@@ -24,6 +24,8 @@ jobs:
   generate-report:
     runs-on: ubuntu-latest
     timeout-minutes: 20
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
     steps:
       - name: Checkout repository
@@ -69,3 +71,17 @@ jobs:
             data/*.generated.csv
             data/*.refreshed.csv
           if-no-files-found: ignore
+
+      - name: Send email report
+        uses: dawidd6/action-send-mail@v6
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          secure: true
+          username: ${{ secrets.SMTP_USERNAME }}
+          password: ${{ secrets.SMTP_PASSWORD }}
+          subject: AI stock rotation report
+          to: ${{ secrets.REPORT_EMAIL_TO }}
+          from: AI Stock Rotation Radar <${{ secrets.SMTP_USERNAME }}>
+          html_body: file://reports/latest.html
+          attachments: reports/latest.html
