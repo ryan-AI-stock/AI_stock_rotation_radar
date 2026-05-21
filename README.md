@@ -46,7 +46,8 @@ python -m rotation_radar.cli --update-latest-report --output reports/latest.html
 這個流程採分層更新：
 
 - 全市場上市/上櫃股票清單快取 30 天。
-- 全市場報價掃描快取 3 天。
+- 全市場報價在正式產報告前預設每次刷新；若使用 `--sector-scan-max-age-days` 才會重用短期快取。
+- 報告摘要會顯示報價日期與時間，用來確認本次報告是否真的使用最新行情。
 - 題材排名依題材資料庫內股票的成交金額與資金占比重算。
 - 題材短趨勢會更新到 `data/theme_history.generated.csv`，用最近 5 個交易日判斷升溫、降溫或持平。
 - GitHub Actions 會快取 `data/theme_history.generated.csv`、`raw_data/`、`processed_data/`，讓自動寄信版本能跨日累積短趨勢與法人/融資資料。

@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import csv
 from datetime import datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -44,7 +45,7 @@ def main() -> None:
     parser.add_argument("--market-quotes-output", default="data/market_quotes.generated.csv", help="Generated full-market quote CSV.")
     parser.add_argument("--hot-sector-symbols-output", default="data/hot_sector_symbols.generated.csv", help="Symbols selected for deeper hot-theme analysis.")
     parser.add_argument("--hot-stock-deep-output", default="data/hot_stock_deep_metrics.generated.csv", help="Deep metrics for hot-sector symbols.")
-    parser.add_argument("--sector-scan-max-age-days", type=float, default=3.0, help="Reuse full-market theme scan cache within this many days.")
+    parser.add_argument("--sector-scan-max-age-days", type=float, default=0.0, help="Reuse full-market quote cache within this many days. Default 0 always refreshes quotes before reporting.")
     parser.add_argument("--universe-max-age-days", type=float, default=30.0, help="Reuse listed/OTC universe cache within this many days.")
     parser.add_argument("--force-sector-scan", action="store_true", help="Force refresh full-market quotes and theme ranking.")
     parser.add_argument("--fetch-raw", help="Fetch raw TWSE/TPEx JSON snapshots for a trade date, YYYY-MM-DD.")
@@ -80,6 +81,7 @@ def main() -> None:
 
         refreshed_path = Path("data/stock_metrics.refreshed.csv")
         market_quotes_path = _ensure_market_quotes(args, sector_path)
+        quote_date, quote_time = _quote_snapshot_info(market_quotes_path)
         print(f"Saved {market_quotes_path}")
         theme_quotes_path = build_theme_market_quotes(
             market_quotes_path=market_quotes_path,
@@ -151,6 +153,8 @@ def main() -> None:
             price_history,
             stock_themes=stock_themes,
             theme_trends=theme_trends,
+            quote_date=quote_date,
+            quote_time=quote_time,
         )
         return
 
@@ -341,6 +345,8 @@ def _write_report(
     sector_themes=None,
     stock_themes=None,
     theme_trends=None,
+    quote_date="",
+    quote_time="",
 ) -> None:
     sector_results, stock_results = build_results(sectors, stocks)
 
@@ -357,6 +363,8 @@ def _write_report(
         sector_themes=sector_themes or {},
         stock_themes=stock_themes or {},
         theme_trends=theme_trends or {},
+        quote_date=quote_date,
+        quote_time=quote_time,
     )
 
     output = Path(output_path)
@@ -383,12 +391,29 @@ def _ensure_market_universe(args) -> tuple[Path, Path]:
 
 def _ensure_market_quotes(args, sector_path: Path) -> Path:
     market_quotes_path = Path(args.market_quotes_output)
-    if not args.force_sector_scan and is_fresh(market_quotes_path, args.sector_scan_max_age_days):
+    if (
+        args.sector_scan_max_age_days > 0
+        and not args.force_sector_scan
+        and is_fresh(market_quotes_path, args.sector_scan_max_age_days)
+    ):
         return market_quotes_path
     return refresh_market_quotes(
         sector_map_path=sector_path,
         output_path=args.market_quotes_output,
     )
+
+
+def _quote_snapshot_info(path: str | Path) -> tuple[str, str]:
+    csv_path = Path(path)
+    if not csv_path.exists():
+        return "", ""
+    with csv_path.open("r", encoding="utf-8-sig", newline="") as handle:
+        for row in csv.DictReader(handle):
+            quote_date = str(row.get("quote_date", "")).strip()
+            quote_time = str(row.get("quote_time", "")).strip()
+            if quote_date or quote_time:
+                return quote_date, quote_time
+    return "", ""
 
 
 def _ensure_sector_metrics(args, market_quotes_path: Path) -> Path:

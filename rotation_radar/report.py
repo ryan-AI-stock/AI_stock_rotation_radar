@@ -89,6 +89,7 @@ def _summary_panel(report: Report, top_sectors, buckets: dict[Bucket, list[Stock
         <div><span>觀察名單</span><strong>{watch}</strong><em>保留前 5 名</em></div>
         <div><span>排除名單</span><strong>{excluded}</strong><em>風險或條件不足</em></div>
         <div><span>核心邏輯</span><strong>資金先行</strong><em>成交金額與題材占比優先</em></div>
+        <div><span>報價資料</span><strong>{_quote_date_text(report)}</strong><em>{_quote_time_text(report)}</em></div>
       </div>
     </section>
     """
@@ -247,6 +248,19 @@ def _trend_detail(trend: dict[str, float | str]) -> str:
     else:
         rank_text = "排名持平"
     return f"{rank_text}，金額{amount_change:+.0f}%"
+
+
+def _quote_date_text(report: Report) -> str:
+    if not report.quote_date:
+        return "資料待補"
+    raw = str(report.quote_date)
+    if len(raw) == 8 and raw.isdigit():
+        return f"{raw[:4]}-{raw[4:6]}-{raw[6:]}"
+    return escape(raw)
+
+
+def _quote_time_text(report: Report) -> str:
+    return escape(report.quote_time or "請以此欄確認是否最新")
 
 
 def _foreign_chip(m) -> str:
@@ -464,7 +478,7 @@ main { padding: 22px max(14px, 4vw) 54px; }
 .brief-head { display: flex; justify-content: space-between; gap: 18px; align-items: baseline; border-bottom: 1px solid #ddd6c8; padding-bottom: 12px; }
 .brief-head span { color: #a16207; font-size: .8rem; font-weight: 850; text-transform: uppercase; letter-spacing: .08em; }
 .brief-head strong { font-size: clamp(1.15rem, 3vw, 2rem); text-align: right; }
-.brief-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; padding-top: 14px; }
+.brief-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; padding-top: 14px; }
 .brief-grid div, .sector-stats div, .metrics div, .valuation-box { background: #fff; border: 1px solid #ddd6c8; border-radius: 6px; padding: 10px; }
 .brief-grid span, .sector-stats span, .metrics span, .valuation-box span { display: block; color: #6f6a60; font-size: .78rem; }
 .brief-grid strong, .sector-stats strong, .metrics strong, .valuation-box strong { display: block; font-size: 1.05rem; }

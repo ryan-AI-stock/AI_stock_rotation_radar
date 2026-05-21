@@ -28,9 +28,11 @@ def refresh_stock_metrics_quotes(
     output = Path(output_path)
     try:
         quotes = fetch_quotes(quote_targets)
-    except OSError:
+    except OSError as exc:
         if output.exists():
+            print(f"Warning: failed to refresh stock quotes; using existing {output}: {exc}")
             return output
+        print(f"Warning: failed to refresh stock quotes; copying base metrics without quote refresh: {exc}")
         shutil.copyfile(stock_metrics_path, output)
         return output
 
@@ -60,8 +62,9 @@ def refresh_market_quotes(
     targets = [(row["symbol"], row.get("market", "TWSE")) for row in sector_rows]
     try:
         quotes = fetch_quotes(targets)
-    except OSError:
+    except OSError as exc:
         if path.exists():
+            print(f"Warning: failed to refresh market quotes; using existing {path}: {exc}")
             return path
         raise
 

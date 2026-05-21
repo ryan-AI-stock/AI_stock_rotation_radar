@@ -89,3 +89,5 @@ class Report:
     sector_themes: dict[str, list[dict[str, float | str]]] = field(default_factory=dict)
     stock_themes: dict[str, list[str]] = field(default_factory=dict)
     theme_trends: dict[str, dict[str, float | str]] = field(default_factory=dict)
+    quote_date: str = ""
+    quote_time: str = ""
