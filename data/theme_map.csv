@@ -1,0 +1,48 @@
+theme,symbol,name,role,conviction,primary
+記憶體,2408,南亞科,DRAM,high,yes
+記憶體,2344,華邦電,利基型 DRAM/NAND,high,yes
+記憶體,2337,旺宏,NOR Flash,high,yes
+記憶體,3006,晶豪科,記憶體 IC,high,yes
+記憶體,3260,威剛,記憶體模組,high,yes
+記憶體,8299,群聯,NAND 控制 IC,high,yes
+記憶體,8271,宇瞻,記憶體模組,medium,yes
+記憶體,8088,品安,記憶體模組,medium,yes
+記憶體,6531,愛普*,記憶體 IP/AI 記憶體,medium,yes
+記憶體,6770,力積電,記憶體代工/晶圓代工,medium,yes
+PCB/載板,3037,欣興,ABF 載板/PCB,high,yes
+PCB/載板,8046,南電,ABF 載板,high,yes
+PCB/載板,3189,景碩,IC 載板,high,yes
+PCB/載板,2368,金像電,AI 伺服器 PCB,high,yes
+PCB/載板,2383,台光電,CCL,high,yes
+PCB/載板,6274,台燿,CCL,high,yes
+PCB/載板,6213,聯茂,CCL,medium,yes
+PCB/載板,8358,金居,銅箔/材料,medium,yes
+PCB/載板,2313,華通,PCB,medium,yes
+PCB/載板,3044,健鼎,PCB,medium,yes
+PCB/載板,4958,臻鼎-KY,PCB,medium,yes
+PCB/載板,2316,楠梓電,PCB,medium,yes
+PCB/載板,2367,燿華,PCB,medium,yes
+PCB/載板,1815,富喬,玻纖布/材料,medium,yes
+PCB/載板,5439,高技,PCB,medium,yes
+CPO/矽光子,3163,波若威,光通訊/CPO,high,yes
+CPO/矽光子,3363,上詮,光纖元件,high,yes
+CPO/矽光子,4908,前鼎,光通訊模組,medium,yes
+CPO/矽光子,4979,華星光,光通訊模組,medium,yes
+CPO/矽光子,3081,聯亞,光通訊磊晶,high,yes
+CPO/矽光子,3450,聯鈞,光通訊元件,medium,yes
+CPO/矽光子,3234,光環,光通訊元件,medium,yes
+CPO/矽光子,4977,眾達-KY,光收發模組,medium,yes
+CPO/矽光子,6442,光聖,光通訊元件,medium,yes
+CPO/矽光子,6451,訊芯-KY,光通訊封裝,medium,yes
+被動元件,2327,國巨,MLCC/被動元件,high,yes
+被動元件,2492,華新科,MLCC/被動元件,high,yes
+被動元件,2472,立隆電,鋁質電容,medium,yes
+被動元件,3026,禾伸堂,MLCC/通路,medium,yes
+被動元件,3090,日電貿,被動元件通路,medium,yes
+被動元件,2375,凱美,電容/電阻,medium,yes
+被動元件,6173,信昌電,MLCC,medium,yes
+被動元件,6127,九豪,被動元件,medium,yes
+被動元件,8043,蜜望實,被動元件,medium,yes
+被動元件,3624,光頡,電阻,medium,yes
+被動元件,3357,臺慶科,電感/被動元件,medium,yes
+被動元件,3236,千如,電感,medium,yes

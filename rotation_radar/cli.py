@@ -24,25 +24,26 @@ from .theme_metrics import build_theme_market_quotes
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Generate Taiwan sector rotation HTML report.")
+    parser = argparse.ArgumentParser(description="Generate Taiwan market-theme rotation HTML report.")
     parser.add_argument("--demo", action="store_true", help="Use bundled demo data.")
     parser.add_argument("--data-dir", default="data", help="Directory containing sector_metrics.csv and stock_metrics.csv.")
-    parser.add_argument("--sector-metrics-file", help="Sector metrics CSV for report generation.")
+    parser.add_argument("--sector-metrics-file", help="Theme metrics CSV for report generation.")
     parser.add_argument("--stock-metrics-file", help="Stock metrics CSV for report generation.")
     parser.add_argument("--price-history-file", default="data/price_history.csv", help="Optional OHLC and MA CSV for charts.")
     parser.add_argument("--refresh-quotes", action="store_true", help="Refresh latest prices before generating a report.")
     parser.add_argument("--update-latest-report", action="store_true", help="Build universe, refresh quotes, and write latest report.")
     parser.add_argument("--sector-map-file", default="data/sector_map.csv", help="Sector map CSV with optional market column.")
+    parser.add_argument("--theme-map-file", default="data/theme_map.csv", help="Market theme to stock mapping CSV.")
     parser.add_argument("--build-market-universe", action="store_true", help="Fetch listed/OTC company universe and build sector map.")
     parser.add_argument("--industry-rules-file", default="data/industry_sector_rules.csv", help="Industry code to sector mapping.")
     parser.add_argument("--market-universe-output", default="data/market_universe.generated.csv", help="Generated market universe CSV.")
     parser.add_argument("--sector-map-output", default="data/sector_map.generated.csv", help="Generated full-market sector map CSV.")
     parser.add_argument("--market-quotes-output", default="data/market_quotes.generated.csv", help="Generated full-market quote CSV.")
-    parser.add_argument("--hot-sector-symbols-output", default="data/hot_sector_symbols.generated.csv", help="Symbols selected for deeper hot-sector analysis.")
+    parser.add_argument("--hot-sector-symbols-output", default="data/hot_sector_symbols.generated.csv", help="Symbols selected for deeper hot-theme analysis.")
     parser.add_argument("--hot-stock-deep-output", default="data/hot_stock_deep_metrics.generated.csv", help="Deep metrics for hot-sector symbols.")
-    parser.add_argument("--sector-scan-max-age-days", type=float, default=3.0, help="Reuse full-market sector scan cache within this many days.")
+    parser.add_argument("--sector-scan-max-age-days", type=float, default=3.0, help="Reuse full-market theme scan cache within this many days.")
     parser.add_argument("--universe-max-age-days", type=float, default=30.0, help="Reuse listed/OTC universe cache within this many days.")
-    parser.add_argument("--force-sector-scan", action="store_true", help="Force refresh full-market quotes and sector ranking.")
+    parser.add_argument("--force-sector-scan", action="store_true", help="Force refresh full-market quotes and theme ranking.")
     parser.add_argument("--fetch-raw", help="Fetch raw TWSE/TPEx JSON snapshots for a trade date, YYYY-MM-DD.")
     parser.add_argument("--daily-update", help="Run fetch, normalize, metric build, and report generation for YYYY-MM-DD.")
     parser.add_argument("--fetch-recent-depth", help="Fetch and normalize recent weekday snapshots ending at YYYY-MM-DD.")
@@ -78,8 +79,9 @@ def main() -> None:
         print(f"Saved {market_quotes_path}")
         theme_quotes_path = build_theme_market_quotes(
             market_quotes_path=market_quotes_path,
-            base_stock_metrics_path=Path(args.data_dir) / "stock_metrics.csv",
+            theme_map_path=args.theme_map_file,
             output_path=Path(args.data_dir) / "theme_market_quotes.generated.csv",
+            fallback_stock_metrics_path=Path(args.data_dir) / "stock_metrics.csv",
         )
         print(f"Saved {theme_quotes_path}")
         tracked_refreshed_path = Path("data/stock_metrics.tracked.refreshed.csv")
@@ -313,7 +315,7 @@ def _write_report(sectors, stocks, output_path: str, data_source: str, price_his
     sector_results, stock_results = build_results(sectors, stocks)
 
     report = Report(
-        title="台股產業輪動與波段選股雷達",
+        title="台股題材輪動與波段選股雷達",
         generated_at=datetime.now(ZoneInfo("Asia/Taipei")).strftime("%Y-%m-%d %H:%M"),
         market_view=(
             "模型先抓全市場報價，再把已標記股票映射到記憶體、PCB/載板、CPO/矽光子、被動元件等市場題材，"

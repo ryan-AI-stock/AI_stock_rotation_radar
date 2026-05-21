@@ -18,7 +18,7 @@ def score_sector(metrics: SectorMetrics) -> SectorResult:
     parts = {
         "資金流入": capital * 0.45,
         "價格動能": momentum * 0.15,
-        "產業趨勢": trend * 0.10,
+        "題材趨勢": trend * 0.10,
         "海外行情": overseas * 0.10,
         "估值合理": valuation * 0.10,
         "風險控管": risk * 0.10,
@@ -29,13 +29,13 @@ def score_sector(metrics: SectorMetrics) -> SectorResult:
     if capital >= 75:
         notes.append(_capital_note(metrics))
     if trend >= 80:
-        notes.append(f"產業趨勢分數 {trend:.0f}/100，主線具中期延續性")
+        notes.append(f"題材趨勢分數 {trend:.0f}/100，主線具中期延續性")
     if overseas >= 75:
         notes.append(f"海外行情同步分數 {overseas:.0f}/100，對應指標偏強")
     if metrics.risk_heat >= 70:
         notes.append(f"短線過熱風險 {metrics.risk_heat:.0f}/100，追價風險升高")
     if not notes:
-        notes.append("族群條件中性，等待資金或基本面訊號放大")
+        notes.append("題材條件中性，等待資金或基本面訊號放大")
 
     return SectorResult(metrics=metrics, score=ScoreBreakdown(total=total, parts=parts, notes=notes))
 
@@ -135,7 +135,7 @@ def _stock_notes(metrics: StockMetrics, valuation_position: float, risk_penalty:
     if metrics.chip_cleanliness >= 70:
         notes.append("籌碼條件偏乾淨")
     if valuation_position >= 70:
-        notes.append("本益比位於族群相對低檔")
+        notes.append("本益比位於題材相對低檔")
     elif valuation_position < 45:
         notes.append("估值已不便宜")
     if metrics.foreign_5d > 0 and metrics.trust_5d > 0:

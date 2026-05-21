@@ -11,12 +11,15 @@ ThemeRows = dict[str, list[dict[str, float | str]]]
 
 def build_theme_market_quotes(
     market_quotes_path: str | Path,
-    base_stock_metrics_path: str | Path,
+    theme_map_path: str | Path,
     output_path: str | Path,
+    fallback_stock_metrics_path: str | Path | None = None,
 ) -> Path:
     """Write a quote file grouped by market theme instead of exchange industry."""
 
-    symbol_theme = _load_symbol_theme(base_stock_metrics_path)
+    symbol_theme = _load_symbol_theme_map(theme_map_path)
+    if fallback_stock_metrics_path is not None:
+        symbol_theme.update({k: v for k, v in _load_stock_metric_themes(fallback_stock_metrics_path).items() if k not in symbol_theme})
     rows: list[dict[str, str]] = []
     for row in _read_csv(market_quotes_path):
         symbol = row.get("symbol", "").strip()
@@ -42,7 +45,7 @@ def build_sector_theme_metrics(
     base_stock_metrics_path: str | Path,
     limit: int = 3,
 ) -> ThemeRows:
-    symbol_theme = _load_symbol_theme(base_stock_metrics_path)
+    symbol_theme = _load_stock_metric_themes(base_stock_metrics_path)
     sector_totals: dict[str, float] = defaultdict(float)
     theme_totals: dict[str, dict[str, float]] = defaultdict(lambda: defaultdict(float))
 
@@ -76,7 +79,21 @@ def build_sector_theme_metrics(
     return result
 
 
-def _load_symbol_theme(path: str | Path) -> dict[str, str]:
+def _load_symbol_theme_map(path: str | Path) -> dict[str, str]:
+    csv_path = Path(path)
+    if not csv_path.exists():
+        return {}
+    themes: dict[str, str] = {}
+    for row in _read_csv(csv_path):
+        symbol = row.get("symbol", "").strip()
+        theme = row.get("theme", "").strip()
+        primary = row.get("primary", "yes").strip().lower()
+        if symbol and theme and primary not in {"no", "false", "0"}:
+            themes[symbol] = theme
+    return themes
+
+
+def _load_stock_metric_themes(path: str | Path) -> dict[str, str]:
     csv_path = Path(path)
     if not csv_path.exists():
         return {}

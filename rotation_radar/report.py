@@ -22,7 +22,7 @@ def render_report(report: Report) -> str:
   <header class="hero">
     <div class="hero-inner">
       <p class="eyebrow">被AI研究社 | Rotation Radar</p>
-      <h1>股票族群輪動雷達</h1>
+      <h1>股票題材輪動雷達</h1>
       <p class="market-view">{escape(report.market_view)}</p>
       <p class="stamp">產出時間：{escape(report.generated_at)}</p>
     </div>
@@ -53,10 +53,10 @@ def render_report(report: Report) -> str:
     <section class="section methodology">
       <h2>欄位判讀</h2>
       <div class="method-grid">
-        <div><strong>本益比位置</strong><span>橫軸越左代表個股本益比越接近族群低檔，越右代表越接近族群高檔；右側不是越好，而是估值越貴。</span></div>
+        <div><strong>本益比位置</strong><span>橫軸越左代表個股本益比越接近題材低檔，越右代表越接近題材高檔；右側不是越好，而是估值越貴。</span></div>
         <div><strong>外資/投信 5 日</strong><span>單位是張，正數代表近五日累計買超，負數代表累計賣超。</span></div>
         <div><strong>融資 5 日</strong><span>代表融資餘額近五日變化率；上升太快通常代表籌碼變熱，會提高風險。</span></div>
-        <div><strong>合理估值</strong><span>用個股 EPS 估算，EPS = 收盤價 / 個股本益比，再乘上族群低檔、平均、高檔本益比。</span></div>
+        <div><strong>合理估值</strong><span>用個股 EPS 估算，EPS = 收盤價 / 個股本益比，再乘上題材低檔、平均、高檔本益比。</span></div>
       </div>
     </section>
   </main>
@@ -86,7 +86,7 @@ def _summary_panel(report: Report, top_sectors, buckets: dict[Bucket, list[Stock
         <div><span>可操作名單</span><strong>{actionable}</strong><em>符合波段條件</em></div>
         <div><span>觀察名單</span><strong>{watch}</strong><em>保留前 5 名</em></div>
         <div><span>排除名單</span><strong>{excluded}</strong><em>風險或條件不足</em></div>
-        <div><span>核心邏輯</span><strong>資金先行</strong><em>成交金額與族群占比優先</em></div>
+        <div><span>核心邏輯</span><strong>資金先行</strong><em>成交金額與題材占比優先</em></div>
       </div>
     </section>
     """
@@ -159,8 +159,8 @@ def _stock_card(item: StockResult, report: Report, rank: int) -> str:
         <div class="metrics">
           <div><span>收盤價</span><strong>{m.close:.1f} 元</strong></div>
           <div><span>本益比</span><strong>{_pe_display(m.pe)}</strong></div>
-          <div><span>族群本益比區間</span><strong>{_pe_range_display(m)}</strong></div>
-          <div><span>族群平均本益比</span><strong>{_pe_display(m.sector_pe_avg)}</strong></div>
+          <div><span>題材本益比區間</span><strong>{_pe_range_display(m)}</strong></div>
+          <div><span>題材平均本益比</span><strong>{_pe_display(m.sector_pe_avg)}</strong></div>
         </div>
         <div class="valuation-box">
           <span>合理估值推估</span>
@@ -282,7 +282,7 @@ def _risk_text(value: str) -> str:
 def _pe_text(m, pe_position: float) -> str:
     if m.pe <= 0 or m.sector_pe_high <= 0:
         return "本益比位置：資料待補；此股目前是全市場初篩候選，尚未接入完整估值資料。"
-    return f"本益比位置：族群區間第 {pe_position:.0f} 百分位；越左代表越便宜，越右代表越接近高估。"
+    return f"本益比位置：題材區間第 {pe_position:.0f} 百分位；越左代表越便宜，越右代表越接近高估。"
 
 
 def _pe_display(value: float) -> str:

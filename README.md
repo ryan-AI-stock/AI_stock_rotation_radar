@@ -1,12 +1,12 @@
 # AI_stock_rotation_radar
 
-台股產業輪動與 2-6 週波段選股報告產生器。
+台股題材輪動與 2-6 週波段選股報告產生器。
 
-這個專案的目標是用免費公開資料，追蹤資金是否流向半導體、AI、金融、傳產，以及更細的輪動族群，例如記憶體、被動元件、CPO、PCB/載板。程式會輸出可在手機、平板、電腦閱讀的 HTML 報告，並把個股分成「可操作名單、觀察名單、排除名單」。
+這個專案的目標是用免費公開資料，追蹤資金目前集中在哪些股票市場題材，例如記憶體、被動元件、CPO/矽光子、PCB/載板。交易所產業分類只作為背景資料；報告排序、候選個股與操作名單都以題材資料庫為主。程式會輸出可在手機、平板、電腦閱讀的 HTML 報告，並把個股分成「可操作名單、觀察名單、排除名單」。
 
 ## 第一版功能
 
-- 族群輪動評分：資金、動能、產業趨勢、海外指標、估值、風險。
+- 題材輪動評分：資金、動能、題材趨勢、海外指標、估值、風險。
 - 個股波段評分：拉回位置、估值、籌碼、基本面、流動性、風險。
 - 名單分類：可操作、觀察、排除。
 - HTML 報告：響應式版面，適合付費訂閱文章或內部投研報告。
@@ -17,7 +17,7 @@
 - 台股日成交、三大法人、融資融券：TWSE、TPEx 公開資料。
 - 月營收、財報、本益比：公開資訊觀測站、TWSE、TPEx。
 - 海外指標：Yahoo Finance 可讀公開行情頁、交易所公開頁面或手動 CSV。
-- 產業事件：先支援人工維護事件檔，避免新聞來源授權問題。
+- 題材事件：先支援人工維護事件檔，避免新聞來源授權問題。
 
 ## 使用方式
 
@@ -33,7 +33,7 @@ python -m rotation_radar.cli --data-dir data --output reports/latest.html
 python -m rotation_radar.cli --daily-update 2026-05-12 --output reports/daily.html
 ```
 
-這會依序執行：抓取原始資料、清洗資料、更新個股指標、回推族群指標、產生 HTML 報告。若官方端點暫時連不上，但本地已有同日期原始資料，程式會沿用本地快照繼續產報告。
+這會依序執行：抓取原始資料、清洗資料、更新個股指標、回推題材指標、產生 HTML 報告。若官方端點暫時連不上，但本地已有同日期原始資料，程式會沿用本地快照繼續產報告。
 
 正式產出最新報告：
 
@@ -44,12 +44,12 @@ python -m rotation_radar.cli --update-latest-report --output reports/latest.html
 這個流程採分層更新：
 
 - 全市場上市/上櫃股票清單快取 30 天。
-- 全市場族群資金掃描快取 3 天。
-- 族群排名依全市場成交金額與資金占比重算。
-- 個股候選池只從熱門族群與高成交金額股票中初篩。
+- 全市場報價掃描快取 3 天。
+- 題材排名依題材資料庫內股票的成交金額與資金占比重算。
+- 個股候選池只從熱門題材與高成交金額股票中初篩。
 - 追蹤股報價會在產報告前刷新。
-- 熱門族群前三名會各取成交金額前 40 檔，輸出 `data/hot_sector_symbols.generated.csv`。
-- 深度資料會針對熱門族群名單合併法人與融資資料，輸出 `data/hot_stock_deep_metrics.generated.csv`。
+- 熱門題材前三名會各取成交金額前 40 檔，輸出 `data/hot_sector_symbols.generated.csv`。
+- 深度資料會針對熱門題材名單合併法人與融資資料，輸出 `data/hot_stock_deep_metrics.generated.csv`。
 - 報告中的觀察名單只保留前 5 名，避免初篩候選過多造成閱讀負擔。
 
 補最近 5 個工作日的法人/融資深度資料：
@@ -60,13 +60,13 @@ python -m rotation_radar.cli --fetch-recent-depth 2026-05-12 --recent-depth-days
 
 目前 TPEx 上櫃逐檔融資可完整合併；TWSE 上市法人已可合併，但目前抓到的 TWSE 融資端點是市場總表，不是逐檔融資，因此上市股會標記為 `missing_margin`，避免用錯資料。
 
-強制重抓全市場族群掃描：
+強制重抓全市場題材掃描：
 
 ```powershell
 python -m rotation_radar.cli --update-latest-report --force-sector-scan --output reports/latest.html
 ```
 
-調整族群掃描快取天數：
+調整題材掃描快取天數：
 
 ```powershell
 python -m rotation_radar.cli --update-latest-report --sector-scan-max-age-days 5 --output reports/latest.html
@@ -100,7 +100,7 @@ python -m rotation_radar.cli --normalize-raw 2026-05-12 --raw-input-dir raw_data
 python -m rotation_radar.cli --build-stock-metrics --stock-metrics-input data/stock_metrics.csv --stock-metrics-output data/stock_metrics.generated.csv --processed-input-dir processed_data
 ```
 
-用個股指標回推族群指標：
+用個股指標回推題材指標：
 
 ```powershell
 python -m rotation_radar.cli --build-sector-metrics --sector-metrics-input data/sector_metrics.csv --stock-metrics-input data/stock_metrics.generated.csv --sector-metrics-output data/sector_metrics.generated.csv
@@ -122,23 +122,24 @@ reports/latest.html
 
 目前資料層先採 CSV，之後 TWSE/TPEx 抓取器會把公開資料整理成同樣格式。
 
-- `data/sector_map.csv`：族群、股票、公司定位、海外參考指標。
-- `data/sector_universe.csv`：候選族群宇宙。報告不會永久鎖定記憶體、PCB、CPO、被動元件；未來塑膠、航運、金融等族群若分數提高，也會進入排名。
-- `data/sector_metrics.csv`：族群評分需要的資金、動能、趨勢、海外、估值與風險指標。
+- `data/theme_map.csv`：市場題材資料庫，定義題材、股票、角色、信心等級與是否納入主要統計。
+- `data/sector_map.csv`：交易所產業分類映射，主要供全市場報價抓取與背景參考使用，不作為報告主排名。
+- `data/sector_universe.csv`：候選題材宇宙。報告不會永久鎖定記憶體、PCB、CPO、被動元件；未來玻璃基板、重電、航運、機器人等題材若加入資料庫且分數提高，也會進入排名。
+- `data/sector_metrics.csv`：題材評分需要的資金、動能、趨勢、海外、估值與風險指標。
 - `data/stock_metrics.csv`：個股評分需要的籌碼、估值、營收、技術與流動性指標。
 - `data/price_history.csv`：個股近一月 OHLC、5 日、20 日、60 日均線，用於技術走勢圖。
 
 ### sector_metrics.csv 欄位
 
-- `capital_inflow_rank`：族群資金流入分數，0-100。
-- `turnover_share_change`：族群成交占比變化分數，0-100。
+- `capital_inflow_rank`：題材資金流入分數，0-100。
+- `turnover_share_change`：題材成交占比變化分數，0-100。
 - `capital_share`、`capital_share_prev`：目前與前期資金占比，單位為 %。
 - `turnover_value`、`turnover_value_prev`：目前與前期成交金額，單位為百萬元。
 - `momentum_20d`：20 日價格動能分數，0-100。
-- `strong_stock_ratio`：族群內強勢股比例分數，0-100。
-- `industry_trend`：產業趨勢分數，0-100。
+- `strong_stock_ratio`：題材內強勢股比例分數，0-100。
+- `industry_trend`：題材趨勢分數，0-100。
 - `overseas_signal`：海外行情同步分數，0-100。
-- `pe_percentile`：族群估值分位，0 代表低估，100 代表偏貴。
+- `pe_percentile`：題材估值分位，0 代表低估，100 代表偏貴。
 - `risk_heat`：短線過熱風險，0 代表低風險，100 代表高風險。
 
 ### stock_metrics.csv 欄位
@@ -148,8 +149,8 @@ reports/latest.html
 - `foreign_5d`、`trust_5d`：外資與投信近五日買賣超。
 - `margin_change_5d`：融資近五日變化率。
 - `pe`：個股本益比。
-- `sector_pe_low`、`sector_pe_avg`、`sector_pe_high`：族群本益比區間與平均。
-- `fair_value_low`、`fair_value_avg`、`fair_value_high`：用個股 EPS 乘上族群低檔、平均、高檔本益比推估的合理估值；若空白，報告會即時計算。
+- `sector_pe_low`、`sector_pe_avg`、`sector_pe_high`：題材本益比區間與平均。
+- `fair_value_low`、`fair_value_avg`、`fair_value_high`：用個股 EPS 乘上題材低檔、平均、高檔本益比推估的合理估值；若空白，報告會即時計算。
 - `revenue_yoy`、`revenue_mom`：月營收年增率與月增率。
 - `technical_setup`：技術結構分數，0-100。
 - `liquidity`：流動性分數，0-100。
@@ -157,11 +158,11 @@ reports/latest.html
 
 ## 評分原則
 
-族群分數滿分 100：
+題材分數滿分 100：
 
 - 資金流入 25%
 - 價格動能 15%
-- 產業趨勢 20%
+- 題材趨勢 20%
 - 海外行情 15%
 - 估值合理性 15%
 - 風險控管 10%

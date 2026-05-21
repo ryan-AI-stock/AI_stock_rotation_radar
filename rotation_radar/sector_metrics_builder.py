@@ -39,7 +39,7 @@ def build_sector_metrics_from_market_quotes(
         output_rows.append(
             {
                 "name": sector,
-                "theme": base_row.get("theme") or f"{sector} 族群資金輪動",
+                "theme": base_row.get("theme") or f"{sector} 題材資金輪動",
                 "capital_inflow_rank": _fmt(_clamp(capital_score)),
                 "turnover_share_change": _fmt(_clamp(turnover_change_score)),
                 "capital_share": _fmt(share),
@@ -78,7 +78,7 @@ def _read_by_key(path: str | Path, key: str) -> dict[str, dict[str, str]]:
 def _default_sector_row(sector: str) -> dict[str, str]:
     return {
         "name": sector,
-        "theme": f"{sector} 族群資金輪動",
+        "theme": f"{sector} 題材資金輪動",
         "momentum_20d": "50",
         "industry_trend": "50",
         "overseas_signal": "50",

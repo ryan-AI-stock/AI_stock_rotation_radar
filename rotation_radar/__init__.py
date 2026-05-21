@@ -1,4 +1,4 @@
-"""Taiwan sector rotation radar."""
+"""Taiwan market-theme rotation radar."""
 
 __all__ = ["__version__"]
 

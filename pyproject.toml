@@ -1,7 +1,7 @@
 [project]
 name = "AI_stock_rotation_radar"
 version = "0.1.0"
-description = "Taiwan sector rotation radar and swing-trading HTML report generator."
+description = "Taiwan market-theme rotation radar and swing-trading HTML report generator."
 requires-python = ">=3.11"
 dependencies = []
 

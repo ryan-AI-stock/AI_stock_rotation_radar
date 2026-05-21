@@ -54,6 +54,8 @@ def merge_deep_metrics_into_stock_metrics(
 ) -> Path:
     stocks = _read_csv(stock_metrics_path)
     deep_by_symbol = _read_by_key(deep_metrics_path, "symbol")
+    if not stocks:
+        return Path(output_path)
 
     for stock in stocks:
         deep = deep_by_symbol.get(stock["symbol"])

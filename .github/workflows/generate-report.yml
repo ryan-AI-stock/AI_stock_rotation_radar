@@ -1,10 +1,10 @@
-name: Generate rotation report
+name: Generate theme rotation report
 
 on:
   workflow_dispatch:
     inputs:
       force_sector_scan:
-        description: "Refresh full-market sector scan instead of using cache"
+        description: "Refresh full-market theme scan instead of using cache"
         required: false
         default: "false"
         type: choice
@@ -84,7 +84,7 @@ jobs:
           secure: true
           username: ${{ secrets.SMTP_USERNAME }}
           password: ${{ secrets.SMTP_PASSWORD }}
-          subject: "【被AI研究社】${{ env.REPORT_DATE }} 股票族群輪動雷達"
+          subject: "【被AI研究社】${{ env.REPORT_DATE }} 股票題材輪動雷達"
           to: ${{ secrets.REPORT_EMAIL_TO }}
           from: AI Stock Rotation Radar <${{ secrets.SMTP_USERNAME }}>
           html_body: file://reports/latest.html
