@@ -20,7 +20,8 @@ from .report import render_report
 from .scoring import build_results
 from .sector_metrics_builder import build_sector_metrics_from_market_quotes
 from .stock_screener import build_market_stock_candidates, export_hot_sector_symbols
-from .theme_metrics import build_theme_market_quotes
+from .theme_history import load_theme_trends, update_theme_history
+from .theme_metrics import build_theme_market_quotes, load_stock_theme_tags
 
 
 def main() -> None:
@@ -35,6 +36,7 @@ def main() -> None:
     parser.add_argument("--sector-map-file", default="data/sector_map.csv", help="Sector map CSV with optional market column.")
     parser.add_argument("--theme-map-file", default="data/theme_map.csv", help="Market theme to stock mapping CSV.")
     parser.add_argument("--theme-universe-file", default="data/theme_universe.csv", help="Market theme universe CSV.")
+    parser.add_argument("--theme-history-output", default="data/theme_history.generated.csv", help="Generated market theme history CSV.")
     parser.add_argument("--build-market-universe", action="store_true", help="Fetch listed/OTC company universe and build sector map.")
     parser.add_argument("--industry-rules-file", default="data/industry_sector_rules.csv", help="Industry code to sector mapping.")
     parser.add_argument("--market-universe-output", default="data/market_universe.generated.csv", help="Generated market universe CSV.")
@@ -98,6 +100,12 @@ def main() -> None:
             output_path=Path("data/sector_metrics.refreshed.csv"),
         )
         print(f"Saved {generated_sector_path}")
+        theme_history_path = update_theme_history(
+            sector_metrics_path=generated_sector_path,
+            theme_quotes_path=theme_quotes_path,
+            output_path=args.theme_history_output,
+        )
+        print(f"Saved {theme_history_path}")
         hot_symbols_path = export_hot_sector_symbols(
             market_quotes_path=theme_quotes_path,
             sector_metrics_path=generated_sector_path,
@@ -132,7 +140,17 @@ def main() -> None:
             market_quotes_path=market_quotes_path,
         )
         price_history = load_price_history(args.price_history_file)
-        _write_report(sectors, stocks, args.output, "latest report with refreshed quotes", price_history)
+        stock_themes = load_stock_theme_tags(args.theme_map_file, args.theme_universe_file)
+        theme_trends = load_theme_trends(theme_history_path, generated_sector_path)
+        _write_report(
+            sectors,
+            stocks,
+            args.output,
+            "latest report with refreshed quotes",
+            price_history,
+            stock_themes=stock_themes,
+            theme_trends=theme_trends,
+        )
         return
 
     if args.build_market_universe:
@@ -313,7 +331,16 @@ def main() -> None:
     _write_report(sectors, stocks, args.output, data_source, price_history)
 
 
-def _write_report(sectors, stocks, output_path: str, data_source: str, price_history=None, sector_themes=None) -> None:
+def _write_report(
+    sectors,
+    stocks,
+    output_path: str,
+    data_source: str,
+    price_history=None,
+    sector_themes=None,
+    stock_themes=None,
+    theme_trends=None,
+) -> None:
     sector_results, stock_results = build_results(sectors, stocks)
 
     report = Report(
@@ -327,6 +354,8 @@ def _write_report(sectors, stocks, output_path: str, data_source: str, price_his
         stock_results=stock_results,
         price_history=price_history or {},
         sector_themes=sector_themes or {},
+        stock_themes=stock_themes or {},
+        theme_trends=theme_trends or {},
     )
 
     output = Path(output_path)

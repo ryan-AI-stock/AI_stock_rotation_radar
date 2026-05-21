@@ -9,6 +9,14 @@ from typing import Any
 ThemeRows = dict[str, list[dict[str, float | str]]]
 
 
+def load_stock_theme_tags(
+    theme_map_path: str | Path,
+    theme_universe_path: str | Path | None = None,
+) -> dict[str, list[str]]:
+    allowed_themes = _load_theme_universe(theme_universe_path)
+    return _load_symbol_theme_map(theme_map_path, allowed_themes)
+
+
 def build_theme_market_quotes(
     market_quotes_path: str | Path,
     theme_map_path: str | Path,

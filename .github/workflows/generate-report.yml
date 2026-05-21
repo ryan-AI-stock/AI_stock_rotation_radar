@@ -36,6 +36,15 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Restore theme history
+        uses: actions/cache@v4
+        with:
+          path: data/theme_history.generated.csv
+          key: theme-history-${{ github.ref_name }}-${{ github.run_id }}
+          restore-keys: |
+            theme-history-${{ github.ref_name }}-
+            theme-history-
+
       - name: Check Python syntax
         run: python -m compileall rotation_radar
 

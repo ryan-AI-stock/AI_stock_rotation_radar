@@ -87,3 +87,5 @@ class Report:
     stock_results: list[StockResult]
     price_history: dict[str, list[dict[str, float | str]]] = field(default_factory=dict)
     sector_themes: dict[str, list[dict[str, float | str]]] = field(default_factory=dict)
+    stock_themes: dict[str, list[str]] = field(default_factory=dict)
+    theme_trends: dict[str, dict[str, float | str]] = field(default_factory=dict)

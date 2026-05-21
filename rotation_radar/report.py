@@ -43,7 +43,7 @@ def render_report(report: Report) -> str:
     <section class="section">
       <div class="section-head">
         <h2>短線波段名單</h2>
-        <p>策略偏好：拉回找買點，其次是低本益比與籌碼轉強；衝高過熱會提高風險分數。</p>
+        <p>策略偏好：拉回找買點，其次是低本益比與籌碼轉強；個股題材標籤中，深色代表本期前三大熱門題材，淺色代表同股關聯題材。</p>
       </div>
       {_stock_section(Bucket.ACTIONABLE, buckets, report)}
       {_stock_section(Bucket.WATCH, buckets, report)}
@@ -53,6 +53,8 @@ def render_report(report: Report) -> str:
     <section class="section methodology">
       <h2>欄位判讀</h2>
       <div class="method-grid">
+        <div><strong>題材標籤</strong><span>深色膠囊代表這檔股票命中本期前三大熱門題材；淺色膠囊代表同股也關聯的其他題材。</span></div>
+        <div><strong>5日短趨勢</strong><span>免費版先看今日熱度與近 5 個交易日累積；資料不足時會標示累積中，不硬判斷升溫或降溫。</span></div>
         <div><strong>本益比位置</strong><span>橫軸越左代表個股本益比越接近題材低檔，越右代表越接近題材高檔；右側不是越好，而是估值越貴。</span></div>
         <div><strong>外資/投信 5 日</strong><span>單位是張，正數代表近五日累計買超，負數代表累計賣超。</span></div>
         <div><strong>融資 5 日</strong><span>代表融資餘額近五日變化率；上升太快通常代表籌碼變熱，會提高風險。</span></div>
@@ -100,6 +102,7 @@ def _sector_card(item, rank: int, report: Report) -> str:
     share_delta = metrics.capital_share - metrics.capital_share_prev
     turnover_delta = _pct_change(metrics.turnover_value, metrics.turnover_value_prev)
     turnover_text = "資料待補" if turnover_delta is None else f"{turnover_delta:+.1f}%"
+    trend = _theme_trend(metrics.name, report)
     return f"""
       <article class="sector-card">
         <div class="card-top">
@@ -111,6 +114,8 @@ def _sector_card(item, rank: int, report: Report) -> str:
         <div class="sector-stats">
           <div><span>資金占比</span><strong>{metrics.capital_share:.1f}%</strong><em>{share_delta:+.1f}ppt</em></div>
           <div><span>成交金額</span><strong>{metrics.turnover_value:,.0f}百萬</strong><em>{turnover_text}</em></div>
+          <div><span>近5日資金</span><strong>{_trend_amount(trend)}</strong><em>{_trend_days(trend)}</em></div>
+          <div><span>5日短趨勢</span><strong>{escape(str(trend.get("status", "資料累積中")))}</strong><em>{_trend_detail(trend)}</em></div>
           <div><span>強勢股比例</span><strong>{metrics.strong_stock_ratio:.0f}/100</strong><em>越高越強</em></div>
           <div><span>過熱風險</span><strong>{metrics.risk_heat:.0f}/100</strong><em>越高越熱</em></div>
         </div>
@@ -146,12 +151,13 @@ def _stock_card(item: StockResult, report: Report, rank: int) -> str:
     fair_low, fair_avg, fair_high = _fair_values(m)
     chart = _chart_svg(report.price_history.get(m.symbol, []))
     pe_text = _pe_text(m, pe_position)
+    theme_pills = _stock_theme_pills(item, report)
     return f"""
       <article class="stock-card">
         <div class="stock-main">
           <div>
-            <span class="sector-pill">{escape(m.sector)}</span>
             <h4>{escape(m.name)} <small>{escape(m.symbol)}</small></h4>
+            {theme_pills}
             <p>{escape(m.thesis)}</p>
           </div>
           <div class="rank-badge">第 {rank} 名</div>
@@ -181,6 +187,66 @@ def _stock_card(item: StockResult, report: Report, rank: int) -> str:
         <p class="risk-text">風險：{escape(_risk_text(m.risk_reason))}</p>
       </article>
     """
+
+
+def _stock_theme_pills(item: StockResult, report: Report) -> str:
+    m = item.metrics
+    hot_themes = {result.metrics.name for result in report.sector_results[:3]}
+    themes = list(report.stock_themes.get(m.symbol, []))
+    if m.sector and m.sector not in themes:
+        themes.insert(0, m.sector)
+    if not themes:
+        themes = [m.sector]
+
+    ordered = sorted(
+        dict.fromkeys(theme for theme in themes if theme),
+        key=lambda theme: (theme not in hot_themes, theme != m.sector, theme),
+    )
+    pills = []
+    for theme in ordered[:6]:
+        cls = "hot" if theme in hot_themes else "related"
+        label = "熱門題材" if theme in hot_themes else "關聯題材"
+        pills.append(f'<span class="theme-pill {cls}" title="{label}：{escape(theme)}">{escape(theme)}</span>')
+    return f"""
+            <div class="theme-pills" aria-label="題材標籤">
+              {''.join(pills)}
+            </div>
+            <p class="theme-note">深色為本期熱門題材；淺色為這檔股票的其他關聯題材。</p>
+    """
+
+
+def _theme_trend(theme: str, report: Report) -> dict[str, float | str]:
+    return report.theme_trends.get(theme, {"days": 0, "status": "資料累積中"})
+
+
+def _trend_amount(trend: dict[str, float | str]) -> str:
+    days = float(trend.get("days", 0) or 0)
+    if days < 2:
+        return "累積中"
+    amount = float(trend.get("amount_5d", 0) or 0)
+    return f"{amount:,.0f}百萬"
+
+
+def _trend_days(trend: dict[str, float | str]) -> str:
+    days = int(float(trend.get("days", 0) or 0))
+    if days <= 0:
+        return "尚無歷史"
+    return f"目前 {days} 日資料"
+
+
+def _trend_detail(trend: dict[str, float | str]) -> str:
+    days = float(trend.get("days", 0) or 0)
+    if days < 2:
+        return "需至少2日"
+    rank_change = float(trend.get("rank_change", 0) or 0)
+    amount_change = float(trend.get("amount_change_pct", 0) or 0)
+    if rank_change > 0:
+        rank_text = f"排名升{rank_change:.0f}"
+    elif rank_change < 0:
+        rank_text = f"排名降{abs(rank_change):.0f}"
+    else:
+        rank_text = "排名持平"
+    return f"{rank_text}，金額{amount_change:+.0f}%"
 
 
 def _chart_svg(rows: list[dict[str, float | str]]) -> str:
@@ -380,8 +446,13 @@ small { color: #6f6a60; font-size: .85rem; }
 .sector-card p, .stock-card p { color: #6f6a60; margin: 0 0 12px; }
 .sector-stats, .metrics { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin: 14px 0; }
 ul { padding-left: 18px; margin: 12px 0; color: #38332c; }
-.tag-row, .risk-row, .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.tag-row, .risk-row, .chips, .theme-pills { display: flex; flex-wrap: wrap; gap: 6px; }
 .tag-row span, .chips span, .sector-pill { background: #eef7f4; color: #0f5f58; border-radius: 999px; padding: 4px 8px; font-size: .82rem; font-weight: 700; }
+.theme-pills { margin: 2px 0 6px; }
+.theme-pill { border-radius: 999px; padding: 4px 9px; font-size: .78rem; font-weight: 850; line-height: 1.35; border: 1px solid transparent; }
+.theme-pill.hot { background: #0f5f58; color: #fffdf8; border-color: #0f5f58; }
+.theme-pill.related { background: #fff; color: #6f6a60; border-color: #ddd6c8; }
+.stock-card .theme-note { margin: 0 0 10px; color: #6f6a60; font-size: .76rem; line-height: 1.45; }
 .risk-row { margin-top: 8px; }
 .risk-row span { color: #b42318; background: #fff0ee; border-radius: 999px; padding: 4px 8px; font-size: .82rem; }
 .bucket { margin-top: 20px; }
