@@ -34,6 +34,7 @@ def main() -> None:
     parser.add_argument("--update-latest-report", action="store_true", help="Build universe, refresh quotes, and write latest report.")
     parser.add_argument("--sector-map-file", default="data/sector_map.csv", help="Sector map CSV with optional market column.")
     parser.add_argument("--theme-map-file", default="data/theme_map.csv", help="Market theme to stock mapping CSV.")
+    parser.add_argument("--theme-universe-file", default="data/theme_universe.csv", help="Market theme universe CSV.")
     parser.add_argument("--build-market-universe", action="store_true", help="Fetch listed/OTC company universe and build sector map.")
     parser.add_argument("--industry-rules-file", default="data/industry_sector_rules.csv", help="Industry code to sector mapping.")
     parser.add_argument("--market-universe-output", default="data/market_universe.generated.csv", help="Generated market universe CSV.")
@@ -82,6 +83,7 @@ def main() -> None:
             theme_map_path=args.theme_map_file,
             output_path=Path(args.data_dir) / "theme_market_quotes.generated.csv",
             fallback_stock_metrics_path=Path(args.data_dir) / "stock_metrics.csv",
+            theme_universe_path=args.theme_universe_file,
         )
         print(f"Saved {theme_quotes_path}")
         tracked_refreshed_path = Path("data/stock_metrics.tracked.refreshed.csv")

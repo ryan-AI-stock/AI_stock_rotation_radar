@@ -14,21 +14,26 @@ def build_theme_market_quotes(
     theme_map_path: str | Path,
     output_path: str | Path,
     fallback_stock_metrics_path: str | Path | None = None,
+    theme_universe_path: str | Path | None = None,
 ) -> Path:
     """Write a quote file grouped by market theme instead of exchange industry."""
 
-    symbol_theme = _load_symbol_theme_map(theme_map_path)
+    allowed_themes = _load_theme_universe(theme_universe_path)
+    symbol_themes = _load_symbol_theme_map(theme_map_path, allowed_themes)
     if fallback_stock_metrics_path is not None:
-        symbol_theme.update({k: v for k, v in _load_stock_metric_themes(fallback_stock_metrics_path).items() if k not in symbol_theme})
+        for symbol, theme in _load_stock_metric_themes(fallback_stock_metrics_path).items():
+            if symbol not in symbol_themes and _theme_allowed(theme, allowed_themes):
+                symbol_themes[symbol] = [theme]
     rows: list[dict[str, str]] = []
     for row in _read_csv(market_quotes_path):
         symbol = row.get("symbol", "").strip()
-        theme = symbol_theme.get(symbol)
-        if not theme:
+        themes = symbol_themes.get(symbol, [])
+        if not themes:
             continue
-        updated = dict(row)
-        updated["sector"] = theme
-        rows.append(updated)
+        for theme in themes:
+            updated = dict(row)
+            updated["sector"] = theme
+            rows.append(updated)
 
     path = Path(output_path)
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -79,18 +84,34 @@ def build_sector_theme_metrics(
     return result
 
 
-def _load_symbol_theme_map(path: str | Path) -> dict[str, str]:
+def _load_symbol_theme_map(path: str | Path, allowed_themes: set[str] | None = None) -> dict[str, list[str]]:
     csv_path = Path(path)
     if not csv_path.exists():
         return {}
-    themes: dict[str, str] = {}
+    themes: dict[str, list[str]] = {}
     for row in _read_csv(csv_path):
         symbol = row.get("symbol", "").strip()
         theme = row.get("theme", "").strip()
         primary = row.get("primary", "yes").strip().lower()
-        if symbol and theme and primary not in {"no", "false", "0"}:
-            themes[symbol] = theme
+        if symbol and theme and primary not in {"no", "false", "0"} and _theme_allowed(theme, allowed_themes):
+            themes.setdefault(symbol, [])
+            if theme not in themes[symbol]:
+                themes[symbol].append(theme)
     return themes
+
+
+def _load_theme_universe(path: str | Path | None) -> set[str] | None:
+    if path is None:
+        return None
+    csv_path = Path(path)
+    if not csv_path.exists():
+        return None
+    themes = {row.get("theme", "").strip() for row in _read_csv(csv_path)}
+    return {theme for theme in themes if theme}
+
+
+def _theme_allowed(theme: str, allowed_themes: set[str] | None) -> bool:
+    return allowed_themes is None or theme in allowed_themes
 
 
 def _load_stock_metric_themes(path: str | Path) -> dict[str, str]:

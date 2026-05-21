@@ -46,3 +46,122 @@ CPO/矽光子,6451,訊芯-KY,光通訊封裝,medium,yes
 被動元件,3624,光頡,電阻,medium,yes
 被動元件,3357,臺慶科,電感/被動元件,medium,yes
 被動元件,3236,千如,電感,medium,yes
+AI伺服器/ODM,2382,廣達,AI 伺服器 ODM,high,yes
+AI伺服器/ODM,3231,緯創,AI 伺服器 ODM,high,yes
+AI伺服器/ODM,6669,緯穎,AI 伺服器整機,high,yes
+AI伺服器/ODM,2356,英業達,伺服器 ODM,medium,yes
+AI伺服器/ODM,2376,技嘉,伺服器主機板/GPU 板卡,medium,yes
+AI伺服器/ODM,2357,華碩,伺服器/品牌硬體,medium,yes
+AI伺服器/ODM,2317,鴻海,AI 伺服器系統組裝,medium,yes
+AI伺服器/ODM,2301,光寶科,伺服器電源/系統零組件,medium,yes
+散熱,3017,奇鋐,AI 伺服器散熱,high,yes
+散熱,3324,雙鴻,AI 伺服器散熱,high,yes
+散熱,6230,尼得科超眾,散熱模組,medium,yes
+散熱,2421,建準,風扇/散熱,medium,yes
+散熱,3653,健策,均熱片/散熱零組件,high,yes
+散熱,3483,力致,散熱模組,medium,yes
+散熱,3338,泰碩,散熱模組,medium,yes
+電源/BBU,2308,台達電,伺服器電源/電源管理,high,yes
+電源/BBU,2301,光寶科,電源供應器,high,yes
+電源/BBU,6412,群電,電源供應器,medium,yes
+電源/BBU,3015,全漢,電源供應器,medium,yes
+電源/BBU,2457,飛宏,電源供應器,medium,yes
+電源/BBU,4931,新盛力,電池模組/BBU,medium,yes
+電源/BBU,3211,順達,電池模組,medium,yes
+電源/BBU,3323,加百裕,電池模組,medium,yes
+重電/電網,1513,中興電,重電/電網設備,high,yes
+重電/電網,1519,華城,變壓器/重電,high,yes
+重電/電網,1504,東元,馬達/電力設備,high,yes
+重電/電網,1605,華新,電線電纜,medium,yes
+重電/電網,1609,大亞,電線電纜,medium,yes
+重電/電網,1514,亞力,配電盤/電力設備,medium,yes
+重電/電網,1618,合機,電纜/電力工程,medium,yes
+重電/電網,6806,森崴能源,能源工程,medium,yes
+機器人/自動化,2049,上銀,線性傳動,high,yes
+機器人/自動化,1590,亞德客-KY,氣動元件/自動化,high,yes
+機器人/自動化,2359,所羅門,機器視覺/自動化,medium,yes
+機器人/自動化,2464,盟立,自動化設備,medium,yes
+機器人/自動化,2308,台達電,工控/自動化,medium,yes
+機器人/自動化,4576,大銀微系統,線性傳動,medium,yes
+機器人/自動化,6166,凌華,工業電腦/控制,medium,yes
+ASIC/IP,3443,創意,ASIC 設計服務,high,yes
+ASIC/IP,3661,世芯-KY,ASIC 設計服務,high,yes
+ASIC/IP,3035,智原,ASIC/IP,high,yes
+ASIC/IP,6531,愛普*,矽智財/記憶體 IP,medium,yes
+ASIC/IP,3529,力旺,矽智財,high,yes
+ASIC/IP,5274,信驊,伺服器管理 IC,medium,yes
+ASIC/IP,2454,聯發科,IC 設計,medium,yes
+ASIC/IP,2379,瑞昱,通訊 IC,medium,yes
+封測/CoWoS,3711,日月光投控,封測/先進封裝,high,yes
+封測/CoWoS,2449,京元電子,測試,high,yes
+封測/CoWoS,6239,力成,封裝/記憶體封測,medium,yes
+封測/CoWoS,6257,矽格,測試,medium,yes
+封測/CoWoS,3264,欣銓,測試,medium,yes
+封測/CoWoS,6510,精測,測試介面,medium,yes
+封測/CoWoS,6223,旺矽,測試介面,high,yes
+封測/CoWoS,6147,頎邦,驅動 IC 封測,medium,yes
+半導體設備/耗材,3131,弘塑,濕製程設備,high,yes
+半導體設備/耗材,3583,辛耘,半導體設備,high,yes
+半導體設備/耗材,6187,萬潤,自動化/封裝設備,medium,yes
+半導體設備/耗材,2467,志聖,設備/製程設備,medium,yes
+半導體設備/耗材,3413,京鼎,半導體設備零組件,medium,yes
+半導體設備/耗材,5434,崇越,半導體材料/通路,medium,yes
+半導體設備/耗材,4768,晶呈科技,半導體材料,medium,yes
+軍工/無人機,2634,漢翔,航太/軍工,high,yes
+軍工/無人機,2208,台船,國艦國造/軍工,medium,yes
+軍工/無人機,8033,雷虎,無人機/航模,medium,yes
+軍工/無人機,4572,駐龍,航太零組件,medium,yes
+軍工/無人機,4916,事欣科,軍工電子,medium,yes
+車用電子,1536,和大,車用傳動零件,medium,yes
+車用電子,2231,為升,車用電子,medium,yes
+車用電子,3665,貿聯-KY,車用/高速連接線,high,yes
+車用電子,6279,胡連,車用連接器,medium,yes
+車用電子,3552,同致,車用感測,medium,yes
+車用電子,2497,怡利電,車載電子,medium,yes
+車用電子,2308,台達電,車用電源,medium,yes
+電子通路,2347,聯強,電子通路,high,yes
+電子通路,3702,大聯大,IC 通路,high,yes
+電子通路,3036,文曄,IC 通路,high,yes
+電子通路,3010,華立,半導體材料通路,medium,yes
+電子通路,3023,信邦,零組件/連接線,medium,yes
+航運,2603,長榮,貨櫃航運,high,yes
+航運,2609,陽明,貨櫃航運,high,yes
+航運,2615,萬海,貨櫃航運,medium,yes
+航運,2618,長榮航,航空,medium,yes
+航運,2610,華航,航空,medium,yes
+航運,2606,裕民,散裝航運,medium,yes
+航運,2605,新興,散裝航運,medium,yes
+金融,2881,富邦金,金控,high,yes
+金融,2882,國泰金,金控,high,yes
+金融,2884,玉山金,金控,medium,yes
+金融,2885,元大金,金控/證券,medium,yes
+金融,2886,兆豐金,金控,medium,yes
+金融,2891,中信金,金控,high,yes
+金融,2892,第一金,金控,medium,yes
+金融,2880,華南金,金控,medium,yes
+金融,5876,上海商銀,銀行,medium,yes
+塑化,1301,台塑,塑膠,high,yes
+塑化,1303,南亞,塑化/電子材料,high,yes
+塑化,1326,台化,石化/化纖,high,yes
+塑化,6505,台塑化,油品/石化,high,yes
+塑化,1314,中石化,石化,medium,yes
+塑化,1304,台聚,塑膠,medium,yes
+生技醫療,6446,藥華藥,新藥,high,yes
+生技醫療,4743,合一,新藥,medium,yes
+生技醫療,1795,美時,學名藥,medium,yes
+生技醫療,1760,寶齡富錦,醫藥,medium,yes
+生技醫療,4162,智擎,新藥,medium,yes
+生技醫療,4123,晟德,生技投控,medium,yes
+觀光餐飲,2707,晶華,飯店,high,yes
+觀光餐飲,2727,王品,餐飲,medium,yes
+觀光餐飲,2731,雄獅,旅行社,high,yes
+觀光餐飲,2748,雲品,飯店,medium,yes
+觀光餐飲,2753,八方雲集,餐飲,medium,yes
+觀光餐飲,2723,美食-KY,餐飲,medium,yes
+觀光餐飲,2739,寒舍,飯店,medium,yes
+綠能/儲能,6443,元晶,太陽能,medium,yes
+綠能/儲能,6244,茂迪,太陽能,medium,yes
+綠能/儲能,3576,聯合再生,太陽能,medium,yes
+綠能/儲能,3708,上緯投控,風電材料,medium,yes
+綠能/儲能,6806,森崴能源,能源工程,medium,yes
+綠能/儲能,4931,新盛力,電池模組,medium,yes

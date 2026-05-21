@@ -123,6 +123,7 @@ reports/latest.html
 目前資料層先採 CSV，之後 TWSE/TPEx 抓取器會把公開資料整理成同樣格式。
 
 - `data/theme_map.csv`：市場題材資料庫，定義題材、股票、角色、信心等級與是否納入主要統計。
+- `data/theme_universe.csv`：題材項目總庫；目前先建立 21 個題材，後續可持續新增。
 - `data/sector_map.csv`：交易所產業分類映射，主要供全市場報價抓取與背景參考使用，不作為報告主排名。
 - `data/sector_universe.csv`：候選題材宇宙。報告不會永久鎖定記憶體、PCB、CPO、被動元件；未來玻璃基板、重電、航運、機器人等題材若加入資料庫且分數提高，也會進入排名。
 - `data/sector_metrics.csv`：題材評分需要的資金、動能、趨勢、海外、估值與風險指標。
@@ -133,7 +134,7 @@ reports/latest.html
 
 - `capital_inflow_rank`：題材資金流入分數，0-100。
 - `turnover_share_change`：題材成交占比變化分數，0-100。
-- `capital_share`、`capital_share_prev`：目前與前期資金占比，單位為 %。
+- `capital_share`、`capital_share_prev`：目前與前期題材熱度池占比，單位為 %；同一檔股票可屬於多個題材，因此這是題材相對熱度，不是交易所唯一產業分類占比。
 - `turnover_value`、`turnover_value_prev`：目前與前期成交金額，單位為百萬元。
 - `momentum_20d`：20 日價格動能分數，0-100。
 - `strong_stock_ratio`：題材內強勢股比例分數，0-100。
