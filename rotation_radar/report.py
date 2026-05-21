@@ -178,9 +178,9 @@ def _stock_card(item: StockResult, report: Report, rank: int) -> str:
         </div>
         <p class="hint">{escape(pe_text)}</p>
         <div class="chips">
-          <span>外資近5日：{_net_text(m.foreign_5d)}</span>
-          <span>投信近5日：{_net_text(m.trust_5d)}</span>
-          <span>融資餘額近5日變化：{m.margin_change_5d:+.1f}%</span>
+          <span>{_foreign_chip(m)}</span>
+          <span>{_trust_chip(m)}</span>
+          <span>{_margin_chip(m)}</span>
         </div>
         {chart}
         <ul>{notes}</ul>
@@ -249,9 +249,37 @@ def _trend_detail(trend: dict[str, float | str]) -> str:
     return f"{rank_text}，金額{amount_change:+.0f}%"
 
 
+def _foreign_chip(m) -> str:
+    if _institutional_missing(m):
+        return "外資近5日：資料待補"
+    return f"外資近5日：{_net_text(m.foreign_5d)}"
+
+
+def _trust_chip(m) -> str:
+    if _institutional_missing(m):
+        return "投信近5日：資料待補"
+    return f"投信近5日：{_net_text(m.trust_5d)}"
+
+
+def _margin_chip(m) -> str:
+    if _margin_missing(m):
+        return "融資餘額近5日變化：資料待補"
+    return f"融資餘額近5日變化：{m.margin_change_5d:+.1f}%"
+
+
+def _institutional_missing(m) -> bool:
+    return "missing_deep_data" in m.risk_reason or "missing_institutional" in m.risk_reason
+
+
+def _margin_missing(m) -> bool:
+    return "missing_deep_data" in m.risk_reason or "missing_margin" in m.risk_reason
+
+
 def _chart_svg(rows: list[dict[str, float | str]]) -> str:
-    if len(rows) < 5:
-        return '<div class="chart-empty">近一月日 K 線資料待補；接上每日 OHLC 後會顯示 5/20/60 日均線。</div>'
+    if not rows:
+        return '<div class="chart-empty">近 5 日 K 線資料待補；接上每日 OHLC 後會顯示股價與 5/20/60 日均線。</div>'
+
+    rows = rows[-5:]
 
     width, height = 360, 190
     left_pad, right_pad, top_pad, bottom_pad = 44, 14, 18, 34
@@ -301,12 +329,18 @@ def _chart_svg(rows: list[dict[str, float | str]]) -> str:
     first_close = float(rows[0]["close"])
     last_close = float(rows[-1]["close"])
     change = (last_close - first_close) / first_close * 100 if first_close else 0.0
-    latest_date = _short_date(str(rows[-1]["date"]))
-    chart_title = "近一月日 K" if len(rows) >= 18 else f"近期日 K（{len(rows)}日，至 {latest_date}）"
+    latest = rows[-1]
+    latest_date = _short_date(str(latest["date"]))
+    chart_title = f"近 5 日 K（{len(rows)}日，至 {latest_date}）"
 
     return f"""
       <div class="chart">
-        <div class="chart-head"><span>{chart_title} <small>{change:+.1f}%</small></span><em>MA5</em><em>MA20</em><em>MA60</em></div>
+        <div class="chart-head">
+          <span>{chart_title} <small>{change:+.1f}%</small></span>
+          <em>MA5 <strong>{_ma_value(latest, "ma5")}</strong></em>
+          <em>MA20 <strong>{_ma_value(latest, "ma20")}</strong></em>
+          <em>MA60 <strong>{_ma_value(latest, "ma60")}</strong></em>
+        </div>
         <svg viewBox="0 0 {width} {height}" role="img" aria-label="{chart_title}與均線">
           {y_axis}
           <line x1="{left_pad}" y1="{height - bottom_pad}" x2="{width - right_pad}" y2="{height - bottom_pad}" stroke="#d9dee7"/>
@@ -319,6 +353,11 @@ def _chart_svg(rows: list[dict[str, float | str]]) -> str:
         </svg>
       </div>
     """
+
+
+def _ma_value(row: dict[str, float | str], key: str) -> str:
+    value = float(row.get(key, 0) or 0)
+    return f"{value:.1f}" if value else "待補"
 
 
 def _fair_values(m) -> tuple[float, float, float]:
@@ -465,9 +504,10 @@ ul { padding-left: 18px; margin: 12px 0; color: #38332c; }
 .hint { font-size: .78rem; margin: 4px 0 10px; }
 .chart, .chart-empty { margin-top: 12px; border: 1px solid #ddd6c8; border-radius: 6px; padding: 8px; background: #fff; }
 .chart svg { width: 100%; height: auto; display: block; }
-.chart-head { display: flex; gap: 10px; align-items: center; font-size: .78rem; color: #6f6a60; }
+.chart-head { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; font-size: .78rem; color: #6f6a60; }
 .chart-head span { font-weight: 800; color: #171717; margin-right: auto; }
 .chart-head em { font-style: normal; }
+.chart-head em strong { font-weight: 850; }
 .chart-head em:nth-child(2) { color: #d69b00; }
 .chart-head em:nth-child(3) { color: #2563eb; }
 .chart-head em:nth-child(4) { color: #7c3aed; }
