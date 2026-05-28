@@ -812,7 +812,16 @@ ul { padding-left: 18px; margin: 12px 0; color: #38332c; }
   .sector-card ul { font-size: .75rem; }
   .tag-row span, .risk-row span { font-size: .72rem; padding: 3px 6px; }
   .stock-list { display: block; }
-  .stock-card { width: 100%; margin-bottom: 12px; }
+  .stock-card {
+    width: 100%;
+    margin-bottom: 10px;
+    display: grid;
+    grid-template-columns: minmax(0, 1.08fr) minmax(260px, .92fr);
+    gap: 7px 12px;
+    align-items: start;
+  }
+  .stock-main, .metrics, .valuation-box, .pe-track, .hint, .chips, .stock-card ul, .risk-text { grid-column: 1; }
+  .stock-card .chart, .stock-card .chart-empty { grid-column: 2; grid-row: 1 / span 8; margin-top: 0; }
   .section-head, .bucket > h3, .bucket-note { break-after: avoid; page-break-after: avoid; }
   .sector-card, .stock-card, .digest, .brief, .chart, .excluded-item, .next-watch { break-inside: avoid; page-break-inside: avoid; }
   .stock-card .theme-note { display: none; }
