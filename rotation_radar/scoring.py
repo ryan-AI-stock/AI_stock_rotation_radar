@@ -41,13 +41,12 @@ def score_sector(metrics: SectorMetrics) -> SectorResult:
 
 
 def _capital_note(metrics: SectorMetrics) -> str:
-    share_delta = metrics.capital_share - metrics.capital_share_prev
     turnover_delta = _pct_change(metrics.turnover_value, metrics.turnover_value_prev)
     if metrics.capital_share > 0 and metrics.capital_share_prev > 0 and turnover_delta is not None:
+        activity_text = "成交活性升溫" if turnover_delta > 0 else "成交活性降溫" if turnover_delta < 0 else "成交活性持平"
         return (
-            f"資金占比 {metrics.capital_share:.1f}%（前期 {metrics.capital_share_prev:.1f}%，"
-            f"變化 {share_delta:+.1f} 個百分點），成交金額 {metrics.turnover_value:,.0f} 百萬元"
-            f"（前期 {metrics.turnover_value_prev:,.0f} 百萬元，{turnover_delta:+.1f}%）"
+            f"今日資金占比 {metrics.capital_share:.1f}%，成交金額 {metrics.turnover_value:,.0f} 百萬元，"
+            f"{activity_text}（成交金額較參考基準 {turnover_delta:+.1f}%）"
         )
     return f"資金流入分數 {metrics.capital_inflow_rank:.0f}/100，成交活性分數 {metrics.turnover_share_change:.0f}/100"
 

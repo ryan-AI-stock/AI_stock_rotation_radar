@@ -79,7 +79,7 @@ def _rotation_digest(report: Report, top_sectors) -> str:
         if days >= 5:
             flow_text = (
                 f"近 5 個交易日資金主線以 {escape(leader_name)} 為核心；"
-                f"今日資金占比 {_share_move_sentence(leader.metrics.capital_share, leader.metrics.capital_share_prev)}，"
+                f"{_rolling_share_sentence(trend, leader.metrics.capital_share, leader.metrics.capital_share_prev)}，"
                 f"{escape(str(trend.get('status', '持平')))}訊號優先觀察是否延續。"
             )
         elif days >= 2:
@@ -151,7 +151,7 @@ def _sector_card(item, rank: int, report: Report) -> str:
         <h3>{escape(metrics.name)}</h3>
         <p>{escape(metrics.theme)}</p>
         <div class="sector-stats">
-          <div><span>資金占比</span><strong>{metrics.capital_share:.1f}%</strong><em>{_share_change_text(metrics.capital_share, metrics.capital_share_prev)}</em></div>
+          <div><span>資金占比</span><strong>{metrics.capital_share:.1f}%</strong><em>{_rolling_share_text(trend, metrics.capital_share, metrics.capital_share_prev)}</em></div>
           <div><span>成交金額</span><strong>{metrics.turnover_value:,.0f}百萬</strong><em>{turnover_text}</em></div>
           <div><span>近5日資金</span><strong>{_trend_amount(trend)}</strong><em>{_trend_days(trend)}</em></div>
           <div><span>5日短趨勢</span><strong>{escape(str(trend.get("status", "今日觀察")))}</strong><em>{_trend_detail(trend)}</em></div>
@@ -309,13 +309,42 @@ def _theme_trend(theme: str, report: Report) -> dict[str, float | str]:
 def _share_move_sentence(current: float, previous: float) -> str:
     if previous <= 0:
         return f"{current:.1f}%"
-    return f"由上一期 {previous:.1f}% 變成今日 {current:.1f}%（{_relative_change_text(current, previous)}）"
+    return f"由前一交易日 {previous:.1f}% 變成今日 {current:.1f}%（{_relative_change_text(current, previous)}）"
 
 
 def _share_change_text(current: float, previous: float) -> str:
     if previous <= 0:
-        return "前期資料待補"
-    return f"上一期 {previous:.1f}% → 今日 {current:.1f}%"
+        return "前一交易日資料待補"
+    return f"前一交易日 {previous:.1f}% → 今日 {current:.1f}%"
+
+
+def _rolling_share_sentence(trend: dict[str, float | str], current: float, previous: float) -> str:
+    current_avg = float(trend.get("avg_share", 0) or 0)
+    previous_avg = float(trend.get("previous_avg_share", 0) or 0)
+    current_range = _trend_range_text(trend, "start_date", "latest_date")
+    previous_range = _trend_range_text(trend, "previous_start_date", "previous_latest_date")
+    if current_avg > 0 and previous_avg > 0 and current_range and previous_range:
+        return (
+            f"本期5日窗口（{current_range}）平均資金占比 {current_avg:.1f}%，"
+            f"前一日窗口（{previous_range}）為 {previous_avg:.1f}%（{_relative_change_text(current_avg, previous_avg)}）"
+        )
+    return f"今日資金占比 {_share_move_sentence(current, previous)}"
+
+
+def _rolling_share_text(trend: dict[str, float | str], current: float, previous: float) -> str:
+    current_avg = float(trend.get("avg_share", 0) or 0)
+    previous_avg = float(trend.get("previous_avg_share", 0) or 0)
+    if current_avg > 0 and previous_avg > 0:
+        return f"前一日5日窗 {previous_avg:.1f}% → 本期 {current_avg:.1f}%"
+    return _share_change_text(current, previous)
+
+
+def _trend_range_text(trend: dict[str, float | str], start_key: str, latest_key: str) -> str:
+    start = str(trend.get(start_key, "") or "")
+    latest = str(trend.get(latest_key, "") or "")
+    if not start or not latest:
+        return ""
+    return f"{_short_date(start)}-{_short_date(latest)}"
 
 
 def _relative_change_text(current: float, previous: float) -> str:
@@ -407,8 +436,8 @@ def _chart_svg(rows: list[dict[str, float | str]]) -> str:
     if not rows:
         return '<div class="chart-empty">最近 5 個可用交易日 K 線資料待補；接上每日 OHLC 後會顯示股價與 5/20/60 日均線。</div>'
 
-    width, height = 360, 178
-    left_pad, right_pad, top_pad, bottom_pad = 44, 14, 18, 42
+    width, height = 360, 160
+    left_pad, right_pad, top_pad, bottom_pad = 44, 14, 16, 36
     prices: list[float] = []
     for row in rows:
         prices.extend([float(row["high"]), float(row["low"]), _chart_number(row, "ma5"), _chart_number(row, "ma20"), _chart_number(row, "ma60")])
@@ -448,7 +477,7 @@ def _chart_svg(rows: list[dict[str, float | str]]) -> str:
         for value in y_ticks
     )
     x_axis = "".join(
-        f'<text x="{left_pad + index * step:.1f}" y="{height - 16}" text-anchor="middle" font-size="9" fill="#667085">{_short_date(str(row["date"]))}</text>'
+        f'<text x="{left_pad + index * step:.1f}" y="{height - 12}" text-anchor="middle" font-size="9" fill="#667085">{_short_date(str(row["date"]))}</text>'
         for index, row in enumerate(rows)
     )
     first_close = float(rows[0]["close"])
@@ -775,6 +804,7 @@ ul { padding-left: 18px; margin: 12px 0; color: #38332c; }
   .brief-grid div, .sector-stats div, .metrics div, .valuation-box { padding: 8px; }
   .sector-card, .stock-card { padding: 12px; }
   .sector-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 9px; }
+  .sector-section { break-inside: avoid; page-break-inside: avoid; }
   .sector-card h3 { font-size: 1.12rem; }
   .sector-card p { font-size: .78rem; margin-bottom: 8px; }
   .sector-stats { gap: 6px; margin: 10px 0; }
@@ -785,7 +815,13 @@ ul { padding-left: 18px; margin: 12px 0; color: #38332c; }
   .stock-card { width: 100%; margin-bottom: 12px; }
   .section-head, .bucket > h3, .bucket-note { break-after: avoid; page-break-after: avoid; }
   .sector-card, .stock-card, .digest, .brief, .chart, .excluded-item, .next-watch { break-inside: avoid; page-break-inside: avoid; }
-  .stock-card .theme-note, .hint, .bucket-note { font-size: .74rem; }
+  .stock-card .theme-note { display: none; }
+  .stock-card p { margin-bottom: 8px; }
+  .metrics, .sector-stats { margin: 9px 0; }
+  .valuation-box { margin-bottom: 8px; }
+  .chart { margin-top: 8px; padding: 6px; }
+  .chart-head { font-size: .72rem; gap: 7px; }
+  .hint, .bucket-note { font-size: .72rem; }
   ul { margin: 8px 0; }
   .risk-text { margin-bottom: 0 !important; }
 }

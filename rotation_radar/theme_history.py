@@ -122,18 +122,27 @@ def load_theme_trends(
     for theme in current_themes:
         rows = [row for row in history_rows if row.get("theme") == theme]
         rows.sort(key=lambda row: row.get("date", ""))
-        rows = rows[-window_days:]
-        available_dates = [row.get("date", "") for row in rows if row.get("date")]
+        current_rows = rows[-window_days:]
+        previous_rows = rows[-(window_days + 1) : -1]
+        available_dates = [row.get("date", "") for row in current_rows if row.get("date")]
+        previous_dates = [row.get("date", "") for row in previous_rows if row.get("date")]
         days = len(set(available_dates))
-        amount_5d = sum(_num(row.get("turnover_value")) for row in rows)
-        avg_share = sum(_num(row.get("capital_share")) for row in rows) / days if days else 0.0
+        previous_days = len(set(previous_dates))
+        amount_5d = sum(_num(row.get("turnover_value")) for row in current_rows)
+        previous_amount_5d = sum(_num(row.get("turnover_value")) for row in previous_rows)
+        avg_share = sum(_num(row.get("capital_share")) for row in current_rows) / days if days else 0.0
+        previous_avg_share = (
+            sum(_num(row.get("capital_share")) for row in previous_rows) / previous_days
+            if previous_days
+            else 0.0
+        )
 
         if days < 2:
             status = "今日觀察"
             rank_change = 0.0
             amount_change_pct = 0.0
         else:
-            first, latest = rows[0], rows[-1]
+            first, latest = current_rows[0], current_rows[-1]
             rank_change = _num(first.get("rank")) - _num(latest.get("rank"))
             first_amount = _num(first.get("turnover_value"))
             latest_amount = _num(latest.get("turnover_value"))
@@ -143,12 +152,16 @@ def load_theme_trends(
         trends[theme] = {
             "days": days,
             "amount_5d": amount_5d,
+            "previous_amount_5d": previous_amount_5d,
             "avg_share": avg_share,
+            "previous_avg_share": previous_avg_share,
             "rank_change": rank_change,
             "amount_change_pct": amount_change_pct,
             "status": status,
             "start_date": available_dates[0] if available_dates else "",
             "latest_date": available_dates[-1] if available_dates else "",
+            "previous_start_date": previous_dates[0] if previous_dates else "",
+            "previous_latest_date": previous_dates[-1] if previous_dates else "",
             "window_days": window_days,
             "missing_days": max(0, window_days - days),
         }
