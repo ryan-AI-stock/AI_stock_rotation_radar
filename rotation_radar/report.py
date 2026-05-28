@@ -804,7 +804,7 @@ ul { padding-left: 18px; margin: 12px 0; color: #38332c; }
   .brief-grid div, .sector-stats div, .metrics div, .valuation-box { padding: 8px; }
   .sector-card, .stock-card { padding: 12px; }
   .sector-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 9px; }
-  .sector-section { break-inside: avoid; page-break-inside: avoid; }
+  .sector-section { break-before: page; page-break-before: always; }
   .sector-card h3 { font-size: 1.12rem; }
   .sector-card p { font-size: .78rem; margin-bottom: 8px; }
   .sector-stats { gap: 6px; margin: 10px 0; }
@@ -822,6 +822,14 @@ ul { padding-left: 18px; margin: 12px 0; color: #38332c; }
   }
   .stock-main, .metrics, .valuation-box, .pe-track, .hint, .chips, .stock-card ul, .risk-text { grid-column: 1; }
   .stock-card .chart, .stock-card .chart-empty { grid-column: 2; grid-row: 1 / span 8; margin-top: 0; }
+  .stock-card h4 { font-size: 1.02rem; margin: 4px 0; }
+  .stock-card p, .stock-card ul { font-size: .72rem; line-height: 1.32; }
+  .stock-card small, .stock-card .theme-pill, .stock-card .rank-badge { font-size: .7rem; }
+  .stock-card .metrics > div { flex-basis: 118px; }
+  .stock-card .valuation-box, .stock-card .hint { font-size: .7rem; line-height: 1.32; }
+  .stock-card .pe-track { height: 14px; margin-top: 4px; font-size: .66rem; }
+  .stock-card .chart svg { height: 108px; }
+  .stock-card .chart-note { display: none; }
   .section-head, .bucket > h3, .bucket-note { break-after: avoid; page-break-after: avoid; }
   .sector-card, .stock-card, .digest, .brief, .chart, .excluded-item, .next-watch { break-inside: avoid; page-break-inside: avoid; }
   .stock-card .theme-note { display: none; }
