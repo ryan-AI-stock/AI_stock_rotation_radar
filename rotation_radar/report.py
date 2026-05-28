@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from collections import defaultdict
+from datetime import datetime, timedelta
 from html import escape
 
 from .models import Bucket, Report, StockResult
@@ -31,7 +32,7 @@ def render_report(report: Report) -> str:
   <main>
     {_rotation_digest(report, top_sectors)}
     {_summary_panel(report, top_sectors, buckets)}
-    <section class="section">
+    <section class="section sector-section">
       <div class="section-head">
         <h2>市場題材資金輪動排名</h2>
         <p>主分類採市場題材/供應鏈主題，不採交易所大產業。資金占比以已標記題材股票的成交金額占題材追蹤池成交金額計算。</p>
@@ -41,7 +42,7 @@ def render_report(report: Report) -> str:
       </div>
     </section>
 
-    <section class="section">
+    <section class="section stock-section">
       <div class="section-head">
         <h2>短線波段名單</h2>
         <p>策略偏好：拉回找買點，其次是低本益比與籌碼轉強；個股題材標籤中，深色代表本期前三大熱門題材，淺色代表同股關聯題材。</p>
@@ -50,6 +51,7 @@ def render_report(report: Report) -> str:
       {_stock_section(Bucket.WATCH, buckets, report)}
       {_stock_section(Bucket.EXCLUDED, buckets, report)}
     </section>
+    {_next_watch_panel(top_sectors)}
   </main>
 </body>
 </html>"""
@@ -73,17 +75,21 @@ def _rotation_digest(report: Report, top_sectors) -> str:
     if leader:
         trend = _theme_trend(leader.metrics.name, report)
         days = int(float(trend.get("days", 0) or 0))
-        share_delta = leader.metrics.capital_share - leader.metrics.capital_share_prev
         heat = max(item.metrics.risk_heat for item in top_sectors)
-        if days >= 2:
+        if days >= 5:
             flow_text = (
-                f"最近 {days} 個可用交易日，資金主線以 {escape(leader_name)} 為核心，"
-                f"今日資金占比 {leader.metrics.capital_share:.1f}%（較前期 {share_delta:+.1f}ppt），"
+                f"近 5 個交易日資金主線以 {escape(leader_name)} 為核心；"
+                f"今日資金占比 {_share_move_sentence(leader.metrics.capital_share, leader.metrics.capital_share_prev)}，"
                 f"{escape(str(trend.get('status', '持平')))}訊號優先觀察是否延續。"
+            )
+        elif days >= 2:
+            flow_text = (
+                f"系統正在回補近 5 個交易日資料，目前已取得 {days} 個交易日；"
+                f"今日先看 {escape(leader_name)} 的資金占比（{_share_move_sentence(leader.metrics.capital_share, leader.metrics.capital_share_prev)}）與強勢股擴散。"
             )
         elif days == 1:
             flow_text = (
-                f"目前只有 1 個可用交易日樣本，今日先看 {escape(leader_name)} 的成交集中度與強勢股擴散，"
+                f"目前只有 1 個交易日樣本，今日先看 {escape(leader_name)} 的成交集中度與強勢股擴散，"
                 "不硬判斷五日趨勢。"
             )
         if heat >= 70:
@@ -133,7 +139,6 @@ def _sector_card(item, rank: int, report: Report) -> str:
     notes = "".join(f"<li>{escape(note)}</li>" for note in item.score.notes)
     catalysts = "".join(f"<span>{escape(text)}</span>" for text in metrics.catalysts)
     risks = "".join(f"<span>{escape(text)}</span>" for text in metrics.risks)
-    share_delta = metrics.capital_share - metrics.capital_share_prev
     turnover_delta = _pct_change(metrics.turnover_value, metrics.turnover_value_prev)
     turnover_text = "資料待補" if turnover_delta is None else f"{turnover_delta:+.1f}%"
     trend = _theme_trend(metrics.name, report)
@@ -146,7 +151,7 @@ def _sector_card(item, rank: int, report: Report) -> str:
         <h3>{escape(metrics.name)}</h3>
         <p>{escape(metrics.theme)}</p>
         <div class="sector-stats">
-          <div><span>資金占比</span><strong>{metrics.capital_share:.1f}%</strong><em>{share_delta:+.1f}ppt</em></div>
+          <div><span>資金占比</span><strong>{metrics.capital_share:.1f}%</strong><em>{_share_change_text(metrics.capital_share, metrics.capital_share_prev)}</em></div>
           <div><span>成交金額</span><strong>{metrics.turnover_value:,.0f}百萬</strong><em>{turnover_text}</em></div>
           <div><span>近5日資金</span><strong>{_trend_amount(trend)}</strong><em>{_trend_days(trend)}</em></div>
           <div><span>5日短趨勢</span><strong>{escape(str(trend.get("status", "今日觀察")))}</strong><em>{_trend_detail(trend)}</em></div>
@@ -182,6 +187,27 @@ def _stock_section(bucket: Bucket, buckets: dict[Bucket, list[StockResult]], rep
         <p class="bucket-note">{note}</p>
         {body}
       </div>
+    """
+
+
+def _next_watch_panel(top_sectors) -> str:
+    if not top_sectors:
+        return ""
+    leader = top_sectors[0].metrics
+    crowded = max(item.metrics.risk_heat for item in top_sectors)
+    breadth = sum(item.metrics.strong_stock_ratio for item in top_sectors) / len(top_sectors)
+    return f"""
+    <section class="section next-watch">
+      <div class="section-head compact">
+        <h2>明日觀察重點</h2>
+        <p>補足日報最後一段判讀：只作市場觀察與風險提醒，不作買賣建議。</p>
+      </div>
+      <div class="watch-grid">
+        <div><strong>主線延續</strong><span>{escape(leader.name)} 若維持高成交占比，代表資金仍集中在同一題材主線。</span></div>
+        <div><strong>擴散程度</strong><span>前三題材平均強勢股比例 {breadth:.0f}/100；若下降，代表行情可能從普漲轉成挑股。</span></div>
+        <div><strong>過熱開關</strong><span>最高過熱分數 {crowded:.0f}/100；越高越要留意追價、量縮與隔日換手風險。</span></div>
+      </div>
+    </section>
     """
 
 
@@ -280,6 +306,26 @@ def _theme_trend(theme: str, report: Report) -> dict[str, float | str]:
     return report.theme_trends.get(theme, {"days": 0, "status": "資料待補"})
 
 
+def _share_move_sentence(current: float, previous: float) -> str:
+    if previous <= 0:
+        return f"{current:.1f}%"
+    return f"由上一期 {previous:.1f}% 變成今日 {current:.1f}%（{_relative_change_text(current, previous)}）"
+
+
+def _share_change_text(current: float, previous: float) -> str:
+    if previous <= 0:
+        return "前期資料待補"
+    return f"上一期 {previous:.1f}% → 今日 {current:.1f}%"
+
+
+def _relative_change_text(current: float, previous: float) -> str:
+    change = (current - previous) / previous * 100
+    if abs(change) < 0.05:
+        return "幾乎持平"
+    direction = "增加" if change > 0 else "減少"
+    return f"{direction} {abs(change):.1f}%"
+
+
 def _trend_amount(trend: dict[str, float | str]) -> str:
     days = float(trend.get("days", 0) or 0)
     if days <= 0:
@@ -294,7 +340,9 @@ def _trend_days(trend: dict[str, float | str]) -> str:
         return "尚無可用交易日"
     latest = str(trend.get("latest_date", "") or "")
     suffix = f" 至 {_short_date(latest)}" if latest else ""
-    return f"近 {days} 個可用交易日{suffix}"
+    if days >= 5:
+        return f"近 5 個交易日{suffix}"
+    return f"已回補 {days}/5 個交易日{suffix}"
 
 
 def _trend_detail(trend: dict[str, float | str]) -> str:
@@ -354,7 +402,7 @@ def _margin_missing(m) -> bool:
 
 
 def _chart_svg(rows: list[dict[str, float | str]]) -> str:
-    rows = _valid_chart_rows(rows)[-5:]
+    rows = _recent_trading_window(_valid_chart_rows(rows), window_days=5)
 
     if not rows:
         return '<div class="chart-empty">最近 5 個可用交易日 K 線資料待補；接上每日 OHLC 後會顯示股價與 5/20/60 日均線。</div>'
@@ -409,8 +457,8 @@ def _chart_svg(rows: list[dict[str, float | str]]) -> str:
     latest = rows[-1]
     latest_date = _short_date(str(latest["date"]))
     first_date = _short_date(str(rows[0]["date"]))
-    chart_title = f"最近 {len(rows)} 個可用交易日 K（{first_date} 至 {latest_date}）"
-    missing_note = "" if len(rows) >= 5 else '<small class="chart-note">資料缺日時不補假 K，僅顯示可用交易日。</small>'
+    chart_title = f"近 5 個交易日 K（{first_date} 至 {latest_date}）"
+    missing_note = _missing_trading_days_note(rows, window_days=5)
 
     return f"""
       <div class="chart">
@@ -456,6 +504,53 @@ def _valid_chart_rows(rows: list[dict[str, float | str]]) -> list[dict[str, floa
         valid_rows.append(row)
     valid_rows.sort(key=lambda row: str(row.get("date", "")))
     return valid_rows
+
+
+def _recent_trading_window(rows: list[dict[str, float | str]], window_days: int) -> list[dict[str, float | str]]:
+    if not rows:
+        return []
+    latest_date = _parse_date(str(rows[-1].get("date", "")))
+    if latest_date is None:
+        return rows[-window_days:]
+    expected = {_date_text(day) for day in _recent_weekdays(latest_date, window_days)}
+    window_rows = [row for row in rows if str(row.get("date", "")) in expected]
+    return window_rows[-window_days:]
+
+
+def _missing_trading_days_note(rows: list[dict[str, float | str]], window_days: int) -> str:
+    if not rows:
+        return ""
+    latest_date = _parse_date(str(rows[-1].get("date", "")))
+    if latest_date is None:
+        return ""
+    expected = [_date_text(day) for day in _recent_weekdays(latest_date, window_days)]
+    actual = {str(row.get("date", "")) for row in rows}
+    missing = [date for date in expected if date not in actual]
+    if not missing:
+        return ""
+    readable = "、".join(_short_date(date) for date in missing)
+    return f'<small class="chart-note">缺少 {readable} 交易資料；系統會在後續產報時嘗試回補，不以更舊日期硬湊。</small>'
+
+
+def _recent_weekdays(latest_date, window_days: int):
+    days = []
+    current = latest_date
+    while len(days) < window_days:
+        if current.weekday() < 5:
+            days.append(current)
+        current -= timedelta(days=1)
+    return sorted(days)
+
+
+def _parse_date(value: str):
+    try:
+        return datetime.strptime(value, "%Y-%m-%d").date()
+    except ValueError:
+        return None
+
+
+def _date_text(value) -> str:
+    return value.strftime("%Y-%m-%d")
 
 
 def _ma_value(row: dict[str, float | str], key: str) -> str:
@@ -587,13 +682,14 @@ main { padding: 22px max(14px, 4vw) 54px; }
 .brief-grid span, .sector-stats span, .metrics span, .valuation-box span { display: block; color: #6f6a60; font-size: .78rem; }
 .brief-grid strong, .sector-stats strong, .metrics strong, .valuation-box strong { display: block; font-size: 1.05rem; }
 .brief-grid em, .sector-stats em, .valuation-box em { display: block; color: #6f6a60; font-size: .76rem; font-style: normal; }
-.section-head { display: flex; justify-content: space-between; gap: 20px; align-items: end; margin-bottom: 14px; padding-top: 4px; }
+.section-head { display: flex; justify-content: space-between; gap: 20px; align-items: end; margin-bottom: 14px; padding-top: 4px; break-after: avoid; page-break-after: avoid; }
+.section-head.compact { margin-bottom: 10px; }
 h2 { margin: 0; font-size: 1.35rem; }
 .section-head p, .hint { margin: 0; color: #6f6a60; max-width: 700px; }
-.sector-grid { display: flex; flex-wrap: wrap; gap: 12px; }
+.sector-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; align-items: stretch; }
 .sector-card, .stock-card, .method-grid div { background: #fffdf8; border: 1px solid #ddd6c8; border-radius: 8px; box-shadow: 0 8px 20px rgba(41, 32, 18, .055); }
 .sector-card, .stock-card { padding: 15px; }
-.sector-card { flex: 1 1 310px; }
+.sector-card { min-width: 0; }
 .card-top, .stock-main { display: flex; justify-content: space-between; gap: 14px; align-items: start; }
 .card-label { font-weight: 800; color: #a16207; font-size: .78rem; letter-spacing: .05em; }
 .rank-badge { white-space: nowrap; color: #0d4f49; background: #eef7f4; border: 1px solid #c9e7e1; border-radius: 999px; padding: 5px 10px; font-weight: 850; font-size: .86rem; }
@@ -624,6 +720,11 @@ ul { padding-left: 18px; margin: 12px 0; color: #38332c; }
 .excluded-item strong, .excluded-item span, .excluded-item em { display: block; }
 .excluded-item span { color: #6f6a60; font-size: .82rem; margin: 4px 0; }
 .excluded-item em { color: #b42318; font-size: .82rem; font-style: normal; }
+.next-watch { background: #fffdf8; border: 1px solid #ddd6c8; border-radius: 8px; padding: 14px 16px; }
+.watch-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.watch-grid div { background: #fff; border: 1px solid #ddd6c8; border-radius: 6px; padding: 10px; }
+.watch-grid strong { display: block; color: #0f5f58; margin-bottom: 4px; }
+.watch-grid span { color: #4a443d; font-size: .88rem; }
 .valuation-box { margin-bottom: 12px; background: #fffaf0; }
 .pe-track { height: 18px; position: relative; display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: 8px; color: #6f6a60; font-size: .76rem; }
 .pe-track:before { content: ""; position: absolute; left: 34px; right: 34px; top: 8px; height: 6px; border-radius: 999px; background: linear-gradient(90deg, #18886f, #d6a642, #c2410c); }
@@ -648,7 +749,7 @@ ul { padding-left: 18px; margin: 12px 0; color: #38332c; }
 .method-grid span { color: #6f6a60; }
 .empty { color: #6f6a60; }
 @media (max-width: 980px) {
-  .digest-grid, .excluded-list { grid-template-columns: 1fr; }
+  .sector-grid, .digest-grid, .excluded-list, .watch-grid { grid-template-columns: 1fr; }
   .section-head { display: block; }
   .section-head p { margin-top: 6px; }
 }
@@ -673,7 +774,17 @@ ul { padding-left: 18px; margin: 12px 0; color: #38332c; }
   .digest, .brief { padding: 13px 14px; }
   .brief-grid div, .sector-stats div, .metrics div, .valuation-box { padding: 8px; }
   .sector-card, .stock-card { padding: 12px; }
-  .sector-card, .stock-card, .digest, .brief, .chart, .excluded-item { break-inside: avoid; page-break-inside: avoid; }
+  .sector-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 9px; }
+  .sector-card h3 { font-size: 1.12rem; }
+  .sector-card p { font-size: .78rem; margin-bottom: 8px; }
+  .sector-stats { gap: 6px; margin: 10px 0; }
+  .sector-stats > div { flex-basis: 104px; }
+  .sector-card ul { font-size: .75rem; }
+  .tag-row span, .risk-row span { font-size: .72rem; padding: 3px 6px; }
+  .stock-list { display: block; }
+  .stock-card { width: 100%; margin-bottom: 12px; }
+  .section-head, .bucket > h3, .bucket-note { break-after: avoid; page-break-after: avoid; }
+  .sector-card, .stock-card, .digest, .brief, .chart, .excluded-item, .next-watch { break-inside: avoid; page-break-inside: avoid; }
   .stock-card .theme-note, .hint, .bucket-note { font-size: .74rem; }
   ul { margin: 8px 0; }
   .risk-text { margin-bottom: 0 !important; }

@@ -21,7 +21,7 @@ from .report import render_report
 from .scoring import build_results
 from .sector_metrics_builder import build_sector_metrics_from_market_quotes
 from .stock_screener import build_market_stock_candidates, export_hot_sector_symbols
-from .theme_history import load_theme_trends, update_theme_history
+from .theme_history import backfill_theme_history_from_processed, load_theme_trends, update_theme_history
 from .theme_metrics import build_theme_market_quotes, load_stock_theme_tags
 
 
@@ -137,6 +137,14 @@ def main() -> None:
         sectors = load_sector_metrics(generated_sector_path)
         stocks = load_stock_metrics(refreshed_path)
         _refresh_recent_price_snapshots(args)
+        theme_history_path = backfill_theme_history_from_processed(
+            processed_root=args.processed_output_dir,
+            theme_map_path=args.theme_map_file,
+            theme_universe_path=args.theme_universe_file,
+            base_sector_metrics_path=Path(args.data_dir) / "sector_metrics.csv",
+            output_path=args.theme_history_output,
+        )
+        print(f"Backfilled {theme_history_path}")
         build_price_history_from_processed(
             processed_root=args.processed_output_dir,
             output_path=args.price_history_file,
@@ -493,7 +501,11 @@ def _has_depth_files(path: Path) -> bool:
 
 
 def _has_price_files(path: Path) -> bool:
-    return path.exists() and any(path.glob("*prices*.csv"))
+    return (
+        path.exists()
+        and any(path.glob("twse_prices*.csv"))
+        and any(path.glob("tpex_prices*.csv"))
+    )
 
 
 def _prune_date_folders(root: str | Path, keep_days: int) -> None:
