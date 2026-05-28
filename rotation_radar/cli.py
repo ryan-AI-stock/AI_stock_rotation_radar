@@ -355,8 +355,8 @@ def _write_report(
         title="台股題材輪動與波段選股雷達",
         generated_at=datetime.now(ZoneInfo("Asia/Taipei")).strftime("%Y-%m-%d %H:%M"),
         market_view=(
-            "模型先抓全市場報價，再把已標記股票映射到記憶體、PCB/載板、CPO/矽光子、被動元件等市場題材，"
-            "以題材資金占比與成交活性排序前三名，並在同一題材池內篩選短線波段個股。"
+            "模型先抓全市場報價，再把已標記股票映射到市場題材與供應鏈主題，"
+            "以題材資金占比、成交活性與短期輪動變化排序，並在同一題材池內篩選短線波段候選股。"
         ),
         sector_results=sector_results,
         stock_results=stock_results,

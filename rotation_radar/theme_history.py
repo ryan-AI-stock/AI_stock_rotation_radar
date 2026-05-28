@@ -63,12 +63,13 @@ def load_theme_trends(
         rows = [row for row in history_rows if row.get("theme") == theme]
         rows.sort(key=lambda row: row.get("date", ""))
         rows = rows[-window_days:]
-        days = len({row.get("date", "") for row in rows if row.get("date")})
+        available_dates = [row.get("date", "") for row in rows if row.get("date")]
+        days = len(set(available_dates))
         amount_5d = sum(_num(row.get("turnover_value")) for row in rows)
         avg_share = sum(_num(row.get("capital_share")) for row in rows) / days if days else 0.0
 
         if days < 2:
-            status = "資料累積中"
+            status = "今日觀察"
             rank_change = 0.0
             amount_change_pct = 0.0
         else:
@@ -86,6 +87,10 @@ def load_theme_trends(
             "rank_change": rank_change,
             "amount_change_pct": amount_change_pct,
             "status": status,
+            "start_date": available_dates[0] if available_dates else "",
+            "latest_date": available_dates[-1] if available_dates else "",
+            "window_days": window_days,
+            "missing_days": max(0, window_days - days),
         }
     return trends
 

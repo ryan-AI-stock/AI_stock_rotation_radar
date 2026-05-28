@@ -76,7 +76,12 @@ def load_price_history(path: str | Path | None) -> dict[str, list[dict[str, floa
                 }
             )
 
-    return {symbol: rows[-23:] for symbol, rows in history.items()}
+    cleaned: dict[str, list[dict[str, float | str]]] = {}
+    for symbol, rows in history.items():
+        valid_rows = [row for row in rows if _valid_ohlc(row)]
+        valid_rows.sort(key=lambda row: str(row.get("date", "")))
+        cleaned[symbol] = valid_rows[-23:]
+    return cleaned
 
 
 def _load_existing_history(path: str | Path, symbols: set[str] | None) -> dict[str, list[dict[str, float | str]]]:
@@ -207,3 +212,16 @@ def _number(value: str | None) -> float:
     if value is None or value.strip() == "":
         return 0.0
     return float(value.replace(",", ""))
+
+
+def _valid_ohlc(row: dict[str, float | str]) -> bool:
+    if not str(row.get("date", "")).strip():
+        return False
+    prices = [float(row.get(key, 0) or 0) for key in ("open", "high", "low", "close")]
+    if any(value <= 0 for value in prices):
+        return False
+    low = float(row.get("low", 0) or 0)
+    high = float(row.get("high", 0) or 0)
+    open_ = float(row.get("open", 0) or 0)
+    close = float(row.get("close", 0) or 0)
+    return low <= min(open_, close) and high >= max(open_, close)
