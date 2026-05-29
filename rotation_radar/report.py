@@ -864,7 +864,8 @@ ul { padding-left: 18px; margin: 12px 0; color: #38332c; }
   .stock-card .metrics > div { flex-basis: 118px; }
   .stock-card .valuation-box, .stock-card .hint { font-size: .7rem; line-height: 1.32; }
   .stock-card .pe-track { height: 14px; margin-top: 4px; font-size: .66rem; }
-  .stock-card .chart svg { height: 108px; }
+  .stock-card .pe-track, .stock-card .hint, .stock-card .valuation-box em { display: none; }
+  .stock-card .chart svg { height: 92px; }
   .stock-card .chart-note { display: none; }
   .section-head, .bucket > h3, .bucket-note { break-after: avoid; page-break-after: avoid; }
   .sector-card, .stock-card, .digest, .brief, .chart, .excluded-item { break-inside: avoid; page-break-inside: avoid; }
