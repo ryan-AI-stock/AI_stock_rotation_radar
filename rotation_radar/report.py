@@ -51,7 +51,6 @@ def render_report(report: Report) -> str:
       {_stock_section(Bucket.WATCH, buckets, report)}
       {_stock_section(Bucket.EXCLUDED, buckets, report)}
     </section>
-    {_next_watch_panel(top_sectors)}
   </main>
 </body>
 </html>"""
@@ -129,9 +128,22 @@ def _summary_panel(report: Report, top_sectors, buckets: dict[Bucket, list[Stock
         <div><span>排除名單</span><strong>{excluded}</strong><em>摘要列出前 3 名</em></div>
         <div><span>核心邏輯</span><strong>資金先行</strong><em>成交金額與題材占比優先</em></div>
         <div><span>報價資料</span><strong>{_quote_date_text(report)}</strong><em>{_quote_time_text(report)}</em></div>
+        <div class="brief-wide"><span>明日觀察</span><strong>主線延續 / 擴散 / 過熱</strong><em>{_next_watch_summary(top_sectors)}</em></div>
       </div>
     </section>
     """
+
+
+def _next_watch_summary(top_sectors) -> str:
+    if not top_sectors:
+        return "資料待補時先看成交金額與題材占比是否恢復穩定。"
+    leader = top_sectors[0].metrics.name
+    avg_strength = sum(item.metrics.strong_stock_ratio for item in top_sectors) / len(top_sectors)
+    max_heat = max(item.metrics.risk_heat for item in top_sectors)
+    return (
+        f"{escape(leader)} 是否維持高成交占比；前三題材平均強勢股比例 {avg_strength:.0f}/100；"
+        f"最高過熱分數 {max_heat:.0f}/100，越高越要留意追價與隔日換手。"
+    )
 
 
 def _sector_card(item, rank: int, report: Report) -> str:
@@ -187,27 +199,6 @@ def _stock_section(bucket: Bucket, buckets: dict[Bucket, list[StockResult]], rep
         <p class="bucket-note">{note}</p>
         {body}
       </div>
-    """
-
-
-def _next_watch_panel(top_sectors) -> str:
-    if not top_sectors:
-        return ""
-    leader = top_sectors[0].metrics
-    crowded = max(item.metrics.risk_heat for item in top_sectors)
-    breadth = sum(item.metrics.strong_stock_ratio for item in top_sectors) / len(top_sectors)
-    return f"""
-    <section class="section next-watch">
-      <div class="section-head compact">
-        <h2>明日觀察重點</h2>
-        <p>補足日報最後一段判讀：只作市場觀察與風險提醒，不作買賣建議。</p>
-      </div>
-      <div class="watch-grid">
-        <div><strong>主線延續</strong><span>{escape(leader.name)} 若維持高成交占比，代表資金仍集中在同一題材主線。</span></div>
-        <div><strong>擴散程度</strong><span>前三題材平均強勢股比例 {breadth:.0f}/100；若下降，代表行情可能從普漲轉成挑股。</span></div>
-        <div><strong>過熱開關</strong><span>最高過熱分數 {crowded:.0f}/100；越高越要留意追價、量縮與隔日換手風險。</span></div>
-      </div>
-    </section>
     """
 
 
@@ -707,6 +698,7 @@ main { padding: 22px max(14px, 4vw) 54px; }
 .brief-head strong { font-size: clamp(1.15rem, 3vw, 2rem); text-align: right; }
 .brief-grid { display: flex; flex-wrap: wrap; gap: 10px; padding-top: 14px; }
 .brief-grid > div { flex: 1 1 170px; }
+.brief-grid .brief-wide { flex-basis: 350px; }
 .brief-grid div, .sector-stats div, .metrics div, .valuation-box { background: #fff; border: 1px solid #ddd6c8; border-radius: 6px; padding: 10px; }
 .brief-grid span, .sector-stats span, .metrics span, .valuation-box span { display: block; color: #6f6a60; font-size: .78rem; }
 .brief-grid strong, .sector-stats strong, .metrics strong, .valuation-box strong { display: block; font-size: 1.05rem; }
@@ -749,11 +741,6 @@ ul { padding-left: 18px; margin: 12px 0; color: #38332c; }
 .excluded-item strong, .excluded-item span, .excluded-item em { display: block; }
 .excluded-item span { color: #6f6a60; font-size: .82rem; margin: 4px 0; }
 .excluded-item em { color: #b42318; font-size: .82rem; font-style: normal; }
-.next-watch { background: #fffdf8; border: 1px solid #ddd6c8; border-radius: 8px; padding: 14px 16px; }
-.watch-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
-.watch-grid div { background: #fff; border: 1px solid #ddd6c8; border-radius: 6px; padding: 10px; }
-.watch-grid strong { display: block; color: #0f5f58; margin-bottom: 4px; }
-.watch-grid span { color: #4a443d; font-size: .88rem; }
 .valuation-box { margin-bottom: 12px; background: #fffaf0; }
 .pe-track { height: 18px; position: relative; display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: 8px; color: #6f6a60; font-size: .76rem; }
 .pe-track:before { content: ""; position: absolute; left: 34px; right: 34px; top: 8px; height: 6px; border-radius: 999px; background: linear-gradient(90deg, #18886f, #d6a642, #c2410c); }
@@ -778,7 +765,7 @@ ul { padding-left: 18px; margin: 12px 0; color: #38332c; }
 .method-grid span { color: #6f6a60; }
 .empty { color: #6f6a60; }
 @media (max-width: 980px) {
-  .sector-grid, .digest-grid, .excluded-list, .watch-grid { grid-template-columns: 1fr; }
+  .sector-grid, .digest-grid, .excluded-list { grid-template-columns: 1fr; }
   .section-head { display: block; }
   .section-head p { margin-top: 6px; }
 }
@@ -803,13 +790,20 @@ ul { padding-left: 18px; margin: 12px 0; color: #38332c; }
   .digest, .brief { padding: 13px 14px; }
   .brief-grid div, .sector-stats div, .metrics div, .valuation-box { padding: 8px; }
   .sector-card, .stock-card { padding: 12px; }
+  .brief-grid .brief-wide { flex-basis: 340px; }
   .sector-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 9px; }
   .sector-section { break-before: page; page-break-before: always; }
-  .sector-card h3 { font-size: 1.12rem; }
-  .sector-card p { font-size: .78rem; margin-bottom: 8px; }
-  .sector-stats { gap: 6px; margin: 10px 0; }
-  .sector-stats > div { flex-basis: 104px; }
-  .sector-card ul { font-size: .75rem; }
+  .sector-section .section-head { display: block; margin-bottom: 8px; break-inside: avoid; page-break-inside: avoid; }
+  .sector-section .section-head p { margin-top: 4px; max-width: none; font-size: .76rem; line-height: 1.35; }
+  .sector-card { padding: 9px; }
+  .sector-card h3 { font-size: 1rem; margin: 4px 0; }
+  .sector-card p { font-size: .68rem; line-height: 1.28; margin-bottom: 5px; }
+  .sector-stats { gap: 5px; margin: 7px 0; }
+  .sector-stats > div { flex-basis: 92px; padding: 6px; }
+  .sector-stats span, .sector-stats em { font-size: .62rem; }
+  .sector-stats strong { font-size: .86rem; }
+  .sector-card ul { font-size: .66rem; line-height: 1.28; margin: 6px 0; }
+  .sector-card .tag-row, .sector-card .risk-row { gap: 4px; }
   .tag-row span, .risk-row span { font-size: .72rem; padding: 3px 6px; }
   .stock-list { display: block; }
   .stock-card {
@@ -831,7 +825,7 @@ ul { padding-left: 18px; margin: 12px 0; color: #38332c; }
   .stock-card .chart svg { height: 108px; }
   .stock-card .chart-note { display: none; }
   .section-head, .bucket > h3, .bucket-note { break-after: avoid; page-break-after: avoid; }
-  .sector-card, .stock-card, .digest, .brief, .chart, .excluded-item, .next-watch { break-inside: avoid; page-break-inside: avoid; }
+  .sector-card, .stock-card, .digest, .brief, .chart, .excluded-item { break-inside: avoid; page-break-inside: avoid; }
   .stock-card .theme-note { display: none; }
   .stock-card p { margin-bottom: 8px; }
   .metrics, .sector-stats { margin: 9px 0; }
