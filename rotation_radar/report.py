@@ -166,7 +166,7 @@ def _sector_card(item, rank: int, report: Report) -> str:
           <div><span>資金占比</span><strong>{metrics.capital_share:.1f}%</strong><em>{_rolling_share_text(trend, metrics.capital_share, metrics.capital_share_prev)}</em></div>
           <div><span>成交金額</span><strong>{metrics.turnover_value:,.0f}百萬</strong><em>{turnover_text}</em></div>
           <div><span>近5日資金</span><strong>{_trend_amount(trend)}</strong><em>{_trend_days(trend)}</em></div>
-          <div><span>5日占比趨勢</span><strong>{_rolling_window_status(trend)}</strong><em>{_trend_detail(trend)}</em></div>
+          <div><span>5日占比趨勢</span><strong>{_rolling_window_status(trend)}</strong><em>{_rolling_window_detail(trend)}</em></div>
           <div><span>強勢股比例</span><strong>{metrics.strong_stock_ratio:.0f}/100</strong><em>越高越強</em></div>
           <div><span>過熱風險</span><strong>{metrics.risk_heat:.0f}/100</strong><em>越高越熱</em></div>
         </div>
@@ -341,6 +341,14 @@ def _rolling_window_status(trend: dict[str, float | str]) -> str:
     if change <= -1:
         return "降溫"
     return "持平"
+
+
+def _rolling_window_detail(trend: dict[str, float | str]) -> str:
+    current_avg = float(trend.get("avg_share", 0) or 0)
+    previous_avg = float(trend.get("previous_avg_share", 0) or 0)
+    if current_avg > 0 and previous_avg > 0:
+        return f"5日窗{_relative_change_text(current_avg, previous_avg)}"
+    return _trend_detail(trend)
 
 
 def _trend_range_text(trend: dict[str, float | str], start_key: str, latest_key: str) -> str:
