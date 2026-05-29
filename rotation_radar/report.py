@@ -270,8 +270,6 @@ def _stock_card(item: StockResult, report: Report, rank: int) -> str:
             <b>低估</b><i style="left:calc(34px + (100% - 68px) * {pe_position:.1f} / 100)"></i><b>高估</b>
           </div>
           <p class="hint">{escape(pe_text)}</p>
-          <ul>{notes}</ul>
-          <p class="risk-text">風險：{escape(_risk_text(m.risk_reason))}</p>
         </div>
         <div class="stock-side">
           {chart}
@@ -279,6 +277,10 @@ def _stock_card(item: StockResult, report: Report, rank: int) -> str:
             <span>{_foreign_chip(m)}</span>
             <span>{_trust_chip(m)}</span>
             <span>{_margin_chip(m)}</span>
+          </div>
+          <div class="side-notes">
+            <ul>{notes}</ul>
+            <p class="risk-text">風險：{escape(_risk_text(m.risk_reason))}</p>
           </div>
         </div>
       </article>
@@ -858,6 +860,8 @@ ul { padding-left: 18px; margin: 12px 0; color: #38332c; }
   .stock-side { grid-column: 2; }
   .stock-card .chart, .stock-card .chart-empty { margin-top: 0; }
   .stock-card .chips { margin-top: 5px; }
+  .stock-card .side-notes { margin-top: 5px; }
+  .stock-card .side-notes ul { margin: 4px 0; padding-left: 15px; }
   .stock-card h4 { font-size: 1.02rem; margin: 4px 0; }
   .stock-card p, .stock-card ul { font-size: .72rem; line-height: 1.32; }
   .stock-card small, .stock-card .theme-pill, .stock-card .rank-badge, .stock-card .chips span { font-size: .7rem; }
