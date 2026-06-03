@@ -362,7 +362,7 @@ def _write_report(
 
     report = Report(
         title="台股題材輪動與波段選股雷達",
-        generated_at=datetime.now(ZoneInfo("Asia/Taipei")).strftime("%Y-%m-%d %H:%M"),
+        generated_at=datetime.now(ZoneInfo("Asia/Taipei")).strftime("%Y-%m-%d"),
         market_view=(
             "模型先抓全市場報價，再把已標記股票映射到市場題材與供應鏈主題，"
             "以題材資金占比、成交活性與短期輪動變化排序，並在同一題材池內篩選短線波段候選股。"
