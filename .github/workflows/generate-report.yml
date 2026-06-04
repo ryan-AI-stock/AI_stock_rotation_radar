@@ -2,9 +2,9 @@ name: Generate theme rotation report
 
 on:
   schedule:
-    # Every hour from 15:00 through 23:00 Asia/Taipei, Monday-Friday.
-    # Scheduled retries skip the full job after the first successful publish of the day.
-    - cron: "0 7-15 * * 1-5"
+    # Check hourly. The trading-day gate starts a new report after 15:00 Asia/Taipei
+    # and keeps retrying the same trading date across midnight until fully published.
+    - cron: "0 * * * *"
   workflow_dispatch:
     inputs:
       force_sector_scan:
@@ -32,25 +32,23 @@ jobs:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
     steps:
-      - name: Determine Taipei report date
-        id: report-date
-        shell: bash
-        run: echo "key=$(TZ=Asia/Taipei date +%Y%m%d)" >> "$GITHUB_OUTPUT"
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      - name: Restore daily publish marker
+      - name: Determine target Taiwan trading date
+        id: report-date
+        run: python -m rotation_radar.schedule_gate
+
+      - name: Restore trading-date publish marker
         id: daily-publish-marker
         uses: actions/cache/restore@v4
         with:
           path: .github-run-state/rotation-report-published
-          key: rotation-report-published-${{ steps.report-date.outputs.key }}
+          key: rotation-report-published-${{ steps.report-date.outputs.target_key }}
 
-      - name: Stop scheduled retry after successful daily publish
+      - name: Stop scheduled retry after successful trading-date publish
         if: github.event_name == 'schedule' && steps.daily-publish-marker.outputs.cache-hit == 'true'
-        run: echo "Today's report was already generated and fully published; skipping this scheduled retry."
-
-      - name: Checkout repository
-        if: github.event_name == 'workflow_dispatch' || steps.daily-publish-marker.outputs.cache-hit != 'true'
-        uses: actions/checkout@v4
+        run: echo "The target trading-date report was already generated and fully published; skipping this scheduled retry."
 
       - name: Set up Python
         if: github.event_name == 'workflow_dispatch' || steps.daily-publish-marker.outputs.cache-hit != 'true'
@@ -91,7 +89,7 @@ jobs:
         run: |
           set -euo pipefail
 
-          args=(--update-latest-report --output reports/latest.html)
+          args=(--update-latest-report --report-date "${{ steps.report-date.outputs.target_date }}" --output reports/latest.html)
 
           if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.force_sector_scan }}" = "true" ]; then
             args+=(--force-sector-scan)
@@ -112,7 +110,7 @@ jobs:
           ROTATION_REPORT_DRIVE_FOLDER_ID: ${{ secrets.ROTATION_REPORT_DRIVE_FOLDER_ID || vars.ROTATION_REPORT_DRIVE_FOLDER_ID }}
           ROTATION_PUBLIC_REPORT_DRIVE_FOLDER_ID: ${{ vars.ROTATION_PUBLIC_REPORT_DRIVE_FOLDER_ID }}
           ROTATION_PUBLIC_REPORT_DRIVE_FILE_ID: ${{ vars.ROTATION_PUBLIC_REPORT_DRIVE_FILE_ID }}
-        run: python -m rotation_radar.drive_publish --html reports/latest.html
+        run: python -m rotation_radar.drive_publish --html reports/latest.html --date "${{ steps.report-date.outputs.target_date }}"
 
       - name: Upload report artifact
         if: github.event_name == 'workflow_dispatch' || steps.daily-publish-marker.outputs.cache-hit != 'true'
@@ -140,11 +138,11 @@ jobs:
         shell: bash
         run: |
           mkdir -p .github-run-state
-          printf '%s\n' "${{ steps.report-date.outputs.key }}" > .github-run-state/rotation-report-published
+          printf '%s\n' "${{ steps.report-date.outputs.target_key }}" > .github-run-state/rotation-report-published
 
       - name: Save daily publish marker
         if: success() && steps.daily-publish-marker.outputs.cache-hit != 'true'
         uses: actions/cache/save@v4
         with:
           path: .github-run-state/rotation-report-published
-          key: rotation-report-published-${{ steps.report-date.outputs.key }}
+          key: rotation-report-published-${{ steps.report-date.outputs.target_key }}

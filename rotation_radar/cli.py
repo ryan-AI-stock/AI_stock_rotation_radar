@@ -71,6 +71,7 @@ def main() -> None:
     parser.add_argument("--sector-metrics-input", default="data/sector_metrics.csv", help="Base sector metrics CSV.")
     parser.add_argument("--sector-metrics-output", default="data/sector_metrics.csv", help="Updated sector metrics CSV.")
     parser.add_argument("--processed-input-dir", default="processed_data", help="Directory containing normalized CSV snapshots.")
+    parser.add_argument("--report-date", help="Target report trading date, YYYY-MM-DD.")
     parser.add_argument("--output", default="reports/latest.html", help="Output HTML path.")
     args = parser.parse_args()
 
@@ -82,6 +83,11 @@ def main() -> None:
         refreshed_path = Path("data/stock_metrics.refreshed.csv")
         market_quotes_path = _ensure_market_quotes(args, sector_path)
         quote_date, quote_time = _quote_snapshot_info(market_quotes_path)
+        if args.report_date and _normalized_quote_date(quote_date) != args.report_date:
+            raise SystemExit(
+                f"Latest market quote date {_normalized_quote_date(quote_date) or 'missing'} "
+                f"does not match target report date {args.report_date}; retry later."
+            )
         print(f"Saved {market_quotes_path}")
         theme_quotes_path = build_theme_market_quotes(
             market_quotes_path=market_quotes_path,
@@ -165,6 +171,7 @@ def main() -> None:
             theme_trends=theme_trends,
             quote_date=quote_date,
             quote_time=quote_time,
+            generated_date=args.report_date,
         )
         return
 
@@ -357,12 +364,13 @@ def _write_report(
     theme_trends=None,
     quote_date="",
     quote_time="",
+    generated_date="",
 ) -> None:
     sector_results, stock_results = build_results(sectors, stocks)
 
     report = Report(
         title="台股題材輪動與波段選股雷達",
-        generated_at=datetime.now(ZoneInfo("Asia/Taipei")).strftime("%Y-%m-%d"),
+        generated_at=generated_date or datetime.now(ZoneInfo("Asia/Taipei")).strftime("%Y-%m-%d"),
         market_view=(
             "模型先抓全市場報價，再把已標記股票映射到市場題材與供應鏈主題，"
             "以題材資金占比、成交活性與短期輪動變化排序，並在同一題材池內篩選短線波段候選股。"
@@ -434,6 +442,13 @@ def _quote_snapshot_info(path: str | Path) -> tuple[str, str]:
     return "", ""
 
 
+def _normalized_quote_date(raw: str) -> str:
+    value = str(raw).strip()
+    if len(value) == 8 and value.isdigit():
+        return f"{value[:4]}-{value[4:6]}-{value[6:]}"
+    return value
+
+
 def _ensure_sector_metrics(args, market_quotes_path: Path) -> Path:
     generated_sector_path = Path("data/sector_metrics.refreshed.csv")
     if (
@@ -450,7 +465,7 @@ def _ensure_sector_metrics(args, market_quotes_path: Path) -> Path:
 
 
 def _refresh_recent_depth_snapshots(args) -> None:
-    today = datetime.now(ZoneInfo("Asia/Taipei")).date()
+    today = _target_report_date(args)
     for trade_date in recent_weekdays(today, args.recent_depth_days):
         ymd = trade_date.strftime("%Y%m%d")
         processed_dir = Path(args.processed_output_dir) / ymd
@@ -474,7 +489,7 @@ def _refresh_recent_depth_snapshots(args) -> None:
 
 
 def _refresh_recent_price_snapshots(args, required_symbols: set[str] | None = None) -> None:
-    today = datetime.now(ZoneInfo("Asia/Taipei")).date()
+    today = _target_report_date(args)
     for index, trade_date in enumerate(recent_weekdays(today, args.recent_price_days)):
         ymd = trade_date.strftime("%Y%m%d")
         processed_dir = Path(args.processed_output_dir) / ymd
@@ -499,6 +514,12 @@ def _refresh_recent_price_snapshots(args, required_symbols: set[str] | None = No
 
     _prune_date_folders(args.raw_output_dir, args.data_retention_days)
     _prune_date_folders(args.processed_output_dir, args.data_retention_days)
+
+
+def _target_report_date(args):
+    if args.report_date:
+        return parse_trade_date(args.report_date)
+    return datetime.now(ZoneInfo("Asia/Taipei")).date()
 
 
 def _has_depth_files(path: Path) -> bool:

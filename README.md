@@ -130,6 +130,8 @@ reports/latest.html
 
 GitHub Actions 產生 `reports/latest.html` 後，會改為轉成 PDF 並上傳 Google Drive，不再寄信到 `zergva@gmail.com`。
 
+排程每小時檢查一次台股交易日狀態。交易日於台北時間 15:00 後開始產報；若報價日期、產報、Google Drive 上傳或 artifacts 任一步驟未完成，會跨午夜持續每小時重試。完整成功後會保存該交易日旗標，後續排程只檢查旗標並跳過產報。週末與證交所公告休市日不建立新報告。
+
 - 自用備份 PDF：`每日題材輪動雷達_YYYYMMDD.pdf`
 - 自用備份資料夾：`1UsIMl0BOH0_K0awNwiQfoJnsCpXyXyMC`
 - 免費觀眾固定 PDF：`每日題材輪動雷達.pdf`
