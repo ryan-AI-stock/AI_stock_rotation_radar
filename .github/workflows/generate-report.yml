@@ -2,8 +2,9 @@ name: Generate theme rotation report
 
 on:
   schedule:
-    # 18:30 Asia/Taipei, Monday-Friday.
-    - cron: "30 10 * * 1-5"
+    # Every hour from 15:00 through 23:00 Asia/Taipei, Monday-Friday.
+    # Scheduled retries skip the full job after the first successful publish of the day.
+    - cron: "0 7-15 * * 1-5"
   workflow_dispatch:
     inputs:
       force_sector_scan:
@@ -31,21 +32,41 @@ jobs:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
     steps:
+      - name: Determine Taipei report date
+        id: report-date
+        shell: bash
+        run: echo "key=$(TZ=Asia/Taipei date +%Y%m%d)" >> "$GITHUB_OUTPUT"
+
+      - name: Restore daily publish marker
+        id: daily-publish-marker
+        uses: actions/cache/restore@v4
+        with:
+          path: .github-run-state/rotation-report-published
+          key: rotation-report-published-${{ steps.report-date.outputs.key }}
+
+      - name: Stop scheduled retry after successful daily publish
+        if: github.event_name == 'schedule' && steps.daily-publish-marker.outputs.cache-hit == 'true'
+        run: echo "Today's report was already generated and fully published; skipping this scheduled retry."
+
       - name: Checkout repository
+        if: github.event_name == 'workflow_dispatch' || steps.daily-publish-marker.outputs.cache-hit != 'true'
         uses: actions/checkout@v4
 
       - name: Set up Python
+        if: github.event_name == 'workflow_dispatch' || steps.daily-publish-marker.outputs.cache-hit != 'true'
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
       - name: Install Drive publish dependencies
+        if: github.event_name == 'workflow_dispatch' || steps.daily-publish-marker.outputs.cache-hit != 'true'
         run: |
           python -m pip install --upgrade pip
           pip install google-api-python-client google-auth playwright
           python -m playwright install --with-deps chromium
 
       - name: Restore market data cache
+        if: github.event_name == 'workflow_dispatch' || steps.daily-publish-marker.outputs.cache-hit != 'true'
         uses: actions/cache@v4
         with:
           path: |
@@ -61,9 +82,11 @@ jobs:
             market-data-
 
       - name: Check Python syntax
+        if: github.event_name == 'workflow_dispatch' || steps.daily-publish-marker.outputs.cache-hit != 'true'
         run: python -m compileall rotation_radar
 
       - name: Generate latest report
+        if: github.event_name == 'workflow_dispatch' || steps.daily-publish-marker.outputs.cache-hit != 'true'
         shell: bash
         run: |
           set -euo pipefail
@@ -81,6 +104,7 @@ jobs:
           python -m rotation_radar.cli "${args[@]}"
 
       - name: Publish PDFs to Google Drive
+        if: github.event_name == 'workflow_dispatch' || steps.daily-publish-marker.outputs.cache-hit != 'true'
         env:
           GOOGLE_OAUTH_CLIENT_ID: ${{ secrets.GOOGLE_OAUTH_CLIENT_ID }}
           GOOGLE_OAUTH_CLIENT_SECRET: ${{ secrets.GOOGLE_OAUTH_CLIENT_SECRET }}
@@ -91,6 +115,7 @@ jobs:
         run: python -m rotation_radar.drive_publish --html reports/latest.html
 
       - name: Upload report artifact
+        if: github.event_name == 'workflow_dispatch' || steps.daily-publish-marker.outputs.cache-hit != 'true'
         uses: actions/upload-artifact@v4
         with:
           name: latest-rotation-report
@@ -101,6 +126,7 @@ jobs:
           if-no-files-found: error
 
       - name: Upload generated data artifact
+        if: github.event_name == 'workflow_dispatch' || steps.daily-publish-marker.outputs.cache-hit != 'true'
         uses: actions/upload-artifact@v4
         with:
           name: generated-data
@@ -108,3 +134,17 @@ jobs:
             data/*.generated.csv
             data/*.refreshed.csv
           if-no-files-found: ignore
+
+      - name: Create daily publish marker
+        if: github.event_name == 'workflow_dispatch' || steps.daily-publish-marker.outputs.cache-hit != 'true'
+        shell: bash
+        run: |
+          mkdir -p .github-run-state
+          printf '%s\n' "${{ steps.report-date.outputs.key }}" > .github-run-state/rotation-report-published
+
+      - name: Save daily publish marker
+        if: success() && steps.daily-publish-marker.outputs.cache-hit != 'true'
+        uses: actions/cache/save@v4
+        with:
+          path: .github-run-state/rotation-report-published
+          key: rotation-report-published-${{ steps.report-date.outputs.key }}
