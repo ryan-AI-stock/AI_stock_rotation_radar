@@ -10,6 +10,8 @@ from datetime import datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
+from .logging_utils import log_warning
+
 
 TAIPEI_TZ = ZoneInfo("Asia/Taipei")
 BACKUP_FOLDER_ID = "1UsIMl0BOH0_K0awNwiQfoJnsCpXyXyMC"
@@ -255,7 +257,7 @@ def build_google_drive_service():
 def _build_google_drive_credentials():
     oauth_config = resolve_google_oauth_config(os.environ)
     if not oauth_config.is_complete:
-        print("Warning: 未設定 Google OAuth 憑證，跳過 Google Drive 操作")
+        log_warning("未設定 Google OAuth 憑證，跳過 Google Drive 操作")
         return None, ""
 
     try:
@@ -274,7 +276,7 @@ def _build_google_drive_credentials():
         return credentials, "OAuth"
     except Exception as exc:
         for message in google_oauth_warning_messages(exc):
-            print(message)
+            log_warning(message)
         return None, ""
 
 
@@ -288,12 +290,23 @@ def resolve_google_oauth_config(env: Mapping[str, str]) -> GoogleOAuthConfig:
 
 def google_oauth_warning_messages(exc: Exception) -> list[str]:
     messages: list[str] = []
-    msg = str(exc)
-    lower_msg = msg.lower()
-    if "invalid_grant" in msg or "invalid_token" in msg or "expired" in lower_msg or "revoked" in lower_msg:
-        messages.append("Warning: Google OAuth refresh token 已失效或被撤銷，請重新授權並更新 GitHub secret GOOGLE_OAUTH_REFRESH_TOKEN")
-    messages.append(f"Warning: Google OAuth 憑證失敗：{exc}")
+    if classify_drive_publish_error(exc) == "oauth_refresh_token":
+        messages.append("Google OAuth refresh token 已失效或被撤銷，請重新授權並更新 GitHub secret GOOGLE_OAUTH_REFRESH_TOKEN")
+    messages.append(f"Google OAuth 憑證失敗：{exc}")
     return messages
+
+
+def classify_drive_publish_error(exc: Exception) -> str:
+    message = str(exc).lower()
+    if "invalid_grant" in message or "invalid_token" in message or "expired" in message or "revoked" in message:
+        return "oauth_refresh_token"
+    if "rate limit" in message or "quota" in message or "429" in message or "resource_exhausted" in message:
+        return "rate_limited"
+    if "permission" in message or "forbidden" in message or "403" in message or "insufficient" in message:
+        return "permission"
+    if "not found" in message or "404" in message:
+        return "not_found"
+    return "unknown"
 
 
 def _drive_name_query(name: str) -> str:

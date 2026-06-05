@@ -10,6 +10,7 @@ from .cache_policy import is_fresh
 from .data_quality import load_quote_snapshot, quote_date_mismatch_message
 from .data_loader import load_sector_metrics, load_stock_metrics
 from .deep_metrics import build_hot_stock_deep_metrics, merge_deep_metrics_into_stock_metrics
+from .logging_utils import log_status
 from .market_universe import MarketUniverseFetchError, build_fallback_universe_from_theme_map, build_market_universe
 from .normalize import normalize_raw_directory
 from .pipeline_settings import PipelineOptions, PipelinePaths
@@ -152,7 +153,7 @@ def run_update_latest_report(args, write_report: ReportWriter) -> None:
             warnings=manifest_warnings,
         ),
     )
-    print(f"Run manifest written to {manifest_path}")
+    log_status(f"Run manifest written to {manifest_path}")
 
 
 def _ensure_market_universe(args, paths: PipelinePaths, options: PipelineOptions) -> tuple[Path, Path]:
