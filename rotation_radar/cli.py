@@ -77,101 +77,7 @@ def main() -> None:
     args = parser.parse_args()
 
     if args.update_latest_report:
-        market_path, sector_path = _ensure_market_universe(args)
-        print(f"Saved {market_path}")
-        print(f"Saved {sector_path}")
-
-        refreshed_path = Path("data/stock_metrics.refreshed.csv")
-        market_quotes_path = _ensure_market_quotes(args, sector_path)
-        quote_snapshot = load_quote_snapshot(market_quotes_path)
-        if args.report_date and quote_snapshot.normalized_date != args.report_date:
-            raise SystemExit(quote_date_mismatch_message(quote_snapshot, args.report_date))
-        quote_date, quote_time = quote_snapshot.quote_date, quote_snapshot.quote_time
-        print(f"Saved {market_quotes_path}")
-        theme_quotes_path = build_theme_market_quotes(
-            market_quotes_path=market_quotes_path,
-            theme_map_path=args.theme_map_file,
-            output_path=Path(args.data_dir) / "theme_market_quotes.generated.csv",
-            fallback_stock_metrics_path=Path(args.data_dir) / "stock_metrics.csv",
-            theme_universe_path=args.theme_universe_file,
-        )
-        print(f"Saved {theme_quotes_path}")
-        tracked_refreshed_path = Path("data/stock_metrics.tracked.refreshed.csv")
-        refresh_stock_metrics_quotes(
-            stock_metrics_path=Path(args.data_dir) / "stock_metrics.csv",
-            sector_map_path=sector_path,
-            output_path=tracked_refreshed_path,
-        )
-        generated_sector_path = build_sector_metrics_from_market_quotes(
-            market_quotes_path=theme_quotes_path,
-            base_sector_metrics_path=Path(args.data_dir) / "sector_metrics.csv",
-            output_path=Path("data/sector_metrics.refreshed.csv"),
-        )
-        print(f"Saved {generated_sector_path}")
-        theme_history_path = update_theme_history(
-            sector_metrics_path=generated_sector_path,
-            theme_quotes_path=theme_quotes_path,
-            output_path=args.theme_history_output,
-        )
-        print(f"Saved {theme_history_path}")
-        hot_symbols_path = export_hot_sector_symbols(
-            market_quotes_path=theme_quotes_path,
-            sector_metrics_path=generated_sector_path,
-            output_path=args.hot_sector_symbols_output,
-        )
-        print(f"Saved {hot_symbols_path}")
-        if not args.skip_depth_refresh:
-            _refresh_recent_depth_snapshots(args)
-        build_market_stock_candidates(
-            market_quotes_path=theme_quotes_path,
-            base_stock_metrics_path=tracked_refreshed_path,
-            sector_metrics_path=generated_sector_path,
-            output_path=refreshed_path,
-        )
-        deep_path = build_hot_stock_deep_metrics(
-            hot_symbols_path=hot_symbols_path,
-            processed_root=args.processed_output_dir,
-            output_path=args.hot_stock_deep_output,
-        )
-        print(f"Saved {deep_path}")
-        merge_deep_metrics_into_stock_metrics(
-            stock_metrics_path=refreshed_path,
-            deep_metrics_path=deep_path,
-            output_path=refreshed_path,
-        )
-        sectors = load_sector_metrics(generated_sector_path)
-        stocks = load_stock_metrics(refreshed_path)
-        candidate_symbols = {stock.symbol for stock in stocks}
-        _refresh_recent_price_snapshots(args, required_symbols=candidate_symbols)
-        theme_history_path = backfill_theme_history_from_processed(
-            processed_root=args.processed_output_dir,
-            theme_map_path=args.theme_map_file,
-            theme_universe_path=args.theme_universe_file,
-            base_sector_metrics_path=Path(args.data_dir) / "sector_metrics.csv",
-            output_path=args.theme_history_output,
-        )
-        print(f"Backfilled {theme_history_path}")
-        build_price_history_from_processed(
-            processed_root=args.processed_output_dir,
-            output_path=args.price_history_file,
-            symbols={stock.symbol for stock in stocks},
-            market_quotes_path=market_quotes_path,
-        )
-        price_history = load_price_history(args.price_history_file)
-        stock_themes = load_stock_theme_tags(args.theme_map_file, args.theme_universe_file)
-        theme_trends = load_theme_trends(theme_history_path, generated_sector_path)
-        _write_report(
-            sectors,
-            stocks,
-            args.output,
-            "latest report with refreshed quotes",
-            price_history,
-            stock_themes=stock_themes,
-            theme_trends=theme_trends,
-            quote_date=quote_date,
-            quote_time=quote_time,
-            generated_date=args.report_date,
-        )
+        _run_update_latest_report(args)
         return
 
     if args.build_market_universe:
@@ -350,6 +256,111 @@ def main() -> None:
 
     price_history = load_price_history(args.price_history_file)
     _write_report(sectors, stocks, args.output, data_source, price_history)
+
+
+def _run_update_latest_report(args) -> None:
+    market_path, sector_path = _ensure_market_universe(args)
+    print(f"Saved {market_path}")
+    print(f"Saved {sector_path}")
+
+    refreshed_path = Path("data/stock_metrics.refreshed.csv")
+    market_quotes_path = _ensure_market_quotes(args, sector_path)
+    quote_snapshot = load_quote_snapshot(market_quotes_path)
+    if args.report_date and quote_snapshot.normalized_date != args.report_date:
+        raise SystemExit(quote_date_mismatch_message(quote_snapshot, args.report_date))
+    quote_date, quote_time = quote_snapshot.quote_date, quote_snapshot.quote_time
+    print(f"Saved {market_quotes_path}")
+
+    theme_quotes_path = build_theme_market_quotes(
+        market_quotes_path=market_quotes_path,
+        theme_map_path=args.theme_map_file,
+        output_path=Path(args.data_dir) / "theme_market_quotes.generated.csv",
+        fallback_stock_metrics_path=Path(args.data_dir) / "stock_metrics.csv",
+        theme_universe_path=args.theme_universe_file,
+    )
+    print(f"Saved {theme_quotes_path}")
+
+    tracked_refreshed_path = Path("data/stock_metrics.tracked.refreshed.csv")
+    refresh_stock_metrics_quotes(
+        stock_metrics_path=Path(args.data_dir) / "stock_metrics.csv",
+        sector_map_path=sector_path,
+        output_path=tracked_refreshed_path,
+    )
+    generated_sector_path = build_sector_metrics_from_market_quotes(
+        market_quotes_path=theme_quotes_path,
+        base_sector_metrics_path=Path(args.data_dir) / "sector_metrics.csv",
+        output_path=Path("data/sector_metrics.refreshed.csv"),
+    )
+    print(f"Saved {generated_sector_path}")
+
+    theme_history_path = update_theme_history(
+        sector_metrics_path=generated_sector_path,
+        theme_quotes_path=theme_quotes_path,
+        output_path=args.theme_history_output,
+    )
+    print(f"Saved {theme_history_path}")
+
+    hot_symbols_path = export_hot_sector_symbols(
+        market_quotes_path=theme_quotes_path,
+        sector_metrics_path=generated_sector_path,
+        output_path=args.hot_sector_symbols_output,
+    )
+    print(f"Saved {hot_symbols_path}")
+
+    if not args.skip_depth_refresh:
+        _refresh_recent_depth_snapshots(args)
+    build_market_stock_candidates(
+        market_quotes_path=theme_quotes_path,
+        base_stock_metrics_path=tracked_refreshed_path,
+        sector_metrics_path=generated_sector_path,
+        output_path=refreshed_path,
+    )
+    deep_path = build_hot_stock_deep_metrics(
+        hot_symbols_path=hot_symbols_path,
+        processed_root=args.processed_output_dir,
+        output_path=args.hot_stock_deep_output,
+    )
+    print(f"Saved {deep_path}")
+
+    merge_deep_metrics_into_stock_metrics(
+        stock_metrics_path=refreshed_path,
+        deep_metrics_path=deep_path,
+        output_path=refreshed_path,
+    )
+    sectors = load_sector_metrics(generated_sector_path)
+    stocks = load_stock_metrics(refreshed_path)
+    candidate_symbols = {stock.symbol for stock in stocks}
+    _refresh_recent_price_snapshots(args, required_symbols=candidate_symbols)
+    theme_history_path = backfill_theme_history_from_processed(
+        processed_root=args.processed_output_dir,
+        theme_map_path=args.theme_map_file,
+        theme_universe_path=args.theme_universe_file,
+        base_sector_metrics_path=Path(args.data_dir) / "sector_metrics.csv",
+        output_path=args.theme_history_output,
+    )
+    print(f"Backfilled {theme_history_path}")
+
+    build_price_history_from_processed(
+        processed_root=args.processed_output_dir,
+        output_path=args.price_history_file,
+        symbols={stock.symbol for stock in stocks},
+        market_quotes_path=market_quotes_path,
+    )
+    price_history = load_price_history(args.price_history_file)
+    stock_themes = load_stock_theme_tags(args.theme_map_file, args.theme_universe_file)
+    theme_trends = load_theme_trends(theme_history_path, generated_sector_path)
+    _write_report(
+        sectors,
+        stocks,
+        args.output,
+        "latest report with refreshed quotes",
+        price_history,
+        stock_themes=stock_themes,
+        theme_trends=theme_trends,
+        quote_date=quote_date,
+        quote_time=quote_time,
+        generated_date=args.report_date,
+    )
 
 
 def _write_report(
