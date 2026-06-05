@@ -68,7 +68,8 @@ class LatestReportFlowTests(unittest.TestCase):
             refresh_depth.assert_not_called()
             build_candidates.assert_called_once()
             merge_deep_metrics.assert_called_once()
-            refresh_prices.assert_called_once_with(args, required_symbols={"2330"})
+            refresh_prices.assert_called_once()
+            self.assertEqual(refresh_prices.call_args.kwargs["required_symbols"], {"2330"})
             build_price_history.assert_called_once()
             write_report.assert_called_once()
             self.assertEqual(write_report.call_args.kwargs["quote_date"], "20260604")
@@ -86,6 +87,8 @@ def _args(**overrides):
         "price_history_file": "data/price_history.csv",
         "processed_output_dir": "processed_data",
         "raw_output_dir": "raw_data",
+        "recent_depth_days": 5,
+        "recent_price_days": 70,
         "report_date": "2026-06-04",
         "sector_map_output": "data/sector_map.generated.csv",
         "sector_scan_max_age_days": 0.0,
@@ -94,6 +97,7 @@ def _args(**overrides):
         "theme_map_file": "data/theme_map.csv",
         "theme_universe_file": "data/theme_universe.csv",
         "universe_max_age_days": 30.0,
+        "data_retention_days": 90,
         "output": "reports/latest.html",
     }
     values.update(overrides)

@@ -12,7 +12,7 @@ from .data_loader import load_sector_metrics, load_stock_metrics
 from .deep_metrics import build_hot_stock_deep_metrics, merge_deep_metrics_into_stock_metrics
 from .market_universe import MarketUniverseFetchError, build_fallback_universe_from_theme_map, build_market_universe
 from .normalize import normalize_raw_directory
-from .pipeline_settings import PipelinePaths
+from .pipeline_settings import PipelineOptions, PipelinePaths
 from .price_history import build_price_history_from_processed, load_price_history
 from .public_sources import fetch_raw_market_snapshots, fetch_raw_price_snapshots, parse_trade_date, recent_weekdays
 from .quote_refresh import refresh_market_quotes, refresh_stock_metrics_quotes
@@ -27,12 +27,13 @@ ReportWriter = Callable[..., None]
 
 def run_update_latest_report(args, write_report: ReportWriter) -> None:
     paths = PipelinePaths.from_args(args)
-    market_path, sector_path = _ensure_market_universe(args, paths)
+    options = PipelineOptions.from_args(args)
+    market_path, sector_path = _ensure_market_universe(args, paths, options)
     print(f"Saved {market_path}")
     print(f"Saved {sector_path}")
 
     refreshed_path = paths.refreshed_stock_metrics
-    market_quotes_path = _ensure_market_quotes(args, paths)
+    market_quotes_path = _ensure_market_quotes(paths, options)
     quote_snapshot = load_quote_snapshot(market_quotes_path)
     if args.report_date and quote_snapshot.normalized_date != args.report_date:
         raise SystemExit(quote_date_mismatch_message(quote_snapshot, args.report_date))
@@ -75,8 +76,8 @@ def run_update_latest_report(args, write_report: ReportWriter) -> None:
     )
     print(f"Saved {hot_symbols_path}")
 
-    if not args.skip_depth_refresh:
-        _refresh_recent_depth_snapshots(args)
+    if not options.skip_depth_refresh:
+        _refresh_recent_depth_snapshots(args, paths, options)
     build_market_stock_candidates(
         market_quotes_path=theme_quotes_path,
         base_stock_metrics_path=tracked_refreshed_path,
@@ -98,7 +99,7 @@ def run_update_latest_report(args, write_report: ReportWriter) -> None:
     sectors = load_sector_metrics(generated_sector_path)
     stocks = load_stock_metrics(refreshed_path)
     candidate_symbols = {stock.symbol for stock in stocks}
-    _refresh_recent_price_snapshots(args, required_symbols=candidate_symbols)
+    _refresh_recent_price_snapshots(args, paths, options, required_symbols=candidate_symbols)
     theme_history_path = backfill_theme_history_from_processed(
         processed_root=paths.processed_root,
         theme_map_path=args.theme_map_file,
@@ -131,13 +132,13 @@ def run_update_latest_report(args, write_report: ReportWriter) -> None:
     )
 
 
-def _ensure_market_universe(args, paths: PipelinePaths) -> tuple[Path, Path]:
+def _ensure_market_universe(args, paths: PipelinePaths, options: PipelineOptions) -> tuple[Path, Path]:
     market_path = paths.market_universe
     sector_path = paths.sector_map
     if (
-        not args.force_sector_scan
-        and is_fresh(market_path, args.universe_max_age_days)
-        and is_fresh(sector_path, args.universe_max_age_days)
+        not options.force_sector_scan
+        and is_fresh(market_path, options.universe_max_age_days)
+        and is_fresh(sector_path, options.universe_max_age_days)
     ):
         return market_path, sector_path
     try:
@@ -155,12 +156,12 @@ def _ensure_market_universe(args, paths: PipelinePaths) -> tuple[Path, Path]:
         )
 
 
-def _ensure_market_quotes(args, paths: PipelinePaths) -> Path:
+def _ensure_market_quotes(paths: PipelinePaths, options: PipelineOptions) -> Path:
     market_quotes_path = paths.market_quotes
     if (
-        args.sector_scan_max_age_days > 0
-        and not args.force_sector_scan
-        and is_fresh(market_quotes_path, args.sector_scan_max_age_days)
+        options.sector_scan_max_age_days > 0
+        and not options.force_sector_scan
+        and is_fresh(market_quotes_path, options.sector_scan_max_age_days)
     ):
         return market_quotes_path
     return refresh_market_quotes(
@@ -169,35 +170,40 @@ def _ensure_market_quotes(args, paths: PipelinePaths) -> Path:
     )
 
 
-def _refresh_recent_depth_snapshots(args) -> None:
+def _refresh_recent_depth_snapshots(args, paths: PipelinePaths, options: PipelineOptions) -> None:
     today = _target_report_date(args)
-    for trade_date in recent_weekdays(today, args.recent_depth_days):
+    for trade_date in recent_weekdays(today, options.recent_depth_days):
         ymd = trade_date.strftime("%Y%m%d")
-        processed_dir = Path(args.processed_output_dir) / ymd
+        processed_dir = paths.processed_root / ymd
         if _has_depth_files(processed_dir):
             print(f"Using existing depth snapshots in {processed_dir}")
             continue
 
-        saved_raw, errors = fetch_raw_market_snapshots(trade_date, args.raw_output_dir)
+        saved_raw, errors = fetch_raw_market_snapshots(trade_date, paths.raw_root)
         for path in saved_raw:
             print(f"Saved {path}")
         for error in errors:
             print(f"Warning: {error}")
 
-        raw_dir = Path(args.raw_output_dir) / ymd
+        raw_dir = paths.raw_root / ymd
         if raw_dir.exists():
             for path in normalize_raw_directory(raw_dir, processed_dir):
                 print(f"Saved {path}")
 
-    _prune_date_folders(args.raw_output_dir, args.data_retention_days)
-    _prune_date_folders(args.processed_output_dir, args.data_retention_days)
+    _prune_date_folders(paths.raw_root, options.data_retention_days)
+    _prune_date_folders(paths.processed_root, options.data_retention_days)
 
 
-def _refresh_recent_price_snapshots(args, required_symbols: set[str] | None = None) -> None:
+def _refresh_recent_price_snapshots(
+    args,
+    paths: PipelinePaths,
+    options: PipelineOptions,
+    required_symbols: set[str] | None = None,
+) -> None:
     today = _target_report_date(args)
-    for index, trade_date in enumerate(recent_weekdays(today, args.recent_price_days)):
+    for index, trade_date in enumerate(recent_weekdays(today, options.recent_price_days)):
         ymd = trade_date.strftime("%Y%m%d")
-        processed_dir = Path(args.processed_output_dir) / ymd
+        processed_dir = paths.processed_root / ymd
         symbols_to_check = required_symbols if index < 7 else None
         force_refresh = processed_dir.exists() and not _has_price_files(processed_dir, symbols_to_check)
         if _has_price_files(processed_dir, symbols_to_check):
@@ -206,19 +212,19 @@ def _refresh_recent_price_snapshots(args, required_symbols: set[str] | None = No
         if force_refresh:
             print(f"Refreshing incomplete price snapshots in {processed_dir}")
 
-        saved_raw, errors = fetch_raw_price_snapshots(trade_date, args.raw_output_dir, force=force_refresh)
+        saved_raw, errors = fetch_raw_price_snapshots(trade_date, paths.raw_root, force=force_refresh)
         for path in saved_raw:
             print(f"Saved {path}")
         for error in errors:
             print(f"Warning: {error}")
 
-        raw_dir = Path(args.raw_output_dir) / ymd
+        raw_dir = paths.raw_root / ymd
         if raw_dir.exists():
             for path in normalize_raw_directory(raw_dir, processed_dir):
                 print(f"Saved {path}")
 
-    _prune_date_folders(args.raw_output_dir, args.data_retention_days)
-    _prune_date_folders(args.processed_output_dir, args.data_retention_days)
+    _prune_date_folders(paths.raw_root, options.data_retention_days)
+    _prune_date_folders(paths.processed_root, options.data_retention_days)
 
 
 def _target_report_date(args):

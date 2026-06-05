@@ -4,7 +4,7 @@ import unittest
 from pathlib import Path
 from types import SimpleNamespace
 
-from rotation_radar.pipeline_settings import PipelinePaths
+from rotation_radar.pipeline_settings import PipelineOptions, PipelinePaths
 
 
 class PipelineSettingsTests(unittest.TestCase):
@@ -30,6 +30,27 @@ class PipelineSettingsTests(unittest.TestCase):
         self.assertEqual(paths.refreshed_stock_metrics, Path("data/stock_metrics.refreshed.csv"))
         self.assertEqual(paths.base_sector_metrics, Path("data/sector_metrics.csv"))
         self.assertEqual(paths.base_stock_metrics, Path("data/stock_metrics.csv"))
+
+    def test_pipeline_options_preserve_existing_cli_values(self) -> None:
+        options = PipelineOptions.from_args(
+            SimpleNamespace(
+                force_sector_scan=True,
+                sector_scan_max_age_days=30,
+                universe_max_age_days=7,
+                recent_depth_days=5,
+                recent_price_days=70,
+                data_retention_days=90,
+                skip_depth_refresh=False,
+            )
+        )
+
+        self.assertTrue(options.force_sector_scan)
+        self.assertEqual(options.sector_scan_max_age_days, 30.0)
+        self.assertEqual(options.universe_max_age_days, 7.0)
+        self.assertEqual(options.recent_depth_days, 5)
+        self.assertEqual(options.recent_price_days, 70)
+        self.assertEqual(options.data_retention_days, 90)
+        self.assertFalse(options.skip_depth_refresh)
 
 
 if __name__ == "__main__":

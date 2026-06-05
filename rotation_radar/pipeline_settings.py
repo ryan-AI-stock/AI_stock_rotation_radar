@@ -5,6 +5,29 @@ from pathlib import Path
 
 
 @dataclass(frozen=True)
+class PipelineOptions:
+    force_sector_scan: bool
+    sector_scan_max_age_days: float
+    universe_max_age_days: float
+    recent_depth_days: int
+    recent_price_days: int
+    data_retention_days: int
+    skip_depth_refresh: bool
+
+    @classmethod
+    def from_args(cls, args) -> "PipelineOptions":
+        return cls(
+            force_sector_scan=bool(args.force_sector_scan),
+            sector_scan_max_age_days=float(args.sector_scan_max_age_days),
+            universe_max_age_days=float(args.universe_max_age_days),
+            recent_depth_days=int(args.recent_depth_days),
+            recent_price_days=int(args.recent_price_days),
+            data_retention_days=int(args.data_retention_days),
+            skip_depth_refresh=bool(args.skip_depth_refresh),
+        )
+
+
+@dataclass(frozen=True)
 class PipelinePaths:
     data_dir: Path
     market_universe: Path
