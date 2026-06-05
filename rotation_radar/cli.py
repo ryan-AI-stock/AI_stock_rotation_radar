@@ -66,6 +66,7 @@ def main() -> None:
     parser.add_argument("--processed-input-dir", default="processed_data", help="Directory containing normalized CSV snapshots.")
     parser.add_argument("--report-date", help="Target report trading date, YYYY-MM-DD.")
     parser.add_argument("--output", default="reports/latest.html", help="Output HTML path.")
+    parser.add_argument("--run-manifest-output", default="reports/latest_manifest.json", help="Internal JSON run manifest for data quality diagnostics.")
     args = parser.parse_args()
 
     if args.update_latest_report:

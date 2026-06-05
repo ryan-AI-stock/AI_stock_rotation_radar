@@ -3,11 +3,13 @@ from __future__ import annotations
 import unittest
 from contextlib import ExitStack
 from pathlib import Path
+from tempfile import TemporaryDirectory
 from types import SimpleNamespace
 from unittest.mock import Mock, patch
 
 import rotation_radar.daily_pipeline as pipeline
 from rotation_radar.data_quality import QuoteSnapshot
+from rotation_radar.pipeline_settings import PipelineOptions, PipelinePaths
 
 
 class LatestReportFlowTests(unittest.TestCase):
@@ -59,6 +61,7 @@ class LatestReportFlowTests(unittest.TestCase):
             stack.enter_context(patch.object(pipeline, "load_price_history", return_value={}))
             stack.enter_context(patch.object(pipeline, "load_stock_theme_tags", return_value={}))
             stack.enter_context(patch.object(pipeline, "load_theme_trends", return_value={}))
+            write_run_manifest = stack.enter_context(patch.object(pipeline, "write_run_manifest", return_value=Path("manifest.json")))
             stack.enter_context(patch("builtins.print"))
             write_report = Mock()
 
@@ -74,6 +77,32 @@ class LatestReportFlowTests(unittest.TestCase):
             write_report.assert_called_once()
             self.assertEqual(write_report.call_args.kwargs["quote_date"], "20260604")
             self.assertEqual(write_report.call_args.kwargs["quote_time"], "14:30:00")
+            write_run_manifest.assert_called_once()
+            manifest = write_run_manifest.call_args.args[1]
+            self.assertEqual(manifest["report_date"], "2026-06-04")
+            self.assertEqual(manifest["quote_date"], "2026-06-04")
+            self.assertEqual(manifest["refresh_status"]["depth"], "skipped")
+            self.assertEqual(manifest["refresh_status"]["price"], "attempted")
+            self.assertEqual(manifest["refresh_status"]["candidate_symbol_count"], 1)
+
+    def test_collect_data_quality_warnings_reports_missing_snapshots(self) -> None:
+        with TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            args = _args(
+                processed_output_dir=str(root / "processed"),
+                raw_output_dir=str(root / "raw"),
+                report_date="2026-06-04",
+                recent_depth_days=1,
+                recent_price_days=1,
+                skip_depth_refresh=False,
+            )
+            paths = PipelinePaths.from_args(args)
+            options = PipelineOptions.from_args(args)
+
+            warnings = pipeline._collect_data_quality_warnings(args, paths, options, {"2330"})
+
+        self.assertTrue(any("missing depth snapshot files" in warning for warning in warnings))
+        self.assertTrue(any("missing price snapshot files" in warning for warning in warnings))
 
 
 def _args(**overrides):
@@ -90,6 +119,7 @@ def _args(**overrides):
         "recent_depth_days": 5,
         "recent_price_days": 70,
         "report_date": "2026-06-04",
+        "run_manifest_output": "reports/latest_manifest.json",
         "sector_map_output": "data/sector_map.generated.csv",
         "sector_scan_max_age_days": 0.0,
         "skip_depth_refresh": False,

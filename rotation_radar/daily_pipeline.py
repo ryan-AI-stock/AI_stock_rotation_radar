@@ -16,6 +16,7 @@ from .pipeline_settings import PipelineOptions, PipelinePaths
 from .price_history import build_price_history_from_processed, load_price_history
 from .public_sources import fetch_raw_market_snapshots, fetch_raw_price_snapshots, parse_trade_date, recent_weekdays
 from .quote_refresh import refresh_market_quotes, refresh_stock_metrics_quotes
+from .run_manifest import build_daily_run_manifest, write_run_manifest
 from .sector_metrics_builder import build_sector_metrics_from_market_quotes
 from .stock_screener import build_market_stock_candidates, export_hot_sector_symbols
 from .theme_history import backfill_theme_history_from_processed, load_theme_trends, update_theme_history
@@ -76,7 +77,9 @@ def run_update_latest_report(args, write_report: ReportWriter) -> None:
     )
     print(f"Saved {hot_symbols_path}")
 
+    depth_refresh_status = "skipped"
     if not options.skip_depth_refresh:
+        depth_refresh_status = "attempted"
         _refresh_recent_depth_snapshots(args, paths, options)
     build_market_stock_candidates(
         market_quotes_path=theme_quotes_path,
@@ -99,6 +102,7 @@ def run_update_latest_report(args, write_report: ReportWriter) -> None:
     sectors = load_sector_metrics(generated_sector_path)
     stocks = load_stock_metrics(refreshed_path)
     candidate_symbols = {stock.symbol for stock in stocks}
+    price_refresh_status = "attempted"
     _refresh_recent_price_snapshots(args, paths, options, required_symbols=candidate_symbols)
     theme_history_path = backfill_theme_history_from_processed(
         processed_root=paths.processed_root,
@@ -130,6 +134,25 @@ def run_update_latest_report(args, write_report: ReportWriter) -> None:
         quote_time=quote_time,
         generated_date=args.report_date,
     )
+    manifest_warnings = _collect_data_quality_warnings(args, paths, options, candidate_symbols)
+    manifest_path = write_run_manifest(
+        paths.run_manifest,
+        build_daily_run_manifest(
+            report_date=args.report_date or quote_snapshot.normalized_date,
+            quote_date=quote_snapshot.normalized_date,
+            quote_time=quote_time,
+            html_output=args.output,
+            market_quotes_path=market_quotes_path,
+            sector_metrics_path=generated_sector_path,
+            stock_metrics_path=refreshed_path,
+            price_history_path=paths.price_history,
+            depth_refresh_status=depth_refresh_status,
+            price_refresh_status=price_refresh_status,
+            candidate_symbol_count=len(candidate_symbols),
+            warnings=manifest_warnings,
+        ),
+    )
+    print(f"Run manifest written to {manifest_path}")
 
 
 def _ensure_market_universe(args, paths: PipelinePaths, options: PipelineOptions) -> tuple[Path, Path]:
@@ -238,11 +261,24 @@ def _has_depth_files(path: Path) -> bool:
 
 
 def _has_price_files(path: Path, required_symbols: set[str] | None = None) -> bool:
-    has_files = path.exists() and any(path.glob("twse_prices*.csv")) and any(path.glob("tpex_prices*.csv"))
-    if not has_files:
+    if not _has_price_snapshot_files(path):
         return False
-    if not required_symbols:
+    missing = _missing_price_symbols(path, required_symbols)
+    if not missing:
         return True
+    preview = ", ".join(missing[:8])
+    suffix = "..." if len(missing) > 8 else ""
+    print(f"Warning: price snapshots in {path} miss {len(missing)} report symbols: {preview}{suffix}")
+    return False
+
+
+def _has_price_snapshot_files(path: Path) -> bool:
+    return path.exists() and any(path.glob("twse_prices*.csv")) and any(path.glob("tpex_prices*.csv"))
+
+
+def _missing_price_symbols(path: Path, required_symbols: set[str] | None = None) -> list[str]:
+    if not required_symbols:
+        return []
     found_symbols: set[str] = set()
     for csv_path in path.glob("*prices*.csv"):
         with csv_path.open("r", encoding="utf-8-sig", newline="") as handle:
@@ -250,13 +286,35 @@ def _has_price_files(path: Path, required_symbols: set[str] | None = None) -> bo
                 symbol = (row.get("證券代號") or row.get("代號") or "").strip()
                 if symbol in required_symbols:
                     found_symbols.add(symbol)
-    missing = sorted(required_symbols - found_symbols)
-    if missing:
-        preview = ", ".join(missing[:8])
-        suffix = "..." if len(missing) > 8 else ""
-        print(f"Warning: price snapshots in {path} miss {len(missing)} report symbols: {preview}{suffix}")
-        return False
-    return True
+    return sorted(required_symbols - found_symbols)
+
+
+def _collect_data_quality_warnings(
+    args,
+    paths: PipelinePaths,
+    options: PipelineOptions,
+    required_symbols: set[str],
+) -> list[str]:
+    warnings: list[str] = []
+    today = _target_report_date(args)
+    if not options.skip_depth_refresh:
+        for trade_date in recent_weekdays(today, options.recent_depth_days):
+            processed_dir = paths.processed_root / trade_date.strftime("%Y%m%d")
+            if not _has_depth_files(processed_dir):
+                warnings.append(f"missing depth snapshot files: {processed_dir}")
+
+    for index, trade_date in enumerate(recent_weekdays(today, min(options.recent_price_days, 7))):
+        processed_dir = paths.processed_root / trade_date.strftime("%Y%m%d")
+        if not _has_price_snapshot_files(processed_dir):
+            warnings.append(f"missing price snapshot files: {processed_dir}")
+            continue
+        if index < 7:
+            missing = _missing_price_symbols(processed_dir, required_symbols)
+            if missing:
+                preview = ", ".join(missing[:8])
+                suffix = "..." if len(missing) > 8 else ""
+                warnings.append(f"price snapshot misses {len(missing)} report symbols in {processed_dir}: {preview}{suffix}")
+    return warnings
 
 
 def _prune_date_folders(root: str | Path, keep_days: int) -> None:

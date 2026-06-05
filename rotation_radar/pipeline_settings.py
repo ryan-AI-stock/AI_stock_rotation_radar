@@ -41,6 +41,7 @@ class PipelinePaths:
     hot_sector_symbols: Path
     hot_stock_deep_metrics: Path
     price_history: Path
+    run_manifest: Path
     raw_root: Path
     processed_root: Path
 
@@ -60,6 +61,7 @@ class PipelinePaths:
             hot_sector_symbols=Path(args.hot_sector_symbols_output),
             hot_stock_deep_metrics=Path(args.hot_stock_deep_output),
             price_history=Path(args.price_history_file),
+            run_manifest=Path(args.run_manifest_output),
             raw_root=Path(args.raw_output_dir),
             processed_root=Path(args.processed_output_dir),
         )

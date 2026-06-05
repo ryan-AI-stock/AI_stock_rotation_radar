@@ -4,6 +4,8 @@ import argparse
 import multiprocessing
 import os
 import shutil
+from collections.abc import Mapping
+from dataclasses import dataclass
 from datetime import datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -14,6 +16,17 @@ BACKUP_FOLDER_ID = "1UsIMl0BOH0_K0awNwiQfoJnsCpXyXyMC"
 PUBLIC_FOLDER_ID = "1jSHKWt8KkkewswQfeVyBPFCT7jL1dp8_"
 BACKUP_FILE_TEMPLATE = "每日題材輪動雷達_{date_key}.pdf"
 PUBLIC_FIXED_FILE_NAME = "每日題材輪動雷達.pdf"
+
+
+@dataclass(frozen=True)
+class GoogleOAuthConfig:
+    refresh_token: str
+    client_id: str
+    client_secret: str
+
+    @property
+    def is_complete(self) -> bool:
+        return bool(self.refresh_token and self.client_id and self.client_secret)
 
 
 def main() -> None:
@@ -240,10 +253,8 @@ def build_google_drive_service():
 
 
 def _build_google_drive_credentials():
-    refresh_token = os.environ.get("GOOGLE_OAUTH_REFRESH_TOKEN", "").strip()
-    client_id = os.environ.get("GOOGLE_OAUTH_CLIENT_ID", "").strip()
-    client_secret = os.environ.get("GOOGLE_OAUTH_CLIENT_SECRET", "").strip()
-    if not (refresh_token and client_id and client_secret):
+    oauth_config = resolve_google_oauth_config(os.environ)
+    if not oauth_config.is_complete:
         print("Warning: 未設定 Google OAuth 憑證，跳過 Google Drive 操作")
         return None, ""
 
@@ -253,20 +264,36 @@ def _build_google_drive_credentials():
 
         credentials = Credentials(
             token=None,
-            refresh_token=refresh_token,
+            refresh_token=oauth_config.refresh_token,
             token_uri="https://oauth2.googleapis.com/token",
-            client_id=client_id,
-            client_secret=client_secret,
+            client_id=oauth_config.client_id,
+            client_secret=oauth_config.client_secret,
             scopes=["https://www.googleapis.com/auth/drive"],
         )
         credentials.refresh(Request())
         return credentials, "OAuth"
     except Exception as exc:
-        msg = str(exc)
-        if "invalid_grant" in msg or "invalid_token" in msg or "expired" in msg.lower() or "revoked" in msg.lower():
-            print("Warning: Google OAuth refresh token 已失效或被撤銷，請重新授權並更新 GitHub secret GOOGLE_OAUTH_REFRESH_TOKEN")
-        print(f"Warning: Google OAuth 憑證失敗：{exc}")
+        for message in google_oauth_warning_messages(exc):
+            print(message)
         return None, ""
+
+
+def resolve_google_oauth_config(env: Mapping[str, str]) -> GoogleOAuthConfig:
+    return GoogleOAuthConfig(
+        refresh_token=env.get("GOOGLE_OAUTH_REFRESH_TOKEN", "").strip(),
+        client_id=env.get("GOOGLE_OAUTH_CLIENT_ID", "").strip(),
+        client_secret=env.get("GOOGLE_OAUTH_CLIENT_SECRET", "").strip(),
+    )
+
+
+def google_oauth_warning_messages(exc: Exception) -> list[str]:
+    messages: list[str] = []
+    msg = str(exc)
+    lower_msg = msg.lower()
+    if "invalid_grant" in msg or "invalid_token" in msg or "expired" in lower_msg or "revoked" in lower_msg:
+        messages.append("Warning: Google OAuth refresh token 已失效或被撤銷，請重新授權並更新 GitHub secret GOOGLE_OAUTH_REFRESH_TOKEN")
+    messages.append(f"Warning: Google OAuth 憑證失敗：{exc}")
+    return messages
 
 
 def _drive_name_query(name: str) -> str:
