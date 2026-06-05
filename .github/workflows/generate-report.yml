@@ -126,6 +126,10 @@ jobs:
             args+=(--force-sector-scan)
           fi
 
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ -n "${{ inputs.report_date }}" ]; then
+            args+=(--sector-scan-max-age-days 30)
+          fi
+
           if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.skip_depth_refresh }}" = "true" ]; then
             args+=(--skip-depth-refresh)
           fi
