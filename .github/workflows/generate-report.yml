@@ -81,7 +81,9 @@ jobs:
 
       - name: Check Python syntax
         if: github.event_name == 'workflow_dispatch' || steps.daily-publish-marker.outputs.cache-hit != 'true'
-        run: python -m compileall rotation_radar
+        run: |
+          python -m compileall rotation_radar tests
+          python -m unittest discover -s tests -v
 
       - name: Generate latest report
         if: github.event_name == 'workflow_dispatch' || steps.daily-publish-marker.outputs.cache-hit != 'true'

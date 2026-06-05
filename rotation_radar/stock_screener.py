@@ -3,6 +3,9 @@ from __future__ import annotations
 import csv
 from pathlib import Path
 
+from .data_loader import load_sector_metrics
+from .scoring import select_top_sector_names
+
 
 def build_market_stock_candidates(
     market_quotes_path: str | Path,
@@ -134,10 +137,8 @@ def _candidate_sort_key(row: dict[str, str]) -> tuple[float, float, float]:
     )
 
 
-def _top_sectors(path: str | Path, limit: int) -> set[str]:
-    rows = _read_csv(path)
-    rows.sort(key=lambda row: _number(row.get("capital_inflow_rank")) or 0.0, reverse=True)
-    return {row["name"] for row in rows[:limit]}
+def _top_sectors(path: str | Path, limit: int) -> tuple[str, ...]:
+    return select_top_sector_names(load_sector_metrics(path), limit=limit)
 
 
 def _refresh_fair_value(row: dict[str, str]) -> None:

@@ -54,9 +54,9 @@ python -m rotation_radar.cli --update-latest-report --output reports/latest.html
 - 法人/融資深度資料會確保最近 5 個交易日可用。
 - 近期日 K 圖只顯示最近 5 個交易日，但 MA5/20/60 會回補最近 70 個交易日資料後計算。
 - 原始/清洗資料預設只保留最近 90 個日期資料夾，避免長期膨脹。
-- 個股候選池只從熱門題材與高成交金額股票中初篩。
+- 個股候選池只從報告最終綜合評分前三名題材與高成交金額股票中初篩，確保候選股來源與報告題材排名一致。
 - 追蹤股報價會在產報告前刷新。
-- 熱門題材前三名會各取成交金額前 40 檔，輸出 `data/hot_sector_symbols.generated.csv`。
+- 報告最終綜合評分前三名題材會各取成交金額前 40 檔，輸出 `data/hot_sector_symbols.generated.csv`。
 - 深度資料會針對熱門題材名單合併法人與融資資料，輸出 `data/hot_stock_deep_metrics.generated.csv`。
 - 報告中的觀察名單只保留前 5 名，避免初篩候選過多造成閱讀負擔。
 

@@ -40,6 +40,14 @@ def score_sector(metrics: SectorMetrics) -> SectorResult:
     return SectorResult(metrics=metrics, score=ScoreBreakdown(total=total, parts=parts, notes=notes))
 
 
+def rank_sectors(sectors: list[SectorMetrics]) -> list[SectorResult]:
+    return sorted((score_sector(item) for item in sectors), key=lambda item: item.score.total, reverse=True)
+
+
+def select_top_sector_names(sectors: list[SectorMetrics], limit: int = 3) -> tuple[str, ...]:
+    return tuple(result.metrics.name for result in rank_sectors(sectors)[: max(limit, 0)])
+
+
 def _capital_note(metrics: SectorMetrics) -> str:
     turnover_delta = _pct_change(metrics.turnover_value, metrics.turnover_value_prev)
     if metrics.capital_share > 0 and metrics.capital_share_prev > 0 and turnover_delta is not None:
@@ -149,6 +157,6 @@ def _stock_notes(metrics: StockMetrics, valuation_position: float, risk_penalty:
 
 
 def build_results(sectors: list[SectorMetrics], stocks: list[StockMetrics]) -> tuple[list[SectorResult], list[StockResult]]:
-    sector_results = sorted((score_sector(item) for item in sectors), key=lambda item: item.score.total, reverse=True)
+    sector_results = rank_sectors(sectors)
     stock_results = sorted((score_stock(item) for item in stocks), key=lambda item: item.score.total, reverse=True)
     return sector_results, stock_results
