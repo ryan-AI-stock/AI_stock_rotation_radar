@@ -7,6 +7,7 @@ from pathlib import Path
 from zoneinfo import ZoneInfo
 
 from .cache_policy import is_fresh
+from .data_quality import load_quote_snapshot, quote_date_mismatch_message
 from .data_loader import load_dataset, load_sector_metrics, load_stock_metrics
 from .deep_metrics import build_hot_stock_deep_metrics, merge_deep_metrics_into_stock_metrics
 from .demo_data import demo_sectors, demo_stocks
@@ -82,12 +83,10 @@ def main() -> None:
 
         refreshed_path = Path("data/stock_metrics.refreshed.csv")
         market_quotes_path = _ensure_market_quotes(args, sector_path)
-        quote_date, quote_time = _quote_snapshot_info(market_quotes_path)
-        if args.report_date and _normalized_quote_date(quote_date) != args.report_date:
-            raise SystemExit(
-                f"Latest market quote date {_normalized_quote_date(quote_date) or 'missing'} "
-                f"does not match target report date {args.report_date}; retry later."
-            )
+        quote_snapshot = load_quote_snapshot(market_quotes_path)
+        if args.report_date and quote_snapshot.normalized_date != args.report_date:
+            raise SystemExit(quote_date_mismatch_message(quote_snapshot, args.report_date))
+        quote_date, quote_time = quote_snapshot.quote_date, quote_snapshot.quote_time
         print(f"Saved {market_quotes_path}")
         theme_quotes_path = build_theme_market_quotes(
             market_quotes_path=market_quotes_path,
@@ -427,26 +426,6 @@ def _ensure_market_quotes(args, sector_path: Path) -> Path:
         sector_map_path=sector_path,
         output_path=args.market_quotes_output,
     )
-
-
-def _quote_snapshot_info(path: str | Path) -> tuple[str, str]:
-    csv_path = Path(path)
-    if not csv_path.exists():
-        return "", ""
-    with csv_path.open("r", encoding="utf-8-sig", newline="") as handle:
-        for row in csv.DictReader(handle):
-            quote_date = str(row.get("quote_date", "")).strip()
-            quote_time = str(row.get("quote_time", "")).strip()
-            if quote_date or quote_time:
-                return quote_date, quote_time
-    return "", ""
-
-
-def _normalized_quote_date(raw: str) -> str:
-    value = str(raw).strip()
-    if len(value) == 8 and value.isdigit():
-        return f"{value[:4]}-{value[4:6]}-{value[6:]}"
-    return value
 
 
 def _ensure_sector_metrics(args, market_quotes_path: Path) -> Path:
