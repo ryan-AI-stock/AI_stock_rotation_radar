@@ -21,6 +21,7 @@ def main() -> None:
     parser.add_argument("--html", default="reports/latest.html", help="Generated HTML report path.")
     parser.add_argument("--date", help="Report date, YYYY-MM-DD. Defaults to current Asia/Taipei date.")
     parser.add_argument("--skip-upload", action="store_true", help="Render PDFs only; do not upload to Google Drive.")
+    parser.add_argument("--skip-public-upload", action="store_true", help="Upload only the dated backup PDF, not the fixed public PDF.")
     args = parser.parse_args()
 
     html_path = Path(args.html)
@@ -64,6 +65,10 @@ def main() -> None:
         print(f"已上傳或更新自用備份 PDF：{backup_link}")
     else:
         raise SystemExit("自用備份 Google Drive PDF 上傳失敗，發布流程中止。")
+
+    if args.skip_public_upload:
+        print("skip-public-upload=true，略過免費觀眾固定 PDF 上傳。")
+        return
 
     public_link = upload_file_to_drive(
         public_pdf,

@@ -23,6 +23,22 @@ on:
         options:
           - "false"
           - "true"
+      report_drive_folder_id:
+        description: "Optional manual-run Drive folder ID for the dated backup PDF"
+        required: false
+        default: ""
+      skip_public_upload:
+        description: "Skip updating the fixed public PDF during manual runs"
+        required: false
+        default: "false"
+        type: choice
+        options:
+          - "false"
+          - "true"
+      report_date:
+        description: "Optional manual-run report date, YYYY-MM-DD"
+        required: false
+        default: ""
 
 jobs:
   generate-report:
@@ -37,7 +53,20 @@ jobs:
 
       - name: Determine target Taiwan trading date
         id: report-date
-        run: python -m rotation_radar.schedule_gate
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ -n "${{ inputs.report_date }}" ]; then
+            report_date="${{ inputs.report_date }}"
+            report_key="${report_date//-/}"
+            echo "Target Taiwan trading date: ${report_date} (manual override)"
+            {
+              echo "target_date=${report_date}"
+              echo "target_key=${report_key}"
+            } >> "$GITHUB_OUTPUT"
+          else
+            python -m rotation_radar.schedule_gate
+          fi
 
       - name: Restore trading-date publish marker
         id: daily-publish-marker
@@ -109,10 +138,17 @@ jobs:
           GOOGLE_OAUTH_CLIENT_ID: ${{ secrets.GOOGLE_OAUTH_CLIENT_ID }}
           GOOGLE_OAUTH_CLIENT_SECRET: ${{ secrets.GOOGLE_OAUTH_CLIENT_SECRET }}
           GOOGLE_OAUTH_REFRESH_TOKEN: ${{ secrets.GOOGLE_OAUTH_REFRESH_TOKEN }}
-          ROTATION_REPORT_DRIVE_FOLDER_ID: ${{ secrets.ROTATION_REPORT_DRIVE_FOLDER_ID || vars.ROTATION_REPORT_DRIVE_FOLDER_ID }}
+          ROTATION_REPORT_DRIVE_FOLDER_ID: ${{ inputs.report_drive_folder_id || secrets.ROTATION_REPORT_DRIVE_FOLDER_ID || vars.ROTATION_REPORT_DRIVE_FOLDER_ID }}
           ROTATION_PUBLIC_REPORT_DRIVE_FOLDER_ID: ${{ vars.ROTATION_PUBLIC_REPORT_DRIVE_FOLDER_ID }}
           ROTATION_PUBLIC_REPORT_DRIVE_FILE_ID: ${{ vars.ROTATION_PUBLIC_REPORT_DRIVE_FILE_ID }}
-        run: python -m rotation_radar.drive_publish --html reports/latest.html --date "${{ steps.report-date.outputs.target_date }}"
+        shell: bash
+        run: |
+          set -euo pipefail
+          args=(--html reports/latest.html --date "${{ steps.report-date.outputs.target_date }}")
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.skip_public_upload }}" = "true" ]; then
+            args+=(--skip-public-upload)
+          fi
+          python -m rotation_radar.drive_publish "${args[@]}"
 
       - name: Upload report artifact
         if: github.event_name == 'workflow_dispatch' || steps.daily-publish-marker.outputs.cache-hit != 'true'
