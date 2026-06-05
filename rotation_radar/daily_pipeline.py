@@ -12,6 +12,7 @@ from .data_loader import load_sector_metrics, load_stock_metrics
 from .deep_metrics import build_hot_stock_deep_metrics, merge_deep_metrics_into_stock_metrics
 from .market_universe import MarketUniverseFetchError, build_fallback_universe_from_theme_map, build_market_universe
 from .normalize import normalize_raw_directory
+from .pipeline_settings import PipelinePaths
 from .price_history import build_price_history_from_processed, load_price_history
 from .public_sources import fetch_raw_market_snapshots, fetch_raw_price_snapshots, parse_trade_date, recent_weekdays
 from .quote_refresh import refresh_market_quotes, refresh_stock_metrics_quotes
@@ -25,12 +26,13 @@ ReportWriter = Callable[..., None]
 
 
 def run_update_latest_report(args, write_report: ReportWriter) -> None:
-    market_path, sector_path = _ensure_market_universe(args)
+    paths = PipelinePaths.from_args(args)
+    market_path, sector_path = _ensure_market_universe(args, paths)
     print(f"Saved {market_path}")
     print(f"Saved {sector_path}")
 
-    refreshed_path = Path("data/stock_metrics.refreshed.csv")
-    market_quotes_path = _ensure_market_quotes(args, sector_path)
+    refreshed_path = paths.refreshed_stock_metrics
+    market_quotes_path = _ensure_market_quotes(args, paths)
     quote_snapshot = load_quote_snapshot(market_quotes_path)
     if args.report_date and quote_snapshot.normalized_date != args.report_date:
         raise SystemExit(quote_date_mismatch_message(quote_snapshot, args.report_date))
@@ -40,36 +42,36 @@ def run_update_latest_report(args, write_report: ReportWriter) -> None:
     theme_quotes_path = build_theme_market_quotes(
         market_quotes_path=market_quotes_path,
         theme_map_path=args.theme_map_file,
-        output_path=Path(args.data_dir) / "theme_market_quotes.generated.csv",
-        fallback_stock_metrics_path=Path(args.data_dir) / "stock_metrics.csv",
+        output_path=paths.theme_market_quotes,
+        fallback_stock_metrics_path=paths.base_stock_metrics,
         theme_universe_path=args.theme_universe_file,
     )
     print(f"Saved {theme_quotes_path}")
 
-    tracked_refreshed_path = Path("data/stock_metrics.tracked.refreshed.csv")
+    tracked_refreshed_path = paths.tracked_stock_metrics
     refresh_stock_metrics_quotes(
-        stock_metrics_path=Path(args.data_dir) / "stock_metrics.csv",
+        stock_metrics_path=paths.base_stock_metrics,
         sector_map_path=sector_path,
         output_path=tracked_refreshed_path,
     )
     generated_sector_path = build_sector_metrics_from_market_quotes(
         market_quotes_path=theme_quotes_path,
-        base_sector_metrics_path=Path(args.data_dir) / "sector_metrics.csv",
-        output_path=Path("data/sector_metrics.refreshed.csv"),
+        base_sector_metrics_path=paths.base_sector_metrics,
+        output_path=paths.refreshed_sector_metrics,
     )
     print(f"Saved {generated_sector_path}")
 
     theme_history_path = update_theme_history(
         sector_metrics_path=generated_sector_path,
         theme_quotes_path=theme_quotes_path,
-        output_path=args.theme_history_output,
+        output_path=paths.theme_history,
     )
     print(f"Saved {theme_history_path}")
 
     hot_symbols_path = export_hot_sector_symbols(
         market_quotes_path=theme_quotes_path,
         sector_metrics_path=generated_sector_path,
-        output_path=args.hot_sector_symbols_output,
+        output_path=paths.hot_sector_symbols,
     )
     print(f"Saved {hot_symbols_path}")
 
@@ -83,8 +85,8 @@ def run_update_latest_report(args, write_report: ReportWriter) -> None:
     )
     deep_path = build_hot_stock_deep_metrics(
         hot_symbols_path=hot_symbols_path,
-        processed_root=args.processed_output_dir,
-        output_path=args.hot_stock_deep_output,
+        processed_root=paths.processed_root,
+        output_path=paths.hot_stock_deep_metrics,
     )
     print(f"Saved {deep_path}")
 
@@ -98,21 +100,21 @@ def run_update_latest_report(args, write_report: ReportWriter) -> None:
     candidate_symbols = {stock.symbol for stock in stocks}
     _refresh_recent_price_snapshots(args, required_symbols=candidate_symbols)
     theme_history_path = backfill_theme_history_from_processed(
-        processed_root=args.processed_output_dir,
+        processed_root=paths.processed_root,
         theme_map_path=args.theme_map_file,
         theme_universe_path=args.theme_universe_file,
-        base_sector_metrics_path=Path(args.data_dir) / "sector_metrics.csv",
-        output_path=args.theme_history_output,
+        base_sector_metrics_path=paths.base_sector_metrics,
+        output_path=paths.theme_history,
     )
     print(f"Backfilled {theme_history_path}")
 
     build_price_history_from_processed(
-        processed_root=args.processed_output_dir,
-        output_path=args.price_history_file,
+        processed_root=paths.processed_root,
+        output_path=paths.price_history,
         symbols={stock.symbol for stock in stocks},
         market_quotes_path=market_quotes_path,
     )
-    price_history = load_price_history(args.price_history_file)
+    price_history = load_price_history(paths.price_history)
     stock_themes = load_stock_theme_tags(args.theme_map_file, args.theme_universe_file)
     theme_trends = load_theme_trends(theme_history_path, generated_sector_path)
     write_report(
@@ -129,9 +131,9 @@ def run_update_latest_report(args, write_report: ReportWriter) -> None:
     )
 
 
-def _ensure_market_universe(args) -> tuple[Path, Path]:
-    market_path = Path(args.market_universe_output)
-    sector_path = Path(args.sector_map_output)
+def _ensure_market_universe(args, paths: PipelinePaths) -> tuple[Path, Path]:
+    market_path = paths.market_universe
+    sector_path = paths.sector_map
     if (
         not args.force_sector_scan
         and is_fresh(market_path, args.universe_max_age_days)
@@ -141,20 +143,20 @@ def _ensure_market_universe(args) -> tuple[Path, Path]:
     try:
         return build_market_universe(
             rules_path=args.industry_rules_file,
-            output_path=args.market_universe_output,
-            sector_map_output_path=args.sector_map_output,
+            output_path=paths.market_universe,
+            sector_map_output_path=paths.sector_map,
         )
     except (OSError, MarketUniverseFetchError) as exc:
         print(f"Warning: failed to refresh exchange universe: {exc}")
         return build_fallback_universe_from_theme_map(
             theme_map_path=args.theme_map_file,
-            output_path=args.market_universe_output,
-            sector_map_output_path=args.sector_map_output,
+            output_path=paths.market_universe,
+            sector_map_output_path=paths.sector_map,
         )
 
 
-def _ensure_market_quotes(args, sector_path: Path) -> Path:
-    market_quotes_path = Path(args.market_quotes_output)
+def _ensure_market_quotes(args, paths: PipelinePaths) -> Path:
+    market_quotes_path = paths.market_quotes
     if (
         args.sector_scan_max_age_days > 0
         and not args.force_sector_scan
@@ -162,8 +164,8 @@ def _ensure_market_quotes(args, sector_path: Path) -> Path:
     ):
         return market_quotes_path
     return refresh_market_quotes(
-        sector_map_path=sector_path,
-        output_path=args.market_quotes_output,
+        sector_map_path=paths.sector_map,
+        output_path=paths.market_quotes,
     )
 
 

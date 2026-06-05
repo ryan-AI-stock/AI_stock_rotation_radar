@@ -85,6 +85,7 @@ def _args(**overrides):
         "market_universe_output": "data/market_universe.generated.csv",
         "price_history_file": "data/price_history.csv",
         "processed_output_dir": "processed_data",
+        "raw_output_dir": "raw_data",
         "report_date": "2026-06-04",
         "sector_map_output": "data/sector_map.generated.csv",
         "sector_scan_max_age_days": 0.0,
