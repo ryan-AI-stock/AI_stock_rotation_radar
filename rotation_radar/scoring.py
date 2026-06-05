@@ -67,7 +67,7 @@ def score_stock(metrics: StockMetrics) -> StockResult:
     risk_penalty = _risk_penalty(metrics)
 
     parts = {
-        "拉回買點": pullback * 0.20,
+        "拉回條件": pullback * 0.20,
         "籌碼乾淨": chip * 0.20,
         "估值位置": valuation_position * 0.20,
         "基本面": fundamental * 0.15,
@@ -130,13 +130,13 @@ def _risk_penalty(metrics: StockMetrics) -> float:
 def _stock_notes(metrics: StockMetrics, valuation_position: float, risk_penalty: float) -> list[str]:
     notes: list[str] = []
     if metrics.pullback_quality >= 70:
-        notes.append("拉回位置相對健康，符合波段找買點方向")
+        notes.append("拉回位置相對健康，正向條件較完整")
     if metrics.chip_cleanliness >= 70:
         notes.append("籌碼條件偏乾淨")
     if valuation_position >= 70:
         notes.append("本益比位於題材相對低檔")
     elif valuation_position < 45:
-        notes.append("估值已不便宜")
+        notes.append("估值位於題材相對高檔")
     if metrics.foreign_5d > 0 and metrics.trust_5d > 0:
         notes.append("外資與投信近五日同步買超")
     if metrics.margin_change_5d > 12:

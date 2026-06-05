@@ -6,9 +6,9 @@ from typing import Sequence
 
 
 class Bucket(str, Enum):
-    ACTIONABLE = "可操作名單"
+    ACTIONABLE = "正向條件名單"
     WATCH = "觀察名單"
-    EXCLUDED = "排除名單"
+    EXCLUDED = "風險條件名單"
 
 
 @dataclass(frozen=True)

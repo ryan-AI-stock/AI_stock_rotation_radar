@@ -44,8 +44,8 @@ def render_report(report: Report) -> str:
 
     <section class="section stock-section">
       <div class="section-head">
-        <h2>短線波段名單</h2>
-        <p>策略偏好：拉回找買點，其次是低本益比與籌碼轉強；個股題材標籤中，深色代表本期前三大熱門題材，淺色代表同股關聯題材。</p>
+        <h2>個股條件分群</h2>
+        <p>條件偏好：拉回型態、題材相對低本益比與籌碼轉強；個股題材標籤中，深色代表本期前三大熱門題材，淺色代表同股關聯題材。</p>
       </div>
       {_stock_section(Bucket.ACTIONABLE, buckets, report)}
       {_stock_section(Bucket.WATCH, buckets, report)}
@@ -124,9 +124,9 @@ def _summary_panel(report: Report, top_sectors, buckets: dict[Bucket, list[Stock
         <strong>{sector_text}</strong>
       </div>
       <div class="brief-grid">
-        <div><span>可操作名單</span><strong>{actionable}</strong><em>符合波段條件</em></div>
+        <div><span>正向條件名單</span><strong>{actionable}</strong><em>正向條件較完整</em></div>
         <div><span>觀察名單</span><strong>{watch}</strong><em>報告保留前 3 名</em></div>
-        <div><span>排除名單</span><strong>{excluded}</strong><em>{excluded_text}</em></div>
+        <div><span>風險條件名單</span><strong>{excluded}</strong><em>{excluded_text}</em></div>
         <div><span>核心邏輯</span><strong>資金先行</strong><em>成交金額與題材占比優先</em></div>
         <div><span>報價資料</span><strong>{_quote_date_text(report)}</strong><em>{_quote_time_text(report)}</em></div>
         <div class="brief-wide"><span>明日觀察</span><strong>主線延續 / 擴散 / 過熱</strong><em>{_next_watch_summary(top_sectors)}</em></div>
@@ -233,7 +233,7 @@ def _bucket_header(bucket: Bucket) -> str:
     elif bucket is Bucket.WATCH:
         kicker = "分類 2 / 接近條件"
     else:
-        kicker = "分類 3 / 風險排除"
+        kicker = "分類 3 / 風險條件較多"
     return f"""
         <div class="bucket-head">
           <span>{kicker}</span>
@@ -244,10 +244,10 @@ def _bucket_header(bucket: Bucket) -> str:
 
 def _bucket_note(bucket: Bucket, total: int, shown: int) -> str:
     if bucket is Bucket.ACTIONABLE:
-        return f"本區僅列波段條件最完整的前 6 檔，降低雜訊。共 {total} 檔，顯示 {shown} 檔。"
+        return f"本區僅列正向條件較完整的前 6 檔，僅供觀察排序。共 {total} 檔，顯示 {shown} 檔。"
     if bucket is Bucket.WATCH:
         return f"觀察名單僅列前三名，重點看條件接近但尚未完整達標的股票。共 {total} 檔，顯示 {shown} 檔。"
-    return f"排除名單保留摘要與主要原因，方便快速掃描風險。共 {total} 檔，顯示 {shown} 檔。"
+    return f"風險條件名單保留摘要與主要原因，方便快速掃描風險。共 {total} 檔，顯示 {shown} 檔。"
 
 
 def _excluded_item(item: StockResult, rank: int) -> str:
@@ -288,12 +288,12 @@ def _stock_card(item: StockResult, report: Report, rank: int) -> str:
             <div><span>題材平均本益比</span><strong>{_pe_display(m.sector_pe_avg)}</strong></div>
           </div>
           <div class="valuation-box">
-            <span>合理估值推估</span>
+            <span>題材本益比情境試算</span>
             <strong>{_fair_display(fair_low, fair_avg, fair_high)}</strong>
-            <em>低檔 / 平均 / 高檔本益比推估</em>
+            <em>低檔 / 平均 / 高檔本益比情境</em>
           </div>
           <div class="pe-track" title="{escape(pe_text)}">
-            <b>低估</b><i style="left:calc(34px + (100% - 68px) * {pe_position:.1f} / 100)"></i><b>高估</b>
+            <b>區間低檔</b><i style="left:calc(34px + (100% - 68px) * {pe_position:.1f} / 100)"></i><b>區間高檔</b>
           </div>
           <p class="hint">{escape(pe_text)}</p>
         </div>
@@ -679,7 +679,7 @@ def _risk_text(value: str) -> str:
 def _pe_text(m, pe_position: float) -> str:
     if m.pe <= 0 or m.sector_pe_high <= 0:
         return "本益比位置：資料待補；此股目前是全市場初篩候選，尚未接入完整估值資料。"
-    return f"本益比位置：題材區間第 {pe_position:.0f} 百分位；越左代表越便宜，越右代表越接近高估。"
+    return f"本益比位置：題材區間第 {pe_position:.0f} 百分位；越左越接近區間低檔，越右越接近區間高檔。"
 
 
 def _pe_display(value: float) -> str:
