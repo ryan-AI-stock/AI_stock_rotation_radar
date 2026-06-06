@@ -5,6 +5,7 @@ import json
 import os
 from datetime import date, datetime, timedelta
 from pathlib import Path
+from urllib.error import URLError
 from urllib.request import Request, urlopen
 from zoneinfo import ZoneInfo
 
@@ -31,8 +32,12 @@ def main() -> None:
 
 def fetch_twse_calendar() -> tuple[set[date], set[date]]:
     request = Request(TWSE_HOLIDAY_URL, headers={"User-Agent": "AI-stock-rotation-radar/1.0"})
-    with urlopen(request, timeout=30) as response:
-        payload = json.load(response)
+    try:
+        with urlopen(request, timeout=30) as response:
+            payload = json.load(response)
+    except (json.JSONDecodeError, OSError, URLError) as exc:
+        print(f"Warning: failed to load TWSE holiday schedule; falling back to weekday calendar: {exc}")
+        return set(), set()
 
     open_dates: set[date] = set()
     closed_dates: set[date] = set()
@@ -46,7 +51,8 @@ def fetch_twse_calendar() -> tuple[set[date], set[date]]:
         else:
             closed_dates.add(trade_date)
     if not closed_dates:
-        raise RuntimeError("TWSE holiday schedule returned no closed dates.")
+        print("Warning: TWSE holiday schedule returned no closed dates; falling back to weekday calendar.")
+        return set(), set()
     return open_dates, closed_dates
 
 
