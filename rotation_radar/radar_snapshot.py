@@ -83,10 +83,12 @@ def build_radar_snapshots(
     output_dir: str | Path,
     days: int = 20,
     overwrite_existing: bool = False,
+    baseline_stock_metrics_path: str | Path | None = None,
 ) -> SnapshotBuildResult:
     theme_history = _load_theme_history(theme_history_path)
     theme_map = _load_theme_map(theme_map_path)
     stock_metrics = _load_stock_metrics(stock_metrics_path)
+    baseline_stock_metrics = _load_stock_metrics(baseline_stock_metrics_path) if baseline_stock_metrics_path else {}
     processed_dates = _available_processed_dates(processed_root)
     target_dates = [date for date in sorted(theme_history) if date in processed_dates][-days:]
 
@@ -105,8 +107,14 @@ def build_radar_snapshots(
         daily_theme_stock_shares[date] = _stock_turnover_shares(theme_map, daily_prices[date])
 
     latest_date = target_dates[-1] if target_dates else ""
+    earliest_date = target_dates[0] if target_dates else ""
+    if earliest_date and baseline_stock_metrics:
+        _write_fundamental_snapshot(output / f"fundamental_snapshot_{earliest_date}.csv", baseline_stock_metrics)
     if latest_date:
-        _write_fundamental_snapshot(output / f"fundamental_snapshot_{latest_date}.csv", stock_metrics)
+        _write_fundamental_snapshot(
+            output / f"fundamental_snapshot_{latest_date}.csv",
+            _merge_stock_metrics(stock_metrics, baseline_stock_metrics),
+        )
     fundamental_snapshots = _load_fundamental_snapshots(output)
     for date in target_dates:
         path = output / f"radar_snapshot_{date}.csv"
@@ -267,6 +275,23 @@ def _load_stock_metrics(path: str | Path) -> dict[str, dict[str, str]]:
             for row in csv.DictReader(handle)
             if (row.get("symbol") or "").strip()
         }
+
+
+def _merge_stock_metrics(
+    primary: dict[str, dict[str, str]],
+    fallback: dict[str, dict[str, str]],
+) -> dict[str, dict[str, str]]:
+    merged = {symbol: dict(row) for symbol, row in primary.items()}
+    for symbol, fallback_row in fallback.items():
+        current = merged.get(symbol, {})
+        if _has_fundamental_data(current):
+            continue
+        merged[symbol] = dict(current) | dict(fallback_row)
+    return merged
+
+
+def _has_fundamental_data(row: dict[str, str]) -> bool:
+    return _to_float(row.get("pe"), 0) > 0 and _to_float(row.get("revenue_yoy"), 0) != 0
 
 
 def _write_fundamental_snapshot(path: Path, rows: dict[str, dict[str, str]]) -> None:

@@ -129,6 +129,7 @@ def run_update_latest_report(args, write_report: ReportWriter) -> None:
         stock_metrics_path=refreshed_path,
         output_dir=paths.radar_snapshot_dir,
         days=args.radar_snapshot_days,
+        baseline_stock_metrics_path=paths.base_stock_metrics,
     )
     for path in snapshot_result.paths:
         print(f"Saved {path}")

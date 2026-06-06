@@ -17,6 +17,7 @@ class RadarSnapshotTests(unittest.TestCase):
             _write_theme_history(root / "theme_history.csv")
             _write_theme_map(root / "theme_map.csv")
             _write_stock_metrics(root / "stock_metrics.csv")
+            _write_stock_metrics(root / "baseline_stock_metrics.csv")
             _write_prices(processed_root / "20260603", "2330", "台積電", 600, 1_000_000_000)
             _write_prices(processed_root / "20260604", "2330", "台積電", 606, 2_000_000_000)
 
@@ -27,21 +28,23 @@ class RadarSnapshotTests(unittest.TestCase):
                 stock_metrics_path=root / "stock_metrics.csv",
                 output_dir=output_dir,
                 days=2,
+                baseline_stock_metrics_path=root / "baseline_stock_metrics.csv",
             )
 
             self.assertEqual([path.name for path in result.paths], ["radar_snapshot_20260603.csv", "radar_snapshot_20260604.csv"])
             first = _read_single_row(output_dir / "radar_snapshot_20260603.csv")
             second = _read_single_row(output_dir / "radar_snapshot_20260604.csv")
-            self.assertEqual(first["fundamental_pass"], "false")
-            self.assertEqual(first["fundamental_data_status"], "missing_fundamental_data")
-            self.assertEqual(first["fundamental_source_date"], "")
-            self.assertEqual(first["bucket"], "excluded_missing_fundamental")
+            self.assertEqual(first["fundamental_pass"], "true")
+            self.assertEqual(first["fundamental_data_status"], "ok")
+            self.assertEqual(first["fundamental_source_date"], "2026-06-03")
+            self.assertEqual(first["bucket"], "theme_leader")
             self.assertEqual(second["fundamental_pass"], "true")
             self.assertEqual(second["fundamental_data_status"], "ok")
             self.assertEqual(second["fundamental_source_date"], "2026-06-04")
             self.assertEqual(first["capital_share_5d_change"], "0.0")
             self.assertEqual(second["capital_share_5d_change"], "2.0")
             self.assertEqual(second["stock_turnover_share_in_theme"], "100.0")
+            self.assertTrue((output_dir / "fundamental_snapshot_20260603.csv").exists())
             self.assertTrue((output_dir / "fundamental_snapshot_20260604.csv").exists())
 
 

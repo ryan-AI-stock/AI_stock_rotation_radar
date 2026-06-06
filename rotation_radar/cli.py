@@ -71,6 +71,7 @@ def main() -> None:
     parser.add_argument("--radar-snapshot-days", type=int, default=20, help="Number of recent trading-day snapshots to build.")
     parser.add_argument("--radar-snapshot-output-dir", default="data/history", help="Directory for radar_snapshot_YYYYMMDD.csv files.")
     parser.add_argument("--radar-stock-metrics-file", default="data/stock_metrics.refreshed.csv", help="Stock metrics CSV used for snapshot fundamental fields.")
+    parser.add_argument("--radar-baseline-stock-metrics-file", default="data/stock_metrics.csv", help="Baseline stock metrics CSV for dated fundamental seed data.")
     parser.add_argument("--overwrite-radar-snapshots", action="store_true", help="Overwrite existing radar snapshot CSV files.")
     parser.add_argument("--output", default="reports/latest.html", help="Output HTML path.")
     parser.add_argument("--run-manifest-output", default="reports/latest_manifest.json", help="Internal JSON run manifest for data quality diagnostics.")
@@ -93,6 +94,7 @@ def main() -> None:
             output_dir=args.radar_snapshot_output_dir,
             days=args.radar_snapshot_days,
             overwrite_existing=args.overwrite_radar_snapshots,
+            baseline_stock_metrics_path=args.radar_baseline_stock_metrics_file,
         )
         for path in result.paths:
             print(f"Saved {path}")
