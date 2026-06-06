@@ -19,6 +19,7 @@ class PipelineSettingsTests(unittest.TestCase):
                 hot_sector_symbols_output="data/hot_sector_symbols.generated.csv",
                 hot_stock_deep_output="data/hot_stock_deep_metrics.generated.csv",
                 price_history_file="data/price_history.csv",
+                radar_snapshot_output_dir="data/history",
                 run_manifest_output="reports/latest_manifest.json",
                 raw_output_dir="raw_data",
                 processed_output_dir="processed_data",
@@ -29,6 +30,7 @@ class PipelineSettingsTests(unittest.TestCase):
         self.assertEqual(paths.tracked_stock_metrics, Path("data/stock_metrics.tracked.refreshed.csv"))
         self.assertEqual(paths.refreshed_sector_metrics, Path("data/sector_metrics.refreshed.csv"))
         self.assertEqual(paths.refreshed_stock_metrics, Path("data/stock_metrics.refreshed.csv"))
+        self.assertEqual(paths.radar_snapshot_dir, Path("data/history"))
         self.assertEqual(paths.run_manifest, Path("reports/latest_manifest.json"))
         self.assertEqual(paths.base_sector_metrics, Path("data/sector_metrics.csv"))
         self.assertEqual(paths.base_stock_metrics, Path("data/stock_metrics.csv"))

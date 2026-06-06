@@ -173,6 +173,7 @@ jobs:
           path: |
             data/*.generated.csv
             data/*.refreshed.csv
+            data/history/*.csv
           if-no-files-found: ignore
 
       - name: Create daily publish marker

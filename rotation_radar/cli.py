@@ -14,8 +14,10 @@ from .normalize import normalize_raw_directory
 from .price_history import build_price_history_from_processed, load_price_history
 from .public_sources import fetch_raw_market_snapshots, fetch_raw_price_snapshots, parse_trade_date, recent_weekdays
 from .quote_refresh import refresh_stock_metrics_quotes
+from .radar_snapshot import build_radar_snapshots
 from .report import render_report
 from .scoring import build_results
+from .theme_history import backfill_theme_history_from_processed
 
 
 def main() -> None:
@@ -65,9 +67,40 @@ def main() -> None:
     parser.add_argument("--sector-metrics-output", default="data/sector_metrics.csv", help="Updated sector metrics CSV.")
     parser.add_argument("--processed-input-dir", default="processed_data", help="Directory containing normalized CSV snapshots.")
     parser.add_argument("--report-date", help="Target report trading date, YYYY-MM-DD.")
+    parser.add_argument("--build-radar-snapshots", action="store_true", help="Build daily radar snapshots for backtests.")
+    parser.add_argument("--radar-snapshot-days", type=int, default=20, help="Number of recent trading-day snapshots to build.")
+    parser.add_argument("--radar-snapshot-output-dir", default="data/history", help="Directory for radar_snapshot_YYYYMMDD.csv files.")
+    parser.add_argument("--radar-stock-metrics-file", default="data/stock_metrics.refreshed.csv", help="Stock metrics CSV used for snapshot fundamental fields.")
+    parser.add_argument("--overwrite-radar-snapshots", action="store_true", help="Overwrite existing radar snapshot CSV files.")
     parser.add_argument("--output", default="reports/latest.html", help="Output HTML path.")
     parser.add_argument("--run-manifest-output", default="reports/latest_manifest.json", help="Internal JSON run manifest for data quality diagnostics.")
     args = parser.parse_args()
+
+    if args.build_radar_snapshots:
+        backfill_theme_history_from_processed(
+            processed_root=args.processed_output_dir,
+            theme_map_path=args.theme_map_file,
+            theme_universe_path=args.theme_universe_file,
+            base_sector_metrics_path=Path(args.data_dir) / "sector_metrics.csv",
+            output_path=args.theme_history_output,
+            keep_days=max(20, args.radar_snapshot_days),
+        )
+        result = build_radar_snapshots(
+            processed_root=args.processed_output_dir,
+            theme_history_path=args.theme_history_output,
+            theme_map_path=args.theme_map_file,
+            stock_metrics_path=args.radar_stock_metrics_file,
+            output_dir=args.radar_snapshot_output_dir,
+            days=args.radar_snapshot_days,
+            overwrite_existing=args.overwrite_radar_snapshots,
+        )
+        for path in result.paths:
+            print(f"Saved {path}")
+        for warning in result.warnings:
+            print(f"Warning: {warning}")
+        if not result.paths:
+            raise SystemExit(1)
+        return
 
     if args.update_latest_report:
         run_update_latest_report(args, _write_report)

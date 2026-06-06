@@ -17,6 +17,7 @@ from .pipeline_settings import PipelineOptions, PipelinePaths
 from .price_history import build_price_history_from_processed, load_price_history
 from .public_sources import fetch_raw_market_snapshots, fetch_raw_price_snapshots, parse_trade_date, recent_weekdays
 from .quote_refresh import refresh_market_quotes, refresh_stock_metrics_quotes
+from .radar_snapshot import build_radar_snapshots
 from .run_manifest import build_daily_run_manifest, write_run_manifest
 from .sector_metrics_builder import build_sector_metrics_from_market_quotes
 from .stock_screener import build_market_stock_candidates, export_hot_sector_symbols
@@ -111,6 +112,7 @@ def run_update_latest_report(args, write_report: ReportWriter) -> None:
         theme_universe_path=args.theme_universe_file,
         base_sector_metrics_path=paths.base_sector_metrics,
         output_path=paths.theme_history,
+        keep_days=max(20, args.radar_snapshot_days),
     )
     print(f"Backfilled {theme_history_path}")
 
@@ -120,6 +122,18 @@ def run_update_latest_report(args, write_report: ReportWriter) -> None:
         symbols={stock.symbol for stock in stocks},
         market_quotes_path=market_quotes_path,
     )
+    snapshot_result = build_radar_snapshots(
+        processed_root=paths.processed_root,
+        theme_history_path=theme_history_path,
+        theme_map_path=args.theme_map_file,
+        stock_metrics_path=refreshed_path,
+        output_dir=paths.radar_snapshot_dir,
+        days=args.radar_snapshot_days,
+    )
+    for path in snapshot_result.paths:
+        print(f"Saved {path}")
+    for warning in snapshot_result.warnings:
+        print(f"Warning: {warning}")
     price_history = load_price_history(paths.price_history)
     stock_themes = load_stock_theme_tags(args.theme_map_file, args.theme_universe_file)
     theme_trends = load_theme_trends(theme_history_path, generated_sector_path)

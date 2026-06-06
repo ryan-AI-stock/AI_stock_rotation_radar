@@ -54,10 +54,13 @@ class LatestReportFlowTests(unittest.TestCase):
             stack.enter_context(patch.object(pipeline, "load_sector_metrics", return_value=["sector"]))
             stack.enter_context(patch.object(pipeline, "load_stock_metrics", return_value=[stock]))
             refresh_prices = stack.enter_context(patch.object(pipeline, "_refresh_recent_price_snapshots"))
-            stack.enter_context(
+            backfill_theme_history = stack.enter_context(
                 patch.object(pipeline, "backfill_theme_history_from_processed", return_value=Path("theme_history.csv"))
             )
             build_price_history = stack.enter_context(patch.object(pipeline, "build_price_history_from_processed"))
+            build_radar_snapshots = stack.enter_context(
+                patch.object(pipeline, "build_radar_snapshots", return_value=SimpleNamespace(paths=[Path("snapshot.csv")], warnings=[]))
+            )
             stack.enter_context(patch.object(pipeline, "load_price_history", return_value={}))
             stack.enter_context(patch.object(pipeline, "load_stock_theme_tags", return_value={}))
             stack.enter_context(patch.object(pipeline, "load_theme_trends", return_value={}))
@@ -73,7 +76,11 @@ class LatestReportFlowTests(unittest.TestCase):
             merge_deep_metrics.assert_called_once()
             refresh_prices.assert_called_once()
             self.assertEqual(refresh_prices.call_args.kwargs["required_symbols"], {"2330"})
+            self.assertEqual(backfill_theme_history.call_args.kwargs["keep_days"], 20)
             build_price_history.assert_called_once()
+            build_radar_snapshots.assert_called_once()
+            self.assertEqual(build_radar_snapshots.call_args.kwargs["stock_metrics_path"], Path("data/stock_metrics.refreshed.csv"))
+            self.assertEqual(build_radar_snapshots.call_args.kwargs["days"], 20)
             write_report.assert_called_once()
             self.assertEqual(write_report.call_args.kwargs["quote_date"], "20260604")
             self.assertEqual(write_report.call_args.kwargs["quote_time"], "14:30:00")
@@ -115,6 +122,8 @@ def _args(**overrides):
         "market_universe_output": "data/market_universe.generated.csv",
         "price_history_file": "data/price_history.csv",
         "processed_output_dir": "processed_data",
+        "radar_snapshot_days": 20,
+        "radar_snapshot_output_dir": "data/history",
         "raw_output_dir": "raw_data",
         "recent_depth_days": 5,
         "recent_price_days": 70,
