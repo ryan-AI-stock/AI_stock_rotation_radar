@@ -24,6 +24,7 @@ SNAPSHOT_COLUMNS = [
     "fundamental_pass",
     "fundamental_score",
     "fundamental_data_status",
+    "fundamental_source_date",
     "fundamental_reason",
     "risk_heat",
     "liquidity",
@@ -104,17 +105,21 @@ def build_radar_snapshots(
         daily_theme_stock_shares[date] = _stock_turnover_shares(theme_map, daily_prices[date])
 
     latest_date = target_dates[-1] if target_dates else ""
+    if latest_date:
+        _write_fundamental_snapshot(output / f"fundamental_snapshot_{latest_date}.csv", stock_metrics)
+    fundamental_snapshots = _load_fundamental_snapshots(output)
     for date in target_dates:
         path = output / f"radar_snapshot_{date}.csv"
         if path.exists() and not overwrite_existing:
             paths.append(path)
             continue
+        fundamental_source_date, dated_stock_metrics = _fundamental_snapshot_for_date(fundamental_snapshots, date)
         rows = _build_snapshot_rows(
             date=date,
-            latest_date=latest_date,
             theme_history=theme_history,
             theme_map=theme_map,
-            stock_metrics=stock_metrics,
+            stock_metrics=dated_stock_metrics,
+            fundamental_source_date=fundamental_source_date,
             prices=daily_prices.get(date, {}),
             daily_theme_stock_shares=daily_theme_stock_shares,
         )
@@ -134,10 +139,10 @@ def build_radar_snapshots(
 def _build_snapshot_rows(
     *,
     date: str,
-    latest_date: str,
     theme_history: dict[str, dict[str, ThemeHistoryRow]],
     theme_map: list[ThemeMapRow],
     stock_metrics: dict[str, dict[str, str]],
+    fundamental_source_date: str,
     prices: dict[str, PriceRow],
     daily_theme_stock_shares: dict[str, dict[tuple[str, str], float]],
 ) -> list[dict[str, str]]:
@@ -167,7 +172,7 @@ def _build_snapshot_rows(
         for stock in mapped:
             price = prices.get(stock.symbol)
             stock_metric = stock_metrics.get(stock.symbol, {})
-            fundamental = _fundamental_status(stock_metric, allow_undated_metrics=date == latest_date)
+            fundamental = _fundamental_status(stock_metric, source_date=fundamental_source_date)
             stock_share = daily_theme_stock_shares.get(date, {}).get((theme, stock.symbol), 0.0)
             stock_share_change = stock_share - _previous_stock_share_average(
                 daily_theme_stock_shares, date, theme, stock.symbol
@@ -201,6 +206,7 @@ def _build_snapshot_rows(
                     "fundamental_pass": str(fundamental["pass"]).lower(),
                     "fundamental_score": _fmt(fundamental["score"]),
                     "fundamental_data_status": str(fundamental["status"]),
+                    "fundamental_source_date": _format_date(fundamental_source_date) if fundamental_source_date else "",
                     "fundamental_reason": str(fundamental["reason"]),
                     "risk_heat": _fmt(risk_heat),
                     "liquidity": _fmt(liquidity),
@@ -261,6 +267,47 @@ def _load_stock_metrics(path: str | Path) -> dict[str, dict[str, str]]:
             for row in csv.DictReader(handle)
             if (row.get("symbol") or "").strip()
         }
+
+
+def _write_fundamental_snapshot(path: Path, rows: dict[str, dict[str, str]]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    fieldnames = [
+        "symbol",
+        "name",
+        "pe",
+        "revenue_yoy",
+        "revenue_mom",
+        "foreign_5d",
+        "trust_5d",
+        "margin_change_5d",
+        "risk_reason",
+    ]
+    with path.open("w", encoding="utf-8-sig", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=fieldnames)
+        writer.writeheader()
+        for symbol, row in sorted(rows.items()):
+            writer.writerow({field: row.get(field, "") for field in fieldnames} | {"symbol": symbol})
+
+
+def _load_fundamental_snapshots(path: Path) -> dict[str, dict[str, dict[str, str]]]:
+    snapshots: dict[str, dict[str, dict[str, str]]] = {}
+    for csv_path in sorted(path.glob("fundamental_snapshot_*.csv")):
+        date = _normalize_date(csv_path.stem.replace("fundamental_snapshot_", ""))
+        if not date:
+            continue
+        snapshots[date] = _load_stock_metrics(csv_path)
+    return snapshots
+
+
+def _fundamental_snapshot_for_date(
+    snapshots: dict[str, dict[str, dict[str, str]]],
+    date: str,
+) -> tuple[str, dict[str, dict[str, str]]]:
+    valid_dates = [snapshot_date for snapshot_date in sorted(snapshots) if snapshot_date <= date]
+    if not valid_dates:
+        return "", {}
+    source_date = valid_dates[-1]
+    return source_date, snapshots[source_date]
 
 
 def _available_processed_dates(root: str | Path) -> set[str]:
@@ -349,8 +396,8 @@ def _previous_stock_share_average(
     return _average(values)
 
 
-def _fundamental_status(row: dict[str, str], *, allow_undated_metrics: bool) -> dict[str, object]:
-    if not allow_undated_metrics:
+def _fundamental_status(row: dict[str, str], *, source_date: str) -> dict[str, object]:
+    if not source_date:
         return {
             "pass": False,
             "score": 0.0,

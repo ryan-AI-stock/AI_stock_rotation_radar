@@ -34,12 +34,15 @@ class RadarSnapshotTests(unittest.TestCase):
             second = _read_single_row(output_dir / "radar_snapshot_20260604.csv")
             self.assertEqual(first["fundamental_pass"], "false")
             self.assertEqual(first["fundamental_data_status"], "missing_fundamental_data")
+            self.assertEqual(first["fundamental_source_date"], "")
             self.assertEqual(first["bucket"], "excluded_missing_fundamental")
             self.assertEqual(second["fundamental_pass"], "true")
             self.assertEqual(second["fundamental_data_status"], "ok")
+            self.assertEqual(second["fundamental_source_date"], "2026-06-04")
             self.assertEqual(first["capital_share_5d_change"], "0.0")
             self.assertEqual(second["capital_share_5d_change"], "2.0")
             self.assertEqual(second["stock_turnover_share_in_theme"], "100.0")
+            self.assertTrue((output_dir / "fundamental_snapshot_20260604.csv").exists())
 
 
 def _write_theme_history(path: Path) -> None:
