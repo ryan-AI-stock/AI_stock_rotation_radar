@@ -8,6 +8,7 @@ from zoneinfo import ZoneInfo
 from .daily_pipeline import run_update_latest_report
 from .data_loader import load_dataset, load_sector_metrics, load_stock_metrics
 from .demo_data import demo_sectors, demo_stocks
+from .formal_grade import build_formal_grade_audit
 from .historical_replay import build_historical_replay_snapshots
 from .metrics_builder import update_sector_metrics_from_stocks, update_stock_metrics_from_processed
 from .models import Report
@@ -80,6 +81,9 @@ def main() -> None:
     parser.add_argument("--replay-end-date", default="2023-12-31", help="Historical replay end date, YYYY-MM-DD.")
     parser.add_argument("--replay-output-dir", default="data/history_replay/2022_2023", help="Directory for historical replay radar_snapshot_YYYYMMDD.csv files.")
     parser.add_argument("--replay-stock-metrics-file", default="data/stock_metrics.csv", help="Baseline stock metrics CSV used for historical replay fundamental fields.")
+    parser.add_argument("--build-formal-grade-audit", action="store_true", help="Audit whether historical replay data can support formal-grade strategy conclusions.")
+    parser.add_argument("--formal-source-dir", default="data/history_replay/backtest_grade_2021_2023", help="Source backtest-grade historical replay directory.")
+    parser.add_argument("--formal-output-dir", default="data/history_replay/formal_grade_2021_2023", help="Output directory for formal-grade audit files.")
     parser.add_argument("--output", default="reports/latest.html", help="Output HTML path.")
     parser.add_argument("--run-manifest-output", default="reports/latest_manifest.json", help="Internal JSON run manifest for data quality diagnostics.")
     args = parser.parse_args()
@@ -105,6 +109,24 @@ def main() -> None:
             print(f"Warning: {warning}")
         if not result.paths:
             raise SystemExit(1)
+        return
+
+    if args.build_formal_grade_audit:
+        result = build_formal_grade_audit(
+            source_dir=args.formal_source_dir,
+            output_dir=args.formal_output_dir,
+            theme_map_path=args.theme_map_file,
+        )
+        print(f"Saved {result.manifest_path}")
+        print(f"Saved {result.readiness_path}")
+        print(f"Saved {result.daily_coverage_path}")
+        print(f"Saved {result.formal_universe_path}")
+        print(f"Saved {result.missing_ohlcv_path}")
+        print(f"Saved {result.fundamental_gap_path}")
+        print(f"Saved {result.theme_membership_gap_path}")
+        print(f"Saved {result.turnover_gap_path}")
+        print(f"Saved {result.unavailable_items_path}")
+        print(f"Saved {result.readme_path}")
         return
 
     if args.build_radar_snapshots:

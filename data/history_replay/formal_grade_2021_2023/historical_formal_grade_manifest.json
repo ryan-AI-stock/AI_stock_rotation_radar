@@ -1,0 +1,58 @@
+{
+  "dataset_type": "historical_formal_grade_audit",
+  "dataset_mode": "formal_grade_blocked",
+  "description": "Formal-grade readiness audit for sector radar historical replay data.",
+  "source_backtest_grade_dir": "data\\history_replay\\backtest_grade_2021_2023",
+  "source_dataset_mode": "backtest_grade_limited_replay",
+  "requested_start_date": "2021-12-01",
+  "requested_end_date": "2023-12-31",
+  "actual_start_date": "20211201",
+  "actual_end_date": "20231229",
+  "source_snapshot_count": 507,
+  "formal_snapshot_count": 0,
+  "daily_coverage_rows": 507,
+  "theme_map_symbol_count": 160,
+  "formal_universe_symbol_count": 69,
+  "formal_universe_missing_ohlcv_count": 0,
+  "excluded_missing_ohlcv_symbol_count": 91,
+  "missing_fundamental_symbol_count": 62,
+  "future_fundamental_violation_count": 0,
+  "fundamental_mode": "unavailable_point_in_time_history",
+  "theme_membership_mode": "unavailable_current_static_map_only",
+  "turnover_mode": "unavailable_official_exchange_turnover",
+  "ready_for_formal_strategy_conclusion": false,
+  "readiness_path": "data\\history_replay\\formal_grade_2021_2023\\historical_formal_grade_readiness.json",
+  "daily_coverage_path": "data\\history_replay\\formal_grade_2021_2023\\historical_formal_grade_daily_coverage.csv",
+  "formal_universe_path": "data\\history_replay\\formal_grade_2021_2023\\formal_universe.csv",
+  "gap_reports": {
+    "missing_ohlcv_symbols": "data\\history_replay\\formal_grade_2021_2023\\missing_ohlcv_symbols.csv",
+    "fundamental_gap_report": "data\\history_replay\\formal_grade_2021_2023\\fundamental_gap_report.csv",
+    "theme_membership_gap_report": "data\\history_replay\\formal_grade_2021_2023\\theme_membership_gap_report.csv",
+    "official_turnover_gap_report": "data\\history_replay\\formal_grade_2021_2023\\official_turnover_gap_report.csv",
+    "formal_grade_unavailable_items": "data\\history_replay\\formal_grade_2021_2023\\formal_grade_unavailable_items.csv"
+  },
+  "blocking_issues": [
+    {
+      "item": "point_in_time_fundamentals",
+      "status": "blocked",
+      "required_mode": "point_in_time or point_in_time_limited",
+      "current_mode": "limited_baseline_seed_carry_forward",
+      "reason": "Only baseline/carry-forward stock metrics are available in this repo; there is no historical financial announcement or acquisition-date table."
+    },
+    {
+      "item": "date_aware_theme_membership",
+      "status": "blocked",
+      "required_mode": "date_aware",
+      "current_mode": "current_static_map",
+      "reason": "theme_map.csv has no effective_start/effective_end/source_date fields, so current classifications cannot be safely replayed as historical membership."
+    },
+    {
+      "item": "official_exchange_turnover",
+      "status": "blocked",
+      "required_mode": "official_exchange_turnover or official_partial_with_gap_report",
+      "current_mode": "approximate_close_times_volume",
+      "reason": "The historical cache used by the replay contains OHLCV only; turnover_value was computed as close * volume, not official TWSE/TPEx turnover amount."
+    }
+  ],
+  "formal_grade_policy": "Do not use this output as formal strategy evidence until readiness ready_for_formal_strategy_conclusion becomes true."
+}

@@ -1,0 +1,48 @@
+{
+  "ready_for_formal_audit_ingestion": true,
+  "ready_for_formal_strategy_conclusion": false,
+  "readiness_status": "blocked_source_data_unavailable",
+  "source_ready_for_backtest_lab_ingestion": true,
+  "source_readiness_status": "ready_with_limitations",
+  "acceptance_criteria": {
+    "future_fundamental_violation_count_is_zero": true,
+    "formal_universe_missing_ohlcv_is_zero": true,
+    "fundamental_not_baseline_seed_carry_forward": false,
+    "theme_membership_not_current_static_map_only": false,
+    "turnover_not_close_times_volume_only": false
+  },
+  "formal_universe_symbol_count": 69,
+  "formal_universe_missing_ohlcv_count": 0,
+  "excluded_missing_ohlcv_symbol_count": 91,
+  "missing_fundamental_symbol_count": 62,
+  "blocking_issue_count": 3,
+  "blocking_issues": [
+    {
+      "item": "point_in_time_fundamentals",
+      "status": "blocked",
+      "required_mode": "point_in_time or point_in_time_limited",
+      "current_mode": "limited_baseline_seed_carry_forward",
+      "reason": "Only baseline/carry-forward stock metrics are available in this repo; there is no historical financial announcement or acquisition-date table."
+    },
+    {
+      "item": "date_aware_theme_membership",
+      "status": "blocked",
+      "required_mode": "date_aware",
+      "current_mode": "current_static_map",
+      "reason": "theme_map.csv has no effective_start/effective_end/source_date fields, so current classifications cannot be safely replayed as historical membership."
+    },
+    {
+      "item": "official_exchange_turnover",
+      "status": "blocked",
+      "required_mode": "official_exchange_turnover or official_partial_with_gap_report",
+      "current_mode": "approximate_close_times_volume",
+      "reason": "The historical cache used by the replay contains OHLCV only; turnover_value was computed as close * volume, not official TWSE/TPEx turnover amount."
+    }
+  ],
+  "required_next_data_sources": [
+    "point-in-time fundamental history with announcement or acquisition dates",
+    "date-aware theme membership table with effective_start/effective_end/source fields",
+    "official TWSE/TPEx daily turnover amount for the replay universe"
+  ],
+  "formal_grade_conclusion": "目前資料只能支援研究草稿，不能支援正式雷達個股輪動策略結論。"
+}

@@ -1,0 +1,4 @@
+﻿item,status,required_mode,current_mode,reason
+point_in_time_fundamentals,blocked,point_in_time or point_in_time_limited,limited_baseline_seed_carry_forward,Only baseline/carry-forward stock metrics are available in this repo; there is no historical financial announcement or acquisition-date table.
+date_aware_theme_membership,blocked,date_aware,current_static_map,"theme_map.csv has no effective_start/effective_end/source_date fields, so current classifications cannot be safely replayed as historical membership."
+official_exchange_turnover,blocked,official_exchange_turnover or official_partial_with_gap_report,approximate_close_times_volume,"The historical cache used by the replay contains OHLCV only; turnover_value was computed as close * volume, not official TWSE/TPEx turnover amount."
