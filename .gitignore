@@ -7,3 +7,4 @@ raw_data/
 processed_data/
 data/*.generated.csv
 data/*.refreshed.csv
+data/formal_sources/raw_official_turnover_cache/

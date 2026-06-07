@@ -1,0 +1,21 @@
+{
+  "ready": true,
+  "date_start": "2021-12-01",
+  "date_end": "2023-12-31",
+  "formal_universe_symbol_count": 69,
+  "expected_symbol_date_count": 34983,
+  "official_turnover_row_count": 34937,
+  "coverage_ratio": 0.99868508,
+  "missing_count": 46,
+  "missing_official_turnover_on_exchange_trading_day_count": 46,
+  "twse_symbol_count": 49,
+  "tpex_symbol_count": 20,
+  "twse_trading_date_count": 507,
+  "tpex_trading_date_count": 507,
+  "non_trading_gap_row_count": 17526,
+  "source_mode": "official_partial_with_gap_report",
+  "blocking_issues": [],
+  "non_blocking_issues": [
+    "46 official source symbol-date rows were absent and are listed in the gap report."
+  ]
+}
