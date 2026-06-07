@@ -1,0 +1,21 @@
+{
+  "ready": true,
+  "source_mode": "point_in_time_limited",
+  "date_start": "2021-12-01",
+  "date_end": "2023-12-31",
+  "period_start": "2021-10",
+  "period_end": "2023-11",
+  "formal_universe_symbol_count": 69,
+  "expected_symbol_period_count": 1794,
+  "monthly_revenue_row_count": 1794,
+  "coverage_ratio": 1.0,
+  "missing_symbol_period_count": 0,
+  "future_data_violation_count": 0,
+  "fetch_error_count": 0,
+  "blocking_issues": [],
+  "source_notes": [
+    "Revenue values come from MOPS static monthly revenue HTML and are converted from thousand TWD to TWD.",
+    "MOPS historical static pages expose current render date, so v1 uses conservative market-available date: next month day 10, moved to the next weekday if needed.",
+    "Rows are point-in-time usable only when available_date is on or before the replay snapshot date."
+  ]
+}

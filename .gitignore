@@ -8,3 +8,4 @@ processed_data/
 data/*.generated.csv
 data/*.refreshed.csv
 data/formal_sources/raw_official_turnover_cache/
+data/formal_sources/raw_monthly_revenue_cache/
