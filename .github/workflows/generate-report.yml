@@ -61,8 +61,10 @@ jobs:
             report_key="${report_date//-/}"
             echo "Target Taiwan trading date: ${report_date} (manual override)"
             {
+              echo "should_run=true"
               echo "target_date=${report_date}"
               echo "target_key=${report_key}"
+              echo "reason=manual_report_date_override"
             } >> "$GITHUB_OUTPUT"
           else
             python -m rotation_radar.schedule_gate
@@ -70,30 +72,35 @@ jobs:
 
       - name: Restore trading-date publish marker
         id: daily-publish-marker
+        if: steps.report-date.outputs.should_run == 'true'
         uses: actions/cache/restore@v4
         with:
           path: .github-run-state/rotation-report-published
           key: rotation-report-published-${{ steps.report-date.outputs.target_key }}
 
+      - name: Stop when schedule gate says not to run
+        if: steps.report-date.outputs.should_run != 'true'
+        run: echo "Schedule gate skipped this run; reason=${{ steps.report-date.outputs.reason }}"
+
       - name: Stop scheduled retry after successful trading-date publish
-        if: github.event_name == 'schedule' && steps.daily-publish-marker.outputs.cache-hit == 'true'
+        if: steps.report-date.outputs.should_run == 'true' && github.event_name == 'schedule' && steps.daily-publish-marker.outputs.cache-hit == 'true'
         run: echo "The target trading-date report was already generated and fully published; skipping this scheduled retry."
 
       - name: Set up Python
-        if: github.event_name == 'workflow_dispatch' || steps.daily-publish-marker.outputs.cache-hit != 'true'
+        if: steps.report-date.outputs.should_run == 'true' && (github.event_name == 'workflow_dispatch' || steps.daily-publish-marker.outputs.cache-hit != 'true')
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
       - name: Install Drive publish dependencies
-        if: github.event_name == 'workflow_dispatch' || steps.daily-publish-marker.outputs.cache-hit != 'true'
+        if: steps.report-date.outputs.should_run == 'true' && (github.event_name == 'workflow_dispatch' || steps.daily-publish-marker.outputs.cache-hit != 'true')
         run: |
           python -m pip install --upgrade pip
           pip install google-api-python-client google-auth playwright
           python -m playwright install --with-deps chromium
 
       - name: Restore market data cache
-        if: github.event_name == 'workflow_dispatch' || steps.daily-publish-marker.outputs.cache-hit != 'true'
+        if: steps.report-date.outputs.should_run == 'true' && (github.event_name == 'workflow_dispatch' || steps.daily-publish-marker.outputs.cache-hit != 'true')
         uses: actions/cache@v4
         with:
           path: |
@@ -109,13 +116,13 @@ jobs:
             market-data-
 
       - name: Check Python syntax
-        if: github.event_name == 'workflow_dispatch' || steps.daily-publish-marker.outputs.cache-hit != 'true'
+        if: steps.report-date.outputs.should_run == 'true' && (github.event_name == 'workflow_dispatch' || steps.daily-publish-marker.outputs.cache-hit != 'true')
         run: |
           python -m compileall rotation_radar tests
           python -m unittest discover -s tests -v
 
       - name: Generate latest report
-        if: github.event_name == 'workflow_dispatch' || steps.daily-publish-marker.outputs.cache-hit != 'true'
+        if: steps.report-date.outputs.should_run == 'true' && (github.event_name == 'workflow_dispatch' || steps.daily-publish-marker.outputs.cache-hit != 'true')
         shell: bash
         run: |
           set -euo pipefail
@@ -137,7 +144,7 @@ jobs:
           python -m rotation_radar.cli "${args[@]}"
 
       - name: Publish PDFs to Google Drive
-        if: github.event_name == 'workflow_dispatch' || steps.daily-publish-marker.outputs.cache-hit != 'true'
+        if: steps.report-date.outputs.should_run == 'true' && (github.event_name == 'workflow_dispatch' || steps.daily-publish-marker.outputs.cache-hit != 'true')
         env:
           GOOGLE_OAUTH_CLIENT_ID: ${{ secrets.GOOGLE_OAUTH_CLIENT_ID }}
           GOOGLE_OAUTH_CLIENT_SECRET: ${{ secrets.GOOGLE_OAUTH_CLIENT_SECRET }}
@@ -155,7 +162,7 @@ jobs:
           python -m rotation_radar.drive_publish "${args[@]}"
 
       - name: Upload report artifact
-        if: github.event_name == 'workflow_dispatch' || steps.daily-publish-marker.outputs.cache-hit != 'true'
+        if: steps.report-date.outputs.should_run == 'true' && (github.event_name == 'workflow_dispatch' || steps.daily-publish-marker.outputs.cache-hit != 'true')
         uses: actions/upload-artifact@v4
         with:
           name: latest-rotation-report
@@ -166,7 +173,7 @@ jobs:
           if-no-files-found: error
 
       - name: Upload generated data artifact
-        if: github.event_name == 'workflow_dispatch' || steps.daily-publish-marker.outputs.cache-hit != 'true'
+        if: steps.report-date.outputs.should_run == 'true' && (github.event_name == 'workflow_dispatch' || steps.daily-publish-marker.outputs.cache-hit != 'true')
         uses: actions/upload-artifact@v4
         with:
           name: generated-data
@@ -177,14 +184,14 @@ jobs:
           if-no-files-found: ignore
 
       - name: Create daily publish marker
-        if: github.event_name == 'workflow_dispatch' || steps.daily-publish-marker.outputs.cache-hit != 'true'
+        if: steps.report-date.outputs.should_run == 'true' && (github.event_name == 'workflow_dispatch' || steps.daily-publish-marker.outputs.cache-hit != 'true')
         shell: bash
         run: |
           mkdir -p .github-run-state
           printf '%s\n' "${{ steps.report-date.outputs.target_key }}" > .github-run-state/rotation-report-published
 
       - name: Save daily publish marker
-        if: success() && steps.daily-publish-marker.outputs.cache-hit != 'true'
+        if: success() && steps.report-date.outputs.should_run == 'true' && steps.daily-publish-marker.outputs.cache-hit != 'true'
         uses: actions/cache/save@v4
         with:
           path: .github-run-state/rotation-report-published

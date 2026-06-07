@@ -3,7 +3,8 @@ from __future__ import annotations
 import argparse
 import json
 import os
-from datetime import date, datetime, timedelta
+from dataclasses import dataclass
+from datetime import date, datetime
 from pathlib import Path
 from urllib.error import URLError
 from urllib.request import Request, urlopen
@@ -14,6 +15,21 @@ TAIPEI_TZ = ZoneInfo("Asia/Taipei")
 TWSE_HOLIDAY_URL = "https://openapi.twse.com.tw/v1/holidaySchedule/holidaySchedule"
 
 
+@dataclass(frozen=True)
+class ScheduleGateDecision:
+    should_run: bool
+    target_date: date | None
+    reason: str
+
+    @property
+    def target_key(self) -> str:
+        return self.target_date.strftime("%Y%m%d") if self.target_date else ""
+
+    @property
+    def target_date_text(self) -> str:
+        return self.target_date.isoformat() if self.target_date else ""
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Determine the Taiwan trading date whose report still needs publishing.")
     parser.add_argument("--now", help="Optional Asia/Taipei timestamp for validation, e.g. 2026-06-04T15:00:00.")
@@ -21,23 +37,28 @@ def main() -> None:
 
     now = _parse_now(args.now)
     open_dates, closed_dates = fetch_twse_calendar()
-    target = target_report_date(now, open_dates, closed_dates)
+    decision = evaluate_schedule_gate(now, open_dates, closed_dates)
     outputs = {
-        "target_date": target.isoformat(),
-        "target_key": target.strftime("%Y%m%d"),
+        "should_run": str(decision.should_run).lower(),
+        "target_date": decision.target_date_text,
+        "target_key": decision.target_key,
+        "reason": decision.reason,
     }
-    print(f"Target Taiwan trading date: {outputs['target_date']}")
+    if decision.should_run:
+        print(f"Target Taiwan trading date: {outputs['target_date']}")
+    else:
+        print(f"Schedule gate skipped: {decision.reason}")
     _write_github_outputs(outputs)
 
 
-def fetch_twse_calendar() -> tuple[set[date], set[date]]:
+def fetch_twse_calendar() -> tuple[set[date], set[date] | None]:
     request = Request(TWSE_HOLIDAY_URL, headers={"User-Agent": "AI-stock-rotation-radar/1.0"})
     try:
         with urlopen(request, timeout=30) as response:
             payload = json.load(response)
     except (json.JSONDecodeError, OSError, URLError) as exc:
-        print(f"Warning: failed to load TWSE holiday schedule; falling back to weekday calendar: {exc}")
-        return set(), set()
+        print(f"Warning: failed to load TWSE holiday schedule; skipping scheduled report: {exc}")
+        return set(), None
 
     open_dates: set[date] = set()
     closed_dates: set[date] = set()
@@ -51,16 +72,23 @@ def fetch_twse_calendar() -> tuple[set[date], set[date]]:
         else:
             closed_dates.add(trade_date)
     if not closed_dates:
-        print("Warning: TWSE holiday schedule returned no closed dates; falling back to weekday calendar.")
-        return set(), set()
+        print("Warning: TWSE holiday schedule returned no closed dates; skipping scheduled report.")
+        return set(), None
     return open_dates, closed_dates
 
 
-def target_report_date(now: datetime, open_dates: set[date], closed_dates: set[date]) -> date:
-    candidate = now.date() if now.hour >= 15 else now.date() - timedelta(days=1)
-    while not is_trading_day(candidate, open_dates, closed_dates):
-        candidate -= timedelta(days=1)
-    return candidate
+def evaluate_schedule_gate(
+    now: datetime,
+    open_dates: set[date],
+    closed_dates: set[date] | None,
+) -> ScheduleGateDecision:
+    if closed_dates is None:
+        return ScheduleGateDecision(False, None, "calendar_unavailable")
+    if now.hour < 15:
+        return ScheduleGateDecision(False, None, "before_15_taipei")
+    if not is_trading_day(now.date(), open_dates, closed_dates):
+        return ScheduleGateDecision(False, None, "not_trading_day")
+    return ScheduleGateDecision(True, now.date(), "trading_day_after_15_taipei")
 
 
 def is_trading_day(value: date, open_dates: set[date], closed_dates: set[date]) -> bool:
