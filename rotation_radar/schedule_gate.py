@@ -4,7 +4,7 @@ import argparse
 import json
 import os
 from dataclasses import dataclass
-from datetime import date, datetime, timedelta
+from datetime import date, datetime, time, timedelta
 from pathlib import Path
 from urllib.error import URLError
 from urllib.request import Request, urlopen
@@ -30,14 +30,27 @@ class ScheduleGateDecision:
         return self.target_date.isoformat() if self.target_date else ""
 
 
+@dataclass(frozen=True)
+class ScheduleGateRules:
+    run_after: time = time(15, 0)
+    retry_until_success: bool = True
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Determine the Taiwan trading date whose report still needs publishing.")
     parser.add_argument("--now", help="Optional Asia/Taipei timestamp for validation, e.g. 2026-06-04T15:00:00.")
+    parser.add_argument(
+        "--rules",
+        type=Path,
+        default=None,
+        help="Optional AI_stock_schedule_rules schedule_rules.json path. Defaults to SCHEDULE_RULES_PATH.",
+    )
     args = parser.parse_args()
 
     now = _parse_now(args.now)
+    rules = load_schedule_rules(args.rules)
     open_dates, closed_dates = fetch_twse_calendar()
-    decision = evaluate_schedule_gate(now, open_dates, closed_dates)
+    decision = evaluate_schedule_gate(now, open_dates, closed_dates, rules=rules)
     outputs = {
         "should_run": str(decision.should_run).lower(),
         "target_date": decision.target_date_text,
@@ -49,6 +62,22 @@ def main() -> None:
     else:
         print(f"Schedule gate skipped: {decision.reason}")
     _write_github_outputs(outputs)
+
+
+def load_schedule_rules(path: Path | None = None) -> ScheduleGateRules:
+    raw_path = path or _schedule_rules_path_from_env()
+    if raw_path is None:
+        return ScheduleGateRules()
+    try:
+        payload = json.loads(raw_path.read_text(encoding="utf-8"))
+        daily = payload["profiles"]["daily"]
+        run_after = _parse_hhmm(str(daily.get("run_after", "15:00")))
+        retry_until_success = bool(daily.get("retry_until_success", True))
+    except (OSError, json.JSONDecodeError, KeyError, TypeError, ValueError) as exc:
+        print(f"Warning: failed to load shared schedule rules from {raw_path}; using defaults: {exc}")
+        return ScheduleGateRules()
+    print(f"Loaded shared daily schedule rules from {raw_path}")
+    return ScheduleGateRules(run_after=run_after, retry_until_success=retry_until_success)
 
 
 def fetch_twse_calendar() -> tuple[set[date], set[date] | None]:
@@ -81,15 +110,18 @@ def evaluate_schedule_gate(
     now: datetime,
     open_dates: set[date],
     closed_dates: set[date] | None,
+    *,
+    rules: ScheduleGateRules | None = None,
 ) -> ScheduleGateDecision:
+    rules = rules or ScheduleGateRules()
     if closed_dates is None:
         return ScheduleGateDecision(False, None, "calendar_unavailable")
-    target = _latest_open_report_date(now, open_dates, closed_dates)
+    target = _latest_open_report_date(now, open_dates, closed_dates, rules)
     if target is None:
-        reason = "before_15_taipei" if now.hour < 15 else "not_trading_day"
+        reason = "before_run_after_taipei" if now.time() < rules.run_after else "not_trading_day"
         return ScheduleGateDecision(False, None, reason)
     if target == now.date():
-        return ScheduleGateDecision(True, target, "trading_day_after_15_taipei")
+        return ScheduleGateDecision(True, target, "trading_day_after_run_after_taipei")
     return ScheduleGateDecision(True, target, "retry_previous_trading_day_until_published")
 
 
@@ -99,10 +131,17 @@ def is_trading_day(value: date, open_dates: set[date], closed_dates: set[date]) 
     return value.weekday() < 5 and value not in closed_dates
 
 
-def _latest_open_report_date(now: datetime, open_dates: set[date], closed_dates: set[date]) -> date | None:
+def _latest_open_report_date(
+    now: datetime,
+    open_dates: set[date],
+    closed_dates: set[date],
+    rules: ScheduleGateRules,
+) -> date | None:
     current = now.date()
-    if now.hour >= 15 and is_trading_day(current, open_dates, closed_dates):
+    if now.time() >= rules.run_after and is_trading_day(current, open_dates, closed_dates):
         return current
+    if not rules.retry_until_success:
+        return None
     for offset in range(1, 15):
         candidate = current - timedelta(days=offset)
         if is_trading_day(candidate, open_dates, closed_dates):
@@ -121,6 +160,16 @@ def _parse_roc_date(raw: str) -> date | None:
     if len(raw) != 7 or not raw.isdigit():
         return None
     return date(int(raw[:3]) + 1911, int(raw[3:5]), int(raw[5:7]))
+
+
+def _parse_hhmm(raw: str) -> time:
+    hour, minute = raw.split(":", 1)
+    return time(int(hour), int(minute))
+
+
+def _schedule_rules_path_from_env() -> Path | None:
+    raw_path = os.environ.get("SCHEDULE_RULES_PATH", "").strip()
+    return Path(raw_path) if raw_path else None
 
 
 def _write_github_outputs(outputs: dict[str, str]) -> None:

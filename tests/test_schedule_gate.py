@@ -7,7 +7,13 @@ from io import StringIO
 from pathlib import Path
 from unittest.mock import patch
 
-from rotation_radar.schedule_gate import evaluate_schedule_gate, fetch_twse_calendar, is_trading_day
+from rotation_radar.schedule_gate import (
+    ScheduleGateRules,
+    evaluate_schedule_gate,
+    fetch_twse_calendar,
+    is_trading_day,
+    load_schedule_rules,
+)
 
 
 class ScheduleGateTests(unittest.TestCase):
@@ -21,6 +27,7 @@ class ScheduleGateTests(unittest.TestCase):
         self.assertEqual(before_15.reason, "retry_previous_trading_day_until_published")
         self.assertTrue(after_15.should_run)
         self.assertEqual(after_15.target_date, date(2026, 6, 5))
+        self.assertEqual(after_15.reason, "trading_day_after_run_after_taipei")
         self.assertTrue(weekend.should_run)
         self.assertEqual(weekend.target_date, date(2026, 6, 5))
 
@@ -50,7 +57,38 @@ class ScheduleGateTests(unittest.TestCase):
         decision = evaluate_schedule_gate(datetime(2026, 6, 1, 14, 59), set(), closed_dates)
 
         self.assertFalse(decision.should_run)
-        self.assertEqual(decision.reason, "before_15_taipei")
+        self.assertEqual(decision.reason, "before_run_after_taipei")
+
+    def test_daily_gate_uses_shared_run_after_rule(self) -> None:
+        rules = ScheduleGateRules(run_after=datetime.strptime("16:00", "%H:%M").time())
+        before_shared_time = evaluate_schedule_gate(datetime(2026, 6, 5, 15, 30), set(), set(), rules=rules)
+        after_shared_time = evaluate_schedule_gate(datetime(2026, 6, 5, 16, 0), set(), set(), rules=rules)
+
+        self.assertEqual(before_shared_time.target_date, date(2026, 6, 4))
+        self.assertEqual(before_shared_time.reason, "retry_previous_trading_day_until_published")
+        self.assertEqual(after_shared_time.target_date, date(2026, 6, 5))
+        self.assertEqual(after_shared_time.reason, "trading_day_after_run_after_taipei")
+
+    def test_load_schedule_rules_reads_shared_daily_profile(self) -> None:
+        rules_file = Path("tmp_schedule_rules_test.json")
+        rules_file.write_text(
+            '{"profiles":{"daily":{"run_after":"16:30","retry_until_success":false}}}',
+            encoding="utf-8",
+        )
+        try:
+            rules = load_schedule_rules(rules_file)
+        finally:
+            rules_file.unlink()
+
+        self.assertEqual(rules.run_after, datetime.strptime("16:30", "%H:%M").time())
+        self.assertFalse(rules.retry_until_success)
+
+    def test_daily_gate_respects_retry_until_success_false(self) -> None:
+        rules = ScheduleGateRules(retry_until_success=False)
+        decision = evaluate_schedule_gate(datetime(2026, 6, 6, 15, 0), set(), set(), rules=rules)
+
+        self.assertFalse(decision.should_run)
+        self.assertEqual(decision.reason, "not_trading_day")
 
     def test_open_dates_override_weekend_rule(self) -> None:
         make_up_trading_day = date(2026, 6, 6)
@@ -82,6 +120,8 @@ class ScheduleGateTests(unittest.TestCase):
 
         self.assertIn("echo \"should_run=true\"", workflow)
         self.assertIn("if: steps.report-date.outputs.should_run == 'true'", workflow)
+        self.assertIn("Checkout shared schedule rules", workflow)
+        self.assertIn("SCHEDULE_RULES_PATH:", workflow)
         self.assertIn("Stop scheduled retry after successful trading-date publish", workflow)
         self.assertIn("github.event_name == 'schedule' && steps.daily-publish-marker.outputs.cache-hit == 'true'", workflow)
 

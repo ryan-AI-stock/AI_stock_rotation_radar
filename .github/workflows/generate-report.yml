@@ -51,9 +51,17 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Checkout shared schedule rules
+        uses: actions/checkout@v4
+        with:
+          repository: ryan-AI-stock/AI_stock_schedule_rules
+          path: AI_stock_schedule_rules
+
       - name: Determine target Taiwan trading date
         id: report-date
         shell: bash
+        env:
+          SCHEDULE_RULES_PATH: ${{ github.workspace }}/AI_stock_schedule_rules/schedule_rules.json
         run: |
           set -euo pipefail
           if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ -n "${{ inputs.report_date }}" ]; then
