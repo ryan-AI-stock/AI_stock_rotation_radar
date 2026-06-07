@@ -40,6 +40,9 @@ class HistoricalReplayTests(unittest.TestCase):
             self.assertEqual(missing["fundamental_data_status"], "missing_fundamental_data")
             self.assertTrue(result.manifest_path.exists())
             self.assertTrue(result.coverage_path.exists())
+            self.assertTrue(result.backtest_grade_manifest_path.exists())
+            self.assertTrue(result.backtest_grade_readiness_path.exists())
+            self.assertTrue(result.backtest_grade_daily_coverage_path.exists())
 
             manifest = json.loads(result.manifest_path.read_text(encoding="utf-8"))
             self.assertEqual(manifest["dataset_type"], "historical_replay")
@@ -47,6 +50,26 @@ class HistoricalReplayTests(unittest.TestCase):
             self.assertEqual(manifest["covered_symbol_count"], 2)
             self.assertEqual(manifest["missing_symbol_count"], 1)
             self.assertIn("3333", manifest["missing_symbols"])
+
+            backtest_manifest = json.loads(result.backtest_grade_manifest_path.read_text(encoding="utf-8"))
+            self.assertEqual(backtest_manifest["dataset_type"], "historical_backtest_grade_replay")
+            self.assertEqual(backtest_manifest["dataset_mode"], "backtest_grade_limited_replay")
+            self.assertEqual(backtest_manifest["fundamental_mode"], "limited_baseline_seed_carry_forward")
+            self.assertEqual(backtest_manifest["theme_membership_mode"], "current_static_map")
+            self.assertEqual(backtest_manifest["turnover_mode"], "approximate_close_times_volume")
+            self.assertFalse(backtest_manifest["readiness_summary"]["ready_for_formal_strategy_conclusion"])
+
+            readiness = json.loads(result.backtest_grade_readiness_path.read_text(encoding="utf-8"))
+            self.assertTrue(readiness["ready_for_backtest_lab_ingestion"])
+            self.assertEqual(readiness["readiness_status"], "ready_with_limitations")
+            self.assertEqual(readiness["required_columns_missing_count"], 0)
+            self.assertEqual(readiness["future_fundamental_violation_count"], 0)
+            self.assertIn("2222", readiness["missing_fundamental_symbols"])
+
+            coverage_rows = _read_rows(result.backtest_grade_daily_coverage_path)
+            self.assertEqual(len(coverage_rows), 2)
+            self.assertEqual(coverage_rows[0]["theme_count"], "1")
+            self.assertEqual(coverage_rows[0]["stock_count"], "2")
 
 
 def _write_theme_map(path: Path) -> None:

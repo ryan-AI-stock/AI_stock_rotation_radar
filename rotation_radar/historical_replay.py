@@ -28,6 +28,9 @@ from .radar_snapshot import (
 class HistoricalReplayResult(SnapshotBuildResult):
     manifest_path: Path
     coverage_path: Path
+    backtest_grade_manifest_path: Path
+    backtest_grade_readiness_path: Path
+    backtest_grade_daily_coverage_path: Path
 
 
 @dataclass(frozen=True)
@@ -41,6 +44,30 @@ class ReplayPriceRow:
     @property
     def amount_million(self) -> float:
         return self.close * self.volume / 1_000_000
+
+
+REQUIRED_BACKTEST_COLUMNS = [
+    "date",
+    "theme",
+    "symbol",
+    "name",
+    "theme_rank",
+    "theme_score",
+    "stock_score",
+    "fundamental_score",
+    "risk_heat",
+    "stock_turnover_rank_in_theme",
+    "stock_turnover_share_in_theme",
+    "turnover_value",
+    "capital_share",
+    "bucket",
+    "fundamental_pass",
+    "fundamental_source_date",
+    "theme_leader_flag",
+    "theme_second_line_flag",
+    "theme_laggard_rebound_flag",
+    "overheated_flag",
+]
 
 
 def build_historical_replay_snapshots(
@@ -114,6 +141,9 @@ def build_historical_replay_snapshots(
 
     coverage_path = output / "historical_replay_coverage.csv"
     manifest_path = output / "historical_replay_manifest.json"
+    backtest_grade_manifest_path = output / "historical_backtest_grade_manifest.json"
+    backtest_grade_readiness_path = output / "historical_backtest_grade_readiness.json"
+    backtest_grade_daily_coverage_path = output / "historical_backtest_grade_daily_coverage.csv"
     _write_coverage(
         coverage_path=coverage_path,
         theme_map=theme_map_all,
@@ -134,12 +164,35 @@ def build_historical_replay_snapshots(
         missing_symbols=missing_symbols,
         warnings=warnings,
     )
+    inspection = _inspect_backtest_grade_snapshots(paths)
+    _write_backtest_grade_daily_coverage(backtest_grade_daily_coverage_path, inspection["daily_rows"])
+    _write_backtest_grade_manifest(
+        manifest_path=backtest_grade_manifest_path,
+        readiness_path=backtest_grade_readiness_path,
+        daily_coverage_path=backtest_grade_daily_coverage_path,
+        legacy_manifest_path=manifest_path,
+        price_cache_dir=Path(price_cache_dir),
+        theme_map_path=Path(theme_map_path),
+        stock_metrics_path=Path(stock_metrics_path),
+        output_dir=output,
+        start_date=start_date,
+        end_date=end_date,
+        dates=dates,
+        theme_map=theme_map_all,
+        covered_symbols=covered_symbols,
+        missing_symbols=missing_symbols,
+        inspection=inspection,
+        warnings=warnings,
+    )
 
     return HistoricalReplayResult(
         paths=paths,
         warnings=warnings,
         manifest_path=manifest_path,
         coverage_path=coverage_path,
+        backtest_grade_manifest_path=backtest_grade_manifest_path,
+        backtest_grade_readiness_path=backtest_grade_readiness_path,
+        backtest_grade_daily_coverage_path=backtest_grade_daily_coverage_path,
     )
 
 
@@ -322,3 +375,218 @@ def _write_manifest(
     manifest_path.parent.mkdir(parents=True, exist_ok=True)
     with manifest_path.open("w", encoding="utf-8") as handle:
         json.dump(manifest, handle, ensure_ascii=False, indent=2)
+
+
+def _inspect_backtest_grade_snapshots(paths: list[Path]) -> dict[str, object]:
+    daily_rows: list[dict[str, str | int]] = []
+    missing_required_columns: dict[str, list[str]] = {}
+    future_fundamental_violation_count = 0
+    missing_fundamental_symbols: set[str] = set()
+
+    for path in sorted(paths):
+        with path.open("r", encoding="utf-8-sig", newline="") as handle:
+            reader = csv.DictReader(handle)
+            fieldnames = reader.fieldnames or []
+            missing_columns = [column for column in REQUIRED_BACKTEST_COLUMNS if column not in fieldnames]
+            if missing_columns:
+                missing_required_columns[path.name] = missing_columns
+
+            rows = list(reader)
+
+        date_text = _snapshot_date_from_path(path)
+        themes = {str(row.get("theme", "")) for row in rows if row.get("theme")}
+        symbols = {str(row.get("symbol", "")) for row in rows if row.get("symbol")}
+        fundamental_pass_count = sum(1 for row in rows if str(row.get("fundamental_pass", "")).lower() == "true")
+        missing_fundamental_count = 0
+        future_violations_for_date = 0
+        for row in rows:
+            status = str(row.get("fundamental_data_status", ""))
+            symbol = str(row.get("symbol", ""))
+            if status == "missing_fundamental_data":
+                missing_fundamental_count += 1
+                if symbol:
+                    missing_fundamental_symbols.add(symbol)
+            source_date = _normalize_date(str(row.get("fundamental_source_date", "")))
+            row_date = _normalize_date(str(row.get("date", ""))) or date_text
+            if source_date and row_date and source_date > row_date:
+                future_violations_for_date += 1
+
+        future_fundamental_violation_count += future_violations_for_date
+        daily_rows.append(
+            {
+                "date": date_text,
+                "snapshot_file": path.name,
+                "row_count": len(rows),
+                "theme_count": len(themes),
+                "stock_count": len(symbols),
+                "fundamental_pass_count": fundamental_pass_count,
+                "missing_fundamental_count": missing_fundamental_count,
+                "future_fundamental_violation_count": future_violations_for_date,
+                "missing_required_columns": ";".join(missing_columns),
+            }
+        )
+
+    return {
+        "daily_rows": daily_rows,
+        "missing_required_columns": missing_required_columns,
+        "required_columns_missing_count": sum(len(value) for value in missing_required_columns.values()),
+        "future_fundamental_violation_count": future_fundamental_violation_count,
+        "missing_fundamental_symbols": sorted(missing_fundamental_symbols),
+    }
+
+
+def _write_backtest_grade_daily_coverage(path: Path, rows: object) -> None:
+    fieldnames = [
+        "date",
+        "snapshot_file",
+        "row_count",
+        "theme_count",
+        "stock_count",
+        "fundamental_pass_count",
+        "missing_fundamental_count",
+        "future_fundamental_violation_count",
+        "missing_required_columns",
+    ]
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("w", encoding="utf-8-sig", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerows(rows)  # type: ignore[arg-type]
+
+
+def _write_backtest_grade_manifest(
+    *,
+    manifest_path: Path,
+    readiness_path: Path,
+    daily_coverage_path: Path,
+    legacy_manifest_path: Path,
+    price_cache_dir: Path,
+    theme_map_path: Path,
+    stock_metrics_path: Path,
+    output_dir: Path,
+    start_date: str,
+    end_date: str,
+    dates: list[str],
+    theme_map: list[ThemeMapRow],
+    covered_symbols: set[str],
+    missing_symbols: list[str],
+    inspection: dict[str, object],
+    warnings: list[str],
+) -> None:
+    readiness = _build_backtest_grade_readiness(
+        readiness_path=readiness_path,
+        daily_coverage_path=daily_coverage_path,
+        start_date=start_date,
+        end_date=end_date,
+        dates=dates,
+        missing_symbols=missing_symbols,
+        inspection=inspection,
+        warnings=warnings,
+    )
+    manifest = {
+        "dataset_type": "historical_backtest_grade_replay",
+        "dataset_mode": "backtest_grade_limited_replay",
+        "description": (
+            "Historical radar snapshots for backtest ingestion. This package is schema/readiness checked, "
+            "but it is not a real-time archived daily radar record."
+        ),
+        "requested_start_date": start_date,
+        "requested_end_date": end_date,
+        "actual_start_date": dates[0] if dates else "",
+        "actual_end_date": dates[-1] if dates else "",
+        "snapshot_count": len(dates),
+        "required_columns": REQUIRED_BACKTEST_COLUMNS,
+        "price_source": str(price_cache_dir),
+        "theme_map_path": str(theme_map_path),
+        "stock_metrics_path": str(stock_metrics_path),
+        "output_dir": str(output_dir),
+        "legacy_manifest_path": str(legacy_manifest_path),
+        "readiness_path": str(readiness_path),
+        "daily_coverage_path": str(daily_coverage_path),
+        "fundamental_mode": "limited_baseline_seed_carry_forward",
+        "fundamental_source_rule": "fundamental_source_date <= snapshot date; missing rows fail closed",
+        "theme_membership_mode": "current_static_map",
+        "versioned_theme_membership_available": False,
+        "turnover_mode": "approximate_close_times_volume",
+        "turnover_unit": "TWD million",
+        "theme_rank_method": "replay_final_composite_score",
+        "theme_map_symbol_count": len({row.symbol for row in theme_map}),
+        "covered_symbol_count": len(covered_symbols),
+        "missing_ohlcv_symbol_count": len(missing_symbols),
+        "missing_ohlcv_symbols": missing_symbols,
+        "missing_fundamental_symbol_count": len(readiness["missing_fundamental_symbols"]),
+        "missing_fundamental_symbols": readiness["missing_fundamental_symbols"],
+        "readiness_summary": readiness,
+        "limitations": [
+            "This output is a limited historical replay package, not a real-time archived daily radar history.",
+            "Theme membership uses the current static theme_map.csv and may not reflect historical membership changes.",
+            "Turnover value is approximated from close * volume because the OHLCV cache does not provide official exchange turnover amount.",
+            "Fundamental fields use the configured baseline stock metrics file seeded at the first replay date; missing rows fail closed.",
+            "Formal strategy conclusions should disclose these modes and should not present this as a fully point-in-time historical production feed.",
+        ],
+        "warnings": warnings,
+    }
+    manifest_path.parent.mkdir(parents=True, exist_ok=True)
+    with manifest_path.open("w", encoding="utf-8") as handle:
+        json.dump(manifest, handle, ensure_ascii=False, indent=2)
+    with readiness_path.open("w", encoding="utf-8") as handle:
+        json.dump(readiness, handle, ensure_ascii=False, indent=2)
+
+
+def _build_backtest_grade_readiness(
+    *,
+    readiness_path: Path,
+    daily_coverage_path: Path,
+    start_date: str,
+    end_date: str,
+    dates: list[str],
+    missing_symbols: list[str],
+    inspection: dict[str, object],
+    warnings: list[str],
+) -> dict[str, object]:
+    missing_required_columns = inspection["missing_required_columns"]
+    future_fundamental_violation_count = int(inspection["future_fundamental_violation_count"])
+    daily_rows = inspection["daily_rows"]  # type: ignore[assignment]
+    snapshot_count = len(dates)
+    missing_snapshot_dates = [
+        str(row["date"])
+        for row in daily_rows  # type: ignore[union-attr]
+        if int(row["row_count"]) <= 0
+    ]
+    ready_for_ingestion = (
+        snapshot_count > 0
+        and not missing_snapshot_dates
+        and int(inspection["required_columns_missing_count"]) == 0
+        and future_fundamental_violation_count == 0
+    )
+    status = "ready_with_limitations" if ready_for_ingestion else "not_ready"
+    return {
+        "ready_for_backtest_lab_ingestion": ready_for_ingestion,
+        "ready_for_formal_strategy_conclusion": False,
+        "readiness_status": status,
+        "requested_start_date": start_date,
+        "requested_end_date": end_date,
+        "actual_start_date": dates[0] if dates else "",
+        "actual_end_date": dates[-1] if dates else "",
+        "snapshot_count": snapshot_count,
+        "missing_snapshot_count": len(missing_snapshot_dates),
+        "missing_snapshot_dates": missing_snapshot_dates,
+        "required_columns_missing_count": int(inspection["required_columns_missing_count"]),
+        "missing_required_columns_by_file": missing_required_columns,
+        "future_fundamental_violation_count": future_fundamental_violation_count,
+        "missing_ohlcv_symbol_count": len(missing_symbols),
+        "missing_ohlcv_symbols": missing_symbols,
+        "missing_fundamental_symbol_count": len(inspection["missing_fundamental_symbols"]),  # type: ignore[arg-type]
+        "missing_fundamental_symbols": inspection["missing_fundamental_symbols"],
+        "fundamental_mode": "limited_baseline_seed_carry_forward",
+        "theme_membership_mode": "current_static_map",
+        "turnover_mode": "approximate_close_times_volume",
+        "daily_coverage_path": str(daily_coverage_path),
+        "readiness_path": str(readiness_path),
+        "warnings": warnings,
+    }
+
+
+def _snapshot_date_from_path(path: Path) -> str:
+    stem = path.stem
+    return stem.rsplit("_", 1)[-1] if "_" in stem else ""

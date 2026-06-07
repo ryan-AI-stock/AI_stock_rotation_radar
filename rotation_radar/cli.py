@@ -98,6 +98,9 @@ def main() -> None:
             print(f"Saved {path}")
         print(f"Saved {result.manifest_path}")
         print(f"Saved {result.coverage_path}")
+        print(f"Saved {result.backtest_grade_manifest_path}")
+        print(f"Saved {result.backtest_grade_readiness_path}")
+        print(f"Saved {result.backtest_grade_daily_coverage_path}")
         for warning in result.warnings:
             print(f"Warning: {warning}")
         if not result.paths:
