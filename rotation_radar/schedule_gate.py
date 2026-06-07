@@ -4,7 +4,7 @@ import argparse
 import json
 import os
 from dataclasses import dataclass
-from datetime import date, datetime
+from datetime import date, datetime, timedelta
 from pathlib import Path
 from urllib.error import URLError
 from urllib.request import Request, urlopen
@@ -84,17 +84,30 @@ def evaluate_schedule_gate(
 ) -> ScheduleGateDecision:
     if closed_dates is None:
         return ScheduleGateDecision(False, None, "calendar_unavailable")
-    if now.hour < 15:
-        return ScheduleGateDecision(False, None, "before_15_taipei")
-    if not is_trading_day(now.date(), open_dates, closed_dates):
-        return ScheduleGateDecision(False, None, "not_trading_day")
-    return ScheduleGateDecision(True, now.date(), "trading_day_after_15_taipei")
+    target = _latest_open_report_date(now, open_dates, closed_dates)
+    if target is None:
+        reason = "before_15_taipei" if now.hour < 15 else "not_trading_day"
+        return ScheduleGateDecision(False, None, reason)
+    if target == now.date():
+        return ScheduleGateDecision(True, target, "trading_day_after_15_taipei")
+    return ScheduleGateDecision(True, target, "retry_previous_trading_day_until_published")
 
 
 def is_trading_day(value: date, open_dates: set[date], closed_dates: set[date]) -> bool:
     if value in open_dates:
         return True
     return value.weekday() < 5 and value not in closed_dates
+
+
+def _latest_open_report_date(now: datetime, open_dates: set[date], closed_dates: set[date]) -> date | None:
+    current = now.date()
+    if now.hour >= 15 and is_trading_day(current, open_dates, closed_dates):
+        return current
+    for offset in range(1, 15):
+        candidate = current - timedelta(days=offset)
+        if is_trading_day(candidate, open_dates, closed_dates):
+            return candidate
+    return None
 
 
 def _parse_now(raw: str | None) -> datetime:
