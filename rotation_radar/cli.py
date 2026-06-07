@@ -8,6 +8,7 @@ from zoneinfo import ZoneInfo
 from .daily_pipeline import run_update_latest_report
 from .data_loader import load_dataset, load_sector_metrics, load_stock_metrics
 from .demo_data import demo_sectors, demo_stocks
+from .historical_replay import build_historical_replay_snapshots
 from .metrics_builder import update_sector_metrics_from_stocks, update_stock_metrics_from_processed
 from .models import Report
 from .normalize import normalize_raw_directory
@@ -73,9 +74,35 @@ def main() -> None:
     parser.add_argument("--radar-stock-metrics-file", default="data/stock_metrics.refreshed.csv", help="Stock metrics CSV used for snapshot fundamental fields.")
     parser.add_argument("--radar-baseline-stock-metrics-file", default="data/stock_metrics.csv", help="Baseline stock metrics CSV for dated fundamental seed data.")
     parser.add_argument("--overwrite-radar-snapshots", action="store_true", help="Overwrite existing radar snapshot CSV files.")
+    parser.add_argument("--build-historical-replay-snapshots", action="store_true", help="Build historical replay radar snapshots for backtests only.")
+    parser.add_argument("--replay-price-cache-dir", default="backtest_cache/radar_core_pool_v1_selected_themes", help="OHLCV cache directory for historical replay snapshots.")
+    parser.add_argument("--replay-start-date", default="2022-01-01", help="Historical replay start date, YYYY-MM-DD.")
+    parser.add_argument("--replay-end-date", default="2023-12-31", help="Historical replay end date, YYYY-MM-DD.")
+    parser.add_argument("--replay-output-dir", default="data/history_replay/2022_2023", help="Directory for historical replay radar_snapshot_YYYYMMDD.csv files.")
+    parser.add_argument("--replay-stock-metrics-file", default="data/stock_metrics.csv", help="Baseline stock metrics CSV used for historical replay fundamental fields.")
     parser.add_argument("--output", default="reports/latest.html", help="Output HTML path.")
     parser.add_argument("--run-manifest-output", default="reports/latest_manifest.json", help="Internal JSON run manifest for data quality diagnostics.")
     args = parser.parse_args()
+
+    if args.build_historical_replay_snapshots:
+        result = build_historical_replay_snapshots(
+            price_cache_dir=args.replay_price_cache_dir,
+            theme_map_path=args.theme_map_file,
+            stock_metrics_path=args.replay_stock_metrics_file,
+            output_dir=args.replay_output_dir,
+            start_date=args.replay_start_date,
+            end_date=args.replay_end_date,
+            overwrite_existing=args.overwrite_radar_snapshots,
+        )
+        for path in result.paths:
+            print(f"Saved {path}")
+        print(f"Saved {result.manifest_path}")
+        print(f"Saved {result.coverage_path}")
+        for warning in result.warnings:
+            print(f"Warning: {warning}")
+        if not result.paths:
+            raise SystemExit(1)
+        return
 
     if args.build_radar_snapshots:
         backfill_theme_history_from_processed(
