@@ -22,7 +22,7 @@ def render_report(report: Report) -> str:
 <body>
   <header class="hero">
     <div class="hero-inner">
-      <p class="eyebrow">被AI研究社 | Rotation Radar</p>
+      <p class="eyebrow">被AI研究所 | Rotation Radar</p>
       <h1>股票題材輪動雷達</h1>
       <p class="market-view">{escape(report.market_view)}</p>
       <p class="stamp">產出時間：{escape(report.generated_at)}</p>
