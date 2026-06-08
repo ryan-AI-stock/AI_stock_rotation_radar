@@ -1,7 +1,12 @@
 from __future__ import annotations
 
+import sys
+import tempfile
 import unittest
+from pathlib import Path
+from unittest.mock import patch
 
+from rotation_radar import drive_publish
 from rotation_radar.drive_publish import classify_drive_publish_error, google_oauth_warning_messages, resolve_google_oauth_config
 
 
@@ -48,6 +53,30 @@ class DrivePublishTests(unittest.TestCase):
         for message, expected in cases.items():
             with self.subTest(message=message):
                 self.assertEqual(classify_drive_publish_error(Exception(message)), expected)
+
+    def test_publish_defaults_to_fixed_public_pdf_only(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            html_path = Path(tmp) / "latest.html"
+            html_path.write_text("<html></html>", encoding="utf-8")
+            public_pdf = Path(drive_publish.__file__).resolve().parent.parent / "public_report" / "每日題材輪動雷達.pdf"
+
+            with (
+                patch.object(sys, "argv", ["drive_publish", "--html", str(html_path), "--date", "2026-06-08"]),
+                patch.dict("os.environ", {}, clear=True),
+                patch.object(drive_publish, "render_report_pdf", return_value=public_pdf) as render_pdf,
+                patch.object(drive_publish, "upload_file_to_drive", return_value="https://drive.example/file") as upload_file,
+            ):
+                drive_publish.main()
+
+            render_pdf.assert_called_once_with(html_path, public_pdf)
+            upload_file.assert_called_once()
+            self.assertEqual(upload_file.call_args.args[0], public_pdf)
+            self.assertEqual(upload_file.call_args.kwargs["file_name"], "每日題材輪動雷達.pdf")
+            self.assertTrue(upload_file.call_args.kwargs["make_public"])
+
+    def test_env_flag_accepts_common_true_values(self) -> None:
+        with patch.dict("os.environ", {"ROTATION_ENABLE_DATED_BACKUP": "true"}, clear=True):
+            self.assertTrue(drive_publish._env_flag("ROTATION_ENABLE_DATED_BACKUP"))
 
 
 if __name__ == "__main__":

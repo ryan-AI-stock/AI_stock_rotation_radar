@@ -18,6 +18,7 @@ BACKUP_FOLDER_ID = "1UsIMl0BOH0_K0awNwiQfoJnsCpXyXyMC"
 PUBLIC_FOLDER_ID = "1jSHKWt8KkkewswQfeVyBPFCT7jL1dp8_"
 BACKUP_FILE_TEMPLATE = "每日題材輪動雷達_{date_key}.pdf"
 PUBLIC_FIXED_FILE_NAME = "每日題材輪動雷達.pdf"
+ENABLE_DATED_BACKUP_ENV = "ROTATION_ENABLE_DATED_BACKUP"
 
 
 @dataclass(frozen=True)
@@ -36,7 +37,11 @@ def main() -> None:
     parser.add_argument("--html", default="reports/latest.html", help="Generated HTML report path.")
     parser.add_argument("--date", help="Report date, YYYY-MM-DD. Defaults to current Asia/Taipei date.")
     parser.add_argument("--skip-upload", action="store_true", help="Render PDFs only; do not upload to Google Drive.")
-    parser.add_argument("--skip-public-upload", action="store_true", help="Upload only the dated backup PDF, not the fixed public PDF.")
+    parser.add_argument(
+        "--skip-public-upload",
+        action="store_true",
+        help="Render PDF without updating the fixed public PDF on Drive. Dated backup upload is deprecated and disabled unless ROTATION_ENABLE_DATED_BACKUP=true.",
+    )
     args = parser.parse_args()
 
     html_path = Path(args.html)
@@ -45,41 +50,50 @@ def main() -> None:
 
     report_date = _report_date(args.date)
     date_key = report_date.strftime("%Y%m%d")
+    enable_dated_backup = _env_flag(ENABLE_DATED_BACKUP_ENV)
 
-    backup_pdf = render_report_pdf(html_path, Path("reports") / BACKUP_FILE_TEMPLATE.format(date_key=date_key))
-    if not backup_pdf:
-        raise SystemExit("PDF render failed; aborting Drive publish.")
     public_pdf = Path(__file__).resolve().parent.parent / "public_report" / PUBLIC_FIXED_FILE_NAME
-    public_pdf.parent.mkdir(parents=True, exist_ok=True)
-    shutil.copyfile(backup_pdf, public_pdf)
+    public_pdf = render_report_pdf(html_path, public_pdf)
+    if not public_pdf:
+        raise SystemExit("PDF render failed; aborting Drive publish.")
 
-    print(f"已產生自用備份 PDF：{backup_pdf}")
     print(f"已產生免費觀眾固定 PDF：{public_pdf}")
+    backup_pdf: Path | None = None
+    if enable_dated_backup:
+        # Deprecated: kept only for manual rollback. The default publishing path
+        # now creates a single fixed public PDF for the free audience.
+        backup_pdf = Path(__file__).resolve().parent.parent / "reports" / BACKUP_FILE_TEMPLATE.format(date_key=date_key)
+        backup_pdf.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(public_pdf, backup_pdf)
+        print(f"已產生自用備份 PDF（deprecated）：{backup_pdf}")
+    else:
+        print(f"{ENABLE_DATED_BACKUP_ENV}=false，略過 dated backup PDF：{BACKUP_FILE_TEMPLATE.format(date_key=date_key)}")
     if args.skip_upload:
         print("skip-upload=true，僅產生 PDF，不上傳 Google Drive。")
         return
 
-    backup_folder_id = (
-        os.environ.get("ROTATION_REPORT_DRIVE_FOLDER_ID")
-        or BACKUP_FOLDER_ID
-    )
     public_folder_id = (
         os.environ.get("ROTATION_PUBLIC_REPORT_DRIVE_FOLDER_ID")
         or PUBLIC_FOLDER_ID
     )
     public_file_id = os.environ.get("ROTATION_PUBLIC_REPORT_DRIVE_FILE_ID", "")
 
-    backup_link = upload_file_to_drive(
-        backup_pdf,
-        backup_folder_id,
-        "application/pdf",
-        file_name=backup_pdf.name,
-        make_public=False,
-    )
-    if backup_link:
-        print(f"已上傳或更新自用備份 PDF：{backup_link}")
-    else:
-        raise SystemExit("自用備份 Google Drive PDF 上傳失敗，發布流程中止。")
+    if enable_dated_backup and backup_pdf:
+        backup_folder_id = (
+            os.environ.get("ROTATION_REPORT_DRIVE_FOLDER_ID")
+            or BACKUP_FOLDER_ID
+        )
+        backup_link = upload_file_to_drive(
+            backup_pdf,
+            backup_folder_id,
+            "application/pdf",
+            file_name=backup_pdf.name,
+            make_public=False,
+        )
+        if backup_link:
+            print(f"已上傳或更新自用備份 PDF（deprecated）：{backup_link}")
+        else:
+            raise SystemExit("自用備份 Google Drive PDF 上傳失敗，發布流程中止。")
 
     if args.skip_public_upload:
         print("skip-public-upload=true，略過免費觀眾固定 PDF 上傳。")
@@ -321,6 +335,13 @@ def _report_date(raw: str | None) -> datetime:
     except ValueError as exc:
         raise SystemExit(f"Invalid --date value, expected YYYY-MM-DD: {raw}") from exc
     return parsed.replace(tzinfo=TAIPEI_TZ)
+
+
+def _env_flag(name: str, default: bool = False) -> bool:
+    value = os.environ.get(name)
+    if value is None:
+        return default
+    return value.strip().lower() in {"1", "true", "yes", "y", "on"}
 
 
 if __name__ == "__main__":

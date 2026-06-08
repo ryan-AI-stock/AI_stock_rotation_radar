@@ -24,7 +24,7 @@ on:
           - "false"
           - "true"
       report_drive_folder_id:
-        description: "Optional manual-run Drive folder ID for the dated backup PDF"
+        description: "Deprecated. Dated backup PDF is disabled unless ROTATION_ENABLE_DATED_BACKUP=true."
         required: false
         default: ""
       skip_public_upload:
@@ -157,6 +157,8 @@ jobs:
           GOOGLE_OAUTH_CLIENT_ID: ${{ secrets.GOOGLE_OAUTH_CLIENT_ID }}
           GOOGLE_OAUTH_CLIENT_SECRET: ${{ secrets.GOOGLE_OAUTH_CLIENT_SECRET }}
           GOOGLE_OAUTH_REFRESH_TOKEN: ${{ secrets.GOOGLE_OAUTH_REFRESH_TOKEN }}
+          # Deprecated: keep code path available, but default publishing creates only the fixed free-audience PDF.
+          ROTATION_ENABLE_DATED_BACKUP: ${{ vars.ROTATION_ENABLE_DATED_BACKUP || 'false' }}
           ROTATION_REPORT_DRIVE_FOLDER_ID: ${{ inputs.report_drive_folder_id || secrets.ROTATION_REPORT_DRIVE_FOLDER_ID || vars.ROTATION_REPORT_DRIVE_FOLDER_ID }}
           ROTATION_PUBLIC_REPORT_DRIVE_FOLDER_ID: ${{ vars.ROTATION_PUBLIC_REPORT_DRIVE_FOLDER_ID }}
           ROTATION_PUBLIC_REPORT_DRIVE_FILE_ID: ${{ vars.ROTATION_PUBLIC_REPORT_DRIVE_FILE_ID }}
@@ -176,7 +178,6 @@ jobs:
           name: latest-rotation-report
           path: |
             reports/latest.html
-            reports/*.pdf
             public_report/*.pdf
           if-no-files-found: error
 
