@@ -1,0 +1,66 @@
+{
+  "created_at": "2026-06-08T06:10:16+00:00",
+  "package": "chip_flow_overlay_2021_2023",
+  "status": "overlay_blocked",
+  "target_universe": [
+    {
+      "symbol": "0050",
+      "ticker": "0050.TW",
+      "name": "元大台灣50"
+    },
+    {
+      "symbol": "00631L",
+      "ticker": "00631L.TW",
+      "name": "元大台灣50正2"
+    },
+    {
+      "symbol": "2330",
+      "ticker": "2330.TW",
+      "name": "台積電"
+    },
+    {
+      "symbol": "2454",
+      "ticker": "2454.TW",
+      "name": "聯發科"
+    },
+    {
+      "symbol": "2308",
+      "ticker": "2308.TW",
+      "name": "台達電"
+    },
+    {
+      "symbol": "2317",
+      "ticker": "2317.TW",
+      "name": "鴻海"
+    },
+    {
+      "symbol": "2382",
+      "ticker": "2382.TW",
+      "name": "廣達"
+    },
+    {
+      "symbol": "3231",
+      "ticker": "3231.TW",
+      "name": "緯創"
+    },
+    {
+      "symbol": "6669",
+      "ticker": "6669.TW",
+      "name": "緯穎"
+    }
+  ],
+  "outputs": {
+    "institutional": "data\\formal_sources\\chip_flow_overlay_2021_2023\\institutional_flows_daily_2021_2023.csv",
+    "margin": "data\\formal_sources\\chip_flow_overlay_2021_2023\\margin_short_lending_daily_2021_2023.csv",
+    "day_trading": "data\\formal_sources\\chip_flow_overlay_2021_2023\\day_trading_daily_2021_2023.csv",
+    "sector_peer": "data\\formal_sources\\chip_flow_overlay_2021_2023\\sector_peer_flow_daily_2021_2023.csv",
+    "features": "data\\formal_sources\\chip_flow_overlay_2021_2023\\chip_flow_overlay_features_2021_2023.csv",
+    "readiness": "data\\formal_sources\\chip_flow_overlay_2021_2023\\chip_flow_overlay_readiness.json",
+    "gap": "data\\formal_sources\\chip_flow_overlay_2021_2023\\chip_flow_overlay_gap_report.csv",
+    "manifest": "data\\formal_sources\\chip_flow_overlay_2021_2023\\chip_flow_overlay_manifest.json"
+  },
+  "notes": [
+    "Empty raw CSVs are intentional because formal historical chip-flow sources are not ingested yet.",
+    "Do not use derived daily report snapshot fields as formal raw chip-flow evidence."
+  ]
+}

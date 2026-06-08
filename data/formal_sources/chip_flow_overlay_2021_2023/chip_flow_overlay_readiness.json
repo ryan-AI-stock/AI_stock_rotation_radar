@@ -1,0 +1,26 @@
+{
+  "ready": false,
+  "source_mode": "overlay_blocked",
+  "start_date": "2021-12-01",
+  "end_date": "2023-12-29",
+  "symbol_count": 9,
+  "trading_day_count": 507,
+  "institutional_flow_coverage_ratio": 0.0,
+  "margin_short_coverage_ratio": 0.0,
+  "day_trade_coverage_ratio": 0.0,
+  "sector_peer_flow_coverage_ratio": 0.0,
+  "feature_score_ready": false,
+  "future_data_violation_count": 0,
+  "missing_symbol_date_count": 4563,
+  "blocking_issues": [
+    "institutional_flows_daily_not_ingested",
+    "margin_short_lending_daily_not_ingested",
+    "day_trading_daily_not_ingested",
+    "feature_scores_not_ready"
+  ],
+  "warnings": [
+    "Existing RADAR report-level foreign_5d, trust_5d, and margin_change_5d are derived snapshot fields and are not used as raw formal overlay sources.",
+    "ETF rows may require separate handling because exchange chip-flow datasets may not expose ETF-equivalent fields in the same format.",
+    "This package is a formal gap audit for BACKTEST_LAB shadow overlay v1, not an overlay-ready feature table."
+  ]
+}
