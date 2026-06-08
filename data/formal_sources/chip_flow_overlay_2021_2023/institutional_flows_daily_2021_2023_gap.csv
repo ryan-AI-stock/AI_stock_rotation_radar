@@ -1,0 +1,2 @@
+﻿symbol,ticker,name,date,missing_reason,source_url,blocking,checked_at
+6669,6669.TW,緯穎,2023-03-27,missing_twse_t86_target_symbol_row,https://www.twse.com.tw/rwd/zh/fund/T86?date=20230327&selectType=ALLBUT0999&response=json,yes,2026-06-08T07:07:04+00:00
