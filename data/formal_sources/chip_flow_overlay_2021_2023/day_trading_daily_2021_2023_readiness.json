@@ -1,0 +1,23 @@
+{
+  "ready": true,
+  "source_mode": "day_trading_ready",
+  "start_date": "2021-12-01",
+  "end_date": "2023-12-29",
+  "target_symbol_count": 9,
+  "covered_symbol_count": 9,
+  "trading_day_count": 507,
+  "expected_symbol_date_count": 4563,
+  "day_trading_row_count": 4507,
+  "coverage_ratio": 0.98772737,
+  "stock_coverage_ratio": 0.9870386,
+  "etf_gap_count": 10,
+  "stock_gap_count": 46,
+  "future_data_violation_count": 0,
+  "blocking_issues": [],
+  "warnings": [
+    "TWSE TWTB4U official source provides day-trading total volume, buy amount, and sell amount; it does not split buy/sell volume, so day_trading_buy_volume and day_trading_sell_volume are left blank instead of estimating values.",
+    "day_trading_volume_ratio uses TWSE STOCK_DAY total trading volume as denominator.",
+    "ETF rows are tracked and gap-reported separately; ETF gaps do not block the 7-stock overlay v1 readiness.",
+    "22 rows are missing STOCK_DAY total trading volume denominator; ratio fields are blank for those rows."
+  ]
+}
