@@ -1,0 +1,9 @@
+symbol,name,theme,effective_start,effective_end,source_date,source_type,source_url,confidence,notes
+2337,旺宏,記憶體,2022-05-04,,2022-05-04,company_annual_report,https://www.mxic.com.tw/zh-tw/about/investor-relations/Documents/annualreport_2021_chinese.pdf,high,2021 annual report identifies Macronix memory and NOR Flash business
+2344,華邦電,記憶體,2022-02-11,,2022-02-11,company_news_release,https://www.winbond.com/hq/about-winbond/news-and-events/news/news00314.html?__locale=uk,high,Official 2021 results separate Flash Memory and DRAM revenue
+2408,南亞科,記憶體,2021-10-08,,2021-10-08,dated_news_article,https://www.cna.com.tw/news/afe/202110080201.aspx,medium,Dated coverage identifies Nanya as DRAM memory company
+3006,晶豪科,記憶體,2021-11-02,,2021-11-02,dated_news_article,https://www.chinatimes.com/newspapers/20211102000204-260206,medium,Dated coverage identifies ESMT as niche memory supplier and SoC memory business
+3260,威剛,記憶體,2021-08-04,,2021-08-04,dated_news_article,https://anuenews.cnyes.com/news/id/4693941,medium,Dated coverage identifies ADATA as memory module company
+6770,力積電,記憶體,2021-11-23,,2021-11-23,underwriting_prospectus,https://www.entrust.com.tw/upload/entrust/otherInfo/202111_6770_B04_20211123_145107.pdf,medium,Underwriting document discusses PSMC memory products and DRAM exposure
+8271,宇瞻,記憶體,2021-01-13,,2021-01-13,dated_news_article,https://www.moneydj.com/kmdj/news/newsviewer.aspx?a=5a21fc0d-753c-4e45-aa43-88794bd9a32e,medium,Dated coverage identifies Apacer as industrial memory brand and memory module maker
+8299,群聯,記憶體,2021-08-17,,2021-08-17,dated_news_article,https://www.moneydj.com/kmdj/news/newsviewer.aspx?a=c17b67ee-46d2-48a8-934e-4e82ebdd4eb2,medium,Dated coverage identifies Phison as NAND controller IC and NAND storage solution supplier

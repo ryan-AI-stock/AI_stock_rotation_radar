@@ -49,10 +49,20 @@ def validate_date_aware_theme_membership(
     output_path: str | Path,
     gap_report_path: str | Path,
     theme_map_path: str | Path | None = None,
+    theme: str | None = None,
+    target_symbols: set[str] | None = None,
 ) -> dict[str, Any]:
     formal_universe = load_formal_universe(formal_universe_path)
+    if theme:
+        formal_universe = [item for item in formal_universe if item.current_theme == theme]
+    if target_symbols is not None:
+        formal_universe = [item for item in formal_universe if item.symbol in target_symbols]
     current_theme_by_symbol = load_current_theme_map(theme_map_path) if theme_map_path else {}
     membership_rows = _read_membership_rows(Path(membership_file))
+    if theme:
+        membership_rows = [row for row in membership_rows if row.get("theme") == theme]
+    if target_symbols is not None:
+        membership_rows = [row for row in membership_rows if row.get("symbol") in target_symbols]
     usable_rows, invalid_rows = classify_membership_rows(membership_rows)
 
     usable_by_symbol: dict[str, dict[str, str]] = {}
@@ -74,6 +84,7 @@ def validate_date_aware_theme_membership(
         usable_by_symbol=usable_by_symbol,
         invalid_rows=invalid_rows,
         gap_rows=gap_rows,
+        theme=theme,
     )
 
     _write_rows(Path(gap_report_path), GAP_FIELDS, gap_rows)
@@ -191,6 +202,7 @@ def build_readiness(
     usable_by_symbol: dict[str, dict[str, str]],
     invalid_rows: list[dict[str, str]],
     gap_rows: list[dict[str, str]],
+    theme: str | None = None,
 ) -> dict[str, Any]:
     formal_count = len(formal_universe)
     row_count = len(usable_by_symbol)
@@ -216,7 +228,9 @@ def build_readiness(
 
     return {
         "ready": source_mode in {"date_aware", "date_aware_partial"},
+        "theme": theme or "",
         "source_mode": source_mode,
+        "target_symbol_count": formal_count,
         "formal_universe_symbol_count": formal_count,
         "date_aware_row_count": row_count,
         "coverage_ratio": round(coverage_ratio, 8),

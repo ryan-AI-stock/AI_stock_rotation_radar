@@ -1,0 +1,22 @@
+{
+  "ready": true,
+  "theme": "記憶體",
+  "source_mode": "date_aware_partial",
+  "target_symbol_count": 9,
+  "formal_universe_symbol_count": 9,
+  "date_aware_row_count": 8,
+  "coverage_ratio": 0.88888889,
+  "high_confidence_count": 2,
+  "medium_confidence_count": 6,
+  "low_confidence_count": 0,
+  "static_only_count": 1,
+  "invalid_row_count": 0,
+  "blocking_issues": [
+    "theme_membership_gap_report_not_empty"
+  ],
+  "source_notes": [
+    "Rows sourced only from the current static theme_map.csv are not counted as date-aware evidence.",
+    "A usable row must include effective_start, source_date, non-static source_type, source_url, and high/medium/low confidence.",
+    "current_static_map_blocked means formal replay must remain research-only for theme membership until dated evidence is added."
+  ]
+}
