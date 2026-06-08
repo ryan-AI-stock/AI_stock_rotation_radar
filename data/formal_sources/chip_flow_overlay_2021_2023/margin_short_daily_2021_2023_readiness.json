@@ -1,0 +1,21 @@
+{
+  "ready": true,
+  "source_mode": "margin_short_ready",
+  "start_date": "2021-12-01",
+  "end_date": "2023-12-29",
+  "target_symbol_count": 9,
+  "covered_symbol_count": 9,
+  "trading_day_count": 507,
+  "expected_symbol_date_count": 4563,
+  "margin_short_row_count": 4563,
+  "coverage_ratio": 1.0,
+  "stock_coverage_ratio": 1.0,
+  "etf_gap_count": 0,
+  "stock_gap_count": 0,
+  "future_data_violation_count": 0,
+  "blocking_issues": [],
+  "warnings": [
+    "TWSE MI_MARGN official source provides margin and short-selling balances in shares/lots, not securities lending balance; securities_lending_* fields are left blank instead of estimating or fabricating values.",
+    "ETF rows are tracked and gap-reported separately; ETF gaps do not block the 7-stock overlay v1 readiness."
+  ]
+}

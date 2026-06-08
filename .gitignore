@@ -10,3 +10,4 @@ data/*.refreshed.csv
 data/formal_sources/raw_official_turnover_cache/
 data/formal_sources/raw_monthly_revenue_cache/
 data/formal_sources/chip_flow_overlay_2021_2023/raw_twse_t86_cache/
+data/formal_sources/chip_flow_overlay_2021_2023/raw_twse_margin_cache/
