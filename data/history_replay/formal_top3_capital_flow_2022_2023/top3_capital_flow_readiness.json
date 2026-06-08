@@ -1,0 +1,25 @@
+{
+  "ready": false,
+  "source_mode": "formal_blocked",
+  "start_date": "2022-01-03",
+  "end_date": "2023-12-29",
+  "trading_day_count": 485,
+  "dates_with_top3_theme_count": 0,
+  "candidate_row_count": 0,
+  "theme_membership_coverage_ratio": 0.0,
+  "official_turnover_coverage_ratio": 0.99868508,
+  "fundamental_coverage_ratio": 1.0,
+  "future_data_violation_count": 0,
+  "missing_top3_theme_date_count": 485,
+  "missing_candidate_date_count": 485,
+  "blocking_issues": [
+    "date_aware_theme_membership_full_universe_blocked",
+    "top3_theme_ranking_not_generated_due_to_membership_block",
+    "candidate_pool_not_generated_due_to_membership_block"
+  ],
+  "warnings": [
+    "formal_ready is blocked because full-universe date-aware theme membership is unavailable.",
+    "official turnover and PIT monthly revenue sources are ready enough for ingestion, but theme membership remains the gating source.",
+    "memory date-aware membership v1 is partial and cannot be generalized to all top3 capital-flow themes."
+  ]
+}

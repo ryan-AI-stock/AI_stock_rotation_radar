@@ -1,0 +1,26 @@
+{
+  "created_at": "2026-06-08T05:21:51+00:00",
+  "package": "formal_top3_capital_flow_2022_2023",
+  "status": "formal_blocked",
+  "start_date": "2022-01-03",
+  "end_date": "2023-12-29",
+  "inputs": {
+    "official_turnover_file": "data/formal_sources/official_turnover_20211201_20231231.csv",
+    "official_turnover_readiness": "data/formal_sources/official_turnover_v1_readiness.json",
+    "fundamental_readiness": "data/formal_sources/point_in_time_revenue_v1_readiness.json",
+    "theme_membership_readiness": "data/formal_sources/date_aware_theme_membership_v1_readiness.json",
+    "memory_theme_membership_readiness": "data/formal_sources/date_aware_theme_membership_memory_v1_readiness.json"
+  },
+  "outputs": {
+    "daily_ranking": "data\\history_replay\\formal_top3_capital_flow_2022_2023\\top3_theme_daily_ranking_2022_2023.csv",
+    "candidates": "data\\history_replay\\formal_top3_capital_flow_2022_2023\\top3_theme_stock_candidates_2022_2023.csv",
+    "snapshot": "data\\history_replay\\formal_top3_capital_flow_2022_2023\\top3_capital_flow_snapshot_2022_2023.csv",
+    "readiness": "data\\history_replay\\formal_top3_capital_flow_2022_2023\\top3_capital_flow_readiness.json",
+    "gap": "data\\history_replay\\formal_top3_capital_flow_2022_2023\\top3_capital_flow_gap_report.csv",
+    "manifest": "data\\history_replay\\formal_top3_capital_flow_2022_2023\\top3_capital_flow_manifest.json"
+  },
+  "notes": [
+    "Empty ranking/candidate/snapshot CSVs are intentional for formal_blocked status.",
+    "Do not downgrade this package to research-only without an explicit downstream decision."
+  ]
+}
