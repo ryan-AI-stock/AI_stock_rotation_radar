@@ -1,0 +1,19 @@
+{
+  "ready": false,
+  "source_mode": "date_aware_full_blocked",
+  "start_date": "2022-01-03",
+  "end_date": "2023-12-29",
+  "formal_universe_symbol_count": 69,
+  "date_aware_row_count": 8,
+  "gap_symbol_count": 61,
+  "coverage_ratio": 0.11594203,
+  "future_data_violation_count": 0,
+  "blocking_issues": [
+    "date_aware_theme_membership_full_universe_incomplete"
+  ],
+  "warnings": [
+    "Only symbols with dated evidence are usable for formal top3 replay.",
+    "The remaining symbols require manual dated evidence collection; current static theme_map.csv is research-only.",
+    "Formal top3 capital-flow package must remain formal_blocked until full-universe membership coverage is sufficient."
+  ]
+}

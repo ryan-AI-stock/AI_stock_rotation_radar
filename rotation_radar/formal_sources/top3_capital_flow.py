@@ -106,7 +106,7 @@ def build_formal_top3_capital_flow_package(
     official_turnover_file: str | Path = "data/formal_sources/official_turnover_20211201_20231231.csv",
     official_turnover_readiness: str | Path = "data/formal_sources/official_turnover_v1_readiness.json",
     fundamental_readiness: str | Path = "data/formal_sources/point_in_time_revenue_v1_readiness.json",
-    theme_membership_readiness: str | Path = "data/formal_sources/date_aware_theme_membership_v1_readiness.json",
+    theme_membership_readiness: str | Path = "data/formal_sources/date_aware_theme_membership_full_2022_2023_readiness.json",
     memory_theme_membership_readiness: str | Path = "data/formal_sources/date_aware_theme_membership_memory_v1_readiness.json",
 ) -> dict[str, Any]:
     output = Path(output_dir)
@@ -136,9 +136,9 @@ def build_formal_top3_capital_flow_package(
             "current_mode": str(theme_ready.get("source_mode", "")),
             "affected_date_start": start_date,
             "affected_date_end": end_date,
-            "affected_count": str(theme_ready.get("static_only_count", "")),
+            "affected_count": str(theme_ready.get("gap_symbol_count", theme_ready.get("static_only_count", ""))),
             "evidence_path": str(theme_membership_readiness),
-            "reason": "Full-universe top3 capital flow replay cannot use current static theme_map.csv as historical theme membership evidence.",
+            "reason": "Full-universe top3 capital flow replay requires near-complete date-aware theme membership; current full package is still blocked.",
             "next_action": "Build date-aware membership evidence for all themes and symbols used by the formal universe.",
         },
         {
