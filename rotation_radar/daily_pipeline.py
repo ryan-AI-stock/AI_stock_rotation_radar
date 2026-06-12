@@ -10,6 +10,7 @@ from .cache_policy import is_fresh
 from .data_quality import load_quote_snapshot, quote_date_mismatch_message
 from .data_loader import load_sector_metrics, load_stock_metrics
 from .deep_metrics import build_hot_stock_deep_metrics, merge_deep_metrics_into_stock_metrics
+from .formal_candidate_export import write_formal_radar_candidates
 from .logging_utils import log_status
 from .market_universe import MarketUniverseFetchError, build_fallback_universe_from_theme_map, build_market_universe
 from .normalize import normalize_raw_directory
@@ -104,6 +105,11 @@ def run_update_latest_report(args, write_report: ReportWriter) -> None:
     sectors = load_sector_metrics(generated_sector_path)
     stocks = load_stock_metrics(refreshed_path)
     candidate_symbols = {stock.symbol for stock in stocks}
+    formal_candidates_path = write_formal_radar_candidates(
+        stocks=stocks,
+        report_date=args.report_date or quote_snapshot.normalized_date,
+    )
+    print(f"Saved {formal_candidates_path}")
     price_refresh_status = "attempted"
     _refresh_recent_price_snapshots(args, paths, options, required_symbols=candidate_symbols)
     theme_history_path = backfill_theme_history_from_processed(
@@ -161,6 +167,7 @@ def run_update_latest_report(args, write_report: ReportWriter) -> None:
             market_quotes_path=market_quotes_path,
             sector_metrics_path=generated_sector_path,
             stock_metrics_path=refreshed_path,
+            formal_candidates_path=formal_candidates_path,
             price_history_path=paths.price_history,
             depth_refresh_status=depth_refresh_status,
             price_refresh_status=price_refresh_status,

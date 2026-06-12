@@ -53,6 +53,9 @@ class LatestReportFlowTests(unittest.TestCase):
             merge_deep_metrics = stack.enter_context(patch.object(pipeline, "merge_deep_metrics_into_stock_metrics"))
             stack.enter_context(patch.object(pipeline, "load_sector_metrics", return_value=["sector"]))
             stack.enter_context(patch.object(pipeline, "load_stock_metrics", return_value=[stock]))
+            write_formal_candidates = stack.enter_context(
+                patch.object(pipeline, "write_formal_radar_candidates", return_value=Path("formal_candidates.csv"))
+            )
             refresh_prices = stack.enter_context(patch.object(pipeline, "_refresh_recent_price_snapshots"))
             backfill_theme_history = stack.enter_context(
                 patch.object(pipeline, "backfill_theme_history_from_processed", return_value=Path("theme_history.csv"))
@@ -74,6 +77,9 @@ class LatestReportFlowTests(unittest.TestCase):
             refresh_depth.assert_not_called()
             build_candidates.assert_called_once()
             merge_deep_metrics.assert_called_once()
+            write_formal_candidates.assert_called_once()
+            self.assertEqual(write_formal_candidates.call_args.kwargs["stocks"], [stock])
+            self.assertEqual(write_formal_candidates.call_args.kwargs["report_date"], "2026-06-04")
             refresh_prices.assert_called_once()
             self.assertEqual(refresh_prices.call_args.kwargs["required_symbols"], {"2330"})
             self.assertEqual(backfill_theme_history.call_args.kwargs["keep_days"], 20)
@@ -88,6 +94,7 @@ class LatestReportFlowTests(unittest.TestCase):
             manifest = write_run_manifest.call_args.args[1]
             self.assertEqual(manifest["report_date"], "2026-06-04")
             self.assertEqual(manifest["quote_date"], "2026-06-04")
+            self.assertEqual(manifest["outputs"]["formal_candidates"], "formal_candidates.csv")
             self.assertEqual(manifest["refresh_status"]["depth"], "skipped")
             self.assertEqual(manifest["refresh_status"]["price"], "attempted")
             self.assertEqual(manifest["refresh_status"]["candidate_symbol_count"], 1)

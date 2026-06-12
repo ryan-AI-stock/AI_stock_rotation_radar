@@ -25,6 +25,7 @@ def build_daily_run_manifest(
     market_quotes_path: str | Path,
     sector_metrics_path: str | Path,
     stock_metrics_path: str | Path,
+    formal_candidates_path: str | Path,
     price_history_path: str | Path,
     depth_refresh_status: str,
     price_refresh_status: str,
@@ -43,6 +44,7 @@ def build_daily_run_manifest(
             "market_quotes": str(market_quotes_path),
             "sector_metrics": str(sector_metrics_path),
             "stock_metrics": str(stock_metrics_path),
+            "formal_candidates": str(formal_candidates_path),
             "price_history": str(price_history_path),
         },
         "refresh_status": {

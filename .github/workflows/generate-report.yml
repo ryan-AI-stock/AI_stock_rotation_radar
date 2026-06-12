@@ -44,6 +44,8 @@ jobs:
   generate-report:
     runs-on: ubuntu-latest
     timeout-minutes: 20
+    permissions:
+      contents: write
     env:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
@@ -151,6 +153,25 @@ jobs:
 
           python -m rotation_radar.cli "${args[@]}"
 
+      - name: Commit formal radar candidate interface
+        if: steps.report-date.outputs.should_run == 'true' && (github.event_name == 'workflow_dispatch' || steps.daily-publish-marker.outputs.cache-hit != 'true')
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ ! -f data/formal_radar_candidates.latest.csv ]; then
+            echo "Missing data/formal_radar_candidates.latest.csv"
+            exit 1
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/formal_radar_candidates.latest.csv
+          if git diff --cached --quiet; then
+            echo "Formal radar candidate interface unchanged."
+          else
+            git commit -m "Update formal radar candidates"
+            git push
+          fi
+
       - name: Publish PDFs to Google Drive
         if: steps.report-date.outputs.should_run == 'true' && (github.event_name == 'workflow_dispatch' || steps.daily-publish-marker.outputs.cache-hit != 'true')
         env:
@@ -189,6 +210,7 @@ jobs:
           path: |
             data/*.generated.csv
             data/*.refreshed.csv
+            data/formal_radar_candidates.latest.csv
             data/history/*.csv
           if-no-files-found: ignore
 

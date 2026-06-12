@@ -20,6 +20,7 @@ class RunManifestTests(unittest.TestCase):
             market_quotes_path="data/market_quotes.generated.csv",
             sector_metrics_path="data/sector_metrics.refreshed.csv",
             stock_metrics_path="data/stock_metrics.refreshed.csv",
+            formal_candidates_path="data/formal_radar_candidates.latest.csv",
             price_history_path="data/price_history.csv",
             depth_refresh_status="skipped",
             price_refresh_status="attempted",
@@ -32,6 +33,7 @@ class RunManifestTests(unittest.TestCase):
         self.assertEqual(manifest["report_date"], "2026-06-04")
         self.assertEqual(manifest["quote_date"], "2026-06-04")
         self.assertEqual(manifest["outputs"]["html"], "reports/latest.html")
+        self.assertEqual(manifest["outputs"]["formal_candidates"], "data/formal_radar_candidates.latest.csv")
         self.assertEqual(manifest["refresh_status"]["depth"], "skipped")
         self.assertEqual(manifest["refresh_status"]["candidate_symbol_count"], 3)
         self.assertEqual(manifest["warnings"], ["missing price snapshot files: processed_data/20260604"])
