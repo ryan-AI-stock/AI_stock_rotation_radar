@@ -7,6 +7,7 @@ from pathlib import Path
 from unittest.mock import patch
 
 from rotation_radar.valuation_backfill import backfill_stock_valuations
+from rotation_radar.valuation_backfill import fetch_exchange_pe_ratios
 
 
 class ValuationBackfillTests(unittest.TestCase):
@@ -64,6 +65,23 @@ class ValuationBackfillTests(unittest.TestCase):
             self.assertEqual(result.filled_pe_count, 0)
             self.assertEqual(result.missing_pe_symbols, ("3006",))
             self.assertEqual(rows["3006"]["pe"], "0")
+
+    def test_keeps_partial_exchange_values_when_other_market_fails(self) -> None:
+        market_by_symbol = {"3006": "TWSE", "3227": "TPEx"}
+
+        with patch("rotation_radar.valuation_backfill._fetch_twse_pe", return_value={"3006": 13.12}):
+            with patch("rotation_radar.valuation_backfill._fetch_tpex_pe", side_effect=OSError("HTTP Error 307")):
+                values = fetch_exchange_pe_ratios(market_by_symbol=market_by_symbol, report_date="2026-06-17")
+
+        self.assertEqual(values, {"3006": 13.12})
+
+    def test_raises_when_all_exchange_sources_fail(self) -> None:
+        market_by_symbol = {"3006": "TWSE", "3227": "TPEx"}
+
+        with patch("rotation_radar.valuation_backfill._fetch_twse_pe", side_effect=OSError("TWSE down")):
+            with patch("rotation_radar.valuation_backfill._fetch_tpex_pe", side_effect=OSError("TPEx down")):
+                with self.assertRaises(OSError):
+                    fetch_exchange_pe_ratios(market_by_symbol=market_by_symbol, report_date="2026-06-17")
 
 
 def _write_csv(path: Path, fieldnames, rows: list[dict[str, str]]) -> None:

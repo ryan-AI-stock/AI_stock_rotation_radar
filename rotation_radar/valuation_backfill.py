@@ -5,7 +5,9 @@ import json
 from dataclasses import dataclass
 from datetime import date
 from pathlib import Path
+from urllib.error import HTTPError
 from urllib.parse import urlencode
+from urllib.parse import urljoin
 from urllib.request import Request, urlopen
 
 
@@ -96,10 +98,19 @@ def fetch_exchange_pe_ratios(
     report_date: str | None = None,
 ) -> dict[str, float]:
     result: dict[str, float] = {}
+    errors: list[str] = []
     if any(market == "TWSE" for market in market_by_symbol.values()):
-        result.update(_fetch_twse_pe(report_date))
+        try:
+            result.update(_fetch_twse_pe(report_date))
+        except OSError as exc:
+            errors.append(f"TWSE: {exc}")
     if any(market == "TPEx" for market in market_by_symbol.values()):
-        result.update(_fetch_tpex_pe())
+        try:
+            result.update(_fetch_tpex_pe())
+        except OSError as exc:
+            errors.append(f"TPEx: {exc}")
+    if errors and not result:
+        raise OSError("; ".join(errors))
     return result
 
 
@@ -151,7 +162,7 @@ def _fetch_tpex_pe() -> dict[str, float]:
     return output
 
 
-def _fetch_json(url: str):
+def _fetch_json(url: str, *, redirects_remaining: int = 3):
     request = Request(
         url,
         headers={
@@ -159,8 +170,15 @@ def _fetch_json(url: str):
             "Accept": "application/json,text/plain,*/*",
         },
     )
-    with urlopen(request, timeout=30) as response:
-        return json.loads(response.read().decode("utf-8-sig"))
+    try:
+        with urlopen(request, timeout=30) as response:
+            return json.loads(response.read().decode("utf-8-sig"))
+    except HTTPError as exc:
+        if exc.code in {301, 302, 303, 307, 308} and redirects_remaining > 0:
+            location = exc.headers.get("Location")
+            if location:
+                return _fetch_json(urljoin(url, location), redirects_remaining=redirects_remaining - 1)
+        raise
 
 
 def _refresh_sector_pe_ranges(rows: list[dict[str, str]]) -> None:
