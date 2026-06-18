@@ -17,7 +17,7 @@ from .normalize import normalize_raw_directory
 from .pipeline_settings import PipelineOptions, PipelinePaths
 from .price_history import build_price_history_from_processed, load_price_history
 from .public_sources import fetch_raw_market_snapshots, fetch_raw_price_snapshots, parse_trade_date, recent_weekdays
-from .quote_refresh import refresh_market_quotes, refresh_stock_metrics_quotes
+from .quote_refresh import build_market_quotes_from_processed_prices, refresh_market_quotes, refresh_stock_metrics_quotes
 from .radar_snapshot import build_radar_snapshots
 from .run_manifest import build_daily_run_manifest, write_run_manifest
 from .sector_metrics_builder import build_sector_metrics_from_market_quotes
@@ -38,7 +38,7 @@ def run_update_latest_report(args, write_report: ReportWriter) -> None:
     print(f"Saved {sector_path}")
 
     refreshed_path = paths.refreshed_stock_metrics
-    market_quotes_path = _ensure_market_quotes(paths, options)
+    market_quotes_path = _ensure_market_quotes(args, paths, options)
     quote_snapshot = load_quote_snapshot(market_quotes_path)
     if args.report_date and quote_snapshot.normalized_date != args.report_date:
         raise SystemExit(quote_date_mismatch_message(quote_snapshot, args.report_date))
@@ -215,8 +215,10 @@ def _ensure_market_universe(args, paths: PipelinePaths, options: PipelineOptions
         )
 
 
-def _ensure_market_quotes(paths: PipelinePaths, options: PipelineOptions) -> Path:
+def _ensure_market_quotes(args, paths: PipelinePaths, options: PipelineOptions) -> Path:
     market_quotes_path = paths.market_quotes
+    if args.report_date:
+        return _ensure_target_date_market_quotes(args, paths)
     if (
         options.sector_scan_max_age_days > 0
         and not options.force_sector_scan
@@ -226,6 +228,33 @@ def _ensure_market_quotes(paths: PipelinePaths, options: PipelineOptions) -> Pat
     return refresh_market_quotes(
         sector_map_path=paths.sector_map,
         output_path=paths.market_quotes,
+    )
+
+
+def _ensure_target_date_market_quotes(args, paths: PipelinePaths) -> Path:
+    trade_date = parse_trade_date(args.report_date)
+    ymd = trade_date.strftime("%Y%m%d")
+    processed_dir = paths.processed_root / ymd
+    if not _has_price_snapshot_files(processed_dir):
+        saved_raw, errors = fetch_raw_price_snapshots(trade_date, paths.raw_root, force=True)
+        for path in saved_raw:
+            print(f"Saved {path}")
+        for error in errors:
+            print(f"Warning: {error}")
+
+        raw_dir = paths.raw_root / ymd
+        if raw_dir.exists():
+            for path in normalize_raw_directory(raw_dir, processed_dir):
+                print(f"Saved {path}")
+
+    if not _has_price_snapshot_files(processed_dir):
+        raise SystemExit(f"Target report date {args.report_date} price snapshots are not ready; retry later.")
+
+    return build_market_quotes_from_processed_prices(
+        processed_dir=processed_dir,
+        sector_map_path=paths.sector_map,
+        output_path=paths.market_quotes,
+        quote_date=ymd,
     )
 
 

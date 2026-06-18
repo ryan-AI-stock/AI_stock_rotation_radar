@@ -3,6 +3,7 @@ from __future__ import annotations
 import csv
 import json
 import shutil
+import re
 from pathlib import Path
 from urllib.parse import quote
 from urllib.request import Request, urlopen
@@ -131,6 +132,74 @@ def refresh_market_quotes(
     return path
 
 
+def build_market_quotes_from_processed_prices(
+    *,
+    processed_dir: str | Path,
+    sector_map_path: str | Path,
+    output_path: str | Path,
+    quote_date: str,
+) -> Path:
+    sector_rows = _read_csv(sector_map_path)
+    sector_by_symbol = {row["symbol"]: row for row in sector_rows}
+    quote_rows: list[dict[str, str]] = []
+    for csv_path in sorted(Path(processed_dir).glob("*prices*.csv")):
+        for row in _read_csv(csv_path):
+            symbol = (row.get("證券代號") or row.get("代號") or "").strip()
+            if symbol not in sector_by_symbol:
+                continue
+            quote = _quote_from_processed_row(row)
+            if quote is None:
+                continue
+            sector_row = sector_by_symbol[symbol]
+            quote_rows.append(
+                {
+                    "sector": sector_row["sector"],
+                    "symbol": symbol,
+                    "name": sector_row["name"],
+                    "market": sector_row.get("market", "").strip() or _market_from_processed_path(csv_path),
+                    "price": _format_number(quote["price"]),
+                    "previous_close": _format_number(quote["previous_close"]),
+                    "change_pct": _format_number(quote["change_pct"]),
+                    "open": _format_number(quote["open"]),
+                    "high": _format_number(quote["high"]),
+                    "low": _format_number(quote["low"]),
+                    "volume_lots": _format_number(quote["volume_lots"]),
+                    "amount_million": _format_number(quote["amount_million"]),
+                    "quote_date": quote_date,
+                    "quote_time": "close",
+                }
+            )
+
+    if not quote_rows:
+        raise RuntimeError(f"No processed price rows found for {quote_date} in {processed_dir}")
+
+    path = Path(output_path)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("w", encoding="utf-8-sig", newline="") as handle:
+        writer = csv.DictWriter(
+            handle,
+            fieldnames=[
+                "sector",
+                "symbol",
+                "name",
+                "market",
+                "price",
+                "previous_close",
+                "change_pct",
+                "open",
+                "high",
+                "low",
+                "volume_lots",
+                "amount_million",
+                "quote_date",
+                "quote_time",
+            ],
+        )
+        writer.writeheader()
+        writer.writerows(sorted(quote_rows, key=lambda item: item["symbol"]))
+    return path
+
+
 def fetch_quotes(symbols: list[tuple[str, str]], batch_size: int = 80) -> dict[str, dict[str, float | str]]:
     result: dict[str, dict[str, float | str]] = {}
     for start in range(0, len(symbols), batch_size):
@@ -214,6 +283,60 @@ def _market_from_quote_item(item: dict[str, str], default: str) -> str:
     if "tse" in raw:
         return "TWSE"
     return default
+
+
+def _market_from_processed_path(path: Path) -> str:
+    name = path.name.lower()
+    if name.startswith("tpex"):
+        return "TPEx"
+    if name.startswith("twse"):
+        return "TWSE"
+    return ""
+
+
+def _quote_from_processed_row(row: dict[str, str]) -> dict[str, float] | None:
+    price = _number(row.get("收盤價") or row.get("收盤"))
+    open_ = _number(row.get("開盤價") or row.get("開盤"))
+    high = _number(row.get("最高價") or row.get("最高"))
+    low = _number(row.get("最低價") or row.get("最低"))
+    volume_shares = _number(row.get("成交股數"))
+    amount = _number(row.get("成交金額") or row.get("成交金額(元)"))
+    if min(price or 0, open_ or 0, high or 0, low or 0, volume_shares or 0, amount or 0) <= 0:
+        return None
+
+    change = _signed_change(row)
+    previous_close = price - change if price is not None else 0.0
+    change_pct = change / previous_close * 100 if previous_close else 0.0
+    return {
+        "price": price or 0.0,
+        "previous_close": previous_close,
+        "change_pct": change_pct,
+        "open": open_ or 0.0,
+        "high": high or 0.0,
+        "low": low or 0.0,
+        "volume_lots": (volume_shares or 0.0) / 1000,
+        "amount_million": (amount or 0.0) / 1_000_000,
+    }
+
+
+def _signed_change(row: dict[str, str]) -> float:
+    if "漲跌價差" in row:
+        raw = _clean_text(row.get("漲跌價差"))
+        change = _number(raw) or 0.0
+        marker = _clean_text(row.get("漲跌(+/-)", "")).lower()
+        if "-" in marker:
+            return -abs(change)
+        return change
+    raw = _clean_text(row.get("漲跌"))
+    if raw.startswith("-"):
+        return -(_number(raw[1:]) or 0.0)
+    if raw.startswith("+"):
+        return _number(raw[1:]) or 0.0
+    return _number(raw) or 0.0
+
+
+def _clean_text(value: str | float | int | None = "") -> str:
+    return re.sub(r"<[^>]*>", "", str(value or "")).strip()
 
 
 def _read_csv(path: str | Path) -> list[dict[str, str]]:
