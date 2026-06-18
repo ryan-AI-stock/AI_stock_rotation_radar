@@ -24,6 +24,7 @@ from .sector_metrics_builder import build_sector_metrics_from_market_quotes
 from .stock_screener import build_market_stock_candidates, export_hot_sector_symbols
 from .theme_history import backfill_theme_history_from_processed, load_theme_trends, update_theme_history
 from .theme_metrics import build_theme_market_quotes, load_stock_theme_tags
+from .valuation_backfill import backfill_stock_valuations
 
 
 ReportWriter = Callable[..., None]
@@ -90,6 +91,18 @@ def run_update_latest_report(args, write_report: ReportWriter) -> None:
         sector_metrics_path=generated_sector_path,
         output_path=refreshed_path,
     )
+    valuation_result = backfill_stock_valuations(
+        stock_metrics_path=refreshed_path,
+        market_quotes_path=theme_quotes_path,
+        output_path=refreshed_path,
+        report_date=args.report_date or quote_snapshot.normalized_date,
+    )
+    print(
+        f"Backfilled valuation data for {valuation_result.filled_pe_count} candidates; "
+        f"missing PE count {len(valuation_result.missing_pe_symbols)}"
+    )
+    for warning in valuation_result.warnings:
+        print(f"Warning: {warning}")
     deep_path = build_hot_stock_deep_metrics(
         hot_symbols_path=hot_symbols_path,
         processed_root=paths.processed_root,

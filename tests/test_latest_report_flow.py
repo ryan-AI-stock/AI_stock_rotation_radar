@@ -49,6 +49,13 @@ class LatestReportFlowTests(unittest.TestCase):
             stack.enter_context(patch.object(pipeline, "export_hot_sector_symbols", return_value=Path("hot_symbols.csv")))
             refresh_depth = stack.enter_context(patch.object(pipeline, "_refresh_recent_depth_snapshots"))
             build_candidates = stack.enter_context(patch.object(pipeline, "build_market_stock_candidates"))
+            backfill_valuations = stack.enter_context(
+                patch.object(
+                    pipeline,
+                    "backfill_stock_valuations",
+                    return_value=SimpleNamespace(filled_pe_count=1, missing_pe_symbols=(), warnings=[]),
+                )
+            )
             stack.enter_context(patch.object(pipeline, "build_hot_stock_deep_metrics", return_value=Path("deep.csv")))
             merge_deep_metrics = stack.enter_context(patch.object(pipeline, "merge_deep_metrics_into_stock_metrics"))
             stack.enter_context(patch.object(pipeline, "load_sector_metrics", return_value=["sector"]))
@@ -76,6 +83,10 @@ class LatestReportFlowTests(unittest.TestCase):
             refresh_stock_metrics_quotes.assert_called_once()
             refresh_depth.assert_not_called()
             build_candidates.assert_called_once()
+            backfill_valuations.assert_called_once()
+            self.assertEqual(backfill_valuations.call_args.kwargs["stock_metrics_path"], Path("data/stock_metrics.refreshed.csv"))
+            self.assertEqual(backfill_valuations.call_args.kwargs["market_quotes_path"], Path("theme_quotes.csv"))
+            self.assertEqual(backfill_valuations.call_args.kwargs["report_date"], "2026-06-04")
             merge_deep_metrics.assert_called_once()
             write_formal_candidates.assert_called_once()
             self.assertEqual(write_formal_candidates.call_args.kwargs["stocks"], [stock])
