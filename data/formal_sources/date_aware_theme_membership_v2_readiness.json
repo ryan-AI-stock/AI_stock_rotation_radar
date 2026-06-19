@@ -1,0 +1,38 @@
+{
+  "ready": false,
+  "source_mode": "evidence_queue_phase1_partial",
+  "formal_top3_status": "formal_blocked",
+  "gap_symbol_count": 61,
+  "queued_symbol_count": 61,
+  "sample_evidence_row_count": 5,
+  "accepted_evidence_row_count": 0,
+  "usable_for_formal_replay_count": 0,
+  "batch_size": 10,
+  "batch_count": 7,
+  "theme_gap_counts": {
+    "PCB/載板": 15,
+    "CPO/矽光子": 10,
+    "AI伺服器/ODM": 8,
+    "電源/BBU": 7,
+    "ASIC/IP": 7,
+    "車用電子": 6,
+    "機器人/自動化": 6,
+    "記憶體": 2
+  },
+  "batch_strategy": [
+    "Process queue by blocker count first: PCB/載板, CPO/矽光子, AI伺服器/ODM, 電源/BBU, ASIC/IP, 車用電子, 機器人/自動化, 記憶體.",
+    "Collect 10 symbols per batch after the 5-symbol schema sample; keep rows draft until reviewed.",
+    "Prefer company/MOPS/annual report/investor material sources; news is supporting evidence only.",
+    "Do not regenerate formal_top3 as ready until accepted evidence coverage is sufficient and future-data checks pass."
+  ],
+  "blocking_issues": [
+    "no_accepted_v2_evidence_yet",
+    "61 formal universe symbols still require dated source review",
+    "formal_top3 remains blocked until v2 evidence is accepted and normalized"
+  ],
+  "warnings": [
+    "Phase 0/1 only creates queue and draft sample ledger rows.",
+    "Draft sample rows use source_pending and usable_for_formal_replay=false.",
+    "This package does not change daily report content, ranking logic, fixed PDF, LINE entry, or publish workflow."
+  ]
+}
