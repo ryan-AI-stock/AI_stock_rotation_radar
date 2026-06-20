@@ -200,11 +200,11 @@ def build_twse_margin_url(trade_date: date) -> str:
 
 
 def parse_twse_margin_csv(*, payload: str, trade_date: date, source_url: str) -> list[dict[str, str]]:
-    if not _looks_like_twse_margin_csv(payload):
+    if not _looks_like_twse_margin_csv(payload) and not _looks_like_positional_twse_margin_csv(payload):
         raise ValueError("TWSE MI_MARGN source did not return the stock-level CSV")
     target_meta = {symbol: (ticker, name) for symbol, ticker, name in TARGET_UNIVERSE}
     output: list[dict[str, str]] = []
-    for row in csv.DictReader(payload.splitlines()):
+    for row in _iter_twse_margin_rows(payload):
         symbol = (row.get("股票代號") or "").strip()
         if symbol not in target_meta:
             continue
@@ -462,6 +462,45 @@ def _assert_header(path: Path, expected_fields: list[str]) -> None:
 def _looks_like_twse_margin_csv(payload: str) -> bool:
     first_line = payload.lstrip("\ufeff\r\n ").splitlines()[0] if payload.strip() else ""
     return "股票代號" in first_line and "融資今日餘額" in first_line and "融券今日餘額" in first_line
+
+
+def _looks_like_positional_twse_margin_csv(payload: str) -> bool:
+    if not payload.strip():
+        return False
+    rows = list(csv.reader(payload.splitlines()))
+    if len(rows) < 2 or len(rows[0]) < 14:
+        return False
+    return any(len(row) >= 14 and row[0].strip().isdigit() for row in rows[1:20])
+
+
+def _iter_twse_margin_rows(payload: str) -> list[dict[str, str]]:
+    if _looks_like_twse_margin_csv(payload):
+        return [{key: value for key, value in row.items()} for row in csv.DictReader(payload.splitlines())]
+
+    rows = []
+    positional_fields = [
+        "股票代號",
+        "股票名稱",
+        "融資買進",
+        "融資賣出",
+        "融資現金償還",
+        "融資前日餘額",
+        "融資今日餘額",
+        "融資限額",
+        "融券買進",
+        "融券賣出",
+        "融券現券償還",
+        "融券前日餘額",
+        "融券今日餘額",
+        "融券限額",
+        "資券互抵",
+        "註記",
+    ]
+    for raw_row in list(csv.reader(payload.splitlines()))[1:]:
+        if len(raw_row) < 14:
+            continue
+        rows.append({field: raw_row[index] if index < len(raw_row) else "" for index, field in enumerate(positional_fields)})
+    return rows
 
 
 def _parse_iso_date(value: str) -> date:

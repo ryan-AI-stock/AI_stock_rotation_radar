@@ -1,0 +1,21 @@
+{
+  "ready": true,
+  "source_mode": "institutional_flow_ready",
+  "start_date": "2024-01-02",
+  "end_date": "2026-05-26",
+  "target_symbol_count": 9,
+  "covered_symbol_count": 9,
+  "trading_day_count": 577,
+  "expected_symbol_date_count": 5193,
+  "institutional_flow_row_count": 5174,
+  "coverage_ratio": 0.99634123,
+  "stock_coverage_ratio": 0.99801931,
+  "etf_gap_count": 11,
+  "stock_gap_count": 8,
+  "future_data_violation_count": 0,
+  "blocking_issues": [],
+  "warnings": [
+    "TWSE T86 official source provides institutional net buy/sell shares, not TWD amounts; *_twd fields are left blank instead of estimating or fabricating values.",
+    "ETF rows are tracked and gap-reported separately; ETF gaps do not block the 7-stock overlay v1 readiness."
+  ]
+}

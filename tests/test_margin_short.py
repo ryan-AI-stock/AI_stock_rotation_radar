@@ -53,6 +53,25 @@ class MarginShortTests(unittest.TestCase):
         self.assertEqual(rows[0]["securities_lending_balance"], "")
         self.assertEqual(rows[0]["data_quality_status"], "official_twse_mi_margn_margin_short_lending_unavailable")
 
+    def test_parses_positional_twse_margin_rows_when_header_is_mojibake(self) -> None:
+        rows = parse_twse_margin_csv(
+            payload="\n".join(
+                [
+                    "�Ѳ��N��,�Ѳ��W��,�ĸ�R�i,�ĸ��X,�ĸ�{���v��,�ĸ�e��l�B,�ĸꤵ��l�B,�ĸ꭭�B,�Ĩ�R�i,�Ĩ��X,�Ĩ�{���v��,�Ĩ�e��l�B,�Ĩ餵��l�B,�Ĩ魭�B,��餬��,���O",
+                    '"2330","台積電","10","4","","100","106","1000","2","5","1","20","22","1000","",""',
+                    '"9999","非目標","1","1","","1","1","1","1","1","","1","1","1","",""',
+                ]
+            ),
+            trade_date=date(2024, 2, 5),
+            source_url="https://example.test/margin",
+        )
+
+        self.assertEqual(len(rows), 1)
+        self.assertEqual(rows[0]["symbol"], "2330")
+        self.assertEqual(rows[0]["margin_balance_change"], "6")
+        self.assertEqual(rows[0]["short_cover"], "3")
+        self.assertEqual(rows[0]["short_balance_change"], "2")
+
     def test_builds_ready_package_from_fake_twse_sources(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

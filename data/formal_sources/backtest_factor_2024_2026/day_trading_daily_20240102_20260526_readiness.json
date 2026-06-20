@@ -1,0 +1,23 @@
+{
+  "ready": true,
+  "source_mode": "day_trading_ready",
+  "start_date": "2024-01-02",
+  "end_date": "2026-05-26",
+  "target_symbol_count": 9,
+  "covered_symbol_count": 9,
+  "trading_day_count": 577,
+  "expected_symbol_date_count": 5193,
+  "day_trading_row_count": 5156,
+  "coverage_ratio": 0.99287502,
+  "stock_coverage_ratio": 0.99405794,
+  "etf_gap_count": 13,
+  "stock_gap_count": 24,
+  "future_data_violation_count": 0,
+  "blocking_issues": [],
+  "warnings": [
+    "TWSE TWTB4U official source provides day-trading total volume, buy amount, and sell amount; it does not split buy/sell volume, so day_trading_buy_volume and day_trading_sell_volume are left blank instead of estimating values.",
+    "day_trading_volume_ratio uses TWSE STOCK_DAY total trading volume as denominator.",
+    "ETF rows are tracked and gap-reported separately; ETF gaps do not block the 7-stock overlay v1 readiness.",
+    "15 rows are missing STOCK_DAY total trading volume denominator; ratio fields are blank for those rows."
+  ]
+}

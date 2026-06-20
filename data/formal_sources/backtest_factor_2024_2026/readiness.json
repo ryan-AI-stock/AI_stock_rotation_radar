@@ -1,0 +1,120 @@
+{
+  "ready": false,
+  "source_mode": "backtest_factor_package_partial",
+  "decision_layer": "data_readiness",
+  "active_in_trade_decision": false,
+  "start_date": "2024-01-02",
+  "end_date": "2026-05-26",
+  "expected_stock_tickers": [
+    "2308.TW",
+    "2317.TW",
+    "2330.TW",
+    "2382.TW",
+    "2454.TW",
+    "3231.TW",
+    "6669.TW"
+  ],
+  "generated_at_utc": "2026-06-20T01:44:20+00:00",
+  "factor_status": {
+    "institutional_flows": {
+      "ready": true,
+      "status": "ready",
+      "source_validator_ready": true,
+      "coverage_threshold_met": true,
+      "source_mode": "institutional_flow_ready",
+      "source_start": "2024-01-02",
+      "source_end": "2026-05-26",
+      "coverage_ratio": 0.99634123,
+      "fresh_coverage_ratio": 0.99801931,
+      "future_data_violation_count": 0,
+      "gap_count": 8,
+      "blocking_issues": [],
+      "warnings": [
+        "TWSE T86 official source provides institutional net buy/sell shares, not TWD amounts; *_twd fields are left blank instead of estimating or fabricating values.",
+        "ETF rows are tracked and gap-reported separately; ETF gaps do not block the 7-stock overlay v1 readiness."
+      ],
+      "csv": "data/formal_sources/backtest_factor_2024_2026/institutional_flows_daily_20240102_20260526.csv",
+      "readiness": "data/formal_sources/backtest_factor_2024_2026/institutional_flows_daily_20240102_20260526_readiness.json",
+      "gap": "data/formal_sources/backtest_factor_2024_2026/institutional_flows_daily_20240102_20260526_gap.csv"
+    },
+    "margin_short": {
+      "ready": true,
+      "status": "ready",
+      "source_validator_ready": true,
+      "coverage_threshold_met": true,
+      "source_mode": "margin_short_ready",
+      "source_start": "2024-01-02",
+      "source_end": "2026-05-26",
+      "coverage_ratio": 1.0,
+      "fresh_coverage_ratio": 1.0,
+      "future_data_violation_count": 0,
+      "gap_count": 0,
+      "blocking_issues": [],
+      "warnings": [
+        "TWSE MI_MARGN official source provides margin and short-selling balances in shares/lots, not securities lending balance; securities_lending_* fields are left blank instead of estimating or fabricating values.",
+        "ETF rows are tracked and gap-reported separately; ETF gaps do not block the 7-stock overlay v1 readiness."
+      ],
+      "csv": "data/formal_sources/backtest_factor_2024_2026/margin_short_daily_20240102_20260526.csv",
+      "readiness": "data/formal_sources/backtest_factor_2024_2026/margin_short_daily_20240102_20260526_readiness.json",
+      "gap": "data/formal_sources/backtest_factor_2024_2026/margin_short_daily_20240102_20260526_gap.csv"
+    },
+    "day_trading": {
+      "ready": true,
+      "status": "ready",
+      "source_validator_ready": true,
+      "coverage_threshold_met": true,
+      "source_mode": "day_trading_ready",
+      "source_start": "2024-01-02",
+      "source_end": "2026-05-26",
+      "coverage_ratio": 0.99287502,
+      "fresh_coverage_ratio": 0.99405794,
+      "future_data_violation_count": 0,
+      "gap_count": 24,
+      "blocking_issues": [],
+      "warnings": [
+        "TWSE TWTB4U official source provides day-trading total volume, buy amount, and sell amount; it does not split buy/sell volume, so day_trading_buy_volume and day_trading_sell_volume are left blank instead of estimating values.",
+        "day_trading_volume_ratio uses TWSE STOCK_DAY total trading volume as denominator.",
+        "ETF rows are tracked and gap-reported separately; ETF gaps do not block the 7-stock overlay v1 readiness.",
+        "15 rows are missing STOCK_DAY total trading volume denominator; ratio fields are blank for those rows."
+      ],
+      "csv": "data/formal_sources/backtest_factor_2024_2026/day_trading_daily_20240102_20260526.csv",
+      "readiness": "data/formal_sources/backtest_factor_2024_2026/day_trading_daily_20240102_20260526_readiness.json",
+      "gap": "data/formal_sources/backtest_factor_2024_2026/day_trading_daily_20240102_20260526_gap.csv"
+    },
+    "valuation": {
+      "ready": false,
+      "status": "blocked",
+      "source_validator_ready": false,
+      "coverage_threshold_met": false,
+      "source_mode": "valuation_point_in_time_blocked",
+      "source_start": "",
+      "source_end": "",
+      "coverage_ratio": 0.0,
+      "fresh_coverage_ratio": 0.0,
+      "future_data_violation_count": 0,
+      "gap_count": 7,
+      "blocking_issues": [
+        "No official point-in-time EPS/PE/PB source has been ingested for 2024-01-02~2026-05-26.",
+        "The 2026-06-14 manual valuation snapshot must not be used to backfill historical dates."
+      ],
+      "warnings": [],
+      "csv": "",
+      "readiness": "",
+      "gap": ""
+    }
+  },
+  "core_validator_source_paths": {
+    "institutional_flows": "data/formal_sources/backtest_factor_2024_2026/institutional_flows_daily_20240102_20260526.csv",
+    "margin_short": "data/formal_sources/backtest_factor_2024_2026/margin_short_daily_20240102_20260526.csv",
+    "day_trading": "data/formal_sources/backtest_factor_2024_2026/day_trading_daily_20240102_20260526.csv"
+  },
+  "future_data_violation_count": 0,
+  "blocking_issues": [
+    "valuation: No official point-in-time EPS/PE/PB source has been ingested for 2024-01-02~2026-05-26.; The 2026-06-14 manual valuation snapshot must not be used to backfill historical dates."
+  ],
+  "notes": [
+    "This package is a Radar data-layer handoff for BACKTEST_LAB validation only.",
+    "It does not change the daily Radar report, fixed PDF/LINE entry, Drive publishing, or BACKTEST_LAB formal model.",
+    "valuation remains blocked until an official point-in-time source is ingested."
+  ]
+}
