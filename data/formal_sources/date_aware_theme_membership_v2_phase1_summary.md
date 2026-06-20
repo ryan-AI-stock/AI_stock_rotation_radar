@@ -70,3 +70,33 @@ Recommended next batch:
 - current static theme map remains research-only and cannot be used to release
   formal top3 replay.
 
+## Batch 01 Evidence Collection
+
+Status: partial evidence collected, not formal-ready.
+
+- batch_01 total: 10
+- official source collected but needs archive/date/license review: 6
+- blocked/source_pending: 4
+- accepted evidence: 0
+- usable_for_formal_replay: 0
+- formal_top3 remains formal_blocked.
+
+Collected source pages:
+
+| Symbol | Name | Status | Source |
+| --- | --- | --- | --- |
+| 2313 | 華通 | needs_license_check | https://www.compeq.com.tw/ |
+| 2368 | 金像電 | needs_license_check | https://www.gce.com.tw/ |
+| 2383 | 台光電 | needs_license_check | https://www.emctw.com/en-global |
+| 3037 | 欣興 | needs_license_check | https://www.unimicron.com/ |
+| 3189 | 景碩 | needs_license_check | https://www.kinsus.com.tw/ |
+| 4958 | 臻鼎-KY | needs_license_check | https://www.zdtco.com/tw |
+| 1815 | 富喬 | blocked/source_pending | official dated source not verified in this pass |
+| 2316 | 楠梓電 | blocked/source_pending | official dated source not verified in this pass |
+| 2367 | 燿華 | blocked/source_pending | official dated source not verified in this pass |
+| 3044 | 健鼎 | blocked/source_pending | official crawler text insufficient for PCB evidence in this pass |
+
+Notes:
+
+- Current official product pages are useful as collection targets, but they are not yet accepted dated evidence for historical replay.
+- The next step is to archive or replace each row with a dated annual report/investor material/MOPS filing before marking any evidence accepted.

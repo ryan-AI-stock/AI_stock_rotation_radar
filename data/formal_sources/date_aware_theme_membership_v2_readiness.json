@@ -4,7 +4,7 @@
   "formal_top3_status": "formal_blocked",
   "gap_symbol_count": 61,
   "queued_symbol_count": 61,
-  "sample_evidence_row_count": 5,
+  "sample_evidence_row_count": 10,
   "accepted_evidence_row_count": 0,
   "usable_for_formal_replay_count": 0,
   "batch_size": 10,
@@ -27,12 +27,22 @@
   ],
   "blocking_issues": [
     "no_accepted_v2_evidence_yet",
-    "61 formal universe symbols still require dated source review",
+    "batch_01 collected evidence still requires archive/date/license review",
     "formal_top3 remains blocked until v2 evidence is accepted and normalized"
   ],
   "warnings": [
     "Phase 0/1 only creates queue and draft sample ledger rows.",
     "Draft sample rows use source_pending and usable_for_formal_replay=false.",
     "This package does not change daily report content, ranking logic, fixed PDF, LINE entry, or publish workflow."
+  ],
+  "batch_01_status": "partial_evidence_collected_needs_review",
+  "batch_01_total": 10,
+  "batch_01_needs_license_check_count": 6,
+  "batch_01_blocked_or_source_pending_count": 4,
+  "batch_01_accepted_count": 0,
+  "batch_01_notes": [
+    "Official source pages were collected for 6 symbols, but they do not expose stable historical publication dates.",
+    "Rows remain usable_for_formal_replay=false until archive/date/license review is completed.",
+    "4 symbols remain blocked/source_pending because sufficiently specific official source evidence was not verified in this pass."
   ]
 }
