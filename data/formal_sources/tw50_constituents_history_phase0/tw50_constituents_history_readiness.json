@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "status": "partial_blocked",
+  "source_mode": "source_feasibility_phase0",
+  "ready": false,
+  "task_id": "TASK-BACKTEST-DATA-TW50-CONSTITUENTS-HISTORY-001",
+  "target_periods": {
+    "2022": {
+      "start": "2022-01-03",
+      "end": "2022-12-30",
+      "coverage_ratio": 0.0,
+      "readiness": "blocked_no_accepted_source"
+    },
+    "2023": {
+      "start": "2023-01-03",
+      "end": "2023-12-29",
+      "coverage_ratio": 0.0,
+      "readiness": "blocked_no_accepted_source"
+    },
+    "2024_2026": {
+      "start": "2024-01-02",
+      "end": "2026-06-18",
+      "coverage_ratio": 0.0,
+      "readiness": "blocked_no_accepted_source_in_phase0_package"
+    }
+  },
+  "accepted_constituent_rows": 0,
+  "usable_for_formal_replay_rows": 0,
+  "minimum_active_count": 45,
+  "acceptance_threshold": 0.95,
+  "phase0_files": {
+    "source_feasibility_report": "data/formal_sources/tw50_constituents_history_phase0/source_feasibility_report.md",
+    "source_candidates": "data/formal_sources/tw50_constituents_history_phase0/tw50_constituents_source_candidates.csv",
+    "source_pending_csv": "data/formal_sources/tw50_constituents_history_phase0/tw50_constituents_source_pending.csv"
+  },
+  "blockers": [
+    "No complete official historical TW50 constituent archive was verified in this pass.",
+    "No accepted 2022-01-03 baseline constituent list is available.",
+    "No accepted add/delete event ledger through 2026-06-18 is available.",
+    "Yuanta 0050 holdings proxy requires user decision on source acceptability and license boundary.",
+    "Secondary sources are research hints only and cannot be used for formal replay."
+  ],
+  "next_steps": [
+    "Decide whether to use official-only, fund-report proxy, or manual reviewed evidence ledger route.",
+    "If official-only, collect baseline snapshot before 2022 and all dated review/change notices.",
+    "If fund-report proxy is accepted, verify full holdings availability and license before producing rows.",
+    "After accepted rows exist, copy or transform into Core contract CSV and rerun Core validator."
+  ],
+  "non_goals_confirmed": [
+    "No daily Radar report, PDF, LINE, Drive, or workflow changes.",
+    "No BACKTEST_LAB Core model changes.",
+    "No current constituent backfill into historical periods.",
+    "No formal ready claim."
+  ]
+}

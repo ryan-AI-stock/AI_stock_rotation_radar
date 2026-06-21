@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "status": "completed",
+  "readiness_status": "blocked_no_historical_coverage",
+  "purpose": "validate_tw50_point_in_time_constituent_coverage_for_stock_pool_replay",
+  "constituent_path": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\data\\formal_sources\\tw50_constituents_history_phase0\\tw50_constituents_source_pending.csv",
+  "source_error": "",
+  "source_columns": [
+    "effective_date",
+    "end_date",
+    "ticker",
+    "name",
+    "source",
+    "source_url",
+    "source_published_date",
+    "source_updated_at",
+    "review_status",
+    "usable_for_formal_replay",
+    "notes"
+  ],
+  "source_row_count": 0,
+  "source_effective_min": "",
+  "source_effective_max": "",
+  "date_stride": 1,
+  "minimum_active_count": 45,
+  "outputs": {
+    "summary": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\data\\formal_sources\\tw50_constituents_history_phase0\\validator_output\\tw50_constituent_coverage_summary.csv",
+    "gaps": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\data\\formal_sources\\tw50_constituents_history_phase0\\validator_output\\tw50_constituent_gap_dates.csv",
+    "markdown": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\data\\formal_sources\\tw50_constituents_history_phase0\\validator_output\\tw50_constituent_coverage.md",
+    "run_log": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\data\\formal_sources\\tw50_constituents_history_phase0\\validator_output\\run_log.csv"
+  },
+  "rows": {
+    "summary": 3,
+    "gaps": 1162
+  }
+}
