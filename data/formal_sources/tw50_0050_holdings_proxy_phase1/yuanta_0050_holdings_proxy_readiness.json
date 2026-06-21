@@ -1,0 +1,49 @@
+{
+  "task_id": "TASK-RADAR-TW50-0050-HOLDINGS-PROXY-PHASE1-001",
+  "generated_at": "2026-06-21",
+  "status": "source_inventory_partial",
+  "ready": false,
+  "formal_ready": false,
+  "source_mode": "yuanta_0050_holdings_proxy",
+  "is_proxy": true,
+  "exact_tw50_official_constituents": false,
+  "coverage": {
+    "target_start": "2022-01-03",
+    "target_end": "2026-06-18",
+    "historical_archive_verified": false,
+    "current_latest_pdf_verified": true,
+    "monthly_or_quarterly_snapshot_rows": 0
+  },
+  "source_checks": [
+    {
+      "source_id": "yuanta_0050_monthly_report",
+      "url": "https://www.yuantafunds.com/fund/download/1066元大台灣卓越50基金月報.pdf",
+      "checked_at": "2026-06-21",
+      "download_status": "ok",
+      "bytes": 425671,
+      "parse_status": "blocked_no_pdf_text_extractor"
+    },
+    {
+      "source_id": "yuanta_domestic_quarterly_holdings",
+      "url": "https://www.yuantafunds.com/fund/download/元大國內基金季持股.pdf",
+      "checked_at": "2026-06-21",
+      "download_status": "ok",
+      "bytes": 542696,
+      "parse_status": "blocked_no_pdf_text_extractor"
+    }
+  ],
+  "blockers": [
+    "Historical month-specific Yuanta archive URL pattern is not verified.",
+    "PDF text/table extraction is not available in the current repo environment.",
+    "License and redistribution constraints need review before publishing a redistributed historical dataset."
+  ],
+  "core_contract_recommendation": {
+    "add_proxy_specific_readiness": true,
+    "do_not_pass_exact_tw50_validator": true,
+    "required_flags": [
+      "source_mode=yuanta_0050_holdings_proxy",
+      "is_proxy=true",
+      "exact_tw50_official_constituents=false"
+    ]
+  }
+}
