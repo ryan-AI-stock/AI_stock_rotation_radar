@@ -1,0 +1,7 @@
+check_id,url,method,result_status,file_signature,bytes,content_result,readiness,notes
+current_monthly_pdf,https://www.yuantafunds.com/fund/download/1066元大台灣卓越50基金月報.pdf,GET,ok,%PDF-1.7,425671,current_pdf_verified,partial_current_only,Source date parsed as 2026-05-31.
+pattern_202205_suffix,https://www.yuantafunds.com/fund/download/1066元大台灣卓越50基金月報_202205.pdf,GET,pattern_failed,<!DOCTYP,1515491,html_not_pdf,blocked,HEAD returned 302 but GET content was HTML; not accepted as archive coverage.
+pattern_202305_suffix,https://www.yuantafunds.com/fund/download/1066元大台灣卓越50基金月報_202305.pdf,GET,pattern_failed,<!DOCTYP,1515491,html_not_pdf,blocked,HEAD returned 302 but GET content was HTML; not accepted as archive coverage.
+pattern_202405_prefix,https://www.yuantafunds.com/fund/download/202405_1066元大台灣卓越50基金月報.pdf,GET,pattern_failed,<!DOCTYP,1515491,html_not_pdf,blocked,HEAD returned 302 but GET content was HTML; not accepted as archive coverage.
+pattern_202505_nounder,https://www.yuantafunds.com/fund/download/1066元大台灣卓越50基金月報202505.pdf,GET,pattern_failed,<!DOCTYP,1515491,html_not_pdf,blocked,HEAD returned 302 but GET content was HTML; not accepted as archive coverage.
+overview_download_links,https://www.yuantafunds.com/myfund/overview,GET,current_links_only,html,not_recorded,current_download_links_found_no_history_param,partial,Official page exposes current/latest download links but no verified historical archive endpoint or month parameter.

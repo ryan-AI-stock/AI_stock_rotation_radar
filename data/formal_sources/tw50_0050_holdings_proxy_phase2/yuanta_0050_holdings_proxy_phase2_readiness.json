@@ -1,0 +1,40 @@
+{
+  "task_id": "TASK-RADAR-TW50-0050-HOLDINGS-PROXY-PHASE2-001",
+  "generated_at": "2026-06-21",
+  "status": "parser_partial_archive_blocked",
+  "ready": false,
+  "formal_ready": false,
+  "source_mode": "yuanta_0050_holdings_proxy",
+  "is_proxy": true,
+  "exact_tw50_official_constituents": false,
+  "parser_feasibility": {
+    "pdfplumber_available": true,
+    "pypdf_available": true,
+    "current_monthly_pdf_parse_status": "partial_parse_current_top10",
+    "current_monthly_pdf_source_date": "2026-05-31",
+    "current_monthly_sample_rows": 10,
+    "current_monthly_scope": "top_10_holdings_only",
+    "domestic_quarterly_pdf_parse_status": "parseable_table_but_outside_target_period",
+    "domestic_quarterly_pdf_source_date": "2018-09-30"
+  },
+  "archive_feasibility": {
+    "target_start": "2022-01-03",
+    "target_end": "2026-06-18",
+    "stable_historical_url_pattern_verified": false,
+    "stable_api_endpoint_verified": false,
+    "sampled_historical_patterns": 4,
+    "sampled_historical_pattern_pdf_hits": 0,
+    "historical_snapshot_rows": 0
+  },
+  "core_readiness_recommendation": {
+    "schema_design_can_continue": true,
+    "data_ingestion_ready": false,
+    "exact_tw50_validator_allowed": false,
+    "proxy_specific_readiness_allowed_only_as_partial_blocked": true
+  },
+  "user_decision_needed": [
+    "Accept manual download of historical Yuanta monthly/quarterly PDFs and track them through a manual evidence ledger.",
+    "Keep the proxy route blocked until a stable official archive/API is found.",
+    "Let Core design proxy-specific readiness schema only, without ingesting historical rows."
+  ]
+}
