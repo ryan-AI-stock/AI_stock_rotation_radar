@@ -1,0 +1,23 @@
+{
+  "generated_at": "2026-06-21T04:00:40+00:00",
+  "status": "blocked_waiting_user_files",
+  "ready": false,
+  "formal_ready": false,
+  "source_mode": "yuanta_0050_holdings_proxy",
+  "is_proxy": true,
+  "exact_tw50_official_constituents": false,
+  "checklist_path": "data\\formal_sources\\tw50_0050_holdings_manual_ledger_phase3\\source_acquisition_checklist.csv",
+  "pdf_dir": "data\\formal_sources\\tw50_0050_holdings_manual_ledger_intake\\manual_pdfs",
+  "target_count": 15,
+  "pdfs_found": 0,
+  "valid_pdf_header_count": 0,
+  "priority_one_target_count": 2,
+  "missing_priority_one_files": [
+    "yuanta_0050_monthly_202201.pdf",
+    "yuanta_domestic_holdings_2022Q1.pdf"
+  ],
+  "invalid_priority_one_files": [],
+  "accepted_rows": 0,
+  "historical_snapshot_rows": 0,
+  "next_action": "Acquire priority-1 PDFs before parser/manual review can begin."
+}
