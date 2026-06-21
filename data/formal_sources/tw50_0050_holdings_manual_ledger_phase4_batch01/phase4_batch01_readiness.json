@@ -1,0 +1,22 @@
+{
+  "generated_at": "2026-06-21",
+  "status": "batch01_source_pending",
+  "ready": false,
+  "formal_ready": false,
+  "source_mode": "yuanta_0050_holdings_proxy",
+  "is_proxy": true,
+  "exact_tw50_official_constituents": false,
+  "target_periods": [
+    "2022-01",
+    "2022-Q1"
+  ],
+  "pdfs_obtained": 0,
+  "accepted_rows": 0,
+  "historical_snapshot_rows": 0,
+  "checks": {
+    "public_search": "no_usable_pdf_found",
+    "internet_archive_direct_cdx": "empty",
+    "internet_archive_wildcard_cdx": "empty"
+  },
+  "next_action": "Manual source acquisition is still required for 2022-01 and 2022-Q1 PDFs before parser/manual review can start."
+}
