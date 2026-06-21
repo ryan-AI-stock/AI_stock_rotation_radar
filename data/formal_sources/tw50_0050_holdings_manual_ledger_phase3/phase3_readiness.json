@@ -1,0 +1,25 @@
+{
+  "task_id": "TASK-RADAR-TW50-0050-MANUAL-LEDGER-PHASE3-001",
+  "generated_at": "2026-06-21",
+  "status": "manual_ledger_design_ready",
+  "ready": false,
+  "formal_ready": false,
+  "source_mode": "yuanta_0050_holdings_proxy",
+  "is_proxy": true,
+  "exact_tw50_official_constituents": false,
+  "historical_snapshot_rows": 0,
+  "accepted_rows": 0,
+  "sample_rows": 1,
+  "design_outputs": {
+    "manual_ledger_template": "data/formal_sources/tw50_0050_holdings_manual_ledger_phase3/manual_ledger_template.csv",
+    "source_acquisition_checklist": "data/formal_sources/tw50_0050_holdings_manual_ledger_phase3/source_acquisition_checklist.csv",
+    "parser_manual_review_sop": "data/formal_sources/tw50_0050_holdings_manual_ledger_phase3/parser_manual_review_sop.md",
+    "core_handoff_recommendation": "data/formal_sources/tw50_0050_holdings_manual_ledger_phase3/core_handoff_recommendation.md"
+  },
+  "next_action": "Manually download historical Yuanta PDFs following source_acquisition_checklist.csv, then enter or parse rows into the ledger and review them.",
+  "core_readiness_recommendation": {
+    "proxy_specific_readiness_design_allowed": true,
+    "data_ingestion_ready": false,
+    "exact_tw50_validator_allowed": false
+  }
+}

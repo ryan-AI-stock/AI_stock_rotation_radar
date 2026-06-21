@@ -1,0 +1,2 @@
+snapshot_date,effective_date,end_date,ticker,name,weight_pct,source_file,source_url_or_manual_note,source_report_date,download_method,parser_status,review_status,reviewer,is_proxy,source_mode,exact_tw50_official_constituents,notes
+2026-05-31,2026-05-31,,2330,台積電,58.28,yuanta_0050_monthly_202605.pdf,https://www.yuantafunds.com/fund/download/1066元大台灣卓越50基金月報.pdf,2026-05-31,official_current_url,auto_parsed_top10_only,sample_not_accepted,,true,yuanta_0050_holdings_proxy,false,Example from Phase 2 current monthly top-10 parse; not historical coverage and not accepted.

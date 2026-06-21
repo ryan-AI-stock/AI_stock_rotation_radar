@@ -1,0 +1,16 @@
+period_id,period_type,target_snapshot_date,priority,preferred_source,expected_filename,source_status,download_method,source_url_or_manual_note,parser_status,review_status,notes
+2022-01,monthly,2022-01-31,1,yuanta_0050_monthly_report,yuanta_0050_monthly_202201.pdf,source_pending,manual_download_required,,not_started,source_pending,First month in target coverage.
+2022-Q1,quarterly,2022-03-31,1,yuanta_domestic_quarterly_holdings,yuanta_domestic_holdings_2022Q1.pdf,source_pending,manual_download_required,,not_started,source_pending,Quarterly fallback for 2022-Q1.
+2022-06,monthly,2022-06-30,2,yuanta_0050_monthly_report,yuanta_0050_monthly_202206.pdf,source_pending,manual_download_required,,not_started,source_pending,Mid-2022 sample before expanding full monthly coverage.
+2022-Q2,quarterly,2022-06-30,2,yuanta_domestic_quarterly_holdings,yuanta_domestic_holdings_2022Q2.pdf,source_pending,manual_download_required,,not_started,source_pending,Quarterly fallback for 2022-Q2.
+2022-12,monthly,2022-12-31,2,yuanta_0050_monthly_report,yuanta_0050_monthly_202212.pdf,source_pending,manual_download_required,,not_started,source_pending,Year-end 2022 sample.
+2023-03,monthly,2023-03-31,3,yuanta_0050_monthly_report,yuanta_0050_monthly_202303.pdf,source_pending,manual_download_required,,not_started,source_pending,Quarter-end monthly sample.
+2023-Q1,quarterly,2023-03-31,3,yuanta_domestic_quarterly_holdings,yuanta_domestic_holdings_2023Q1.pdf,source_pending,manual_download_required,,not_started,source_pending,Quarterly fallback for 2023-Q1.
+2023-12,monthly,2023-12-31,3,yuanta_0050_monthly_report,yuanta_0050_monthly_202312.pdf,source_pending,manual_download_required,,not_started,source_pending,Year-end 2023 sample.
+2024-03,monthly,2024-03-31,4,yuanta_0050_monthly_report,yuanta_0050_monthly_202403.pdf,source_pending,manual_download_required,,not_started,source_pending,Quarter-end monthly sample.
+2024-Q1,quarterly,2024-03-31,4,yuanta_domestic_quarterly_holdings,yuanta_domestic_holdings_2024Q1.pdf,source_pending,manual_download_required,,not_started,source_pending,Quarterly fallback for 2024-Q1.
+2024-12,monthly,2024-12-31,4,yuanta_0050_monthly_report,yuanta_0050_monthly_202412.pdf,source_pending,manual_download_required,,not_started,source_pending,Year-end 2024 sample.
+2025-03,monthly,2025-03-31,5,yuanta_0050_monthly_report,yuanta_0050_monthly_202503.pdf,source_pending,manual_download_required,,not_started,source_pending,Recent-year sample.
+2025-Q1,quarterly,2025-03-31,5,yuanta_domestic_quarterly_holdings,yuanta_domestic_holdings_2025Q1.pdf,source_pending,manual_download_required,,not_started,source_pending,Quarterly fallback for 2025-Q1.
+2025-12,monthly,2025-12-31,5,yuanta_0050_monthly_report,yuanta_0050_monthly_202512.pdf,source_pending,manual_download_required,,not_started,source_pending,Year-end 2025 sample if available.
+2026-05,monthly,2026-05-31,6,yuanta_0050_monthly_report,yuanta_0050_monthly_202605.pdf,downloaded,official_current_url,https://www.yuantafunds.com/fund/download/1066元大台灣卓越50基金月報.pdf,auto_parsed_top10_only,sample_not_accepted,Current report already parsed in Phase 2 as top-10 sample only.
