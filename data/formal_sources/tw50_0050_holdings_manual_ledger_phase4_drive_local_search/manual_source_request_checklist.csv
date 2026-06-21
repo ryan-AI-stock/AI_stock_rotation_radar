@@ -1,0 +1,5 @@
+period_id,period_type,target_snapshot_date,priority,expected_filename,needed_from_user_or_source,reason,after_obtained_action
+2022-01,monthly,2022-01-31,1,yuanta_0050_monthly_202201.pdf,required,First target month for 2022 historical proxy coverage; public/archive/Drive/local searches found no PDF,Run parser and manual review; append accepted proxy rows to manual ledger
+2022-Q1,quarterly,2022-03-31,1,yuanta_domestic_holdings_2022Q1.pdf,required,Quarterly fallback for 2022-Q1 historical proxy coverage; public/archive/Drive/local searches found no PDF,Run parser and manual review; append accepted proxy rows to manual ledger
+2022-06,monthly,2022-06-30,2,yuanta_0050_monthly_202206.pdf,next_batch,Mid-2022 sample after first two files unblock the workflow,Run parser/manual review only after batch01 sources are resolved
+2022-Q2,quarterly,2022-06-30,2,yuanta_domestic_holdings_2022Q2.pdf,next_batch,Quarterly fallback for 2022-Q2 after batch01 sources are resolved,Run parser/manual review only after batch01 sources are resolved

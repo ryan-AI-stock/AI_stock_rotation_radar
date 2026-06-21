@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-06-21",
+  "status": "blocked_waiting_user_files",
+  "ready": false,
+  "formal_ready": false,
+  "source_mode": "yuanta_0050_holdings_proxy",
+  "is_proxy": true,
+  "exact_tw50_official_constituents": false,
+  "targets_checked": [
+    "2022-01",
+    "2022-Q1"
+  ],
+  "pdfs_found_in_google_drive": 0,
+  "usable_google_drive_pdfs": 0,
+  "pdfs_found_in_local_workspace": 0,
+  "accepted_rows": 0,
+  "historical_snapshot_rows": 0,
+  "checks": {
+    "phase4_batch01_public_search": "no_usable_pdf_found",
+    "phase4_batch01_internet_archive": "empty",
+    "google_drive_search": "no_usable_pdf_found",
+    "local_filesystem_search": "no_usable_pdf_found"
+  },
+  "blocker": "Historical Yuanta 0050 monthly report and domestic-fund quarterly holdings PDFs were not found in public/archive/Drive/local sources.",
+  "next_action": "User or source-acquisition step must provide yuanta_0050_monthly_202201.pdf and yuanta_domestic_holdings_2022Q1.pdf before parser/manual review can create accepted proxy rows."
+}

@@ -1,0 +1,8 @@
+search_surface,query_or_path,filter,result_count,usable_result_count,notes
+google_drive,0050 2022,application/pdf,0,0,no_results
+google_drive,元大 0050,application/pdf,0,0,no_results
+google_drive,卓越50,application/pdf,0,0,no_results
+google_drive,元大 月報,application/pdf,0,0,no_results
+google_drive,季持股,application/pdf,1,0,matched unrelated daily stock report PDF
+local_filesystem,C:\Users\zergv\Documents\Codex,"PDF filename regex: 0050|卓越50|元大|yuanta|季持股|月報|1066|202201|2022Q1",0,0,no_results
+local_filesystem,current_repo,"PDF filename regex: 0050|卓越50|元大|yuanta|季持股|月報|1066|202201|2022Q1",0,0,no_results
