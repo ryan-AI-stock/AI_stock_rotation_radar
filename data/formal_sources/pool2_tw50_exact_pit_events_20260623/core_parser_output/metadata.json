@@ -1,0 +1,12 @@
+{
+  "generated_at": "2026-06-23T18:15:00+08:00",
+  "parser_status": "not_run_no_technical_notice_pdfs_downloaded",
+  "input_file_count": 0,
+  "candidate_notice_count": 29,
+  "downloaded_notice_count": 0,
+  "failed_notice_count": 29,
+  "event_rows": 0,
+  "accepted_event_rows": 0,
+  "blocked_notice_rows": 0,
+  "future_data_violation_count": 0
+}

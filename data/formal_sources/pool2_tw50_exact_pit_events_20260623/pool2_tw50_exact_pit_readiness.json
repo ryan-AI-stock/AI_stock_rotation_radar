@@ -1,0 +1,50 @@
+{
+  "task_id": "TASK-BACKTEST-CORE-POOL2-PIT-REPLAY-COVERAGE-20260623",
+  "package": "pool2_tw50_exact_pit_events_20260623",
+  "status": "partial_blocked_download_rate_limited_and_missing_official_baseline",
+  "ready": false,
+  "formal_ready": false,
+  "accepted_for_core_validator": false,
+  "exact_or_proxy": "exact_candidate_event_source_only; no exact PIT baseline yet",
+  "technical_notice_source": "Taiwan Index official technical notices",
+  "candidate_notice_count": 29,
+  "candidate_notice_count_by_year": {
+    "2026": 9,
+    "2025": 6,
+    "2024": 6,
+    "2023": 4,
+    "2022": 4
+  },
+  "downloaded_notice_count": 0,
+  "download_blocker": "HTTP 429 Too Many Requests from backend.taiwanindex.com.tw for technical notice PDFs",
+  "parser_output_dir": "data\\formal_sources\\pool2_tw50_exact_pit_events_20260623\\core_parser_output",
+  "accepted_event_rows": 0,
+  "baseline_snapshot_status": "blocked_not_found",
+  "official_baseline_found": false,
+  "baseline_requirement": "Complete official TW50 constituent snapshot dated on or before the first accepted event row; current 2026 FTSE constituents are too late and rejected for 2022 PIT reconstruction.",
+  "current_snapshot_status": "official current FTSE constituents/factsheet downloadable and audited, but not usable as pre-2022 baseline",
+  "coverage_by_period": {
+    "2022": "0% exact PIT ready; event PDFs not downloaded and baseline missing",
+    "2023": "0% exact PIT ready; baseline missing",
+    "2024_now": "0% new exact PIT ready from this package; prior Core seed remains separate"
+  },
+  "future_data_violation_count": 0,
+  "public_source_exhausted": false,
+  "blockers": [
+    "Technical notice PDF downloads currently rate-limited by official backend (HTTP 429).",
+    "No official complete TW50 baseline snapshot dated before first 2022 event found in public unauthenticated sources.",
+    "FTSE current constituents/factsheet are 2026 current/late snapshots and cannot be used to backfill 2022/2023."
+  ],
+  "next_steps": [
+    "Retry Taiwan Index technical notice downloads with slower/backoff cadence or after rate-limit window clears.",
+    "Continue official baseline search via Taiwan Index/FTSE/TWSE official archives or authenticated FTSE announcement resources.",
+    "If official baseline remains unavailable, ask Core whether to support non-official cross-check lane separately from exact formal readiness; do not mark formal_ready."
+  ],
+  "outputs": {
+    "technical_notice_source_manifest": "technical_notice_source_manifest.csv",
+    "baseline_source_search_audit": "baseline_source_search_audit.csv",
+    "official_current_snapshot_audit": "official_current_snapshot_audit.csv",
+    "core_parser_output": "core_parser_output",
+    "manifest": "manifest.md"
+  }
+}
