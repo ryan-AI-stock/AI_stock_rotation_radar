@@ -1,0 +1,93 @@
+{
+  "generated_at": "2026-06-23T08:38:26+00:00",
+  "task_id": "TASK-BACKTEST-CORE-POOL2-PIT-REPLAY-COVERAGE-20260623",
+  "status": "blocked_waiting_user_files",
+  "ready": false,
+  "formal_ready": false,
+  "exact_tw50_official_constituents_ready": false,
+  "yuanta_0050_holdings_proxy_ready": false,
+  "source_mode": "blocked_no_accepted_pit_rows",
+  "is_proxy": false,
+  "exact_tw50_official_constituents": true,
+  "future_data_violation_count": 0,
+  "core_coverage_dir": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-30\\ep05-chat-ai-stock-backtest-lab\\outputs\\pool2_tw50_pit_replay_coverage_20260623",
+  "core_coverage_summary": [
+    {
+      "period": "2022",
+      "start": "2022-01-03",
+      "end": "2022-12-30",
+      "checked_dates": "260",
+      "ready_dates": "0",
+      "gap_dates": "260",
+      "coverage_ratio": "0.0",
+      "minimum_active_count": "45",
+      "min_active_count": "0",
+      "max_active_count": "0",
+      "first_ready_date": "",
+      "last_ready_date": ""
+    },
+    {
+      "period": "2023",
+      "start": "2023-01-03",
+      "end": "2023-12-29",
+      "checked_dates": "259",
+      "ready_dates": "0",
+      "gap_dates": "259",
+      "coverage_ratio": "0.0",
+      "minimum_active_count": "45",
+      "min_active_count": "0",
+      "max_active_count": "0",
+      "first_ready_date": "",
+      "last_ready_date": ""
+    },
+    {
+      "period": "2024_now",
+      "start": "2024-01-02",
+      "end": "2026-06-12",
+      "checked_dates": "639",
+      "ready_dates": "255",
+      "gap_dates": "384",
+      "coverage_ratio": "0.39906103",
+      "minimum_active_count": "45",
+      "min_active_count": "0",
+      "max_active_count": "50",
+      "first_ready_date": "2025-06-23",
+      "last_ready_date": "2026-06-12"
+    }
+  ],
+  "core_source_row_count": 50,
+  "core_source_effective_min": "2025-06-23",
+  "core_source_effective_max": "2025-06-23",
+  "manual_pdf_intake_status": "blocked_waiting_user_files",
+  "manual_pdf_dir": "data\\formal_sources\\tw50_0050_holdings_manual_ledger_intake\\manual_pdfs",
+  "manual_pdfs_found": 0,
+  "valid_pdf_header_count": 0,
+  "missing_priority_one_files": [
+    "yuanta_0050_monthly_202201.pdf",
+    "yuanta_domestic_holdings_2022Q1.pdf"
+  ],
+  "phase4_drive_local_search_status": "blocked_waiting_user_files",
+  "phase4_drive_local_search_blocker": "Historical Yuanta 0050 monthly report and domestic-fund quarterly holdings PDFs were not found in public/archive/Drive/local sources.",
+  "accepted_proxy_rows": 0,
+  "historical_snapshot_rows": 0,
+  "missing_manual_source_count": 14,
+  "blocking_issues": [
+    "exact_tw50_constituents_ready=false: Core coverage remains below 95% for at least one period.",
+    "yuanta_0050_holdings_proxy_ready=false: missing manual PDFs yuanta_0050_monthly_202201.pdf, yuanta_domestic_holdings_2022Q1.pdf, yuanta_0050_monthly_202206.pdf, yuanta_domestic_holdings_2022Q2.pdf, yuanta_0050_monthly_202212.pdf",
+    "proxy_specific_readiness_ready=false: accepted holdings proxy rows=0."
+  ],
+  "next_actions": [
+    "Place required historical Yuanta PDFs into the manual_pdfs intake folder using the expected filenames.",
+    "Run python -m rotation_radar.formal_sources.build_tw50_holdings_manual_intake.",
+    "Parse and manually review holdings rows before appending accepted proxy rows.",
+    "Core must use proxy-specific readiness for Yuanta 0050 holdings proxy; do not pass proxy rows as exact official TW50 constituents."
+  ],
+  "outputs": {
+    "readiness": "data\\formal_sources\\pool2_tw50_pit_replay_readiness_20260623\\pool2_tw50_readiness.json",
+    "coverage_gap_summary": "data\\formal_sources\\pool2_tw50_pit_replay_readiness_20260623\\coverage_gap_summary.csv",
+    "manual_source_request": "data\\formal_sources\\pool2_tw50_pit_replay_readiness_20260623\\manual_source_request.csv",
+    "0050_holdings_proxy_rows": "data\\formal_sources\\pool2_tw50_pit_replay_readiness_20260623\\0050_holdings_proxy_rows.csv",
+    "tw50_constituents_pit_candidate": "data\\formal_sources\\pool2_tw50_pit_replay_readiness_20260623\\tw50_constituents_pit_candidate.csv",
+    "manifest": "data\\formal_sources\\pool2_tw50_pit_replay_readiness_20260623\\manifest.md"
+  }
+}

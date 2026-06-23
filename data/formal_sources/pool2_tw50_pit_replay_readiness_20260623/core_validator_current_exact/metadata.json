@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "status": "completed",
+  "readiness_status": "partial_blocked",
+  "purpose": "validate_tw50_point_in_time_constituent_coverage_for_stock_pool_replay",
+  "constituent_path": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-30\\ep05-chat-ai-stock-backtest-lab\\data\\tw50_constituents.csv",
+  "source_error": "",
+  "source_columns": [
+    "effective_date",
+    "ticker",
+    "name",
+    "source",
+    "source_updated_at"
+  ],
+  "source_row_count": 50,
+  "source_effective_min": "2025-06-23",
+  "source_effective_max": "2025-06-23",
+  "date_stride": 1,
+  "minimum_active_count": 45,
+  "outputs": {
+    "summary": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\data\\formal_sources\\pool2_tw50_pit_replay_readiness_20260623\\core_validator_current_exact\\tw50_constituent_coverage_summary.csv",
+    "gaps": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\data\\formal_sources\\pool2_tw50_pit_replay_readiness_20260623\\core_validator_current_exact\\tw50_constituent_gap_dates.csv",
+    "markdown": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\data\\formal_sources\\pool2_tw50_pit_replay_readiness_20260623\\core_validator_current_exact\\tw50_constituent_coverage.md",
+    "run_log": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\data\\formal_sources\\pool2_tw50_pit_replay_readiness_20260623\\core_validator_current_exact\\run_log.csv"
+  },
+  "rows": {
+    "summary": 3,
+    "gaps": 903
+  }
+}

@@ -1,0 +1,4 @@
+﻿period,start,end,checked_dates,ready_dates,gap_dates,coverage_ratio,minimum_active_count,min_active_count,max_active_count,first_ready_date,last_ready_date
+2022,2022-01-03,2022-12-30,260,0,260,0.0,45,0,0,,
+2023,2023-01-03,2023-12-29,259,0,259,0.0,45,0,0,,
+2024_now,2024-01-02,2026-06-12,639,255,384,0.39906103,45,0,50,2025-06-23,2026-06-12
