@@ -1,0 +1,52 @@
+{
+  "generated_at": "2026-06-23T09:38:40+00:00",
+  "task_id": "TASK-BACKTEST-CORE-POOL2-PIT-REPLAY-COVERAGE-20260623",
+  "status": "partial_exact_public_sources_found_parse_pending",
+  "ready": false,
+  "formal_ready": false,
+  "public_source_exhausted": false,
+  "exact_candidate_count": 74,
+  "exact_candidates_by_year": {
+    "2011": 2,
+    "2012": 1,
+    "2013": 5,
+    "2014": 5,
+    "2015": 4,
+    "2016": 4,
+    "2017": 4,
+    "2018": 5,
+    "2019": 4,
+    "2020": 5,
+    "2021": 6,
+    "2022": 4,
+    "2023": 4,
+    "2024": 6,
+    "2025": 6,
+    "2026": 9
+  },
+  "proxy_candidate_count": 1,
+  "accepted_rows": 0,
+  "blocked_or_parse_pending_rows": 103,
+  "future_data_violation_count": 0,
+  "download_status_counts": {
+    "download_failed:HTTPError": 67,
+    "http_non_pdf_or_unverified": 1,
+    "http_pdf_verified": 35
+  },
+  "source_modes_observed": [
+    "cross_check_only",
+    "exact_candidate",
+    "proxy_candidate"
+  ],
+  "outputs": {
+    "readiness": "data\\formal_sources\\pool2_tw50_public_source_search_20260623\\pool2_tw50_public_source_search_readiness.json",
+    "source_search_audit": "data\\formal_sources\\pool2_tw50_public_source_search_20260623\\source_search_audit.csv",
+    "public_search_queries": "data\\formal_sources\\pool2_tw50_public_source_search_20260623\\public_search_queries.csv",
+    "manifest": "data\\formal_sources\\pool2_tw50_public_source_search_20260623\\manifest.md"
+  },
+  "next_actions": [
+    "Download the exact_candidate technical notices and parse constituent add/delete/effective-date events.",
+    "Build point-in-time TW50 constituent intervals from accepted official events only.",
+    "Run Core tw50 constituent coverage validator before marking ready."
+  ]
+}

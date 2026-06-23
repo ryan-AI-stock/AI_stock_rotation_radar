@@ -1,0 +1,3 @@
+﻿query_or_source,source_url,search_status,result_count,exact_candidate_count,proxy_candidate_count,failure_or_gap
+Taiwan Index technical notice public Nuxt pages,https://taiwanindex.com.tw/downloads/technical_notice,metadata_fetched,1228,74,1,PDF parse not performed in fetch step; source rows remain parse_pending.
+Yuanta 0050 current monthly report fixed public URL,https://www.yuantafunds.com/fund/download/1066元大台灣卓越50基金月報.pdf,metadata_recorded,1,0,1,Current monthly proxy only; historical archive still requires separate source acquisition.
