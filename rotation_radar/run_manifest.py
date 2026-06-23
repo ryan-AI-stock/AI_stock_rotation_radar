@@ -32,11 +32,19 @@ def build_daily_run_manifest(
     candidate_symbol_count: int,
     warnings: list[str] | None = None,
     generated_at: datetime | None = None,
+    requested_date: str = "",
+    actual_report_date: str = "",
+    fallback_reason: str = "",
+    manual_rerun: bool = False,
 ) -> dict:
     timestamp = generated_at or datetime.now(TAIPEI_TZ)
     return {
         "generated_at": timestamp.astimezone(TAIPEI_TZ).isoformat(timespec="seconds"),
         "report_date": report_date,
+        "requested_date": requested_date,
+        "actual_report_date": actual_report_date or report_date,
+        "fallback_reason": fallback_reason,
+        "manual_rerun": manual_rerun,
         "quote_date": quote_date,
         "quote_time": quote_time,
         "outputs": {

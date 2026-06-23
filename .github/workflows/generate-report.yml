@@ -39,6 +39,14 @@ on:
         description: "Optional manual-run report date, YYYY-MM-DD"
         required: false
         default: ""
+      require_exact_report_date:
+        description: "Manual run exact mode: skip/fail instead of falling back to latest complete report date"
+        required: false
+        default: "false"
+        type: choice
+        options:
+          - "false"
+          - "true"
 
 jobs:
   generate-report:
@@ -66,15 +74,18 @@ jobs:
           SCHEDULE_RULES_PATH: ${{ github.workspace }}/AI_stock_schedule_rules/schedule_rules.json
         run: |
           set -euo pipefail
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ -n "${{ inputs.report_date }}" ]; then
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             report_date="${{ inputs.report_date }}"
+            if [ -z "${report_date}" ]; then
+              report_date="$(TZ=Asia/Taipei date +%F)"
+            fi
             report_key="${report_date//-/}"
-            echo "Target Taiwan trading date: ${report_date} (manual override)"
+            echo "Target Taiwan trading date: ${report_date} (manual workflow_dispatch; fallback allowed unless exact mode is enabled)"
             {
               echo "should_run=true"
               echo "target_date=${report_date}"
               echo "target_key=${report_key}"
-              echo "reason=manual_report_date_override"
+              echo "reason=manual_workflow_dispatch"
             } >> "$GITHUB_OUTPUT"
           else
             python -m rotation_radar.schedule_gate
@@ -138,6 +149,12 @@ jobs:
           set -euo pipefail
 
           args=(--update-latest-report --report-date "${{ steps.report-date.outputs.target_date }}" --output reports/latest.html)
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            args+=(--manual-rerun)
+            if [ "${{ inputs.require_exact_report_date }}" = "true" ]; then
+              args+=(--require-exact-report-date)
+            fi
+          fi
 
           if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.force_sector_scan }}" = "true" ]; then
             args+=(--force-sector-scan)
@@ -152,6 +169,24 @@ jobs:
           fi
 
           python -m rotation_radar.cli "${args[@]}"
+
+      - name: Resolve actual report date
+        id: actual-report-date
+        if: steps.report-date.outputs.should_run == 'true' && (github.event_name == 'workflow_dispatch' || steps.daily-publish-marker.outputs.cache-hit != 'true')
+        shell: bash
+        run: |
+          set -euo pipefail
+          actual_date="$(python -c 'import json; from pathlib import Path; manifest = json.loads(Path("reports/latest_manifest.json").read_text(encoding="utf-8")); print(manifest.get("actual_report_date") or manifest.get("report_date") or "")')"
+          if [ -z "${actual_date}" ]; then
+            echo "Missing actual report date in reports/latest_manifest.json"
+            exit 1
+          fi
+          actual_key="${actual_date//-/}"
+          echo "Actual report date: ${actual_date}"
+          {
+            echo "actual_report_date=${actual_date}"
+            echo "actual_report_key=${actual_key}"
+          } >> "$GITHUB_OUTPUT"
 
       - name: Commit formal radar candidate interface
         if: steps.report-date.outputs.should_run == 'true' && (github.event_name == 'workflow_dispatch' || steps.daily-publish-marker.outputs.cache-hit != 'true')
@@ -186,7 +221,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          args=(--html reports/latest.html --date "${{ steps.report-date.outputs.target_date }}")
+          args=(--html reports/latest.html --date "${{ steps.actual-report-date.outputs.actual_report_date }}")
           if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.skip_public_upload }}" = "true" ]; then
             args+=(--skip-public-upload)
           fi
@@ -215,15 +250,15 @@ jobs:
           if-no-files-found: ignore
 
       - name: Create daily publish marker
-        if: steps.report-date.outputs.should_run == 'true' && (github.event_name == 'workflow_dispatch' || steps.daily-publish-marker.outputs.cache-hit != 'true')
+        if: steps.report-date.outputs.should_run == 'true' && github.event_name == 'schedule' && steps.daily-publish-marker.outputs.cache-hit != 'true'
         shell: bash
         run: |
           mkdir -p .github-run-state
-          printf '%s\n' "${{ steps.report-date.outputs.target_key }}" > .github-run-state/rotation-report-published
+          printf '%s\n' "${{ steps.actual-report-date.outputs.actual_report_key }}" > .github-run-state/rotation-report-published
 
       - name: Save daily publish marker
-        if: success() && steps.report-date.outputs.should_run == 'true' && steps.daily-publish-marker.outputs.cache-hit != 'true'
+        if: success() && steps.report-date.outputs.should_run == 'true' && github.event_name == 'schedule' && steps.daily-publish-marker.outputs.cache-hit != 'true'
         uses: actions/cache/save@v4
         with:
           path: .github-run-state/rotation-report-published
-          key: rotation-report-published-${{ steps.report-date.outputs.target_key }}
+          key: rotation-report-published-${{ steps.actual-report-date.outputs.actual_report_key }}

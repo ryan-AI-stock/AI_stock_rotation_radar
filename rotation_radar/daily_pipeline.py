@@ -1,8 +1,9 @@
 from __future__ import annotations
 
 import csv
+import copy
 from collections.abc import Callable
-from datetime import datetime
+from datetime import date, datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
@@ -33,6 +34,8 @@ ReportWriter = Callable[..., None]
 def run_update_latest_report(args, write_report: ReportWriter) -> None:
     paths = PipelinePaths.from_args(args)
     options = PipelineOptions.from_args(args)
+    requested_report_date = args.report_date or ""
+    fallback_reason = ""
     market_path, sector_path = _ensure_market_universe(args, paths, options)
     print(f"Saved {market_path}")
     print(f"Saved {sector_path}")
@@ -41,7 +44,16 @@ def run_update_latest_report(args, write_report: ReportWriter) -> None:
     market_quotes_path = _ensure_market_quotes(args, paths, options)
     quote_snapshot = load_quote_snapshot(market_quotes_path)
     if args.report_date and quote_snapshot.normalized_date != args.report_date:
-        raise SystemExit(quote_date_mismatch_message(quote_snapshot, args.report_date))
+        if not _manual_fallback_enabled(args):
+            raise SystemExit(quote_date_mismatch_message(quote_snapshot, args.report_date))
+        fallback_reason = (
+            f"requested report date {args.report_date} was unavailable; "
+            f"using latest complete report date {quote_snapshot.normalized_date or 'missing'}"
+        )
+        print(f"Manual rerun fallback: {fallback_reason}")
+    actual_report_date = quote_snapshot.normalized_date if args.report_date else quote_snapshot.normalized_date
+    run_args = copy.copy(args)
+    run_args.report_date = actual_report_date
     quote_date, quote_time = quote_snapshot.quote_date, quote_snapshot.quote_time
     print(f"Saved {market_quotes_path}")
 
@@ -84,7 +96,7 @@ def run_update_latest_report(args, write_report: ReportWriter) -> None:
     depth_refresh_status = "skipped"
     if not options.skip_depth_refresh:
         depth_refresh_status = "attempted"
-        _refresh_recent_depth_snapshots(args, paths, options)
+        _refresh_recent_depth_snapshots(run_args, paths, options)
     build_market_stock_candidates(
         market_quotes_path=theme_quotes_path,
         base_stock_metrics_path=tracked_refreshed_path,
@@ -95,7 +107,7 @@ def run_update_latest_report(args, write_report: ReportWriter) -> None:
         stock_metrics_path=refreshed_path,
         market_quotes_path=theme_quotes_path,
         output_path=refreshed_path,
-        report_date=args.report_date or quote_snapshot.normalized_date,
+        report_date=run_args.report_date or quote_snapshot.normalized_date,
     )
     print(
         f"Backfilled valuation data for {valuation_result.filled_pe_count} candidates; "
@@ -120,11 +132,11 @@ def run_update_latest_report(args, write_report: ReportWriter) -> None:
     candidate_symbols = {stock.symbol for stock in stocks}
     formal_candidates_path = write_formal_radar_candidates(
         stocks=stocks,
-        report_date=args.report_date or quote_snapshot.normalized_date,
+        report_date=run_args.report_date or quote_snapshot.normalized_date,
     )
     print(f"Saved {formal_candidates_path}")
     price_refresh_status = "attempted"
-    _refresh_recent_price_snapshots(args, paths, options, required_symbols=candidate_symbols)
+    _refresh_recent_price_snapshots(run_args, paths, options, required_symbols=candidate_symbols)
     theme_history_path = backfill_theme_history_from_processed(
         processed_root=paths.processed_root,
         theme_map_path=args.theme_map_file,
@@ -167,13 +179,17 @@ def run_update_latest_report(args, write_report: ReportWriter) -> None:
         theme_trends=theme_trends,
         quote_date=quote_date,
         quote_time=quote_time,
-        generated_date=args.report_date,
+        generated_date=run_args.report_date,
     )
-    manifest_warnings = _collect_data_quality_warnings(args, paths, options, candidate_symbols)
+    manifest_warnings = _collect_data_quality_warnings(run_args, paths, options, candidate_symbols)
     manifest_path = write_run_manifest(
         paths.run_manifest,
         build_daily_run_manifest(
-            report_date=args.report_date or quote_snapshot.normalized_date,
+            report_date=run_args.report_date or quote_snapshot.normalized_date,
+            requested_date=requested_report_date,
+            actual_report_date=run_args.report_date or quote_snapshot.normalized_date,
+            fallback_reason=fallback_reason,
+            manual_rerun=bool(getattr(args, "manual_rerun", False)),
             quote_date=quote_snapshot.normalized_date,
             quote_time=quote_time,
             html_output=args.output,
@@ -248,7 +264,22 @@ def _ensure_target_date_market_quotes(args, paths: PipelinePaths) -> Path:
                 print(f"Saved {path}")
 
     if not _has_price_snapshot_files(processed_dir):
-        raise SystemExit(f"Target report date {args.report_date} price snapshots are not ready; retry later.")
+        fallback_date = _latest_complete_price_snapshot_date(paths.processed_root)
+        if not _manual_fallback_enabled(args) or fallback_date is None:
+            raise SystemExit(f"Target report date {args.report_date} price snapshots are not ready; retry later.")
+        fallback_ymd = fallback_date.strftime("%Y%m%d")
+        fallback_dir = paths.processed_root / fallback_ymd
+        print(
+            "Manual rerun fallback: "
+            f"target report date {args.report_date} price snapshots are not ready; "
+            f"using {fallback_date.isoformat()}."
+        )
+        return build_market_quotes_from_processed_prices(
+            processed_dir=fallback_dir,
+            sector_map_path=paths.sector_map,
+            output_path=paths.market_quotes,
+            quote_date=fallback_ymd,
+        )
 
     return build_market_quotes_from_processed_prices(
         processed_dir=processed_dir,
@@ -319,6 +350,24 @@ def _target_report_date(args):
     if args.report_date:
         return parse_trade_date(args.report_date)
     return datetime.now(ZoneInfo("Asia/Taipei")).date()
+
+
+def _manual_fallback_enabled(args) -> bool:
+    return bool(getattr(args, "manual_rerun", False)) and not bool(getattr(args, "require_exact_report_date", False))
+
+
+def _latest_complete_price_snapshot_date(processed_root: str | Path) -> date | None:
+    root = Path(processed_root)
+    if not root.exists():
+        return None
+    dates: list[date] = []
+    for path in root.iterdir():
+        if not path.is_dir() or len(path.name) != 8 or not path.name.isdigit():
+            continue
+        if not _has_price_snapshot_files(path):
+            continue
+        dates.append(date(int(path.name[:4]), int(path.name[4:6]), int(path.name[6:])))
+    return max(dates) if dates else None
 
 
 def _has_depth_files(path: Path) -> bool:

@@ -27,10 +27,18 @@ class RunManifestTests(unittest.TestCase):
             candidate_symbol_count=3,
             warnings=["missing price snapshot files: processed_data/20260604"],
             generated_at=datetime(2026, 6, 5, 17, 0, tzinfo=ZoneInfo("Asia/Taipei")),
+            requested_date="2026-06-05",
+            actual_report_date="2026-06-04",
+            fallback_reason="requested report date 2026-06-05 was unavailable",
+            manual_rerun=True,
         )
 
         self.assertEqual(manifest["generated_at"], "2026-06-05T17:00:00+08:00")
         self.assertEqual(manifest["report_date"], "2026-06-04")
+        self.assertEqual(manifest["requested_date"], "2026-06-05")
+        self.assertEqual(manifest["actual_report_date"], "2026-06-04")
+        self.assertEqual(manifest["fallback_reason"], "requested report date 2026-06-05 was unavailable")
+        self.assertTrue(manifest["manual_rerun"])
         self.assertEqual(manifest["quote_date"], "2026-06-04")
         self.assertEqual(manifest["outputs"]["html"], "reports/latest.html")
         self.assertEqual(manifest["outputs"]["formal_candidates"], "data/formal_radar_candidates.latest.csv")

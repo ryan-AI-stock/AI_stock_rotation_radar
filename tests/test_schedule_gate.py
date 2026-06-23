@@ -118,12 +118,17 @@ class ScheduleGateTests(unittest.TestCase):
     def test_workflow_manual_report_date_override_sets_should_run(self) -> None:
         workflow = Path(".github/workflows/generate-report.yml").read_text(encoding="utf-8")
 
+        self.assertIn("manual workflow_dispatch; fallback allowed unless exact mode is enabled", workflow)
+        self.assertIn("--manual-rerun", workflow)
+        self.assertIn("--require-exact-report-date", workflow)
+        self.assertIn("actual_report_date", workflow)
         self.assertIn("echo \"should_run=true\"", workflow)
         self.assertIn("if: steps.report-date.outputs.should_run == 'true'", workflow)
         self.assertIn("Checkout shared schedule rules", workflow)
         self.assertIn("SCHEDULE_RULES_PATH:", workflow)
         self.assertIn("Stop scheduled retry after successful trading-date publish", workflow)
         self.assertIn("github.event_name == 'schedule' && steps.daily-publish-marker.outputs.cache-hit == 'true'", workflow)
+        self.assertIn("github.event_name == 'schedule' && steps.daily-publish-marker.outputs.cache-hit != 'true'", workflow)
 
 
 @contextmanager

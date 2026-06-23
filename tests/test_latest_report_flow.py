@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import unittest
 from contextlib import ExitStack
+from datetime import date
 from pathlib import Path
 from tempfile import TemporaryDirectory
 from types import SimpleNamespace
@@ -27,6 +28,68 @@ class LatestReportFlowTests(unittest.TestCase):
                 pipeline.run_update_latest_report(args, write_report=lambda *args, **kwargs: None)
 
         build_theme_market_quotes.assert_not_called()
+
+    def test_manual_rerun_falls_back_to_quote_date_and_records_manifest(self) -> None:
+        args = _args(report_date="2026-06-04", manual_rerun=True)
+        stock = SimpleNamespace(symbol="2330")
+
+        with ExitStack() as stack:
+            stack.enter_context(
+                patch.object(pipeline, "_ensure_market_universe", return_value=(Path("market.csv"), Path("sector.csv")))
+            )
+            stack.enter_context(patch.object(pipeline, "_ensure_market_quotes", return_value=Path("quotes.csv")))
+            stack.enter_context(
+                patch.object(pipeline, "load_quote_snapshot", return_value=QuoteSnapshot("20260605", "14:30:00"))
+            )
+            stack.enter_context(patch.object(pipeline, "build_theme_market_quotes", return_value=Path("theme_quotes.csv")))
+            stack.enter_context(patch.object(pipeline, "refresh_stock_metrics_quotes"))
+            stack.enter_context(
+                patch.object(pipeline, "build_sector_metrics_from_market_quotes", return_value=Path("sector_metrics.csv"))
+            )
+            stack.enter_context(patch.object(pipeline, "update_theme_history", return_value=Path("theme_history.csv")))
+            stack.enter_context(patch.object(pipeline, "export_hot_sector_symbols", return_value=Path("hot_symbols.csv")))
+            stack.enter_context(patch.object(pipeline, "_refresh_recent_depth_snapshots"))
+            stack.enter_context(patch.object(pipeline, "build_market_stock_candidates"))
+            backfill_valuations = stack.enter_context(
+                patch.object(
+                    pipeline,
+                    "backfill_stock_valuations",
+                    return_value=SimpleNamespace(filled_pe_count=1, missing_pe_symbols=(), warnings=[]),
+                )
+            )
+            stack.enter_context(patch.object(pipeline, "build_hot_stock_deep_metrics", return_value=Path("deep.csv")))
+            stack.enter_context(patch.object(pipeline, "merge_deep_metrics_into_stock_metrics"))
+            stack.enter_context(patch.object(pipeline, "load_sector_metrics", return_value=["sector"]))
+            stack.enter_context(patch.object(pipeline, "load_stock_metrics", return_value=[stock]))
+            write_formal_candidates = stack.enter_context(
+                patch.object(pipeline, "write_formal_radar_candidates", return_value=Path("formal_candidates.csv"))
+            )
+            refresh_prices = stack.enter_context(patch.object(pipeline, "_refresh_recent_price_snapshots"))
+            stack.enter_context(patch.object(pipeline, "backfill_theme_history_from_processed", return_value=Path("theme_history.csv")))
+            stack.enter_context(patch.object(pipeline, "build_price_history_from_processed"))
+            stack.enter_context(
+                patch.object(pipeline, "build_radar_snapshots", return_value=SimpleNamespace(paths=[Path("snapshot.csv")], warnings=[]))
+            )
+            stack.enter_context(patch.object(pipeline, "load_price_history", return_value={}))
+            stack.enter_context(patch.object(pipeline, "load_stock_theme_tags", return_value={}))
+            stack.enter_context(patch.object(pipeline, "load_theme_trends", return_value={}))
+            write_run_manifest = stack.enter_context(patch.object(pipeline, "write_run_manifest", return_value=Path("manifest.json")))
+            stack.enter_context(patch("builtins.print"))
+            write_report = Mock()
+
+            pipeline.run_update_latest_report(args, write_report)
+
+            self.assertEqual(backfill_valuations.call_args.kwargs["report_date"], "2026-06-05")
+            self.assertEqual(write_formal_candidates.call_args.kwargs["report_date"], "2026-06-05")
+            refresh_prices.assert_called_once()
+            self.assertEqual(refresh_prices.call_args.args[0].report_date, "2026-06-05")
+            self.assertEqual(write_report.call_args.kwargs["generated_date"], "2026-06-05")
+            manifest = write_run_manifest.call_args.args[1]
+            self.assertEqual(manifest["report_date"], "2026-06-05")
+            self.assertEqual(manifest["requested_date"], "2026-06-04")
+            self.assertEqual(manifest["actual_report_date"], "2026-06-05")
+            self.assertIn("requested report date 2026-06-04 was unavailable", manifest["fallback_reason"])
+            self.assertTrue(manifest["manual_rerun"])
 
     def test_update_latest_report_runs_expected_internal_flow_without_depth_refresh(self) -> None:
         args = _args(skip_depth_refresh=True)
@@ -129,6 +192,22 @@ class LatestReportFlowTests(unittest.TestCase):
         self.assertTrue(any("missing depth snapshot files" in warning for warning in warnings))
         self.assertTrue(any("missing price snapshot files" in warning for warning in warnings))
 
+    def test_latest_complete_price_snapshot_date_uses_newest_complete_folder(self) -> None:
+        with TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            incomplete = root / "20260605"
+            older = root / "20260604"
+            newer = root / "20260606"
+            for folder in (incomplete, older, newer):
+                folder.mkdir()
+            (incomplete / "twse_prices.csv").write_text("", encoding="utf-8")
+            (older / "twse_prices.csv").write_text("", encoding="utf-8")
+            (older / "tpex_prices.csv").write_text("", encoding="utf-8")
+            (newer / "twse_prices.csv").write_text("", encoding="utf-8")
+            (newer / "tpex_prices.csv").write_text("", encoding="utf-8")
+
+            self.assertEqual(pipeline._latest_complete_price_snapshot_date(root), date(2026, 6, 6))
+
 
 def _args(**overrides):
     values = {
@@ -146,6 +225,8 @@ def _args(**overrides):
         "recent_depth_days": 5,
         "recent_price_days": 70,
         "report_date": "2026-06-04",
+        "manual_rerun": False,
+        "require_exact_report_date": False,
         "run_manifest_output": "reports/latest_manifest.json",
         "sector_map_output": "data/sector_map.generated.csv",
         "sector_scan_max_age_days": 0.0,

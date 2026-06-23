@@ -69,6 +69,16 @@ def main() -> None:
     parser.add_argument("--sector-metrics-output", default="data/sector_metrics.csv", help="Updated sector metrics CSV.")
     parser.add_argument("--processed-input-dir", default="processed_data", help="Directory containing normalized CSV snapshots.")
     parser.add_argument("--report-date", help="Target report trading date, YYYY-MM-DD.")
+    parser.add_argument(
+        "--manual-rerun",
+        action="store_true",
+        help="Treat this as a manual rerun that may fallback to the latest complete report date.",
+    )
+    parser.add_argument(
+        "--require-exact-report-date",
+        action="store_true",
+        help="Disable manual rerun fallback and require --report-date to be exactly available.",
+    )
     parser.add_argument("--build-radar-snapshots", action="store_true", help="Build daily radar snapshots for backtests.")
     parser.add_argument("--radar-snapshot-days", type=int, default=20, help="Number of recent trading-day snapshots to build.")
     parser.add_argument("--radar-snapshot-output-dir", default="data/history", help="Directory for radar_snapshot_YYYYMMDD.csv files.")
