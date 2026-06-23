@@ -1,48 +1,20 @@
 {
   "ready": false,
-  "source_mode": "evidence_queue_phase1_partial",
+  "source_mode": "evidence_queue_phase2_partial",
   "formal_top3_status": "formal_blocked",
   "gap_symbol_count": 61,
   "queued_symbol_count": 61,
-  "sample_evidence_row_count": 10,
-  "accepted_evidence_row_count": 0,
-  "usable_for_formal_replay_count": 0,
-  "batch_size": 10,
-  "batch_count": 7,
-  "theme_gap_counts": {
-    "PCB/載板": 15,
-    "CPO/矽光子": 10,
-    "AI伺服器/ODM": 8,
-    "電源/BBU": 7,
-    "ASIC/IP": 7,
-    "車用電子": 6,
-    "機器人/自動化": 6,
-    "記憶體": 2
-  },
-  "batch_strategy": [
-    "Process queue by blocker count first: PCB/載板, CPO/矽光子, AI伺服器/ODM, 電源/BBU, ASIC/IP, 車用電子, 機器人/自動化, 記憶體.",
-    "Collect 10 symbols per batch after the 5-symbol schema sample; keep rows draft until reviewed.",
-    "Prefer company/MOPS/annual report/investor material sources; news is supporting evidence only.",
-    "Do not regenerate formal_top3 as ready until accepted evidence coverage is sufficient and future-data checks pass."
-  ],
+  "sample_evidence_row_count": 8,
+  "accepted_evidence_row_count": 8,
+  "usable_for_formal_replay_count": 8,
+  "formal_universe_symbol_count": 69,
+  "date_aware_membership_coverage_ratio": 0.11594203,
+  "future_data_violation_count": 0,
   "blocking_issues": [
-    "no_accepted_v2_evidence_yet",
-    "batch_01 collected evidence still requires archive/date/license review",
-    "formal_top3 remains blocked until v2 evidence is accepted and normalized"
+    "theme_membership_v2_ready=false: accepted_formal_symbols=8/69"
   ],
   "warnings": [
-    "Phase 0/1 only creates queue and draft sample ledger rows.",
-    "Draft sample rows use source_pending and usable_for_formal_replay=false.",
-    "This package does not change daily report content, ranking logic, fixed PDF, LINE entry, or publish workflow."
-  ],
-  "batch_01_status": "partial_evidence_collected_needs_review",
-  "batch_01_total": 10,
-  "batch_01_needs_license_check_count": 6,
-  "batch_01_blocked_or_source_pending_count": 4,
-  "batch_01_accepted_count": 0,
-  "batch_01_notes": [
-    "Official source pages were collected for 6 symbols, but they do not expose stable historical publication dates.",
-    "Rows remain usable_for_formal_replay=false until archive/date/license review is completed.",
-    "4 symbols remain blocked/source_pending because sufficiently specific official source evidence was not verified in this pass."
+    "Phase 2 partial includes accepted dated evidence rows, but full-universe coverage is still below formal threshold.",
+    "formal_top3 remains blocked until accepted evidence coverage reaches the formal threshold and Core revalidates."
   ]
 }

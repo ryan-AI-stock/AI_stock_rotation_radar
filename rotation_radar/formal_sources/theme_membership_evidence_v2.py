@@ -72,11 +72,14 @@ THEME_PRIORITY = {
 FORMAL_SOURCE_TYPES = {
     "mops_company_filing",
     "annual_report_segment",
+    "company_annual_report",
+    "company_news_release",
     "investor_conference_material",
     "company_product_page_archived",
     "monthly_revenue_note",
     "dated_industry_report",
     "dated_news_article",
+    "underwriting_prospectus",
     "internal_archived_radar_theme_definition",
 }
 NON_FORMAL_DRAFT_SOURCE_TYPES = {"source_pending", "current_static_theme_map"}
@@ -124,11 +127,18 @@ def validate_theme_membership_evidence_v2(
         _validate_ledger_row(row)
 
     if readiness.get("ready") is not False:
-        raise ValueError("v2 readiness must remain ready=false during Phase 0/1")
-    if readiness.get("source_mode") != "evidence_queue_phase1_partial":
+        raise ValueError("v2 readiness must remain ready=false until full-universe evidence coverage is accepted")
+    source_mode = readiness.get("source_mode")
+    if source_mode not in {"evidence_queue_phase1_partial", "evidence_queue_phase2_partial"}:
         raise ValueError("unexpected v2 source_mode")
-    if readiness.get("usable_for_formal_replay_count") != 0:
+    if source_mode == "evidence_queue_phase1_partial" and readiness.get("usable_for_formal_replay_count") != 0:
         raise ValueError("Phase 0/1 must not create usable formal evidence")
+    if source_mode == "evidence_queue_phase2_partial":
+        accepted_rows = [row for row in ledger_rows if row["review_status"] == "accepted" and row["usable_for_formal_replay"].lower() == "true"]
+        expected_accepted = int(readiness.get("accepted_evidence_row_count", 0) or 0)
+        expected_usable = int(readiness.get("usable_for_formal_replay_count", 0) or 0)
+        if len(accepted_rows) != expected_accepted or len(accepted_rows) != expected_usable:
+            raise ValueError("Phase 2 accepted/usable readiness counts do not match ledger rows")
     if readiness.get("formal_top3_status") != "formal_blocked":
         raise ValueError("formal_top3_status must remain formal_blocked")
     if Path(formal_top3_readiness_path).exists():

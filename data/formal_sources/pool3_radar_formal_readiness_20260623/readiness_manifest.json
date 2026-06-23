@@ -1,0 +1,72 @@
+{
+  "created_at": "2026-06-23T06:44:33+00:00",
+  "status": "partial_price_ready_membership_blocked",
+  "formal_top3_ready": false,
+  "formal_top3_source_mode": "formal_blocked",
+  "theme_membership_v2_ready": false,
+  "theme_membership_v2_formal_top3_status": "formal_blocked",
+  "accepted_evidence_row_count": 8,
+  "usable_for_formal_replay_count": 8,
+  "accepted_formal_universe_symbol_count": 8,
+  "formal_universe_symbol_count": 69,
+  "date_aware_membership_coverage_ratio": 0.11594203,
+  "blocked_membership_symbol_count": 61,
+  "future_data_violation_count": 0,
+  "price_cache_dir": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-30\\ep05-chat-ai-stock-backtest-lab\\backtest_cache\\sector_dynamic_pool",
+  "price_cache_coverage_by_year": [
+    {
+      "period": "2022",
+      "start_date": "2022-01-03",
+      "end_date": "2022-12-30",
+      "member_count": 166,
+      "resolved_member_count": 166,
+      "skipped_member_count": 0,
+      "price_cache_coverage_ratio": 1.0
+    },
+    {
+      "period": "2023",
+      "start_date": "2023-01-03",
+      "end_date": "2023-12-29",
+      "member_count": 166,
+      "resolved_member_count": 166,
+      "skipped_member_count": 0,
+      "price_cache_coverage_ratio": 1.0
+    },
+    {
+      "period": "2024",
+      "start_date": "2024-01-02",
+      "end_date": "2024-12-31",
+      "member_count": 166,
+      "resolved_member_count": 166,
+      "skipped_member_count": 0,
+      "price_cache_coverage_ratio": 1.0
+    },
+    {
+      "period": "2025",
+      "start_date": "2025-01-02",
+      "end_date": "2025-12-31",
+      "member_count": 166,
+      "resolved_member_count": 166,
+      "skipped_member_count": 0,
+      "price_cache_coverage_ratio": 1.0
+    },
+    {
+      "period": "2026_ytd",
+      "start_date": "2026-01-02",
+      "end_date": "2026-05-26",
+      "member_count": 166,
+      "resolved_member_count": 166,
+      "skipped_member_count": 0,
+      "price_cache_coverage_ratio": 1.0
+    }
+  ],
+  "price_cache_skipped_row_count": 0,
+  "blocking_issues": [
+    "theme_membership_v2_ready=false: accepted_formal_symbols=8/69"
+  ],
+  "warnings": [
+    "This readiness package is for BACKTEST_LAB Core formal challenger validation only.",
+    "It does not modify the daily public Radar report, PDF/HTML layout, Drive publish, LINE entry, or workflow.",
+    "Current/static theme maps remain research-only unless backed by accepted date-aware evidence."
+  ]
+}
