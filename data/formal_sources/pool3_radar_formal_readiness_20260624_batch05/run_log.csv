@@ -1,0 +1,15 @@
+﻿ts,symbol,step,status,message
+2026-06-24T10:43:08+08:00,2308,mops_pdf,started,fetch/reuse annual report
+2026-06-24T10:43:41+08:00,2308,evidence,accepted,Power
+2026-06-24T10:43:41+08:00,2457,mops_pdf,started,fetch/reuse annual report
+2026-06-24T10:43:51+08:00,2457,evidence,accepted,電源;電源供應器;交換式電源;不斷電;UPS
+2026-06-24T10:43:51+08:00,3015,mops_pdf,started,fetch/reuse annual report
+2026-06-24T10:44:05+08:00,3015,evidence,accepted,電源;電源供應器;交換式電源;不斷電;UPS
+2026-06-24T10:44:05+08:00,3211,mops_pdf,started,fetch/reuse annual report
+2026-06-24T10:44:11+08:00,3211,evidence,accepted,UPS;BBU
+2026-06-24T10:44:11+08:00,3323,mops_pdf,started,fetch/reuse annual report
+2026-06-24T10:44:24+08:00,3323,evidence,accepted,電源;不斷電;電池;電池模組;鋰電池
+2026-06-24T10:44:24+08:00,4931,mops_pdf,started,fetch/reuse annual report
+2026-06-24T10:44:37+08:00,4931,evidence,accepted,電源;不斷電;UPS;電池;電池模組
+2026-06-24T10:44:37+08:00,6412,mops_pdf,started,fetch/reuse annual report
+2026-06-24T10:44:47+08:00,6412,evidence,accepted,Power
