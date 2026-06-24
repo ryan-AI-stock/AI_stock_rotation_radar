@@ -1,0 +1,44 @@
+{
+  "created_at": "2026-06-24T12:30:00+08:00",
+  "task_id": "TASK-SECTOR-RADAR-POOL3-READINESS-EVIDENCE-CONTINUE-20260624",
+  "status": "batch07_membership_threshold_reached_pending_core_replay",
+  "formal_ready": false,
+  "formal_top3_ready": false,
+  "theme_membership_v2_ready": true,
+  "pool3_role": "attack_pool",
+  "previous_accepted_evidence_rows": 53,
+  "accepted_evidence_delta_count": 16,
+  "accepted_evidence_row_count_after_batch": 69,
+  "formal_universe_symbol_count": 69,
+  "accepted_formal_universe_symbol_count_after_batch": 69,
+  "coverage_ratio_after_batch": 1.0,
+  "blocked_or_failed_batch_count": 0,
+  "remaining_gap_symbol_count": 0,
+  "future_data_violation_count": 0,
+  "ready_threshold": 0.95,
+  "attack_pool_support_judgment": "membership_evidence_threshold_reached_pending_core_replay",
+  "attack_pool_support_note": "Batch07 completes the remaining 16 date-aware MOPS annual-report evidence rows. This supports Pool3 Radar attack-candidate universe readiness at the data layer, but formal_top3/formal_ready stay false until Core reruns formal challenger replay and three-pool strength consistency validation.",
+  "combined_accepted_evidence_path": "accepted_theme_membership_v2_combined.csv",
+  "remaining_gap_path": "remaining_gap_after_batch.csv",
+  "blocking_issues": [
+    "formal_top3 remains blocked until Core challenger replay and consistency validation pass"
+  ],
+  "outputs": [
+    "accepted_evidence_delta.csv",
+    "accepted_theme_membership_v2_combined.csv",
+    "blocked_evidence_rows.csv",
+    "completed.csv",
+    "current_step.txt",
+    "date_aware_theme_membership_v2_readiness_after_batch.json",
+    "failed.csv",
+    "final_summary_zh.md",
+    "readiness_manifest.json",
+    "remaining_gap_after_batch.csv",
+    "run_log.csv",
+    "source_audit.csv"
+  ],
+  "validation": {
+    "theme_membership_validator": "passed: python -m rotation_radar.formal_sources.validate_theme_membership_evidence_v2 --queue data/formal_sources/theme_membership_evidence_queue_v2.csv --ledger data/formal_sources/pool3_radar_formal_readiness_20260624_batch07/accepted_theme_membership_v2_combined.csv --readiness data/formal_sources/pool3_radar_formal_readiness_20260624_batch07/date_aware_theme_membership_v2_readiness_after_batch.json",
+    "unit_tests": "passed: python -m unittest tests.test_theme_membership_evidence_v2 tests.test_pool3_radar_readiness (3 tests OK)"
+  }
+}

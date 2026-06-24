@@ -1,0 +1,21 @@
+{
+  "ready": false,
+  "source_mode": "evidence_queue_phase2_partial",
+  "formal_top3_status": "formal_blocked",
+  "formal_universe_symbol_count": 69,
+  "accepted_evidence_row_count": 69,
+  "accepted_formal_universe_symbol_count": 69,
+  "usable_for_formal_replay_count": 69,
+  "coverage_ratio": 1.0,
+  "future_data_violation_count": 0,
+  "theme_membership_v2_ready": true,
+  "formal_ready": false,
+  "blocking_issues": [
+    "formal_top3/Core challenger replay not run yet",
+    "three-pool strength consistency not validated by Core"
+  ],
+  "warnings": [
+    "Membership evidence coverage reaches threshold, but Radar/Data does not activate formal model logic.",
+    "2356 and 2376 are accepted as dated server/GPU-platform evidence; AI-specific interpretation remains Core/Research responsibility."
+  ]
+}

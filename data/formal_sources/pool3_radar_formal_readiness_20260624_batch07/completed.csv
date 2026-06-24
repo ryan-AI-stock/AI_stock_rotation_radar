@@ -1,0 +1,17 @@
+﻿symbol,name,theme,status,evidence_id,source_date,source_exactness
+1536,和大,車用電子,accepted,TMEM-V2-BATCH07-1536-車用電子-ANNUAL-2021,2022-06-08,exact_auto_drivetrain_components
+1590,亞德客-KY,機器人/自動化,accepted,TMEM-V2-BATCH07-1590-機器人自動化-ANNUAL-2021,2022-06-16,exact_pneumatic_automation
+2049,上銀,機器人/自動化,accepted,TMEM-V2-BATCH07-2049-機器人自動化-ANNUAL-2021,2022-06-27,exact_linear_motion_robotics
+2231,為升,車用電子,accepted,TMEM-V2-BATCH07-2231-車用電子-ANNUAL-2021,2022-05-26,exact_auto_electronics
+2356,英業達,AI伺服器/ODM,accepted,TMEM-V2-BATCH07-2356-AI伺服器ODM-ANNUAL-2021,2022-06-14,server_odm_proxy_not_ai_specific
+2359,所羅門,機器人/自動化,accepted,TMEM-V2-BATCH07-2359-機器人自動化-ANNUAL-2021,2022-06-08,exact_machine_vision_automation
+2376,技嘉,AI伺服器/ODM,accepted,TMEM-V2-BATCH07-2376-AI伺服器ODM-ANNUAL-2021,2022-06-14,server_gpu_platform_proxy
+2464,盟立,機器人/自動化,accepted,TMEM-V2-BATCH07-2464-機器人自動化-ANNUAL-2021,2022-06-09,exact_factory_automation
+2497,怡利電,車用電子,accepted,TMEM-V2-BATCH07-2497-車用電子-ANNUAL-2021,2022-06-15,exact_in_vehicle_electronics
+3552,同致,車用電子,accepted,TMEM-V2-BATCH07-3552-車用電子-ANNUAL-2021,2022-06-30,exact_auto_sensors
+3665,貿聯-KY,車用電子,accepted,TMEM-V2-BATCH07-3665-車用電子-ANNUAL-2021,2022-06-23,exact_auto_ev_interconnect
+4576,大銀微系統,機器人/自動化,accepted,TMEM-V2-BATCH07-4576-機器人自動化-ANNUAL-2021,2022-05-31,exact_motion_control_automation
+6166,凌華,機器人/自動化,accepted,TMEM-V2-BATCH07-6166-機器人自動化-ANNUAL-2021,2022-06-22,exact_industrial_pc_automation
+6279,胡連,車用電子,accepted,TMEM-V2-BATCH07-6279-車用電子-ANNUAL-2021,2022-06-17,exact_auto_connectors
+6531,愛普*,記憶體,accepted,TMEM-V2-BATCH07-6531-記憶體-ANNUAL-2021,2022-05-27,exact_memory_ic_ip
+8088,品安,記憶體,accepted,TMEM-V2-BATCH07-8088-記憶體-ANNUAL-2021,2022-06-17,exact_memory_modules
