@@ -1,0 +1,15 @@
+﻿ts,symbol,step,status,message
+2026-06-24T11:12:35+08:00,2379,mops_pdf,started,fetch/reuse annual report
+2026-06-24T11:12:42+08:00,2379,evidence,accepted,SoC;IP;EDA
+2026-06-24T11:12:42+08:00,2454,mops_pdf,started,fetch/reuse annual report
+2026-06-24T11:13:07+08:00,2454,evidence,accepted,IC設計;IC 設計;積體電路;晶片設計;晶片
+2026-06-24T11:13:07+08:00,3035,mops_pdf,started,fetch/reuse annual report
+2026-06-24T11:13:19+08:00,3035,evidence,accepted,積體電路設計;積體電路;ASIC;SoC;IP
+2026-06-24T11:13:19+08:00,3443,mops_pdf,started,fetch/reuse annual report
+2026-06-24T11:13:35+08:00,3443,evidence,accepted,IC設計;IC 設計;積體電路設計;積體電路;晶片設計
+2026-06-24T11:13:35+08:00,3529,mops_pdf,started,fetch/reuse annual report
+2026-06-24T11:13:44+08:00,3529,evidence,accepted,ASIC;SoC;IP;矽智財;NRE
+2026-06-24T11:13:44+08:00,3661,mops_pdf,started,fetch/reuse annual report
+2026-06-24T11:13:55+08:00,3661,evidence,accepted,IC 設計;ASIC;SoC;IP;矽智財
+2026-06-24T11:13:55+08:00,5274,mops_pdf,started,fetch/reuse annual report
+2026-06-24T11:14:01+08:00,5274,evidence,accepted,IC設計;IC 設計;晶片;SoC;IP
