@@ -1,0 +1,45 @@
+{
+  "created_at": "2026-06-24T10:23:32+08:00",
+  "task_id": "TASK-SECTOR-RADAR-POOL3-READINESS-EVIDENCE-CONTINUE-20260624",
+  "status": "partial_batch03_attack_pool_evidence",
+  "formal_ready": false,
+  "formal_top3_ready": false,
+  "theme_membership_v2_ready": false,
+  "pool3_role": "attack_pool",
+  "previous_accepted_evidence_rows": 23,
+  "accepted_evidence_delta_count": 10,
+  "accepted_evidence_row_count_after_batch": 33,
+  "formal_universe_symbol_count": 69,
+  "accepted_formal_universe_symbol_count_after_batch": 33,
+  "coverage_ratio_after_batch": 0.47826087,
+  "blocked_or_failed_batch_count": 0,
+  "remaining_gap_symbol_count": 36,
+  "future_data_violation_count": 0,
+  "ready_threshold": 0.95,
+  "attack_pool_support_judgment": "partial_not_sufficient_yet",
+  "attack_pool_support_note": "Batch03 adds date-aware CPO/矽光子 membership evidence for attack-candidate universe construction. Coverage improves but remains below 95%; Pool3 Radar remains report-only/shadow diagnostic until broader evidence and Core challenger replay pass.",
+  "combined_accepted_evidence_path": "accepted_theme_membership_v2_combined.csv",
+  "remaining_gap_path": "remaining_gap_after_batch.csv",
+  "blocking_issues": [
+    "theme_membership_v2_ready=false: accepted_formal_symbols below 95% threshold",
+    "formal_top3 remains blocked by incomplete full-universe evidence"
+  ],
+  "outputs": [
+    "accepted_evidence_delta.csv",
+    "accepted_theme_membership_v2_combined.csv",
+    "blocked_evidence_rows.csv",
+    "completed.csv",
+    "current_step.txt",
+    "date_aware_theme_membership_v2_readiness_after_batch.json",
+    "failed.csv",
+    "final_summary_zh.md",
+    "readiness_manifest.json",
+    "remaining_gap_after_batch.csv",
+    "run_log.csv",
+    "source_audit.csv"
+  ],
+  "validation": {
+    "theme_membership_validator": "python -m rotation_radar.formal_sources.validate_theme_membership_evidence_v2 --queue data/formal_sources/theme_membership_evidence_queue_v2.csv --ledger data/formal_sources/pool3_radar_formal_readiness_20260624_batch03/accepted_theme_membership_v2_combined.csv --readiness data/formal_sources/pool3_radar_formal_readiness_20260624_batch03/date_aware_theme_membership_v2_readiness_after_batch.json = OK",
+    "unit_tests": "python -m unittest tests.test_theme_membership_evidence_v2 tests.test_pool3_radar_readiness = OK (3 tests)"
+  }
+}
