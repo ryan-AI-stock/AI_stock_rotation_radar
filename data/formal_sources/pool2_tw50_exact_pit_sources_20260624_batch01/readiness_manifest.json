@@ -1,0 +1,47 @@
+{
+  "generated_at": "2026-06-24T03:51:59+00:00",
+  "task_id": "TASK-BACKTEST-CORE-POOL2-PIT-REPLAY-COVERAGE-20260623",
+  "package": "pool2_tw50_exact_pit_sources_20260624_batch01",
+  "status": "partial_exact_events_parsed_baseline_missing",
+  "ready": false,
+  "formal_ready": false,
+  "accepted_for_core_validator": false,
+  "exact_or_proxy": "exact_candidate_event_sources_only",
+  "source_type": "official_technical_notice",
+  "candidate_notice_count": 29,
+  "downloaded_notice_count": 29,
+  "failed_notice_count": 0,
+  "first_downloaded_event_source_date": "2022/03/05",
+  "baseline_snapshot_status": "blocked_not_found",
+  "official_baseline_found": false,
+  "baseline_requirement": "Complete official TW50 constituent snapshot dated on or before the first accepted add/delete event.",
+  "ready_for_core_parser": true,
+  "core_parser_input_dir": "data\\formal_sources\\pool2_tw50_exact_pit_sources_20260624_batch01\\technical_notices_pdf",
+  "future_data_violation_count": 0,
+  "public_source_exhausted": false,
+  "blockers": [
+    "PIT interval build still requires a complete official TW50 baseline snapshot dated on or before the first accepted event."
+  ],
+  "outputs": {
+    "source_audit": "source_audit.csv",
+    "accepted_sources": "accepted_sources.csv",
+    "blocked_sources": "blocked_sources.csv",
+    "failed": "failed.csv",
+    "final_summary": "final_summary_zh.md",
+    "baseline_source_search_audit": "baseline_source_search_audit.csv",
+    "core_parser_output": "core_parser_output",
+    "tw50_technical_notice_events": "core_parser_output/tw50_technical_notice_events.csv",
+    "core_parser_metadata": "core_parser_output/metadata.json"
+  },
+  "core_next_steps": [
+    "Use core_parser_output/tw50_technical_notice_events.csv as accepted official technical notice event rows.",
+    "Find or ingest a complete official TW50 baseline snapshot dated on or before 2022-03-21, the first accepted event effective_date in this package.",
+    "After baseline is available, run Core PIT interval builder and Pool2/TW50 coverage validator; keep formal_ready=false until then."
+  ],
+  "core_parser_status": "events_ready_pending_baseline_snapshot",
+  "core_parser_output_dir": "data\\formal_sources\\pool2_tw50_exact_pit_sources_20260624_batch01\\core_parser_output",
+  "accepted_event_rows": 62,
+  "blocked_event_rows": 0,
+  "event_rows": 62,
+  "ready_for_core_interval_builder": false
+}

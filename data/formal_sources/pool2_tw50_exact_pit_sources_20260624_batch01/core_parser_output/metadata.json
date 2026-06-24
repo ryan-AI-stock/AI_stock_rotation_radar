@@ -1,0 +1,21 @@
+{
+  "output_dir": "data\\formal_sources\\pool2_tw50_exact_pit_sources_20260624_batch01\\core_parser_output",
+  "event_rows": 62,
+  "accepted_event_rows": 62,
+  "blocked_event_rows": 0,
+  "readiness_status": "events_ready_pending_baseline_snapshot",
+  "blockers": [
+    "PIT interval build still requires an official baseline constituent snapshot on or before the first event"
+  ],
+  "outputs": {
+    "events": "data\\formal_sources\\pool2_tw50_exact_pit_sources_20260624_batch01\\core_parser_output\\tw50_technical_notice_events.csv",
+    "source_audit": "data\\formal_sources\\pool2_tw50_exact_pit_sources_20260624_batch01\\core_parser_output\\tw50_technical_notice_source_audit.csv",
+    "metadata": "data\\formal_sources\\pool2_tw50_exact_pit_sources_20260624_batch01\\core_parser_output\\metadata.json",
+    "markdown": "data\\formal_sources\\pool2_tw50_exact_pit_sources_20260624_batch01\\core_parser_output\\tw50_technical_notice_events.md",
+    "run_log": "data\\formal_sources\\pool2_tw50_exact_pit_sources_20260624_batch01\\core_parser_output\\run_log.csv",
+    "completed": "data\\formal_sources\\pool2_tw50_exact_pit_sources_20260624_batch01\\core_parser_output\\completed.csv",
+    "failed": "data\\formal_sources\\pool2_tw50_exact_pit_sources_20260624_batch01\\core_parser_output\\failed.csv"
+  },
+  "formal_ready": false,
+  "reason": "technical notice events are source evidence; full PIT intervals still require an official baseline snapshot on or before the first event"
+}
