@@ -1,0 +1,11 @@
+{
+  "ready": false,
+  "source_mode": "evidence_queue_phase2_partial",
+  "formal_top3_status": "formal_blocked",
+  "accepted_evidence_row_count": 14,
+  "usable_for_formal_replay_count": 14,
+  "queue_row_count": 61,
+  "batch_size": 6,
+  "accepted_delta_count": 6,
+  "notes": "Batch01 compatibility readiness for validator; formal ready remains false until full-universe threshold passes."
+}
