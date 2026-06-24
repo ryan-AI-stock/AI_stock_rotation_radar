@@ -1,0 +1,3 @@
+﻿symbol,ticker,exchange,name,theme,subtheme,block_reason,attempted_source,source_status,notes
+2356,2356.TW,TWSE,英業達,AI伺服器/ODM,伺服器 ODM,no_ai_server_odm_keyword_in_extracted_text,https://doc.twse.com.tw/server-java/t57sb01?step=9&kind=F&co_id=2356&filename=2021_2356_20220614F04.pdf,parsed_no_match,Keep blocked/source_pending; no accepted date-aware AI伺服器/ODM membership evidence from this annual report.
+2376,2376.TW,TWSE,技嘉,AI伺服器/ODM,伺服器主機板/GPU 板卡,no_ai_server_odm_keyword_in_extracted_text,https://doc.twse.com.tw/server-java/t57sb01?step=9&kind=F&co_id=2376&filename=2021_2376_20220614F04.pdf,parsed_no_match,Keep blocked/source_pending; no accepted date-aware AI伺服器/ODM membership evidence from this annual report.
