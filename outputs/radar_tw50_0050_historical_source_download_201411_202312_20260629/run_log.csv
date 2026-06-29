@@ -1,0 +1,3 @@
+timestamp,step,status,details
+2026-06-29T13:53:38+08:00,start_fast_probe,running,Short-timeout bounded probe started.
+2026-06-29T13:56:14+08:00,finish_fast_probe,completed,attempts=32 raw_candidates=0 accepted_rows=0

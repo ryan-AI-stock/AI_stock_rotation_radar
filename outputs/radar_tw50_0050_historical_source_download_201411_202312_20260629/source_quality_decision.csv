@@ -1,0 +1,3 @@
+source_family,decision,formal_exact,manual_proxy_allowed,rationale
+official_fixed_urls,attempted_not_accepted_as_historical,false,true_if_dated_snapshot,Fixed official URLs are rolling/current; direct 200 responses are not historical PIT evidence.
+wayback_direct_and_cdx,attempted_with_http_evidence,false,true_if_pdf_date_and_rows_reviewed,Wayback snapshots can become source-backed manual/proxy evidence only after content/date review and row extraction.
