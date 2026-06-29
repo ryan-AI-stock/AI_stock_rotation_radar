@@ -1,0 +1,6 @@
+source_family,decision,usable_for_formal_pit,usable_for_diagnostic,period_start,period_end,rationale
+Taiwan Index official technical notices,exact_candidate_event_source,false,true,2022-03-21,2023-12-29,"Official dated event notices are exact candidates for constituent changes, but not enough to build full PIT without dated baseline."
+FTSE Russell/LSEG TWSE Taiwan Index Series archive,exact_candidate_unacquired,false,true,2014-11-01,2023-12-29,"Authoritative route if dated constituent notices or snapshots are acquired; currently not archived in repo."
+TWSE/Taiwan Index dated baseline snapshots,exact_candidate_baseline_required,false,true,2014-11-01,2023-12-29,"Required to seed event reconstruction and avoid reverse-building from a future snapshot."
+Yuanta 0050 monthly/annual holdings,manual_evidence_candidate_proxy,false,true,2014-11-01,2023-12-29,"Dated ETF holdings may support manual evidence/proxy checks, but cannot be treated as exact official TW50 membership by default."
+Repository current TW50 snapshot,proxy_current_only,false,true,2026-06-24,2026-06-24,"Current snapshot is useful only for current diagnostics; using it as historical exact would be future-data leakage."

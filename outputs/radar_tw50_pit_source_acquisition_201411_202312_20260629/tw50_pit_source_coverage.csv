@@ -1,0 +1,6 @@
+coverage_id,period_start,period_end,source_family,source_type,coverage_status,formal_ready,core_normalizer_ready,blocker_or_notes
+tw50_201411_202112_exact,2014-11-01,2021-12-31,"FTSE/TWSE/Taiwan Index official archive",exact_candidate,blocked_missing_acquired_archive,false,false,"No committed exact dated baseline or complete event archive for this period."
+tw50_202203_202312_event_notices,2022-03-21,2023-12-29,"Taiwan Index technical notices prior Radar batch",exact_candidate_event_source,partial_events_available_baseline_missing,false,false,"Official event notices exist in prior Radar package, but interval builder still requires dated official baseline on/before first event."
+tw50_201411_202312_exact_full,2014-11-01,2023-12-29,"Combined official baseline plus events",exact,not_ready,false,false,"Formal PIT table remains blocked until exact baseline and complete event coverage are acquired."
+0050_201411_202312_manual,2014-11-01,2023-12-29,"Yuanta 0050 monthly/annual holdings reports",manual_evidence_candidate_proxy,not_acquired,false,false,"Can support diagnostic/manual evidence only after dated PDFs or CSVs are acquired; not exact TW50 by itself."
+repo_current_snapshot,2026-06-24,2026-06-24,"Repository current TW50 snapshot",proxy,current_only,false,false,"May be used for current diagnostics, never historical exact reconstruction."

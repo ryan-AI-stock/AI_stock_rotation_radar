@@ -1,0 +1,5 @@
+item_id,completed_at,status,evidence
+core_phase2_intake,2026-06-29,completed,"Core output e214135 reviewed; headers and readiness blockers copied into Radar/Data package."
+prior_radar_pool2_intake,2026-06-29,completed,"Existing Pool2 TW50 exact PIT source package reviewed: 29 Taiwan Index technical-notice PDFs parsed for 2022+ events, but official baseline missing."
+source_classification_ledger,2026-06-29,completed,"exact/manual/proxy decisions written to exact_vs_manual_vs_proxy_source_decision.csv."
+00631l_201411_trade_check,2026-06-29,completed,"TWSE official endpoint confirmed 00631L had 2014/11 trading rows; not a non-listed explanation."

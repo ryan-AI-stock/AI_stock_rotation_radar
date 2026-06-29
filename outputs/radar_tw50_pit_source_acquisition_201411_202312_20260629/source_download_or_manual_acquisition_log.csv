@@ -1,0 +1,7 @@
+attempt_id,attempt_date,source_family,action,result,next_step
+core_phase2_plan_intake,2026-06-29,Core output,read_existing_plan,completed,"Use Core raw_source_archive_manifest_template.csv and pit_source_acquisition_plan.csv as schema/target."
+radar_prior_pool2_intake,2026-06-29,Radar Pool2 prior source packages,read_existing_audits,completed,"Reuse existing Taiwan Index technical-notice evidence and baseline blocker findings."
+official_twse_00631l_probe,2026-06-29,TWSE official STOCK_DAY endpoint,small_api_probe_completed,completed,"Record 2014/11 trading presence; do not classify 00631L gap as not listed."
+large_pdf_downloads,2026-06-29,All raw PDF/CSV sources,not_started_by_design,skipped,"Use manual/checkpointed acquisition in next batch; do not add raw PDFs or large binary files to git."
+ftse_russell_archive,2026-06-29,FTSE Russell/LSEG,manual_acquisition_required,blocked,"Need dated TWSE Taiwan Index Series constituent archive or official notices."
+yuanta_0050_reports,2026-06-29,Yuanta 0050,manual_acquisition_required,blocked,"Need dated monthly factsheets or annual/semiannual reports for historical holdings evidence."

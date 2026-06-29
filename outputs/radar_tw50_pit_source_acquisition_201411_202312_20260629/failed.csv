@@ -1,0 +1,4 @@
+item_id,status,reason,next_step
+full_exact_tw50_pit_201411_202312,blocked,"No complete official dated baseline plus event archive covering 2014/11-2023/12 is available in committed Radar/Core artifacts.","Acquire official FTSE Russell/Taiwan Index historical constituent archive or dated TW50 baseline snapshots."
+yuanta_0050_pdf_archive_2014_2023,blocked,"Prior public/Drive/local searches did not produce usable dated Yuanta 0050 monthly or annual holdings PDFs for required historical periods.","Manual download/intake of dated Yuanta 0050 monthly factsheets or annual reports, then classify as manual evidence candidate/proxy rather than exact TW50."
+formal_ready_core_normalization,blocked,"Core tw50_pit_backfill.py cannot normalize a formal PIT table until exact source files or dated manual ledgers exist.","Feed acquired source archive into Core normalizer after acquisition."

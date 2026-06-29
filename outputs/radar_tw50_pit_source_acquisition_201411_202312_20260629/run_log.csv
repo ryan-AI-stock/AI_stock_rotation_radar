@@ -1,0 +1,5 @@
+timestamp,step,status,details
+2026-06-29T10:00:00+08:00,read_core_phase2_output,completed,"Read Core plan, templates, readiness ledger, and final summary from phase2 runner output."
+2026-06-29T10:10:00+08:00,read_radar_prior_pool2_outputs,completed,"Reused prior Radar Pool2 TW50 exact PIT packages, source audit ledgers, Yuanta proxy/manual ledgers, and baseline-source search audit."
+2026-06-29T10:31:00+08:00,verify_00631l_201411_twse_trading,completed,"TWSE official STOCK_DAY endpoint returned 2014-11 daily trading rows for 00631L."
+2026-06-29T10:35:00+08:00,write_acquisition_package,completed_partial,"Created checkpointed package without raw PDFs or large binary downloads."

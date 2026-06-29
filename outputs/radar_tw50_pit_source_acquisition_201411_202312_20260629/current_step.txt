@@ -1,0 +1,3 @@
+package_completed_partial_blocked
+
+No large raw-source download was started. The package records source availability, source-class decisions, 00631L official TWSE trading check, and remaining blockers for Core normalization.
