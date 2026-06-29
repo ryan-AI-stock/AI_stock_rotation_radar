@@ -1,0 +1,2 @@
+started_at,finished_at,status,months_requested,months_completed,months_missing,request_attempts,validated_rows,rejected_rows,quarantined_days,notes
+2026-06-29T20:14:23+08:00,2026-06-29T20:33:09+08:00,completed,110,110,0,4118,112200,1874,0,core_contract=C:\Users\zergv\Documents\Codex\2026-05-30\ep05-chat-ai-stock-backtest-lab\outputs\core_0050_pcf_daily_pit_contract_judgment_20260629; force=False; reset=True
