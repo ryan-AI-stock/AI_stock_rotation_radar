@@ -1,0 +1,2 @@
+started_at,finished_at,status,sitca_requests,yuanta_requests,exact_replay_attempts,parsed_rows,accepted_rows,notes
+2026-06-29T17:23:37+08:00,2026-06-29T17:24:40+08:00,completed_partial_no_valid_dated_rows,54,50,40,189,0,read_phase6=C:\Users\zergv\Documents\Codex\2026-05-23\ai-stock-rotation-radar-https-docs\outputs\radar_tw50_0050_session_replay_phase6_201411_202312_20260629

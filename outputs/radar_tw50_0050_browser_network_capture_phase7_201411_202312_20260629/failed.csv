@@ -1,0 +1,5 @@
+period,step,status,error,next_step
+2014Q4,target_period_acceptance,missing_accepted_rows,Live browser capture/replay did not return target-date 0050 holdings rows.,"Non-headless Chrome/devtools capture with persisted profile, then SITCA static endpoint discovery or Yuanta common-params deeper trace."
+2016Q1,target_period_acceptance,missing_accepted_rows,Live browser capture/replay did not return target-date 0050 holdings rows.,"Non-headless Chrome/devtools capture with persisted profile, then SITCA static endpoint discovery or Yuanta common-params deeper trace."
+2021Q4,target_period_acceptance,missing_accepted_rows,Live browser capture/replay did not return target-date 0050 holdings rows.,"Non-headless Chrome/devtools capture with persisted profile, then SITCA static endpoint discovery or Yuanta common-params deeper trace."
+2023Q4,target_period_acceptance,missing_accepted_rows,Live browser capture/replay did not return target-date 0050 holdings rows.,"Non-headless Chrome/devtools capture with persisted profile, then SITCA static endpoint discovery or Yuanta common-params deeper trace."

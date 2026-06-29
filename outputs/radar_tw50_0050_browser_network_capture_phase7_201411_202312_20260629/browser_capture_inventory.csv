@@ -1,0 +1,6 @@
+capture_id,source,page_url,status,http_status,title,request_count,api_request_count,relevant_response_count,notes
+sitca_live_in2421,SITCA IN2421.aspx,https://www.sitca.org.tw/ROC/Industry/IN2421.aspx,captured,200,中華民國證券投資信託暨顧問商業同業公會,54,4,0,
+yuanta_live_0,Yuanta 0050 live page,https://www.yuantaetfs.com/product/detail/0050/ratio,captured,200,(0050)元大台灣卓越50證券投資信託基金 - 持股比重 | 元大投信 YuantaETFs,14,11,7,
+yuanta_live_1,Yuanta 0050 live page,https://www.yuantaetfs.com/tradeInfo/pcf/0050,captured,200,(0050)元大台灣卓越50證券投資信託基金 - 元大申購買回清單 | 元大投信 YuantaETFs,15,12,6,
+yuanta_live_2,Yuanta 0050 live page,https://www.yuantaetfs.com/#/product/detail/0050/ratio,captured,200,ETF投資專區｜元大投信,19,14,13,
+yuanta_live_3,Yuanta 0050 live page,https://www.yuantaetfs.com/#/tradeInfo/pcf/0050,captured,200,ETF投資專區｜元大投信,2,1,1,

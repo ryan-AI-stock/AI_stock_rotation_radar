@@ -1,0 +1,4 @@
+source,source_type,formal_exact,evidence_quality,accepted_rows,decision,notes
+SITCA IN2421.aspx CDP browser capture,browser_capture_candidate,false,no_holdings_rows_detected,0,not_formal_ready,accepted only if target date rows are parsed
+Yuanta 0050 CDP browser capture,endpoint_contract_sample,false,live_api_contract_captured,0,not_formal_ready,current/date-mismatched payloads are not historical evidence
+Phase7 exact replay,browser_capture_exact_replay,false,no_target_date_rows,0,blocked_partial,no current snapshot backfill
