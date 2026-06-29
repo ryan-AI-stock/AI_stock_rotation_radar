@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "task_id": "TASK-RADAR-DATA-TW50-0050-DATED-API-DISCLOSURE-PHASE4-20260629",
+  "status": "completed_partial_no_valid_dated_rows",
+  "created_at": "2026-06-29T16:12:16+08:00",
+  "previous_output_dir": "outputs/radar_tw50_0050_archived_html_crawler_201411_202312_20260629",
+  "output_dir": "outputs/radar_tw50_0050_dated_api_disclosure_phase4_201411_202312_20260629",
+  "target_periods": [
+    "2014Q4",
+    "2016Q1",
+    "2021Q4",
+    "2023Q4"
+  ],
+  "source_probe_attempt_count": 112,
+  "api_payload_candidate_count": 72,
+  "disclosure_candidate_count": 40,
+  "raw_source_count": 93,
+  "parsed_holdings_sample_rows": 0,
+  "accepted_historical_rows": 0,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "formal_exact": false,
+  "current_snapshot_used_as_historical": false,
+  "date_mismatched_payload_accepted": false,
+  "future_data_violation_count": 0,
+  "large_unbounded_crawl_started": false,
+  "bogus_pdf_text_rows_removed": true
+}

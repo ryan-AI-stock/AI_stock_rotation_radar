@@ -1,0 +1,4 @@
+source_family,decision,formal_exact,manual_proxy_allowed,rationale
+yuanta_etfapi_or_nuxt_payload,attempted_dated_route_probe,false,true_if_date_matched,Can support source-backed manual/proxy only when payload exposes holdings_date/source_date matching target period and holdings rows.
+sitca_mops_twse_taiwan_index,attempted_disclosure_or_proxy_route_probe,false,source_dependent,Regulator/disclosure routes may support accepted rows if date and fund identity are explicit; Taiwan Index constituents remain proxy unless tied to ETF holdings.
+date_mismatched_or_current_payload,not_accepted,false,sample_only,Rows without target holdings_date/source_date are parser samples only.
