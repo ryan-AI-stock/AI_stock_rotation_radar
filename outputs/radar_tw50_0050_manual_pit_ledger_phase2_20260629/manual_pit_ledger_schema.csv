@@ -1,0 +1,13 @@
+field_name,required,type,description,allowed_or_example
+effective_date,true,date,"Date Core may use as PIT/manual snapshot effective date. For monthly reports use next trading day or report-specific effective policy after review.","2021-12-31 or 2022-01-03"
+holdings_date,true,date,"Date printed in source or official page trandate; must not be later than the effective date policy permits.","2026-06-26"
+source_file,true,string,"Local archive path or manifest placeholder. Raw PDFs are normally not committed.","raw_sources/manual_required/yuanta_0050_monthly_202112.pdf"
+source_url,true,string,"Official URL, archive snapshot URL, or UI path used to obtain the source.","https://www.yuantafunds.com/fund/download/1066元大台灣卓越50基金月報.pdf"
+ticker,true,string,"TW stock ticker from the source row.","2330"
+name,true,string,"Security name from the source row.","台積電"
+weight,false,number,"Holding weight percent if available. Leave blank if source only gives quantities or constituents.","57.72"
+source_type,true,string,"Manual/proxy source classification; never exact for this route.","manual_evidence_candidate|source_backed_manual_proxy"
+formal_exact,true,boolean,"Always false for Yuanta 0050 manual/proxy rows.","false"
+evidence_quality,true,string,"Quality grade based on source date, row scope, and review level.","official_current_parser_sample|dated_pdf_full_holdings|dated_pdf_top10_only|manual_pending"
+parser_status,true,string,"Extraction state.","source_pending|auto_parsed_current_sample_only|auto_parsed|manual_entered|manual_reviewed|accepted|rejected"
+notes,false,string,"Limitations, review comments, source-date caveats, and future-data checks.","Do not use current row for historical effective date."

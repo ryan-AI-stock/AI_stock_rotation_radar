@@ -1,0 +1,4 @@
+item_id,status,reason,next_step
+historical_pdf_auto_acquisition_2014_2016_2021_2023,source_pending,"No stable automated historical PDF source was acquired in this batch; Internet Archive CDX checks for fixed official PDF URLs were empty/null or timed out.","Use manual Yuanta website UI download, issuer request, or local/Drive archive intake for target dated PDFs."
+accepted_historical_manual_rows,source_pending,"Without dated historical PDFs, no historical ticker rows can be accepted.","After PDF acquisition, extract all holdings rows and set parser_status to auto_parsed, manual_entered, or manual_reviewed."
+formal_exact_pit_readiness,not_applicable,"This route is source-backed manual/proxy and explicitly not exact TW50 official PIT.","Core must consume this only through manual/proxy readiness, not exact validator."

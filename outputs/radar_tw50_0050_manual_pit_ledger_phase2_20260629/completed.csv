@@ -1,0 +1,6 @@
+item_id,completed_at,status,evidence
+shared_sheet_intake,2026-06-29,completed,"SECTOR_RADAR row and latest handoff confirmed previous exact-archive blocker and 00631L source/cache status."
+prior_manual_route_intake,2026-06-29,completed,"Phase3/Phase4 manual ledger design and failed 2022 source acquisition reports reviewed."
+official_yuanta_source_pattern,2026-06-29,completed,"Official page exposes fixed DOC_YUEBAO_URL and DOC_HOLD_STOCK_URL for 0050/FUND_ID=1066."
+current_parser_sample,2026-06-29,completed,"Official 0050 ratio page SSR exposes 2026-06-26 StockWeights with 50 rows; top 10 rows included as schema/parser sample only."
+manual_ledger_schema,2026-06-29,completed,"manual_pit_ledger_schema.csv defines required Core-normalizable fields and flags."

@@ -1,0 +1,7 @@
+timestamp,step,status,details
+2026-06-29T12:20:00+08:00,read_shared_sheet,completed,"Confirmed previous a12313a TW50 PIT source package status and that the new Phase2 manual-ledger task did not yet have a task-board row."
+2026-06-29T12:30:00+08:00,read_prior_radar_manual_packages,completed,"Read phase3 manual ledger design, phase4 batch01 acquisition report, and phase4 Drive/local search report."
+2026-06-29T12:45:00+08:00,inspect_yuanta_official_download_page,completed,"Official 0050 download page SSR exposes FUND_ID=1066, DOC_YUEBAO_URL, DOC_HOLD_STOCK_URL, and ETF file list."
+2026-06-29T12:55:00+08:00,inspect_yuanta_current_ratio_page,completed,"Official 0050 ratio page SSR exposes current PCF/FundWeights/StockWeights with 50 stock rows for 2026-06-26."
+2026-06-29T13:00:00+08:00,internet_archive_sample_probe,partial_unstable,"Four target-period CDX probes for fixed monthly/quarterly PDF URLs returned empty/null handling or timeout; not stable enough for accepted historical rows."
+2026-06-29T13:07:00+08:00,write_phase2_package,completed_partial,"Created source-backed manual ledger package without raw PDF downloads or model changes."

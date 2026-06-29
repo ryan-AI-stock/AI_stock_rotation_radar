@@ -1,0 +1,6 @@
+source_family,observed_source,can_support_stable_manual_ledger,can_support_historical_sample_now,formal_exact,quality_decision,rationale
+Yuanta official 0050 ratio page,current SSR StockWeights and PCF trandate 2026-06-26,true,false,false,parser_sample_only,"Stable for current schema/parser mapping with 50 rows, but not a historical source for 2014-2023."
+Yuanta official 0050 monthly report fixed URL,DOC_YUEBAO_URL from official page,true,false,false,manual_download_required,"Official and traceable, but fixed URL appears rolling/current; historical usage requires dated downloaded file or archive snapshot."
+Yuanta domestic fund quarterly holdings fixed URL,DOC_HOLD_STOCK_URL from official page,true,false,false,manual_download_required,"Potentially strongest source-backed manual ledger route if historical dated PDFs can be acquired and the 0050 section has full holdings."
+Internet Archive CDX for fixed Yuanta PDF URLs,small probes for 2014Q4/2016Q1/2021Q4/2023Q4,false,false,false,unstable_or_empty,"Queries returned empty/null handling or timeout in this batch; cannot be treated as stable acquisition route without manual verification."
+Repository/current TW50 snapshot,current only,false,false,false,not_allowed_for_historical,"Explicitly prohibited as a historical backfill source."

@@ -1,0 +1,3 @@
+package_completed_historical_manual_sources_pending
+
+The workflow, schema, official current parser sample, source acquisition plan, and missing-period ledger are ready. Historical dated Yuanta 0050 PDFs remain pending manual acquisition.

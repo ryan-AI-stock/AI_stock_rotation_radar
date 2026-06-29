@@ -1,0 +1,7 @@
+step_id,step_name,input,output,owner,checkpoint,acceptance_rule
+1,archive_file_intake,"Dated Yuanta PDF from source_acquisition_plan.csv","raw_source_archive_manifest.csv row with file path/date/source_url",Radar/Data or human downloader,"completed.csv / failed.csv","Source date must be visible and not inferred from filename only."
+2,pdf_text_or_table_probe,"Archived PDF","parser_status candidate: auto_parsed, top10_only, full_holdings, or needs_manual_entry",Radar/Data,"run_log.csv","Do not accept rows if source only has current or undated content."
+3,row_extraction,"PDF tables or manual review","manual_pit_ledger_sample.csv rows",Radar/Data,"manual_pit_ledger_sample.csv","Every row must include effective_date, holdings_date, ticker, name, source_file, source_url, source_type, formal_exact=false."
+4,row_scope_decision,"Extracted rows","source_quality_decision.csv update",Radar/Data/Core reviewer,"source_quality_decision.csv","Classify as full_holdings, top10_only, or section_missing; top10_only cannot satisfy full 50-constituent table."
+5,future_data_check,"Ledger rows","future_data_violation_count",Core or Radar validator,"manifest.json","No source dated after the claimed effective_date unless Core applies explicit next-trading-day policy."
+6,core_normalize,"Reviewed ledger","PIT/manual/proxy table for tw50_pit_backfill.py or successor normalizer",Core,"Core output manifest","Manual/proxy rows remain formal_exact=false and cannot pass exact TW50 validator."
