@@ -1,0 +1,5 @@
+﻿ticker,name,corporate_action_mapping_used,substitute_ticker,mapping_status,notes
+2311.TW,日月光,False,,not_used,Delisted after ASE/SPIL holding-company transition; no substitution to 3711.TW used.
+2823.TW,中壽,False,,not_used,Historical ticker; no substitution used.
+2888.TW,新光金,False,,not_used,Historical ticker; no substitution used.
+3474.TW,華亞科,False,,not_used,Delisted/merged memory-company ticker; no substitution used.

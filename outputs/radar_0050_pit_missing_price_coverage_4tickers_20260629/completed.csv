@@ -1,0 +1,5 @@
+﻿ticker,name,status,required_start,required_end,first_date,last_date,row_count,source,adjusted_close_available,notes
+2311.TW,日月光,completed_candidate,2014-11-28,2018-03-31,2014-11-28,2018-03-31,817,twse_stock_day,False,TWSE official daily rows cover start month through required end month; calendar non-trading dates are not synthesized.
+2823.TW,中壽,completed_candidate,2016-11-30,2020-08-31,2016-11-30,2020-08-31,918,twse_stock_day,False,TWSE official daily rows cover start month through required end month; calendar non-trading dates are not synthesized.
+2888.TW,新光金,completed_candidate,2019-09-27,2020-08-31,2019-09-27,2020-08-31,225,twse_stock_day,False,TWSE official daily rows cover start month through required end month; calendar non-trading dates are not synthesized.
+3474.TW,華亞科,completed_candidate,2014-11-28,2016-10-31,2014-11-28,2016-10-31,469,twse_stock_day,False,TWSE official daily rows cover start month through required end month; calendar non-trading dates are not synthesized.

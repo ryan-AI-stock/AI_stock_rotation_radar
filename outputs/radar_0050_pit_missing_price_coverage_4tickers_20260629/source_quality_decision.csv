@@ -1,0 +1,2 @@
+﻿source,source_type,accepted_as_price_candidate,formal_exact,adjusted_close_available,decision
+twse_stock_day,official_twse_unadjusted_ohlcv,True,False,False,Use as source-backed cache-compatible price candidate only; do not treat as adjusted total-return series.

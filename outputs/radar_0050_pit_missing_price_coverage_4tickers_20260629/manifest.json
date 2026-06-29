@@ -1,0 +1,28 @@
+{
+  "task_id": "TASK-RADAR-DATA-0050-PIT-MISSING-PRICE-COVERAGE-4TICKERS-20260629",
+  "status": "completed_candidate",
+  "run_started_at": "2026-06-29T21:22:36+08:00",
+  "run_finished_at": "2026-06-29T21:23:17+08:00",
+  "output_dir": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_0050_pit_missing_price_coverage_4tickers_20260629",
+  "source": "twse_stock_day",
+  "target_tickers": [
+    "2311.TW",
+    "2823.TW",
+    "2888.TW",
+    "3474.TW"
+  ],
+  "completed_tickers": [
+    "2311.TW",
+    "2823.TW",
+    "2888.TW",
+    "3474.TW"
+  ],
+  "failed_tickers": [],
+  "candidate_rows": 2429,
+  "source_attempts": 196,
+  "adjusted_close_available": false,
+  "formal_exact": false,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "notes": "TWSE STOCK_DAY official OHLCV is unadjusted. No synthetic prices, forward-fill, or substitute tickers were used."
+}

@@ -1,0 +1,6 @@
+﻿timestamp,step,status,details
+2026-06-29T21:22:36+08:00,start_2311.TW,running,2014-11-28 to 2018-03-31
+2026-06-29T21:22:41+08:00,start_2823.TW,running,2016-11-30 to 2020-08-31
+2026-06-29T21:22:59+08:00,start_2888.TW,running,2019-09-27 to 2020-08-31
+2026-06-29T21:23:05+08:00,start_3474.TW,running,2014-11-28 to 2016-10-31
+2026-06-29T21:23:17+08:00,write_outputs,completed,completed_tickers=4 failed_tickers=0 candidate_rows=2429
