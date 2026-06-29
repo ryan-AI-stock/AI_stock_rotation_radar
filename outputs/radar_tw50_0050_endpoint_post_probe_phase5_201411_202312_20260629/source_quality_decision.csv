@@ -1,0 +1,4 @@
+source_family,decision,formal_exact,manual_proxy_allowed,rationale
+yuanta_nuxt_js_endpoint_reverse,attempted_bounded_endpoint_reverse,false,true_if_date_matched,Endpoints/params are usable only if response exposes target holdings_date/source_date and valid rows.
+sitca_mops_post_probe,attempted_form_post_probe,false,source_dependent,Form response must identify fund/date and holdings rows; landing/error pages are not accepted.
+wayback_availability_metadata,not_accepted_as_source_date,false,false,"Wayback metadata timestamp is route evidence only, not holdings_date/source_date."

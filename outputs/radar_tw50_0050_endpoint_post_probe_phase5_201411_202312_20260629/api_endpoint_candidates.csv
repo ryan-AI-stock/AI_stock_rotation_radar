@@ -1,0 +1,13 @@
+endpoint_id,endpoint_url,candidate_source,param_hypothesis,notes
+https_api.yuantafunds.com_ECAPI_api_ETF_GetFileDownload,https://api.yuantafunds.com/ECAPI/api/ETF/GetFileDownload,known_or_extracted,fundid/fundId/FundID/code + date/month variants,
+https_api.yuantafunds.com_ECAPI_api_ETF_GetHoldStock,https://api.yuantafunds.com/ECAPI/api/ETF/GetHoldStock,known_or_extracted,fundid/fundId/FundID/code + date/month variants,
+https_api.yuantafunds.com_ECAPI_api_ETF_GetPCF,https://api.yuantafunds.com/ECAPI/api/ETF/GetPCF,known_or_extracted,fundid/fundId/FundID/code + date/month variants,
+https_etfapi.yuantaetfs.com_ECImage_ETFBackstage_file_offline.json,https://etfapi.yuantaetfs.com/ECImage/ETFBackstage/file/offline.json,known_or_extracted,fundid/fundId/FundID/code + date/month variants,
+https_etfapi.yuantaetfs.com_api_ETF_GetETFInfo,https://etfapi.yuantaetfs.com/api/ETF/GetETFInfo,known_or_extracted,fundid/fundId/FundID/code + date/month variants,
+https_etfapi.yuantaetfs.com_api_ETF_GetETFList,https://etfapi.yuantaetfs.com/api/ETF/GetETFList,known_or_extracted,fundid/fundId/FundID/code + date/month variants,
+https_etfapi.yuantaetfs.com_api_ETF_GetFileDownload,https://etfapi.yuantaetfs.com/api/ETF/GetFileDownload,known_or_extracted,fundid/fundId/FundID/code + date/month variants,
+https_etfapi.yuantaetfs.com_api_ETF_GetHoldStock,https://etfapi.yuantaetfs.com/api/ETF/GetHoldStock,known_or_extracted,fundid/fundId/FundID/code + date/month variants,
+https_etfapi.yuantaetfs.com_api_ETF_GetPCF,https://etfapi.yuantaetfs.com/api/ETF/GetPCF,known_or_extracted,fundid/fundId/FundID/code + date/month variants,
+https_etfapi.yuantaetfs.com_api_bridge,https://etfapi.yuantaetfs.com/api/bridge,known_or_extracted,fundid/fundId/FundID/code + date/month variants,
+https_etfapi.yuantaetfs.com_api_trans,https://etfapi.yuantaetfs.com/api/trans,known_or_extracted,fundid/fundId/FundID/code + date/month variants,
+https_etfapi.yuantaetfs.com_ectranslation,https://etfapi.yuantaetfs.com/ectranslation,known_or_extracted,fundid/fundId/FundID/code + date/month variants,

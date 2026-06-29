@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "task_id": "TASK-RADAR-DATA-TW50-0050-ENDPOINT-POST-PROBE-PHASE5-20260629",
+  "status": "completed_partial",
+  "created_at": "2026-06-29T16:42:41+08:00",
+  "previous_output_dir": "outputs/radar_tw50_0050_dated_api_disclosure_phase4_201411_202312_20260629",
+  "output_dir": "outputs/radar_tw50_0050_endpoint_post_probe_phase5_201411_202312_20260629",
+  "target_periods": [
+    "2014Q4",
+    "2016Q1",
+    "2021Q4",
+    "2023Q4"
+  ],
+  "nuxt_chunk_candidate_count": 24,
+  "api_endpoint_candidate_count": 12,
+  "api_probe_attempt_count": 120,
+  "sitca_mops_form_candidate_count": 3,
+  "post_probe_attempt_count": 12,
+  "raw_source_count": 125,
+  "parsed_holdings_sample_rows": 0,
+  "accepted_historical_rows": 0,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "formal_exact": false,
+  "current_snapshot_used_as_historical": false,
+  "wayback_metadata_accepted_as_source_date": false,
+  "future_data_violation_count": 0,
+  "large_unbounded_crawl_started": false
+}

@@ -1,0 +1,4 @@
+form_id,page_url,method,action,hidden_field_count,hidden_fields_sample
+sitca_in2421_form_1,https://www.sitca.org.tw/ROC/Industry/IN2421.aspx,POST,https://www.sitca.org.tw/ROC/Industry/IN2421.aspx,3,__VIEWSTATE=/wEPDwUINTM5ODAxNzgPZBYCZg9kFgICAw9kFgQCAQ8PFgIeBFRleHRlZGQCAw9kFgYCBQ8QZBAVFwcyMDA05bm0BzIwMDXlubQHMjAwNuW5tAcyMDA35bm0BzIwMDjlubQHMjAwOeW5tAcyMDEw5bm0BzIwMTHlubQHMjAxMuW5tAcyMDEz5bm0BzIwMTTlubQHMjAxNeW5tAcyMDE25bm0BzIwMTflubQHMjAxOOW5tAcyMDE55bm0BzIwMjDlubQHMjAyMeW5tAcyMDIy5bm0BzIwMjPlubQHMjAyNOW5tAcyMDI15bm0BzIwMjblubQVFwQyMDA0BDIwMDUEMjAwNgQyMDA3BDIwMDgEMjAwOQQyMDEwBDIwMTEEMjAxMgQyMDEzBDIwMTQEMjAxNQQyMDE2BDIwMTcEMjAxOAQyMDE5BDIwMjAEMjAyMQQyMDIyBDIwMjMEMjAyNAQyMDI1BDIwMjYUKwMXZ2dn
+sitca_etf_root_no_form,https://www.sitca.org.tw/ROC/ETF/,GET,https://www.sitca.org.tw/ROC/ETF/,0,
+mops_index_no_form,https://mops.twse.com.tw/mops/web/index,GET,https://mops.twse.com.tw/mops/web/index,0,
