@@ -1,0 +1,2 @@
+item_id,completed_at,status,evidence
+archived_html_crawler_matrix,2026-06-29T15:05:44+08:00,completed_partial,html_attempts=68 pdf_href_candidates=77 pdf_download_attempts=98 raw_sources=80 parsed_holdings_sample_rows=20 accepted_historical_rows=0

@@ -1,0 +1,4 @@
+source_family,decision,formal_exact,manual_proxy_allowed,rationale
+wayback_archived_html_pages,attempted_html_snapshot_crawler,false,true_if_date_matched_and_rows_reviewed,HTML snapshots are routing evidence. Linked/downloaded pages can support source-backed manual/proxy only after dated content and holdings rows are reviewed.
+archived_yuanta_ratio_pcf_html_table,parsed_sample_not_accepted,false,true_as_parser_sample_only,"Archived ratio/PCF SSR HTML exposed ticker/name/weight rows, but closest snapshot dates did not match requested target periods, so accepted PIT rows remain zero."
+wayback_wrapper_or_non_pdf_downloads,not_accepted_as_pdf,false,false_until_dated_rows_extracted,Wayback wrapper/current/rolling/non-dated downloads are not historical PIT holdings evidence.

@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "task_id": "TASK-RADAR-DATA-TW50-0050-ARCHIVED-HTML-CRAWLER-PHASE3-20260629",
+  "status": "completed_partial_samples_extracted_no_accepted_rows",
+  "created_at": "2026-06-29T15:05:44+08:00",
+  "previous_output_dir": "outputs/radar_tw50_0050_historical_source_download_201411_202312_20260629",
+  "output_dir": "outputs/radar_tw50_0050_archived_html_crawler_201411_202312_20260629",
+  "target_periods": [
+    "2014Q4",
+    "2016Q1",
+    "2021Q4",
+    "2023Q4"
+  ],
+  "html_snapshot_attempt_count": 68,
+  "pdf_href_candidate_count": 77,
+  "pdf_download_attempt_count": 98,
+  "raw_source_count": 80,
+  "parsed_holdings_sample_rows": 20,
+  "accepted_historical_rows": 0,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "formal_exact": false,
+  "current_snapshot_used_as_historical": false,
+  "wayback_wrapper_html_accepted": false,
+  "future_data_violation_count": 0,
+  "large_unbounded_crawl_started": false,
+  "html_table_sample_extracted": true
+}
