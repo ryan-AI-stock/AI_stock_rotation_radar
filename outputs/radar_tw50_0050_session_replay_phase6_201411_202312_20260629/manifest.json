@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "task_id": "TASK-RADAR-DATA-TW50-0050-SESSION-REPLAY-PHASE6-20260629",
+  "status": "completed_partial",
+  "created_at": "2026-06-29T17:03:24+08:00",
+  "previous_output_dir": "outputs/radar_tw50_0050_endpoint_post_probe_phase5_201411_202312_20260629",
+  "output_dir": "outputs/radar_tw50_0050_session_replay_phase6_201411_202312_20260629",
+  "target_periods": [
+    "2014Q4",
+    "2016Q1",
+    "2021Q4",
+    "2023Q4"
+  ],
+  "sitca_form_state_inventory_rows": 6,
+  "sitca_postback_attempt_count": 16,
+  "nuxt_request_extraction_count": 6,
+  "exact_api_probe_attempt_count": 48,
+  "raw_source_count": 49,
+  "parsed_holdings_sample_rows": 0,
+  "accepted_historical_rows": 0,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "formal_exact": false,
+  "current_snapshot_used_as_historical": false,
+  "aspnet_error_page_accepted": false,
+  "future_data_violation_count": 0,
+  "large_unbounded_crawl_started": false
+}

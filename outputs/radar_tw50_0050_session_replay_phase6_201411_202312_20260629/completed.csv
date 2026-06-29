@@ -1,0 +1,2 @@
+item_id,completed_at,status,evidence
+phase6_session_replay_exact_api,2026-06-29T17:03:24+08:00,completed_partial,sitca_inventory=6 sitca_attempts=16 nuxt_extract=6 api_attempts=48 accepted=0

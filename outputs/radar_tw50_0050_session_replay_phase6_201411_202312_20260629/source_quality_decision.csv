@@ -1,0 +1,4 @@
+source_family,decision,formal_exact,manual_proxy_allowed,rationale
+sitca_session_aspnet_postback,attempted_session_replay,false,true_if_date_matched,"POST preserved cookies and hidden fields, but response must include target date and holdings rows to accept."
+nuxt_exact_request_static_extraction,attempted_exact_param_probe,false,true_if_date_matched,"Static extraction can identify endpoints/params, but rows are accepted only with target source_date/holdings_date."
+aspnet_error_or_viewstate_pages,not_accepted,false,false,ASP.NET pages without holdings table rows are not evidence.
