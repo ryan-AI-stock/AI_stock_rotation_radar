@@ -1,0 +1,49 @@
+{
+  "task_id": "TASK-RADAR-DATA-TW50-0050-FORMAL-PIT-SOURCE-PHASE8-20260629",
+  "output_dir": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_tw50_0050_formal_pit_source_phase8_201411_202312_20260629",
+  "previous_output": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_tw50_0050_browser_network_capture_phase7_201411_202312_20260629",
+  "generated_at": "2026-06-29T19:57:31+08:00",
+  "target_periods": [
+    {
+      "period": "2014Q4",
+      "target_date": "2014-12-31",
+      "year": "2014",
+      "month": "12",
+      "ndate": "20141231",
+      "yyyymm": "201412"
+    },
+    {
+      "period": "2016Q1",
+      "target_date": "2016-03-31",
+      "year": "2016",
+      "month": "03",
+      "ndate": "20160331",
+      "yyyymm": "201603"
+    },
+    {
+      "period": "2021Q4",
+      "target_date": "2021-12-31",
+      "year": "2021",
+      "month": "12",
+      "ndate": "20211231",
+      "yyyymm": "202112"
+    },
+    {
+      "period": "2023Q4",
+      "target_date": "2023-12-31",
+      "year": "2023",
+      "month": "12",
+      "ndate": "20231231",
+      "yyyymm": "202312"
+    }
+  ],
+  "source_probe_attempt_count": 211,
+  "browser_capture_attempt_count": 65,
+  "sitca_static_handler_candidate_count": 36,
+  "index_constituents_proxy_candidate_rows": 320,
+  "yuanta_legacy_source_candidate_count": 200,
+  "parsed_holdings_sample_rows": 6305,
+  "accepted_historical_rows": 4301,
+  "formal_model_changed": false,
+  "current_snapshot_used_as_historical": false
+}

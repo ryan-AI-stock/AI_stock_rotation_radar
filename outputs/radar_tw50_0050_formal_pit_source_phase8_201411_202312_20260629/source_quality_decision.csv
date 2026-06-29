@@ -1,0 +1,4 @@
+source,source_type,formal_exact,evidence_quality,accepted_rows,decision,notes
+SITCA IN2421 non-headless/static/replay,formal_0050_holdings_candidate,false,no_target_date_rows,0,not_formal_ready,SITCA responses must include holdings context and target date
+Yuanta PCF/Daily + legacy/API alternative,formal_0050_holdings_candidate,false,partial_target_date_rows,4301,manual_candidate_partial,target-month PCF/Daily rows accepted as source-backed manual candidates; rolling/current/date-mismatched rows are rejected
+Taiwan Index/TWSE,index_constituents_proxy_candidate,false,proxy_only,0,separate_proxy_candidate_only,not 0050 holdings; Core/Research must decide proxy use

@@ -1,0 +1,2 @@
+started_at,finished_at,status,source_probe_attempts,browser_capture_attempts,proxy_candidate_rows,parsed_rows,accepted_rows,notes
+2026-06-29T19:54:35+08:00,2026-06-29T19:57:31+08:00,completed_partial_with_rows,211,65,320,6305,4301,read_phase7=C:\Users\zergv\Documents\Codex\2026-05-23\ai-stock-rotation-radar-https-docs\outputs\radar_tw50_0050_browser_network_capture_phase7_201411_202312_20260629; browser_error=
