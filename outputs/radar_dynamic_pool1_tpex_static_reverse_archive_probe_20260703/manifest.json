@@ -1,0 +1,80 @@
+{
+  "task_id": "TASK-RADAR-DATA-DYNAMIC-POOL1-TPEX-STATIC-REVERSE-ARCHIVE-PROBE-20260703",
+  "created_at_utc": "2026-07-03T07:28:27.008353+00:00",
+  "status": "completed_partial_with_accepted_historical_rows",
+  "source_package": "TPEx static reverse + official bounded API probe",
+  "raw_sources": {
+    "js_files": [
+      "global.js",
+      "main.js",
+      "tables.js"
+    ],
+    "html_files": [
+      "www_tpex_org_tw_zh_tw_announce_market_attention_html.html",
+      "www_tpex_org_tw_zh_tw_announce_market_disposal_html.html",
+      "www_tpex_org_tw_zh_tw_announce_market_download_html.html",
+      "www_tpex_org_tw_zh_tw_announce_market_halt_html.html",
+      "www_tpex_org_tw_zh_tw_announce_market_warning_html.html",
+      "www_tpex_org_tw_zh_tw_mainboard_applying_status_company_html.html",
+      "www_tpex_org_tw_zh_tw_mainboard_applying_status_new_listed_html.html",
+      "www_tpex_org_tw_zh_tw_mainboard_listed_delisted_html.html",
+      "www_tpex_org_tw_zh_tw_mainboard_listed_latest_html.html",
+      "www_tpex_org_tw_zh_tw_mainboard_trading_info_altered_html.html",
+      "www_tpex_org_tw_zh_tw_mainboard_trading_info_altered_trading_html.html",
+      "www_tpex_org_tw_zh_tw_mainboard_trading_info_disposal_html.html",
+      "www_tpex_org_tw_zh_tw_mainboard_trading_info_stock_pricing_html.html",
+      "www_tpex_org_tw_zh_tw_mainboard_trading_info_suspension_html.html",
+      "www_tpex_org_tw_zh_tw_sitemap_html.html"
+    ],
+    "json_files": [
+      "www_tpex_org_tw_data_menu_en_us_menu_json.json",
+      "www_tpex_org_tw_data_menu_zh_tw_menu_json.json"
+    ],
+    "probe_response_files": [
+      "altered_2015.json",
+      "altered_2018.json",
+      "altered_2021.json",
+      "altered_2025.json",
+      "anndownload_2015.json",
+      "anndownload_2018.json",
+      "anndownload_2021.json",
+      "anndownload_2025.json",
+      "attention_2015.json",
+      "attention_2018.json",
+      "attention_2021.json",
+      "attention_2025.json",
+      "delisted_2015.json",
+      "delisted_2018.json",
+      "delisted_2021.json",
+      "delisted_2025.json",
+      "disposal_2015.json",
+      "disposal_2018.json",
+      "disposal_2021.json",
+      "disposal_2025.json",
+      "halt_current_contract.json",
+      "latest_2015.json",
+      "latest_2018.json",
+      "latest_2021.json",
+      "latest_2025.json",
+      "newlisted_2015.json",
+      "newlisted_2018.json",
+      "newlisted_2021.json",
+      "newlisted_2025.json"
+    ]
+  },
+  "outputs": [
+    "js_inventory.csv",
+    "extracted_route_candidates.csv",
+    "route_probe_attempts.csv",
+    "accepted_listing_metadata_rows.csv",
+    "accepted_suspension_event_rows.csv",
+    "accepted_status_snapshot_rows.csv",
+    "blocked_source_rows.csv",
+    "coverage_by_year_market.csv",
+    "future_data_violation_audit.csv",
+    "readiness_for_core.json",
+    "final_summary_zh.md"
+  ],
+  "formal_model_changed": false,
+  "trade_decision_changed": false
+}

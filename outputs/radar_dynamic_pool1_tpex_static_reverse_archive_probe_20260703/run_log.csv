@@ -1,0 +1,6 @@
+﻿timestamp_utc,level,message
+2026-07-03T07:28:27.008353+00:00,INFO,Read previous TPEx blocker package and Core readiness context.
+2026-07-03T07:28:27.008353+00:00,INFO,"Downloaded TPEx official JS, menu JSON, and menu-derived HTML pages."
+2026-07-03T07:28:27.008353+00:00,INFO,Extracted tables.js POST contract and page-level action endpoints.
+2026-07-03T07:28:27.008353+00:00,INFO,"Probed 2015/2018/2021/2025 sample years for listing, delisting, status, and bulletin routes."
+2026-07-03T07:28:27.008353+00:00,INFO,Accepted partial TPEx historical listing/delisting rows and daily status snapshot rows; kept suspension event history blocked.

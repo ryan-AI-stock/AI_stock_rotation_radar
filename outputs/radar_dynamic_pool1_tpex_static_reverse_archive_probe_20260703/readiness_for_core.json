@@ -1,0 +1,25 @@
+{
+  "task_id": "TASK-RADAR-DATA-DYNAMIC-POOL1-TPEX-STATIC-REVERSE-ARCHIVE-PROBE-20260703",
+  "status": "completed_partial_with_accepted_historical_rows",
+  "output_path": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_dynamic_pool1_tpex_static_reverse_archive_probe_20260703",
+  "accepted_listing_metadata_rows": 150,
+  "accepted_status_snapshot_rows": 107,
+  "accepted_suspension_event_rows": 0,
+  "route_probe_attempts": 32,
+  "future_data_violation_count": 0,
+  "tpex_static_reverse_contract_extracted": true,
+  "tpex_sample_historical_listing_delisting_ready": true,
+  "tpex_sample_historical_status_snapshot_ready": true,
+  "tpex_full_2015_2025_master_ready": false,
+  "listing_delisting_suspension_master_full_ready": false,
+  "ready_for_core_rerun": true,
+  "ready_for_strategy_replay": false,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "remaining_blockers": [
+    "Run full 2015-2025 sweep for company/latest, company/deListed, and afterTrading/chtm.",
+    "Extract suspension/resumption event history; bulletin/sprc is current-only, so use announcement archive ZIP or daily status transition inference.",
+    "Download and parse company/applicantStatDl annual files as cross-check."
+  ]
+}

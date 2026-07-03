@@ -1,0 +1,5 @@
+﻿year,market,listing_rows,delisting_rows,status_snapshot_rows,probe_attempts,coverage_status,formal_ready_scope,remaining_gap
+2015,TPEx,34,7,36,7,sample_verified,partial_sample_only,Need full 2015-2025 sweep and suspension/resumption event extraction.
+2018,TPEx,31,9,34,7,sample_verified,partial_sample_only,Need full 2015-2025 sweep and suspension/resumption event extraction.
+2021,TPEx,13,8,37,7,sample_verified,partial_sample_only,Need full 2015-2025 sweep and suspension/resumption event extraction.
+2025,TPEx,42,6,0,7,sample_verified,partial_sample_only,Need full 2015-2025 sweep and suspension/resumption event extraction.

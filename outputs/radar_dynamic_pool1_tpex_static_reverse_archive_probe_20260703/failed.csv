@@ -1,0 +1,3 @@
+﻿step,status,reason
+bulletin_sprc_historical_events,blocked,current-only endpoint; no date parameter in live form
+full_2015_2025_sweep,not_run_by_scope,this pass is static reverse + bounded sample probe

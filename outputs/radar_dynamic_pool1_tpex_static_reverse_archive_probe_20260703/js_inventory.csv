@@ -1,0 +1,4 @@
+﻿file,relative_path,bytes,sha256,source_url,relevant_symbols,source_type
+global.js,raw_sources/js/global.js,103180,4a3d54a57a876fef0b940b61d19c883ff8e35f474e847df93465b8256566eb32,https://www.tpex.org.tw/rsrc/asset/js/global.js,Defines menu JSON route /data/menu/zh-tw/menu.json and sitemap/menu rendering helpers.,official_frontend_js
+main.js,raw_sources/js/main.js,45227,cfbd8c64c748149f039f1d4f1c5b3ba4511039b9c9e60d8ed53fd9624edc587a,https://www.tpex.org.tw/rsrc/js/main.js,Defines API_PATTERN='/www/{LANG}/{ACTION}' and header codeQuery service.,official_frontend_js
+tables.js,raw_sources/js/tables.js,124695,bb506cf023d688a52cbc892e65cf876c01fed247009a9a562d296ac2c76a30e6,https://www.tpex.org.tw/rsrc/js/tables.js,bxRport.init default pattern '/{LANG}/{ACTION}'; apiAction derived from tables.init action; submit posts form fields plus response=json; serverPaging adds paging-offset/paging-size and paging-table.,official_frontend_js

@@ -1,0 +1,5 @@
+﻿step,status,evidence
+download_official_js_and_menu,completed,raw_sources/js and raw_sources/json
+static_reverse_tables_js_contract,completed,extracted_route_candidates.csv
+bounded_official_api_probes,completed,route_probe_attempts.csv
+accepted_partial_historical_rows,completed_partial,accepted_listing_metadata_rows.csv; accepted_status_snapshot_rows.csv

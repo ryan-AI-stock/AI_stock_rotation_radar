@@ -1,0 +1,1 @@
+completed_partial_with_accepted_historical_rows; next: Core can rerun readiness against partial TPEx listing/delisting/status sample, or Radar/Data can run full 2015-2025 sweep.
