@@ -1,0 +1,12 @@
+﻿year,market,listing_route_attempted,listing_rows,delisting_route_attempted,delisting_rows,status_dates_expected,status_dates_attempted,status_failed_dates,status_missing_dates,status_snapshot_rows,coverage_status,formal_ready_scope
+2015,TPEx,true,34,true,7,365,365,0,0,8702,complete_route_coverage,source_backed_historical_candidate_full_route_coverage
+2016,TPEx,true,38,true,16,366,366,0,0,8552,complete_route_coverage,source_backed_historical_candidate_full_route_coverage
+2017,TPEx,true,23,true,11,365,365,0,0,8042,complete_route_coverage,source_backed_historical_candidate_full_route_coverage
+2018,TPEx,true,31,true,9,365,365,0,0,9347,complete_route_coverage,source_backed_historical_candidate_full_route_coverage
+2019,TPEx,true,20,true,11,365,365,0,0,9569,complete_route_coverage,source_backed_historical_candidate_full_route_coverage
+2020,TPEx,true,19,true,12,366,366,0,0,10299,complete_route_coverage,source_backed_historical_candidate_full_route_coverage
+2021,TPEx,true,13,true,8,365,365,0,0,9134,complete_route_coverage,source_backed_historical_candidate_full_route_coverage
+2022,TPEx,true,27,true,7,365,365,0,0,8882,complete_route_coverage,source_backed_historical_candidate_full_route_coverage
+2023,TPEx,true,17,true,9,365,365,0,0,7401,complete_route_coverage,source_backed_historical_candidate_full_route_coverage
+2024,TPEx,true,30,true,8,366,366,0,0,6245,complete_route_coverage,source_backed_historical_candidate_full_route_coverage
+2025,TPEx,true,42,true,6,365,365,0,0,4692,complete_route_coverage,source_backed_historical_candidate_full_route_coverage

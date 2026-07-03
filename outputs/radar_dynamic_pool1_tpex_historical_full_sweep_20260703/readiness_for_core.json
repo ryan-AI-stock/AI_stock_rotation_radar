@@ -1,0 +1,28 @@
+{
+  "task_id": "TASK-RADAR-DATA-DYNAMIC-POOL1-TPEX-HISTORICAL-FULL-SWEEP-20260703",
+  "status": "completed_full_route_coverage_suspension_events_still_blocked",
+  "output_path": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_dynamic_pool1_tpex_historical_full_sweep_20260703",
+  "covered_start": "2015-01-01",
+  "covered_end": "2025-12-31",
+  "route_request_attempts": 4040,
+  "failed_attempts": 0,
+  "accepted_listing_metadata_rows": 294,
+  "accepted_delisting_metadata_rows": 104,
+  "accepted_status_snapshot_rows": 90865,
+  "accepted_suspension_event_rows": 0,
+  "accepted_historical_rows": 91263,
+  "future_data_violation_count": 0,
+  "full_tpex_2015_2025_route_coverage_ready": true,
+  "full_tpex_2015_2025_master_ready": false,
+  "listing_delisting_suspension_master_full_ready": false,
+  "ready_for_core_rerun": true,
+  "ready_for_strategy_replay": false,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "remaining_blockers": [
+    "Suspension/resumption transition event ledger remains 0 accepted rows; afterTrading/chtm is a daily status snapshot source.",
+    "Core must decide whether daily status snapshots are sufficient for universe integrity or require explicit transition events.",
+    "Optional annDownload ZIP and applicantStatDl cross-check not completed in this main sweep."
+  ]
+}

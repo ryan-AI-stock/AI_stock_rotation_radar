@@ -1,0 +1,4 @@
+﻿audit_item,result,future_data_violation_count,evidence
+current_snapshot_backfill,pass,0,All accepted rows use explicit TPEx historical year/date parameters; no current company profile snapshot backfill.
+status_snapshot_boundary,pass,0,"afterTrading/chtm rows are marked status snapshots, not transition event rows."
+model_boundary,pass,0,"No BACKTEST_LAB formal model, report, selector, or trade decision changed."

@@ -1,0 +1,4 @@
+﻿source_id,source_name,endpoint,method,params,coverage,source_type,accepted_scope,formal_exact
+tpex_company_latest,TPEx 最近上櫃公司,https://www.tpex.org.tw/www/zh-tw/company/latest,POST,code=&date=YYYY&response=json,2015-2025 yearly,official_historical_api,listing event rows,false
+tpex_company_deListed,TPEx 終止上櫃公司,https://www.tpex.org.tw/www/zh-tw/company/deListed,POST,code=&date=YYYY&reason=&response=json&paging-offset=0&paging-size=5000,2015-2025 yearly,official_historical_api,delisting event rows,false
+tpex_afterTrading_chtm,TPEx 變更交易/分盤/管理股票/停止交易資訊,https://www.tpex.org.tw/www/zh-tw/afterTrading/chtm,POST,date=YYYY/MM/DD&response=json,2015-01-01 to 2025-12-31 daily,official_historical_api,status snapshot rows,false

@@ -1,0 +1,3 @@
+﻿step,status,reason
+suspension_resumption_event_ledger,blocked,bulletin/sprc current-only; no historical date parameter
+annDownload_zip_extraction,not_run_optional,kept out of main full sweep to avoid blocking route coverage

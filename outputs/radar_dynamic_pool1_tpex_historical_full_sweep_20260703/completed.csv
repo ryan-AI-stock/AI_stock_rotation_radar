@@ -1,0 +1,5 @@
+﻿step,status,evidence
+company_latest_yearly_sweep,completed,accepted_listing_metadata_rows.csv
+company_deListed_yearly_sweep,completed,accepted_delisting_metadata_rows.csv
+afterTrading_chtm_daily_sweep,completed,accepted_status_snapshot_rows.csv; coverage_by_year.csv
+package_readiness,completed,readiness_for_core.json

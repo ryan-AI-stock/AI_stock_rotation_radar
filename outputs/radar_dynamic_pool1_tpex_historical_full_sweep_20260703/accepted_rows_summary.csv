@@ -1,0 +1,5 @@
+﻿dataset,accepted_rows,source,coverage,notes
+listing_metadata,294,company/latest,2015-2025 yearly,listing events
+delisting_metadata,104,company/deListed,2015-2025 yearly,delisting events
+status_snapshot,90865,afterTrading/chtm,2015-01-01 to 2025-12-31 daily,altered/periodic/management/suspended as-of snapshots
+suspension_event,0,bulletin/sprc,current only,blocked as event ledger

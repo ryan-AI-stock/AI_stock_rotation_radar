@@ -1,0 +1,35 @@
+[
+  {
+    "source_id": "tpex_company_latest",
+    "source_name": "TPEx 最近上櫃公司",
+    "endpoint": "https://www.tpex.org.tw/www/zh-tw/company/latest",
+    "method": "POST",
+    "params": "code=&date=YYYY&response=json",
+    "coverage": "2015-2025 yearly",
+    "source_type": "official_historical_api",
+    "accepted_scope": "listing event rows",
+    "formal_exact": "false"
+  },
+  {
+    "source_id": "tpex_company_deListed",
+    "source_name": "TPEx 終止上櫃公司",
+    "endpoint": "https://www.tpex.org.tw/www/zh-tw/company/deListed",
+    "method": "POST",
+    "params": "code=&date=YYYY&reason=&response=json&paging-offset=0&paging-size=5000",
+    "coverage": "2015-2025 yearly",
+    "source_type": "official_historical_api",
+    "accepted_scope": "delisting event rows",
+    "formal_exact": "false"
+  },
+  {
+    "source_id": "tpex_afterTrading_chtm",
+    "source_name": "TPEx 變更交易/分盤/管理股票/停止交易資訊",
+    "endpoint": "https://www.tpex.org.tw/www/zh-tw/afterTrading/chtm",
+    "method": "POST",
+    "params": "date=YYYY/MM/DD&response=json",
+    "coverage": "2015-01-01 to 2025-12-31 daily",
+    "source_type": "official_historical_api",
+    "accepted_scope": "status snapshot rows",
+    "formal_exact": "false"
+  }
+]

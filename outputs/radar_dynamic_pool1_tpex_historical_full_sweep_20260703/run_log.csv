@@ -1,0 +1,4 @@
+﻿timestamp_utc,level,message
+2026-07-03T08:02:30.532043+00:00,INFO,Started TPEx historical full sweep.
+2026-07-03T08:02:30.532043+00:00,INFO,Using previous static reverse API contract: /www/zh-tw/{action}; POST form fields + response=json.
+2026-07-03T08:13:44.117451+00:00,INFO,Retried 529 failed status attempts; readiness status completed_full_route_coverage_suspension_events_still_blocked
