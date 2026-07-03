@@ -1,0 +1,15 @@
+[
+  {
+    "source_id": "mops_spa_t163sb04_redirectToOld_full_sweep",
+    "source_name": "MOPS quarterly consolidated income statement summary",
+    "source_url": "https://mops.twse.com.tw/mops/#/web/t163sb04",
+    "source_route": "POST /mops/api/redirectToOld -> GET mopsov /mops/web/ajax_t163sb04?parameters=...",
+    "source_type": "official_source_candidate",
+    "coverage": "2015Q1-2026Q1",
+    "markets": "sii;otc",
+    "source_date_available": "yes",
+    "filing_date_available": "no",
+    "formal_exact": "false",
+    "notes": "full sweep source candidate; available_date uses conservative statutory deadline"
+  }
+]

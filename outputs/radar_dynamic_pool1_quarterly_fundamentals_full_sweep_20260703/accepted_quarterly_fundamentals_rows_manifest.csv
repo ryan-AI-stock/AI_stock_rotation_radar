@@ -1,0 +1,13 @@
+﻿shard_path,fiscal_year,rows,git_tracked
+shards\accepted_quarterly_fundamentals_rows_2015.csv,2015,6204,true
+shards\accepted_quarterly_fundamentals_rows_2016.csv,2016,6372,true
+shards\accepted_quarterly_fundamentals_rows_2017.csv,2017,6522,true
+shards\accepted_quarterly_fundamentals_rows_2018.csv,2018,6706,true
+shards\accepted_quarterly_fundamentals_rows_2019.csv,2019,6846,true
+shards\accepted_quarterly_fundamentals_rows_2020.csv,2020,6967,true
+shards\accepted_quarterly_fundamentals_rows_2021.csv,2021,7140,true
+shards\accepted_quarterly_fundamentals_rows_2022.csv,2022,7312,true
+shards\accepted_quarterly_fundamentals_rows_2023.csv,2023,7490,true
+shards\accepted_quarterly_fundamentals_rows_2024.csv,2024,7677,true
+shards\accepted_quarterly_fundamentals_rows_2025.csv,2025,7841,true
+shards\accepted_quarterly_fundamentals_rows_2026.csv,2026,1969,true

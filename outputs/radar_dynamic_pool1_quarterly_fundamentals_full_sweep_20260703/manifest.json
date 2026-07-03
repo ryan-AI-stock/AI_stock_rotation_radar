@@ -1,0 +1,12 @@
+{
+  "task_id": "TASK-RADAR-DATA-DYNAMIC-POOL1-QUARTERLY-FUNDAMENTALS-FULL-SWEEP-20260703",
+  "status": "completed_full_sweep_source_candidate",
+  "output_path": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_dynamic_pool1_quarterly_fundamentals_full_sweep_20260703",
+  "accepted_rows": 79046,
+  "symbol_count": 1970,
+  "covered_start": "2015Q1",
+  "covered_end": "2026Q1",
+  "missing_period_markets": 0,
+  "future_data_violation_count": 0,
+  "generated_at": "2026-07-03T18:34:37.385398+08:00"
+}

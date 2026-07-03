@@ -1,0 +1,27 @@
+{
+  "task_id": "TASK-RADAR-DATA-DYNAMIC-POOL1-QUARTERLY-FUNDAMENTALS-FULL-SWEEP-20260703",
+  "status": "completed_full_sweep_source_candidate",
+  "quarterly_fundamentals_full_sweep_ready": true,
+  "quarterly_fundamentals_partial_ready": false,
+  "covered_start": "2015Q1",
+  "covered_end": "2026Q1",
+  "accepted_rows": 79046,
+  "symbol_count": 1970,
+  "failed_or_missing_period_markets": 0,
+  "route_request_attempts": 180,
+  "source_type": "source_candidate_no_exact_filing_date",
+  "formal_exact": false,
+  "filing_date_available": false,
+  "available_date_policy": "conservative statutory deadline by quarter; not per-company exact filing timestamp",
+  "future_data_violation_count": 0,
+  "ready_for_core_rerun": true,
+  "ready_for_strategy_replay": false,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "remaining_blockers": [
+    "Per-company exact filing_date/release timestamp is still unavailable.",
+    "Only t163sb04 income statement summary is swept; balance sheet/cash flow/ratio expansion remains separate if needed."
+  ],
+  "generated_at": "2026-07-03T18:34:37.385398+08:00"
+}

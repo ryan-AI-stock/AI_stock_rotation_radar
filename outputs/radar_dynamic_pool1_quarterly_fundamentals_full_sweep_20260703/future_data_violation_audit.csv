@@ -1,0 +1,4 @@
+﻿audit_item,status,violation_count,evidence
+period_specific_route,pass,0,Each request uses fiscal year/quarter and market parameters in MOPS redirectToOld contract.
+current_snapshot_backfill,pass,0,No current company profile or current financial snapshot was used.
+filing_date_exactness,partial,0,available_date uses conservative statutory deadline; per-company filing_date remains unavailable.
