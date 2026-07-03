@@ -1,0 +1,27 @@
+﻿timestamp,step,status,detail
+2026-07-03T11:02:44+08:00,start,running,"mode=sample; dates=12; markets=TWSE,TPEx"
+2026-07-03T11:02:44+08:00,fetch_market_date,rows_found,TWSE 2015-01-05: rows=911 accepted=856
+2026-07-03T11:02:45+08:00,fetch_market_date,rows_found,TPEx 2015-01-05: rows=3969 accepted=663
+2026-07-03T11:02:45+08:00,fetch_market_date,rows_found,TWSE 2016-01-04: rows=939 accepted=871
+2026-07-03T11:02:46+08:00,fetch_market_date,rows_found,TPEx 2016-01-04: rows=3851 accepted=674
+2026-07-03T11:02:46+08:00,fetch_market_date,rows_found,TWSE 2017-01-03: rows=982 accepted=895
+2026-07-03T11:02:47+08:00,fetch_market_date,rows_found,TPEx 2017-01-03: rows=4106 accepted=703
+2026-07-03T11:02:47+08:00,fetch_market_date,rows_found,TWSE 2018-01-02: rows=1037 accepted=910
+2026-07-03T11:02:48+08:00,fetch_market_date,rows_found,TPEx 2018-01-02: rows=5221 accepted=714
+2026-07-03T11:02:48+08:00,fetch_market_date,rows_found,TWSE 2019-01-02: rows=1075 accepted=925
+2026-07-03T11:02:49+08:00,fetch_market_date,rows_found,TPEx 2019-01-02: rows=5385 accepted=722
+2026-07-03T11:02:49+08:00,fetch_market_date,rows_found,TWSE 2020-01-02: rows=1114 accepted=945
+2026-07-03T11:02:50+08:00,fetch_market_date,rows_found,TPEx 2020-01-02: rows=5532 accepted=752
+2026-07-03T11:02:50+08:00,fetch_market_date,rows_found,TWSE 2021-01-04: rows=1122 accepted=948
+2026-07-03T11:02:51+08:00,fetch_market_date,rows_found,TPEx 2021-01-04: rows=6586 accepted=763
+2026-07-03T11:02:51+08:00,fetch_market_date,rows_found,TWSE 2022-01-03: rows=1150 accepted=954
+2026-07-03T11:02:52+08:00,fetch_market_date,rows_found,TPEx 2022-01-03: rows=8091 accepted=773
+2026-07-03T11:02:52+08:00,fetch_market_date,rows_found,TWSE 2023-01-03: rows=1181 accepted=967
+2026-07-03T11:02:53+08:00,fetch_market_date,rows_found,TPEx 2023-01-03: rows=7385 accepted=775
+2026-07-03T11:02:54+08:00,fetch_market_date,rows_found,TWSE 2024-01-02: rows=1222 accepted=1001
+2026-07-03T11:02:55+08:00,fetch_market_date,rows_found,TPEx 2024-01-02: rows=10902 accepted=798
+2026-07-03T11:02:55+08:00,fetch_market_date,rows_found,TWSE 2025-01-02: rows=1274 accepted=1035
+2026-07-03T11:02:56+08:00,fetch_market_date,rows_found,TPEx 2025-01-02: rows=11469 accepted=825
+2026-07-03T11:02:56+08:00,fetch_market_date,rows_found,TWSE 2026-07-02: rows=1368 accepted=1079
+2026-07-03T11:02:57+08:00,fetch_market_date,rows_found,TPEx 2026-07-02: rows=10027 accepted=870
+2026-07-03T11:02:59+08:00,write_outputs,completed,accepted_rows=20418 blocked_rows=75481 attempts=24

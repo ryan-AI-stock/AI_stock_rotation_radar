@@ -1,0 +1,96 @@
+{
+  "task_id": "TASK-RADAR-DATA-DYNAMIC-POOL1-ALL-LISTED-LIQUID-UNIVERSE-PIT-DAILY-20260703",
+  "sources": [
+    {
+      "source_id": "twse_mi_index_allbut0999",
+      "dataset": "all_listed_liquid_universe_pit_daily",
+      "source_name": "TWSE MI_INDEX ALLBUT0999 full-market daily trading data",
+      "official_proxy_manual": "official",
+      "source_type": "official_daily_trading_pit",
+      "coverage": "sample_verified_2015_latest; full_range_runner_available",
+      "source_date_available": "true",
+      "effective_date_available": "true_for_daily_presence",
+      "formal_ready": "partial",
+      "notes": "Accepted for daily exchange presence, OHLCV, turnover, and liquidity screen inputs. Listing/delisting/suspension master still separate."
+    },
+    {
+      "source_id": "tpex_daily_quotes",
+      "dataset": "all_listed_liquid_universe_pit_daily",
+      "source_name": "TPEx dailyQuotes full-market daily trading data",
+      "official_proxy_manual": "official",
+      "source_type": "official_daily_trading_pit",
+      "coverage": "sample_verified_2015_latest; full_range_runner_available",
+      "source_date_available": "true",
+      "effective_date_available": "true_for_daily_presence",
+      "formal_ready": "partial",
+      "notes": "Accepted for daily exchange presence, OHLCV, turnover, and liquidity screen inputs. Listing/delisting/suspension master still separate."
+    }
+  ],
+  "listing_status_source_inventory": [
+    {
+      "dataset": "listing_status_source_inventory",
+      "source_id": "twse_mi_index_daily_presence",
+      "source_name": "TWSE MI_INDEX ALLBUT0999 daily security rows",
+      "source_url": "https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX?date={yyyymmdd}&type=ALLBUT0999&response=json",
+      "official_proxy_manual": "official",
+      "coverage": "2015 sample verified; runner supports bounded daily sweep to latest",
+      "source_date_available": "true",
+      "effective_date_available": "same as trading date for presence in daily table",
+      "formal_ready": "partial",
+      "acceptance_decision": "accepted_for_daily_presence_and_liquidity_only",
+      "notes": "Presence in the official daily trading table is PIT evidence for that trading date; it is not a standalone listing/delisting master."
+    },
+    {
+      "dataset": "listing_status_source_inventory",
+      "source_id": "tpex_daily_quotes_presence",
+      "source_name": "TPEx dailyQuotes daily security rows",
+      "source_url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date={yyyy/mm/dd}&response=json",
+      "official_proxy_manual": "official",
+      "coverage": "2015 sample verified; runner supports bounded daily sweep to latest",
+      "source_date_available": "true",
+      "effective_date_available": "same as trading date for presence in daily table",
+      "formal_ready": "partial",
+      "acceptance_decision": "accepted_for_daily_presence_and_liquidity_only",
+      "notes": "Presence in the official daily trading table is PIT evidence for that trading date; it is not a standalone listing/delisting master."
+    },
+    {
+      "dataset": "listing_status_source_inventory",
+      "source_id": "twse_t187ap03_L_current_company_profile",
+      "source_name": "TWSE listed company profile OpenAPI",
+      "source_url": "https://openapi.twse.com.tw/v1/opendata/t187ap03_L",
+      "official_proxy_manual": "official_current_snapshot",
+      "coverage": "current snapshot only",
+      "source_date_available": "true",
+      "effective_date_available": "current only",
+      "formal_ready": "false",
+      "acceptance_decision": "proxy_inventory_only_not_used_for_2015_pit",
+      "notes": "Useful to discover fields and current listed companies; not used to backfill historical PIT membership."
+    },
+    {
+      "dataset": "listing_status_source_inventory",
+      "source_id": "tpex_t187ap03_O_current_company_profile",
+      "source_name": "TPEx company profile OpenAPI",
+      "source_url": "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap03_O",
+      "official_proxy_manual": "official_current_snapshot",
+      "coverage": "current snapshot only",
+      "source_date_available": "true",
+      "effective_date_available": "current only",
+      "formal_ready": "false",
+      "acceptance_decision": "proxy_inventory_only_not_used_for_2015_pit",
+      "notes": "Useful to discover fields and current listed companies; not used to backfill historical PIT membership."
+    },
+    {
+      "dataset": "listing_status_source_inventory",
+      "source_id": "twse_tpex_historical_suspend_delist_notice_candidate",
+      "source_name": "TWSE/TPEx historical suspension delisting announcement route",
+      "source_url": "to_probe_next",
+      "official_proxy_manual": "official_candidate",
+      "coverage": "not acquired in this batch",
+      "source_date_available": "unknown",
+      "effective_date_available": "required",
+      "formal_ready": "false",
+      "acceptance_decision": "blocked_until_endpoint_identified",
+      "notes": "Next programmatic source: official historical suspension/resumption/delisting announcement endpoints or downloadable archives."
+    }
+  ]
+}

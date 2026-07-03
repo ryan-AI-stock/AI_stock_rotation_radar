@@ -1,0 +1,25 @@
+﻿year,market,coverage_status,attempted_dates,accepted_common_stock_rows,full_range_ready,notes
+2015,TWSE,sample_verified,1,856,false,Sample verified only; full daily sweep requires bounded continuation runner.
+2015,TPEx,sample_verified,1,663,false,Sample verified only; full daily sweep requires bounded continuation runner.
+2016,TWSE,sample_verified,1,871,false,Sample verified only; full daily sweep requires bounded continuation runner.
+2016,TPEx,sample_verified,1,674,false,Sample verified only; full daily sweep requires bounded continuation runner.
+2017,TWSE,sample_verified,1,895,false,Sample verified only; full daily sweep requires bounded continuation runner.
+2017,TPEx,sample_verified,1,703,false,Sample verified only; full daily sweep requires bounded continuation runner.
+2018,TWSE,sample_verified,1,910,false,Sample verified only; full daily sweep requires bounded continuation runner.
+2018,TPEx,sample_verified,1,714,false,Sample verified only; full daily sweep requires bounded continuation runner.
+2019,TWSE,sample_verified,1,925,false,Sample verified only; full daily sweep requires bounded continuation runner.
+2019,TPEx,sample_verified,1,722,false,Sample verified only; full daily sweep requires bounded continuation runner.
+2020,TWSE,sample_verified,1,945,false,Sample verified only; full daily sweep requires bounded continuation runner.
+2020,TPEx,sample_verified,1,752,false,Sample verified only; full daily sweep requires bounded continuation runner.
+2021,TWSE,sample_verified,1,948,false,Sample verified only; full daily sweep requires bounded continuation runner.
+2021,TPEx,sample_verified,1,763,false,Sample verified only; full daily sweep requires bounded continuation runner.
+2022,TWSE,sample_verified,1,954,false,Sample verified only; full daily sweep requires bounded continuation runner.
+2022,TPEx,sample_verified,1,773,false,Sample verified only; full daily sweep requires bounded continuation runner.
+2023,TWSE,sample_verified,1,967,false,Sample verified only; full daily sweep requires bounded continuation runner.
+2023,TPEx,sample_verified,1,775,false,Sample verified only; full daily sweep requires bounded continuation runner.
+2024,TWSE,sample_verified,1,1001,false,Sample verified only; full daily sweep requires bounded continuation runner.
+2024,TPEx,sample_verified,1,798,false,Sample verified only; full daily sweep requires bounded continuation runner.
+2025,TWSE,sample_verified,1,1035,false,Sample verified only; full daily sweep requires bounded continuation runner.
+2025,TPEx,sample_verified,1,825,false,Sample verified only; full daily sweep requires bounded continuation runner.
+2026,TWSE,sample_verified,1,1079,false,Sample verified only; full daily sweep requires bounded continuation runner.
+2026,TPEx,sample_verified,1,870,false,Sample verified only; full daily sweep requires bounded continuation runner.

@@ -1,0 +1,59 @@
+{
+  "task_id": "TASK-RADAR-DATA-DYNAMIC-POOL1-ALL-LISTED-LIQUID-UNIVERSE-PIT-DAILY-20260703",
+  "status": "completed_partial_sample_verified",
+  "all_listed_liquid_universe_pit_daily_partial_ready": true,
+  "all_listed_liquid_universe_pit_daily_full_range_ready": false,
+  "listing_delisting_suspension_metadata_ready": false,
+  "ready_for_core_rerun": true,
+  "ready_for_strategy_replay": false,
+  "dynamic_pool1_shadow_challenger_ready": false,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "future_data_violation_count": 0,
+  "accepted_liquidity_rows": 20418,
+  "blocked_rows_total": 75481,
+  "blocked_rows_file_mode": "sample_first_5000_plus_blocked_rows_summary",
+  "download_attempts": 24,
+  "successful_attempts": 24,
+  "covered_years_sample": [
+    "2015",
+    "2016",
+    "2017",
+    "2018",
+    "2019",
+    "2020",
+    "2021",
+    "2022",
+    "2023",
+    "2024",
+    "2025",
+    "2026"
+  ],
+  "covered_markets_sample": [
+    "TPEx",
+    "TWSE"
+  ],
+  "core_input_hint": {
+    "liquid_universe_pit_daily_candidate": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_dynamic_pool1_all_listed_liquid_universe_pit_daily_20260703\\liquid_universe_pit_daily_candidate.csv",
+    "accepted_liquidity_rows": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_dynamic_pool1_all_listed_liquid_universe_pit_daily_20260703\\accepted_liquidity_rows.csv",
+    "download_attempts": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_dynamic_pool1_all_listed_liquid_universe_pit_daily_20260703\\download_attempts.csv",
+    "listing_status_source_inventory": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_dynamic_pool1_all_listed_liquid_universe_pit_daily_20260703\\listing_status_source_inventory.csv",
+    "coverage_by_year_market": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_dynamic_pool1_all_listed_liquid_universe_pit_daily_20260703\\coverage_by_year_market.csv"
+  },
+  "resume_design": {
+    "sample_command": "python outputs/radar_dynamic_pool1_all_listed_liquid_universe_pit_daily_20260703/build_all_listed_liquid_universe_package.py --mode sample",
+    "bounded_range_command": "python outputs/radar_dynamic_pool1_all_listed_liquid_universe_pit_daily_20260703/build_all_listed_liquid_universe_package.py --mode range --start-date 2015-01-01 --end-date 2015-03-31 --max-dates 60",
+    "full_range_warning": "Run in monthly or quarterly bounded chunks; do not launch an unbounded 2015-latest sweep without checkpoint review."
+  },
+  "blocking_issues": [
+    "Full 2015-latest daily sweep not run in this batch; only annual/latest official samples were downloaded and parsed.",
+    "Listing/delisting/suspension master metadata remains blocked; current company profile snapshots are inventory-only.",
+    "Suspension status is unknown from daily trading rows alone; zero-trade rows are marked liquidity_pass=false, not inferred as formal suspension."
+  ],
+  "next_programmatic_sources": [
+    "Run bounded monthly/quarterly range sweeps for TWSE MI_INDEX and TPEx dailyQuotes.",
+    "Probe official TWSE/TPEx historical suspension, resumption, delisting, and transfer-listing announcement archives.",
+    "Join daily presence rows with verified listing/delisting/suspension metadata before formal all-listed tradable universe use."
+  ]
+}

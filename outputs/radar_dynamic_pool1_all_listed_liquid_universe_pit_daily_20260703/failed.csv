@@ -1,0 +1,2 @@
+﻿task_id,status,failed_item,reason
+TASK-RADAR-DATA-DYNAMIC-POOL1-ALL-LISTED-LIQUID-UNIVERSE-PIT-DAILY-20260703,metadata_master_blocked,listing_delisting_suspension_master,"Daily trading rows give PIT presence and liquidity, but complete listing/delisting/suspension metadata master was not acquired in this batch."

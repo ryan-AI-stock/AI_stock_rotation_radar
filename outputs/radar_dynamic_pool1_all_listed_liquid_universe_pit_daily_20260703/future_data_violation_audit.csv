@@ -1,0 +1,5 @@
+﻿source_id,future_data_violation_count,decision,evidence
+twse_mi_index_allbut0999,0,accepted_daily_pit_rows_only,Rows are fetched from official daily trading endpoint for each target date; source_date equals trade date.
+tpex_daily_quotes,0,accepted_daily_pit_rows_only,Rows are fetched from official daily trading endpoint for each target date; source_date equals trade date.
+twse_t187ap03_L_current_company_profile,0,excluded_from_historical_accepted_rows,Current company profile snapshot is inventory-only and is not used to infer 2015 historical listing membership.
+tpex_t187ap03_O_current_company_profile,0,excluded_from_historical_accepted_rows,Current company profile snapshot is inventory-only and is not used to infer 2015 historical listing membership.
