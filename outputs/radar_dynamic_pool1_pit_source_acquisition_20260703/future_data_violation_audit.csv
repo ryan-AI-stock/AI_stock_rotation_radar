@@ -1,0 +1,4 @@
+﻿source_id,dataset,future_data_violation_count,future_data_risk_excluded_count,decision,evidence
+current_generated_static_maps,sector_membership_pit,0,2,excluded_from_accepted_sources,sector_map/theme_map/current generated universe lack source/effective/release dates and are not accepted for Dynamic Pool1 history.
+accepted_partial_sources,monthly_revenue_pit;sector_breadth_turnover_component,0,0,partial_ready_not_formal_ready,Partial official sources retain available/source dates but do not cover all-listed Dynamic Pool1 scope.
+package_readiness,all,0,2,dynamic_pool1_shadow_challenger_ready_false,No current snapshot/proxy/static sector map is promoted to formal-ready historical PIT.

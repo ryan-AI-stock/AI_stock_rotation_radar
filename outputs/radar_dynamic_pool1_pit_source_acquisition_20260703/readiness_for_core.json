@@ -1,0 +1,47 @@
+{
+  "task_id": "TASK-RADAR-DATA-DYNAMIC-POOL1-PIT-SOURCE-ACQUISITION-20260703",
+  "status": "completed_partial_sources_but_core_ready_false",
+  "dynamic_pool1_shadow_challenger_ready": false,
+  "ready_for_core_rerun": true,
+  "ready_for_strategy_replay": false,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "future_data_violation_count": 0,
+  "candidate_source_count": 10,
+  "accepted_partial_source_count": 2,
+  "proxy_source_count": 3,
+  "blocked_source_count": 5,
+  "partial_ready_datasets": [
+    "all_listed_liquid_universe_pit_daily",
+    "monthly_revenue_pit"
+  ],
+  "blocked_datasets": [
+    "all_listed_liquid_universe_pit_daily",
+    "quarterly_fundamentals_pit",
+    "historical_market_cap_pit",
+    "sector_membership_pit",
+    "sector_breadth_pit_daily"
+  ],
+  "core_readiness_runner_input_hint": {
+    "source_manifest": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_dynamic_pool1_pit_source_acquisition_20260703\\source_manifest.csv",
+    "accepted_source_rows": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_dynamic_pool1_pit_source_acquisition_20260703\\accepted_source_rows.csv",
+    "proxy_source_rows": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_dynamic_pool1_pit_source_acquisition_20260703\\proxy_source_rows.csv",
+    "blocked_source_rows": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_dynamic_pool1_pit_source_acquisition_20260703\\blocked_source_rows.csv",
+    "coverage_by_dataset_year": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_dynamic_pool1_pit_source_acquisition_20260703\\coverage_by_dataset_year.csv"
+  },
+  "blocking_issues": [
+    "No all-listed PIT liquid universe accepted.",
+    "Monthly revenue PIT has partial existing source pattern but not all-listed full-period Dynamic Pool1 coverage.",
+    "No quarterly fundamentals PIT with filing/release date.",
+    "No historical market cap PIT from date-aware shares outstanding or official market cap.",
+    "Sector/mainline membership and breadth remain blocked; current static maps excluded."
+  ],
+  "next_data_steps": [
+    "Build bounded TWSE/TPEx full-market daily downloader plus listing/delisting/suspension metadata ledger.",
+    "Extend MOPS monthly revenue PIT ingestion to all-listed universe and full Dynamic Pool1 period.",
+    "Probe MOPS/XBRL quarterly financial statements with filing/release date.",
+    "Acquire shares outstanding/capital changes PIT and derive market cap with date-aware prices.",
+    "Acquire date-aware sector/mainline membership from official historical classifications or dated company filings."
+  ]
+}
