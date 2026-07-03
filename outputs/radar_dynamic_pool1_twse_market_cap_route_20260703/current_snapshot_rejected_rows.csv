@@ -1,0 +1,4 @@
+﻿route,url,reason,formal_exact,evidence
+twse_t187ap03_L_current,https://openapi.twse.com.tw/v1/opendata/t187ap03_L,current/latest snapshot only or top20 only; no historical date/as-of parameter,false,raw_sources\twse_t187ap03_L_current.txt
+twse_t187ap08_L_current,https://openapi.twse.com.tw/v1/opendata/t187ap08_L,current/latest snapshot only or top20 only; no historical date/as-of parameter,false,raw_sources\twse_t187ap08_L_current.txt
+twse_fund_mi_qfiis_sort_20_current,https://openapi.twse.com.tw/v1/fund/MI_QFIIS_sort_20,current/latest snapshot only or top20 only; no historical date/as-of parameter,false,raw_sources\twse_fund_mi_qfiis_sort_20_current.txt

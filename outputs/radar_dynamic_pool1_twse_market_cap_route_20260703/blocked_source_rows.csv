@@ -1,0 +1,4 @@
+﻿source,target_period,blocked_reason,next_programmatic_route,evidence
+TWSE MI_INDEX,2015/2024/2026 daily,official daily trading route has close/turnover but no per-stock issued shares or direct market cap,"combine MOPS quarterly capital stock candidate with official TWSE daily close as proxy candidate, or find TWSE capital-change effective-date archives",route_probe_attempts.csv
+TWSE direct market cap,2015-latest,openapi/swagger probe found no full historical per-stock direct market cap endpoint,"search Taiwan Index/TWSE index constituent market value weight archive, or official capital-change announcement route",raw_sources/twse_openapi_swagger.txt
+free-float market cap,2015-latest,no official free-float market cap / free-float factor history route found,Taiwan Index company free-float factor publications or index methodology component archive,route_probe_attempts.csv

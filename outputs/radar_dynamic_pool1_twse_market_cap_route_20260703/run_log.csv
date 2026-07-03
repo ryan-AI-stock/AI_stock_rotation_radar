@@ -1,0 +1,5 @@
+timestamp,step,status,notes
+2026-07-03T20:10:00+08:00,skeleton,created,Starting TWSE market cap route unlock bounded probes
+2026-07-03T21:23:39.913914+08:00,build_twse_market_cap_route_package,completed_partial_quarterly_capital_stock_route_unlocked_direct_market_cap_blocked,accepted_capital_stock_rows=0
+2026-07-03T21:24:25.361374+08:00,build_twse_market_cap_route_package,completed_partial_quarterly_capital_stock_route_unlocked_direct_market_cap_blocked,accepted_capital_stock_rows=0
+2026-07-03T21:29:56.892747+08:00,build_twse_market_cap_route_package,completed_partial_quarterly_capital_stock_route_unlocked_direct_market_cap_blocked,accepted_capital_stock_rows=720

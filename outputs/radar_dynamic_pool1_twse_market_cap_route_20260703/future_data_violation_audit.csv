@@ -1,0 +1,4 @@
+﻿check,result,violation_count,notes
+current_snapshot_rejected,pass,0,t187ap03_L and current top20 share routes were rejected for historical use.
+period_specific_capital_stock,pass,0,accepted sample rows use MOPS year/season parameters and conservative available_date.
+direct_market_cap_not_fabricated,pass,0,No direct TWSE market cap rows were fabricated; market_cap sample remains empty.

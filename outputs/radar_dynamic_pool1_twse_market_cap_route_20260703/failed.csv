@@ -1,0 +1,4 @@
+﻿step,status,notes
+twse_direct_market_cap_route,blocked,No direct per-stock historical market cap endpoint found.
+twse_daily_issued_shares_route,blocked,No daily issued shares endpoint found; quarterly capital stock route only.
+free_float_market_cap_route,blocked,No official history route found.

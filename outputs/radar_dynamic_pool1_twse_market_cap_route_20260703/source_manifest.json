@@ -1,0 +1,35 @@
+[
+  {
+    "source_id": "mops_ajax_t163sb05_balance_sheet",
+    "source_name": "MOPS quarterly balance sheet summary",
+    "source_url": "https://mops.twse.com.tw/mops/#/web/t163sb05",
+    "source_route": "POST /mops/api/redirectToOld apiName=ajax_t163sb05 -> GET mopsov ajax_t163sb05",
+    "source_type": "official_quarterly_capital_stock_source_candidate",
+    "coverage_sample": "2015Q4, 2024Q4, 2026Q1 TWSE",
+    "date_awareness": "period-specific fiscal year/quarter; available_date conservative statutory deadline, not exact company filing timestamp",
+    "formal_exact": "false",
+    "notes": "Provides capital_stock from balance sheet; does not provide daily issued shares or direct market cap."
+  },
+  {
+    "source_id": "twse_mi_index",
+    "source_name": "TWSE MI_INDEX daily trading",
+    "source_url": "https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX",
+    "source_route": "GET date/type=ALLBUT0999",
+    "source_type": "official_daily_trading_no_shares_blocked",
+    "coverage_sample": "2015, 2024, 2026 sample dates",
+    "date_awareness": "daily source date available",
+    "formal_exact": "false",
+    "notes": "No per-stock issued shares/direct market cap field."
+  },
+  {
+    "source_id": "twse_openapi_t187ap03_L",
+    "source_name": "上市公司基本資料",
+    "source_url": "https://openapi.twse.com.tw/v1/opendata/t187ap03_L",
+    "source_route": "GET current snapshot",
+    "source_type": "official_current_snapshot_rejected_for_history",
+    "coverage_sample": "latest only",
+    "date_awareness": "出表日期 only; no historical as-of parameter",
+    "formal_exact": "false",
+    "notes": "Contains issued ordinary shares but cannot be used to backfill 2015."
+  }
+]

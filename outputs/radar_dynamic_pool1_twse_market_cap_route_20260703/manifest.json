@@ -1,0 +1,14 @@
+{
+  "task_id": "TASK-RADAR-DATA-DYNAMIC-POOL1-TWSE-MARKET-CAP-ROUTE-20260703",
+  "status": "completed_partial_quarterly_capital_stock_route_unlocked_direct_market_cap_blocked",
+  "output_path": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_dynamic_pool1_twse_market_cap_route_20260703",
+  "accepted_twse_capital_stock_sample_rows": 720,
+  "accepted_periods": [
+    "2015Q4",
+    "2024Q4",
+    "2026Q1"
+  ],
+  "ready_for_core_rerun": true,
+  "future_data_violation_count": 0,
+  "generated_at": "2026-07-03T21:29:56.892747+08:00"
+}

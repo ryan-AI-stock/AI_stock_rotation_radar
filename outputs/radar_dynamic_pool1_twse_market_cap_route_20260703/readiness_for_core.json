@@ -1,0 +1,31 @@
+{
+  "task_id": "TASK-RADAR-DATA-DYNAMIC-POOL1-TWSE-MARKET-CAP-ROUTE-20260703",
+  "status": "completed_partial_quarterly_capital_stock_route_unlocked_direct_market_cap_blocked",
+  "twse_market_cap_route_unlocked": false,
+  "twse_issued_shares_route_unlocked": false,
+  "twse_quarterly_capital_stock_route_unlocked": true,
+  "twse_sample_ready": true,
+  "twse_still_blocked": true,
+  "accepted_twse_capital_stock_sample_rows": 720,
+  "accepted_twse_market_cap_sample_rows": 0,
+  "accepted_periods": [
+    "2015Q4",
+    "2024Q4",
+    "2026Q1"
+  ],
+  "accepted_symbols": 243,
+  "future_data_violation_count": 0,
+  "formal_exact": false,
+  "ready_for_core_rerun": true,
+  "ready_for_strategy_replay": false,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "remaining_blockers": [
+    "No direct TWSE historical per-stock market cap route found.",
+    "No daily TWSE issued shares route found.",
+    "MOPS t163sb05 is quarterly capital stock, not daily issued shares.",
+    "Free-float market cap remains blocked."
+  ],
+  "generated_at": "2026-07-03T21:29:56.892747+08:00"
+}

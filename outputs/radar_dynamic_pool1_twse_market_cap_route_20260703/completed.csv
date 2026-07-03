@@ -1,0 +1,3 @@
+﻿step,status,rows,notes
+mops_ajax_t163sb05_route_probe,completed,720,Quarterly balance-sheet capital stock sample rows parsed.
+twse_openapi_catalog_probe,completed,0,No direct historical per-stock market cap route found in bounded probe.
