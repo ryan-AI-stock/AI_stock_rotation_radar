@@ -1,0 +1,2 @@
+﻿task_id,status,failed_item,reason
+TASK-RADAR-DATA-DYNAMIC-POOL1-LISTING-MASTER-COMPLETION-20260703,remaining_master_blocked,complete_cross_market_listing_delisting_suspension_master,"TWSE coverage improved, but TPEx historical delisting/suspension and MOPS date-range material information remain blocked."

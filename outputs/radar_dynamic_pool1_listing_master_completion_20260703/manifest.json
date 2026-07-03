@@ -1,0 +1,30 @@
+{
+  "task_id": "TASK-RADAR-DATA-DYNAMIC-POOL1-LISTING-MASTER-COMPLETION-20260703",
+  "created_at": "2026-07-03T14:50:59+08:00",
+  "previous_output": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_dynamic_pool1_listing_delisting_suspension_master_20260703",
+  "core_rerun_output": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-30\\ep05-chat-ai-stock-backtest-lab\\outputs\\dynamic_pool1_pit_readiness_after_listing_metadata_20260703",
+  "output_path": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_dynamic_pool1_listing_master_completion_20260703",
+  "raw_source_dir": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_dynamic_pool1_listing_master_completion_20260703\\raw_sources",
+  "files": [
+    "accepted_code_name_change_rows.csv",
+    "accepted_listing_metadata_rows.csv",
+    "accepted_suspension_event_rows.csv",
+    "accepted_transfer_listing_rows.csv",
+    "blocked_source_rows.csv",
+    "build_listing_master_completion.py",
+    "completed.csv",
+    "coverage_by_year_market.csv",
+    "current_step.txt",
+    "failed.csv",
+    "future_data_violation_audit.csv",
+    "proxy_source_rows.csv",
+    "readiness_for_core.json",
+    "run_log.csv",
+    "source_manifest.csv",
+    "source_manifest.json",
+    "source_probe_attempts.csv"
+  ],
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false
+}
