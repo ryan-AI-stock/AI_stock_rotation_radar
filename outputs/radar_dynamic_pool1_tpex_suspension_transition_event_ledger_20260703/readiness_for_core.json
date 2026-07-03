@@ -1,0 +1,22 @@
+{
+  "task_id": "TASK-RADAR-DATA-DYNAMIC-POOL1-TPEX-SUSPENSION-TRANSITION-EVENT-LEDGER-20260703",
+  "status": "completed_transition_candidate_ledger_unverified",
+  "output_path": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_dynamic_pool1_tpex_suspension_transition_event_ledger_20260703",
+  "previous_package": "outputs\\radar_dynamic_pool1_tpex_historical_full_sweep_20260703",
+  "core_readiness_input": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-30\\ep05-chat-ai-stock-backtest-lab\\outputs\\dynamic_pool1_pit_readiness_after_tpex_full_route_coverage_20260703",
+  "transition_candidate_count": 2295,
+  "announcement_verification_attempts": 160,
+  "announcement_verified_event_count": 0,
+  "unverified_transition_candidate_count": 2295,
+  "future_data_violation_count": 0,
+  "ready_for_core_rerun": true,
+  "ready_for_strategy_replay": false,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "source_type_boundary": "inferred candidates are not official explicit events unless source_type=announcement_verified",
+  "remaining_blockers": [
+    "Announcement verification is bounded and may not cover all transition candidates.",
+    "Core must decide whether inferred snapshot transition candidates are acceptable for universe integrity, or require broader archive verification."
+  ]
+}

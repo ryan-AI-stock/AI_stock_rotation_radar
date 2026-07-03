@@ -1,0 +1,1 @@
+event_id,ticker,name,event_date,previous_status,new_status,transition_type,source_snapshot_date,source_url,source_type,verification_status,matched_announcement_date,matched_announcement_url,matched_keywords,matched_excerpt,notes

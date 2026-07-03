@@ -1,0 +1,3 @@
+source,blocked_component,blocked_reason,next_programmatic_route
+TPEx bulletin/sprc,explicit suspension/resumption event history,current_only_no_historical_date_parameter,Use bulletin/annDownload ZIP archive extraction or infer from daily snapshot diffs.
+TPEx bulletin/annDownload,announcement verification matches,bounded_zip_keyword_probe_found_no_ticker_keyword_matches,Expand ZIP archive extraction window and parse document formats by attachment type; or diff daily status snapshots and validate manually against announcement titles.

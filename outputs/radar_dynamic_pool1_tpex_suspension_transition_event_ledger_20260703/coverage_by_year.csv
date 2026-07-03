@@ -1,0 +1,12 @@
+year,market,transition_candidates,verified_events,unverified_candidates,normal_to_abnormal,abnormal_to_normal,status_change,coverage_status
+2015,TPEx,232,0,232,98,63,71,candidate_ledger_ready_announcement_partial
+2016,TPEx,255,0,255,73,78,104,candidate_ledger_ready_announcement_partial
+2017,TPEx,208,0,208,73,69,66,candidate_ledger_ready_announcement_partial
+2018,TPEx,213,0,213,71,67,75,candidate_ledger_ready_announcement_partial
+2019,TPEx,222,0,222,81,75,66,candidate_ledger_ready_announcement_partial
+2020,TPEx,280,0,280,69,76,135,candidate_ledger_ready_announcement_partial
+2021,TPEx,223,0,223,64,65,94,candidate_ledger_ready_announcement_partial
+2022,TPEx,194,0,194,66,69,59,candidate_ledger_ready_announcement_partial
+2023,TPEx,187,0,187,59,63,65,candidate_ledger_ready_announcement_partial
+2024,TPEx,158,0,158,52,57,49,candidate_ledger_ready_announcement_partial
+2025,TPEx,123,0,123,38,46,39,candidate_ledger_ready_announcement_partial

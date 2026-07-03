@@ -1,0 +1,4 @@
+audit_item,result,future_data_violation_count,evidence
+snapshot_diff_source_date,pass,0,Transition candidates are derived only from TPEx historical daily status snapshot rows with status_date/source_date in 2015-2025.
+inferred_not_formal_exact,pass,0,Inferred candidates remain source_type=inferred_from_daily_status_snapshot unless matched by bounded announcement verification.
+model_boundary,pass,0,"No BACKTEST_LAB formal model, selector, report, or trade decision changed."

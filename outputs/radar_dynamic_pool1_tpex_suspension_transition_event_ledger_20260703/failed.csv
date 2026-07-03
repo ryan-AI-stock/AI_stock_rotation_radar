@@ -1,0 +1,2 @@
+step,status,reason
+full_archive_verification,not_completed,bounded verification only; full archive ZIP extraction remains next source-expansion task if Core requires it.

@@ -1,0 +1,4 @@
+step,status,evidence
+transition_candidate_diff,completed,transition_event_candidates.csv
+bounded_announcement_verification,completed,announcement_verification_attempts.csv
+readiness_package,completed,readiness_for_core.json
