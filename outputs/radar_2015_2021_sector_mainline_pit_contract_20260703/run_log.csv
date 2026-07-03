@@ -1,0 +1,4 @@
+﻿timestamp,step,status,details
+2026-07-03T08:53:08+08:00,start,running,TASK-BACKTEST-DATA-2015-2021-SECTOR-MAINLINE-PIT-CONTRACT-001
+2026-07-03T08:53:09+08:00,inventory_existing_sources,completed,"Read current static maps, date-aware membership readiness, official turnover readiness, PIT revenue readiness, formal grade audit."
+2026-07-03T08:53:09+08:00,write_contract_outputs,completed,membership_rows=6 readiness=blocked future_data_violation_count=0

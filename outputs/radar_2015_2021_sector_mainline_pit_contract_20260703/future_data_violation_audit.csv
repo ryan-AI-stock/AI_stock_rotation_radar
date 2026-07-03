@@ -1,0 +1,5 @@
+﻿audit_item,checked_source,future_data_violation_count,future_data_risk_count,decision,evidence
+current_static_sector_map,data/sector_map.csv,0,1,exclude_from_pit_contract,Header lacks source_date/effective_date/as_of_date; not accepted as 2015-2021 PIT membership.
+current_static_theme_map,data/theme_map.csv,0,1,exclude_from_pit_contract,Header lacks source_date/effective_date/as_of_date and includes modern themes; not accepted as 2015-2021 PIT membership.
+dated_membership_rows,data/formal_sources/date_aware_theme_membership_full_2022_2023.csv,0,0,partial_diagnostic_only,"6 rows have source_date <= 2021-12-31, but coverage is far below sector/mainline universe needs."
+package_acceptance,all accepted package rows,0,0,blocked_not_formal_ready,No static modern map rows were accepted into formal PIT membership; empty breadth/liquid panels prevent accidental future-data replay.

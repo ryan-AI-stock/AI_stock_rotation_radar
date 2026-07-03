@@ -1,0 +1,4 @@
+﻿component,status,missing_data,next_programmatic_source
+sector_membership_pit_panel,blocked,Full 2015-2021 date-aware sector/mainline membership with source_date/effective_date/as_of_date.,"MOPS annual reports, prospectuses, company formal filings, TWSE/TPEx industry classification archives if available."
+sector_breadth_pit_daily,blocked,Daily sector/mainline constituent set and liquid tradable universe for each trading day.,TWSE/TPEx daily full-market OHLCV/turnover plus PIT membership after membership contract is acquired.
+liquid_universe_pit_daily,blocked,2015-2021 full-market listing/delisting/suspension/liquidity filters.,"TWSE/TPEX listed company daily/monthly metadata, daily trading files, delisting/suspension announcements."

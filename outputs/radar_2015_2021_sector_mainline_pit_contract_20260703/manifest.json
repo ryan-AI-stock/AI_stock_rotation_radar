@@ -1,0 +1,17 @@
+{
+  "task_id": "TASK-BACKTEST-DATA-2015-2021-SECTOR-MAINLINE-PIT-CONTRACT-001",
+  "status": "blocked",
+  "output_dir": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_2015_2021_sector_mainline_pit_contract_20260703",
+  "created_at": "2026-07-03T08:53:09+08:00",
+  "required_outputs": {
+    "sector_membership_pit_panel": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_2015_2021_sector_mainline_pit_contract_20260703\\sector_membership_pit_panel.csv",
+    "sector_breadth_pit_daily": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_2015_2021_sector_mainline_pit_contract_20260703\\sector_breadth_pit_daily.csv",
+    "liquid_universe_pit_daily": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_2015_2021_sector_mainline_pit_contract_20260703\\liquid_universe_pit_daily.csv",
+    "source_manifest": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_2015_2021_sector_mainline_pit_contract_20260703\\source_manifest.csv",
+    "future_data_violation_audit": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_2015_2021_sector_mainline_pit_contract_20260703\\future_data_violation_audit.csv",
+    "coverage_by_year": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_2015_2021_sector_mainline_pit_contract_20260703\\coverage_by_year.csv",
+    "readiness": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_2015_2021_sector_mainline_pit_contract_20260703\\readiness.json"
+  },
+  "formal_model_changed": false,
+  "trade_decision_changed": false
+}
