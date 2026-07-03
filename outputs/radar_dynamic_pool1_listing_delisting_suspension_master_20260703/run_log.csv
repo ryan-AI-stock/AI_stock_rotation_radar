@@ -1,0 +1,15 @@
+﻿timestamp,step,status,detail
+2026-07-03T14:25:30+08:00,start,running,TASK-RADAR-DATA-DYNAMIC-POOL1-LISTING-DELISTING-SUSPENSION-MASTER-20260703
+2026-07-03T14:25:31+08:00,probe_source,retrieved,twse_swagger listing=0 suspension=0 proxy=0
+2026-07-03T14:25:31+08:00,probe_source,retrieved,twse_company_newlisting listing=294 suspension=0 proxy=0
+2026-07-03T14:25:31+08:00,probe_source,retrieved,twse_company_suspend_listing listing=85 suspension=0 proxy=0
+2026-07-03T14:25:31+08:00,probe_source,retrieved,twse_current_company_profile listing=0 suspension=0 proxy=1089
+2026-07-03T14:25:32+08:00,probe_source,retrieved,twse_daily_material_information_current listing=0 suspension=0 proxy=105
+2026-07-03T14:25:32+08:00,probe_source,retrieved,tpex_swagger listing=0 suspension=0 proxy=0
+2026-07-03T14:25:32+08:00,probe_source,retrieved,tpex_spendi_history listing=0 suspension=178 proxy=0
+2026-07-03T14:25:32+08:00,probe_source,retrieved,tpex_spendi_today listing=0 suspension=0 proxy=0
+2026-07-03T14:25:32+08:00,probe_source,retrieved,tpex_cmode_current listing=0 suspension=0 proxy=20
+2026-07-03T14:25:33+08:00,probe_source,retrieved,tpex_current_company_profile listing=0 suspension=0 proxy=891
+2026-07-03T14:25:33+08:00,probe_source,retrieved,tpex_daily_material_information_current listing=0 suspension=0 proxy=48
+2026-07-03T14:25:33+08:00,probe_source,retrieved,tpex_operation_scope_stop_trading listing=0 suspension=0 proxy=0
+2026-07-03T14:25:33+08:00,write_outputs,completed_partial,listing_rows=379 suspension_rows=178 proxy_rows=2153

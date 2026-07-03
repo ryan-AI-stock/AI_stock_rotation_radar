@@ -1,0 +1,34 @@
+{
+  "task_id": "TASK-RADAR-DATA-DYNAMIC-POOL1-LISTING-DELISTING-SUSPENSION-MASTER-20260703",
+  "status": "completed_partial_event_sources_but_master_ready_false",
+  "accepted_listing_metadata_rows": 379,
+  "accepted_suspension_event_rows": 178,
+  "proxy_source_rows": 2153,
+  "blocked_source_rows": 3,
+  "listing_delisting_suspension_metadata_ready": false,
+  "ready_for_core_rerun": true,
+  "ready_for_strategy_replay": false,
+  "dynamic_pool1_shadow_challenger_ready": false,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "future_data_violation_count": 0,
+  "coverage_statuses": [
+    "no_accepted_master_rows_observed",
+    "partial_event_rows_available"
+  ],
+  "coverage_by_year_market": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_dynamic_pool1_listing_delisting_suspension_master_20260703\\coverage_by_year_market.csv",
+  "core_input_hint": {
+    "accepted_listing_metadata_rows": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_dynamic_pool1_listing_delisting_suspension_master_20260703\\accepted_listing_metadata_rows.csv",
+    "accepted_suspension_event_rows": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_dynamic_pool1_listing_delisting_suspension_master_20260703\\accepted_suspension_event_rows.csv",
+    "source_probe_attempts": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_dynamic_pool1_listing_delisting_suspension_master_20260703\\source_probe_attempts.csv",
+    "proxy_source_rows": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_dynamic_pool1_listing_delisting_suspension_master_20260703\\proxy_source_rows.csv",
+    "blocked_source_rows": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_dynamic_pool1_listing_delisting_suspension_master_20260703\\blocked_source_rows.csv"
+  },
+  "readiness_decision": "partial official event rows available, but not a complete master for Dynamic Pool1 replay",
+  "next_programmatic_sources": [
+    "Probe TWSE historical suspension/resumption status archive or MOPS/TWSE material-information date query for stopped/resumed trading keywords.",
+    "Probe TPEx historical listing/delisting/removal archive outside current OpenAPI catalog.",
+    "Build MOPS/TWSE/TPEx date-range material-information crawler for name_change and transfer listing events."
+  ]
+}

@@ -1,0 +1,3 @@
+﻿audit_id,future_data_violation_count,decision,evidence
+accepted_event_rows,0,accepted_only_when_event_date_present_and_within_requested_window,Rows use explicit official event date fields; rows outside 2015-01-01 to 2026-07-03 are excluded.
+current_snapshot_exclusion,0,current snapshots kept in proxy_source_rows_only,TWSE/TPEx current company profiles and current status endpoints are not copied into accepted master rows.

@@ -1,0 +1,2 @@
+﻿task_id,status,failed_item,reason
+TASK-RADAR-DATA-DYNAMIC-POOL1-LISTING-DELISTING-SUSPENSION-MASTER-20260703,master_metadata_blocked,complete_listing_delisting_suspension_master,"Partial official event rows were acquired, but complete 2015-latest TWSE/TPEx listing/delisting/suspension master is not ready."

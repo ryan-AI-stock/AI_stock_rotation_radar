@@ -1,0 +1,65 @@
+{
+  "task_id": "TASK-RADAR-DATA-DYNAMIC-POOL1-LISTING-DELISTING-SUSPENSION-MASTER-20260703",
+  "sources": [
+    {
+      "source_id": "twse_company_suspend_listing",
+      "dataset": "listing_delisting_suspension_master",
+      "source_name": "TWSE terminated listing companies",
+      "source_url": "https://openapi.twse.com.tw/v1/company/suspendListingCsvAndHtml",
+      "official_proxy_manual": "official",
+      "coverage": "dated delisting rows available; coverage audit required before full formal master",
+      "source_date_available": "true",
+      "effective_date_available": "true_DelistingDate",
+      "formal_ready": "partial_event_rows_not_full_master",
+      "notes": "Accepted for dated TWSE delisting events only."
+    },
+    {
+      "source_id": "twse_company_newlisting",
+      "dataset": "listing_delisting_suspension_master",
+      "source_name": "TWSE recent listed companies",
+      "source_url": "https://openapi.twse.com.tw/v1/company/newlisting",
+      "official_proxy_manual": "official",
+      "coverage": "recent listing rows only, not complete 2015-latest history",
+      "source_date_available": "true",
+      "effective_date_available": "true_ListingDate_or_ApprovedListingDate",
+      "formal_ready": "partial_event_rows_not_full_master",
+      "notes": "Accepted only for explicitly dated rows in requested window; not used as complete historical listing archive."
+    },
+    {
+      "source_id": "tpex_spendi_history",
+      "dataset": "listing_delisting_suspension_master",
+      "source_name": "TPEx historical suspended/resumed trading stocks",
+      "source_url": "https://www.tpex.org.tw/openapi/v1/tpex_spendi_history",
+      "official_proxy_manual": "official",
+      "coverage": "endpoint returns dated suspension/resumption rows; observed coverage is not full 2015-latest",
+      "source_date_available": "true",
+      "effective_date_available": "true_DateOfSuspendedTrading_or_DateOfResumedTrading",
+      "formal_ready": "partial_event_rows_not_full_master",
+      "notes": "Accepted for dated TPEx suspension/resumption events only."
+    },
+    {
+      "source_id": "twse_current_company_profile",
+      "dataset": "listing_delisting_suspension_master",
+      "source_name": "TWSE current listed company profile",
+      "source_url": "https://openapi.twse.com.tw/v1/opendata/t187ap03_L",
+      "official_proxy_manual": "official_current_snapshot",
+      "coverage": "current snapshot only",
+      "source_date_available": "true",
+      "effective_date_available": "current only",
+      "formal_ready": "false",
+      "notes": "Proxy inventory only; not used to backfill 2015 PIT membership."
+    },
+    {
+      "source_id": "tpex_current_company_profile",
+      "dataset": "listing_delisting_suspension_master",
+      "source_name": "TPEx current company profile",
+      "source_url": "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap03_O",
+      "official_proxy_manual": "official_current_snapshot",
+      "coverage": "current snapshot only",
+      "source_date_available": "true",
+      "effective_date_available": "current only",
+      "formal_ready": "false",
+      "notes": "Proxy inventory only; not used to backfill 2015 PIT membership."
+    }
+  ]
+}

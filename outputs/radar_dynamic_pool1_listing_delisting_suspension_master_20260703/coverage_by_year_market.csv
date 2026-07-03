@@ -1,0 +1,25 @@
+﻿year,market,listing_delisting_event_rows,suspension_resumption_event_rows,coverage_status,formal_master_ready,notes
+2015,TWSE,32,0,partial_event_rows_available,false,Event rows are source-backed but not a complete listing/delisting/suspension master.
+2015,TPEx,0,0,no_accepted_master_rows_observed,false,Event rows are source-backed but not a complete listing/delisting/suspension master.
+2016,TWSE,35,0,partial_event_rows_available,false,Event rows are source-backed but not a complete listing/delisting/suspension master.
+2016,TPEx,0,0,no_accepted_master_rows_observed,false,Event rows are source-backed but not a complete listing/delisting/suspension master.
+2017,TWSE,29,0,partial_event_rows_available,false,Event rows are source-backed but not a complete listing/delisting/suspension master.
+2017,TPEx,0,0,no_accepted_master_rows_observed,false,Event rows are source-backed but not a complete listing/delisting/suspension master.
+2018,TWSE,41,0,partial_event_rows_available,false,Event rows are source-backed but not a complete listing/delisting/suspension master.
+2018,TPEx,0,0,no_accepted_master_rows_observed,false,Event rows are source-backed but not a complete listing/delisting/suspension master.
+2019,TWSE,27,0,partial_event_rows_available,false,Event rows are source-backed but not a complete listing/delisting/suspension master.
+2019,TPEx,0,0,no_accepted_master_rows_observed,false,Event rows are source-backed but not a complete listing/delisting/suspension master.
+2020,TWSE,19,0,partial_event_rows_available,false,Event rows are source-backed but not a complete listing/delisting/suspension master.
+2020,TPEx,0,0,no_accepted_master_rows_observed,false,Event rows are source-backed but not a complete listing/delisting/suspension master.
+2021,TWSE,29,0,partial_event_rows_available,false,Event rows are source-backed but not a complete listing/delisting/suspension master.
+2021,TPEx,0,0,no_accepted_master_rows_observed,false,Event rows are source-backed but not a complete listing/delisting/suspension master.
+2022,TWSE,37,0,partial_event_rows_available,false,Event rows are source-backed but not a complete listing/delisting/suspension master.
+2022,TPEx,0,0,no_accepted_master_rows_observed,false,Event rows are source-backed but not a complete listing/delisting/suspension master.
+2023,TWSE,30,0,partial_event_rows_available,false,Event rows are source-backed but not a complete listing/delisting/suspension master.
+2023,TPEx,0,0,no_accepted_master_rows_observed,false,Event rows are source-backed but not a complete listing/delisting/suspension master.
+2024,TWSE,40,0,partial_event_rows_available,false,Event rows are source-backed but not a complete listing/delisting/suspension master.
+2024,TPEx,0,0,no_accepted_master_rows_observed,false,Event rows are source-backed but not a complete listing/delisting/suspension master.
+2025,TWSE,38,0,partial_event_rows_available,false,Event rows are source-backed but not a complete listing/delisting/suspension master.
+2025,TPEx,0,0,no_accepted_master_rows_observed,false,Event rows are source-backed but not a complete listing/delisting/suspension master.
+2026,TWSE,22,0,partial_event_rows_available,false,Event rows are source-backed but not a complete listing/delisting/suspension master.
+2026,TPEx,0,178,partial_event_rows_available,false,Event rows are source-backed but not a complete listing/delisting/suspension master.
