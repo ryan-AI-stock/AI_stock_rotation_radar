@@ -1,0 +1,3 @@
+dataset,market,blocked_reason,next_programmatic_source
+TWSE total market cap PIT,TWSE,official direct historical market cap or PIT issued shares route not found,reverse MOPS capital-change pages / TWSE listed company capital-change archive / official open-data catalog for dated issued shares
+free-float market cap PIT,TWSE/TPEx,official free-float shares or free-float market cap history not found,Taiwan Index free-float factor publications or index-company constituent/free-float archives if available

@@ -1,0 +1,3 @@
+step,status,notes
+twse_historical_market_cap_route,blocked,No PIT issued shares/direct market cap route found; MOPS t05st03/t51sb01 are current-only.
+free_float_market_cap_route,blocked,No official free-float market cap history route found.

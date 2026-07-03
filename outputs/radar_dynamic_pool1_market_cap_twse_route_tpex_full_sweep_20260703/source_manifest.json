@@ -1,0 +1,29 @@
+[
+  {
+    "source": "TPEx dailyQuotes",
+    "source_url": "https://www.tpex.org.tw/www/en-us/afterTrading/dailyQuotes",
+    "source_type": "official_source_candidate",
+    "coverage": "2015-latest TPEx daily rows in local shards",
+    "date_awareness": "source_date is trading date",
+    "formal_exact": "false",
+    "notes": "market_cap derived as close_price * official shares_outstanding from same daily quote source."
+  },
+  {
+    "source": "TWSE MI_INDEX",
+    "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX",
+    "source_type": "official_route_probe_blocked",
+    "coverage": "daily trading fields only",
+    "date_awareness": "trading date available; issued shares/direct market cap unavailable",
+    "formal_exact": "false",
+    "notes": "Not accepted for TWSE market cap because shares/direct market cap field is missing."
+  },
+  {
+    "source": "MOPS t05st03/t51sb01 SPA",
+    "source_url": "https://mops.twse.com.tw/mops/web/index",
+    "source_type": "official_current_snapshot_candidate",
+    "coverage": "current company basic/profile route only in this pass",
+    "date_awareness": "no historical as-of parameter found",
+    "formal_exact": "false",
+    "notes": "Static chunks expose capital/commonStockAmount fields but are current-only for PIT use."
+  }
+]

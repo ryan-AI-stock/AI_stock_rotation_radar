@@ -1,0 +1,15 @@
+{
+  "task_id": "TASK-RADAR-DATA-DYNAMIC-POOL1-MARKET-CAP-TWSE-ROUTE-TPEX-FULL-SWEEP-20260703",
+  "status": "completed_partial_tpex_full_candidate_twse_blocked",
+  "output_path": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_dynamic_pool1_market_cap_twse_route_tpex_full_sweep_20260703",
+  "tpex_accepted_rows": 2123871,
+  "tpex_shards": 139,
+  "tpex_completed_dates": 3002,
+  "tpex_expected_weekday_dates": 3002,
+  "tpex_missing_dates": 0,
+  "twse_status": "blocked_no_historical_issued_shares_or_direct_market_cap_route",
+  "large_local_shards_git_tracked": false,
+  "future_data_violation_count": 0,
+  "ready_for_core_rerun": true,
+  "generated_at": "2026-07-03T12:07:12+00:00"
+}

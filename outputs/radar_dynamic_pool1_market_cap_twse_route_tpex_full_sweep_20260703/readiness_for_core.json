@@ -1,0 +1,23 @@
+{
+  "task_id": "TASK-RADAR-DATA-DYNAMIC-POOL1-MARKET-CAP-TWSE-ROUTE-TPEX-FULL-SWEEP-20260703",
+  "status": "completed_partial_tpex_full_candidate_twse_blocked",
+  "market_cap_pit_ready": false,
+  "market_cap_pit_partial_ready": true,
+  "tpex_full_sweep_completed": true,
+  "tpex_completed_dates": 3002,
+  "tpex_expected_weekday_dates": 3002,
+  "tpex_missing_dates": 0,
+  "tpex_accepted_rows": 2123871,
+  "twse_status": "blocked_no_historical_issued_shares_or_direct_market_cap_route",
+  "twse_route_unlocked": false,
+  "twse_sample_ready": false,
+  "free_float_market_cap_ready": false,
+  "formal_exact": false,
+  "future_data_violation_count": 0,
+  "ready_for_core_rerun": true,
+  "ready_for_strategy_replay": false,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "generated_at": "2026-07-03T12:07:12+00:00"
+}

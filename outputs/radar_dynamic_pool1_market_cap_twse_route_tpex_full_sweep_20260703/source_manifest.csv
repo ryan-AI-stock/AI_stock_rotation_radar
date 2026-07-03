@@ -1,0 +1,4 @@
+source,source_url,source_type,coverage,date_awareness,formal_exact,notes
+TPEx dailyQuotes,https://www.tpex.org.tw/www/en-us/afterTrading/dailyQuotes,official_source_candidate,2015-latest TPEx daily rows in local shards,source_date is trading date,false,market_cap derived as close_price * official shares_outstanding from same daily quote source.
+TWSE MI_INDEX,https://www.twse.com.tw/exchangeReport/MI_INDEX,official_route_probe_blocked,daily trading fields only,trading date available; issued shares/direct market cap unavailable,false,Not accepted for TWSE market cap because shares/direct market cap field is missing.
+MOPS t05st03/t51sb01 SPA,https://mops.twse.com.tw/mops/web/index,official_current_snapshot_candidate,current company basic/profile route only in this pass,no historical as-of parameter found,false,Static chunks expose capital/commonStockAmount fields but are current-only for PIT use.

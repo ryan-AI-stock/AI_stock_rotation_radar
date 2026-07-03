@@ -1,0 +1,3 @@
+check,result,violation_count,notes
+current_snapshot_not_used_for_historical_twse_market_cap,pass,0,"MOPS current company profile routes were recorded as blockers/current-only candidates, not accepted historical rows."
+tpex_same_day_source_date,pass,0,TPEx derived market cap rows use the same daily official quote date as source_date.

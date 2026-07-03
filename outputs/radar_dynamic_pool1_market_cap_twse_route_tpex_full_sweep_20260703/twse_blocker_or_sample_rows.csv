@@ -1,0 +1,5 @@
+market,route,status,sample_or_blocker,source_type,formal_exact,notes
+TWSE,TWSE MI_INDEX type=ALLBUT0999,blocked_no_issued_shares_or_direct_market_cap_field,blocker,official_route_probe,false,MI_INDEX provides daily trading fields such as close and turnover but not PIT issued shares or direct market cap.
+TWSE,MOPS SPA t05st03 base company profile,route_unlocked_current_only_not_accepted_for_historical_pit,current_only_sample_candidate,official_current_snapshot_candidate,false,"Static JS confirms t05st03 fields include capitalAmount, listingDate and commonStockAmount; no date/as-of parameter was found, so it cannot backfill 2015 historical shares."
+TWSE,MOPS t51sb01 / ajax_t51sb01,route_unlocked_current_summary_not_historical_market_cap,current_only_summary_candidate,official_current_snapshot_candidate,false,"Static JS confirms basic-data summary route by TYPEK and industry, but no effective date parameter for historical issued shares."
+TWSE,free-float market cap,blocked_no_official_full_history_route_found,blocker,blocked,false,No official free-float market cap route found in this bounded pass.

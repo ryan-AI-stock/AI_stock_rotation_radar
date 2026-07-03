@@ -1,0 +1,14 @@
+year,market,accepted_rows,covered_trading_days,covered_months,status
+2015,TPEx,164131,244,12,covered
+2016,TPEx,167762,241,12,covered
+2017,TPEx,174390,243,12,covered
+2018,TPEx,179396,245,12,covered
+2019,TPEx,180956,242,12,covered
+2020,TPEx,185243,245,12,covered
+2021,TPEx,188380,244,12,covered
+2022,TPEx,190793,246,12,covered
+2023,TPEx,190083,239,12,covered
+2024,TPEx,196715,242,12,covered
+2025,TPEx,202666,243,12,covered
+2026,TPEx,103356,119,7,covered
+2015-latest,TWSE,0,0,0,blocked_no_historical_issued_shares_or_direct_market_cap_route

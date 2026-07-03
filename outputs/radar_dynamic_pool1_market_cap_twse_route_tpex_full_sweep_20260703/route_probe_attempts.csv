@@ -1,0 +1,5 @@
+source,route,method,target,status,accepted_rows,error
+TPEx,dailyQuotes,GET,2015-latest full date sweep,completed,2123871,
+TWSE,MI_INDEX?type=ALLBUT0999,GET,direct market cap / issued shares fields,blocked_no_field,0,No issued shares or direct market cap field in official daily trading response.
+MOPS,SPA chunk t05st03 + base t05st03,static_reverse,TWSE current company profile shares/capital route,route_unlocked_current_only,0,No historical effective/as-of date parameter found.
+MOPS,SPA chunk t51sb01/ajax_t51sb01,static_reverse,TWSE listed company basic summary,route_unlocked_current_only,0,No historical effective/as-of date parameter found.

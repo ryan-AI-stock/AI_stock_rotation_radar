@@ -1,0 +1,7 @@
+﻿date,failed_at,status,error,url
+2019-03-05,2026-07-03T19:35:17.544613+08:00,failed,IncompleteRead(80878 bytes read),https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2019/03/05&response=json
+2019-04-26,2026-07-03T19:35:45.394851+08:00,failed,IncompleteRead(391870 bytes read),https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2019/04/26&response=json
+2020-04-14,2026-07-03T19:38:34.884344+08:00,failed,IncompleteRead(457342 bytes read),https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2020/04/14&response=json
+2019-03-05,2026-07-03T20:03:55.694021+08:00,failed,"URLError(ConnectionRefusedError(10061, '無法連線，因為目標電腦拒絕連線。', None, 10061, None))",https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2019/03/05&response=json
+2019-04-26,2026-07-03T20:03:58.748289+08:00,failed,"URLError(ConnectionRefusedError(10061, '無法連線，因為目標電腦拒絕連線。', None, 10061, None))",https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2019/04/26&response=json
+2020-04-14,2026-07-03T20:04:01.814621+08:00,failed,"URLError(ConnectionRefusedError(10061, '無法連線，因為目標電腦拒絕連線。', None, 10061, None))",https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2020/04/14&response=json

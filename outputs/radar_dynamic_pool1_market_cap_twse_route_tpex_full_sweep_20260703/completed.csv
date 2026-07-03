@@ -1,0 +1,2 @@
+step,status,accepted_rows,notes
+tpex_market_cap_full_sweep,completed,2123871,"Full rows are local shards; committed package keeps manifest, coverage, and sample."
