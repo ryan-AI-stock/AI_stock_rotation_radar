@@ -1,0 +1,3 @@
+﻿audit_id,future_data_violation_count,decision,evidence
+no_new_tpex_historical_accepted_rows,0,No current snapshot or current-year TPEx rows were accepted as 2015-2025 historical rows.,accepted_status_snapshot_rows.csv is header-only; current/carried TPEx 2026 rows are separated.
+current_snapshot_exclusion,0,Current snapshots/proxy rows remain excluded from formal historical PIT rows.,proxy/current rows are not copied into accepted historical files.

@@ -1,0 +1,4 @@
+﻿timestamp,step,status,detail
+2026-07-03T15:12:51+08:00,start,running,TASK-RADAR-DATA-DYNAMIC-POOL1-TPEX-HISTORICAL-LISTING-STATUS-MASTER-20260703
+2026-07-03T15:12:51+08:00,read_core_and_prior_outputs,completed,prior_tpex_current_rows=236
+2026-07-03T15:12:51+08:00,write_converged_attempt_package,completed,No new accepted TPEx 2015-2025 historical rows; route evidence captured.

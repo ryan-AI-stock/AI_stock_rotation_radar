@@ -1,0 +1,26 @@
+{
+  "task_id": "TASK-RADAR-DATA-DYNAMIC-POOL1-TPEX-HISTORICAL-LISTING-STATUS-MASTER-20260703",
+  "created_at": "2026-07-03T15:12:51+08:00",
+  "output_path": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_dynamic_pool1_tpex_historical_listing_status_master_20260703",
+  "previous_output": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_dynamic_pool1_listing_master_completion_20260703",
+  "core_output": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-30\\ep05-chat-ai-stock-backtest-lab\\outputs\\dynamic_pool1_pit_readiness_after_listing_master_completion_20260703",
+  "files": [
+    "accepted_current_or_carried_tpex_rows.csv",
+    "accepted_listing_metadata_rows.csv",
+    "accepted_status_snapshot_rows.csv",
+    "accepted_suspension_event_rows.csv",
+    "blocked_source_rows.csv",
+    "build_tpex_historical_listing_status_master.py",
+    "coverage_by_year_market.csv",
+    "current_step.txt",
+    "future_data_violation_audit.csv",
+    "readiness_for_core.json",
+    "run_log.csv",
+    "source_manifest.csv",
+    "source_manifest.json",
+    "source_probe_attempts.csv"
+  ],
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false
+}

@@ -1,0 +1,2 @@
+﻿task_id,status,failed_item,reason
+TASK-RADAR-DATA-DYNAMIC-POOL1-TPEX-HISTORICAL-LISTING-STATUS-MASTER-20260703,blocked_with_attempt_evidence,tpex_2015_2025_historical_listing_status_master,Bounded official route probes did not identify or retrieve accepted TPEx 2015-2025 historical rows.

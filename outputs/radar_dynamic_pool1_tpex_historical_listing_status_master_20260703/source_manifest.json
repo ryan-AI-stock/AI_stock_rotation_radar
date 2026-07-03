@@ -1,0 +1,41 @@
+{
+  "task_id": "TASK-RADAR-DATA-DYNAMIC-POOL1-TPEX-HISTORICAL-LISTING-STATUS-MASTER-20260703",
+  "sources": [
+    {
+      "source_id": "previous_cross_market_master_completion",
+      "dataset": "full_cross_market_listing_master",
+      "source_name": "Prior Radar listing master completion package",
+      "source_url": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_dynamic_pool1_listing_master_completion_20260703",
+      "official_proxy_manual": "mixed_official_source_package",
+      "coverage": "TWSE stronger partial; TPEx 2026 current partial only",
+      "source_date_available": "true_for_accepted_rows",
+      "effective_date_available": "true_for_accepted_rows",
+      "formal_ready": "false",
+      "notes": "Carried forward for context; not reclassified as formal-ready."
+    },
+    {
+      "source_id": "tpex_spendi_history_no_param_support",
+      "dataset": "tpex_historical_suspension_resumption",
+      "source_name": "TPEx OpenAPI tpex_spendi_history with historical params",
+      "source_url": "https://www.tpex.org.tw/openapi/v1/tpex_spendi_history?startDate=20150101&endDate=20150131",
+      "official_proxy_manual": "official_endpoint_blocked_for_history",
+      "coverage": "current ROC year only; historical params ignored",
+      "source_date_available": "true_for_current_rows_only",
+      "effective_date_available": "true_for_current_rows_only",
+      "formal_ready": "false",
+      "notes": "No accepted 2015-2025 historical rows."
+    },
+    {
+      "source_id": "tpex_site_route_inventory",
+      "dataset": "tpex_route_discovery",
+      "source_name": "TPEx old/new site route probes",
+      "source_url": "https://www.tpex.org.tw/web/stock/aftertrading/ ; https://www.tpex.org.tw/zh-tw/mainboard/trading/info/stock-pricing.html",
+      "official_proxy_manual": "official_route_inventory",
+      "coverage": "bounded route discovery only",
+      "source_date_available": "not_applicable",
+      "effective_date_available": "not_applicable",
+      "formal_ready": "false",
+      "notes": "Route inventory produced no accepted historical TPEx metadata rows."
+    }
+  ]
+}
