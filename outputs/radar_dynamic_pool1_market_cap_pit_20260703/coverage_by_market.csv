@@ -1,0 +1,3 @@
+﻿market,coverage_status,accepted_rows,symbol_count,notes
+TPEx,partial_sample_route_unlocked,240,110,source-backed daily total market cap proxy candidate
+TWSE,blocked,0,0,needs official historical issued shares/capital changes or direct market cap route

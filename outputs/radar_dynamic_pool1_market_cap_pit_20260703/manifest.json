@@ -1,0 +1,10 @@
+{
+  "task_id": "TASK-RADAR-DATA-DYNAMIC-POOL1-MARKET-CAP-PIT-20260703",
+  "status": "completed_partial_tpex_total_market_cap_proxy_sample_twse_blocked",
+  "output_path": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_dynamic_pool1_market_cap_pit_20260703",
+  "accepted_rows": 240,
+  "market_cap_pit_ready": false,
+  "partial_ready": true,
+  "future_data_violation_count": 0,
+  "generated_at": "2026-07-03T19:11:27.802351+08:00"
+}

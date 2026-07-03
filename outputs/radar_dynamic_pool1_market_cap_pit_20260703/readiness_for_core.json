@@ -1,0 +1,28 @@
+{
+  "task_id": "TASK-RADAR-DATA-DYNAMIC-POOL1-MARKET-CAP-PIT-20260703",
+  "status": "completed_partial_tpex_total_market_cap_proxy_sample_twse_blocked",
+  "market_cap_pit_ready": false,
+  "market_cap_pit_partial_ready": true,
+  "accepted_rows": 240,
+  "accepted_markets": [
+    "TPEx"
+  ],
+  "blocked_markets": [
+    "TWSE"
+  ],
+  "source_type": "shares_derived_official_daily_candidate",
+  "formal_exact": false,
+  "free_float_market_cap_ready": false,
+  "future_data_violation_count": 0,
+  "ready_for_core_rerun": true,
+  "ready_for_strategy_replay": false,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "remaining_blockers": [
+    "TWSE historical issued shares/capital changes or direct official market cap route still missing.",
+    "Free-float shares/free-float market cap route still missing for both markets.",
+    "TPEx full 2015-latest daily sweep not run in this bounded package, but route is sample-verified and resumable runner can be built next."
+  ],
+  "generated_at": "2026-07-03T19:11:27.802351+08:00"
+}

@@ -1,0 +1,2 @@
+﻿file,rows,markets,date_range,source_type,formal_exact
+accepted_market_cap_rows.csv,240,TPEx,2015-01-05;2024-07-01;2026-07-02 sample,shares_derived_official_daily_candidate,false

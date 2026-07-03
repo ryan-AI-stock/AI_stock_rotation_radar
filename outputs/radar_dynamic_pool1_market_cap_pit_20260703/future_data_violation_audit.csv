@@ -1,0 +1,4 @@
+﻿audit_item,status,violation_count,evidence
+tpex_same_day_inputs,pass,0,TPEx market cap samples derive from same-day close and same-day issued shares in official dailyQuotes.
+current_snapshot_backfill,pass,0,Current TWSE/MOPS company basic shares were blocked and not used for accepted historical rows.
+free_float_market_cap,blocked,0,No official free-float shares route accepted in this package.

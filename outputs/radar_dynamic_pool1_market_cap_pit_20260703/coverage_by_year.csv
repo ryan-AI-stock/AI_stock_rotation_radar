@@ -1,0 +1,5 @@
+﻿year,market,coverage_status,accepted_rows,notes
+2015,TPEx,sample_route_unlocked,80,dailyQuotes includes issued shares and close; full sweep runner required
+2024,TPEx,sample_route_unlocked,80,dailyQuotes includes issued shares and close; full sweep runner required
+2026,TPEx,sample_route_unlocked,80,dailyQuotes includes issued shares and close; full sweep runner required
+2015-latest,TWSE,blocked_missing_historical_shares_or_direct_market_cap,0,MI_INDEX lacks issued shares; current company basic snapshot not PIT

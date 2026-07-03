@@ -1,0 +1,35 @@
+[
+  {
+    "source_id": "tpex_daily_quotes_issued_shares",
+    "source_name": "TPEx dailyQuotes with close and issued shares",
+    "source_url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date={yyyy/mm/dd}&response=json",
+    "source_type": "official_daily_source_derived_market_cap_candidate",
+    "market": "TPEx",
+    "coverage": "sample_verified_2015_2024_2026; full sweep possible",
+    "source_date_available": "yes",
+    "formal_exact": "false",
+    "notes": "total market cap = same-day close * same-day issued shares; not free-float market cap"
+  },
+  {
+    "source_id": "twse_mi_index_allbut0999",
+    "source_name": "TWSE MI_INDEX full-market daily data",
+    "source_url": "https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX?date={yyyymmdd}&type=ALLBUT0999&response=json",
+    "source_type": "official_daily_price_turnover_only_blocked_for_market_cap",
+    "market": "TWSE",
+    "coverage": "sample_checked",
+    "source_date_available": "yes",
+    "formal_exact": "false",
+    "notes": "No issued shares or market cap field in sampled response"
+  },
+  {
+    "source_id": "twse_openapi_t187ap03_L",
+    "source_name": "TWSE/MOPS company basic current snapshot",
+    "source_url": "https://openapi.twse.com.tw/v1/opendata/t187ap03_L",
+    "source_type": "current_snapshot_blocked_for_historical_pit",
+    "market": "TWSE",
+    "coverage": "current only",
+    "source_date_available": "current",
+    "formal_exact": "false",
+    "notes": "Includes issued shares/capital but current snapshot cannot be used to backfill 2015-latest PIT"
+  }
+]

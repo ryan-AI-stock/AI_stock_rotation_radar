@@ -1,0 +1,2 @@
+﻿task_id,completed_at,status,evidence
+TASK-RADAR-DATA-DYNAMIC-POOL1-MARKET-CAP-PIT-20260703,2026-07-03T19:11:27.802351+08:00,completed_partial_tpex_sample_route_unlocked_twse_blocked,accepted_market_cap_rows.csv;source_probe_attempts.csv
