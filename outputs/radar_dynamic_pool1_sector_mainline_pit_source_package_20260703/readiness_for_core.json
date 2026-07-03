@@ -1,0 +1,33 @@
+{
+  "task_id": "TASK-RADAR-DATA-DYNAMIC-POOL1-SECTOR-MAINLINE-PIT-SOURCE-PACKAGE-20260703",
+  "status": "completed_partial_twse_sector_route_unlocked",
+  "sector_membership_pit_ready": false,
+  "sector_membership_pit_partial_source_candidate": true,
+  "sector_membership_accepted_rows": 2696,
+  "sector_membership_proxy_rows": 2,
+  "blocked_source_rows": 3,
+  "twse_industry_daily_route_unlocked": true,
+  "twse_sample_dates": [
+    "20150105",
+    "20200102",
+    "20260702"
+  ],
+  "twse_industry_codes_tested": 31,
+  "tpex_sector_membership_route_unlocked": false,
+  "mainline_theme_pit_ready": false,
+  "sector_breadth_pit_daily_ready": false,
+  "sector_breadth_derivable_after_full_membership": true,
+  "ready_for_core_rerun": true,
+  "ready_for_strategy_replay": false,
+  "future_data_violation_count": 0,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "remaining_blockers": [
+    "Need TWSE MI_INDEX by-industry full daily sweep or Core-approved compression policy.",
+    "Need TPEx historical industry/sector membership route; dailyQuotes has no sector field.",
+    "Need date-aware mainline/theme taxonomy; TWSE industry sectors are not equivalent to thematic mainlines.",
+    "Sector breadth daily remains blocked until full cross-market membership is accepted."
+  ],
+  "generated_at": "2026-07-03T22:13:13.518910+08:00"
+}

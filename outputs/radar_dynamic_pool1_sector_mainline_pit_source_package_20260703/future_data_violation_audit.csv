@@ -1,0 +1,4 @@
+﻿check,result,violation_count,notes
+current_static_maps_excluded,pass,0,Current/generated sector/theme maps are written only to proxy_source_rows and are not accepted.
+accepted_rows_have_source_dates,pass,0,accepted_rows=2696 all use TWSE trading date as source/effective/as_of date.
+future_data_violation_count,pass,0,No current snapshot or 2026 generated taxonomy is used to label historical rows.

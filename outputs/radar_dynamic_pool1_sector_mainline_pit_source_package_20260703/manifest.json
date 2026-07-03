@@ -1,0 +1,15 @@
+{
+  "task_id": "TASK-RADAR-DATA-DYNAMIC-POOL1-SECTOR-MAINLINE-PIT-SOURCE-PACKAGE-20260703",
+  "status": "completed_partial_twse_sector_route_unlocked",
+  "output_path": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_dynamic_pool1_sector_mainline_pit_source_package_20260703",
+  "started_at": "2026-07-03T22:12:51.887214+08:00",
+  "generated_at": "2026-07-03T22:13:13.518910+08:00",
+  "files": {
+    "accepted_sector_membership_rows": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_dynamic_pool1_sector_mainline_pit_source_package_20260703\\accepted_sector_membership_rows.csv",
+    "proxy_source_rows": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_dynamic_pool1_sector_mainline_pit_source_package_20260703\\proxy_source_rows.csv",
+    "blocked_source_rows": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_dynamic_pool1_sector_mainline_pit_source_package_20260703\\blocked_source_rows.csv",
+    "source_probe_attempts": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_dynamic_pool1_sector_mainline_pit_source_package_20260703\\source_probe_attempts.csv",
+    "readiness_for_core": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_dynamic_pool1_sector_mainline_pit_source_package_20260703\\readiness_for_core.json"
+  },
+  "large_raw_policy": "Small JSON/TXT probe responses are kept under raw_sources for audit; no unbounded crawl artifacts."
+}

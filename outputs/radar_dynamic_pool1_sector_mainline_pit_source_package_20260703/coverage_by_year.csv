@@ -1,0 +1,13 @@
+﻿year,sector_membership_status,accepted_rows,proxy_rows,blocked_sources,sector_breadth_status,notes
+2015,twse_sample_route_unlocked_not_full_sweep,782,2,3,blocked_missing_full_cross_market_membership,TWSE sample date-aware industry rows exist; not a full year panel.
+2016,route_contract_candidate_not_swept,0,2,3,blocked_missing_full_cross_market_membership,No accepted sample rows for this year in bounded package.
+2017,route_contract_candidate_not_swept,0,2,3,blocked_missing_full_cross_market_membership,No accepted sample rows for this year in bounded package.
+2018,route_contract_candidate_not_swept,0,2,3,blocked_missing_full_cross_market_membership,No accepted sample rows for this year in bounded package.
+2019,route_contract_candidate_not_swept,0,2,3,blocked_missing_full_cross_market_membership,No accepted sample rows for this year in bounded package.
+2020,twse_sample_route_unlocked_not_full_sweep,908,2,3,blocked_missing_full_cross_market_membership,TWSE sample date-aware industry rows exist; not a full year panel.
+2021,route_contract_candidate_not_swept,0,2,3,blocked_missing_full_cross_market_membership,No accepted sample rows for this year in bounded package.
+2022,route_contract_candidate_not_swept,0,2,3,blocked_missing_full_cross_market_membership,No accepted sample rows for this year in bounded package.
+2023,route_contract_candidate_not_swept,0,2,3,blocked_missing_full_cross_market_membership,No accepted sample rows for this year in bounded package.
+2024,route_contract_candidate_not_swept,0,2,3,blocked_missing_full_cross_market_membership,No accepted sample rows for this year in bounded package.
+2025,route_contract_candidate_not_swept,0,2,3,blocked_missing_full_cross_market_membership,No accepted sample rows for this year in bounded package.
+2026,twse_sample_route_unlocked_not_full_sweep,1006,2,3,blocked_missing_full_cross_market_membership,TWSE sample date-aware industry rows exist; not a full year panel.
