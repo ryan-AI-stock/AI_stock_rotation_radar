@@ -1,0 +1,29 @@
+{
+  "task_id": "TASK-RADAR-DATA-DYNAMIC-POOL1-ALL-LISTED-LIQUID-UNIVERSE-FULL-SWEEP-20260703",
+  "sources": [
+    {
+      "source_id": "twse_mi_index_allbut0999",
+      "dataset": "all_listed_liquid_universe_pit_daily",
+      "source_name": "TWSE MI_INDEX ALLBUT0999 full-market daily trading data",
+      "official_proxy_manual": "official",
+      "source_type": "official_daily_trading_pit",
+      "coverage": "full sweep candidate; see coverage_by_year_market.csv",
+      "source_date_available": "true",
+      "effective_date_available": "true_for_daily_presence",
+      "formal_ready": "candidate_not_exact",
+      "notes": "Accepted for daily exchange presence, OHLCV, turnover, and liquidity screen inputs. Listing/delisting/suspension master remains separate."
+    },
+    {
+      "source_id": "tpex_daily_quotes",
+      "dataset": "all_listed_liquid_universe_pit_daily",
+      "source_name": "TPEx dailyQuotes full-market daily trading data",
+      "official_proxy_manual": "official",
+      "source_type": "official_daily_trading_pit",
+      "coverage": "full sweep candidate; see coverage_by_year_market.csv",
+      "source_date_available": "true",
+      "effective_date_available": "true_for_daily_presence",
+      "formal_ready": "candidate_not_exact",
+      "notes": "Accepted for daily exchange presence, OHLCV, turnover, and liquidity screen inputs. Listing/delisting/suspension master remains separate."
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+﻿source_id,future_data_violation_count,decision,evidence
+twse_mi_index_allbut0999,0,accepted_daily_pit_rows_only,Rows are fetched by trade date from official daily endpoint; source_date equals target trading date.
+tpex_daily_quotes,0,accepted_daily_pit_rows_only,Rows are fetched by trade date from official daily endpoint; source_date equals target trading date.
+current_company_profile_snapshots,0,excluded,Current snapshots are documented only in listing_status_source_inventory and not used in accepted rows.

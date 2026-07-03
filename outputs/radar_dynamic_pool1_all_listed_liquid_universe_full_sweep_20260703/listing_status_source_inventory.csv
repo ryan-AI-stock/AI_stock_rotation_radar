@@ -1,0 +1,4 @@
+﻿source_id,official_proxy_manual,status,notes
+twse_mi_index_daily_presence,official,accepted_for_daily_presence_and_liquidity_only,Daily rows prove PIT presence in the trading table but are not a listing/delisting/suspension master.
+tpex_daily_quotes_presence,official,accepted_for_daily_presence_and_liquidity_only,Daily rows prove PIT presence in the trading table but are not a listing/delisting/suspension master.
+twse_tpex_current_company_profile,official_current_snapshot,excluded_from_historical_pit_rows,Current company profile snapshots are not used to infer 2015 historical membership.

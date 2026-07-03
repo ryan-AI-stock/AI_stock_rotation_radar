@@ -1,0 +1,41 @@
+{
+  "task_id": "TASK-RADAR-DATA-DYNAMIC-POOL1-ALL-LISTED-LIQUID-UNIVERSE-FULL-SWEEP-20260703",
+  "status": "completed_full_sweep_candidate",
+  "covered_date_range": {
+    "start": "2015-01-05",
+    "end": "2026-07-02",
+    "requested_start": "2015-01-01",
+    "requested_end": "2026-07-02"
+  },
+  "expected_attempts": 6002,
+  "completed_attempts": 6002,
+  "failed_attempts": 0,
+  "missing_attempts": 0,
+  "accepted_liquidity_rows": 4769784,
+  "accepted_shard_count": 139,
+  "all_listed_liquid_universe_pit_daily_full_range_ready": true,
+  "listing_delisting_suspension_metadata_ready": false,
+  "ready_for_core_rerun": true,
+  "ready_for_strategy_replay": false,
+  "dynamic_pool1_shadow_challenger_ready": false,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "future_data_violation_count": 0,
+  "large_local_outputs_not_git_tracked": [
+    "shards/",
+    "raw_sources/"
+  ],
+  "core_input_hint": {
+    "accepted_liquidity_shard_manifest": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_dynamic_pool1_all_listed_liquid_universe_full_sweep_20260703\\accepted_liquidity_shard_manifest.csv",
+    "download_attempts": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_dynamic_pool1_all_listed_liquid_universe_full_sweep_20260703\\download_attempts.csv",
+    "full_sweep_progress": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_dynamic_pool1_all_listed_liquid_universe_full_sweep_20260703\\full_sweep_progress.csv",
+    "coverage_by_year_market": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_dynamic_pool1_all_listed_liquid_universe_full_sweep_20260703\\coverage_by_year_market.csv",
+    "missing_dates": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_dynamic_pool1_all_listed_liquid_universe_full_sweep_20260703\\missing_dates.csv"
+  },
+  "resume_command": "python outputs/radar_dynamic_pool1_all_listed_liquid_universe_full_sweep_20260703/run_full_sweep.py --start-date 2015-01-01 --end-date 2026-07-02",
+  "next_blockers": [
+    "Listing/delisting/suspension master metadata remains separate and is not solved by daily liquidity sweep.",
+    "Current company profile snapshots remain excluded from historical PIT membership."
+  ]
+}
