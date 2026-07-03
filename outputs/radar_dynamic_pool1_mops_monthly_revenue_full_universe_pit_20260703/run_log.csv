@@ -1,0 +1,25 @@
+timestamp,status,details
+2026-07-03T16:44:33.0124582+08:00,running,skeleton_created
+2026-07-03T08:47:54.020588+00:00,running,"period=2015-01..2026-05; markets=TWSE,TPEx; company_types=0,1"
+2026-07-03T08:47:59.505671+00:00,progress,completed_requests=50/548
+2026-07-03T08:48:06.879235+00:00,progress,completed_requests=100/548
+2026-07-03T08:48:13.186789+00:00,progress,completed_requests=150/548
+2026-07-03T08:48:18.543738+00:00,progress,completed_requests=200/548
+2026-07-03T08:48:24.454905+00:00,progress,completed_requests=250/548
+2026-07-03T08:48:30.357869+00:00,progress,completed_requests=300/548
+2026-07-03T08:48:36.625212+00:00,progress,completed_requests=350/548
+2026-07-03T08:48:42.455266+00:00,progress,completed_requests=400/548
+2026-07-03T08:48:49.855332+00:00,progress,completed_requests=450/548
+2026-07-03T08:48:56.483512+00:00,progress,completed_requests=500/548
+2026-07-03T08:49:16.328659+00:00,running,"period=2015-01..2026-05; markets=TWSE,TPEx; company_types=0,1"
+2026-07-03T08:49:22.866832+00:00,progress,completed_requests=50/548
+2026-07-03T08:49:30.944729+00:00,progress,completed_requests=100/548
+2026-07-03T08:49:37.848339+00:00,progress,completed_requests=150/548
+2026-07-03T08:49:47.723623+00:00,progress,completed_requests=200/548
+2026-07-03T08:49:56.022240+00:00,progress,completed_requests=250/548
+2026-07-03T08:50:04.567695+00:00,progress,completed_requests=300/548
+2026-07-03T08:50:13.990403+00:00,progress,completed_requests=350/548
+2026-07-03T08:50:22.924188+00:00,progress,completed_requests=400/548
+2026-07-03T08:50:29.359704+00:00,progress,completed_requests=450/548
+2026-07-03T08:50:36.315185+00:00,progress,completed_requests=500/548
+2026-07-03T08:50:46.114180+00:00,completed,"{""task_id"": ""TASK-RADAR-DATA-DYNAMIC-POOL1-MOPS-MONTHLY-REVENUE-FULL-UNIVERSE-PIT-20260703"", ""status"": ""completed_full_universe_candidate"", ""monthly_revenue_pit_full_universe_ready"": true, ""monthly_revenue_pit_partial_ready"": true, ""output_path"": ""C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_dynamic_pool1_mops_monthly_revenue_full_universe_pit_20260703"", ""core_readiness_input"": ""C:\\Users\\zergv\\Documents\\Codex\\2026-05-30\\ep05-chat-ai-stock-backtest-lab\\outputs\\dynamic_pool1_pit_readiness_after_tpex_transition_candidates_20260703"", ""previous_source_package"": ""outputs\\radar_dynamic_pool1_pit_source_acquisition_20260703"", ""period_start"": ""2015-01"", ""period_end"": ""2026-05"", ""route_request_attempts"": 548, ""failed_attempts"": 0, ""accepted_rows"": 244620, ""symbol_count"": 1971, ""accepted_month_market"": 274, ""expected_month_market"": 274, ""coverage_ratio_month_market"": 1.0, ""future_data_violation_count"": 0, ""ready_for_core_rerun"": true, ""ready_for_strategy_replay"": false, ""formal_model_changed"": false, ""trade_decision_changed"": false, ""active_in_trade_decision"": false, ""source_type_boundary"": ""release/source dates are conservative available dates, not per-company actual filing timestamps; formal_exact=false"", ""remaining_blockers"": [""Core must decide whether conservative next-month day 10 available_date is sufficient for Dynamic Pool1 PIT use."", ""If exact per-company filing timestamps are required, next route is MOPS material information/announcement crawler by company/month.""]}"

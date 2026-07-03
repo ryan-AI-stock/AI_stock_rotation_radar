@@ -1,0 +1,22 @@
+[
+  {
+    "source_id": "mops_static_t21sc03_sii",
+    "source_name": "MOPS TWSE monthly revenue static HTML",
+    "source_url_pattern": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_{roc_year}_{month}_{company_type}.html",
+    "market": "TWSE",
+    "source_type": "official_static_html_conservative_available_date",
+    "coverage": "2015-01..2026-05",
+    "release_date_available": "conservative_available_date_next_month_10_weekday_adjusted",
+    "formal_exact": "false"
+  },
+  {
+    "source_id": "mops_static_t21sc03_otc",
+    "source_name": "MOPS TPEx monthly revenue static HTML",
+    "source_url_pattern": "https://mopsov.twse.com.tw/nas/t21/otc/t21sc03_{roc_year}_{month}_{company_type}.html",
+    "market": "TPEx",
+    "source_type": "official_static_html_conservative_available_date",
+    "coverage": "2015-01..2026-05",
+    "release_date_available": "conservative_available_date_next_month_10_weekday_adjusted",
+    "formal_exact": "false"
+  }
+]

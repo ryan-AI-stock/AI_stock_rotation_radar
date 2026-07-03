@@ -1,0 +1,23 @@
+{
+  "task_id": "TASK-RADAR-DATA-DYNAMIC-POOL1-MOPS-MONTHLY-REVENUE-FULL-UNIVERSE-PIT-20260703",
+  "created_at_utc": "2026-07-03T08:49:16.327655+00:00",
+  "status": "completed_full_universe_candidate",
+  "outputs": [
+    "source_manifest.csv",
+    "source_manifest.json",
+    "download_attempts.csv",
+    "accepted_monthly_revenue_rows.csv",
+    "rejected_or_blocked_rows.csv",
+    "coverage_by_year_month.csv",
+    "coverage_by_market.csv",
+    "future_data_violation_audit.csv",
+    "readiness_for_core.json",
+    "final_summary_zh.md",
+    "accepted_monthly_revenue_rows_manifest.csv",
+    "accepted_monthly_revenue_rows_sample.csv",
+    "accepted_monthly_revenue_rows_shards/"
+  ],
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false
+}

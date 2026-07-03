@@ -1,0 +1,2 @@
+step,status,reason
+exact_per_company_release_timestamp,not_available_in_static_route,Static historical monthly revenue pages do not expose exact per-company filing timestamp; using conservative available_date.

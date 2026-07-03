@@ -1,0 +1,4 @@
+step,status,evidence
+mops_static_route_sweep,completed,download_attempts.csv
+monthly_revenue_parse,completed,accepted_monthly_revenue_rows.csv
+coverage_and_readiness,completed,coverage_by_year_month.csv; readiness_for_core.json

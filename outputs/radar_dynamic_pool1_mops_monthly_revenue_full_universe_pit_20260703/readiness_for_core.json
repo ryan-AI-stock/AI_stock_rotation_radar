@@ -1,0 +1,29 @@
+{
+  "task_id": "TASK-RADAR-DATA-DYNAMIC-POOL1-MOPS-MONTHLY-REVENUE-FULL-UNIVERSE-PIT-20260703",
+  "status": "completed_full_universe_candidate",
+  "monthly_revenue_pit_full_universe_ready": true,
+  "monthly_revenue_pit_partial_ready": true,
+  "output_path": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_dynamic_pool1_mops_monthly_revenue_full_universe_pit_20260703",
+  "core_readiness_input": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-30\\ep05-chat-ai-stock-backtest-lab\\outputs\\dynamic_pool1_pit_readiness_after_tpex_transition_candidates_20260703",
+  "previous_source_package": "outputs\\radar_dynamic_pool1_pit_source_acquisition_20260703",
+  "period_start": "2015-01",
+  "period_end": "2026-05",
+  "route_request_attempts": 548,
+  "failed_attempts": 0,
+  "accepted_rows": 244620,
+  "symbol_count": 1971,
+  "accepted_month_market": 274,
+  "expected_month_market": 274,
+  "coverage_ratio_month_market": 1.0,
+  "future_data_violation_count": 0,
+  "ready_for_core_rerun": true,
+  "ready_for_strategy_replay": false,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "source_type_boundary": "release/source dates are conservative available dates, not per-company actual filing timestamps; formal_exact=false",
+  "remaining_blockers": [
+    "Core must decide whether conservative next-month day 10 available_date is sufficient for Dynamic Pool1 PIT use.",
+    "If exact per-company filing timestamps are required, next route is MOPS material information/announcement crawler by company/month."
+  ]
+}

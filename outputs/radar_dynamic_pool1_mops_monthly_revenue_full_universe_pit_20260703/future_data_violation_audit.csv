@@ -1,0 +1,4 @@
+audit_item,result,future_data_violation_count,evidence
+available_date_after_revenue_month,pass,0,"available_date/source_date/release_date use conservative next-month day 10 weekday-adjusted rule, never revenue-month end or current snapshot."
+current_snapshot_backfill,pass,0,Rows are parsed from MOPS static historical monthly pages by period and market; no current company profile used.
+model_boundary,pass,0,"No BACKTEST_LAB formal model, selector, report, or trade decision changed."
