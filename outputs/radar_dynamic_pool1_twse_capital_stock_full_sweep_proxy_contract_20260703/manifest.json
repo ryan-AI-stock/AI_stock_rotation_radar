@@ -1,0 +1,11 @@
+{
+  "task_id": "TASK-RADAR-DATA-DYNAMIC-POOL1-TWSE-CAPITAL-STOCK-FULL-SWEEP-PROXY-CONTRACT-20260703",
+  "status": "completed_twse_capital_stock_full_sweep_proxy_contract_ready",
+  "output_path": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_dynamic_pool1_twse_capital_stock_full_sweep_proxy_contract_20260703",
+  "accepted_twse_capital_stock_rows": 43705,
+  "covered_periods": 45,
+  "expected_periods": 45,
+  "ready_for_core_rerun": true,
+  "future_data_violation_count": 0,
+  "generated_at": "2026-07-03T21:57:13.290361+08:00"
+}

@@ -1,0 +1,4 @@
+﻿check,result,violation_count,notes
+period_specific_route,pass,0,Each request uses year/season and market=sii parameters.
+available_date_policy,pass,0,Rows use conservative available_date; no quarter data is available before statutory deadline.
+proxy_not_formal_exact,pass,0,Readiness and contract explicitly mark formal_exact=false and proxy boundaries.

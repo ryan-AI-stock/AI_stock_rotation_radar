@@ -1,0 +1,6 @@
+﻿contract_item,value,formal_exact,notes
+source_capital_stock,MOPS ajax_t163sb05 quarterly balance-sheet capital_stock,false,Period-specific official source candidate; no company-exact filing timestamp.
+available_date_policy,"Conservative statutory deadline: Q1 05-15, Q2 08-14, Q3 11-14, Q4 next-year 03-31",false,Avoids using quarter data before conservative public availability.
+daily_join,Join ticker to TWSE daily close from MI_INDEX/STOCK_DAY_ALL on trade_date >= available_date until next available_date,false,"Capital stock is carried forward as proxy, not daily exact issued shares."
+proxy_market_cap_formula,daily_close * shares_proxy derived from capital_stock / par_value where par value is available or policy-defined,false,Core must decide par-value normalization policy before full daily proxy materialization.
+excluded_claim,"Do not label as direct official daily market cap, daily issued shares, or free-float market cap",false,This contract can only support a source-backed proxy candidate.

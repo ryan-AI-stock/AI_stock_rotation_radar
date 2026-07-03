@@ -1,0 +1,3 @@
+﻿source_id,source_name,source_url,source_route,source_type,coverage,date_awareness,formal_exact,notes
+mops_ajax_t163sb05_balance_sheet_full_sweep,MOPS quarterly balance sheet,https://mops.twse.com.tw/mops/#/web/t163sb05,POST /mops/api/redirectToOld apiName=ajax_t163sb05 -> GET mopsov ajax_t163sb05,official_quarterly_capital_stock_source_candidate,2015Q1-2026Q1,year/season parameters plus conservative available_date,false,"Quarterly capital_stock, not daily issued shares."
+twse_daily_close_join_candidate,TWSE daily close,TWSE MI_INDEX/STOCK_DAY_ALL,existing all-listed liquidity/daily trading source,official_daily_price_join_candidate,covered by upstream liquidity sweep,trade date,false,Used only for proxy contract; no full daily proxy table generated in this package.

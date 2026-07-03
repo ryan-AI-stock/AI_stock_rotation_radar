@@ -1,0 +1,27 @@
+{
+  "task_id": "TASK-RADAR-DATA-DYNAMIC-POOL1-TWSE-CAPITAL-STOCK-FULL-SWEEP-PROXY-CONTRACT-20260703",
+  "status": "completed_twse_capital_stock_full_sweep_proxy_contract_ready",
+  "twse_capital_stock_full_sweep_ready": true,
+  "proxy_contract_ready": true,
+  "market_cap_pit_partial_ready": true,
+  "accepted_twse_capital_stock_rows": 43705,
+  "covered_periods": 45,
+  "expected_periods": 45,
+  "missing_or_failed_periods": 0,
+  "symbols": 1079,
+  "formal_exact": false,
+  "free_float_market_cap_ready": false,
+  "ready_for_core_rerun": true,
+  "ready_for_strategy_replay": false,
+  "future_data_violation_count": 0,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "remaining_blockers": [
+    "No direct official TWSE daily market cap route.",
+    "No daily exact issued shares route.",
+    "Capital-stock-to-shares normalization policy requires Core decision.",
+    "Free-float market cap remains blocked."
+  ],
+  "generated_at": "2026-07-03T21:57:13.290361+08:00"
+}
