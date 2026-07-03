@@ -1,0 +1,3 @@
+dataset,blocked_component,blocked_reason,evidence,next_programmatic_source
+quarterly_fundamentals_pit,MOPS ajax financial table data,MOPS returned security page for direct ajax probes,source_probe_attempts.csv status=security_block,"Use browser/devtools exact request extraction with valid session and hidden anti-CSRF fields, or MOPS open XBRL bulk download if exact path can be resolved."
+quarterly_fundamentals_pit,filing/release date,No accepted rows; route did not confirm filing_date/source_date/available_date fields,accepted_quarterly_fundamentals_rows.csv is header-only,Probe MOPS material information / financial report announcement routes by company-quarter after data route is solved.

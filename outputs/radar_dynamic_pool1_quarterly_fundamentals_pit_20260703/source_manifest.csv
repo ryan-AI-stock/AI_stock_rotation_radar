@@ -1,0 +1,4 @@
+source_id,source_name,source_url_or_pattern,source_type,markets,coverage_probe,release_date_available,accepted_for_pit,decision
+mops_t163sb04_candidate,MOPS quarterly financial summary,https://mops.twse.com.tw/mops/web/ajax_t163sb04,official_ajax_candidate,TWSE;TPEx,2015Q4;2024Q4,not_confirmed,false,blocked_security_page
+mops_t163sb05_t163sb06_candidate,MOPS quarterly financial ratios / fields,https://mops.twse.com.tw/mops/web/ajax_t163sb05; ajax_t163sb06,official_ajax_candidate,TWSE;TPEx,2024Q4,not_confirmed,false,blocked_security_page
+mops_xbrl_static_candidate,MOPS XBRL/static download candidate,server-java/FileDownLoad or t164 routes,official_download_candidate,TWSE;TPEx,2024Q4,not_confirmed,false,route_not_resolved

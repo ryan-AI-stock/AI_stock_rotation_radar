@@ -1,0 +1,4 @@
+audit_item,result,future_data_violation_count,evidence
+accepted_rows,pass,0,No rows accepted because filing/source/available date could not be confirmed.
+current_snapshot_backfill,pass,0,No current snapshot used to backfill historical fundamentals.
+model_boundary,pass,0,"No BACKTEST_LAB formal model, selector, report, or trade decision changed."

@@ -1,0 +1,21 @@
+{
+  "task_id": "TASK-RADAR-DATA-DYNAMIC-POOL1-QUARTERLY-FUNDAMENTALS-PIT-20260703",
+  "created_at_utc": "2026-07-03T09:11:02.470561+00:00",
+  "status": "blocked_with_route_evidence",
+  "outputs": [
+    "source_manifest.csv",
+    "source_manifest.json",
+    "source_probe_attempts.csv",
+    "download_attempts.csv",
+    "accepted_quarterly_fundamentals_rows.csv",
+    "rejected_or_blocked_rows.csv",
+    "coverage_by_year_quarter.csv",
+    "coverage_by_market.csv",
+    "future_data_violation_audit.csv",
+    "readiness_for_core.json",
+    "final_summary_zh.md"
+  ],
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false
+}

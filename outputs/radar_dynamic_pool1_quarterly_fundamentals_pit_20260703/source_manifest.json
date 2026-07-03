@@ -1,0 +1,35 @@
+[
+  {
+    "source_id": "mops_t163sb04_candidate",
+    "source_name": "MOPS quarterly financial summary",
+    "source_url_or_pattern": "https://mops.twse.com.tw/mops/web/ajax_t163sb04",
+    "source_type": "official_ajax_candidate",
+    "markets": "TWSE;TPEx",
+    "coverage_probe": "2015Q4;2024Q4",
+    "release_date_available": "not_confirmed",
+    "accepted_for_pit": "false",
+    "decision": "blocked_security_page"
+  },
+  {
+    "source_id": "mops_t163sb05_t163sb06_candidate",
+    "source_name": "MOPS quarterly financial ratios / fields",
+    "source_url_or_pattern": "https://mops.twse.com.tw/mops/web/ajax_t163sb05; ajax_t163sb06",
+    "source_type": "official_ajax_candidate",
+    "markets": "TWSE;TPEx",
+    "coverage_probe": "2024Q4",
+    "release_date_available": "not_confirmed",
+    "accepted_for_pit": "false",
+    "decision": "blocked_security_page"
+  },
+  {
+    "source_id": "mops_xbrl_static_candidate",
+    "source_name": "MOPS XBRL/static download candidate",
+    "source_url_or_pattern": "server-java/FileDownLoad or t164 routes",
+    "source_type": "official_download_candidate",
+    "markets": "TWSE;TPEx",
+    "coverage_probe": "2024Q4",
+    "release_date_available": "not_confirmed",
+    "accepted_for_pit": "false",
+    "decision": "route_not_resolved"
+  }
+]

@@ -1,0 +1,26 @@
+{
+  "task_id": "TASK-RADAR-DATA-DYNAMIC-POOL1-QUARTERLY-FUNDAMENTALS-PIT-20260703",
+  "status": "blocked_with_route_evidence",
+  "quarterly_fundamentals_pit_ready": false,
+  "quarterly_fundamentals_pit_partial_ready": false,
+  "output_path": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_dynamic_pool1_quarterly_fundamentals_pit_20260703",
+  "core_readiness_input": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-30\\ep05-chat-ai-stock-backtest-lab\\outputs\\dynamic_pool1_pit_readiness_after_mops_monthly_revenue_20260703",
+  "source_probe_attempts": 8,
+  "accepted_rows": 0,
+  "future_data_violation_count": 0,
+  "ready_for_core_rerun": true,
+  "ready_for_strategy_replay": false,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "remaining_blockers": [
+    "MOPS ajax financial table routes returned security pages for direct scripted requests.",
+    "Static/XBRL bulk route path was not resolved in bounded probes.",
+    "No accepted rows because filing/source/available date fields were not confirmed."
+  ],
+  "next_programmatic_sources": [
+    "Browser/devtools exact request extraction for MOPS t163/t164 financial routes with valid session.",
+    "Official XBRL bulk download route discovery via MOPS UI/static JS or TWSE open-data catalog.",
+    "MOPS material information / financial report announcement crawler by company-quarter for filing_date."
+  ]
+}

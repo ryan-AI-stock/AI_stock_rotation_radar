@@ -1,0 +1,4 @@
+step,status,evidence
+mops_ajax_route_probe,completed_with_blocker,source_probe_attempts.csv
+xbrl_static_route_probe,completed_with_blocker,source_probe_attempts.csv
+readiness_package,completed,readiness_for_core.json
