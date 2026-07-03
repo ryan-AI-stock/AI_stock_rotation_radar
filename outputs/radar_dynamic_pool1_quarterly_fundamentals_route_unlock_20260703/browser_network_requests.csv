@@ -1,0 +1,2 @@
+﻿source,target,method,status,http_code,content_type,request_url,response_summary,blocked_reason
+mops_browser_iab,https://mops.twse.com.tw/mops/web/t163sb04,browser_goto,redirected_to_spa_shell,,,https://mops.twse.com.tw/mops/web/t163sb04,Browser navigation ended at https://mops.twse.com.tw/mops/#/ with assets/index.js; no legacy t163 form was present.,in-app browser API does not expose network request event stream; route was unlocked by static SPA extraction instead.

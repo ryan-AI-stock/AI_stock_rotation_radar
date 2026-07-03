@@ -1,0 +1,11 @@
+{
+  "task_id": "TASK-RADAR-DATA-DYNAMIC-POOL1-QUARTERLY-FUNDAMENTALS-ROUTE-UNLOCK-20260703",
+  "status": "completed_route_unlocked_sample_rows",
+  "output_path": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_dynamic_pool1_quarterly_fundamentals_route_unlock_20260703",
+  "upstream_output": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_dynamic_pool1_quarterly_fundamentals_pit_20260703",
+  "route_unlocked": true,
+  "sample_rows": 320,
+  "attempts": 8,
+  "future_data_violation_count": 0,
+  "generated_at": "2026-07-03T18:15:46.106125+08:00"
+}

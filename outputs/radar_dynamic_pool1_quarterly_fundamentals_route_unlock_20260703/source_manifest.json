@@ -1,0 +1,30 @@
+[
+  {
+    "source_id": "mops_spa_t163sb04_redirectToOld",
+    "source_name": "MOPS SPA quarterly consolidated income statement summary",
+    "source_url": "https://mops.twse.com.tw/mops/#/web/t163sb04",
+    "source_route": "POST https://mops.twse.com.tw/mops/api/redirectToOld -> GET https://mopsov.twse.com.tw/mops/web/ajax_t163sb04?parameters=...",
+    "source_type": "official_source_candidate",
+    "coverage_tested": "2015Q4;2024Q4",
+    "markets_tested": "otc;sii",
+    "source_date_available": "yes",
+    "filing_date_available": "no",
+    "available_date_policy": "conservative statutory deadline by quarter; not company-exact filing timestamp",
+    "formal_exact": "false",
+    "notes": "Route unlocked from official MOPS SPA chunks t163sb04.js and index.js."
+  },
+  {
+    "source_id": "mops_single_company_t164sb04_base",
+    "source_name": "MOPS SPA single-company income statement endpoint",
+    "source_url": "https://mops.twse.com.tw/mops/#/web/t164sb04",
+    "source_route": "POST https://mops.twse.com.tw/mops/api/t164sb04",
+    "source_type": "official_source_candidate_not_full_universe_probe",
+    "coverage_tested": "static_contract_only",
+    "markets_tested": "",
+    "source_date_available": "yes",
+    "filing_date_available": "no",
+    "available_date_policy": "requires separate filing-date crawler",
+    "formal_exact": "false",
+    "notes": "Contract extracted but not needed for full-universe sample because t163sb04 route succeeded."
+  }
+]

@@ -1,0 +1,11 @@
+timestamp,status,details
+2026-07-03T17:58:16.3875046+08:00,running,skeleton_created
+2026-07-03T18:00:28.4567687+08:00,running,browser_api_checked_network_event_not_exposed_running_bounded_route_probe
+2026-07-03T18:07:43.2834410+08:00,running,mops_browser_redirected_to_spa_no_t163_form_assets_index_js_detected
+2026-07-03T18:08:33.5168744+08:00,running,downloaded_mops_spa_index_js_len_369220
+2026-07-03T18:09:20.2598269+08:00,running,extracted_spa_contract_t163sb04_ajax_post_twse_and_t164sb04_base_post
+2026-07-03T18:09:42.2647392+08:00,running,extracted_rp_redirectToOld_and_base_api_contract
+2026-07-03T18:13:33.038428+08:00,completed,route_unlocked_sample_rows=240
+2026-07-03T18:14:43.910510+08:00,completed,route_unlocked_sample_rows=160
+2026-07-03T18:15:46.106125+08:00,completed,route_unlocked_sample_rows=320
+2026-07-03T18:16:27.9908796+08:00,running,created_raw_source_archive_manifest_and_ignored_large_html

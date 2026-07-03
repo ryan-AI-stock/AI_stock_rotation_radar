@@ -1,0 +1,2 @@
+﻿task_id,completed_at,status,evidence
+TASK-RADAR-DATA-DYNAMIC-POOL1-QUARTERLY-FUNDAMENTALS-ROUTE-UNLOCK-20260703,2026-07-03T18:15:46.106125+08:00,completed_route_unlocked_sample_rows,route_probe_attempts.csv;accepted_quarterly_fundamentals_sample_rows.csv

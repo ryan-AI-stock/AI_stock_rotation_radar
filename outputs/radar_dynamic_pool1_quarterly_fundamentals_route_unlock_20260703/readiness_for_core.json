@@ -1,0 +1,32 @@
+{
+  "task_id": "TASK-RADAR-DATA-DYNAMIC-POOL1-QUARTERLY-FUNDAMENTALS-ROUTE-UNLOCK-20260703",
+  "status": "completed_route_unlocked_sample_rows",
+  "quarterly_fundamentals_route_unlocked": true,
+  "quarterly_fundamentals_pit_full_universe_ready": false,
+  "sample_rows": 320,
+  "full_source_rows_observed": 320,
+  "tested_periods": [
+    "2015Q4",
+    "2024Q4"
+  ],
+  "tested_markets": [
+    "otc",
+    "sii"
+  ],
+  "source_type": "source_candidate_no_exact_filing_date",
+  "formal_exact": false,
+  "filing_date_available": false,
+  "available_date_policy": "conservative statutory deadline, not exact filing timestamp",
+  "future_data_violation_count": 0,
+  "ready_for_core_rerun": true,
+  "ready_for_strategy_replay": false,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "remaining_blockers": [
+    "Need per-company exact filing_date/release timestamp route for formal PIT exactness.",
+    "Need full 2015-latest quarterly sweep and coverage audit before strategy replay.",
+    "Need balance sheet/cash flow/ratio field expansion if Dynamic Pool1 needs non-income-statement factors."
+  ],
+  "generated_at": "2026-07-03T18:15:46.106125+08:00"
+}
