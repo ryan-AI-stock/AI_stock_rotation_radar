@@ -1,0 +1,3 @@
+﻿category,row_count,accepted_for_diagnostic,accepted_for_formal,human_review_required,decision
+accepted_diagnostic_rows,22,true,false,true,partial_ready_for_taxonomy_evidence_panel_not_strategy_replay
+blocked_or_needs_review,22,false,false,true,needs_deeper_document_locator_and_text_extraction

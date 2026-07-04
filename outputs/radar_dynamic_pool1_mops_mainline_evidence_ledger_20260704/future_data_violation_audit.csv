@@ -1,0 +1,4 @@
+﻿check,status,future_data_violation_count,notes
+all_accepted_rows_have_source_effective_as_of_dates,pass,0,source_date uses official disclosure output date; effective/as_of uses report year end for ESG disclosure aggregation.
+current_static_generated_maps_excluded,pass,0,Repo static/generated sector/theme maps are not used as accepted evidence.
+formal_boundary,pass,0,All accepted rows are diagnostic-only and require human review.

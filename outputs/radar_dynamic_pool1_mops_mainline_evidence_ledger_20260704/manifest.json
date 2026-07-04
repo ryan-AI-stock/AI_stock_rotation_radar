@@ -1,0 +1,24 @@
+{
+  "task_id": "TASK-RADAR-DATA-DYNAMIC-POOL1-MOPS-MAINLINE-EVIDENCE-LEDGER-20260704",
+  "status": "partial_ready_diagnostic_evidence_v0",
+  "candidate_scope_count": 41,
+  "accepted_theme_taxonomy_rows": 22,
+  "accepted_unique_tickers": 19,
+  "blocked_or_needs_review_tickers": 22,
+  "ready_for_core_rerun": true,
+  "ready_for_taxonomy_evidence_panel": true,
+  "ready_for_strategy_replay": false,
+  "accepted_for_formal": false,
+  "diagnostic_only": true,
+  "future_data_violation_count": 0,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "source_boundary": "v0 uses dated official TWSE ESG/OpenAPI disclosure aggregation and does not consume current/static/generated maps.",
+  "remaining_blockers": [
+    "MOPS annual report / investor conference document locator and PDF/text extraction not yet full-range.",
+    "TPEx corresponding ESG endpoints guessed in this pass returned HTML shell, so TPEx names remain mostly blocked.",
+    "Formal taxonomy policy still requires Research/Core approval."
+  ],
+  "research_judgment": "C:\\Users\\zergv\\Documents\\Codex\\2026-06-17\\repo-ai-stock-backtest-lab-repo-2\\outputs\\research_sector_taxonomy_readiness_blocker_judgment_20260704.md"
+}
