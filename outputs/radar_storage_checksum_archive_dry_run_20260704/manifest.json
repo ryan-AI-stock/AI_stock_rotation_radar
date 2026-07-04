@@ -1,0 +1,21 @@
+{
+  "task_id": "TASK-RADAR-DATA-STORAGE-CHECKSUM-ARCHIVE-DRY-RUN-20260704",
+  "status": "completed_dry_run_no_delete_no_compress",
+  "generated_at": "2026-07-04T05:14:11.110141+00:00",
+  "source_audit": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_storage_governance_audit_20260704",
+  "candidate_packages": 27,
+  "checksum_rows": 3721,
+  "unique_hash_count": 1445,
+  "duplicate_rows": 2276,
+  "candidate_size_mb": 657.006168,
+  "deduplicated_candidate_size_mb": 363.742015,
+  "estimated_compressed_deduplicated_mb": 169.243534,
+  "delete_executed": false,
+  "move_executed": false,
+  "compress_executed": false,
+  "raw_data_deleted": false,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "user_approval_required_for_delete": true
+}
