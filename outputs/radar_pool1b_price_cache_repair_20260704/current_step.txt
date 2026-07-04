@@ -1,0 +1,1 @@
+completed_all_requested_tickers_ready

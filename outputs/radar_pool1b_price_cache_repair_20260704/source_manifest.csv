@@ -1,0 +1,3 @@
+﻿source,market,route,source_type,formal_exact
+TWSE MI_INDEX ALLBUT0999,TWSE,https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX?date={yyyymmdd}&type=ALLBUT0999&response=json,official_daily_trading_pit,false
+TPEx dailyQuotes,TPEx,https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date={yyyy/mm/dd}&response=json,official_daily_trading_pit,false

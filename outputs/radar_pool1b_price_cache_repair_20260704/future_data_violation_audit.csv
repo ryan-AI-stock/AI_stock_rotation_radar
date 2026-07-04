@@ -1,0 +1,3 @@
+﻿check,status,future_data_violation_count,notes
+source_date_not_after_price_date,pass,0,Each repaired row uses the same trading date as source_date from the official daily trading source.
+current_snapshot_not_used,pass,0,"Rows are filtered from date-stamped TWSE/TPEx official daily trading shards, not current profile snapshots."

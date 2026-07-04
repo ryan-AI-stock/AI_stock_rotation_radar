@@ -1,0 +1,10 @@
+{
+  "source_package": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_dynamic_pool1_all_listed_liquid_universe_full_sweep_20260703",
+  "source_shard_dir": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_dynamic_pool1_all_listed_liquid_universe_full_sweep_20260703\\shards",
+  "derived_output": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_pool1b_price_cache_repair_20260704",
+  "source_type": "official_daily_trading_pit_prior_full_sweep",
+  "twse_route": "https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX?date={yyyymmdd}&type=ALLBUT0999&response=json",
+  "tpex_route": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date={yyyy/mm/dd}&response=json",
+  "formal_exact": false,
+  "adjusted_close_available": false
+}

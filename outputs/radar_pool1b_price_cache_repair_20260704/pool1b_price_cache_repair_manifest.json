@@ -1,0 +1,25 @@
+{
+  "task_id": "TASK-RADAR-DATA-POOL1B-PRICE-CACHE-REPAIR-20260704",
+  "status": "completed_all_requested_tickers_ready",
+  "requested_ticker_count": 19,
+  "completed_ticker_count": 19,
+  "failed_ticker_count": 0,
+  "accepted_price_rows": 11439,
+  "latest_complete_date": "2026-07-02",
+  "requested_start": "2024-01-01",
+  "min_required_latest": "2026-06-29",
+  "price_cache_candidate_ready": true,
+  "pool1b_material_layer_diagnostic_rerun_ready": true,
+  "adjusted_close_available": false,
+  "adjusted_close_boundary": "Official daily OHLCV is unadjusted; adjusted_close is intentionally empty and not synthesized.",
+  "sources": [
+    "TWSE MI_INDEX ALLBUT0999 official full-market daily trading PIT shard",
+    "TPEx dailyQuotes official full-market daily trading PIT shard"
+  ],
+  "future_data_violation_count": 0,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "repaired_cache_output_path": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_pool1b_price_cache_repair_20260704\\cache_compatible",
+  "legacy_repaired_cache_output_path": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_pool1b_price_cache_repair_20260704\\repaired_cache"
+}
