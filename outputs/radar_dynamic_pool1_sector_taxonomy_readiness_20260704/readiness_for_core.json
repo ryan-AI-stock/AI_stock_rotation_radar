@@ -1,0 +1,24 @@
+{
+  "task_id": "TASK-RADAR-DATA-DYNAMIC-POOL1-SECTOR-TAXONOMY-READINESS-20260704",
+  "status": "completed_readiness_blocked_with_evidence",
+  "tpex_sector_membership_ready": false,
+  "tpex_sector_membership_route_unlocked": false,
+  "accepted_tpex_sector_rows": 0,
+  "ai_mainline_theme_taxonomy_ready": false,
+  "accepted_theme_taxonomy_rows": 0,
+  "official_industry_to_mainline_mapping_ready": false,
+  "twse_official_industry_diagnostic_only": true,
+  "ready_for_core_rerun": true,
+  "ready_for_strategy_replay": false,
+  "future_data_violation_count": 0,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "research_judgment_source": "C:\\Users\\zergv\\Documents\\Codex\\2026-06-17\\repo-ai-stock-backtest-lab-repo-2\\outputs\\research_dynamic_pool1_twse_sector_proxy_shadow_diagnostic_judgment_20260704.md",
+  "previous_sector_output": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_dynamic_pool1_sector_mainline_pit_full_sweep_and_tpex_reverse_20260703",
+  "remaining_blockers": [
+    "TPEx all-stock historical sector membership route remains locked.",
+    "AI/mainline/theme taxonomy lacks date-aware evidence ledger.",
+    "Official industry categories are not equivalent to market mainline/theme taxonomy."
+  ]
+}

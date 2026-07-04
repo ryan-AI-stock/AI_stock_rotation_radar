@@ -1,0 +1,3 @@
+﻿timestamp_utc,status,detail
+2026-07-04T03:10:42+00:00,started,sector taxonomy readiness package
+2026-07-04T03:10:42+00:00,completed,accepted_tpex_rows=0 accepted_theme_rows=0 ready_for_core_rerun=true

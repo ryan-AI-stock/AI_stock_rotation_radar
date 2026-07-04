@@ -1,0 +1,12 @@
+{
+  "task_id": "TASK-RADAR-DATA-DYNAMIC-POOL1-SECTOR-TAXONOMY-READINESS-20260704",
+  "dataset": "tpex_sector_membership",
+  "status": "blocked_with_route_evidence",
+  "tpex_sector_membership_route_unlocked": false,
+  "accepted_tpex_sector_rows": 0,
+  "accepted_for_diagnostic": false,
+  "accepted_for_formal": false,
+  "proxy_policy": "TPEx current/platform routes may be retained only as route evidence until a dated all-stock membership endpoint or source document is identified. Do not backfill current membership into historical periods.",
+  "next_programmatic_source": "Reverse TPEx IC platform JS/API and statistics idx schema; search official dated membership/download endpoints.",
+  "future_data_violation_count": 0
+}

@@ -1,0 +1,3 @@
+﻿check,status,future_data_violation_count,notes
+current_static_maps_not_accepted,pass,0,Repo current/static/generated sector and theme maps are inventoried only and excluded from accepted historical rows.
+accepted_rows_require_date_awareness,pass,0,No TPEx or theme taxonomy rows were accepted because date-aware evidence is not established.

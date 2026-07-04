@@ -1,0 +1,12 @@
+{
+  "task_id": "TASK-RADAR-DATA-DYNAMIC-POOL1-SECTOR-TAXONOMY-READINESS-20260704",
+  "dataset": "ai_mainline_theme_taxonomy",
+  "status": "blocked_pending_dated_evidence_ledger",
+  "ai_mainline_theme_taxonomy_ready": false,
+  "accepted_theme_taxonomy_rows": 0,
+  "accepted_for_diagnostic": false,
+  "accepted_for_formal": false,
+  "official_industry_mapping_boundary": "TWSE official industry can be diagnostic sector proxy only; it is not AI/mainline/theme taxonomy.",
+  "next_programmatic_source": "Dated MOPS document evidence ledger: annual reports, prospectuses, investor presentations, material information, official filings.",
+  "future_data_violation_count": 0
+}
