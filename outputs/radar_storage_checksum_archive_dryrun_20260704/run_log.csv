@@ -1,0 +1,3 @@
+﻿timestamp_utc,status,detail
+2026-07-04T07:35:47+00:00,started,checksum raw/archive candidates dry-run only
+2026-07-04T07:35:47+00:00,completed,files=1588 original_mb=314.877 unique_mb=271.998 estimated_compressed_mb=165.131 deduped_compressed_mb=148.891
