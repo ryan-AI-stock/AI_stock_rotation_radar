@@ -1,0 +1,19 @@
+{
+  "task_id": "TASK-RADAR-DATA-DYNAMIC-POOL1-PULLBACK-CASE-PRICE-CACHE-REFRESH-20260704",
+  "status": "completed_targeted_case_trace_price_refresh",
+  "source": "TWSE STOCK_DAY",
+  "source_type": "official_twse_unadjusted_ohlcv",
+  "target_month": "20260701",
+  "required_through_date": "2026-07-03",
+  "requested_tickers": 5,
+  "completed_tickers": 5,
+  "failed_or_partial_tickers": 0,
+  "accepted_price_rows": 15,
+  "adjusted_close_available": false,
+  "future_data_violation_count": 0,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "strategy_replay_executed": false
+}

@@ -1,0 +1,4 @@
+﻿date,ticker,code,name,market,open,high,low,close,volume,turnover_value,adjusted_close,adjusted_close_available,source_date,as_of_date,source_url,source_route,source_type,formal_exact
+2026-07-01,2308.TW,2308,台達電,TWSE,2020.00,2020.00,1965.00,1990.00,8753015,17529889380,,false,2026-07-01,2026-07-01,https://www.twse.com.tw/exchangeReport/STOCK_DAY?response=json&date=20260701&stockNo=2308,TWSE_STOCK_DAY,official_twse_unadjusted_ohlcv,false
+2026-07-02,2308.TW,2308,台達電,TWSE,1955.00,2010.00,1920.00,1970.00,6939618,13739120390,,false,2026-07-02,2026-07-02,https://www.twse.com.tw/exchangeReport/STOCK_DAY?response=json&date=20260701&stockNo=2308,TWSE_STOCK_DAY,official_twse_unadjusted_ohlcv,false
+2026-07-03,2308.TW,2308,台達電,TWSE,1920.00,2075.00,1885.00,2075.00,15207642,30584631650,,false,2026-07-03,2026-07-03,https://www.twse.com.tw/exchangeReport/STOCK_DAY?response=json&date=20260701&stockNo=2308,TWSE_STOCK_DAY,official_twse_unadjusted_ohlcv,false

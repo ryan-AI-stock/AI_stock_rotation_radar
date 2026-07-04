@@ -1,0 +1,4 @@
+﻿date,ticker,code,name,market,open,high,low,close,volume,turnover_value,adjusted_close,adjusted_close_available,source_date,as_of_date,source_url,source_route,source_type,formal_exact
+2026-07-01,6669.TW,6669,緯穎,TWSE,4740.00,5050.00,4655.00,5035.00,2872601,14158093790,,false,2026-07-01,2026-07-01,https://www.twse.com.tw/exchangeReport/STOCK_DAY?response=json&date=20260701&stockNo=6669,TWSE_STOCK_DAY,official_twse_unadjusted_ohlcv,false
+2026-07-02,6669.TW,6669,緯穎,TWSE,4905.00,5200.00,4865.00,5200.00,2817565,14269535045,,false,2026-07-02,2026-07-02,https://www.twse.com.tw/exchangeReport/STOCK_DAY?response=json&date=20260701&stockNo=6669,TWSE_STOCK_DAY,official_twse_unadjusted_ohlcv,false
+2026-07-03,6669.TW,6669,緯穎,TWSE,5180.00,5280.00,5110.00,5265.00,1563793,8164714390,,false,2026-07-03,2026-07-03,https://www.twse.com.tw/exchangeReport/STOCK_DAY?response=json&date=20260701&stockNo=6669,TWSE_STOCK_DAY,official_twse_unadjusted_ohlcv,false

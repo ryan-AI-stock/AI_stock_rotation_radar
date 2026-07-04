@@ -1,0 +1,4 @@
+﻿date,ticker,code,name,market,open,high,low,close,volume,turnover_value,adjusted_close,adjusted_close_available,source_date,as_of_date,source_url,source_route,source_type,formal_exact
+2026-07-01,00631L.TW,00631L,元大台灣50正2,TWSE,39.95,40.09,38.91,39.48,285176366,11242894804,,false,2026-07-01,2026-07-01,https://www.twse.com.tw/exchangeReport/STOCK_DAY?response=json&date=20260701&stockNo=00631L,TWSE_STOCK_DAY,official_twse_unadjusted_ohlcv,false
+2026-07-02,00631L.TW,00631L,元大台灣50正2,TWSE,37.83,39.03,37.70,38.88,263558669,10115514214,,false,2026-07-02,2026-07-02,https://www.twse.com.tw/exchangeReport/STOCK_DAY?response=json&date=20260701&stockNo=00631L,TWSE_STOCK_DAY,official_twse_unadjusted_ohlcv,false
+2026-07-03,00631L.TW,00631L,元大台灣50正2,TWSE,37.53,39.05,37.19,38.80,264692695,10062239734,,false,2026-07-03,2026-07-03,https://www.twse.com.tw/exchangeReport/STOCK_DAY?response=json&date=20260701&stockNo=00631L,TWSE_STOCK_DAY,official_twse_unadjusted_ohlcv,false

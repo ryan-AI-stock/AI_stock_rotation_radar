@@ -1,0 +1,6 @@
+﻿ticker,cache_compatible_path,row_count,first_date,last_date,coverage_ready,adjusted_close_available,source_type
+6669.TW,C:\Users\zergv\Documents\Codex\2026-05-23\ai-stock-rotation-radar-https-docs\outputs\radar_dynamic_pool1_pullback_case_price_cache_refresh_20260704\cache_compatible\6669_TW.csv,3,2026-07-01,2026-07-03,true,false,official_twse_unadjusted_ohlcv
+2308.TW,C:\Users\zergv\Documents\Codex\2026-05-23\ai-stock-rotation-radar-https-docs\outputs\radar_dynamic_pool1_pullback_case_price_cache_refresh_20260704\cache_compatible\2308_TW.csv,3,2026-07-01,2026-07-03,true,false,official_twse_unadjusted_ohlcv
+2317.TW,C:\Users\zergv\Documents\Codex\2026-05-23\ai-stock-rotation-radar-https-docs\outputs\radar_dynamic_pool1_pullback_case_price_cache_refresh_20260704\cache_compatible\2317_TW.csv,3,2026-07-01,2026-07-03,true,false,official_twse_unadjusted_ohlcv
+0050.TW,C:\Users\zergv\Documents\Codex\2026-05-23\ai-stock-rotation-radar-https-docs\outputs\radar_dynamic_pool1_pullback_case_price_cache_refresh_20260704\cache_compatible\0050_TW.csv,3,2026-07-01,2026-07-03,true,false,official_twse_unadjusted_ohlcv
+00631L.TW,C:\Users\zergv\Documents\Codex\2026-05-23\ai-stock-rotation-radar-https-docs\outputs\radar_dynamic_pool1_pullback_case_price_cache_refresh_20260704\cache_compatible\00631L_TW.csv,3,2026-07-01,2026-07-03,true,false,official_twse_unadjusted_ohlcv

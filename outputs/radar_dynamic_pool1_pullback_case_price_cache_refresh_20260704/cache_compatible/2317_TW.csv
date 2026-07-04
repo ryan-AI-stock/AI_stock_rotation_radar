@@ -1,0 +1,4 @@
+﻿date,ticker,code,name,market,open,high,low,close,volume,turnover_value,adjusted_close,adjusted_close_available,source_date,as_of_date,source_url,source_route,source_type,formal_exact
+2026-07-01,2317.TW,2317,鴻海,TWSE,255.00,255.50,248.00,248.00,65880617,16492926865,,false,2026-07-01,2026-07-01,https://www.twse.com.tw/exchangeReport/STOCK_DAY?response=json&date=20260701&stockNo=2317,TWSE_STOCK_DAY,official_twse_unadjusted_ohlcv,false
+2026-07-02,2317.TW,2317,鴻海,TWSE,239.00,243.00,238.00,239.00,67897136,16295091341,,false,2026-07-02,2026-07-02,https://www.twse.com.tw/exchangeReport/STOCK_DAY?response=json&date=20260701&stockNo=2317,TWSE_STOCK_DAY,official_twse_unadjusted_ohlcv,false
+2026-07-03,2317.TW,2317,鴻海,TWSE,237.00,241.00,236.00,240.50,51008242,12190174057,,false,2026-07-03,2026-07-03,https://www.twse.com.tw/exchangeReport/STOCK_DAY?response=json&date=20260701&stockNo=2317,TWSE_STOCK_DAY,official_twse_unadjusted_ohlcv,false

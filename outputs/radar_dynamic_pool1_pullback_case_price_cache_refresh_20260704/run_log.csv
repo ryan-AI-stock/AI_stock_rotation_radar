@@ -1,0 +1,3 @@
+﻿timestamp_utc,status,detail
+2026-07-04T09:35:29+00:00,started,targeted TWSE STOCK_DAY refresh for pullback lowpoint case trace
+2026-07-04T09:35:29+00:00,completed,completed=5 failed=0 rows=15

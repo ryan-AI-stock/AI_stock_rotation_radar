@@ -1,0 +1,4 @@
+﻿check,status,future_data_violation_count,notes
+source_date_as_of_date_present,pass,0,source_date/as_of_date are set to the official trading date for each TWSE STOCK_DAY row.
+no_adjusted_close_fabrication,pass,0,TWSE STOCK_DAY provides unadjusted OHLCV; adjusted close is intentionally blank.
+case_trace_only_boundary,pass,0,"No strategy replay, report update, formal model change, or trade decision change was executed."
