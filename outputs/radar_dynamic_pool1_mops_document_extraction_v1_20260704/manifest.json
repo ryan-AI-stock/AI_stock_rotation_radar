@@ -1,0 +1,23 @@
+{
+  "task_id": "TASK-RADAR-DATA-DYNAMIC-POOL1-MOPS-DOCUMENT-EXTRACTION-V1-20260704",
+  "status": "partial_ready_all_requested_tickers_document_evidence_v1",
+  "requested_tickers": 22,
+  "accepted_document_evidence_rows": 22,
+  "accepted_unique_tickers": 22,
+  "blocked_tickers": 0,
+  "ready_for_core_rerun": true,
+  "ready_for_taxonomy_evidence_panel_update": true,
+  "ready_for_strategy_replay": false,
+  "accepted_for_formal": false,
+  "diagnostic_only": true,
+  "future_data_violation_count": 0,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "raw_pdf_git_policy": "raw_sources/pdf is gitignored; extracted snippets and evidence ledgers are tracked.",
+  "remaining_blockers": [
+    "All accepted evidence remains diagnostic-only pending Research/Core review.",
+    "Formal taxonomy and strategy replay remain blocked; this package only supplies dated document evidence.",
+    "Investor conference / material information / company IR presentation extraction remains an optional next source to raise confidence."
+  ]
+}

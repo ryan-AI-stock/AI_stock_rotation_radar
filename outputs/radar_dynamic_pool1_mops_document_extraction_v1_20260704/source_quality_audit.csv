@@ -1,0 +1,2 @@
+﻿source_type,attempted_tickers,accepted_evidence_rows,accepted_unique_tickers,blocked_tickers,quality_decision,notes
+MOPS annual report PDF,22,22,22,0,diagnostic_only_all_requested_tickers_ready,PDF text extraction is bounded to annual reports; source is dated but taxonomy label needs human review.

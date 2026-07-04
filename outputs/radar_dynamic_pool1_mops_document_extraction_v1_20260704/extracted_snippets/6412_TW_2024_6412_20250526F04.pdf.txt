@@ -1,0 +1,1 @@
+雙輸入 ATS CRPS 標 準 電 源 模 組 ， 以 及 符 合 OCP (Open Compute Project) 規 範 3000W/5500W 高階AI伺服器及超大型雲端資料中心(N+M )冗餘電源系統。 (C) 伺服器電源：符合 OCP (Open Compute Project) MHS-CRPS：60mm 和 73.5mm 兩種不同寬度之標準外型大小，包含 800W，1100W，1500W 及 2400W，3200W等機種，滿足DSSI， SPDM，Security Boot等新資安功能設 計需求。 H. 雷射印表機電源：提供雷射印表機的電源及雷射引擎的驅動器，包括 110W 至 400W 電源模組等。 I. 噴墨印表機電源：提供 10W 至60W 的內
