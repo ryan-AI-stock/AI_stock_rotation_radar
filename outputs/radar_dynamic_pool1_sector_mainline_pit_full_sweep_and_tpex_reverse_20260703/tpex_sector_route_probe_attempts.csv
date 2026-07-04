@@ -1,0 +1,7 @@
+﻿candidate_id,source_url,method,status,http_code,content_type,bytes,error,notes
+tpex_statistics_idx_daily_sector_type3_2026,https://www.tpex.org.tw/www/zh-tw/statistics/idx,POST,fetched,200,application/json;charset=UTF-8,1009,,"Response contains industry-like text; retained as route evidence, not accepted membership rows."
+tpex_statistics_idx_constituents_type4_2026,https://www.tpex.org.tw/www/zh-tw/statistics/idx,POST,fetched,200,application/json;charset=UTF-8,1009,,
+tpex_statistics_idx_daily_sector_type3_2015,https://www.tpex.org.tw/www/zh-tw/statistics/idx,POST,fetched,200,application/json;charset=UTF-8,1841,,"Response contains industry-like text; retained as route evidence, not accepted membership rows."
+tpex_statistics_idx_constituents_type4_2015,https://www.tpex.org.tw/www/zh-tw/statistics/idx,POST,fetched,200,application/json;charset=UTF-8,1841,,
+tpex_ic_platform_landing,https://ic.tpex.org.tw/,GET,fetched,200,text/html,18951,,"Response contains industry-like text; retained as route evidence, not accepted membership rows."
+tpex_mis_market_information_by_industry,https://mis.tpex.org.tw/en/IB130SRT1.aspx?QueryProductType=T,GET,fetched,200,text/html; charset=utf-8,30685,,"Response contains industry-like text; retained as route evidence, not accepted membership rows."

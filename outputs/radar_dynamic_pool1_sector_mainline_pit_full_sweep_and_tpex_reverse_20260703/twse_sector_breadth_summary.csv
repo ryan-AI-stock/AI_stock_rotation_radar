@@ -1,0 +1,7 @@
+metric,value,notes
+status,blocked_not_generated,"TWSE membership is monthly-anchor, not daily full exact; breadth daily is intentionally header-only."
+twse_sector_membership_rows,126394,"Rows are sharded by year and indexed by twse_sector_membership_pit_daily_manifest.csv."
+twse_only,true,"TPEx sector membership route remains blocked."
+tpex_included,false,"No TPEx sector rows accepted."
+mainline_theme_ready,false,"Official TWSE industry is not AI/mainline/theme taxonomy."
+future_data_violation_count,0,"No current/static/generated maps used for accepted rows."

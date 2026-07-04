@@ -1,0 +1,32 @@
+[
+  {
+    "source_id": "twse_mi_index_industry_monthly_anchor",
+    "dataset": "sector_membership_pit",
+    "source_name": "TWSE MI_INDEX by-industry monthly anchor membership",
+    "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?response=json&date={yyyymmdd}&type={industry_code}",
+    "source_route": "GET monthly last TWSE trading day + industry type code",
+    "source_type": "official_monthly_anchor_sector_membership_candidate",
+    "status": "full_monthly_anchor_sweep_ready",
+    "coverage": "2015-01 through latest monthly anchor available from liquidity sweep",
+    "source_date_available": "true",
+    "effective_date_available": "true_same_as_anchor_trading_date",
+    "as_of_date_available": "true_same_as_anchor_trading_date",
+    "formal_exact": "false",
+    "notes": "Monthly anchor candidate only; not full daily exact sector change ledger."
+  },
+  {
+    "source_id": "tpex_statistics_idx",
+    "dataset": "sector_membership_pit",
+    "source_name": "TPEx statistics/idx from daily-sector and constituents pages",
+    "source_url": "https://www.tpex.org.tw/www/zh-tw/statistics/idx",
+    "source_route": "POST type=3 or type=4 + date=YYYY + response=json",
+    "source_type": "official_route_candidate_not_accepted",
+    "status": "route_unlocked_but_not_membership_ready",
+    "coverage": "bounded probes 2015 and 2026",
+    "source_date_available": "year_only_if_valid",
+    "effective_date_available": "unknown",
+    "as_of_date_available": "unknown",
+    "formal_exact": "false",
+    "notes": "Route is for index statistics/constituents, not accepted all-stock sector membership in this pass."
+  }
+]

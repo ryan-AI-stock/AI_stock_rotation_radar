@@ -1,0 +1,8 @@
+timestamp,status,detail
+2026-07-03T22:15:52+08:00,running,skeleton_created_building_twse_monthly_anchor_runner_and_tpex_reverse
+2026-07-03T22:19:18.895259+08:00,completed_partial_twse_monthly_anchor_ready_tpex_blocked,twse_rows=0 tpex_attempts=6
+2026-07-03T22:30:04.352186+08:00,partial_with_checkpoint_twse_monthly_anchor_incomplete_tpex_blocked,twse_rows=2503 tpex_attempts=6
+2026-07-03T22:55:44.082958+08:00,partial_with_checkpoint_twse_monthly_anchor_incomplete_tpex_blocked,twse_rows=102178 tpex_attempts=6
+2026-07-03T22:55:57+08:00,paused_partial_with_checkpoint,stopped_for_user_shutdown rows=102178 resume='python -X utf8 outputs\\radar_dynamic_pool1_sector_mainline_pit_full_sweep_and_tpex_reverse_20260703\\run_sector_full_sweep_and_tpex_reverse.py --skip-tpex'
+2026-07-04T09:48:17.609004+08:00,completed_partial_twse_monthly_anchor_ready_tpex_blocked,twse_rows=126394 tpex_attempts=6
+2026-07-04T09:50:08.731956+08:00,completed_partial_twse_monthly_anchor_ready_tpex_blocked,twse_rows=126394 tpex_attempts=6

@@ -1,0 +1,19 @@
+{
+  "task_id": "TASK-RADAR-DATA-DYNAMIC-POOL1-SECTOR-MAINLINE-PIT-FULL-SWEEP-AND-TPEX-REVERSE-20260703",
+  "status": "completed_partial_twse_monthly_anchor_ready_tpex_blocked",
+  "output_path": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_dynamic_pool1_sector_mainline_pit_full_sweep_and_tpex_reverse_20260703",
+  "generated_at": "2026-07-04T09:50:08.731956+08:00",
+  "large_raw_policy": "raw_sources ignored by git; accepted shards and manifests are tracked.",
+  "files": {
+    "twse_sector_membership_rows_manifest": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_dynamic_pool1_sector_mainline_pit_full_sweep_and_tpex_reverse_20260703\\twse_sector_membership_rows_manifest.csv",
+    "twse_sector_membership_pit_daily": "sharded under outputs/.../shards/twse_sector_membership_YYYY.csv",
+    "tpex_sector_route_probe_attempts": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_dynamic_pool1_sector_mainline_pit_full_sweep_and_tpex_reverse_20260703\\tpex_sector_route_probe_attempts.csv",
+    "coverage_by_year_market": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_dynamic_pool1_sector_mainline_pit_full_sweep_and_tpex_reverse_20260703\\coverage_by_year_market.csv",
+    "readiness_for_core": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_dynamic_pool1_sector_mainline_pit_full_sweep_and_tpex_reverse_20260703\\readiness_for_core.json",
+    "twse_sector_membership_pit_daily_manifest": "outputs\\radar_dynamic_pool1_sector_mainline_pit_full_sweep_and_tpex_reverse_20260703\\twse_sector_membership_pit_daily_manifest.csv",
+    "accepted_sector_membership_rows_manifest": "outputs\\radar_dynamic_pool1_sector_mainline_pit_full_sweep_and_tpex_reverse_20260703\\accepted_sector_membership_rows_manifest.csv",
+    "twse_sector_membership_coverage_by_year": "outputs\\radar_dynamic_pool1_sector_mainline_pit_full_sweep_and_tpex_reverse_20260703\\twse_sector_membership_coverage_by_year.csv",
+    "twse_sector_breadth_pit_daily": "outputs\\radar_dynamic_pool1_sector_mainline_pit_full_sweep_and_tpex_reverse_20260703\\twse_sector_breadth_pit_daily.csv",
+    "twse_sector_breadth_summary": "outputs\\radar_dynamic_pool1_sector_mainline_pit_full_sweep_and_tpex_reverse_20260703\\twse_sector_breadth_summary.csv"
+  }
+}

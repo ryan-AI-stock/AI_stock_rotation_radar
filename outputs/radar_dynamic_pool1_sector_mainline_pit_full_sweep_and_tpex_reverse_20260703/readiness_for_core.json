@@ -1,0 +1,41 @@
+{
+  "task_id": "TASK-RADAR-DATA-DYNAMIC-POOL1-SECTOR-MAINLINE-PIT-FULL-SWEEP-AND-TPEX-REVERSE-20260703",
+  "status": "completed_partial_twse_monthly_anchor_ready_tpex_blocked",
+  "twse_only": true,
+  "tpex_included": false,
+  "mainline_theme_ready": false,
+  "twse_sector_full_sweep_ready": false,
+  "twse_sector_monthly_anchor_ready": true,
+  "twse_sector_sweep_granularity": "monthly_anchor",
+  "twse_sector_membership_rows": 126394,
+  "twse_sector_years": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025,
+    2026
+  ],
+  "tpex_sector_membership_route_unlocked": false,
+  "sector_membership_pit_partial_ready": true,
+  "sector_breadth_pit_daily_ready": false,
+  "ready_for_core_rerun": true,
+  "ready_for_strategy_replay": false,
+  "future_data_violation_count": 0,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "remaining_blockers": [
+    "TPEx historical sector membership route remains blocked.",
+    "TWSE sweep is monthly-anchor candidate, not full daily exact membership.",
+    "Mainline/theme PIT taxonomy remains blocked.",
+    "Sector breadth daily cannot be formal-ready until full cross-market membership is accepted."
+  ],
+  "generated_at": "2026-07-04T09:50:08.731956+08:00"
+}

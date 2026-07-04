@@ -1,0 +1,4 @@
+﻿check,result,violation_count,notes
+accepted_rows_have_dates,pass,0,accepted_rows=126394 have source/effective/as_of date from TWSE monthly anchor trading date.
+current_static_maps_excluded,pass,0,Static/current maps are proxy rows only.
+future_data_violation_count,pass,0,No current snapshot used to backfill historical accepted rows.
