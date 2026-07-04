@@ -1,0 +1,20 @@
+{
+  "task_id": "TASK-RADAR-DATA-STORAGE-GOVERNANCE-AUDIT-20260704",
+  "status": "completed_audit_plan_only",
+  "output_path": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_storage_governance_audit_20260704",
+  "scanned_packages": 35,
+  "scanned_files": 10721,
+  "total_outputs_size_mb": 5800.28,
+  "keep_required_for_backtest_packages": 11,
+  "keep_required_for_backtest_size_mb": 5376.002,
+  "diagnostic_keep_optional_packages": 16,
+  "archive_or_compress_candidate_rows": 27,
+  "archive_or_compress_candidate_size_mb_duplicated_rows_possible": 657.621,
+  "large_shard_manifest_rows": 360,
+  "large_shard_manifest_size_mb": 2443.819,
+  "delete_executed": false,
+  "raw_data_deleted": false,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false
+}

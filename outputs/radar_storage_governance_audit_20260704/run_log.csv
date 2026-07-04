@@ -1,0 +1,3 @@
+﻿timestamp_utc,status,detail
+2026-07-04T05:02:12+00:00,started,scan outputs package sizes and governance classes
+2026-07-04T05:02:12+00:00,completed,packages=35 files=10721 size_mb=5800.28

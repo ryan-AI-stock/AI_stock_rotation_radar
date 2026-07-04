@@ -1,0 +1,5 @@
+﻿artifact_type,policy,delete_allowed,compress_candidate,notes
+normalized candidate shards / cache-compatible rows,keep_local_required_for_backtest,false,false,"Includes 0050 PCF, full-market liquidity, Pool1B price repair, MOPS revenue/fundamentals, market-cap candidate, listing/status metadata."
+raw PDF / HTML / JSON / browser wrapper,archive_or_compress_after_manifest_verified,false,true,Do not delete in this task. Compress only after source manifest and checksum plan exist.
+failed route attempts / intermediate probes,keep_manifest_summary_attempt_log; archive bulky raw artifacts,false,true,"Evidence is useful for blocker history, but raw failed artifacts should not dominate local storage."
+future-data audits / readiness ledgers / source manifests,always_keep_tracked,false,false,These are governance evidence and must stay accessible.
