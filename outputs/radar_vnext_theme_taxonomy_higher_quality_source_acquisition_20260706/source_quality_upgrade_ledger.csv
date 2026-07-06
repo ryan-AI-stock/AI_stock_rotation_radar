@@ -1,0 +1,18 @@
+field,source_quality,rows_or_routes,accepted_for_diagnostic,accepted_for_formal,ready_for_higher_quality_ai_allocation_rerun,blocked_reason
+dated_ai_membership,higher-quality diagnostic,44,True,False,False,"human review contract exists, but review not executed/approved"
+non_ai_market_theme_taxonomy,proxy,5,True,False,False,TWSE industry proxy is not market theme taxonomy; TPEx unavailable
+tpex_all_stock_sector_membership,blocked,3,False,False,False,route locked; no accepted all-stock dated membership rows
+exact_rolling_new_high_count,blocked,2,False,False,False,"contract documented, component not materialized"
+ai_theme_excess_vs_0050,proxy,,True,False,False,trailing non-forward RS/excess proxy from weekly snapshot
+ai_theme_excess_vs_00631L,proxy,,True,False,False,trailing non-forward excess proxy from weekly snapshot
+ai_breadth_vs_0050,proxy,,True,False,False,Breadth depends on accepted membership; current trailing breadth proxy is diagnostic only.
+ai_breadth_vs_00631L,proxy,,True,False,False,Breadth depends on accepted membership; current trailing breadth proxy is diagnostic only.
+ai_turnover_concentration,diagnostic,,True,False,False,"Official turnover/liquidity components exist, but full all-listed PIT universe remains incomplete."
+ai_new_high_count,proxy,,True,False,False,Exact rolling new-high count requires accepted daily price panel plus rolling high definition; current Core proxy uses drawdown_60d >= -2%.
+ai_long_strong_count,diagnostic,,True,False,False,from subpool_class
+ai_pullback_repair_count,diagnostic,,True,False,False,from subpool_class
+ai_drawdown_resilience,diagnostic,,True,False,False,"Can be computed from price drawdown fields, but not a membership-quality substitute."
+best_non_ai_theme_id,proxy,,True,False,False,"Non-AI comparator can move from unclassified bucket to official-industry proxy candidates, but still not formal theme taxonomy."
+best_non_ai_theme_score,proxy,,True,False,False,Comparator score can be computed against official-industry proxy candidates only after Core adopts the diagnostic taxonomy.
+ai_vs_best_non_ai_theme_spread,proxy,,True,False,False,Spread remains proxy because both AI membership and non-AI comparator are not formal-reviewed.
+ai_theme_state,proxy,,True,False,False,state computed from proxy-heavy membership and comparator

@@ -1,0 +1,37 @@
+{
+  "date": "2026-07-06",
+  "task_id": "TASK-RADAR-DATA-VNEXT-THEME-TAXONOMY-HIGHER-QUALITY-SOURCE-ACQUISITION-001",
+  "owner": "AI_stock_rotation_radar / Radar-Data",
+  "status": "blocked_higher_quality_source_contract_ready",
+  "diagnostic_only": true,
+  "ready_for_proxy_limited_ai_allocation_rerun": true,
+  "ready_for_higher_quality_ai_allocation_rerun": false,
+  "ready_for_strategy_replay": false,
+  "ready_for_formal": false,
+  "future_data_violation_count": 0,
+  "exact_ai_membership_rows": 0,
+  "human_review_contract_rows": 44,
+  "higher_quality_dated_ai_membership_rows_from_core": 39,
+  "non_ai_taxonomy_candidate_rows": 5,
+  "tpex_attempt_rows": 3,
+  "rolling_new_high_contract_rows": 2,
+  "source_quality_counts": {
+    "higher-quality diagnostic": 1,
+    "proxy": 10,
+    "blocked": 2,
+    "diagnostic": 4
+  },
+  "blocking_summary": [
+    "Human review contract exists but review is not executed/approved.",
+    "Non-AI comparator remains official-industry proxy, not formal market theme taxonomy.",
+    "TPEx all-stock historical sector membership remains locked; only documented alternative is TWSE-only diagnostic proxy.",
+    "Exact rolling new-high count has a materialization contract but no accepted membership universe/window policy."
+  ],
+  "next_owner": "Core/Data or vNext Research for taxonomy policy and human-review decision",
+  "recommended_next_step": "Do not rerun Experiments until Core/Research either executes human review and accepts TWSE proxy comparator, or provides an exact TPEx/non-AI taxonomy source.",
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "portfolio_replay_executed": false
+}

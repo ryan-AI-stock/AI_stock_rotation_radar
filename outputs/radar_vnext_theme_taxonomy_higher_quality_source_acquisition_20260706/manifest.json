@@ -1,0 +1,28 @@
+{
+  "task_id": "TASK-RADAR-DATA-VNEXT-THEME-TAXONOMY-HIGHER-QUALITY-SOURCE-ACQUISITION-001",
+  "created_at": "2026-07-06",
+  "inputs": {
+    "research_judgment": "C:\\Users\\zergv\\Documents\\Codex\\2026-07-06\\backtest-lab-vnext-research-dynamic-candidate\\outputs\\vnext_ai_allocation_proxy_limited_rerun_research_judgment_20260706.md",
+    "core_ingest": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-30\\ep05-chat-ai-stock-backtest-lab\\outputs\\vnext_theme_taxonomy_source_ingest_readiness_20260706",
+    "radar_source_package": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_vnext_theme_taxonomy_source_package_20260706"
+  },
+  "outputs": [
+    "source_route_acquisition_ledger.csv",
+    "human_review_ai_membership_contract.csv",
+    "tpex_sector_route_or_alternative_evidence.csv",
+    "rolling_new_high_materialization_contract.csv",
+    "source_quality_upgrade_ledger.csv",
+    "readiness_for_core_research.json",
+    "final_summary_zh.md",
+    "current_step.txt",
+    "completed.csv"
+  ],
+  "flags": {
+    "formal_model_changed": false,
+    "trade_decision_changed": false,
+    "active_in_trade_decision": false,
+    "report_changed": false,
+    "portfolio_replay_executed": false,
+    "ready_for_strategy_replay": false
+  }
+}
