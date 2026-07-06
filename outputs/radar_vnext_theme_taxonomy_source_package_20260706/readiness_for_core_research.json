@@ -1,0 +1,35 @@
+{
+  "date": "2026-07-06",
+  "task_id": "TASK-RADAR-DATA-VNEXT-THEME-TAXONOMY-SOURCE-PACKAGE-20260706",
+  "owner": "AI_stock_rotation_radar / Radar-Data",
+  "status": "completed_bounded_source_package_ready_for_core_research_judgment",
+  "diagnostic_only": true,
+  "ready_for_core_rerun": true,
+  "ready_for_proxy_limited_ai_allocation_rerun": true,
+  "ready_for_higher_quality_ai_allocation_rerun": false,
+  "ready_for_strategy_replay": false,
+  "ready_for_formal": false,
+  "future_data_violation_count": 0,
+  "ai_membership_rows": 41,
+  "higher_quality_dated_ai_membership_rows": 39,
+  "exact_ai_membership_rows": 0,
+  "ai_subtheme_evidence_rows": 44,
+  "non_ai_taxonomy_candidate_rows": 5,
+  "source_quality_counts": {
+    "higher_quality_dated_document_diagnostic": 39,
+    "proxy_from_core_membership_ledger": 2
+  },
+  "blocked_field_count": 8,
+  "remaining_blockers": [
+    "formal taxonomy policy not approved",
+    "human review still required for AI subtheme and membership labels",
+    "TPEx all-stock historical sector membership route remains locked",
+    "official industry proxies are not equivalent to market theme taxonomy",
+    "exact rolling new-high count is not materialized"
+  ],
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "portfolio_replay_executed": false
+}

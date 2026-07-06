@@ -1,0 +1,9 @@
+field,blocked_reason,proxy_field_or_source,future_data_violation_count,accepted_for_formal,ready_for_strategy_replay
+exact_ai_membership,No formal-approved dated AI membership policy; MOPS evidence remains diagnostic.,higher_quality_dated_document_diagnostic,0,False,False
+ai_subtheme_classification,Subtheme labels are parser/rule derived and require human review.,MOPS keyword/topic evidence ledger,0,False,False
+non_ai_theme_taxonomy,Official industry proxy is not equivalent to market theme taxonomy; TPEx all-stock route locked.,TWSE official industry proxy taxonomy,0,False,False
+new_high_count,Exact rolling new-high count not materialized in Core package.,drawdown_60d >= -2% proxy,0,False,False
+breadth,Requires accepted membership universe.,trailing breadth proxy,0,False,False
+turnover_concentration,All-listed PIT liquidity universe incomplete.,official partial turnover component,0,False,False
+drawdown_resilience,"Price-based diagnostic field, not taxonomy evidence.",drawdown_60d,0,False,False
+best_non_ai_theme_comparator,Formal non-AI theme taxonomy not approved/materialized.,official industry proxy comparator candidates,0,False,False

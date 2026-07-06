@@ -1,0 +1,29 @@
+{
+  "task_id": "TASK-RADAR-DATA-VNEXT-THEME-TAXONOMY-SOURCE-PACKAGE-20260706",
+  "created_at": "2026-07-06",
+  "inputs": {
+    "core_package": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-30\\ep05-chat-ai-stock-backtest-lab\\outputs\\vnext_theme_taxonomy_readiness_20260706",
+    "mops_document_extraction_v1": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_dynamic_pool1_mops_document_extraction_v1_20260704",
+    "mops_mainline_evidence_ledger": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_dynamic_pool1_mops_mainline_evidence_ledger_20260704",
+    "sector_taxonomy_readiness": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_dynamic_pool1_sector_taxonomy_readiness_20260704",
+    "sector_mainline_source_package": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_dynamic_pool1_sector_mainline_pit_source_package_20260703"
+  },
+  "outputs": [
+    "ai_membership_source_package_upgrade.csv",
+    "ai_subtheme_classification_evidence_ledger.csv",
+    "non_ai_theme_taxonomy_candidate_ledger.csv",
+    "theme_strength_score_component_readiness_ledger.csv",
+    "blocked_fields_and_proxy_fields.csv",
+    "source_attempt_evidence.csv",
+    "readiness_for_core_research.json",
+    "final_summary_zh.md"
+  ],
+  "flags": {
+    "formal_model_changed": false,
+    "trade_decision_changed": false,
+    "active_in_trade_decision": false,
+    "report_changed": false,
+    "portfolio_replay_executed": false,
+    "ready_for_strategy_replay": false
+  }
+}
