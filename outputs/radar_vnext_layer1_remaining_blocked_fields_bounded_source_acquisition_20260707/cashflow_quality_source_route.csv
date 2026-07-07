@@ -1,0 +1,3 @@
+field,route_id,source,local_evidence,status,pit_timing,core_ingest_contract,future_data_risk
+operating_cash_flow_quality,mops_t163sb06_cashflow_candidate,"MOPS official quarterly cash-flow statement route, likely t163sb06/ajax_t163sb06",raw asset mops_asset_t163sb06.js exists in quarterly route-unlock package; no accepted parsed rows,blocked,requires quarter available_date or exact filing timestamp crawler,not ready; route unlock/sample parse needed,medium until official response and date policy are captured
+free_cash_flow_quality,ocf_capex_derivation_after_cashflow,derive from OCF and investing/capex fields after t163sb06 materialization,none,blocked,inherits cash-flow statement timing,not ready,medium

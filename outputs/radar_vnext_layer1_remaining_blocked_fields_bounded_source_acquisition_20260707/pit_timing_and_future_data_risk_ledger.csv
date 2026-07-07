@@ -1,0 +1,6 @@
+source,fields,available_date_policy,future_data_violation_risk,future_data_violation_count,notes
+MOPS t163sb05 balance sheet,"current_ratio, inventory_risk, receivable_risk, capital_stock proxy",conservative statutory quarter available_date unless exact filing crawler is added,low-to-medium,0,route candidate official; fields not yet parsed except capital_stock
+MOPS t163sb06 cash-flow,"operating cash flow, free cash flow inputs",not established; should mirror quarterly filing available_date or exact filing crawler,medium,0,route asset only; no accepted parsed rows
+TPEx dailyQuotes,TPEx total market cap proxy,trading date source_date,low,0,"source-backed total market cap proxy, not free-float"
+TWSE current snapshots / current maps,"free-float, current industry/theme maps, issued shares snapshots",current-only,high,0,blocked from PIT backfill
+TWSE MI_INDEX industry monthly anchor,TWSE sector/industry proxy,anchor trading date,low if monthly-anchor proxy is labeled,0,not full daily exact; not TPEx

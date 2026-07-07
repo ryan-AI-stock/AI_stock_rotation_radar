@@ -1,0 +1,3 @@
+field,route_id,source,local_evidence,status,pit_timing,core_ingest_contract,future_data_risk
+free_float_market_cap,official_free_float_share_route_missing,none found locally,no accepted free-float shares/free-float market cap rows; current snapshots/index weights not accepted,requires-human-policy,not available,blocked unless Strategy accepts proxy or Radar finds official dated free-float route,high
+total_market_cap_proxy,tpex_total_market_cap_plus_twse_capital_stock_proxy,TPEx dailyQuotes full sweep + TWSE quarterly capital stock proxy,"TPEx full 2,123,871 rows; TWSE capital stock 43,705 rows",proxy,TPEx trading date; TWSE quarterly available_date,"can support total-cap proxy, not free-float cap",low-to-medium

@@ -1,0 +1,36 @@
+{
+  "task_id": "TASK-BACKTEST-RADAR-VNEXT-LAYER1-REMAINING-BLOCKED-FIELDS-BOUNDED-SOURCE-ACQUISITION-001",
+  "created_at": "2026-07-07",
+  "inputs": {
+    "previous_missing": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_vnext_layer1_missing_fundamental_source_acquisition_readiness_20260707",
+    "twse_market_cap_route": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_dynamic_pool1_twse_market_cap_route_20260703",
+    "market_cap_full": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_dynamic_pool1_market_cap_twse_route_tpex_full_sweep_20260703",
+    "twse_capital_stock": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_dynamic_pool1_twse_capital_stock_full_sweep_proxy_contract_20260703",
+    "sector_full_sweep": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_dynamic_pool1_sector_mainline_pit_full_sweep_and_tpex_reverse_20260703",
+    "sector_taxonomy": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_dynamic_pool1_sector_taxonomy_readiness_20260704",
+    "quarterly_route_unlock": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_dynamic_pool1_quarterly_fundamentals_route_unlock_20260703",
+    "quarterly_full_sweep": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_dynamic_pool1_quarterly_fundamentals_full_sweep_20260703"
+  },
+  "outputs": [
+    "layer1_remaining_blocked_source_inventory.csv",
+    "cashflow_quality_source_route.csv",
+    "balance_sheet_ratio_risk_source_route.csv",
+    "free_float_market_cap_source_route.csv",
+    "exact_daily_market_cap_source_route.csv",
+    "tpex_sector_pit_source_route.csv",
+    "pit_timing_and_future_data_risk_ledger.csv",
+    "blocked_or_policy_required_fields_ledger.csv",
+    "readiness_for_core_layer1_remaining_source_refresh.json",
+    "manifest.json",
+    "final_summary_zh.md"
+  ],
+  "flags": {
+    "formal_model_changed": false,
+    "trade_decision_changed": false,
+    "active_in_trade_decision": false,
+    "report_changed": false,
+    "portfolio_replay_executed": false,
+    "ready_for_strategy_replay": false,
+    "not_live_rule": true
+  }
+}

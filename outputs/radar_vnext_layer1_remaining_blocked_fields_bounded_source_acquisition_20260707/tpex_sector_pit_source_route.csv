@@ -1,0 +1,3 @@
+field,route_id,source,local_evidence,status,pit_timing,core_ingest_contract,future_data_risk
+TPEx all-stock sector PIT,tpex_statistics_idx_not_accepted,TPEx statistics/idx and industry-chain route candidates,bounded probes did not yield accepted all-stock sector membership; accepted_tpex_sector_rows=0,blocked,not proven,not ready,high if current platform map backfilled
+TWSE monthly-anchor sector PIT,twse_mi_index_industry_monthly_anchor,TWSE MI_INDEX by-industry monthly anchor,"126,394 rows; 2015-2026 monthly anchor; TWSE only",proxy,anchor trading date as as-of/effective date,diagnostic/proxy sector control only; not exact daily sector PIT,low if anchor policy explicit

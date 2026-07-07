@@ -1,0 +1,37 @@
+{
+  "date": "2026-07-07",
+  "task_id": "TASK-BACKTEST-RADAR-VNEXT-LAYER1-REMAINING-BLOCKED-FIELDS-BOUNDED-SOURCE-ACQUISITION-001",
+  "owner": "AI_stock_rotation_radar / Radar-Data",
+  "status": "completed_bounded_source_route_readiness_partial_not_ingest_ready",
+  "ready_for_core_layer1_remaining_source_refresh": true,
+  "ready_for_core_ingest_contract_build": false,
+  "ready_for_radar_bounded_route_unlock": true,
+  "ready_for_experiments": false,
+  "ready_for_formal": false,
+  "ready_for_strategy_replay": false,
+  "not_live_rule": true,
+  "future_data_violation_count": 0,
+  "source_status_counts": {
+    "requires-human-policy": 1,
+    "blocked": 4,
+    "PIT-ready_route_candidate": 3
+  },
+  "core_ingest_possible_after_policy_or_parse": [
+    "current_ratio/inventory/receivable via MOPS t163sb05 after field parse",
+    "TWSE monthly-anchor sector proxy if accepted as diagnostic",
+    "TPEx total market cap proxy if total-cap proxy accepted"
+  ],
+  "still_blocked_or_policy_required": [
+    "free_float_market_cap",
+    "operating_cash_flow_quality",
+    "free_cash_flow_quality",
+    "TPEx all-stock sector PIT",
+    "TWSE exact daily market cap"
+  ],
+  "recommended_next_step": "Core/Data should not build full remaining contract yet; Radar/Data can next run bounded t163sb05/t163sb06 sample parsers, while Strategy decides free-float and sector proxy policy.",
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "portfolio_replay_executed": false
+}

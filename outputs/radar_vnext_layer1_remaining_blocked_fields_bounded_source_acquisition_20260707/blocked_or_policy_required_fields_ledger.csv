@@ -1,0 +1,9 @@
+field,status,policy_or_blocker,proxy_allowed_only_if,ready_for_core_ingest_now,ready_for_experiments,ready_for_formal
+free_float_market_cap,requires-human-policy,Strategy/Core decide whether total market cap proxy is acceptable; otherwise Radar needs bounded official free-float source acquisition,Strategy/Core explicitly approves diagnostic proxy; never formal-ready,False,False,False
+operating_cash_flow_quality,blocked,"Radar bounded route unlock: t163sb06 sample parse for sii/otc 2015Q4, 2024Q4, 2026Q1",Strategy/Core explicitly approves diagnostic proxy; never formal-ready,False,False,False
+free_cash_flow_quality,blocked,defer until t163sb06 fields are parsed,Strategy/Core explicitly approves diagnostic proxy; never formal-ready,False,False,False
+current_ratio,PIT-ready_route_candidate,Radar/Core parse current_assets/current_liabilities from t163sb05 full route,Strategy/Core explicitly approves diagnostic proxy; never formal-ready,True,False,False
+inventory_risk,PIT-ready_route_candidate,Radar bounded parse inventory field and profile coverage,Strategy/Core explicitly approves diagnostic proxy; never formal-ready,True,False,False
+receivable_risk,PIT-ready_route_candidate,Radar bounded parse receivables field and profile coverage,Strategy/Core explicitly approves diagnostic proxy; never formal-ready,True,False,False
+TPEx all-stock sector PIT,blocked,Radar bounded TPEx route reverse probe; Strategy may accept TWSE-only sector proxy for diagnostic but not full cross-market Layer1,Strategy/Core explicitly approves diagnostic proxy; never formal-ready,False,False,False
+TWSE exact daily market cap,blocked,Core/Strategy decide whether quarterly shares proxy is acceptable; otherwise Radar needs bounded official daily issued-shares route acquisition,Strategy/Core explicitly approves diagnostic proxy; never formal-ready,False,False,False

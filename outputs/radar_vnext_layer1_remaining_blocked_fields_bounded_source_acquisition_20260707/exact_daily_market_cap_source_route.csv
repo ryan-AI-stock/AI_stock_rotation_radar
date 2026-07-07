@@ -1,0 +1,3 @@
+field,route_id,source,local_evidence,status,pit_timing,core_ingest_contract,future_data_risk
+TWSE exact daily market cap,twse_direct_daily_market_cap_missing,TWSE direct route not found in local probes,MI_INDEX lacks issued shares/direct market cap; OpenAPI company basic is current snapshot only,blocked,not available,blocked; use proxy only if policy approves,high if current snapshot backfilled
+TPEx daily total market cap,tpex_dailyquotes_total_market_cap_proxy,TPEx official dailyQuotes,full sweep completed 2015-latest weekdays; 0 missing weekday dates,proxy,trading-date source_date,TPEx side can be ingested as source-backed proxy if total market cap accepted,low
