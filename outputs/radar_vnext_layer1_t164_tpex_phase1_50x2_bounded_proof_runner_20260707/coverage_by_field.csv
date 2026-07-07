@@ -1,0 +1,8 @@
+﻿field,requested_rows,non_null_rows,missing_rows,missing_share,source_quality,formal_model_changed,trade_decision_changed,active_in_trade_decision,report_changed,portfolio_replay_executed,ready_for_strategy_replay,not_live_rule,forward_returns_live_rule_usage
+operating_cash_flow,100,100,0,0.0,candidate_exact,False,False,False,False,False,False,True,False
+investing_cash_flow,100,98,2,0.02,candidate_exact,False,False,False,False,False,False,True,False
+capex_proxy,100,94,6,0.06,human_review_proxy_or_basket,False,False,False,False,False,False,True,False
+inventory,100,86,14,0.14,candidate_exact,False,False,False,False,False,False,True,False
+receivables_trade,100,94,6,0.06,human_review_proxy_or_basket,False,False,False,False,False,False,True,False
+current_assets,100,100,0,0.0,candidate_exact,False,False,False,False,False,False,True,False
+current_liabilities,100,100,0,0.0,candidate_exact,False,False,False,False,False,False,True,False
