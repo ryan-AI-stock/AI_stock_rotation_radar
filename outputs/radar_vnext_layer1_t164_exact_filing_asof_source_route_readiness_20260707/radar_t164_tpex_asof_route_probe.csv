@@ -1,0 +1,3 @@
+﻿ticker,market,route_id,sample_result,announcement_timestamp,matched_subject,universal_tpex_ready,assessment,formal_model_changed,trade_decision_changed,active_in_trade_decision,report_changed,portfolio_replay_executed,ready_for_strategy_replay,not_live_rule,forward_returns_live_rule_usage
+6488,TPEx,t05st01/t05st01_detail,pass,115/05/05 15:11:12,公告本公司董事會通過115年第一季合併財務報告,False,"bounded TPEx support confirmed, not universal readiness",False,False,False,False,False,False,True,False
+8299,TPEx,t05st01/t05st01_detail,pass,115/05/08 16:31:18,公告董事會決議通過民國115年第1季合併財務報告,False,second bounded TPEx sample confirmed; exact upload timestamp still not available,False,False,False,False,False,False,True,False

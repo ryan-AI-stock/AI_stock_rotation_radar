@@ -1,0 +1,28 @@
+{
+  "task_id": "TASK-RADAR-DATA-VNEXT-LAYER1-T164-EXACT-FILING-ASOF-SOURCE-ROUTE-READINESS-001",
+  "created_at": "2026-07-07",
+  "source": "MOPS official SPA API t05st01/t05st01_detail, t163sb01, t57sb01_q1 bounded probes",
+  "coverage": "bounded route readiness only: TWSE 1101, TPEx 6488 and 8299, 115Q1; 1101 114Q4 cross-period sample",
+  "future_data_violation_count": 0,
+  "ready_for_core_rerun": false,
+  "ready_for_strategy_replay": false,
+  "ready_for_core_t164_full_ingest_asof_join": false,
+  "ready_for_core_official_announcement_timestamp_contract": true,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "portfolio_replay_executed": false,
+  "not_live_rule": true,
+  "forward_returns_live_rule_usage": false,
+  "files": [
+    "radar_t164_exact_filing_asof_source_route_matrix.csv",
+    "radar_t164_mops_disclosure_timestamp_probe.csv",
+    "radar_t164_tpex_asof_route_probe.csv",
+    "radar_t164_asof_policy_options.csv",
+    "radar_t164_blocked_prohibited_ledger.csv",
+    "readiness_for_core_t164_asof_source_route.json",
+    "final_summary_zh.md",
+    "manifest.json"
+  ]
+}
