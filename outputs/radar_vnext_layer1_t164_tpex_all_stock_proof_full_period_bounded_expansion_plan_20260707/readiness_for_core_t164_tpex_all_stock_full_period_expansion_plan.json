@@ -1,0 +1,48 @@
+{
+  "task_id": "TASK-RADAR-DATA-VNEXT-LAYER1-T164-TPEX-ALL-STOCK-PROOF-FULL-PERIOD-BOUNDED-EXPANSION-PLAN-001",
+  "owner": "Radar/Data",
+  "status": "bounded_expansion_plan_ready_tpex_all_stock_proof_not_complete",
+  "diagnostic_only": true,
+  "source": "Local Core bounded t164 materialization + Radar pruning v2 cost basis + local TPEx current-or-carried universe candidate",
+  "coverage": {
+    "existing_tpex_seed_ticker_count": 8,
+    "existing_tpex_seed_period_count": 2,
+    "existing_tpex_seed_rows": 16,
+    "existing_tpex_statement_success_rows": 16,
+    "existing_tpex_official_asof_matched_rows": 16,
+    "tpex_current_or_carried_universe_candidate_count": 891,
+    "planned_phase_1_sample_ticker_count": 50,
+    "planned_full_period_range": "2014Q4-2026Q1",
+    "planned_full_period_count": 46
+  },
+  "ready_for_core_t164_tpex_all_stock_proof_runner_contract": true,
+  "ready_for_core_t164_full_period_bounded_expansion_contract": true,
+  "ready_for_core_t164_broader_or_full_ingest_contract": false,
+  "ready_for_core_t164_broader_or_full_materialization": false,
+  "ready_for_experiments": false,
+  "ready_for_formal": false,
+  "ready_for_strategy_replay": false,
+  "ready_for_full_universe": false,
+  "tpex_all_stock_universal_ready": false,
+  "future_data_violation_count": 0,
+  "route_error_count": "not_executed_in_this_plan_package",
+  "blocked_reason": "TPEx seed is positive, but all-stock route proof and full-period materialization are not executed; TPEx historical membership remains current-snapshot/proxy-limited.",
+  "proxy_policy": {
+    "capex_proxy": "diagnostic_proxy_only_human_review_required_not_formal",
+    "receivables_trade": "diagnostic_proxy_only_human_review_required_not_formal"
+  },
+  "input_readiness": {
+    "core_bounded_status": "bounded_broader_materialized_not_experiments_ready",
+    "core_bounded_future_data_violation_count": 0,
+    "pruning_v2_status": "candidate_detail_pruning_runner_v2_ready_not_full_universe",
+    "pruning_v2_projected_routes_per_row": 8.0,
+    "pruning_v2_actual_cache_rows_per_materialized_row": 11.4
+  },
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "portfolio_replay_executed": false,
+  "not_live_rule": true,
+  "forward_returns_live_rule_usage": false
+}
