@@ -1,0 +1,37 @@
+{
+  "task_id": "TASK-RADAR-DATA-VNEXT-LAYER0-INVESTABLE-UNIVERSE-SOURCE-HARDENING-001",
+  "created_date": "2026-07-07",
+  "output_path": "outputs/radar_vnext_layer0_investable_universe_source_hardening_20260707",
+  "input_core_package": "C:/Users/zergv/Documents/Codex/2026-05-30/ep05-chat-ai-stock-backtest-lab/outputs/vnext_layer0_investable_universe_prefilter_contract_20260707",
+  "input_core_commit": "34ffb82",
+  "artifacts": [
+    "layer0_daily_traded_value_source_confirmation.csv",
+    "layer0_instrument_type_master_source_inventory.csv",
+    "layer0_pit_event_ledger_source_inventory.csv",
+    "layer0_market_cap_proxy_policy_readiness.csv",
+    "layer0_blocked_proxy_gap_ledger.csv",
+    "layer0_future_data_audit.csv",
+    "readiness_for_core_layer0_source_hardening.json",
+    "final_summary_zh.md",
+    "manifest.json"
+  ],
+  "source_packages_referenced": [
+    "outputs/radar_dynamic_pool1_all_listed_liquid_universe_pit_daily_20260703",
+    "outputs/radar_dynamic_pool1_listing_master_completion_20260703",
+    "outputs/radar_dynamic_pool1_twse_market_cap_route_20260703",
+    "outputs/radar_dynamic_pool1_twse_capital_stock_full_sweep_proxy_contract_20260703",
+    "outputs/radar_dynamic_pool1_tpex_suspension_transition_event_ledger_20260703",
+    "outputs/radar_dynamic_pool1_market_cap_twse_route_tpex_full_sweep_20260703"
+  ],
+  "new_download_performed": false,
+  "google_drive_read": false,
+  "future_data_violation_count": 0,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "portfolio_replay_executed": false,
+  "ready_for_strategy_replay": false,
+  "not_live_rule": true,
+  "forward_returns_live_rule_usage": false
+}

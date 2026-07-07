@@ -1,0 +1,49 @@
+{
+  "task_id": "TASK-RADAR-DATA-VNEXT-LAYER0-INVESTABLE-UNIVERSE-SOURCE-HARDENING-001",
+  "status": "layer0_source_hardening_ready_traded_value_ready_instrument_event_marketcap_partial",
+  "source": "existing_local_radar_outputs_only",
+  "coverage": {
+    "daily_traded_value_local_rows": 20418,
+    "listing_metadata_local_rows": 379,
+    "suspension_event_local_rows": 5582,
+    "tpex_transition_candidate_rows": 2295,
+    "core_recommended_initial_universe_size": "200_to_500_with_buffer"
+  },
+  "readiness": {
+    "ready_for_core_layer0_source_contract_refresh": true,
+    "ready_for_core_layer0_traded_value_contract_refresh": true,
+    "ready_for_core_layer0_total_market_turnover_contract_refresh": true,
+    "ready_for_core_layer0_instrument_type_master_contract": false,
+    "ready_for_core_layer0_pit_event_ledger_contract": false,
+    "ready_for_core_layer0_market_cap_rank_contract": false,
+    "ready_for_experiments": false,
+    "ready_for_formal": false,
+    "ready_for_strategy_replay": false,
+    "ready_for_full_universe": false
+  },
+  "source_route_recommendation": "existing_local_traded_value_primary_with_partial_source_candidates_for_filters",
+  "accepted_policy": {
+    "layer0_is_data_pruning_filter": true,
+    "not_live_rule": true,
+    "no_forward_returns": true,
+    "ky_tag_separate_no_auto_exclusion": true,
+    "etf_etn_separate_benchmark_fallback_universe": true,
+    "market_cap_proxy_diagnostic_only": true
+  },
+  "blocked_or_partial_fields": [
+    "instrument_type_master",
+    "pit_disposition_full_delivery_event_ledger",
+    "direct_exact_market_cap_rank",
+    "historical_all_stock_universe_master"
+  ],
+  "future_data_violation_count": 0,
+  "future_data_violation_risk": "low_for_traded_value; medium_for_partial_instrument_event_marketcap_sources_if_core_policy_silent_backfills",
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "portfolio_replay_executed": false,
+  "not_live_rule": true,
+  "forward_returns_live_rule_usage": false,
+  "ready_for_strategy_replay": false
+}

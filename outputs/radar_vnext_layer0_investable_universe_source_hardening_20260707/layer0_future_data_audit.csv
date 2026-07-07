@@ -1,0 +1,6 @@
+audit_item,status,future_data_violation_count,policy,notes
+forward_returns,prohibited,0,no_forward_returns_as_rule,"Layer0 is data-pruning / investable universe source filter only."
+trade_decision,not_active,0,no_trade_decision_change,"No daily report, selector, or trade decision was changed."
+daily_traded_value_available_at,accepted_after_close_source_timing,0,use official daily trading rows after market close,"No query response datetime is used as available_at."
+market_cap_proxy_available_at,proxy_only,0,use conservative public availability for capital_stock and daily close for price,"Proxy is not formal-ready."
+current_snapshot_backfill,prohibited,0,no current/static/generated map backfill to history,"Instrument/event unknowns remain unknown or blocked."
