@@ -1,0 +1,29 @@
+{
+  "task_id": "TASK-RADAR-DATA-VNEXT-LAYER1-T164-BROADER-SOURCE-MATERIALIZATION-READINESS-001",
+  "created_at": "2026-07-07",
+  "source": "MOPS official t164sb05/t164sb03 direct replay and t05st01/t05st01_detail announcement timestamp routes",
+  "coverage": "bounded sample: 4 tickers, TWSE/TPEx, 2 periods, t164 cashflow/balance sheet plus t05st01 announcement timestamp match",
+  "future_data_violation_count": 0,
+  "ready_for_core_rerun": false,
+  "ready_for_strategy_replay": false,
+  "ready_for_core_t164_broader_interim_official_asof_join": true,
+  "ready_for_core_full_ingest_readiness": false,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "portfolio_replay_executed": false,
+  "not_live_rule": true,
+  "forward_returns_live_rule_usage": false,
+  "files": [
+    "radar_t164_broader_source_materialization_matrix.csv",
+    "radar_t164_t05st01_match_candidate_coverage.csv",
+    "radar_t164_twse_tpex_route_coverage.csv",
+    "radar_t164_field_label_review_ledger.csv",
+    "radar_t164_asof_policy_audit.csv",
+    "radar_t164_blocked_prohibited_ledger.csv",
+    "readiness_for_core_t164_broader_source_materialization.json",
+    "final_summary_zh.md",
+    "manifest.json"
+  ]
+}
