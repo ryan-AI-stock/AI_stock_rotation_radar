@@ -1,0 +1,4 @@
+source_route,sample_files,available_date_policy,future_data_violation_risk,future_data_violation_count,pit_ready_for_sample
+t163sb05 balance sheet summary,t163sb05_sii_104q04_response.html;t163sb05_sii_113q04_response.html;t163sb05_sii_115q01_response.html,"conservative statutory quarterly deadline, inherited from previous market-cap route package; exact per-company filing timestamp unavailable",low-to-medium if Core enforces quarter available_date lag,0,True
+t164sb05 cash-flow single-company route,none,not yet proven; should use same quarterly filing available_date or exact filing crawler after response capture,medium until response sample and date policy captured,0,False
+t163sb06 operating analysis route,none,not cash-flow; do not use for cash-flow quality,blocked route misuse risk,0,False

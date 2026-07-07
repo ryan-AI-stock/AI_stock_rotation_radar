@@ -1,0 +1,28 @@
+{
+  "task_id": "TASK-BACKTEST-RADAR-VNEXT-LAYER1-REMAINING-FIELDS-BOUNDED-PARSER-SAMPLE-UNLOCK-001",
+  "created_at": "2026-07-07",
+  "inputs": {
+    "previous_source_route_package": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_vnext_layer1_remaining_blocked_fields_bounded_source_acquisition_20260707",
+    "t163sb05_raw_samples": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_dynamic_pool1_twse_market_cap_route_20260703\\raw_sources",
+    "route_assets": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_dynamic_pool1_quarterly_fundamentals_route_unlock_20260703\\raw_sources"
+  },
+  "outputs": [
+    "t163sb05_balance_sheet_sample_parse_contract.csv",
+    "t163sb06_cashflow_sample_parse_contract.csv",
+    "derived_ratio_field_mapping.csv",
+    "sample_pit_timing_audit.csv",
+    "parser_blocked_fields_ledger.csv",
+    "readiness_for_core_layer1_remaining_parser_ingest.json",
+    "manifest.json",
+    "final_summary_zh.md"
+  ],
+  "flags": {
+    "formal_model_changed": false,
+    "trade_decision_changed": false,
+    "active_in_trade_decision": false,
+    "report_changed": false,
+    "portfolio_replay_executed": false,
+    "ready_for_strategy_replay": false,
+    "not_live_rule": true
+  }
+}

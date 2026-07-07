@@ -1,0 +1,6 @@
+derived_field,source_route,required_raw_fields,formula,parser_status,core_ingest_readiness
+current_ratio,MOPS t163sb05 balance sheet summary,流動資產;流動負債,current_assets / current_liabilities,sample_unlocked,ready_for_bounded_core_contract_design_not_full_sweep
+inventory_risk,MOPS t163sb05 or detailed balance sheet route,存貨;營收 or total_assets,inventory / revenue or inventory / total_assets; Core policy needed,blocked_not_in_standard_t163sb05_summary_sample,not_ready
+receivable_risk,MOPS t163sb05 or detailed balance sheet route,應收帳款 or 應收款項;營收 or total_assets,receivables / revenue or receivables / total_assets; Core policy needed,profile_specific_only_not_standard_sample,not_ready
+operating_cash_flow_quality,MOPS t164sb05 cash-flow statement,營業活動現金流量 or equivalent,operating_cash_flow / net_income or operating_cash_flow positive quality floor,route_contract_found_response_sample_missing,not_ready_until_response_sample_parse
+free_cash_flow,MOPS cash-flow statement plus capex field policy,operating_cash_flow; capital_expenditure or purchase_of_property_plant_equipment,operating_cash_flow - capex,blocked_until_cashflow_fields_parsed,not_ready

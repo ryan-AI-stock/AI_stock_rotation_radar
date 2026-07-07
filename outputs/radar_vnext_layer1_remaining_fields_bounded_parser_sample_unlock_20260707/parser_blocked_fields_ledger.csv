@@ -1,0 +1,8 @@
+field,status,blocked_reason,next_action
+operating_cash_flow,route_contract_found_sample_missing,"t164sb05 cash-flow route asset exists, but no response sample parsed; t163sb06 is not cash-flow",bounded fetch/sample parse t164sb05 for 3 tickers x 3 periods if approved
+free_cash_flow,blocked,depends on operating cash flow and capex field availability; no local response sample,"after t164sb05 sample, inspect capex field labels"
+inventory_risk,blocked_for_standard_summary_sample,t163sb05 standard summary sample does not include inventory field,probe detailed balance sheet route or single-company detail if Strategy requires inventory risk
+receivable_risk,profile_specific_or_blocked,standard summary lacks general receivables; financial profile tables contain 應收款項 but not universal receivable field,probe detailed balance sheet route or profile-specific parser
+free_float_market_cap,blocked_policy_required,out of parser scope and no local official free-float route,Strategy/Core policy on total market cap proxy or separate official free-float acquisition
+TPEx all-stock sector PIT,blocked,out of t163 parser scope; prior route evidence still lacks accepted all-stock TPEx sector membership,separate TPEx sector route acquisition
+TWSE exact daily market cap,blocked,out of t163 parser scope; no direct daily TWSE market cap/issued shares route,separate TWSE daily shares/market cap acquisition or proxy policy
