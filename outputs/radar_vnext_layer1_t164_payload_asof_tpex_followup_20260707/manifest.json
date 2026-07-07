@@ -1,0 +1,28 @@
+{
+  "task_id": "TASK-BACKTEST-RADAR-VNEXT-LAYER1-T164-PAYLOAD-ASOF-TPEX-FOLLOWUP-001",
+  "created_at": "2026-07-07",
+  "source": "MOPS official SPA API and public SPA asset inspection",
+  "coverage": "bounded samples only: 1101 TWSE custom 115Q1, 6488/8299 TPEx latest 115Q1, t163sb01 announcement route samples",
+  "future_data_violation_count": 0,
+  "ready_for_core_rerun": false,
+  "ready_for_strategy_replay": false,
+  "ready_for_core_payload_replay_contract": true,
+  "ready_for_core_t164_cashflow_inventory_receivable_full_ingest": false,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "portfolio_replay_executed": false,
+  "not_live_rule": true,
+  "files": [
+    "t164_browser_equivalent_payload_capture.csv",
+    "t164_direct_replay_feasibility_ledger.csv",
+    "mops_disclosure_asof_source_route.csv",
+    "t164_tpex_bounded_sample_confirmation.csv",
+    "t164_label_taxonomy_policy.csv",
+    "blocked_prerequisites_ledger.csv",
+    "readiness_for_core_t164_cashflow_inventory_receivable_full_ingest.json",
+    "manifest.json",
+    "final_summary_zh.md"
+  ]
+}
