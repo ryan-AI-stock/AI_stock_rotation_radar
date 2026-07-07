@@ -1,0 +1,29 @@
+{
+  "task_id": "TASK-RADAR-DATA-VNEXT-LAYER1-T164-T05ST01-UNMATCHED-ALTERNATE-ROUTE-CAPTURE-001",
+  "created_at": "2026-07-07",
+  "source": "MOPS official t05st01/t05st01_detail bounded broader query and subject policy capture",
+  "coverage": "6 prior unmatched rows: 3008, 6669, 6187 across 115Q1 and 114Q4; query years/months/date windows bounded",
+  "future_data_violation_count": 0,
+  "ready_for_core_rerun": false,
+  "ready_for_strategy_replay": false,
+  "ready_for_core_t164_asof_join_contract_refresh": false,
+  "ready_for_core_t164_full_or_broader_ingest_contract": false,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "portfolio_replay_executed": false,
+  "not_live_rule": true,
+  "forward_returns_live_rule_usage": false,
+  "files": [
+    "t05st01_unmatched_route_probe_ledger.csv",
+    "t05st01_unmatched_subject_inventory.csv",
+    "t05st01_unmatched_candidate_policy_evidence.csv",
+    "t05st01_unmatched_accepted_official_timestamp_rows.csv",
+    "t05st01_unmatched_remaining_blocked_rows.csv",
+    "t05st01_unmatched_policy_ledger.csv",
+    "readiness_for_core_t164_t05st01_unmatched_alternate_route_capture.json",
+    "manifest.json",
+    "final_summary_zh.md"
+  ]
+}
