@@ -1,0 +1,10 @@
+field,status,blocked_or_proxy_reason,ready_for_core_contract,accepted_for_formal
+market_cap,proxy,"partial refreshed PIT contract candidate, not exact market cap; low if source_date/available_date and lag policy are enforced; medium for TWSE proxy normalization",True,False
+free_float_market_cap,blocked,do not ingest until source acquired; high if inferred from current float or index weights; do not use current/static maps,False,False
+sector_industry_pit,proxy,"diagnostic proxy only; not accepted PIT taxonomy; low for TWSE official date route, high for current/static maps; static maps excluded",True,False
+listing_board_industry_pit,proxy,partial listing board/status proxy candidate only; low for dated official event rows; medium for proxy carried-forward rows,True,False
+operating_cash_flow_quality,blocked,Radar source acquisition needed before Core contract; medium until available_date policy and route parser are built,False,False
+free_cash_flow_quality,blocked,blocked; do not proxy from profitability; medium until source acquisition,False,False
+current_ratio,blocked,Radar source acquisition needed; medium until full sweep and missingness audit,False,False
+inventory_risk,blocked,blocked; medium until detailed balance-sheet route acquired,False,False
+receivable_risk,blocked,blocked; medium until detailed balance-sheet route acquired,False,False

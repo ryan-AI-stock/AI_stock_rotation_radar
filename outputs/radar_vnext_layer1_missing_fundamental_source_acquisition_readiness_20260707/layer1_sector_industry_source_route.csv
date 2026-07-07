@@ -1,0 +1,4 @@
+field,route_id,source,status,coverage,pit_timing,blocked_reason,next_step
+industry_sector,twse_mi_index_by_industry,TWSE MI_INDEX by official industry,proxy,TWSE official industry diagnostic route only,as-of trading date,not TPEx all-stock; official industry not equivalent to vNext theme taxonomy,Core can ingest as diagnostic industry proxy only if Layer1 requires broad sector control
+industry_sector,tpex_sector_membership_route,TPEx statistics/industry chain/menu routes,blocked,accepted_tpex_sector_rows=0,not proven,no accepted all-stock historical sector membership rows,bounded TPEx route acquisition needed if Core requires cross-market industry PIT
+theme_taxonomy,repo_current_static_theme_maps,data sector/theme maps,blocked,current/static only,none,future-data risk; not accepted for PIT,do not ingest

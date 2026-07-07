@@ -1,0 +1,43 @@
+{
+  "date": "2026-07-07",
+  "task_id": "TASK-BACKTEST-RADAR-VNEXT-LAYER1-MISSING-FUNDAMENTAL-SOURCE-ACQUISITION-READINESS-001",
+  "owner": "AI_stock_rotation_radar / Radar-Data",
+  "status": "completed_missing_source_readiness_partial_core_contract_candidate",
+  "ready_for_core_layer1_fuller_contract_refresh": true,
+  "ready_for_radar_source_acquisition": true,
+  "ready_for_experiments": false,
+  "ready_for_formal": false,
+  "ready_for_strategy_replay": false,
+  "not_live_rule": true,
+  "future_data_violation_count": 0,
+  "future_data_violation_risk": "low for accepted dated local sources if Core uses available_date; high for current/static sector/theme maps and free-float inference, which are blocked",
+  "source_status_counts": {
+    "proxy": 3,
+    "blocked": 6,
+    "PIT-ready": 1
+  },
+  "core_ingest_candidate_fields": [
+    "market_cap TPEx proxy",
+    "TWSE capital stock/shares proxy",
+    "debt_leverage_solvency from quarterly fundamentals",
+    "listing board/status partial proxy",
+    "TWSE industry diagnostic proxy"
+  ],
+  "blocked_fields": [
+    "free_float_market_cap",
+    "operating_cash_flow_quality",
+    "free_cash_flow_quality",
+    "current_ratio",
+    "inventory_risk",
+    "receivable_risk",
+    "TPEx all-stock sector PIT",
+    "TWSE exact daily market cap"
+  ],
+  "source_route_recommendation": "existing_local_partial_plus_bounded_official_route_acquisition",
+  "next_owner": "Core/Data for refreshed fuller Layer1 PIT contract decision; Strategy Center if free-float/cashflow/current-ratio remain mandatory",
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "portfolio_replay_executed": false
+}

@@ -1,0 +1,6 @@
+source,field_family,date_policy,future_data_violation_risk,future_data_violation_count
+monthly_revenue_full_universe,growth,source_date/release_date/available_date; conservative next-month day 10 weekday-adjusted,low if available_date used; exact filing timestamp absent,0
+quarterly_fundamentals_full_sweep,profitability/leverage,conservative statutory quarterly available_date; exact filing_date unavailable,low-to-medium depending Core acceptance of statutory date,0
+market_cap_tpex_full_sweep,market_cap,trading-date source_date,low for TPEx proxy rows; TWSE still blocked,0
+twse_capital_stock_proxy,paid_in_capital/shares proxy,quarter/asof proxy; Core lag policy required,medium until normalization/laging policy approved,0
+sector_static_maps,industry/theme,none/current-static,high; excluded from accepted PIT,0
