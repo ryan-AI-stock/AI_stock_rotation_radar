@@ -1,0 +1,5 @@
+﻿ticker,market,report_period,route,payload,status,code,message,returned_rows,formal_model_changed,trade_decision_changed,active_in_trade_decision,report_changed,portfolio_replay_executed,ready_for_strategy_replay,not_live_rule,forward_returns_live_rule_usage
+6187,TPEx,114Q4,POST /mops/api/t05st01,"{""companyId"": ""6187"", ""year"": ""115"", ""month"": ""all"", ""firstDay"": """", ""lastDay"": """"}",ok,200,查詢成功,54,False,False,False,False,False,False,True,False
+6187,TPEx,114Q4,POST /mops/api/t05st01,"{""companyId"": ""6187"", ""year"": ""115"", ""month"": ""02"", ""firstDay"": """", ""lastDay"": """"}",ok,200,查詢成功,10,False,False,False,False,False,False,True,False
+6187,TPEx,114Q4,POST /mops/api/t05st01,"{""companyId"": ""6187"", ""year"": ""115"", ""month"": """", ""firstDay"": ""02/01"", ""lastDay"": ""02/28""}",ok,500,請輸入月份,0,False,False,False,False,False,False,True,False
+6187,TPEx,114Q4,POST /mops/api/t05st01,"{""companyId"": ""6187"", ""year"": ""114"", ""month"": ""all"", ""firstDay"": """", ""lastDay"": """"}",ok,200,查詢成功,69,False,False,False,False,False,False,True,False

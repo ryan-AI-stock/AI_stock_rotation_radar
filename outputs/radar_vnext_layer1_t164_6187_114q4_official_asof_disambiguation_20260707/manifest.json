@@ -1,0 +1,28 @@
+{
+  "task_id": "TASK-RADAR-DATA-VNEXT-LAYER1-T164-6187-114Q4-OFFICIAL-ASOF-DISAMBIGUATION-001",
+  "created_at": "2026-07-07",
+  "source": "MOPS official t05st01/t05st01_detail bounded single-row disambiguation",
+  "coverage": "6187 TPEx 114Q4 only; bounded t05st01 year/month/date-window probes",
+  "future_data_violation_count": 0,
+  "ready_for_core_rerun": false,
+  "ready_for_strategy_replay": false,
+  "ready_for_core_t164_asof_patch_refresh": true,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "portfolio_replay_executed": false,
+  "not_live_rule": true,
+  "forward_returns_live_rule_usage": false,
+  "files": [
+    "t05st01_6187_114q4_route_probe_ledger.csv",
+    "t05st01_6187_114q4_strict_detail_candidates.csv",
+    "t05st01_6187_114q4_exclusion_policy_ledger.csv",
+    "t05st01_6187_114q4_accepted_official_timestamp.csv",
+    "t05st01_6187_114q4_after_close_eligibility.csv",
+    "t05st01_6187_114q4_future_data_audit.csv",
+    "readiness_for_core_t164_6187_114q4_official_asof_disambiguation.json",
+    "manifest.json",
+    "final_summary_zh.md"
+  ]
+}
