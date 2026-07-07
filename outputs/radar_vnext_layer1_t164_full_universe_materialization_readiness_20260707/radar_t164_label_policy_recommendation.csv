@@ -1,0 +1,7 @@
+﻿field,source,primary_label,status,human_review_required,policy,formal_model_changed,trade_decision_changed,active_in_trade_decision,report_changed,portfolio_replay_executed,ready_for_strategy_replay,not_live_rule,forward_returns_live_rule_usage
+operating_cash_flow,t164sb05,營業活動之淨現金流入（流出）,bounded_available,False,exact label match after whitespace normalization,False,False,False,False,False,False,True,False
+investing_cash_flow,t164sb05,投資活動之淨現金流入（流出）,bounded_available,False,exact label match after whitespace normalization,False,False,False,False,False,False,True,False
+capex_proxy,t164sb05,取得不動產、廠房及設備,bounded_available_proxy_human_review,True,FCF proxy only; label variants require approval before broader ingest,False,False,False,False,False,False,True,False
+inventory,t164sb03,存貨,bounded_available,False,"balance-sheet ending balance, not cash-flow inventory change row",False,False,False,False,False,False,True,False
+receivables_basket,t164sb03,應收帳款淨額,bounded_available_human_review,True,trade receivable available; broader basket policy still needs approval,False,False,False,False,False,False,True,False
+current_ratio,t164sb03,流動資產合計 / 流動負債合計,bounded_available,False,derive current_assets/current_liabilities; cross-check with t163sb05 if needed,False,False,False,False,False,False,True,False

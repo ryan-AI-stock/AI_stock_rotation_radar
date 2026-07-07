@@ -1,0 +1,6 @@
+﻿item,status,reason,impact,formal_model_changed,trade_decision_changed,active_in_trade_decision,report_changed,portfolio_replay_executed,ready_for_strategy_replay,not_live_rule,forward_returns_live_rule_usage
+full_universe_materialization_runner,blocked_not_started,this task is bounded readiness; no full download/full sweep,ready_for_core_full_ingest_readiness=false,False,False,False,False,False,False,True,False
+tpex_universal_ready,blocked_bounded_only,TPEx 6488/8299 samples pass but not all-stock coverage,do not claim universal readiness,False,False,False,False,False,False,True,False
+quarter_end_date,prohibited,quarter end precedes disclosure,never use as available_date,False,False,False,False,False,False,True,False
+query_response_datetime,prohibited,API response datetime is query time,never use as available_date,False,False,False,False,False,False,True,False
+capex_proxy_and_receivables_basket,human_review_required,label variants and basket definition require policy approval,not formal-ready,False,False,False,False,False,False,True,False
