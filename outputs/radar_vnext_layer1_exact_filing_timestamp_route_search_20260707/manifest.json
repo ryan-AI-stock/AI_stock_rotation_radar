@@ -1,0 +1,26 @@
+{
+  "task_id": "TASK-BACKTEST-RADAR-VNEXT-LAYER1-EXACT-FILING-TIMESTAMP-ROUTE-SEARCH-001",
+  "created_at": "2026-07-07",
+  "source": "MOPS official SPA API t05st01/t05st01_detail plus bounded asset inspection",
+  "coverage": "bounded samples: 1101 TWSE 115Q1 and 114Q4 material-info timestamps; 6488 TPEx 115Q1 material-info timestamp",
+  "future_data_violation_count": 0,
+  "ready_for_core_rerun": false,
+  "ready_for_strategy_replay": false,
+  "ready_for_core_exact_filing_asof_join": false,
+  "ready_for_core_official_announcement_timestamp_asof_contract": true,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "portfolio_replay_executed": false,
+  "not_live_rule": true,
+  "files": [
+    "exact_filing_timestamp_source_route_inventory.csv",
+    "mops_financial_report_announcement_route_probe.csv",
+    "official_announcement_date_vs_timestamp_policy_ledger.csv",
+    "blocked_or_partial_asof_fields.csv",
+    "readiness_for_core_exact_filing_asof_join.json",
+    "manifest.json",
+    "final_summary_zh.md"
+  ]
+}
