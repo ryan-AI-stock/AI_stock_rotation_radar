@@ -1,0 +1,4 @@
+derived_field,raw_field_candidates,source_route,sample_parse_status,formula_or_rule,ready_for_core_contract
+operating_cash_flow_quality,營業活動之淨現金流入(流出);營業活動現金流量,t164sb05 or t05st39 cash-flow statement,blocked_no_accepted_rows,OCF > 0 and/or OCF / net_income quality floor after Core policy,False
+free_cash_flow_quality,operating_cash_flow;購置不動產廠房及設備 or capital expenditure proxy,cash-flow statement detail,blocked_dependency,OCF - capex; capex sign convention needs parser evidence,False
+cashflow_negative_multi_period_flag,operating_cash_flow by quarter/year,cash-flow statement after route unlock,blocked_no_accepted_rows,count recent periods with negative OCF,False

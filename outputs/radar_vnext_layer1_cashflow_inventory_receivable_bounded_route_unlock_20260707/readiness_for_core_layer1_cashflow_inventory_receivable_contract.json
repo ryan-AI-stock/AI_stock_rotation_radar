@@ -1,0 +1,32 @@
+{
+  "date": "2026-07-07",
+  "task_id": "TASK-BACKTEST-RADAR-VNEXT-LAYER1-CASHFLOW-INVENTORY-RECEIVABLE-BOUNDED-ROUTE-UNLOCK-001",
+  "owner": "AI_stock_rotation_radar / Radar-Data",
+  "status": "blocked_with_attempt_evidence_cashflow_inventory_receivable_not_unlocked",
+  "bounded_sample_only": true,
+  "cashflow_route_sample_attempted": true,
+  "cashflow_response_sample_parsed": false,
+  "operating_cash_flow_quality_ready_for_core": false,
+  "free_cash_flow_quality_ready_for_core": false,
+  "inventory_risk_ready_for_core": false,
+  "receivable_risk_ready_for_core": false,
+  "current_ratio_context_from_previous_package": true,
+  "ready_for_core_contract": false,
+  "ready_for_radar_next_bounded_browser_or_payload_probe": true,
+  "ready_for_experiments": false,
+  "ready_for_formal": false,
+  "ready_for_strategy_replay": false,
+  "not_live_rule": true,
+  "future_data_violation_count": 0,
+  "blocked_summary": [
+    "t164sb05 API returned no data for bounded samples",
+    "legacy t05st39/t05st33/t05st31 returned MOPS security block pages",
+    "t163sb05 summary lacks universal inventory/receivable fields"
+  ],
+  "next_owner": "Strategy Center or Radar/Data browser/devtools bounded route capture; do not send to Experiments",
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "portfolio_replay_executed": false
+}

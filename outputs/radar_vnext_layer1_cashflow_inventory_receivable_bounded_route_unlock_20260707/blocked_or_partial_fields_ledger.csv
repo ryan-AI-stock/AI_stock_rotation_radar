@@ -1,0 +1,5 @@
+field,status,reason,next_decision
+operating_cash_flow_quality,blocked,t164sb05 returned no data; legacy t05st39 security-blocked,Radar needs browser/devtools or corrected API payload; not ready for Core ingest
+free_cash_flow_quality,blocked,OCF/capex unavailable,defer until cash-flow response rows parsed
+inventory_risk,blocked,no universal inventory field in t163sb05 summary; detail route security-blocked,need detailed balance sheet route unlock
+receivable_risk,partial_blocked,profile-specific receivables only; not universal Layer1 field,need detailed balance sheet route and profile policy

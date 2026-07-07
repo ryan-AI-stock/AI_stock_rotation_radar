@@ -1,0 +1,4 @@
+field,source,sample_status,core_contract_status,notes
+current_ratio,previous t163sb05 sample parser,unlocked in prior package,ready_for_current_ratio_only_design,Not repeated here; current task targets cash-flow/inventory/receivable.
+inventory,t163sb05 summary + legacy t05st33/t05st31 probes,blocked_or_missing,not_ready,No universal inventory field in summary sample; legacy detail route security-blocked.
+receivables,t163sb05 summary + legacy t05st33/t05st31 probes,partial_profile_specific_or_blocked,not_ready,"Financial profile has 應收款項, but standard non-financial universal field not parsed."

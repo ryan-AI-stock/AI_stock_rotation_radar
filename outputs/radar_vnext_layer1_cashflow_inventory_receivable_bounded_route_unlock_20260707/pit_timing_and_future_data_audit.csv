@@ -1,0 +1,5 @@
+route,field_family,available_date_or_disclosure_timing,future_data_risk,sample_result
+mops_api_t164sb05,cash-flow,not proven because response sample returned no data,medium until accepted response includes period/source date or statutory available_date policy,JSON code=406 no data
+mops_legacy_ajax_t05st39,cash-flow,not proven because security block,medium until route unlocked,security block
+mops_legacy_ajax_t05st33/t05st31,inventory/receivables detail,not proven because security block,medium until route unlocked,security block
+mops_t163sb05_summary,current ratio only,conservative statutory quarterly available_date from prior package; exact per-company filing timestamp unavailable,low-to-medium if Core accepts statutory date,current_assets/current_liabilities available; inventory/receivables not universal

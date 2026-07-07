@@ -1,0 +1,4 @@
+field,route_id,source,sample_result,status,universal_layer1_ready,next_step
+inventory_risk,mops_t163sb05_summary_existing_sample,MOPS t163sb05 balance sheet summary local samples,standard summary table has current_assets/current_liabilities but no universal inventory field,partial_blocked,False,find detailed balance-sheet statement route; likely single-company statement or XBRL/detail route
+receivable_risk,mops_t163sb05_summary_existing_sample,MOPS t163sb05 balance sheet summary local samples,standard non-financial summary lacks universal receivables; financial profile tables have 應收款項 but profile-specific,partial_profile_specific_not_universal,False,find detailed balance-sheet statement route or profile-aware parser
+inventory_receivable_detail,mops_legacy_ajax_t05st33_t05st31,MOPS legacy 合併/個別資產負債表,direct bounded POST returned security block pages,blocked_security_page,False,browser/devtools route capture or official API payload discovery required

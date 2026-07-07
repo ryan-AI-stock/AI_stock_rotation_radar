@@ -1,0 +1,4 @@
+"name","url","status","status_code","content_type","bytes","file","error"
+"t164sb05_1101_113q4","https://mops.twse.com.tw/mops/api/t164sb05","fetched","200","System.String[]","77","outputs\radar_vnext_layer1_cashflow_inventory_receivable_bounded_route_unlock_20260707\raw_sources\t164sb05_1101_113q4.txt",""
+"t164sb05_2308_113q4","https://mops.twse.com.tw/mops/api/t164sb05","fetched","200","System.String[]","77","outputs\radar_vnext_layer1_cashflow_inventory_receivable_bounded_route_unlock_20260707\raw_sources\t164sb05_2308_113q4.txt",""
+"ajax_t164sb06_1101_113q04","https://mops.twse.com.tw/mops/web/ajax_t164sb06","fetched","200","System.String[]","686","outputs\radar_vnext_layer1_cashflow_inventory_receivable_bounded_route_unlock_20260707\raw_sources\ajax_t164sb06_1101_113q04.txt",""
