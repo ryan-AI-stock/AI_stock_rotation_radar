@@ -1,0 +1,2 @@
+﻿runner_scope,requested_rows,raw_cache_hash_manifest_rows,raw_cache_file_count,route_error_count,cost_readiness_note,full_universe_ready,formal_model_changed,trade_decision_changed,active_in_trade_decision,report_changed,portfolio_replay_executed,ready_for_strategy_replay,not_live_rule,forward_returns_live_rule_usage
+broader_seed_20_tickers_2_periods,40,1683,1683,0,"broader seed is complete, but full universe must add candidate/detail pruning before all-stock execution",False,False,False,False,False,False,False,True,False
