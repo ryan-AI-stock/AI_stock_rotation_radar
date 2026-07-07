@@ -1,0 +1,6 @@
+﻿coverage_type,group,requested_rows,materialized_rows,statement_success_rows,official_asof_matched_rows,blocked_rows,formal_model_changed,trade_decision_changed,active_in_trade_decision,report_changed,portfolio_replay_executed,ready_for_strategy_replay,not_live_rule,forward_returns_live_rule_usage
+market,TPEx,400,400,400,352,48,False,False,False,False,False,False,True,False
+period,114Q2,100,100,100,83,17,False,False,False,False,False,False,True,False
+period,114Q3,100,100,100,82,18,False,False,False,False,False,False,True,False
+period,114Q4,100,100,100,93,7,False,False,False,False,False,False,True,False
+period,115Q1,100,100,100,94,6,False,False,False,False,False,False,True,False
