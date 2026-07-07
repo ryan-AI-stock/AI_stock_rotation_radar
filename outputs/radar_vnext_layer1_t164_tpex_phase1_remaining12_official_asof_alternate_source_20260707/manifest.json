@@ -1,0 +1,32 @@
+{
+  "task_id": "TASK-RADAR-DATA-VNEXT-LAYER1-T164-TPEX-PHASE1-REMAINING-12-OFFICIAL-ASOF-ALTERNATE-SOURCE-001",
+  "created_at": "2026-07-07",
+  "source": "MOPS official t05st01/t05st01_detail higher-cost bounded query",
+  "coverage": "12 remaining TPEx phase1 official-asof blocked rows only",
+  "future_data_violation_count": 0,
+  "files": [
+    "build_package.py",
+    "raw_cache/.gitignore",
+    "current_step.txt",
+    "checkpoint_state.json",
+    "remaining12_higher_cost_payload_response_hash_manifest.csv",
+    "remaining12_resolution_summary.csv",
+    "remaining12_accepted_patch_rows.csv",
+    "remaining12_still_blocked_ledger.csv",
+    "remaining12_candidate_evidence.csv",
+    "6114_dual_candidate_policy_evidence.csv",
+    "route_source_evidence_ledger.csv",
+    "future_data_audit.csv",
+    "readiness_for_core_t164_tpex_remaining12_asof_source.json",
+    "manifest.json",
+    "final_summary_zh.md"
+  ],
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "portfolio_replay_executed": false,
+  "ready_for_strategy_replay": false,
+  "not_live_rule": true,
+  "forward_returns_live_rule_usage": false
+}
