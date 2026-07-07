@@ -1,0 +1,26 @@
+{
+  "task_id": "TASK-BACKTEST-RADAR-VNEXT-LAYER1-CASHFLOW-INVENTORY-RECEIVABLE-BROWSER-ROUTE-CAPTURE-001",
+  "created_at": "2026-07-07",
+  "source": "MOPS official website, bounded browser UI route capture plus public SPA asset inspection",
+  "coverage": "bounded sample only: 1101 latest t164sb05 cashflow and 1101 latest t164sb03 balance sheet; direct API attempt evidence; prior legacy security blocker carried forward",
+  "future_data_violation_count": 0,
+  "ready_for_core_rerun": false,
+  "ready_for_strategy_replay": false,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "portfolio_replay_executed": false,
+  "not_live_rule": true,
+  "files": [
+    "browser_route_capture_ledger.csv",
+    "cashflow_route_payload_response_sample.csv",
+    "balance_sheet_detail_payload_response_sample.csv",
+    "field_mapping_cashflow_inventory_receivable.csv",
+    "pit_timing_capture_audit.csv",
+    "blocked_security_or_policy_ledger.csv",
+    "readiness_for_core_layer1_cashflow_inventory_receivable_ingest.json",
+    "manifest.json",
+    "final_summary_zh.md"
+  ]
+}
