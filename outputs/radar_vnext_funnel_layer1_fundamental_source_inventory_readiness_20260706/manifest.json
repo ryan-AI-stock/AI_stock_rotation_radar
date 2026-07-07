@@ -1,0 +1,36 @@
+{
+  "task_id": "TASK-BACKTEST-RADAR-VNEXT-FUNNEL-LAYER1-FUNDAMENTAL-SOURCE-INVENTORY-READINESS-001",
+  "created_at": "2026-07-06",
+  "inputs": {
+    "core_layer1_readiness": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-30\\ep05-chat-ai-stock-backtest-lab\\outputs\\vnext_funnel_layer1_fundamental_size_quality_readiness_20260706",
+    "experiments_layer1_diagnostic": "C:\\Users\\zergv\\Documents\\Codex\\2026-07-06\\backtest-lab-experiments-diagnostic-validation-attribution\\outputs\\vnext_funnel_layer1_partial_fundamental_size_quality_event_diagnostic_20260706",
+    "radar_source_readiness": {
+      "monthly_revenue": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_dynamic_pool1_mops_monthly_revenue_full_universe_pit_20260703",
+      "quarterly_fundamentals": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_dynamic_pool1_quarterly_fundamentals_full_sweep_20260703",
+      "market_cap": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_dynamic_pool1_market_cap_pit_20260703",
+      "twse_capital_stock": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_dynamic_pool1_twse_capital_stock_full_sweep_proxy_contract_20260703",
+      "listing_status": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_dynamic_pool1_listing_delisting_suspension_master_20260703",
+      "sector_taxonomy": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_dynamic_pool1_sector_taxonomy_readiness_20260704"
+    }
+  },
+  "outputs": [
+    "funnel_layer1_source_inventory.csv",
+    "funnel_layer1_existing_local_source_candidates.csv",
+    "funnel_layer1_pit_feasibility_matrix.csv",
+    "funnel_layer1_field_coverage_estimate.csv",
+    "funnel_layer1_source_gap_ledger.csv",
+    "readiness_for_core_layer1_source_package.json",
+    "manifest.json",
+    "final_summary_zh.md"
+  ],
+  "flags": {
+    "formal_model_changed": false,
+    "trade_decision_changed": false,
+    "active_in_trade_decision": false,
+    "report_changed": false,
+    "portfolio_replay_executed": false,
+    "ready_for_strategy_replay": false,
+    "not_live_rule": true,
+    "forward_returns_live_rule_usage": false
+  }
+}

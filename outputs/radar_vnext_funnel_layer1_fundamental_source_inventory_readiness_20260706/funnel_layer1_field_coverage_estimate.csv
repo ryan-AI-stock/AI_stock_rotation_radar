@@ -1,0 +1,16 @@
+field,coverage_estimate,source_quality,ready_for_core_layer1_contract_refresh,ready_for_experiments,ready_for_formal,notes
+market_cap,TPEx sample route unlocked; TWSE capital stock quarterly proxy available 2015Q1-2026Q1; no full daily exact market cap,proxy,True,False,False,TWSE direct daily market cap missing; free-float market cap missing; policy needed for capital-stock-to-shares normalization
+paid_in_capital / shares outstanding proxy,"TWSE 45 quarters, 1079 symbols; TPEx needs separate route",proxy,True,False,False,formal_exact=false; no daily exact issued shares; TPEx not covered by this TWSE package
+listing board,partial event rows and proxy rows; master_ready=false,proxy,True,False,False,accepted master rows incomplete; needs Core policy for proxy_source_rows
+industry / sector,TWSE official industry diagnostic only; TPEx route locked,blocked,False,False,False,TPEx all-stock historical sector membership locked; official industry not formal theme/sector taxonomy
+monthly revenue YoY / MoM / rolling 3M YoY,"2015-01 to 2026-05; TWSE 1080 symbols, TPEx 891 symbols; 244620 rows",higher_quality_diagnostic,True,False,False,"available_date uses conservative next-month day 10, not exact per-company filing timestamp"
+quarterly revenue growth,2015Q1 to 2026Q1; 79046 rows; TWSE/TPEx full sweep,higher_quality_diagnostic,True,False,False,per-company exact filing timestamp unavailable; Core must compute growth and enforce asof policy
+EPS growth,EPS column present where MOPS table supplies value; 2015Q1-2026Q1,higher_quality_diagnostic,True,False,False,growth not precomputed; financial statement profiles differ for financial firms
+operating income growth,operating_income column present for non-financial profiles; 2015Q1-2026Q1,higher_quality_diagnostic,True,False,False,growth not precomputed; bank/financial profile lacks same operating_income semantics
+net margin,derivable for non-financial rows where revenue and net_income populated,higher_quality_diagnostic,True,False,False,needs Core derivation contract and financial-sector handling
+ROE / ROA,ROE column exists in source schema; ROA derivable from net_income/total_assets where populated,higher_quality_diagnostic,True,False,False,missingness by profile must be audited before use
+margin trend / profitability trend,2015Q1-2026Q1 source candidate; trend requires rolling transform,higher_quality_diagnostic,True,False,False,trend not materialized; Core must define windows and lag policy
+operating cash flow / free cash flow quality,not available,blocked,False,False,False,cash-flow statement route not acquired/materialized
+debt / leverage,derivable where balance-sheet fields populated in t163sb04 profile,higher_quality_diagnostic,True,False,False,missingness/profile audit required; exact filing timestamp unavailable
+current ratio,not available,blocked,False,False,False,current assets/current liabilities not materialized
+inventory / receivable risk,not available,blocked,False,False,False,inventory/accounts receivable fields not materialized

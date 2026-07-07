@@ -1,0 +1,8 @@
+field,gap_type,blocked_reason,recommended_next_route,formal_model_changed,trade_decision_changed
+market_cap,proxy,TWSE direct daily market cap missing; free-float market cap missing; policy needed for capital-stock-to-shares normalization,existing_local_transform,False,False
+paid_in_capital / shares outstanding proxy,proxy,formal_exact=false; no daily exact issued shares; TPEx not covered by this TWSE package,existing_local_transform,False,False
+listing board,proxy,accepted master rows incomplete; needs Core policy for proxy_source_rows,existing_local_transform,False,False
+industry / sector,blocked,TPEx all-stock historical sector membership locked; official industry not formal theme/sector taxonomy,external_source_needed,False,False
+operating cash flow / free cash flow quality,blocked,cash-flow statement route not acquired/materialized,external_source_needed,False,False
+current ratio,blocked,current assets/current liabilities not materialized,external_source_needed,False,False
+inventory / receivable risk,blocked,inventory/accounts receivable fields not materialized,external_source_needed,False,False
