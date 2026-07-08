@@ -1,0 +1,27 @@
+{
+  "task_id": "TASK-RADAR-DATA-VNEXT-ROUTE-SUPPORT-MAX1-FULL-PERIOD-SELECTED-STOCK-OHLC-GAP-FILL-001",
+  "status": "route_support_max1_full_period_selected_stock_ohlc_source_package_ready_for_core_absorption",
+  "source": "official TWSE selected-ticker monthly STOCK_DAY route for ticker 2330 only",
+  "coverage": {
+    "input_missing_rows": 2,
+    "path_ready_rows": 2,
+    "path_blocked_rows": 0,
+    "unique_tickers": 1,
+    "selected_ohlc_rows": 4,
+    "source_manifest_rows": 2
+  },
+  "ready_for_core_route_support_max1_full_period_ohlc_absorption": true,
+  "ready_for_route_support_max1_full_period_same_basis_modelization_diagnostic": false,
+  "ready_for_experiments": false,
+  "ready_for_formal": false,
+  "ready_for_strategy_replay": false,
+  "adjusted_close_ready": false,
+  "future_data_violation_count": 0,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "portfolio_replay_executed": false,
+  "not_live_rule": true,
+  "forward_returns_live_rule_usage": false
+}

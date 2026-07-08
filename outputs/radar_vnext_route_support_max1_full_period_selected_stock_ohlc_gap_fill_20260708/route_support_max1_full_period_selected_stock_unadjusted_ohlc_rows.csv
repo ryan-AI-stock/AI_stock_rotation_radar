@@ -1,0 +1,5 @@
+﻿date,ticker,name,market,open,high,low,close,volume,turnover_value,source_route,source_quality,adjustment_policy
+2023-03-20,2330,台積電,TWSE,517.00,518.00,510.00,512.00,12752221,6542889562,twse_rwd_stock_day_selected_ticker_month,official_unadjusted_ohlcv_selected_ticker_month,unadjusted_ohlc_only_adjusted_close_blocked_not_fabricated
+2023-03-27,2330,台積電,TWSE,533.00,536.00,531.00,531.00,17170557,9148085033,twse_rwd_stock_day_selected_ticker_month,official_unadjusted_ohlcv_selected_ticker_month,unadjusted_ohlc_only_adjusted_close_blocked_not_fabricated
+2026-06-01,2330,台積電,TWSE,2355.00,2415.00,2350.00,2355.00,60942792,144105259583,twse_rwd_stock_day_selected_ticker_month,official_unadjusted_ohlcv_selected_ticker_month,unadjusted_ohlc_only_adjusted_close_blocked_not_fabricated
+2026-06-08,2330,台積電,TWSE,2230.00,2320.00,2230.00,2295.00,52273858,119557290165,twse_rwd_stock_day_selected_ticker_month,official_unadjusted_ohlcv_selected_ticker_month,unadjusted_ohlc_only_adjusted_close_blocked_not_fabricated
