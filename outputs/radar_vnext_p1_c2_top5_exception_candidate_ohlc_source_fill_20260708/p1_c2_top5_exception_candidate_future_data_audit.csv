@@ -1,0 +1,5 @@
+check,status,future_data_violation_count,notes
+selected_only_scope,pass,0,"ticker_month_routes=988, no full-market mass download."
+official_unadjusted_ohlc_source,pass,0,"TWSE STOCK_DAY first, TPEx tradingStock fallback."
+no_00631L_excess_reconstruction,pass,0,No selected-stock path reconstructed from benchmark/excess.
+no_adjusted_close_fabrication,pass,0,adjusted_close remains blocked/not fabricated.

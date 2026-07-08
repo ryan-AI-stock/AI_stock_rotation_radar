@@ -1,0 +1,5 @@
+check,status,future_data_violation_count,notes
+official_source_only,pass,0,TWSE/TPEx official OpenAPI plus TWSE official TWT48U/TWT49U probes only.
+bounded_selected_scope,pass,0,Filtered to P1 C2 16 blocked selected tickers/intervals; no full adjusted-close computation.
+no_silent_no_event,pass,0,Missing exact ex-right/capital-change routes remain blocked/partial.
+no_adjusted_close_calculation,pass,0,Radar did not compute adjusted close or factors.

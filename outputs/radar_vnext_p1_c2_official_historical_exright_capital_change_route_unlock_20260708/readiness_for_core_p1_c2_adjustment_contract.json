@@ -1,0 +1,25 @@
+{
+  "task_id": "TASK-RADAR-DATA-VNEXT-P1-C2-OFFICIAL-HISTORICAL-EXRIGHT-CAPITAL-CHANGE-ROUTE-UNLOCK-001",
+  "status": "official_historical_dividend_route_partial_capital_change_and_exact_exdate_blocked",
+  "source": "TWSE/TPEx official t187ap39/40 dividend OpenAPI partial; TWSE TWT48U/TWT49U date probe current-only; MOPS bounded window upstream no candidates",
+  "coverage": {
+    "target_blocked_interval_rows": 16,
+    "source_manifest_rows": 6,
+    "event_candidate_rows": 51,
+    "adjustment_factor_source_candidate_rows": 51,
+    "blocked_interval_rows": 16
+  },
+  "ready_for_core_p1_c2_adjustment_contract": false,
+  "ready_for_experiments": false,
+  "ready_for_formal": false,
+  "ready_for_strategy_replay": false,
+  "future_data_violation_count": 0,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "portfolio_replay_executed": false,
+  "not_live_rule": true,
+  "forward_returns_live_rule_usage": false,
+  "notes": "Official dividend distribution candidates exist for selected tickers, but exact historical ex-right trading date and capital-change routes remain incomplete; not enough for adjusted-close contract."
+}
