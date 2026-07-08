@@ -1,0 +1,46 @@
+{
+  "task_id": "TASK-RADAR-DATA-VNEXT-LEGACY-RS20-SELECTED-STOCK-PRICE-PATH-SOURCE-PACKAGE-001",
+  "status": "legacy_rs20_selected_stock_unadjusted_required_trade_path_ready_adjusted_close_blocked",
+  "source": "radar_dynamic_pool1_all_listed_liquid_universe_full_sweep_20260703 local shards",
+  "coverage": {
+    "request_rows": 389,
+    "selected_unique_ticker_count": 388,
+    "primary_start": "2024-01-02",
+    "primary_end_with_exit_buffer": "2026-06-05",
+    "required_trading_date_count": 586,
+    "selected_price_rows": 219088,
+    "markets": [
+      "TPEx",
+      "TWSE"
+    ],
+    "full_unadjusted_coverage_ticker_count": 0,
+    "missing_or_partial_unadjusted_coverage_ticker_count": 388,
+    "primary_trade_path_rows_audited": 1476,
+    "primary_trade_path_unadjusted_available_rows": 1464,
+    "primary_trade_path_missing_unadjusted_rows": 12,
+    "blocked_unadjusted_detail": "12 rows all tied to 8249 exit dates 2024-10-11/2024-10-15 absent from official daily rows in local full sweep; no silent fill"
+  },
+  "ready_for_legacy_rs20_exact_cost_timing_diagnostic": false,
+  "ready_for_core_legacy_rs20_unadjusted_open_close_path_ingest": false,
+  "exact_selected_stock_adjusted_close_path_ready": false,
+  "next_trading_day_close_path_ready": false,
+  "next_trading_day_open_path_ready": false,
+  "adjusted_close_available": false,
+  "adjustment_policy": "adjusted_close_blocked_not_fabricated; official daily OHLCV is unadjusted",
+  "large_local_artifacts": {
+    "selected_stock_price_rows_local_only": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_vnext_legacy_rs20_selected_stock_price_path_source_package_20260708\\selected_stock_price_rows_local_only.csv",
+    "git_tracked": false,
+    "sha256": "efeab7165ddeed60dce90f8f80af8c696fc4643ab9372954a4ee2159fb42645a"
+  },
+  "ready_for_experiments": false,
+  "ready_for_formal": false,
+  "future_data_violation_count": 0,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "portfolio_replay_executed": false,
+  "ready_for_strategy_replay": false,
+  "not_live_rule": true,
+  "forward_returns_live_rule_usage": false
+}

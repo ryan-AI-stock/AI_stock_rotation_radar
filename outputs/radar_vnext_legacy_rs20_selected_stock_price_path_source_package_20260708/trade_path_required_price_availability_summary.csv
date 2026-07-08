@@ -1,0 +1,5 @@
+﻿timing_variant,rows,unadjusted_available_rows,adjusted_available_rows,adjusted_blocked_rows,missing_unadjusted_rows
+same_week_close_to_next_rebalance_close_comparator,369,366,0,369,3
+next_day_close_entry_fixed_5td_exit,369,366,0,369,3
+next_day_close_entry_weekly_rebalance_exit,369,366,0,369,3
+next_day_open_entry_fixed_5td_exit,369,366,0,369,3

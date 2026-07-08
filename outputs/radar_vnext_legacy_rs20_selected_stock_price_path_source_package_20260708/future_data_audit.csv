@@ -1,0 +1,5 @@
+﻿check,status,future_data_violation_count,notes
+no_forward_return_reconstruction,pass,0,00631L_forward_return_5d and forward_excess_vs_00631L_5d are not used.
+official_daily_rows_only,pass,0,Rows are extracted from PIT daily trading full-sweep shards by date.
+no_adjusted_close_fabrication,pass,0,adjusted_close is blank and adjusted_close_available=false.
+no_formal_or_replay_change,pass,0,No model/report/trade decision/replay executed.

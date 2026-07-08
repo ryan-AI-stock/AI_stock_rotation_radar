@@ -1,0 +1,37 @@
+{
+  "task_id": "TASK-RADAR-DATA-VNEXT-LEGACY-RS20-SELECTED-STOCK-PRICE-PATH-SOURCE-PACKAGE-001",
+  "created_at_utc": "2026-07-08T05:20:05+00:00",
+  "output_path": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_vnext_legacy_rs20_selected_stock_price_path_source_package_20260708",
+  "input_core_package": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-30\\ep05-chat-ai-stock-backtest-lab\\outputs\\vnext_legacy_rs20_exact_path_timing_cost_materialization_20260708",
+  "input_core_commit": "f64fec8",
+  "tracked_artifacts": [
+    "selected_stock_price_rows_sample.csv",
+    "selected_ticker_price_coverage.csv",
+    "selected_ticker_missing_price_ledger.csv",
+    "source_route_readiness.csv",
+    "source_shard_hash_manifest.csv",
+    "future_data_audit.csv",
+    "readiness_for_core_legacy_rs20_selected_stock_price_path.json",
+    "manifest.json",
+    "final_summary_zh.md",
+    ".gitignore",
+    "trade_path_required_price_availability_audit.csv",
+    "trade_path_required_price_availability_summary.csv",
+    "trade_path_blocked_or_proxy_price_ledger.csv"
+  ],
+  "local_only_artifacts": [
+    "selected_stock_price_rows_local_only.csv",
+    "cache_compatible/"
+  ],
+  "new_download_performed": false,
+  "google_drive_read": false,
+  "future_data_violation_count": 0,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "portfolio_replay_executed": false,
+  "ready_for_strategy_replay": false,
+  "not_live_rule": true,
+  "forward_returns_live_rule_usage": false
+}
