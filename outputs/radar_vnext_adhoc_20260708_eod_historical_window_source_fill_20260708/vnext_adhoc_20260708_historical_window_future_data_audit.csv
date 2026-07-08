@@ -1,0 +1,6 @@
+﻿audit_item,status,note,future_data_violation_count,formal_model_changed,trade_decision_changed,active_in_trade_decision,report_changed,portfolio_replay_executed,ready_for_strategy_replay,ready_for_formal,not_live_rule,forward_returns_live_rule_usage
+patch_window_dates,"2026-07-03,2026-07-06,2026-07-07,2026-07-08",No weekend/non-trading days included; designed to bridge Core latest 2026-07-02 to requested 2026-07-08.,0,False,False,False,True,False,False,False,True,False
+older_latest_available_reference_only,not_used_as_20260708,"2026-06-29/06-30/07-02 are Core-side historical anchors only, not substitutes for 2026-07-08.",0,False,False,False,True,False,False,False,True,False
+query_response_datetime_as_available_date,prohibited_not_used,Retrieval time recorded only in manifest.,0,False,False,False,True,False,False,False,True,False
+adjusted_close,blocked_not_fabricated,Only official unadjusted OHLCV supplied.,0,False,False,False,True,False,False,False,True,False
+forward_returns_live_rule_usage,false,No forward returns or hindsight fields.,0,False,False,False,True,False,False,False,True,False
