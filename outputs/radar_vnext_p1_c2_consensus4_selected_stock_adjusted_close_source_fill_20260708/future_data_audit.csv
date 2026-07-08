@@ -1,0 +1,5 @@
+check,status,future_data_violation_count,notes
+no_00631L_excess_reconstruction,pass,0,No selected-stock adjusted close reconstructed from 00631L/excess.
+no_adjusted_close_fabrication,pass,0,All missing adjusted close rows remain blocked.
+selected_only_scope,pass,0,Only 16 missing intervals from Core ledger evaluated.
+unadjusted_proxy_separated,pass,0,Unadjusted OHLC comparator not promoted to adjusted-close source.

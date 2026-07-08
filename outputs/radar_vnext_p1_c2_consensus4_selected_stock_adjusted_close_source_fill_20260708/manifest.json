@@ -1,0 +1,32 @@
+{
+  "task_id": "TASK-RADAR-DATA-VNEXT-P1-C2-CONSENSUS4-SELECTED-STOCK-ADJUSTED-CLOSE-SOURCE-FILL-001",
+  "created_at_utc": "2026-07-08T09:16:21+00:00",
+  "output_path": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_vnext_p1_c2_consensus4_selected_stock_adjusted_close_source_fill_20260708",
+  "input_core_package": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-30\\ep05-chat-ai-stock-backtest-lab\\outputs\\vnext_p1_c2_market_health_consensus4_adjusted_state_machine_contract_20260708",
+  "input_core_commit": "3ff33e4",
+  "artifacts": [
+    "p1_c2_consensus4_missing_scope.csv",
+    "p1_c2_consensus4_selected_stock_adjusted_close_patch_rows.csv",
+    "p1_c2_consensus4_selected_stock_adjusted_close_blocked_ledger.csv",
+    "adjusted_close_source_route_attempts.csv",
+    "source_quality_ledger.csv",
+    "future_data_audit.csv",
+    "readiness_for_core_p1_c2_consensus4_adjusted_close_source_fill.json",
+    "manifest.json",
+    "final_summary_zh.md"
+  ],
+  "local_only_artifacts": [
+    "raw_sources/",
+    "local_only/"
+  ],
+  "future_data_violation_count": 0,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "portfolio_replay_executed": false,
+  "ready_for_strategy_replay": false,
+  "ready_for_formal": false,
+  "not_live_rule": true,
+  "forward_returns_live_rule_usage": false
+}

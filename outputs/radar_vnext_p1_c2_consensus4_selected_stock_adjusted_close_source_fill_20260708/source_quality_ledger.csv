@@ -1,0 +1,4 @@
+field,status,source_quality,accepted_for_core_patch,accepted_for_experiments,accepted_for_formal,notes
+entry_adjusted_close,blocked,blocked_no_accepted_adjusted_close_source,false,false,false,No selected missing row filled; unadjusted comparator remains separate proxy comparator only.
+exit_adjusted_close,blocked,blocked_no_accepted_adjusted_close_source,false,false,false,No silent fill and no 00631L/excess reconstruction.
+unadjusted_ohlc_comparator,available_upstream_proxy_only,official_unadjusted_ohlcv_comparator_from_core,false,false,false,"Core says 21/21 ready but proxy comparator only, not adjusted-close formal path."
