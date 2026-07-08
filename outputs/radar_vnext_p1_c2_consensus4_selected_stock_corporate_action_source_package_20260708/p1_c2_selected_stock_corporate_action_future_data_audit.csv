@@ -1,0 +1,5 @@
+check,status,future_data_violation_count,notes
+selected_only_scope,pass,0,Only 16 blocked selected intervals and bounded +/-1 month MOPS windows queried.
+official_source_only,pass,0,MOPS t05st01/t05st01_detail and TWSE ex-right route probes only.
+no_adjusted_close_calculation,pass,0,Radar/Data did not compute adjusted close or adjustment factors.
+no_silent_fill,pass,0,Rows without official event candidates remain blocked/no-candidate.

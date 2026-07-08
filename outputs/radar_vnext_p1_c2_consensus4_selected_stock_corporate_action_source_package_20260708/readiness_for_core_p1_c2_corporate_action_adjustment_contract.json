@@ -1,0 +1,25 @@
+{
+  "task_id": "TASK-RADAR-DATA-VNEXT-P1-C2-CONSENSUS4-SELECTED-STOCK-CORPORATE-ACTION-SOURCE-PACKAGE-001",
+  "status": "corporate_action_source_package_blocked_no_candidates",
+  "source": "MOPS official t05st01/t05st01_detail bounded event probes plus TWSE TWT48U/TWT49U current-route probes",
+  "coverage": {
+    "target_blocked_interval_rows": 16,
+    "source_manifest_rows": 52,
+    "corporate_action_event_candidate_rows": 0,
+    "adjustment_factor_source_candidate_rows": 0,
+    "blocked_no_candidate_rows": 16
+  },
+  "ready_for_core_p1_c2_corporate_action_adjustment_contract": false,
+  "ready_for_experiments": false,
+  "ready_for_formal": false,
+  "ready_for_strategy_replay": false,
+  "future_data_violation_count": 0,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "portfolio_replay_executed": false,
+  "not_live_rule": true,
+  "forward_returns_live_rule_usage": false,
+  "notes": "Candidate package only. Core must decide factor formula, event applicability between entry/exit dates, and whether no-event intervals can use unadjusted equivalence."
+}
