@@ -1,0 +1,5 @@
+check,status,future_data_violation_count,notes
+selected_only_scope,pass,0,"target_rows=601, additional_ticker_month_routes=188; no full-market mass download."
+timing_contract_reuse,pass,0,Core blocked rows had blank entry/exit dates; reused same-signal timing from prior P1 C2 top5 official OHLC package for next_day_close_entry_fixed_5td_exit.
+no_00631L_excess_reconstruction,pass,0,No selected-stock path reconstructed from benchmark/excess.
+no_adjusted_close_fabrication,pass,0,adjusted_close remains blocked/not fabricated.
