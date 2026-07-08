@@ -1,0 +1,5 @@
+﻿check,status,future_data_violation_count,notes
+no_forward_return_reconstruction,pass,0,00631L + excess reconstruction not used.
+00631L_reference_separated,pass,0,"00631L rows are path_bucket=00631L_reference, not ordinary_stock."
+no_adjusted_close_fabrication,pass,0,adjusted_close remains blank/blocked.
+no_formal_or_replay_change,pass,0,No Experiments/replay/formal/report/trade decision.

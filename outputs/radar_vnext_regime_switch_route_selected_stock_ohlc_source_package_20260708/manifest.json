@@ -1,0 +1,31 @@
+{
+  "task_id": "TASK-RADAR-DATA-VNEXT-REGIME-SWITCH-ROUTE-SELECTED-STOCK-OHLC-SOURCE-PACKAGE-001",
+  "created_at_utc": "2026-07-08T05:39:20+00:00",
+  "output_path": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_vnext_regime_switch_route_selected_stock_ohlc_source_package_20260708",
+  "input_core_package": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-30\\ep05-chat-ai-stock-backtest-lab\\outputs\\vnext_regime_switch_hybrid_route_market_fields_path_materialization_20260708",
+  "input_core_commit": "5490f16",
+  "artifacts": [
+    "regime_switch_selected_ohlc_rows.csv",
+    "regime_switch_selected_path_ohlc_availability_audit.csv",
+    "regime_switch_selected_path_blocked_price_ledger.csv",
+    "regime_switch_selected_path_coverage_by_variant.csv",
+    "regime_switch_missing_request_ticker_coverage.csv",
+    "source_route_readiness.csv",
+    "source_shard_hash_manifest.csv",
+    "future_data_audit.csv",
+    "readiness_for_core_regime_switch_selected_stock_ohlc_source.json",
+    "manifest.json",
+    "final_summary_zh.md"
+  ],
+  "new_download_performed": false,
+  "google_drive_read": false,
+  "future_data_violation_count": 0,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "portfolio_replay_executed": false,
+  "ready_for_strategy_replay": false,
+  "not_live_rule": true,
+  "forward_returns_live_rule_usage": false
+}
