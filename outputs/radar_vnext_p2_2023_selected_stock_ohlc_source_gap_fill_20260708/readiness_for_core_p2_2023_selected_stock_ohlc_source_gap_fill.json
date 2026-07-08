@@ -1,0 +1,29 @@
+{
+  "task_id": "TASK-RADAR-DATA-VNEXT-P2-2023-SELECTED-STOCK-OHLC-SOURCE-GAP-FILL-001",
+  "status": "p2_2023_selected_stock_unadjusted_ohlc_source_package_partial_blocked",
+  "source": "selected ticker-month official TWSE STOCK_DAY / TPEx tradingStock plus bounded TWSE MI_INDEX day fallback for 1519 route anomaly",
+  "coverage": {
+    "ledger_rows": 1368,
+    "path_ready_rows": 1359,
+    "blocked_rows": 9,
+    "unique_tickers": 100,
+    "selected_ohlc_rows": 525,
+    "bounded_day_fallback_rows": 2
+  },
+  "next_day_close_ready": true,
+  "same_week_close_ready": false,
+  "next_day_open_ready": true,
+  "adjusted_close_ready": false,
+  "ready_for_core_p2_2023_unadjusted_ohlc_path_patch_ingest": false,
+  "ready_for_experiments": false,
+  "ready_for_formal": false,
+  "future_data_violation_count": 0,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "portfolio_replay_executed": false,
+  "ready_for_strategy_replay": false,
+  "not_live_rule": true,
+  "forward_returns_live_rule_usage": false
+}

@@ -1,0 +1,5 @@
+﻿check,status,future_data_violation_count,notes
+no_00631L_excess_reconstruction,pass,0,Selected stock OHLC fetched directly from official routes.
+no_adjusted_close_fabrication,pass,0,adjusted_close remains blocked/not fabricated.
+selected_only_scope,pass,0,"ticker_month_routes=170, no full-market mass download."
+bounded_mi_index_day_fallback_for_1519,pass,0,Used official TWSE MI_INDEX for 2023-08-25/2023-08-28 only after STOCK_DAY month route anomaly; selected ticker row only.

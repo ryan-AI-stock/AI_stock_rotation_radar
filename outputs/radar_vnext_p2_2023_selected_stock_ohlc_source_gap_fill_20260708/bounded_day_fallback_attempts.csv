@@ -1,0 +1,3 @@
+﻿ticker,date,status,source_url,raw_path,raw_sha256,notes
+1519,2023-08-25,accepted,https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX?date=20230825&type=ALLBUT0999&response=json,outputs\radar_vnext_p2_2023_selected_stock_ohlc_source_gap_fill_20260708\raw_sources\1519_2023-08-25_TWSE_MI_INDEX.json,dcf48a7d604c8993478d4a68866daf0db5516eb9214e3d3ea3c97939139ee7d9,bounded day fallback for STOCK_DAY month route anomaly
+1519,2023-08-28,accepted,https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX?date=20230828&type=ALLBUT0999&response=json,outputs\radar_vnext_p2_2023_selected_stock_ohlc_source_gap_fill_20260708\raw_sources\1519_2023-08-28_TWSE_MI_INDEX.json,632b2a07fdfbaf1edcc32facba8b44db775c9f492de42f08a818819a9f7d8a08,bounded day fallback for STOCK_DAY month route anomaly
