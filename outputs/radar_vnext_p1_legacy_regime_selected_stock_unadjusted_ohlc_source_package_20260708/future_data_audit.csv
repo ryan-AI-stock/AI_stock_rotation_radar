@@ -1,0 +1,4 @@
+﻿check,status,future_data_violation_count,notes
+no_forward_return_reconstruction,pass,0,00631L/excess reconstruction not used.
+official_unadjusted_ohlc_only,pass,0,TWSE STOCK_DAY / TPEx tradingStock official unadjusted OHLCV.
+no_adjusted_close_fabrication,pass,0,adjusted_close remains blocked/not required for this unadjusted request.

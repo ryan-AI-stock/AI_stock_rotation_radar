@@ -1,0 +1,30 @@
+﻿timestamp_utc,status,detail
+2026-07-08T06:40:00+00:00,started,work_items=1379 completed=0
+2026-07-08T06:40:08+00:00,progress,route_index=50/1379
+2026-07-08T06:40:17+00:00,progress,route_index=100/1379
+2026-07-08T06:40:26+00:00,progress,route_index=150/1379
+2026-07-08T06:40:35+00:00,progress,route_index=200/1379
+2026-07-08T06:40:44+00:00,progress,route_index=250/1379
+2026-07-08T06:40:53+00:00,progress,route_index=300/1379
+2026-07-08T06:41:02+00:00,progress,route_index=350/1379
+2026-07-08T06:41:11+00:00,progress,route_index=400/1379
+2026-07-08T06:41:20+00:00,progress,route_index=450/1379
+2026-07-08T06:41:29+00:00,progress,route_index=500/1379
+2026-07-08T06:41:38+00:00,progress,route_index=550/1379
+2026-07-08T06:41:47+00:00,progress,route_index=600/1379
+2026-07-08T06:41:56+00:00,progress,route_index=650/1379
+2026-07-08T06:42:06+00:00,progress,route_index=700/1379
+2026-07-08T06:42:15+00:00,progress,route_index=750/1379
+2026-07-08T06:42:24+00:00,progress,route_index=800/1379
+2026-07-08T06:42:34+00:00,progress,route_index=850/1379
+2026-07-08T06:42:43+00:00,progress,route_index=900/1379
+2026-07-08T06:42:52+00:00,progress,route_index=950/1379
+2026-07-08T06:43:01+00:00,progress,route_index=1000/1379
+2026-07-08T06:43:11+00:00,progress,route_index=1050/1379
+2026-07-08T06:43:20+00:00,progress,route_index=1100/1379
+2026-07-08T06:43:30+00:00,progress,route_index=1150/1379
+2026-07-08T06:43:39+00:00,progress,route_index=1200/1379
+2026-07-08T06:43:49+00:00,progress,route_index=1250/1379
+2026-07-08T06:43:58+00:00,progress,route_index=1300/1379
+2026-07-08T06:44:08+00:00,progress,route_index=1350/1379
+2026-07-08T06:44:14+00:00,completed,path_ready_rows=10785/10926 selected_rows=4391

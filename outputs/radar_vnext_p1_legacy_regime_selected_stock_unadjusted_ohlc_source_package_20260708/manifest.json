@@ -1,0 +1,33 @@
+{
+  "task_id": "TASK-RADAR-DATA-VNEXT-P1-LEGACY-REGIME-SELECTED-STOCK-UNADJUSTED-OHLC-SOURCE-PACKAGE-001",
+  "created_at_utc": "2026-07-08T06:44:14+00:00",
+  "output_path": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_vnext_p1_legacy_regime_selected_stock_unadjusted_ohlc_source_package_20260708",
+  "input_core_package": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-30\\ep05-chat-ai-stock-backtest-lab\\outputs\\vnext_p1_legacy_regime_selected_stock_unadjusted_path_materialization_20260708",
+  "input_core_commit": "43f5a49",
+  "artifacts": [
+    "p1_selected_stock_unadjusted_ohlc_rows_sample.csv",
+    "p1_trade_path_ohlc_availability_audit.csv",
+    "p1_trade_path_blocked_price_ledger.csv",
+    "p1_selected_ticker_path_coverage.csv",
+    "completed_route_attempts.csv",
+    "checkpoint_state.json",
+    "future_data_audit.csv",
+    "readiness_for_core_p1_selected_stock_unadjusted_ohlc_source.json",
+    "manifest.json",
+    "final_summary_zh.md"
+  ],
+  "local_only_artifacts": [
+    "raw_sources/",
+    "local_only/p1_selected_stock_unadjusted_ohlc_rows_local_only.csv"
+  ],
+  "future_data_violation_count": 0,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "portfolio_replay_executed": false,
+  "ready_for_strategy_replay": false,
+  "not_live_rule": true,
+  "forward_returns_live_rule_usage": false,
+  "ready_for_formal": false
+}
