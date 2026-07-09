@@ -1,0 +1,35 @@
+{
+  "task_id": "TASK-RADAR-DATA-VNEXT-P1-RISK-ADJUSTED-RS20-SELECTED-STOCK-OHLC-GAP-FILL-001",
+  "created_at_utc": "2026-07-09T01:43:18+00:00",
+  "output_path": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_vnext_p1_risk_adjusted_rs20_selected_stock_ohlc_gap_fill_20260709",
+  "input_core_package": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-30\\ep05-chat-ai-stock-backtest-lab\\outputs\\vnext_p1_risk_adjusted_rs20_branch_contract_20260709",
+  "input_core_commit": "b5ad56b",
+  "artifacts": [
+    "p1_risk_adjusted_rs20_selected_stock_ohlc_source_manifest.csv",
+    "p1_risk_adjusted_rs20_selected_stock_ohlc_filled_rows.csv",
+    "p1_risk_adjusted_rs20_selected_stock_ohlc_blocked_ledger.csv",
+    "p1_risk_adjusted_rs20_selected_stock_unadjusted_ohlc_rows.csv",
+    "p1_risk_adjusted_rs20_selected_stock_ohlc_coverage_audit.csv",
+    "p1_risk_adjusted_rs20_selected_stock_ohlc_future_data_audit.csv",
+    "readiness_for_core_p1_risk_adjusted_rs20_selected_ohlc_absorption.json",
+    "checkpoint_state.json",
+    "current_step.txt",
+    "run_log.csv",
+    "manifest.json",
+    "final_summary_zh.md"
+  ],
+  "local_only_artifacts": [
+    "raw_sources/"
+  ],
+  "future_data_violation_count": 0,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "portfolio_replay_executed": false,
+  "ready_for_strategy_replay": false,
+  "ready_for_formal": false,
+  "not_live_rule": true,
+  "forward_returns_live_rule_usage": false,
+  "updated_at_utc": "2026-07-09T01:47:28+00:00"
+}

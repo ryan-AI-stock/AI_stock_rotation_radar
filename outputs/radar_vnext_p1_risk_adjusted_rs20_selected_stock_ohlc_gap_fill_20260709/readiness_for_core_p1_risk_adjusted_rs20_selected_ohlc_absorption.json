@@ -1,0 +1,28 @@
+{
+  "task_id": "TASK-RADAR-DATA-VNEXT-P1-RISK-ADJUSTED-RS20-SELECTED-STOCK-OHLC-GAP-FILL-001",
+  "status": "p1_risk_adjusted_rs20_selected_stock_ohlc_source_package_partial_blocked",
+  "source": "official selected ticker-month TWSE STOCK_DAY / TPEx tradingStock plus bounded exact-day TWSE MI_INDEX / TPEx dailyQuotes fallback for remaining missing rows",
+  "coverage": {
+    "input_missing_rows": 357,
+    "path_ready_rows": 351,
+    "path_blocked_rows": 6,
+    "unique_tickers": 199,
+    "ticker_month_routes": 395,
+    "bounded_day_fallback_routes": 23,
+    "selected_ohlc_rows": 677,
+    "source_manifest_rows": 418
+  },
+  "ready_for_core_p1_risk_adjusted_rs20_selected_ohlc_absorption": false,
+  "ready_for_experiments": false,
+  "ready_for_formal": false,
+  "ready_for_strategy_replay": false,
+  "adjusted_close_ready": false,
+  "future_data_violation_count": 0,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "portfolio_replay_executed": false,
+  "not_live_rule": true,
+  "forward_returns_live_rule_usage": false
+}

@@ -1,0 +1,5 @@
+﻿audit_item,status,note,future_data_violation_count,formal_model_changed,trade_decision_changed,active_in_trade_decision,report_changed,portfolio_replay_executed,ready_for_strategy_replay,ready_for_formal,not_live_rule,forward_returns_live_rule_usage
+source_scope,bounded_selected_ticker_month_only,395 ticker-month routes from missing ledger only; no full-market download.,0,False,False,False,False,False,False,False,True,False
+adjusted_close,blocked_not_fabricated,Only official unadjusted OHLCV supplied.,0,False,False,False,False,False,False,False,True,False
+forward_returns_live_rule_usage,false,"No strategy performance, no forward returns.",0,False,False,False,False,False,False,False,True,False
+query_response_datetime_as_market_date,prohibited_not_used,retrieved_at_utc is metadata only.,0,False,False,False,False,False,False,False,True,False
