@@ -1,0 +1,3 @@
+﻿date,ticker,name,market,open,high,low,close,volume,turnover_value,source_route,source_url,source_quality,adjustment_policy
+2018-03-19,8464,億豐,TWSE,295.00,295.00,289.50,291.00,169020,49223380,twse_rwd_stock_day_selected_ticker_month,https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?date=20180301&stockNo=8464&response=json,official_unadjusted_ohlcv_twse_stock_day,unadjusted_ohlcv; adjusted_close_blocked_not_fabricated
+2018-03-26,8464,億豐,TWSE,279.50,282.50,278.00,280.00,397726,111494780,twse_rwd_stock_day_selected_ticker_month,https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?date=20180301&stockNo=8464&response=json,official_unadjusted_ohlcv_twse_stock_day,unadjusted_ohlcv; adjusted_close_blocked_not_fabricated

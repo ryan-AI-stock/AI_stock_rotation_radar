@@ -1,0 +1,25 @@
+{
+  "task_id": "TASK-RADAR-DATA-VNEXT-LOW-BASE-INTEGRATED-C2-ROUTE-SUPPORT-SELECTED-STOCK-OHLC-GAP-FILL-001",
+  "status": "low_base_integrated_selected_stock_ohlc_source_package_ready_for_core_absorption",
+  "source": "official TWSE selected ticker-month STOCK_DAY route for ticker 8464 only",
+  "coverage": {
+    "input_gap_rows": 1,
+    "path_ready_rows": 1,
+    "path_blocked_rows": 0,
+    "selected_ohlc_rows": 2,
+    "source_manifest_rows": 1
+  },
+  "ready_for_core_low_base_integrated_c2_route_support_ohlc_absorption": true,
+  "ready_for_experiments": false,
+  "ready_for_formal": false,
+  "ready_for_strategy_replay": false,
+  "adjusted_close_ready": false,
+  "future_data_violation_count": 0,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "portfolio_replay_executed": false,
+  "not_live_rule": true,
+  "forward_returns_live_rule_usage": false
+}
