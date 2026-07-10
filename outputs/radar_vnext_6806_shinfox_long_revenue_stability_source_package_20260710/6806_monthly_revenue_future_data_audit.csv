@@ -1,0 +1,2 @@
+dataset,future_data_violation_count,asof_policy,period_end_as_available_date,query_response_datetime_as_available_date
+6806_monthly_revenue,0,conservative next-month day 10 weekday-adjusted available_date; not per-company exact filing timestamp,prohibited,prohibited

@@ -1,0 +1,2 @@
+ticker,name,market,source_market_code,revenue_year_month,missing_reason,source_route_checked
+6806,森崴能源,MOPS_PUB,pub,2026-06,ticker_not_found_in_bounded_static_or_company_specific_ajax_mops_routes,mops_static_t21sc03/pub/company_type_0_and_1; mops_ajax_t05st10_ifrs/pub/company_specific; sample route probe found 6806 in pub not sii/otc/rotc for 2026-05

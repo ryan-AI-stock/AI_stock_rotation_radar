@@ -1,0 +1,2 @@
+blocked_item,blocked_count,blocked_reason,next_source_route
+missing_months,1,6806 not present in requested MOPS static pub monthly page or company-specific ajax route for remaining month(s),"If Core requires the latest missing month, wait for official MOPS monthly revenue publication or probe MOPS material-information announcement route; do not use query time as available date."
