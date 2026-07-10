@@ -1,0 +1,32 @@
+{
+  "task_id": "TASK-RADAR-DATA-VNEXT-SELECTED-STOCK-EXACT-EXDATE-CAPITAL-CHANGE-ROUTE-UNLOCK-001",
+  "status": "bounded_t05st01_exact_exdate_route_attempt_completed",
+  "source": "MOPS official t05st01/t05st01_detail bounded by Core canonical event candidate windows",
+  "coverage": {
+    "canonical_events": 87,
+    "selected_tickers": 31,
+    "high_priority_events": 4,
+    "accepted_exact_exdate_events": 59,
+    "accepted_payment_date_events": 16,
+    "high_priority_exact_exdate_accepted": 3,
+    "stock_distribution_effective_date_rows": 2,
+    "capital_change_inventory_candidate_rows": 36,
+    "blocked_ledger_rows": 98,
+    "route_cache_rows": 1031,
+    "route_error_count": 0
+  },
+  "ready_for_core_absorption": true,
+  "ready_for_core_total_return_ledger": false,
+  "ready_for_experiments": false,
+  "ready_for_formal": false,
+  "ready_for_strategy_replay": false,
+  "future_data_violation_count": 0,
+  "blocked_reason": "Any unmatched/ambiguous event remains blocked; Radar does not infer entitlement or total-return factors.",
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "portfolio_replay_executed": false,
+  "not_live_rule": true,
+  "forward_returns_live_rule_usage": false
+}

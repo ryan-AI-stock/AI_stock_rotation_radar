@@ -1,0 +1,119 @@
+{
+  "task_id": "TASK-RADAR-DATA-VNEXT-SELECTED-STOCK-EXACT-EXDATE-CAPITAL-CHANGE-ROUTE-UNLOCK-001",
+  "generated_at_utc": "2026-07-10T08:13:37+00:00",
+  "output_dir": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_vnext_selected_stock_exact_exdate_capital_change_route_unlock_20260710",
+  "core_input": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-30\\ep05-chat-ai-stock-backtest-lab\\outputs\\vnext_selected_stock_total_return_corporate_action_ledger_20260710",
+  "files": [
+    {
+      "path": ".gitignore",
+      "sha256": "5c9c51adb2aea66c24cecfd41c357cebfcb9ae1e917f3d91246db1541205b306",
+      "bytes": 24
+    },
+    {
+      "path": "build_package.py",
+      "sha256": "be1ae9bcb365b54dab0fd0cbc870a5da19c0ef6556028efb82238a269448623f",
+      "bytes": 24246
+    },
+    {
+      "path": "current_step.txt",
+      "sha256": "d1c5793102d8c0b68985549f5e91971f29dcefa4d4e009c98204ab2dab86e611",
+      "bytes": 19
+    },
+    {
+      "path": "final_summary_zh.md",
+      "sha256": "80984873b1fd3776fcbc5092f6595c08ba4086108a74ea115128f9e9c3bb2921",
+      "bytes": 789
+    },
+    {
+      "path": "manifest.json",
+      "sha256": "337bb20c2c0c5a65297ec6007352fe4b357e3b7accd3926b0fb5521cfffebd86",
+      "bytes": 4822
+    },
+    {
+      "path": "readiness_for_core_selected_stock_exact_exdate_capital_change_route_unlock.json",
+      "sha256": "e917eac45c7ba0c7509655e40035aae0b39d5f59e258a7fab3d648796eed4961",
+      "bytes": 1311
+    },
+    {
+      "path": "selected_stock_cash_payment_date_candidate_rows.csv",
+      "sha256": "dcf4510c5f3e19ef49cf724fb6eb9d011b5fc9de63a7b7455051429342455555",
+      "bytes": 26508
+    },
+    {
+      "path": "selected_stock_exact_exdate_accepted_patch_rows.csv",
+      "sha256": "4fd6c97d006dc3689969c028903c9009d9b75737cc0a9dc05411e1510c355fd1",
+      "bytes": 61202
+    },
+    {
+      "path": "selected_stock_exact_exdate_candidate_evidence.csv",
+      "sha256": "d279e50659d630093f0d58c4ae3377201469ca552f8dc97c449644b81344f6b1",
+      "bytes": 1726305
+    },
+    {
+      "path": "selected_stock_exact_exdate_capital_change_blocked_ledger.csv",
+      "sha256": "e0433aa895867b166fc729b2d373f390184b1e9c06fc78ea91d465d24289e984",
+      "bytes": 30737
+    },
+    {
+      "path": "selected_stock_exact_exdate_capital_change_future_data_audit.csv",
+      "sha256": "89ee6d69c6ec17edd9dd6c577c901b68b529e3f5a6db27d9af00302a780452a4",
+      "bytes": 755
+    },
+    {
+      "path": "selected_stock_exact_exdate_capital_change_source_manifest.csv",
+      "sha256": "76ed975d49fce6193d69a20f08faca1fcd073c7f37b51adffc6cd0d9593acd37",
+      "bytes": 405336
+    },
+    {
+      "path": "selected_stock_non_dividend_capital_change_inventory.csv",
+      "sha256": "bd7dae82598803a1be2a44d979369e4748c0125850a8dccbce093e2782fefedb",
+      "bytes": 64290
+    },
+    {
+      "path": "selected_stock_stock_distribution_effective_date_candidates.csv",
+      "sha256": "b755ff6593839e185e1ebab66e76a1b94efa3bee0afcbc0923058dfa490820c3",
+      "bytes": 668
+    }
+  ],
+  "readiness": {
+    "task_id": "TASK-RADAR-DATA-VNEXT-SELECTED-STOCK-EXACT-EXDATE-CAPITAL-CHANGE-ROUTE-UNLOCK-001",
+    "status": "bounded_t05st01_exact_exdate_route_attempt_completed",
+    "source": "MOPS official t05st01/t05st01_detail bounded by Core canonical event candidate windows",
+    "coverage": {
+      "canonical_events": 87,
+      "selected_tickers": 31,
+      "high_priority_events": 4,
+      "accepted_exact_exdate_events": 59,
+      "accepted_payment_date_events": 16,
+      "high_priority_exact_exdate_accepted": 3,
+      "stock_distribution_effective_date_rows": 2,
+      "capital_change_inventory_candidate_rows": 36,
+      "blocked_ledger_rows": 98,
+      "route_cache_rows": 1031,
+      "route_error_count": 0
+    },
+    "ready_for_core_absorption": true,
+    "ready_for_core_total_return_ledger": false,
+    "ready_for_experiments": false,
+    "ready_for_formal": false,
+    "ready_for_strategy_replay": false,
+    "future_data_violation_count": 0,
+    "blocked_reason": "Any unmatched/ambiguous event remains blocked; Radar does not infer entitlement or total-return factors.",
+    "formal_model_changed": false,
+    "trade_decision_changed": false,
+    "active_in_trade_decision": false,
+    "report_changed": false,
+    "portfolio_replay_executed": false,
+    "not_live_rule": true,
+    "forward_returns_live_rule_usage": false
+  },
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "portfolio_replay_executed": false,
+  "ready_for_strategy_replay": false,
+  "ready_for_formal": false,
+  "not_live_rule": true,
+  "forward_returns_live_rule_usage": false
+}
