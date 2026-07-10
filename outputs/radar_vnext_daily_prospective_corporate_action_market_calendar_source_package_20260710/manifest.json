@@ -1,0 +1,84 @@
+{
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 11,
+      "sha256": "a8558385e94cd0a33f41b56e48648213ba132fac91b032f675ca8912880a82a8"
+    },
+    {
+      "path": "build_package.py",
+      "bytes": 6400,
+      "sha256": "6a2dd3248f02a1ff267b44ea2dbae9e98f8272c953a0e53c063ad68e26e08bbf"
+    },
+    {
+      "path": "current_step.txt",
+      "bytes": 26,
+      "sha256": "4c3f9819ec80c5a18d72770dd9f48a9094cc70a56940120a62c58ab20aa00939"
+    },
+    {
+      "path": "daily_prospective_market_calendar_blocked_ledger.csv",
+      "bytes": 1088,
+      "sha256": "48b9658b8ec372d92d526bf6c12fe95cc416085903a2b974a51e544eb83febfb"
+    },
+    {
+      "path": "daily_prospective_market_calendar_canonical_rows.csv",
+      "bytes": 149750,
+      "sha256": "ddf6ec6c451dea9285ccf40b06282b695ec24e3a862cc0b28f966290740d0df0"
+    },
+    {
+      "path": "daily_prospective_market_calendar_future_data_audit.csv",
+      "bytes": 511,
+      "sha256": "0f55665bca2fe961aba9b936a734e6643fefb7741a95fa4c08b26582a157a103"
+    },
+    {
+      "path": "daily_prospective_market_calendar_source_manifest.csv",
+      "bytes": 1054,
+      "sha256": "91d89174e17495c5478671802ecc282fb800dc922f0244ec32e199cfc8d28101"
+    },
+    {
+      "path": "final_summary_zh.md",
+      "bytes": 288,
+      "sha256": "18a0c761172ec590fe253b2c8c9200212246f3cccd5e77d75dc1927ab5b2af46"
+    },
+    {
+      "path": "readiness_for_core_daily_prospective_market_calendar_absorption.json",
+      "bytes": 986,
+      "sha256": "75cde5ff63d6fcb75f357e1d874585cc576c4f3e84ea23a2ffd7bb63eae259f5"
+    }
+  ],
+  "readiness": {
+    "task_id": "TASK-RADAR-DATA-VNEXT-DAILY-PROSPECTIVE-CORPORATE-ACTION-MARKET-CALENDAR-SOURCE-PACKAGE-001",
+    "status": "twse_current_calendar_materialized_tpex_and_252session_history_blocked",
+    "coverage": {
+      "twse_calendar_rows": 298,
+      "tpex_calendar_rows": 0,
+      "market_level_queries": 2,
+      "affected_ticker_detail_queries": 0,
+      "observed_raw_bytes": 35081,
+      "route_error_count": 0
+    },
+    "ready_for_core_daily_prospective_calendar_absorption": true,
+    "ready_for_all_market_daily_prospective_guard": false,
+    "retained_252session_calendar_history_ready": false,
+    "ready_for_experiments": false,
+    "ready_for_formal": false,
+    "ready_for_strategy_replay": false,
+    "future_data_violation_count": 0,
+    "formal_model_changed": false,
+    "trade_decision_changed": false,
+    "active_in_trade_decision": false,
+    "report_changed": false,
+    "portfolio_replay_executed": false,
+    "not_live_rule": true,
+    "forward_returns_live_rule_usage": false
+  },
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "portfolio_replay_executed": false,
+  "ready_for_strategy_replay": false,
+  "ready_for_formal": false,
+  "not_live_rule": true,
+  "forward_returns_live_rule_usage": false
+}
