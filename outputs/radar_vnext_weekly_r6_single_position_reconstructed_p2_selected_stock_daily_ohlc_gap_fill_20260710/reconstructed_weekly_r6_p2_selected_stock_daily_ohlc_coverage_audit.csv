@@ -1,0 +1,2 @@
+﻿input_gap_rows,filled_rows,blocked_rows,unique_tickers,unique_price_dates,unique_ohlc_points,official_unadjusted_ohlc_ready_share,adjusted_close_ready,ready_for_core_reconstructed_weekly_r6_p2_daily_ohlc_absorption,future_data_violation_count
+32,32,0,7,32,32,1.0,False,True,0
