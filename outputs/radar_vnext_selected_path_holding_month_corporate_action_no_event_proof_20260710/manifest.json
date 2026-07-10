@@ -1,0 +1,104 @@
+{
+  "task_id": "TASK-RADAR-DATA-VNEXT-SELECTED-PATH-HOLDING-MONTH-CORPORATE-ACTION-NO-EVENT-PROOF-001",
+  "generated_at_utc": "2026-07-10T10:43:05+00:00",
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 11,
+      "sha256": "a8558385e94cd0a33f41b56e48648213ba132fac91b032f675ca8912880a82a8"
+    },
+    {
+      "path": "current_step.txt",
+      "bytes": 18,
+      "sha256": "0560a9446affc6cd3bf4075bda1072fd76fbc3b8380e66744b159035711aa621"
+    },
+    {
+      "path": "final_summary_zh.md",
+      "bytes": 456,
+      "sha256": "957228697f619bfb2e9d58687428a7add0c18a0d8b796cf080d2a746c3816a44"
+    },
+    {
+      "path": "readiness_for_core_selected_path_total_return_completeness.json",
+      "bytes": 1327,
+      "sha256": "d8a2fe5fd770712bb32f517e430c0157fdc8492dc050121a4ebd19fb1af62664"
+    },
+    {
+      "path": "run_no_event_proof.py",
+      "bytes": 14506,
+      "sha256": "4473b6f6dd4785f1e0d4aab89879650f156de8863f1dd400ddd5f4a114ea9325"
+    },
+    {
+      "path": "selected_path_entitled_event_candidates.csv",
+      "bytes": 5,
+      "sha256": "f01a374e9c81e3db89b3a42940c4d6a5447684986a1296e42bf13f196eed6295"
+    },
+    {
+      "path": "selected_path_future_data_audit.csv",
+      "bytes": 725,
+      "sha256": "b05f1e8be28b9a4044acca063327c73a9654ba9bc8d13cafcc2f53861a435d24"
+    },
+    {
+      "path": "selected_path_holding_intervals.csv",
+      "bytes": 38184,
+      "sha256": "851fcd20ce9e642dd0ad0736069f66929c885925fb40cba60a7836aeb41383b3"
+    },
+    {
+      "path": "selected_path_holding_month_event_query_ledger.csv",
+      "bytes": 17942,
+      "sha256": "7b423f7b64f3fc138203499c2eaf4fe45956a55e6962455de47410c0c253010d"
+    },
+    {
+      "path": "selected_path_holding_month_no_event_proof.csv",
+      "bytes": 113666,
+      "sha256": "c3b3ce041e6f0bf856dfdef5a9a37b316d5eb5d6ef2bb4a718779f5264ca5e74"
+    },
+    {
+      "path": "selected_path_no_event_proof_blocked_ledger.csv",
+      "bytes": 19910,
+      "sha256": "d946246d6407e55a766b2385f04749f8f8dd9488ca519c3ab559a74df0bf9c45"
+    },
+    {
+      "path": "selected_path_official_archive_source_manifest.csv",
+      "bytes": 119523,
+      "sha256": "eb0f7d40718f1977a76fd248d7dc93288fbf0f60813307470218f9b90793cf8f"
+    }
+  ],
+  "readiness": {
+    "task_id": "TASK-RADAR-DATA-VNEXT-SELECTED-PATH-HOLDING-MONTH-CORPORATE-ACTION-NO-EVENT-PROOF-001",
+    "status": "bounded_selected_path_holding_month_official_no_event_proof_completed",
+    "source": "MOPS date-scoped t05st01/t05st01_detail plus TWSE/TPEx official historical-partial archive coverage audit",
+    "coverage": {
+      "actual_holding_intervals": 279,
+      "ticker_month_queries": 42,
+      "event_type_proof_rows": 210,
+      "no_event_proven_rows": 174,
+      "event_outside_held_dates_proven_rows": 2,
+      "entitled_event_candidate_rows": 0,
+      "blocked_rows": 34,
+      "mops_route_error_count": 0
+    },
+    "ready_for_core_selected_path_total_return_completeness_absorption": true,
+    "selected_path_total_return_complete": false,
+    "ready_for_experiments": false,
+    "ready_for_formal": false,
+    "ready_for_strategy_replay": false,
+    "future_data_violation_count": 0,
+    "blocked_reason": "Only event types with a successful official date-scoped query and explicit zero classified rows are no_event_proven; partial exchange archives do not prove absence.",
+    "formal_model_changed": false,
+    "trade_decision_changed": false,
+    "active_in_trade_decision": false,
+    "report_changed": false,
+    "portfolio_replay_executed": false,
+    "not_live_rule": true,
+    "forward_returns_live_rule_usage": false
+  },
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "portfolio_replay_executed": false,
+  "ready_for_strategy_replay": false,
+  "ready_for_formal": false,
+  "not_live_rule": true,
+  "forward_returns_live_rule_usage": false
+}

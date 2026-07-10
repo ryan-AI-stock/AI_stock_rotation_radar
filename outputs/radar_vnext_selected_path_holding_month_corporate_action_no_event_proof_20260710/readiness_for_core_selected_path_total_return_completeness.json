@@ -1,0 +1,29 @@
+{
+  "task_id": "TASK-RADAR-DATA-VNEXT-SELECTED-PATH-HOLDING-MONTH-CORPORATE-ACTION-NO-EVENT-PROOF-001",
+  "status": "bounded_selected_path_holding_month_official_no_event_proof_completed",
+  "source": "MOPS date-scoped t05st01/t05st01_detail plus TWSE/TPEx official historical-partial archive coverage audit",
+  "coverage": {
+    "actual_holding_intervals": 279,
+    "ticker_month_queries": 42,
+    "event_type_proof_rows": 210,
+    "no_event_proven_rows": 174,
+    "event_outside_held_dates_proven_rows": 2,
+    "entitled_event_candidate_rows": 0,
+    "blocked_rows": 34,
+    "mops_route_error_count": 0
+  },
+  "ready_for_core_selected_path_total_return_completeness_absorption": true,
+  "selected_path_total_return_complete": false,
+  "ready_for_experiments": false,
+  "ready_for_formal": false,
+  "ready_for_strategy_replay": false,
+  "future_data_violation_count": 0,
+  "blocked_reason": "Only event types with a successful official date-scoped query and explicit zero classified rows are no_event_proven; partial exchange archives do not prove absence.",
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "portfolio_replay_executed": false,
+  "not_live_rule": true,
+  "forward_returns_live_rule_usage": false
+}
