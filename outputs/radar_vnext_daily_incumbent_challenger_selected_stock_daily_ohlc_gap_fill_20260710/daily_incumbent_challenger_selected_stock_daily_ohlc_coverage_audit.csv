@@ -1,0 +1,2 @@
+input_gap_rows,filled_rows,blocked_rows,unique_tickers,unique_ohlc_points,official_unadjusted_ohlc_ready_share,next_day_close_ready,adjusted_close_ready,future_data_violation_count
+131,131,0,27,163,1.0,True,False,0

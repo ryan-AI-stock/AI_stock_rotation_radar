@@ -1,0 +1,1 @@
+ticker,signal_date,entry_date,exit_date,transition_type,pool_snapshot_date,impacted_state_machine_variants,required_fields,source_requirement,adjusted_close_ready,path_status,next_owner,entry_open,entry_close,exit_close,entry_market,exit_market,source_route_attempted,blocked_reason,future_data_violation_count
