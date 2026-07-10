@@ -1,0 +1,112 @@
+{
+  "task_id": "TASK-RADAR-DATA-VNEXT-SELECTED-STOCK-CORPORATE-ACTION-REMAINING-GAP-FILL-001",
+  "generated_at_utc": "2026-07-10T08:27:21+00:00",
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 11,
+      "sha256": "a8558385e94cd0a33f41b56e48648213ba132fac91b032f675ca8912880a82a8"
+    },
+    {
+      "path": "current_step.txt",
+      "bytes": 18,
+      "sha256": "0560a9446affc6cd3bf4075bda1072fd76fbc3b8380e66744b159035711aa621"
+    },
+    {
+      "path": "final_summary_zh.md",
+      "bytes": 457,
+      "sha256": "0ec5165059ba5d6dbb7137fb3ff0c749cb23f0ae87b73797c69b7a2bde96bc6b"
+    },
+    {
+      "path": "readiness_for_core_selected_stock_corporate_action_remaining_gap_fill.json",
+      "bytes": 1321,
+      "sha256": "f636722b2097a432df0719408202710681c2434df571cb57349c84132b32fcae"
+    },
+    {
+      "path": "run_remaining_gap_fill.py",
+      "bytes": 15629,
+      "sha256": "923bb9f71313ac5ac248b53415ac1dc8b525ddafd496d8bd246cce2ccf0b948e"
+    },
+    {
+      "path": "selected_stock_remaining_blocked_ledger.csv",
+      "bytes": 16401,
+      "sha256": "687ee7e7e9374a104d2e6463b81327c66d8492f558a6db1bcb295e145cc1fc2c"
+    },
+    {
+      "path": "selected_stock_remaining_canonical_event_mapping_patch.csv",
+      "bytes": 14089,
+      "sha256": "7877176302b11d8705a806f1d42628e6f13bdce79199b4dcd2bcb6ef61ecd0b5"
+    },
+    {
+      "path": "selected_stock_remaining_capital_change_inventory.csv",
+      "bytes": 140059,
+      "sha256": "2be3bba0f8996c0e74e271f23a4bf3c8dc01291d7fe0bf7dd505cef2b3250c30"
+    },
+    {
+      "path": "selected_stock_remaining_future_data_audit.csv",
+      "bytes": 713,
+      "sha256": "93451a699f3d64ae2296834d66706b0712df811705012464a9179605f8198838"
+    },
+    {
+      "path": "selected_stock_remaining_holding_month_event_evidence.csv",
+      "bytes": 604486,
+      "sha256": "a21e7b7d69ebbfa715ea7abac8676a198f4e01b17c43a5c61b9727a01085a495"
+    },
+    {
+      "path": "selected_stock_remaining_source_manifest.csv",
+      "bytes": 30511,
+      "sha256": "246ff619cf9217157e2a1888379532f340626084c9392862c16dd85e1f23495a"
+    },
+    {
+      "path": "selected_stock_remaining_stock_distribution_effective_candidates.csv",
+      "bytes": 5,
+      "sha256": "f01a374e9c81e3db89b3a42940c4d6a5447684986a1296e42bf13f196eed6295"
+    },
+    {
+      "path": "selected_stock_remaining_temporal_coverage_audit.csv",
+      "bytes": 4769,
+      "sha256": "1cffd70420d3bc867e0416f652ea009cd8cbd6facda43dfc98b79f7774f7c9bf"
+    }
+  ],
+  "readiness": {
+    "task_id": "TASK-RADAR-DATA-VNEXT-SELECTED-STOCK-CORPORATE-ACTION-REMAINING-GAP-FILL-001",
+    "status": "bounded_actual_holding_month_route_fill_completed",
+    "source": "MOPS t05st01/t05st01_detail official bounded actual holding-month queries",
+    "coverage": {
+      "remaining_gap_rows_input": 141,
+      "actual_holding_legs": 279,
+      "ticker_month_queries": 42,
+      "official_event_evidence_rows": 429,
+      "canonical_mapping_rows": 75,
+      "accepted_exact_mapping_rows": 29,
+      "accepted_payment_date_rows": 12,
+      "stock_distribution_effective_candidates": 0,
+      "capital_change_inventory_rows": 76,
+      "blocked_rows": 63,
+      "route_error_count": 0
+    },
+    "ready_for_core_absorption": true,
+    "ready_for_core_selected_stock_total_return_ledger": false,
+    "ready_for_experiments": false,
+    "ready_for_formal": false,
+    "ready_for_strategy_replay": false,
+    "future_data_violation_count": 0,
+    "blocked_reason": "Unique canonical mapping, payment date, and holder-scale impact remain required before Core can calculate total-return ledger.",
+    "formal_model_changed": false,
+    "trade_decision_changed": false,
+    "active_in_trade_decision": false,
+    "report_changed": false,
+    "portfolio_replay_executed": false,
+    "not_live_rule": true,
+    "forward_returns_live_rule_usage": false
+  },
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "portfolio_replay_executed": false,
+  "ready_for_strategy_replay": false,
+  "ready_for_formal": false,
+  "not_live_rule": true,
+  "forward_returns_live_rule_usage": false
+}

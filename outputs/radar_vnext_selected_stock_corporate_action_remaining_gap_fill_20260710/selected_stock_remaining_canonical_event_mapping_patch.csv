@@ -1,0 +1,78 @@
+﻿ticker,event_key,cash_candidate,stock_candidate,candidate_count,exact_candidate_count,payment_candidate_count,accepted_exact_exdate,accepted_payment_date,accepted_market_available_at,accepted_source_url,accepted_subject,mapping_status,future_data_violation_count,formal_model_changed,trade_decision_changed,active_in_trade_decision,report_changed,portfolio_replay_executed,ready_for_strategy_replay,ready_for_formal,not_live_rule,forward_returns_live_rule_usage
+1301,1301|ROC107|P1|C5.8|S0,5.8,0,2,1,1,2019-07-02,2019-08-02,2019-06-11 16:18:16,https://mops.twse.com.tw/mops/#/web/t05st01,董事會決議股利配發基準日,accepted_unique_candidate,0,False,False,False,False,False,False,False,True,False
+1301,1301|ROC108|P1|C4.4|S0,4.4,0,1,1,1,2020-07-02,2020-07-31,2020-06-10 16:26:07,https://mops.twse.com.tw/mops/#/web/t05st01,董事會決議股利配發基準日,accepted_unique_candidate,0,False,False,False,False,False,False,False,True,False
+1301,1301|ROC109|P1|C2.4|S0,2.4,0,3,2,2,,,,,,blocked_multiple_candidates,0,False,False,False,False,False,False,False,True,False
+2316,2316|ROC107|P1|C1|S0,1,0,9,3,0,,,,,,blocked_multiple_candidates,0,False,False,False,False,False,False,False,True,False
+2316,2316|ROC108|P1|C0.5|S0,0.5,0,1,1,0,2020-07-13,,2020-06-24 16:39:49,https://mops.twse.com.tw/mops/#/web/t05st01,公告本公司董事會決議除息基準日,accepted_unique_candidate,0,False,False,False,False,False,False,False,True,False
+2316,2316|ROC109|P1|C1.5|S0,1.5,0,1,1,0,2021-08-30,,2021-08-12 17:37:22,https://mops.twse.com.tw/mops/#/web/t05st01,公告本公司董事會決議除息基準日,accepted_unique_candidate,0,False,False,False,False,False,False,False,True,False
+2317,2317|ROC107|P1|C4|S0,4,0,8,3,0,,,,,,blocked_multiple_candidates,0,False,False,False,False,False,False,False,True,False
+2317,2317|ROC108|P1|C4.2|S0,4.2,0,1,1,0,2020-07-23,,2020-06-24 18:03:33,https://mops.twse.com.tw/mops/#/web/t05st01,公告本公司訂定除息基準日,accepted_unique_candidate,0,False,False,False,False,False,False,False,True,False
+2317,2317|ROC109|P1|C4|S0,4,0,8,3,0,,,,,,blocked_multiple_candidates,0,False,False,False,False,False,False,False,True,False
+2330,2330|ROC107|P1|C8|S0,8,0,38,17,10,,,,,,blocked_multiple_candidates,0,False,False,False,False,False,False,False,True,False
+2330,2330|ROC108|P1|C2.5|S0,2.5,0,10,0,0,,,,,,blocked_multiple_candidates,0,False,False,False,False,False,False,False,True,False
+2330,2330|ROC108|P1|C2|S0,2,0,38,17,10,,,,,,blocked_multiple_candidates,0,False,False,False,False,False,False,False,True,False
+2330,2330|ROC109|P1|C2.5|S0,2.5,0,10,0,0,,,,,,blocked_multiple_candidates,0,False,False,False,False,False,False,False,True,False
+2330,2330|ROC110|P1|C2.75|S0,2.75,0,6,3,0,,,,,,blocked_multiple_candidates,0,False,False,False,False,False,False,False,True,False
+2351,2351|ROC107|P1|C2.8|S0,2.8,0,1,1,0,2019-07-31,,2019-06-21 11:23:46,https://mops.twse.com.tw/mops/#/web/t05st01,公告本公司107年度盈餘分配案決定除息基準日事宜。,accepted_unique_candidate,0,False,False,False,False,False,False,False,True,False
+2351,2351|ROC108|P1|C1.8|S0,1.8,0,2,2,0,,,,,,blocked_multiple_candidates,0,False,False,False,False,False,False,False,True,False
+2351,2351|ROC109|P1|C1.8|S0,1.8,0,2,2,0,,,,,,blocked_multiple_candidates,0,False,False,False,False,False,False,False,True,False
+2374,2374|ROC107|P1|C0.5|S0,0.5,0,1,1,1,2019-08-19,2019-09-17,2019-08-02 16:11:25,https://mops.twse.com.tw/mops/#/web/t05st01,公告本公司108年除息基準日相關事宜,accepted_unique_candidate,0,False,False,False,False,False,False,False,True,False
+2374,2374|ROC108|P1|C0.3|S0,0.3,0,1,1,1,2020-07-27,2020-08-21,2020-07-10 15:56:48,https://mops.twse.com.tw/mops/#/web/t05st01,公告本公司109年除息基準日相關事宜,accepted_unique_candidate,0,False,False,False,False,False,False,False,True,False
+2388,2388|ROC109|P1|C0.8|S0,0.8,0,1,1,0,2021-08-19,,2021-07-20 14:07:13,https://mops.twse.com.tw/mops/#/web/t05st01,公告本公司現金股利分配基準日,accepted_unique_candidate,0,False,False,False,False,False,False,False,True,False
+2412,2412|ROC107|P1|C4.479|S0,4.479,0,1,1,0,2019-07-25,,2019-06-22 00:07:50,https://mops.twse.com.tw/mops/#/web/t05st01,公告股利配發基準日,accepted_unique_candidate,0,False,False,False,False,False,False,False,True,False
+2412,2412|ROC108|P1|C4.226|S0,4.226,0,1,1,0,2020-07-02,,2020-06-08 16:59:47,https://mops.twse.com.tw/mops/#/web/t05st01,公告股利配發基準日,accepted_unique_candidate,0,False,False,False,False,False,False,False,True,False
+2412,2412|ROC109|P1|C4.306|S0,4.306,0,2,2,0,,,,,,blocked_multiple_candidates,0,False,False,False,False,False,False,False,True,False
+2453,2453|ROC107|P1|C0.5|S0,0.5,0,1,1,0,2019-07-05,,2019-06-13 14:59:18,https://mops.twse.com.tw/mops/#/web/t05st01,公告本公司董事會決議現金股利除息基準日,accepted_unique_candidate,0,False,False,False,False,False,False,False,True,False
+2453,2453|ROC108|P1|C1|S0,1,0,5,3,1,,2019-08-09,2019-08-12 09:33:34,https://mops.twse.com.tw/mops/#/web/t05st01,"公告本公司原訂108年8月9日發放現金股利，因受利奇馬颱風
+影響停止上班，變更至108年8月12日發放",accepted_unique_candidate,0,False,False,False,False,False,False,False,True,False
+2453,2453|ROC109|P1|C1.5|S0,1.5,0,1,1,0,2021-08-27,,2021-08-11 14:09:00,https://mops.twse.com.tw/mops/#/web/t05st01,公告本公司董事會決議現金股利除息基準日,accepted_unique_candidate,0,False,False,False,False,False,False,False,True,False
+2468,2468|ROC107|P1|C0.5|S0,0.5,0,2,2,2,,,,,,blocked_multiple_candidates,0,False,False,False,False,False,False,False,True,False
+2468,2468|ROC108|P1|C0.5|S0,0.5,0,2,2,2,,,,,,blocked_multiple_candidates,0,False,False,False,False,False,False,False,True,False
+2468,2468|ROC109|P1|C0.4|S0,0.4,0,1,1,1,2021-08-19,2021-09-15,2021-07-29 11:18:19,https://mops.twse.com.tw/mops/#/web/t05st01,公告本公司董事會決議現金股利配息基準日,accepted_unique_candidate,0,False,False,False,False,False,False,False,True,False
+2603,2603|ROC109|P1|C2.5|S0,2.5,0,1,0,0,,,,,,blocked_multiple_candidates,0,False,False,False,False,False,False,False,True,False
+2615,2615|ROC107|P1|C0.60563|S0,0.6056299,0,1,1,0,2019-07-12,,2019-06-18 13:56:04,https://mops.twse.com.tw/mops/#/web/t05st01,本公司董事會決議除息基準日,accepted_unique_candidate,0,False,False,False,False,False,False,False,True,False
+2615,2615|ROC108|P1|C0.8|S0,0.8,0,1,1,0,2020-08-27,,2020-08-10 13:44:39,https://mops.twse.com.tw/mops/#/web/t05st01,本公司董事會決議除息基準日,accepted_unique_candidate,0,False,False,False,False,False,False,False,True,False
+2615,2615|ROC109|P1|C1|S1,1,1,4,4,1,,2025-07-23,2025-05-29 15:52:33,https://mops.twse.com.tw/mops/#/web/t05st01,本公司董事會決議除息基準日,accepted_unique_candidate,0,False,False,False,False,False,False,False,True,False
+2636,2636|ROC107|P1|C2.2|S0,2.2,0,1,1,1,2019-07-22,2019-08-21,2019-07-05 15:10:24,https://mops.twse.com.tw/mops/#/web/t05st01,公告本公司董事長決定現金股利除息基準日,accepted_unique_candidate,0,False,False,False,False,False,False,False,True,False
+2636,2636|ROC108|P1|C1.3|S0,1.3,0,1,1,1,2020-08-03,2020-09-04,2020-07-17 11:14:38,https://mops.twse.com.tw/mops/#/web/t05st01,公告本公司董事長決定現金股利除息基準日,accepted_unique_candidate,0,False,False,False,False,False,False,False,True,False
+2636,2636|ROC109|P1|C3.2|S0,3.2,0,0,0,0,,,,,,blocked_no_candidate,0,False,False,False,False,False,False,False,True,False
+3008,3008|ROC107|P1|C68|S0,68,0,1,1,0,2019-08-06,,2019-07-22 14:35:34,https://mops.twse.com.tw/mops/#/web/t05st01,本公司董事會決議除息基準日,accepted_unique_candidate,0,False,False,False,False,False,False,False,True,False
+3008,3008|ROC108|P1|C79|S0,79,0,1,1,0,2020-08-11,,2020-07-27 14:29:41,https://mops.twse.com.tw/mops/#/web/t05st01,本公司董事會決議除息基準日,accepted_unique_candidate,0,False,False,False,False,False,False,False,True,False
+3008,3008|ROC109|P1|C91.5|S0,91.5,0,1,0,0,,,,,,blocked_multiple_candidates,0,False,False,False,False,False,False,False,True,False
+3037,3037|ROC107|P1|C0.8|S0,0.8,0,2,1,0,2019-07-29,,2019-07-11 14:47:28,https://mops.twse.com.tw/mops/#/web/t05st01,本公司訂定107年度現金股利之基準日,accepted_unique_candidate,0,False,False,False,False,False,False,False,True,False
+3037,3037|ROC108|P1|C1.1|S0,1.1,0,1,0,0,,,,,,blocked_multiple_candidates,0,False,False,False,False,False,False,False,True,False
+3037,3037|ROC109|P1|C1.4|S0,1.4,0,1,0,0,,,,,,blocked_multiple_candidates,0,False,False,False,False,False,False,False,True,False
+3090,3090|ROC107|P1|C6.5|S0,6.5,0,1,1,0,2019-07-08,,2019-06-21 13:53:19,https://mops.twse.com.tw/mops/#/web/t05st01,公告本公司董事長訂定除息基準日等相關事宜。,accepted_unique_candidate,0,False,False,False,False,False,False,False,True,False
+3090,3090|ROC108|P1|C3.5|S0,3.5,0,1,1,0,2020-07-10,,2020-06-23 13:39:59,https://mops.twse.com.tw/mops/#/web/t05st01,公告本公司董事長訂定除息基準日等相關事宜。,accepted_unique_candidate,0,False,False,False,False,False,False,False,True,False
+3090,3090|ROC109|P1|C3.1|S0,3.1,0,1,1,0,2021-08-09,,2021-07-23 14:50:49,https://mops.twse.com.tw/mops/#/web/t05st01,公告本公司董事長訂定除息基準日等相關事宜。,accepted_unique_candidate,0,False,False,False,False,False,False,False,True,False
+3105,3105|ROC107|P1|C5|S0,5,0,6,3,3,,,,,,blocked_multiple_candidates,0,False,False,False,False,False,False,False,True,False
+3163,3163|ROC107|P1|C0.6|S0,0.6,0,1,1,1,2019-08-20,2019-09-06,2019-08-01 14:48:51,https://mops.twse.com.tw/mops/#/web/t05st01,公告本公司董事會決議除息基準日,accepted_unique_candidate,0,False,False,False,False,False,False,False,True,False
+3163,3163|ROC108|P1|C1.2|S0,1.2,0,1,0,0,,,,,,blocked_multiple_candidates,0,False,False,False,False,False,False,False,True,False
+3260,3260|ROC107|P1|C0.2|S0,0.2,0,1,1,0,2019-07-15,,2019-06-28 17:18:18,https://mops.twse.com.tw/mops/#/web/t05st01,公告本公司決議除息基準日、發放日等相關事宜,accepted_unique_candidate,0,False,False,False,False,False,False,False,True,False
+3260,3260|ROC108|P1|C1.4|S0,1.4,0,1,0,0,,,,,,blocked_multiple_candidates,0,False,False,False,False,False,False,False,True,False
+3260,3260|ROC109|P1|C3.5|S0,3.5,0,1,0,0,,,,,,blocked_multiple_candidates,0,False,False,False,False,False,False,False,True,False
+3324,3324|ROC107|P1|C1.5|S0,1.5,0,1,1,0,2019-07-04,,2019-06-05 17:36:27,https://mops.twse.com.tw/mops/#/web/t05st01,公告本公司董事長訂定除息基準日事宜,accepted_unique_candidate,0,False,False,False,False,False,False,False,True,False
+3324,3324|ROC109|P1|C5.5|S0,5.5,0,1,0,0,,,,,,blocked_multiple_candidates,0,False,False,False,False,False,False,False,True,False
+3346,3346|ROC107|P1|C1.66|S0,1.66,0,1,0,0,,,,,,blocked_multiple_candidates,0,False,False,False,False,False,False,False,True,False
+3346,3346|ROC109|P1|C0.16|S0,0.16,0,2,1,0,2021-10-22,,2021-09-23 15:26:23,https://mops.twse.com.tw/mops/#/web/t05st01,"公告本公司董事會決議除息基準日及國內
+第二、三次無擔保轉換公司債之停止轉換期間",accepted_unique_candidate,0,False,False,False,False,False,False,False,True,False
+3661,3661|ROC107|P1|C1.50585|S0,1.50584985,0,0,0,0,,,,,,blocked_no_candidate,0,False,False,False,False,False,False,False,True,False
+3661,3661|ROC108|P1|C3.56846|S0,3.56846277,0,0,0,0,,,,,,blocked_no_candidate,0,False,False,False,False,False,False,False,True,False
+3661,3661|ROC109|P1|C6.6|S0,6.6,0,6,0,0,,,,,,blocked_multiple_candidates,0,False,False,False,False,False,False,False,True,False
+3661,3661|ROC109|P1|C6.8|S0,6.8,0,0,0,0,,,,,,blocked_no_candidate,0,False,False,False,False,False,False,False,True,False
+4971,4971|ROC107|P1|C1|S0,1,0,5,3,2,,,,,,blocked_multiple_candidates,0,False,False,False,False,False,False,False,True,False
+6121,6121|ROC107|P1|C11.5|S0,11.5,0,1,1,1,2019-07-16,2019-08-22,2019-07-01 18:14:52,https://mops.twse.com.tw/mops/#/web/t05st01,公告本公司除息基準日,accepted_unique_candidate,0,False,False,False,False,False,False,False,True,False
+6121,6121|ROC109|P1|C19.1|S0,19.1,0,2,2,2,,,,,,blocked_multiple_candidates,0,False,False,False,False,False,False,False,True,False
+6143,6143|ROC107|P1|C4|S0,4,0,4,3,3,,,,,,blocked_multiple_candidates,0,False,False,False,False,False,False,False,True,False
+6150,6150|ROC107|P1|C2|S0,2,0,2,2,1,,2021-09-06,2021-07-22 14:11:04,https://mops.twse.com.tw/mops/#/web/t05st01,決議本公司109年度股利配發基準日,accepted_unique_candidate,0,False,False,False,False,False,False,False,True,False
+6573,6573|ROC107|P1|C0.25|S0.25,0.25,0.25,2,2,2,,,,,,blocked_multiple_candidates,0,False,False,False,False,False,False,False,True,False
+8021,8021|ROC107|P1|C1.2|S0,1.2,0,0,0,0,,,,,,blocked_no_candidate,0,False,False,False,False,False,False,False,True,False
+8021,8021|ROC108|P1|C1.2|S0,1.2,0,0,0,0,,,,,,blocked_no_candidate,0,False,False,False,False,False,False,False,True,False
+8021,8021|ROC109|P1|C1.58|S0,1.58,0,0,0,0,,,,,,blocked_no_candidate,0,False,False,False,False,False,False,False,True,False
+8163,8163|ROC107|P1|C3.5|S0,3.5,0,0,0,0,,,,,,blocked_no_candidate,0,False,False,False,False,False,False,False,True,False
+8163,8163|ROC108|P1|C2.3|S0,2.3,0,1,0,0,,,,,,blocked_multiple_candidates,0,False,False,False,False,False,False,False,True,False
+8163,8163|ROC109|P1|C2.5|S0,2.5,0,1,0,0,,,,,,blocked_multiple_candidates,0,False,False,False,False,False,False,False,True,False
+8433,8433|ROC107|P1|C3|S0,3,0,3,3,2,,,,,,blocked_multiple_candidates,0,False,False,False,False,False,False,False,True,False
+8478,8478|ROC107|P1|C2|S0,2,0,6,3,0,,,,,,blocked_multiple_candidates,0,False,False,False,False,False,False,False,True,False
+8478,8478|ROC108|P1|C0.5|S0,0.5,0,1,0,0,,,,,,blocked_multiple_candidates,0,False,False,False,False,False,False,False,True,False
+8478,8478|ROC109|P1|C1|S0,1,0,6,3,0,,,,,,blocked_multiple_candidates,0,False,False,False,False,False,False,False,True,False
