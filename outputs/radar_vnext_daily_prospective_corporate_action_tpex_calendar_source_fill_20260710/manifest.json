@@ -1,0 +1,84 @@
+{
+  "files": [
+    {
+      "path": "build_forward_readiness.py",
+      "bytes": 5233,
+      "sha256": "268a6b1626059569ebdf3e11489d66c1e5607050065dfdb4d75c9fac4ace5b24"
+    },
+    {
+      "path": "current_step.txt",
+      "bytes": 39,
+      "sha256": "ae3d556137ec71d414d8a62c805d9a745d2643bd30f1ca5ac530fc0d0d81925a"
+    },
+    {
+      "path": "final_summary_zh.md",
+      "bytes": 191,
+      "sha256": "c402f6bd350d127c8ae873a901a3927373d2d4b4fa0186c2d97e01dfe5ffb93e"
+    },
+    {
+      "path": "readiness_for_core_tpex_forward_calendar_source_fill.json",
+      "bytes": 985,
+      "sha256": "ceada2d2bb22358c1cd3e4e74b7badc4bf513d02c1552c232a02e3c91c7d67f2"
+    },
+    {
+      "path": "tpex_forward_cache_design.csv",
+      "bytes": 896,
+      "sha256": "09099759fa68ebf094c376997987df35bc65028ec583daaf183280ef274a576d"
+    },
+    {
+      "path": "tpex_forward_calendar_future_data_audit.csv",
+      "bytes": 565,
+      "sha256": "216dc7ccfc7ec4fbdbd1827754f6a81a7f6cb46b1d8e6436c024d4a4969586e2"
+    },
+    {
+      "path": "tpex_forward_calendar_missing_ledger.csv",
+      "bytes": 741,
+      "sha256": "3a8d50f46a0494c06e613648147218d33969514f6f0a1194250d64866113019f"
+    },
+    {
+      "path": "tpex_forward_calendar_source_manifest.csv",
+      "bytes": 853,
+      "sha256": "4acc95de9ec0145f31943d2e214fcdd18097cbb3a79c0169198e8eb1dc0f066f"
+    },
+    {
+      "path": "tpex_forward_current_prospective_calendar_rows.csv",
+      "bytes": 6947,
+      "sha256": "3e4934af9ce527c5904c32fde93fd01b50c5fbee11bf233dee5d260cbf4f5430"
+    }
+  ],
+  "readiness": {
+    "task_id": "TASK-RADAR-DATA-VNEXT-DAILY-PROSPECTIVE-CORPORATE-ACTION-TPEX-CALENDAR-SOURCE-FILL-001",
+    "status": "tpex_current_calendar_ready_forward_cache_design_ready_market_available_at_gated",
+    "coverage": {
+      "current_calendar_rows": 10,
+      "market_calendar_queries_observed": 1,
+      "affected_detail_queries_observed": 0,
+      "forward_retention_sessions_max": 252,
+      "route_error_count": 0
+    },
+    "ready_for_core_tpex_forward_calendar_absorption": true,
+    "market_available_at_ready": false,
+    "event_factor_ready": false,
+    "ready_for_all_market_daily_guard": false,
+    "ready_for_experiments": false,
+    "ready_for_formal": false,
+    "ready_for_strategy_replay": false,
+    "future_data_violation_count": 0,
+    "formal_model_changed": false,
+    "trade_decision_changed": false,
+    "active_in_trade_decision": false,
+    "report_changed": false,
+    "portfolio_replay_executed": false,
+    "not_live_rule": true,
+    "forward_returns_live_rule_usage": false
+  },
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "portfolio_replay_executed": false,
+  "ready_for_strategy_replay": false,
+  "ready_for_formal": false,
+  "not_live_rule": true,
+  "forward_returns_live_rule_usage": false
+}

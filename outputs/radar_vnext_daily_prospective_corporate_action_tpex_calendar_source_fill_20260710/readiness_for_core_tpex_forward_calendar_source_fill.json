@@ -1,0 +1,26 @@
+{
+  "task_id": "TASK-RADAR-DATA-VNEXT-DAILY-PROSPECTIVE-CORPORATE-ACTION-TPEX-CALENDAR-SOURCE-FILL-001",
+  "status": "tpex_current_calendar_ready_forward_cache_design_ready_market_available_at_gated",
+  "coverage": {
+    "current_calendar_rows": 10,
+    "market_calendar_queries_observed": 1,
+    "affected_detail_queries_observed": 0,
+    "forward_retention_sessions_max": 252,
+    "route_error_count": 0
+  },
+  "ready_for_core_tpex_forward_calendar_absorption": true,
+  "market_available_at_ready": false,
+  "event_factor_ready": false,
+  "ready_for_all_market_daily_guard": false,
+  "ready_for_experiments": false,
+  "ready_for_formal": false,
+  "ready_for_strategy_replay": false,
+  "future_data_violation_count": 0,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "portfolio_replay_executed": false,
+  "not_live_rule": true,
+  "forward_returns_live_rule_usage": false
+}
