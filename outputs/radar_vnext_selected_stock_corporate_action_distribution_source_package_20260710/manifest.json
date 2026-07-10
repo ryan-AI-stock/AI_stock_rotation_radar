@@ -1,0 +1,132 @@
+{
+  "task_id": "TASK-RADAR-DATA-VNEXT-SELECTED-STOCK-CORPORATE-ACTION-DISTRIBUTION-SOURCE-PACKAGE-001",
+  "generated_at_utc": "2026-07-10T07:50:25+00:00",
+  "output_dir": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_vnext_selected_stock_corporate_action_distribution_source_package_20260710",
+  "input_contracts": [
+    "C:\\Users\\zergv\\Documents\\Codex\\2026-05-30\\ep05-chat-ai-stock-backtest-lab\\outputs\\vnext_weekly_r6_single_position_state_boundary_reconstruction_contract_20260710",
+    "C:\\Users\\zergv\\Documents\\Codex\\2026-05-30\\ep05-chat-ai-stock-backtest-lab\\outputs\\vnext_daily_incumbent_challenger_state_machine_contract_ohlc_absorbed_20260710"
+  ],
+  "files": [
+    {
+      "path": ".gitignore",
+      "sha256": "40ef660650f89cc488fe2c9236e1a03f9e8ddf388db101b0134a5334f2e0823f",
+      "bytes": 26
+    },
+    {
+      "path": "current_step.txt",
+      "sha256": "d1c5793102d8c0b68985549f5e91971f29dcefa4d4e009c98204ab2dab86e611",
+      "bytes": 19
+    },
+    {
+      "path": "final_summary_zh.md",
+      "sha256": "65e1a4eee8bbfc03c7fdeb902579a93e334e979936670d771a965c454a390cfb",
+      "bytes": 1596
+    },
+    {
+      "path": "manifest.json",
+      "sha256": "ea5f60048686f36562bfee1b36b3956de2a4cf014b3da3010300e53cc2034a97",
+      "bytes": 5818
+    },
+    {
+      "path": "readiness_for_core_selected_stock_total_return_ledger.json",
+      "sha256": "aac6aeba4d267e3254be783b9cbeea36a48a6d05970d786b516bf4c35e170230",
+      "bytes": 1996
+    },
+    {
+      "path": "selected_stock_adjustment_factor_source_candidates.csv",
+      "sha256": "ca3ad0ee993882f4ab24ad1d7a97b3c80c355808cb0a2b9e6975a43b48fe2ff9",
+      "bytes": 1649
+    },
+    {
+      "path": "selected_stock_benchmark_etf_source_status.csv",
+      "sha256": "f29b984ad134086581353a79acf7c5ca044cb59f93fd76cfa5825ff77f979c87",
+      "bytes": 608
+    },
+    {
+      "path": "selected_stock_cash_distribution_events.csv",
+      "sha256": "aa7e213bbf5e5aecb271894343d8dc85f85ba7b55f3cda079d56f5dc3681b016",
+      "bytes": 303852
+    },
+    {
+      "path": "selected_stock_corporate_action_events.csv",
+      "sha256": "1842b35c3b3ef1a8023665645b19d551051fa5d27bdcf7d816b911a4233355ab",
+      "bytes": 317238
+    },
+    {
+      "path": "selected_stock_event_blocked_ledger.csv",
+      "sha256": "ee80ebb754b483fee5e81b1a58fe23900cd277daa28ca71fd28c5dabe0fcfb77",
+      "bytes": 31473
+    },
+    {
+      "path": "selected_stock_event_coverage_by_ticker.csv",
+      "sha256": "847e45aa0128bc2e3aa92409748a28fd89445f21e71fa40fc4b4cff9685e9643",
+      "bytes": 14389
+    },
+    {
+      "path": "selected_stock_event_future_data_audit.csv",
+      "sha256": "90aedea98296c652eaadf793605f46f2fd5063744b2078f9424a0fe98934bb21",
+      "bytes": 829
+    },
+    {
+      "path": "selected_stock_event_source_manifest.csv",
+      "sha256": "8925ed648c9562187787bc0b9b2a89e8eceb0bdd53c6aae0c7e9f4224063c7cb",
+      "bytes": 1931
+    },
+    {
+      "path": "selected_stock_universe.csv",
+      "sha256": "1a4dfdf5549252df3820f85e869a025cdb5503d925d57ab85558bee3cbdae85e",
+      "bytes": 10948
+    },
+    {
+      "path": "build_selected_stock_corporate_action_distribution_source_package.py",
+      "sha256": "9992c56be18e872665514baea8a186ea08a7a839cf6fbd289ffb1637bb24627e",
+      "bytes": 26602
+    }
+  ],
+  "readiness": {
+    "task_id": "TASK-RADAR-DATA-VNEXT-SELECTED-STOCK-CORPORATE-ACTION-DISTRIBUTION-SOURCE-PACKAGE-001",
+    "status": "selected_stock_distribution_source_candidates_ready_total_return_ledger_blocked_by_exact_exdate_and_capital_change_routes",
+    "source": "TWSE/TPEx official t187ap39/40 dividend OpenAPI filtered to reconstructed R6 and Daily F selected/held ordinary-stock tickers",
+    "coverage": {
+      "selected_ordinary_stock_tickers": 32,
+      "benchmark_etf_status_rows": 2,
+      "source_manifest_rows": 4,
+      "corporate_action_event_candidate_rows": 114,
+      "cash_distribution_candidate_rows": 105,
+      "adjustment_factor_source_candidate_rows": 3,
+      "coverage_by_ticker_rows": 32,
+      "blocked_ledger_rows": 65,
+      "event_ticker_count": 31,
+      "dividend_year_roc_min": 107,
+      "dividend_year_roc_max": 110
+    },
+    "ready_for_core_selected_stock_total_return_ledger": false,
+    "ready_for_core_source_absorption_review": true,
+    "ready_for_experiments": false,
+    "ready_for_formal": false,
+    "ready_for_strategy_replay": false,
+    "cash_distribution_ledger_ready": "partial_source_candidate",
+    "adjustment_event_ledger_ready": "partial_source_candidate_for_stock_dividend_only",
+    "exact_exdate_route_ready": false,
+    "capital_reduction_split_merger_route_ready": false,
+    "future_data_violation_count": 0,
+    "formal_model_changed": false,
+    "trade_decision_changed": false,
+    "active_in_trade_decision": false,
+    "report_changed": false,
+    "portfolio_replay_executed": false,
+    "not_live_rule": true,
+    "forward_returns_live_rule_usage": false,
+    "blocked_reason": "Official dividend distribution candidates exist, but available t187ap39/40 coverage is partial and exact historical ex-date/payment-date/asof timestamp plus non-dividend capital-change event routes remain blocked; Radar did not calculate adjusted close or total-return factors.",
+    "next_handoff": "TASK-BACKTEST-CORE-VNEXT-SELECTED-STOCK-TOTAL-RETURN-AND-CORPORATE-ACTION-LEDGER-001"
+  },
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "portfolio_replay_executed": false,
+  "ready_for_strategy_replay": false,
+  "ready_for_formal": false,
+  "not_live_rule": true,
+  "forward_returns_live_rule_usage": false
+}
