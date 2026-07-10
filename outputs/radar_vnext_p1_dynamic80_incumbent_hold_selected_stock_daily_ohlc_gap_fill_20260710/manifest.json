@@ -1,0 +1,30 @@
+{
+  "task_id": "TASK-RADAR-DATA-VNEXT-P1-DYNAMIC80-INCUMBENT-HOLD-SELECTED-STOCK-DAILY-OHLC-GAP-FILL-001",
+  "output_path": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_vnext_p1_dynamic80_incumbent_hold_selected_stock_daily_ohlc_gap_fill_20260710",
+  "core_input_ledger": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-30\\ep05-chat-ai-stock-backtest-lab\\outputs\\vnext_p1_dynamic80_incumbent_hold_comparator_contract_20260710\\p1_dynamic80_incumbent_hold_selected_stock_ohlc_gap_ledger.csv",
+  "core_commit": "8643f8d",
+  "raw_cache_ignored": true,
+  "artifacts": [
+    "p1_dynamic80_incumbent_hold_selected_stock_daily_ohlc_filled_rows.csv",
+    "p1_dynamic80_incumbent_hold_selected_stock_daily_ohlc_blocked_ledger.csv",
+    "p1_dynamic80_incumbent_hold_selected_stock_daily_unadjusted_ohlc_rows.csv",
+    "p1_dynamic80_incumbent_hold_selected_stock_daily_ohlc_source_manifest.csv",
+    "p1_dynamic80_incumbent_hold_selected_stock_daily_ohlc_coverage_audit.csv",
+    "p1_dynamic80_incumbent_hold_selected_stock_daily_ohlc_future_data_audit.csv",
+    "source_route_attempts.csv",
+    "checkpoint_state.json",
+    "current_step.txt",
+    "readiness_for_core_p1_dynamic80_incumbent_hold_ohlc_absorption.json",
+    "final_summary_zh.md"
+  ],
+  "future_data_violation_count": 0,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "portfolio_replay_executed": false,
+  "ready_for_strategy_replay": false,
+  "ready_for_formal": false,
+  "not_live_rule": true,
+  "forward_returns_live_rule_usage": false
+}

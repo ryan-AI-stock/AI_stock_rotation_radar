@@ -1,0 +1,4 @@
+﻿check,status,future_data_violation_count,notes
+official_market_date_rows_only,pass,0,Only exact Core ticker/date requirements were matched.
+no_00631l_excess_reconstruction,pass,0,Not used.
+no_adjusted_close_fabrication,pass,0,Adjusted close is intentionally blocked.
