@@ -215,9 +215,9 @@ jobs:
           GOOGLE_OAUTH_REFRESH_TOKEN: ${{ secrets.GOOGLE_OAUTH_REFRESH_TOKEN }}
           # Deprecated: keep code path available, but default publishing creates only the fixed free-audience PDF.
           ROTATION_ENABLE_DATED_BACKUP: ${{ vars.ROTATION_ENABLE_DATED_BACKUP || 'false' }}
-          ROTATION_REPORT_DRIVE_FOLDER_ID: ${{ inputs.report_drive_folder_id || secrets.ROTATION_REPORT_DRIVE_FOLDER_ID || vars.ROTATION_REPORT_DRIVE_FOLDER_ID }}
-          ROTATION_PUBLIC_REPORT_DRIVE_FOLDER_ID: ${{ vars.ROTATION_PUBLIC_REPORT_DRIVE_FOLDER_ID }}
-          ROTATION_PUBLIC_REPORT_DRIVE_FILE_ID: ${{ vars.ROTATION_PUBLIC_REPORT_DRIVE_FILE_ID }}
+          ROTATION_REPORT_DRIVE_FOLDER_ID: ${{ inputs.report_drive_folder_id || '16SmfPgMMIs7MWteeX1h2EkhSIEaGvpHn' }}
+          ROTATION_PUBLIC_REPORT_DRIVE_FOLDER_ID: 16SmfPgMMIs7MWteeX1h2EkhSIEaGvpHn
+          ROTATION_PUBLIC_REPORT_DRIVE_FILE_ID: ""
         shell: bash
         run: |
           set -euo pipefail

@@ -58,7 +58,7 @@ class DrivePublishTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             html_path = Path(tmp) / "latest.html"
             html_path.write_text("<html></html>", encoding="utf-8")
-            public_pdf = Path(drive_publish.__file__).resolve().parent.parent / "public_report" / "每日題材輪動雷達.pdf"
+            public_pdf = Path(drive_publish.__file__).resolve().parent.parent / "public_report" / "台股股票族群輪動雷達_每日台股報告.pdf"
 
             with (
                 patch.object(sys, "argv", ["drive_publish", "--html", str(html_path), "--date", "2026-06-08"]),
@@ -71,7 +71,7 @@ class DrivePublishTests(unittest.TestCase):
             render_pdf.assert_called_once_with(html_path, public_pdf)
             upload_file.assert_called_once()
             self.assertEqual(upload_file.call_args.args[0], public_pdf)
-            self.assertEqual(upload_file.call_args.kwargs["file_name"], "每日題材輪動雷達.pdf")
+            self.assertEqual(upload_file.call_args.kwargs["file_name"], "台股股票族群輪動雷達_每日台股報告.pdf")
             self.assertTrue(upload_file.call_args.kwargs["make_public"])
 
     def test_env_flag_accepts_common_true_values(self) -> None:

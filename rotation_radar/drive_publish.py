@@ -14,10 +14,10 @@ from .logging_utils import log_warning
 
 
 TAIPEI_TZ = ZoneInfo("Asia/Taipei")
-BACKUP_FOLDER_ID = "1UsIMl0BOH0_K0awNwiQfoJnsCpXyXyMC"
-PUBLIC_FOLDER_ID = "1jSHKWt8KkkewswQfeVyBPFCT7jL1dp8_"
-BACKUP_FILE_TEMPLATE = "每日題材輪動雷達_{date_key}.pdf"
-PUBLIC_FIXED_FILE_NAME = "每日題材輪動雷達.pdf"
+BACKUP_FOLDER_ID = "16SmfPgMMIs7MWteeX1h2EkhSIEaGvpHn"
+PUBLIC_FOLDER_ID = "16SmfPgMMIs7MWteeX1h2EkhSIEaGvpHn"
+BACKUP_FILE_TEMPLATE = "台股股票族群輪動雷達_每日台股報告.pdf"
+PUBLIC_FIXED_FILE_NAME = "台股股票族群輪動雷達_每日台股報告.pdf"
 ENABLE_DATED_BACKUP_ENV = "ROTATION_ENABLE_DATED_BACKUP"
 
 
