@@ -1,0 +1,4 @@
+﻿audit_item,status,future_data_violation_count,formal_model_changed,trade_decision_changed,active_in_trade_decision,report_changed,portfolio_replay_executed,ready_for_strategy_replay,ready_for_formal,not_live_rule,forward_returns_live_rule_usage
+future_return_as_rule,prohibited_not_used,0,False,False,False,False,False,False,False,True,False
+trusted_source_as_formal,prohibited_trusted_nonofficial_only,0,False,False,False,False,False,False,False,True,False
+cash_dividend_reinvestment,not_assumed_payment_date_separate,0,False,False,False,False,False,False,False,True,False

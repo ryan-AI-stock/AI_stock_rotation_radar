@@ -1,0 +1,30 @@
+﻿ticker,market,ticker_month_key,event_type,finmind_candidate_count,finmind_effective_date,finmind_amount_or_ratio,finmind_payment_date,yahoo_matching_event_count,yahoo_match,yahoo_type_event_count,yahoo_inferred_event,source_status,future_data_violation_count,formal_model_changed,trade_decision_changed,active_in_trade_decision,report_changed,portfolio_replay_executed,ready_for_strategy_replay,ready_for_formal,not_live_rule,forward_returns_live_rule_usage
+2330,TWSE,2330|ROC104|M02,cash_dividend_exdiv,0,,,,0,[],1,"{""date"": ""2015-06-29"", ""amount"": 4.499875}",trusted_nonofficial_inferred_yahoo_only,0,False,False,False,False,False,False,False,True,False
+2330,TWSE,2330|ROC104|M02,stock_dividend_exright,0,,,,0,[],0,{},blocked,0,False,False,False,False,False,False,False,True,False
+2330,TWSE,2330|ROC112|M03,cash_dividend_exdiv,1,2023-03-16,2.74982072,2023-04-13,1,"[{""date"": ""2023-03-16"", ""amount"": 2.749821}]",5,{},trusted_cross_source_agreement,0,False,False,False,False,False,False,False,True,False
+2374,TWSE,2374|ROC113|M05,cash_dividend_exdiv,0,,,,0,[],1,"{""date"": ""2024-07-18"", ""amount"": 0.800101}",trusted_nonofficial_inferred_yahoo_only,0,False,False,False,False,False,False,False,True,False
+2374,TWSE,2374|ROC113|M05,stock_dividend_exright,0,,,,0,[],0,{},blocked,0,False,False,False,False,False,False,False,True,False
+2374,TWSE,2374|ROC113|M05,merger_share_conversion,0,,,,0,[],0,{},blocked,0,False,False,False,False,False,False,False,True,False
+2412,TWSE,2412|ROC105|M09,merger_share_conversion,0,,,,0,[],0,{},blocked,0,False,False,False,False,False,False,False,True,False
+2453,TWSE,2453|ROC112|M03,cash_dividend_exdiv,0,,,,0,[],1,"{""date"": ""2023-07-13"", ""amount"": 2.2}",trusted_nonofficial_inferred_yahoo_only,0,False,False,False,False,False,False,False,True,False
+2453,TWSE,2453|ROC112|M03,stock_dividend_exright,0,,,,0,[],0,{},blocked,0,False,False,False,False,False,False,False,True,False
+2468,TWSE,2468|ROC114|M05,merger_share_conversion,0,,,,0,[],0,{},blocked,0,False,False,False,False,False,False,False,True,False
+2603,TWSE,2603|ROC106|M08,merger_share_conversion,0,,,,0,[],0,{},blocked,0,False,False,False,False,False,False,False,True,False
+2615,TWSE,2615|ROC114|M05,merger_share_conversion,0,,,,0,[],0,{},blocked,0,False,False,False,False,False,False,False,True,False
+2636,TWSE,2636|ROC110|M06,merger_share_conversion,0,,,,0,[],0,{},blocked,0,False,False,False,False,False,False,False,True,False
+3037,TWSE,3037|ROC115|M01,capital_reduction_refund,0,,,,0,[],0,{},blocked,0,False,False,False,False,False,False,False,True,False
+3037,TWSE,3037|ROC115|M01,merger_share_conversion,0,,,,0,[],0,{},blocked,0,False,False,False,False,False,False,False,True,False
+3090,TWSE,3090|ROC107|M06,cash_dividend_exdiv,0,,,,0,[],1,"{""date"": ""2018-07-31"", ""amount"": 2.5}",trusted_nonofficial_inferred_yahoo_only,0,False,False,False,False,False,False,False,True,False
+3090,TWSE,3090|ROC107|M06,stock_dividend_exright,0,,,,0,[],1,"{""date"": ""2018-07-31"", ""numerator"": 1070.0, ""denominator"": 1000.0}",trusted_nonofficial_inferred_yahoo_only,0,False,False,False,False,False,False,False,True,False
+3163,TPEx,3163|ROC115|M04,merger_share_conversion,0,,,,0,[],0,{},blocked,0,False,False,False,False,False,False,False,True,False
+3324,TPEx,3324|ROC105|M03,cash_dividend_exdiv,0,,,,0,[],1,"{""date"": ""2016-09-23"", ""amount"": 0.91641}",trusted_nonofficial_inferred_yahoo_only,0,False,False,False,False,False,False,False,True,False
+3324,TPEx,3324|ROC105|M03,stock_dividend_exright,0,,,,0,[],0,{},blocked,0,False,False,False,False,False,False,False,True,False
+3324,TPEx,3324|ROC105|M03,merger_share_conversion,0,,,,0,[],0,{},blocked,0,False,False,False,False,False,False,False,True,False
+3346,TWSE,3346|ROC106|M02,merger_share_conversion,0,,,,0,[],0,{},blocked,0,False,False,False,False,False,False,False,True,False
+3661,TWSE,3661|ROC108|M09,cash_dividend_exdiv,0,,,,0,[],1,"{""date"": ""2020-08-20"", ""amount"": 3.418614}",trusted_nonofficial_inferred_yahoo_only,0,False,False,False,False,False,False,False,True,False
+4971,TPEx,4971|ROC115|M01,merger_share_conversion,0,,,,0,[],0,{},blocked,0,False,False,False,False,False,False,False,True,False
+6150,TPEx,6150|ROC107|M03,cash_dividend_exdiv,0,,,,0,[],1,"{""date"": ""2018-08-13"", ""amount"": 5.0}",trusted_nonofficial_inferred_yahoo_only,0,False,False,False,False,False,False,False,True,False
+6150,TPEx,6150|ROC107|M03,stock_dividend_exright,0,,,,0,[],1,"{""date"": ""2018-08-13"", ""numerator"": 1100.0, ""denominator"": 1000.0}",trusted_nonofficial_inferred_yahoo_only,0,False,False,False,False,False,False,False,True,False
+6150,TPEx,6150|ROC107|M03,capital_reduction_refund,0,,,,0,[],1,"{""date"": ""2018-08-13"", ""numerator"": 1100.0, ""denominator"": 1000.0}",trusted_nonofficial_inferred_yahoo_only,0,False,False,False,False,False,False,False,True,False
+6150,TPEx,6150|ROC107|M03,merger_share_conversion,0,,,,0,[],1,"{""date"": ""2018-08-13"", ""numerator"": 1100.0, ""denominator"": 1000.0}",trusted_nonofficial_inferred_yahoo_only,0,False,False,False,False,False,False,False,True,False
+8021,TWSE,8021|ROC114|M08,merger_share_conversion,0,,,,0,[],0,{},blocked,0,False,False,False,False,False,False,False,True,False

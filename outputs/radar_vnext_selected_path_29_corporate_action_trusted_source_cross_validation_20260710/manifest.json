@@ -1,0 +1,103 @@
+{
+  "task_id": "TASK-RADAR-DATA-VNEXT-SELECTED-PATH-29-CORPORATE-ACTION-TRUSTED-SOURCE-CROSS-VALIDATION-001",
+  "generated_at_utc": "2026-07-10T10:59:31+00:00",
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 11,
+      "sha256": "a8558385e94cd0a33f41b56e48648213ba132fac91b032f675ca8912880a82a8"
+    },
+    {
+      "path": "current_step.txt",
+      "bytes": 18,
+      "sha256": "9df2c8549bdd0b2645dd112ba0a5500c2f6b3594d2ca48ba46d5ebce9a501ccd"
+    },
+    {
+      "path": "final_summary_zh.md",
+      "bytes": 555,
+      "sha256": "15f239aaab23735a9c947c6251cb13f6723eaaa2d7e02ebae02a703f62414b66"
+    },
+    {
+      "path": "readiness_for_core_selected_path_trusted_source_absorption.json",
+      "bytes": 958,
+      "sha256": "c717b4ee471d902aa7747d42e09b249f05e6e1b0c3ef6765977edccb83e861ff"
+    },
+    {
+      "path": "run_cross_validation.py",
+      "bytes": 16875,
+      "sha256": "1808a5d2bb10ac5b32f2995be012a4a101ad4c0f32a565f6138da5936ccfc6cb"
+    },
+    {
+      "path": "selected_path_29_adjusted_raw_reconciliation.csv",
+      "bytes": 4364,
+      "sha256": "e1d08d30ba9aaecd8d706f716367822ca201eb6673a62cd7c72c792b2a4c4f69"
+    },
+    {
+      "path": "selected_path_29_cross_source_agreement.csv",
+      "bytes": 6048,
+      "sha256": "06a16a595ea407a4fb7c5c7a18580b8f3ffc80add430c35b3947f9918c8bc49b"
+    },
+    {
+      "path": "selected_path_29_future_data_audit.csv",
+      "bytes": 581,
+      "sha256": "22bcf5ca4208bab1692a13af76688b654f87e2355c7c4753b0de10a2c081b9f9"
+    },
+    {
+      "path": "selected_path_29_provider_terms_and_cost_options.csv",
+      "bytes": 1537,
+      "sha256": "be0449d568b011e367cb774d46059c963cedb7cc16c46bf31706cad90d0cecfd"
+    },
+    {
+      "path": "selected_path_29_remaining_blocked.csv",
+      "bytes": 34340,
+      "sha256": "53a7fa4a1059147561f4435661821c72e585f4aaecf2e75c8f03c2a4f03cdece"
+    },
+    {
+      "path": "selected_path_29_resolved_rows.csv",
+      "bytes": 2244,
+      "sha256": "e560e419ef355adf19ae1775fa7cbd74807e115726d1f0e3e75ac0cae6a2428e"
+    },
+    {
+      "path": "selected_path_29_source_inventory.csv",
+      "bytes": 4653,
+      "sha256": "deb58bbe885728bb6e04366f86061d9995febef9ec499f10da3cc9537ce8ed4e"
+    },
+    {
+      "path": "selected_path_29_trusted_event_candidates.csv",
+      "bytes": 5238,
+      "sha256": "359971b1fe4d93a81a3c426d97bfa1982a0bf9711f311508e6147e50f2be60ba"
+    }
+  ],
+  "readiness": {
+    "task_id": "TASK-RADAR-DATA-VNEXT-SELECTED-PATH-29-CORPORATE-ACTION-TRUSTED-SOURCE-CROSS-VALIDATION-001",
+    "status": "bounded_trusted_source_cross_validation_completed",
+    "coverage": {
+      "input_rows": 29,
+      "resolved_trusted_nonofficial_rows": 1,
+      "remaining_blocked_rows": 28,
+      "route_error_count": 0
+    },
+    "ready_for_core_selected_path_trusted_source_absorption": true,
+    "ready_for_experiments": false,
+    "ready_for_formal": false,
+    "ready_for_strategy_replay": false,
+    "future_data_violation_count": 0,
+    "blocked_reason": "Trusted nonofficial evidence is diagnostic-only; unresolved merger/capital-reduction rows require holder terms, and all formal use remains blocked.",
+    "formal_model_changed": false,
+    "trade_decision_changed": false,
+    "active_in_trade_decision": false,
+    "report_changed": false,
+    "portfolio_replay_executed": false,
+    "not_live_rule": true,
+    "forward_returns_live_rule_usage": false
+  },
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "portfolio_replay_executed": false,
+  "ready_for_strategy_replay": false,
+  "ready_for_formal": false,
+  "not_live_rule": true,
+  "forward_returns_live_rule_usage": false
+}
