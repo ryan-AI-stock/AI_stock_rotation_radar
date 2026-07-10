@@ -1,0 +1,91 @@
+{
+  "task_id": "TASK-RADAR-DATA-VNEXT-SELECTED-PATH-34-CORPORATE-ACTION-EFFECTIVE-DATE-ARCHIVE-ROUTE-UNLOCK-001",
+  "generated_at_utc": "2026-07-10T10:51:45+00:00",
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 11,
+      "sha256": "a8558385e94cd0a33f41b56e48648213ba132fac91b032f675ca8912880a82a8"
+    },
+    {
+      "path": "current_step.txt",
+      "bytes": 18,
+      "sha256": "0560a9446affc6cd3bf4075bda1072fd76fbc3b8380e66744b159035711aa621"
+    },
+    {
+      "path": "final_summary_zh.md",
+      "bytes": 549,
+      "sha256": "cdeb02c3b46429441d82e90c3fa08b305e3ade9ad4d94590d572bdae06aaded8"
+    },
+    {
+      "path": "readiness_for_core_selected_path_34_effective_date_route_unlock.json",
+      "bytes": 1114,
+      "sha256": "89b17f551b518175d9f30b0e5e23b705f1e531d49f2d79c6ce1b4a7f4348430e"
+    },
+    {
+      "path": "run_effective_date_route_unlock.py",
+      "bytes": 13395,
+      "sha256": "af64bb4d12b9de91d06804b88f612300ee9bd7880bef675d1e3ebca69ee25214"
+    },
+    {
+      "path": "selected_path_34_effective_date_route_blocked_ledger.csv",
+      "bytes": 34147,
+      "sha256": "055d821967893a56c22859339be1e7ca43f06b242337c2b23316da4a22c6f491"
+    },
+    {
+      "path": "selected_path_34_effective_date_route_results.csv",
+      "bytes": 39378,
+      "sha256": "6cfafa9cbab3018587b71e05f8a726b4c88b8b451b3393802630fd5c650d664d"
+    },
+    {
+      "path": "selected_path_34_future_data_audit.csv",
+      "bytes": 605,
+      "sha256": "05300989f056e6457fd44e2ca76e1eb965be19dec5091a234dc7917da184afc9"
+    },
+    {
+      "path": "selected_path_34_mops_detail_candidate_evidence.csv",
+      "bytes": 15291,
+      "sha256": "34652ede1ad00d03e05ea47be20d2236daa5140ab4d6adf64703f24fd9f90cfe"
+    },
+    {
+      "path": "selected_path_34_official_archive_source_manifest.csv",
+      "bytes": 1141,
+      "sha256": "87594695bc5e84d91e798416abfc22fcf1f7277e88c064555c6cd983438f5bc6"
+    }
+  ],
+  "readiness": {
+    "task_id": "TASK-RADAR-DATA-VNEXT-SELECTED-PATH-34-CORPORATE-ACTION-EFFECTIVE-DATE-ARCHIVE-ROUTE-UNLOCK-001",
+    "status": "bounded_34_effective_date_public_archive_route_unlock_completed",
+    "coverage": {
+      "input_structural_blocker_rows": 34,
+      "mops_detail_candidate_rows": 6,
+      "route_status_counts": {
+        "accepted_non_holder_exclusion": 5,
+        "structural_source_exhausted": 29
+      },
+      "structural_source_exhausted_rows": 29
+    },
+    "ready_for_core_absorption": true,
+    "ready_for_experiments": false,
+    "ready_for_formal": false,
+    "ready_for_strategy_replay": false,
+    "future_data_violation_count": 0,
+    "blocked_reason": "Public historical exchange routes cannot provide date-scoped coverage for this 2015+ bounded set after MOPS detail omits an effective date; licensed source decision remains with Core/Strategy Center.",
+    "formal_model_changed": false,
+    "trade_decision_changed": false,
+    "active_in_trade_decision": false,
+    "report_changed": false,
+    "portfolio_replay_executed": false,
+    "not_live_rule": true,
+    "forward_returns_live_rule_usage": false
+  },
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "portfolio_replay_executed": false,
+  "ready_for_strategy_replay": false,
+  "ready_for_formal": false,
+  "not_live_rule": true,
+  "forward_returns_live_rule_usage": false
+}

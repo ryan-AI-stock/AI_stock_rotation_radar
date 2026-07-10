@@ -1,0 +1,26 @@
+{
+  "task_id": "TASK-RADAR-DATA-VNEXT-SELECTED-PATH-34-CORPORATE-ACTION-EFFECTIVE-DATE-ARCHIVE-ROUTE-UNLOCK-001",
+  "status": "bounded_34_effective_date_public_archive_route_unlock_completed",
+  "coverage": {
+    "input_structural_blocker_rows": 34,
+    "mops_detail_candidate_rows": 6,
+    "route_status_counts": {
+      "accepted_non_holder_exclusion": 5,
+      "structural_source_exhausted": 29
+    },
+    "structural_source_exhausted_rows": 29
+  },
+  "ready_for_core_absorption": true,
+  "ready_for_experiments": false,
+  "ready_for_formal": false,
+  "ready_for_strategy_replay": false,
+  "future_data_violation_count": 0,
+  "blocked_reason": "Public historical exchange routes cannot provide date-scoped coverage for this 2015+ bounded set after MOPS detail omits an effective date; licensed source decision remains with Core/Strategy Center.",
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "portfolio_replay_executed": false,
+  "not_live_rule": true,
+  "forward_returns_live_rule_usage": false
+}
