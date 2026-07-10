@@ -1,0 +1,28 @@
+{
+  "task_id": "TASK-RADAR-DATA-VNEXT-DAILY-INCUMBENT-CHALLENGER-00631L-BENCHMARK-PRICE-GAP-FILL-001",
+  "generated_at": "2026-07-10T05:26:40+00:00",
+  "output_path": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_vnext_daily_incumbent_challenger_00631l_benchmark_price_gap_fill_20260710",
+  "artifacts": [
+    "daily_incumbent_challenger_00631L_benchmark_price_filled_rows.csv",
+    "daily_incumbent_challenger_00631L_benchmark_price_blocked_ledger.csv",
+    "daily_incumbent_challenger_00631L_benchmark_price_source_manifest.csv",
+    "daily_incumbent_challenger_00631L_benchmark_price_unadjusted_close_rows.csv",
+    "daily_incumbent_challenger_00631L_benchmark_price_coverage_audit.csv",
+    "daily_incumbent_challenger_00631L_benchmark_price_future_data_audit.csv",
+    "readiness_for_core_daily_incumbent_challenger_00631L_benchmark_absorption.json",
+    "manifest.json",
+    "final_summary_zh.md",
+    "current_step.txt"
+  ],
+  "flags": {
+    "formal_model_changed": false,
+    "trade_decision_changed": false,
+    "active_in_trade_decision": false,
+    "report_changed": false,
+    "portfolio_replay_executed": false,
+    "ready_for_strategy_replay": false,
+    "ready_for_formal": false,
+    "not_live_rule": true,
+    "forward_returns_live_rule_usage": false
+  }
+}

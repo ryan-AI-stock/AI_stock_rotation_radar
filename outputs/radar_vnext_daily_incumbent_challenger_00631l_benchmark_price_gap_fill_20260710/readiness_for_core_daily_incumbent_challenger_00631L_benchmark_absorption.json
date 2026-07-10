@@ -1,0 +1,22 @@
+{
+  "task_id": "TASK-RADAR-DATA-VNEXT-DAILY-INCUMBENT-CHALLENGER-00631L-BENCHMARK-PRICE-GAP-FILL-001",
+  "status": "blocked_00631L_price_dates_remaining",
+  "input_gap_dates": 21,
+  "filled_dates": 20,
+  "blocked_dates": 1,
+  "same_basis_adjusted_reference_ready": false,
+  "official_unadjusted_close_available": false,
+  "ready_for_core_absorption": false,
+  "ready_for_experiments": false,
+  "ready_for_formal": false,
+  "ready_for_strategy_replay": false,
+  "future_data_violation_count": 0,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "portfolio_replay_executed": false,
+  "not_live_rule": true,
+  "forward_returns_live_rule_usage": false,
+  "blocked_reason": "some official close dates missing"
+}
