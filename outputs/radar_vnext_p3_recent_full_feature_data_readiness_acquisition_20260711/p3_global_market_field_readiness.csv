@@ -1,0 +1,7 @@
+﻿field,symbol,status,mandatory,download_executed,actual_start,actual_end,exchange_timezone,acceptance_policy
+Nikkei,^N225,accepted,False,True,2023-07-11,2026-07-09,Asia/Tokyo,trusted_nonofficial_research_grade_with_session_timezone_and_Taiwan_decision_time_PIT
+Dow,^DJI,accepted,False,True,2023-07-11,2026-07-09,America/New_York,trusted_nonofficial_research_grade_with_session_timezone_and_Taiwan_decision_time_PIT
+VIX,^VIX,accepted,False,True,2023-07-11,2026-07-09,America/Chicago,trusted_nonofficial_research_grade_with_session_timezone_and_Taiwan_decision_time_PIT
+KOSPI,^KS11,accepted,False,True,2023-07-11,2026-07-09,Asia/Seoul,trusted_nonofficial_research_grade_with_session_timezone_and_Taiwan_decision_time_PIT
+USD_TWD,TWD=X,accepted,False,True,2023-07-11,2026-07-09,Europe/London,trusted_nonofficial_research_grade_with_session_timezone_and_Taiwan_decision_time_PIT
+Nasdaq,^IXIC,accepted,False,True,2023-07-11,2026-07-09,America/New_York,trusted_nonofficial_research_grade_with_session_timezone_and_Taiwan_decision_time_PIT

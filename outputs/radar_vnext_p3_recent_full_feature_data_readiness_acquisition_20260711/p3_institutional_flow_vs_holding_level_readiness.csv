@@ -1,0 +1,4 @@
+﻿field,semantics,status,source_quality
+foreign_trust_dealer_daily_net_buy_sell,daily flow,ready,official_where_covered
+foreign_ownership_ratio_and_change,"stock level / ownership ratio, separate from flow",ready,official_TWSE_TPEx_where_covered
+法人／大戶籌碼代理分數,proxy components only; no exact identity claim,source_collection_partial,institutional_flow + TDCC buckets + margin/short/lending; weights_not_defined

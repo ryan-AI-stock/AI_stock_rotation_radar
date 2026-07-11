@@ -1,0 +1,13 @@
+﻿field_group,gate_role,full_period_required,current_status,policy
+official_raw_execution_ohlcv,mandatory,True,ready,raw execution only; never adjusted analysis
+research_grade_adjusted_analysis_ohlc,mandatory,True,partial,trusted_nonofficial allowed for research; official_adjusted_ready=false
+official_adjusted_analysis_ohlc,unavailable_formal_source,False,blocked_not_materialized,official raw plus corporate-action completeness not proven for every ticker
+three_institutional_daily_net_flow,mandatory,True,ready,daily buy/sell net flow; not actual holding level
+法人／大戶籌碼代理分數_source_components,mandatory_components_with_partial_tdcc,False,partial,"proxy semantics only; collect source components, weights not defined"
+foreign_ownership_ratio_and_change,optional_component,False,ready,"official daily stock level, separate from institutional flow"
+margin_short,mandatory,True,ready,official post-close; next-day only
+securities_lending,mandatory,True,ready,official post-close; next-day only
+tdcc_holder_distribution,optional_recent_subperiod,False,partial,official history about one year only; actual publication lag; never latest-backfill
+taifex_oi_foreign_net,mandatory,True,partial,market-level official post-close
+global_market_dow_nasdaq_nikkei_kospi_usdtwd_vix,optional_research_grade,False,ready,trusted_nonofficial Yahoo; timezone/session/Taiwan decision-time PIT required
+layer4_new_PIT_membership_after_2026-06-29,unavailable_source_contract,False,blocked_not_materialized,2026-06-29 scope carried only for source acquisition; not new PIT membership

@@ -1,0 +1,7 @@
+﻿field_group,status,source_gate
+official_raw_execution_ohlcv,ready,mandatory
+three_institutional_daily_net_flow,ready,mandatory
+foreign_ownership_ratio_and_change,ready,optional_component
+margin_short,ready,mandatory
+securities_lending,ready,mandatory
+global_market_dow_nasdaq_nikkei_kospi_usdtwd_vix,ready,optional_research_grade

@@ -1,0 +1,5 @@
+compact/
+checkpoints/
+raw_audit_samples/
+*.lock
+__pycache__/

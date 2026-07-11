@@ -1,0 +1,5 @@
+﻿field_group,status,source_gate
+research_grade_adjusted_analysis_ohlc,partial,mandatory
+法人／大戶籌碼代理分數_source_components,partial,mandatory_components_with_partial_tdcc
+tdcc_holder_distribution,partial,optional_recent_subperiod
+taifex_oi_foreign_net,partial,mandatory

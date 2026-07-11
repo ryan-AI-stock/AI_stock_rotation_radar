@@ -1,0 +1,6 @@
+﻿audit_item,status,future_data_violation_count
+future_return_as_rule,prohibited,0
+raw_execution_as_adjusted_analysis,prohibited,0
+TDCC_latest_backfill_to_prior_weeks,prohibited,0
+same_day_post_close_chip_data_for_same_close_decision,prohibited_next_trading_day_only,0
+global_session_after_Taiwan_decision_cutoff,prohibited,0

@@ -1,0 +1,2 @@
+﻿file_count,total_persistent_bytes,observed_http_response_bytes,acquisition_started_at_utc,acquisition_ended_at_utc,elapsed_seconds,generated_at_utc,raw_full_market_persisted,compact_filter_policy
+74,108208547,3162315186,2026-07-11T08:54:45+00:00,2026-07-11T09:35:25+00:00,2440.0,2026-07-11T09:46:58+00:00,False,frozen_layer4_100_only_or_market_context
