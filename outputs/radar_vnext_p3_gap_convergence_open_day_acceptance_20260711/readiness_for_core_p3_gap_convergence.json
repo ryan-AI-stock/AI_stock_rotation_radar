@@ -1,0 +1,30 @@
+{
+  "task_id": "TASK-RADAR-DATA-VNEXT-P3-GAP-CONVERGENCE-OPEN-DAY-ACCEPTANCE-001",
+  "status": "gap_convergence_complete_open_day_acceptance_pending",
+  "source": "TAIFEX official range CSV; TDCC official retained-history ticker-week query; prior adjusted source exhaustion evidence",
+  "coverage": {
+    "taifex_input_dates": 110,
+    "taifex_repaired_dates": 110,
+    "taifex_blocked_dates": 0,
+    "tdcc_input_ticker_weeks": 11,
+    "tdcc_repaired_ticker_weeks": 3,
+    "tdcc_blocked_ticker_weeks": 8,
+    "adjusted_analysis_tickers_blocked": 12,
+    "layer4_exact_pit_membership_end": "2026-06-29"
+  },
+  "future_data_violation_count": 0,
+  "ready_for_core_p3_gap_patch_absorption": true,
+  "ready_for_core_p3_full_feature_contract": false,
+  "ready_for_open_day_ingestion_validation": false,
+  "open_day_validation_status": "pending_first_official_open_day_after_workflow_schedule",
+  "ready_for_experiments": false,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "portfolio_replay_executed": false,
+  "ready_for_strategy_replay": false,
+  "ready_for_formal": false,
+  "not_live_rule": true,
+  "forward_returns_live_rule_usage": false
+}

@@ -248,7 +248,7 @@ def fetch_tdcc_if_new(output_root: Path, wanted: set[str]) -> tuple[list[dict], 
                 ticker = str(r.get("證券代號", "")).strip()
                 if ticker in wanted: rows.append({"publication_date": publication, "ticker": ticker, "holding_bucket": r.get("持股分級", ""), "holder_count": r.get("人數", ""), "shares": r.get("股數", ""), "share_pct": r.get("占集保庫存數比例%", ""), "available_at_policy": "actual weekly publication date; never daily backfill", "source_url": final_url, "source_hash": sha(raw), "retrieved_at_utc": retrieved})
             atomic_csv_gz(existing, rows, list(rows[0]) if rows else ["publication_date"])
-        state = "accepted_new_week" if rows else "no_new_week"
+        state = "accepted_new_week" if rows else "no_new_release"
     except Exception as exc: error = f"parse_{type(exc).__name__}"; state = "blocked"
     return rows, {"family": "tdcc_holder_distribution", "market": "TDCC", "requested_date": "", "actual_source_date": publication, "status": state, "row_count": len(rows), "http_status": status, "source_url": final_url, "source_hash": sha(raw) if raw else "", "retrieved_at_utc": retrieved, "error": error}
 
@@ -257,21 +257,68 @@ def tdcc_should_append(publication: str, output_root: Path) -> bool:
     return bool(publication) and not (output_root / "tdcc" / f"{publication}.csv.gz").exists()
 
 
-def run_date(target: date, output_root: Path, scope_path: Path, calendar_state: str | None = None) -> dict:
+FAMILY_GROUPS = {
+    "price": {"official_raw_execution_ohlcv"},
+    "chips": {"institutional", "margin_short", "securities_lending"},
+    "foreign_ownership": {"foreign_ownership"},
+    "taifex": {"taifex_foreign_oi"},
+    "global": {"global_market"},
+    "corporate_action": {"corporate_action_guard"},
+    "tdcc": {"tdcc_holder_distribution"},
+}
+
+
+def _existing_rows(path: Path) -> list[dict]:
+    if not path.exists():
+        return []
+    with gzip.open(path, "rt", encoding="utf-8", newline="") as handle:
+        return list(csv.DictReader(handle))
+
+
+def run_date(target: date, output_root: Path, scope_path: Path, calendar_state: str | None = None, retry_families: set[str] | None = None) -> dict:
     target_dir = output_root / "daily" / target.strftime("%Y/%m/%d"); manifest_path = target_dir / "manifest.json"
     wanted, _ = load_scope(scope_path)
+    previous = json.loads(manifest_path.read_text(encoding="utf-8")) if retry_families and manifest_path.exists() else {}
+    if retry_families and not previous:
+        raise IncompleteSourceError("family-only retry requires an existing manifest")
+    selected = set(FAMILY_GROUPS) if not retry_families else retry_families
+    unknown = selected - set(FAMILY_GROUPS)
+    if unknown:
+        raise ValueError(f"unknown retry families: {sorted(unknown)}")
     if calendar_state is None:
         open_dates, closed_dates = fetch_twse_calendar(); calendar_state = classify_calendar_day(target, open_dates, closed_dates)
     if calendar_state in {"scheduled_closed", "weekend_closed"}:
         payload = {"requested_date": target.isoformat(), "status": "skipped_market_closed", "calendar_state": calendar_state, "future_data_violation_count": 0, **FLAGS}; atomic_json(manifest_path, payload); return payload
-    price_rows, manifests = fetch_price(target, wanted)
+    old_sources = previous.get("sources", [])
+    replaced = set().union(*(FAMILY_GROUPS[name] for name in selected))
+    manifests = [row for row in old_sources if row.get("family") not in replaced]
+    price_rows = _existing_rows(target_dir / "official_raw_execution_ohlcv.csv.gz")
+    if "price" in selected:
+        price_rows, price_manifest = fetch_price(target, wanted)
+        manifests.extend(price_manifest)
     market_states = {r["market"]: r["status"] for r in manifests}
     if all(market_states.get(x) == "no_rows" for x in ("TWSE", "TPEx")):
         payload = {"requested_date": target.isoformat(), "status": "skipped_market_closed", "calendar_state": "official_market_data_both_no_rows", "sources": manifests, "future_data_violation_count": 0, **FLAGS}; atomic_json(manifest_path, payload); return payload
     if any(market_states.get(x) != "accepted" for x in ("TWSE", "TPEx")):
         payload = {"requested_date": target.isoformat(), "status": "incomplete_source", "calendar_state": calendar_state, "sources": manifests, "future_data_violation_count": 0, **FLAGS}; atomic_json(manifest_path, payload); raise IncompleteSourceError("official price markets incomplete")
-    chip_rows, chip_manifest = fetch_chip_family(target, wanted); ownership_rows, ownership_manifest = fetch_foreign_ownership(target, wanted); taifex_rows, taifex_manifest = fetch_taifex(target); global_rows, global_manifest = fetch_global(target); action_rows, action_manifest = fetch_corporate_calendar(target, wanted); _, tdcc_manifest = fetch_tdcc_if_new(output_root, wanted)
-    manifests.extend(chip_manifest + ownership_manifest + [taifex_manifest] + global_manifest + action_manifest + [tdcc_manifest])
+    chip_rows = _existing_rows(target_dir / "institutional_margin_lending.csv.gz")
+    ownership_rows = _existing_rows(target_dir / "foreign_ownership.csv.gz")
+    taifex_rows = _existing_rows(target_dir / "taifex_market_context.csv.gz")
+    global_rows = _existing_rows(target_dir / "global_market_context.csv.gz")
+    action_rows = _existing_rows(target_dir / "corporate_action_guard.csv.gz")
+    global_manifest = [r for r in manifests if r.get("family") == "global_market"]
+    if "chips" in selected:
+        chip_rows, rows = fetch_chip_family(target, wanted); manifests.extend(rows)
+    if "foreign_ownership" in selected:
+        ownership_rows, rows = fetch_foreign_ownership(target, wanted); manifests.extend(rows)
+    if "taifex" in selected:
+        taifex_rows, row = fetch_taifex(target); manifests.append(row)
+    if "global" in selected:
+        global_rows, global_manifest = fetch_global(target); manifests.extend(global_manifest)
+    if "corporate_action" in selected:
+        action_rows, rows = fetch_corporate_calendar(target, wanted); manifests.extend(rows)
+    if "tdcc" in selected:
+        _, row = fetch_tdcc_if_new(output_root, wanted); manifests.append(row)
     mandatory = [r for r in manifests if r["family"] in {"official_raw_execution_ohlcv", "institutional", "margin_short", "securities_lending", "foreign_ownership", "taifex_foreign_oi"}]
     for row in mandatory:
         if row["status"] == "accepted" and row.get("actual_source_date") != target.isoformat():
@@ -288,8 +335,11 @@ def run_date(target: date, output_root: Path, scope_path: Path, calendar_state: 
         "global_market_context.csv.gz": global_rows,
         "corporate_action_guard.csv.gz": action_rows,
     }
-    for name, rows in fields.items(): atomic_csv_gz(target_dir / name, rows, list(rows[0]) if rows else ["date"])
-    payload = {"requested_date": target.isoformat(), "actual_market_date": target.isoformat(), "status": "incomplete_source" if blocked else "accepted", "calendar_state": calendar_state, "candidate_scope_count": len(wanted), "actual_source_dates": {r["family"] + ":" + r.get("market", ""): r.get("actual_source_date", "") for r in manifests}, "latest_completed_global_sessions": {r["market"]: r.get("actual_source_date", "") for r in global_manifest}, "source_counts": {"accepted": sum(str(r["status"]).startswith("accepted") for r in manifests), "no_rows": sum(r["status"] == "no_rows" for r in manifests), "blocked": sum(r["status"] == "blocked" for r in manifests)}, "sources": manifests, "future_data_violation_count": 0, "法人／大戶籌碼代理分數": "source_components_only_weights_not_defined", "raw_execution_and_adjusted_analysis_separate": True, **FLAGS}
+    file_groups = {"official_raw_execution_ohlcv.csv.gz": "price", "institutional_margin_lending.csv.gz": "chips", "foreign_ownership.csv.gz": "foreign_ownership", "taifex_market_context.csv.gz": "taifex", "global_market_context.csv.gz": "global", "corporate_action_guard.csv.gz": "corporate_action"}
+    for name, rows in fields.items():
+        if file_groups[name] in selected:
+            atomic_csv_gz(target_dir / name, rows, list(rows[0]) if rows else ["date"])
+    payload = {"requested_date": target.isoformat(), "actual_market_date": target.isoformat(), "status": "incomplete_source" if blocked else "accepted", "calendar_state": calendar_state, "candidate_scope_count": len(wanted), "retry_families": sorted(retry_families or []), "actual_source_dates": {r["family"] + ":" + r.get("market", ""): r.get("actual_source_date", "") for r in manifests}, "latest_completed_global_sessions": {r["market"]: r.get("actual_source_date", "") for r in global_manifest}, "source_counts": {"accepted": sum(str(r["status"]).startswith("accepted") for r in manifests), "no_rows": sum(r["status"] in {"no_rows", "no_new_release"} for r in manifests), "blocked": sum(r["status"] == "blocked" for r in manifests)}, "sources": manifests, "future_data_violation_count": 0, "法人／大戶籌碼代理分數": "source_components_only_weights_not_defined", "raw_execution_and_adjusted_analysis_separate": True, **FLAGS}
     atomic_json(manifest_path, payload)
     if blocked: raise IncompleteSourceError(f"mandatory source incomplete: {[(r['family'], r.get('market')) for r in blocked]}")
     return payload
@@ -302,14 +352,15 @@ def date_range(start: date, end: date) -> list[date]:
 
 
 def main() -> None:
-    p = argparse.ArgumentParser(); p.add_argument("--date"); p.add_argument("--backfill-start"); p.add_argument("--backfill-end"); p.add_argument("--output-root", type=Path, default=Path("data/risk_features")); p.add_argument("--scope", type=Path, default=Path("data/risk_features/frozen_candidate_scope.csv")); args = p.parse_args()
+    p = argparse.ArgumentParser(); p.add_argument("--date"); p.add_argument("--backfill-start"); p.add_argument("--backfill-end"); p.add_argument("--retry-families", default=""); p.add_argument("--output-root", type=Path, default=Path("data/risk_features")); p.add_argument("--scope", type=Path, default=Path("data/risk_features/frozen_candidate_scope.csv")); args = p.parse_args()
     if args.backfill_start or args.backfill_end:
         if not (args.backfill_start and args.backfill_end): raise SystemExit("both backfill dates required")
         targets = date_range(date.fromisoformat(args.backfill_start), date.fromisoformat(args.backfill_end))
     else: targets = [date.fromisoformat(args.date) if args.date else datetime.now(TAIPEI).date()]
     failed = False
     for target in targets:
-        try: run_date(target, args.output_root, args.scope)
+        retry_families = {x.strip() for x in args.retry_families.split(",") if x.strip()} or None
+        try: run_date(target, args.output_root, args.scope, retry_families=retry_families)
         except IncompleteSourceError as exc: print(f"incomplete_source {target}: {exc}"); failed = True
     raise SystemExit(2 if failed else 0)
 

@@ -1,0 +1,17 @@
+{
+  "status": "pending_future_official_open_day",
+  "date_policy": "determine from official market calendar and actual market data; not hardcoded",
+  "required_validation": [
+    "OHLCV",
+    "institutional_flow",
+    "margin_short_lending",
+    "official_foreign_ownership",
+    "TAIFEX",
+    "Yahoo_global",
+    "corporate_action_final_selection_guard",
+    "TDCC_no_new_release_or_accepted"
+  ],
+  "run_url": "",
+  "persisted_commit": "",
+  "updated_at": "2026-07-11T09:55:22+00:00"
+}

@@ -18,6 +18,10 @@ on:
         description: "Optional bounded backfill end (YYYY-MM-DD)"
         required: false
         default: ""
+      retry_families:
+        description: "Optional failed family groups only: price,chips,foreign_ownership,taifex,global,corporate_action,tdcc"
+        required: false
+        default: ""
 
 concurrency:
   group: daily-risk-feature-sources
@@ -66,14 +70,23 @@ jobs:
             if [ -z "$target" ]; then target="$(TZ=Asia/Taipei date +%F)"; fi
             echo "value=--date $target" >> "$GITHUB_OUTPUT"
           fi
+          retry="${{ inputs.retry_families }}"
+          if [ -n "$retry" ]; then
+            echo "retry=--retry-families $retry" >> "$GITHUB_OUTPUT"
+          else
+            echo "retry=" >> "$GITHUB_OUTPUT"
+          fi
 
       - name: Acquire compact daily sources
+        id: acquire
+        continue-on-error: true
         shell: bash
         run: |
           set -euo pipefail
-          python -m rotation_radar.daily_risk_features ${{ steps.args.outputs.value }}
+          python -m rotation_radar.daily_risk_features ${{ steps.args.outputs.value }} ${{ steps.args.outputs.retry }}
 
       - name: Verify manifests and compact persistence
+        if: always()
         shell: bash
         run: |
           set -euo pipefail
@@ -87,12 +100,13 @@ jobs:
               payload = json.loads(path.read_text(encoding="utf-8"))
               if payload.get("future_data_violation_count") != 0:
                   raise SystemExit(f"future-data violation: {path}")
-              if payload.get("status") not in {"accepted", "skipped_market_closed"}:
-                  raise SystemExit(f"non-accepted manifest: {path}: {payload.get('status')}")
+              if payload.get("status") not in {"accepted", "skipped_market_closed", "incomplete_source"}:
+                  raise SystemExit(f"invalid manifest status: {path}: {payload.get('status')}")
           print(f"verified_manifests={len(manifests)}")
           PY
 
       - name: Persist compact shards and manifests to Git
+        if: always()
         shell: bash
         run: |
           set -euo pipefail
@@ -114,3 +128,9 @@ jobs:
           name: daily-risk-feature-audit-${{ github.run_id }}
           path: data/risk_features/daily/**/manifest.json
           if-no-files-found: warn
+
+      - name: Fail after persisting incomplete source evidence
+        if: always() && steps.acquire.outcome == 'failure'
+        run: |
+          echo "Source acquisition incomplete. Accepted family shards and manifest were persisted; rerun only failed families with workflow_dispatch retry_families." >&2
+          exit 2

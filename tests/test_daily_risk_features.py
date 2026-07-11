@@ -4,6 +4,7 @@ import csv
 import gzip
 import tempfile
 import unittest
+import json
 from datetime import date
 from pathlib import Path
 from unittest.mock import patch
@@ -39,6 +40,25 @@ class DailyRiskFeatureTests(unittest.TestCase):
             manifests = [source("official_raw_execution_ohlcv", "TWSE", "2026-07-09"), source("official_raw_execution_ohlcv", "TPEx", "2026-07-09", "blocked")]
             with patch("rotation_radar.daily_risk_features.fetch_price", return_value=([{"date": "2026-07-09"}], manifests)):
                 with self.assertRaises(IncompleteSourceError): run_date(date(2026, 7, 9), root, scope, "scheduled_open")
+            manifest = json.loads((root / "daily/2026/07/09/manifest.json").read_text(encoding="utf-8"))
+            self.assertEqual(manifest["status"], "incomplete_source")
+
+    def test_family_only_retry_preserves_accepted_price_shard(self) -> None:
+        target = date(2026, 7, 9); target_s = target.isoformat()
+        price_manifest = [source("official_raw_execution_ohlcv", "TWSE", target_s), source("official_raw_execution_ohlcv", "TPEx", target_s)]
+        chip_manifest = [source(f, m, target_s) for f in ("institutional", "margin_short", "securities_lending") for m in ("TWSE", "TPEx")]
+        with self._workspace() as (root, scope):
+            target_dir = root / "daily/2026/07/09"; target_dir.mkdir(parents=True)
+            with gzip.open(target_dir / "official_raw_execution_ohlcv.csv.gz", "wt", encoding="utf-8", newline="") as handle:
+                writer = csv.DictWriter(handle, fieldnames=["date", "ticker"]); writer.writeheader(); writer.writerow({"date": target_s, "ticker": "2330"})
+            existing_sources = price_manifest + chip_manifest + [source("foreign_ownership", "TWSE", target_s), source("foreign_ownership", "TPEx", target_s), source("taifex_foreign_oi", "TAIFEX", target_s)]
+            (target_dir / "manifest.json").write_text(json.dumps({"status": "incomplete_source", "sources": existing_sources}), encoding="utf-8")
+            repaired = [source(f, m, target_s) for f in ("institutional", "margin_short", "securities_lending") for m in ("TWSE", "TPEx")]
+            with patch("rotation_radar.daily_risk_features.fetch_chip_family", return_value=([{"date": target_s, "ticker": "2330"}], repaired)):
+                result = run_date(target, root, scope, "scheduled_open", retry_families={"chips"})
+            self.assertEqual(result["status"], "accepted")
+            with gzip.open(target_dir / "official_raw_execution_ohlcv.csv.gz", "rt", encoding="utf-8") as handle:
+                self.assertEqual(list(csv.DictReader(handle))[0]["ticker"], "2330")
 
     def test_normal_day_is_idempotent_and_rejects_stale_mandatory_date(self) -> None:
         target = date(2026, 7, 9); target_s = target.isoformat()

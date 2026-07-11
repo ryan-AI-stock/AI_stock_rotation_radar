@@ -1,0 +1,76 @@
+{
+  "task_id": "TASK-RADAR-DATA-VNEXT-P3-GAP-CONVERGENCE-OPEN-DAY-ACCEPTANCE-001",
+  "generated_at": "2026-07-11T09:55:22+00:00",
+  "files": [
+    {
+      "path": "adjusted_12_exhausted_evidence.csv",
+      "bytes": 2317,
+      "sha256": "190816bbfb5a6195e55b330fe4035f2307882023882d51bd83e906b4d6c4e6d0"
+    },
+    {
+      "path": "current_step.txt",
+      "bytes": 54,
+      "sha256": "4a8f8e79d34ea58352b6d060c16c79006ae7d8815ce0ae77cec449f568441947"
+    },
+    {
+      "path": "final_summary_zh.md",
+      "bytes": 736,
+      "sha256": "4ee61e4725c701decec5e761bafb4128f456c8c5b955df846e9f2dbfd75ac4dc"
+    },
+    {
+      "path": "first_open_day_acceptance_status.json",
+      "bytes": 503,
+      "sha256": "ab2f5acee487bddce182face54f53347af7851d6a42c75d7d44b698f38a5f07c"
+    },
+    {
+      "path": "layer4_membership_freshness_ledger.csv",
+      "bytes": 265,
+      "sha256": "bc047352bb88d2aca942ec546aae3b37a391c5faa1c134c7aed43e38601db380"
+    },
+    {
+      "path": "readiness_for_core_p3_gap_convergence.json",
+      "bytes": 1257,
+      "sha256": "2902c1c808e32016e933c6f85fd82db10d6d113de0a7c31ed7de3d4fac144a88"
+    },
+    {
+      "path": "taifex_110_classification.csv",
+      "bytes": 20431,
+      "sha256": "be6c7cf3a238e01a3e64bc1508640cd657813ad0f4a8fa6d69566698013638ed"
+    },
+    {
+      "path": "taifex_110_failed_only_patch.csv",
+      "bytes": 32063,
+      "sha256": "8529b45745a9ac16da02e7e27da1ae6a47fe10411200fd1fa0d356620c3887c2"
+    },
+    {
+      "path": "taifex_checkpoint.json",
+      "bytes": 267,
+      "sha256": "f2c70e50ffb6d13e03cdddfe4adc1d1a9ca034b1a8a030770b1b110f6416f59b"
+    },
+    {
+      "path": "tdcc_11_classification.csv",
+      "bytes": 3235,
+      "sha256": "842af28956eb6483dcb64efbef474d66372cfbfbde5736fe2aff493ebc5f5e56"
+    },
+    {
+      "path": "tdcc_11_failed_only_patch.csv",
+      "bytes": 14535,
+      "sha256": "1e428b59977f1c2f0ad3181e98e68e8d6c16e07519db4122914c5dc224358040"
+    },
+    {
+      "path": "tdcc_checkpoint.json",
+      "bytes": 150,
+      "sha256": "a884243d847ff952dd9a449e2fecbb9910df30b0fa2656a7a417624eeeb327c3"
+    }
+  ],
+  "future_data_violation_count": 0,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "portfolio_replay_executed": false,
+  "ready_for_strategy_replay": false,
+  "ready_for_formal": false,
+  "not_live_rule": true,
+  "forward_returns_live_rule_usage": false
+}
