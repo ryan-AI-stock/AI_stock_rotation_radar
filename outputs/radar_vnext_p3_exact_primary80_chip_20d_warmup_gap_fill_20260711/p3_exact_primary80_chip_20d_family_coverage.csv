@@ -1,0 +1,5 @@
+﻿family,required_ticker_dates,ready_ticker_dates,blocked_ticker_dates,ready_share,blocked_classification_counts,availability_policy
+institutional,89525,89236,289,0.9967718514,{'official_zero_or_not_applicable': 289},official post-close; next-trading-day eligible
+margin_short,89525,87963,1562,0.9825523597,{'official_zero_or_not_applicable': 1562},official post-close; next-trading-day eligible
+securities_lending,89525,88963,562,0.9937224239,{'official_zero_or_not_applicable': 562},official post-close; next-trading-day eligible
+foreign_ownership,89525,89379,146,0.9983691706,{'official_zero_or_not_applicable': 146},official post-close; next-trading-day eligible

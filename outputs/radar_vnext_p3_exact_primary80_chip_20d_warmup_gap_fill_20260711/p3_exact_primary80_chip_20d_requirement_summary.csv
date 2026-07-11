@@ -1,0 +1,2 @@
+﻿segment_count,unique_tickers,required_unique_ticker_dates_per_family,family_count,total_family_ticker_date_requirements,unique_dates,warmup_sessions_per_segment,primary_contract_sha256,adjusted_11_reprobed
+5016,701,89525,4,358100,736,20,21d5c42ac151ec71706c793f386a1f1e2ab16f656601d0c2474dd1dc496e3901,False

@@ -1,0 +1,44 @@
+{
+  "task_id": "TASK-RADAR-DATA-VNEXT-P3-EXACT-PRIMARY80-CHIP-FAMILY-20D-WARMUP-GAP-FILL-001",
+  "status": "chip_20d_warmup_source_package_ready_with_explicit_no_rows",
+  "source": "official TWSE/TPEx institutional, margin/short, securities lending, foreign ownership",
+  "coverage": {
+    "institutional": {
+      "ready": 89236,
+      "required": 89525,
+      "blocked": 289
+    },
+    "margin_short": {
+      "ready": 87963,
+      "required": 89525,
+      "blocked": 1562
+    },
+    "securities_lending": {
+      "ready": 88963,
+      "required": 89525,
+      "blocked": 562
+    },
+    "foreign_ownership": {
+      "ready": 89379,
+      "required": 89525,
+      "blocked": 146
+    }
+  },
+  "segment_count": 5016,
+  "all_mandatory_chip_20d_ready_segments": 4797,
+  "source_gap_count": 0,
+  "future_data_violation_count": 0,
+  "ready_for_core_p3_exact_primary80_chip_20d_absorption": true,
+  "ready_for_experiments": false,
+  "adjusted_11_reprobed": false,
+  "zero_or_stale_fill_used": false,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "portfolio_replay_executed": false,
+  "ready_for_strategy_replay": false,
+  "ready_for_formal": false,
+  "not_live_rule": true,
+  "forward_returns_live_rule_usage": false
+}
