@@ -129,6 +129,9 @@ class ScheduleGateTests(unittest.TestCase):
         self.assertIn("Stop scheduled retry after successful trading-date publish", workflow)
         self.assertIn("github.event_name == 'schedule' && steps.daily-publish-marker.outputs.cache-hit == 'true'", workflow)
         self.assertIn("github.event_name == 'schedule' && steps.daily-publish-marker.outputs.cache-hit != 'true'", workflow)
+        self.assertIn('if [ "$status" -eq 75 ]', workflow)
+        self.assertIn('echo "report_ready=false"', workflow)
+        self.assertIn("if: steps.generate-report.outputs.report_ready == 'true'", workflow)
 
 
 @contextmanager

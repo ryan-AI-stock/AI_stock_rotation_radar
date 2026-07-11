@@ -31,6 +31,13 @@ from .valuation_backfill import backfill_stock_valuations
 ReportWriter = Callable[..., None]
 
 
+class ReportDataNotReadyError(RuntimeError):
+    """The requested trading-day source snapshots are not complete yet."""
+
+
+REPORT_DATA_NOT_READY_EXIT_CODE = 75
+
+
 def run_update_latest_report(args, write_report: ReportWriter) -> None:
     paths = PipelinePaths.from_args(args)
     options = PipelineOptions.from_args(args)
@@ -45,7 +52,7 @@ def run_update_latest_report(args, write_report: ReportWriter) -> None:
     quote_snapshot = load_quote_snapshot(market_quotes_path)
     if args.report_date and quote_snapshot.normalized_date != args.report_date:
         if not _manual_fallback_enabled(args):
-            raise SystemExit(quote_date_mismatch_message(quote_snapshot, args.report_date))
+            raise ReportDataNotReadyError(quote_date_mismatch_message(quote_snapshot, args.report_date))
         fallback_reason = (
             f"requested report date {args.report_date} was unavailable; "
             f"using latest complete report date {quote_snapshot.normalized_date or 'missing'}"
@@ -266,7 +273,9 @@ def _ensure_target_date_market_quotes(args, paths: PipelinePaths) -> Path:
     if not _has_price_snapshot_files(processed_dir):
         fallback_date = _latest_complete_price_snapshot_date(paths.processed_root)
         if not _manual_fallback_enabled(args) or fallback_date is None:
-            raise SystemExit(f"Target report date {args.report_date} price snapshots are not ready; retry later.")
+            raise ReportDataNotReadyError(
+                f"Target report date {args.report_date} price snapshots are not ready; retry later."
+            )
         fallback_ymd = fallback_date.strftime("%Y%m%d")
         fallback_dir = paths.processed_root / fallback_ymd
         print(

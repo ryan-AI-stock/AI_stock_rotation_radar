@@ -5,7 +5,7 @@ from datetime import datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
-from .daily_pipeline import run_update_latest_report
+from .daily_pipeline import REPORT_DATA_NOT_READY_EXIT_CODE, ReportDataNotReadyError, run_update_latest_report
 from .data_loader import load_dataset, load_sector_metrics, load_stock_metrics
 from .demo_data import demo_sectors, demo_stocks
 from .formal_grade import build_formal_grade_audit
@@ -167,7 +167,11 @@ def main() -> None:
         return
 
     if args.update_latest_report:
-        run_update_latest_report(args, _write_report)
+        try:
+            run_update_latest_report(args, _write_report)
+        except ReportDataNotReadyError as exc:
+            print(f"REPORT_DATA_NOT_READY: {exc}")
+            raise SystemExit(REPORT_DATA_NOT_READY_EXIT_CODE) from exc
         return
 
     if args.build_market_universe:

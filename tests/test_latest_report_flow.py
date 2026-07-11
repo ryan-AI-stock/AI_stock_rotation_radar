@@ -24,7 +24,7 @@ class LatestReportFlowTests(unittest.TestCase):
             patch.object(pipeline, "build_theme_market_quotes") as build_theme_market_quotes,
             patch("builtins.print"),
         ):
-            with self.assertRaisesRegex(SystemExit, "does not match target report date 2026-06-04"):
+            with self.assertRaisesRegex(pipeline.ReportDataNotReadyError, "does not match target report date 2026-06-04"):
                 pipeline.run_update_latest_report(args, write_report=lambda *args, **kwargs: None)
 
         build_theme_market_quotes.assert_not_called()

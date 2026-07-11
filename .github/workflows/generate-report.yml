@@ -48,6 +48,10 @@ on:
           - "false"
           - "true"
 
+concurrency:
+  group: daily-theme-rotation-report
+  cancel-in-progress: false
+
 jobs:
   generate-report:
     runs-on: ubuntu-latest
@@ -143,6 +147,7 @@ jobs:
           python -m unittest discover -s tests -v
 
       - name: Generate latest report
+        id: generate-report
         if: steps.report-date.outputs.should_run == 'true' && (github.event_name == 'workflow_dispatch' || steps.daily-publish-marker.outputs.cache-hit != 'true')
         shell: bash
         run: |
@@ -168,11 +173,24 @@ jobs:
             args+=(--skip-depth-refresh)
           fi
 
+          set +e
           python -m rotation_radar.cli "${args[@]}"
+          status=$?
+          set -e
+          if [ "$status" -eq 75 ]; then
+            echo "report_ready=false" >> "$GITHUB_OUTPUT"
+            echo "### Radar 等待收盤資料" >> "$GITHUB_STEP_SUMMARY"
+            echo "目標交易日的 TWSE/TPEx 快照尚未完整，下一次每小時排程會自動重試。" >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          if [ "$status" -ne 0 ]; then
+            exit "$status"
+          fi
+          echo "report_ready=true" >> "$GITHUB_OUTPUT"
 
       - name: Resolve actual report date
         id: actual-report-date
-        if: steps.report-date.outputs.should_run == 'true' && (github.event_name == 'workflow_dispatch' || steps.daily-publish-marker.outputs.cache-hit != 'true')
+        if: steps.generate-report.outputs.report_ready == 'true'
         shell: bash
         run: |
           set -euo pipefail
@@ -189,7 +207,7 @@ jobs:
           } >> "$GITHUB_OUTPUT"
 
       - name: Commit formal radar candidate interface
-        if: steps.report-date.outputs.should_run == 'true' && (github.event_name == 'workflow_dispatch' || steps.daily-publish-marker.outputs.cache-hit != 'true')
+        if: steps.generate-report.outputs.report_ready == 'true'
         shell: bash
         run: |
           set -euo pipefail
@@ -208,7 +226,7 @@ jobs:
           fi
 
       - name: Publish PDFs to Google Drive
-        if: steps.report-date.outputs.should_run == 'true' && (github.event_name == 'workflow_dispatch' || steps.daily-publish-marker.outputs.cache-hit != 'true')
+        if: steps.generate-report.outputs.report_ready == 'true'
         env:
           GOOGLE_OAUTH_CLIENT_ID: ${{ secrets.GOOGLE_OAUTH_CLIENT_ID }}
           GOOGLE_OAUTH_CLIENT_SECRET: ${{ secrets.GOOGLE_OAUTH_CLIENT_SECRET }}
@@ -228,7 +246,7 @@ jobs:
           python -m rotation_radar.drive_publish "${args[@]}"
 
       - name: Upload report artifact
-        if: steps.report-date.outputs.should_run == 'true' && (github.event_name == 'workflow_dispatch' || steps.daily-publish-marker.outputs.cache-hit != 'true')
+        if: steps.generate-report.outputs.report_ready == 'true'
         uses: actions/upload-artifact@v4
         with:
           name: latest-rotation-report
@@ -238,7 +256,7 @@ jobs:
           if-no-files-found: error
 
       - name: Upload generated data artifact
-        if: steps.report-date.outputs.should_run == 'true' && (github.event_name == 'workflow_dispatch' || steps.daily-publish-marker.outputs.cache-hit != 'true')
+        if: steps.generate-report.outputs.report_ready == 'true'
         uses: actions/upload-artifact@v4
         with:
           name: generated-data
@@ -250,14 +268,14 @@ jobs:
           if-no-files-found: ignore
 
       - name: Create daily publish marker
-        if: steps.report-date.outputs.should_run == 'true' && github.event_name == 'schedule' && steps.daily-publish-marker.outputs.cache-hit != 'true'
+        if: steps.generate-report.outputs.report_ready == 'true' && github.event_name == 'schedule' && steps.daily-publish-marker.outputs.cache-hit != 'true'
         shell: bash
         run: |
           mkdir -p .github-run-state
           printf '%s\n' "${{ steps.actual-report-date.outputs.actual_report_key }}" > .github-run-state/rotation-report-published
 
       - name: Save daily publish marker
-        if: success() && steps.report-date.outputs.should_run == 'true' && github.event_name == 'schedule' && steps.daily-publish-marker.outputs.cache-hit != 'true'
+        if: success() && steps.generate-report.outputs.report_ready == 'true' && github.event_name == 'schedule' && steps.daily-publish-marker.outputs.cache-hit != 'true'
         uses: actions/cache/save@v4
         with:
           path: .github-run-state/rotation-report-published
