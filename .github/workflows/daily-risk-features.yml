@@ -1,0 +1,116 @@
+name: Update daily risk feature sources
+
+on:
+  schedule:
+    # 21:30 Asia/Taipei. Actual exchange data is verified before persistence.
+    - cron: "30 13 * * 1-5"
+  workflow_dispatch:
+    inputs:
+      target_date:
+        description: "Single Taiwan market date (YYYY-MM-DD)"
+        required: false
+        default: ""
+      backfill_start:
+        description: "Optional bounded backfill start (YYYY-MM-DD)"
+        required: false
+        default: ""
+      backfill_end:
+        description: "Optional bounded backfill end (YYYY-MM-DD)"
+        required: false
+        default: ""
+
+concurrency:
+  group: daily-risk-feature-sources
+  cancel-in-progress: false
+
+jobs:
+  acquire:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    permissions:
+      contents: write
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install bounded source dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests beautifulsoup4
+
+      - name: Validate pipeline
+        run: |
+          python -m compileall rotation_radar tests
+          python -m unittest tests.test_daily_risk_features -v
+
+      - name: Resolve arguments
+        id: args
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -n "${{ inputs.backfill_start }}" ] || [ -n "${{ inputs.backfill_end }}" ]; then
+            if [ -z "${{ inputs.backfill_start }}" ] || [ -z "${{ inputs.backfill_end }}" ]; then
+              echo "Both backfill dates are required." >&2
+              exit 2
+            fi
+            echo "value=--backfill-start ${{ inputs.backfill_start }} --backfill-end ${{ inputs.backfill_end }}" >> "$GITHUB_OUTPUT"
+          else
+            target="${{ inputs.target_date }}"
+            if [ -z "$target" ]; then target="$(TZ=Asia/Taipei date +%F)"; fi
+            echo "value=--date $target" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Acquire compact daily sources
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m rotation_radar.daily_risk_features ${{ steps.args.outputs.value }}
+
+      - name: Verify manifests and compact persistence
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          manifests = list(Path("data/risk_features/daily").glob("**/manifest.json"))
+          if not manifests:
+              raise SystemExit("No daily manifest generated")
+          for path in manifests:
+              payload = json.loads(path.read_text(encoding="utf-8"))
+              if payload.get("future_data_violation_count") != 0:
+                  raise SystemExit(f"future-data violation: {path}")
+              if payload.get("status") not in {"accepted", "skipped_market_closed"}:
+                  raise SystemExit(f"non-accepted manifest: {path}: {payload.get('status')}")
+          print(f"verified_manifests={len(manifests)}")
+          PY
+
+      - name: Persist compact shards and manifests to Git
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/risk_features
+          if git diff --cached --quiet; then
+            echo "No new risk source rows (idempotent rerun or no new TDCC week)."
+          else
+            git commit -m "Update daily risk feature sources"
+            git pull --rebase origin "${GITHUB_REF_NAME}"
+            git push origin "HEAD:${GITHUB_REF_NAME}"
+          fi
+
+      - name: Upload secondary audit artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: daily-risk-feature-audit-${{ github.run_id }}
+          path: data/risk_features/daily/**/manifest.json
+          if-no-files-found: warn
