@@ -1,0 +1,5 @@
+﻿family,official_earliest_tested,official_latest_tested,tested_date_market_rows,accepted,no_rows_valid_official_response,true_failed
+institutional,2023-07-11,2026-07-09,1622,1456,110,0
+margin_short,2023-07-11,2026-07-09,1622,1456,110,0
+securities_lending,2023-07-11,2026-07-09,1622,1459,107,0
+foreign_ownership,2023-07-11,2026-07-09,1566,1462,104,0

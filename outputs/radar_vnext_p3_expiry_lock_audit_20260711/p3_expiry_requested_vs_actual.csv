@@ -1,0 +1,10 @@
+﻿family,requested_start,requested_end,actual_start,actual_end,status
+taifex_foreign_tx_futures,2023-07-11,2026-07-10,2023-07-11,2026-07-09,locked_complete
+tdcc_holder_distribution,2023-07-11,2026-07-10,2025-07-11,2026-07-03,partial_locked
+institutional,2023-07-11,2026-07-10,2023-07-11,2026-07-09,locked_complete
+margin_short,2023-07-11,2026-07-10,2023-07-11,2026-07-09,locked_complete
+securities_lending,2023-07-11,2026-07-10,2023-07-11,2026-07-09,locked_complete
+foreign_ownership,2023-07-11,2026-07-10,2023-07-11,2026-07-09,locked_complete
+corporate_action_event_inventory,2023-07-11,2026-07-10,2022-07-11,2026-07-10,partial_locked
+yahoo_adjusted_analysis,2023-07-11,2026-07-10,2023-07-11,2026-07-09,partial_locked
+yahoo_global_market,2023-07-11,2026-07-10,2023-07-11,2026-07-09,locked_complete

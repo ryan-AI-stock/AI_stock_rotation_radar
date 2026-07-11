@@ -1,0 +1,75 @@
+{
+  "task_id": "TASK-RADAR-DATA-VNEXT-P3-EXPIRY-RISK-LOCK-AUDIT-001",
+  "generated_at_utc": "2026-07-11T13:58:45+00:00",
+  "files": [
+    {
+      "path": "current_step.txt",
+      "bytes": 56,
+      "sha256": "5de87767d053ac35953f9fe1865dac78cc204215a4268dc1addb9b9aa2ed0185"
+    },
+    {
+      "path": "final_summary_zh.md",
+      "bytes": 731,
+      "sha256": "583ef4ae2beb3cfdcf44f977bf9424991bc61a97b7fc65a8f6dceb1611797acd"
+    },
+    {
+      "path": "p3_expiry_checksum_manifest.csv",
+      "bytes": 6728,
+      "sha256": "160994a5810a9fe89506226791e4492a0388fe53d4dad1e06812e9d3b2a93594"
+    },
+    {
+      "path": "p3_expiry_compact_integrity_audit.csv",
+      "bytes": 5394,
+      "sha256": "20ef62158ce3ca064b1d8f9ada6c8fd8ec937bb93de3a0b86bb340dd0ecfe79f"
+    },
+    {
+      "path": "p3_expiry_future_data_audit.csv",
+      "bytes": 195,
+      "sha256": "db6a0fbdd61fcad01573d12b1638d8986e4aa79fbe233b12cc7fad8935cbbf00"
+    },
+    {
+      "path": "p3_expiry_missing_blocked_ledger.csv",
+      "bytes": 1285,
+      "sha256": "fb6508a83e4f4ce5d9837079b3e6b2319ffe610e3e21376328c48d401ba9407a"
+    },
+    {
+      "path": "p3_expiry_requested_vs_actual.csv",
+      "bytes": 810,
+      "sha256": "fd3c4e5172480889fe3abf69af74161428b2d3ef88261ef5e3426c4165dc898d"
+    },
+    {
+      "path": "p3_expiry_risk_matrix.csv",
+      "bytes": 1319,
+      "sha256": "43a04274ee005863edc17be10e695716c9775502ca2f459e2b580b86d3c92bb8"
+    },
+    {
+      "path": "p3_expiry_source_coverage.csv",
+      "bytes": 356,
+      "sha256": "d48e43b306a79dff4c95d4eb443daa74719f53dd9b050dcfb6b1f8ee1c83b16a"
+    },
+    {
+      "path": "p3_expiry_taifex_source_manifest.csv",
+      "bytes": 358,
+      "sha256": "351327a17639629e7b482e086f949618ffe55f1e5dfa71e30145e7fbca824fc9"
+    },
+    {
+      "path": "p3_expiry_tdcc_zero_ticker_week_ledger.csv",
+      "bytes": 2965,
+      "sha256": "682cb5714e3e5449d41a14dc121d1e673f5510a947611deff395ca7735c343e9"
+    },
+    {
+      "path": "readiness_for_core_p3_expiry_lock.json",
+      "bytes": 1415,
+      "sha256": "658304b89972248a6d807983bf8674fc3480d463687e80597025fae2f7d75c37"
+    }
+  ],
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "portfolio_replay_executed": false,
+  "ready_for_strategy_replay": false,
+  "ready_for_formal": false,
+  "not_live_rule": true,
+  "forward_returns_live_rule_usage": false
+}

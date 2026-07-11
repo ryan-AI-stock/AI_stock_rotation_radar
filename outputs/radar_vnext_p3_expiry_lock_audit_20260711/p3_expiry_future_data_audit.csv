@@ -1,0 +1,4 @@
+﻿audit_item,status,future_data_violation_count
+post_close_official_data_same_day_use,prohibited_next_trading_day_only,0
+TDCC_latest_backfill,prohibited,0
+raw_price_as_adjusted,prohibited,0

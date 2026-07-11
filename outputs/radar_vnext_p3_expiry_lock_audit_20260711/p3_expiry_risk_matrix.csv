@@ -1,0 +1,10 @@
+﻿family,expiry_status,actual_min,actual_max,locked_rows,missing_count,notes
+taifex_foreign_tx_futures,locked_complete,2023-07-11,2026-07-09,728,0,official full-range CSV; trade and OI contracts/amounts locked
+tdcc_holder_distribution,partial_locked,2025-07-11,2026-07-03,61856,11,official retained history 51 weeks; 11 ticker-weeks official zero/schema-empty retained explicitly
+institutional,locked_complete,2023-07-11,2026-07-09,339332,0,official date-market manifests and compact physically present
+margin_short,locked_complete,2023-07-11,2026-07-09,332663,0,official date-market manifests and compact physically present
+securities_lending,locked_complete,2023-07-11,2026-07-09,447670,0,official date-market manifests and compact physically present
+foreign_ownership,locked_complete,2023-07-11,2026-07-09,329293,0,official daily ownership ratio compact physically present
+corporate_action_event_inventory,partial_locked,2022-07-11,2026-07-10,3372,0,trusted_nonofficial Yahoo candidates locked; official historical completeness not proven
+yahoo_adjusted_analysis,partial_locked,2023-07-11,2026-07-09,732006,24,coverage/checksum audit only; known structural blockers not reprobed
+yahoo_global_market,locked_complete,2023-07-11,2026-07-09,4531,0,research-grade sessions locked with timezone/source metadata
