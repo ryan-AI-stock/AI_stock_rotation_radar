@@ -2,4 +2,6 @@ compact/
 checkpoints/
 raw_audit_samples/
 *.lock
+*.log
+*_progress.json
 __pycache__/
