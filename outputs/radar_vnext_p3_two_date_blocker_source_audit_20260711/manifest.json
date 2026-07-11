@@ -1,0 +1,66 @@
+{
+  "task_id": "TASK-RADAR-DATA-VNEXT-P3-TWO-DATE-BLOCKER-BOUNDED-SOURCE-AUDIT-001",
+  "generated_at_utc": "2026-07-11T12:59:55+00:00",
+  "files": [
+    {
+      "path": "current_step.txt",
+      "bytes": 47,
+      "sha256": "b04e342f97bf32a8ba1b782312e5df163a71e095c2ef743b2bf1369b9580fa5a"
+    },
+    {
+      "path": "final_summary_zh.md",
+      "bytes": 640,
+      "sha256": "fe009cebc4342813952ad1aa59ebece310c8e43d29a41b710ea4cd5489e464a0"
+    },
+    {
+      "path": "p3_20250801_adjusted_patch.csv",
+      "bytes": 131,
+      "sha256": "73127f7deeb90fc33b095b78dc2b40380c6ce9efd9a38e1868a8b14029551725"
+    },
+    {
+      "path": "p3_20250801_yahoo_adjusted_probe.csv",
+      "bytes": 42023,
+      "sha256": "100a4853d1ca1799f85668cbd187995677efb88a99118f7f1bf98ccd0d4c630f"
+    },
+    {
+      "path": "p3_20251226_taifex_patch.csv",
+      "bytes": 538,
+      "sha256": "c4173468ff061a14a8683bffa0fe5cd55a685c5a42253026c6065fa94dfa406f"
+    },
+    {
+      "path": "p3_two_date_blocked_ledger.csv",
+      "bytes": 31697,
+      "sha256": "b19be3287a8c4aa49df3f9c553a1d44e558fc173307c4ad0c27783147cd03cc5"
+    },
+    {
+      "path": "p3_two_date_future_data_audit.csv",
+      "bytes": 174,
+      "sha256": "1344b16c6a72dd8bcc2ab5938c99ee115f906a2b9c325751c74662b09414c08b"
+    },
+    {
+      "path": "p3_two_date_market_status_evidence.csv",
+      "bytes": 1360,
+      "sha256": "cc527e99ad248ea3498da9c9fb3375436a01649b131b910f79bfd94f1a6153db"
+    },
+    {
+      "path": "p3_two_date_source_manifest.csv",
+      "bytes": 1169,
+      "sha256": "1a1ddcf9201105108bd0a82d618535c9f7ccf8b1f1d2660df89323a0c9ee8631"
+    },
+    {
+      "path": "readiness_for_core_p3_two_date_blocker_audit.json",
+      "bytes": 1243,
+      "sha256": "723f3f40fe5687c0526429397a9b5ddc2a2e89d03a37670f5bf182a7f634f950"
+    }
+  ],
+  "future_data_violation_count": 0,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "portfolio_replay_executed": false,
+  "ready_for_strategy_replay": false,
+  "ready_for_formal": false,
+  "not_live_rule": true,
+  "forward_returns_live_rule_usage": false
+}

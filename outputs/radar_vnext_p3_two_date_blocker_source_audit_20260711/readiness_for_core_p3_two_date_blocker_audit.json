@@ -1,0 +1,30 @@
+{
+  "task_id": "TASK-RADAR-DATA-VNEXT-P3-TWO-DATE-BLOCKER-BOUNDED-SOURCE-AUDIT-001",
+  "status": "taifex_patch_ready_adjusted_date_structurally_blocked_by_provider_nulls",
+  "source": "official TWSE/TPEx market status plus Yahoo trusted adjusted probe plus official TAIFEX range CSV",
+  "coverage": {
+    "2025-08-01_primary80_tickers": 80,
+    "2025-08-01_existing_adjusted_rows": 0,
+    "2025-08-01_adjusted_patch_rows": 0,
+    "2025-08-01_yahoo_classifications": {
+      "provider_null_placeholder_for_official_trading_session": 72,
+      "provider_session_absent": 2,
+      "symbol_history_unavailable_chart_result_null": 6
+    },
+    "2025-12-26_taifex_patch_rows": 1
+  },
+  "future_data_violation_count": 0,
+  "ready_for_core_p3_20251226_taifex_patch_absorption": true,
+  "ready_for_core_p3_20250801_adjusted_patch_absorption": false,
+  "ready_for_experiments": false,
+  "raw_used_as_adjusted": false,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "portfolio_replay_executed": false,
+  "ready_for_strategy_replay": false,
+  "ready_for_formal": false,
+  "not_live_rule": true,
+  "forward_returns_live_rule_usage": false
+}
