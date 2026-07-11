@@ -50,6 +50,8 @@ def main() -> None:
     now = _parse_now(args.now)
     rules = load_schedule_rules(args.rules)
     open_dates, closed_dates = fetch_twse_calendar()
+    if closed_dates is not None:
+        closed_dates = add_recent_emergency_market_closure(now, open_dates, closed_dates, rules)
     decision = evaluate_schedule_gate(now, open_dates, closed_dates, rules=rules)
     outputs = {
         "should_run": str(decision.should_run).lower(),
@@ -104,6 +106,53 @@ def fetch_twse_calendar() -> tuple[set[date], set[date] | None]:
         print("Warning: TWSE holiday schedule returned no closed dates; skipping scheduled report.")
         return set(), None
     return open_dates, closed_dates
+
+
+def fetch_official_market_session_state(trade_date: date) -> str:
+    """Return open/closed/unknown using both official after-trading APIs."""
+    ymd = trade_date.strftime("%Y%m%d")
+    slash_date = trade_date.strftime("%Y/%m/%d")
+    urls = (
+        "https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX"
+        f"?date={ymd}&type=ALLBUT0999&response=json",
+        "https://www.tpex.org.tw/www/zh-tw/afterTrading/otc"
+        f"?date={slash_date}&type=EW&response=json",
+    )
+    row_counts = []
+    try:
+        for url in urls:
+            request = Request(url, headers={"User-Agent": "AI-stock-rotation-radar/1.0"})
+            with urlopen(request, timeout=30) as response:
+                payload = json.load(response)
+            row_counts.append(sum(len(table.get("data") or []) for table in payload.get("tables") or []))
+    except (json.JSONDecodeError, OSError, TypeError, URLError):
+        return "unknown"
+    if any(count > 0 for count in row_counts):
+        return "open"
+    return "closed" if len(row_counts) == 2 else "unknown"
+
+
+def add_recent_emergency_market_closure(
+    now: datetime,
+    open_dates: set[date],
+    closed_dates: set[date],
+    rules: ScheduleGateRules,
+) -> set[date]:
+    """Add an unscheduled closure only when both official markets confirm no session."""
+    updated = set(closed_dates)
+    candidate = now.date()
+    if candidate.weekday() >= 5:
+        candidate -= timedelta(days=candidate.weekday() - 4)
+    elif now.time() < rules.run_after:
+        candidate -= timedelta(days=1)
+        while candidate.weekday() >= 5:
+            candidate -= timedelta(days=1)
+    if candidate in open_dates or candidate in updated:
+        return updated
+    if fetch_official_market_session_state(candidate) == "closed":
+        updated.add(candidate)
+        print(f"Detected official no-session market date: {candidate.isoformat()}")
+    return updated
 
 
 def evaluate_schedule_gate(

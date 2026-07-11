@@ -2,13 +2,14 @@ from __future__ import annotations
 
 import unittest
 from contextlib import contextmanager
-from datetime import date, datetime
+from datetime import date, datetime, time
 from io import StringIO
 from pathlib import Path
 from unittest.mock import patch
 
 from rotation_radar.schedule_gate import (
     ScheduleGateRules,
+    add_recent_emergency_market_closure,
     evaluate_schedule_gate,
     fetch_twse_calendar,
     is_trading_day,
@@ -17,6 +18,26 @@ from rotation_radar.schedule_gate import (
 
 
 class ScheduleGateTests(unittest.TestCase):
+    def test_emergency_friday_closure_retries_thursday(self) -> None:
+        now = datetime(2026, 7, 10, 18, 0)
+        rules = ScheduleGateRules(run_after=time(15, 0))
+
+        with patch("rotation_radar.schedule_gate.fetch_official_market_session_state", return_value="closed"):
+            closed = add_recent_emergency_market_closure(now, set(), set(), rules)
+        decision = evaluate_schedule_gate(now, set(), closed, rules=rules)
+
+        self.assertIn(date(2026, 7, 10), closed)
+        self.assertEqual(decision.target_date, date(2026, 7, 9))
+
+    def test_unknown_session_state_does_not_invent_closure(self) -> None:
+        now = datetime(2026, 7, 10, 18, 0)
+        rules = ScheduleGateRules(run_after=time(15, 0))
+
+        with patch("rotation_radar.schedule_gate.fetch_official_market_session_state", return_value="unknown"):
+            closed = add_recent_emergency_market_closure(now, set(), set(), rules)
+
+        self.assertNotIn(date(2026, 7, 10), closed)
+
     def test_daily_gate_retries_previous_trading_day_until_next_window_opens(self) -> None:
         before_15 = evaluate_schedule_gate(datetime(2026, 6, 5, 14, 59), set(), set())
         after_15 = evaluate_schedule_gate(datetime(2026, 6, 5, 15, 0), set(), set())
@@ -141,3 +162,4 @@ def _response(text: str):
 
 if __name__ == "__main__":
     unittest.main()
+    add_recent_emergency_market_closure,
