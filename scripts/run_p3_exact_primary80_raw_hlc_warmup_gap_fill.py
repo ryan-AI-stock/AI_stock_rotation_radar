@@ -390,7 +390,7 @@ def main() -> None:
     parser.add_argument("--workers", type=int, default=8)
     args = parser.parse_args()
     OUT.mkdir(parents=True, exist_ok=True)
-    (OUT / ".gitignore").write_text("local/\ncheckpoints/\ncompact/\n*.stdout.log\n*.stderr.log\n", encoding="utf-8")
+    (OUT / ".gitignore").write_text("local/\ncheckpoints/\ncompact/\n*.stdout.log\n*.stderr.log\n*.tmp\n", encoding="utf-8")
     if args.step in {"scope", "all"}:
         write_scope()
     if args.step in {"repair", "all"}:
