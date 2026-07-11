@@ -1,0 +1,7 @@
+﻿family,route_rows,reused_routes,retrieval_attempted_routes,accepted_routes,no_row_routes,failed_routes
+price,1431,647,784,783,1,0
+institutional,1431,647,784,766,18,0
+margin_short,1431,363,1068,861,0,207
+securities_lending,1431,611,820,309,0,511
+foreign_ownership,1431,652,779,309,0,470
+adjusted_analysis,701,405,296,285,0,11

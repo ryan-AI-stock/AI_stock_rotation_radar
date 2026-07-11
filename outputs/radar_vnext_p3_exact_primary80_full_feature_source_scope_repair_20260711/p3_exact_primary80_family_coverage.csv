@@ -1,0 +1,8 @@
+﻿family,required_ticker_dates,ready_ticker_dates,blocked_ticker_dates,ready_share,source_scope,status
+price,57360,57301,59,0.9989714086,exact_primary80_daily_active_membership,partial
+institutional,57360,57250,110,0.9980822873,exact_primary80_daily_active_membership,partial
+margin_short,57360,55981,1379,0.9759588563,exact_primary80_daily_active_membership,partial
+securities_lending,57360,55888,1472,0.9743375174,exact_primary80_daily_active_membership,partial
+foreign_ownership,57360,56047,1313,0.977109484,exact_primary80_daily_active_membership,partial
+adjusted_analysis,227186,224936,2250,0.9900962207,exact_primary80_plus_80_trading_day_warmup,partial
+corporate_action_guard,701,674,701,0,primary80_union_event_inventory,partial_event_inventory_no_no_event_completeness_proof

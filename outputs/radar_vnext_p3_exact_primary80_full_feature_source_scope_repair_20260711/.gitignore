@@ -1,0 +1,5 @@
+local/
+checkpoints/
+compact/
+*.stdout.log
+*.stderr.log

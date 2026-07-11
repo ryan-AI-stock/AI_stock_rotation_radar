@@ -1,0 +1,355 @@
+{
+  "task_id": "TASK-RADAR-DATA-VNEXT-P3-EXACT-PRIMARY80-FULL-FEATURE-SOURCE-SCOPE-REPAIR-001",
+  "generated_at_utc": "2026-07-11T10:34:19+00:00",
+  "source_contract": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-30\\ep05-chat-ai-stock-backtest-lab\\outputs\\vnext_layer4_80_primary_pool_contract_20260708\\layer4_80_primary_pool_contract.csv",
+  "source_contract_sha256": "21d5c42ac151ec71706c793f386a1f1e2ab16f656601d0c2474dd1dc496e3901",
+  "coverage": [
+    {
+      "family": "price",
+      "required_ticker_dates": 57360,
+      "ready_ticker_dates": 57301,
+      "blocked_ticker_dates": 59,
+      "ready_share": 0.9989714086,
+      "source_scope": "exact_primary80_daily_active_membership",
+      "status": "partial"
+    },
+    {
+      "family": "institutional",
+      "required_ticker_dates": 57360,
+      "ready_ticker_dates": 57250,
+      "blocked_ticker_dates": 110,
+      "ready_share": 0.9980822873,
+      "source_scope": "exact_primary80_daily_active_membership",
+      "status": "partial"
+    },
+    {
+      "family": "margin_short",
+      "required_ticker_dates": 57360,
+      "ready_ticker_dates": 55981,
+      "blocked_ticker_dates": 1379,
+      "ready_share": 0.9759588563,
+      "source_scope": "exact_primary80_daily_active_membership",
+      "status": "partial"
+    },
+    {
+      "family": "securities_lending",
+      "required_ticker_dates": 57360,
+      "ready_ticker_dates": 55888,
+      "blocked_ticker_dates": 1472,
+      "ready_share": 0.9743375174,
+      "source_scope": "exact_primary80_daily_active_membership",
+      "status": "partial"
+    },
+    {
+      "family": "foreign_ownership",
+      "required_ticker_dates": 57360,
+      "ready_ticker_dates": 56047,
+      "blocked_ticker_dates": 1313,
+      "ready_share": 0.977109484,
+      "source_scope": "exact_primary80_daily_active_membership",
+      "status": "partial"
+    },
+    {
+      "family": "adjusted_analysis",
+      "required_ticker_dates": 227186,
+      "ready_ticker_dates": 224936,
+      "blocked_ticker_dates": 2250,
+      "ready_share": 0.9900962207,
+      "source_scope": "exact_primary80_plus_80_trading_day_warmup",
+      "status": "partial"
+    },
+    {
+      "family": "corporate_action_guard",
+      "required_ticker_dates": 701,
+      "ready_ticker_dates": 674,
+      "blocked_ticker_dates": 701,
+      "ready_share": 0,
+      "source_scope": "primary80_union_event_inventory",
+      "status": "partial_event_inventory_no_no_event_completeness_proof"
+    }
+  ],
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 60,
+      "sha256": "7859e6cbf594910f4fa214f1768f92af853e83ac7e6d0c666cfa19b032cc21e7"
+    },
+    {
+      "path": "adjusted_progress.json",
+      "bytes": 113,
+      "sha256": "c73c0731836e8194bea35c735da50ba63d8c3c907f9963b4a8ba8e7ad1282b1b"
+    },
+    {
+      "path": "adjusted_source_manifest.csv",
+      "bytes": 31157,
+      "sha256": "9db1dccc88d69936afcc4257d97b6c031434fbcd42ff91591edf4258dde2e67a"
+    },
+    {
+      "path": "current_step.txt",
+      "bytes": 37,
+      "sha256": "e16eb8f1db73ff7a31892e5df444432f206fad18b870ffa4ea3f6446a6a787c6"
+    },
+    {
+      "path": "final_summary_zh.md",
+      "bytes": 783,
+      "sha256": "063019135f0539baa5e52bfe5288b116f83d351be8a48fb758e3b72f583b38b5"
+    },
+    {
+      "path": "foreign_ownership_progress.json",
+      "bytes": 147,
+      "sha256": "e900d0f52281e01e271ccbe69060cd69e6384213e57096c8b40c5653f556089f"
+    },
+    {
+      "path": "foreign_ownership_source_manifest.csv",
+      "bytes": 91042,
+      "sha256": "2d8d78538274ac3f6416ca8113eae0cca754bb47b4f864f4a5987721c72aa687"
+    },
+    {
+      "path": "institutional_progress.json",
+      "bytes": 143,
+      "sha256": "ad14d6deed10dbfcd33b624913d22347aaa9ee648fae28d8614ccadcd65c6b4f"
+    },
+    {
+      "path": "institutional_source_manifest.csv",
+      "bytes": 86580,
+      "sha256": "5aa458683f78fda3412108dcd0917d9305a6e126e0cb1271a6edbd8a003832fb"
+    },
+    {
+      "path": "margin_short_progress.json",
+      "bytes": 144,
+      "sha256": "af011eb14577efa741d8791543a7ed4b96b5416e7a999d3c062bc50d49b8db20"
+    },
+    {
+      "path": "margin_short_source_manifest.csv",
+      "bytes": 79789,
+      "sha256": "b3ef2aca45e35419dfbab4e1c0c8c83c06285937d8af1ff7e4427050006c5b19"
+    },
+    {
+      "path": "p3_exact_primary80_adjusted_blocked_tickers.csv",
+      "bytes": 10223,
+      "sha256": "70b1a80556877333f7a1ef04fd51d9b90e73a9deee7a8b12f5527e88efa368d7"
+    },
+    {
+      "path": "p3_exact_primary80_blocked_ticker_date_ledger.csv",
+      "bytes": 970254,
+      "sha256": "0d99e423406781132777a590d36e62a583f69086060067efe2afb8578e93989d"
+    },
+    {
+      "path": "p3_exact_primary80_compact_hash_manifest.csv",
+      "bytes": 2751,
+      "sha256": "0dfad463cba8712b10c4609bc333a2587130cc20695e18abc6cd193a52ff1015"
+    },
+    {
+      "path": "p3_exact_primary80_core_no_path_proof_contradiction.csv",
+      "bytes": 1147,
+      "sha256": "6f603b3aa41c13b9490946e0539975e48f1a200dff3dfc0274437a35267702c3"
+    },
+    {
+      "path": "p3_exact_primary80_corporate_action_guard_coverage.csv",
+      "bytes": 50636,
+      "sha256": "8d2b59a7e8351a54f0e6ea4d14e69d8c641ceb1ec9039500ea1868b9882b35d0"
+    },
+    {
+      "path": "p3_exact_primary80_family_coverage.csv",
+      "bytes": 793,
+      "sha256": "b1eee8905361069aea5fdc81cd639ff32d46cc9781701b432d4cbba8654eb97d"
+    },
+    {
+      "path": "p3_exact_primary80_family_coverage_by_ticker.csv",
+      "bytes": 168790,
+      "sha256": "6dd5bb57af97eaf50aeb896bcda7bc92b2e61e2ff6a1dac59a9fded100fa4e2d"
+    },
+    {
+      "path": "p3_exact_primary80_future_data_audit.csv",
+      "bytes": 164,
+      "sha256": "3da88be9bda472d4631f57730f20b46f310156c2fc01d56383a0f33304456c64"
+    },
+    {
+      "path": "p3_exact_primary80_membership.csv",
+      "bytes": 742023,
+      "sha256": "ee866a5dda787b2e2979b8a66d2880bacc5c3dcccebcc44ef82f5cedb71bb360"
+    },
+    {
+      "path": "p3_exact_primary80_requested_vs_actual.csv",
+      "bytes": 304,
+      "sha256": "81dd39cde1200e93f2106f6fa201e0534dbc2028e7a553fc3ac7c4930de81bc2"
+    },
+    {
+      "path": "p3_exact_primary80_scope_summary.csv",
+      "bytes": 652,
+      "sha256": "14d390bcf168ae5e263ffb081a7870604d7ae0bd5521e7222c0b8944da4cc906"
+    },
+    {
+      "path": "p3_exact_primary80_source_reuse_download_audit.csv",
+      "bytes": 335,
+      "sha256": "243b4bf6fa1956d2cbcd3ba7132328e008638783925140cda7597e2744c8f247"
+    },
+    {
+      "path": "price_progress.json",
+      "bytes": 213,
+      "sha256": "f3d8974b1351aa1a25d6fb013ae2d5ba8a355bf6b2fa1115b41c4cf6d2a6e6be"
+    },
+    {
+      "path": "price_source_manifest.csv",
+      "bytes": 74741,
+      "sha256": "499b7c9b8512e8278704df7a43c74ba0dc19f2d187e1d6b65d2bf12fa2e8db76"
+    },
+    {
+      "path": "readiness_for_core_p3_exact_primary80_source_scope_repair.json",
+      "bytes": 2007,
+      "sha256": "f64f03bdcb2e5179b947c7b6ff02d51befd55c96df1ab6e962c5a64c57edb688"
+    },
+    {
+      "path": "scope_progress.json",
+      "bytes": 143,
+      "sha256": "11ea14d81cec28e7e8e186c41d7e82b35eefbd4a59eea48a9bed41382675823d"
+    },
+    {
+      "path": "securities_lending_progress.json",
+      "bytes": 148,
+      "sha256": "c37e9d8c22289001d7885ab6124520d977b5f394d44c48b72cfd06b84090b48e"
+    },
+    {
+      "path": "securities_lending_source_manifest.csv",
+      "bytes": 91735,
+      "sha256": "e71b2a17f1fca84f98f5565ba26b8f86b12ff4c20b22708b10959ce31b014bab"
+    }
+  ],
+  "compact_files": [
+    {
+      "path": "compact/adjusted/2023.csv.gz",
+      "bytes": 4291104,
+      "sha256": "f40b43e27627009dfd12acb343398c2ef7ef73dc9011829f823b051b4ed8ce63"
+    },
+    {
+      "path": "compact/adjusted/2024.csv.gz",
+      "bytes": 5821403,
+      "sha256": "c454542ec4068419ab81d4140cca211fad9c7259d1eb6c5d0be38db1cb7a9f8d"
+    },
+    {
+      "path": "compact/adjusted/2025.csv.gz",
+      "bytes": 5640782,
+      "sha256": "fe7476de490f45338536ed51d1f2a7ce249c3c330c3b16b4f0123b72ccaa5b3e"
+    },
+    {
+      "path": "compact/adjusted/2026.csv.gz",
+      "bytes": 2216342,
+      "sha256": "28733b0d8ac187301132e2aaedec6f9bdbf88b5536ca3c59037d2d8104f8ad51"
+    },
+    {
+      "path": "compact/chip_institutional/2023.csv.gz",
+      "bytes": 129782,
+      "sha256": "d43a4aa054d85a748dd11c550fcebb994f48f0776cf04959bff8a60d7d1ba957"
+    },
+    {
+      "path": "compact/chip_institutional/2024.csv.gz",
+      "bytes": 275036,
+      "sha256": "f24f8a7c032c11a898e3f9858d2edbb0ad48c7e1f186eed5dde47d559a1e1aac"
+    },
+    {
+      "path": "compact/chip_institutional/2025.csv.gz",
+      "bytes": 273018,
+      "sha256": "828c5066e2cf8d95825f2ec4f516c86ae9278deb74b41c1d9772460a213fa9d3"
+    },
+    {
+      "path": "compact/chip_institutional/2026.csv.gz",
+      "bytes": 136240,
+      "sha256": "ea58e71a5c5c461a6b057dfad24cccec3df107c4d050736c15874c2482cc086a"
+    },
+    {
+      "path": "compact/chip_margin_short/2023.csv.gz",
+      "bytes": 143543,
+      "sha256": "6103b7b12ab04039a8d922bc73cceba0701b525c47061cf3a44076fd9113709c"
+    },
+    {
+      "path": "compact/chip_margin_short/2024.csv.gz",
+      "bytes": 294606,
+      "sha256": "2749fb5e1169edb0b4f02250203cffe3a13f035c26f4f6fd801533cdb2f6d9db"
+    },
+    {
+      "path": "compact/chip_margin_short/2025.csv.gz",
+      "bytes": 291143,
+      "sha256": "eba8d99ebfc542d8656b1cd91224e530b339c61bcc6f8ede1af25919b2cf7532"
+    },
+    {
+      "path": "compact/chip_margin_short/2026.csv.gz",
+      "bytes": 139953,
+      "sha256": "5e76b406b753d368bbff979ccc654e58697dbaf374a5a8bdeefbc07a0ab70bf2"
+    },
+    {
+      "path": "compact/chip_securities_lending/2023.csv.gz",
+      "bytes": 121798,
+      "sha256": "96f77382ebef54d6bee9d368207e47d092732b56702441425b795be67ba460c1"
+    },
+    {
+      "path": "compact/chip_securities_lending/2024.csv.gz",
+      "bytes": 254858,
+      "sha256": "b16c9b4cfa67710bf4b01f317bb36803cc52ca6492b566c104a491d9ef86274e"
+    },
+    {
+      "path": "compact/chip_securities_lending/2025.csv.gz",
+      "bytes": 252845,
+      "sha256": "a725be48c19905804a418fa2fadf050c5ec0d057b636b5e3af8d0b93db0505c6"
+    },
+    {
+      "path": "compact/chip_securities_lending/2026.csv.gz",
+      "bytes": 119511,
+      "sha256": "e7e9177f2f9c90e903fa160ee7eb7bae9fd34014bb690b12cdd653a351f194bb"
+    },
+    {
+      "path": "compact/corporate_action_guard/events.csv.gz",
+      "bytes": 76444,
+      "sha256": "a760eeda619e56252e5967068e8c57a04b1f2ebae1636d5ca197a909b0f32e32"
+    },
+    {
+      "path": "compact/foreign_ownership/2023.csv.gz",
+      "bytes": 232846,
+      "sha256": "c48547ff1f92f279287dc7722eaa1290e10d37b6e87a3a30cc10843319553bab"
+    },
+    {
+      "path": "compact/foreign_ownership/2024.csv.gz",
+      "bytes": 484654,
+      "sha256": "da33369211222ea351ef6522eb9ad87a3853228bb0c6f2bbb088153c39036e13"
+    },
+    {
+      "path": "compact/foreign_ownership/2025.csv.gz",
+      "bytes": 489071,
+      "sha256": "c70fd4b6bdcd753ec1238ac752552a5f3eb17f94e2f7c92571a45d063f8dc918"
+    },
+    {
+      "path": "compact/foreign_ownership/2026.csv.gz",
+      "bytes": 233009,
+      "sha256": "778c722ec5947cea8c6c163070946ccb043813699500ac55a78004f2118c4e6b"
+    },
+    {
+      "path": "compact/price/2023.csv.gz",
+      "bytes": 250602,
+      "sha256": "c960bdf5f7099c7141ab220390ac6c5e2bb094cc8a03923c610ee2fd5a99908f"
+    },
+    {
+      "path": "compact/price/2024.csv.gz",
+      "bytes": 529668,
+      "sha256": "2aeadf34078a1a0945ed004a141a17bddeb38878227f7977797b0038d574fe8f"
+    },
+    {
+      "path": "compact/price/2025.csv.gz",
+      "bytes": 527966,
+      "sha256": "72c13cdc4778e300cd385ef57df7d1a90497dd85d3e00f08e9e1a20513683e27"
+    },
+    {
+      "path": "compact/price/2026.csv.gz",
+      "bytes": 260976,
+      "sha256": "ed0570cbb7db718941f514ab5c6ab323675d2b230db05e34ec92d4a66a260d50"
+    }
+  ],
+  "future_data_violation_count": 0,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "portfolio_replay_executed": false,
+  "ready_for_strategy_replay": false,
+  "ready_for_formal": false,
+  "not_live_rule": true,
+  "forward_returns_live_rule_usage": false
+}
