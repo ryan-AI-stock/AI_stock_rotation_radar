@@ -1,0 +1,30 @@
+{
+  "task_id": "TASK-RADAR-DATA-VNEXT-P3-EXACT-PRIMARY80-RAW-HLC-WARMUP-GAP-FILL-001",
+  "status": "raw_hlc_warmup_source_package_ready_with_explicit_official_no_rows",
+  "source": "official TWSE/TPEx raw OHLCV; reused exact-key local compact plus bounded market-wide repair",
+  "coverage": {
+    "required_ticker_dates": 183886,
+    "ready_ticker_dates": 181375,
+    "blocked_ticker_dates": 2511,
+    "ready_share": 0.9863448006,
+    "segment_count": 5016,
+    "complete_60td_segments": 3139,
+    "blocked_classification_counts": {
+      "official_zero_or_not_applicable": 2511
+    }
+  },
+  "future_data_violation_count": 0,
+  "ready_for_core_p3_exact_primary80_raw_hlc_warmup_absorption": true,
+  "ready_for_experiments": false,
+  "adjusted_11_reprobed": false,
+  "raw_used_as_adjusted": false,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "portfolio_replay_executed": false,
+  "ready_for_strategy_replay": false,
+  "ready_for_formal": false,
+  "not_live_rule": true,
+  "forward_returns_live_rule_usage": false
+}

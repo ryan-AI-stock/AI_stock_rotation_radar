@@ -1,0 +1,2 @@
+﻿segment_count,unique_tickers,required_unique_ticker_dates,required_unique_dates,required_markets,warmup_sessions_per_segment,primary_contract_sha256,adjusted_blocked_tickers_reprobed
+5016,701,183886,776,"TPEx,TWSE",60,21d5c42ac151ec71706c793f386a1f1e2ab16f656601d0c2474dd1dc496e3901,False

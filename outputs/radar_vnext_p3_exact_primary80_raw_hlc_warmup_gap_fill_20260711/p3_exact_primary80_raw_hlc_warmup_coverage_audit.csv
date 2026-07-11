@@ -1,0 +1,2 @@
+﻿required_ticker_dates,ready_ticker_dates,blocked_ticker_dates,ready_share,segment_count,complete_60td_segments,blocked_classification_counts,source_quality,adjustment_policy
+183886,181375,2511,0.9863448006,5016,3139,{'official_zero_or_not_applicable': 2511},official_twse_tpex_raw_execution_ohlcv,raw_only; Core applies existing trusted factor; raw not adjusted

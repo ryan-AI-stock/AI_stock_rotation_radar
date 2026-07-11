@@ -1,0 +1,121 @@
+{
+  "task_id": "TASK-RADAR-DATA-VNEXT-P3-EXACT-PRIMARY80-RAW-HLC-WARMUP-GAP-FILL-001",
+  "generated_at_utc": "2026-07-11T11:34:55+00:00",
+  "primary_contract": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-30\\ep05-chat-ai-stock-backtest-lab\\outputs\\vnext_layer4_80_primary_pool_contract_20260708\\layer4_80_primary_pool_contract.csv",
+  "primary_contract_sha256": "21d5c42ac151ec71706c793f386a1f1e2ab16f656601d0c2474dd1dc496e3901",
+  "coverage": {
+    "required_ticker_dates": 183886,
+    "ready_ticker_dates": 181375,
+    "blocked_ticker_dates": 2511,
+    "ready_share": 0.9863448006,
+    "segment_count": 5016,
+    "complete_60td_segments": 3139,
+    "blocked_classification_counts": {
+      "official_zero_or_not_applicable": 2511
+    }
+  },
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 60,
+      "sha256": "7859e6cbf594910f4fa214f1768f92af853e83ac7e6d0c666cfa19b032cc21e7"
+    },
+    {
+      "path": "current_step.txt",
+      "bytes": 37,
+      "sha256": "e16eb8f1db73ff7a31892e5df444432f206fad18b870ffa4ea3f6446a6a787c6"
+    },
+    {
+      "path": "final_summary_zh.md",
+      "bytes": 534,
+      "sha256": "ba3fc60b7e999f675630828d3e8cafb498a77d721d22198d406d8966b251a81e"
+    },
+    {
+      "path": "p3_exact_primary80_membership_segments.csv",
+      "bytes": 437429,
+      "sha256": "42bc3293b8b6250b93c6a3fef2bf1fe82257a3b059e68e995de9fd673478bd6a"
+    },
+    {
+      "path": "p3_exact_primary80_raw_hlc_warmup_blocked_ledger.csv",
+      "bytes": 1005214,
+      "sha256": "629b05a09b4e39c7d13223c946d7c2449f62cc67733f802e9ad78772d5cd2346"
+    },
+    {
+      "path": "p3_exact_primary80_raw_hlc_warmup_compact_hash_manifest.csv",
+      "bytes": 457,
+      "sha256": "815c6bcdcc23fc44e9bae846307f3d5a88c840d61503c9b7144fb2f0f08a3507"
+    },
+    {
+      "path": "p3_exact_primary80_raw_hlc_warmup_coverage_audit.csv",
+      "bytes": 367,
+      "sha256": "47f417542738fbe8701d190d78c9cdae057f76628d2f49a6e3404c60b88f52c1"
+    },
+    {
+      "path": "p3_exact_primary80_raw_hlc_warmup_coverage_by_segment.csv",
+      "bytes": 504631,
+      "sha256": "07ba2dcfb1d5d9e767aae2d44d7ae1de00e53760d42295f1087e6392f8a63309"
+    },
+    {
+      "path": "p3_exact_primary80_raw_hlc_warmup_future_data_audit.csv",
+      "bytes": 178,
+      "sha256": "ddb2e06fe361455ca57e4d56f62bf4d44f312668d33803983d040e1822dc02c7"
+    },
+    {
+      "path": "p3_exact_primary80_raw_hlc_warmup_requirement_summary.csv",
+      "bytes": 294,
+      "sha256": "4af3345fea0867029afd2aab818fdc84a28d6c039a64a2fe0e42046d71c5db51"
+    },
+    {
+      "path": "raw_hlc_warmup_progress.json",
+      "bytes": 191,
+      "sha256": "88f1fa7ebe551483516383f8f993fce3cbf85d1ef2bf9e860b078879ccfccc24"
+    },
+    {
+      "path": "raw_hlc_warmup_source_manifest.csv",
+      "bytes": 152721,
+      "sha256": "139d8940c7407598630c70d7597569af2e25771d7da7ae5dde681bd9af170f15"
+    },
+    {
+      "path": "readiness_for_core_p3_exact_primary80_raw_hlc_warmup.json",
+      "bytes": 1132,
+      "sha256": "3f63f290d277984843c7f77fd6f5a0ed9aa8c65f5645d2ec88d351a5db273487"
+    },
+    {
+      "path": "scope_progress.json",
+      "bytes": 132,
+      "sha256": "d1e734c6af43159225d091e7ba6f822f41d0688ae2b6e245ca6a95e46f13c33c"
+    }
+  ],
+  "compact_files": [
+    {
+      "path": "compact/raw_hlc_warmup/2023.csv.gz",
+      "bytes": 1332041,
+      "sha256": "bfd06a8fee501a1f5eb33e6158e61942153d0250bcdf5aaf07805879aa681e26"
+    },
+    {
+      "path": "compact/raw_hlc_warmup/2024.csv.gz",
+      "bytes": 1981621,
+      "sha256": "db16d0c19b6f773cb7b10dcc5d1f5c11bb82884323248ad5c06a15fdefdc0884"
+    },
+    {
+      "path": "compact/raw_hlc_warmup/2025.csv.gz",
+      "bytes": 1950644,
+      "sha256": "00f0dc8cdfb6a5f624b87560bac58ed8093145ffc1821bcf5e213e2674942b5f"
+    },
+    {
+      "path": "compact/raw_hlc_warmup/2026.csv.gz",
+      "bytes": 840199,
+      "sha256": "7f4601220840c19db9a5ae1cf506d092d1b286b56468f989e065ff0960422421"
+    }
+  ],
+  "future_data_violation_count": 0,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "portfolio_replay_executed": false,
+  "ready_for_strategy_replay": false,
+  "ready_for_formal": false,
+  "not_live_rule": true,
+  "forward_returns_live_rule_usage": false
+}
