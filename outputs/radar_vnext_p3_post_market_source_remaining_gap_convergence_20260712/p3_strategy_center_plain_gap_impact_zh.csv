@@ -1,0 +1,7 @@
+﻿項目,目前狀態,影響,是否阻止Phase_A,是否阻止Phase_B,formal影響
+技術指標,來源足夠，少數 adjusted rows 明確 blocked,Core 尚未完成日級 RS/MA/BIAS/KD 計算,是，原因是未計算，不是未下載,是,adjusted/corporate completeness 仍阻止 formal
+籌碼,法人/融資融券/借券/外資持股 20D source gap=0；官方零列保留 NA,Core 尚未滾出 5/10/20D 特徵,是，原因是未計算,是,不新增 source blocker
+行情環境,TAIFEX、全市場成交額/融資、SOX/Nasdaq/VIX/USD-TWD ready,Core 尚未形成三群 market state,是，原因是未計算/政策,是,Yahoo 全球欄位維持 trusted_nonofficial
+候選池,exact Layer4 只到 2026-06-29；7月底層來源已存在,7月不能沿用舊名單冒充 exact,若驗證期延伸到7月則是,若延伸到7月則是,需 Core frozen-contract recompute
+TDCC,51週已鎖存，P3-1 舊週結構性不可得,只作 P3-2 optional A/B,否,否,不得宣稱P3全期 TDCC ready
+成交執行,official raw OHLCV ready with explicit official NA,可作 execution ledger,否,否,仍須與 adjusted analysis 分欄

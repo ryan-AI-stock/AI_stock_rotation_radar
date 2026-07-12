@@ -1,0 +1,59 @@
+{
+  "task_id": "TASK-RADAR-DATA-VNEXT-P3-POST-MARKET-SOURCE-REMAINING-GAP-CONVERGENCE-001",
+  "generated_at_utc": "2026-07-12T00:34:40.539015+00:00",
+  "source": "latest Core/Radar physical compact, manifest, coverage and blocked-ledger audit",
+  "coverage": "P3 requested 2023-07-11~2026-07-10; source actual generally through 2026-07-09; exact Layer4 PIT through 2026-06-29",
+  "future_data_violation_count": 0,
+  "ready_for_core_rerun": true,
+  "ready_for_strategy_replay": false,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "artifacts": [
+    {
+      "path": "current_step.txt",
+      "bytes": 55,
+      "sha256": "7b45039d1693fe9b26a52fad60dc9d94d79527072738f90162722d509ed3f42c"
+    },
+    {
+      "path": "final_summary_zh.md",
+      "bytes": 1337,
+      "sha256": "1c2207a513e1210afed7121cdfedefd59cec23dda9137d30e62831e234277d23"
+    },
+    {
+      "path": "p3_existing_compact_reuse_manifest.csv",
+      "bytes": 2043,
+      "sha256": "22f133022a59ac6e4d6df57986270df3ade4eb05393b28beb9a8c8094de36bef"
+    },
+    {
+      "path": "p3_future_data_audit.csv",
+      "bytes": 209,
+      "sha256": "b5b0a121193d42628c3542ebc59a5412f7520d1a730c38a7f014189e44341f6f"
+    },
+    {
+      "path": "p3_layer4_july_freshness_audit.csv",
+      "bytes": 354,
+      "sha256": "c8ae4189d5c74c8eac32cae45a78c48a73a7a71f9bc01ae45a69d82321c5bfc9"
+    },
+    {
+      "path": "p3_remaining_source_family_matrix.csv",
+      "bytes": 4027,
+      "sha256": "ff39adbbe2add3107a903b4ae645ef83a3b3b960d25b26ebe9f0211b83b0903b"
+    },
+    {
+      "path": "p3_remaining_source_gap_ledger.csv",
+      "bytes": 1152,
+      "sha256": "e0c463154057916c0cfe56880a1fc219b036289d2dc525ddbbd63fe8f6a663b9"
+    },
+    {
+      "path": "p3_strategy_center_plain_gap_impact_zh.csv",
+      "bytes": 1113,
+      "sha256": "b52f1cdd251a2b9dcdc255c0401f22cd3294e09331658a1fa612555013b5a006"
+    },
+    {
+      "path": "readiness_for_core_p3_post_market_source_convergence.json",
+      "bytes": 1460,
+      "sha256": "3fc0bbfa3278eba91531fe977fbd3d2d44131c6c89573eec50970f7e13fe31df"
+    }
+  ]
+}
