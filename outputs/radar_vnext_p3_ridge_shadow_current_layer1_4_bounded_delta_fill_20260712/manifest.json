@@ -1,0 +1,138 @@
+{
+  "task_id": "TASK-RADAR-DATA-VNEXT-P3-RIDGE-SHADOW-CURRENT-LAYER1-4-BOUNDED-DELTA-FILL-001",
+  "generated_at": "2026-07-12T20:12:20+08:00",
+  "artifacts": [
+    {
+      "path": ".gitignore",
+      "bytes": 16,
+      "sha256": "c83016f0118893d705dc8d7ce2ff32933417bc014ce0766e5817656f58dc6ff8"
+    },
+    {
+      "path": "build_package.py",
+      "bytes": 26493,
+      "sha256": "8adb6fa70ef35225a55fab18ead1b4eccacefb2d2a38d51402094087f0de277c"
+    },
+    {
+      "path": "checkpoint.json",
+      "bytes": 266,
+      "sha256": "bc7b959454e86e9d7696f21ee689ac11ae033d67aba4e4733bc26cb3e91c2a7d"
+    },
+    {
+      "path": "current_step.txt",
+      "bytes": 43,
+      "sha256": "a4a3bbcba18137d77fd0639c752135ba7383eb602449dfa648342d1ec5e6b178"
+    },
+    {
+      "path": "final_summary_zh.md",
+      "bytes": 670,
+      "sha256": "fd7c9aafb8c8f0e1137f906794d72057433c69b284b86de839a73de448ad6a91"
+    },
+    {
+      "path": "readiness_for_core_p3_ridge_shadow_current_layer1_4_delta.json",
+      "bytes": 1087,
+      "sha256": "6a715b0068dbd2a1aacd7cea39e129c2f9724bfe5531ad30e6a19ec809ec1a54"
+    },
+    {
+      "path": "ridge_shadow_current_active_ticker_scope.csv",
+      "bytes": 71304,
+      "sha256": "9a605000617f362a077ad1db2a524ad4c6230843dfb157cd0a6b81812e86c93a"
+    },
+    {
+      "path": "ridge_shadow_current_adjusted_analysis_ohlc_factor_rows.csv.gz",
+      "bytes": 3080100,
+      "sha256": "8c552269d186debafb9de4563d4ec8b0aa2ffe4b7a2a624d66dea736130d9b71"
+    },
+    {
+      "path": "ridge_shadow_current_adjusted_analysis_sample.csv",
+      "bytes": 408276,
+      "sha256": "657040905eac9f4a4e9d7243bb6ca15c2ae666896b7f5f368980b5bc9e1b3f81"
+    },
+    {
+      "path": "ridge_shadow_current_adjusted_blocked_ledger.csv",
+      "bytes": 293,
+      "sha256": "235a8e2e607ae89455ed2453eda7a2585239f86d2f9c1d83593ebf8da6a778a0"
+    },
+    {
+      "path": "ridge_shadow_current_adjusted_coverage_by_ticker.csv",
+      "bytes": 46469,
+      "sha256": "88638a07246fc0cc5b320150c86294bee16c03a8acac8d29cf45f669b219d9ad"
+    },
+    {
+      "path": "ridge_shadow_current_corporate_action_event_rows.csv",
+      "bytes": 94987,
+      "sha256": "943a2657c5996ff47bbe25a9d60687bfe41b249245344e6cb89494c56ef0e486"
+    },
+    {
+      "path": "ridge_shadow_current_corporate_action_review_ledger.csv",
+      "bytes": 10712,
+      "sha256": "0ebab1d745b326819fbf75bccad94c768118ef43b58252b10d148056b92fc379"
+    },
+    {
+      "path": "ridge_shadow_current_future_data_audit.csv",
+      "bytes": 454,
+      "sha256": "92240f6bb0ce1277d4c70b554741557f83bd54c1d264dafccf1c59942521c8ed"
+    },
+    {
+      "path": "ridge_shadow_current_new_ticker_balance_cashflow_pit_rows.csv",
+      "bytes": 103077,
+      "sha256": "5e7b02181f45403b5936c6a7da5faee630fdaba1394487f907e562ee3aee8fa0"
+    },
+    {
+      "path": "ridge_shadow_current_new_ticker_fundamental_coverage.csv",
+      "bytes": 1902,
+      "sha256": "05db32283d4f6223f3cc6b7a47bbf5647b13918c7402e7103441556ef0c38405"
+    },
+    {
+      "path": "ridge_shadow_current_new_ticker_monthly_revenue_pit_rows.csv.gz",
+      "bytes": 8758,
+      "sha256": "5442cb0e1d22ccaa301f6cfcf39014255fd88a5d422d1381942bb8001a468f24"
+    },
+    {
+      "path": "ridge_shadow_current_new_ticker_quarterly_fundamental_pit_rows.csv.gz",
+      "bytes": 11435,
+      "sha256": "58d89fb82328978cebbcae7202fac7e406cfa7cb46edf77aa2379eda53b1fd42"
+    },
+    {
+      "path": "ridge_shadow_current_source_manifest.csv",
+      "bytes": 48459,
+      "sha256": "3e13b722ebd09bb11cdd05645b5283ac6d0983a086b0dfc40fd997099867383a"
+    }
+  ],
+  "readiness": {
+    "task_id": "TASK-RADAR-DATA-VNEXT-P3-RIDGE-SHADOW-CURRENT-LAYER1-4-BOUNDED-DELTA-FILL-001",
+    "status": "candidate_scoped_delta_ready_for_core_layer1_4_recompute",
+    "source": "local official MOPS/corporate-action compacts plus bounded trusted-nonofficial Yahoo adjusted analysis",
+    "coverage": {
+      "active_tickers": 297,
+      "adjusted_analysis_ready_tickers": 297,
+      "adjusted_analysis_blocked_tickers": 0,
+      "corporate_action_review_tickers": 61,
+      "corporate_action_event_rows": 307,
+      "new_context_tickers": 8,
+      "new_context_fundamental_ready_tickers": 8,
+      "price_rows": 79950
+    },
+    "future_data_violation_count": 0,
+    "ready_for_core_layer1_4_recompute": true,
+    "ready_for_core_rerun": true,
+    "ready_for_strategy_replay": false,
+    "ready_for_experiments": false,
+    "formal_model_changed": false,
+    "trade_decision_changed": false,
+    "active_in_trade_decision": false,
+    "report_changed": false,
+    "portfolio_replay_executed": false,
+    "ready_for_formal": false,
+    "not_live_rule": true,
+    "forward_returns_live_rule_usage": false
+  },
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "portfolio_replay_executed": false,
+  "ready_for_strategy_replay": false,
+  "ready_for_formal": false,
+  "not_live_rule": true,
+  "forward_returns_live_rule_usage": false
+}

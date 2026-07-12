@@ -1,0 +1,28 @@
+{
+  "task_id": "TASK-RADAR-DATA-VNEXT-P3-RIDGE-SHADOW-CURRENT-LAYER1-4-BOUNDED-DELTA-FILL-001",
+  "status": "candidate_scoped_delta_ready_for_core_layer1_4_recompute",
+  "source": "local official MOPS/corporate-action compacts plus bounded trusted-nonofficial Yahoo adjusted analysis",
+  "coverage": {
+    "active_tickers": 297,
+    "adjusted_analysis_ready_tickers": 297,
+    "adjusted_analysis_blocked_tickers": 0,
+    "corporate_action_review_tickers": 61,
+    "corporate_action_event_rows": 307,
+    "new_context_tickers": 8,
+    "new_context_fundamental_ready_tickers": 8,
+    "price_rows": 79950
+  },
+  "future_data_violation_count": 0,
+  "ready_for_core_layer1_4_recompute": true,
+  "ready_for_core_rerun": true,
+  "ready_for_strategy_replay": false,
+  "ready_for_experiments": false,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "portfolio_replay_executed": false,
+  "ready_for_formal": false,
+  "not_live_rule": true,
+  "forward_returns_live_rule_usage": false
+}

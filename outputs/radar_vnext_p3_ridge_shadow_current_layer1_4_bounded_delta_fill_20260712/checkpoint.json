@@ -1,0 +1,6 @@
+{
+  "task_id": "TASK-RADAR-DATA-VNEXT-P3-RIDGE-SHADOW-CURRENT-LAYER1-4-BOUNDED-DELTA-FILL-001",
+  "current_step": "completed_ready_for_core_layer1_4_recompute",
+  "resume_command": "python -X utf8 build_package.py",
+  "updated_at": "2026-07-12T20:12:20+08:00"
+}
