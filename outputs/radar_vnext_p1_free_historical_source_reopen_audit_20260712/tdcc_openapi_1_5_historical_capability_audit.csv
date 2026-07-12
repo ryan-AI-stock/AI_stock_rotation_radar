@@ -1,0 +1,2 @@
+﻿source_url,http_status,response_bytes,response_sha256,row_count,unique_data_dates,oas_parameters,historical_date_parameter_available,historical_policy,p1_2015_2022_ready,retrieval_time_utc
+https://openapi.tdcc.com.tw/v1/opendata/1-5,200,9611169,a0282082d195730c527499ffbcc51f5142df2bc9f188b8bbe12d9275f4697c92,68017,20260703,0,False,official query page states one-year retention; open API exposes current snapshot without date parameter,False,2026-07-12T00:19:32+00:00

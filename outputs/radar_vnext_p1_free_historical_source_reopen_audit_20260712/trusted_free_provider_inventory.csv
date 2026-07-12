@@ -1,0 +1,9 @@
+﻿provider,source_quality,dataset,reproducible_access,p1_coverage,batch_status,terms_or_cost,notes
+TPEx,official,daily per-stock institutional buy/sell,public JSON/CSV endpoint,2015-2022 verified and materialized,accepted,public website; free,sect=EW required; cate parameter was the prior route error
+TDCC,official,holder distribution OpenAPI 1-5,current snapshot API only,blocked,no historical parameter,government open data license; free current snapshot,one-year query retention; no latest backfill
+TAIFEX,official,TXF institutional trade/OI,free range endpoint limited to recent years,blocked,official DateTime error for P1,older history paid; no purchase,UI and endpoint limit confirmed
+FinMind,trusted_nonofficial_structured,TaiwanStockInstitutionalInvestorsBuySell,documented API; token/rate limits,candidate cross-check,not needed after official TPEx correction,free tier exists; account/token terms apply,do not upgrade to official/formal
+Yahoo Finance,trusted_nonofficial,adjusted price/dividend/split,chart endpoint used for research; UI CSV download Gold,partial with known ticker blockers,research cross-check only,licensing restrictions; no purchase,not institutional/TDCC/TAIFEX replacement
+MoneyDJ,web_reference,market/institutional pages,no documented stable bulk API/CSV found,not accepted,page view only,site terms; no bypass,cannot treat visible page as reproducible source
+Anue,web_reference,market pages,no documented stable bulk API/CSV found,not accepted,page view only,site terms; no bypass,not primary evidence
+Goodinfo/HiStock,web_reference,stock/institutional pages,no authorized stable bulk export established,not accepted,login/anti-bot constraints not bypassed,no account/payment used,manual page availability is not batch readiness

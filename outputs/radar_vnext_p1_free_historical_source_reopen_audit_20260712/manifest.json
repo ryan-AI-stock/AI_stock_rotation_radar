@@ -1,0 +1,165 @@
+{
+  "task_id": "TASK-RADAR-DATA-VNEXT-P1-FREE-HISTORICAL-SOURCE-REOPEN-AUDIT-001",
+  "generated_at_utc": "2026-07-12T00:19:34+00:00",
+  "files": [
+    {
+      "path": "compact\\tpex_institutional\\2015.csv.gz",
+      "bytes": 1696252,
+      "sha256": "c1b5ddeb18ab36ef32efede2ee03ca5970b2724c48f35b6f6d18c4e3f75e76a5"
+    },
+    {
+      "path": "compact\\tpex_institutional\\2016.csv.gz",
+      "bytes": 1844120,
+      "sha256": "1b22b3a027f8db474892951aa33df7b96226a0051dc7ae367e8e35a9949025e4"
+    },
+    {
+      "path": "compact\\tpex_institutional\\2017.csv.gz",
+      "bytes": 2012484,
+      "sha256": "2ca2deeda74bf19bca4897689b989117bc59e80640e724937fcbe81432b32b73"
+    },
+    {
+      "path": "compact\\tpex_institutional\\2018.csv.gz",
+      "bytes": 2005327,
+      "sha256": "bdd310c4e81104ba126b6b2475325686a6c859b6637e7ce5ddd3c47a9abebf78"
+    },
+    {
+      "path": "compact\\tpex_institutional\\2019.csv.gz",
+      "bytes": 2224181,
+      "sha256": "a1cf795d492411cce4e2b600d75d88f6bd15c00cc08987654130d032109737ff"
+    },
+    {
+      "path": "compact\\tpex_institutional\\2020.csv.gz",
+      "bytes": 2507793,
+      "sha256": "0c952f97f460ccd3502c5b5bd3c08b4098b31b206768df5a959913bfb20d6efd"
+    },
+    {
+      "path": "compact\\tpex_institutional\\2021.csv.gz",
+      "bytes": 3069643,
+      "sha256": "0160ced4656121e1478ee17df6cc26b6a91621ca393933a2cab55cb4f3655954"
+    },
+    {
+      "path": "compact\\tpex_institutional\\2022.csv.gz",
+      "bytes": 3136588,
+      "sha256": "3709bec7635717889db18286d135ae6412cf0a6516a4314f0ba92bbcb6dedaa2"
+    },
+    {
+      "path": "current_step.txt",
+      "bytes": 56,
+      "sha256": "a177052d3250ddc878425937522dd86ca77221d893a3e8908f2f4483b1ffd81d"
+    },
+    {
+      "path": "final_summary_zh.md",
+      "bytes": 633,
+      "sha256": "c912642c4b5512c9a487f8af2a559dfb7a09eb51b407a71dad8a5516187eb89b"
+    },
+    {
+      "path": "p1_free_historical_future_data_audit.csv",
+      "bytes": 203,
+      "sha256": "2679f668bb2d5f03cfb7a397b77a0686f47d73447eef445bc033642c9ee2dc31"
+    },
+    {
+      "path": "p1_free_historical_requested_vs_actual.csv",
+      "bytes": 442,
+      "sha256": "4ca54e5483c6eed62e6b4f1f9e66ca59ca820b4d859d0f4dbeafcbd6cefa318c"
+    },
+    {
+      "path": "prior_exhausted_conclusion_reassessment.csv",
+      "bytes": 819,
+      "sha256": "ef185906080f732559340b978fea474b92a18539f8625d8bef7a0b95e9e6f962"
+    },
+    {
+      "path": "raw_audit_samples\\tdcc_taibir\\taibir_1_2009.csv",
+      "bytes": 4209,
+      "sha256": "3f40d55fea5c75d7851e445fa9319ecde029109d6b702a9dc32a2f64255a7d7e"
+    },
+    {
+      "path": "raw_audit_samples\\tdcc_taibir\\taibir_1_2015.csv",
+      "bytes": 18609,
+      "sha256": "f62d9bd922396c0cdc7044da7f3c3a73fdd28e823a903121c39a5407986d3fc6"
+    },
+    {
+      "path": "raw_audit_samples\\tdcc_taibir\\taibir_1_2022.csv",
+      "bytes": 18834,
+      "sha256": "5c3943f33406e6cb2cd94341265c331ff98068c9ba487c1c3eb251a7f396cc05"
+    },
+    {
+      "path": "raw_audit_samples\\tdcc_taibir\\taibir_2_2009.csv",
+      "bytes": 4059,
+      "sha256": "d4277522eaa5457959e43ac9aa982208a7fc7d2e43b0a969ad7b6a42b21588a9"
+    },
+    {
+      "path": "raw_audit_samples\\tdcc_taibir\\taibir_2_2015.csv",
+      "bytes": 18609,
+      "sha256": "8776fa99f41f929743efeac549c98f598fec5b1a0b6e549fea16856679d2d53b"
+    },
+    {
+      "path": "raw_audit_samples\\tdcc_taibir\\taibir_2_2022.csv",
+      "bytes": 18834,
+      "sha256": "c0e6fa3a95fec4800b9ceb19ae0d4e498f496368413f5e61234cf5dea03c42aa"
+    },
+    {
+      "path": "readiness_for_core_p1_free_historical_reopen.json",
+      "bytes": 859,
+      "sha256": "7648ed2ae618a0c8395fe293c6e9d807eb762a88fb7681491a726950d1f43d12"
+    },
+    {
+      "path": "taifex_p1_free_range_endpoint_audit.csv",
+      "bytes": 1017,
+      "sha256": "3c049edaafc8239c97ff2ecddcfcd88da1537c973663f0d9a7225e05083f9539"
+    },
+    {
+      "path": "tdcc_openapi_1_5_current_sample.csv",
+      "bytes": 3042,
+      "sha256": "b44732764cdc62a4f4937626b92328742a0f305337997dc48288c6ff921c4fd1"
+    },
+    {
+      "path": "tdcc_openapi_1_5_historical_capability_audit.csv",
+      "bytes": 474,
+      "sha256": "977677738a97592aa7f4802f4030ab8fc61f571923d549c2f9b98c2bdadc339e"
+    },
+    {
+      "path": "tdcc_taibir_representative_download_audit.csv",
+      "bytes": 2441,
+      "sha256": "190b9fac675306929157ddc385c460a817743510e9991c51efa61f3904395756"
+    },
+    {
+      "path": "tpex_institutional_blocked_ledger.csv",
+      "bytes": 96,
+      "sha256": "8db969668a11e9e41e5cd6cfd62bd7e80820241b79c22eb0474a1d47fd2b54aa"
+    },
+    {
+      "path": "tpex_institutional_checksum_manifest.csv",
+      "bytes": 926,
+      "sha256": "11f48a7d2b445b49b1ba87744ba41b8daa1138c2f5a5942a59da6fef0d603385"
+    },
+    {
+      "path": "tpex_institutional_progress.json",
+      "bytes": 172,
+      "sha256": "e53ef00b55ffdd955be9230afa7a1db0c369b02db49631e1de44378a00896b95"
+    },
+    {
+      "path": "tpex_institutional_representative_ticker_evidence.csv",
+      "bytes": 3001,
+      "sha256": "0ad17d8d07e5ac000e889fbac0d1410583b628a906eac1ce4a4286dca4f5ac89"
+    },
+    {
+      "path": "tpex_institutional_source_manifest.csv",
+      "bytes": 449437,
+      "sha256": "3838f9390118bdc275208b6e9494f4fb1bbb5ef0a2b1435a334c2e475af19ad2"
+    },
+    {
+      "path": "trusted_free_provider_inventory.csv",
+      "bytes": 1775,
+      "sha256": "f863823d856faee3317a80e395af4d3a842a106a5151aba3cdd4c0a92656a7fe"
+    }
+  ],
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "portfolio_replay_executed": false,
+  "ready_for_strategy_replay": false,
+  "ready_for_formal": false,
+  "not_live_rule": true,
+  "forward_returns_live_rule_usage": false
+}

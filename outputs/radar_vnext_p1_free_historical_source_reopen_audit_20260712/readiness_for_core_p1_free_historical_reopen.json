@@ -1,0 +1,21 @@
+{
+  "task_id": "TASK-RADAR-DATA-VNEXT-P1-FREE-HISTORICAL-SOURCE-REOPEN-AUDIT-001",
+  "status": "tpex_official_p1_corrected_and_materialized_tdcc_taifex_confirmed_blocked",
+  "source": "official TDCC/TAIFEX/TPEx route tests plus bounded trusted-provider inventory",
+  "ready_for_core_tpex_p1_institutional_absorption": true,
+  "tpex_p1_dates": 1943,
+  "tpex_p1_rows": 1091250,
+  "tdcc_p1_holder_distribution_ready": false,
+  "taifex_p1_free_history_ready": false,
+  "future_data_violation_count": 0,
+  "ready_for_experiments": false,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "portfolio_replay_executed": false,
+  "ready_for_strategy_replay": false,
+  "ready_for_formal": false,
+  "not_live_rule": true,
+  "forward_returns_live_rule_usage": false
+}

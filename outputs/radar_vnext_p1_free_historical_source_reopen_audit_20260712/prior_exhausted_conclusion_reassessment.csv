@@ -1,0 +1,5 @@
+﻿source_family,prior_exhausted_conclusion,audit_verdict,reason,p1_ready
+TDCC_holder_distribution_P1,official free historical route exhausted,confirmed,screenshot page is TAIBIR rates; holder query retains one year; OpenAPI 1-5 has no date parameter and returns one current date,False
+TAIFEX_TXF_foreign_trade_OI_P1,official free historical route exhausted,confirmed,2015/2018/2022 official range endpoint returns DateTime error; older data remains paid store route,False
+TPEx_daily_stock_institutional_P1,official free historical route exhausted,corrected,correct current endpoint is insti/dailyTrade with sect=EW; full P1 daily market files materialized,True
+trusted_adjusted_analysis_63,free structured coverage partial,confirmed,not reprobed in this task; prior explicit ticker-level blockers preserved,False
