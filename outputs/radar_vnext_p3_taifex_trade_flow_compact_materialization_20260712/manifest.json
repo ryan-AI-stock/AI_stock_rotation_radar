@@ -1,0 +1,60 @@
+{
+  "task_id": "TASK-RADAR-DATA-VNEXT-P3-TAIFEX-TRADE-FLOW-COMPACT-MATERIALIZATION-001",
+  "generated_at_utc": "2026-07-12T01:49:17.472309+00:00",
+  "source": "reused official TAIFEX futContractsDateDown locked full-range compact",
+  "coverage": "2023-07-11~2026-07-09; 728 official trading dates; Core target through 2026-06-29",
+  "future_data_violation_count": 0,
+  "ready_for_core_rerun": true,
+  "ready_for_strategy_replay": false,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "artifacts": [
+    {
+      "path": "current_step.txt",
+      "bytes": 32,
+      "sha256": "cb1e8ec65b4c14986cb04157406c7e47851275d1249f85cf22cee4561aff44d4"
+    },
+    {
+      "path": "final_summary_zh.md",
+      "bytes": 547,
+      "sha256": "558db11fe6c9854130114844e77ece09a9765b6bcb83d2e8120a77cb2e78293c"
+    },
+    {
+      "path": "p3_taifex_foreign_trade_oi_daily_compact.csv.gz",
+      "bytes": 19809,
+      "sha256": "9d9c6f654b9b35f2a7f767c6a2bbafb2ecb71a5be49f6f9727d2a91360309847"
+    },
+    {
+      "path": "p3_taifex_trade_oi_blocked_ledger.csv",
+      "bytes": 11,
+      "sha256": "845f8526eb1b99b597a31cb15f2ecd9377e6b73bf5bb40efa7a95131994d4e22"
+    },
+    {
+      "path": "p3_taifex_trade_oi_coverage_audit.csv",
+      "bytes": 326,
+      "sha256": "73ab5907231e6759d4aa635c64a88113be403d00c3c0597a75a2159bf255406b"
+    },
+    {
+      "path": "p3_taifex_trade_oi_future_data_audit.csv",
+      "bytes": 243,
+      "sha256": "571b68ea61f0e8249bf8259e14269f0f86b97ff1e79ed85b23ab470e3496865e"
+    },
+    {
+      "path": "p3_taifex_trade_oi_requested_vs_actual.csv",
+      "bytes": 176,
+      "sha256": "761bd4b79652e94af1a0c686de8ed862ada9eec1c645865c52a5392c054d02ca"
+    },
+    {
+      "path": "p3_taifex_trade_oi_source_manifest.csv",
+      "bytes": 1134,
+      "sha256": "7654998ce77d2b77832690154fe9c7d9d04a0639e26a8816ebc2e538831d567f"
+    },
+    {
+      "path": "readiness_for_core_p3_taifex_trade_flow_absorption.json",
+      "bytes": 1219,
+      "sha256": "62866e94e7e0b0c4d64c89ab8901f045f7c9d4fc02318b1ff9701ece1eb19d87"
+    }
+  ]
+}

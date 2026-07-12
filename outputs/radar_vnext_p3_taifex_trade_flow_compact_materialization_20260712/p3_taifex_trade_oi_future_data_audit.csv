@@ -1,0 +1,2 @@
+﻿audit,same_day_use_prohibited,pit_join,exact_publication_timestamp_fabricated,future_data_violation_count,status
+trade flow is independent official field and is not derived from OI change,True,next trading decision date only,False,0,pass

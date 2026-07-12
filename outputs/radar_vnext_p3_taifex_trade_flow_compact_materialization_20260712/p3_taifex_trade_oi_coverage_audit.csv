@@ -1,0 +1,2 @@
+﻿family,requested_start,requested_end,actual_start,actual_end,required_dates,ready_dates,missing_dates,duplicate_dates,null_four_field_rows,core_v2_target_end,core_v2_ready_rows,status,future_data_violation_count
+TAIFEX_foreign_trade_and_OI,2023-07-11,2026-07-09,2023-07-11,2026-07-09,728,728,0,0,0,2026-06-29,720,ready,0
