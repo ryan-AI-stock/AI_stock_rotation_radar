@@ -1,0 +1,2 @@
+﻿family,symbol,status,actual_start,actual_end,rows,http_status,response_bytes,source_url,source_hash,retrieval_time_utc,error
+SOX,^SOX,accepted,2023-07-11,2026-07-09,752,200,71164,https://query1.finance.yahoo.com/v8/finance/chart/%5ESOX?period1=1688947200&period2=1783728000&interval=1d&events=div%2Csplits,662ecffcf9af976cab4a83e23d6d76d3225bc2b5582611fc1775a3f683776cee,2026-07-12T00:25:34+00:00,

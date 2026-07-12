@@ -1,0 +1,65 @@
+{
+  "task_id": "TASK-RADAR-DATA-VNEXT-P3-MARKET-STATE-SOURCE-FILL-001",
+  "generated_at_utc": "2026-07-12T00:25:35+00:00",
+  "files": [
+    {
+      "path": "current_step.txt",
+      "bytes": 37,
+      "sha256": "e16eb8f1db73ff7a31892e5df444432f206fad18b870ffa4ea3f6446a6a787c6"
+    },
+    {
+      "path": "final_summary_zh.md",
+      "bytes": 410,
+      "sha256": "0aefab7e8691811eb206bd1823a7bd99873b620d5b799b7019ac3242bddd3d4e"
+    },
+    {
+      "path": "p3_market_state_checksum_manifest.csv",
+      "bytes": 376,
+      "sha256": "ad0d3cb08631423cff856c5418f29a6a098f50a0c211c8ed14ddcdd7ded378d0"
+    },
+    {
+      "path": "p3_market_state_future_data_audit.csv",
+      "bytes": 276,
+      "sha256": "c58f9c87a77ce8e942e8c5b079fd8f2441e1acad79eccb8d12dadab4a79dd075"
+    },
+    {
+      "path": "p3_market_state_missing_dates.csv",
+      "bytes": 48,
+      "sha256": "ea89bd147976c956cc805fa85afe75b566e0f7265527f52a75dac7f7ed636d98"
+    },
+    {
+      "path": "p3_market_state_requested_vs_actual.csv",
+      "bytes": 1125,
+      "sha256": "2eabd75a1dab758a3ff4b141c18d070bccd35116a99f18d036ed194e9b9fcecd"
+    },
+    {
+      "path": "p3_market_state_source_manifest.csv",
+      "bytes": 1006404,
+      "sha256": "2ec93d75b832e1f287410805e9f9f16e755d4b6573add008e52c147e104cd916"
+    },
+    {
+      "path": "p3_sox_source_manifest.csv",
+      "bytes": 403,
+      "sha256": "bffa4b790b112f96f4621010ecae5bd0f588895dd23f30aecb2adc5d84551edd"
+    },
+    {
+      "path": "progress.json",
+      "bytes": 147,
+      "sha256": "fee6ced0297d69deab279966f0224959fb5559ba0e3b5e7e8dd447efac522efc"
+    },
+    {
+      "path": "readiness_for_core_p3_market_state_source_fill.json",
+      "bytes": 1082,
+      "sha256": "7717818e0174bb536f277e588ad77f1b363f24e86795fe0bc0e7b6b2ba9be06b"
+    }
+  ],
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "portfolio_replay_executed": false,
+  "ready_for_strategy_replay": false,
+  "ready_for_formal": false,
+  "not_live_rule": true,
+  "forward_returns_live_rule_usage": false
+}

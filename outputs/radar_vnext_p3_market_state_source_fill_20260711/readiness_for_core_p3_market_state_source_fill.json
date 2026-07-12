@@ -1,0 +1,29 @@
+{
+  "task_id": "TASK-RADAR-DATA-VNEXT-P3-MARKET-STATE-SOURCE-FILL-001",
+  "status": "p3_market_state_sources_ready_for_core",
+  "source": "official TWSE/TPEx full-market daily totals plus Yahoo trusted SOX",
+  "coverage": {
+    "full_market_traded_value:TWSE": 728,
+    "full_market_traded_value:TPEx": 728,
+    "full_market_traded_value:ALL": 728,
+    "full_market_margin_balance:TWSE": 728,
+    "full_market_margin_balance:TPEx": 728,
+    "full_market_margin_balance:ALL": 728,
+    "SOX:US": 752
+  },
+  "ready_for_core_p3_market_state_absorption": true,
+  "full_market_traded_value_ready": true,
+  "full_market_margin_balance_ready": true,
+  "sox_research_grade_ready": true,
+  "future_data_violation_count": 0,
+  "ready_for_experiments": false,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "portfolio_replay_executed": false,
+  "ready_for_strategy_replay": false,
+  "ready_for_formal": false,
+  "not_live_rule": true,
+  "forward_returns_live_rule_usage": false
+}

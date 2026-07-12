@@ -1,0 +1,8 @@
+﻿family,market,requested_start,requested_end,actual_start,actual_end,expected_trading_dates,actual_dates,missing_dates,source_quality,available_at_policy
+full_market_traded_value,TWSE,2023-07-11,2026-07-10,2023-07-11,2026-07-09,728,728,0,official,post-close; next-trading-day only
+full_market_traded_value,TPEx,2023-07-11,2026-07-10,2023-07-11,2026-07-09,728,728,0,official,post-close; next-trading-day only
+full_market_traded_value,ALL,2023-07-11,2026-07-10,2023-07-11,2026-07-09,728,728,0,derived_from_official_markets,post-close; next-trading-day only
+full_market_margin_balance,TWSE,2023-07-11,2026-07-10,2023-07-11,2026-07-09,728,728,0,official,post-close; next-trading-day only
+full_market_margin_balance,TPEx,2023-07-11,2026-07-10,2023-07-11,2026-07-09,728,728,0,official,post-close; next-trading-day only
+full_market_margin_balance,ALL,2023-07-11,2026-07-10,2023-07-11,2026-07-09,728,728,0,derived_from_official_markets,post-close; next-trading-day only
+SOX,US,2023-07-11,2026-07-10,2023-07-11,2026-07-09,,752,,trusted_nonofficial_yahoo_research_grade,latest completed US session before Taiwan signal close
