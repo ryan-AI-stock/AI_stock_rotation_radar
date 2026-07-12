@@ -1,0 +1,12 @@
+﻿scenario,decision_date,requested_execution_date,prior_target,new_target,core_prior_last_price_date,first_common_official_tradable_date,status,termination_event_required,forced_exit_guard_required,future_data_violation_count
+placebo_seed_17,2023-07-24,2023-07-25,6470,4919,2023-07-21,2023-07-25,official_trade_continuity_patch_ready,False,False,0
+placebo_seed_17,2025-03-14,2025-03-17,1522,3645,2025-02-07,2025-03-17,official_trade_continuity_patch_ready,False,False,0
+placebo_seed_17,2026-03-23,2026-03-24,3526,3481,2026-02-11,2026-03-24,official_trade_continuity_patch_ready,False,False,0
+placebo_seed_17,2026-05-20,2026-05-21,2436,3045,2026-05-15,2026-05-21,official_trade_continuity_patch_ready,False,False,0
+placebo_seed_17,2026-06-08,2026-06-09,3583,8299,2026-06-05,2026-06-09,official_trade_continuity_patch_ready,False,False,0
+placebo_seed_29,2025-08-01,2025-08-04,6206,,2025-08-01,2025-08-04,official_trade_continuity_patch_ready,False,False,0
+placebo_seed_43,2023-08-07,2023-08-08,2419,5439,2023-08-04,2023-08-08,official_trade_continuity_patch_ready,False,False,0
+placebo_seed_71,2026-05-04,2026-05-05,2605,6257,2026-04-10,2026-05-05,official_trade_continuity_patch_ready,False,False,0
+placebo_seed_71,2026-06-26,2026-06-29,3357,6209,2026-06-18,2026-06-29,official_trade_continuity_patch_ready,False,False,0
+placebo_seed_101,2024-06-12,2024-06-13,5009,3374,2024-05-03,2024-06-13,official_trade_continuity_patch_ready,False,False,0
+placebo_seed_101,2025-05-26,2025-05-27,3434,3231,2025-05-23,2025-05-27,official_trade_continuity_patch_ready,False,False,0

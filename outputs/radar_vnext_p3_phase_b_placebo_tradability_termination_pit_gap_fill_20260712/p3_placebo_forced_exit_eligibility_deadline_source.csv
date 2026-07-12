@@ -1,0 +1,12 @@
+﻿scenario,ticker,forced_exit_eligible,forced_exit_deadline,reason,normal_execution_date,future_data_violation_count
+placebo_seed_17,6470,False,,official trade continuity resolves transition,2023-07-25,0
+placebo_seed_17,1522,False,,official trade continuity resolves transition,2025-03-17,0
+placebo_seed_17,3526,False,,official trade continuity resolves transition,2026-03-24,0
+placebo_seed_17,2436,False,,official trade continuity resolves transition,2026-05-21,0
+placebo_seed_17,3583,False,,official trade continuity resolves transition,2026-06-09,0
+placebo_seed_29,6206,False,,official trade continuity resolves transition,2025-08-04,0
+placebo_seed_43,2419,False,,official trade continuity resolves transition,2023-08-08,0
+placebo_seed_71,2605,False,,official trade continuity resolves transition,2026-05-05,0
+placebo_seed_71,3357,False,,official trade continuity resolves transition,2026-06-29,0
+placebo_seed_101,5009,False,,official trade continuity resolves transition,2024-06-13,0
+placebo_seed_101,3434,False,,official trade continuity resolves transition,2025-05-27,0

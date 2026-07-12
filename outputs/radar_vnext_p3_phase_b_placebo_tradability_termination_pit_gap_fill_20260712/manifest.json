@@ -1,0 +1,175 @@
+{
+  "task_id": "TASK-RADAR-DATA-VNEXT-P3-PHASE-B-PLACEBO-TRADABILITY-TERMINATION-PIT-GAP-FILL-001",
+  "generated_at_utc": "2026-07-12T01:26:19.897028+00:00",
+  "source": "official selected ticker-month TWSE STOCK_DAY / TPEx tradingStock",
+  "coverage": "Core blocked episodes=11; exact requested-month routes only",
+  "future_data_violation_count": 0,
+  "ready_for_core_rerun": true,
+  "ready_for_strategy_replay": false,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "artifacts": [
+    {
+      "path": "current_step.txt",
+      "bytes": 32,
+      "sha256": "cb1e8ec65b4c14986cb04157406c7e47851275d1249f85cf22cee4561aff44d4"
+    },
+    {
+      "path": "final_summary_zh.md",
+      "bytes": 716,
+      "sha256": "057fe1c0de92946a7dd11d3a7468d9ca7993b2b242f811fceba076baa602e204"
+    },
+    {
+      "path": "p3_placebo_delisting_termination_event_ledger.csv",
+      "bytes": 4059,
+      "sha256": "964e4d22af8acebf8cf064fe13b707c948e3f134dc480a2dd612666f2887f2a7"
+    },
+    {
+      "path": "p3_placebo_forced_exit_eligibility_deadline_source.csv",
+      "bytes": 1089,
+      "sha256": "e7f413b21067bdbb1774e0bec1bb232576ffbe742fa69326f8bb8b07073a500d"
+    },
+    {
+      "path": "p3_placebo_future_data_audit.csv",
+      "bytes": 201,
+      "sha256": "1fde01aab1764fb027a67856436a3037359478a0b33b9c00dab9a6bd51caeab3"
+    },
+    {
+      "path": "p3_placebo_official_ohlcv_patch_rows.csv",
+      "bytes": 13980,
+      "sha256": "de9a440cd0a4114178a9c68d14190a06e928b3d98676b305374325cfb5e06cd7"
+    },
+    {
+      "path": "p3_placebo_official_unadjusted_ohlcv_rows.csv",
+      "bytes": 258314,
+      "sha256": "116e80de68fa14627c32bf5ca699ec926ecf2cb7d1a23824018419dd4eb4fe4a"
+    },
+    {
+      "path": "p3_placebo_selected_path_impact_ledger.csv",
+      "bytes": 1579,
+      "sha256": "b0f2119e282252bc7067f555accf338886727fb766812e5f67440465d5a07abe"
+    },
+    {
+      "path": "p3_placebo_tradability_source_manifest.csv",
+      "bytes": 9788,
+      "sha256": "d3f67cf90808cb78e8547067dbe093beb27365dc0cc09b4a9b7399fb724af774"
+    },
+    {
+      "path": "p3_placebo_tradability_termination_blocked_ledger.csv",
+      "bytes": 11,
+      "sha256": "845f8526eb1b99b597a31cb15f2ecd9377e6b73bf5bb40efa7a95131994d4e22"
+    },
+    {
+      "path": "raw_audit_samples\\TPEx_3357_2026-06.json",
+      "bytes": 2423,
+      "sha256": "6fa370296648a49097e4f11ed78e6805118d95f4e6229e6e94c02b5036a27b67"
+    },
+    {
+      "path": "raw_audit_samples\\TPEx_3374_2024-06.json",
+      "bytes": 2228,
+      "sha256": "01ead57d7e3e8b5b4c357df0da26faae6862ce08fe60652ab1090c9d54a23e67"
+    },
+    {
+      "path": "raw_audit_samples\\TPEx_3434_2025-05.json",
+      "bytes": 2199,
+      "sha256": "8d0006508e5c1871100017c99192c9b7dff5898a578216ea97be9282a8c35e2f"
+    },
+    {
+      "path": "raw_audit_samples\\TPEx_3526_2026-03.json",
+      "bytes": 2376,
+      "sha256": "1ecf4fb473fa96b10ccca96d161a62fe0686b2040bf1ef397ee061c77f8b60e7"
+    },
+    {
+      "path": "raw_audit_samples\\TPEx_5009_2024-06.json",
+      "bytes": 2105,
+      "sha256": "5cc2f15f37123ce5efaaa1450dfdf7f8aad484ddca0e9c2fd511e82755f2a318"
+    },
+    {
+      "path": "raw_audit_samples\\TPEx_5439_2023-08.json",
+      "bytes": 2391,
+      "sha256": "031d1e8f55b97060e5a57b72763d01a2744a6042d6fcef3a4f509afdcbdffa80"
+    },
+    {
+      "path": "raw_audit_samples\\TPEx_6470_2023-07.json",
+      "bytes": 2271,
+      "sha256": "3503eedae9777d3c6e1579e2e17d1e1047ac8dff005516c97863cd3a88120f3e"
+    },
+    {
+      "path": "raw_audit_samples\\TPEx_8299_2026-06.json",
+      "bytes": 2626,
+      "sha256": "e516cca941076d0f3f0448130aeda5556133a0aa23940d212b4c4946dd167a21"
+    },
+    {
+      "path": "raw_audit_samples\\TWSE_1522_2025-03.json",
+      "bytes": 2746,
+      "sha256": "5ea3de0803e9bec3f6ab208c498e65d16579601c962eccf5ad44ab10e481d017"
+    },
+    {
+      "path": "raw_audit_samples\\TWSE_2419_2023-08.json",
+      "bytes": 2876,
+      "sha256": "b176528140b5a08019598a9169347a5f3145d890e0925d8e07aadc09504e2949"
+    },
+    {
+      "path": "raw_audit_samples\\TWSE_2436_2026-05.json",
+      "bytes": 2704,
+      "sha256": "c5f9d97a5b8f6864f9fa0d096b805f5cd3a77549f9f586dd6ccf7d94f6d503af"
+    },
+    {
+      "path": "raw_audit_samples\\TWSE_2605_2026-05.json",
+      "bytes": 2683,
+      "sha256": "3a1aedb758fdb5f5bbdc1201fc1237fb9182106c1ee3b38c6dafc1d27a6d4398"
+    },
+    {
+      "path": "raw_audit_samples\\TWSE_3045_2026-05.json",
+      "bytes": 2808,
+      "sha256": "70773d74f94309bba170fcac3cf413856cd48b59c4586183f827ac8099b36013"
+    },
+    {
+      "path": "raw_audit_samples\\TWSE_3231_2025-05.json",
+      "bytes": 2844,
+      "sha256": "51e56044207ab65975535d4ab533b2bd9d29cb6162343120da7837628ed28703"
+    },
+    {
+      "path": "raw_audit_samples\\TWSE_3481_2026-03.json",
+      "bytes": 3022,
+      "sha256": "545c29319b650eacc133c9567698998e675ee8517ac19ad0311984999f89b73f"
+    },
+    {
+      "path": "raw_audit_samples\\TWSE_3583_2026-06.json",
+      "bytes": 2897,
+      "sha256": "9afac52bce45dc37b813a13619b52172c9bb69359831a93a06a15d575bf1e4df"
+    },
+    {
+      "path": "raw_audit_samples\\TWSE_3645_2025-03.json",
+      "bytes": 2777,
+      "sha256": "ba0908d652ac11823b36b0c22ddbd129df7d31f4928d75fb2aee7d88aff7d16a"
+    },
+    {
+      "path": "raw_audit_samples\\TWSE_4919_2023-07.json",
+      "bytes": 2886,
+      "sha256": "f060d370e2a855ea052fdc462bc9ec51affe84551d74120541040a25cbbd134b"
+    },
+    {
+      "path": "raw_audit_samples\\TWSE_6206_2025-08.json",
+      "bytes": 2838,
+      "sha256": "23ce3d1e503a7734737d7a8b90718f5891f6bcebefd15ca98e9cc088a73605e2"
+    },
+    {
+      "path": "raw_audit_samples\\TWSE_6209_2026-06.json",
+      "bytes": 2843,
+      "sha256": "7275a86b7c17c10610fb0fa98d96a38aed200d90a0d27038cc71392185661f9a"
+    },
+    {
+      "path": "raw_audit_samples\\TWSE_6257_2026-05.json",
+      "bytes": 2841,
+      "sha256": "cf1a8d84ea818d31e4c8a145d49454dc1d79370c91d9c42acb1daefdc482a2b7"
+    },
+    {
+      "path": "readiness_for_core_p3_placebo_tradability_termination_patch.json",
+      "bytes": 1061,
+      "sha256": "8937724431832f7ceff6edaafbb5e6e840df3fa80001cf1bb310a349d311f333"
+    }
+  ]
+}
