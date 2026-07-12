@@ -1,0 +1,105 @@
+{
+  "task_id": "TASK-RADAR-DATA-VNEXT-P3-LAYER5-FUNDAMENTAL-BALANCE-CASHFLOW-PIT-SOURCE-FILL-001",
+  "generated_at": "2026-07-12T15:27:45.158647+08:00",
+  "artifacts": [
+    {
+      "path": ".gitignore",
+      "bytes": 13,
+      "sha256": "32dae3052f331ee34d628ef535709b301259a45df7c7522c4d35dcf49873f00b"
+    },
+    {
+      "path": "batch_results/.gitignore",
+      "bytes": 7,
+      "sha256": "287bad6f22bffb15536a90b21696aa8b6d3df035ada653e9a730124d1ef7bc32"
+    },
+    {
+      "path": "build_package.py",
+      "bytes": 22024,
+      "sha256": "2a9d4cdb295d4f1eee72a34ee48c3c8e282109fe70e153f7930eff329c69688c"
+    },
+    {
+      "path": "checkpoint.json",
+      "bytes": 416,
+      "sha256": "c6907024c42fee6dc17703078985be5c9a19efb5bb5d1abefa596ac18dc41cef"
+    },
+    {
+      "path": "current_step.txt",
+      "bytes": 35,
+      "sha256": "6f038cba8ea414154ed560a38038d5d0c80df356afec5cb79fd6e8f71de62a55"
+    },
+    {
+      "path": "final_summary_zh.md",
+      "bytes": 924,
+      "sha256": "0ed9742e432993427fbf69f0c9fd4ff63610149c7528c9ab28f07c730e2485a3"
+    },
+    {
+      "path": "indicator_batch_results/.gitignore",
+      "bytes": 7,
+      "sha256": "287bad6f22bffb15536a90b21696aa8b6d3df035ada653e9a730124d1ef7bc32"
+    },
+    {
+      "path": "p3_layer5_balance_cashflow_applicability_blocked_ledger.csv",
+      "bytes": 76091,
+      "sha256": "ff95fe11f6d406b20617ba685e71152411ead7b07a03eb4aa06c8218df48e7b1"
+    },
+    {
+      "path": "p3_layer5_balance_cashflow_field_coverage.csv",
+      "bytes": 1393,
+      "sha256": "9f1630eac2d723c9864fa653aff639abe2b3d30b2207b13ff75e1000d26f458b"
+    },
+    {
+      "path": "p3_layer5_balance_cashflow_future_data_audit.csv",
+      "bytes": 427,
+      "sha256": "b958b0a97b3a07d5366964aac836d7583b16893b20cb8aadb12f78f62f0bcc5a"
+    },
+    {
+      "path": "p3_layer5_balance_cashflow_official_indicator_rows.csv.gz",
+      "bytes": 212580,
+      "sha256": "c8d7091d7299eb177e01b34abff07eaaddd3cde1288883a4e43e4dfce1fcb1e4"
+    },
+    {
+      "path": "p3_layer5_balance_cashflow_pit_timing_audit.csv",
+      "bytes": 662,
+      "sha256": "dcdacbff10fa83ff6a9b4bda3d080a4946841b27dc0a9abff7a6c723b8b6bbfe"
+    },
+    {
+      "path": "p3_layer5_balance_cashflow_source_manifest.csv",
+      "bytes": 35689,
+      "sha256": "ed10abdf657f94c9c15067d9e114fb5221fb2e8e78d47835644631764eab3390"
+    },
+    {
+      "path": "p3_layer5_exact_candidate_ticker_period_requirements.csv.gz",
+      "bytes": 30086,
+      "sha256": "d09bf0e0534a30e4bddfcb64ac541395ca9eaf217a0be24108157e22395276d2"
+    },
+    {
+      "path": "raw_audit_samples/balance_2022Q1_b000.html.gz",
+      "bytes": 10508,
+      "sha256": "5a66cd713b3a0a473866f7e7b91a2e26f01973a508ce8fe33c6ee36bc7123c88"
+    },
+    {
+      "path": "readiness_for_core_p3_layer5_balance_cashflow_absorption.json",
+      "bytes": 1524,
+      "sha256": "de612e9abebe5decb1d62cc1ada4d06d630a27a2aa744c6d46ab060929a2e3df"
+    },
+    {
+      "path": "run_indicator_package.py",
+      "bytes": 13880,
+      "sha256": "98b18018b184938a424d8888e4ce1f2b1f2cb6c9d798651f2719b065ca6b3512"
+    },
+    {
+      "path": "run_t164_direct.py",
+      "bytes": 8105,
+      "sha256": "05c62dd6cc575e0658ae7d31ff6f64e10df69d76e15c46a8cbfb66122b7f07d2"
+    }
+  ],
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "portfolio_replay_executed": false,
+  "ready_for_strategy_replay": false,
+  "ready_for_formal": false,
+  "not_live_rule": true,
+  "forward_returns_live_rule_usage": false
+}

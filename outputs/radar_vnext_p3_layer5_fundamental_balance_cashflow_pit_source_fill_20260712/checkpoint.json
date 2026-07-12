@@ -1,0 +1,10 @@
+{
+  "task_id": "TASK-RADAR-DATA-VNEXT-P3-LAYER5-FUNDAMENTAL-BALANCE-CASHFLOW-PIT-SOURCE-FILL-001",
+  "current_step": "completed_ready_for_core_absorption",
+  "completed_indicator_jobs": 140,
+  "total_indicator_jobs": 140,
+  "candidate_tickers": 698,
+  "requirement_ticker_period_rows": 6141,
+  "resume_command": "python -X utf8 run_indicator_package.py",
+  "updated_at": "2026-07-12T15:27:45.158647+08:00"
+}
