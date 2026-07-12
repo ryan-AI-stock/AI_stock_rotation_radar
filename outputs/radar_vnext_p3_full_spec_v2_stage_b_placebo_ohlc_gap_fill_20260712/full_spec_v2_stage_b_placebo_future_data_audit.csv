@@ -1,0 +1,2 @@
+﻿audit,status,future_data_violation_count
+"requested execution date exact official OHLC only; no last-price, neighbour, benchmark, or current-status backfill",pass,0

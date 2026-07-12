@@ -1,0 +1,160 @@
+{
+  "task_id": "TASK-RADAR-DATA-VNEXT-P3-FULL-SPEC-V2-STAGE-B-PLACEBO-OHLC-GAP-FILL-003",
+  "generated_at_utc": "2026-07-12T05:14:32.343520+00:00",
+  "source": "official selected ticker-month TWSE STOCK_DAY / TPEx tradingStock",
+  "coverage": "Core full_spec_v2 Stage B incremental gap only; 10 episodes / 20 roles / 19 unique ticker-date keys",
+  "future_data_violation_count": 0,
+  "ready_for_core_rerun": true,
+  "ready_for_strategy_replay": false,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "artifacts": [
+    {
+      "path": "current_step.txt",
+      "bytes": 32,
+      "sha256": "cb1e8ec65b4c14986cb04157406c7e47851275d1249f85cf22cee4561aff44d4"
+    },
+    {
+      "path": "final_summary_zh.md",
+      "bytes": 380,
+      "sha256": "b0924a9425e79af197da3e6f6c272d3f240f84db126bb06a90bd7da485d4c386"
+    },
+    {
+      "path": "full_spec_v2_stage_b_placebo_blocked_ledger.csv",
+      "bytes": 11,
+      "sha256": "845f8526eb1b99b597a31cb15f2ecd9377e6b73bf5bb40efa7a95131994d4e22"
+    },
+    {
+      "path": "full_spec_v2_stage_b_placebo_false_termination_ledger.csv",
+      "bytes": 3344,
+      "sha256": "8d473d14c3b7c730b715f65b7ab900ab6557848210075a96dcf80676ccc223b8"
+    },
+    {
+      "path": "full_spec_v2_stage_b_placebo_future_data_audit.csv",
+      "bytes": 170,
+      "sha256": "93b1eb58e0bc9e49dc49110a05a39cb3e0ad7b012f36cd251356e5e8ecc99d89"
+    },
+    {
+      "path": "full_spec_v2_stage_b_placebo_official_ohlcv_patch_rows.csv",
+      "bytes": 13120,
+      "sha256": "20b24065dc73d87f2500b2ea3e945eb608fdc1cf9b50d289badf7e316cbd98b9"
+    },
+    {
+      "path": "full_spec_v2_stage_b_placebo_official_unadjusted_ohlcv_rows.csv",
+      "bytes": 219324,
+      "sha256": "071b5907f3ab4c457c64dbf631201079b07321035b15b411f07aa173e800c508"
+    },
+    {
+      "path": "full_spec_v2_stage_b_placebo_path_impact_ledger.csv",
+      "bytes": 1544,
+      "sha256": "50a6a4aa4523dbde4cf5eb3ad1b2e35204846597f919a25f17ee8acb6206e404"
+    },
+    {
+      "path": "full_spec_v2_stage_b_placebo_source_manifest.csv",
+      "bytes": 8668,
+      "sha256": "248e20b491182303b64ef9f10215531ea19c3387e37e7eb4fcb7198d36a3ab11"
+    },
+    {
+      "path": "raw_audit_samples\\TPEx_3152_2023-12.json",
+      "bytes": 2255,
+      "sha256": "4ff30f9b5c7fa4f0297feaee2a656caf222ccc75611214913ea58f3a3cd71f8b"
+    },
+    {
+      "path": "raw_audit_samples\\TPEx_3680_2026-02.json",
+      "bytes": 1585,
+      "sha256": "03bf153e3a973909c88f344fdc48e40155c676f0734f53d24b01463e46e6d6d9"
+    },
+    {
+      "path": "raw_audit_samples\\TPEx_4908_2026-05.json",
+      "bytes": 2235,
+      "sha256": "c83987b58fe871323e7b2273171419d2f385bb2fc5a27a9f2df56fd8a548cd58"
+    },
+    {
+      "path": "raw_audit_samples\\TPEx_6190_2026-06.json",
+      "bytes": 2275,
+      "sha256": "5414a120d6971ce0ff24bf22fa0a29c545fcc9d5d9c8cfb214c003f12aba77b4"
+    },
+    {
+      "path": "raw_audit_samples\\TPEx_8048_2023-10.json",
+      "bytes": 2157,
+      "sha256": "f7966884f754d764647a76f25201c0403eec49591be7fc6c5083f45e8ece9073"
+    },
+    {
+      "path": "raw_audit_samples\\TPEx_8088_2026-02.json",
+      "bytes": 1547,
+      "sha256": "5d6150f133ca34a92c19d24b496194b010be4c891977960f1d204f65017c987a"
+    },
+    {
+      "path": "raw_audit_samples\\TWSE_1522_2025-04.json",
+      "bytes": 2640,
+      "sha256": "80ffd270953a7bc2025d46d87cd824b93ec7c56c5c24f4249df624b2929554f4"
+    },
+    {
+      "path": "raw_audit_samples\\TWSE_1618_2025-06.json",
+      "bytes": 2759,
+      "sha256": "585929ea59ed465bf21a58633e9e9791e0719ccb27dbcc677e6f991483e778d5"
+    },
+    {
+      "path": "raw_audit_samples\\TWSE_2301_2025-06.json",
+      "bytes": 2882,
+      "sha256": "de2b605511fc6c57aa8501c621f6d9b902a4ea2796002c72b00f7f6ab1775fea"
+    },
+    {
+      "path": "raw_audit_samples\\TWSE_2476_2026-05.json",
+      "bytes": 2775,
+      "sha256": "8c2db909f50de8c22793ade42219aa93360cba84dae1094a2441c104eb0aa376"
+    },
+    {
+      "path": "raw_audit_samples\\TWSE_3138_2026-03.json",
+      "bytes": 2987,
+      "sha256": "4dae43e4dfc3b1f08c05615f1ebf713e2d7868a211d4498db65b6e9c19663520"
+    },
+    {
+      "path": "raw_audit_samples\\TWSE_3481_2026-03.json",
+      "bytes": 3022,
+      "sha256": "545c29319b650eacc133c9567698998e675ee8517ac19ad0311984999f89b73f"
+    },
+    {
+      "path": "raw_audit_samples\\TWSE_3563_2025-04.json",
+      "bytes": 2779,
+      "sha256": "cac0a15d08c5180bc597e2d53817db8d570077626c6408957c427423513ec14b"
+    },
+    {
+      "path": "raw_audit_samples\\TWSE_3661_2023-10.json",
+      "bytes": 2992,
+      "sha256": "37178d0992ef4c57f2407235dadad7c01aaf271e679719cd02ed208d4a8a849c"
+    },
+    {
+      "path": "raw_audit_samples\\TWSE_4746_2024-03.json",
+      "bytes": 2822,
+      "sha256": "144cc8daa4b913054ecea564562b95b6cb8a9c5f2baae5d5c1b1093c9e71d268"
+    },
+    {
+      "path": "raw_audit_samples\\TWSE_5534_2025-04.json",
+      "bytes": 2655,
+      "sha256": "d81d764577559ed25dea9345e6c7aeffd24702cac1e551d7ef5f74d2bd6be666"
+    },
+    {
+      "path": "raw_audit_samples\\TWSE_6117_2023-12.json",
+      "bytes": 2800,
+      "sha256": "ffbd621f3b40173fd4e5ce0f92bd176f9f7765edde0321668f1c775881b91fab"
+    },
+    {
+      "path": "raw_audit_samples\\TWSE_6257_2026-06.json",
+      "bytes": 2932,
+      "sha256": "032f6c43c102579d9664c322305e492485be9c0792627dbf1ffb373564553746"
+    },
+    {
+      "path": "raw_audit_samples\\TWSE_6799_2024-03.json",
+      "bytes": 2836,
+      "sha256": "c733c3644f0c814961008c7d0707204f89ff887e41403497230f7dedec1804fa"
+    },
+    {
+      "path": "readiness_for_core_p3_full_spec_v2_stage_b_placebo_ohlcv_absorption.json",
+      "bytes": 1038,
+      "sha256": "02e7981e0f13fffdf77f1982c936c439e412ee20127da2aa426c78d0f99db314"
+    }
+  ]
+}

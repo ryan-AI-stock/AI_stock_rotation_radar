@@ -1,0 +1,11 @@
+﻿scenario,decision_date,requested_execution_date,prior_target,new_target,core_prior_last_price_date,prior_exact_official_close_ready,new_exact_official_close_ready,exact_same_day_transition_ready,status,false_termination_inference,future_data_violation_count
+placebo_seed_17,2025-04-08,2025-04-09,1522,5534,2025-03-17,True,True,True,active_scope_compact_gap_official_patch_ready,True,0
+placebo_seed_17,2025-04-21,2025-04-22,5534,3563,2025-04-18,True,True,True,active_scope_compact_gap_official_patch_ready,True,0
+placebo_seed_29,2026-06-01,2026-06-02,6190,6257,2026-05-29,True,True,True,active_scope_compact_gap_official_patch_ready,True,0
+placebo_seed_43,2023-10-30,2023-10-31,8048,3661,2023-10-27,True,True,True,active_scope_compact_gap_official_patch_ready,True,0
+placebo_seed_43,2026-05-04,2026-05-05,4908,2476,2026-04-10,True,True,True,active_scope_compact_gap_official_patch_ready,True,0
+placebo_seed_71,2024-03-11,2024-03-12,4746,6799,2024-02-23,True,True,True,active_scope_compact_gap_official_patch_ready,True,0
+placebo_seed_71,2025-06-02,2025-06-03,1618,2301,2025-05-29,True,True,True,active_scope_compact_gap_official_patch_ready,True,0
+placebo_seed_71,2026-03-30,2026-03-31,3138,3481,2026-03-27,True,True,True,active_scope_compact_gap_official_patch_ready,True,0
+placebo_seed_101,2023-12-11,2023-12-12,3152,6117,2023-12-01,True,True,True,active_scope_compact_gap_official_patch_ready,True,0
+placebo_seed_101,2026-02-09,2026-02-10,8088,3680,2026-02-06,True,True,True,active_scope_compact_gap_official_patch_ready,True,0
