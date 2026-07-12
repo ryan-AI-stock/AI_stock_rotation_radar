@@ -1,0 +1,2 @@
+﻿audit,status,future_data_violation_count
+"exact requested execution date only; no last-price carry, neighbour substitution, benchmark reconstruction, or current-status backfill",pass,0

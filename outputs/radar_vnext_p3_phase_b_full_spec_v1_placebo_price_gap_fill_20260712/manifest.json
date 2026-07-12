@@ -1,0 +1,140 @@
+{
+  "task_id": "TASK-RADAR-DATA-VNEXT-P3-PHASE-B-FULL-SPEC-V1-PLACEBO-PRICE-GAP-FILL-002",
+  "generated_at_utc": "2026-07-12T01:43:41.811028+00:00",
+  "source": "official selected ticker-month TWSE STOCK_DAY / TPEx tradingStock",
+  "coverage": "Core full_spec_v1 incremental blocked episodes only; 8 episodes / 15 tickers",
+  "future_data_violation_count": 0,
+  "ready_for_core_rerun": true,
+  "ready_for_strategy_replay": false,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "artifacts": [
+    {
+      "path": "current_step.txt",
+      "bytes": 32,
+      "sha256": "cb1e8ec65b4c14986cb04157406c7e47851275d1249f85cf22cee4561aff44d4"
+    },
+    {
+      "path": "final_summary_zh.md",
+      "bytes": 503,
+      "sha256": "f50cd7798e2dc5733081c30817bf1e3624a21286bc99335496ef8e3a045d1bea"
+    },
+    {
+      "path": "full_spec_v1_placebo_false_termination_event_ledger.csv",
+      "bytes": 2723,
+      "sha256": "f01d624fa232937ddfe5f557e08004c71b86b186c58e25e1dedad155a0acd937"
+    },
+    {
+      "path": "full_spec_v1_placebo_future_data_audit.csv",
+      "bytes": 190,
+      "sha256": "0ac0ab2b65b17c2bb99fc7c2df0a63518b96a96703cec102468fb2b6f3151e4b"
+    },
+    {
+      "path": "full_spec_v1_placebo_official_ohlcv_patch_rows.csv",
+      "bytes": 9953,
+      "sha256": "d06d81cb7a49bbcd57d618de07a585cc4ccda5b0eee39474c8f0df80ea7d1727"
+    },
+    {
+      "path": "full_spec_v1_placebo_official_unadjusted_ohlcv_rows.csv",
+      "bytes": 179926,
+      "sha256": "1d351f3c4289c4ea40017738693663bf6984d0cbc4e70718a47c5e6e9679dc95"
+    },
+    {
+      "path": "full_spec_v1_placebo_path_impact_ledger.csv",
+      "bytes": 1284,
+      "sha256": "64a65c501b00780bf6d5ae076f1d658d0ac980a69803754fef8b6abf4605f7aa"
+    },
+    {
+      "path": "full_spec_v1_placebo_price_blocked_ledger.csv",
+      "bytes": 11,
+      "sha256": "845f8526eb1b99b597a31cb15f2ecd9377e6b73bf5bb40efa7a95131994d4e22"
+    },
+    {
+      "path": "full_spec_v1_placebo_price_source_manifest.csv",
+      "bytes": 6908,
+      "sha256": "9bf1615c1869c8bf53b3dee238e1e0591b48970fbcfeb74dc6f10d738c13cf8e"
+    },
+    {
+      "path": "raw_audit_samples\\TPEx_4123_2026-03.json",
+      "bytes": 2349,
+      "sha256": "510042b5dc3de3002e669c87f4fd00f1aeaaa64dd0522f9aa36f76a5729128e9"
+    },
+    {
+      "path": "raw_audit_samples\\TPEx_4162_2025-03.json",
+      "bytes": 2290,
+      "sha256": "98ca52b731e915aa0dfa3a97f675f28c2d73f51d3907e057b4fd662246cc94b8"
+    },
+    {
+      "path": "raw_audit_samples\\TPEx_4563_2024-09.json",
+      "bytes": 2237,
+      "sha256": "4217c07a1d9227c5404b0cf9398758db0220895660a56d359cd6e74079a50b4a"
+    },
+    {
+      "path": "raw_audit_samples\\TPEx_4749_2026-05.json",
+      "bytes": 2463,
+      "sha256": "268fbf018054681add1efc56509f65f3bb91d82a8a2f13cae333d9619d02c257"
+    },
+    {
+      "path": "raw_audit_samples\\TPEx_5289_2026-06.json",
+      "bytes": 2596,
+      "sha256": "424309ed9d2e3c1d73d602b787f2bad7830af73bda6626ec601d9c85d928d392"
+    },
+    {
+      "path": "raw_audit_samples\\TPEx_6290_2026-05.json",
+      "bytes": 2309,
+      "sha256": "7ed8226bd75c4766f303f78b8f677cea67eda8786f0d61e06199fd651f24e281"
+    },
+    {
+      "path": "raw_audit_samples\\TPEx_8096_2024-09.json",
+      "bytes": 2197,
+      "sha256": "a9f3747e27332634ad6e5b0a108bc45bf187ca55accd142af88f015a6282d894"
+    },
+    {
+      "path": "raw_audit_samples\\TWSE_1717_2026-05.json",
+      "bytes": 2765,
+      "sha256": "8c9ee771456f44c91330495078b46f0650c304b257068bab147f1462032aa87c"
+    },
+    {
+      "path": "raw_audit_samples\\TWSE_2301_2026-05.json",
+      "bytes": 2862,
+      "sha256": "c38724a7b2de54df890da899d90e33804c885b2e149d407a30bfd7367867b6b7"
+    },
+    {
+      "path": "raw_audit_samples\\TWSE_3047_2024-09.json",
+      "bytes": 2721,
+      "sha256": "36ecb8fe7d1a290b39cf2f12b8c85a35891faa68d136f4304d0f2f1c4fd85daf"
+    },
+    {
+      "path": "raw_audit_samples\\TWSE_3673_2026-05.json",
+      "bytes": 2742,
+      "sha256": "802868333d4acc76ab01eb07757e148da8e9303703c6d2e51a3461c4757c207f"
+    },
+    {
+      "path": "raw_audit_samples\\TWSE_4906_2024-09.json",
+      "bytes": 2690,
+      "sha256": "5115e3d78d9ccfadace2d7dcf9123c1938263f3e31dd782a6ae93c787d0aefc6"
+    },
+    {
+      "path": "raw_audit_samples\\TWSE_7750_2026-06.json",
+      "bytes": 3013,
+      "sha256": "9f02f4e764a1ba0d877c9e0cbb1b384977a0d5a137c196220123f724b0a12ecf"
+    },
+    {
+      "path": "raw_audit_samples\\TWSE_8039_2026-03.json",
+      "bytes": 3017,
+      "sha256": "59d355b53e6b3c33dec8aa242c89e972e2a1878433820e693c964643741706a1"
+    },
+    {
+      "path": "raw_audit_samples\\TWSE_8150_2026-05.json",
+      "bytes": 2775,
+      "sha256": "2ee6356529d5cd4b21ec0f866b38529e79e58edc08e019131dca18f6167bf0d1"
+    },
+    {
+      "path": "readiness_for_core_p3_full_spec_v1_placebo_price_absorption.json",
+      "bytes": 985,
+      "sha256": "9f9d2daccaae45f311b6bfc07b0309bf0a52cae4e1e800f55e544af086a34676"
+    }
+  ]
+}
