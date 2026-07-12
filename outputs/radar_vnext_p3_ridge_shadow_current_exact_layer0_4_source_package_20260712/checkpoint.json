@@ -1,0 +1,9 @@
+{
+  "task_id": "TASK-RADAR-DATA-VNEXT-P3-RIDGE-SHADOW-CURRENT-EXACT-LAYER0-4-SOURCE-PACKAGE-001",
+  "current_step": "completed_ready_for_core_exact_layer0_4_recompute",
+  "completed_dates": 13,
+  "total_dates": 13,
+  "latest_open_market_date": "2026-07-09",
+  "resume_command": "python -X utf8 build_package.py",
+  "updated_at": "2026-07-12T19:54:40+08:00"
+}

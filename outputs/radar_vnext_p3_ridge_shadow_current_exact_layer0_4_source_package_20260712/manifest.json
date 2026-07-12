@@ -1,0 +1,100 @@
+{
+  "task_id": "TASK-RADAR-DATA-VNEXT-P3-RIDGE-SHADOW-CURRENT-EXACT-LAYER0-4-SOURCE-PACKAGE-001",
+  "generated_at": "2026-07-12T19:54:41+08:00",
+  "artifacts": [
+    {
+      "path": ".gitignore",
+      "bytes": 32,
+      "sha256": "8e80bd25a2b498d676ce4c3aa15c80e9e4dac4b26d171aeaac5c644598e2a7d4"
+    },
+    {
+      "path": "build_package.py",
+      "bytes": 15691,
+      "sha256": "3f9a93d945c7b11f5355e1df8954a187a6c35aa0c9ea47f8722b8c1e27b35d15"
+    },
+    {
+      "path": "checkpoint.json",
+      "bytes": 366,
+      "sha256": "550c60bf0e2d41202af4165937a0c6bb40db6dcb1ee6738037e0d62f2be8a38c"
+    },
+    {
+      "path": "current_step.txt",
+      "bytes": 49,
+      "sha256": "862d8ac4949eaa04b46850fa70888010d09010f0c76fa4e29de4a60ce338b70c"
+    },
+    {
+      "path": "final_summary_zh.md",
+      "bytes": 710,
+      "sha256": "fe14ff6e56da99f66c79b9cd2eb9f12cfe25062b826636ae825ce8f3ef75dd19"
+    },
+    {
+      "path": "readiness_for_core_p3_ridge_shadow_current_exact_layer0_4_source.json",
+      "bytes": 1633,
+      "sha256": "4187bd86c3b71b6ec8b703ae639f8d8a47ccac5833987af7e11b43fb6c37f608"
+    },
+    {
+      "path": "ridge_shadow_current_blocked_ledger.csv",
+      "bytes": 10,
+      "sha256": "cbf2ec508591df442cf34ebef01c3794bbe2c036cd92e251965c8de3033c9c22"
+    },
+    {
+      "path": "ridge_shadow_current_corporate_action_guard_rows.csv",
+      "bytes": 61236,
+      "sha256": "f60d62f0d00fe6f734afe05be01413059e1964df406613227d6efbab6feec0cd"
+    },
+    {
+      "path": "ridge_shadow_current_full_market_official_chip_rows.csv.gz",
+      "bytes": 849057,
+      "sha256": "690d6c7f06bda3be6dbc310da3b64f7b40f2e97e6478a7bac0aa4b58353eee11"
+    },
+    {
+      "path": "ridge_shadow_current_full_market_official_foreign_ownership.csv.gz",
+      "bytes": 550256,
+      "sha256": "9297c1621fcd40440bb8244f365011cd70713b4bb7ba541f92316c824db23b86"
+    },
+    {
+      "path": "ridge_shadow_current_full_market_official_ohlcv.csv.gz",
+      "bytes": 499937,
+      "sha256": "1ffa8360dff8c537e6ed138548f1c9870a9a2e86e97d0b730ef832ac6c7c98ae"
+    },
+    {
+      "path": "ridge_shadow_current_layer0_4_source_coverage.csv",
+      "bytes": 471,
+      "sha256": "5a691aa75d2db27b212f9eb053a160d3f5d427ecd72071799e718a4e068ab496"
+    },
+    {
+      "path": "ridge_shadow_current_source_manifest.csv",
+      "bytes": 16376,
+      "sha256": "7848373c5854dc007f3fa637d79cf7af45e6402ac116e523f641525d63dc142e"
+    },
+    {
+      "path": "ridge_shadow_existing_source_reuse_manifest.csv",
+      "bytes": 2478,
+      "sha256": "429df7786e095bfa7aadec87f313c1961382e1026d202ef291b664db91c52fd2"
+    },
+    {
+      "path": "ridge_shadow_future_data_audit.csv",
+      "bytes": 478,
+      "sha256": "ecd7b7e486836f09aa47109088668d8a4438416865ef33da4a0c3bcd7b8b554a"
+    },
+    {
+      "path": "ridge_shadow_market_session_audit.csv",
+      "bytes": 1967,
+      "sha256": "fc4d99b8e05ac1bfcf90c74f4183123290ab1859eaadd3b501e52e2bf5f3b364"
+    },
+    {
+      "path": "ridge_shadow_official_market_calendar_rows.csv",
+      "bytes": 2510,
+      "sha256": "314631c318faa71a152046413a228bb579e75c0916a4ae56254ea7de650c6548"
+    }
+  ],
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "portfolio_replay_executed": false,
+  "ready_for_strategy_replay": false,
+  "ready_for_formal": false,
+  "not_live_rule": true,
+  "forward_returns_live_rule_usage": false
+}

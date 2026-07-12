@@ -1,0 +1,6 @@
+﻿family,required_dates,ready_dates,rows,latest_source_date,status
+full_market_official_ohlcv,8,8,15655,2026-07-09,ready
+full_market_institutional_margin_lending,8,8,50099,2026-07-09,ready
+full_market_foreign_ownership,8,8,15792,2026-07-09,ready
+corporate_action_guard,current_event_window,candidate events only,135,2026-07-10,partial_market_available_at_guard
+exact_layer4_primary80,next normal trading day,0,0,2026-06-29,Core_recompute_required_no_carry_forward

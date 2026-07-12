@@ -1,0 +1,48 @@
+{
+  "task_id": "TASK-RADAR-DATA-VNEXT-P3-RIDGE-SHADOW-CURRENT-EXACT-LAYER0-4-SOURCE-PACKAGE-001",
+  "status": "current_full_market_source_patch_ready_for_core_exact_layer0_4_recompute",
+  "source": "official TWSE/TPEx market-wide EOD, institutional, margin/short/lending and foreign ownership routes",
+  "coverage": {
+    "requested_start": "2026-06-30",
+    "requested_end": "2026-07-12",
+    "latest_open_market_date": "2026-07-09",
+    "open_market_dates": [
+      "2026-06-30",
+      "2026-07-01",
+      "2026-07-02",
+      "2026-07-03",
+      "2026-07-06",
+      "2026-07-07",
+      "2026-07-08",
+      "2026-07-09"
+    ],
+    "closed_no_signal_dates": [
+      "2026-07-04",
+      "2026-07-05",
+      "2026-07-10",
+      "2026-07-11",
+      "2026-07-12"
+    ],
+    "official_ohlcv_rows": 15655,
+    "official_chip_rows": 50099,
+    "official_foreign_ownership_rows": 15792,
+    "corporate_action_guard_rows": 135
+  },
+  "current_exact_layer4_primary80_ready": false,
+  "carried_2026_06_29_membership_allowed": false,
+  "ready_for_core_exact_layer0_4_recompute": true,
+  "ready_for_core_rerun": true,
+  "ready_for_first_prospective_ridge_prediction": false,
+  "market_closed_no_signal_policy_ready": true,
+  "future_data_violation_count": 0,
+  "ready_for_experiments": false,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "portfolio_replay_executed": false,
+  "ready_for_strategy_replay": false,
+  "ready_for_formal": false,
+  "not_live_rule": true,
+  "forward_returns_live_rule_usage": false
+}
