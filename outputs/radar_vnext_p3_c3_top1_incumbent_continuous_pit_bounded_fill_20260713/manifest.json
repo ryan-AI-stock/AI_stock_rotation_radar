@@ -1,0 +1,90 @@
+{
+  "task_id": "TASK-RADAR-DATA-VNEXT-P3-C3-TOP1-INCUMBENT-CONTINUOUS-PIT-BOUNDED-FILL-001",
+  "generated_at_utc": "2026-07-13T06:34:23+00:00",
+  "artifacts": [
+    {
+      "path": "p3_C3_incumbent_continuous_pit_segment_exact_keys.csv",
+      "size_bytes": 23633,
+      "sha256": "ec95dfb4ff876cf6bc56a575329bb4fed2f20a5984c7218520bb773f6bf8fb79"
+    },
+    {
+      "path": "p3_C3_incumbent_continuous_pit_exact_compact.csv.gz",
+      "size_bytes": 100250,
+      "sha256": "4788749eb54a115e72aede698fcf09eab6101bde906d5e267de348403d18f63a"
+    },
+    {
+      "path": "p3_C3_incumbent_continuous_pit_family_coverage.csv",
+      "size_bytes": 491,
+      "sha256": "f4e987650fd58ee21a532e7e135f6e0b854a5bd595b2824aec86cbbd4fd7f729"
+    },
+    {
+      "path": "p3_C3_incumbent_continuous_pit_blocked_ledger.csv",
+      "size_bytes": 291,
+      "sha256": "ffe816ca10a1aac8813c7b485de6e5ba3af95fb2a15a3b6634e6822db79f48de"
+    },
+    {
+      "path": "p3_C3_incumbent_continuous_pit_zero_na_ledger.csv",
+      "size_bytes": 73,
+      "sha256": "73f4e671f75d10808d257e543114122c6c9fba92416e13ac5f264f2c6ebb3489"
+    },
+    {
+      "path": "p3_C3_incumbent_adjusted_hlc_factor_event_audit.csv",
+      "size_bytes": 667,
+      "sha256": "a62fc3ffe9df53e6229fd5822bf553fdd2ae6e1b71a6b84d162c2a241b1e9f75"
+    },
+    {
+      "path": "p3_C3_incumbent_corporate_action_event_inventory.csv",
+      "size_bytes": 1801,
+      "sha256": "81731173d5f248eb2630d22b4713d974ef1bf94924cb7f02bfd5ff3aeb711e53"
+    },
+    {
+      "path": "p3_C3_incumbent_continuous_pit_source_manifest.csv",
+      "size_bytes": 292320,
+      "sha256": "94a0881114c044c48f1258c65a72366eb8abac2d6f4f58210a595d002426280f"
+    },
+    {
+      "path": "p3_C3_incumbent_continuous_pit_future_data_audit.csv",
+      "size_bytes": 615,
+      "sha256": "c73980ae298e251c8ccf4825ed1addbc8e2fc2c43c6605b2cc9cd5b1dac1cd56"
+    },
+    {
+      "path": "readiness_for_core_p3_C3_incumbent_continuous_pit_absorption.json",
+      "size_bytes": 1170,
+      "sha256": "24337ce061d5110ed72ca83b002a5dee06c8715d0503c3595266d5b1741e9af6"
+    },
+    {
+      "path": "final_summary_zh.md",
+      "size_bytes": 634,
+      "sha256": "fe982a9ffa3615b6f869719b67994d88b252b7875ae38b2390d945da80765cfc"
+    },
+    {
+      "path": "current_step.txt",
+      "size_bytes": 37,
+      "sha256": "e16eb8f1db73ff7a31892e5df444432f206fad18b870ffa4ea3f6446a6a787c6"
+    },
+    {
+      "path": "progress.json",
+      "size_bytes": 241,
+      "sha256": "70f365b6404afc2d6e3e67776727d8a8cf6a18ea14b962170569f73e4d23e3f5"
+    },
+    {
+      "path": "run_bounded_fill.py",
+      "size_bytes": 32085,
+      "sha256": "477715bd9c479e353643357290e0bb30ba809ce4cbd30f969413e08eb00cbd2d"
+    }
+  ],
+  "raw_cache_persisted_locally_ignored_by_git": true,
+  "full_market_expansion": false,
+  "performance_authorized": false,
+  "P3_2_outcome_read_authorized": false,
+  "future_data_violation_count": 0,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "portfolio_replay_executed": false,
+  "ready_for_strategy_replay": false,
+  "ready_for_formal": false,
+  "not_live_rule": true,
+  "forward_returns_live_rule_usage": false
+}

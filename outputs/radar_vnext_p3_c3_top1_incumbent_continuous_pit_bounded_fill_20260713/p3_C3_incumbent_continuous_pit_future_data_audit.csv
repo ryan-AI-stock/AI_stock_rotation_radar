@@ -1,0 +1,6 @@
+﻿audit_item,status,detail,future_data_violation_count
+scope,pass,"only four tickers, nine segments, and exact 20TD warmup keys; no P3-2 outcome read",0
+adjusted_vs_raw,pass,trusted adjusted analysis HLC and official raw execution HLC are separate columns; raw is not presented as adjusted,0
+chip_availability,pass,post-close source availability policy retained; Core must apply next-trading-day eligibility,0
+TDCC_P3_1,pass,TDCC is NA_not_required_not_zero and is neither queried nor imputed,0
+trusted_adjusted_limit,pass,retro-adjusted trusted source is research diagnostic only and not formal PIT truth,0

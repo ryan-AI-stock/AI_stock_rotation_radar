@@ -1,0 +1,5 @@
+﻿ticker,required_rows,factor_ready_rows,factor_min,factor_max,factor_change_rows_in_required_scope,trusted_event_inventory_rows,source_quality,raw_execution_separate,human_review_required,future_data_violation_count
+2327,49,49,0.9521108034278164,0.9928759049069706,1,1,trusted_nonofficial_research_grade_not_formal,True,True,0
+2610,23,23,0.8996819922643833,0.92690322865013,3,1,trusted_nonofficial_research_grade_not_formal,True,True,0
+3533,95,95,0.955045166015625,0.9716171436095505,4,1,trusted_nonofficial_research_grade_not_formal,True,True,0
+5871,112,112,0.8832815939863677,0.9119013775137969,14,2,trusted_nonofficial_research_grade_not_formal,True,True,0

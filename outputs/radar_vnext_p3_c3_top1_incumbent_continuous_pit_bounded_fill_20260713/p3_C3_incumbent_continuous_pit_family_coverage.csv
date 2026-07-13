@@ -1,0 +1,6 @@
+﻿family,required_rows,ready_rows,official_zero_or_not_applicable_rows,blocked_rows,source_quality
+adjusted_analysis_HLC,279,279,0,0,trusted_nonofficial_research_grade; raw execution separate
+institutional,279,279,0,0,official post-close daily stock-level source
+margin_short,279,279,0,0,official post-close daily stock-level source
+securities_lending,279,279,0,0,official post-close daily stock-level source
+foreign_ownership,279,279,0,0,official post-close daily stock-level source
