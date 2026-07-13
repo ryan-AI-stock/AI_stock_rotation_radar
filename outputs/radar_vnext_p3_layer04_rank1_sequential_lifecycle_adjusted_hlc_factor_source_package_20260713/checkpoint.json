@@ -1,0 +1,6 @@
+{
+  "task_id": "TASK-RADAR-DATA-VNEXT-P3-LAYER04-RANK1-SEQUENTIAL-LIFECYCLE-ADJUSTED-HLC-FACTOR-SOURCE-PACKAGE-001",
+  "current_step": "completed_ready_for_core_absorption_with_2888_blocked",
+  "resume_command": "python -X utf8 build_package.py",
+  "updated_at": "2026-07-13T11:38:00+08:00"
+}

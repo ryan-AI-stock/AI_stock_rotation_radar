@@ -1,0 +1,140 @@
+{
+  "task_id": "TASK-RADAR-DATA-VNEXT-P3-LAYER04-RANK1-SEQUENTIAL-LIFECYCLE-ADJUSTED-HLC-FACTOR-SOURCE-PACKAGE-001",
+  "generated_at": "2026-07-13T11:38:00+08:00",
+  "artifacts": [
+    {
+      "path": ".gitignore",
+      "bytes": 16,
+      "sha256": "c83016f0118893d705dc8d7ce2ff32933417bc014ce0766e5817656f58dc6ff8"
+    },
+    {
+      "path": "build_package.py",
+      "bytes": 27900,
+      "sha256": "5eebbbbe648578ae587f5475906d20572daedeb99f80bbe23487de9417aab42b"
+    },
+    {
+      "path": "checkpoint.json",
+      "bytes": 297,
+      "sha256": "40d9dfb8ace933ce45ce638f310c7452503626a88aa73663222f324acdc91055"
+    },
+    {
+      "path": "current_step.txt",
+      "bytes": 53,
+      "sha256": "27a8975f9519178840bbad811a47660a2c71387daebdba1d0070029db8f1e667"
+    },
+    {
+      "path": "final_summary_zh.md",
+      "bytes": 656,
+      "sha256": "e99ea838b3fdeee3e07c981f05030ab2deac1b621946ee2365837ab81378f6c7"
+    },
+    {
+      "path": "rank1_adjusted_analysis_hlc_factor_compact.csv.gz",
+      "bytes": 8987637,
+      "sha256": "7d6bb5d424f5c2ed6113c87cd7c68c8bdf07777fb184627ce6a7ee233f9e6967"
+    },
+    {
+      "path": "rank1_adjusted_analysis_hlc_factor_sample.csv",
+      "bytes": 145657,
+      "sha256": "3cf45148c01452147a02f0a52a3f96bbb983152300246973225b97f32174f79e"
+    },
+    {
+      "path": "rank1_adjusted_hlc_252td_warmup_by_segment.csv",
+      "bytes": 20939,
+      "sha256": "cfca1452e992c6a2a80da2cf2086b4594dffc62b5f9b7467f6c497f54423c737"
+    },
+    {
+      "path": "rank1_adjusted_hlc_blocked_ledger.csv",
+      "bytes": 822,
+      "sha256": "862fb9e36c42b0533904f7061d4556768747dd4d64e4801efe475c3e1dda1652"
+    },
+    {
+      "path": "rank1_adjusted_hlc_coverage_by_ticker.csv",
+      "bytes": 17494,
+      "sha256": "a1c9a3c5251d7b73fb33c25f626a2f72f256f63394586d25368f8bc129899624"
+    },
+    {
+      "path": "rank1_adjusted_hlc_future_data_audit.csv",
+      "bytes": 709,
+      "sha256": "402bf078b984d877e3c61737802aa2223afd02327e47510f4e26ae8d64b994de"
+    },
+    {
+      "path": "rank1_adjusted_hlc_source_manifest.csv",
+      "bytes": 48274,
+      "sha256": "a2f4424cd1b147bbfe2042ee894d78d009dbffc482ec3afe028f782edd3cb9b6"
+    },
+    {
+      "path": "rank1_adjusted_hlc_ticker_scope.csv",
+      "bytes": 1965,
+      "sha256": "09e8b56a081cf469c8b300290c2322a53dbe5d289a07ffd0ce9f19c2246a8622"
+    },
+    {
+      "path": "rank1_adjustment_factor_corporate_action_audit.csv",
+      "bytes": 95405,
+      "sha256": "46e397d7c6b06198988d878119416fad66e6d0c403d2b2cd97903b93e9e6b42f"
+    },
+    {
+      "path": "rank1_corporate_action_event_inventory.csv",
+      "bytes": 147148,
+      "sha256": "2b17d1a499a054a3b41f23da06a9f1205bb15603b5ce9c50a2804a85d0a5afda"
+    },
+    {
+      "path": "rank1_factor_continuity_patch_ledger.csv",
+      "bytes": 812,
+      "sha256": "770ab155ea81c3b7d67f07d374a334ac822232971ae4d4297f8f39ee9abed378"
+    },
+    {
+      "path": "readiness_for_core_rank1_sequential_KD_self_history_absorption.json",
+      "bytes": 1405,
+      "sha256": "92aac788dff7bed41ae5873a8f9809b9b5c016f431c6a1735c09f89dc8f16e0f"
+    }
+  ],
+  "readiness": {
+    "task_id": "TASK-RADAR-DATA-VNEXT-P3-LAYER04-RANK1-SEQUENTIAL-LIFECYCLE-ADJUSTED-HLC-FACTOR-SOURCE-PACKAGE-001",
+    "status": "rank1_sequential_adjusted_hlc_source_ready_with_2888_explicit_blocker",
+    "source": "bounded Yahoo trusted_nonofficial adjusted HLC plus official TWSE/TPEx raw HLC overlap and official corporate-action inventory",
+    "coverage": {
+      "requested_tickers": 101,
+      "ready_tickers": 100,
+      "blocked_tickers": 1,
+      "decision_dates": 715,
+      "decision_rows": 715,
+      "adjusted_hlc_rows": 96677,
+      "segments": 136,
+      "segments_252td_ready": 135,
+      "segments_252td_not_ready": 1,
+      "official_raw_overlap_rows": 78970,
+      "corporate_action_event_rows": 476
+    },
+    "future_data_violation_count": 0,
+    "ready_for_core_rank1_sequential_KD_self_history_absorption": true,
+    "ready_for_experiments": false,
+    "diagnostic_subproblem": true,
+    "supports_sequential_lifecycle_rank1_timing": true,
+    "representative_of_full_all80_layer5": false,
+    "may_be_used_to_reject_full_layer5": false,
+    "broad_additive_formula_followup": false,
+    "formal_model_changed": false,
+    "trade_decision_changed": false,
+    "active_in_trade_decision": false,
+    "report_changed": false,
+    "portfolio_replay_executed": false,
+    "ready_for_strategy_replay": false,
+    "ready_for_formal": false,
+    "not_live_rule": true,
+    "forward_returns_live_rule_usage": false
+  },
+  "diagnostic_subproblem": true,
+  "supports_sequential_lifecycle_rank1_timing": true,
+  "representative_of_full_all80_layer5": false,
+  "may_be_used_to_reject_full_layer5": false,
+  "broad_additive_formula_followup": false,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "portfolio_replay_executed": false,
+  "ready_for_strategy_replay": false,
+  "ready_for_formal": false,
+  "not_live_rule": true,
+  "forward_returns_live_rule_usage": false
+}
