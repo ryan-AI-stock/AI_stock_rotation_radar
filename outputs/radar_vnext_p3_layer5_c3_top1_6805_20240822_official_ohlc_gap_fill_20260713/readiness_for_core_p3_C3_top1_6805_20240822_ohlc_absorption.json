@@ -1,0 +1,23 @@
+{
+  "task_id": "TASK-RADAR-DATA-VNEXT-P3-LAYER5-C3-TOP1-6805-20240822-OFFICIAL-OHLC-GAP-FILL-001",
+  "status": "exact_official_raw_execution_ohlc_ready_for_core_absorption",
+  "input_gap_rows": 1,
+  "filled_rows": 1,
+  "blocked_rows": 0,
+  "official_unadjusted_ohlc_ready_share": 1.0,
+  "next_execution_date_exact_ready": true,
+  "ready_for_core_p3_C3_top1_execution_ohlc_absorption": true,
+  "ready_for_experiments": false,
+  "new_download_performed": false,
+  "adjusted_analysis_ohlc_used": false,
+  "future_data_violation_count": 0,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "portfolio_replay_executed": false,
+  "ready_for_strategy_replay": false,
+  "ready_for_formal": false,
+  "not_live_rule": true,
+  "forward_returns_live_rule_usage": false
+}

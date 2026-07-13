@@ -1,0 +1,4 @@
+﻿audit_item,status,detail,future_data_violation_count
+decision_to_execution_timing,pass,2024-08-21 decision uses 2024-08-22 official raw OHLC only as next-day execution realization,0
+no_substitution,pass,"exact ticker/date row; no neighbor, last-price, adjusted-analysis, or benchmark substitution",0
+retrieval_metadata,pass,package materialization time is metadata and is not used as market date,0

@@ -1,0 +1,58 @@
+{
+  "task_id": "TASK-RADAR-DATA-VNEXT-P3-LAYER5-C3-TOP1-6805-20240822-OFFICIAL-OHLC-GAP-FILL-001",
+  "generated_at_utc": "2026-07-13T06:14:08+00:00",
+  "artifacts": [
+    {
+      "path": "p3_C3_top1_6805_20240822_official_ohlc_filled_rows.csv",
+      "size_bytes": 996,
+      "sha256": "3a82abb5d257f6a323c985967194ceb34aecdfb14ad4e963688a72e843a20c1d"
+    },
+    {
+      "path": "p3_C3_top1_6805_20240822_official_ohlc_source_manifest.csv",
+      "size_bytes": 1303,
+      "sha256": "6a06102489e989cf06e9a6e76ee11d5515971e6e3c1fa79b90e35224dd015775"
+    },
+    {
+      "path": "p3_C3_top1_6805_20240822_official_ohlc_blocked_ledger.csv",
+      "size_bytes": 105,
+      "sha256": "88e371c96864302a8e7165402bf6a63929c63957e26386a50894a11e95d76475"
+    },
+    {
+      "path": "p3_C3_top1_6805_20240822_official_ohlc_future_data_audit.csv",
+      "size_bytes": 405,
+      "sha256": "dc6086535002c640e41ce5aaf683973d2111c91eb97ba5bdf5f7c6bb9875e9f4"
+    },
+    {
+      "path": "readiness_for_core_p3_C3_top1_6805_20240822_ohlc_absorption.json",
+      "size_bytes": 866,
+      "sha256": "719eb79b5a313e9ea654c47a57e11d47b91774198d9cc91a84caf42c1786cecb"
+    },
+    {
+      "path": "final_summary_zh.md",
+      "size_bytes": 600,
+      "sha256": "05eb3b9ca43f524fb8b18b4a3f12e3bd927dbc060b55dbc544d530ad227f5fb8"
+    },
+    {
+      "path": "current_step.txt",
+      "size_bytes": 37,
+      "sha256": "e16eb8f1db73ff7a31892e5df444432f206fad18b870ffa4ea3f6446a6a787c6"
+    },
+    {
+      "path": "build_source_package.py",
+      "size_bytes": 10893,
+      "sha256": "284c604a2bdc0ac9392000ee164083fbbd19d00d29b522bfcbe4bdafb1244249"
+    }
+  ],
+  "source_package_reused": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_vnext_legacy_rs20_selected_stock_price_path_source_package_20260708",
+  "new_download_performed": false,
+  "future_data_violation_count": 0,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "portfolio_replay_executed": false,
+  "ready_for_strategy_replay": false,
+  "ready_for_formal": false,
+  "not_live_rule": true,
+  "forward_returns_live_rule_usage": false
+}
