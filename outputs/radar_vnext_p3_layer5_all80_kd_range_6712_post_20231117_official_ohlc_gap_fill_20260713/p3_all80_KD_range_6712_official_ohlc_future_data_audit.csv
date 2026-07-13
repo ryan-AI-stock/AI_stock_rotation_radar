@@ -1,0 +1,5 @@
+﻿audit_item,status,detail,future_data_violation_count
+first_post_decision_ticker_trading_day,pass,Full official 2023-11 ticker-month sequence was sorted; first row after 2023-11-17 is 2023-11-20.,0
+execution_only_usage,pass,2023-11-20 official raw OHLC is a realized execution row and is not used as a 2023-11-17 decision feature.,0
+no_price_substitution,pass,"No neighbor, last-price, adjusted-analysis, or benchmark substitution.",0
+retrieval_metadata,pass,Retrieval timestamp is metadata only and is not the market date.,0

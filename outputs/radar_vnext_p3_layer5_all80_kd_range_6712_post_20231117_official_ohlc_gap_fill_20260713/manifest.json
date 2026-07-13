@@ -1,0 +1,67 @@
+{
+  "task_id": "TASK-RADAR-DATA-VNEXT-P3-LAYER5-ALL80-KD-RANGE-6712-POST-20231117-OFFICIAL-OHLC-GAP-FILL-001",
+  "generated_at_utc": "2026-07-13T07:40:42+00:00",
+  "source_route_scope": "one TPEx ticker-month",
+  "artifacts": [
+    {
+      "path": "p3_all80_KD_range_6712_202311_official_unadjusted_ohlcv_rows.csv",
+      "size_bytes": 6829,
+      "sha256": "262bb0964c524be6041d6f7710b83f947baacf3e49bb80835e53f7d4461a1478"
+    },
+    {
+      "path": "p3_all80_KD_range_6712_post_20231117_official_ohlc_filled_rows.csv",
+      "size_bytes": 811,
+      "sha256": "96ffccba99aad2d9c2f09f29e714570013ad12d118bef31867e998fb164a3d0f"
+    },
+    {
+      "path": "p3_all80_KD_range_6712_official_ohlc_source_manifest.csv",
+      "size_bytes": 774,
+      "sha256": "7f2c376d92852d4dd2d28a07ae8b034224feae29a2b0d3adb20b48ae67927ea0"
+    },
+    {
+      "path": "p3_all80_KD_range_6712_official_ohlc_blocked_ledger.csv",
+      "size_bytes": 98,
+      "sha256": "7c5b8ed84790789ad8afb6a851ac2d8f71d05c2c09d8157d18d09b89ce05dc47"
+    },
+    {
+      "path": "p3_all80_KD_range_6712_official_ohlc_future_data_audit.csv",
+      "size_bytes": 533,
+      "sha256": "15d644a181e42d66d3bda370b57d408360d83e774e9bede2fe44e6cdf56ace1d"
+    },
+    {
+      "path": "readiness_for_core_p3_all80_KD_range_6712_execution_absorption.json",
+      "size_bytes": 965,
+      "sha256": "6af2d9d3dd180bb2108ff38cde622bdc7e6570b0bc08928309ac2b60270f6ab7"
+    },
+    {
+      "path": "final_summary_zh.md",
+      "size_bytes": 643,
+      "sha256": "c33590e278d60920479ecd8da4c7b30cadda5da1fc861db13c312b2dabe8d531"
+    },
+    {
+      "path": "current_step.txt",
+      "size_bytes": 37,
+      "sha256": "e16eb8f1db73ff7a31892e5df444432f206fad18b870ffa4ea3f6446a6a787c6"
+    },
+    {
+      "path": "raw_audit_samples\\TPEx_6712_2023-11.json",
+      "size_bytes": 2340,
+      "sha256": "f4a194ede45adb30646c139f7c2caf7601e5b274d183c8e760702460499feadb"
+    },
+    {
+      "path": "build_source_package.py",
+      "size_bytes": 12018,
+      "sha256": "ff35794980741e2b84028f30189040304e7599d937015e84972da2bc5c492815"
+    }
+  ],
+  "future_data_violation_count": 0,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "portfolio_replay_executed": false,
+  "ready_for_strategy_replay": false,
+  "ready_for_formal": false,
+  "not_live_rule": true,
+  "forward_returns_live_rule_usage": false
+}
