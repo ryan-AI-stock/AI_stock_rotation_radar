@@ -1,0 +1,5 @@
+﻿check,status,violation_count,notes
+exact_authorized_key_only,pass,0,"No ticker/date outside the 11,678 authorized rows may enter the delta compact."
+no_neighbor_or_current_backfill,pass,0,"No neighbor date, current status, or P3-2 outcome is used."
+raw_execution_adjusted_analysis_separated,pass,0,Official raw execution fields and trusted adjusted analysis fields remain separate.
+no_performance_or_state_read,pass,0,"No state, NAV, performance, Top3, or future outcome was read or calculated."

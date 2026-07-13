@@ -1,0 +1,187 @@
+{
+  "task_id": "TASK-RADAR-DATA-VNEXT-P3-LAYER5-ALL80-CONTINUOUS-LIFECYCLE-ADJUSTED-HLC-BOUNDED-DELTA-ACQUISITION-001",
+  "generated_at": "2026-07-13T05:27:27+00:00",
+  "artifacts": [
+    {
+      "path": ".gitignore",
+      "bytes": 33,
+      "sha256": "94e6a3c93735ad8bd5097301b00b92de73d117e7197d3abb647abfe5deadda4c"
+    },
+    {
+      "path": "all80_bounded_delta_adjusted_hlc_exact_key_compact.csv.gz",
+      "bytes": 582980,
+      "sha256": "a13c09cbd529e571a9b892db722901f98d8c7d927141a7df72749617c0932253"
+    },
+    {
+      "path": "all80_bounded_delta_coverage_audit.csv",
+      "bytes": 891,
+      "sha256": "8ba082abbd657e527b358e59e39cea094f320dfd9a265f49fe1d2bbfbfdf1537"
+    },
+    {
+      "path": "all80_bounded_delta_future_data_audit.csv",
+      "bytes": 504,
+      "sha256": "ceebcdff7442e5d8d99c1ad515430a2eaf645174c4f610c1d6b0be2105d9790c"
+    },
+    {
+      "path": "all80_bounded_delta_official_applicability_ledger.csv",
+      "bytes": 452576,
+      "sha256": "6bb07d61a25dfab35a0082f75dae9c538cbdfe37d91772ef9bcedb34095caf5a"
+    },
+    {
+      "path": "all80_bounded_delta_official_raw_hlc_rows.csv.gz",
+      "bytes": 254105,
+      "sha256": "6bc82782d84167b73d87bd7a13e679c98b279542716d5577206b9d955e92b382"
+    },
+    {
+      "path": "all80_bounded_delta_official_route_manifest.csv",
+      "bytes": 1129601,
+      "sha256": "170d3bd0f447432d8954e37ff230f7d338c73f7c5c6476356d407f8ceb15b83b"
+    },
+    {
+      "path": "all80_bounded_delta_remaining_blocker_ledger.csv.gz",
+      "bytes": 19296,
+      "sha256": "290f3f9d6f00b50f08c853f28dcb7da8234b2c2342a3bfd89c45e0534644c29a"
+    },
+    {
+      "path": "all80_bounded_delta_remaining_blocker_sample.csv",
+      "bytes": 7336,
+      "sha256": "217eaf1d0a23be31cb372877521a730a8087d664e5c905d6b37d058c57128a48"
+    },
+    {
+      "path": "all80_bounded_delta_remaining_blocker_summary.csv",
+      "bytes": 351,
+      "sha256": "39d4f2f5e09ff82af4d244a91b01991b3f96ac4e6764d911d37fcda46e0ef5b4"
+    },
+    {
+      "path": "all80_bounded_delta_source_lineage_manifest.csv",
+      "bytes": 9777,
+      "sha256": "bfb2c06c63ad6bcc133b87b8589828ef229c6616e95e460d9f4eeab80ba2289f"
+    },
+    {
+      "path": "all80_bounded_delta_trusted_factor_manifest.csv",
+      "bytes": 35179,
+      "sha256": "79e809f8c16f29fc1d537d19634308a3518f200aa84d3b1623ab735454bdcace"
+    },
+    {
+      "path": "all80_bounded_delta_trusted_factor_rows.csv.gz",
+      "bytes": 22423,
+      "sha256": "f0f390e2b5f2fcfb14589074f6ae43269d621ce306c6fc414962895139d70635"
+    },
+    {
+      "path": "current_step.txt",
+      "bytes": 43,
+      "sha256": "057614479c3a48c6dabc9961222b2713995b2beecda7ebe69a9c203d21f77b79"
+    },
+    {
+      "path": "final_summary_zh.md",
+      "bytes": 605,
+      "sha256": "22da61c22a0a522c2ddcbc1a6697b6ec54ccf22f2256feb9b4de2ca9007072a2"
+    },
+    {
+      "path": "progress.json",
+      "bytes": 362,
+      "sha256": "28c5b05051e709547b90c1b37bd2d9cf0af40aa811561f4ad26a3248c939e2b1"
+    },
+    {
+      "path": "readiness_for_core_all80_adjusted_hlc_bounded_delta_absorption.json",
+      "bytes": 2128,
+      "sha256": "c453d60b1325a4993bd4b939163475eab93a74212f4cdabcd889600d32693905"
+    },
+    {
+      "path": "repair_twse_legacy_fallback.ps1",
+      "bytes": 4568,
+      "sha256": "e89d449b5b54c1de9ce4fa42858631ff61e2806974ae593b26888a57b0024bed"
+    },
+    {
+      "path": "run_bounded_delta_acquisition.py",
+      "bytes": 43739,
+      "sha256": "0f470061e315afbd08cac47c84db4e5c153426d03e03b099df53008ebc286013"
+    },
+    {
+      "path": "twse_legacy_fallback_progress.json",
+      "bytes": 449,
+      "sha256": "0838156a678c633aef827a9e90c621e8bc817fb9df68c4c1f934ba09b0ad445d"
+    },
+    {
+      "path": "twse_legacy_fallback_trace.log",
+      "bytes": 369501,
+      "sha256": "4185b95031c4021f747c05a600e1c4c816dbd820896a461a9b11774aa3f51971"
+    }
+  ],
+  "raw_cache_persisted_locally_ignored_by_git": true,
+  "authorized_scope": {
+    "rows": 11678,
+    "routes": 2460,
+    "raw_routes": 2379,
+    "factor_tickers": 67
+  },
+  "readiness": {
+    "task_id": "TASK-RADAR-DATA-VNEXT-P3-LAYER5-ALL80-CONTINUOUS-LIFECYCLE-ADJUSTED-HLC-BOUNDED-DELTA-ACQUISITION-001",
+    "status": "bounded_delta_acquired_partial_structural_blockers_retained",
+    "coverage": {
+      "authorized_delta_rows": 11678,
+      "newly_reconstructable_adjusted_hlc_rows": 7802,
+      "new_official_zero_or_not_applicable_proven_rows": 1328,
+      "remaining_blocked_rows": 2548,
+      "authorized_rows_accounted": 11678,
+      "acquired_official_raw_exact_rows": 6275,
+      "acquired_trusted_factor_exact_rows": 295,
+      "official_routes": 2032,
+      "official_routes_accepted": 1896,
+      "official_routes_valid_no_exact_row": 66,
+      "official_routes_failed": 70,
+      "trusted_factor_tickers": 67,
+      "trusted_factor_tickers_accepted": 59,
+      "future_data_violation_count": 0,
+      "diagnostic_subproblem": false,
+      "represents_intended_all80_layer5_state_supply": true,
+      "performance_authorized": false,
+      "P3_2_outcome_read_authorized": false,
+      "Top3_authorized": false,
+      "formal_model_changed": false,
+      "trade_decision_changed": false,
+      "active_in_trade_decision": false,
+      "report_changed": false,
+      "portfolio_replay_executed": false,
+      "ready_for_strategy_replay": false,
+      "ready_for_formal": false,
+      "not_live_rule": true,
+      "forward_returns_live_rule_usage": false
+    },
+    "ready_for_core_all80_adjusted_hlc_delta_absorption": true,
+    "ready_for_core_state_supply_rerun": false,
+    "ready_for_experiments": false,
+    "download_scope_expanded": false,
+    "raw_used_as_adjusted": false,
+    "future_data_violation_count": 0,
+    "diagnostic_subproblem": false,
+    "represents_intended_all80_layer5_state_supply": true,
+    "performance_authorized": false,
+    "P3_2_outcome_read_authorized": false,
+    "Top3_authorized": false,
+    "formal_model_changed": false,
+    "trade_decision_changed": false,
+    "active_in_trade_decision": false,
+    "report_changed": false,
+    "portfolio_replay_executed": false,
+    "ready_for_strategy_replay": false,
+    "ready_for_formal": false,
+    "not_live_rule": true,
+    "forward_returns_live_rule_usage": false
+  },
+  "future_data_violation_count": 0,
+  "diagnostic_subproblem": false,
+  "represents_intended_all80_layer5_state_supply": true,
+  "performance_authorized": false,
+  "P3_2_outcome_read_authorized": false,
+  "Top3_authorized": false,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "portfolio_replay_executed": false,
+  "ready_for_strategy_replay": false,
+  "ready_for_formal": false,
+  "not_live_rule": true,
+  "forward_returns_live_rule_usage": false
+}

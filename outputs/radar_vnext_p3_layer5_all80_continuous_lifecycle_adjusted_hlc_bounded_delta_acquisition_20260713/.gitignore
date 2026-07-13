@@ -1,0 +1,3 @@
+raw_cache/
+*.csv.gz
+__pycache__/

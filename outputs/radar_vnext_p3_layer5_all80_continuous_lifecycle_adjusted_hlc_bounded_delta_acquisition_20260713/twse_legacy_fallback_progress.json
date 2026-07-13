@@ -1,0 +1,13 @@
+{
+  "task_id": "TASK-RADAR-DATA-VNEXT-P3-LAYER5-ALL80-CONTINUOUS-LIFECYCLE-ADJUSTED-HLC-BOUNDED-DELTA-ACQUISITION-001",
+  "family": "twse_legacy_failed_only_fallback",
+  "status": "completed",
+  "completed": 1675,
+  "total": 1675,
+  "accepted": 1605,
+  "blocked": 70,
+  "cursor": "9958/2024-08",
+  "last_error": "",
+  "updated_at": "2026-07-13T05:19:17.8328921+00:00",
+  "resume_command": "pwsh -File repair_twse_legacy_fallback.ps1"
+}
