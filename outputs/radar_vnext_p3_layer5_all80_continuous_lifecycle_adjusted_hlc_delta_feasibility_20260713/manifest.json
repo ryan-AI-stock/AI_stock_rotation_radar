@@ -1,0 +1,128 @@
+{
+  "task_id": "TASK-RADAR-DATA-VNEXT-P3-LAYER5-ALL80-CONTINUOUS-LIFECYCLE-ADJUSTED-HLC-DELTA-FEASIBILITY-001",
+  "generated_at": "2026-07-13T12:02:14+08:00",
+  "artifacts": [
+    {
+      "path": ".gitignore",
+      "bytes": 9,
+      "sha256": "68e09e5c0c875f2a6bd05f244291e881f46c54f1461ab93864b8671c39650d3f"
+    },
+    {
+      "path": "all80_adjusted_hlc_future_data_audit.csv",
+      "bytes": 618,
+      "sha256": "976019b51b31dc1f26d41f5545cbe7c30fa895d06234a5052fa4440f15350b7b"
+    },
+    {
+      "path": "all80_adjusted_hlc_gap_classification_sample.csv",
+      "bytes": 6423,
+      "sha256": "a2589c334bbd06ebb9bb45692db471b8c6324bc5824f03f216df7aba5ea92eaf"
+    },
+    {
+      "path": "all80_adjusted_hlc_gap_classification_summary.csv",
+      "bytes": 1211,
+      "sha256": "19f3b2b25732877353fc1702980a7ea9aac30488abe11055016673a00686ecf6"
+    },
+    {
+      "path": "all80_adjusted_hlc_gap_reuse_classification.csv.gz",
+      "bytes": 1372688,
+      "sha256": "c4d2fee9006f48f7a167c0ce95d152478d37ba31d42cebb69628e2bcb8cb9391"
+    },
+    {
+      "path": "all80_adjusted_hlc_reuse_source_manifest.csv",
+      "bytes": 8316,
+      "sha256": "34baa42176a07716e8223054354c7d96bcd35198120a47d940bb454600aebf0a"
+    },
+    {
+      "path": "all80_adjusted_hlc_route_cost_estimate.csv",
+      "bytes": 1044,
+      "sha256": "9112146975a73996ddf287995a5ebad235fe6f7b0452e5363a8426ef896b3af5"
+    },
+    {
+      "path": "all80_adjusted_hlc_structural_blocker_ledger.csv",
+      "bytes": 18851,
+      "sha256": "f9f1662ca6c3d3db5e85f1c20695f08b2cc14da2ebe742764a15f730db1c5160"
+    },
+    {
+      "path": "all80_adjusted_hlc_unique_ticker_month_routes.csv",
+      "bytes": 462364,
+      "sha256": "4f0ee5717326837af2194bbea887c0553a25a7a1e0a489aa235718b9f6e43e07"
+    },
+    {
+      "path": "build_feasibility.py",
+      "bytes": 19097,
+      "sha256": "e09e80745e1bace507f0f00194aebc5c241d39c13be5bfb242a5acda601ae68f"
+    },
+    {
+      "path": "checkpoint.json",
+      "bytes": 292,
+      "sha256": "bb989c057ebbf1b5cfbffeb645768a912b507f32f9a9d89252554de050e58588"
+    },
+    {
+      "path": "current_step.txt",
+      "bytes": 49,
+      "sha256": "b8dbcdadf491dddc0eed065425f12476019526a3afd68b0cb01a01c3a7fb90af"
+    },
+    {
+      "path": "final_summary_zh.md",
+      "bytes": 884,
+      "sha256": "354010b694b14e0bbd2085df0dbd80061dad0392457e9035f62498519e4704a5"
+    },
+    {
+      "path": "readiness_for_core_all80_adjusted_hlc_delta_feasibility.json",
+      "bytes": 1589,
+      "sha256": "8c5efb213d61d69ec2841311b21dfdeeef2b344be32140036b0ecba838814318"
+    }
+  ],
+  "readiness": {
+    "task_id": "TASK-RADAR-DATA-VNEXT-P3-LAYER5-ALL80-CONTINUOUS-LIFECYCLE-ADJUSTED-HLC-DELTA-FEASIBILITY-001",
+    "status": "all80_adjusted_hlc_delta_feasibility_ready_below_stop_gate_no_download_executed",
+    "source": "exact-key local compact/cache reuse audit against Core all80 gap ledger",
+    "coverage": {
+      "input_gap_rows": 149369,
+      "input_gap_tickers": 610,
+      "locally_reconstructable_rows": 136491,
+      "locally_reconstructable_share": 0.9137839846,
+      "official_zero_or_not_applicable_proven_rows": 1200,
+      "official_zero_or_not_applicable_evidence_rows_total": 1517,
+      "remaining_rows_requiring_source_or_policy": 11678,
+      "unique_ticker_month_routes": 2460,
+      "raw_month_routes": 2379,
+      "trusted_factor_ticker_routes": 67
+    },
+    "future_data_violation_count": 0,
+    "bounded_stop_gate_pass": true,
+    "download_executed": false,
+    "ready_for_bounded_delta_acquisition_planning": true,
+    "ready_for_core_all80_adjusted_hlc_delta_planning_absorption": true,
+    "ready_for_core_rerun": false,
+    "ready_for_experiments": false,
+    "diagnostic_subproblem": false,
+    "represents_intended_all80_layer5_state_supply": true,
+    "performance_authorized": false,
+    "P3_2_outcome_read_authorized": false,
+    "Top3_authorized": false,
+    "formal_model_changed": false,
+    "trade_decision_changed": false,
+    "active_in_trade_decision": false,
+    "report_changed": false,
+    "portfolio_replay_executed": false,
+    "ready_for_strategy_replay": false,
+    "ready_for_formal": false,
+    "not_live_rule": true,
+    "forward_returns_live_rule_usage": false
+  },
+  "diagnostic_subproblem": false,
+  "represents_intended_all80_layer5_state_supply": true,
+  "performance_authorized": false,
+  "P3_2_outcome_read_authorized": false,
+  "Top3_authorized": false,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "portfolio_replay_executed": false,
+  "ready_for_strategy_replay": false,
+  "ready_for_formal": false,
+  "not_live_rule": true,
+  "forward_returns_live_rule_usage": false
+}
