@@ -1,0 +1,5 @@
+﻿audit_item,status,detail,future_data_violation_count
+exact_ticker_date_only,pass,accepted=11; official_no_row=0; source_gap=0,0
+first_post_signal_ticker_trading_day,pass,Each accepted leg matches the first official ticker trading row after its signal date.,0
+no_substitution,pass,"No neighbor, last-price, adjusted-analysis, or benchmark substitution.",0
+scope_and_outcome_guard,pass,Only 11 authority legs queried; no performance or P3-2 outcome read.,0

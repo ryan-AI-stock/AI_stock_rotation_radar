@@ -1,0 +1,117 @@
+{
+  "task_id": "TASK-RADAR-DATA-VNEXT-P3-LAYER5-ALL80-KRANGEGT30-MATCHED-EXIT-OHLC-GAP-FILL-001",
+  "generated_at_utc": "2026-07-13T08:29:42+00:00",
+  "source_scope": "11 exact ticker-month official routes",
+  "artifacts": [
+    {
+      "path": "p3_all80_KrangeGT30_matched_exit_official_ohlc_filled_legs.csv",
+      "size_bytes": 4673,
+      "sha256": "eaff088d762b76ddc6f4f2373564dcb6ad2c3e1f334ee0e90f7bfde0dcfd7b72"
+    },
+    {
+      "path": "p3_all80_KrangeGT30_matched_exit_official_ohlc_blocked_ledger.csv",
+      "size_bytes": 193,
+      "sha256": "fe37baee83604a8bd092e74a7f20f30692eb4821a8d1eac50f5e5d8bb34e640f"
+    },
+    {
+      "path": "p3_all80_KrangeGT30_matched_exit_official_ohlc_source_manifest.csv",
+      "size_bytes": 4012,
+      "sha256": "33def81f629d6a90f86a55c4d752e137cac654695f80df377f48ebc8ecbc6bc2"
+    },
+    {
+      "path": "p3_all80_KrangeGT30_matched_exit_official_unadjusted_ohlcv_month_rows.csv",
+      "size_bytes": 65569,
+      "sha256": "fec1c127e88d6decde05b5b584ce2c86027a264ddb32d62c7c69ea28bff36b0d"
+    },
+    {
+      "path": "p3_all80_KrangeGT30_matched_exit_official_ohlc_future_data_audit.csv",
+      "size_bytes": 463,
+      "sha256": "938509cc52db044f9ddd7af1f55937f97cba10f8a7e1ee29630ae27d902b55da"
+    },
+    {
+      "path": "readiness_for_core_p3_all80_KrangeGT30_matched_exit_ohlc_absorption.json",
+      "size_bytes": 932,
+      "sha256": "1a1a017874d1466bb42ec5bedf47155111dbbf36c918d61cf459a75a6e0beff3"
+    },
+    {
+      "path": "final_summary_zh.md",
+      "size_bytes": 535,
+      "sha256": "860548db3203e07d53fcf4e1df4bba479a0a1d2c83e48b2ca45e97f25cec7f4d"
+    },
+    {
+      "path": "current_step.txt",
+      "size_bytes": 37,
+      "sha256": "e16eb8f1db73ff7a31892e5df444432f206fad18b870ffa4ea3f6446a6a787c6"
+    },
+    {
+      "path": "build_source_package.py",
+      "size_bytes": 19469,
+      "sha256": "a2f3fb3e55f62098cc86bc43925b35559c170cb0bf725425220d91959324007f"
+    },
+    {
+      "path": "raw_audit_samples\\TPEx_8089_2024-12.json",
+      "size_bytes": 2316,
+      "sha256": "9ad2d06c04f720c3a8275051bd9cebf19dc8bc4995ed3424631674668b21224b"
+    },
+    {
+      "path": "raw_audit_samples\\TWSE_1101_2025-04.json",
+      "size_bytes": 2717,
+      "sha256": "cb4d4bbdf90648210bd8726356cf154cfa68a19f917271023980b0c26682eae5"
+    },
+    {
+      "path": "raw_audit_samples\\TWSE_1102_2025-07.json",
+      "size_bytes": 2981,
+      "sha256": "3665b2d0cf909ce69edbc3a1f96008dfe3ad5dcf84c73dec8beb318b4bce05b9"
+    },
+    {
+      "path": "raw_audit_samples\\TWSE_1319_2025-05.json",
+      "size_bytes": 2768,
+      "sha256": "130b6f4c6f2582fecc148ee0179605f10474b8661d8b5ed728429e1e4a1faae6"
+    },
+    {
+      "path": "raw_audit_samples\\TWSE_1808_2024-08.json",
+      "size_bytes": 2960,
+      "sha256": "9576b3b882c2ce31d55f98b288f1bb808083dfe9158ae17dee7d59f6df455027"
+    },
+    {
+      "path": "raw_audit_samples\\TWSE_2014_2024-01.json",
+      "size_bytes": 2860,
+      "sha256": "2dff0eebc88e845b65e8a781d1db46259c3cad06ce3dbef815096a2b60fac071"
+    },
+    {
+      "path": "raw_audit_samples\\TWSE_2540_2025-04.json",
+      "size_bytes": 2640,
+      "sha256": "4c9f21fd78726ca33a753cf24552d204c8ee36fc817092718a498f0355054ae9"
+    },
+    {
+      "path": "raw_audit_samples\\TWSE_4919_2023-10.json",
+      "size_bytes": 2757,
+      "sha256": "6c64d8656a9cbbbd89533962e8617dbfc03aee718c964f33b053915d5b148fb1"
+    },
+    {
+      "path": "raw_audit_samples\\TWSE_6451_2025-02.json",
+      "size_bytes": 2673,
+      "sha256": "0c29f6219898a55d36a7c4e669e5637f7ca8b3b710932383edc04f4a8a8f45ab"
+    },
+    {
+      "path": "raw_audit_samples\\TWSE_6757_2025-05.json",
+      "size_bytes": 2735,
+      "sha256": "74f426f1adf8f165e16d3a1ab39fad25502bbc7ec48a2674a0b19d617bd91b69"
+    },
+    {
+      "path": "raw_audit_samples\\TWSE_9921_2025-04.json",
+      "size_bytes": 2730,
+      "sha256": "144c579058d999c08bce9e64f2c439e4c368f292972a02c3a80441124450ad3c"
+    }
+  ],
+  "future_data_violation_count": 0,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "portfolio_replay_executed": false,
+  "ready_for_strategy_replay": false,
+  "ready_for_formal": false,
+  "not_live_rule": true,
+  "forward_returns_live_rule_usage": false
+}
