@@ -1,0 +1,67 @@
+{
+  "task_id": "TASK-RADAR-DATA-VNEXT-P3-LAYER5-INDIVIDUAL-SEQUENTIAL-5258-20240308-EXIT-OHLC-GAP-FILL-001",
+  "generated_at_utc": "2026-07-13T09:15:43+00:00",
+  "source_scope": "one TWSE ticker-month",
+  "artifacts": [
+    {
+      "path": "p3_individual_sequential_5258_202403_official_unadjusted_ohlcv_rows.csv",
+      "size_bytes": 6116,
+      "sha256": "c7548eb286d3ba0acc7527e86e3550d170aabcbdbe2a31eb7fd57bb00bcdb591"
+    },
+    {
+      "path": "p3_individual_sequential_5258_20240308_exit_official_ohlc_filled_row.csv",
+      "size_bytes": 779,
+      "sha256": "af798aed2b494ec302ce86328a111bff5306b2481c670f4bfb7c090cfab3307c"
+    },
+    {
+      "path": "p3_individual_sequential_5258_20240308_exit_official_ohlc_source_manifest.csv",
+      "size_bytes": 746,
+      "sha256": "8a4719522eca3748489f90539611ab861755a406ad077abc2fa6cd8d07bb901d"
+    },
+    {
+      "path": "p3_individual_sequential_5258_20240308_exit_official_ohlc_blocked_ledger.csv",
+      "size_bytes": 122,
+      "sha256": "09faf6cdec3b74681da840895b324c9c518bdfb0d61e82fc0673ddbd38e26b10"
+    },
+    {
+      "path": "p3_individual_sequential_5258_20240308_exit_official_ohlc_future_data_audit.csv",
+      "size_bytes": 542,
+      "sha256": "4d9146eee52bd67063d16c42c22959ce54ac58e14619e8daf4b0ebaa3a190231"
+    },
+    {
+      "path": "readiness_for_core_p3_individual_sequential_5258_exit_ohlc_absorption.json",
+      "size_bytes": 1025,
+      "sha256": "c71c37b9927f3bd102edf2733c71a57c113b50a037305e5a723abf1cf6724c9d"
+    },
+    {
+      "path": "final_summary_zh.md",
+      "size_bytes": 585,
+      "sha256": "e68cd1d35359c8c96bc54d4f68f907ce0c9a54e3810cd4b41507cd2f97d188d6"
+    },
+    {
+      "path": "current_step.txt",
+      "size_bytes": 37,
+      "sha256": "e16eb8f1db73ff7a31892e5df444432f206fad18b870ffa4ea3f6446a6a787c6"
+    },
+    {
+      "path": "raw_audit_samples\\TWSE_5258_2024-03.json",
+      "size_bytes": 2868,
+      "sha256": "3817f12a3adaef6a40d4b322ac3a9299f3a26e8320e6a3317e0cb75e8d19b909"
+    },
+    {
+      "path": "build_source_package.py",
+      "size_bytes": 11831,
+      "sha256": "f276eab9f0c494aae933e96f00f2e992cc2512aa46f37ee8829af1dbe56f5d76"
+    }
+  ],
+  "future_data_violation_count": 0,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "portfolio_replay_executed": false,
+  "ready_for_strategy_replay": false,
+  "ready_for_formal": false,
+  "not_live_rule": true,
+  "forward_returns_live_rule_usage": false
+}

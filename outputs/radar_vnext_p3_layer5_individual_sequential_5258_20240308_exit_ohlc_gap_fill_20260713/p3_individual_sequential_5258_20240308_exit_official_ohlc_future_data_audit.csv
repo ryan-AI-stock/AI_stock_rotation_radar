@@ -1,0 +1,5 @@
+﻿audit_item,status,detail,future_data_violation_count
+first_post_signal_ticker_trading_day,pass,Full official 2024-03 sequence confirms 2024-03-08 is the first 5258 trading row after 2024-03-07.,0
+execution_only_usage,pass,"2024-03-08 official raw OHLC is used only as realized exit execution price, not as a 2024-03-07 feature.",0
+no_substitution,pass,"No neighbor, last-price, adjusted-analysis, or benchmark substitution.",0
+scope_and_outcome_guard,pass,One ticker-month only; no P3-2 outcome read and no performance calculation.,0
