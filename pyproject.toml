@@ -4,10 +4,19 @@ version = "0.1.0"
 description = "Taiwan market-theme rotation radar and swing-trading HTML report generator."
 requires-python = ">=3.11"
 dependencies = [
+    "beautifulsoup4",
     "google-api-python-client",
     "google-auth",
     "playwright",
+    "requests",
 ]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["rotation_radar"]
 
 [tool.ruff]
 line-length = 120
