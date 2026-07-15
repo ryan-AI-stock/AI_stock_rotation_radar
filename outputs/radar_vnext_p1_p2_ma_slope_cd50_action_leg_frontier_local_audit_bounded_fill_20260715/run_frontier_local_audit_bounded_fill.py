@@ -47,6 +47,12 @@ FLAGS = {
     "not_live_rule": True,
     "forward_returns_live_rule_usage": False,
 }
+TASK_ID = "TASK-RADAR-DATA-VNEXT-P1-P2-MA-SLOPE-CD50-ACTION-LEG-FRONTIER-LOCAL-AUDIT-AND-BOUNDED-FILL-001"
+EXPECTED_FRONTIER_ROWS = 25
+EXPECTED_REQUEST_SPANS = 94
+EXPECTED_POLICY_ROWS = 24
+EXPECTED_UNCLASSIFIED_ROWS = 23717
+PROVISIONAL_GAP_ROWS = 5193
 
 
 def now() -> str:
@@ -84,14 +90,14 @@ def load_authority() -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame, pd.DataF
     request = pd.read_csv(INCUMBENT_REQUEST, dtype=str)
     exact = pd.read_csv(INCUMBENT_EXACT, dtype=str)
     policy = pd.read_csv(POLICY, dtype=str)
-    if len(frontier) != 25 or frontier[["period", "ticker", "requested_execution_date"]].duplicated().any():
-        raise RuntimeError("frontier authority must contain exactly 25 unique exact legs")
-    if len(request) != 94 or request["network_download_authorized"].str.lower().ne("false").any():
-        raise RuntimeError("all 94 incumbent spans must prohibit network download")
-    if len(policy) != 24:
-        raise RuntimeError("atomic policy blocker authority must contain exactly 24 rows")
-    if exact["classification"].eq("incumbent_continuity_unclassified_local_audit_required").sum() != 23717:
-        raise RuntimeError("incumbent exact local-audit authority must contain 23,717 unclassified rows")
+    if len(frontier) != EXPECTED_FRONTIER_ROWS or frontier[["period", "ticker", "requested_execution_date"]].duplicated().any():
+        raise RuntimeError(f"frontier authority must contain exactly {EXPECTED_FRONTIER_ROWS} unique exact legs")
+    if len(request) != EXPECTED_REQUEST_SPANS or request["network_download_authorized"].str.lower().ne("false").any():
+        raise RuntimeError(f"all {EXPECTED_REQUEST_SPANS} incumbent spans must prohibit network download")
+    if len(policy) != EXPECTED_POLICY_ROWS:
+        raise RuntimeError(f"atomic policy blocker authority must contain exactly {EXPECTED_POLICY_ROWS} rows")
+    if exact["classification"].eq("incumbent_continuity_unclassified_local_audit_required").sum() != EXPECTED_UNCLASSIFIED_ROWS:
+        raise RuntimeError(f"incumbent exact local-audit authority must contain {EXPECTED_UNCLASSIFIED_ROWS} unclassified rows")
     return frontier, request, exact, policy
 
 
@@ -238,6 +244,44 @@ def load_local_market_sessions() -> dict[str, set[str]]:
     return sessions
 
 
+def infer_market_for_tickers(tickers: set[str]) -> dict[str, str]:
+    result: dict[str, str] = {}
+    for ticker in sorted(tickers):
+        path = P1_LIFECYCLE / "trusted_adjusted_analysis" / f"{ticker}.csv.gz"
+        if path.exists():
+            header = pd.read_csv(path, nrows=0).columns.tolist()
+            if "yahoo_symbol" in header:
+                values = pd.read_csv(path, usecols=["yahoo_symbol"], dtype=str, nrows=5)["yahoo_symbol"].dropna()
+                if not values.empty:
+                    symbol = values.iloc[0]
+                    if symbol.endswith(".TW"):
+                        result[ticker] = "TWSE"
+                    elif symbol.endswith(".TWO"):
+                        result[ticker] = "TPEx"
+    remaining = tickers - set(result)
+    if remaining:
+        for path in sorted((P3_ACQUISITION / "adjusted").glob("*.csv.gz")):
+            header = pd.read_csv(path, nrows=0).columns.tolist()
+            wanted = [column for column in ("ticker", "market", "yahoo_symbol") if column in header]
+            if "ticker" not in wanted:
+                continue
+            frame = pd.read_csv(path, usecols=wanted, dtype={"ticker": str})
+            frame = frame[frame["ticker"].isin(remaining)]
+            for row in frame.drop_duplicates("ticker").to_dict("records"):
+                market = str(row.get("market") or "")
+                symbol = str(row.get("yahoo_symbol") or "")
+                if market in {"TWSE", "TPEx"}:
+                    result[row["ticker"]] = market
+                elif symbol.endswith(".TW"):
+                    result[row["ticker"]] = "TWSE"
+                elif symbol.endswith(".TWO"):
+                    result[row["ticker"]] = "TPEx"
+            remaining = tickers - set(result)
+            if not remaining:
+                break
+    return result
+
+
 def normalize_ticker(value: object) -> str:
     text = str(value).strip()
     return text[:-2] if text.endswith(".0") else text
@@ -355,6 +399,11 @@ def local_audit() -> None:
     factor = joined["local_factor"].notna()
     trusted = joined["adjusted_close"].notna()
     known_e = joined["classification"].eq("E_official_no_trade_or_NA_no_analysis_gap")
+    prior_local_classification = (
+        joined["local_A_to_E_classification"].copy()
+        if "local_A_to_E_classification" in joined.columns
+        else pd.Series(pd.NA, index=joined.index)
+    )
     sessions = load_local_market_sessions()
     joined["market_session_open_evidence"] = joined.apply(
         lambda row: row["date"] in sessions.get(row["period"], set()), axis=1
@@ -367,6 +416,12 @@ def local_audit() -> None:
     joined.loc[raw, "local_A_to_E_classification"] = "D_raw_ready_adjusted_factor_incomplete_unadjusted_research_fallback"
     joined.loc[raw & factor, "local_A_to_E_classification"] = "B_raw_plus_adjusted_factor_reconstructable"
     joined.loc[known_e, "local_A_to_E_classification"] = "E_official_no_trade_or_NA_no_analysis_gap"
+    preserve_prior = (
+        ~joined["classification"].eq("incumbent_continuity_unclassified_local_audit_required")
+        & prior_local_classification.notna()
+        & prior_local_classification.astype(str).ne("")
+    )
+    joined.loc[preserve_prior, "local_A_to_E_classification"] = prior_local_classification.loc[preserve_prior]
     joined["network_download_authorized"] = False
     joined["unadjusted_ma_slope_research_fallback_allowed"] = raw
     joined["corporate_action_warning_required"] = raw & ~factor
@@ -409,6 +464,10 @@ def local_audit() -> None:
     yahoo_two = missing["trusted_raw_source_url"].fillna("").str.contains(r"\.TWO(?:\?|$)", regex=True)
     missing.loc[missing["market_for_route"].isna() & yahoo_tw, "market_for_route"] = "TWSE"
     missing.loc[missing["market_for_route"].isna() & yahoo_two, "market_for_route"] = "TPEx"
+    market_map = infer_market_for_tickers(set(missing.loc[missing["market_for_route"].isna(), "ticker"]))
+    missing.loc[missing["market_for_route"].isna(), "market_for_route"] = missing.loc[
+        missing["market_for_route"].isna(), "ticker"
+    ].map(market_map)
     unresolved_market = missing["market_for_route"].isna()
     if unresolved_market.any():
         raise RuntimeError("bounded route candidates have unresolved market: " + ",".join(missing.loc[unresolved_market, "ticker"]))
@@ -419,19 +478,19 @@ def local_audit() -> None:
     route_plan["year_month"] = route_plan["requested_execution_date"].str[:7]
     route_plan["download_authority"] = "frontier_exact_leg_only"
     route_plan.to_csv(OUT / "frontier_bounded_route_plan.csv", index=False)
-    if len(local) + len(route_plan) != 25 or len(route_plan) > 25:
+    if len(local) + len(route_plan) != EXPECTED_FRONTIER_ROWS or len(route_plan) > EXPECTED_FRONTIER_ROWS:
         raise RuntimeError("frontier partition escaped authority")
 
     scope = pd.DataFrame([
-        {"scope": "frontier_exact_legs", "rows": 25, "network_download_authorized": True, "loaded_for_download": True},
-        {"scope": "incumbent_continuity_exact_rows", "rows": 23717, "network_download_authorized": False, "loaded_for_download": False},
+        {"scope": "frontier_exact_legs", "rows": EXPECTED_FRONTIER_ROWS, "network_download_authorized": True, "loaded_for_download": True},
+        {"scope": "incumbent_continuity_unclassified_exact_rows", "rows": EXPECTED_UNCLASSIFIED_ROWS, "network_download_authorized": False, "loaded_for_download": False},
         {"scope": "atomic_policy_blockers", "rows": len(policy), "network_download_authorized": False, "loaded_for_download": False},
-        {"scope": "provisional_action_leg_gaps", "rows": 5193, "network_download_authorized": False, "loaded_for_download": False},
+        {"scope": "provisional_action_leg_gaps", "rows": PROVISIONAL_GAP_ROWS, "network_download_authorized": False, "loaded_for_download": False},
     ])
     scope.to_csv(OUT / "authority_scope_guard_audit.csv", index=False)
     set_step(
         "local_audit_complete_bounded_fill_pending",
-        frontier_rows=25,
+        frontier_rows=EXPECTED_FRONTIER_ROWS,
         frontier_local_ready_rows=len(local),
         frontier_network_candidate_rows=len(route_plan),
         incumbent_local_classification_rows=len(joined),
@@ -613,6 +672,14 @@ def finalize() -> None:
 
     classification = pd.read_csv(LOCAL_CLASSIFICATION, dtype=str)
     class_summary = pd.read_csv(OUT / "incumbent_continuity_classification_summary.csv", dtype=str)
+    new_unclassified = classification[
+        classification["classification"].eq("incumbent_continuity_unclassified_local_audit_required")
+    ]
+    new_unclassified_summary = (
+        new_unclassified.groupby(["period", "local_A_to_E_classification"], dropna=False)
+        .size().rename("rows").reset_index()
+    )
+    new_unclassified_summary.to_csv(OUT / "incumbent_new_unclassified_resolution_summary.csv", index=False)
     future = pd.DataFrame([
         {"audit_item": "frontier_exact_dates_only", "status": "pass", "future_data_violation_count": 0},
         {"audit_item": "incumbent_network_download_prohibited", "status": "pass", "future_data_violation_count": 0},
@@ -635,9 +702,9 @@ def finalize() -> None:
     checksums = [{"file": p.name, "bytes": p.stat().st_size, "sha256": sha256(p)} for p in sorted(output_files)]
     pd.DataFrame(checksums).to_csv(OUT / "checksum_manifest.csv", index=False)
     readiness = {
-        "task": "TASK-RADAR-DATA-VNEXT-P1-P2-MA-SLOPE-CD50-ACTION-LEG-FRONTIER-LOCAL-AUDIT-AND-BOUNDED-FILL-001",
+        "task": TASK_ID,
         "status": "frontier_closed_ready_for_core_rechain" if blocked.empty else "frontier_partial_blocked_ready_for_core_rechain",
-        "frontier_authority_rows": 25,
+        "frontier_authority_rows": EXPECTED_FRONTIER_ROWS,
         "frontier_exact_ready_rows": int(len(accepted)),
         "frontier_exact_blocked_rows": int(len(blocked)),
         "frontier_official_no_trade_rows": int(len(no_trade)),
@@ -645,6 +712,8 @@ def finalize() -> None:
         "frontier_local_reuse_rows": int(len(local)),
         "frontier_bounded_network_rows": int(len(network)),
         "incumbent_local_audit_rows": int(len(classification)),
+        "incumbent_unclassified_authority_rows": EXPECTED_UNCLASSIFIED_ROWS,
+        "incumbent_unclassified_resolved_or_classified_rows": int(len(new_unclassified)),
         "incumbent_network_download_rows": 0,
         "atomic_policy_blocker_rows": int(len(policy)),
         "provisional_gap_rows_used_as_download_authority": 0,
@@ -654,17 +723,18 @@ def finalize() -> None:
         "formal_0050_00631l_mainline_changed": False,
         **FLAGS,
         "classification_summary": class_summary.to_dict("records"),
+        "new_unclassified_resolution_summary": new_unclassified_summary.to_dict("records"),
     }
     write_json(OUT / "readiness_for_core_rechain.json", readiness)
     summary = f"""# P1/P2 MA-slope CD50 frontier source 結案
 
 ## 結論
 
-- 下載 authority 僅限 Core 指定 25 筆 frontier exact legs。
-- exact official raw ready：{len(accepted)}/25；official no-trade：{len(no_trade)}/25；true source blocked：{len(blocked)}/25。
+- 下載 authority 僅限 Core 指定 {EXPECTED_FRONTIER_ROWS} 筆 frontier exact legs。
+- exact official raw ready：{len(accepted)}/{EXPECTED_FRONTIER_ROWS}；official no-trade：{len(no_trade)}/{EXPECTED_FRONTIER_ROWS}；true source blocked：{len(blocked)}/{EXPECTED_FRONTIER_ROWS}。
 - local official raw reuse：{len(local)} 筆；bounded official route patch：{len(network)} 筆。
 - incumbent continuity 共 {len(classification):,} 筆僅做 local A/B/C/D/E 分類，網路下載 0 筆。
-- 24 筆 atomic policy blockers 與 5,193 provisional gaps 均未作下載清單。
+- {EXPECTED_POLICY_ROWS} 筆 atomic policy blockers 與 {PROVISIONAL_GAP_ROWS:,} provisional gaps 均未作下載清單。
 - future_data_violation_count=0。
 
 ## 治理

@@ -11,7 +11,7 @@
     {
       "file": "checksum_manifest.csv",
       "bytes": 1623,
-      "sha256": "a3674550345d1f3e8da24bfc63e6891b7d0f8aea854fd0e3fcf6bd476630a58c"
+      "sha256": "ece307c8325e2b8e39942432a64890f3f5854230105113a92c3d3f236db5918c"
     },
     {
       "file": "current_step.txt",
@@ -90,8 +90,8 @@
     },
     {
       "file": "run_frontier_local_audit_bounded_fill.py",
-      "bytes": 38351,
-      "sha256": "efbf2b4c07835620ae0bc4ecfead18650fedab1b12ad1a8ccbdd6a469227dc2f"
+      "bytes": 42284,
+      "sha256": "7de9ee4ffb5d87ecbd1ecb2197aa4e69340997931f1d59536d420f50474638ee"
     }
   ],
   "flags": {

@@ -1,0 +1,3 @@
+variant_id,period,decision_date,ticker,role,requested_execution_date,reason,blocked_reason,classification,future_data_violation_count
+S09_CD10,P1,2015-07-09,2330,sell,2015-07-10,missing_official_raw_execution_close,official_valid_no_target_row,official_valid_response_no_exact_target_row_possible_no_trade_or_suspension,0
+S09_CD10,P1,2015-07-09,3293,buy,2015-07-10,missing_official_raw_execution_close,official_valid_no_target_row,official_valid_response_no_exact_target_row_possible_no_trade_or_suspension,0
