@@ -1,0 +1,1 @@
+period,ticker,decision_date,requested_execution_date,market_probe,http_status,schema_ok,response_rows,exact_target_rows,source_url,source_hash,raw_cache_path,cache_reused,future_data_violation_count
