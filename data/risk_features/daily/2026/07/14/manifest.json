@@ -1,7 +1,7 @@
 {
   "requested_date": "2026-07-14",
   "actual_market_date": "2026-07-14",
-  "status": "incomplete_source",
+  "status": "accepted",
   "calendar_state": "calendar_unknown_weekday",
   "candidate_scope_count": 100,
   "retry_families": [
@@ -27,7 +27,7 @@
     "corporate_action_guard:TWSE": "2026-07-14",
     "corporate_action_guard:TPEx": "2026-07-14",
     "tdcc_holder_distribution:TDCC": "20260709",
-    "taifex_foreign_oi:TAIFEX": ""
+    "taifex_foreign_oi:TAIFEX": "2026-07-14"
   },
   "latest_completed_global_sessions": {
     "Dow": "2026-07-14",
@@ -38,8 +38,8 @@
     "VIX": "2026-07-14"
   },
   "source_counts": {
-    "accepted": 19,
-    "no_rows": 1,
+    "accepted": 20,
+    "no_rows": 0,
     "blocked": 0
   },
   "sources": [
@@ -303,13 +303,13 @@
       "family": "taifex_foreign_oi",
       "market": "TAIFEX",
       "requested_date": "2026-07-14",
-      "actual_source_date": "",
-      "status": "no_rows",
-      "row_count": 0,
+      "actual_source_date": "2026-07-14",
+      "status": "accepted",
+      "row_count": 1,
       "http_status": 200,
-      "source_url": "https://www.bq888.taifex.com.tw/cht/3/futContractsDate?queryType=1&doQuery=1&queryDate=2026%2F07%2F14",
-      "source_hash": "8d12ecc95419e1aa992b864f9ab3aff06472fe252aa90e83ad3c5809fddf510c",
-      "retrieved_at_utc": "2026-07-15T00:43:12+00:00",
+      "source_url": "https://www.taifex.com.tw/cht/3/futContractsDateDown",
+      "source_hash": "7589178c7d1cee7fc43917a51b86b7d56defc5994b7dc4ddf69115fd330940ea",
+      "retrieved_at_utc": "2026-07-15T00:48:29+00:00",
       "error": ""
     }
   ],
