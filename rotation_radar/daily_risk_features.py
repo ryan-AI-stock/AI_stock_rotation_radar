@@ -276,6 +276,20 @@ MANDATORY_FAMILIES = {
     "taifex_foreign_oi",
 }
 
+MANDATORY_SOURCE_KEYS = {
+    ("official_raw_execution_ohlcv", "TWSE"),
+    ("official_raw_execution_ohlcv", "TPEx"),
+    ("institutional", "TWSE"),
+    ("institutional", "TPEx"),
+    ("margin_short", "TWSE"),
+    ("margin_short", "TPEx"),
+    ("securities_lending", "TWSE"),
+    ("securities_lending", "TPEx"),
+    ("foreign_ownership", "TWSE"),
+    ("foreign_ownership", "TPEx"),
+    ("taifex_foreign_oi", "TAIFEX"),
+}
+
 
 def retry_groups_from_manifest(payload: dict) -> set[str]:
     """Return only mandatory source groups that still need an exact-date retry."""
@@ -284,11 +298,14 @@ def retry_groups_from_manifest(payload: dict) -> set[str]:
         for group, families in FAMILY_GROUPS.items()
         for family in families
     }
-    return {
-        family_to_group[row["family"]]
+    rows = {
+        (row.get("family"), row.get("market")): row
         for row in payload.get("sources", [])
-        if row.get("family") in MANDATORY_FAMILIES
-        and row.get("status") != "accepted"
+    }
+    return {
+        family_to_group[family]
+        for family, market in MANDATORY_SOURCE_KEYS
+        if rows.get((family, market), {}).get("status") != "accepted"
     }
 
 
@@ -350,7 +367,27 @@ def run_date(target: date, output_root: Path, scope_path: Path, calendar_state: 
         action_rows, rows = fetch_corporate_calendar(target, wanted); manifests.extend(rows)
     if "tdcc" in selected:
         _, row = fetch_tdcc_if_new(output_root, wanted); manifests.append(row)
-    mandatory = [r for r in manifests if r["family"] in MANDATORY_FAMILIES]
+    mandatory_by_key = {
+        (row.get("family"), row.get("market")): row
+        for row in manifests
+        if row.get("family") in MANDATORY_FAMILIES
+    }
+    for family, market in sorted(MANDATORY_SOURCE_KEYS):
+        if (family, market) not in mandatory_by_key:
+            missing = {
+                "family": family,
+                "market": market,
+                "requested_date": target.isoformat(),
+                "actual_source_date": "",
+                "status": "blocked",
+                "row_count": 0,
+                "source_hash": "",
+                "retrieved_at_utc": "",
+                "error": "missing_required_source_manifest",
+            }
+            manifests.append(missing)
+            mandatory_by_key[(family, market)] = missing
+    mandatory = list(mandatory_by_key.values())
     for row in mandatory:
         if row["status"] == "accepted" and row.get("actual_source_date") != target.isoformat():
             row["status"] = "blocked"; row["error"] = "stale_actual_source_date_rejected"

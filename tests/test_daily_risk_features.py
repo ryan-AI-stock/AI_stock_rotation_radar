@@ -61,16 +61,54 @@ class DailyRiskFeatureTests(unittest.TestCase):
                 self.assertEqual(list(csv.DictReader(handle))[0]["ticker"], "2330")
 
     def test_incomplete_manifest_maps_only_failed_mandatory_groups(self) -> None:
+        target = "2026-07-14"
+        complete = [
+            source(family, market, target)
+            for family, market in (
+                ("official_raw_execution_ohlcv", "TWSE"),
+                ("official_raw_execution_ohlcv", "TPEx"),
+                ("institutional", "TWSE"),
+                ("institutional", "TPEx"),
+                ("margin_short", "TWSE"),
+                ("margin_short", "TPEx"),
+                ("securities_lending", "TWSE"),
+                ("securities_lending", "TPEx"),
+                ("foreign_ownership", "TWSE"),
+                ("foreign_ownership", "TPEx"),
+            )
+        ]
         payload = {
             "status": "incomplete_source",
-            "sources": [
-                source("official_raw_execution_ohlcv", "TWSE", "2026-07-14"),
-                source("official_raw_execution_ohlcv", "TPEx", "2026-07-14"),
-                source("taifex_foreign_oi", "TAIFEX", "2026-07-14", "blocked"),
-                source("tdcc_holder_distribution", "TDCC", "2026-07-14", "no_rows"),
-            ],
+            "sources": complete + [source("tdcc_holder_distribution", "TDCC", target, "no_rows")],
         }
         self.assertEqual(retry_groups_from_manifest(payload), {"taifex"})
+
+    def test_missing_mandatory_source_row_is_not_silently_accepted(self) -> None:
+        target = date(2026, 7, 14); target_s = target.isoformat()
+        existing = [
+            source(family, market, target_s)
+            for family, market in (
+                ("official_raw_execution_ohlcv", "TWSE"),
+                ("official_raw_execution_ohlcv", "TPEx"),
+                ("institutional", "TWSE"),
+                ("institutional", "TPEx"),
+                ("margin_short", "TWSE"),
+                ("margin_short", "TPEx"),
+                ("securities_lending", "TWSE"),
+                ("securities_lending", "TPEx"),
+                ("foreign_ownership", "TWSE"),
+                ("taifex_foreign_oi", "TAIFEX"),
+            )
+        ]
+        with self._workspace() as (root, scope):
+            target_dir = root / "daily/2026/07/14"; target_dir.mkdir(parents=True)
+            (target_dir / "manifest.json").write_text(json.dumps({"status": "incomplete_source", "sources": existing}), encoding="utf-8")
+            with patch("rotation_radar.daily_risk_features.fetch_foreign_ownership", return_value=([], [source("foreign_ownership", "TWSE", target_s)])):
+                with self.assertRaises(IncompleteSourceError):
+                    run_date(target, root, scope, "scheduled_open")
+            manifest = json.loads((root / "daily/2026/07/14/manifest.json").read_text(encoding="utf-8"))
+            missing = [row for row in manifest["sources"] if row.get("error") == "missing_required_source_manifest"]
+            self.assertEqual({(row["family"], row["market"]) for row in missing}, {("foreign_ownership", "TPEx")})
 
     def test_default_rerun_retries_only_failed_mandatory_group(self) -> None:
         target = date(2026, 7, 14); target_s = target.isoformat()
