@@ -1,0 +1,17 @@
+{
+  "current_step": "complete_ready_for_core_rechain",
+  "updated_at": "2026-07-15T08:27:21+00:00",
+  "registry_candidate_files": 7603,
+  "network_rows": 0,
+  "completed_files": 7500,
+  "frontier_rows": 94,
+  "frontier_local_ready_rows": 34,
+  "frontier_network_candidate_rows": 60,
+  "incumbent_local_classification_rows": 25266,
+  "incumbent_network_rows": 0,
+  "bounded_route_rows": 60,
+  "completed_routes": 60,
+  "frontier_exact_ready_rows": 94,
+  "frontier_official_no_trade_rows": 0,
+  "frontier_exact_blocked_rows": 0
+}
