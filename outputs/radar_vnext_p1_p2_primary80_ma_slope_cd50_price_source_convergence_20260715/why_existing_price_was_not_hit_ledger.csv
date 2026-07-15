@@ -1,0 +1,7 @@
+﻿issue,evidence,classification
+Core path registry incomplete,later Radar selected-price/all80/rank1 packages contain exact rows outside Core original path list,ingestion_path_gap_not_price_gap
+schema variation,close/official_raw_close/entry_close/exit_close and date/trade_date/price_date require normalization,schema_mapping_gap_not_price_gap
+calendar contamination,legacy bulk can label a holiday query with query date although response represents prior session; 2019-10-10 example,calendar_response_date_bug
+scope mismatch,P3 initial compact used extended watchlist scope; exact primary80 supplemental packages were separate,scope_join_gap_not_price_gap
+suspension/prelisting,market session exists but ticker need not have an official row,not_applicable_requires_official_no_row_or_listing_evidence
+adjusted source limitation,raw execution close can exist while trusted adjusted/corporate-action factor remains blocked,factor_event_gap_not_daily_close_gap

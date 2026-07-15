@@ -1,0 +1,12 @@
+{
+  "task_id": "TASK-RADAR-DATA-VNEXT-P1-P2-LAYER4-PRIMARY80-MA-SLOPE-CD50-PRICE-SOURCE-CONVERGENCE-001",
+  "status": "paused_for_local_reuse_reclassification",
+  "current_step": "reuse_audit_only_network_disabled",
+  "updated_at": "2026-07-15T05:33:47+00:00",
+  "resume_command": "network acquisition prohibited pending Strategy Center review",
+  "completed": 1125,
+  "total": 1138,
+  "route": "9914_TWSE_2024-08",
+  "network_download_stopped": true,
+  "interrupted_cache_preserved": true
+}

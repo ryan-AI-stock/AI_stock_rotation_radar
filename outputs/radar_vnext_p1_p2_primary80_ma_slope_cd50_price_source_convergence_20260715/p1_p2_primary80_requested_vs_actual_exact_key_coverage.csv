@@ -1,0 +1,5 @@
+﻿period,family,required_ticker_dates,ready_ticker_dates,blocked_ticker_dates,required_tickers,ready_tickers_any,coverage_share,actual_ready_start,actual_ready_end,future_data_violation_count
+P1,adjusted_analysis_close,514188,480243,33945,976,913,0.9339832901584635,2014-11-03,2022-12-29,0
+P1,official_raw_execution_close,168196,130156,38040,976,819,0.773835287402792,2015-01-12,2022-12-29,0
+P2,adjusted_analysis_close,235040,227236,7804,781,714,0.9667971409121852,2022-10-07,2026-06-29,0
+P2,official_raw_execution_close,72910,67822,5088,781,671,0.9302153339733918,2023-01-03,2026-06-29,0

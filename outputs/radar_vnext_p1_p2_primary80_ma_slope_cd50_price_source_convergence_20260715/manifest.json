@@ -1,0 +1,167 @@
+{
+  "task_id": "TASK-RADAR-DATA-VNEXT-P1-P2-LAYER4-PRIMARY80-MA-SLOPE-CD50-PRICE-SOURCE-CONVERGENCE-001",
+  "updated_at": "2026-07-15T06:06:18+00:00",
+  "network_acquisition_stopped": true,
+  "artifacts": [
+    {
+      "file": "audit_summary.json",
+      "bytes": 1277,
+      "sha256": "8ad6b6e9bbb05af478d728622f0a1757b1e23236ff26412c2f5131c8ec035d02"
+    },
+    {
+      "file": "current_step.txt",
+      "bytes": 58,
+      "sha256": "5030f2357180cf9e13e614e0f2af7f354ebf2f1d34b52f63962aabbb07078ede"
+    },
+    {
+      "file": "final_summary_zh.md",
+      "bytes": 2606,
+      "sha256": "7eab5f74b900716e7861226b146941e836ac83217b316e081f0804d2d2f03e96"
+    },
+    {
+      "file": "interrupted_network_download_inventory.csv",
+      "bytes": 338987,
+      "sha256": "ed29cbf0be59990a0ef5f644a0db1af7456c52931e7e10e3247ece462ce5b606"
+    },
+    {
+      "file": "local_price_source_path_schema_audit.csv",
+      "bytes": 2372947,
+      "sha256": "27aab70ee34f5b03cf532634521d13b68e2c9903cb4fb7fcc521b9434ba9f3bb"
+    },
+    {
+      "file": "local_reuse_A_to_E_coverage_summary.csv",
+      "bytes": 729,
+      "sha256": "2be70e80bd1c18ecaf24d3810063d38e71804aa8ae64fdbb8f0a813d650d2f6c"
+    },
+    {
+      "file": "local_reuse_audit_checksum_manifest.csv",
+      "bytes": 3389,
+      "sha256": "dd40cdbd8f889cd18e00ebeaa876fd3e4e52e0eec1cdcab2a834da1a3feb2581"
+    },
+    {
+      "file": "local_reuse_audit_progress.json",
+      "bytes": 326,
+      "sha256": "4a2b3ba8b3666be0f676ef75f9b657ac65127a8ecb973d3afa1a8a5f8b6dab98"
+    },
+    {
+      "file": "p1_p2_benchmark_0050_00631l_gap_ledger.csv.gz",
+      "bytes": 16732,
+      "sha256": "f14692b974e22413bba3c87b85d0f596ea27d40d201ce6f6acdb57b039c61857"
+    },
+    {
+      "file": "p1_p2_benchmark_0050_00631l_same_coverage_audit.csv",
+      "bytes": 1254,
+      "sha256": "cc0d17d1b8c79cdab462add5910d47df2ac9b3ac1558cbc3b83802ddcb701948"
+    },
+    {
+      "file": "p1_p2_primary80_adjusted_analysis_close_reuse_compact.csv.gz",
+      "bytes": 9675193,
+      "sha256": "2c85a37c53d74e2f05aaacdd0a09d66a448c71ef32ccf7af36e70b39e5e4a298"
+    },
+    {
+      "file": "p1_p2_primary80_adjusted_analysis_exact_requirement.csv.gz",
+      "bytes": 2066427,
+      "sha256": "086513e9367abe98f743fc76ff02bf69a2eaeaf793517a60797e11aa632fc147"
+    },
+    {
+      "file": "p1_p2_primary80_bounded_delta_route_plan.csv",
+      "bytes": 763260,
+      "sha256": "fa582dbf031a6a2f01bf356721b6c3c109fd678ca58e7288cc5ab1afeb19d7ff"
+    },
+    {
+      "file": "p1_p2_primary80_official_raw_execution_close_reuse_compact.csv.gz",
+      "bytes": 10905748,
+      "sha256": "4a1297a6d8102ad3e61f96bf5c3fb7323d486cf12dbc97e4dd899311305a3728"
+    },
+    {
+      "file": "p1_p2_primary80_official_raw_execution_exact_requirement.csv.gz",
+      "bytes": 712414,
+      "sha256": "5dc7c30faf94393ac09d4130867d4d4f7963ea17df80be1514ea84c9eb7fc672"
+    },
+    {
+      "file": "p1_p2_primary80_remaining_exact_source_delta_ledger.csv.gz",
+      "bytes": 331533,
+      "sha256": "0f09915c7dafbea47bfc9f55a484109c13ba2fc385cd20513374e88645b72c37"
+    },
+    {
+      "file": "p1_p2_primary80_requested_vs_actual_exact_key_coverage.csv",
+      "bytes": 595,
+      "sha256": "6dc5e42383f6f2d66bf5ce34c2a18b3b8338286b6f7e1d33b7f60708c681ea7b"
+    },
+    {
+      "file": "p1_p2_primary80_snapshot_price_readiness_before_delta.csv.gz",
+      "bytes": 272797,
+      "sha256": "6fedcd15d9f730295a446caafd9081fe79b7c9b49d0c48409be5b5181bdfe158"
+    },
+    {
+      "file": "p2_primary80_trusted_adjusted_delta_manifest.csv",
+      "bytes": 31235,
+      "sha256": "1a4bdbc1146c14a529540813588f4167f86eb3fa57af187544fa309dc41d02f1"
+    },
+    {
+      "file": "p2_primary80_trusted_adjusted_delta_rows.csv.gz",
+      "bytes": 82717,
+      "sha256": "6505fa44a3241bc2c79b3de9e20050b3f6cc9d08c5a7d7bdb3e0ab8624e9d64c"
+    },
+    {
+      "file": "progress.json",
+      "bytes": 496,
+      "sha256": "d92a609c9866a3d550bc28b8fc1cb942f81dfdea99a74e42030ec6aa3482b058"
+    },
+    {
+      "file": "readiness_after_emergency_local_reuse_audit.json",
+      "bytes": 2935,
+      "sha256": "24c7c756dc4d6ac2e16a945f81379ac00946f92393caa949ddf2d71a7c4f1b4d"
+    },
+    {
+      "file": "reuse_A_existing_raw_close.csv.gz",
+      "bytes": 53806895,
+      "sha256": "f468fee296ed426db1282707ea0be0240322a26c8a9aa4fada0bbd7fb5dfe0b0"
+    },
+    {
+      "file": "reuse_B_raw_plus_adjusted_factor_reconstructable.csv.gz",
+      "bytes": 52512957,
+      "sha256": "47257c7a41a46af2b5e9df34c740b0b5d5c7173c875dec2ac03c9345e671096d"
+    },
+    {
+      "file": "reuse_C_true_local_raw_gap.csv.gz",
+      "bytes": 739432,
+      "sha256": "5bdc4c17f83a0304a696196c310036559195c03f586a1fc4d6b5b7b1a2e832cd"
+    },
+    {
+      "file": "reuse_D_raw_ready_adjusted_factor_incomplete.csv.gz",
+      "bytes": 1043128,
+      "sha256": "6ecfbd322b10af65f7aff711510ec7dc67310d8925cb28078fda1af8ab4860cf"
+    },
+    {
+      "file": "reuse_E_not_applicable_or_no_trade_review.csv.gz",
+      "bytes": 95687,
+      "sha256": "7d460c03a9a78af58a0f0b420a37f69078ff10a5ed8a744dec36fdd7b34c44ae"
+    },
+    {
+      "file": "run_local_reuse_reclassification.py",
+      "bytes": 25334,
+      "sha256": "983ec9d1d28cdcc0fce5132c6a05c3e42340c141d9391cef76e6a52525c6d95d"
+    },
+    {
+      "file": "run_source_convergence.py",
+      "bytes": 49409,
+      "sha256": "9813c1ed326ddd7e3ffc44d99cd6c2586b2878e8c3a362b7ae233f6f03e7458a"
+    },
+    {
+      "file": "why_existing_price_was_not_hit_ledger.csv",
+      "bytes": 968,
+      "sha256": "be78cc326743c036cfe7c39d3f05aba2d8069d97a78eff8252344ae3b212e496"
+    }
+  ],
+  "future_data_violation_count": 0,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "portfolio_replay_executed": false,
+  "ready_for_strategy_replay": false,
+  "ready_for_formal": false,
+  "not_live_rule": true,
+  "forward_returns_live_rule_usage": false
+}
