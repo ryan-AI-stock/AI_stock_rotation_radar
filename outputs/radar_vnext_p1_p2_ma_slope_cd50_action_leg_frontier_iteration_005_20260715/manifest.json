@@ -1,0 +1,139 @@
+{
+  "task": "TASK-RADAR-DATA-VNEXT-P1-P2-MA-SLOPE-CD50-ACTION-LEG-FRONTIER-ITERATION-005",
+  "generated_at": "2026-07-15T08:19:21+00:00",
+  "output_path": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_vnext_p1_p2_ma_slope_cd50_action_leg_frontier_iteration_005_20260715",
+  "files": [
+    {
+      "file": "authority_scope_guard_audit.csv",
+      "bytes": 243,
+      "sha256": "2a0061c448e3f181e0162c59ab2262eb26e0cff420ace32b3787ff739fcba215"
+    },
+    {
+      "file": "checksum_manifest.csv",
+      "bytes": 2280,
+      "sha256": "e2df06f1347840378b637929167b79922706f360c4613bcdb60623e22f407fc8"
+    },
+    {
+      "file": "current_step.txt",
+      "bytes": 33,
+      "sha256": "55d163de55ee0acc17318fd429c24141821846321a9195035c26891dfa4ad21d"
+    },
+    {
+      "file": "final_summary_zh.md",
+      "bytes": 1109,
+      "sha256": "751ed5e7f077e440c1ceef88cd3de72ed48741603dc8c892dd22ac5cb37c8fdd"
+    },
+    {
+      "file": "frontier_authority_resolved.csv",
+      "bytes": 6882,
+      "sha256": "d495f4ba01b6256bc685812c86f69f7e6b3e8d1129882a4e6e20b5bdec7e6ee9"
+    },
+    {
+      "file": "frontier_bounded_route_plan.csv",
+      "bytes": 8962,
+      "sha256": "2ea15314b98bda4ccf12f3fb4873f57056b54e616891bd39a625f8989b463091"
+    },
+    {
+      "file": "frontier_future_data_audit.csv",
+      "bytes": 277,
+      "sha256": "5bc230447234fddf1623ce117125b35f74f4bf29aa2e9228ef686aab60898212"
+    },
+    {
+      "file": "frontier_historical_market_inference_audit.csv",
+      "bytes": 1045,
+      "sha256": "d82deffb0f385459d5e16b04053e92eb1d1008ed67467829259591593f21cc73"
+    },
+    {
+      "file": "frontier_market_route_fallback_audit.csv",
+      "bytes": 215,
+      "sha256": "beed0438a1869ca9ae4f025fbc37dd8f733e638b299a48563d9bb0d99940bd27"
+    },
+    {
+      "file": "frontier_missing_execution_date_resolution_audit.csv",
+      "bytes": 275,
+      "sha256": "4c13c4cbf9d907abd3c8e174530ba220628c28151ba23d878c9ec3c2305d9352"
+    },
+    {
+      "file": "frontier_official_no_trade_ledger.csv",
+      "bytes": 120,
+      "sha256": "f351f2fba9f1bbaad25360feecb53327526c245f9c5f430e46b57c4a18196c9f"
+    },
+    {
+      "file": "frontier_official_raw_accepted_patch.csv",
+      "bytes": 48725,
+      "sha256": "831d73e2492ec7a82c53654d1b0c65b67e61e0537c9119b68135cdf7925fa001"
+    },
+    {
+      "file": "frontier_official_raw_bounded_fill_patch.csv",
+      "bytes": 23449,
+      "sha256": "350a4b7b60a46497b9eba016c2994e714326b3141635c94dfbf1e03113b5c9b1"
+    },
+    {
+      "file": "frontier_official_raw_local_reuse_patch.csv",
+      "bytes": 25513,
+      "sha256": "4a43862cfce4c8dfea0b09d53dd6fe25b8a9ea283c2aa39b0ba3bef030724910"
+    },
+    {
+      "file": "frontier_remaining_blocked.csv",
+      "bytes": 105,
+      "sha256": "9c44cd23f50b9b8f2a2effe135ff3631425a1d83108022aa87bd403010c1eb86"
+    },
+    {
+      "file": "frontier_source_manifest.csv",
+      "bytes": 20146,
+      "sha256": "5ad057c5da4091f0bcb7faeb17ea7f3dba9075c97de8de73d532d0ad5ea438e5"
+    },
+    {
+      "file": "incumbent_continuity_classification_summary.csv",
+      "bytes": 669,
+      "sha256": "70a8df8cc819101cefe53f5297cc253e2f1c0479589ba45b45c09b6f09532651"
+    },
+    {
+      "file": "incumbent_continuity_local_classification.csv.gz",
+      "bytes": 281705,
+      "sha256": "75827606b81103085c326b96542caea73f556455cd4bc8d65262ccb2af2b2191"
+    },
+    {
+      "file": "incumbent_local_registry_exact_key_reuse.csv.gz",
+      "bytes": 163744,
+      "sha256": "06a49a1538f47ccc5a77b071eb6f172735cd7a4ce9c2d189c6cb9ca0b96540aa"
+    },
+    {
+      "file": "incumbent_new_unclassified_resolution_summary.csv",
+      "bytes": 552,
+      "sha256": "4eeffee6699970daf548412166fc82427769bce0aa6754a23a010a3f06894565"
+    },
+    {
+      "file": "progress.json",
+      "bytes": 545,
+      "sha256": "d744db531d92205f86b2411bc19f989dbe14bf3b272c9c3e8cd2e7d6f15625bc"
+    },
+    {
+      "file": "readiness_for_core_rechain.json",
+      "bytes": 4284,
+      "sha256": "343377d5890426e67b0ed50628e73c3b68c061f528b0ed35fc9e684300213f83"
+    },
+    {
+      "file": "run_iteration_005.py",
+      "bytes": 6605,
+      "sha256": "3fc3489cc4fedf790446a6169b6a4861a3ce82975f81de0350317cebd557b17d"
+    },
+    {
+      "file": "runner_dependency_manifest.csv",
+      "bytes": 623,
+      "sha256": "1776d054614831e69dac9e7e8190d2fbc7e1831d80b131f0689be1c9d241a972"
+    }
+  ],
+  "flags": {
+    "formal_model_changed": false,
+    "trade_decision_changed": false,
+    "active_in_trade_decision": false,
+    "report_changed": false,
+    "portfolio_replay_executed": false,
+    "ready_for_strategy_replay": false,
+    "ready_for_formal": false,
+    "not_live_rule": true,
+    "forward_returns_live_rule_usage": false
+  },
+  "future_data_violation_count": 0
+}

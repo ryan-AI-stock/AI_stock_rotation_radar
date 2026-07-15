@@ -1,0 +1,6 @@
+audit_item,status,future_data_violation_count
+frontier_exact_dates_only,pass,0
+incumbent_network_download_prohibited,pass,0
+atomic_policy_rows_not_downloaded,pass,0
+provisional_5193_not_used_as_download_authority,pass,0
+official_raw_and_adjusted_analysis_separate,pass,0

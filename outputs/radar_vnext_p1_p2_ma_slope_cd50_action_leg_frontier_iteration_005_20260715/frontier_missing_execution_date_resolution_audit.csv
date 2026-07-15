@@ -1,0 +1,1 @@
+variant_id,period,ticker,role,decision_date,authority_requested_execution_date,resolved_execution_date,resolution_policy,market,http_status,schema_ok,official_month_rows,source_url,source_hash,retrieved_at,raw_cache_path,cache_reused,silent_fill,future_data_violation_count
