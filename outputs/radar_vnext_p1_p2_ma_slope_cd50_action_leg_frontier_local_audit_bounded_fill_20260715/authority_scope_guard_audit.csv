@@ -1,0 +1,5 @@
+scope,rows,network_download_authorized,loaded_for_download
+frontier_exact_legs,25,True,True
+incumbent_continuity_exact_rows,23717,False,False
+atomic_policy_blockers,24,False,False
+provisional_action_leg_gaps,5193,False,False
