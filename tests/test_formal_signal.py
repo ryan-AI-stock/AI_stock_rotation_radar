@@ -218,6 +218,26 @@ class FormalSignalTests(unittest.TestCase):
         self.assertIn("7/16、7/17、7/20、7/21、7/22、7/23、7/24", html)
         self.assertIn("2026-07-27", html)
 
+    def test_report_marks_actual_buy_that_was_not_a_model_entry_signal(self) -> None:
+        formal_signal = self._build(
+            report_date="2026-07-15",
+            closes=[100.0] * 20,
+            actual_trades=[_trade("2026-07-15", "buy")],
+        )
+        html = render_report(
+            Report(
+                title="Radar",
+                generated_at="2026-07-15 21:30",
+                market_view="正式模式",
+                sector_results=[],
+                stock_results=[],
+                formal_signal=formal_signal,
+            )
+        )
+
+        self.assertEqual(formal_signal["today_signal"], "none")
+        self.assertIn("本日實際買進；不是本日模型買訊", html)
+
     def _build(
         self,
         *,

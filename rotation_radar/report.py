@@ -93,6 +93,15 @@ def _formal_signal_panel(report: Report) -> str:
         "blocked_signal": "訊號異常，禁止動作",
     }.get(str(signal.get("model_next_day_execution_action", "")), "狀態待確認")
     actual_trade_date = str(signal.get("actual_trade_date", "") or "無")
+    actual_trade_action = str(signal.get("actual_trade_action", "") or "")
+    report_date = str(signal.get("report_date", "") or "")
+    today_signal = str(signal.get("today_signal", "") or "")
+    if actual_trade_date == report_date and actual_trade_action == "buy" and today_signal != "entry":
+        trade_alignment = "本日實際買進；不是本日模型買訊"
+    elif actual_trade_date == report_date and actual_trade_action == "sell" and today_signal != "exit":
+        trade_alignment = "本日實際賣出；不是本日模型賣訊"
+    else:
+        trade_alignment = "實際成交紀錄與模型訊號分欄"
     model_execution_date = str(signal.get("model_next_day_execution_date", "") or "待確認")
     next_tradable = str(signal.get("next_tradable_date", "") or "未受 CD 限制")
     remaining = int(signal.get("remaining_blocked_trading_days", 0) or 0)
@@ -114,7 +123,7 @@ def _formal_signal_panel(report: Report) -> str:
         <div><span>00631L 實際部位</span><strong>{escape(position_text)}</strong><em>{escape(average_text)}，均價不參與訊號</em></div>
       </div>
       <div class="formal-cd">
-        <p><b>實際成交日</b>{escape(actual_trade_date)} <small>與 model_next_day_execution_date 分欄</small></p>
+        <p><b>實際成交日</b>{escape(actual_trade_date)} <small>{escape(trade_alignment)}</small></p>
         <p><b>CD blocked trading dates</b>{escape(blocked_dates)}</p>
         <p><b>Next tradable date</b>{escape(next_tradable)} <small>尚餘 {remaining} 個 blocked trading days</small></p>
         <p><b>Market session</b>{escape(str(signal.get("market_session_status", "unknown")))} <small>{escape(str(signal.get("market_session_source", "")))}</small></p>
