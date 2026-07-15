@@ -1,0 +1,119 @@
+{
+  "task": "TASK-RADAR-DATA-VNEXT-P1-P2-MA-SLOPE-CD50-ACTION-LEG-FRONTIER-ITERATION-003",
+  "generated_at": "2026-07-15T07:50:28+00:00",
+  "output_path": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_vnext_p1_p2_ma_slope_cd50_action_leg_frontier_iteration_003_20260715",
+  "files": [
+    {
+      "file": "authority_scope_guard_audit.csv",
+      "bytes": 243,
+      "sha256": "4479379f7ce1a8dc89a114839f726c52de79bc0628bc51ca5912bf1149d5c701"
+    },
+    {
+      "file": "checksum_manifest.csv",
+      "bytes": 1824,
+      "sha256": "e2d98539ded657171d9bfd79f15044d23070d745330b2b1b79b0be83d95f0528"
+    },
+    {
+      "file": "current_step.txt",
+      "bytes": 33,
+      "sha256": "55d163de55ee0acc17318fd429c24141821846321a9195035c26891dfa4ad21d"
+    },
+    {
+      "file": "final_summary_zh.md",
+      "bytes": 840,
+      "sha256": "127e3a9fdf7ac70ed0b6dd906d9ab5e8e8d23f84ad8a6d70f0d8f997cc0d87ea"
+    },
+    {
+      "file": "frontier_bounded_route_plan.csv",
+      "bytes": 4225,
+      "sha256": "ec619d7a8f6650c297357d11249a048cae6dd326fb86ce3bcbfab5d71d213e0a"
+    },
+    {
+      "file": "frontier_future_data_audit.csv",
+      "bytes": 277,
+      "sha256": "5bc230447234fddf1623ce117125b35f74f4bf29aa2e9228ef686aab60898212"
+    },
+    {
+      "file": "frontier_official_no_trade_ledger.csv",
+      "bytes": 120,
+      "sha256": "f351f2fba9f1bbaad25360feecb53327526c245f9c5f430e46b57c4a18196c9f"
+    },
+    {
+      "file": "frontier_official_raw_accepted_patch.csv",
+      "bytes": 32549,
+      "sha256": "246c0229b489708d8b2aecff1e1d0d968d45f9507219a52d91944d3ec94bcccd"
+    },
+    {
+      "file": "frontier_official_raw_bounded_fill_patch.csv",
+      "bytes": 11524,
+      "sha256": "87a8b2f51b0c86db56f481826e3f9ec2f0f14f82fa5c2e5dcb80f160083f147c"
+    },
+    {
+      "file": "frontier_official_raw_local_reuse_patch.csv",
+      "bytes": 21262,
+      "sha256": "1f5d98a8ddbdfc344ed2ba6d9d299f01645c63607d643e866b39fc123235968b"
+    },
+    {
+      "file": "frontier_remaining_blocked.csv",
+      "bytes": 105,
+      "sha256": "9c44cd23f50b9b8f2a2effe135ff3631425a1d83108022aa87bd403010c1eb86"
+    },
+    {
+      "file": "frontier_source_manifest.csv",
+      "bytes": 9935,
+      "sha256": "c7df221291036659344e170e2874a63ff017da1ff1e348cd6b98c19546d722c5"
+    },
+    {
+      "file": "incumbent_continuity_classification_summary.csv",
+      "bytes": 518,
+      "sha256": "eb99409632a3babd28d4a33617a5999eaced90ddcdfdb47f99421254efc53bb6"
+    },
+    {
+      "file": "incumbent_continuity_local_classification.csv.gz",
+      "bytes": 272722,
+      "sha256": "6ee60fac9554baad54b846ed29bfeb1c20e498acb999571799ad3edb926c7154"
+    },
+    {
+      "file": "incumbent_local_registry_exact_key_reuse.csv.gz",
+      "bytes": 161878,
+      "sha256": "ff87e6fe0b1569d1846b21098eb8483f7812f718673774c932e2e6a4bffbe779"
+    },
+    {
+      "file": "incumbent_new_unclassified_resolution_summary.csv",
+      "bytes": 466,
+      "sha256": "893b1be3b852e59ccbb4d547d1a1dd394a71eb9d781dfe14a0f23d7861303f20"
+    },
+    {
+      "file": "progress.json",
+      "bytes": 545,
+      "sha256": "b6d31484b5385deaf9abdd66412be6c8fa2ba6dd592521e13b7adb654ddcf7d5"
+    },
+    {
+      "file": "readiness_for_core_rechain.json",
+      "bytes": 3537,
+      "sha256": "c56bf1c6fd02d0738bab66723b85529de5ff6b41b5652dd83afc62c2bf36ab22"
+    },
+    {
+      "file": "run_iteration_003.py",
+      "bytes": 1592,
+      "sha256": "4e28bad9aa9360e45456bda5c2f9f17f9a2b5b8051d4df3ed99f3b2cb702f417"
+    },
+    {
+      "file": "runner_dependency_manifest.csv",
+      "bytes": 349,
+      "sha256": "13d472df30f19ed13afca267f08ac83fe35ed93724fada73ed3449028c7028c3"
+    }
+  ],
+  "flags": {
+    "formal_model_changed": false,
+    "trade_decision_changed": false,
+    "active_in_trade_decision": false,
+    "report_changed": false,
+    "portfolio_replay_executed": false,
+    "ready_for_strategy_replay": false,
+    "ready_for_formal": false,
+    "not_live_rule": true,
+    "forward_returns_live_rule_usage": false
+  },
+  "future_data_violation_count": 0
+}
