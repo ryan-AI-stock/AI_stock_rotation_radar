@@ -186,6 +186,8 @@ jobs:
               if row.get("family") in MANDATORY_FAMILIES
               and row.get("status") != "accepted"
           ]
+          if not blocked:
+              raise SystemExit("Incomplete manifest has no blocked mandatory source ledger")
           message = f"Official source deferred for {target}; persisted valid shards and will retry automatically: {', '.join(blocked)}"
           print(f"::warning::{message}")
           summary = os.environ.get("GITHUB_STEP_SUMMARY")

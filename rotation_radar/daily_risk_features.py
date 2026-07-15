@@ -323,7 +323,11 @@ def run_date(target: date, output_root: Path, scope_path: Path, calendar_state: 
     if "price" in selected:
         price_rows, price_manifest = fetch_price(target, wanted)
         manifests.extend(price_manifest)
-    market_states = {r["market"]: r["status"] for r in manifests}
+    market_states = {
+        r["market"]: r["status"]
+        for r in manifests
+        if r.get("family") == "official_raw_execution_ohlcv"
+    }
     if all(market_states.get(x) == "no_rows" for x in ("TWSE", "TPEx")):
         payload = {"requested_date": target.isoformat(), "status": "skipped_market_closed", "calendar_state": "official_market_data_both_no_rows", "sources": manifests, "future_data_violation_count": 0, **FLAGS}; atomic_json(manifest_path, payload); return payload
     if any(market_states.get(x) != "accepted" for x in ("TWSE", "TPEx")):

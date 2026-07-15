@@ -78,7 +78,10 @@ class DailyRiskFeatureTests(unittest.TestCase):
         chip_manifest = [source(family, market, target_s) for family in ("institutional", "margin_short", "securities_lending") for market in ("TWSE", "TPEx")]
         existing_sources = price_manifest + chip_manifest + [
             source("foreign_ownership", market, target_s) for market in ("TWSE", "TPEx")
-        ] + [source("taifex_foreign_oi", "TAIFEX", target_s, "blocked")]
+        ] + [
+            source("taifex_foreign_oi", "TAIFEX", target_s, "blocked"),
+            source("corporate_action_guard", "TPEx", target_s, "accepted_calendar_page_hash_only"),
+        ]
         with self._workspace() as (root, scope):
             target_dir = root / "daily/2026/07/14"; target_dir.mkdir(parents=True)
             (target_dir / "manifest.json").write_text(json.dumps({"status": "incomplete_source", "sources": existing_sources}), encoding="utf-8")
