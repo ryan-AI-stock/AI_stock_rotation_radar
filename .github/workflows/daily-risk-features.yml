@@ -2,8 +2,9 @@ name: Update daily risk feature sources
 
 on:
   schedule:
-    # 21:30 Asia/Taipei. Actual exchange data is verified before persistence.
+    # 21:30 first attempt and 23:00 bounded retry in Asia/Taipei.
     - cron: "30 13 * * 1-5"
+    - cron: "0 15 * * 1-5"
   workflow_dispatch:
     inputs:
       target_date:
@@ -69,16 +70,43 @@ jobs:
             target="${{ inputs.target_date }}"
             if [ -z "$target" ]; then target="$(TZ=Asia/Taipei date +%F)"; fi
             echo "value=--date $target" >> "$GITHUB_OUTPUT"
+            echo "target=$target" >> "$GITHUB_OUTPUT"
+            echo "mode=single" >> "$GITHUB_OUTPUT"
           fi
           retry="${{ inputs.retry_families }}"
           if [ -n "$retry" ]; then
             echo "retry=--retry-families $retry" >> "$GITHUB_OUTPUT"
+            echo "skip=false" >> "$GITHUB_OUTPUT"
           else
-            echo "retry=" >> "$GITHUB_OUTPUT"
+            python - "${target:-}" "$GITHUB_OUTPUT" <<'PY'
+          import json
+          import sys
+          from pathlib import Path
+          from rotation_radar.daily_risk_features import retry_groups_from_manifest
+
+          target, output = sys.argv[1:]
+          if not target:
+              with open(output, "a", encoding="utf-8") as handle:
+                  handle.write("retry=\nskip=false\nmode=backfill\n")
+              raise SystemExit(0)
+          path = Path("data/risk_features/daily") / target.replace("-", "/") / "manifest.json"
+          retry = ""
+          skip = "false"
+          if path.exists():
+              payload = json.loads(path.read_text(encoding="utf-8"))
+              if payload.get("status") in {"accepted", "skipped_market_closed"}:
+                  skip = "true"
+              elif payload.get("status") == "incomplete_source":
+                  groups = sorted(retry_groups_from_manifest(payload))
+                  retry = f"--retry-families {','.join(groups)}" if groups else ""
+          with open(output, "a", encoding="utf-8") as handle:
+              handle.write(f"retry={retry}\nskip={skip}\n")
+          PY
           fi
 
       - name: Acquire compact daily sources
         id: acquire
+        if: steps.args.outputs.skip != 'true'
         continue-on-error: true
         shell: bash
         run: |
@@ -129,8 +157,39 @@ jobs:
           path: data/risk_features/daily/**/manifest.json
           if-no-files-found: warn
 
-      - name: Fail after persisting incomplete source evidence
+      - name: Classify deferred official source
         if: always() && steps.acquire.outcome == 'failure'
+        shell: bash
         run: |
-          echo "Source acquisition incomplete. Accepted family shards and manifest were persisted; rerun only failed families with workflow_dispatch retry_families." >&2
-          exit 2
+          set -euo pipefail
+          if [ "${{ steps.args.outputs.mode }}" != "single" ]; then
+            echo "Backfill acquisition failed and requires review." >&2
+            exit 2
+          fi
+          python - "${{ steps.args.outputs.target }}" <<'PY'
+          import json
+          import os
+          import sys
+          from pathlib import Path
+          from rotation_radar.daily_risk_features import MANDATORY_FAMILIES
+
+          target = sys.argv[1]
+          path = Path("data/risk_features/daily") / target.replace("-", "/") / "manifest.json"
+          if not path.exists():
+              raise SystemExit("Acquisition failed without a persisted manifest")
+          payload = json.loads(path.read_text(encoding="utf-8"))
+          if payload.get("status") != "incomplete_source" or payload.get("future_data_violation_count") != 0:
+              raise SystemExit(f"Unexpected failed acquisition state: {payload.get('status')}")
+          blocked = [
+              f"{row.get('family')}:{row.get('market')}"
+              for row in payload.get("sources", [])
+              if row.get("family") in MANDATORY_FAMILIES
+              and row.get("status") != "accepted"
+          ]
+          message = f"Official source deferred for {target}; persisted valid shards and will retry automatically: {', '.join(blocked)}"
+          print(f"::warning::{message}")
+          summary = os.environ.get("GITHUB_STEP_SUMMARY")
+          if summary:
+              with open(summary, "a", encoding="utf-8") as handle:
+                  handle.write(f"## Deferred official source\n\n{message}\n")
+          PY

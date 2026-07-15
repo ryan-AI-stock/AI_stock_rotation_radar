@@ -9,7 +9,7 @@ from datetime import date
 from pathlib import Path
 from unittest.mock import patch
 
-from rotation_radar.daily_risk_features import IncompleteSourceError, classify_calendar_day, run_date, tdcc_should_append
+from rotation_radar.daily_risk_features import IncompleteSourceError, classify_calendar_day, retry_groups_from_manifest, run_date, tdcc_should_append
 
 
 def source(family: str, market: str, target: str, status: str = "accepted") -> dict:
@@ -59,6 +59,35 @@ class DailyRiskFeatureTests(unittest.TestCase):
             self.assertEqual(result["status"], "accepted")
             with gzip.open(target_dir / "official_raw_execution_ohlcv.csv.gz", "rt", encoding="utf-8") as handle:
                 self.assertEqual(list(csv.DictReader(handle))[0]["ticker"], "2330")
+
+    def test_incomplete_manifest_maps_only_failed_mandatory_groups(self) -> None:
+        payload = {
+            "status": "incomplete_source",
+            "sources": [
+                source("official_raw_execution_ohlcv", "TWSE", "2026-07-14"),
+                source("official_raw_execution_ohlcv", "TPEx", "2026-07-14"),
+                source("taifex_foreign_oi", "TAIFEX", "2026-07-14", "blocked"),
+                source("tdcc_holder_distribution", "TDCC", "2026-07-14", "no_rows"),
+            ],
+        }
+        self.assertEqual(retry_groups_from_manifest(payload), {"taifex"})
+
+    def test_default_rerun_retries_only_failed_mandatory_group(self) -> None:
+        target = date(2026, 7, 14); target_s = target.isoformat()
+        price_manifest = [source("official_raw_execution_ohlcv", market, target_s) for market in ("TWSE", "TPEx")]
+        chip_manifest = [source(family, market, target_s) for family in ("institutional", "margin_short", "securities_lending") for market in ("TWSE", "TPEx")]
+        existing_sources = price_manifest + chip_manifest + [
+            source("foreign_ownership", market, target_s) for market in ("TWSE", "TPEx")
+        ] + [source("taifex_foreign_oi", "TAIFEX", target_s, "blocked")]
+        with self._workspace() as (root, scope):
+            target_dir = root / "daily/2026/07/14"; target_dir.mkdir(parents=True)
+            (target_dir / "manifest.json").write_text(json.dumps({"status": "incomplete_source", "sources": existing_sources}), encoding="utf-8")
+            with patch("rotation_radar.daily_risk_features.fetch_taifex", return_value=([{"date": target_s}], source("taifex_foreign_oi", "TAIFEX", target_s))) as taifex, patch("rotation_radar.daily_risk_features.fetch_price") as price, patch("rotation_radar.daily_risk_features.fetch_chip_family") as chips:
+                result = run_date(target, root, scope, "scheduled_open")
+            self.assertEqual(result["status"], "accepted")
+            taifex.assert_called_once()
+            price.assert_not_called()
+            chips.assert_not_called()
 
     def test_normal_day_is_idempotent_and_rejects_stale_mandatory_date(self) -> None:
         target = date(2026, 7, 9); target_s = target.isoformat()

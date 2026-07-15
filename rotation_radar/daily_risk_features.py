@@ -267,6 +267,30 @@ FAMILY_GROUPS = {
     "tdcc": {"tdcc_holder_distribution"},
 }
 
+MANDATORY_FAMILIES = {
+    "official_raw_execution_ohlcv",
+    "institutional",
+    "margin_short",
+    "securities_lending",
+    "foreign_ownership",
+    "taifex_foreign_oi",
+}
+
+
+def retry_groups_from_manifest(payload: dict) -> set[str]:
+    """Return only mandatory source groups that still need an exact-date retry."""
+    family_to_group = {
+        family: group
+        for group, families in FAMILY_GROUPS.items()
+        for family in families
+    }
+    return {
+        family_to_group[row["family"]]
+        for row in payload.get("sources", [])
+        if row.get("family") in MANDATORY_FAMILIES
+        and row.get("status") != "accepted"
+    }
+
 
 def _existing_rows(path: Path) -> list[dict]:
     if not path.exists():
@@ -278,7 +302,10 @@ def _existing_rows(path: Path) -> list[dict]:
 def run_date(target: date, output_root: Path, scope_path: Path, calendar_state: str | None = None, retry_families: set[str] | None = None) -> dict:
     target_dir = output_root / "daily" / target.strftime("%Y/%m/%d"); manifest_path = target_dir / "manifest.json"
     wanted, _ = load_scope(scope_path)
-    previous = json.loads(manifest_path.read_text(encoding="utf-8")) if retry_families and manifest_path.exists() else {}
+    existing = json.loads(manifest_path.read_text(encoding="utf-8")) if manifest_path.exists() else {}
+    if retry_families is None and existing.get("status") == "incomplete_source":
+        retry_families = retry_groups_from_manifest(existing) or None
+    previous = existing if retry_families else {}
     if retry_families and not previous:
         raise IncompleteSourceError("family-only retry requires an existing manifest")
     selected = set(FAMILY_GROUPS) if not retry_families else retry_families
@@ -319,7 +346,7 @@ def run_date(target: date, output_root: Path, scope_path: Path, calendar_state: 
         action_rows, rows = fetch_corporate_calendar(target, wanted); manifests.extend(rows)
     if "tdcc" in selected:
         _, row = fetch_tdcc_if_new(output_root, wanted); manifests.append(row)
-    mandatory = [r for r in manifests if r["family"] in {"official_raw_execution_ohlcv", "institutional", "margin_short", "securities_lending", "foreign_ownership", "taifex_foreign_oi"}]
+    mandatory = [r for r in manifests if r["family"] in MANDATORY_FAMILIES]
     for row in mandatory:
         if row["status"] == "accepted" and row.get("actual_source_date") != target.isoformat():
             row["status"] = "blocked"; row["error"] = "stale_actual_source_date_rejected"
