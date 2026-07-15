@@ -1,0 +1,2 @@
+variant_id,period,ticker,decision_date,requested_execution_date,primary_market,primary_outcome,alternate_market,alternate_outcome,alternate_exact_rows,source_url,source_hash,silent_fill,future_data_violation_count
+S07_CD2,P2,6472,2023-08-07,2023-08-08,TWSE,source_route_failed,TPEx,accepted_exact_row,1,https://www.tpex.org.tw/www/zh-tw/afterTrading/tradingStock?code=6472&date=2023%2F08%2F01&response=json,694e6c8d00f181e6201ce414ffd435fbe83e1c1024ce7fc5e27b1f1f68c53aaa,False,0

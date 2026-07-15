@@ -1,0 +1,123 @@
+{
+  "task": "TASK-RADAR-DATA-VNEXT-P1-P2-MA-SLOPE-CD50-ACTION-LEG-FRONTIER-ITERATION-004",
+  "status": "frontier_closed_ready_for_core_rechain",
+  "frontier_authority_rows": 75,
+  "frontier_exact_ready_rows": 73,
+  "frontier_exact_blocked_rows": 0,
+  "frontier_official_no_trade_rows": 2,
+  "frontier_closed_rows": 75,
+  "frontier_local_reuse_rows": 45,
+  "frontier_bounded_network_rows": 28,
+  "incumbent_local_audit_rows": 25687,
+  "incumbent_unclassified_authority_rows": 6518,
+  "incumbent_unclassified_resolved_or_classified_rows": 6518,
+  "incumbent_network_download_rows": 0,
+  "atomic_policy_blocker_rows": 40,
+  "provisional_gap_rows_used_as_download_authority": 0,
+  "ready_for_core_action_leg_frontier_rechain": true,
+  "ready_for_experiments": false,
+  "future_data_violation_count": 0,
+  "formal_0050_00631l_mainline_changed": false,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "portfolio_replay_executed": false,
+  "ready_for_strategy_replay": false,
+  "ready_for_formal": false,
+  "not_live_rule": true,
+  "forward_returns_live_rule_usage": false,
+  "classification_summary": [
+    {
+      "period": "P1",
+      "local_A_to_E_classification": "B_raw_plus_adjusted_factor_reconstructable",
+      "rows": "195"
+    },
+    {
+      "period": "P1",
+      "local_A_to_E_classification": "C_trusted_trade_evidence_official_raw_gap_local_only",
+      "rows": "345"
+    },
+    {
+      "period": "P1",
+      "local_A_to_E_classification": "E_market_session_open_ticker_trade_unclassified_local_only",
+      "rows": "22118"
+    },
+    {
+      "period": "P1",
+      "local_A_to_E_classification": "E_no_market_session_local_candidate_no_trade_or_holiday_review",
+      "rows": "73"
+    },
+    {
+      "period": "P1",
+      "local_A_to_E_classification": "E_official_no_trade_or_NA_no_analysis_gap",
+      "rows": "836"
+    },
+    {
+      "period": "P2",
+      "local_A_to_E_classification": "B_raw_plus_adjusted_factor_reconstructable",
+      "rows": "1030"
+    },
+    {
+      "period": "P2",
+      "local_A_to_E_classification": "C_trusted_trade_evidence_official_raw_gap_local_only",
+      "rows": "1083"
+    },
+    {
+      "period": "P2",
+      "local_A_to_E_classification": "D_raw_ready_adjusted_factor_incomplete_unadjusted_research_fallback",
+      "rows": "1"
+    },
+    {
+      "period": "P2",
+      "local_A_to_E_classification": "E_market_session_open_ticker_trade_unclassified_local_only",
+      "rows": "6"
+    }
+  ],
+  "new_unclassified_resolution_summary": [
+    {
+      "period": "P1",
+      "local_A_to_E_classification": "B_raw_plus_adjusted_factor_reconstructable",
+      "rows": 195
+    },
+    {
+      "period": "P1",
+      "local_A_to_E_classification": "C_trusted_trade_evidence_official_raw_gap_local_only",
+      "rows": 345
+    },
+    {
+      "period": "P1",
+      "local_A_to_E_classification": "E_market_session_open_ticker_trade_unclassified_local_only",
+      "rows": 3852
+    },
+    {
+      "period": "P1",
+      "local_A_to_E_classification": "E_no_market_session_local_candidate_no_trade_or_holiday_review",
+      "rows": 11
+    },
+    {
+      "period": "P2",
+      "local_A_to_E_classification": "B_raw_plus_adjusted_factor_reconstructable",
+      "rows": 1030
+    },
+    {
+      "period": "P2",
+      "local_A_to_E_classification": "C_trusted_trade_evidence_official_raw_gap_local_only",
+      "rows": 1083
+    },
+    {
+      "period": "P2",
+      "local_A_to_E_classification": "D_raw_ready_adjusted_factor_incomplete_unadjusted_research_fallback",
+      "rows": 1
+    },
+    {
+      "period": "P2",
+      "local_A_to_E_classification": "E_market_session_open_ticker_trade_unclassified_local_only",
+      "rows": 1
+    }
+  ],
+  "authority_blank_execution_date_rows": 1,
+  "authority_blank_date_resolved_rows": 1,
+  "authority_date_resolution_policy": "first_official_ticker_trading_day_after_decision_date",
+  "authority_date_resolution_silent_fill": false
+}
