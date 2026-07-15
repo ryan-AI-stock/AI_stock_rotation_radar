@@ -36,6 +36,9 @@ def build_daily_run_manifest(
     actual_report_date: str = "",
     fallback_reason: str = "",
     manual_rerun: bool = False,
+    formal_signal_checkpoint_path: str | Path = "",
+    formal_signal_state_path: str | Path = "",
+    formal_signal: dict | None = None,
 ) -> dict:
     timestamp = generated_at or datetime.now(TAIPEI_TZ)
     return {
@@ -54,6 +57,8 @@ def build_daily_run_manifest(
             "stock_metrics": str(stock_metrics_path),
             "formal_candidates": str(formal_candidates_path),
             "price_history": str(price_history_path),
+            "formal_signal_checkpoint": str(formal_signal_checkpoint_path),
+            "formal_signal_state": str(formal_signal_state_path),
         },
         "refresh_status": {
             "depth": depth_refresh_status,
@@ -61,4 +66,9 @@ def build_daily_run_manifest(
             "candidate_symbol_count": candidate_symbol_count,
         },
         "warnings": warnings or [],
+        "formal_signal": formal_signal or {},
+        "formal_model_changed": True,
+        "trade_decision_changed": True,
+        "active_in_trade_decision": True,
+        "report_changed": True,
     }

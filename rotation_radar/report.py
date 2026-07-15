@@ -31,6 +31,7 @@ def render_report(report: Report) -> str:
 
   <main>
     {_rotation_digest(report, top_sectors)}
+    {_formal_signal_panel(report)}
     {_summary_panel(report, top_sectors, buckets)}
     <section class="section sector-section">
       <div class="section-head">
@@ -61,6 +62,77 @@ def _group_stocks(stocks: list[StockResult]) -> dict[Bucket, list[StockResult]]:
     for item in stocks:
         grouped[item.bucket].append(item)
     return grouped
+
+
+def _formal_signal_panel(report: Report) -> str:
+    signal = report.formal_signal
+    if not signal:
+        return ""
+    blocked_dates = "、".join(_short_date(str(value)) for value in signal.get("blocked_trading_dates", [])) or "無"
+    position = signal.get("actual_position", {}) or {}
+    position_text = "持有 00631L" if position.get("asset_type") == "long_00631L" else "空手"
+    average_price = position.get("average_price")
+    average_text = f"均價 {float(average_price):.3f}" if average_price else "無持倉均價"
+    signal_text = {
+        "entry": "買入訊號",
+        "exit": "賣出訊號",
+        "none": "無新交易訊號",
+        "conflict_blocked": "訊號衝突，禁止交易",
+        "blocked_source": "資料未完成，禁止交易",
+    }.get(str(signal.get("today_signal", "")), "狀態待確認")
+    action_text = {
+        "buy_00631L": "買入 00631L",
+        "sell_00631L": "賣出 00631L",
+        "hold_00631L": "續抱 00631L",
+        "stay_flat": "維持空手",
+        "cooldown_blocked_buy_00631L": "CD 封鎖：不得買入",
+        "cooldown_blocked_sell_00631L": "CD 封鎖：不得賣出",
+        "blocked_source": "資料未完成，禁止動作",
+        "blocked_calendar_unavailable": "交易日曆不可用，禁止動作",
+        "market_closed_no_signal": "市場休市，不產生動作",
+        "blocked_signal": "訊號異常，禁止動作",
+    }.get(str(signal.get("model_next_day_execution_action", "")), "狀態待確認")
+    actual_trade_date = str(signal.get("actual_trade_date", "") or "無")
+    model_execution_date = str(signal.get("model_next_day_execution_date", "") or "待確認")
+    next_tradable = str(signal.get("next_tradable_date", "") or "未受 CD 限制")
+    remaining = int(signal.get("remaining_blocked_trading_days", 0) or 0)
+    return f"""
+    <section class="section formal-signal">
+      <div class="formal-head">
+        <div>
+          <span>正式 0050 訊號 / 00631L 執行</span>
+          <h2>{escape(str(signal.get("mode_label", "")))}</h2>
+        </div>
+        <strong>{escape(signal_text)}</strong>
+      </div>
+      <div class="formal-grid">
+        <div><span>0050 今日收盤</span><strong>{_formal_number(signal.get("close"))}</strong><em>訊號標的</em></div>
+        <div><span>MA4 / MA10</span><strong>{_formal_number(signal.get("ma4"))} / {_formal_number(signal.get("ma10"))}</strong><em>收盤均線</em></div>
+        <div><span>7D slope（7筆）</span><strong>{_formal_signed(signal.get("slope_7d_value"))}</strong><em>相對6個交易日前 {_formal_pct(signal.get("slope_7d_pct"))}</em></div>
+        <div><span>20D slope（20筆）</span><strong>{_formal_signed(signal.get("slope_20d_value"))}</strong><em>相對19個交易日前 {_formal_pct(signal.get("slope_20d_pct"))}</em></div>
+        <div><span>次一交易日模型動作</span><strong>{escape(action_text)}</strong><em>{escape(model_execution_date)}</em></div>
+        <div><span>00631L 實際部位</span><strong>{escape(position_text)}</strong><em>{escape(average_text)}，均價不參與訊號</em></div>
+      </div>
+      <div class="formal-cd">
+        <p><b>實際成交日</b>{escape(actual_trade_date)} <small>與 model_next_day_execution_date 分欄</small></p>
+        <p><b>CD blocked trading dates</b>{escape(blocked_dates)}</p>
+        <p><b>Next tradable date</b>{escape(next_tradable)} <small>尚餘 {remaining} 個 blocked trading days</small></p>
+        <p><b>Market session</b>{escape(str(signal.get("market_session_status", "unknown")))} <small>{escape(str(signal.get("market_session_source", "")))}</small></p>
+      </div>
+    </section>
+    """
+
+
+def _formal_number(value) -> str:
+    return "資料待補" if value is None else f"{float(value):.2f}"
+
+
+def _formal_signed(value) -> str:
+    return "資料待補" if value is None else f"{float(value):+.2f}"
+
+
+def _formal_pct(value) -> str:
+    return "資料待補" if value is None else f"{float(value):+.2f}%"
 
 
 def _rotation_digest(report: Report, top_sectors) -> str:
@@ -760,6 +832,19 @@ main { padding: 22px max(14px, 4vw) 54px; }
 .digest-grid p { margin: 0; color: #4a443d; font-size: .9rem; line-height: 1.55; }
 .digest-grid b { display: block; color: #0f5f58; margin-bottom: 3px; }
 .brief { margin-top: -8px; background: #fffdf8; border: 1px solid #ddd6c8; border-radius: 8px; padding: 18px; box-shadow: 0 10px 24px rgba(41, 32, 18, .07); }
+.formal-signal { background: #132f2c; color: #fffdf8; border-left: 5px solid #d6a642; padding: 18px 20px; }
+.formal-head { display: flex; justify-content: space-between; gap: 20px; align-items: end; border-bottom: 1px solid rgba(255,255,255,.2); padding-bottom: 12px; }
+.formal-head span { color: #d6a642; font-size: .78rem; font-weight: 850; }
+.formal-head h2 { margin-top: 4px; }
+.formal-head > strong { color: #132f2c; background: #fff5df; padding: 7px 10px; font-size: 1rem; }
+.formal-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 18px; }
+.formal-grid > div { padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,.14); }
+.formal-grid span, .formal-grid em { display: block; color: #c8d9d6; font-size: .76rem; font-style: normal; }
+.formal-grid strong { display: block; font-size: 1.03rem; }
+.formal-cd { padding-top: 10px; }
+.formal-cd p { display: grid; grid-template-columns: 170px 1fr; gap: 8px; margin: 5px 0; font-size: .82rem; }
+.formal-cd b { color: #d6a642; }
+.formal-cd small { color: #c8d9d6; margin-left: 8px; }
 .brief-head { display: flex; justify-content: space-between; gap: 18px; align-items: baseline; border-bottom: 1px solid #ddd6c8; padding-bottom: 12px; }
 .brief-head span { color: #a16207; font-size: .8rem; font-weight: 850; text-transform: uppercase; letter-spacing: .08em; }
 .brief-head strong { font-size: clamp(1.15rem, 3vw, 2rem); text-align: right; }
@@ -840,7 +925,7 @@ ul { padding-left: 18px; margin: 12px 0; color: #38332c; }
 .method-grid span { color: #6f6a60; }
 .empty { color: #6f6a60; }
 @media (max-width: 980px) {
-  .sector-grid, .digest-grid, .excluded-list { grid-template-columns: 1fr; }
+  .sector-grid, .digest-grid, .excluded-list, .formal-grid { grid-template-columns: 1fr; }
   .section-head { display: block; }
   .section-head p { margin-top: 6px; }
 }
@@ -851,6 +936,9 @@ ul { padding-left: 18px; margin: 12px 0; color: #38332c; }
   .digest-title strong { display: block; text-align: left; margin-top: 6px; }
   .brief-head { display: block; }
   .brief-head strong { display: block; text-align: left; margin-top: 6px; }
+  .formal-head { display: block; }
+  .formal-head > strong { display: inline-block; margin-top: 8px; }
+  .formal-cd p { display: block; }
   .stock-main { align-items: start; }
   .metrics, .sector-stats { grid-template-columns: 1fr 1fr; }
 }

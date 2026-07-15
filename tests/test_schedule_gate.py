@@ -153,6 +153,13 @@ class ScheduleGateTests(unittest.TestCase):
         self.assertIn('if [ "$status" -eq 75 ]', workflow)
         self.assertIn('echo "report_ready=false"', workflow)
         self.assertIn("if: steps.generate-report.outputs.report_ready == 'true'", workflow)
+        self.assertIn("Validate formal signal checkpoint", workflow)
+        self.assertIn("validate_formal_signal_checkpoint(checkpoint)", workflow)
+        self.assertIn("data/formal_0050_00631l_state.json", workflow)
+        self.assertNotIn(
+            'checkpoint["actual_trade_date"] != checkpoint["model_next_day_execution_date"]',
+            workflow,
+        )
 
 
 @contextmanager

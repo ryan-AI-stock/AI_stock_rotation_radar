@@ -43,6 +43,9 @@ class PipelinePaths:
     price_history: Path
     radar_snapshot_dir: Path
     run_manifest: Path
+    formal_signal_state: Path
+    formal_trade_override: Path
+    formal_signal_checkpoint: Path
     raw_root: Path
     processed_root: Path
 
@@ -64,6 +67,15 @@ class PipelinePaths:
             price_history=Path(args.price_history_file),
             radar_snapshot_dir=Path(args.radar_snapshot_output_dir),
             run_manifest=Path(args.run_manifest_output),
+            formal_signal_state=Path(
+                getattr(args, "formal_signal_state_file", "data/formal_0050_00631l_state.json")
+            ),
+            formal_trade_override=Path(
+                getattr(args, "formal_trade_override_file", "data/formal_0050_00631l_trade_override.json")
+            ),
+            formal_signal_checkpoint=Path(
+                getattr(args, "formal_signal_checkpoint_output", "reports/formal_0050_00631l_checkpoint.json")
+            ),
             raw_root=Path(args.raw_output_dir),
             processed_root=Path(args.processed_output_dir),
         )

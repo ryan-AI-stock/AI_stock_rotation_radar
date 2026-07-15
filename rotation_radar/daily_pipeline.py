@@ -12,6 +12,7 @@ from .data_quality import load_quote_snapshot, quote_date_mismatch_message
 from .data_loader import load_sector_metrics, load_stock_metrics
 from .deep_metrics import build_hot_stock_deep_metrics, merge_deep_metrics_into_stock_metrics
 from .formal_candidate_export import write_formal_radar_candidates
+from .formal_signal import build_formal_signal_checkpoint
 from .logging_utils import log_status
 from .market_universe import MarketUniverseFetchError, build_fallback_universe_from_theme_map, build_market_universe
 from .normalize import normalize_raw_directory
@@ -137,13 +138,14 @@ def run_update_latest_report(args, write_report: ReportWriter) -> None:
     sectors = load_sector_metrics(generated_sector_path)
     stocks = load_stock_metrics(refreshed_path)
     candidate_symbols = {stock.symbol for stock in stocks}
+    required_price_symbols = candidate_symbols | {"0050", "00631L"}
     formal_candidates_path = write_formal_radar_candidates(
         stocks=stocks,
         report_date=run_args.report_date or quote_snapshot.normalized_date,
     )
     print(f"Saved {formal_candidates_path}")
     price_refresh_status = "attempted"
-    _refresh_recent_price_snapshots(run_args, paths, options, required_symbols=candidate_symbols)
+    _refresh_recent_price_snapshots(run_args, paths, options, required_symbols=required_price_symbols)
     theme_history_path = backfill_theme_history_from_processed(
         processed_root=paths.processed_root,
         theme_map_path=args.theme_map_file,
@@ -157,7 +159,7 @@ def run_update_latest_report(args, write_report: ReportWriter) -> None:
     build_price_history_from_processed(
         processed_root=paths.processed_root,
         output_path=paths.price_history,
-        symbols={stock.symbol for stock in stocks},
+        symbols=required_price_symbols,
         market_quotes_path=market_quotes_path,
     )
     snapshot_result = build_radar_snapshots(
@@ -174,6 +176,14 @@ def run_update_latest_report(args, write_report: ReportWriter) -> None:
     for warning in snapshot_result.warnings:
         print(f"Warning: {warning}")
     price_history = load_price_history(paths.price_history)
+    formal_signal = build_formal_signal_checkpoint(
+        price_history.get("0050", []),
+        report_date=run_args.report_date or quote_snapshot.normalized_date,
+        state_path=paths.formal_signal_state,
+        override_path=paths.formal_trade_override,
+        checkpoint_path=paths.formal_signal_checkpoint,
+        explicit_trade_override=_explicit_trade_override(args),
+    )
     stock_themes = load_stock_theme_tags(args.theme_map_file, args.theme_universe_file)
     theme_trends = load_theme_trends(theme_history_path, generated_sector_path)
     write_report(
@@ -187,8 +197,9 @@ def run_update_latest_report(args, write_report: ReportWriter) -> None:
         quote_date=quote_date,
         quote_time=quote_time,
         generated_date=run_args.report_date,
+        formal_signal=formal_signal,
     )
-    manifest_warnings = _collect_data_quality_warnings(run_args, paths, options, candidate_symbols)
+    manifest_warnings = _collect_data_quality_warnings(run_args, paths, options, required_price_symbols)
     manifest_path = write_run_manifest(
         paths.run_manifest,
         build_daily_run_manifest(
@@ -209,9 +220,31 @@ def run_update_latest_report(args, write_report: ReportWriter) -> None:
             price_refresh_status=price_refresh_status,
             candidate_symbol_count=len(candidate_symbols),
             warnings=manifest_warnings,
+            formal_signal_checkpoint_path=paths.formal_signal_checkpoint,
+            formal_signal_state_path=paths.formal_signal_state,
+            formal_signal=formal_signal,
         ),
     )
     log_status(f"Run manifest written to {manifest_path}")
+
+
+def _explicit_trade_override(args) -> dict | None:
+    trade_date = str(getattr(args, "actual_trade_override_date", "") or "").strip()
+    action = str(getattr(args, "actual_trade_override_action", "") or "").strip()
+    price = getattr(args, "actual_trade_override_price", None)
+    if not trade_date and not action and price is None:
+        return None
+    if not trade_date or not action:
+        raise ValueError("Actual trade override requires both date and action.")
+    if action == "buy" and (price is None or float(price) <= 0):
+        raise ValueError("Actual buy override requires a positive average price.")
+    return {
+        "trade_date": trade_date,
+        "action": action,
+        "ticker": "00631L",
+        "average_price": price,
+        "source": "workflow_dispatch_actual_trade_override",
+    }
 
 
 def _ensure_market_universe(args, paths: PipelinePaths, options: PipelineOptions) -> tuple[Path, Path]:

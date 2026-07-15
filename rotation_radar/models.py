@@ -91,3 +91,4 @@ class Report:
     theme_trends: dict[str, dict[str, float | str]] = field(default_factory=dict)
     quote_date: str = ""
     quote_time: str = ""
+    formal_signal: dict[str, object] = field(default_factory=dict)

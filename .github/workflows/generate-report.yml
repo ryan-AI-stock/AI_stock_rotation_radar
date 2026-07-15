@@ -47,6 +47,23 @@ on:
         options:
           - "false"
           - "true"
+      actual_trade_override_date:
+        description: "Optional actual 00631L trade date, YYYY-MM-DD"
+        required: false
+        default: ""
+      actual_trade_override_action:
+        description: "Optional actual 00631L trade action; actual fills reset CD7"
+        required: false
+        default: "none"
+        type: choice
+        options:
+          - "none"
+          - "buy"
+          - "sell"
+      actual_trade_override_price:
+        description: "Actual average price; required for buy, state only"
+        required: false
+        default: ""
 
 concurrency:
   group: daily-theme-rotation-report
@@ -173,6 +190,14 @@ jobs:
             args+=(--skip-depth-refresh)
           fi
 
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.actual_trade_override_action }}" != "none" ]; then
+            args+=(--actual-trade-override-date "${{ inputs.actual_trade_override_date }}")
+            args+=(--actual-trade-override-action "${{ inputs.actual_trade_override_action }}")
+            if [ -n "${{ inputs.actual_trade_override_price }}" ]; then
+              args+=(--actual-trade-override-price "${{ inputs.actual_trade_override_price }}")
+            fi
+          fi
+
           set +e
           python -m rotation_radar.cli "${args[@]}"
           status=$?
@@ -206,7 +231,35 @@ jobs:
             echo "actual_report_key=${actual_key}"
           } >> "$GITHUB_OUTPUT"
 
-      - name: Commit formal radar candidate interface
+      - name: Validate formal signal checkpoint
+        if: steps.generate-report.outputs.report_ready == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from rotation_radar.formal_signal import validate_formal_signal_checkpoint
+
+          checkpoint = json.loads(Path("reports/formal_0050_00631l_checkpoint.json").read_text(encoding="utf-8"))
+          manifest = json.loads(Path("reports/latest_manifest.json").read_text(encoding="utf-8"))
+          validate_formal_signal_checkpoint(checkpoint)
+          assert checkpoint["report_date"] == manifest["actual_report_date"]
+          assert checkpoint["signal_ticker"] == "0050"
+          assert checkpoint["execution_ticker"] == "00631L"
+          assert checkpoint["signal_carry_forward_used"] is False
+          assert checkpoint["future_data_violation_count"] == 0
+          print(json.dumps({
+              "formal_signal_report_date": checkpoint["report_date"],
+              "today_signal": checkpoint["today_signal"],
+              "model_next_day_execution_action": checkpoint["model_next_day_execution_action"],
+              "model_next_day_execution_date": checkpoint["model_next_day_execution_date"],
+              "actual_trade_date": checkpoint["actual_trade_date"],
+              "next_tradable_date": checkpoint["next_tradable_date"],
+          }, ensure_ascii=False))
+          PY
+
+      - name: Commit formal radar candidate interface and CD state
         if: steps.generate-report.outputs.report_ready == 'true'
         shell: bash
         run: |
@@ -217,7 +270,7 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/formal_radar_candidates.latest.csv
+          git add data/formal_radar_candidates.latest.csv data/formal_0050_00631l_state.json
           if git diff --cached --quiet; then
             echo "Formal radar candidate interface unchanged."
           else
@@ -252,6 +305,9 @@ jobs:
           name: latest-rotation-report
           path: |
             reports/latest.html
+            reports/latest_manifest.json
+            reports/formal_0050_00631l_checkpoint.json
+            data/formal_0050_00631l_state.json
             public_report/*.pdf
           if-no-files-found: error
 

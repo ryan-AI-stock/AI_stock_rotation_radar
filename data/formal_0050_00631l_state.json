@@ -1,0 +1,30 @@
+{
+  "active_in_trade_decision": true,
+  "actual_trades": [
+    {
+      "action": "buy",
+      "average_price": 37.265,
+      "source": "user_actual_trade_override",
+      "ticker": "00631L",
+      "trade_date": "2026-07-15"
+    }
+  ],
+  "cooldown_trading_days": 7,
+  "current_position": {
+    "asset_type": "long_00631L",
+    "average_price": 37.265,
+    "ticker": "00631L"
+  },
+  "execution_ticker": "00631L",
+  "formal_model_changed": true,
+  "last_completed_report_date": "",
+  "last_completed_signal": "",
+  "mode_id": "0050_MA4_SLOPE7_ENTRY_MA10_SLOPE20_EXIT_CD7",
+  "pending_signal": null,
+  "report_changed": true,
+  "schema_version": 2,
+  "signal_carry_forward_used": false,
+  "signal_ticker": "0050",
+  "trade_decision_changed": true,
+  "updated_at": "2026-07-15T00:00:00+08:00"
+}

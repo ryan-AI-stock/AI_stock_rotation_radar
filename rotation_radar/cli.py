@@ -96,6 +96,34 @@ def main() -> None:
     parser.add_argument("--formal-output-dir", default="data/history_replay/formal_grade_2021_2023", help="Output directory for formal-grade audit files.")
     parser.add_argument("--output", default="reports/latest.html", help="Output HTML path.")
     parser.add_argument("--run-manifest-output", default="reports/latest_manifest.json", help="Internal JSON run manifest for data quality diagnostics.")
+    parser.add_argument(
+        "--formal-signal-state-file",
+        default="data/formal_0050_00631l_state.json",
+        help="Persistent 0050 signal / 00631L position and trading-day cooldown state.",
+    )
+    parser.add_argument(
+        "--formal-trade-override-file",
+        default="data/formal_0050_00631l_trade_override.json",
+        help="Configured actual 00631L trade overrides. Actual trades, not model signals, reset CD7.",
+    )
+    parser.add_argument(
+        "--formal-signal-checkpoint-output",
+        default="reports/formal_0050_00631l_checkpoint.json",
+        help="Machine-readable per-report formal signal checkpoint.",
+    )
+    parser.add_argument("--actual-trade-override-date", default="", help="Optional actual 00631L trade date, YYYY-MM-DD.")
+    parser.add_argument(
+        "--actual-trade-override-action",
+        choices=["", "buy", "sell"],
+        default="",
+        help="Optional actual 00631L trade action for workflow_dispatch.",
+    )
+    parser.add_argument(
+        "--actual-trade-override-price",
+        type=float,
+        default=None,
+        help="Actual average price. Required for a buy override; state only, never a model input.",
+    )
     args = parser.parse_args()
 
     if args.build_historical_replay_snapshots:
@@ -364,6 +392,7 @@ def _write_report(
     quote_date="",
     quote_time="",
     generated_date="",
+    formal_signal=None,
 ) -> None:
     sector_results, stock_results = build_results(sectors, stocks)
 
@@ -382,6 +411,7 @@ def _write_report(
         theme_trends=theme_trends or {},
         quote_date=quote_date,
         quote_time=quote_time,
+        formal_signal=formal_signal or {},
     )
 
     output = Path(output_path)

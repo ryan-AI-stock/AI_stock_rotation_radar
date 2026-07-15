@@ -1,0 +1,12 @@
+{
+  "actual_trades": [
+    {
+      "action": "buy",
+      "average_price": 37.265,
+      "source": "user_actual_trade_override",
+      "ticker": "00631L",
+      "trade_date": "2026-07-15"
+    }
+  ],
+  "schema_version": 1
+}
