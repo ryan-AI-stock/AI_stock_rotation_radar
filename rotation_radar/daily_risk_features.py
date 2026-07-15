@@ -196,13 +196,40 @@ def fetch_foreign_ownership(target: date, wanted: set[str]) -> tuple[list[dict],
 
 
 def fetch_taifex(target: date) -> tuple[list[dict], dict]:
-    url = "https://www.bq888.taifex.com.tw/cht/3/futContractsDate"; raw, status, error, final_url, retrieved = request("GET", url, params={"queryType": "1", "doQuery": "1", "queryDate": target.strftime("%Y/%m/%d")}); rows = []
+    url = "https://www.taifex.com.tw/cht/3/futContractsDateDown"
+    raw, status, error, final_url, retrieved = request(
+        "POST",
+        url,
+        data={
+            "queryStartDate": target.strftime("%Y/%m/%d"),
+            "queryEndDate": target.strftime("%Y/%m/%d"),
+            "commodityId": "TXF",
+        },
+    )
+    rows = []
     try:
-        soup = BeautifulSoup(raw.decode("utf-8", errors="replace"), "html.parser"); product = ""
-        for tr in soup.select("tr"):
-            vals = [c.get_text(" ", strip=True) for c in tr.select("th,td")]
-            if len(vals) >= 15 and vals[0].isdigit(): product = vals[1]
-            if product == "臺股期貨" and len(vals) >= 13 and vals[0] == "外資": rows.append({"date": target.isoformat(), "product": "TXF", "investor": "foreign", "oi_net_contracts": clean(vals[11]), "oi_net_amount": clean(vals[12]), "available_at_policy": "official post-close; next-trading-day eligible", "source_url": final_url, "source_hash": sha(raw), "retrieved_at_utc": retrieved}); break
+        decoded = raw.decode("cp950", errors="strict")
+        for vals in csv.reader(decoded.splitlines()):
+            if (
+                len(vals) >= 15
+                and vals[0] == target.strftime("%Y/%m/%d")
+                and vals[1] == "臺股期貨"
+                and vals[2] in {"外資", "外資及陸資"}
+            ):
+                rows.append({
+                    "date": target.isoformat(),
+                    "product": "TXF",
+                    "investor": "foreign",
+                    "trade_net_contracts": clean(vals[7]),
+                    "trade_net_amount": clean(vals[8]),
+                    "oi_net_contracts": clean(vals[13]),
+                    "oi_net_amount": clean(vals[14]),
+                    "available_at_policy": "official post-close; next-trading-day eligible",
+                    "source_url": final_url,
+                    "source_hash": sha(raw),
+                    "retrieved_at_utc": retrieved,
+                })
+                break
     except Exception as exc: error = f"parse_{type(exc).__name__}"
     state = "accepted" if rows else "no_rows" if status == 200 and not error else "blocked"
     return rows, {"family": "taifex_foreign_oi", "market": "TAIFEX", "requested_date": target.isoformat(), "actual_source_date": target.isoformat() if rows else "", "status": state, "row_count": len(rows), "http_status": status, "source_url": final_url, "source_hash": sha(raw) if raw else "", "retrieved_at_utc": retrieved, "error": error}

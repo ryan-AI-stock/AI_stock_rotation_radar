@@ -9,7 +9,7 @@ from datetime import date
 from pathlib import Path
 from unittest.mock import patch
 
-from rotation_radar.daily_risk_features import IncompleteSourceError, classify_calendar_day, retry_groups_from_manifest, run_date, tdcc_should_append
+from rotation_radar.daily_risk_features import IncompleteSourceError, classify_calendar_day, fetch_taifex, retry_groups_from_manifest, run_date, tdcc_should_append
 
 
 def source(family: str, market: str, target: str, status: str = "accepted") -> dict:
@@ -17,6 +17,32 @@ def source(family: str, market: str, target: str, status: str = "accepted") -> d
 
 
 class DailyRiskFeatureTests(unittest.TestCase):
+    def test_taifex_official_range_csv_parses_foreign_trade_and_oi(self) -> None:
+        payload = "\n".join([
+            "日期,商品名稱,身份別,多方交易口數,多方交易契約金額(千元),空方交易口數,空方交易契約金額(千元),多空交易口數淨額,多空交易契約金額淨額(千元),多方未平倉口數,多方未平倉契約金額(千元),空方未平倉口數,空方未平倉契約金額(千元),多空未平倉口數淨額,多空未平倉契約金額淨額(千元)",
+            "2026/07/14,臺股期貨,外資及陸資,130107,1166274183,132326,1187371511,-2219,-21097328,10732,96522287,94122,849133079,-83390,-752610792",
+        ]).encode("cp950")
+        response = (payload, 200, "", "https://www.taifex.com.tw/cht/3/futContractsDateDown", "2026-07-15T00:00:00+00:00")
+        with patch("rotation_radar.daily_risk_features.request", return_value=response) as official_request:
+            rows, manifest = fetch_taifex(date(2026, 7, 14))
+        self.assertEqual(rows[0]["trade_net_contracts"], "-2219")
+        self.assertEqual(rows[0]["oi_net_contracts"], "-83390")
+        self.assertEqual(rows[0]["oi_net_amount"], "-752610792")
+        self.assertEqual(manifest["status"], "accepted")
+        official_request.assert_called_once_with(
+            "POST",
+            "https://www.taifex.com.tw/cht/3/futContractsDateDown",
+            data={"queryStartDate": "2026/07/14", "queryEndDate": "2026/07/14", "commodityId": "TXF"},
+        )
+
+    def test_taifex_official_range_csv_empty_day_is_no_rows(self) -> None:
+        payload = "日期,商品名稱,身份別\n".encode("cp950")
+        response = (payload, 200, "", "https://www.taifex.com.tw/cht/3/futContractsDateDown", "2026-07-15T00:00:00+00:00")
+        with patch("rotation_radar.daily_risk_features.request", return_value=response):
+            rows, manifest = fetch_taifex(date(2026, 7, 14))
+        self.assertEqual(rows, [])
+        self.assertEqual(manifest["status"], "no_rows")
+
     def test_calendar_weekend_and_scheduled_close(self) -> None:
         self.assertEqual(classify_calendar_day(date(2026, 7, 11), set(), set()), "weekend_closed")
         self.assertEqual(classify_calendar_day(date(2026, 7, 10), set(), {date(2026, 7, 10)}), "scheduled_closed")
