@@ -1,0 +1,10 @@
+{
+  "iteration": 8,
+  "authority_hash": "419e19dfff427b911d3add6beac16cd8d14836c42c1717dd32321650c88e3c6f",
+  "stage": "complete_ready_for_core_rechain",
+  "updated_at": "2026-07-15T08:59:21.803048+00:00",
+  "resume_command": "python \"C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\scripts\\run_p1_p2_ma_slope_cd50_bounded_frontier_adapter.py\" --iteration 8 --core-output \"C:\\Users\\zergv\\Documents\\Codex\\2026-05-30\\ep05-chat-ai-stock-backtest-lab\\outputs\\vnext_p1_p2_layer4_primary80_individual_MA_slope_CD50_action_legs_20260715\" --output \"C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_vnext_p1_p2_ma_slope_cd50_action_leg_frontier_iteration_008_20260715\"",
+  "core_output": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-30\\ep05-chat-ai-stock-backtest-lab\\outputs\\vnext_p1_p2_layer4_primary80_individual_MA_slope_CD50_action_legs_20260715",
+  "resume_mode": "existing_complete_output_adopted",
+  "frontier_authority_rows": 88
+}

@@ -1,0 +1,143 @@
+{
+  "task": "TASK-RADAR-DATA-VNEXT-P1-P2-MA-SLOPE-CD50-ACTION-LEG-FRONTIER-ITERATION-008",
+  "generated_at": "2026-07-15T08:59:21.860732+00:00",
+  "output_path": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_vnext_p1_p2_ma_slope_cd50_action_leg_frontier_iteration_008_20260715",
+  "files": [
+    {
+      "file": "adapter_checkpoint.json",
+      "bytes": 1045,
+      "sha256": "708fbcbc131e1758f637274780f9f4665c20df2c580f4ef1ebc65abceb97f5d5"
+    },
+    {
+      "file": "adapter_policy_blocker_ledger.csv",
+      "bytes": 101,
+      "sha256": "a580117cbe3f6917d2500b72bbc8028640af19a2b608d560c21b34f81d964e7f"
+    },
+    {
+      "file": "authority_scope_guard_audit.csv",
+      "bytes": 242,
+      "sha256": "831749c6c862cc1bfa9f290e301e132e52322e4fcba1e8b314525334913a618c"
+    },
+    {
+      "file": "checksum_manifest.csv",
+      "bytes": 2598,
+      "sha256": "9fb79fa9edc388dfe73c81f4655ac757b9add84bdc1a6a7dbeeb8a8c87e00656"
+    },
+    {
+      "file": "current_step.txt",
+      "bytes": 33,
+      "sha256": "55d163de55ee0acc17318fd429c24141821846321a9195035c26891dfa4ad21d"
+    },
+    {
+      "file": "final_summary_zh.md",
+      "bytes": 1108,
+      "sha256": "3d33319979209c727ada1552c9a9b5b3374fba54d34813c9198f3142b6824812"
+    },
+    {
+      "file": "frontier_authority_resolved.csv",
+      "bytes": 7204,
+      "sha256": "5b294c6c2308995d11040e722424626a9e5ea91f13f1587d4231790ed9bc3cc5"
+    },
+    {
+      "file": "frontier_bounded_route_plan.csv",
+      "bytes": 9464,
+      "sha256": "9f01982d8da6b9327423168e46c96682060223a99dbeef6a8dff50b0ec91626d"
+    },
+    {
+      "file": "frontier_future_data_audit.csv",
+      "bytes": 277,
+      "sha256": "5bc230447234fddf1623ce117125b35f74f4bf29aa2e9228ef686aab60898212"
+    },
+    {
+      "file": "frontier_historical_market_inference_audit.csv",
+      "bytes": 200,
+      "sha256": "5c8f8ebbcaa51879981cb086bc7b26429484ce395cb130564e784e66cc850cb3"
+    },
+    {
+      "file": "frontier_market_route_fallback_audit.csv",
+      "bytes": 215,
+      "sha256": "beed0438a1869ca9ae4f025fbc37dd8f733e638b299a48563d9bb0d99940bd27"
+    },
+    {
+      "file": "frontier_missing_execution_date_resolution_audit.csv",
+      "bytes": 275,
+      "sha256": "4c13c4cbf9d907abd3c8e174530ba220628c28151ba23d878c9ec3c2305d9352"
+    },
+    {
+      "file": "frontier_official_no_trade_ledger.csv",
+      "bytes": 120,
+      "sha256": "f351f2fba9f1bbaad25360feecb53327526c245f9c5f430e46b57c4a18196c9f"
+    },
+    {
+      "file": "frontier_official_raw_accepted_patch.csv",
+      "bytes": 50910,
+      "sha256": "0bf37ae32c1999d63d885a374505f0840a413020bf9691d255f5470505fd1180"
+    },
+    {
+      "file": "frontier_official_raw_bounded_fill_patch.csv",
+      "bytes": 23994,
+      "sha256": "3f5312f3a8f99ef5b40946779aef7240253476087428fd8e9ac2f72ca8cadbbc"
+    },
+    {
+      "file": "frontier_official_raw_local_reuse_patch.csv",
+      "bytes": 27153,
+      "sha256": "6c3fecf94af482aa306814cbda78e00ed8fb1159f53d4ea15381b8c7203ae736"
+    },
+    {
+      "file": "frontier_remaining_blocked.csv",
+      "bytes": 105,
+      "sha256": "9c44cd23f50b9b8f2a2effe135ff3631425a1d83108022aa87bd403010c1eb86"
+    },
+    {
+      "file": "frontier_same_market_failed_only_retry_audit.csv",
+      "bytes": 278,
+      "sha256": "5d1e1866a20c46bc012de0154d4dd4956a9a9ba61f77635dbe23e15a27d83969"
+    },
+    {
+      "file": "frontier_source_manifest.csv",
+      "bytes": 20603,
+      "sha256": "488567431c6ece74677ef2412aa3aff46d23534f3a74db8f605eaa3507eaf426"
+    },
+    {
+      "file": "incumbent_continuity_classification_summary.csv",
+      "bytes": 593,
+      "sha256": "8634b24f5fc546643c25d7929ab9e5ea751e7cc8862d4470c0b0da95789e69f4"
+    },
+    {
+      "file": "incumbent_continuity_local_classification.csv.gz",
+      "bytes": 246700,
+      "sha256": "e6219e1eef1efff72a6b9e9039ca815f1c54ce3b4808ba7666ac5b80c81c4449"
+    },
+    {
+      "file": "incumbent_local_registry_exact_key_reuse.csv.gz",
+      "bytes": 140254,
+      "sha256": "3ec834fce8291cb7285df32522e188ac84e625643e0a63fe62f9c8eecd1bd08b"
+    },
+    {
+      "file": "incumbent_new_unclassified_resolution_summary.csv",
+      "bytes": 540,
+      "sha256": "9f2e556f5447317daa39571d0ed646316c4a2c5fcef9baf72eb2ac5b54ab32d0"
+    },
+    {
+      "file": "progress.json",
+      "bytes": 545,
+      "sha256": "e9dd109125f638edba7bef2d0655ca383717fe07752cc170cb081b9ef440b90d"
+    },
+    {
+      "file": "readiness_for_core_rechain.json",
+      "bytes": 4411,
+      "sha256": "1300ba1c2e056779ccde3bcd78299d78d17a88813978643f20367e5ec76827d2"
+    },
+    {
+      "file": "run_iteration_008.py",
+      "bytes": 3499,
+      "sha256": "e977c9ec7a1b3b617c12a3defe8b4865a2e5eaa5631caff75cf750920a67058c"
+    },
+    {
+      "file": "runner_dependency_manifest.csv",
+      "bytes": 1685,
+      "sha256": "60f48af199d07ec8469e24685040636be262aaf4470d2e87e900beb637498b1a"
+    }
+  ],
+  "future_data_violation_count": 0
+}

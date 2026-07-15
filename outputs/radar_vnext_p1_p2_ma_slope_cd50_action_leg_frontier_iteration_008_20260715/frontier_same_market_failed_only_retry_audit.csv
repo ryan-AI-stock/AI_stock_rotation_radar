@@ -1,0 +1,1 @@
+variant_id,period,ticker,decision_date,requested_execution_date,market,prior_cache_hash,prior_cache_evidence_path,retry_http_status,retry_schema_ok,retry_response_rows,retry_exact_rows,retry_outcome,source_url,source_hash,raw_cache_path,silent_fill,future_data_violation_count
