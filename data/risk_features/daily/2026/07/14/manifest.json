@@ -1,45 +1,7 @@
 {
   "requested_date": "2026-07-14",
-  "actual_market_date": "2026-07-14",
   "status": "incomplete_source",
   "calendar_state": "calendar_unknown_weekday",
-  "candidate_scope_count": 100,
-  "retry_families": [],
-  "actual_source_dates": {
-    "official_raw_execution_ohlcv:TWSE": "2026-07-14",
-    "official_raw_execution_ohlcv:TPEx": "2026-07-14",
-    "institutional:TWSE": "2026-07-14",
-    "margin_short:TWSE": "2026-07-14",
-    "securities_lending:TWSE": "2026-07-14",
-    "institutional:TPEx": "2026-07-14",
-    "margin_short:TPEx": "2026-07-14",
-    "securities_lending:TPEx": "2026-07-14",
-    "foreign_ownership:TWSE": "2026-07-14",
-    "foreign_ownership:TPEx": "2026-07-14",
-    "taifex_foreign_oi:TAIFEX": "",
-    "global_market:Dow": "2026-07-14",
-    "global_market:Nasdaq": "2026-07-14",
-    "global_market:Nikkei": "2026-07-13",
-    "global_market:KOSPI": "2026-07-13",
-    "global_market:USD_TWD": "2026-07-13",
-    "global_market:VIX": "2026-07-14",
-    "corporate_action_guard:TWSE": "2026-07-14",
-    "corporate_action_guard:TPEx": "2026-07-14",
-    "tdcc_holder_distribution:TDCC": "20260709"
-  },
-  "latest_completed_global_sessions": {
-    "Dow": "2026-07-14",
-    "Nasdaq": "2026-07-14",
-    "Nikkei": "2026-07-13",
-    "KOSPI": "2026-07-13",
-    "USD_TWD": "2026-07-13",
-    "VIX": "2026-07-14"
-  },
-  "source_counts": {
-    "accepted": 19,
-    "no_rows": 1,
-    "blocked": 0
-  },
   "sources": [
     {
       "family": "official_raw_execution_ohlcv",
@@ -180,19 +142,6 @@
       "error": ""
     },
     {
-      "family": "taifex_foreign_oi",
-      "market": "TAIFEX",
-      "requested_date": "2026-07-14",
-      "actual_source_date": "",
-      "status": "no_rows",
-      "row_count": 0,
-      "http_status": 200,
-      "source_url": "https://www.bq888.taifex.com.tw/cht/3/futContractsDate?queryType=1&doQuery=1&queryDate=2026%2F07%2F14",
-      "source_hash": "8d12ecc95419e1aa992b864f9ab3aff06472fe252aa90e83ad3c5809fddf510c",
-      "retrieved_at_utc": "2026-07-14T15:07:10+00:00",
-      "error": ""
-    },
-    {
       "family": "global_market",
       "market": "Dow",
       "requested_date": "2026-07-14",
@@ -312,8 +261,6 @@
     }
   ],
   "future_data_violation_count": 0,
-  "法人／大戶籌碼代理分數": "source_components_only_weights_not_defined",
-  "raw_execution_and_adjusted_analysis_separate": true,
   "formal_model_changed": false,
   "trade_decision_changed": false,
   "active_in_trade_decision": false,
