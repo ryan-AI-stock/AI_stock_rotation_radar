@@ -1,0 +1,7 @@
+audit,status,future_data_violation_count
+authority_only_exact_key,pass,0
+close_only_normalized_outputs,pass,0
+raw_and_adjusted_separate,pass,0
+neighbor_last_price_substitution,not_used,0
+iterative_frontier_loop,disabled,0
+non_close_family_download,not_used,0

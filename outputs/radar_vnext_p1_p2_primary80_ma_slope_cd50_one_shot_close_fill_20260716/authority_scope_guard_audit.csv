@@ -1,0 +1,6 @@
+scope,rows,network_authorized
+one_shot_exact_close_missing_authority,56326,True
+adjusted_analysis_close,49009,True
+official_raw_execution_close,7362,True
+all_non_close_families,0,False
+iterative_frontier,0,False
