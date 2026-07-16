@@ -355,11 +355,13 @@ def classify(
     p1_intervals: dict[str, list[tuple[pd.Timestamp, pd.Timestamp]]],
     p3_intervals: dict[str, list[tuple[pd.Timestamp, pd.Timestamp]]],
     routes: pd.DataFrame,
+    prior_no_trade: set[tuple[str, pd.Timestamp]] | None = None,
 ) -> pd.DataFrame:
     merged = requirements.merge(close_index, on=KEY, how="left", validate="one_to_one", suffixes=("_required", "_source"))
     merged["market"] = merged["market_required"]
     conflict_keys = set(map(tuple, conflicts[KEY].itertuples(index=False, name=None)))
-    prior_no_trade = previous_no_trade_keys()
+    if prior_no_trade is None:
+        prior_no_trade = previous_no_trade_keys()
     valid_routes = route_valid_map(routes)
 
     classifications = []

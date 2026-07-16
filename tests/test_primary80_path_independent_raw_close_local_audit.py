@@ -48,11 +48,30 @@ class Primary80PathIndependentRawCloseAuditTest(unittest.TestCase):
 
         result = classify(
             requirements, close_index, pd.DataFrame(columns=["ticker", "date"]),
-            {}, {}, {}, {}, {}, routes,
+            {}, {}, {}, {}, {}, routes, prior_no_trade=set(),
         )
 
         self.assertEqual(result.loc[0, "market"], "TWSE")
         self.assertEqual(result.loc[0, "classification"], "true_missing")
+
+    def test_classification_uses_injected_prior_no_trade_without_local_artifact(self) -> None:
+        day = pd.Timestamp("2020-01-02")
+        requirements = pd.DataFrame([{
+            "ticker": "2330", "date": day, "market": "TWSE", "markets": "TWSE",
+            "market_policy_blocked": False,
+        }])
+        close_index = pd.DataFrame(columns=["ticker", "date", "close", "market"])
+        routes = pd.DataFrame([{
+            "market": "TWSE", "date": day, "route_response_valid": True,
+        }])
+
+        result = classify(
+            requirements, close_index, pd.DataFrame(columns=["ticker", "date"]),
+            {}, {}, {}, {}, {}, routes, prior_no_trade={("2330", day)},
+        )
+
+        self.assertEqual(result.loc[0, "classification"], "official_no_trade_or_termination")
+        self.assertEqual(result.loc[0, "classification_reason"], "prior_official_market_file_valid_exact_ticker_absent")
 
 
 if __name__ == "__main__":
