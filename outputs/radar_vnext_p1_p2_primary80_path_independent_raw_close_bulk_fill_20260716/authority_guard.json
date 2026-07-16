@@ -1,0 +1,11 @@
+{
+  "authority_path": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_vnext_p1_p2_primary80_path_independent_raw_close_local_audit_20260716\\primary80_path_independent_true_missing.csv.gz",
+  "authority_sha256": "b5017065e40cccc1e5472a5a123064f9fd375a04e1f32682fb94a8a4a65bb589",
+  "authority_rows": 1144181,
+  "market_date_routes": 5821,
+  "twse_routes": 2906,
+  "tpex_routes": 2915,
+  "network_authorized": true,
+  "non_close_family_download_rows": 0,
+  "locally_reclassified_official_no_session_routes": 0
+}

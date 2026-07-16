@@ -1,0 +1,5 @@
+classification,rows,future_data_violation_count
+required_unique_ticker_date,1972684,0
+official_raw_close_ready,1862861,0
+official_no_trade_or_termination,109287,0
+blocked,536,0
