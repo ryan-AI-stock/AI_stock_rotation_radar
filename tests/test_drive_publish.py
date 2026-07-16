@@ -3,8 +3,9 @@ from __future__ import annotations
 import sys
 import tempfile
 import unittest
+from datetime import date
 from pathlib import Path
-from unittest.mock import patch
+from unittest.mock import MagicMock, patch
 
 from rotation_radar import drive_publish
 from rotation_radar.drive_publish import classify_drive_publish_error, google_oauth_warning_messages, resolve_google_oauth_config
@@ -77,6 +78,28 @@ class DrivePublishTests(unittest.TestCase):
     def test_env_flag_accepts_common_true_values(self) -> None:
         with patch.dict("os.environ", {"ROTATION_ENABLE_DATED_BACKUP": "true"}, clear=True):
             self.assertTrue(drive_publish._env_flag("ROTATION_ENABLE_DATED_BACKUP"))
+
+    def test_fixed_drive_pdf_modified_after_cycle_start_is_current(self) -> None:
+        service = MagicMock()
+        service.files.return_value.list.return_value.execute.return_value = {
+            "files": [{"id": "radar", "name": drive_publish.PUBLIC_FIXED_FILE_NAME, "modifiedTime": "2026-07-15T08:30:00Z"}]
+        }
+
+        with patch.object(drive_publish, "build_google_drive_service", return_value=(service, "OAuth")):
+            current = drive_publish.is_public_report_current(date(2026, 7, 15), "folder")
+
+        self.assertTrue(current)
+
+    def test_stale_fixed_drive_pdf_is_not_current(self) -> None:
+        service = MagicMock()
+        service.files.return_value.list.return_value.execute.return_value = {
+            "files": [{"id": "radar", "name": drive_publish.PUBLIC_FIXED_FILE_NAME, "modifiedTime": "2026-07-15T06:00:00Z"}]
+        }
+
+        with patch.object(drive_publish, "build_google_drive_service", return_value=(service, "OAuth")):
+            current = drive_publish.is_public_report_current(date(2026, 7, 15), "folder")
+
+        self.assertFalse(current)
 
 
 if __name__ == "__main__":

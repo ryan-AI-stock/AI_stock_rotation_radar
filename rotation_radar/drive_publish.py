@@ -6,7 +6,7 @@ import os
 import shutil
 from collections.abc import Mapping
 from dataclasses import dataclass
-from datetime import datetime
+from datetime import date, datetime, time
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
@@ -38,17 +38,33 @@ def main() -> None:
     parser.add_argument("--date", help="Report date, YYYY-MM-DD. Defaults to current Asia/Taipei date.")
     parser.add_argument("--skip-upload", action="store_true", help="Render PDFs only; do not upload to Google Drive.")
     parser.add_argument(
+        "--check-current-report",
+        action="store_true",
+        help="Exit 0 when the fixed Drive PDF is current for --date; exit 3 otherwise.",
+    )
+    parser.add_argument(
         "--skip-public-upload",
         action="store_true",
         help="Render PDF without updating the fixed public PDF on Drive. Dated backup upload is deprecated and disabled unless ROTATION_ENABLE_DATED_BACKUP=true.",
     )
     args = parser.parse_args()
 
+    report_date = _report_date(args.date)
+    public_folder_id = os.environ.get("ROTATION_PUBLIC_REPORT_DRIVE_FOLDER_ID") or PUBLIC_FOLDER_ID
+    public_file_id = os.environ.get("ROTATION_PUBLIC_REPORT_DRIVE_FILE_ID", "")
+    if args.check_current_report:
+        current = is_public_report_current(
+            report_date.date(),
+            public_folder_id,
+            public_file_id.strip() or None,
+        )
+        print(f"drive_report_current={str(current).lower()} report_date={report_date.date().isoformat()}")
+        raise SystemExit(0 if current else 3)
+
     html_path = Path(args.html)
     if not html_path.exists():
         raise SystemExit(f"Report HTML not found: {html_path}")
 
-    report_date = _report_date(args.date)
     date_key = report_date.strftime("%Y%m%d")
     enable_dated_backup = _env_flag(ENABLE_DATED_BACKUP_ENV)
 
@@ -71,12 +87,6 @@ def main() -> None:
     if args.skip_upload:
         print("skip-upload=true，僅產生 PDF，不上傳 Google Drive。")
         return
-
-    public_folder_id = (
-        os.environ.get("ROTATION_PUBLIC_REPORT_DRIVE_FOLDER_ID")
-        or PUBLIC_FOLDER_ID
-    )
-    public_file_id = os.environ.get("ROTATION_PUBLIC_REPORT_DRIVE_FILE_ID", "")
 
     if enable_dated_backup and backup_pdf:
         backup_folder_id = (
@@ -183,7 +193,6 @@ def upload_file_to_drive(
     if not folder_id:
         print("Warning: 未設定 Google Drive folder_id，跳過上傳")
         return None
-
     try:
         from googleapiclient.http import MediaFileUpload
     except Exception as exc:
@@ -253,6 +262,48 @@ def upload_file_to_drive(
     except Exception as exc:
         print(f"Warning: 上傳 Google Drive PDF 失敗：{exc}")
         return None
+
+
+def is_public_report_current(
+    report_date: date,
+    folder_id: str,
+    file_id: str | None = None,
+) -> bool:
+    """Use the fixed Drive PDF modified time as the scheduled completion authority."""
+    if not folder_id:
+        return False
+    service, _auth_mode = build_google_drive_service()
+    if not service:
+        return False
+    try:
+        file_info = None
+        if file_id:
+            file_info = service.files().get(
+                fileId=file_id,
+                fields="id,name,modifiedTime",
+                supportsAllDrives=True,
+            ).execute()
+        if not file_info:
+            query = (
+                f"'{folder_id}' in parents and "
+                f"name = '{_drive_name_query(PUBLIC_FIXED_FILE_NAME)}' and "
+                "trashed = false"
+            )
+            files = service.files().list(
+                q=query,
+                fields="files(id,name,modifiedTime)",
+                supportsAllDrives=True,
+                includeItemsFromAllDrives=True,
+            ).execute().get("files", [])
+            file_info = files[0] if files else None
+        if not file_info or not file_info.get("modifiedTime"):
+            return False
+        modified = datetime.fromisoformat(file_info["modifiedTime"].replace("Z", "+00:00")).astimezone(TAIPEI_TZ)
+        cycle_start = datetime.combine(report_date, time(15, 0), tzinfo=TAIPEI_TZ)
+        return modified >= cycle_start
+    except Exception as exc:
+        print(f"Warning: 無法檢查 Google Drive 當日 Radar 報告，繼續產報避免漏產：{exc}")
+        return False
 
 
 def build_google_drive_service():
