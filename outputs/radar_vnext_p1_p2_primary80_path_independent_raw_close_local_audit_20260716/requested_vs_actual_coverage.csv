@@ -1,0 +1,6 @@
+﻿classification,rows,share,network_requests,future_data_violation_count
+required_unique_ticker_date,1972684,1.0,0,0
+local_ready,782799,0.3968192574178125,0,0
+official_no_trade_or_termination,45168,0.022896723448864592,0,0
+true_missing,1144181,0.5800123081040855,0,0
+market_policy_blocked_or_local_conflict,536,0.00027171102923732334,0,0
