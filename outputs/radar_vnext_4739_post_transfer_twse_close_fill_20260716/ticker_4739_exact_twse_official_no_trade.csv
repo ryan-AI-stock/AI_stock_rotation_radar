@@ -1,0 +1,2 @@
+ticker,date,market,status,reason,source_url,source_hash,retrieved_at,future_data_violation_count
+4739,2019-10-10,TWSE,official_valid_no_target_row,official_market_closed_no_session,https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20191010&type=ALLBUT0999&response=json,a5691b2512d7068ab2f69df75c3ef8fbc38dc565086422b1602656895c92c652,2026-07-16T05:43:59+00:00,0

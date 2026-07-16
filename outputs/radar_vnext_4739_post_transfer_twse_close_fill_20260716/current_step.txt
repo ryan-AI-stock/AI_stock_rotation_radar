@@ -1,0 +1,2 @@
+status=complete_ready_for_core_absorption
+resume_step=none

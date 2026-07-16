@@ -1,0 +1,11 @@
+{
+  "authority_path": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_vnext_4739_market_transfer_3474_termination_source_package_20260716\\ticker_4739_post_transition_remaining_local_gap.csv",
+  "authority_sha256": "d0fa275f9c613797bd5a0b53b316ce8d06abd49fc93440ae42f784324891c24c",
+  "requested_exact_dates": 579,
+  "ticker": "4739",
+  "market": "TWSE",
+  "local_exact_reused_rows": 0,
+  "network_authorized_max_routes": 579,
+  "non_close_family_download_rows": 0,
+  "future_data_violation_count": 0
+}

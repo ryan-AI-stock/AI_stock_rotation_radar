@@ -1,0 +1,2996 @@
+{
+  "task": "TASK-RADAR-DATA-VNEXT-4739-POST-TRANSFER-579-TWSE-CLOSE-FILL-001",
+  "generated_at": "2026-07-16T07:36:53+00:00",
+  "output_path": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_vnext_4739_post_transfer_twse_close_fill_20260716",
+  "authority_path": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_vnext_4739_market_transfer_3474_termination_source_package_20260716\\ticker_4739_post_transition_remaining_local_gap.csv",
+  "authority_sha256": "d0fa275f9c613797bd5a0b53b316ce8d06abd49fc93440ae42f784324891c24c",
+  "network_authorized_exact_routes": 579,
+  "network_scope": "ticker=4739 market=TWSE close-only",
+  "readiness": {
+    "task": "TASK-RADAR-DATA-VNEXT-4739-POST-TRANSFER-579-TWSE-CLOSE-FILL-001",
+    "status": "complete_ready_for_core_absorption",
+    "requested_exact_dates": 579,
+    "official_raw_close_ready_rows": 578,
+    "official_valid_no_target_rows": 1,
+    "blocked_rows": 0,
+    "partition_rows": 579,
+    "partition_matches_authority": true,
+    "duplicate_exact_keys": 0,
+    "network_outside_authority_rows": 0,
+    "non_close_family_download_rows": 0,
+    "ready_for_core_4739_transition_close_absorption": true,
+    "ready_for_experiments": false,
+    "future_data_violation_count": 0,
+    "formal_model_changed": false,
+    "trade_decision_changed": false,
+    "active_in_trade_decision": false,
+    "report_changed": false,
+    "portfolio_replay_executed": false,
+    "ready_for_strategy_replay": false,
+    "ready_for_formal": false,
+    "not_live_rule": true,
+    "forward_returns_live_rule_usage": false
+  },
+  "files": [
+    {
+      "file": "authority_guard.json",
+      "bytes": 566,
+      "sha256": "e67bbe631b99300d096ef55564e169983f7b52139cf7f9dc1225fd704c32fc51"
+    },
+    {
+      "file": "checkpoints/TWSE/2018-04-09.json.gz",
+      "bytes": 565,
+      "sha256": "6e9d28f5745ec895044296ce3308fd77e57bb030258e3381e74c73384225fbc0"
+    },
+    {
+      "file": "checkpoints/TWSE/2018-04-10.json.gz",
+      "bytes": 564,
+      "sha256": "d6b6976a79cf79c55cecd161dbb86bedc73de60afc62780c72ed3ffcc2b3376b"
+    },
+    {
+      "file": "checkpoints/TWSE/2018-04-11.json.gz",
+      "bytes": 565,
+      "sha256": "4f847e8a0fb0682cdbd56e16b5f2733b5d18e7a5667e90e3dcb356c398edd355"
+    },
+    {
+      "file": "checkpoints/TWSE/2018-04-12.json.gz",
+      "bytes": 566,
+      "sha256": "ef0c5faec036030b607d205d9344cfc3c2b68e46de5a3c0326b9d84f034cfab6"
+    },
+    {
+      "file": "checkpoints/TWSE/2018-04-13.json.gz",
+      "bytes": 567,
+      "sha256": "c46b6fdfef374968c40bb4ab93222673162f2503302b7b5b194d850feee47dc3"
+    },
+    {
+      "file": "checkpoints/TWSE/2018-04-16.json.gz",
+      "bytes": 566,
+      "sha256": "b3f5c578ed3041316dcf431898950c724d1950d3793d16dfecad32de3f5b04eb"
+    },
+    {
+      "file": "checkpoints/TWSE/2018-04-17.json.gz",
+      "bytes": 566,
+      "sha256": "f069474845c11ea21acfa53d151ad3514052bbd47b17d5a5cce9d5bf80cf5196"
+    },
+    {
+      "file": "checkpoints/TWSE/2018-04-18.json.gz",
+      "bytes": 566,
+      "sha256": "6c6b444f987a8f14d5f71a92e32eb91a59068358d1d1fd260a433ec0cb3bc410"
+    },
+    {
+      "file": "checkpoints/TWSE/2018-04-19.json.gz",
+      "bytes": 566,
+      "sha256": "3d3d2b3ef85a8cdd9dd04696e7cb13ecdebb832b417a3d288bbf2c7e2a08d098"
+    },
+    {
+      "file": "checkpoints/TWSE/2018-04-20.json.gz",
+      "bytes": 567,
+      "sha256": "60b19d0532d0005a0226baa18e59858ed2e9146f73f5d94c249b94bf7f2c2ed2"
+    },
+    {
+      "file": "checkpoints/TWSE/2018-04-23.json.gz",
+      "bytes": 566,
+      "sha256": "03a74a3b8c42b1be7aa19d4508d3afde97ba3c72cc248e99a34114cf19caf4bf"
+    },
+    {
+      "file": "checkpoints/TWSE/2018-04-24.json.gz",
+      "bytes": 566,
+      "sha256": "eb9325e95b7fc75ea0452b53d65f5c1eb4c9d8bd80f2ea11ad3865c483ef4d7d"
+    },
+    {
+      "file": "checkpoints/TWSE/2018-04-25.json.gz",
+      "bytes": 565,
+      "sha256": "9be9dc7c9bd04641fe893e667df2c6a5e23967606fa22158007a9f87fae90abc"
+    },
+    {
+      "file": "checkpoints/TWSE/2018-04-26.json.gz",
+      "bytes": 567,
+      "sha256": "6f5363d3fe6b4930349686d989658a3a541d50c40f4a95686defbc81e5090f50"
+    },
+    {
+      "file": "checkpoints/TWSE/2018-04-27.json.gz",
+      "bytes": 566,
+      "sha256": "a17f8a9eb231dca00d0be775633878b2481c8fdcb71658db4bb1dd199b8885da"
+    },
+    {
+      "file": "checkpoints/TWSE/2018-04-30.json.gz",
+      "bytes": 565,
+      "sha256": "c0ab4904bc7d6a31f8c9049e5870f0713be4f6139dbfb2e8966107791690e40c"
+    },
+    {
+      "file": "checkpoints/TWSE/2018-05-02.json.gz",
+      "bytes": 566,
+      "sha256": "5863d747c1734ee32ce551071f6561f2c34e8a4864371f6e6ff856246c72e546"
+    },
+    {
+      "file": "checkpoints/TWSE/2018-05-03.json.gz",
+      "bytes": 567,
+      "sha256": "c114762e806eb57a16ae9946b65554b0dd0a05c5c4f793caa1a99d4ebb6adc46"
+    },
+    {
+      "file": "checkpoints/TWSE/2018-05-04.json.gz",
+      "bytes": 564,
+      "sha256": "8027746bceb5481f6ad59bf3906c9f8795d2554476aa14cdccbd6695a1851e81"
+    },
+    {
+      "file": "checkpoints/TWSE/2018-05-07.json.gz",
+      "bytes": 563,
+      "sha256": "a4c7efbaff9fd11299fe44b3a20a1c2eaded2d435a6f98dff4ba3b30d04e16aa"
+    },
+    {
+      "file": "checkpoints/TWSE/2018-05-08.json.gz",
+      "bytes": 565,
+      "sha256": "9d9387ba95ae4e1ff2e5b7222f1f0294ff9c40e66e03c343ffaea1d8fdfda282"
+    },
+    {
+      "file": "checkpoints/TWSE/2018-05-09.json.gz",
+      "bytes": 564,
+      "sha256": "63227d4c46eb06e849788f3ec831e63b43a9c74ad1bcfd73f7a67833fe32b6b7"
+    },
+    {
+      "file": "checkpoints/TWSE/2018-05-10.json.gz",
+      "bytes": 567,
+      "sha256": "3ecf463dc45928ec2e2945997cf64e7f8ed58e48da591f34df89c4e190667d11"
+    },
+    {
+      "file": "checkpoints/TWSE/2018-05-11.json.gz",
+      "bytes": 564,
+      "sha256": "4ae7d6ccb6b55ce2e31e60bf24729dec75c3a65a4e4b99793f9545d1d7cb4f13"
+    },
+    {
+      "file": "checkpoints/TWSE/2018-05-14.json.gz",
+      "bytes": 567,
+      "sha256": "ad45e92c79e8375db4f2031c0c8c7385e828fb6d6efcc5e94ad545153212e4fe"
+    },
+    {
+      "file": "checkpoints/TWSE/2018-05-15.json.gz",
+      "bytes": 564,
+      "sha256": "fb6cff6a8a4d6d309cf333fcc829b5c0c7b53bb86bcb2abb29cfce8411042c65"
+    },
+    {
+      "file": "checkpoints/TWSE/2018-05-16.json.gz",
+      "bytes": 566,
+      "sha256": "be7f7c884b0c0b3e9ad37b1e32405446289d6680bf464ba263589ce4ea42b53c"
+    },
+    {
+      "file": "checkpoints/TWSE/2018-05-17.json.gz",
+      "bytes": 565,
+      "sha256": "9011d40263c1865e92e6a14448101ed97b962cd1a4ebe3ba94f21c2c61d108bc"
+    },
+    {
+      "file": "checkpoints/TWSE/2018-05-18.json.gz",
+      "bytes": 566,
+      "sha256": "88da57bb44a229d50b1568dae05edcbb29fac74b9eda206a5f2ab696bc824931"
+    },
+    {
+      "file": "checkpoints/TWSE/2018-05-21.json.gz",
+      "bytes": 565,
+      "sha256": "61e667c717af58dc9d448635ce0efaff74e3ed07fdc950e596d75a4d9d7514db"
+    },
+    {
+      "file": "checkpoints/TWSE/2018-05-22.json.gz",
+      "bytes": 565,
+      "sha256": "fb0c949732e7f8eb9c6cfbf06b0f045b2b1e9868fc864b176d50d53e6064ad2a"
+    },
+    {
+      "file": "checkpoints/TWSE/2018-05-23.json.gz",
+      "bytes": 566,
+      "sha256": "aadbd89c823cfdfe2bbf575f3579ce3d2c4497704ce044e5ad46b819428b698d"
+    },
+    {
+      "file": "checkpoints/TWSE/2018-05-24.json.gz",
+      "bytes": 565,
+      "sha256": "b204a30e2ab8a9a10dcbb39ff2408636a8644d454e5f29819992d280160d6448"
+    },
+    {
+      "file": "checkpoints/TWSE/2018-05-25.json.gz",
+      "bytes": 567,
+      "sha256": "a28737dc7ea6c5cce2c7efc6d0ae5ed8b16b9e6fc96e4d2eea14206a102442f1"
+    },
+    {
+      "file": "checkpoints/TWSE/2018-05-28.json.gz",
+      "bytes": 565,
+      "sha256": "6bad82c76a006cc6d91ad68a75354a0f2521f1919e335390f2fbb487adb4219c"
+    },
+    {
+      "file": "checkpoints/TWSE/2018-05-29.json.gz",
+      "bytes": 566,
+      "sha256": "c13681f9ae59f00233f2b3fa426667265909033b8fd5f1549d30846c49c30b9c"
+    },
+    {
+      "file": "checkpoints/TWSE/2018-05-30.json.gz",
+      "bytes": 566,
+      "sha256": "7bb293888eb64d1c42b7fd644a5e36ed8dec05cba5543c1cfa7f52a8328ffad6"
+    },
+    {
+      "file": "checkpoints/TWSE/2018-05-31.json.gz",
+      "bytes": 567,
+      "sha256": "7c3b6df35e572a615eb83e38f66d7caa65ae626a52efeb299aac525e2fa217f5"
+    },
+    {
+      "file": "checkpoints/TWSE/2018-06-01.json.gz",
+      "bytes": 564,
+      "sha256": "7b95582577f18f507a72f768420ff8ed966fbf9c77d2d3e28cb2ecee0e372bc9"
+    },
+    {
+      "file": "checkpoints/TWSE/2018-06-04.json.gz",
+      "bytes": 565,
+      "sha256": "d5a64218335ca5bdf6b19e01eb9117cd003fd87483f6a562a4c0ef5916840aeb"
+    },
+    {
+      "file": "checkpoints/TWSE/2018-06-05.json.gz",
+      "bytes": 564,
+      "sha256": "50427024db47f570661cb458348937519edd87fe7ca9e8c87f5ea510ff95a168"
+    },
+    {
+      "file": "checkpoints/TWSE/2018-06-06.json.gz",
+      "bytes": 565,
+      "sha256": "18b9025372fa3723e2b663ccff3af6865b318f55a9a35ba64159e94e21e53616"
+    },
+    {
+      "file": "checkpoints/TWSE/2018-06-07.json.gz",
+      "bytes": 565,
+      "sha256": "d97ec46d1b89d842bd3b7e657c74751969ac1b3c62e57fe4af002e32364f7b7f"
+    },
+    {
+      "file": "checkpoints/TWSE/2018-06-08.json.gz",
+      "bytes": 564,
+      "sha256": "496852555f0a99a399144e79485cb92173a2b820128da4fae801a91433066f74"
+    },
+    {
+      "file": "checkpoints/TWSE/2018-06-11.json.gz",
+      "bytes": 564,
+      "sha256": "6db81794a58dda1e872773a756ef40b7d06ff7419c22682a7805f614370629c9"
+    },
+    {
+      "file": "checkpoints/TWSE/2018-06-12.json.gz",
+      "bytes": 564,
+      "sha256": "4800e422962249e1a750763757b03dc70f6999260bf56eba69ca38fd27be4687"
+    },
+    {
+      "file": "checkpoints/TWSE/2018-06-13.json.gz",
+      "bytes": 567,
+      "sha256": "b416f9f881016a92364ccb69f179057974be7dee06902268812fb03b55c8b29d"
+    },
+    {
+      "file": "checkpoints/TWSE/2018-06-14.json.gz",
+      "bytes": 567,
+      "sha256": "0a176c0bfd058261b2cb5c17c427248875b466ef5b4e16b1b03ea8e3002e3ede"
+    },
+    {
+      "file": "checkpoints/TWSE/2018-06-15.json.gz",
+      "bytes": 565,
+      "sha256": "3e5596df49b26eb00c0b6bad5715b2979a3429648d5d1767d587ce326ab86b9c"
+    },
+    {
+      "file": "checkpoints/TWSE/2018-06-19.json.gz",
+      "bytes": 564,
+      "sha256": "2a9c3dd25ed1cc78a7dcca118acb06d775a1e1db6f574b117d91ce9e91f3e3ee"
+    },
+    {
+      "file": "checkpoints/TWSE/2018-06-20.json.gz",
+      "bytes": 563,
+      "sha256": "361e19bf7c5a3dc83b7a61518ff0bbc42141d72c4a2fec2d111be113ed1e8016"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-01-17.json.gz",
+      "bytes": 562,
+      "sha256": "3aa7580750f7f06e5b1b9ebaf484e7a1b0562345e17dc37d99822feb413d3179"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-03-11.json.gz",
+      "bytes": 563,
+      "sha256": "9a3883f961bd399cec921a33b308f0849ae1bc3cdf92a4daf9a931e7a4b2b3b1"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-03-12.json.gz",
+      "bytes": 564,
+      "sha256": "f57878784ecbb6861082630109d33760ec4d11a64b8ed5988f4dbbc8ccdab103"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-03-13.json.gz",
+      "bytes": 565,
+      "sha256": "57ccd0fca48c6bac376a401bf276e2060cd97836ccdefa3700319d9d1c3f3110"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-03-14.json.gz",
+      "bytes": 565,
+      "sha256": "6df65abacd88588f3488532972485693056833d1a38e581a040cf6dc06919b89"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-03-15.json.gz",
+      "bytes": 563,
+      "sha256": "b6ebe9f04c8daf441b0a0e97ab603d23263f57967079de6d67ed2dc03c09934e"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-03-18.json.gz",
+      "bytes": 565,
+      "sha256": "080fb1153a17452618af5b36c7b07e25239944e66278d0692392931103bf9c39"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-03-19.json.gz",
+      "bytes": 565,
+      "sha256": "2c1ead0666fed336063e9306db956a71d8f565c6afbfbc5830d92e6dde1fcfee"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-03-20.json.gz",
+      "bytes": 563,
+      "sha256": "48f66dd2238692ba093e77f9f2bdb46d74339908d791fc9fbdcd3c0d4476905d"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-03-21.json.gz",
+      "bytes": 561,
+      "sha256": "117ecf2dae1025c0097f752c21b898f41406456c4752fdc890ae28bff58b1a9c"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-03-22.json.gz",
+      "bytes": 564,
+      "sha256": "5ac1509da0da95bf8b011bdb0979f024fc9a41b10ec3435b5dcd2b801d3e6e3f"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-03-25.json.gz",
+      "bytes": 565,
+      "sha256": "a8d103091ca793b91701190e4cd95250bf3aaf4b44063b7974fda4cdfcce9247"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-03-26.json.gz",
+      "bytes": 565,
+      "sha256": "f82586cbccf63d34186b48107ff7bcbca00dd08729ddcda591f227058ddfce5c"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-03-27.json.gz",
+      "bytes": 564,
+      "sha256": "2d22d4ad850236466882b002ae655944d935f6882de6aac9613b2180b42b0980"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-03-28.json.gz",
+      "bytes": 564,
+      "sha256": "4db1616af8afa6cbf7237b9783d06a7976c3f05d4fd4cf07f34aff6a0a4a9383"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-03-29.json.gz",
+      "bytes": 563,
+      "sha256": "dda7cacab0f27cdf412a24ad458f16c60f64aff5cdbe4278fe6883dc1b85155d"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-04-01.json.gz",
+      "bytes": 563,
+      "sha256": "6e9773d15f2b8bfcff0c44282f4f308f9938f398f58a2c421228bcdcb98e4853"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-04-02.json.gz",
+      "bytes": 564,
+      "sha256": "f699f7a5eb4e7142ba74a2d543e11cdf0aeef8748a3ca02188ba339e4d235131"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-04-03.json.gz",
+      "bytes": 565,
+      "sha256": "1801f548a79d7dc78dd609e0b58dff910d57ba2ebc18c13ae99e6e73360d308d"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-04-08.json.gz",
+      "bytes": 563,
+      "sha256": "8b27172aebc89250523c6b92cda042a93f28c5c27f8ae04180707253febfe0aa"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-04-09.json.gz",
+      "bytes": 563,
+      "sha256": "e6d30967473735bc614d814404ca0c89efabf3ed7f394aa06f782c447865cf33"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-04-10.json.gz",
+      "bytes": 565,
+      "sha256": "0399784a217f6ad00a152489950561ba97c093c42e223a39078bc5b070b47abf"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-04-11.json.gz",
+      "bytes": 565,
+      "sha256": "435c092ae294461b7bd0d0ead5b1ec85ee87a67dca773c9dd3b7ebcab52bb8ce"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-04-12.json.gz",
+      "bytes": 565,
+      "sha256": "cbf9f001bbbf025ceb16fdc430dc6a0ab7ebd58c0b1bdf0066fe69cfe352a6d2"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-04-15.json.gz",
+      "bytes": 565,
+      "sha256": "8006ca27fc768b3df2ebdb2d58fd7e841cf91ae09881e05c53ff6cb53e534fe8"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-04-16.json.gz",
+      "bytes": 564,
+      "sha256": "98c532395617163fe027584af774c9dc646309e7b1a3b9c376ae5a0c13fdd731"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-04-17.json.gz",
+      "bytes": 563,
+      "sha256": "668325a2d5470c4a9eeb1ec2ae07a634af209cbc8e9dfdeef388665b9d2e65a4"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-04-18.json.gz",
+      "bytes": 564,
+      "sha256": "7918fa9c6ed6d3d85dbe0034f10de184cba6215a7ddd6d8364ccda30c1de0470"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-04-19.json.gz",
+      "bytes": 562,
+      "sha256": "b8eaf1e3231ab48cca6831a1f9b7975320bdf9d86405c72d614e71567162c276"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-04-22.json.gz",
+      "bytes": 564,
+      "sha256": "0a427d2dc5db36cc5661a7be02b3ef12596fefcb2520073941065a419bc96cc4"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-04-23.json.gz",
+      "bytes": 564,
+      "sha256": "a045aa02f0ec412dc9361d61f2a3db4cfddfe1f4745de5116d46bb4e464d77a2"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-04-24.json.gz",
+      "bytes": 562,
+      "sha256": "2b35aa036da797962cf1afb42688d1157f409c83d5aeac920bc6b7ccc7690b5f"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-04-25.json.gz",
+      "bytes": 565,
+      "sha256": "0d9f15d31cf6974c7d563f82dd4ecf5a788935f665af7ffa686c520521b28bfa"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-04-26.json.gz",
+      "bytes": 565,
+      "sha256": "de3268fcd42ecd47c0b28af2d32e7e0890b971be1e9397114ccf76cbe0ab6479"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-04-29.json.gz",
+      "bytes": 563,
+      "sha256": "82ff5684cc2a367f669b8c57ec6358a9da864ec05ff3ce4572467d43c49d9a9a"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-04-30.json.gz",
+      "bytes": 565,
+      "sha256": "aa639eae9dc80b9f41eae1147c4345fe847c2c31954c00f19ae542c4140d3294"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-05-02.json.gz",
+      "bytes": 565,
+      "sha256": "65e126ad78debfb60a395dd1ee3284742d62b8c9ddaf703bd13e9d590dbc7833"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-05-03.json.gz",
+      "bytes": 565,
+      "sha256": "ba601efab49dcdd64841989ee3dc968d8be673a33e5d4a4ce0f517417c4b0a5d"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-05-06.json.gz",
+      "bytes": 565,
+      "sha256": "4de9ca7a35ab291b21ae3bc5d0eb0a515f5ca561f5245279ddf97fbbebd3e1b3"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-05-07.json.gz",
+      "bytes": 562,
+      "sha256": "31386917e15abd6e8a45f866b8516be8101c07bd5894900091275f1bb93546c7"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-05-08.json.gz",
+      "bytes": 565,
+      "sha256": "c0d956e8445c286d42bc3ad88091303bff2299e6d0ba4e1673babc800852fb10"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-05-09.json.gz",
+      "bytes": 565,
+      "sha256": "712fd752e6230bb2d6d945202b7042ad0da7e2049b5e7a9739300b9736f268e2"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-05-10.json.gz",
+      "bytes": 563,
+      "sha256": "0cfb75ff5dbf28b2b00a829722f68931285bd000db8549c4d3a230abcde3218f"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-05-13.json.gz",
+      "bytes": 563,
+      "sha256": "173272e6c8119076391ef34b34b88871594d635cf0c5f8b39339db63bb24f854"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-05-14.json.gz",
+      "bytes": 563,
+      "sha256": "f4aaf269a5f5da3e41c58ebaacd210bedca64d63ea13c4e7d4c7beb47bf3d100"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-05-15.json.gz",
+      "bytes": 564,
+      "sha256": "4942cc832d287dbb1e2a67f3035b09d66e6dd52afeaad480d3c94185aeed76ab"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-05-16.json.gz",
+      "bytes": 564,
+      "sha256": "be537428c75b229fb562aecd63c5cc436956e3c33b5a7a67d73de213514e23b9"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-05-17.json.gz",
+      "bytes": 563,
+      "sha256": "1553dc8261773d3322b62fa5f7ee2deccfc7d9921e2a6f6d9f163a2a970aacae"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-05-20.json.gz",
+      "bytes": 563,
+      "sha256": "a186b7234fe4ccc6b51771f22a11e83fcc4f4e6180469b7dc9ea47da8a0372af"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-05-21.json.gz",
+      "bytes": 565,
+      "sha256": "f685e5691cf016ed44f85675fd22870ceecbd07d8938fc490415e4d068852c7e"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-05-22.json.gz",
+      "bytes": 565,
+      "sha256": "8cb120a98b608ccb32fd481aa7c636a449be59b5e0e2d4f0dde63fa3aa7b28cd"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-05-23.json.gz",
+      "bytes": 564,
+      "sha256": "6522baa8721d134dc4345e20fdcd07bad2feeba0b16555d4071c8f091b2cd31b"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-05-24.json.gz",
+      "bytes": 564,
+      "sha256": "18a1324166567b846ecc58c6f75175e346ae12ce2ea0836b1bb41bd24a725b7c"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-05-27.json.gz",
+      "bytes": 563,
+      "sha256": "f7ba0911aa62db5e03edfdb171c572bb01caeb621f31e1dd1003d701a53a69be"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-05-28.json.gz",
+      "bytes": 565,
+      "sha256": "29cb47322f3d59781cd20297d36a79b5f0df99653a2d40cbdb481fe18f4a999d"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-05-29.json.gz",
+      "bytes": 564,
+      "sha256": "a4d58657bf6febf497c7586654451b908685ddd6fd53e72e104f78236b9456b1"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-05-30.json.gz",
+      "bytes": 562,
+      "sha256": "7802f9ec7eb2fe800c795e9c803d0196be642cc74c8910ed37a25b667a61ca05"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-05-31.json.gz",
+      "bytes": 564,
+      "sha256": "d0bd25bf568642fb505f9d8b67c399f9ffa8369f001f3afdb140b8ab04a93aa7"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-06-03.json.gz",
+      "bytes": 565,
+      "sha256": "0498065421dc1550e1acf9fd65b18faf636a7cb59423b5418a5e9fe17ac21f58"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-06-04.json.gz",
+      "bytes": 565,
+      "sha256": "ba4b296a0814cde2e5388b379a421e73310230450221c6c116a3ecc1955d629a"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-06-05.json.gz",
+      "bytes": 562,
+      "sha256": "15c5085954accac48684e388f826decf94ddea7ccb6f62f69d4ec1d67a3bf6af"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-06-06.json.gz",
+      "bytes": 563,
+      "sha256": "bdbdcf2192a6e897e6039ccb8f9e8a72414e15006f1d8882b37eb060a3ac2e1c"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-06-10.json.gz",
+      "bytes": 564,
+      "sha256": "b15793fadea6c5ae992db66ea1e03dd9864e8714531546b499524e187c44a86a"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-06-11.json.gz",
+      "bytes": 565,
+      "sha256": "75b69ee78c78e746c0403f13c8b351fd1b50735fa41de52df048a5d88531cb21"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-06-12.json.gz",
+      "bytes": 565,
+      "sha256": "4d6bf14a64b3f73b612bf7cd6968fb321e7b731dc580dcf182c9423a7b0fe5af"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-06-13.json.gz",
+      "bytes": 564,
+      "sha256": "07ec282f2d23228beed08f60a926a166473c9b428d53cddab8ca0578906b387e"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-06-14.json.gz",
+      "bytes": 562,
+      "sha256": "5f7a7996b5ff475bae065cefe7c4ac08381e601f5a8f671cb537c88b9d702d8c"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-06-17.json.gz",
+      "bytes": 563,
+      "sha256": "d512d9b72a22cc9d05afcdf9c1c6be94dff41c0c70a7abcf70215d8548701a8d"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-06-18.json.gz",
+      "bytes": 565,
+      "sha256": "55980ee7d5dd50f51c80a6668cda88ab00918e2222f776e70f3317fd9ee93e9c"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-06-19.json.gz",
+      "bytes": 563,
+      "sha256": "57ff5b63fd492e981f16a43349275e823f66dad7ecfee50dd079b58d558c9c9c"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-06-20.json.gz",
+      "bytes": 562,
+      "sha256": "a0700b7ac579d63d53f5be388ed574f857a5898387f46f1255554228fc0a9646"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-06-21.json.gz",
+      "bytes": 563,
+      "sha256": "2a1fb48aa67bfd39adf14aea1ad93d00a3c9a67e3ae0895797280a6540ca0cff"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-06-24.json.gz",
+      "bytes": 565,
+      "sha256": "e6959ebf082773e0fb1eb9da38e64c381e4e0d0bc094a497fc1186df8bcf610c"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-06-25.json.gz",
+      "bytes": 566,
+      "sha256": "85592c1fd891870760d7ea2829260b76c4c825acd1c4e785086ca6bf690d2217"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-06-26.json.gz",
+      "bytes": 564,
+      "sha256": "a728b7cd64f5bb4be963967eefe5c2be556a218f2f7db5cb4452fe84cc1e3330"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-06-27.json.gz",
+      "bytes": 563,
+      "sha256": "ca428424f3deed28dc485a78fe602c9c0b1bf25643728a8b18712a9deb72f190"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-06-28.json.gz",
+      "bytes": 564,
+      "sha256": "65a04cbcfd35fca55b7ee24f8d887756cc3f492749a4e3c9b3f8f87411fa0c78"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-07-01.json.gz",
+      "bytes": 560,
+      "sha256": "6ea22ab549e88bb738a165cf22c6c6a19ff25a2e730e49d0d7764033d1e79865"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-07-02.json.gz",
+      "bytes": 562,
+      "sha256": "f346502436f8a057447462af2f2566fb990e7f9dd045935eac91780736d6a27b"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-07-03.json.gz",
+      "bytes": 564,
+      "sha256": "f4d7e5bd56cfd3c1b08eddffa5d7281bc6c08187beddc7e117f55ff0e248367f"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-07-04.json.gz",
+      "bytes": 564,
+      "sha256": "9ec36adb2555622ec8b099b5665b9db0d561a8673204157971c1686fb96141f2"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-07-05.json.gz",
+      "bytes": 563,
+      "sha256": "8e5c46564e2d68390ffd2941b1a71f8f4a1d5ecc706bf1b8c1c924c02d653ab1"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-07-08.json.gz",
+      "bytes": 564,
+      "sha256": "8863d21ca57cac0a3eb458c0219dd25dcd894b480d776b416e47534af41e8f88"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-07-09.json.gz",
+      "bytes": 562,
+      "sha256": "aec353bc616cd2b7491ee9af9d7b3e42f68f57f02a05284904862abf784b3f95"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-07-10.json.gz",
+      "bytes": 563,
+      "sha256": "65d991c4981215cdd28218d96aee12df0cae1526d8256fadc3966dd25e4909dd"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-07-11.json.gz",
+      "bytes": 561,
+      "sha256": "d01a86497dd0a5effedca8250a055c1261df9f2fbf48affdcc84dc2df9d094ad"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-07-12.json.gz",
+      "bytes": 561,
+      "sha256": "0a7ed3bee7a9f746dee2f8b3e39f371d7f58dd4859dd48aec48fdd595c6bf3c0"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-07-15.json.gz",
+      "bytes": 562,
+      "sha256": "2872ecbecc1d2db589ba4b03510fd8284548126d8a0097453384fed0bea5cea9"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-07-16.json.gz",
+      "bytes": 563,
+      "sha256": "fdb8a93269631079fe406bc4014a4d43f697fcc3ab1036c6454e393c4fb694c7"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-07-17.json.gz",
+      "bytes": 560,
+      "sha256": "4b9b93072a04115337e775b71f65be9f27b09c785911e2911e70b65b25f7d165"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-07-18.json.gz",
+      "bytes": 560,
+      "sha256": "cbbb26f5407ffd43f8f6abfd3326bc1fbc43f2843764c399ba2f00e8e9b22fef"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-07-19.json.gz",
+      "bytes": 562,
+      "sha256": "5bda3ff3e6608398c44f8bcf3d8ab52faf19c0ae0544928167a12423822abc62"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-07-22.json.gz",
+      "bytes": 563,
+      "sha256": "bd77b60334cf3feb41c47abaafdcb1eba805d70643a68682f4c88028a41a2688"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-07-23.json.gz",
+      "bytes": 562,
+      "sha256": "9569160bf6e548ba7f7eace17d3583a948180e2e3038d1fbdac1a90e2911496b"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-07-24.json.gz",
+      "bytes": 562,
+      "sha256": "a0534e06d606fec06455acc9655afd0a4652f39a7f9803408bb421c1a9f14ef0"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-07-25.json.gz",
+      "bytes": 561,
+      "sha256": "097e02be00368706ad6e1857c01915b700c15b263ca57b8f07073fb8cbb57dd1"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-07-26.json.gz",
+      "bytes": 562,
+      "sha256": "222c05547405a0f1a4c6fc579ee9930bce39d3f51f2b84a96aa83e70560f5e93"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-07-29.json.gz",
+      "bytes": 561,
+      "sha256": "c4ec2fdb0a67c4fdc00ef1cc87199c8376e0e48683ac7c399092d8087d7356ce"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-07-30.json.gz",
+      "bytes": 561,
+      "sha256": "0a63c7e0fbe2698256715bc5710a9e714417a7747645a1b242185d54c69d054d"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-07-31.json.gz",
+      "bytes": 561,
+      "sha256": "f84a86c3a48065849f351c41f4a92232e1f64b029125f361c4258547012a1006"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-08-01.json.gz",
+      "bytes": 561,
+      "sha256": "9523c5faff81e21a2acf1603ab30d36750f2c783dec1e2c29e259200c2787b5c"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-08-02.json.gz",
+      "bytes": 564,
+      "sha256": "588b5b59086d9ab8fd2b382c4e94497bad5f36c7433dd69f1f6c71d15838c2f7"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-08-05.json.gz",
+      "bytes": 564,
+      "sha256": "fd31f1a8f3d6fbd12fab2acbf834afb50e26971981d16289f2249e89366faa1c"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-08-06.json.gz",
+      "bytes": 562,
+      "sha256": "ece7e8d48334c4b39955f026f314836177eacc1bb331872b43f54cebd9887310"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-08-07.json.gz",
+      "bytes": 565,
+      "sha256": "ee8e7f97643692bbf85fdbac626789112b7fa8bee7b91d0252dccbe820514cc5"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-08-08.json.gz",
+      "bytes": 564,
+      "sha256": "cf155bbb0bebad4a01b23f7b9313c4035d9ff8ecf910a026be600bba87251977"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-08-12.json.gz",
+      "bytes": 565,
+      "sha256": "462f850919eb5639fe0c17b662ab556a17c061d4e77f102c4d9dc738896f93ed"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-08-13.json.gz",
+      "bytes": 566,
+      "sha256": "841a3b41c202d31902f66f1d8673673c3784bbba33baad6eaee3aec55e58d1e5"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-08-14.json.gz",
+      "bytes": 564,
+      "sha256": "576e715d4598541c9b4b0ae31be64570e4c4b8eb57890f6c138c8a5474d11301"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-08-15.json.gz",
+      "bytes": 562,
+      "sha256": "911c93ccf52688f405cc256a5137a5ee32188809521d28f32387fccb486738a6"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-08-16.json.gz",
+      "bytes": 563,
+      "sha256": "064c62b4be8db35463cbc4e65e7e9e43c73ba94933924c0e2ae916982fdd7bd1"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-08-19.json.gz",
+      "bytes": 563,
+      "sha256": "5b4f82d6a21ba7a440b0751b7dbb68898f3bc8cb80086a20f1038ec01ff10b86"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-08-20.json.gz",
+      "bytes": 563,
+      "sha256": "bfee32e38962e21c20c95ee6d3db3c1106cb377f0588c2282ada744b629a2321"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-08-21.json.gz",
+      "bytes": 564,
+      "sha256": "bc9599770e11676d823dd5ecc7428462abe9dadb578a0fc4aa256ceedfe85e75"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-08-22.json.gz",
+      "bytes": 565,
+      "sha256": "02ce6fa4398f53213e6d9c9a8aeb9b85b2aad7c2228d082245689636b11f8378"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-08-23.json.gz",
+      "bytes": 565,
+      "sha256": "58c112f8c2288bac1eec78119a1475232b2622b96c412c56132c2c2ce73e126a"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-08-26.json.gz",
+      "bytes": 563,
+      "sha256": "acf47d32f086750d39eec8466dd5055c8726671f82d5ec9470ebe4d01f08688d"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-08-27.json.gz",
+      "bytes": 564,
+      "sha256": "c1e6fc4eaa55bd3df236133630e7946780e30b74e4a7a81f4eb814a8d4660f2d"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-08-28.json.gz",
+      "bytes": 564,
+      "sha256": "829bc4dc9db71c341a25a42222ec1e32ed97a856aed7bf0b51e5c80640be5cd2"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-08-29.json.gz",
+      "bytes": 564,
+      "sha256": "796fc504de6a2cb5e6f77e1a279eeeffc4da7fe27201a7aaa97286104039f83b"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-08-30.json.gz",
+      "bytes": 564,
+      "sha256": "dd6b146443bbeee5d75c003d9a0d038a3b07a68844e7da41c9546ba650d2d011"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-09-02.json.gz",
+      "bytes": 562,
+      "sha256": "eb4de3ebb47927e90437869e5ed217cc07e208fbd5e589302460d1ccdadd539c"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-09-03.json.gz",
+      "bytes": 565,
+      "sha256": "92c13949dfd1da86bd0e32a3b17e12931656a148ece8f1a21acb8e5b65a4a9b4"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-09-04.json.gz",
+      "bytes": 565,
+      "sha256": "fd74315cdf8ff37fb3aa69086b30f5d82fb18b38d475aa521878624683ec6938"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-09-05.json.gz",
+      "bytes": 565,
+      "sha256": "d0cb67b7875cffc83240827d863241ff62b81509f6298781fdfe0ccbf601a9a4"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-09-06.json.gz",
+      "bytes": 565,
+      "sha256": "6dd4c34149e5619f183dbd69cc54bb896b0c1f75763c8847712759989579ef8e"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-09-09.json.gz",
+      "bytes": 562,
+      "sha256": "dc14ab249e79ee710fa10e0681b545be04db17a4754dfda2d2370c798345636e"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-09-10.json.gz",
+      "bytes": 564,
+      "sha256": "30eba2e5db4faba0201a0c2ac54d967c2a34ca84f5fd45b750029d0cce93bab4"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-09-11.json.gz",
+      "bytes": 563,
+      "sha256": "763cd51df96eb10c1673cde85a0428ddc24d3859b6e8264860763139e15c0094"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-09-12.json.gz",
+      "bytes": 562,
+      "sha256": "bba242c47f37981a2ee00ab151737061b1c8e7a966c11deefb580711f2750329"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-09-16.json.gz",
+      "bytes": 566,
+      "sha256": "e94b0b6bfa718ac97a4d18b4a34481d66f0106287b8e845e37cb302be5c7e6bd"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-09-17.json.gz",
+      "bytes": 565,
+      "sha256": "ceef2fca411df31c9ae2297749502d809adb3db26db504df7753803ecdfdd71f"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-09-18.json.gz",
+      "bytes": 563,
+      "sha256": "201d40e4ba0d6d16fd61278adfa7e085c40de1b6d08e6c3f244285d2ae83d3b0"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-09-19.json.gz",
+      "bytes": 565,
+      "sha256": "9d8126942c261c90ab425bc357cc0352171a5f3baf7c8b28660aeacdac5148dc"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-09-20.json.gz",
+      "bytes": 563,
+      "sha256": "bab135e60de9d8cb82c4416e3b3f560f26edd2aaff7a8bf7a0536c0a6d4727aa"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-09-23.json.gz",
+      "bytes": 563,
+      "sha256": "ecffb9b5f3c9af358be77bf6f066d65617f099a1daa837508711b9a71a2916ce"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-09-24.json.gz",
+      "bytes": 564,
+      "sha256": "b78ae2dd528e0c83bfafc80a0945f66fd1dfc7a83e3a263f729850900903db7a"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-09-25.json.gz",
+      "bytes": 564,
+      "sha256": "bd07c430f6716e9b23a291c309ad2794ae2166793dc720bb802f2b5709de20f8"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-09-26.json.gz",
+      "bytes": 563,
+      "sha256": "ea68998f72cef80bfb44e0ddf23a18522de5a24e5bb6a1e30079be476e92ef3e"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-09-27.json.gz",
+      "bytes": 562,
+      "sha256": "a4061d045d152f24bd1a4be9abefb25c9304f20f811327bb7f3112d85b9ec4de"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-10-01.json.gz",
+      "bytes": 563,
+      "sha256": "56fa6d41e83c8009dd3e52dedbc3a159874c8019fe1933aba1064593d14940b6"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-10-02.json.gz",
+      "bytes": 564,
+      "sha256": "5fb939d1e9847bef791577d1f9cef271b6f09a094efb1efb1fbf1e6e64718d33"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-10-03.json.gz",
+      "bytes": 563,
+      "sha256": "b729406c2d6b0dfb9aac36408598918525fb36feff21aca29261ae48ba88686c"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-10-04.json.gz",
+      "bytes": 563,
+      "sha256": "3f69967b9be2b64c46590d62338036d06d44f17f237afc26f832588e76c85f9d"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-10-07.json.gz",
+      "bytes": 564,
+      "sha256": "068946973840a91a5d7653c99dfcbe0c5df41142c13a2cf52cd54e193a954521"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-10-08.json.gz",
+      "bytes": 564,
+      "sha256": "1ffad9ac3edca5eb0362fb0a2e4ea801729c45525103ed28f7da088ffbf6f3d8"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-10-09.json.gz",
+      "bytes": 564,
+      "sha256": "180ff4df8ff22449f4e55ed04f282732acfb9668b7eb0f8f793d8aaf76ac37ee"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-10-10.json.gz",
+      "bytes": 684,
+      "sha256": "a5ab868541aa29763ef5623dfd019354dbc7e029ef9153ff29d07bf7ef9388ab"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-10-14.json.gz",
+      "bytes": 564,
+      "sha256": "b85928360c5624ef25f70d260d9007bcc209eb93708b519fd3fd2881f97b8294"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-10-15.json.gz",
+      "bytes": 563,
+      "sha256": "5b6af6a2b2295b13759f2659a7bd185931bfe00dc13fa72bb09a151c51aa5e16"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-10-16.json.gz",
+      "bytes": 564,
+      "sha256": "2c2a38d7c549440f1696e106eab0063df4132e8976290829eb6ae8b0b03fa1eb"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-10-17.json.gz",
+      "bytes": 564,
+      "sha256": "58e96ada3688472a57ae4587a7640ca0a24c6bc653e84daa9f2b3f050c393fcd"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-10-18.json.gz",
+      "bytes": 565,
+      "sha256": "03a8068c6e86b6274c6501dc6bcf11bc23df16fb7533ba2e7a8dc6890a8f159d"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-10-21.json.gz",
+      "bytes": 564,
+      "sha256": "3b3985bdf2085e081b194495de1fb3edd6e7ecb8c6dfb8f004e87bc5c3cce210"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-10-22.json.gz",
+      "bytes": 564,
+      "sha256": "97229a1be12744be082a58d08f8115b0ab7ab61469fa05a9010d20c7cbe2216c"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-10-23.json.gz",
+      "bytes": 564,
+      "sha256": "e9400b27b22276642f7a892ab6bdaa6cafcf0eda1e9a7defd37d146e1b73078b"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-10-24.json.gz",
+      "bytes": 566,
+      "sha256": "ede53a391b8ce54e557194f18fdea1e7acd72ae5c212406b07b59d9bfc12b4c7"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-10-25.json.gz",
+      "bytes": 563,
+      "sha256": "fd2ebd5db884d1c3dde8c41d2f57837b900a387a715ead424bf41a9efcf08466"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-10-28.json.gz",
+      "bytes": 564,
+      "sha256": "59eaf1dcabf2e8814d7a2f75ce208ec7d550e9854418ed57f85f66872de856cc"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-10-29.json.gz",
+      "bytes": 564,
+      "sha256": "5a5e93a2ea5819477705eebfaee14818382fbfe7fd0dca831833cf65d64b1afe"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-10-30.json.gz",
+      "bytes": 564,
+      "sha256": "4436ff48fefbf12beece791a24a3a2f4111ae30b2315319f7239a889446f38e4"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-10-31.json.gz",
+      "bytes": 565,
+      "sha256": "3d29376710d9b8e5f09135649b95ab937be9afa8bdf7aa234f92332a458e7443"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-11-01.json.gz",
+      "bytes": 562,
+      "sha256": "f7d8fb36c42d54fa3e0aa54bc9774a968e233978d29bdc5efbfc325760c25a18"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-11-04.json.gz",
+      "bytes": 565,
+      "sha256": "245c31a7859c0eed92dfc99bca1cf296d208fecd40237b3582bf6b0332262985"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-11-05.json.gz",
+      "bytes": 564,
+      "sha256": "24837bcd3a1555e833dce55e7354d1ba71a2e0e97d5b17fd0dd817c786ec4e24"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-11-06.json.gz",
+      "bytes": 564,
+      "sha256": "257db649e541ce7d90baffa5fe19c1ed853b044ea1ecf7ca7a67ffe46f3bea0b"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-11-07.json.gz",
+      "bytes": 563,
+      "sha256": "72a2250a832427dbd953abb191c0a09ecba83295bcf87c4bf431a7c67e2ada00"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-11-08.json.gz",
+      "bytes": 565,
+      "sha256": "439a077c122a18db2f4002133c5f1dbcceeca8f25437ef394df4296d72d7f45a"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-11-11.json.gz",
+      "bytes": 564,
+      "sha256": "0350aaeb1d820e1c2b5b0818815d8f5a1fdb708f295e5614f69ce8f318f3e11d"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-11-12.json.gz",
+      "bytes": 564,
+      "sha256": "3d41fbf7804443912483e63f3c27f2de184af21308b0488171f4a88d5ecffaed"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-11-13.json.gz",
+      "bytes": 564,
+      "sha256": "842c7dffd04b8bc5618419c6f907793013285c1c9e980f573a073d047e970ea9"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-11-14.json.gz",
+      "bytes": 565,
+      "sha256": "bf313a8e9fd4e4c6622b55f8d21c9e79257c976068a6c29172bc8f15cfb95e6b"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-11-15.json.gz",
+      "bytes": 565,
+      "sha256": "03801a800793da745298716e8008ae1ce6ad6ffa637b66d6089a419dffda9574"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-11-18.json.gz",
+      "bytes": 566,
+      "sha256": "21cd1f513195bf1a1c221a415b274c413e0ca9d735e30f6025125fff30564740"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-11-19.json.gz",
+      "bytes": 564,
+      "sha256": "03a114bc50b39ade800f40f9825383f44bddc5ecf14649018f4531ea08215905"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-11-20.json.gz",
+      "bytes": 564,
+      "sha256": "eddb995024c1e5f9d995990c4e361cdbe95d894c672ddf2f405d87ef978aa265"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-11-21.json.gz",
+      "bytes": 564,
+      "sha256": "36c807090e723a0429d314aa29fb39d34b0a1330d3a905c1a128dbc7c0cfe258"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-11-22.json.gz",
+      "bytes": 565,
+      "sha256": "58017069b28bfd98a08c27b9ac5ac6990cfac10b9a430d6a0668fe0b4c5ab1f6"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-11-25.json.gz",
+      "bytes": 563,
+      "sha256": "45f4bf1151cb0569894b0a813315615a34226de8e49c8b3a289f354cf498370e"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-11-26.json.gz",
+      "bytes": 564,
+      "sha256": "4c7863f4926aeb1a36ce52efe41cebb50e5b0bad691edd3cac647dfc532759bf"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-11-27.json.gz",
+      "bytes": 564,
+      "sha256": "68f2f0ca90869c275a53901dc9dbf3b0e369eed1c28a74176cf1506821c760bb"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-11-28.json.gz",
+      "bytes": 563,
+      "sha256": "72fee5e422036d80fbb887baa74433b3dfe573cd38693658c565ca43ba5c2df5"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-11-29.json.gz",
+      "bytes": 564,
+      "sha256": "47e0509e515081dfbc2349593b275fd4e3384d39fab8151d5b542cea18d61080"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-12-02.json.gz",
+      "bytes": 563,
+      "sha256": "5fe9bd7d131442b2753f5329ddcc160e499964d1afc0ebaf25ee3e1980234d6b"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-12-03.json.gz",
+      "bytes": 564,
+      "sha256": "edc369d4a10c3e94b148d4a7b8add4dd13862a898a0b3d436b2f3ee277975ce0"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-12-04.json.gz",
+      "bytes": 565,
+      "sha256": "b9822565b13ded9012f9c71292be38d5d99bcdddae5badbcb3e1f614616d70fa"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-12-05.json.gz",
+      "bytes": 565,
+      "sha256": "4a3b8114d946b7cd346b39e73e3f3db7523a04c31d8aacb93deac656b698dfaf"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-12-06.json.gz",
+      "bytes": 564,
+      "sha256": "983d563c5346e6403389ecf1febafb072e09d103366c1fdb01184d2c0f79741e"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-12-09.json.gz",
+      "bytes": 565,
+      "sha256": "5420849222957d8b8d0a83c53f9ff1c73422bca680d83f347b25b6eac971e7b2"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-12-10.json.gz",
+      "bytes": 565,
+      "sha256": "348a7ca415a13ea25e5ba4c24d3f8d978f96bdf97b5fabf63565aeb13ec12482"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-12-11.json.gz",
+      "bytes": 563,
+      "sha256": "d4d820258ced0ef75e2aa26c858a3834531f9509e973a3368fd4b4b613ee8af8"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-12-12.json.gz",
+      "bytes": 564,
+      "sha256": "7f2589d2ae73977f29dbb881dd16408aa1174795d7099ed2b4250e08a13c6358"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-12-13.json.gz",
+      "bytes": 566,
+      "sha256": "b1b00fab4460a429d5b60f56e00069547771b7253baac8df5c3e38e35c5e4ed2"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-12-16.json.gz",
+      "bytes": 564,
+      "sha256": "3a80c6d0af2a3a05df7a25d5905cb951ef9860eee8a12190ec9664bd91e96068"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-12-17.json.gz",
+      "bytes": 564,
+      "sha256": "ee1a18b159f40dd586dea458e2b8403f62d2bfb1b390501dc7d7ceeff96e2e3d"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-12-18.json.gz",
+      "bytes": 565,
+      "sha256": "791bed45408a7afb73b0d75146f7d06ed7ec8c2e4c1473cd1dc79ac5fb40904b"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-12-19.json.gz",
+      "bytes": 565,
+      "sha256": "3dec25a02087121f4c9e920311a2ca7f672abe621ea742298293cbd5794151d7"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-12-20.json.gz",
+      "bytes": 563,
+      "sha256": "b99b64ef627ce06d466e3240f3159ed3f9b1086c3de106053a166c049f671686"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-12-23.json.gz",
+      "bytes": 564,
+      "sha256": "a9db2499da8c03e861ffd732f700ddfb60c4682c1204315b4e753652dd3ee4ed"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-12-24.json.gz",
+      "bytes": 565,
+      "sha256": "14271626d5b63963b8b3f4c0a7a264fba6b92c894a14ac77796a423232f54fad"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-12-25.json.gz",
+      "bytes": 564,
+      "sha256": "62ee0e38571310166a097d23ff323690e7af3fd38618832cd1dfd454166d603a"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-12-26.json.gz",
+      "bytes": 563,
+      "sha256": "9332d2f19d5a0ae2bffa22bffd734e90ad515513010eba806b956e45f91b5363"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-12-27.json.gz",
+      "bytes": 564,
+      "sha256": "2f4dad60277467439604baf70f65162c217515dc100149ff46400da2965ded01"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-12-30.json.gz",
+      "bytes": 565,
+      "sha256": "15f9a1402985a1073005acc6f50d395b2f46c96e4f8b64715ce5a8e1eb89eb14"
+    },
+    {
+      "file": "checkpoints/TWSE/2019-12-31.json.gz",
+      "bytes": 565,
+      "sha256": "381a490d427e755d66265c32e05a0a293d896cbb76aa1758fafa844740609215"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-01-02.json.gz",
+      "bytes": 563,
+      "sha256": "fe02f002c19f0e66fb0d4620b6d7422c9fa771bac3f78a8269e79d5de180447b"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-01-03.json.gz",
+      "bytes": 562,
+      "sha256": "f529d8dcc46818ea058cc424dbad91324fa6fd4f669749708e6fa3865e8d7b53"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-01-06.json.gz",
+      "bytes": 562,
+      "sha256": "39e82a858aab119c090eabae1b6238305e6a8c033baba025c0e62a62fa7df9f7"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-01-07.json.gz",
+      "bytes": 563,
+      "sha256": "a9f3136159de15c61b73090758fecbb2cc64835803098a9376be9b7862c97259"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-01-08.json.gz",
+      "bytes": 563,
+      "sha256": "18bbde31074fcd50c9a817c8a2aa9652ddd5150f07317819ac8fc4af7e263037"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-01-09.json.gz",
+      "bytes": 562,
+      "sha256": "2f2d0cff417da8de42261f7c43cd85ac39ffa543302c3700252c2caa648e432a"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-01-10.json.gz",
+      "bytes": 562,
+      "sha256": "bcf309f1d8e8cf71328f7801f633ee705ec3f633cfdcab90c0288ea2b074ebcb"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-01-13.json.gz",
+      "bytes": 562,
+      "sha256": "0311fedc408550754c2af1a62da612442faa992e2afca4cecf80bb5bcd4e12bb"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-01-14.json.gz",
+      "bytes": 563,
+      "sha256": "9e904cc7e9be32968811680ade73ebc5f2adba195ca7b58750d01ead1d706854"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-01-15.json.gz",
+      "bytes": 564,
+      "sha256": "b37627dda9212495dfe3b28f970d6772a91ca782fd46c01e45e32564f791d416"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-01-16.json.gz",
+      "bytes": 565,
+      "sha256": "e2bbab00ecd2d500d55cdb15610b5b2d8d9c27345c6736bb6043e31543a83633"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-01-17.json.gz",
+      "bytes": 565,
+      "sha256": "63f71d70c9abc3717b862726e2247a109d245eb24aead6bb81b281869e63323a"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-01-20.json.gz",
+      "bytes": 562,
+      "sha256": "ab465cee30c0cce3a305d9ffa058dab9b369b2123919d3ec2ae878ce97a2d42d"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-01-30.json.gz",
+      "bytes": 563,
+      "sha256": "9ca0f549ee38b1c79b20d056be213564ad6316e82fd6b6c623728f508c2e4930"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-01-31.json.gz",
+      "bytes": 561,
+      "sha256": "2c4e2f678177df2569793f9a1815a78f47278ed17ff1b84a8c22e6ab791d3e2b"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-02-03.json.gz",
+      "bytes": 564,
+      "sha256": "88c46c24c973cce45c8d7db70750f7b9325e4e2012e6d736c06b8c60ff1e13fe"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-02-04.json.gz",
+      "bytes": 563,
+      "sha256": "358aa37e17652f2aff0d5d21c616435695f5b82f1b0848d5387bcefe1555a2d8"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-02-05.json.gz",
+      "bytes": 562,
+      "sha256": "4a9ac35d7ed86b03f72165bacfadc9a388a2e328f8ba0cb1aa545865abd15f8d"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-02-06.json.gz",
+      "bytes": 562,
+      "sha256": "773169d94134e59a2e73d677daac39d37f8514068e2286a2b17c789c5d3ae943"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-02-07.json.gz",
+      "bytes": 562,
+      "sha256": "5cb9998279e0ec6829b2449f95f873123483b35d82cd82a33b69ccd32c5ffa37"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-02-10.json.gz",
+      "bytes": 564,
+      "sha256": "371be438742783938aa164835f620aff32a82eb0f9f88ff0f58514e1570e896e"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-02-11.json.gz",
+      "bytes": 564,
+      "sha256": "9d3177b588eb60cafc91151c212bf061b655e1604a9f6678db5a17abd4ca1a7d"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-02-12.json.gz",
+      "bytes": 563,
+      "sha256": "322bb133d067f066039dd9572e86e7a42f7066101b5da4d43ff3eafb0d9ae023"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-02-13.json.gz",
+      "bytes": 565,
+      "sha256": "acad8a5f6d9b23e0ccedfaf9bc514f1d5883fa54fcb463c3cca03d92c5594696"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-02-14.json.gz",
+      "bytes": 562,
+      "sha256": "3e1025e1c9f28135538c6e4265dc7af9c2bea3c8ce119fe8f016d6de268b8355"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-02-17.json.gz",
+      "bytes": 563,
+      "sha256": "c98ed4069ccbf90f448eddd1c1d6b61aaa34a44b8a9349b7b0f13f7fd684bd55"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-02-18.json.gz",
+      "bytes": 564,
+      "sha256": "fca86d57be33f8a4513fd59ceb7b5b379a26c5dcb4eea9496104c684e28e2a78"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-02-19.json.gz",
+      "bytes": 562,
+      "sha256": "69642a0e7a45ccfbf16bf47685e170f114b38e8a2ee64739e49c030364a556a5"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-02-20.json.gz",
+      "bytes": 563,
+      "sha256": "6b649412157a79b3655c97de3efce6459e976a33072fcc17083231cfbfae7150"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-02-21.json.gz",
+      "bytes": 562,
+      "sha256": "c444979aceb8200bde16ff206234c5685c94b3bedab3fc8ee15e26227d0276fc"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-02-24.json.gz",
+      "bytes": 563,
+      "sha256": "77795aa7c5c675a3a1afdbb92a69791a8911c6cfbafad7491d18ba75bf9d7a09"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-02-25.json.gz",
+      "bytes": 563,
+      "sha256": "97e7bed2d28f6b2e7d4db7658ff6b4d5ff21a405c0842b56179d630923988d56"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-02-26.json.gz",
+      "bytes": 564,
+      "sha256": "c4528874347b14e087382d92318710482bcc55f744851de928a41113099476b1"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-02-27.json.gz",
+      "bytes": 563,
+      "sha256": "f991f29185505eb0c3974c11f6d43d921b8fc86373fe512f81902d486f48e4a7"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-03-02.json.gz",
+      "bytes": 565,
+      "sha256": "38bae5ba1579cb22f8901b4bbf0a854ad166cb3a8cc02b5fe6bfd26cca9633df"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-03-03.json.gz",
+      "bytes": 564,
+      "sha256": "28231a9e8adc61a293c98e613712998e037223b1d3a3413b9e7b2225e46eba95"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-03-04.json.gz",
+      "bytes": 563,
+      "sha256": "6fe41ba432e5548ab7c8b6052c2c20146aa175a4ba03e19f2d6c4bf8a3026f6b"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-03-05.json.gz",
+      "bytes": 565,
+      "sha256": "d82d1719cdf1ce64c0a738f2e1b4203de6c3582ccdd4fc79c6eb49c97ea50adb"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-03-06.json.gz",
+      "bytes": 563,
+      "sha256": "31b893e6f2d0f5d6d6acafc8f16ad839fbc8871f10393a5099031e40f690101d"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-03-09.json.gz",
+      "bytes": 564,
+      "sha256": "7c271ccb64bba3ad99bb9a5c52c220ad37f59f4781258f5e84ad6c6f45888223"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-03-10.json.gz",
+      "bytes": 562,
+      "sha256": "60c5baecbd0b63600e883597d1ef7937e90d5b0091200d50f8cc4a1d89d2bc68"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-03-11.json.gz",
+      "bytes": 564,
+      "sha256": "b50485db566630f20b141d7741deabd06813ae9857051a18a45ea479123b09c3"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-03-12.json.gz",
+      "bytes": 567,
+      "sha256": "2c69ff198270952ec8a3f00b271c4c7e96fbf8cb38e9e35a57b7d0899b48961a"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-03-13.json.gz",
+      "bytes": 566,
+      "sha256": "0758300c89bb1f78e0d5f4adae455a243fd3889e85d84ba815a194513c099602"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-03-16.json.gz",
+      "bytes": 563,
+      "sha256": "37b18f434394ce7864b97a53b4f62d2e798ed36833bfdcc03444f2260908de1d"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-03-17.json.gz",
+      "bytes": 564,
+      "sha256": "dcb31050326138888a7372838a3929ee9afc08e2fc1e79aaa3f4161b485fe353"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-03-18.json.gz",
+      "bytes": 565,
+      "sha256": "27f5e8e1adf62bcb769555e6b4f235a02af216e520f87f22574f0d50655b9e77"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-03-19.json.gz",
+      "bytes": 563,
+      "sha256": "0a00fe02778cd79128b2c63ea01bce4f431965d248f53694da41c5b44af6cf4b"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-03-20.json.gz",
+      "bytes": 565,
+      "sha256": "bc3871cce6312079c116503de60c52a0a35e0ead928a60a25ba15a0f2632d90a"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-03-23.json.gz",
+      "bytes": 563,
+      "sha256": "a3141fcc62daa9f1ca5f0ce8139aa207b6e01ec3165153dcaf07531792efc282"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-03-24.json.gz",
+      "bytes": 564,
+      "sha256": "8d9d9a20e0a118e876a62d64bee8ad7561d2e46a0257395be503e19f4c721c39"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-03-25.json.gz",
+      "bytes": 564,
+      "sha256": "f98ce366881a7679744fa3ae18ede55fe4e91b96416d76fa77a5ae35dc3e9f73"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-03-26.json.gz",
+      "bytes": 564,
+      "sha256": "91d38cfd09e55cd4a3726ba96b1c440c36830f28f0ad3dd057963764d2a70e17"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-03-27.json.gz",
+      "bytes": 562,
+      "sha256": "a30e0677a13ca96f413689f6664f3cdf7bf1f1f0cdf4722081cb228f8e99ea63"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-03-30.json.gz",
+      "bytes": 565,
+      "sha256": "81a9484ecfd95b354e88c60e8a4dc4ff8ebfaed06f20d5b14930d2aa4a945241"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-03-31.json.gz",
+      "bytes": 561,
+      "sha256": "5c052a3fbf6ed9596b87aec665ed43d364f8a2cc5a300f3ea7301c7be3ce3448"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-04-01.json.gz",
+      "bytes": 563,
+      "sha256": "2b9a8115e6c11bc814dc400c6be08b0d22b6fc35f429b3ea656d64a3b5294463"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-04-06.json.gz",
+      "bytes": 563,
+      "sha256": "e79c22cc06f5d99556716c8da3b08680ff616ac089046a2bcb7b9c615c4a174b"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-04-07.json.gz",
+      "bytes": 563,
+      "sha256": "c928ecc5ee3f96792a80518f4b666bf229d6e8323b18db97ab0eff20e299dea8"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-04-08.json.gz",
+      "bytes": 562,
+      "sha256": "07254ef5ceb0566a9ac7300ede87dfda8629de08fd45c6b3f186753fd1361ac7"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-04-09.json.gz",
+      "bytes": 562,
+      "sha256": "b8ad1d6a3c01244f03e28cec749a5c897ea4403273a986c889c94de6c39adbec"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-04-10.json.gz",
+      "bytes": 563,
+      "sha256": "89abd47ea4164740c9b9097289c933d405f1e0f5056468a3780dca0187ccfee7"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-04-13.json.gz",
+      "bytes": 564,
+      "sha256": "fb24bb6c6813e4a65fb1103f6905f04167eaf7782a015f7a3de718794148b4a5"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-04-14.json.gz",
+      "bytes": 564,
+      "sha256": "b795fd0e1e6302bc219bd6a96ff94832efc0886ece502eff183affc3f7e292c3"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-04-15.json.gz",
+      "bytes": 564,
+      "sha256": "ed67687485d36f9dd1c01d7302307d30d752fb13f7172774a94dd3d5f2c6ca46"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-04-16.json.gz",
+      "bytes": 564,
+      "sha256": "7de36ea1588c92ce5005386257fbb3c3db31b49f17202a8f3e20ab8544b157fb"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-04-17.json.gz",
+      "bytes": 563,
+      "sha256": "aa43cb774d9cf12079590673847d7fcbb889bd44a8a34456b06560af9a3f3e3b"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-04-20.json.gz",
+      "bytes": 563,
+      "sha256": "c2b04ae501c3b9f6091486f8bdad58dcd6ac080aad6efcdb92a7b7e2d637d8c1"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-04-21.json.gz",
+      "bytes": 564,
+      "sha256": "39faed9927e1fd4cf29c44c8024e59f190e9d792ed3f5d48603b43bb17db99cb"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-04-22.json.gz",
+      "bytes": 563,
+      "sha256": "5ca52a78b60e7bcf2a1af53b3655f254487b84d8dca903141b9eace707c5ce6f"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-04-23.json.gz",
+      "bytes": 564,
+      "sha256": "2d562f57a8909dbff8ec66978c12d4e665b51d00af7cbd44eaf3d7bbb7be9d7b"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-04-24.json.gz",
+      "bytes": 564,
+      "sha256": "5f68bc0c5b781731a7ced29838510de9226a3e30ae7fae5adfd60c61674d0080"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-04-27.json.gz",
+      "bytes": 565,
+      "sha256": "c9880ef14c0d853e8ba96ec777fe3cb17827a334e787d7c1cf3fba759aee70dd"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-04-28.json.gz",
+      "bytes": 564,
+      "sha256": "f722f36a494662882c167529ff8c43b4acbcbb15ffa8686bcd9e9323d50f33cb"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-04-29.json.gz",
+      "bytes": 564,
+      "sha256": "1d9a9b055da711a7e417775da6bffbe1e601e24d7df5ef00db7c37f77744be55"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-04-30.json.gz",
+      "bytes": 563,
+      "sha256": "80689767689d895902b80f9c41d88b7813284d0ea61de788cef93c343f450c36"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-05-04.json.gz",
+      "bytes": 562,
+      "sha256": "e415c34ceb38277d0b02a2df904323cd45f908a3f19dd6fdc7fb89442fa3a0f3"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-05-05.json.gz",
+      "bytes": 562,
+      "sha256": "acfb3504e8b48f89a54b1ff9caab23acf3d0ac42636b053735de66267495e690"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-05-06.json.gz",
+      "bytes": 563,
+      "sha256": "3ae0595514e188b0ce5be03071cc97426daf4b1aaab64f94079c28b77f975ef8"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-05-07.json.gz",
+      "bytes": 563,
+      "sha256": "812b045623b51477dd20837c2a27c613af6bb95c9bc4688b651016ca1618a422"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-05-08.json.gz",
+      "bytes": 562,
+      "sha256": "a1a3b7e8a7d2a892c609b2bac90d30234ed6727b474aa145dbcf7fe6601ba7cd"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-05-11.json.gz",
+      "bytes": 562,
+      "sha256": "2ad421a73a59f9383201255711dfe475d36e41d254709cb0e7ac63990156d599"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-05-12.json.gz",
+      "bytes": 564,
+      "sha256": "08f0a51e293e4a2292a70c62e4c8ddc0923bc83bae81fb9c0ca682691aeb2ac3"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-05-13.json.gz",
+      "bytes": 565,
+      "sha256": "f749c147e7c732f1b7cbe15b8e2c1daba92cb5315f16dd771d272df3101efe69"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-05-14.json.gz",
+      "bytes": 563,
+      "sha256": "4967235aca88dc743c880d87a5ee7cd3d2f2a31afa6120e47fbf2cbee6117910"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-05-15.json.gz",
+      "bytes": 564,
+      "sha256": "554e5d05a776d031e0bc223b8d55b86352260aae7b83230b5351b7d342cb2709"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-05-18.json.gz",
+      "bytes": 565,
+      "sha256": "bd53c99493971153fc82b120016f704082cf471d20bbe4f1cf4ebfdbc4a9828c"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-05-19.json.gz",
+      "bytes": 563,
+      "sha256": "394e853a50e477b233894f2021b1b1b77a802346686d3268e2018b7c583ebf9d"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-05-20.json.gz",
+      "bytes": 565,
+      "sha256": "591389e339e3a8846a727bcaaaea5289036b87942f73487bda131af10880e456"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-05-21.json.gz",
+      "bytes": 564,
+      "sha256": "28ba75d491aa63461b6f47da0fbad56cb65de87ab2528f9b8048b5fab41671b2"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-05-22.json.gz",
+      "bytes": 563,
+      "sha256": "a52e30ed09fcc7afa5450e6810e93587894069875f3b14525fadcf3d8bb485c6"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-05-25.json.gz",
+      "bytes": 564,
+      "sha256": "f7b6bf38c2b90a073b3c56e90415d4cdb7a5b4875c6ac79739ae4ee7adc26fc9"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-05-26.json.gz",
+      "bytes": 563,
+      "sha256": "a5ba2bf064c582a681662e0a6890f9cf776db981bde80637698a94c95c100508"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-05-27.json.gz",
+      "bytes": 564,
+      "sha256": "79ce60e3ace56624fb3cc5d7da20b3c7f4a4fec07dfe5e4d1d646ac60b6edb21"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-05-28.json.gz",
+      "bytes": 563,
+      "sha256": "a135a18d4c547265b9ea09409263fa14da6aae56f5a59c69f646e26cb2152124"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-05-29.json.gz",
+      "bytes": 563,
+      "sha256": "5b66741c12d134cb1b219b69fa98e4cd2b2788525bdc1b3e1b04ea64cf7caae8"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-06-01.json.gz",
+      "bytes": 560,
+      "sha256": "1dc49f9c40edd1b9e9bcdc3f5bc3e21e6f6c695579c311e558c6eb0d3929b49f"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-06-02.json.gz",
+      "bytes": 563,
+      "sha256": "20e6caf03c086ee6aaab3f08718fd89a9f9dc29a3dcd72c702a106c4f6dc73b3"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-06-03.json.gz",
+      "bytes": 563,
+      "sha256": "dcfb16869d2ab8448abf396359dbb23a883a6de76542d06fe41a0bef2c7e3893"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-06-04.json.gz",
+      "bytes": 563,
+      "sha256": "dad6eb20abdfcea495426a46b6cdbdd6107eff129c01044200e001a1d753eab0"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-06-05.json.gz",
+      "bytes": 563,
+      "sha256": "11ad967fce71bcac9e295acaf24d716523557d2eaeb005455f86aed0e9fefb81"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-06-08.json.gz",
+      "bytes": 562,
+      "sha256": "1b1cef26676128373bcf52c61da64344b66016b83f9fe303f0933cdedb5d0e99"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-06-09.json.gz",
+      "bytes": 563,
+      "sha256": "1fa29d7fd60821cb745b5a633cf7237c05e90cbc7e2c8fb3395c258c7846c388"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-06-10.json.gz",
+      "bytes": 562,
+      "sha256": "34d99c124048b59e9262c2eac9e73cb0dea91e7375d29d9b1902fff455a7a176"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-06-11.json.gz",
+      "bytes": 561,
+      "sha256": "3d636ed1c10d8ec71ae239697f0f38db6c84eeca7409a52a458e9ebb2d387892"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-06-12.json.gz",
+      "bytes": 563,
+      "sha256": "9fb3d636b3f18bae2be986d58ff1acf29a5725ceb4790da53f516e12ac5e0161"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-06-15.json.gz",
+      "bytes": 564,
+      "sha256": "bffaf0bb98aaf69bcb476e6a7c4420b5d979289b412724c05c44d6a4caf7665b"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-06-16.json.gz",
+      "bytes": 563,
+      "sha256": "b556325b6102154759d0727312e1183a13d4aa10f9c7d23592f3448b2f034937"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-06-17.json.gz",
+      "bytes": 562,
+      "sha256": "18e59838d17fac06610d883ba5006d9078fa2d2bcb434f535e04e0010759d30b"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-06-18.json.gz",
+      "bytes": 564,
+      "sha256": "3f13b10241e21543e5ab025f15bccd7ec10a2a5fcd182f982245b9ea80d0bcf5"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-06-19.json.gz",
+      "bytes": 563,
+      "sha256": "6d3d8654b5b043581f2e5d637850f6dfe5ab3187b73315d51e97dd14e0224df6"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-06-22.json.gz",
+      "bytes": 564,
+      "sha256": "80760a29a901e1e563ef103fe041b0907a47edd7cb53375e411a090e640d0fd4"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-06-23.json.gz",
+      "bytes": 564,
+      "sha256": "f9e003d57716a2ba53ec172e511d5d65f2450b98799e42c4c5929f864f6bdf5d"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-06-24.json.gz",
+      "bytes": 565,
+      "sha256": "cbc09acbd80a0fd07ed4f7b0b2b4ea6232e6f3bcdc67e9ad5d38ac0630957aab"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-06-29.json.gz",
+      "bytes": 564,
+      "sha256": "bee2d2be02667bc2d01cc477e9cf34fe96d1e20e0e605906e4c49e37447ce1f1"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-06-30.json.gz",
+      "bytes": 563,
+      "sha256": "f2e924591949deccdd34a7fe18df13eada59d5516217012d934eb82042f4a57e"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-07-01.json.gz",
+      "bytes": 562,
+      "sha256": "0416c7a65823c25358b7475f98ab7354b51289577ed2e5cb578ba035b1dceee6"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-07-02.json.gz",
+      "bytes": 563,
+      "sha256": "c802327cb7391f749d7c83d66a0e5efb93df279e2e22f42db5a13135ffb0e163"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-07-03.json.gz",
+      "bytes": 562,
+      "sha256": "0e73f767e785aa3499ca22794919e93785db9e29d409a4c2754ba61380f0ddfb"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-07-06.json.gz",
+      "bytes": 561,
+      "sha256": "0f4b335f054313822470da054c303a144cf065bb3bd6f55b29c1c4da1eeaac21"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-07-07.json.gz",
+      "bytes": 562,
+      "sha256": "821673ea994a7eace0fd1994d89aa99342661ebc270e4fc5e69e79420f3a0442"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-07-08.json.gz",
+      "bytes": 563,
+      "sha256": "b7001f919682d8d0e2d94ce0ecd2ef89ce87b08495f8d1790c046ceae388fb6b"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-07-09.json.gz",
+      "bytes": 561,
+      "sha256": "01a25f1110cd3f668e30cbefada0ef8729628c7c88e56bf66ac5e622a5a4fcfe"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-07-10.json.gz",
+      "bytes": 561,
+      "sha256": "3ae0a779f8e530bc2e9c86e9347725766ba72cd33441a4fe5f3df619dad1244b"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-07-13.json.gz",
+      "bytes": 562,
+      "sha256": "dc0a7efda1fde29586dd0f5d0b1b4f78f45b4b795145fc08d83b7602da13460a"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-07-14.json.gz",
+      "bytes": 562,
+      "sha256": "191121c5fd9d4d366763ee0dcebea072ee28cc563ae37ce182908d9f2860fb1c"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-07-15.json.gz",
+      "bytes": 560,
+      "sha256": "41c5ae365a57e9f160bfad20445c7e09072928602f836107c6255eea838c6f5c"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-07-16.json.gz",
+      "bytes": 561,
+      "sha256": "87a056c9c5a80620b75c41396a31997f85d569a08fbfbd88c8b363f1fa08d157"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-07-17.json.gz",
+      "bytes": 561,
+      "sha256": "936b74c21ebfcc85f7a6e6ee9f0ea7e021d194bdde364ffc05498196804720e5"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-07-20.json.gz",
+      "bytes": 562,
+      "sha256": "93db45c0eb3de9fddb90420ba726dd5285ce0ddc00e35d784e63555a59344de0"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-07-21.json.gz",
+      "bytes": 563,
+      "sha256": "e1473b75a73178a3cffa2567286342abbf9d4eba3d0b1b562d534bf4d980cd7e"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-07-22.json.gz",
+      "bytes": 561,
+      "sha256": "64dfc627f10064c1adedaff81eec03c7191fcb4b0ce7a1ab1145b8588b917646"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-07-23.json.gz",
+      "bytes": 562,
+      "sha256": "c42bd1b156047efd4594fc9f7fc3f6b8d8a4b46481c439d1c20121f2babad1aa"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-07-24.json.gz",
+      "bytes": 562,
+      "sha256": "287dc247fc28eb5477d24f76df21fc4a3672dab4bf53167cecc6201ba62559d0"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-07-27.json.gz",
+      "bytes": 562,
+      "sha256": "a5b13a82cc0e7faac8065928d07ca07d79ed2090bf334467bc1c4b9b039ee01e"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-07-28.json.gz",
+      "bytes": 562,
+      "sha256": "9f5fec9a8eeba45e1f81955778adbf171c08588665288e53eb20d54f6a5d97ea"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-07-29.json.gz",
+      "bytes": 563,
+      "sha256": "3b572c0cc7464b250bd66f53abf11eed186cbcf15157afb9d017055c57f34c0e"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-07-30.json.gz",
+      "bytes": 562,
+      "sha256": "665fed4f6930d33381526491f8ddb3bc96f85b3a095aaea2912be886af7a6c03"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-07-31.json.gz",
+      "bytes": 563,
+      "sha256": "a6e87a5f5f8ae4eb6e343258c32aeeae1ff40f96657762feeab6e37c9a8cd02c"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-08-03.json.gz",
+      "bytes": 565,
+      "sha256": "1b7f74bfef8927427aadb27fa82826e00731df4a093eebf4281d5b47c6c0d676"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-08-04.json.gz",
+      "bytes": 561,
+      "sha256": "2c94f66c8a5b8a5ee87e6b2969dc7428ad64d515a3e7241241829983b32ea5fa"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-08-05.json.gz",
+      "bytes": 564,
+      "sha256": "ddbc021b4c306d3832f83c5c059b0b3f6b51252bac2f3f6ddd7e86ebea3c4373"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-08-06.json.gz",
+      "bytes": 564,
+      "sha256": "292fa9e4507ef200efe59f545219cff087db5d2d9646b5f4448b828319ae462c"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-08-07.json.gz",
+      "bytes": 562,
+      "sha256": "e21a83ee2bd19bb6afc4f813b035c553f88249db367a6f4738d6317ee6a562c5"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-08-10.json.gz",
+      "bytes": 562,
+      "sha256": "659510429c9230da7118e73d8ba208798e0b1d4fd54fbf19a66ef6b42e0fc128"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-08-11.json.gz",
+      "bytes": 564,
+      "sha256": "a59b9504907e9571a394c514ac047b88d9a78f5e6f5f1d2e0089ed350c42c57b"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-08-12.json.gz",
+      "bytes": 564,
+      "sha256": "aac17757b1680691b27a79daae80e5e8cce85aae5a78448a8f5a496ae0c7df1e"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-08-13.json.gz",
+      "bytes": 564,
+      "sha256": "7a6cdc526291427f868954b693eaf509ed6dcb64f57e09c10992975f4544d346"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-08-14.json.gz",
+      "bytes": 565,
+      "sha256": "98c6ce35aea818623507b4fa621da1a5729d34810c45944d6c8de8fce2200917"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-08-17.json.gz",
+      "bytes": 563,
+      "sha256": "2563f0dec7d607aeb3806055fbfef8bca15eb4e9a520b4ce860abf84392d2bf6"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-08-18.json.gz",
+      "bytes": 564,
+      "sha256": "99b49b168af0a38cfa9b67adcf0b7df519de7a396ea286ce1d32168e746ba140"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-08-19.json.gz",
+      "bytes": 564,
+      "sha256": "4ccfe84e0d969e4432f0413249143021206b0b2dfbf3370907f3832929033ac7"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-08-20.json.gz",
+      "bytes": 563,
+      "sha256": "00908f79d18214e29bd2a74f5d64cd453155a095e13695ab4f8d9326073e9c49"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-08-21.json.gz",
+      "bytes": 564,
+      "sha256": "efb3cfb0081851a77ee14ed5baa429b35c889f8e85889f3b9c63840d4e499b07"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-08-24.json.gz",
+      "bytes": 564,
+      "sha256": "27e3047fbc068905b5aa936ba69dc8ea00f9580652d2f35ca8e0161e4d7cd470"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-08-25.json.gz",
+      "bytes": 563,
+      "sha256": "3a1d139f08084977fafedd0110f617005280a148034645179962c8448296da82"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-08-26.json.gz",
+      "bytes": 563,
+      "sha256": "dc7f46274fbe58ff794587005699127d65095a9c51d986bea94794db5036c5ce"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-08-27.json.gz",
+      "bytes": 563,
+      "sha256": "2d51351f13b98cd0716f8dc0849c5b4b45036aac266b829abc2cf8c71d0cd24b"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-08-28.json.gz",
+      "bytes": 562,
+      "sha256": "8ed64482f46035b6fd8b6c4b697c904f21bd982cc94700a555adc1cddfbd46cf"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-08-31.json.gz",
+      "bytes": 563,
+      "sha256": "99c6c26d0913c2bcd44f3679a4569ee07fe25e411694b65903211bea1d789b05"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-09-01.json.gz",
+      "bytes": 562,
+      "sha256": "391a8ebde8e881e3905a06a804dc1eddfe43be551e4ed16d76a552388ccaee0e"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-09-02.json.gz",
+      "bytes": 562,
+      "sha256": "705f75a90c42e591f185f02093dae15e1a0664338277062c109f111fc5c37320"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-09-03.json.gz",
+      "bytes": 564,
+      "sha256": "732a36d4d3909c70e02867369c281e203ed113aa0faacf02e07f27b91354a06d"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-09-04.json.gz",
+      "bytes": 563,
+      "sha256": "1c3d5de3e5f6e13266d7e365b6d714ec9a5ca4b88939205192896a57811e3e6a"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-09-07.json.gz",
+      "bytes": 563,
+      "sha256": "187b3a5d1c171fbb3110ec0046e0720c1c068a4846443e615cb7e0459182550e"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-09-08.json.gz",
+      "bytes": 563,
+      "sha256": "779f4de79b1879b5ccd1165dcd872b3206b2fef6cc635d4c38c35a6b3fdd5015"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-09-09.json.gz",
+      "bytes": 561,
+      "sha256": "f8cd838f514e84e0dea95abbc6d708279dbdb79d8a6ed7f753ae9761be41552b"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-09-10.json.gz",
+      "bytes": 563,
+      "sha256": "72636f7b040eaf467bf1e1383d64da2bc0f35a44d5f1385e314bc51ba3a6503c"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-09-11.json.gz",
+      "bytes": 563,
+      "sha256": "6eb9c872f04ed0bdbf5a33e0fd53241cdcd3bc1e7f1d2329e69de332d9a11beb"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-09-14.json.gz",
+      "bytes": 563,
+      "sha256": "da98e61b53c36ac8558184c4b623e5dfee963cc3bea25124fff9478db7e9ebd8"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-09-15.json.gz",
+      "bytes": 564,
+      "sha256": "ef8fbf121ad5725bb64456da584403c8b51a66ecd2306d106ccdc0c98f711774"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-09-16.json.gz",
+      "bytes": 563,
+      "sha256": "92e7da1a3b02e223cb6e473292b7e441471605662edc4a3c737a1bcb169ee6fa"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-09-17.json.gz",
+      "bytes": 563,
+      "sha256": "238a9d537b5532bea7f91cd97d6b06fb129057c60eea9748ef9631c7705b7739"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-09-18.json.gz",
+      "bytes": 561,
+      "sha256": "208c4f18896a5c7f803269398004d2db1ff805a0657627645ce4c6d42fa188d3"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-09-21.json.gz",
+      "bytes": 565,
+      "sha256": "bc86a2c9496a1a9cf847123063513ab350ce31c6c9afb6fc2921910163fe93f9"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-09-22.json.gz",
+      "bytes": 563,
+      "sha256": "838495116c14741a020b21e2bad3cd0f84916a291287938f2202c4cbf90e8c08"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-09-23.json.gz",
+      "bytes": 563,
+      "sha256": "df1cc44d3e435074f21385d106a153eb5519529c181fd5f0b1cbe0ae46cb503b"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-09-24.json.gz",
+      "bytes": 562,
+      "sha256": "5917b2c8877951874e50117a4e17f9a483f9ec1b24fdd0c91391cf5901914161"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-09-25.json.gz",
+      "bytes": 564,
+      "sha256": "628266ebcd93a73235e1c942889cbc97fde672bcb68a55cf13464481ac9ec0fa"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-09-28.json.gz",
+      "bytes": 564,
+      "sha256": "a37df5553276c8614b03000982d5cc7b0240e1680f242f213456121c0f518c8c"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-09-29.json.gz",
+      "bytes": 562,
+      "sha256": "c5906d6f9857cd7899fc4d6c02365a2cd006d3dcc1155766d2731e6d1c6b34a3"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-09-30.json.gz",
+      "bytes": 563,
+      "sha256": "b96d2948a494ec71e911eba090764a6c9462bd4f5b8f247f78cfab37bf572696"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-10-05.json.gz",
+      "bytes": 562,
+      "sha256": "9b643dc4652d126b273c1637d755a9be557159f9110b0d655555ba817af533a8"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-10-06.json.gz",
+      "bytes": 563,
+      "sha256": "246e2a46f585390c9a4e8601e9526310c809ff5c2fce9e8b0031ad7298eb3b97"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-10-07.json.gz",
+      "bytes": 562,
+      "sha256": "3ba8c0b9f5ed5d67c6c9f65b5a60aa5bfeac45f367da1a5259e8a29d9b939b26"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-10-08.json.gz",
+      "bytes": 565,
+      "sha256": "6a991feafd0c8422d3eae1f55dfb471b1b2331adee1298d29a77077a133f58bf"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-10-12.json.gz",
+      "bytes": 562,
+      "sha256": "cd74f49b5f6c7ec46fde68c0fe488c7234d6ced0f917433d7a4d8fcdaac86059"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-10-13.json.gz",
+      "bytes": 561,
+      "sha256": "3ff22428193393bb1b1eb15c1f066fcde661b1c54d62e011c15ca210285bf11f"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-10-14.json.gz",
+      "bytes": 562,
+      "sha256": "ac0fe405455e3a9f0f2f02cc6f43f21c187599ea14d2c5480624b78710f31513"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-10-15.json.gz",
+      "bytes": 563,
+      "sha256": "69f6f846c1e8818c8d63f348dba7e1e76593ac424d39bbc4c15ee97614ed13d1"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-10-16.json.gz",
+      "bytes": 563,
+      "sha256": "a411cf25ee98e7580a094d6e07aec1008df544f68a2594ccc6d4c20d97e183cc"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-10-19.json.gz",
+      "bytes": 563,
+      "sha256": "18584c447afec8727176e81b71a2b1de6055d303a6be864e5706f90c4b79f322"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-10-20.json.gz",
+      "bytes": 564,
+      "sha256": "3d0fe1bdaa72745ef327473389cdf7365b64249a73d4c2bb32ba5b1e6fc7bb3b"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-10-21.json.gz",
+      "bytes": 562,
+      "sha256": "aac567e1540debb2e9da07dc3aa4ae2398525ffb39a1c401db43347251be7ccb"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-10-22.json.gz",
+      "bytes": 564,
+      "sha256": "638daa3d58e85dd22146c968d0810321547f2bf14da7368ecb72ac1c72326fa8"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-10-23.json.gz",
+      "bytes": 562,
+      "sha256": "d97c9632fa1ea51aa2ecbfb843d80c7722648ffda4197db2863ba1c55256ff8d"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-10-26.json.gz",
+      "bytes": 564,
+      "sha256": "a0ced2d639bffc8a3ba3c0de1db2cf91a31e015b625942b98b40e2c6cb64a607"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-10-27.json.gz",
+      "bytes": 563,
+      "sha256": "99044f31acf39fc70a5f29987aa7ec1108023c351052decdfed018601c2621f7"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-10-28.json.gz",
+      "bytes": 565,
+      "sha256": "87a2b3c69036e88511135d56bc1fceefd9489164b8c525ac56cc571fa9b6940e"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-10-29.json.gz",
+      "bytes": 562,
+      "sha256": "c057a6f3fb65b8d36d8e12baa145cd03b84ed120281f50f5756e1c5b8820d278"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-10-30.json.gz",
+      "bytes": 563,
+      "sha256": "5b0e29bfb6c897688e58de70a540eac28ceb64ff280496118da8db5ded719280"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-11-02.json.gz",
+      "bytes": 562,
+      "sha256": "2b49fc46d053f40ef5e31378bb0f2cfdcdf3e3dc751d3ad6f0d2ddcb25ac9d62"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-11-03.json.gz",
+      "bytes": 564,
+      "sha256": "ff7260104e27eda67a7fffab046bc1b13eaefcb64f4223689dd6f37c9287e829"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-11-04.json.gz",
+      "bytes": 564,
+      "sha256": "a9398a8d7943e713f5c333148b3c4face0a2ae2aa58e520257ba1e69e7484c63"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-11-05.json.gz",
+      "bytes": 561,
+      "sha256": "766b5d3902b00aa990cddd17af512e86c28540fd31e0500cd8c53d0aae903a8b"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-11-06.json.gz",
+      "bytes": 564,
+      "sha256": "3ff42706ae68f926f89d46ce80c4c26957568c0629ef7f91ed815994d3052c6d"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-11-09.json.gz",
+      "bytes": 562,
+      "sha256": "dfe402df5128571d38995b0c1256cef79bc6d8128106c4457947f9641c852c2d"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-11-10.json.gz",
+      "bytes": 564,
+      "sha256": "0ef7adb5752a4b8ac36d41f521812919a4549c718872a209e71646970ab457c1"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-11-11.json.gz",
+      "bytes": 564,
+      "sha256": "e3dac9cf06706a16e6df347d23c56ad6f5d76801c3bcc13b6f323bd3941b1701"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-11-12.json.gz",
+      "bytes": 564,
+      "sha256": "437f61eaaf2fb0cabcfc1c93b6ba55e976bb866c005829337eb7d8f849488e95"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-11-13.json.gz",
+      "bytes": 562,
+      "sha256": "f633285ffafc385b83fdb9ba68fa5cc8403823e8103cd2789b7742f3092af040"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-11-16.json.gz",
+      "bytes": 562,
+      "sha256": "e287a4e5374fbfa8f9d766e39247c6386fb8026af423be03dbe7e81fece09975"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-11-17.json.gz",
+      "bytes": 564,
+      "sha256": "3014e04e95db77a985a855e6cf6a568373cf34ea2aa5fc17d9926ce3d2502bee"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-11-18.json.gz",
+      "bytes": 562,
+      "sha256": "2ce1e3ff982d7e14caad4daf0f9a1d75318d5ffcbddd020c6eaa6134f15f538b"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-11-19.json.gz",
+      "bytes": 564,
+      "sha256": "01bd9fc93b7462bee48649bb18a14d05dda327a666a114859bf5a2e03df4679e"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-11-20.json.gz",
+      "bytes": 563,
+      "sha256": "e14ad019699fb3453e3bfb5082eaa92e9ad5e75c59a96f91adc5f87982491976"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-11-23.json.gz",
+      "bytes": 564,
+      "sha256": "e29a4c6e6ce1fb7cb27242158cebc4674d26a5bb4e8d9fec21a76c85c3c93b59"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-11-24.json.gz",
+      "bytes": 563,
+      "sha256": "bced9de493a5990bf00292d513bbb2a8f92d64f875874bb4b68e05a0712904a1"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-11-25.json.gz",
+      "bytes": 563,
+      "sha256": "e59b38f11051ec36ff7d7de09c3b907cac5e4cabcb2df0e21b035772d2ac70d2"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-11-26.json.gz",
+      "bytes": 563,
+      "sha256": "26fd3a8535ff93dcf13dd9adf45e1cf0e5e324a8ae39017bdcb8be25ed11ca3b"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-11-27.json.gz",
+      "bytes": 564,
+      "sha256": "b1770c015e9bb9a8dc4427d2b947c3d852dd175fa1457d85b547c05944c3174f"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-11-30.json.gz",
+      "bytes": 562,
+      "sha256": "0153187484237302006e58cd8709cea513b5968dda0527f906544d14a680f6c0"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-12-01.json.gz",
+      "bytes": 562,
+      "sha256": "0509b0dd7e1dab98073236baf51883c20f5ed4f39e30a4e74b5f7c14424d3c55"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-12-02.json.gz",
+      "bytes": 563,
+      "sha256": "3fffc3e6bb17372f1e593db76e8c05b5b142b9c5c962521021dea0bf29a11f0b"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-12-03.json.gz",
+      "bytes": 564,
+      "sha256": "a758b4272b2868f816de2654e3a65b80ed9967b7ac3bc6a8b7a9742e42a5b3f7"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-12-04.json.gz",
+      "bytes": 561,
+      "sha256": "6a485adccf8c01c3662e3975489061efccf6209111f5ec3a9f935d9da3ca5e09"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-12-07.json.gz",
+      "bytes": 562,
+      "sha256": "03db5ced9558024b4a2d2226d6eee929b5474b15f4da858a3f212f582606be56"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-12-08.json.gz",
+      "bytes": 562,
+      "sha256": "6cbaba0cf5be0b0278a021bc881b85ad9f2c32cdb16fe59851fecd57a10e5995"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-12-09.json.gz",
+      "bytes": 563,
+      "sha256": "f477f461c9cca51c9107f92626525bf22512d1c4bed71611e68c5e183b56fab2"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-12-10.json.gz",
+      "bytes": 564,
+      "sha256": "4b666df8cc776be3e087e16b9fdfce309f4ee16f505e2e22d411e3350a6f9118"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-12-11.json.gz",
+      "bytes": 564,
+      "sha256": "5e460a0ba2b324d8da0dd90e4cd418b22e9ccbb3e7e74605835983d91c9a05e0"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-12-14.json.gz",
+      "bytes": 563,
+      "sha256": "2fe489bc2343868282662801c3b6e572d56981818ed87593db1544c7de9125bd"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-12-15.json.gz",
+      "bytes": 565,
+      "sha256": "e26b222133f4d56cd58bfefc2c5f1e46bb90d6ec283bfb1568ce1ab72afaeedf"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-12-16.json.gz",
+      "bytes": 563,
+      "sha256": "e048383e5d6d65e3924e28967bacd7e29c4347c65bf6ba7af38b83c902f44677"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-12-17.json.gz",
+      "bytes": 564,
+      "sha256": "c93a9c12bd7b4ffd861dca4b6779ba389a72875ca039567e99fd2785e0c32ae4"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-12-18.json.gz",
+      "bytes": 565,
+      "sha256": "60f24584a68c3f217e96a31004df6930410d7c9b71116f24a87125ff7ddbebe7"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-12-21.json.gz",
+      "bytes": 563,
+      "sha256": "79e3767291003099bd5fa4fee059cf329b7f8fccc33a4413669856a9f818289a"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-12-22.json.gz",
+      "bytes": 564,
+      "sha256": "85241cb9ef2c96108b573e9aa4399de2a6e17c8f3022a765b4d101261abf5e8b"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-12-23.json.gz",
+      "bytes": 565,
+      "sha256": "6680a38cf87b5c91588b318ff57bad544dbc2955dbe968ae7c50b66c49b2f96b"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-12-24.json.gz",
+      "bytes": 563,
+      "sha256": "5c89bf0717784a9d5f1276ccb95cc54a86af1c2d3ce8bbc8fca0362bd20d2ac0"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-12-25.json.gz",
+      "bytes": 563,
+      "sha256": "af55ff534673afdfafddc58f069be15390c6ad92b819beea2aaa17ac2e3879dd"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-12-28.json.gz",
+      "bytes": 564,
+      "sha256": "92b79096ce6584a2e7172a181dcc0b9b599d29ae9b1db2e801c7aef1f091efd8"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-12-29.json.gz",
+      "bytes": 563,
+      "sha256": "ca321ec0a87915311ec4cf0c75d8512041dbe80dfb1ecc92a4471114e7b067bd"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-12-30.json.gz",
+      "bytes": 562,
+      "sha256": "89ee607c32b715f7aec845ed718c15987e628ccc0d090bab830a39ac1fb5d3a0"
+    },
+    {
+      "file": "checkpoints/TWSE/2020-12-31.json.gz",
+      "bytes": 562,
+      "sha256": "5c81a65656f231adffc9e9447671b7ea8fec854c8253b7aa3393eae26d9a9914"
+    },
+    {
+      "file": "checkpoints/TWSE/2021-01-04.json.gz",
+      "bytes": 563,
+      "sha256": "895fd26a050baf0baab35bac86a7ca4f4dc59b84dbd0fde9e6929012bd72f440"
+    },
+    {
+      "file": "checkpoints/TWSE/2021-01-05.json.gz",
+      "bytes": 563,
+      "sha256": "6163f34bfc9d76d4642db8c638b24b890355c331afe0b3a22979b56a30a7f350"
+    },
+    {
+      "file": "checkpoints/TWSE/2021-01-06.json.gz",
+      "bytes": 562,
+      "sha256": "868d109a4ac1fd61bbcb6ee9490c2e802032972e36b678f16f7c475dcf1830af"
+    },
+    {
+      "file": "checkpoints/TWSE/2021-01-07.json.gz",
+      "bytes": 564,
+      "sha256": "950034b8c24ab09e576ec713533e52ca8c7c6c4b217639ee8fc9634532b68468"
+    },
+    {
+      "file": "checkpoints/TWSE/2021-01-08.json.gz",
+      "bytes": 564,
+      "sha256": "8b8897af89405d552137df95eba5ef2396bb8b2c73d4eac45429d6b9cd438934"
+    },
+    {
+      "file": "checkpoints/TWSE/2021-01-11.json.gz",
+      "bytes": 563,
+      "sha256": "a0af0446e7defccd55b3d2b78ed540a9c17229b5a0936d8706880f5015dbd30e"
+    },
+    {
+      "file": "checkpoints/TWSE/2021-01-12.json.gz",
+      "bytes": 565,
+      "sha256": "d04c4047ba6ae6d4791e81116d84d3b4cde859df7153daa554bb06faa0f0480d"
+    },
+    {
+      "file": "checkpoints/TWSE/2021-01-13.json.gz",
+      "bytes": 562,
+      "sha256": "2f4839d10c9a536d37156397ecda28968907d80a42f4c747bda33c1a74df8df5"
+    },
+    {
+      "file": "checkpoints/TWSE/2021-01-14.json.gz",
+      "bytes": 563,
+      "sha256": "583f07a4f236d1799a7f625bbfe8d14c848aa930343a1f2d21e87b27c94a80d4"
+    },
+    {
+      "file": "checkpoints/TWSE/2021-01-15.json.gz",
+      "bytes": 564,
+      "sha256": "95693bca927642cd25734eaa9533fcfb9aeb9e82eeccce1c293d8571e98f428e"
+    },
+    {
+      "file": "checkpoints/TWSE/2021-01-18.json.gz",
+      "bytes": 563,
+      "sha256": "0e65ca0e1ee55488bcdc6d4d393e0764aa95bbf7d79da09f772d0e90f4c17faf"
+    },
+    {
+      "file": "checkpoints/TWSE/2021-01-19.json.gz",
+      "bytes": 562,
+      "sha256": "afb689db4e8e1189b1ffbd26d8bce1fa7e9f139894e4e19e858f8f10dcbb2897"
+    },
+    {
+      "file": "checkpoints/TWSE/2021-01-20.json.gz",
+      "bytes": 564,
+      "sha256": "260a1d71075ead216aa3e2e33a4f66f2861feee69cccecd5dbe036172702fbee"
+    },
+    {
+      "file": "checkpoints/TWSE/2021-01-21.json.gz",
+      "bytes": 564,
+      "sha256": "c1ce7cd8e0a84b07d33a24a2ca59de36914c8e3bdf5386b0df6f342277f47fd6"
+    },
+    {
+      "file": "checkpoints/TWSE/2021-01-22.json.gz",
+      "bytes": 564,
+      "sha256": "6bc54deb861ab6d95e30f833c28b85429d90f70f8f414060d37eae606bb3ab83"
+    },
+    {
+      "file": "checkpoints/TWSE/2021-01-25.json.gz",
+      "bytes": 564,
+      "sha256": "d7b48d552dd27ced72db632de671f5f9b23ac2ccffa03fc90a697880797d1733"
+    },
+    {
+      "file": "checkpoints/TWSE/2021-01-26.json.gz",
+      "bytes": 562,
+      "sha256": "e306ec8be8bd9326b424e2ff872a779769b58661ba0f57a28b85f6e47c1b79a5"
+    },
+    {
+      "file": "checkpoints/TWSE/2021-01-27.json.gz",
+      "bytes": 564,
+      "sha256": "c8a50474ce6fc8d0d2b7b94b6c7a50d5f0c70deac96201c2d21509d341eb46f2"
+    },
+    {
+      "file": "checkpoints/TWSE/2021-01-28.json.gz",
+      "bytes": 564,
+      "sha256": "b9d419280ab8dc61787e2686b92ef2c48cb4a90cdf91c15f3c6a9d97d7bc4915"
+    },
+    {
+      "file": "checkpoints/TWSE/2021-01-29.json.gz",
+      "bytes": 563,
+      "sha256": "4bdc6f4c48ff7343aff378e93ba53fedda431360c0903071ed7ea2fe98d78af0"
+    },
+    {
+      "file": "checkpoints/TWSE/2021-02-01.json.gz",
+      "bytes": 562,
+      "sha256": "eea19515170f5c39e54d2f556d3cfc8efa6438d55be9f1c10c72404b4917d675"
+    },
+    {
+      "file": "checkpoints/TWSE/2021-02-02.json.gz",
+      "bytes": 563,
+      "sha256": "2cb18161964aefd43ac15d63ec2e00b700eb1e489358584192a820875f451f73"
+    },
+    {
+      "file": "checkpoints/TWSE/2021-02-03.json.gz",
+      "bytes": 562,
+      "sha256": "833490875e9d07cdd880e403e70e655c9e99983d6d0941f63946748ff3592af1"
+    },
+    {
+      "file": "checkpoints/TWSE/2021-02-04.json.gz",
+      "bytes": 564,
+      "sha256": "051ec57ee64d530f3f1780c3acead6fbed2573ec4e6ac2ea5a5639fd7ecbba9d"
+    },
+    {
+      "file": "checkpoints/TWSE/2021-02-05.json.gz",
+      "bytes": 563,
+      "sha256": "df3215b95ad62f091c158a35a610af4b03fd4eeb6d8283b31d92a8ef13130919"
+    },
+    {
+      "file": "checkpoints/TWSE/2021-02-17.json.gz",
+      "bytes": 564,
+      "sha256": "b1be4c39cb5255cd2ca6ce881ee6652964d3f068f4f885c11a3f9194fcda0203"
+    },
+    {
+      "file": "checkpoints/TWSE/2021-02-18.json.gz",
+      "bytes": 563,
+      "sha256": "01113ce1c38e6917298dd5045bfeb05fcb69ae7236253eaac97436ffa171c63a"
+    },
+    {
+      "file": "checkpoints/TWSE/2021-02-19.json.gz",
+      "bytes": 561,
+      "sha256": "6dabc12464c88985a2f2e9f0de62769f81ac2682a50002724c6af1a069f19117"
+    },
+    {
+      "file": "checkpoints/TWSE/2021-02-22.json.gz",
+      "bytes": 563,
+      "sha256": "20a7b6c5910f28a6ddf3b6876ca762233fb522795e7bf13806d3fe2b6e61e476"
+    },
+    {
+      "file": "checkpoints/TWSE/2021-02-23.json.gz",
+      "bytes": 564,
+      "sha256": "a6897cdc395d64acd4e0c1120881ac2d15319c8004a6f4822a3d3ac6bd568d83"
+    },
+    {
+      "file": "checkpoints/TWSE/2021-02-24.json.gz",
+      "bytes": 562,
+      "sha256": "fe97e1cb41d9e32a62433f9af1f00a226ca428c59ab4dc2ebcfcd492f1909e99"
+    },
+    {
+      "file": "checkpoints/TWSE/2021-02-25.json.gz",
+      "bytes": 561,
+      "sha256": "9af46759090092409c8e5fd54e4c7fd090525a87b7bce8f757ed13116c23e16b"
+    },
+    {
+      "file": "checkpoints/TWSE/2021-02-26.json.gz",
+      "bytes": 565,
+      "sha256": "57e7c0de1fbede62f259baa6d699fd59aef2a2a37648011b94407e5e851908a4"
+    },
+    {
+      "file": "checkpoints/TWSE/2021-03-02.json.gz",
+      "bytes": 563,
+      "sha256": "826a63d29e28e4447677219d70306a4467d82a5d7f118593f46176ecf60ee00c"
+    },
+    {
+      "file": "checkpoints/TWSE/2021-03-03.json.gz",
+      "bytes": 564,
+      "sha256": "6549c6365830f8e2cf7cd79a4f21346bd5f304a68f7f3b2e99c75f029faadf23"
+    },
+    {
+      "file": "checkpoints/TWSE/2021-03-04.json.gz",
+      "bytes": 562,
+      "sha256": "621c3e195c5e1eda449832bb374574e84d97d5cce9b4e1f309aa244654ef98be"
+    },
+    {
+      "file": "checkpoints/TWSE/2021-03-05.json.gz",
+      "bytes": 564,
+      "sha256": "a83ab91901c1c61862d18dbb40b2690a4a10aee1809bf0f3b5fea88d6dd6232a"
+    },
+    {
+      "file": "checkpoints/TWSE/2021-03-08.json.gz",
+      "bytes": 563,
+      "sha256": "04933b829153f1587c75cabdccd936d31eb1934213cae8b60c518ecb9ba28bfc"
+    },
+    {
+      "file": "checkpoints/TWSE/2021-03-09.json.gz",
+      "bytes": 564,
+      "sha256": "68fea6442d74868cfb77dbd418053f582cc216b18c5fe199cf2ec0271bb35785"
+    },
+    {
+      "file": "checkpoints/TWSE/2021-03-10.json.gz",
+      "bytes": 564,
+      "sha256": "c821d239a5b41db50d54702798fb36a5f095bee8154d7b560d7ad393f80e7e8b"
+    },
+    {
+      "file": "checkpoints/TWSE/2021-03-11.json.gz",
+      "bytes": 562,
+      "sha256": "a8ee7a2325e9bda87219d1f68a6b85c9e72f71edde2a4d709d95834480d247e6"
+    },
+    {
+      "file": "checkpoints/TWSE/2021-03-12.json.gz",
+      "bytes": 562,
+      "sha256": "50bdd9495b5995411b3140f91578f15b38184f2dd1bbdc886e15bd36c86c0716"
+    },
+    {
+      "file": "checkpoints/TWSE/2021-03-15.json.gz",
+      "bytes": 563,
+      "sha256": "0c02bb0adeb4fd76ce2b11a2a390c43c35601ed5cfbba4022575de42a8e62852"
+    },
+    {
+      "file": "checkpoints/TWSE/2021-03-16.json.gz",
+      "bytes": 563,
+      "sha256": "0c26171603e156261076eb2de0de1afb3258f68df46ef0aab662516e5cf7e708"
+    },
+    {
+      "file": "checkpoints/TWSE/2021-03-17.json.gz",
+      "bytes": 563,
+      "sha256": "d6bb438d8f1f2f381bb3181cc397e6fab2749e90e6aec347350b7f336da2cc15"
+    },
+    {
+      "file": "checkpoints/TWSE/2021-03-18.json.gz",
+      "bytes": 564,
+      "sha256": "f93925fba4312b21e886caa4786374d114f35063ce7c744c7fe221d54b57eb4e"
+    },
+    {
+      "file": "checkpoints/TWSE/2021-03-19.json.gz",
+      "bytes": 564,
+      "sha256": "023a44f5ff8234bf9f3099d9c3294f4b400d33dde7093839b9da4afe6ed98db1"
+    },
+    {
+      "file": "checkpoints/TWSE/2021-03-22.json.gz",
+      "bytes": 563,
+      "sha256": "86e74ab424a9d0660c6458a49718bfd9269233520fe6f6f0897d398ff676d96e"
+    },
+    {
+      "file": "checkpoints/TWSE/2021-03-23.json.gz",
+      "bytes": 564,
+      "sha256": "c80ccf3138b01b92e433f8ffcd1885e9c300c39e2979ffb0366bb453f9ef4db9"
+    },
+    {
+      "file": "checkpoints/TWSE/2021-03-24.json.gz",
+      "bytes": 565,
+      "sha256": "007e5e15b5b28bd15fba54348104d0f650aa41ec8b5b502c0f7bd134d393038d"
+    },
+    {
+      "file": "checkpoints/TWSE/2021-03-25.json.gz",
+      "bytes": 564,
+      "sha256": "845e18cffade35a069430c30d13bac0cb0ad683ec076b4a4fb7ee52d60065463"
+    },
+    {
+      "file": "checkpoints/TWSE/2021-03-26.json.gz",
+      "bytes": 564,
+      "sha256": "07481a85b3e43a58bd008478a1b716105f86a39529b9a956c9f0090a72e21cbe"
+    },
+    {
+      "file": "checkpoints/TWSE/2021-03-29.json.gz",
+      "bytes": 565,
+      "sha256": "5fc61dd2dca846f4dbdb4ff22846957d2858e9885089b3a5abea494f3769bf2b"
+    },
+    {
+      "file": "checkpoints/TWSE/2021-03-30.json.gz",
+      "bytes": 565,
+      "sha256": "e39986f86fe1ab56e697b792cdc48607f86b78a635ed5c415478acdc58a94b45"
+    },
+    {
+      "file": "checkpoints/TWSE/2021-03-31.json.gz",
+      "bytes": 563,
+      "sha256": "9e01b2357b805ae2c6fe36fed32d14118b9c0ba98d1e4df7b15ee2206055f8c3"
+    },
+    {
+      "file": "checkpoints/TWSE/2021-04-01.json.gz",
+      "bytes": 562,
+      "sha256": "a0f054cdc34c4e6c34fe8c5d5dbf11ad2d04a82d612a6686da19e3b9ec2f1238"
+    },
+    {
+      "file": "checkpoints/TWSE/2021-04-09.json.gz",
+      "bytes": 564,
+      "sha256": "6f1f0556a90af679b9d04f6589004ec92424e8bf489ee707198e25ec9d461b19"
+    },
+    {
+      "file": "checkpoints/TWSE/2021-09-28.json.gz",
+      "bytes": 565,
+      "sha256": "e4b92716c104499a016e8725c799881752d81cad47031f01e22614c3b16f18f0"
+    },
+    {
+      "file": "checkpoints/TWSE/2021-11-12.json.gz",
+      "bytes": 562,
+      "sha256": "3d7f7dc023f90bcf6898d3f0c36ccbca792165381a6377b99342bb75ae0023e1"
+    },
+    {
+      "file": "checkpoints/TWSE/2022-12-05.json.gz",
+      "bytes": 564,
+      "sha256": "d17cf7486bcffdd8fa195bbdfa759a3954c04add54310f4a0cf6164377e8b72b"
+    },
+    {
+      "file": "checkpoints/TWSE/2022-12-06.json.gz",
+      "bytes": 563,
+      "sha256": "85dcff36e966e7004abed6c8981eb3e7362a80373c91ed7fdff09a3c4f647185"
+    },
+    {
+      "file": "checkpoints/TWSE/2022-12-07.json.gz",
+      "bytes": 559,
+      "sha256": "834d43bab3fe17259163f90d717cd4193895a0ff5b953e9ff19c90464a3db170"
+    },
+    {
+      "file": "checkpoints/TWSE/2022-12-08.json.gz",
+      "bytes": 562,
+      "sha256": "1312b866a6f38c7813b7583ecdfc8aeb2e7ec0849d0b2a54ea3400b7df756984"
+    },
+    {
+      "file": "checkpoints/TWSE/2022-12-09.json.gz",
+      "bytes": 564,
+      "sha256": "ba722c91220c96236c96ace0596f1d81526b3b97c830025ad7d08b831781e0c8"
+    },
+    {
+      "file": "checkpoints/TWSE/2022-12-12.json.gz",
+      "bytes": 561,
+      "sha256": "6938d1b3a358e7166e3a28529e848693ef573a67ccd1f7b6ff5c6424d41615a5"
+    },
+    {
+      "file": "checkpoints/TWSE/2022-12-13.json.gz",
+      "bytes": 563,
+      "sha256": "bc94edadc59bac147ab147fd08bb0253d651b0c18d33ed32f72d2bc09ad7800a"
+    },
+    {
+      "file": "checkpoints/TWSE/2022-12-14.json.gz",
+      "bytes": 564,
+      "sha256": "7e9abc0b40d3a683d77e4639d554376c83b5df90ba7cf19cdf15b70b3c0c5265"
+    },
+    {
+      "file": "checkpoints/TWSE/2022-12-15.json.gz",
+      "bytes": 563,
+      "sha256": "969aea42b9b0439b619c0314189a856eaa197f8aa38ad6bbe3d73eba4ce3251f"
+    },
+    {
+      "file": "checkpoints/TWSE/2022-12-16.json.gz",
+      "bytes": 565,
+      "sha256": "92a6b557111406c600385107973df0a9b9d44d232126e27d8c5c755f2f893d86"
+    },
+    {
+      "file": "checkpoints/TWSE/2022-12-19.json.gz",
+      "bytes": 562,
+      "sha256": "d40397ffa6e76ac1e411eeec782a85331d4dadf7177732ad4daef7c567954a87"
+    },
+    {
+      "file": "checkpoints/TWSE/2022-12-20.json.gz",
+      "bytes": 564,
+      "sha256": "bdf48aeb95bf4047cebc19c8351dd34ce91ebdd2696e120e5b1919e29ca21fcb"
+    },
+    {
+      "file": "checkpoints/TWSE/2022-12-21.json.gz",
+      "bytes": 560,
+      "sha256": "d31be02f43a8629dc5ed59487aa436378cd6d58eefa2d79c3a5f141177e9c666"
+    },
+    {
+      "file": "checkpoints/TWSE/2022-12-22.json.gz",
+      "bytes": 564,
+      "sha256": "ca1edd30b1a5e7eefdfeebc0be9b91fd99f6db80c0f780ca043d0f3ffac23a1e"
+    },
+    {
+      "file": "checkpoints/TWSE/2022-12-23.json.gz",
+      "bytes": 563,
+      "sha256": "6dfe1ffc4eddb1edbe9ffb4e7fc3c1c2f75696d30c36a13a520b166a626df22b"
+    },
+    {
+      "file": "checkpoints/TWSE/2022-12-26.json.gz",
+      "bytes": 562,
+      "sha256": "8654deed74c9e489f3e512966f7ec249249790fd2559ad54231c12cef6d50702"
+    },
+    {
+      "file": "checkpoints/TWSE/2022-12-27.json.gz",
+      "bytes": 563,
+      "sha256": "4f2dae9c75400aa54e6e1dc3c5e458a598cda36d0032a70a652eed2da32b3b6c"
+    },
+    {
+      "file": "checkpoints/TWSE/2022-12-28.json.gz",
+      "bytes": 563,
+      "sha256": "119c6ac5099ab1196cf5aac879d36ced806d2c63bb95303e0b445263de672cbe"
+    },
+    {
+      "file": "checkpoints/TWSE/2022-12-29.json.gz",
+      "bytes": 561,
+      "sha256": "52f7ef5e66881eb34277917b4c512b56aa23f0416bbcfdccfd03253b34276c20"
+    },
+    {
+      "file": "current_step.txt",
+      "bytes": 61,
+      "sha256": "4e438838e4436d6825ce834402309c83803c568bff25e8ee4c84370c48b5e262"
+    },
+    {
+      "file": "final_summary_zh.md",
+      "bytes": 297,
+      "sha256": "1a6c750b106f54d7c561ac2f68946e6b5593820b9709f13bbe320787ea9e0424"
+    },
+    {
+      "file": "future_data_audit.csv",
+      "bytes": 193,
+      "sha256": "90438731307be15ac27e703f2fcad6c456b265f3d7dfacac7efcc2dc6703c915"
+    },
+    {
+      "file": "progress.json",
+      "bytes": 997,
+      "sha256": "171cb4ca21362c57c159be5e1f26e75869277001f24b27d35bef890c34c1bb64"
+    },
+    {
+      "file": "readiness_for_core_4739_transition_close_absorption.json",
+      "bytes": 893,
+      "sha256": "3fc46fdf220a03cada73efcf51d2b9bee307ac797c16820d339e9ac8bded79c8"
+    },
+    {
+      "file": "requested_vs_actual_coverage.csv",
+      "bytes": 157,
+      "sha256": "2ed73dc3d4a10cd574990b0a3674550d3489bede8056afe9924ad4b48df50bc8"
+    },
+    {
+      "file": "ticker_4739_exact_twse_blocked.csv",
+      "bytes": 98,
+      "sha256": "15dc0b0d805c345bc8e96e58db8f0042efcc81c5d1f50351b6aaa770109b502f"
+    },
+    {
+      "file": "ticker_4739_exact_twse_close_patch.csv.gz",
+      "bytes": 30752,
+      "sha256": "c3d610f479d4a8f3be7cc7ab23edc8839a7eadaac3d5ec154138d9a35a7d86ea"
+    },
+    {
+      "file": "ticker_4739_exact_twse_official_no_trade.csv",
+      "bytes": 368,
+      "sha256": "d854c8c500b7e107ccbd7d220a33efc6216dcd5453cc5029e307b80c6127170d"
+    },
+    {
+      "file": "ticker_4739_twse_close_source_manifest.csv.gz",
+      "bytes": 32084,
+      "sha256": "517e5e2a51cfdc6e0227e2a029cfd81fe47ad82fd149f9d0627fb37db45c6839"
+    }
+  ],
+  "future_data_violation_count": 0,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "portfolio_replay_executed": false,
+  "ready_for_strategy_replay": false,
+  "ready_for_formal": false,
+  "not_live_rule": true,
+  "forward_returns_live_rule_usage": false
+}
