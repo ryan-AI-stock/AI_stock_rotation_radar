@@ -148,6 +148,7 @@ jobs:
           GOOGLE_OAUTH_CLIENT_SECRET: ${{ secrets.GOOGLE_OAUTH_CLIENT_SECRET }}
           GOOGLE_OAUTH_REFRESH_TOKEN: ${{ secrets.GOOGLE_OAUTH_REFRESH_TOKEN }}
           ROTATION_PUBLIC_REPORT_DRIVE_FOLDER_ID: 16SmfPgMMIs7MWteeX1h2EkhSIEaGvpHn
+          ROTATION_PRIVATE_REPORT_DRIVE_FOLDER_ID: 1O6Se-HfI7ZDTQ-LWeAO6f8vtvoLcCzIj
           ROTATION_PUBLIC_REPORT_DRIVE_FILE_ID: ""
         shell: bash
         run: |
@@ -320,7 +321,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          args=(--html reports/latest.html --date "${{ steps.actual-report-date.outputs.actual_report_date }}")
+          args=(--html reports/latest.html --private-html reports/private_0050_00631l.html --date "${{ steps.actual-report-date.outputs.actual_report_date }}")
           if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.skip_public_upload }}" = "true" ]; then
             args+=(--skip-public-upload)
           fi
@@ -333,10 +334,12 @@ jobs:
           name: latest-rotation-report
           path: |
             reports/latest.html
+            reports/private_0050_00631l.html
             reports/latest_manifest.json
             reports/formal_0050_00631l_checkpoint.json
             data/formal_0050_00631l_state.json
             public_report/*.pdf
+            private_report/*.pdf
           if-no-files-found: error
 
       - name: Upload generated data artifact

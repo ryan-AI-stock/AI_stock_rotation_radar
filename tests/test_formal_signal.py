@@ -11,7 +11,7 @@ from rotation_radar.formal_signal import (
     validate_formal_signal_checkpoint,
 )
 from rotation_radar.models import Report
-from rotation_radar.report import render_report
+from rotation_radar.report import render_private_signal_report, render_report
 
 
 class FormalSignalTests(unittest.TestCase):
@@ -200,8 +200,7 @@ class FormalSignalTests(unittest.TestCase):
             closes=_rising_closes(),
             actual_trades=[_trade("2026-07-15", "buy")],
         )
-        html = render_report(
-            Report(
+        report = Report(
                 title="Radar",
                 generated_at="2026-07-15 21:30",
                 market_view="正式模式",
@@ -209,8 +208,11 @@ class FormalSignalTests(unittest.TestCase):
                 stock_results=[],
                 formal_signal=formal_signal,
             )
-        )
+        public_html = render_report(report)
+        html = render_private_signal_report(report)
 
+        self.assertNotIn("正式 0050 訊號 / 00631L 執行", public_html)
+        self.assertNotIn("持有 00631L", public_html)
         self.assertIn("正式 0050 訊號 / 00631L 執行", html)
         self.assertIn("MA4＋7日正斜率買入／MA10＋20日負斜率賣出／CD7", html)
         self.assertIn("0050 今日收盤", html)
@@ -224,7 +226,7 @@ class FormalSignalTests(unittest.TestCase):
             closes=[100.0] * 20,
             actual_trades=[_trade("2026-07-15", "buy")],
         )
-        html = render_report(
+        html = render_private_signal_report(
             Report(
                 title="Radar",
                 generated_at="2026-07-15 21:30",

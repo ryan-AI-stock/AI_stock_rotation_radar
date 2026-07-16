@@ -31,7 +31,6 @@ def render_report(report: Report) -> str:
 
   <main>
     {_rotation_digest(report, top_sectors)}
-    {_formal_signal_panel(report)}
     {_summary_panel(report, top_sectors, buckets)}
     <section class="section sector-section">
       <div class="section-head">
@@ -52,6 +51,32 @@ def render_report(report: Report) -> str:
       {_stock_section(Bucket.WATCH, buckets, report)}
       {_stock_section(Bucket.EXCLUDED, buckets, report)}
     </section>
+  </main>
+</body>
+</html>"""
+
+
+def render_private_signal_report(report: Report) -> str:
+    """Render the private trading guide separately from the public Radar report."""
+    return f"""<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>0050 訊號與 00631L 私人操作指南</title>
+  <style>{_css()}</style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">私人操作指南 | 不公開發布</p>
+      <h1>0050 訊號與 00631L 操作指南</h1>
+      <p class="market-view">此報告包含個人持倉、交易訊號與冷卻期資訊，只能上傳至「4. 自用」。</p>
+      <p class="stamp">產出時間：{escape(report.generated_at)}</p>
+    </div>
+  </header>
+  <main>
+    {_formal_signal_panel(report)}
   </main>
 </body>
 </html>"""

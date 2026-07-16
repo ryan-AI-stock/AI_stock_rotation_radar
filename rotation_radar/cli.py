@@ -17,7 +17,7 @@ from .price_history import build_price_history_from_processed, load_price_histor
 from .public_sources import fetch_raw_market_snapshots, fetch_raw_price_snapshots, parse_trade_date, recent_weekdays
 from .quote_refresh import refresh_stock_metrics_quotes
 from .radar_snapshot import build_radar_snapshots
-from .report import render_report
+from .report import render_private_signal_report, render_report
 from .scoring import build_results
 from .theme_history import backfill_theme_history_from_processed
 
@@ -418,6 +418,10 @@ def _write_report(
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(render_report(report), encoding="utf-8")
     print(f"Report written to {output} ({data_source})")
+    if report.formal_signal:
+        private_output = output.parent / "private_0050_00631l.html"
+        private_output.write_text(render_private_signal_report(report), encoding="utf-8")
+        print(f"Private trading guide written to {private_output}")
 
 
 if __name__ == "__main__":

@@ -59,21 +59,36 @@ class DrivePublishTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             html_path = Path(tmp) / "latest.html"
             html_path.write_text("<html></html>", encoding="utf-8")
+            private_html_path = Path(tmp) / "private.html"
+            private_html_path.write_text("<html>private</html>", encoding="utf-8")
             public_pdf = Path(drive_publish.__file__).resolve().parent.parent / "public_report" / "台股股票族群輪動雷達_每日台股報告.pdf"
+            private_pdf = Path(drive_publish.__file__).resolve().parent.parent / "private_report" / drive_publish.PRIVATE_FIXED_FILE_NAME
 
             with (
-                patch.object(sys, "argv", ["drive_publish", "--html", str(html_path), "--date", "2026-06-08"]),
+                patch.object(sys, "argv", ["drive_publish", "--html", str(html_path), "--private-html", str(private_html_path), "--date", "2026-06-08"]),
                 patch.dict("os.environ", {}, clear=True),
-                patch.object(drive_publish, "render_report_pdf", return_value=public_pdf) as render_pdf,
+                patch.object(drive_publish, "render_report_pdf", side_effect=[public_pdf, private_pdf]) as render_pdf,
                 patch.object(drive_publish, "upload_file_to_drive", return_value="https://drive.example/file") as upload_file,
             ):
                 drive_publish.main()
 
-            render_pdf.assert_called_once_with(html_path, public_pdf)
-            upload_file.assert_called_once()
-            self.assertEqual(upload_file.call_args.args[0], public_pdf)
-            self.assertEqual(upload_file.call_args.kwargs["file_name"], "台股股票族群輪動雷達_每日台股報告.pdf")
-            self.assertTrue(upload_file.call_args.kwargs["make_public"])
+            self.assertEqual(render_pdf.call_count, 2)
+            self.assertEqual(upload_file.call_count, 2)
+            private_call, public_call = upload_file.call_args_list
+            self.assertEqual(private_call.args[0], private_pdf)
+            self.assertEqual(private_call.args[1], drive_publish.PRIVATE_FOLDER_ID)
+            self.assertFalse(private_call.kwargs["make_public"])
+            self.assertEqual(public_call.args[0], public_pdf)
+            self.assertEqual(public_call.kwargs["file_name"], "台股股票族群輪動雷達_每日台股報告.pdf")
+            self.assertTrue(public_call.kwargs["make_public"])
+
+    def test_public_report_guard_rejects_private_trading_panel(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            html_path = Path(tmp) / "latest.html"
+            html_path.write_text("<html>正式 0050 訊號 / 00631L 執行</html>", encoding="utf-8")
+
+            with self.assertRaises(SystemExit):
+                drive_publish.assert_public_report_safe(html_path)
 
     def test_env_flag_accepts_common_true_values(self) -> None:
         with patch.dict("os.environ", {"ROTATION_ENABLE_DATED_BACKUP": "true"}, clear=True):
