@@ -86,6 +86,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: ryan-AI-stock/AI_stock_schedule_rules
+          ref: main
           path: AI_stock_schedule_rules
 
       - name: Determine target Taiwan trading date
