@@ -1,0 +1,19 @@
+{
+  "task": "TASK-RADAR-DATA-VNEXT-P1-P2-MA-SLOPE-CD50-SHIFTED-PATH-BOUNDED-NETWORK-CLOSE-COMPLETION-001",
+  "adjusted_authorized_routes": 46,
+  "adjusted_authorized_keys": 9344,
+  "raw_authorized_routes": 5,
+  "raw_authorized_keys": 7,
+  "network_authority_outside_rows": 0,
+  "non_close_family_download_rows": 0,
+  "future_data_violation_count": 0,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "portfolio_replay_executed": false,
+  "ready_for_strategy_replay": false,
+  "ready_for_formal": false,
+  "not_live_rule": true,
+  "forward_returns_live_rule_usage": false
+}

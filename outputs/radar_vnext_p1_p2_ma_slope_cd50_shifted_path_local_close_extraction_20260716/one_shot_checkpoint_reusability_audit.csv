@@ -1,0 +1,3 @@
+﻿family,checkpoint_files_read_once,checkpoint_status_counts,full_route_payload_retained,retained_content,network_requests
+adjusted_analysis_close,971,"{""accepted"": 879, ""accepted_partial"": 25, ""source_gap"": 57, ""trusted_no_target_rows"": 10}",False,prior_authority_target_rows_only,0
+official_raw_execution_close,2986,"{""accepted"": 2977, ""official_valid_no_target_rows"": 6, ""source_gap"": 3}",False,prior_authority_target_rows_only,0

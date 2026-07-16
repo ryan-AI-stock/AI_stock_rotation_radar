@@ -1,0 +1,5 @@
+﻿audit,status,future_data_violation_count
+exact_core_authority_only,pass,0
+network_requests,0,0
+neighbor_or_last_price_substitution,prohibited_and_unused,0
+raw_used_as_adjusted,false,0
