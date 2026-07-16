@@ -1,0 +1,2 @@
+﻿ticker,blocked_component,derived_candidate_date,derived_candidate_policy,structural_source_blocked,network_probe_expanded,future_data_violation_count
+3474,exact_official_suspension_start_date_and_announcement_timestamp,2016-11-30,derived only from last official price followed by no price; not accepted as official event date,True,False,0

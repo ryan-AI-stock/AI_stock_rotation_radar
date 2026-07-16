@@ -1,0 +1,31 @@
+{
+  "task_id": "TASK-RADAR-DATA-VNEXT-4739-MARKET-TRANSFER-3474-TERMINATION-SOURCE-PACKAGE-001",
+  "status": "bounded_market_transition_patch_ready_termination_metadata_partial_for_core_absorption",
+  "core_post_last_rows": 24118,
+  "material_ticker_count": 2,
+  "material_tickers": [
+    "3474",
+    "4739"
+  ],
+  "ticker_4739_unique_required_dates": 1299,
+  "ticker_4739_local_exact_close_patch_rows": 720,
+  "ticker_4739_remaining_local_scope_gap_rows": 579,
+  "ticker_4739_market_transfer_proven": true,
+  "ticker_4739_true_termination": false,
+  "ticker_3474_true_termination_proven": true,
+  "ticker_3474_last_tradable_date_ready": true,
+  "ticker_3474_holder_treatment_ready": true,
+  "ticker_3474_exact_suspension_start_ready": false,
+  "ready_for_core_market_transition_termination_absorption": true,
+  "ready_for_experiments": false,
+  "future_data_violation_count": 0,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "portfolio_replay_executed": false,
+  "ready_for_strategy_replay": false,
+  "ready_for_formal": false,
+  "not_live_rule": true,
+  "forward_returns_live_rule_usage": false
+}

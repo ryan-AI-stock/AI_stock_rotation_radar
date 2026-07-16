@@ -1,0 +1,3 @@
+﻿audit_item,status,detail,future_data_violation_count
+event_date_and_market_available_at_separated,pass,3474 effective date is not substituted for historical announcement availability,0
+4739_exact_date_close_only,pass,"no neighbour, last-price, adjusted-price, or cross-ticker substitution",0
