@@ -1,0 +1,2 @@
+task,ticker,month,market,source_url,http_status,source_hash,retrieved_at,response_bytes,network_attempted,status,error,future_data_violation_count
+TASK-RADAR-DATA-VNEXT-P1-P2-AI-DIFFUSION-WEEKLY-SWITCH-DEFERRED-6669-CLOSE-FILL-001,6669,2019-03,TWSE,https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?date=20190301&stockNo=6669&response=json,200,c3055099f75ad84f9cbf1b1a0e61383d879c505089f5901ed75320ded768ccd2,2026-07-18T06:01:51+00:00,1156,True,accepted,,0

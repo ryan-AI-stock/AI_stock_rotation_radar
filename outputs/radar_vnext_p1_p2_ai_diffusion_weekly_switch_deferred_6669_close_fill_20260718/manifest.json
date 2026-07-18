@@ -1,0 +1,95 @@
+{
+  "task": "TASK-RADAR-DATA-VNEXT-P1-P2-AI-DIFFUSION-WEEKLY-SWITCH-DEFERRED-6669-CLOSE-FILL-001",
+  "generated_at": "2026-07-18T06:01:53+00:00",
+  "authority_path": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-30\\ep05-chat-ai-stock-backtest-lab\\outputs\\vnext_p1_p2_ai_concentration_diffusion_weekly_switch_exact_nav_contract_20260718\\weekly_switch_bounded_official_raw_execution_gap_ledger.csv",
+  "authority_sha256": "d2677b317a917a9e64138f12d17309f74fd077811aabc186ffbeb046d7fe7f59",
+  "network_scope": "ticker=6669, exact four dates, TWSE selected ticker-month close-only",
+  "readiness": {
+    "task": "TASK-RADAR-DATA-VNEXT-P1-P2-AI-DIFFUSION-WEEKLY-SWITCH-DEFERRED-6669-CLOSE-FILL-001",
+    "status": "complete_ready_for_core_absorption",
+    "requested_exact_keys": 4,
+    "official_raw_close_ready_rows": 4,
+    "blocked_rows": 0,
+    "partition_rows": 4,
+    "partition_matches_authority": true,
+    "duplicate_exact_keys": 0,
+    "local_checkpoint_reuse_rows": 1,
+    "network_routes": 1,
+    "network_outside_authority_rows": 0,
+    "non_close_family_download_rows": 0,
+    "ready_for_core_weekly_switch_deferred_6669_close_absorption": true,
+    "ready_for_experiments": false,
+    "future_data_violation_count": 0,
+    "formal_model_changed": false,
+    "trade_decision_changed": false,
+    "active_in_trade_decision": false,
+    "report_changed": false,
+    "portfolio_replay_executed": false,
+    "ready_for_strategy_replay": false,
+    "ready_for_formal": false,
+    "not_live_rule": true,
+    "forward_returns_live_rule_usage": false
+  },
+  "files": [
+    {
+      "file": "checkpoints/6669/2019-03.json.gz",
+      "bytes": 509,
+      "sha256": "cf58ec2fb1f55f01dd81b09e94b5ab8a569c4a640eabe84ef35a5965c88e0ad5"
+    },
+    {
+      "file": "current_step.txt",
+      "bytes": 71,
+      "sha256": "0c7666cb1c9aa2b64273860f53547c8975309d4cfa5fa45eb36729d888f263b7"
+    },
+    {
+      "file": "final_summary_zh.md",
+      "bytes": 286,
+      "sha256": "d30624d97f437c5628944bca7d45da877a93f145b20a19b582a2f59cf0ca4033"
+    },
+    {
+      "file": "future_data_audit.csv",
+      "bytes": 198,
+      "sha256": "2f5a0fc309d9f955a378c0499e54c9d1b30f9858b24d7099513e86b79f52e1ef"
+    },
+    {
+      "file": "progress.json",
+      "bytes": 985,
+      "sha256": "14897c50e75b3afab5db293e250d878ba460aa6dce07e4d0cad4e74d86717b1e"
+    },
+    {
+      "file": "readiness_for_core_weekly_switch_deferred_6669_close_absorption.json",
+      "bytes": 939,
+      "sha256": "881f367705369e1da7cd9d9e7ec21c226479493e1af7776c87b8ba6581936852"
+    },
+    {
+      "file": "requested_vs_actual_coverage.csv",
+      "bytes": 118,
+      "sha256": "356934d4138aab4285aac47c319ca53d358fb44ff9cfff9504f7bdc745fa40e1"
+    },
+    {
+      "file": "weekly_switch_deferred_6669_exact_close_blocked.csv",
+      "bytes": 106,
+      "sha256": "c9a02936df3717a36d7544416366cbfca141d5e92464885ba4fa48b54406cc15"
+    },
+    {
+      "file": "weekly_switch_deferred_6669_exact_close_patch.csv",
+      "bytes": 1484,
+      "sha256": "6172462190c39917ad686fae5ea4c086d8fad57b9d33fba6a4577c135a3b4118"
+    },
+    {
+      "file": "weekly_switch_deferred_6669_source_manifest.csv",
+      "bytes": 463,
+      "sha256": "860be0058f9308f07b66393cf8a2ca8ae39d868a2f245b904e0bdfac7edad3e1"
+    }
+  ],
+  "future_data_violation_count": 0,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "portfolio_replay_executed": false,
+  "ready_for_strategy_replay": false,
+  "ready_for_formal": false,
+  "not_live_rule": true,
+  "forward_returns_live_rule_usage": false
+}
