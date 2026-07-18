@@ -1,0 +1,106 @@
+{
+  "task": "TASK-RADAR-DATA-VNEXT-P1-P2-STRICT-AI-DIFFUSION-WEEKLY-SWITCH-BEAR-CASH-RECHAIN-CLOSE-FILL-001",
+  "generated_at": "2026-07-18T06:34:27+00:00",
+  "authority_path": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-30\\ep05-chat-ai-stock-backtest-lab\\outputs\\vnext_p1_p2_strict_ai_diffusion_weekly_switch_fixed_bear_cash_extension_contract_20260718\\strict_bear_cash_bounded_official_raw_execution_gap_ledger.csv",
+  "authority_sha256": "51e8cd44dbee22ce8a262289518d80b4ef05647cbec98dfab934192825c57f51",
+  "network_scope": "ticker=00631L exact four dates TWSE selected ticker-month close-only",
+  "readiness": {
+    "task": "TASK-RADAR-DATA-VNEXT-P1-P2-STRICT-AI-DIFFUSION-WEEKLY-SWITCH-BEAR-CASH-RECHAIN-CLOSE-FILL-001",
+    "status": "complete_ready_for_core_absorption",
+    "requested_exact_keys": 4,
+    "official_raw_close_ready_rows": 4,
+    "blocked_rows": 0,
+    "partition_rows": 4,
+    "partition_matches_authority": true,
+    "duplicate_exact_keys": 0,
+    "network_routes": 3,
+    "network_outside_authority_rows": 0,
+    "non_close_family_download_rows": 0,
+    "ready_for_core_strict_bear_cash_rechain_close_absorption": true,
+    "ready_for_experiments": false,
+    "data_readiness_blocked_only": false,
+    "may_be_used_to_reject_strategy": false,
+    "future_data_violation_count": 0,
+    "formal_model_changed": false,
+    "trade_decision_changed": false,
+    "active_in_trade_decision": false,
+    "report_changed": false,
+    "portfolio_replay_executed": false,
+    "ready_for_strategy_replay": false,
+    "ready_for_formal": false,
+    "not_live_rule": true,
+    "forward_returns_live_rule_usage": false
+  },
+  "files": [
+    {
+      "file": "checkpoints/00631L/2018-01.json.gz",
+      "bytes": 637,
+      "sha256": "40e8e4009011a8c891f3a3fab34e783fe274184a75bc0dde4dd234cfe3f163b9"
+    },
+    {
+      "file": "checkpoints/00631L/2022-08.json.gz",
+      "bytes": 637,
+      "sha256": "cce5069b43bcd4ecc51031db21999e2e60c0915dc0eb04c7a8977f4c38f5ac0b"
+    },
+    {
+      "file": "checkpoints/00631L/2025-06.json.gz",
+      "bytes": 634,
+      "sha256": "6f0546349ac90f3efa1098d10c642828021687156d911c725d7b4011c339dad5"
+    },
+    {
+      "file": "current_step.txt",
+      "bytes": 75,
+      "sha256": "b6167c3ecd9b4b61addd27dd1dfc9ab83c7fe2b7eadee143604f62f80f343cc4"
+    },
+    {
+      "file": "final_summary_zh.md",
+      "bytes": 214,
+      "sha256": "152dddff92475beb08ee84770fadb8c22008bbbbf7d9901f8b940cf5acc80bf8"
+    },
+    {
+      "file": "future_data_audit.csv",
+      "bytes": 200,
+      "sha256": "c65bc1d9b5adb3bb9bac384a0695d2762a55bb5e00acc19e67c2d26be3c75266"
+    },
+    {
+      "file": "progress.json",
+      "bytes": 1041,
+      "sha256": "41a3eeab0c60ca73753adbc98bf7451b5f8616dd5d5b5ae6c83e499fd47d3001"
+    },
+    {
+      "file": "readiness_for_core_strict_bear_cash_rechain_close_absorption.json",
+      "bytes": 995,
+      "sha256": "2eb619c4269176e7842ce12316d6bcc17561832ad19de8592a12ea0b6c26f72f"
+    },
+    {
+      "file": "requested_vs_actual_coverage.csv",
+      "bytes": 118,
+      "sha256": "356934d4138aab4285aac47c319ca53d358fb44ff9cfff9504f7bdc745fa40e1"
+    },
+    {
+      "file": "strict_bear_cash_rechain_exact_close_blocked.csv",
+      "bytes": 106,
+      "sha256": "c9a02936df3717a36d7544416366cbfca141d5e92464885ba4fa48b54406cc15"
+    },
+    {
+      "file": "strict_bear_cash_rechain_exact_close_patch.csv",
+      "bytes": 1489,
+      "sha256": "4b33dd4202e6e22f3db826d4c0570ae3459895451e47b1919aaf77d08da0f44e"
+    },
+    {
+      "file": "strict_bear_cash_rechain_source_manifest.csv",
+      "bytes": 1138,
+      "sha256": "a4a2d8781e21d8651c9b9d5e86052417198108c241586b77001c1b9212d6594a"
+    }
+  ],
+  "future_data_violation_count": 0,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "portfolio_replay_executed": false,
+  "ready_for_strategy_replay": false,
+  "ready_for_formal": false,
+  "not_live_rule": true,
+  "forward_returns_live_rule_usage": false
+}
