@@ -1,0 +1,111 @@
+{
+  "task": "TASK-RADAR-DATA-VNEXT-P1-P2-STRICT-BEAR-CASH-INCREMENTAL-CLOSE-FILL-001",
+  "generated_at": "2026-07-18T06:46:44+00:00",
+  "authority_path": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-30\\ep05-chat-ai-stock-backtest-lab\\outputs\\vnext_p1_p2_strict_ai_diffusion_weekly_switch_fixed_bear_cash_extension_contract_20260718\\strict_bear_cash_bounded_official_raw_execution_gap_ledger.csv",
+  "authority_sha256": "8307ca4a2022676775b0e5ffd1ff3487c57fed678f6fbb266075f6135d2a155d",
+  "network_scope": "current Core authority only; 00631L exact dates; TWSE selected ticker-month close-only",
+  "readiness": {
+    "task": "TASK-RADAR-DATA-VNEXT-P1-P2-STRICT-BEAR-CASH-INCREMENTAL-CLOSE-FILL-001",
+    "status": "complete_ready_for_core_absorption",
+    "requested_exact_keys": 9,
+    "official_raw_close_ready_rows": 9,
+    "blocked_rows": 0,
+    "partition_rows": 9,
+    "partition_matches_authority": true,
+    "duplicate_exact_keys": 0,
+    "network_routes": 5,
+    "network_outside_authority_rows": 0,
+    "non_close_family_download_rows": 0,
+    "ready_for_core_strict_bear_cash_incremental_close_absorption": true,
+    "ready_for_experiments": false,
+    "data_readiness_blocked_only": false,
+    "may_be_used_to_reject_strategy": false,
+    "future_data_violation_count": 0,
+    "formal_model_changed": false,
+    "trade_decision_changed": false,
+    "active_in_trade_decision": false,
+    "report_changed": false,
+    "portfolio_replay_executed": false,
+    "ready_for_strategy_replay": false,
+    "ready_for_formal": false,
+    "not_live_rule": true,
+    "forward_returns_live_rule_usage": false
+  },
+  "files": [
+    {
+      "file": "checkpoints/00631L/2018-07.json.gz",
+      "bytes": 618,
+      "sha256": "d46ca74e0c9824e17cfe5492db31fc5f5f64c75bc106242b4036ff83e60e700e"
+    },
+    {
+      "file": "checkpoints/00631L/2019-04.json.gz",
+      "bytes": 603,
+      "sha256": "a3e9f2a2b3c416c0824e8fe060b7bf78579a1e6166b0713827008aa5c4ca00a9"
+    },
+    {
+      "file": "checkpoints/00631L/2022-05.json.gz",
+      "bytes": 611,
+      "sha256": "d3db3bee1be1d557c02c60784ee93ad6293a0a6664c77f74608a4173bedab433"
+    },
+    {
+      "file": "checkpoints/00631L/2022-08.json.gz",
+      "bytes": 618,
+      "sha256": "132887e160beeae58ed65d151eed052ba09ed9c3fc6c49f1d09d5ecffff53c8f"
+    },
+    {
+      "file": "checkpoints/00631L/2022-11.json.gz",
+      "bytes": 622,
+      "sha256": "e1816fb3cd1cb405f5d4288cfd4636fe0277fda5dd8cd796e1443955ed72a762"
+    },
+    {
+      "file": "current_step.txt",
+      "bytes": 75,
+      "sha256": "b6167c3ecd9b4b61addd27dd1dfc9ab83c7fe2b7eadee143604f62f80f343cc4"
+    },
+    {
+      "file": "final_summary_zh.md",
+      "bytes": 186,
+      "sha256": "0f23792c16b0c9ad79778f7ec1563f8afde6fafc6ba0ae354d9839dbf81e86af"
+    },
+    {
+      "file": "future_data_audit.csv",
+      "bytes": 164,
+      "sha256": "6250712efce81b2005aaa78897103075474dc6bcc33d3c9e6e72edf3abc00f0e"
+    },
+    {
+      "file": "progress.json",
+      "bytes": 1022,
+      "sha256": "9eb3080c445c47de81e4327ea2b1641ebcad2d5a5931cbb5d383e95f09638d28"
+    },
+    {
+      "file": "readiness_for_core_strict_bear_cash_incremental_close_absorption.json",
+      "bytes": 976,
+      "sha256": "82e7cc2b0e4b1360fb71453ec44dc5baaedd48dc9e12cfcb6934e0a61e3dbf3c"
+    },
+    {
+      "file": "requested_vs_actual_coverage.csv",
+      "bytes": 118,
+      "sha256": "f6b2206d6788a417f9aba333a15e021c6c262b2e88b6b1dcad535a590e9f353d"
+    },
+    {
+      "file": "strict_bear_cash_incremental_exact_close_blocked.csv",
+      "bytes": 106,
+      "sha256": "c9a02936df3717a36d7544416366cbfca141d5e92464885ba4fa48b54406cc15"
+    },
+    {
+      "file": "strict_bear_cash_incremental_exact_close_patch.csv",
+      "bytes": 3226,
+      "sha256": "7137f6274581aaa1ac3a87b1a25064b2767ad7713f5157fe1521843c45cc796a"
+    }
+  ],
+  "future_data_violation_count": 0,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "portfolio_replay_executed": false,
+  "ready_for_strategy_replay": false,
+  "ready_for_formal": false,
+  "not_live_rule": true,
+  "forward_returns_live_rule_usage": false
+}

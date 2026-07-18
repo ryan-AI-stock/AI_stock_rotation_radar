@@ -15,7 +15,7 @@ except ModuleNotFoundError:
 TASK = "TASK-RADAR-DATA-VNEXT-P1-P2-STRICT-BEAR-CASH-INCREMENTAL-CLOSE-FILL-001"
 CORE_OUTPUT = Path(r"C:\Users\zergv\Documents\Codex\2026-05-30\ep05-chat-ai-stock-backtest-lab\outputs\vnext_p1_p2_strict_ai_diffusion_weekly_switch_fixed_bear_cash_extension_contract_20260718")
 AUTHORITY = CORE_OUTPUT / "strict_bear_cash_bounded_official_raw_execution_gap_ledger.csv"
-OUTPUT = REPO / "outputs/radar_vnext_p1_p2_strict_bear_cash_incremental_close_fill_20260718"
+OUTPUT = REPO / "outputs/radar_vnext_p1_p2_strict_bear_cash_final_union_close_fill_20260718"
 REUSE_ROOT = REPO / "outputs/radar_vnext_p1_p2_ai_diffusion_weekly_switch_close_fill_20260718/checkpoints/00631L"
 
 
@@ -23,7 +23,7 @@ def load_authority(path: Path) -> pd.DataFrame:
     frame = pd.read_csv(path, dtype=str, low_memory=False)[["ticker", "date"]].drop_duplicates()
     frame["ticker"] = frame["ticker"].astype(str).str.strip().str.upper(); frame["date"] = frame["date"].astype(str).str[:10]
     frame = frame.sort_values(["ticker", "date"]).reset_index(drop=True)
-    if len(frame) != 3 or not frame["ticker"].eq("00631L").all(): raise RuntimeError(f"authority_scope_changed:{frame.to_dict('records')}")
+    if len(frame) != 9 or not frame["ticker"].eq("00631L").all(): raise RuntimeError(f"authority_scope_changed:{frame.to_dict('records')}")
     return frame
 
 
