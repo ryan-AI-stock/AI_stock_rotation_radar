@@ -1,0 +1,2 @@
+ticker,date,market,classification,reason,source_url,source_hash,retrieved_at,future_data_violation_count
+00631L,2015-09-29,TWSE,official_no_trade,accepted_official_ticker_month_response_has_no_exact_trade_row,https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?date=20150901&stockNo=00631L&response=json,7ffd0f782cc7d25864f7240ef44ee409eea78961e5fb34e5be197c219441f356,2026-07-18T07:23:33+00:00,0
