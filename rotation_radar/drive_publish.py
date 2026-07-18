@@ -19,7 +19,7 @@ PUBLIC_FOLDER_ID = "16SmfPgMMIs7MWteeX1h2EkhSIEaGvpHn"
 PRIVATE_FOLDER_ID = "1O6Se-HfI7ZDTQ-LWeAO6f8vtvoLcCzIj"
 BACKUP_FILE_TEMPLATE = "台股股票族群輪動雷達_每日台股報告.pdf"
 PUBLIC_FIXED_FILE_NAME = "台股股票族群輪動雷達_每日台股報告.pdf"
-PRIVATE_FIXED_FILE_NAME = "0050訊號與00631L私人操作指南_每日報告.pdf"
+PRIVATE_FIXED_FILE_NAME = "私人策略操作總覽_每日報告.pdf"
 ENABLE_DATED_BACKUP_ENV = "ROTATION_ENABLE_DATED_BACKUP"
 
 
@@ -39,8 +39,8 @@ def main() -> None:
     parser.add_argument("--html", default="reports/latest.html", help="Generated HTML report path.")
     parser.add_argument(
         "--private-html",
-        default="reports/private_0050_00631l.html",
-        help="Private trading-guide HTML path.",
+        default="reports/private_strategy_daily.html",
+        help="Private strategy-report HTML path.",
     )
     parser.add_argument("--date", help="Report date, YYYY-MM-DD. Defaults to current Asia/Taipei date.")
     parser.add_argument("--skip-upload", action="store_true", help="Render PDFs only; do not upload to Google Drive.")

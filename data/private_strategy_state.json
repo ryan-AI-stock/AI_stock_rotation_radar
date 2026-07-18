@@ -1,0 +1,26 @@
+{
+  "old_ai_7_s10_cd10": {
+    "buy_date": "2026-06-26",
+    "held_ticker": "3231",
+    "last_processed_date": "2026-06-04",
+    "last_sold_ticker": "2454",
+    "pending_action": {
+      "decision_date": "2026-07-17",
+      "execution_date": "2026-07-20",
+      "role": "sell",
+      "ticker": "3231"
+    }
+  },
+  "yuanta_0050_top30_s08_cd3": {
+    "buy_date": "2026-05-19",
+    "held_ticker": "2327",
+    "last_processed_date": "2026-06-04",
+    "last_sold_ticker": "2360",
+    "pending_action": {
+      "decision_date": "2026-07-17",
+      "execution_date": "2026-07-20",
+      "role": "sell",
+      "ticker": "2327"
+    }
+  }
+}

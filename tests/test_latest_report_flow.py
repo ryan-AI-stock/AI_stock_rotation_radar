@@ -11,6 +11,7 @@ from unittest.mock import Mock, patch
 import rotation_radar.daily_pipeline as pipeline
 from rotation_radar.data_quality import QuoteSnapshot
 from rotation_radar.pipeline_settings import PipelineOptions, PipelinePaths
+from rotation_radar.private_strategies import required_private_strategy_symbols
 
 
 class LatestReportFlowTests(unittest.TestCase):
@@ -159,7 +160,10 @@ class LatestReportFlowTests(unittest.TestCase):
             self.assertEqual(write_formal_candidates.call_args.kwargs["stocks"], [stock])
             self.assertEqual(write_formal_candidates.call_args.kwargs["report_date"], "2026-06-04")
             refresh_prices.assert_called_once()
-            self.assertEqual(refresh_prices.call_args.kwargs["required_symbols"], {"2330", "0050", "00631L"})
+            self.assertEqual(
+                refresh_prices.call_args.kwargs["required_symbols"],
+                {"2330", "0050", "00631L"} | required_private_strategy_symbols(),
+            )
             self.assertEqual(backfill_theme_history.call_args.kwargs["keep_days"], 20)
             build_price_history.assert_called_once()
             build_radar_snapshots.assert_called_once()

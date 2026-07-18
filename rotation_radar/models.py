@@ -92,3 +92,4 @@ class Report:
     quote_date: str = ""
     quote_time: str = ""
     formal_signal: dict[str, object] = field(default_factory=dict)
+    private_strategies: list[dict[str, object]] = field(default_factory=list)

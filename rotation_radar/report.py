@@ -57,29 +57,107 @@ def render_report(report: Report) -> str:
 
 
 def render_private_signal_report(report: Report) -> str:
-    """Render the private trading guide separately from the public Radar report."""
+    """Render the consolidated private strategy report."""
     return f"""<!doctype html>
 <html lang="zh-Hant">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>0050 訊號與 00631L 私人操作指南</title>
+  <title>私人策略操作總覽</title>
   <style>{_css()}</style>
 </head>
 <body>
   <header class="hero">
     <div class="hero-inner">
-      <p class="eyebrow">私人操作指南 | 不公開發布</p>
-      <h1>0050 訊號與 00631L 操作指南</h1>
-      <p class="market-view">此報告包含個人持倉、交易訊號與冷卻期資訊，只能上傳至「4. 自用」。</p>
+      <p class="eyebrow">被AI研究所 | Private Strategy Desk</p>
+      <h1>私人策略操作總覽</h1>
+      <p class="market-view">兩套候選池策略的收盤後訊號、模擬持股與隔日動作。僅供私人決策，不公開發布。</p>
       <p class="stamp">產出時間：{escape(report.generated_at)}</p>
     </div>
   </header>
   <main>
-    {_formal_signal_panel(report)}
+    <section class="section private-overview">
+      <div class="private-summary">
+        <span>今日策略快照</span>
+        <strong>{escape(report.generated_at)}</strong>
+        <p>價格口徑為每日官方未調整收盤價；訊號在收盤後成立，預計於下一個交易日執行。</p>
+      </div>
+      {''.join(_private_strategy_panel(item) for item in report.private_strategies) if report.private_strategies else _formal_signal_panel(report)}
+      <div class="private-footnote">
+        <b>執行邊界</b>
+        <p>本頁顯示模型模擬狀態，不等同券商實際部位。若資料不足、休市或候選池來源過期，應停止依此交易。</p>
+      </div>
+    </section>
   </main>
 </body>
 </html>"""
+
+
+def _private_strategy_panel(item: dict[str, object]) -> str:
+    action = str(item.get("today_action", "stay_flat"))
+    action_label = {
+        "buy_next_day": "隔日買入",
+        "sell_next_day": "隔日賣出",
+        "hold": "續抱",
+        "cooldown_hold": "CD鎖定續抱",
+        "stay_flat": "維持空手",
+    }.get(action, "狀態待確認")
+    action_class = (
+        "positive"
+        if action == "buy_next_day"
+        else "negative"
+        if action == "sell_next_day"
+        else "neutral"
+    )
+    held = str(item.get("held_ticker", "") or "")
+    held_name = str(item.get("held_name", "") or "")
+    signal = str(item.get("signal_ticker", "") or "")
+    signal_name = str(item.get("signal_name", "") or "")
+    focus = dict(item.get("focus_metrics", {}) or {})
+    candidates = list(item.get("top_candidates", []) or [])
+    candidate_rows = "".join(
+        f"<tr><td>{index}</td><td>{escape(str(row.get('ticker', '')))} "
+        f"{escape(str(row.get('name', '')))}</td>"
+        f"<td>{_formal_number(row.get('close'))}</td>"
+        f"<td>{_formal_pct(float(row.get('entry_slope_pct', 0) or 0))}</td></tr>"
+        for index, row in enumerate(candidates, start=1)
+    )
+    if not candidate_rows:
+        candidate_rows = '<tr><td colspan="4">今日沒有符合完整進場條件的候選</td></tr>'
+    position_text = f"{held} {held_name}" if held else "空手"
+    focus_text = f"{signal} {signal_name}" if signal else "無"
+    source_date = str(item.get("pool_source_date", "") or "")
+    pool_count = int(item.get("pool_size", 0) or 0)
+    ready_count = int(item.get("data_ready_count", 0) or 0)
+    return f"""
+    <article class="private-strategy-card">
+      <div class="private-card-head">
+        <div>
+          <span>{escape(str(item.get("pool_label", "")))}</span>
+          <h2>{escape(str(item.get("mode_label", "")))}</h2>
+        </div>
+        <strong class="{action_class}">{escape(action_label)}</strong>
+      </div>
+      <div class="private-status-grid">
+        <div><span>目前模擬部位</span><strong>{escape(position_text)}</strong><em>買入日 {escape(str(item.get("buy_date", "") or "無"))}</em></div>
+        <div><span>今日判斷標的</span><strong>{escape(focus_text)}</strong><em>{escape(str(item.get("action_reason", "")))}</em></div>
+        <div><span>隔日執行日</span><strong>{escape(str(item.get("next_execution_date", "") or "待確認"))}</strong><em>訊號日 {escape(str(item.get("report_date", "")))}</em></div>
+        <div><span>候選 / 資料覆蓋</span><strong>{int(item.get("candidate_count", 0) or 0)} / {ready_count}</strong><em>候選池 {pool_count} 檔；來源 {escape(source_date)}</em></div>
+      </div>
+      <div class="private-metric-strip">
+        <div><span>收盤</span><strong>{_formal_number(focus.get("close"))}</strong></div>
+        <div><span>進場 MA</span><strong>{_formal_number(focus.get("entry_ma"))}</strong></div>
+        <div><span>進場斜率</span><strong>{_formal_pct(focus.get("entry_slope_pct"))}</strong></div>
+        <div><span>退出 MA</span><strong>{_formal_number(focus.get("exit_ma"))}</strong></div>
+        <div><span>退出斜率</span><strong>{_formal_pct(focus.get("exit_slope_pct"))}</strong></div>
+        <div><span>CD</span><strong>{int(item.get("cooldown", 0) or 0)} TD</strong></div>
+      </div>
+      <div class="private-candidates">
+        <h3>今日進場候選排序</h3>
+        <table><thead><tr><th>#</th><th>股票</th><th>收盤</th><th>進場斜率</th></tr></thead><tbody>{candidate_rows}</tbody></table>
+      </div>
+    </article>
+    """
 
 
 def _group_stocks(stocks: list[StockResult]) -> dict[Bucket, list[StockResult]]:
@@ -879,6 +957,35 @@ main { padding: 22px max(14px, 4vw) 54px; }
 .formal-cd p { display: grid; grid-template-columns: 170px 1fr; gap: 8px; margin: 5px 0; font-size: .82rem; }
 .formal-cd b { color: #d6a642; }
 .formal-cd small { color: #c8d9d6; margin-left: 8px; }
+.private-overview { max-width: 920px; }
+.private-summary { background: #fffdf8; border: 1px solid #ddd6c8; border-left: 5px solid #d6a642; border-radius: 6px; padding: 14px 18px; margin-bottom: 14px; }
+.private-summary span { color: #a16207; font-size: .78rem; font-weight: 850; }
+.private-summary strong { display: block; font-size: 1.35rem; }
+.private-summary p { margin: 4px 0 0; color: #6f6a60; }
+.private-strategy-card { background: #fffdf8; border: 1px solid #d8d3c8; border-radius: 7px; margin-bottom: 16px; overflow: hidden; break-inside: avoid; page-break-inside: avoid; }
+.private-card-head { display: flex; justify-content: space-between; gap: 18px; align-items: center; padding: 16px 18px; background: #162a3a; color: #fff; border-bottom: 4px solid #d6a642; }
+.private-card-head span { color: #d6a642; font-size: .8rem; font-weight: 850; }
+.private-card-head h2 { margin-top: 4px; font-size: 1.16rem; }
+.private-card-head > strong { min-width: 96px; text-align: center; padding: 7px 9px; border-radius: 4px; font-size: .94rem; }
+.private-card-head .positive { color: #0f5f58; background: #dff5ee; }
+.private-card-head .negative { color: #9f1d17; background: #ffe5e1; }
+.private-card-head .neutral { color: #514b42; background: #f3eee4; }
+.private-status-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0; padding: 0 18px; }
+.private-status-grid > div { padding: 12px 10px 12px 0; border-bottom: 1px solid #e2ddd3; }
+.private-status-grid span, .private-status-grid em { display: block; color: #6f6a60; font-size: .76rem; font-style: normal; }
+.private-status-grid strong { display: block; font-size: 1.04rem; }
+.private-metric-strip { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 8px; padding: 12px 18px; background: #f4f6f7; }
+.private-metric-strip div { background: #fff; border: 1px solid #d8dfe3; border-radius: 5px; padding: 8px; }
+.private-metric-strip span { display: block; color: #6f6a60; font-size: .72rem; }
+.private-metric-strip strong { display: block; font-size: .9rem; }
+.private-candidates { padding: 0 18px 16px; }
+.private-candidates h3 { font-size: .96rem; margin: 12px 0 6px; }
+.private-candidates table { width: 100%; font-size: .8rem; border-collapse: collapse; }
+.private-candidates th, .private-candidates td { padding: 6px 8px; border-bottom: 1px solid #e2ddd3; text-align: left; }
+.private-candidates th { color: #6f6a60; font-weight: 750; }
+.private-footnote { color: #6f6a60; background: #fff; border: 1px solid #ddd6c8; border-radius: 6px; padding: 12px 16px; font-size: .78rem; }
+.private-footnote b { color: #171717; }
+.private-footnote p { margin: 3px 0 0; }
 .brief-head { display: flex; justify-content: space-between; gap: 18px; align-items: baseline; border-bottom: 1px solid #ddd6c8; padding-bottom: 12px; }
 .brief-head span { color: #a16207; font-size: .8rem; font-weight: 850; text-transform: uppercase; letter-spacing: .08em; }
 .brief-head strong { font-size: clamp(1.15rem, 3vw, 2rem); text-align: right; }
@@ -959,7 +1066,7 @@ ul { padding-left: 18px; margin: 12px 0; color: #38332c; }
 .method-grid span { color: #6f6a60; }
 .empty { color: #6f6a60; }
 @media (max-width: 980px) {
-  .sector-grid, .digest-grid, .excluded-list, .formal-grid { grid-template-columns: 1fr; }
+  .sector-grid, .digest-grid, .excluded-list, .formal-grid, .private-status-grid { grid-template-columns: 1fr; }
   .section-head { display: block; }
   .section-head p { margin-top: 6px; }
 }
@@ -973,6 +1080,9 @@ ul { padding-left: 18px; margin: 12px 0; color: #38332c; }
   .formal-head { display: block; }
   .formal-head > strong { display: inline-block; margin-top: 8px; }
   .formal-cd p { display: block; }
+  .private-card-head { display: block; }
+  .private-card-head > strong { display: inline-block; margin-top: 8px; }
+  .private-metric-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .stock-main { align-items: start; }
   .metrics, .sector-stats { grid-template-columns: 1fr 1fr; }
 }

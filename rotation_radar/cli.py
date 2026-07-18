@@ -111,6 +111,11 @@ def main() -> None:
         default="reports/formal_0050_00631l_checkpoint.json",
         help="Machine-readable per-report formal signal checkpoint.",
     )
+    parser.add_argument(
+        "--private-strategy-state-file",
+        default="data/private_strategy_state.json",
+        help="Persistent model state for the two private stock-pool strategies.",
+    )
     parser.add_argument("--actual-trade-override-date", default="", help="Optional actual 00631L trade date, YYYY-MM-DD.")
     parser.add_argument(
         "--actual-trade-override-action",
@@ -393,6 +398,7 @@ def _write_report(
     quote_time="",
     generated_date="",
     formal_signal=None,
+    private_strategies=None,
 ) -> None:
     sector_results, stock_results = build_results(sectors, stocks)
 
@@ -412,16 +418,17 @@ def _write_report(
         quote_date=quote_date,
         quote_time=quote_time,
         formal_signal=formal_signal or {},
+        private_strategies=private_strategies or [],
     )
 
     output = Path(output_path)
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(render_report(report), encoding="utf-8")
     print(f"Report written to {output} ({data_source})")
-    if report.formal_signal:
-        private_output = output.parent / "private_0050_00631l.html"
+    if report.private_strategies:
+        private_output = output.parent / "private_strategy_daily.html"
         private_output.write_text(render_private_signal_report(report), encoding="utf-8")
-        print(f"Private trading guide written to {private_output}")
+        print(f"Private strategy report written to {private_output}")
 
 
 if __name__ == "__main__":

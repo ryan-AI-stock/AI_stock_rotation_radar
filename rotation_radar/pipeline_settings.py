@@ -46,6 +46,7 @@ class PipelinePaths:
     formal_signal_state: Path
     formal_trade_override: Path
     formal_signal_checkpoint: Path
+    private_strategy_state: Path
     raw_root: Path
     processed_root: Path
 
@@ -75,6 +76,9 @@ class PipelinePaths:
             ),
             formal_signal_checkpoint=Path(
                 getattr(args, "formal_signal_checkpoint_output", "reports/formal_0050_00631l_checkpoint.json")
+            ),
+            private_strategy_state=Path(
+                getattr(args, "private_strategy_state_file", "data/private_strategy_state.json")
             ),
             raw_root=Path(args.raw_output_dir),
             processed_root=Path(args.processed_output_dir),

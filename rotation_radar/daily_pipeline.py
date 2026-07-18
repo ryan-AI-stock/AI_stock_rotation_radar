@@ -18,6 +18,10 @@ from .market_universe import MarketUniverseFetchError, build_fallback_universe_f
 from .normalize import normalize_raw_directory
 from .pipeline_settings import PipelineOptions, PipelinePaths
 from .price_history import build_price_history_from_processed, load_price_history
+from .private_strategies import (
+    build_private_strategy_checkpoints,
+    required_private_strategy_symbols,
+)
 from .public_sources import fetch_raw_market_snapshots, fetch_raw_price_snapshots, parse_trade_date, recent_weekdays
 from .quote_refresh import build_market_quotes_from_processed_prices, refresh_market_quotes, refresh_stock_metrics_quotes
 from .radar_snapshot import build_radar_snapshots
@@ -138,7 +142,11 @@ def run_update_latest_report(args, write_report: ReportWriter) -> None:
     sectors = load_sector_metrics(generated_sector_path)
     stocks = load_stock_metrics(refreshed_path)
     candidate_symbols = {stock.symbol for stock in stocks}
-    required_price_symbols = candidate_symbols | {"0050", "00631L"}
+    required_price_symbols = (
+        candidate_symbols
+        | {"0050", "00631L"}
+        | required_private_strategy_symbols()
+    )
     formal_candidates_path = write_formal_radar_candidates(
         stocks=stocks,
         report_date=run_args.report_date or quote_snapshot.normalized_date,
@@ -184,6 +192,14 @@ def run_update_latest_report(args, write_report: ReportWriter) -> None:
         checkpoint_path=paths.formal_signal_checkpoint,
         explicit_trade_override=_explicit_trade_override(args),
     )
+    private_strategies = build_private_strategy_checkpoints(
+        price_history,
+        report_date=run_args.report_date or quote_snapshot.normalized_date,
+        next_execution_date=str(
+            formal_signal.get("model_next_day_execution_date", "") or ""
+        ),
+        state_path=paths.private_strategy_state,
+    )
     stock_themes = load_stock_theme_tags(args.theme_map_file, args.theme_universe_file)
     theme_trends = load_theme_trends(theme_history_path, generated_sector_path)
     write_report(
@@ -198,6 +214,7 @@ def run_update_latest_report(args, write_report: ReportWriter) -> None:
         quote_time=quote_time,
         generated_date=run_args.report_date,
         formal_signal=formal_signal,
+        private_strategies=private_strategies,
     )
     manifest_warnings = _collect_data_quality_warnings(run_args, paths, options, required_price_symbols)
     manifest_path = write_run_manifest(
