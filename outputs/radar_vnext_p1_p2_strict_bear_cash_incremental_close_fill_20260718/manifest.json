@@ -1,0 +1,96 @@
+{
+  "task": "TASK-RADAR-DATA-VNEXT-P1-P2-STRICT-BEAR-CASH-INCREMENTAL-CLOSE-FILL-001",
+  "generated_at": "2026-07-18T06:39:59+00:00",
+  "authority_path": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-30\\ep05-chat-ai-stock-backtest-lab\\outputs\\vnext_p1_p2_strict_ai_diffusion_weekly_switch_fixed_bear_cash_extension_contract_20260718\\strict_bear_cash_bounded_official_raw_execution_gap_ledger.csv",
+  "authority_sha256": "d85fc4918d244fe9098130ac2bc5041d81e9252c581be36e42abd15664246634",
+  "network_scope": "current Core authority only; 00631L exact dates; TWSE selected ticker-month close-only",
+  "readiness": {
+    "task": "TASK-RADAR-DATA-VNEXT-P1-P2-STRICT-BEAR-CASH-INCREMENTAL-CLOSE-FILL-001",
+    "status": "complete_ready_for_core_absorption",
+    "requested_exact_keys": 3,
+    "official_raw_close_ready_rows": 3,
+    "blocked_rows": 0,
+    "partition_rows": 3,
+    "partition_matches_authority": true,
+    "duplicate_exact_keys": 0,
+    "network_routes": 2,
+    "network_outside_authority_rows": 0,
+    "non_close_family_download_rows": 0,
+    "ready_for_core_strict_bear_cash_incremental_close_absorption": true,
+    "ready_for_experiments": false,
+    "data_readiness_blocked_only": false,
+    "may_be_used_to_reject_strategy": false,
+    "future_data_violation_count": 0,
+    "formal_model_changed": false,
+    "trade_decision_changed": false,
+    "active_in_trade_decision": false,
+    "report_changed": false,
+    "portfolio_replay_executed": false,
+    "ready_for_strategy_replay": false,
+    "ready_for_formal": false,
+    "not_live_rule": true,
+    "forward_returns_live_rule_usage": false
+  },
+  "files": [
+    {
+      "file": "checkpoints/00631L/2018-05.json.gz",
+      "bytes": 613,
+      "sha256": "80dc3e7c957bdb8543edf02e1b5639018f69f0767677e3017d79da477a5fff8c"
+    },
+    {
+      "file": "checkpoints/00631L/2018-11.json.gz",
+      "bytes": 611,
+      "sha256": "f9c0c7e3f90765f5ad0aa5ae9d5c9ca9b5a2fc80d16fa0d8cb2d071abb99d950"
+    },
+    {
+      "file": "current_step.txt",
+      "bytes": 75,
+      "sha256": "b6167c3ecd9b4b61addd27dd1dfc9ab83c7fe2b7eadee143604f62f80f343cc4"
+    },
+    {
+      "file": "final_summary_zh.md",
+      "bytes": 186,
+      "sha256": "1a7a69e58139e315992a0f1906b43802dc8db30ba43bf2bf4ff52b6ba52a46c7"
+    },
+    {
+      "file": "future_data_audit.csv",
+      "bytes": 164,
+      "sha256": "6250712efce81b2005aaa78897103075474dc6bcc33d3c9e6e72edf3abc00f0e"
+    },
+    {
+      "file": "progress.json",
+      "bytes": 1022,
+      "sha256": "1ff175066e1b24042a2c5eb984d5a9c301220111d4be189ef7b28be35eaf0b93"
+    },
+    {
+      "file": "readiness_for_core_strict_bear_cash_incremental_close_absorption.json",
+      "bytes": 976,
+      "sha256": "92ee01a19a71dc8891e5861e509882c3dae53379159a6378d08781b928a6c6e1"
+    },
+    {
+      "file": "requested_vs_actual_coverage.csv",
+      "bytes": 118,
+      "sha256": "51c53c51400defeef5d6dd81d4859ec41d125f1ce808fc5061d312a111d7c2b4"
+    },
+    {
+      "file": "strict_bear_cash_incremental_exact_close_blocked.csv",
+      "bytes": 106,
+      "sha256": "c9a02936df3717a36d7544416366cbfca141d5e92464885ba4fa48b54406cc15"
+    },
+    {
+      "file": "strict_bear_cash_incremental_exact_close_patch.csv",
+      "bytes": 1162,
+      "sha256": "b2497089b41d9264f42f464b1ac1f902fddb986dc7a865e142b8b27ad56a8380"
+    }
+  ],
+  "future_data_violation_count": 0,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "portfolio_replay_executed": false,
+  "ready_for_strategy_replay": false,
+  "ready_for_formal": false,
+  "not_live_rule": true,
+  "forward_returns_live_rule_usage": false
+}
