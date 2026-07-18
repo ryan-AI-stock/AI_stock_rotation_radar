@@ -1,0 +1,6 @@
+ticker,date,market,classification,reason,source_url,source_hash,retrieved_at,future_data_violation_count
+6669,2018-02-08,TWSE,official_no_trade_prelisting,target_date_before_official_twse_listing_date_2019-03-27,https://openapi.twse.com.tw/v1/company/newlisting,c289ede8248e3fe1ac74cec62e01f08d774d183e9ddaca77b93b55808e2600d8,,0
+6669,2018-03-06,TWSE,official_no_trade_prelisting,target_date_before_official_twse_listing_date_2019-03-27,https://openapi.twse.com.tw/v1/company/newlisting,c289ede8248e3fe1ac74cec62e01f08d774d183e9ddaca77b93b55808e2600d8,,0
+6669,2018-04-09,TWSE,official_no_trade_prelisting,target_date_before_official_twse_listing_date_2019-03-27,https://openapi.twse.com.tw/v1/company/newlisting,c289ede8248e3fe1ac74cec62e01f08d774d183e9ddaca77b93b55808e2600d8,,0
+6669,2018-06-25,TWSE,official_no_trade_prelisting,target_date_before_official_twse_listing_date_2019-03-27,https://openapi.twse.com.tw/v1/company/newlisting,c289ede8248e3fe1ac74cec62e01f08d774d183e9ddaca77b93b55808e2600d8,,0
+6669,2019-03-13,TWSE,official_no_trade_prelisting,target_date_before_official_twse_listing_date_2019-03-27,https://openapi.twse.com.tw/v1/company/newlisting,c289ede8248e3fe1ac74cec62e01f08d774d183e9ddaca77b93b55808e2600d8,,0

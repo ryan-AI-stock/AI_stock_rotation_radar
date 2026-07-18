@@ -1,0 +1,323 @@
+{
+  "task": "TASK-RADAR-DATA-VNEXT-P1-P2-AI-CONCENTRATION-DIFFUSION-WEEKLY-SWITCH-CLOSE-FILL-001",
+  "generated_at": "2026-07-18T05:51:07+00:00",
+  "output_path": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-23\\ai-stock-rotation-radar-https-docs\\outputs\\radar_vnext_p1_p2_ai_diffusion_weekly_switch_close_fill_20260718",
+  "authority_path": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-30\\ep05-chat-ai-stock-backtest-lab\\outputs\\vnext_p1_p2_ai_concentration_diffusion_weekly_switch_exact_nav_contract_20260718\\weekly_switch_bounded_official_raw_execution_gap_ledger.csv",
+  "authority_sha256": "f3f8cdd4146838e4ff9f42b16d6271e8930b2f9d1e7ae6ebcc21e53197d93f12",
+  "network_scope": "exact 55 authority keys; TWSE selected ticker-month close-only",
+  "readiness": {
+    "task": "TASK-RADAR-DATA-VNEXT-P1-P2-AI-CONCENTRATION-DIFFUSION-WEEKLY-SWITCH-CLOSE-FILL-001",
+    "status": "complete_ready_for_core_absorption",
+    "requested_exact_keys": 55,
+    "official_raw_close_ready_rows": 50,
+    "official_no_trade_or_no_target_rows": 5,
+    "blocked_rows": 0,
+    "partition_rows": 55,
+    "partition_matches_authority": true,
+    "duplicate_exact_keys": 0,
+    "network_routes": 44,
+    "network_outside_authority_rows": 0,
+    "non_close_family_download_rows": 0,
+    "ready_for_core_weekly_switch_close_absorption": true,
+    "ready_for_experiments": false,
+    "data_readiness_blocked_only": false,
+    "may_be_used_to_reject_strategy": false,
+    "future_data_violation_count": 0,
+    "formal_model_changed": false,
+    "trade_decision_changed": false,
+    "active_in_trade_decision": false,
+    "report_changed": false,
+    "portfolio_replay_executed": false,
+    "ready_for_strategy_replay": false,
+    "ready_for_formal": false,
+    "not_live_rule": true,
+    "forward_returns_live_rule_usage": false
+  },
+  "files": [
+    {
+      "file": "authority_guard.json",
+      "bytes": 647,
+      "sha256": "67f6d08fec88721b932379549c192609e0d920bccc451bc9621bd5c36b947069"
+    },
+    {
+      "file": "checkpoints/00631L/2018-02.json.gz",
+      "bytes": 572,
+      "sha256": "c0c88fb8428eef02a38430c67a79f8d86c92d8b4239d54a15fe3c741a9e4ccb0"
+    },
+    {
+      "file": "checkpoints/00631L/2018-06.json.gz",
+      "bytes": 609,
+      "sha256": "35b14db01f135c0db42c0690aec253c0d912a5e0798a2e0c99166749a817e33a"
+    },
+    {
+      "file": "checkpoints/00631L/2019-01.json.gz",
+      "bytes": 615,
+      "sha256": "91ca23f3269db9bf3f8dcb5de1612038a2e04b3fe1ab921c2c1fc9b2b4a748c3"
+    },
+    {
+      "file": "checkpoints/00631L/2019-05.json.gz",
+      "bytes": 627,
+      "sha256": "d078fd069b39dda8e4a044f0d4ecf69c7fa5a3995d5afcb9c9e4614661748c9a"
+    },
+    {
+      "file": "checkpoints/00631L/2019-06.json.gz",
+      "bytes": 607,
+      "sha256": "daccf494bebc0818fa1ef8bf46b45faaedf9572eeea24e2dcef085191a1ef2b9"
+    },
+    {
+      "file": "checkpoints/00631L/2019-07.json.gz",
+      "bytes": 623,
+      "sha256": "eacfba07d49d2a995f40ad71c5890f09900a014b9b5fadcbebe1ad2ecc15859e"
+    },
+    {
+      "file": "checkpoints/00631L/2019-08.json.gz",
+      "bytes": 614,
+      "sha256": "c5b159c61f99d2a21059ca03c3c0db52c5b469a897434fc7f22a7056663095fc"
+    },
+    {
+      "file": "checkpoints/00631L/2019-09.json.gz",
+      "bytes": 606,
+      "sha256": "6a990928784853413c7200bb50052ccf6b66989e9c124059ec2e4efed3a7766f"
+    },
+    {
+      "file": "checkpoints/00631L/2019-11.json.gz",
+      "bytes": 615,
+      "sha256": "ddb87b0be7dfcd13b47d46580d4ebbc07d6cfd780b984106f74ab333a967bb6f"
+    },
+    {
+      "file": "checkpoints/00631L/2019-12.json.gz",
+      "bytes": 619,
+      "sha256": "32f83789f86b6de7ead9ca491c1f87cf084b14d86c0d6fe3418ec2c5bfc30dfa"
+    },
+    {
+      "file": "checkpoints/00631L/2020-03.json.gz",
+      "bytes": 643,
+      "sha256": "f69abbf4a670e96464a687a45c33857f9810b5d9241438e29ddca299a2c1519e"
+    },
+    {
+      "file": "checkpoints/00631L/2020-04.json.gz",
+      "bytes": 621,
+      "sha256": "80b748aa806de73f924180e6fd8407b466ba9b553c34fbac6a12436a3ac5ab4b"
+    },
+    {
+      "file": "checkpoints/00631L/2020-07.json.gz",
+      "bytes": 626,
+      "sha256": "c1ea63f57d6cedeb143ee7b1289c9c2a9b5ef5b1d1995285d80099e88edf8553"
+    },
+    {
+      "file": "checkpoints/00631L/2020-08.json.gz",
+      "bytes": 614,
+      "sha256": "6567b3d323f93c0ffa657d96485b8cfab27e6f3649b94c0a5b7f28ef8abc85f7"
+    },
+    {
+      "file": "checkpoints/00631L/2021-01.json.gz",
+      "bytes": 613,
+      "sha256": "ec06cc1b07669b8be598ac88ac3c1726c389c186494d0a1cab594d80007a331e"
+    },
+    {
+      "file": "checkpoints/00631L/2021-04.json.gz",
+      "bytes": 605,
+      "sha256": "32071402c1e6ae61474a37cb3681bee9ed11ec7a1460639fbbc08a93820e6a96"
+    },
+    {
+      "file": "checkpoints/00631L/2021-05.json.gz",
+      "bytes": 624,
+      "sha256": "5880fd6734364b498d23f59275fc163cdbe771b10f9b0c6eb79a4ca488b67ae9"
+    },
+    {
+      "file": "checkpoints/00631L/2021-07.json.gz",
+      "bytes": 621,
+      "sha256": "68cb4d13dbbc077b02fa4601f15786c18180681b728565cc3772d99fc494709c"
+    },
+    {
+      "file": "checkpoints/00631L/2021-08.json.gz",
+      "bytes": 630,
+      "sha256": "edd216d17452557dd41753146af3d8367c5770416bfef4d0ecf8b96c599772c8"
+    },
+    {
+      "file": "checkpoints/00631L/2021-11.json.gz",
+      "bytes": 625,
+      "sha256": "233e620bad94afd9e8e42aeb2bd5a79dca3c7de44d56befce323a2a3c11d2a1e"
+    },
+    {
+      "file": "checkpoints/00631L/2022-01.json.gz",
+      "bytes": 606,
+      "sha256": "d99babf77149c89b8a13845886a319be66ce64c67b6e3b54c36e9a6fdc49f4a2"
+    },
+    {
+      "file": "checkpoints/00631L/2022-07.json.gz",
+      "bytes": 620,
+      "sha256": "8abb6b11fff900dbaa7a7cd89f2b47ba78a409cc34a6128b51ccb700882b4322"
+    },
+    {
+      "file": "checkpoints/00631L/2022-09.json.gz",
+      "bytes": 624,
+      "sha256": "658763c6cd731fa7fff1fe86efa70c3ba8c06261e12b30aaf5297ed401798170"
+    },
+    {
+      "file": "checkpoints/00631L/2022-10.json.gz",
+      "bytes": 615,
+      "sha256": "dda4f9e250fc10ba2f2e16505252ce1c04f8e60fd198c3efbc40666ecd1a65e5"
+    },
+    {
+      "file": "checkpoints/00631L/2022-12.json.gz",
+      "bytes": 623,
+      "sha256": "7bbf912fc9fac3be01567eea4a9d43a75bd6e77d6122d53dfdf82ed727a465ef"
+    },
+    {
+      "file": "checkpoints/00631L/2023-01.json.gz",
+      "bytes": 575,
+      "sha256": "3f767a9d369fb7a7cdb71a4ef51b617c6bd2fd7c99860fd5da091e9d56e5c4bb"
+    },
+    {
+      "file": "checkpoints/00631L/2023-03.json.gz",
+      "bytes": 627,
+      "sha256": "6b160d2ce69c7d633cb2c86e84980f8b1b0ae54d1c79c779a00644aa78114b9e"
+    },
+    {
+      "file": "checkpoints/00631L/2023-06.json.gz",
+      "bytes": 612,
+      "sha256": "f16367adcab3221729ff124526e2c7493338889e091f7d0cf29cce142a4f8b4a"
+    },
+    {
+      "file": "checkpoints/00631L/2023-08.json.gz",
+      "bytes": 623,
+      "sha256": "d1cb8430c47e77e50ab7c36f0cb2e86fe37dc4b31132f125cb1f0188edd59ee3"
+    },
+    {
+      "file": "checkpoints/00631L/2024-01.json.gz",
+      "bytes": 627,
+      "sha256": "c3d29e52ecca265c953d6daca878610b92d7d246fea229386e6800401e3f546f"
+    },
+    {
+      "file": "checkpoints/00631L/2024-02.json.gz",
+      "bytes": 577,
+      "sha256": "9f0ba30df1f20dd7f536c1ac7682ad2d2edc401331932832ae382d83ebd3bc72"
+    },
+    {
+      "file": "checkpoints/00631L/2024-03.json.gz",
+      "bytes": 619,
+      "sha256": "cc219e1d6c4b20964f440501e3f203d3d157d8b271ffafd3ce1ccdbfee4b8e48"
+    },
+    {
+      "file": "checkpoints/00631L/2024-04.json.gz",
+      "bytes": 625,
+      "sha256": "8afa7f7d5adb99e996a411f8e3a779ebc53a4d866da23d8337102278ae72196c"
+    },
+    {
+      "file": "checkpoints/00631L/2024-05.json.gz",
+      "bytes": 636,
+      "sha256": "a0ef170947b06ec6dfcf4d1442be3d30ad344731b3378c77f253922f079c8402"
+    },
+    {
+      "file": "checkpoints/00631L/2024-06.json.gz",
+      "bytes": 620,
+      "sha256": "0489180ab2e1421ebb5b06743024e4d32c097d306986c48e43429898d025c381"
+    },
+    {
+      "file": "checkpoints/00631L/2024-07.json.gz",
+      "bytes": 633,
+      "sha256": "1c151859511c023852ee65f8ffe76f333663e5d1fc1d8bf61eec5177aab2b414"
+    },
+    {
+      "file": "checkpoints/00631L/2024-08.json.gz",
+      "bytes": 639,
+      "sha256": "9c780e8fa31f08578b586e0fa894e0e0d04077a4237df1904a318f51cf786798"
+    },
+    {
+      "file": "checkpoints/00631L/2024-11.json.gz",
+      "bytes": 631,
+      "sha256": "28f0cbfc4eaf279ae91c6c323eb7d3d062ea21fe88f26657c9066af0f199c6a4"
+    },
+    {
+      "file": "checkpoints/00631L/2024-12.json.gz",
+      "bytes": 624,
+      "sha256": "adf70264a04c12b1e763a8aa1f36191cf2d2ea9358523d3c289350da111f7900"
+    },
+    {
+      "file": "checkpoints/00631L/2025-05.json.gz",
+      "bytes": 626,
+      "sha256": "950c76584e1f22e253ff58282112d5eedcee1d39f99f66cd830666984848c287"
+    },
+    {
+      "file": "checkpoints/00631L/2026-01.json.gz",
+      "bytes": 629,
+      "sha256": "7fc667773cb4c9ca0e5f86aa80e2c06b7a590f4d9d174b58382cb04e6bcab4b6"
+    },
+    {
+      "file": "checkpoints/00631L/2026-05.json.gz",
+      "bytes": 617,
+      "sha256": "8e43cbf620edc3456446817c672447407507eb0b03c0cef128ca884c408383d5"
+    },
+    {
+      "file": "checkpoints/6669/2019-04.json.gz",
+      "bytes": 606,
+      "sha256": "48d93a5996254f5c322847729772c6847e0b2e54e578000926b6a58ceda6a048"
+    },
+    {
+      "file": "checkpoints/6669/2021-04.json.gz",
+      "bytes": 597,
+      "sha256": "dd7303dc079d8bf986ec1e6cc9cc2ccd6197a9a64e0bc0dda61fbe15ede5521e"
+    },
+    {
+      "file": "current_step.txt",
+      "bytes": 84,
+      "sha256": "eaba752982580498919540f03ab82e3301dbbb7b51b203806d468f15f225c2e1"
+    },
+    {
+      "file": "final_summary_zh.md",
+      "bytes": 301,
+      "sha256": "c1d2a3541398291b9d6a2dc88cac7d2462d5472a5f1e41d84c633fb7e7851f33"
+    },
+    {
+      "file": "future_data_audit.csv",
+      "bytes": 190,
+      "sha256": "076fa9a61c06edf1ef5176bd26d195a277833cc96059b486d1c8bbe12c984017"
+    },
+    {
+      "file": "progress.json",
+      "bytes": 1094,
+      "sha256": "df527c4cb2238022e2361c82b343b910922b40467bb497e7b8269c3a083536db"
+    },
+    {
+      "file": "readiness_for_core_weekly_switch_close_absorption.json",
+      "bytes": 1022,
+      "sha256": "d7ad971be4e5acee7cc2c772ce488ba23e2f1dcfcdeac43c13b754e635ec7b1e"
+    },
+    {
+      "file": "requested_vs_actual_coverage.csv",
+      "bytes": 156,
+      "sha256": "ab7f80676d03bde268805130735d03e56e7bb94c1c7ad7dcf5a5ef5ea02420a7"
+    },
+    {
+      "file": "weekly_switch_close_source_manifest.csv",
+      "bytes": 14176,
+      "sha256": "586b502d977826f22d6face78b3160edcd95ea89ccf43b16283a20fa12aa64f7"
+    },
+    {
+      "file": "weekly_switch_exact_official_no_trade.csv",
+      "bytes": 1236,
+      "sha256": "8d09e89110f7af79824440d451a898d4038d4f488ca776ea5695441b05952952"
+    },
+    {
+      "file": "weekly_switch_exact_official_raw_close_blocked.csv",
+      "bytes": 106,
+      "sha256": "c9a02936df3717a36d7544416366cbfca141d5e92464885ba4fa48b54406cc15"
+    },
+    {
+      "file": "weekly_switch_exact_official_raw_close_patch.csv.gz",
+      "bytes": 3068,
+      "sha256": "161e4be5d2b16e0db0dac53b9544bf8d28f2bc96880b879abe4e064921fb6e7e"
+    }
+  ],
+  "future_data_violation_count": 0,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "portfolio_replay_executed": false,
+  "ready_for_strategy_replay": false,
+  "ready_for_formal": false,
+  "not_live_rule": true,
+  "forward_returns_live_rule_usage": false
+}

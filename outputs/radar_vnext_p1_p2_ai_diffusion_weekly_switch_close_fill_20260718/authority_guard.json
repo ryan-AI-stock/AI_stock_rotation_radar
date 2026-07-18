@@ -1,0 +1,14 @@
+{
+  "authority_path": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-30\\ep05-chat-ai-stock-backtest-lab\\outputs\\vnext_p1_p2_ai_concentration_diffusion_weekly_switch_exact_nav_contract_20260718\\weekly_switch_bounded_official_raw_execution_gap_ledger.csv",
+  "authority_sha256": "f3f8cdd4146838e4ff9f42b16d6271e8930b2f9d1e7ae6ebcc21e53197d93f12",
+  "requested_exact_keys": 55,
+  "ticker_counts": {
+    "00631L": 48,
+    "6669": 7
+  },
+  "local_exact_reused_rows": 1,
+  "official_prelisting_no_trade_rows": 5,
+  "network_authorized_ticker_month_routes": 44,
+  "non_close_family_download_rows": 0,
+  "future_data_violation_count": 0
+}
