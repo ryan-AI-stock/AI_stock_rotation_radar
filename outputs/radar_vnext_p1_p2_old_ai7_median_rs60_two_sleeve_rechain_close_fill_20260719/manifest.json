@@ -1,0 +1,90 @@
+{
+  "task": "TASK-RADAR-DATA-VNEXT-P1-P2-OLD-AI7-VS-00631L-WEEKLY-MEDIAN-RS60-TWO-SLEEVE-RECHAIN-EXACT-CLOSE-FILL-002",
+  "generated_at": "2026-07-19T04:10:06+00:00",
+  "authority_path": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-30\\ep05-chat-ai-stock-backtest-lab\\outputs\\vnext_p1_p2_old_ai7_vs_00631l_weekly_median_rs60_two_sleeve_contract_20260719\\path_independent_close_gap_union.csv",
+  "authority_sha256": "1e148c283af419b799f9d8fdf95155f1377792ec245ea52f19787084050aa030",
+  "files": [
+    {
+      "file": "current_step.txt",
+      "bytes": 76,
+      "sha256": "da230e203fc3e2e9db5aa01b8cc2f1bd4732ec4e6157775c5c6e357aaa2d806e"
+    },
+    {
+      "file": "final_summary_zh.md",
+      "bytes": 230,
+      "sha256": "64f31ebd316f43d2df1c876fe5c5e804a2636e33d02188c2f5421e8a885afe4c"
+    },
+    {
+      "file": "future_data_audit.csv",
+      "bytes": 165,
+      "sha256": "402b8d9d2294bac87b574fa6f255b772aba12c7045fa20d2640362e347084f86"
+    },
+    {
+      "file": "old_ai7_median_rs60_two_sleeve_rechain_exact_close_blocked.csv",
+      "bytes": 35,
+      "sha256": "7cbcca3b06076120c746c67d2121d4113933d7d089964af3bd7c95a694cc5538"
+    },
+    {
+      "file": "old_ai7_median_rs60_two_sleeve_rechain_exact_close_no_trade.csv",
+      "bytes": 2,
+      "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+    },
+    {
+      "file": "old_ai7_median_rs60_two_sleeve_rechain_exact_close_patch.csv",
+      "bytes": 854,
+      "sha256": "3b32fffbfe36a0b7a61a88429c3b891709d37b8068597e58d50ab556e78543dc"
+    },
+    {
+      "file": "progress.json",
+      "bytes": 1060,
+      "sha256": "bdd3356dae875a80967e5cdc9a427609d1e17f506f721f8dc7ad6a0935b00452"
+    },
+    {
+      "file": "readiness_for_core_old_ai7_median_rs60_two_sleeve_rechain_close_absorption.json",
+      "bytes": 1014,
+      "sha256": "907a1d2eba8e417c7dd6c402a731ddb0368dbc3d2a3d07dbffb28db0abef34bc"
+    },
+    {
+      "file": "requested_vs_actual_coverage.csv",
+      "bytes": 105,
+      "sha256": "975bc74714d8174f959742bad628ac2c6b7d1c3f0b50ce5f61c689daeb695a08"
+    }
+  ],
+  "readiness": {
+    "task": "TASK-RADAR-DATA-VNEXT-P1-P2-OLD-AI7-VS-00631L-WEEKLY-MEDIAN-RS60-TWO-SLEEVE-RECHAIN-EXACT-CLOSE-FILL-002",
+    "status": "complete_ready_for_core_absorption",
+    "requested_exact_keys": 2,
+    "official_raw_close_ready_rows": 2,
+    "official_no_trade_rows": 0,
+    "blocked_rows": 0,
+    "partition_rows": 2,
+    "partition_matches_authority": true,
+    "duplicate_exact_keys": 0,
+    "network_routes": 0,
+    "local_accepted_checkpoint_reuse_routes": 2,
+    "network_outside_authority_rows": 0,
+    "non_close_family_download_rows": 0,
+    "ready_for_core_old_ai7_median_rs60_two_sleeve_rechain_close_absorption": true,
+    "ready_for_experiments": false,
+    "future_data_violation_count": 0,
+    "formal_model_changed": false,
+    "trade_decision_changed": false,
+    "active_in_trade_decision": false,
+    "report_changed": false,
+    "portfolio_replay_executed": false,
+    "ready_for_strategy_replay": false,
+    "ready_for_formal": false,
+    "not_live_rule": true,
+    "forward_returns_live_rule_usage": false
+  },
+  "future_data_violation_count": 0,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "portfolio_replay_executed": false,
+  "ready_for_strategy_replay": false,
+  "ready_for_formal": false,
+  "not_live_rule": true,
+  "forward_returns_live_rule_usage": false
+}
