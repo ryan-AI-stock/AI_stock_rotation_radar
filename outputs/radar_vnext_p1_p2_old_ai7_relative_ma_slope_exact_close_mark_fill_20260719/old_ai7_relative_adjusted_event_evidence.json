@@ -1,0 +1,5 @@
+{
+  "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/2308.TW?period1=1753660800&period2=1754438400&interval=1d&events=div%2Csplits&includeAdjustedClose=true",
+  "source_hash": "305698d321fa63f98da7f3818a0038ac34e10b6b2ed6212c36cf63a33ba7a730",
+  "events": {}
+}

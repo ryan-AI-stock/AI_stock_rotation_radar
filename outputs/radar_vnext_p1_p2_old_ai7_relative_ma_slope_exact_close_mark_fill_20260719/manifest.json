@@ -1,0 +1,198 @@
+{
+  "task": "TASK-RADAR-DATA-VNEXT-P1-P2-00631L-OLD-AI7-RELATIVE-MA-SLOPE-SWITCH-EXACT-CLOSE-MARK-FILL-001",
+  "generated_at": "2026-07-19T02:22:04+00:00",
+  "raw_authority_path": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-30\\ep05-chat-ai-stock-backtest-lab\\outputs\\vnext_p1_p2_00631l_old_ai7_relative_ma_slope_switch_contract_20260719\\path_independent_close_gap_union.csv",
+  "raw_authority_sha256": "2a8fca2331d11764a57193d455b45a0e3667a2fea7e08fcc661c03548dcd9f9d",
+  "mark_authority_path": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-30\\ep05-chat-ai-stock-backtest-lab\\outputs\\vnext_p1_p2_00631l_old_ai7_relative_ma_slope_switch_contract_20260719\\holding_mark_gap_ledger.csv",
+  "mark_authority_sha256": "a83e9e8a7ee99cc93050f9439338ee3be947882178623b039e4e2a65890624f5",
+  "readiness": {
+    "task": "TASK-RADAR-DATA-VNEXT-P1-P2-00631L-OLD-AI7-RELATIVE-MA-SLOPE-SWITCH-EXACT-CLOSE-MARK-FILL-001",
+    "status": "complete_ready_for_core_absorption",
+    "official_raw_authority_keys": 72,
+    "official_raw_close_ready_rows": 71,
+    "official_raw_no_trade_rows": 1,
+    "official_raw_blocked_rows": 0,
+    "official_raw_partition_rows": 72,
+    "official_raw_partition_matches_authority": true,
+    "adjusted_mark_authority_keys": 1,
+    "adjusted_mark_ready_rows": 1,
+    "adjusted_mark_blocked_rows": 0,
+    "network_routes": 16,
+    "reused_accepted_checkpoint_routes": 23,
+    "trusted_adjusted_mark_network_routes": 1,
+    "network_outside_authority_rows": 0,
+    "non_close_family_download_rows": 0,
+    "raw_used_as_adjusted": false,
+    "ready_for_core_old_ai7_relative_close_mark_absorption": true,
+    "ready_for_experiments": false,
+    "data_readiness_blocked_only": false,
+    "may_be_used_to_reject_strategy": false,
+    "future_data_violation_count": 0,
+    "formal_model_changed": false,
+    "trade_decision_changed": false,
+    "active_in_trade_decision": false,
+    "report_changed": false,
+    "portfolio_replay_executed": false,
+    "ready_for_strategy_replay": false,
+    "ready_for_formal": false,
+    "not_live_rule": true,
+    "forward_returns_live_rule_usage": false
+  },
+  "files": [
+    {
+      "file": "checkpoints/official_raw/00631L/2016-02.json.gz",
+      "bytes": 574,
+      "sha256": "39a13a3eae998a8a4db2ecc8888e029d2f51c8c41da59c096b4f13739d1ea596"
+    },
+    {
+      "file": "checkpoints/official_raw/00631L/2016-08.json.gz",
+      "bytes": 631,
+      "sha256": "aaff079b3bbca0de51a3f92472ec64c9f69923fc1ecbb90eb892efe2bd10a1b6"
+    },
+    {
+      "file": "checkpoints/official_raw/00631L/2016-10.json.gz",
+      "bytes": 614,
+      "sha256": "8c39a90cee8cf97debf9f706949ceaa75e9b8efb82a925ff5646f30f68f59933"
+    },
+    {
+      "file": "checkpoints/official_raw/00631L/2017-07.json.gz",
+      "bytes": 614,
+      "sha256": "090e8a5cb21e79b038e770d2720723119d732708f840fb3fe1eb87fd140f42e6"
+    },
+    {
+      "file": "checkpoints/official_raw/00631L/2019-03.json.gz",
+      "bytes": 612,
+      "sha256": "1c4055a9387e52979c3061f94fa9e41364c781a4b5965a50ff32615b71c076e3"
+    },
+    {
+      "file": "checkpoints/official_raw/00631L/2020-11.json.gz",
+      "bytes": 626,
+      "sha256": "54de1ba475b8f07b4a654ce52b36446713f89167236b85b5b4f784688a947638"
+    },
+    {
+      "file": "checkpoints/official_raw/00631L/2021-06.json.gz",
+      "bytes": 619,
+      "sha256": "20d396b236e8ef82c84e2ef1095dca05b65a15728a5606f27e0f582f317b0124"
+    },
+    {
+      "file": "checkpoints/official_raw/00631L/2024-10.json.gz",
+      "bytes": 620,
+      "sha256": "a06fddc0d324a70c55bcd19740dcf66a6f1fb655b917b60796103452ac7bd815"
+    },
+    {
+      "file": "checkpoints/official_raw/00631L/2025-07.json.gz",
+      "bytes": 649,
+      "sha256": "1f0886685c16111143b48a25b5d735e53f703fbcce9232ca1a6ecc43dae79e5a"
+    },
+    {
+      "file": "checkpoints/official_raw/00631L/2025-12.json.gz",
+      "bytes": 642,
+      "sha256": "900e3de18fa1da4ee8893ec6a0f0d88687aeceaae9bdba1569c44aec6b1fb843"
+    },
+    {
+      "file": "checkpoints/official_raw/2308/2015-09.json.gz",
+      "bytes": 603,
+      "sha256": "93009b26823d59d4b8ac9c97340f7748d06bf59da646fdb6f5185ff12424fb14"
+    },
+    {
+      "file": "checkpoints/official_raw/2308/2025-08.json.gz",
+      "bytes": 648,
+      "sha256": "e2c09e6150df287303a348d4c6bb845fe1ebedf2a736e173dc690235a1d3653c"
+    },
+    {
+      "file": "checkpoints/official_raw/2382/2020-09.json.gz",
+      "bytes": 614,
+      "sha256": "fb45710f705bdf91bb5bb0f2438719ff50e3a4646e1a99eb411cee0472fe5176"
+    },
+    {
+      "file": "checkpoints/official_raw/2454/2023-01.json.gz",
+      "bytes": 572,
+      "sha256": "e4e9ea09c98668e8ac7afb4d20b7f873eea50068fab9e2320e468190fa03eb9a"
+    },
+    {
+      "file": "checkpoints/official_raw/2454/2023-03.json.gz",
+      "bytes": 621,
+      "sha256": "b2ab5529671f4dbe141de3eb2956063935bb46b4479eaaf3d3fdcc329d5e6511"
+    },
+    {
+      "file": "checkpoints/official_raw/6669/2021-11.json.gz",
+      "bytes": 625,
+      "sha256": "5396aa8a91eea7d1006a4f8399ff9cd9b8e07ff18a82ed9bcc7fe4af380155fb"
+    },
+    {
+      "file": "current_step.txt",
+      "bytes": 82,
+      "sha256": "bbfcafdd9529e96b10d887148c19c5769aa2a36ba91632e9399dc6e02b383aaf"
+    },
+    {
+      "file": "final_summary_zh.md",
+      "bytes": 245,
+      "sha256": "0109dd1422808f5e6c411c56d166dc383e44d912cac265c4640eef6bda5576cf"
+    },
+    {
+      "file": "future_data_audit.csv",
+      "bytes": 186,
+      "sha256": "5dc7fb9c38ec87153eda34ba286a146419cf174b02ce687cd31847339e17bd72"
+    },
+    {
+      "file": "old_ai7_relative_adjusted_event_evidence.json",
+      "bytes": 282,
+      "sha256": "2a4958007f03dc76665fdd12666f8d0aa50010fdbb0105a79168c9186897ff5f"
+    },
+    {
+      "file": "old_ai7_relative_adjusted_holding_mark_blocked.csv",
+      "bytes": 2,
+      "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+    },
+    {
+      "file": "old_ai7_relative_adjusted_holding_mark_patch.csv",
+      "bytes": 554,
+      "sha256": "df7054ba36dca1e26ff767db53e79099a998cd7d05eab14ef4ab42ec274f8dcd"
+    },
+    {
+      "file": "old_ai7_relative_adjustment_factor_audit.csv",
+      "bytes": 766,
+      "sha256": "05e6d301d7a3eadb9d97036b4fad2cda587f05872f08898748c75a6bc2b5116f"
+    },
+    {
+      "file": "old_ai7_relative_exact_official_raw_close_blocked.csv",
+      "bytes": 106,
+      "sha256": "c9a02936df3717a36d7544416366cbfca141d5e92464885ba4fa48b54406cc15"
+    },
+    {
+      "file": "old_ai7_relative_exact_official_raw_close_no_trade.csv",
+      "bytes": 397,
+      "sha256": "8ac00a0abeb86ed94886b1aee5a606b34a1bd989880a175698cdeb85d1b103a2"
+    },
+    {
+      "file": "old_ai7_relative_exact_official_raw_close_patch.csv",
+      "bytes": 25142,
+      "sha256": "0a618a7fa0f2b9fb353170b70c587568fb799f548c3b4c140e14bbc81b8df1ce"
+    },
+    {
+      "file": "progress.json",
+      "bytes": 1325,
+      "sha256": "81bf507389842042928cb36dbd43e1085d67bebb8ed21b48ff4280ca990e4661"
+    },
+    {
+      "file": "readiness_for_core_old_ai7_relative_close_mark_absorption.json",
+      "bytes": 1279,
+      "sha256": "29660b7acf85236a4950d79e989a8821d489dc7429aadf405c3f06499ba164e5"
+    },
+    {
+      "file": "requested_vs_actual_coverage.csv",
+      "bytes": 133,
+      "sha256": "a3d9c099db037cd0b7a0280ee28258d2a53677fafdd9c151723bd9a0b6a5299c"
+    }
+  ],
+  "future_data_violation_count": 0,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "portfolio_replay_executed": false,
+  "ready_for_strategy_replay": false,
+  "ready_for_formal": false,
+  "not_live_rule": true,
+  "forward_returns_live_rule_usage": false
+}

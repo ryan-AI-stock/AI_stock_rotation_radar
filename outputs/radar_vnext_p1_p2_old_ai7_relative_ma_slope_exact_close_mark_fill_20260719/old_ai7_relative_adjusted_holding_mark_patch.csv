@@ -1,0 +1,2 @@
+ticker,date,adjusted_analysis_mark,source_quality,adjustment_policy,source_url,source_hash,retrieved_at,future_data_violation_count
+2308,2025-08-01,584.9413570894619,trusted_nonofficial_yahoo_factor_continuity_reconstruction,trusted_yahoo_factor_applied_to_official_raw_close; research_analysis_only_not_execution_price_not_formal,https://query1.finance.yahoo.com/v8/finance/chart/2308.TW?period1=1679011200&period2=1782432000&interval=1d&events=div%2Csplits,253b51444e991cc25f907a5067da92ff045a7a7e864ffaae4657e600bab3bd41,2026-07-11T10:25:36+00:00,0

@@ -1,0 +1,2 @@
+ticker,date,market,classification,reason,source_url,source_hash,retrieved_at,future_data_violation_count
+2308,2015-09-29,TWSE,official_no_trade,accepted_official_ticker_month_response_has_no_exact_trade_row,https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?date=20150901&stockNo=2308&response=json,c5507107bef9e42a864b178524bffa86f64e67f8d7d5580d4d4b17b423fee66f,2026-07-19T02:20:05+00:00,0

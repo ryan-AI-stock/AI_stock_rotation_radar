@@ -1,0 +1,5 @@
+audit,status,future_data_violation_count
+exact_authority_close_only,pass,0
+raw_used_as_adjusted,false,0
+neighbor_last_benchmark_substitution,false,0
+performance_calculation,false,0
