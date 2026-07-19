@@ -1,0 +1,90 @@
+{
+  "task": "TASK-RADAR-DATA-VNEXT-P1-P2-OLD-AI7-VS-00631L-WEEKLY-MEDIAN-RS60-TWO-SLEEVE-EXACT-CLOSE-FILL-001",
+  "generated_at": "2026-07-19T03:55:28+00:00",
+  "authority_path": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-30\\ep05-chat-ai-stock-backtest-lab\\outputs\\vnext_p1_p2_old_ai7_vs_00631l_weekly_median_rs60_two_sleeve_contract_20260719\\path_independent_close_gap_union.csv",
+  "authority_sha256": "1f3fb7934ff28327f5cf1a0ce257b34c756c2ca2aa3efe8c74ec60cc42c784ac",
+  "files": [
+    {
+      "file": "current_step.txt",
+      "bytes": 82,
+      "sha256": "095d1b557cc8a6b8cf032a9c6eba3eae90e16f663b0e4d9f83de88f3f9f53f7e"
+    },
+    {
+      "file": "final_summary_zh.md",
+      "bytes": 222,
+      "sha256": "e0838db48ae0ad90c30d5c59aa5211e8c73a78b7e41d5d07833b244af12eb75b"
+    },
+    {
+      "file": "future_data_audit.csv",
+      "bytes": 165,
+      "sha256": "402b8d9d2294bac87b574fa6f255b772aba12c7045fa20d2640362e347084f86"
+    },
+    {
+      "file": "old_ai7_median_rs60_two_sleeve_exact_close_blocked.csv",
+      "bytes": 35,
+      "sha256": "7cbcca3b06076120c746c67d2121d4113933d7d089964af3bd7c95a694cc5538"
+    },
+    {
+      "file": "old_ai7_median_rs60_two_sleeve_exact_close_no_trade.csv",
+      "bytes": 2,
+      "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+    },
+    {
+      "file": "old_ai7_median_rs60_two_sleeve_exact_close_patch.csv",
+      "bytes": 855,
+      "sha256": "e162cbb441cb89b1e66f782dee9832a3197e13ce8559fb4e35be69f7f74e5482"
+    },
+    {
+      "file": "progress.json",
+      "bytes": 1044,
+      "sha256": "61212451216c045756fa1eff239d22523bc424861bee2573f941f4d4a189ffc3"
+    },
+    {
+      "file": "readiness_for_core_old_ai7_median_rs60_two_sleeve_close_absorption.json",
+      "bytes": 998,
+      "sha256": "8862ad2e61b5cbcd15519316162751fd98d718674be4919ee47e23c536bf3058"
+    },
+    {
+      "file": "requested_vs_actual_coverage.csv",
+      "bytes": 105,
+      "sha256": "975bc74714d8174f959742bad628ac2c6b7d1c3f0b50ce5f61c689daeb695a08"
+    }
+  ],
+  "readiness": {
+    "task": "TASK-RADAR-DATA-VNEXT-P1-P2-OLD-AI7-VS-00631L-WEEKLY-MEDIAN-RS60-TWO-SLEEVE-EXACT-CLOSE-FILL-001",
+    "status": "complete_ready_for_core_absorption",
+    "requested_exact_keys": 2,
+    "official_raw_close_ready_rows": 2,
+    "official_no_trade_rows": 0,
+    "blocked_rows": 0,
+    "partition_rows": 2,
+    "partition_matches_authority": true,
+    "duplicate_exact_keys": 0,
+    "network_routes": 0,
+    "local_accepted_checkpoint_reuse_routes": 2,
+    "network_outside_authority_rows": 0,
+    "non_close_family_download_rows": 0,
+    "ready_for_core_old_ai7_median_rs60_two_sleeve_close_absorption": true,
+    "ready_for_experiments": false,
+    "future_data_violation_count": 0,
+    "formal_model_changed": false,
+    "trade_decision_changed": false,
+    "active_in_trade_decision": false,
+    "report_changed": false,
+    "portfolio_replay_executed": false,
+    "ready_for_strategy_replay": false,
+    "ready_for_formal": false,
+    "not_live_rule": true,
+    "forward_returns_live_rule_usage": false
+  },
+  "future_data_violation_count": 0,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "portfolio_replay_executed": false,
+  "ready_for_strategy_replay": false,
+  "ready_for_formal": false,
+  "not_live_rule": true,
+  "forward_returns_live_rule_usage": false
+}
