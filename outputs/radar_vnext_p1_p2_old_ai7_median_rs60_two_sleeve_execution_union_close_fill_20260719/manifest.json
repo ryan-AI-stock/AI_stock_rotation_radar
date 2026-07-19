@@ -1,0 +1,125 @@
+{
+  "task": "TASK-RADAR-DATA-VNEXT-P1-P2-OLD-AI7-VS-00631L-WEEKLY-MEDIAN-RS60-TWO-SLEEVE-PATH-INDEPENDENT-EXECUTION-CLOSE-UNION-FILL-003",
+  "generated_at": "2026-07-19T04:58:28+00:00",
+  "authority_path": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-30\\ep05-chat-ai-stock-backtest-lab\\outputs\\vnext_p1_p2_old_ai7_vs_00631l_weekly_median_rs60_two_sleeve_contract_20260719\\path_independent_close_gap_union.csv",
+  "authority_sha256": "698cccc5c59a36c47bedfea8599d2c636196078ec3af29db975d8c003366d6ab",
+  "files": [
+    {
+      "file": "checkpoints/00631L/2019-10.json.gz",
+      "bytes": 622,
+      "sha256": "e08316645accdf9949766cf24bebbe92be9fd99894cf20d19e2625c06de083ac"
+    },
+    {
+      "file": "checkpoints/00631L/2020-01.json.gz",
+      "bytes": 579,
+      "sha256": "90079b72cff258a8207e89efdf9fd56ed64803059c17895782559da11c93955a"
+    },
+    {
+      "file": "checkpoints/00631L/2020-02.json.gz",
+      "bytes": 605,
+      "sha256": "b93b66bc7fa464b4f8d70fc4b67b703af42c2d710fd4a45ca5e5a43711f4f410"
+    },
+    {
+      "file": "checkpoints/00631L/2020-06.json.gz",
+      "bytes": 614,
+      "sha256": "d2c1acc357686abda999243586cbe307c116ad38db158f77fdff4cbb8e4e17ac"
+    },
+    {
+      "file": "checkpoints/00631L/2023-07.json.gz",
+      "bytes": 621,
+      "sha256": "4c2979e39aa13a58bb92976247f2888b6ccb2d84bdf3affa65d7b4b9f51325a3"
+    },
+    {
+      "file": "checkpoints/00631L/2024-10.json.gz",
+      "bytes": 617,
+      "sha256": "047c4a95eb30206c1cd1099a4e01a497c9cba2fd9f4fb71764bd372feec20dc3"
+    },
+    {
+      "file": "checkpoints/00631L/2025-07.json.gz",
+      "bytes": 646,
+      "sha256": "9c72c479532305b56080cfcb3c58f25b3d7bdb2e97bf5d90e7e06bbf6f2d25e7"
+    },
+    {
+      "file": "current_step.txt",
+      "bytes": 82,
+      "sha256": "095d1b557cc8a6b8cf032a9c6eba3eae90e16f663b0e4d9f83de88f3f9f53f7e"
+    },
+    {
+      "file": "final_summary_zh.md",
+      "bytes": 243,
+      "sha256": "5be63a34fc605689c500a2fb49122362f947ddcf39715417d53c68aa0f8b5d6a"
+    },
+    {
+      "file": "future_data_audit.csv",
+      "bytes": 165,
+      "sha256": "402b8d9d2294bac87b574fa6f255b772aba12c7045fa20d2640362e347084f86"
+    },
+    {
+      "file": "old_ai7_median_rs60_two_sleeve_execution_union_exact_close_blocked.csv",
+      "bytes": 2,
+      "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+    },
+    {
+      "file": "old_ai7_median_rs60_two_sleeve_execution_union_exact_close_no_trade.csv",
+      "bytes": 2,
+      "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+    },
+    {
+      "file": "old_ai7_median_rs60_two_sleeve_execution_union_exact_close_patch.csv",
+      "bytes": 18715,
+      "sha256": "d98d365dd77ad2725533b3c840bd531826d87f0819431ff1ea2ab30c38c8a03d"
+    },
+    {
+      "file": "progress.json",
+      "bytes": 1089,
+      "sha256": "ed6d59ad77c5492ac7f7e92a8000323c818e1897fa81cb0a464911a88f863d08"
+    },
+    {
+      "file": "readiness_for_core_old_ai7_median_rs60_two_sleeve_execution_union_close_absorption.json",
+      "bytes": 1043,
+      "sha256": "2acf06cd0667ddbcbf0809db74d6f7d502e1689f6a50b2cfb2d0b37ff0f50c8c"
+    },
+    {
+      "file": "requested_vs_actual_coverage.csv",
+      "bytes": 107,
+      "sha256": "64a21452798f25b0dbef11997cdfe297f48f97b15b69a3eb8ac1612db482b8dc"
+    }
+  ],
+  "readiness": {
+    "task": "TASK-RADAR-DATA-VNEXT-P1-P2-OLD-AI7-VS-00631L-WEEKLY-MEDIAN-RS60-TWO-SLEEVE-PATH-INDEPENDENT-EXECUTION-CLOSE-UNION-FILL-003",
+    "status": "complete_ready_for_core_absorption",
+    "requested_exact_keys": 34,
+    "official_raw_close_ready_rows": 34,
+    "official_no_trade_rows": 0,
+    "blocked_rows": 0,
+    "partition_rows": 34,
+    "partition_matches_authority": true,
+    "duplicate_exact_keys": 0,
+    "network_routes": 7,
+    "local_accepted_checkpoint_reuse_rows": 25,
+    "network_outside_authority_rows": 0,
+    "non_close_family_download_rows": 0,
+    "ready_for_core_old_ai7_median_rs60_two_sleeve_execution_union_close_absorption": true,
+    "ready_for_experiments": false,
+    "future_data_violation_count": 0,
+    "formal_model_changed": false,
+    "trade_decision_changed": false,
+    "active_in_trade_decision": false,
+    "report_changed": false,
+    "portfolio_replay_executed": false,
+    "ready_for_strategy_replay": false,
+    "ready_for_formal": false,
+    "not_live_rule": true,
+    "forward_returns_live_rule_usage": false
+  },
+  "future_data_violation_count": 0,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "portfolio_replay_executed": false,
+  "ready_for_strategy_replay": false,
+  "ready_for_formal": false,
+  "not_live_rule": true,
+  "forward_returns_live_rule_usage": false
+}
