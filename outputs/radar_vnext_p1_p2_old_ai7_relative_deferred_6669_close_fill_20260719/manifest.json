@@ -1,0 +1,95 @@
+{
+  "task": "TASK-RADAR-DATA-VNEXT-P1-P2-00631L-OLD-AI7-RELATIVE-MA-SLOPE-SWITCH-DEFERRED-6669-20190416-CLOSE-FILL-001",
+  "generated_at": "2026-07-19T02:36:20+00:00",
+  "authority": {
+    "ticker": "6669",
+    "date": "2019-04-16",
+    "role": "sell",
+    "action": "atomic_switch",
+    "authority_path": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-30\\ep05-chat-ai-stock-backtest-lab\\outputs\\vnext_p1_p2_00631l_old_ai7_relative_ma_slope_switch_contract_20260719\\path_independent_close_gap_union.csv",
+    "authority_sha256": "699eb5be330dea978a18b560b07aede8354e0d8548a36e68441861fa349ac54f"
+  },
+  "files": [
+    {
+      "file": "current_step.txt",
+      "bytes": 79,
+      "sha256": "7b78bd843e8b6df8b35d6673d3f31b698f245616e300754501ccb76c8a0eafc1"
+    },
+    {
+      "file": "final_summary_zh.md",
+      "bytes": 229,
+      "sha256": "94faddb8b85519a7b8ecb69182a65ce5858ce330c27fc483acb7f37c3a072857"
+    },
+    {
+      "file": "future_data_audit.csv",
+      "bytes": 165,
+      "sha256": "402b8d9d2294bac87b574fa6f255b772aba12c7045fa20d2640362e347084f86"
+    },
+    {
+      "file": "old_ai7_deferred_6669_exact_close_blocked.csv",
+      "bytes": 35,
+      "sha256": "7cbcca3b06076120c746c67d2121d4113933d7d089964af3bd7c95a694cc5538"
+    },
+    {
+      "file": "old_ai7_deferred_6669_exact_close_no_trade.csv",
+      "bytes": 2,
+      "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+    },
+    {
+      "file": "old_ai7_deferred_6669_exact_close_patch.csv",
+      "bytes": 522,
+      "sha256": "5d6eb26b5591c60912005893044ed5e658abfa89dad8a57636ba1752d19669af"
+    },
+    {
+      "file": "progress.json",
+      "bytes": 1014,
+      "sha256": "cd714c324610b7781fae9ca0e1bc81c34056d99f04594e36bb28cddfcf58297c"
+    },
+    {
+      "file": "readiness_for_core_old_ai7_deferred_6669_close_absorption.json",
+      "bytes": 968,
+      "sha256": "81b8eb68956768a800d05aa8dcec9f393a1132dfc70e7dfaf29104377029c71f"
+    },
+    {
+      "file": "requested_vs_actual_coverage.csv",
+      "bytes": 105,
+      "sha256": "bc1e29f62eb954c2432da2083e4e71578032ed7b6a08eeeba04d96bb636b8c17"
+    }
+  ],
+  "readiness": {
+    "task": "TASK-RADAR-DATA-VNEXT-P1-P2-00631L-OLD-AI7-RELATIVE-MA-SLOPE-SWITCH-DEFERRED-6669-20190416-CLOSE-FILL-001",
+    "status": "complete_ready_for_core_absorption",
+    "requested_exact_keys": 1,
+    "official_raw_close_ready_rows": 1,
+    "official_no_trade_rows": 0,
+    "blocked_rows": 0,
+    "partition_rows": 1,
+    "partition_matches_authority": true,
+    "network_routes": 0,
+    "local_accepted_checkpoint_reuse_routes": 1,
+    "network_outside_authority_rows": 0,
+    "non_close_family_download_rows": 0,
+    "ready_for_core_old_ai7_deferred_6669_close_absorption": true,
+    "ready_for_experiments": false,
+    "future_data_violation_count": 0,
+    "formal_model_changed": false,
+    "trade_decision_changed": false,
+    "active_in_trade_decision": false,
+    "report_changed": false,
+    "portfolio_replay_executed": false,
+    "ready_for_strategy_replay": false,
+    "ready_for_formal": false,
+    "not_live_rule": true,
+    "forward_returns_live_rule_usage": false
+  },
+  "future_data_violation_count": 0,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "portfolio_replay_executed": false,
+  "ready_for_strategy_replay": false,
+  "ready_for_formal": false,
+  "not_live_rule": true,
+  "forward_returns_live_rule_usage": false
+}

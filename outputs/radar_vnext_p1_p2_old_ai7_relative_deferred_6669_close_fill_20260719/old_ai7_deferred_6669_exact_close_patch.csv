@@ -1,0 +1,2 @@
+ticker,date,role,action,market,close,source_quality,adjustment_policy,source_url,source_hash,retrieved_at,source_reuse,future_data_violation_count
+6669,2019-04-16,sell,atomic_switch,TWSE,364.0,official_twse_selected_ticker_month_close_only,official_unadjusted_execution_close_only,https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?date=20190401&stockNo=6669&response=json,e13a9a8f058bb3d2297f60a790e6a390079d5ce7d24a03fbed818db794a66923,2026-07-18T05:51:02+00:00,previous_accepted_official_ticker_month_checkpoint,0
