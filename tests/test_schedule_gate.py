@@ -18,7 +18,7 @@ from rotation_radar.schedule_gate import (
 
 
 class ScheduleGateTests(unittest.TestCase):
-    def test_emergency_friday_closure_retries_thursday(self) -> None:
+    def test_emergency_friday_closure_does_not_backfill_thursday(self) -> None:
         now = datetime(2026, 7, 10, 18, 0)
         rules = ScheduleGateRules(run_after=time(15, 0))
 
@@ -27,7 +27,8 @@ class ScheduleGateTests(unittest.TestCase):
         decision = evaluate_schedule_gate(now, set(), closed, rules=rules)
 
         self.assertIn(date(2026, 7, 10), closed)
-        self.assertEqual(decision.target_date, date(2026, 7, 9))
+        self.assertFalse(decision.should_run)
+        self.assertIsNone(decision.target_date)
 
     def test_unknown_session_state_does_not_invent_closure(self) -> None:
         now = datetime(2026, 7, 10, 18, 0)
@@ -38,28 +39,27 @@ class ScheduleGateTests(unittest.TestCase):
 
         self.assertNotIn(date(2026, 7, 10), closed)
 
-    def test_daily_gate_retries_previous_trading_day_until_next_window_opens(self) -> None:
+    def test_daily_gate_runs_only_current_trading_day_after_window_opens(self) -> None:
         before_15 = evaluate_schedule_gate(datetime(2026, 6, 5, 14, 59), set(), set())
         after_15 = evaluate_schedule_gate(datetime(2026, 6, 5, 15, 0), set(), set())
         weekend = evaluate_schedule_gate(datetime(2026, 6, 6, 15, 0), set(), set())
 
-        self.assertTrue(before_15.should_run)
-        self.assertEqual(before_15.target_date, date(2026, 6, 4))
-        self.assertEqual(before_15.reason, "retry_previous_trading_day_until_published")
+        self.assertFalse(before_15.should_run)
+        self.assertIsNone(before_15.target_date)
         self.assertTrue(after_15.should_run)
         self.assertEqual(after_15.target_date, date(2026, 6, 5))
         self.assertEqual(after_15.reason, "trading_day_after_run_after_taipei")
-        self.assertTrue(weekend.should_run)
-        self.assertEqual(weekend.target_date, date(2026, 6, 5))
+        self.assertFalse(weekend.should_run)
+        self.assertIsNone(weekend.target_date)
 
-    def test_daily_gate_uses_previous_trading_day_when_today_is_closed(self) -> None:
+    def test_daily_gate_skips_when_today_is_closed(self) -> None:
         closed_dates = {date(2026, 6, 5)}
 
         closed = evaluate_schedule_gate(datetime(2026, 6, 5, 15, 0), set(), closed_dates)
 
-        self.assertTrue(closed.should_run)
-        self.assertEqual(closed.target_date, date(2026, 6, 4))
-        self.assertEqual(closed.reason, "retry_previous_trading_day_until_published")
+        self.assertFalse(closed.should_run)
+        self.assertIsNone(closed.target_date)
+        self.assertEqual(closed.reason, "not_trading_day")
 
     def test_daily_gate_skips_before_first_open_window(self) -> None:
         closed_dates = {
@@ -85,8 +85,8 @@ class ScheduleGateTests(unittest.TestCase):
         before_shared_time = evaluate_schedule_gate(datetime(2026, 6, 5, 15, 30), set(), set(), rules=rules)
         after_shared_time = evaluate_schedule_gate(datetime(2026, 6, 5, 16, 0), set(), set(), rules=rules)
 
-        self.assertEqual(before_shared_time.target_date, date(2026, 6, 4))
-        self.assertEqual(before_shared_time.reason, "retry_previous_trading_day_until_published")
+        self.assertIsNone(before_shared_time.target_date)
+        self.assertEqual(before_shared_time.reason, "before_run_after_taipei")
         self.assertEqual(after_shared_time.target_date, date(2026, 6, 5))
         self.assertEqual(after_shared_time.reason, "trading_day_after_run_after_taipei")
 
@@ -139,6 +139,8 @@ class ScheduleGateTests(unittest.TestCase):
     def test_workflow_manual_report_date_override_sets_should_run(self) -> None:
         workflow = Path(".github/workflows/generate-report.yml").read_text(encoding="utf-8")
 
+        self.assertIn('cron: "0 7-15 * * 1-5"', workflow)
+        self.assertNotIn('cron: "0 * * * *"', workflow)
         self.assertIn("manual workflow_dispatch; fallback allowed unless exact mode is enabled", workflow)
         self.assertIn("--manual-rerun", workflow)
         self.assertIn("--require-exact-report-date", workflow)

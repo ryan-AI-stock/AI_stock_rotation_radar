@@ -33,7 +33,7 @@ class ScheduleGateDecision:
 @dataclass(frozen=True)
 class ScheduleGateRules:
     run_after: time = time(15, 0)
-    retry_until_success: bool = True
+    retry_until_success: bool = False
 
 
 def main() -> None:
@@ -74,7 +74,7 @@ def load_schedule_rules(path: Path | None = None) -> ScheduleGateRules:
         payload = json.loads(raw_path.read_text(encoding="utf-8"))
         daily = payload["profiles"]["daily"]
         run_after = _parse_hhmm(str(daily.get("run_after", "15:00")))
-        retry_until_success = bool(daily.get("retry_until_success", True))
+        retry_until_success = bool(daily.get("retry_until_success", False))
     except (OSError, json.JSONDecodeError, KeyError, TypeError, ValueError) as exc:
         print(f"Warning: failed to load shared schedule rules from {raw_path}; using defaults: {exc}")
         return ScheduleGateRules()

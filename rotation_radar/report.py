@@ -71,16 +71,23 @@ def render_private_signal_report(report: Report) -> str:
     <div class="hero-inner">
       <p class="eyebrow">被AI研究所 | Private Strategy Desk</p>
       <h1>私人策略操作總覽</h1>
-      <p class="market-view">兩套候選池策略的收盤後訊號、模擬持股與隔日動作。僅供私人決策，不公開發布。</p>
+      <p class="market-view">三套策略的收盤後訊號、模擬持股與隔日動作。僅供私人決策，不公開發布。</p>
       <p class="stamp">產出時間：{escape(report.generated_at)}</p>
     </div>
   </header>
   <main>
     <section class="section private-overview">
       <div class="private-summary">
-        <span>今日策略快照</span>
+        <span>第一部分｜今日三模型總結</span>
         <strong>{escape(report.generated_at)}</strong>
         <p>價格口徑為每日官方未調整收盤價；訊號在收盤後成立，預計於下一個交易日執行。</p>
+      </div>
+      <div class="private-summary-grid">
+        {''.join(_private_strategy_summary(item) for item in report.private_strategies)}
+      </div>
+      <div class="private-detail-title">
+        <span>第二部分</span>
+        <h2>三模型詳細分析</h2>
       </div>
       {''.join(_private_strategy_panel(item) for item in report.private_strategies) if report.private_strategies else _formal_signal_panel(report)}
       <div class="private-footnote">
@@ -91,6 +98,29 @@ def render_private_signal_report(report: Report) -> str:
   </main>
 </body>
 </html>"""
+
+
+def _private_strategy_summary(item: dict[str, object]) -> str:
+    action = str(item.get("today_action", "stay_flat"))
+    action_label = {
+        "buy_next_day": "隔日買入",
+        "sell_next_day": "隔日賣出",
+        "hold": "續抱",
+        "cooldown_hold": "CD鎖定續抱",
+        "stay_flat": "維持空手",
+    }.get(action, "待確認")
+    held = str(item.get("held_ticker", "") or "")
+    held_name = str(item.get("held_name", "") or "")
+    position = f"{held} {held_name}" if held else "空手"
+    return f"""
+    <article class="private-summary-item">
+      <span>{escape(str(item.get("pool_label", "")))}</span>
+      <h3>{escape(str(item.get("mode_label", "")))}</h3>
+      <strong>{escape(action_label)}</strong>
+      <p>目前部位：{escape(position)}</p>
+      <em>{escape(str(item.get("action_reason", "")))}</em>
+    </article>
+    """
 
 
 def _private_strategy_panel(item: dict[str, object]) -> str:
@@ -962,6 +992,15 @@ main { padding: 22px max(14px, 4vw) 54px; }
 .private-summary span { color: #a16207; font-size: .78rem; font-weight: 850; }
 .private-summary strong { display: block; font-size: 1.35rem; }
 .private-summary p { margin: 4px 0 0; color: #6f6a60; }
+.private-summary-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-bottom: 18px; }
+.private-summary-item { background: #fffdf8; border: 1px solid #d8d3c8; border-top: 4px solid #0f5f58; border-radius: 6px; padding: 12px; }
+.private-summary-item span { color: #a16207; font-size: .74rem; font-weight: 850; }
+.private-summary-item h3 { margin: 4px 0 8px; font-size: .88rem; line-height: 1.35; }
+.private-summary-item strong { display: block; color: #0f5f58; font-size: 1rem; }
+.private-summary-item p, .private-summary-item em { display: block; margin: 3px 0 0; color: #6f6a60; font-size: .74rem; font-style: normal; }
+.private-detail-title { margin: 4px 0 10px; }
+.private-detail-title span { color: #a16207; font-size: .78rem; font-weight: 850; }
+.private-detail-title h2 { margin: 2px 0 0; font-size: 1.25rem; }
 .private-strategy-card { background: #fffdf8; border: 1px solid #d8d3c8; border-radius: 7px; margin-bottom: 16px; overflow: hidden; break-inside: avoid; page-break-inside: avoid; }
 .private-card-head { display: flex; justify-content: space-between; gap: 18px; align-items: center; padding: 16px 18px; background: #162a3a; color: #fff; border-bottom: 4px solid #d6a642; }
 .private-card-head span { color: #d6a642; font-size: .8rem; font-weight: 850; }
@@ -1066,7 +1105,7 @@ ul { padding-left: 18px; margin: 12px 0; color: #38332c; }
 .method-grid span { color: #6f6a60; }
 .empty { color: #6f6a60; }
 @media (max-width: 980px) {
-  .sector-grid, .digest-grid, .excluded-list, .formal-grid, .private-status-grid { grid-template-columns: 1fr; }
+  .sector-grid, .digest-grid, .excluded-list, .formal-grid, .private-status-grid, .private-summary-grid { grid-template-columns: 1fr; }
   .section-head { display: block; }
   .section-head p { margin-top: 6px; }
 }

@@ -2,9 +2,9 @@ name: Generate theme rotation report
 
 on:
   schedule:
-    # Check hourly. The trading-day gate starts a new report after 15:00 Asia/Taipei
-    # and keeps retrying the same trading date across midnight until fully published.
-    - cron: "0 * * * *"
+    # Wake only during Taipei weekday afternoons/evenings. The shared TWSE gate
+    # still rejects holidays, typhoon closures and other non-trading days.
+    - cron: "0 7-15 * * 1-5"
   workflow_dispatch:
     inputs:
       force_sector_scan:

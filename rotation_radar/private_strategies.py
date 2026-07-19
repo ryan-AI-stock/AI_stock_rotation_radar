@@ -8,7 +8,15 @@ from pathlib import Path
 YUANTA_0050_HOLDINGS_URL = "https://www.yuantaetfs.com/product/detail/0050/ratio"
 
 STOCK_NAMES = {
+    "00631L": "元大台灣50正2",
+    "1101": "台泥",
+    "1216": "統一",
+    "1301": "台塑",
     "1303": "南亞",
+    "1326": "台化",
+    "1590": "亞德客-KY",
+    "2002": "中鋼",
+    "2207": "和泰車",
     "2303": "聯電",
     "2308": "台達電",
     "2317": "鴻海",
@@ -18,11 +26,16 @@ STOCK_NAMES = {
     "2345": "智邦",
     "2357": "華碩",
     "2360": "致茂",
+    "2379": "瑞昱",
     "2382": "廣達",
     "2383": "台光電",
+    "2395": "研華",
     "2408": "南亞科",
     "2412": "中華電",
     "2454": "聯發科",
+    "2603": "長榮",
+    "2615": "萬海",
+    "2880": "華南金",
     "2881": "富邦金",
     "2882": "國泰金",
     "2883": "凱基金",
@@ -32,50 +45,36 @@ STOCK_NAMES = {
     "2887": "台新新光金",
     "2890": "永豐金",
     "2891": "中信金",
+    "2892": "第一金",
+    "2912": "統一超",
+    "3008": "大立光",
     "3017": "奇鋐",
+    "3034": "聯詠",
     "3037": "欣興",
+    "3045": "台灣大",
     "3231": "緯創",
+    "3661": "世芯-KY",
     "3711": "日月光投控",
+    "4904": "遠傳",
     "4958": "臻鼎-KY",
+    "5880": "合庫金",
+    "6505": "台塑化",
     "6669": "緯穎",
+    "7769": "鴻勁",
+    "8046": "南電",
 }
 
 OLD_AI_7 = ("2330", "2454", "2382", "2317", "6669", "3231", "2308")
 
-# Official Yuanta 0050 PCF Top30 at the last accepted P2 membership date.
-# The daily report displays the source date so a stale pool cannot be hidden.
-YUANTA_0050_TOP30 = (
-    "2330",
-    "2454",
-    "2308",
-    "2317",
-    "3711",
-    "2303",
-    "2327",
-    "2383",
-    "3037",
-    "2891",
-    "2345",
-    "2881",
-    "2382",
-    "2882",
-    "2360",
-    "2887",
-    "1303",
-    "3017",
-    "2885",
-    "2344",
-    "2886",
-    "2412",
-    "2408",
-    "2884",
-    "2890",
-    "6669",
-    "2357",
-    "2883",
-    "3231",
-    "4958",
+YUANTA_0050_CONSTITUENTS = (
+    "1101", "1216", "1301", "1303", "1326", "1590", "2002", "2207", "2303", "2308",
+    "2317", "2327", "2330", "2345", "2357", "2379", "2382", "2383", "2395", "2412",
+    "2454", "2603", "2615", "2880", "2881", "2882", "2883", "2884", "2885", "2886",
+    "2887", "2890", "2891", "2892", "2912", "3008", "3017", "3034", "3037", "3045",
+    "3231", "3661", "3711", "4904", "4958", "5880", "6505", "6669", "7769", "8046",
 )
+
+PRIVATE_STRATEGY_ACTIVATION_DATE = "2026-07-20"
 
 
 @dataclass(frozen=True)
@@ -90,9 +89,23 @@ class StrategySpec:
     exit_slope: int
     cooldown: int
     pool_source_date: str
+    buy_and_hold: bool = False
 
 
 STRATEGIES = (
+    StrategySpec(
+        strategy_id="00631l_buy_and_hold",
+        pool_label="0050正二",
+        mode_label="0050正二抱著不動",
+        symbols=("00631L",),
+        entry_ma=1,
+        entry_slope=1,
+        exit_ma=1,
+        exit_slope=1,
+        cooldown=0,
+        pool_source_date="固定標的",
+        buy_and_hold=True,
+    ),
     StrategySpec(
         strategy_id="old_ai_7_s10_cd10",
         pool_label="老AI固定7檔",
@@ -106,16 +119,16 @@ STRATEGIES = (
         pool_source_date="固定名單",
     ),
     StrategySpec(
-        strategy_id="yuanta_0050_top30_s08_cd3",
-        pool_label="0050前30大",
-        mode_label="MA7＋10日正斜率買入／MA10＋20日負斜率賣出／CD3",
-        symbols=YUANTA_0050_TOP30,
+        strategy_id="yuanta_0050_constituents_s10_cd10",
+        pool_label="0050成分股",
+        mode_label="MA7＋10日正斜率買入／MA10＋20日負斜率賣出／CD10",
+        symbols=YUANTA_0050_CONSTITUENTS,
         entry_ma=7,
         entry_slope=10,
         exit_ma=10,
         exit_slope=20,
-        cooldown=3,
-        pool_source_date="2026-06-30",
+        cooldown=10,
+        pool_source_date="2026-07-17",
     ),
 )
 
@@ -182,6 +195,7 @@ def _evaluate_strategy(
     held = str(state.get("held_ticker", "") or "")
     buy_date = str(state.get("buy_date", "") or "")
     last_sold = str(state.get("last_sold_ticker", "") or "")
+    activation_date = str(state.get("activation_date", PRIVATE_STRATEGY_ACTIVATION_DATE))
 
     for day in [value for value in dates if value > last_processed]:
         if pending and str(pending.get("execution_date", "")) == day:
@@ -202,7 +216,7 @@ def _evaluate_strategy(
     eligible = [
         dict(metrics, ticker=symbol, name=STOCK_NAMES.get(symbol, symbol))
         for symbol, metrics in evaluations.items()
-        if metrics.get("entry_signal") and symbol != last_sold
+        if (spec.buy_and_hold or metrics.get("entry_signal")) and symbol != last_sold
     ]
     eligible.sort(
         key=lambda row: (
@@ -215,12 +229,17 @@ def _evaluate_strategy(
     today_action = "hold" if held else "stay_flat"
     action_reason = "持股尚未出現完整賣出訊號" if held else "目前沒有符合條件的候選"
     signal_ticker = held
-    if not pending:
+    if report_date < activation_date:
+        today_action = "stay_flat"
+        action_reason = f"新模型於 {activation_date} 起開始判斷，目前維持空手"
+        signal_ticker = ""
+        eligible = []
+    elif not pending:
         if held:
             held_metrics = evaluations.get(held, {})
             trading_days_since_buy = _trading_days_since(dates, buy_date, report_date)
             cooldown_unlocked = trading_days_since_buy > spec.cooldown
-            if held_metrics.get("exit_signal") and cooldown_unlocked:
+            if not spec.buy_and_hold and held_metrics.get("exit_signal") and cooldown_unlocked:
                 pending = {
                     "role": "sell",
                     "ticker": held,
@@ -242,7 +261,11 @@ def _evaluate_strategy(
                 "execution_date": next_execution_date,
             }
             today_action = "buy_next_day"
-            action_reason = "候選池中標準化斜率最強，且收盤站上進場均線"
+            action_reason = (
+                "固定持有策略啟動，於下一交易日建立部位"
+                if spec.buy_and_hold
+                else "候選池中標準化斜率最強，且收盤站上進場均線"
+            )
 
     focus_metrics = evaluations.get(signal_ticker, {}) if signal_ticker else {}
     checkpoint = {
@@ -250,7 +273,7 @@ def _evaluate_strategy(
         "pool_label": spec.pool_label,
         "mode_label": spec.mode_label,
         "pool_source_date": spec.pool_source_date,
-        "pool_source_url": YUANTA_0050_HOLDINGS_URL if "top30" in spec.strategy_id else "",
+        "pool_source_url": YUANTA_0050_HOLDINGS_URL if "constituents" in spec.strategy_id else "",
         "report_date": report_date,
         "next_execution_date": next_execution_date,
         "today_action": today_action,
@@ -268,6 +291,7 @@ def _evaluate_strategy(
         "data_ready_count": sum(bool(value.get("ready")) for value in evaluations.values()),
         "pool_size": len(spec.symbols),
         "price_basis": "official raw close operational snapshot",
+        "activation_date": activation_date,
     }
     updated = {
         "last_processed_date": report_date,
@@ -275,6 +299,7 @@ def _evaluate_strategy(
         "buy_date": buy_date,
         "last_sold_ticker": last_sold,
         "pending_action": pending,
+        "activation_date": activation_date,
     }
     return checkpoint, updated
 
