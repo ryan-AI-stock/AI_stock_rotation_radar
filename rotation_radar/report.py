@@ -66,7 +66,7 @@ def render_private_signal_report(report: Report) -> str:
   <title>私人策略操作總覽</title>
   <style>{_css()}</style>
 </head>
-<body>
+<body class="private-report">
   <header class="hero">
     <div class="hero-inner">
       <p class="eyebrow">被AI研究所 | Private Strategy Desk</p>
@@ -85,7 +85,7 @@ def render_private_signal_report(report: Report) -> str:
       <div class="private-summary-grid">
         {''.join(_private_strategy_summary(item) for item in report.private_strategies)}
       </div>
-      <div class="private-detail-title">
+      <div class="private-detail-title private-detail-page">
         <span>第二部分</span>
         <h2>三模型詳細分析</h2>
       </div>
@@ -958,6 +958,7 @@ def _css() -> str:
 }
 * { box-sizing: border-box; }
 body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", sans-serif; color: #171717; background: #f3f1ea; line-height: 1.58; }
+.private-report { font-family: "Noto Sans CJK TC", "Microsoft JhengHei", sans-serif; }
 .hero { padding: 34px max(18px, 5vw) 20px; background: #171717; color: #fffdf8; border-bottom: 5px solid #d6a642; }
 .hero-inner { max-width: 1120px; margin: 0 auto; }
 .eyebrow { margin: 0 0 10px; color: #d6a642; font-size: .78rem; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; }
@@ -999,6 +1000,7 @@ main { padding: 22px max(14px, 4vw) 54px; }
 .private-summary-item strong { display: block; color: #0f5f58; font-size: 1rem; }
 .private-summary-item p, .private-summary-item em { display: block; margin: 3px 0 0; color: #6f6a60; font-size: .74rem; font-style: normal; }
 .private-detail-title { margin: 4px 0 10px; }
+.private-detail-page { break-before: page; page-break-before: always; padding-top: 4px; }
 .private-detail-title span { color: #a16207; font-size: .78rem; font-weight: 850; }
 .private-detail-title h2 { margin: 2px 0 0; font-size: 1.25rem; }
 .private-strategy-card { background: #fffdf8; border: 1px solid #d8d3c8; border-radius: 7px; margin-bottom: 16px; overflow: hidden; break-inside: avoid; page-break-inside: avoid; }

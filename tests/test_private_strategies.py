@@ -54,6 +54,9 @@ class PrivateStrategiesTest(unittest.TestCase):
             )
             self.assertTrue(all(item["today_action"] == "stay_flat" for item in checkpoints))
             self.assertTrue(all(not item["held_ticker"] for item in checkpoints))
+            self.assertTrue(all(item["data_ready_count"] == item["pool_size"] for item in checkpoints))
+            self.assertTrue(all(item["focus_metrics"].get("ready") for item in checkpoints))
+            self.assertTrue(all(item["signal_ticker"] for item in checkpoints))
 
     def test_held_stock_exit_respects_cooldown(self) -> None:
         spec = STRATEGIES[1]

@@ -75,6 +75,7 @@ YUANTA_0050_CONSTITUENTS = (
 )
 
 PRIVATE_STRATEGY_ACTIVATION_DATE = "2026-07-20"
+PRIVATE_STRATEGY_HISTORY_WEEKDAYS = 30
 
 
 @dataclass(frozen=True)
@@ -213,18 +214,23 @@ def _evaluate_strategy(
         symbol: _signal_metrics(rows, spec)
         for symbol, rows in rows_by_symbol.items()
     }
-    eligible = [
+    ranked_ready = [
         dict(metrics, ticker=symbol, name=STOCK_NAMES.get(symbol, symbol))
         for symbol, metrics in evaluations.items()
-        if (spec.buy_and_hold or metrics.get("entry_signal")) and symbol != last_sold
+        if metrics.get("ready") and symbol != last_sold
     ]
-    eligible.sort(
+    ranked_ready.sort(
         key=lambda row: (
             -float(row.get("normalized_entry_slope", 0) or 0),
             float(row.get("distance_above_entry_ma", 0) or 0),
             str(row["ticker"]),
         )
     )
+    eligible = [
+        row
+        for row in ranked_ready
+        if spec.buy_and_hold or row.get("entry_signal")
+    ]
 
     today_action = "hold" if held else "stay_flat"
     action_reason = "持股尚未出現完整賣出訊號" if held else "目前沒有符合條件的候選"
@@ -232,8 +238,7 @@ def _evaluate_strategy(
     if report_date < activation_date:
         today_action = "stay_flat"
         action_reason = f"新模型於 {activation_date} 起開始判斷，目前維持空手"
-        signal_ticker = ""
-        eligible = []
+        signal_ticker = str(ranked_ready[0]["ticker"]) if ranked_ready else ""
     elif not pending:
         if held:
             held_metrics = evaluations.get(held, {})

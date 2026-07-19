@@ -219,6 +219,9 @@ class FormalSignalTests(unittest.TestCase):
         self.assertIn("持有 00631L", html)
         self.assertIn("7/16、7/17、7/20、7/21、7/22、7/23、7/24", html)
         self.assertIn("2026-07-27", html)
+        self.assertIn('class="private-detail-title private-detail-page"', html)
+        self.assertIn("page-break-before: always", html)
+        self.assertIn('"Noto Sans CJK TC", "Microsoft JhengHei"', html)
 
     def test_report_marks_actual_buy_that_was_not_a_model_entry_signal(self) -> None:
         formal_signal = self._build(

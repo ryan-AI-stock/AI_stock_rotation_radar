@@ -19,6 +19,7 @@ from .normalize import normalize_raw_directory
 from .pipeline_settings import PipelineOptions, PipelinePaths
 from .price_history import build_price_history_from_processed, load_price_history
 from .private_strategies import (
+    PRIVATE_STRATEGY_HISTORY_WEEKDAYS,
     build_private_strategy_checkpoints,
     required_private_strategy_symbols,
 )
@@ -382,7 +383,11 @@ def _refresh_recent_price_snapshots(
     for index, trade_date in enumerate(recent_weekdays(today, options.recent_price_days)):
         ymd = trade_date.strftime("%Y%m%d")
         processed_dir = paths.processed_root / ymd
-        symbols_to_check = required_symbols if index < 7 else None
+        symbols_to_check = (
+            required_symbols
+            if index < PRIVATE_STRATEGY_HISTORY_WEEKDAYS
+            else None
+        )
         force_refresh = processed_dir.exists() and not _has_price_files(processed_dir, symbols_to_check)
         if _has_price_files(processed_dir, symbols_to_check):
             print(f"Using existing price snapshots in {processed_dir}")
@@ -476,12 +481,17 @@ def _collect_data_quality_warnings(
             if not _has_depth_files(processed_dir):
                 warnings.append(f"missing depth snapshot files: {processed_dir}")
 
-    for index, trade_date in enumerate(recent_weekdays(today, min(options.recent_price_days, 7))):
+    for index, trade_date in enumerate(
+        recent_weekdays(
+            today,
+            min(options.recent_price_days, PRIVATE_STRATEGY_HISTORY_WEEKDAYS),
+        )
+    ):
         processed_dir = paths.processed_root / trade_date.strftime("%Y%m%d")
         if not _has_price_snapshot_files(processed_dir):
             warnings.append(f"missing price snapshot files: {processed_dir}")
             continue
-        if index < 7:
+        if index < PRIVATE_STRATEGY_HISTORY_WEEKDAYS:
             missing = _missing_price_symbols(processed_dir, required_symbols)
             if missing:
                 preview = ", ".join(missing[:8])
