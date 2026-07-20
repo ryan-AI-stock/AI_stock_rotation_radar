@@ -1,0 +1,2 @@
+ticker,date,market,close,source_quality,adjustment_policy,source_url,source_hash,retrieved_at,source_reuse,future_data_violation_count
+00631L,2017-08-28,TWSE,34.83,official_twse_selected_ticker_month_close_only,official_unadjusted_execution_close_only,https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?date=20170801&stockNo=00631L&response=json,18c5c7b0f183ddc5694ac7b0c603f585b3325499ee4f8ff922a4857fded386e1,2026-07-18T07:23:43+00:00,previous_accepted_official_ticker_month_checkpoint,0
