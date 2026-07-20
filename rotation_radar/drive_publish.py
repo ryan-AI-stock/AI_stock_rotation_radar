@@ -47,7 +47,12 @@ def main() -> None:
     parser.add_argument(
         "--check-current-report",
         action="store_true",
-        help="Exit 0 when the fixed Drive PDF is current for --date; exit 3 otherwise.",
+        help="Exit 0 when both required fixed Drive PDFs are current for --date; exit 3 otherwise.",
+    )
+    parser.add_argument(
+        "--check-private-report",
+        action="store_true",
+        help="Exit 0 when the fixed private strategy PDF is current for --date; exit 3 otherwise.",
     )
     parser.add_argument(
         "--skip-public-upload",
@@ -61,12 +66,23 @@ def main() -> None:
     private_folder_id = os.environ.get("ROTATION_PRIVATE_REPORT_DRIVE_FOLDER_ID") or PRIVATE_FOLDER_ID
     public_file_id = os.environ.get("ROTATION_PUBLIC_REPORT_DRIVE_FILE_ID", "")
     if args.check_current_report:
-        current = is_public_report_current(
+        public_current = is_public_report_current(
             report_date.date(),
             public_folder_id,
             public_file_id.strip() or None,
         )
-        print(f"drive_report_current={str(current).lower()} report_date={report_date.date().isoformat()}")
+        private_current = is_private_report_current(report_date.date(), private_folder_id)
+        current = public_current and private_current
+        print(
+            f"drive_reports_current={str(current).lower()} "
+            f"public_current={str(public_current).lower()} "
+            f"private_current={str(private_current).lower()} "
+            f"report_date={report_date.date().isoformat()}"
+        )
+        raise SystemExit(0 if current else 3)
+    if args.check_private_report:
+        current = is_private_report_current(report_date.date(), private_folder_id)
+        print(f"drive_private_report_current={str(current).lower()} report_date={report_date.date().isoformat()}")
         raise SystemExit(0 if current else 3)
 
     html_path = Path(args.html)
@@ -345,6 +361,48 @@ def is_public_report_current(
         return modified >= cycle_start
     except Exception as exc:
         print(f"Warning: 無法檢查 Google Drive 當日 Radar 報告，繼續產報避免漏產：{exc}")
+        return False
+
+
+def is_private_report_current(report_date: date, folder_id: str) -> bool:
+    """Require the private strategy PDF to be updated in the same reporting cycle."""
+    return _fixed_report_current(
+        report_date,
+        folder_id,
+        PRIVATE_FIXED_FILE_NAME,
+    )
+
+
+def _fixed_report_current(
+    report_date: date,
+    folder_id: str,
+    file_name: str,
+) -> bool:
+    if not folder_id:
+        return False
+    service, _auth_mode = build_google_drive_service()
+    if not service:
+        return False
+    try:
+        query = (
+            f"'{folder_id}' in parents and "
+            f"name = '{_drive_name_query(file_name)}' and "
+            "trashed = false"
+        )
+        files = service.files().list(
+            q=query,
+            fields="files(id,name,modifiedTime)",
+            supportsAllDrives=True,
+            includeItemsFromAllDrives=True,
+        ).execute().get("files", [])
+        file_info = files[0] if files else None
+        if not file_info or not file_info.get("modifiedTime"):
+            return False
+        modified = datetime.fromisoformat(file_info["modifiedTime"].replace("Z", "+00:00")).astimezone(TAIPEI_TZ)
+        cycle_start = datetime.combine(report_date, time(15, 0), tzinfo=TAIPEI_TZ)
+        return modified >= cycle_start
+    except Exception as exc:
+        print(f"Warning: 無法檢查 Google Drive 固定報告 {file_name}，視為未完成：{exc}")
         return False
 
 

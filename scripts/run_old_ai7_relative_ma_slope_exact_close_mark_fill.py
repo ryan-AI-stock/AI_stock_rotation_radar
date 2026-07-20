@@ -141,11 +141,16 @@ def yahoo_mark(target: str) -> tuple[dict, dict]:
     return result, {"source_url": response.url, "source_hash": result["source_hash"], "events": {}}
 
 
-def factor_continuity_mark(target: str, official_raw_close: float | None) -> tuple[dict | None, dict]:
+def factor_continuity_mark(
+    target: str,
+    official_raw_close: float | None,
+    adjusted_history_path: Path | None = None,
+) -> tuple[dict | None, dict]:
     """Reconstruct only when trusted provider factors agree on both sides of the missing session."""
-    if official_raw_close is None or not LOCAL_2308_ADJUSTED.exists():
+    history_path = adjusted_history_path or LOCAL_2308_ADJUSTED
+    if official_raw_close is None or not history_path.exists():
         return None, {"factor_continuity_status": "unavailable_missing_official_raw_or_local_trusted_history"}
-    with gzip.open(LOCAL_2308_ADJUSTED, "rt", encoding="utf-8") as handle:
+    with gzip.open(history_path, "rt", encoding="utf-8") as handle:
         rows = [row for row in csv.DictReader(handle) if row.get("ticker") == "2308"]
     prior = [row for row in rows if row.get("date", "") < target and row.get("adjusted_close") and row.get("raw_close_comparator")]
     later = [row for row in rows if row.get("date", "") > target and row.get("adjusted_close") and row.get("raw_close_comparator")]
@@ -170,14 +175,14 @@ def factor_continuity_mark(target: str, official_raw_close: float | None) -> tup
         "reconstructed_adjusted_analysis_mark": official_raw_close * factor,
         "raw_used_as_adjusted": False,
         "source_quality": "trusted_nonofficial_yahoo_factor_continuity_reconstruction",
-        "source_url": before.get("source_url", ""), "source_hash": sha256_file(LOCAL_2308_ADJUSTED),
+        "source_url": before.get("source_url", ""), "source_hash": sha256_file(history_path),
         "retrieved_at": before.get("retrieval_time_utc", ""), "future_data_violation_count": 0,
     }
     mark = {
         "ticker": "2308", "date": target, "adjusted_analysis_mark": official_raw_close * factor,
         "source_quality": "trusted_nonofficial_yahoo_factor_continuity_reconstruction",
         "adjustment_policy": "trusted_yahoo_factor_applied_to_official_raw_close; research_analysis_only_not_execution_price_not_formal",
-        "source_url": before.get("source_url", ""), "source_hash": sha256_file(LOCAL_2308_ADJUSTED),
+        "source_url": before.get("source_url", ""), "source_hash": sha256_file(history_path),
         "retrieved_at": before.get("retrieval_time_utc", ""), "future_data_violation_count": 0,
     }
     return mark, audit

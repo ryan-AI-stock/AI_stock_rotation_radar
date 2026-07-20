@@ -1,3 +1,5 @@
+import csv
+import gzip
 import tempfile
 import unittest
 from pathlib import Path
@@ -30,10 +32,36 @@ class OldAi7RelativeExactCloseMarkFillTest(unittest.TestCase):
         self.assertEqual(rows[0]["close"], 101.0)
 
     def test_2308_factor_continuity_is_not_raw_as_adjusted(self):
-        mark, audit = factor_continuity_mark("2025-08-01", 588.0)
-        self.assertIsNotNone(mark)
-        self.assertNotEqual(mark["adjusted_analysis_mark"], 588.0)
-        self.assertFalse(audit["raw_used_as_adjusted"])
+        with tempfile.TemporaryDirectory() as temp:
+            history = Path(temp) / "2308.csv.gz"
+            rows = [
+                {
+                    "ticker": "2308",
+                    "date": "2025-07-31",
+                    "adjusted_close": "584.9413570894619",
+                    "raw_close_comparator": "588.0",
+                    "source_url": "fixture://before",
+                    "retrieval_time_utc": "2026-07-19T00:00:00Z",
+                },
+                {
+                    "ticker": "2308",
+                    "date": "2025-08-04",
+                    "adjusted_close": "594.8893393528881",
+                    "raw_close_comparator": "598.0",
+                    "source_url": "fixture://after",
+                    "retrieval_time_utc": "2026-07-19T00:00:00Z",
+                },
+            ]
+            with gzip.open(history, "wt", encoding="utf-8", newline="") as handle:
+                writer = csv.DictWriter(handle, fieldnames=rows[0].keys())
+                writer.writeheader()
+                writer.writerows(rows)
+
+            mark, audit = factor_continuity_mark("2025-08-01", 588.0, history)
+
+            self.assertIsNotNone(mark)
+            self.assertNotEqual(mark["adjusted_analysis_mark"], 588.0)
+            self.assertFalse(audit["raw_used_as_adjusted"])
 
 
 if __name__ == "__main__":

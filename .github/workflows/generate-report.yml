@@ -64,6 +64,14 @@ on:
         description: "Actual average price; required for buy, state only"
         required: false
         default: ""
+      require_private_report:
+        description: "Require private strategy PDF generation and same-day Drive update"
+        required: false
+        default: "true"
+        type: choice
+        options:
+          - "true"
+          - "false"
 
 concurrency:
   group: daily-theme-rotation-report
@@ -318,6 +326,7 @@ jobs:
           ROTATION_ENABLE_DATED_BACKUP: ${{ vars.ROTATION_ENABLE_DATED_BACKUP || 'false' }}
           ROTATION_REPORT_DRIVE_FOLDER_ID: ${{ inputs.report_drive_folder_id || '16SmfPgMMIs7MWteeX1h2EkhSIEaGvpHn' }}
           ROTATION_PUBLIC_REPORT_DRIVE_FOLDER_ID: 16SmfPgMMIs7MWteeX1h2EkhSIEaGvpHn
+          ROTATION_PRIVATE_REPORT_DRIVE_FOLDER_ID: 1O6Se-HfI7ZDTQ-LWeAO6f8vtvoLcCzIj
           ROTATION_PUBLIC_REPORT_DRIVE_FILE_ID: ""
         shell: bash
         run: |
@@ -327,6 +336,18 @@ jobs:
             args+=(--skip-public-upload)
           fi
           python -m rotation_radar.drive_publish "${args[@]}"
+
+      - name: Verify private strategy PDF on Google Drive
+        if: steps.generate-report.outputs.report_ready == 'true' && (github.event_name != 'workflow_dispatch' || inputs.require_private_report == 'true')
+        env:
+          GOOGLE_OAUTH_CLIENT_ID: ${{ secrets.GOOGLE_OAUTH_CLIENT_ID }}
+          GOOGLE_OAUTH_CLIENT_SECRET: ${{ secrets.GOOGLE_OAUTH_CLIENT_SECRET }}
+          GOOGLE_OAUTH_REFRESH_TOKEN: ${{ secrets.GOOGLE_OAUTH_REFRESH_TOKEN }}
+          ROTATION_PRIVATE_REPORT_DRIVE_FOLDER_ID: 1O6Se-HfI7ZDTQ-LWeAO6f8vtvoLcCzIj
+        run: |
+          python -m rotation_radar.drive_publish \
+            --check-private-report \
+            --date "${{ steps.actual-report-date.outputs.actual_report_date }}"
 
       - name: Upload report artifact
         if: steps.generate-report.outputs.report_ready == 'true'

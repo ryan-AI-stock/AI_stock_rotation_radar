@@ -116,6 +116,19 @@ class DrivePublishTests(unittest.TestCase):
 
         self.assertFalse(current)
 
+    def test_private_report_current_uses_private_fixed_file(self) -> None:
+        service = MagicMock()
+        service.files.return_value.list.return_value.execute.return_value = {
+            "files": [{"id": "private", "name": drive_publish.PRIVATE_FIXED_FILE_NAME, "modifiedTime": "2026-07-15T08:30:00Z"}]
+        }
+
+        with patch.object(drive_publish, "build_google_drive_service", return_value=(service, "OAuth")):
+            current = drive_publish.is_private_report_current(date(2026, 7, 15), "private-folder")
+
+        self.assertTrue(current)
+        query = service.files.return_value.list.call_args.kwargs["q"]
+        self.assertIn(drive_publish.PRIVATE_FIXED_FILE_NAME, query)
+
 
 if __name__ == "__main__":
     unittest.main()
