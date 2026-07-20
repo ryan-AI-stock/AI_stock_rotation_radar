@@ -1,0 +1,90 @@
+{
+  "task": "TASK-RADAR-DATA-VNEXT-P1-P2-OLD-AI7-PRIORITY-00631L-BACKUP-CD-OVERRIDE-EXACT-CLOSE-FILL-001",
+  "generated_at": "2026-07-20T00:42:36+00:00",
+  "authority_path": "C:\\Users\\zergv\\Documents\\Codex\\2026-05-30\\ep05-chat-ai-stock-backtest-lab\\outputs\\vnext_p1_p2_old_ai7_priority_00631l_backup_cd_override_contract_20260720\\path_independent_close_gap_union.csv",
+  "authority_sha256": "5ea5fea89261820562cca1eff986328c27f30275dc3daf6586e06b0006cb252e",
+  "files": [
+    {
+      "file": "current_step.txt",
+      "bytes": 93,
+      "sha256": "81581e4321289ad1e84114811085e94e2d90d80d3d5b236dc2ec7f79dc4884f6"
+    },
+    {
+      "file": "final_summary_zh.md",
+      "bytes": 213,
+      "sha256": "e30924c0990ed6e906128b25236f829050f47618d87cad2bb2b37bb634592c4d"
+    },
+    {
+      "file": "future_data_audit.csv",
+      "bytes": 165,
+      "sha256": "402b8d9d2294bac87b574fa6f255b772aba12c7045fa20d2640362e347084f86"
+    },
+    {
+      "file": "old_ai7_priority_backup_cd_override_exact_close_blocked.csv",
+      "bytes": 35,
+      "sha256": "7cbcca3b06076120c746c67d2121d4113933d7d089964af3bd7c95a694cc5538"
+    },
+    {
+      "file": "old_ai7_priority_backup_cd_override_exact_close_no_trade.csv",
+      "bytes": 2,
+      "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+    },
+    {
+      "file": "old_ai7_priority_backup_cd_override_exact_close_patch.csv",
+      "bytes": 854,
+      "sha256": "b932f3da9973e4662084097c9753edd0555fdaf39608d0761b5ffda36fd1bdf4"
+    },
+    {
+      "file": "progress.json",
+      "bytes": 1044,
+      "sha256": "546dec23ed2dcc2f4298805a40d101364c8de8882c8df18ff02c2df2ffb27639"
+    },
+    {
+      "file": "readiness_for_core_old_ai7_priority_backup_cd_override_close_absorption.json",
+      "bytes": 998,
+      "sha256": "6a92dbba1e47fe56b31972d9b105cae8f39bffc4c985512eaf040e232e031e85"
+    },
+    {
+      "file": "requested_vs_actual_coverage.csv",
+      "bytes": 105,
+      "sha256": "975bc74714d8174f959742bad628ac2c6b7d1c3f0b50ce5f61c689daeb695a08"
+    }
+  ],
+  "readiness": {
+    "task": "TASK-RADAR-DATA-VNEXT-P1-P2-OLD-AI7-PRIORITY-00631L-BACKUP-CD-OVERRIDE-EXACT-CLOSE-FILL-001",
+    "status": "complete_ready_for_core_absorption",
+    "requested_exact_keys": 2,
+    "official_raw_close_ready_rows": 2,
+    "official_no_trade_rows": 0,
+    "blocked_rows": 0,
+    "partition_rows": 2,
+    "partition_matches_authority": true,
+    "duplicate_exact_keys": 0,
+    "network_routes": 0,
+    "local_accepted_checkpoint_reuse_routes": 2,
+    "network_outside_authority_rows": 0,
+    "non_close_family_download_rows": 0,
+    "ready_for_core_old_ai7_priority_backup_cd_override_close_absorption": true,
+    "ready_for_experiments": false,
+    "future_data_violation_count": 0,
+    "formal_model_changed": false,
+    "trade_decision_changed": false,
+    "active_in_trade_decision": false,
+    "report_changed": false,
+    "portfolio_replay_executed": false,
+    "ready_for_strategy_replay": false,
+    "ready_for_formal": false,
+    "not_live_rule": true,
+    "forward_returns_live_rule_usage": false
+  },
+  "future_data_violation_count": 0,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "portfolio_replay_executed": false,
+  "ready_for_strategy_replay": false,
+  "ready_for_formal": false,
+  "not_live_rule": true,
+  "forward_returns_live_rule_usage": false
+}
