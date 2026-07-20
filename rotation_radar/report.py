@@ -71,14 +71,14 @@ def render_private_signal_report(report: Report) -> str:
     <div class="hero-inner">
       <p class="eyebrow">被AI研究所 | Private Strategy Desk</p>
       <h1>私人策略操作總覽</h1>
-      <p class="market-view">三套策略的收盤後訊號、模擬持股與隔日動作。僅供私人決策，不公開發布。</p>
+      <p class="market-view">兩套策略的收盤後訊號、模擬持股與隔日動作。僅供私人決策，不公開發布。</p>
       <p class="stamp">產出時間：{escape(report.generated_at)}</p>
     </div>
   </header>
   <main>
     <section class="section private-overview">
       <div class="private-summary">
-        <span>第一部分｜今日三模型總結</span>
+        <span>第一部分｜今日兩模型總結</span>
         <strong>{escape(report.generated_at)}</strong>
         <p>價格口徑為每日官方未調整收盤價；訊號在收盤後成立，預計於下一個交易日執行。</p>
       </div>
@@ -87,7 +87,7 @@ def render_private_signal_report(report: Report) -> str:
       </div>
       <div class="private-detail-title private-detail-page">
         <span>第二部分</span>
-        <h2>三模型詳細分析</h2>
+        <h2>兩模型詳細分析</h2>
       </div>
       {''.join(_private_strategy_panel(item) for item in report.private_strategies) if report.private_strategies else _formal_signal_panel(report)}
       <div class="private-footnote">

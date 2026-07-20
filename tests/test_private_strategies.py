@@ -14,13 +14,13 @@ from rotation_radar.private_strategies import (
 
 
 class PrivateStrategiesTest(unittest.TestCase):
-    def test_required_symbols_cover_all_three_strategies(self) -> None:
+    def test_required_symbols_cover_both_strategies(self) -> None:
         symbols = required_private_strategy_symbols()
         self.assertIn("00631L", symbols)
         self.assertIn("2330", symbols)
         self.assertIn("6669", symbols)
-        self.assertIn("2891", symbols)
-        self.assertEqual(len(STRATEGIES), 3)
+        self.assertNotIn("2891", symbols)
+        self.assertEqual(len(STRATEGIES), 2)
 
     def test_rising_series_builds_ranked_entry_candidate(self) -> None:
         history = {}
@@ -34,11 +34,11 @@ class PrivateStrategiesTest(unittest.TestCase):
                 next_execution_date="2026-07-21",
                 state_path=state_path,
             )
-            self.assertEqual(len(checkpoints), 3)
+            self.assertEqual(len(checkpoints), 2)
             self.assertTrue(all(item["candidate_count"] > 0 for item in checkpoints))
             self.assertTrue(all(item["today_action"] == "buy_next_day" for item in checkpoints))
             persisted = json.loads(state_path.read_text(encoding="utf-8"))
-            self.assertEqual(len(persisted), 3)
+            self.assertEqual(len(persisted), 2)
 
     def test_activation_date_keeps_all_models_flat_before_monday(self) -> None:
         history = {

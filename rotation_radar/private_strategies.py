@@ -5,8 +5,6 @@ from dataclasses import dataclass
 from pathlib import Path
 
 
-YUANTA_0050_HOLDINGS_URL = "https://www.yuantaetfs.com/product/detail/0050/ratio"
-
 STOCK_NAMES = {
     "00631L": "元大台灣50正2",
     "1101": "台泥",
@@ -66,14 +64,6 @@ STOCK_NAMES = {
 
 OLD_AI_7 = ("2330", "2454", "2382", "2317", "6669", "3231", "2308")
 
-YUANTA_0050_CONSTITUENTS = (
-    "1101", "1216", "1301", "1303", "1326", "1590", "2002", "2207", "2303", "2308",
-    "2317", "2327", "2330", "2345", "2357", "2379", "2382", "2383", "2395", "2412",
-    "2454", "2603", "2615", "2880", "2881", "2882", "2883", "2884", "2885", "2886",
-    "2887", "2890", "2891", "2892", "2912", "3008", "3017", "3034", "3037", "3045",
-    "3231", "3661", "3711", "4904", "4958", "5880", "6505", "6669", "7769", "8046",
-)
-
 PRIVATE_STRATEGY_ACTIVATION_DATE = "2026-07-20"
 PRIVATE_STRATEGY_HISTORY_WEEKDAYS = 30
 
@@ -118,18 +108,6 @@ STRATEGIES = (
         exit_slope=20,
         cooldown=10,
         pool_source_date="固定名單",
-    ),
-    StrategySpec(
-        strategy_id="yuanta_0050_constituents_s10_cd10",
-        pool_label="0050成分股",
-        mode_label="MA7＋10日正斜率買入／MA10＋20日負斜率賣出／CD10",
-        symbols=YUANTA_0050_CONSTITUENTS,
-        entry_ma=7,
-        entry_slope=10,
-        exit_ma=10,
-        exit_slope=20,
-        cooldown=10,
-        pool_source_date="2026-07-17",
     ),
 )
 
@@ -278,7 +256,7 @@ def _evaluate_strategy(
         "pool_label": spec.pool_label,
         "mode_label": spec.mode_label,
         "pool_source_date": spec.pool_source_date,
-        "pool_source_url": YUANTA_0050_HOLDINGS_URL if "constituents" in spec.strategy_id else "",
+        "pool_source_url": "",
         "report_date": report_date,
         "next_execution_date": next_execution_date,
         "today_action": today_action,
