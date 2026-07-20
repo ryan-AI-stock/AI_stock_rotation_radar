@@ -1,0 +1,45 @@
+{
+  "requested_date": "2026-07-21",
+  "status": "incomplete_source",
+  "calendar_state": "calendar_unknown_weekday",
+  "sources": [
+    {
+      "family": "official_raw_execution_ohlcv",
+      "market": "TWSE",
+      "requested_date": "2026-07-21",
+      "actual_source_date": "",
+      "status": "blocked",
+      "row_count": 0,
+      "http_status": 307,
+      "response_bytes": 800,
+      "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20260721&type=ALLBUT0999&response=json",
+      "source_hash": "f24826ecd1b572ad2b9eef388ecf9319e44669760208e52e4d8c2b8e554ab9a4",
+      "retrieved_at_utc": "2026-07-20T16:21:03+00:00",
+      "error": ""
+    },
+    {
+      "family": "official_raw_execution_ohlcv",
+      "market": "TPEx",
+      "requested_date": "2026-07-21",
+      "actual_source_date": "",
+      "status": "no_rows",
+      "row_count": 0,
+      "http_status": 200,
+      "response_bytes": 1630,
+      "source_url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2026/07/21&response=json",
+      "source_hash": "08ef90246994456194cb2d806ee7dde7ccd4aaf0b0d8006438aa7c8dfce7cdfe",
+      "retrieved_at_utc": "2026-07-20T16:21:05+00:00",
+      "error": ""
+    }
+  ],
+  "future_data_violation_count": 0,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "portfolio_replay_executed": false,
+  "ready_for_strategy_replay": false,
+  "ready_for_formal": false,
+  "not_live_rule": true,
+  "forward_returns_live_rule_usage": false
+}
