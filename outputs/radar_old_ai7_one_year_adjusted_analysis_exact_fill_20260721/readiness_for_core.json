@@ -1,0 +1,17 @@
+{
+  "task": "TASK-RADAR-DATA-OLD-AI7-ONE-YEAR-THREE-CHIP-FAMILIES-ADJUSTED-ANALYSIS-AUTHORITY-001",
+  "status": "partial_blocked_with_exact_ledger",
+  "required_exact_keys": 1736,
+  "accepted_exact_keys": 1729,
+  "blocked_exact_keys": 7,
+  "source_quality": "trusted_nonofficial_yahoo_research_grade",
+  "raw_as_adjusted_used": false,
+  "ready_for_core_old_ai7_adjusted_panel_absorption": true,
+  "ready_for_experiments": false,
+  "future_data_violation_count": 0,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "not_live_rule": true
+}

@@ -1,0 +1,2 @@
+future_data_violation_count,result,policy
+0,pass,exact ledger dates only; no outcome or neighbor price used
