@@ -31,7 +31,7 @@ class PrivateStrategiesTest(unittest.TestCase):
         )
         self.assertEqual(
             defensive.mode_label,
-            "MA4＋7日正斜率買入／MA10＋20日負斜率賣出／CD7",
+            "MA4＋近7日上漲買入／MA10＋近20日下跌賣出／CD7",
         )
 
     def test_rising_series_builds_ranked_entry_candidate(self) -> None:

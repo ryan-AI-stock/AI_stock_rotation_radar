@@ -214,7 +214,7 @@ class FormalSignalTests(unittest.TestCase):
         self.assertNotIn("正式 0050 訊號 / 00631L 執行", public_html)
         self.assertNotIn("持有 00631L", public_html)
         self.assertIn("正式 0050 訊號 / 00631L 執行", html)
-        self.assertIn("MA4＋7日正斜率買入／MA10＋20日負斜率賣出／CD7", html)
+        self.assertIn("MA4＋近7日上漲買入／MA10＋近20日下跌賣出／CD7", html)
         self.assertIn("0050 今日收盤", html)
         self.assertIn("持有 00631L", html)
         self.assertIn("7/16、7/17、7/20、7/21、7/22、7/23、7/24", html)

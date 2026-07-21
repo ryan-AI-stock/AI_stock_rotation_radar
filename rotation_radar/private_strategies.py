@@ -90,7 +90,7 @@ STRATEGIES = (
     StrategySpec(
         strategy_id="00631l_ma4_s7_cd7",
         pool_label="0050正二",
-        mode_label="MA4＋7日正斜率買入／MA10＋20日負斜率賣出／CD7",
+        mode_label="MA4＋近7日上漲買入／MA10＋近20日下跌賣出／CD7",
         symbols=("00631L",),
         entry_ma=4,
         entry_slope=7,
@@ -102,7 +102,7 @@ STRATEGIES = (
     StrategySpec(
         strategy_id="old_ai_7_s10_cd10",
         pool_label="老AI固定7檔",
-        mode_label="MA10＋20日正斜率買入／MA20＋20日負斜率賣出／CD10",
+        mode_label="MA10＋近20日上漲買入／MA20＋近20日下跌賣出／CD10",
         symbols=OLD_AI_7,
         entry_ma=10,
         entry_slope=20,

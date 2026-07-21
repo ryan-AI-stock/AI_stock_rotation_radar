@@ -95,7 +95,7 @@ def build_formal_signal_checkpoint(
     checkpoint = {
         "schema_version": 2,
         "mode_id": MODE_ID,
-        "mode_label": "MA4＋7日正斜率買入／MA10＋20日負斜率賣出／CD7",
+        "mode_label": "MA4＋近7日上漲買入／MA10＋近20日下跌賣出／CD7",
         "signal_ticker": SIGNAL_TICKER,
         "execution_ticker": EXECUTION_TICKER,
         "report_date": report_day.isoformat(),
