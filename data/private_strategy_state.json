@@ -12,13 +12,23 @@
       "ticker": "00631L"
     }
   },
+  "00631l_ma4_s7_cd7": {
+    "activation_date": "2026-07-20",
+    "buy_date": "",
+    "held_ticker": "",
+    "last_processed_date": "2026-07-20",
+    "last_sold_ticker": "",
+    "pending_action": {},
+    "state_version": "2026-07-21-signal-required-v2"
+  },
   "old_ai_7_s10_cd10": {
     "activation_date": "2026-07-20",
     "buy_date": "",
     "held_ticker": "",
     "last_processed_date": "2026-07-20",
     "last_sold_ticker": "",
-    "pending_action": {}
+    "pending_action": {},
+    "state_version": "2026-07-21-signal-required-v2"
   },
   "yuanta_0050_constituents_s10_cd10": {
     "activation_date": "2026-07-20",
