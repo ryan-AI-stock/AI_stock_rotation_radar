@@ -219,20 +219,20 @@ def _private_strategy_panel(item: dict[str, object]) -> str:
           <h3>進場區塊</h3>
           <div class="private-metric-pair">
             <div><span>進場 MA（{entry_ma_days}日）</span><strong>{_formal_number(entry_ma_value)}</strong><em>{'通過：收盤高於 MA' if entry_price_pass else '未通過：收盤需高於 MA'}</em></div>
-            <div><span>進場斜率（{entry_slope_days}日）</span><strong>{_formal_pct(entry_slope_value)}</strong><em>相對 {max(entry_slope_days - 1, 0)} 個交易日前；{'通過：正數' if entry_slope_value > 0 else '未通過：需大於 0'}</em></div>
+            <div><span>近{entry_slope_days}日價格漲跌</span><strong>{_formal_pct(entry_slope_value)}</strong><em>今日收盤相對 {max(entry_slope_days - 1, 0)} 個交易日前；{'通過：上漲' if entry_slope_value > 0 else '未通過：需上漲'}</em></div>
           </div>
         </section>
         <section class="private-metric-group exit-group">
           <h3>出場區塊</h3>
           <div class="private-metric-pair">
             <div><span>出場 MA（{exit_ma_days}日）</span><strong>{_formal_number(exit_ma_value)}</strong><em>{'通過：收盤低於 MA' if exit_price_pass else '未通過：收盤需低於 MA'}</em></div>
-            <div><span>出場斜率（{exit_slope_days}日）</span><strong>{_formal_pct(exit_slope_value)}</strong><em>相對 {max(exit_slope_days - 1, 0)} 個交易日前；{'通過：負數' if exit_slope_value < 0 else '未通過：需小於 0'}</em></div>
+            <div><span>近{exit_slope_days}日價格漲跌</span><strong>{_formal_pct(exit_slope_value)}</strong><em>今日收盤相對 {max(exit_slope_days - 1, 0)} 個交易日前；{'通過：下跌' if exit_slope_value < 0 else '未通過：需下跌'}</em></div>
           </div>
         </section>
       </div>
       <div class="private-candidates">
         <h3>今日進場候選排序</h3>
-        <table><thead><tr><th>#</th><th>股票</th><th>收盤</th><th>進場斜率</th></tr></thead><tbody>{candidate_rows}</tbody></table>
+        <table><thead><tr><th>#</th><th>股票</th><th>收盤</th><th>近{entry_slope_days}日價格漲跌</th></tr></thead><tbody>{candidate_rows}</tbody></table>
       </div>
     </article>
     """
