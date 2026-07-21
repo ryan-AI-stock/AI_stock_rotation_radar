@@ -171,8 +171,8 @@ def _private_strategy_panel(item: dict[str, object]) -> str:
       <div class="private-status-grid">
         <div><span>目前模擬部位</span><strong>{escape(position_text)}</strong><em>買入日 {escape(str(item.get("buy_date", "") or "無"))}</em></div>
         <div><span>今日判斷標的</span><strong>{escape(focus_text)}</strong><em>{escape(str(item.get("action_reason", "")))}</em></div>
-        <div><span>隔日執行日</span><strong>{escape(str(item.get("next_execution_date", "") or "待確認"))}</strong><em>訊號日 {escape(str(item.get("report_date", "")))}</em></div>
-        <div><span>候選 / 資料覆蓋</span><strong>{int(item.get("candidate_count", 0) or 0)} / {ready_count}</strong><em>候選池 {pool_count} 檔；來源 {escape(source_date)}</em></div>
+        <div><span>隔日執行日</span><strong>{escape(str(item.get("next_execution_date", "") or "待確認"))}</strong><em>訊號資料日 {escape(str(item.get("signal_data_date", "") or "待確認"))}；報告日 {escape(str(item.get("report_date", "")))}</em></div>
+        <div><span>符合買入 / 資料完整</span><strong>{int(item.get("candidate_count", 0) or 0)} / {ready_count}</strong><em>候選池 {pool_count} 檔；來源 {escape(source_date)}</em></div>
       </div>
       <div class="private-metric-strip">
         <div><span>收盤</span><strong>{_formal_number(focus.get("close"))}</strong></div>

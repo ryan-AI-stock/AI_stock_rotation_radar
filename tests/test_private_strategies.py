@@ -7,6 +7,7 @@ from pathlib import Path
 from tempfile import TemporaryDirectory
 
 from rotation_radar.private_strategies import (
+    PRIVATE_STRATEGY_STATE_VERSION,
     STRATEGIES,
     build_private_strategy_checkpoints,
     required_private_strategy_symbols,
@@ -21,6 +22,15 @@ class PrivateStrategiesTest(unittest.TestCase):
         self.assertIn("6669", symbols)
         self.assertNotIn("2891", symbols)
         self.assertEqual(len(STRATEGIES), 2)
+        defensive = STRATEGIES[0]
+        self.assertEqual(
+            (defensive.entry_ma, defensive.entry_slope, defensive.exit_ma, defensive.exit_slope, defensive.cooldown),
+            (4, 7, 10, 20, 7),
+        )
+        self.assertEqual(
+            defensive.mode_label,
+            "MA4＋7日正斜率買入／MA10＋20日負斜率賣出／CD7",
+        )
 
     def test_rising_series_builds_ranked_entry_candidate(self) -> None:
         history = {}
@@ -39,6 +49,41 @@ class PrivateStrategiesTest(unittest.TestCase):
             self.assertTrue(all(item["today_action"] == "buy_next_day" for item in checkpoints))
             persisted = json.loads(state_path.read_text(encoding="utf-8"))
             self.assertEqual(len(persisted), 2)
+
+    def test_old_forced_buy_state_is_reset_by_signal_required_version(self) -> None:
+        history = {
+            symbol: _rows(140, step=-0.5)
+            for symbol in required_private_strategy_symbols()
+        }
+        with TemporaryDirectory() as temp:
+            state_path = Path(temp) / "state.json"
+            state_path.write_text(
+                json.dumps(
+                    {
+                        "00631l_ma4_s7_cd7": {
+                            "last_processed_date": "2026-07-20",
+                            "pending_action": {
+                                "role": "buy",
+                                "ticker": "00631L",
+                                "decision_date": "2026-07-20",
+                                "execution_date": "2026-07-21",
+                            },
+                        }
+                    }
+                ),
+                encoding="utf-8",
+            )
+            checkpoints = build_private_strategy_checkpoints(
+                history,
+                report_date="2026-07-20",
+                next_execution_date="2026-07-21",
+                state_path=state_path,
+            )
+            defensive = checkpoints[0]
+            self.assertEqual(defensive["today_action"], "stay_flat")
+            persisted = json.loads(state_path.read_text(encoding="utf-8"))
+            self.assertEqual(persisted["00631l_ma4_s7_cd7"]["pending_action"], {})
+            self.assertIn("state_version", persisted["00631l_ma4_s7_cd7"])
 
     def test_activation_date_keeps_all_models_flat_before_monday(self) -> None:
         history = {
@@ -67,6 +112,7 @@ class PrivateStrategiesTest(unittest.TestCase):
                 json.dumps(
                     {
                         spec.strategy_id: {
+                            "state_version": PRIVATE_STRATEGY_STATE_VERSION,
                             "activation_date": "2026-07-01",
                             "last_processed_date": "2026-07-01",
                             "held_ticker": "2330",

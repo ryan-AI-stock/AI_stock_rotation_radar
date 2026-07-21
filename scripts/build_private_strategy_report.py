@@ -49,6 +49,16 @@ def main() -> None:
         next_execution_date=args.next_execution_date,
         state_path=args.state,
     )
+    incomplete = [
+        item for item in checkpoints
+        if int(item.get("data_ready_count", 0) or 0) != int(item.get("pool_size", 0) or 0)
+    ]
+    if incomplete:
+        details = ", ".join(
+            f"{item.get('strategy_id')}={item.get('data_ready_count')}/{item.get('pool_size')}"
+            for item in incomplete
+        )
+        raise RuntimeError(f"private strategy history incomplete: {details}")
     report = Report(
         title="私人策略操作總覽",
         generated_at=args.date,

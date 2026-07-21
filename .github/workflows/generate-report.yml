@@ -297,6 +297,18 @@ jobs:
           }, ensure_ascii=False))
           PY
 
+      - name: Build complete private strategy report from official history
+        if: steps.generate-report.outputs.report_ready == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          next_execution_date="$(python -c 'import json; from pathlib import Path; print(json.loads(Path("reports/formal_0050_00631l_checkpoint.json").read_text(encoding="utf-8"))["model_next_day_execution_date"])')"
+          python -m scripts.build_private_strategy_report \
+            --date "${{ steps.actual-report-date.outputs.actual_report_date }}" \
+            --next-execution-date "${next_execution_date}" \
+            --state data/private_strategy_state.json \
+            --output reports/private_strategy_daily.html
+
       - name: Commit formal radar candidate interface and CD state
         if: steps.generate-report.outputs.report_ready == 'true'
         shell: bash

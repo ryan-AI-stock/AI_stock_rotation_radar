@@ -66,6 +66,7 @@ OLD_AI_7 = ("2330", "2454", "2382", "2317", "6669", "3231", "2308")
 
 PRIVATE_STRATEGY_ACTIVATION_DATE = "2026-07-20"
 PRIVATE_STRATEGY_HISTORY_WEEKDAYS = 30
+PRIVATE_STRATEGY_STATE_VERSION = "2026-07-21-signal-required-v2"
 
 
 @dataclass(frozen=True)
@@ -80,22 +81,20 @@ class StrategySpec:
     exit_slope: int
     cooldown: int
     pool_source_date: str
-    buy_and_hold: bool = False
 
 
 STRATEGIES = (
     StrategySpec(
-        strategy_id="00631l_buy_and_hold",
+        strategy_id="00631l_ma4_s7_cd7",
         pool_label="0050正二",
-        mode_label="0050正二抱著不動",
+        mode_label="MA4＋7日正斜率買入／MA10＋20日負斜率賣出／CD7",
         symbols=("00631L",),
-        entry_ma=1,
-        entry_slope=1,
-        exit_ma=1,
-        exit_slope=1,
-        cooldown=0,
+        entry_ma=4,
+        entry_slope=7,
+        exit_ma=10,
+        exit_slope=20,
+        cooldown=7,
         pool_source_date="固定標的",
-        buy_and_hold=True,
     ),
     StrategySpec(
         strategy_id="old_ai_7_s10_cd10",
@@ -153,6 +152,8 @@ def _evaluate_strategy(
     next_execution_date: str,
     state: dict[str, object],
 ) -> tuple[dict[str, object], dict[str, object]]:
+    if state.get("state_version") != PRIVATE_STRATEGY_STATE_VERSION:
+        state = {}
     rows_by_symbol = {
         symbol: [
             row
@@ -207,12 +208,14 @@ def _evaluate_strategy(
     eligible = [
         row
         for row in ranked_ready
-        if spec.buy_and_hold or row.get("entry_signal")
+        if row.get("entry_signal")
     ]
 
     today_action = "hold" if held else "stay_flat"
     action_reason = "持股尚未出現完整賣出訊號" if held else "目前沒有符合條件的候選"
     signal_ticker = held
+    if not signal_ticker and ranked_ready:
+        signal_ticker = str(ranked_ready[0]["ticker"])
     if report_date < activation_date:
         today_action = "stay_flat"
         action_reason = f"新模型於 {activation_date} 起開始判斷，目前維持空手"
@@ -222,7 +225,7 @@ def _evaluate_strategy(
             held_metrics = evaluations.get(held, {})
             trading_days_since_buy = _trading_days_since(dates, buy_date, report_date)
             cooldown_unlocked = trading_days_since_buy > spec.cooldown
-            if not spec.buy_and_hold and held_metrics.get("exit_signal") and cooldown_unlocked:
+            if held_metrics.get("exit_signal") and cooldown_unlocked:
                 pending = {
                     "role": "sell",
                     "ticker": held,
@@ -244,11 +247,7 @@ def _evaluate_strategy(
                 "execution_date": next_execution_date,
             }
             today_action = "buy_next_day"
-            action_reason = (
-                "固定持有策略啟動，於下一交易日建立部位"
-                if spec.buy_and_hold
-                else "候選池中標準化斜率最強，且收盤站上進場均線"
-            )
+            action_reason = "候選池中標準化斜率最強，且收盤站上進場均線"
 
     focus_metrics = evaluations.get(signal_ticker, {}) if signal_ticker else {}
     checkpoint = {
@@ -275,6 +274,7 @@ def _evaluate_strategy(
         "pool_size": len(spec.symbols),
         "price_basis": "official raw close operational snapshot",
         "activation_date": activation_date,
+        "signal_data_date": str(focus_metrics.get("date", "") or ""),
     }
     updated = {
         "last_processed_date": report_date,
@@ -283,6 +283,7 @@ def _evaluate_strategy(
         "last_sold_ticker": last_sold,
         "pending_action": pending,
         "activation_date": activation_date,
+        "state_version": PRIVATE_STRATEGY_STATE_VERSION,
     }
     return checkpoint, updated
 
