@@ -1,0 +1,14 @@
+{
+  "task": "TASK-RADAR-DATA-2308-20250801-ADJUSTED-HOLDING-MARK-BOUNDED-FILL-001",
+  "status": "complete_research_grade_factor_continuity_reconstruction",
+  "accepted_rows": 1,
+  "raw_as_adjusted_used": false,
+  "future_data_violation_count": 0,
+  "ready_for_core_absorption": true,
+  "ready_for_experiments": false,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "not_live_rule": true
+}

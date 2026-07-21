@@ -1,0 +1,4 @@
+route,source_url,http_status,source_hash,response_bytes,retrieval_time_utc,stat
+yahoo_chart_adjusted,https://query1.finance.yahoo.com/v8/finance/chart/00631L.TW?period1=1752192000&period2=1784678400&interval=1d&events=div%2Csplits,200,ef7548e50d6f798182804786de1bbbae0df420a8a0c92f0b23d0ae06cbd02127,29011,2026-07-21T13:44:33+00:00,
+twse_stock_day,https://www.twse.com.tw/exchangeReport/STOCK_DAY?response=json&date=20250701&stockNo=00631L,200,2ac92e6b61fde98327ce89fbbb3b889f12474bfc9fc0aae0c9554cf8ec8feeda,3094,2026-07-21T13:44:33+00:00,OK
+twse_stock_day,https://www.twse.com.tw/exchangeReport/STOCK_DAY?response=json&date=20260701&stockNo=00631L,200,af6c19285384432b564bdbc5547d544483caa97a5b25a0a9f2f4fd9eea6e4b21,2224,2026-07-21T13:44:34+00:00,OK

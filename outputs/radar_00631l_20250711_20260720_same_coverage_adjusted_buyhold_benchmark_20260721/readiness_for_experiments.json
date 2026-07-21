@@ -1,0 +1,16 @@
+{
+  "task": "TASK-RADAR-DATA-00631L-20250711-20260720-SAME-COVERAGE-ADJUSTED-BUYHOLD-BENCHMARK-001",
+  "status": "complete",
+  "requested_start": "2025-07-11",
+  "requested_end": "2026-07-20",
+  "adjusted_analysis_rows": 249,
+  "official_raw_endpoint_rows": 2,
+  "raw_as_adjusted_used": false,
+  "ready_for_experiments_same_coverage_benchmark_absorption": true,
+  "future_data_violation_count": 0,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "not_live_rule": true
+}

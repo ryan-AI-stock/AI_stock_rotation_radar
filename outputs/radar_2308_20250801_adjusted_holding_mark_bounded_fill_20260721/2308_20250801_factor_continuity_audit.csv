@@ -1,0 +1,4 @@
+check,result,factor_range,value
+two_neighbor_factor_continuity,pass,1.3433031353926594e-08,
+raw_as_adjusted_used,pass_false,,False
+future_data_violation_count,pass,,0

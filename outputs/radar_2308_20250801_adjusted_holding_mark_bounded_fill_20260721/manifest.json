@@ -1,0 +1,33 @@
+{
+  "readiness": {
+    "task": "TASK-RADAR-DATA-2308-20250801-ADJUSTED-HOLDING-MARK-BOUNDED-FILL-001",
+    "status": "complete_research_grade_factor_continuity_reconstruction",
+    "accepted_rows": 1,
+    "raw_as_adjusted_used": false,
+    "future_data_violation_count": 0,
+    "ready_for_core_absorption": true,
+    "ready_for_experiments": false,
+    "formal_model_changed": false,
+    "trade_decision_changed": false,
+    "active_in_trade_decision": false,
+    "report_changed": false,
+    "not_live_rule": true
+  },
+  "files": [
+    {
+      "file": "2308_20250801_adjusted_holding_mark_patch.csv",
+      "sha256": "02a439b48c02f6e3ee4d71e05af6ff97428170ca9f7234fe241ec8678f7c7532",
+      "bytes": 1112
+    },
+    {
+      "file": "2308_20250801_blocked_ledger.csv",
+      "sha256": "c49fb5d26ea29372a6aaf8446ae81e7ccaa2f0924e7681c7e5f088a57de43a29",
+      "bytes": 20
+    },
+    {
+      "file": "2308_20250801_factor_continuity_audit.csv",
+      "sha256": "1b0a6ee527e2643e85bd6afd10356621923e1ff14aab7f517e37b228f96709a6",
+      "bytes": 171
+    }
+  ]
+}

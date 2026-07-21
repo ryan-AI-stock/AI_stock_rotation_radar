@@ -1,0 +1,3 @@
+date,ticker,market,official_raw_execution_close,source_quality,adjustment_policy,source_url,source_hash,retrieval_time_utc
+2025-07-11,00631L,TWSE,224.8,official_twse_stock_day_unadjusted,raw_execution_close_only; not adjusted analysis,https://www.twse.com.tw/exchangeReport/STOCK_DAY?response=json&date=20250701&stockNo=00631L,2ac92e6b61fde98327ce89fbbb3b889f12474bfc9fc0aae0c9554cf8ec8feeda,2026-07-21T13:44:33+00:00
+2026-07-20,00631L,TWSE,32.06,official_twse_stock_day_unadjusted,raw_execution_close_only; not adjusted analysis,https://www.twse.com.tw/exchangeReport/STOCK_DAY?response=json&date=20260701&stockNo=00631L,af6c19285384432b564bdbc5547d544483caa97a5b25a0a9f2f4fd9eea6e4b21,2026-07-21T13:44:34+00:00

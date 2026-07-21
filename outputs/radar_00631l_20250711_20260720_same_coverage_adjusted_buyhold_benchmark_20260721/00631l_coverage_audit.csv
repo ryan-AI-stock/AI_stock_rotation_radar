@@ -1,0 +1,2 @@
+requested_start,requested_end,adjusted_daily_rows,adjusted_unique_dates,official_raw_endpoint_rows,official_raw_start_ready,official_raw_end_ready,raw_as_adjusted_used,future_data_violation_count
+2025-07-11,2026-07-20,249,249,2,True,True,False,0

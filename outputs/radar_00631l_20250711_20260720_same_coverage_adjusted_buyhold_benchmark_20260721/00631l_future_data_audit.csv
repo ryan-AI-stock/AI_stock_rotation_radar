@@ -1,0 +1,2 @@
+future_data_violation_count,result,policy
+0,pass,same coverage only; no neighbor or raw-as-adjusted substitution

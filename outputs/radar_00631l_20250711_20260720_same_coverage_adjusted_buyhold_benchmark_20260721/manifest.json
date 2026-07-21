@@ -1,0 +1,55 @@
+{
+  "readiness": {
+    "task": "TASK-RADAR-DATA-00631L-20250711-20260720-SAME-COVERAGE-ADJUSTED-BUYHOLD-BENCHMARK-001",
+    "status": "complete",
+    "requested_start": "2025-07-11",
+    "requested_end": "2026-07-20",
+    "adjusted_analysis_rows": 249,
+    "official_raw_endpoint_rows": 2,
+    "raw_as_adjusted_used": false,
+    "ready_for_experiments_same_coverage_benchmark_absorption": true,
+    "future_data_violation_count": 0,
+    "formal_model_changed": false,
+    "trade_decision_changed": false,
+    "active_in_trade_decision": false,
+    "report_changed": false,
+    "not_live_rule": true
+  },
+  "files": [
+    {
+      "file": "00631l_blocked_no_trade_ledger.csv",
+      "bytes": 2,
+      "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+    },
+    {
+      "file": "00631l_coverage_audit.csv",
+      "bytes": 248,
+      "sha256": "09cdc3e883d6d00a6cce965ec98f76230c398712fa59842b9513e4ebbb4fe791"
+    },
+    {
+      "file": "00631l_event_aware_adjusted_analysis_close.csv.gz",
+      "bytes": 4655,
+      "sha256": "2ce24090f9091c4c256b406dcc4dc461471ae3f28c47f73012487eb1d36f4e60"
+    },
+    {
+      "file": "00631l_future_data_audit.csv",
+      "bytes": 115,
+      "sha256": "1791d416691d1d8345faf051cf91948c83d89c99cf089557f3d425fe1163f009"
+    },
+    {
+      "file": "00631l_official_raw_execution_endpoints.csv",
+      "bytes": 716,
+      "sha256": "a0d239a2ac8eda2539a0c64c400bf9d3a9e3267558402630f4a766c84df012a2"
+    },
+    {
+      "file": "00631l_source_manifest.csv",
+      "bytes": 757,
+      "sha256": "1bbe552b0a96d6bafdf3bad15810e6f3ab533a414dd5cb023eefb0a7cc770087"
+    },
+    {
+      "file": "readiness_for_experiments.json",
+      "bytes": 570,
+      "sha256": "ccd4788f3be4bea9940f19eddc281ad144aa08e9d0631ff911b40132daa0716b"
+    }
+  ]
+}
