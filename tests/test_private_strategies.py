@@ -67,7 +67,9 @@ class PrivateStrategiesTest(unittest.TestCase):
             self.assertIn("進場區塊", html)
             self.assertIn("出場區塊", html)
             self.assertIn("下次可交易日期＝2026/7/30", html)
-            self.assertIn("通過：斜率為正數", html)
+            self.assertIn("進場斜率（7日）", html)
+            self.assertIn("相對 6 個交易日前；通過：正數", html)
+            self.assertIn("出場斜率（20日）", html)
             persisted = json.loads(state_path.read_text(encoding="utf-8"))
             self.assertEqual(len(persisted), 2)
 

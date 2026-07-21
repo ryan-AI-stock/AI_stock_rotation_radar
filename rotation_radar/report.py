@@ -168,6 +168,10 @@ def _private_strategy_panel(item: dict[str, object]) -> str:
     exit_ma_value = focus.get("exit_ma")
     entry_slope_value = float(focus.get("entry_slope_pct", 0) or 0)
     exit_slope_value = float(focus.get("exit_slope_pct", 0) or 0)
+    entry_ma_days = int(item.get("entry_ma_days", 0) or 0)
+    entry_slope_days = int(item.get("entry_slope_days", 0) or 0)
+    exit_ma_days = int(item.get("exit_ma_days", 0) or 0)
+    exit_slope_days = int(item.get("exit_slope_days", 0) or 0)
     entry_price_pass = bool(
         focus.get("ready") and close_value is not None and entry_ma_value is not None
         and float(close_value) > float(entry_ma_value)
@@ -214,15 +218,15 @@ def _private_strategy_panel(item: dict[str, object]) -> str:
         <section class="private-metric-group entry-group">
           <h3>進場區塊</h3>
           <div class="private-metric-pair">
-            <div><span>進場 MA</span><strong>{_formal_number(entry_ma_value)}</strong><em>{'通過：收盤高於 MA' if entry_price_pass else '未通過：收盤需高於 MA'}</em></div>
-            <div><span>進場斜率</span><strong>{_formal_pct(entry_slope_value)}</strong><em>{'通過：斜率為正數' if entry_slope_value > 0 else '未通過：斜率需大於 0'}</em></div>
+            <div><span>進場 MA（{entry_ma_days}日）</span><strong>{_formal_number(entry_ma_value)}</strong><em>{'通過：收盤高於 MA' if entry_price_pass else '未通過：收盤需高於 MA'}</em></div>
+            <div><span>進場斜率（{entry_slope_days}日）</span><strong>{_formal_pct(entry_slope_value)}</strong><em>相對 {max(entry_slope_days - 1, 0)} 個交易日前；{'通過：正數' if entry_slope_value > 0 else '未通過：需大於 0'}</em></div>
           </div>
         </section>
         <section class="private-metric-group exit-group">
           <h3>出場區塊</h3>
           <div class="private-metric-pair">
-            <div><span>出場 MA</span><strong>{_formal_number(exit_ma_value)}</strong><em>{'通過：收盤低於 MA' if exit_price_pass else '未通過：收盤需低於 MA'}</em></div>
-            <div><span>出場斜率</span><strong>{_formal_pct(exit_slope_value)}</strong><em>{'通過：斜率為負數' if exit_slope_value < 0 else '未通過：斜率需小於 0'}</em></div>
+            <div><span>出場 MA（{exit_ma_days}日）</span><strong>{_formal_number(exit_ma_value)}</strong><em>{'通過：收盤低於 MA' if exit_price_pass else '未通過：收盤需低於 MA'}</em></div>
+            <div><span>出場斜率（{exit_slope_days}日）</span><strong>{_formal_pct(exit_slope_value)}</strong><em>相對 {max(exit_slope_days - 1, 0)} 個交易日前；{'通過：負數' if exit_slope_value < 0 else '未通過：需小於 0'}</em></div>
           </div>
         </section>
       </div>
