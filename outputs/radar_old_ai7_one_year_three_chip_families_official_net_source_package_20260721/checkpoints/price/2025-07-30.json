@@ -1,0 +1,92 @@
+{
+  "family": "price",
+  "date": "2025-07-30",
+  "status": "accepted",
+  "filtered_rows": 6,
+  "http_status": 200,
+  "response_bytes": 231222,
+  "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20250730&type=ALLBUT0999&response=json",
+  "source_hash": "c6043916d5e63772cc8cf4cc7bf7e1628b97604c8f76e69fe412232d1ac49b7c",
+  "retrieval_time_utc": "2026-07-21T11:10:01+00:00",
+  "error": "",
+  "rows": [
+    {
+      "date": "2025-07-30",
+      "ticker": "2308",
+      "name": "台達電",
+      "market": "TWSE",
+      "close": 530.0,
+      "source_quality": "official_twse_raw_execution_close",
+      "adjustment_policy": "unadjusted_execution_only",
+      "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20250730&type=ALLBUT0999&response=json",
+      "source_hash": "c6043916d5e63772cc8cf4cc7bf7e1628b97604c8f76e69fe412232d1ac49b7c",
+      "retrieval_time_utc": "2026-07-21T11:10:01+00:00",
+      "source_reuse": "new_official_market_day"
+    },
+    {
+      "date": "2025-07-30",
+      "ticker": "2330",
+      "name": "台積電",
+      "market": "TWSE",
+      "close": 1155.0,
+      "source_quality": "official_twse_raw_execution_close",
+      "adjustment_policy": "unadjusted_execution_only",
+      "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20250730&type=ALLBUT0999&response=json",
+      "source_hash": "c6043916d5e63772cc8cf4cc7bf7e1628b97604c8f76e69fe412232d1ac49b7c",
+      "retrieval_time_utc": "2026-07-21T11:10:01+00:00",
+      "source_reuse": "new_official_market_day"
+    },
+    {
+      "date": "2025-07-30",
+      "ticker": "2382",
+      "name": "廣達",
+      "market": "TWSE",
+      "close": 270.0,
+      "source_quality": "official_twse_raw_execution_close",
+      "adjustment_policy": "unadjusted_execution_only",
+      "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20250730&type=ALLBUT0999&response=json",
+      "source_hash": "c6043916d5e63772cc8cf4cc7bf7e1628b97604c8f76e69fe412232d1ac49b7c",
+      "retrieval_time_utc": "2026-07-21T11:10:01+00:00",
+      "source_reuse": "new_official_market_day"
+    },
+    {
+      "date": "2025-07-30",
+      "ticker": "2454",
+      "name": "聯發科",
+      "market": "TWSE",
+      "close": 1380.0,
+      "source_quality": "official_twse_raw_execution_close",
+      "adjustment_policy": "unadjusted_execution_only",
+      "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20250730&type=ALLBUT0999&response=json",
+      "source_hash": "c6043916d5e63772cc8cf4cc7bf7e1628b97604c8f76e69fe412232d1ac49b7c",
+      "retrieval_time_utc": "2026-07-21T11:10:01+00:00",
+      "source_reuse": "new_official_market_day"
+    },
+    {
+      "date": "2025-07-30",
+      "ticker": "3231",
+      "name": "緯創",
+      "market": "TWSE",
+      "close": 120.5,
+      "source_quality": "official_twse_raw_execution_close",
+      "adjustment_policy": "unadjusted_execution_only",
+      "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20250730&type=ALLBUT0999&response=json",
+      "source_hash": "c6043916d5e63772cc8cf4cc7bf7e1628b97604c8f76e69fe412232d1ac49b7c",
+      "retrieval_time_utc": "2026-07-21T11:10:01+00:00",
+      "source_reuse": "new_official_market_day"
+    },
+    {
+      "date": "2025-07-30",
+      "ticker": "6669",
+      "name": "緯穎",
+      "market": "TWSE",
+      "close": 2650.0,
+      "source_quality": "official_twse_raw_execution_close",
+      "adjustment_policy": "unadjusted_execution_only",
+      "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20250730&type=ALLBUT0999&response=json",
+      "source_hash": "c6043916d5e63772cc8cf4cc7bf7e1628b97604c8f76e69fe412232d1ac49b7c",
+      "retrieval_time_utc": "2026-07-21T11:10:01+00:00",
+      "source_reuse": "new_official_market_day"
+    }
+  ]
+}

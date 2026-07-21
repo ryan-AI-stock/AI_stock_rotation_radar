@@ -1,0 +1,13 @@
+{
+  "family": "price",
+  "date": "2026-07-10",
+  "status": "official_no_target_or_market_closed",
+  "filtered_rows": 0,
+  "http_status": 200,
+  "response_bytes": 71,
+  "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20260710&type=ALLBUT0999&response=json",
+  "source_hash": "a5691b2512d7068ab2f69df75c3ef8fbc38dc565086422b1602656895c92c652",
+  "retrieval_time_utc": "2026-07-21T11:12:19+00:00",
+  "error": "",
+  "rows": []
+}

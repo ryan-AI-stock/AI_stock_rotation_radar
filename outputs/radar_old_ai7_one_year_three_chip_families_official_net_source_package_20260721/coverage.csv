@@ -1,0 +1,5 @@
+family,rows,min_date,max_date,unique_dates,unique_tickers
+institutional_net,1735,2025-07-11,2026-07-20,248,7
+margin_short,1736,2025-07-11,2026-07-20,248,7
+raw_close,1707,2025-07-11,2026-07-20,244,7
+tdcc_400plus,367,2025-07-11,2026-07-17,53,7
