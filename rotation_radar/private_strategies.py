@@ -2,7 +2,10 @@ from __future__ import annotations
 
 import json
 from dataclasses import dataclass
+from datetime import date, timedelta
 from pathlib import Path
+
+from .schedule_gate import is_trading_day
 
 
 STOCK_NAMES = {
@@ -66,7 +69,7 @@ OLD_AI_7 = ("2330", "2454", "2382", "2317", "6669", "3231", "2308")
 
 PRIVATE_STRATEGY_ACTIVATION_DATE = "2026-07-20"
 PRIVATE_STRATEGY_HISTORY_WEEKDAYS = 30
-PRIVATE_STRATEGY_STATE_VERSION = "2026-07-21-signal-required-v2"
+PRIVATE_STRATEGY_STATE_VERSION = "2026-07-21-signal-cooldown-v3"
 
 
 @dataclass(frozen=True)
@@ -121,6 +124,8 @@ def build_private_strategy_checkpoints(
     report_date: str,
     next_execution_date: str,
     state_path: str | Path,
+    open_dates: set[date] | None = None,
+    closed_dates: set[date] | None = None,
 ) -> list[dict[str, object]]:
     state_file = Path(state_path)
     loaded_state = _read_state(state_file)
@@ -137,6 +142,9 @@ def build_private_strategy_checkpoints(
             report_date=report_date,
             next_execution_date=next_execution_date,
             state=item_state,
+            open_dates=set(open_dates or set()),
+            closed_dates=set(closed_dates or set()),
+            calendar_ready=closed_dates is not None,
         )
         state[spec.strategy_id] = updated
         checkpoints.append(checkpoint)
@@ -155,6 +163,9 @@ def _evaluate_strategy(
     report_date: str,
     next_execution_date: str,
     state: dict[str, object],
+    open_dates: set[date],
+    closed_dates: set[date],
+    calendar_ready: bool,
 ) -> tuple[dict[str, object], dict[str, object]]:
     if state.get("state_version") != PRIVATE_STRATEGY_STATE_VERSION:
         state = {}
@@ -179,6 +190,9 @@ def _evaluate_strategy(
     held = str(state.get("held_ticker", "") or "")
     buy_date = str(state.get("buy_date", "") or "")
     last_sold = str(state.get("last_sold_ticker", "") or "")
+    last_signal_date = str(state.get("last_signal_date", "") or "")
+    last_signal_role = str(state.get("last_signal_role", "") or "")
+    cooldown_next_tradable_date = str(state.get("cooldown_next_tradable_date", "") or "")
     activation_date = str(state.get("activation_date", PRIVATE_STRATEGY_ACTIVATION_DATE))
 
     for day in [value for value in dates if value > last_processed]:
@@ -197,10 +211,13 @@ def _evaluate_strategy(
         symbol: _signal_metrics(rows, spec)
         for symbol, rows in rows_by_symbol.items()
     }
+    cooldown_locked = bool(
+        cooldown_next_tradable_date and report_date < cooldown_next_tradable_date
+    )
     ranked_ready = [
         dict(metrics, ticker=symbol, name=STOCK_NAMES.get(symbol, symbol))
         for symbol, metrics in evaluations.items()
-        if metrics.get("ready") and symbol != last_sold
+        if metrics.get("ready") and (symbol != last_sold or not cooldown_locked)
     ]
     ranked_ready.sort(
         key=lambda row: (
@@ -228,8 +245,7 @@ def _evaluate_strategy(
         if held:
             held_metrics = evaluations.get(held, {})
             trading_days_since_buy = _trading_days_since(dates, buy_date, report_date)
-            cooldown_unlocked = trading_days_since_buy > spec.cooldown
-            if held_metrics.get("exit_signal") and cooldown_unlocked:
+            if held_metrics.get("exit_signal") and not cooldown_locked and calendar_ready:
                 pending = {
                     "role": "sell",
                     "ticker": held,
@@ -238,10 +254,23 @@ def _evaluate_strategy(
                 }
                 today_action = "sell_next_day"
                 action_reason = "收盤低於退出均線，且退出斜率為負"
+                last_signal_date = report_date
+                last_signal_role = "sell"
+                cooldown_next_tradable_date = _cooldown_next_tradable_date(
+                    report_date,
+                    spec.cooldown,
+                    open_dates,
+                    closed_dates,
+                )
             elif held_metrics.get("exit_signal"):
                 today_action = "cooldown_hold"
-                action_reason = f"賣出訊號成立，但買入後CD{spec.cooldown}尚未解鎖"
-        elif eligible:
+                action_reason = f"賣出條件成立，但前次交易訊號的CD{spec.cooldown}尚未解鎖"
+        elif eligible and cooldown_locked:
+            target = eligible[0]
+            signal_ticker = str(target["ticker"])
+            today_action = "cooldown_wait"
+            action_reason = f"買入條件成立，但前次交易訊號的CD{spec.cooldown}尚未解鎖"
+        elif eligible and calendar_ready:
             target = eligible[0]
             signal_ticker = str(target["ticker"])
             pending = {
@@ -252,7 +281,23 @@ def _evaluate_strategy(
             }
             today_action = "buy_next_day"
             action_reason = "候選池中標準化斜率最強，且收盤站上進場均線"
+            last_signal_date = report_date
+            last_signal_role = "buy"
+            cooldown_next_tradable_date = _cooldown_next_tradable_date(
+                report_date,
+                spec.cooldown,
+                open_dates,
+                closed_dates,
+            )
+        elif eligible:
+            target = eligible[0]
+            signal_ticker = str(target["ticker"])
+            today_action = "blocked_calendar"
+            action_reason = "買入條件成立，但官方交易日曆不足，禁止建立交易訊號"
 
+    cooldown_locked = bool(
+        cooldown_next_tradable_date and report_date < cooldown_next_tradable_date
+    )
     focus_metrics = evaluations.get(signal_ticker, {}) if signal_ticker else {}
     checkpoint = {
         "strategy_id": spec.strategy_id,
@@ -272,6 +317,19 @@ def _evaluate_strategy(
         "top_candidates": eligible[:5],
         "focus_metrics": focus_metrics,
         "cooldown": spec.cooldown,
+        "cooldown_start_signal_date": last_signal_date,
+        "cooldown_start_signal_role": last_signal_role,
+        "cooldown_next_tradable_date": cooldown_next_tradable_date,
+        "cooldown_remaining_trading_days": _remaining_cooldown_days(
+            report_date,
+            cooldown_next_tradable_date,
+            open_dates,
+            closed_dates,
+        ) if calendar_ready else None,
+        "cooldown_status": (
+            "locked" if cooldown_locked else "unlocked" if last_signal_date else "not_started"
+        ),
+        "cooldown_calendar_ready": calendar_ready,
         "buy_date": buy_date,
         "trading_days_since_buy": _trading_days_since(dates, buy_date, report_date),
         "data_ready_count": sum(bool(value.get("ready")) for value in evaluations.values()),
@@ -288,6 +346,9 @@ def _evaluate_strategy(
         "pending_action": pending,
         "activation_date": activation_date,
         "state_version": PRIVATE_STRATEGY_STATE_VERSION,
+        "last_signal_date": last_signal_date,
+        "last_signal_role": last_signal_role,
+        "cooldown_next_tradable_date": cooldown_next_tradable_date,
     }
     return checkpoint, updated
 
@@ -327,6 +388,42 @@ def _trading_days_since(dates: list[str], buy_date: str, report_date: str) -> in
     if not buy_date or buy_date not in dates:
         return 0
     return sum(buy_date < value <= report_date for value in dates)
+
+
+def _cooldown_next_tradable_date(
+    signal_date: str,
+    cooldown: int,
+    open_dates: set[date],
+    closed_dates: set[date],
+) -> str:
+    signal_day = date.fromisoformat(signal_date)
+    sessions: list[date] = []
+    candidate = signal_day + timedelta(days=1)
+    for _ in range(370):
+        if is_trading_day(candidate, open_dates, closed_dates):
+            sessions.append(candidate)
+            if len(sessions) == cooldown + 1:
+                return candidate.isoformat()
+        candidate += timedelta(days=1)
+    return ""
+
+
+def _remaining_cooldown_days(
+    report_date: str,
+    next_tradable_date: str,
+    open_dates: set[date],
+    closed_dates: set[date],
+) -> int:
+    if not next_tradable_date or report_date >= next_tradable_date:
+        return 0
+    current = date.fromisoformat(report_date) + timedelta(days=1)
+    boundary = date.fromisoformat(next_tradable_date)
+    remaining = 0
+    while current < boundary:
+        if is_trading_day(current, open_dates, closed_dates):
+            remaining += 1
+        current += timedelta(days=1)
+    return remaining
 
 
 def _read_state(path: Path) -> dict[str, dict[str, object]]:

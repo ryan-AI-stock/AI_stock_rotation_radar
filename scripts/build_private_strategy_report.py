@@ -14,6 +14,7 @@ from rotation_radar.private_strategies import (
     required_private_strategy_symbols,
 )
 from rotation_radar.report import render_private_signal_report
+from rotation_radar.schedule_gate import fetch_twse_calendar
 
 
 TWSE_STOCK_DAY_URL = "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY"
@@ -43,11 +44,16 @@ def main() -> None:
         symbol: _fetch_symbol(symbol, months, args.date)
         for symbol in sorted(required_private_strategy_symbols())
     }
+    open_dates, closed_dates = fetch_twse_calendar()
+    if closed_dates is None:
+        raise RuntimeError("private strategy report requires the official TWSE trading calendar")
     checkpoints = build_private_strategy_checkpoints(
         history,
         report_date=args.date,
         next_execution_date=args.next_execution_date,
         state_path=args.state,
+        open_dates=open_dates,
+        closed_dates=closed_dates,
     )
     incomplete = [
         item for item in checkpoints

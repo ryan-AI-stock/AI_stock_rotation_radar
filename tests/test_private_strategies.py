@@ -12,6 +12,8 @@ from rotation_radar.private_strategies import (
     build_private_strategy_checkpoints,
     required_private_strategy_symbols,
 )
+from rotation_radar.models import Report
+from rotation_radar.report import render_private_signal_report
 
 
 class PrivateStrategiesTest(unittest.TestCase):
@@ -43,10 +45,29 @@ class PrivateStrategiesTest(unittest.TestCase):
                 report_date="2026-07-20",
                 next_execution_date="2026-07-21",
                 state_path=state_path,
+                **_calendar(),
             )
             self.assertEqual(len(checkpoints), 2)
             self.assertTrue(all(item["candidate_count"] > 0 for item in checkpoints))
             self.assertTrue(all(item["today_action"] == "buy_next_day" for item in checkpoints))
+            self.assertEqual(checkpoints[0]["cooldown_next_tradable_date"], "2026-07-30")
+            self.assertEqual(checkpoints[0]["cooldown_remaining_trading_days"], 7)
+            self.assertEqual(checkpoints[0]["cooldown_start_signal_role"], "buy")
+            self.assertEqual(checkpoints[0]["cooldown_status"], "locked")
+            html = render_private_signal_report(
+                Report(
+                    title="Radar",
+                    generated_at="2026-07-20",
+                    market_view="private",
+                    sector_results=[],
+                    stock_results=[],
+                    private_strategies=checkpoints,
+                )
+            )
+            self.assertIn("進場區塊", html)
+            self.assertIn("出場區塊", html)
+            self.assertIn("下次可交易日期＝2026/7/30", html)
+            self.assertIn("通過：斜率為正數", html)
             persisted = json.loads(state_path.read_text(encoding="utf-8"))
             self.assertEqual(len(persisted), 2)
 
@@ -86,6 +107,7 @@ class PrivateStrategiesTest(unittest.TestCase):
                 report_date="2026-07-20",
                 next_execution_date="2026-07-21",
                 state_path=state_path,
+                **_calendar(),
             )
             defensive = checkpoints[0]
             self.assertEqual(defensive["today_action"], "stay_flat")
@@ -105,6 +127,7 @@ class PrivateStrategiesTest(unittest.TestCase):
                 report_date="2026-07-17",
                 next_execution_date="2026-07-20",
                 state_path=Path(temp) / "state.json",
+                **_calendar(),
             )
             self.assertTrue(all(item["today_action"] == "stay_flat" for item in checkpoints))
             self.assertTrue(all(not item["held_ticker"] for item in checkpoints))
@@ -138,11 +161,24 @@ class PrivateStrategiesTest(unittest.TestCase):
                 report_date="2026-07-17",
                 next_execution_date="2026-07-20",
                 state_path=state_path,
+                **_calendar(),
             )
             checkpoint = next(
                 item for item in checkpoints if item["strategy_id"] == spec.strategy_id
             )
             self.assertEqual(checkpoint["today_action"], "sell_next_day")
+            self.assertEqual(checkpoint["cooldown_start_signal_role"], "sell")
+
+
+def _calendar() -> dict[str, set[date]]:
+    open_dates: set[date] = set()
+    cursor = date(2026, 6, 1)
+    end = date(2026, 9, 1)
+    while cursor <= end:
+        if cursor.weekday() < 5:
+            open_dates.add(cursor)
+        cursor += timedelta(days=1)
+    return {"open_dates": open_dates, "closed_dates": set()}
 
 
 def _rows(start: float, *, step: float) -> list[dict[str, float | str]]:

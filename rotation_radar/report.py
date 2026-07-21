@@ -107,6 +107,8 @@ def _private_strategy_summary(item: dict[str, object]) -> str:
         "sell_next_day": "隔日賣出",
         "hold": "續抱",
         "cooldown_hold": "CD鎖定續抱",
+        "cooldown_wait": "CD鎖定空手",
+        "blocked_calendar": "交易日曆待確認",
         "stay_flat": "維持空手",
     }.get(action, "待確認")
     held = str(item.get("held_ticker", "") or "")
@@ -130,6 +132,8 @@ def _private_strategy_panel(item: dict[str, object]) -> str:
         "sell_next_day": "隔日賣出",
         "hold": "續抱",
         "cooldown_hold": "CD鎖定續抱",
+        "cooldown_wait": "CD鎖定空手",
+        "blocked_calendar": "交易日曆待確認",
         "stay_flat": "維持空手",
     }.get(action, "狀態待確認")
     action_class = (
@@ -159,6 +163,31 @@ def _private_strategy_panel(item: dict[str, object]) -> str:
     source_date = str(item.get("pool_source_date", "") or "")
     pool_count = int(item.get("pool_size", 0) or 0)
     ready_count = int(item.get("data_ready_count", 0) or 0)
+    close_value = focus.get("close")
+    entry_ma_value = focus.get("entry_ma")
+    exit_ma_value = focus.get("exit_ma")
+    entry_slope_value = float(focus.get("entry_slope_pct", 0) or 0)
+    exit_slope_value = float(focus.get("exit_slope_pct", 0) or 0)
+    entry_price_pass = bool(
+        focus.get("ready") and close_value is not None and entry_ma_value is not None
+        and float(close_value) > float(entry_ma_value)
+    )
+    exit_price_pass = bool(
+        focus.get("ready") and close_value is not None and exit_ma_value is not None
+        and float(close_value) < float(exit_ma_value)
+    )
+    next_tradable = str(item.get("cooldown_next_tradable_date", "") or "")
+    cooldown_status = str(item.get("cooldown_status", "not_started") or "not_started")
+    cooldown_remaining = item.get("cooldown_remaining_trading_days")
+    if cooldown_status == "locked":
+        cooldown_text = f"尚餘 {int(cooldown_remaining or 0)} TD"
+        cooldown_note = f"下次可交易日期＝{_slash_date(next_tradable)}"
+    elif cooldown_status == "unlocked":
+        cooldown_text = "已解鎖"
+        cooldown_note = f"可交易日期＝{_slash_date(next_tradable)}"
+    else:
+        cooldown_text = "尚未啟動"
+        cooldown_note = "正式買入或賣出訊號成立後開始計算"
     return f"""
     <article class="private-strategy-card">
       <div class="private-card-head">
@@ -174,13 +203,28 @@ def _private_strategy_panel(item: dict[str, object]) -> str:
         <div><span>隔日執行日</span><strong>{escape(str(item.get("next_execution_date", "") or "待確認"))}</strong><em>訊號資料日 {escape(str(item.get("signal_data_date", "") or "待確認"))}；報告日 {escape(str(item.get("report_date", "")))}</em></div>
         <div><span>符合買入 / 資料完整</span><strong>{int(item.get("candidate_count", 0) or 0)} / {ready_count}</strong><em>候選池 {pool_count} 檔；來源 {escape(source_date)}</em></div>
       </div>
-      <div class="private-metric-strip">
-        <div><span>收盤</span><strong>{_formal_number(focus.get("close"))}</strong></div>
-        <div><span>進場 MA</span><strong>{_formal_number(focus.get("entry_ma"))}</strong></div>
-        <div><span>進場斜率</span><strong>{_formal_pct(focus.get("entry_slope_pct"))}</strong></div>
-        <div><span>退出 MA</span><strong>{_formal_number(focus.get("exit_ma"))}</strong></div>
-        <div><span>退出斜率</span><strong>{_formal_pct(focus.get("exit_slope_pct"))}</strong></div>
-        <div><span>CD</span><strong>{int(item.get("cooldown", 0) or 0)} TD</strong></div>
+      <div class="private-metric-groups">
+        <section class="private-metric-group price-cd-group">
+          <h3>收盤與交易限制</h3>
+          <div class="private-metric-pair">
+            <div><span>收盤</span><strong>{_formal_number(close_value)}</strong><em>今日訊號判斷價格</em></div>
+            <div><span>CD{int(item.get("cooldown", 0) or 0)}</span><strong>{escape(cooldown_text)}</strong><em>{escape(cooldown_note)}</em></div>
+          </div>
+        </section>
+        <section class="private-metric-group entry-group">
+          <h3>進場區塊</h3>
+          <div class="private-metric-pair">
+            <div><span>進場 MA</span><strong>{_formal_number(entry_ma_value)}</strong><em>{'通過：收盤高於 MA' if entry_price_pass else '未通過：收盤需高於 MA'}</em></div>
+            <div><span>進場斜率</span><strong>{_formal_pct(entry_slope_value)}</strong><em>{'通過：斜率為正數' if entry_slope_value > 0 else '未通過：斜率需大於 0'}</em></div>
+          </div>
+        </section>
+        <section class="private-metric-group exit-group">
+          <h3>出場區塊</h3>
+          <div class="private-metric-pair">
+            <div><span>出場 MA</span><strong>{_formal_number(exit_ma_value)}</strong><em>{'通過：收盤低於 MA' if exit_price_pass else '未通過：收盤需低於 MA'}</em></div>
+            <div><span>出場斜率</span><strong>{_formal_pct(exit_slope_value)}</strong><em>{'通過：斜率為負數' if exit_slope_value < 0 else '未通過：斜率需小於 0'}</em></div>
+          </div>
+        </section>
       </div>
       <div class="private-candidates">
         <h3>今日進場候選排序</h3>
@@ -188,6 +232,16 @@ def _private_strategy_panel(item: dict[str, object]) -> str:
       </div>
     </article>
     """
+
+
+def _slash_date(value: str) -> str:
+    if not value:
+        return "待確認"
+    try:
+        parsed = datetime.strptime(value, "%Y-%m-%d")
+    except ValueError:
+        return value
+    return f"{parsed.year}/{parsed.month}/{parsed.day}"
 
 
 def _group_stocks(stocks: list[StockResult]) -> dict[Bucket, list[StockResult]]:
@@ -1015,10 +1069,18 @@ main { padding: 22px max(14px, 4vw) 54px; }
 .private-status-grid > div { padding: 12px 10px 12px 0; border-bottom: 1px solid #e2ddd3; }
 .private-status-grid span, .private-status-grid em { display: block; color: #6f6a60; font-size: .76rem; font-style: normal; }
 .private-status-grid strong { display: block; font-size: 1.04rem; }
-.private-metric-strip { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 8px; padding: 12px 18px; background: #f4f6f7; }
-.private-metric-strip div { background: #fff; border: 1px solid #d8dfe3; border-radius: 5px; padding: 8px; }
-.private-metric-strip span { display: block; color: #6f6a60; font-size: .72rem; }
-.private-metric-strip strong { display: block; font-size: .9rem; }
+.private-metric-groups { display: grid; grid-template-columns: .95fr 1.25fr 1.25fr; gap: 10px; padding: 12px 18px; background: #f4f6f7; }
+.private-metric-group { border: 1px solid #d8dfe3; border-top: 4px solid #6b7280; border-radius: 6px; padding: 9px; background: #fff; }
+.private-metric-group h3 { margin: 0 0 7px; font-size: .82rem; }
+.private-metric-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 7px; }
+.private-metric-pair > div { border: 1px solid #e1e5e8; border-radius: 5px; padding: 7px; min-width: 0; }
+.private-metric-pair span, .private-metric-pair em { display: block; color: #6f6a60; font-size: .67rem; font-style: normal; line-height: 1.35; }
+.private-metric-pair strong { display: block; font-size: .87rem; line-height: 1.35; overflow-wrap: anywhere; }
+.entry-group { border-color: #e2aaa6; border-top-color: #b42318; background: #fff8f7; }
+.entry-group h3, .entry-group strong { color: #9f1d17; }
+.exit-group { border-color: #9bd4c2; border-top-color: #0f766e; background: #f5fcf9; }
+.exit-group h3, .exit-group strong { color: #0f5f58; }
+.price-cd-group { background: #fbfbfa; }
 .private-candidates { padding: 0 18px 16px; }
 .private-candidates h3 { font-size: .96rem; margin: 12px 0 6px; }
 .private-candidates table { width: 100%; font-size: .8rem; border-collapse: collapse; }
@@ -1123,7 +1185,7 @@ ul { padding-left: 18px; margin: 12px 0; color: #38332c; }
   .formal-cd p { display: block; }
   .private-card-head { display: block; }
   .private-card-head > strong { display: inline-block; margin-top: 8px; }
-  .private-metric-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .private-metric-groups { grid-template-columns: 1fr; }
   .stock-main { align-items: start; }
   .metrics, .sector-stats { grid-template-columns: 1fr 1fr; }
 }

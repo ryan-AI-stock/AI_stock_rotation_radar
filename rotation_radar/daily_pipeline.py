@@ -27,6 +27,7 @@ from .public_sources import fetch_raw_market_snapshots, fetch_raw_price_snapshot
 from .quote_refresh import build_market_quotes_from_processed_prices, refresh_market_quotes, refresh_stock_metrics_quotes
 from .radar_snapshot import build_radar_snapshots
 from .run_manifest import build_daily_run_manifest, write_run_manifest
+from .schedule_gate import fetch_twse_calendar
 from .sector_metrics_builder import build_sector_metrics_from_market_quotes
 from .stock_screener import build_market_stock_candidates, export_hot_sector_symbols
 from .theme_history import backfill_theme_history_from_processed, load_theme_trends, update_theme_history
@@ -193,6 +194,7 @@ def run_update_latest_report(args, write_report: ReportWriter) -> None:
         checkpoint_path=paths.formal_signal_checkpoint,
         explicit_trade_override=_explicit_trade_override(args),
     )
+    private_open_dates, private_closed_dates = fetch_twse_calendar()
     private_strategies = build_private_strategy_checkpoints(
         price_history,
         report_date=run_args.report_date or quote_snapshot.normalized_date,
@@ -200,6 +202,8 @@ def run_update_latest_report(args, write_report: ReportWriter) -> None:
             formal_signal.get("model_next_day_execution_date", "") or ""
         ),
         state_path=paths.private_strategy_state,
+        open_dates=private_open_dates,
+        closed_dates=private_closed_dates,
     )
     stock_themes = load_stock_theme_tags(args.theme_map_file, args.theme_universe_file)
     theme_trends = load_theme_trends(theme_history_path, generated_sector_path)
