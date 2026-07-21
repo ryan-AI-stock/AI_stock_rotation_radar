@@ -60,6 +60,14 @@ class PrivateStrategiesTest(unittest.TestCase):
             state_path.write_text(
                 json.dumps(
                     {
+                        "00631l_buy_and_hold": {
+                            "pending_action": {
+                                "role": "buy",
+                                "ticker": "00631L",
+                                "decision_date": "2026-07-20",
+                                "execution_date": "2026-07-21",
+                            }
+                        },
                         "00631l_ma4_s7_cd7": {
                             "last_processed_date": "2026-07-20",
                             "pending_action": {
@@ -84,6 +92,7 @@ class PrivateStrategiesTest(unittest.TestCase):
             persisted = json.loads(state_path.read_text(encoding="utf-8"))
             self.assertEqual(persisted["00631l_ma4_s7_cd7"]["pending_action"], {})
             self.assertIn("state_version", persisted["00631l_ma4_s7_cd7"])
+            self.assertNotIn("00631l_buy_and_hold", persisted)
 
     def test_activation_date_keeps_all_models_flat_before_monday(self) -> None:
         history = {

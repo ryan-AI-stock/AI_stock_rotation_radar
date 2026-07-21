@@ -123,7 +123,11 @@ def build_private_strategy_checkpoints(
     state_path: str | Path,
 ) -> list[dict[str, object]]:
     state_file = Path(state_path)
-    state = _read_state(state_file)
+    loaded_state = _read_state(state_file)
+    state = {
+        spec.strategy_id: dict(loaded_state.get(spec.strategy_id, {}))
+        for spec in STRATEGIES
+    }
     checkpoints: list[dict[str, object]] = []
     for spec in STRATEGIES:
         item_state = dict(state.get(spec.strategy_id, {}))
