@@ -1,0 +1,196 @@
+name: Generate private base-cycle Top10 report
+
+on:
+  schedule:
+    - cron: "0 7-15 * * 1-5"
+  workflow_dispatch:
+    inputs:
+      report_date:
+        description: "Optional report date, YYYY-MM-DD"
+        required: false
+        default: ""
+
+concurrency:
+  group: daily-theme-rotation-report
+  cancel-in-progress: false
+
+jobs:
+  generate-base-cycle-report:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+    steps:
+      - name: Checkout Radar repository
+        uses: actions/checkout@v4
+
+      - name: Checkout shared schedule rules
+        uses: actions/checkout@v4
+        with:
+          repository: ryan-AI-stock/AI_stock_schedule_rules
+          ref: main
+          path: AI_stock_schedule_rules
+
+      - name: Determine target Taiwan trading date
+        id: report-date
+        shell: bash
+        env:
+          SCHEDULE_RULES_PATH: ${{ github.workspace }}/AI_stock_schedule_rules/schedule_rules.json
+        run: |
+          set -euo pipefail
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            report_date="${{ inputs.report_date }}"
+            if [ -z "${report_date}" ]; then report_date="$(TZ=Asia/Taipei date +%F)"; fi
+            {
+              echo "should_run=true"
+              echo "target_date=${report_date}"
+              echo "target_key=${report_date//-/}"
+              echo "reason=manual_workflow_dispatch"
+            } >> "$GITHUB_OUTPUT"
+          else
+            python -m rotation_radar.schedule_gate
+          fi
+
+      - name: Stop when shared schedule gate rejects this run
+        if: steps.report-date.outputs.should_run != 'true'
+        run: echo "Schedule gate skipped; reason=${{ steps.report-date.outputs.reason }}"
+
+      - name: Restore publish marker
+        id: publish-marker
+        if: steps.report-date.outputs.should_run == 'true'
+        uses: actions/cache/restore@v4
+        with:
+          path: .github-run-state/base-cycle-top10-published
+          key: base-cycle-top10-published-${{ steps.report-date.outputs.target_key }}
+
+      - name: Set up Python
+        if: steps.report-date.outputs.should_run == 'true' && (github.event_name == 'workflow_dispatch' || steps.publish-marker.outputs.cache-hit != 'true')
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        if: steps.report-date.outputs.should_run == 'true' && (github.event_name == 'workflow_dispatch' || steps.publish-marker.outputs.cache-hit != 'true')
+        run: |
+          python -m pip install --upgrade pip
+          pip install '.[test]'
+
+      - name: Check Drive completion for scheduled retries
+        id: drive-completion
+        if: steps.report-date.outputs.should_run == 'true' && github.event_name == 'schedule' && steps.publish-marker.outputs.cache-hit != 'true'
+        env:
+          GOOGLE_OAUTH_CLIENT_ID: ${{ secrets.GOOGLE_OAUTH_CLIENT_ID }}
+          GOOGLE_OAUTH_CLIENT_SECRET: ${{ secrets.GOOGLE_OAUTH_CLIENT_SECRET }}
+          GOOGLE_OAUTH_REFRESH_TOKEN: ${{ secrets.GOOGLE_OAUTH_REFRESH_TOKEN }}
+          ROTATION_PRIVATE_REPORT_DRIVE_FOLDER_ID: 1O6Se-HfI7ZDTQ-LWeAO6f8vtvoLcCzIj
+        shell: bash
+        run: |
+          set +e
+          python -m rotation_radar.base_cycle_publish --check-current-report --date "${{ steps.report-date.outputs.target_date }}"
+          status=$?
+          set -e
+          if [ "$status" -eq 0 ]; then echo "already_published=true" >> "$GITHUB_OUTPUT"; else echo "already_published=false" >> "$GITHUB_OUTPUT"; fi
+
+      - name: Checkout Core contract repository
+        if: steps.report-date.outputs.should_run == 'true' && (github.event_name == 'workflow_dispatch' || (steps.publish-marker.outputs.cache-hit != 'true' && steps.drive-completion.outputs.already_published != 'true'))
+        uses: actions/checkout@v4
+        with:
+          repository: ryan-AI-stock/AI_stock_backtest_lab
+          ref: main
+          path: AI_stock_backtest_lab
+
+      - name: Restore bounded source cache
+        if: steps.report-date.outputs.should_run == 'true' && (github.event_name == 'workflow_dispatch' || (steps.publish-marker.outputs.cache-hit != 'true' && steps.drive-completion.outputs.already_published != 'true'))
+        uses: actions/cache@v4
+        with:
+          path: data/current_base_cycle_source_cache
+          key: base-cycle-source-${{ github.ref_name }}-${{ github.run_id }}
+          restore-keys: |
+            base-cycle-source-${{ github.ref_name }}-
+
+      - name: Validate new report code
+        if: steps.report-date.outputs.should_run == 'true' && (github.event_name == 'workflow_dispatch' || (steps.publish-marker.outputs.cache-hit != 'true' && steps.drive-completion.outputs.already_published != 'true'))
+        run: |
+          python -m py_compile rotation_radar/base_cycle_daily_report.py rotation_radar/base_cycle_publish.py
+          python -m unittest tests.test_base_cycle_daily_report tests.test_schedule_gate tests.test_drive_publish -v
+
+      - name: Build current V_BASE Top10 report
+        id: build-report
+        if: steps.report-date.outputs.should_run == 'true' && (github.event_name == 'workflow_dispatch' || (steps.publish-marker.outputs.cache-hit != 'true' && steps.drive-completion.outputs.already_published != 'true'))
+        shell: bash
+        run: |
+          set +e
+          python -m rotation_radar.base_cycle_daily_report \
+            --date "${{ steps.report-date.outputs.target_date }}" \
+            --core-repo AI_stock_backtest_lab \
+            --source-repo . \
+            --state data/current_base_cycle_top3_state.json \
+            --output reports/current_base_cycle_top10_daily.html \
+            --screen-output reports/current_base_cycle_top10_daily.csv
+          status=$?
+          set -e
+          if [ "$status" -eq 75 ]; then
+            echo "report_ready=false" >> "$GITHUB_OUTPUT"
+            echo "資料尚未完整，排程稍後自動重試。" >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          if [ "$status" -ne 0 ]; then exit "$status"; fi
+          echo "report_ready=true" >> "$GITHUB_OUTPUT"
+
+      - name: Install Chromium
+        if: steps.build-report.outputs.report_ready == 'true'
+        run: python -m playwright install --with-deps chromium
+
+      - name: Publish fixed PDF to private Drive folder
+        if: steps.build-report.outputs.report_ready == 'true'
+        env:
+          GOOGLE_OAUTH_CLIENT_ID: ${{ secrets.GOOGLE_OAUTH_CLIENT_ID }}
+          GOOGLE_OAUTH_CLIENT_SECRET: ${{ secrets.GOOGLE_OAUTH_CLIENT_SECRET }}
+          GOOGLE_OAUTH_REFRESH_TOKEN: ${{ secrets.GOOGLE_OAUTH_REFRESH_TOKEN }}
+          ROTATION_PRIVATE_REPORT_DRIVE_FOLDER_ID: 1O6Se-HfI7ZDTQ-LWeAO6f8vtvoLcCzIj
+        run: |
+          python -m rotation_radar.base_cycle_publish \
+            --html reports/current_base_cycle_top10_daily.html \
+            --date "${{ steps.report-date.outputs.target_date }}"
+
+      - name: Commit durable Top3 history
+        if: steps.build-report.outputs.report_ready == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/current_base_cycle_top3_state.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Update base-cycle Top3 tracking state"
+          git pull --rebase origin main
+          git push origin HEAD:main
+
+      - name: Upload report artifact
+        if: steps.build-report.outputs.report_ready == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: current-base-cycle-top10-report
+          path: |
+            reports/current_base_cycle_top10_daily.html
+            reports/current_base_cycle_top10_daily.csv
+            data/current_base_cycle_top3_state.json
+            private_report/強勢股低基期Top10_每日追蹤報告.pdf
+          if-no-files-found: error
+
+      - name: Create publish marker
+        if: success() && github.event_name == 'schedule' && steps.publish-marker.outputs.cache-hit != 'true' && (steps.build-report.outputs.report_ready == 'true' || steps.drive-completion.outputs.already_published == 'true')
+        shell: bash
+        run: |
+          mkdir -p .github-run-state
+          printf '%s\n' "${{ steps.report-date.outputs.target_key }}" > .github-run-state/base-cycle-top10-published
+
+      - name: Save publish marker
+        if: success() && github.event_name == 'schedule' && steps.publish-marker.outputs.cache-hit != 'true' && (steps.build-report.outputs.report_ready == 'true' || steps.drive-completion.outputs.already_published == 'true')
+        uses: actions/cache/save@v4
+        with:
+          path: .github-run-state/base-cycle-top10-published
+          key: base-cycle-top10-published-${{ steps.report-date.outputs.target_key }}
