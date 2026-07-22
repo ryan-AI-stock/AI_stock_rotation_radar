@@ -1,0 +1,77 @@
+{
+  "readiness": {
+    "task": "TASK-RADAR-DATA-VNEXT-CURRENT-LAYER0-RISK-ADJUSTED-RS20-BASE-CYCLE-ADJUSTED-WARMUP-FILL-001",
+    "status": "partial_blocked_exact_ledger",
+    "candidate_keys": 10542,
+    "official_no_trade_keys": 2259,
+    "accepted_warmup_keys": 8264,
+    "blocked_warmup_keys": 19,
+    "tickers_with_at_least_119_sessions_through_20260720": 250,
+    "total_tickers": 251,
+    "raw_as_adjusted_used": false,
+    "ready_for_core_current_layer0_base_cycle_warmup_absorption": true,
+    "future_data_violation_count": 0,
+    "formal_model_changed": false,
+    "trade_decision_changed": false,
+    "active_in_trade_decision": false,
+    "report_changed": false,
+    "not_live_rule": true
+  },
+  "files": [
+    {
+      "file": "current_layer0_adjusted_warmup_blocked_ledger.csv",
+      "bytes": 3823,
+      "sha256": "e5b59e28a9038ac2dd5db5ffe866e622f9ae88026c368cdf3738bbdaa8563f5a"
+    },
+    {
+      "file": "current_layer0_adjusted_warmup_coverage_audit.csv",
+      "bytes": 260,
+      "sha256": "d61a98e985e67ed327d2fa512d779b3145f5ec6b211e90bf6613a90419146e59"
+    },
+    {
+      "file": "current_layer0_adjusted_warmup_exact_rows.csv.gz",
+      "bytes": 143152,
+      "sha256": "0ea0f48cbf86b0580815fccbe58257489a82b9dcbd910416345da23f73bfb64b"
+    },
+    {
+      "file": "current_layer0_adjusted_warmup_future_data_audit.csv",
+      "bytes": 109,
+      "sha256": "71c3d2418a28d31188ae4bcd7b94ba575d54e38e366e393694a42362c5b949bd"
+    },
+    {
+      "file": "current_layer0_adjusted_warmup_official_no_trade_ledger.csv",
+      "bytes": 286935,
+      "sha256": "fc86942e0ce74d7e2adaa8c2b5116f3a5432ef61c9a961422455612781d52930"
+    },
+    {
+      "file": "current_layer0_adjusted_warmup_session_readiness.csv",
+      "bytes": 6450,
+      "sha256": "6230e0654c4bc74ea4104251922c277b04d4dd03839ea2770b4514fc52186267"
+    },
+    {
+      "file": "current_layer0_adjusted_warmup_source_manifest.csv",
+      "bytes": 2823,
+      "sha256": "f5c7af2a17ebf41c4a2627256d6dea56796a5fa16fdfd5b09a3d79651da4379a"
+    },
+    {
+      "file": "current_step.txt",
+      "bytes": 101,
+      "sha256": "43623b57b17c4ff6381f9e306cc58bf818e5065e2ca7e8d8cf26635c449dc2ce"
+    },
+    {
+      "file": "final_summary_zh.md",
+      "bytes": 359,
+      "sha256": "e0db7fe147ac8aa2e5c4c4e5878e0dd4949b2cc056bbc39e90545c0997d275f7"
+    },
+    {
+      "file": "progress.json",
+      "bytes": 122,
+      "sha256": "63f3aa9b09d27d284a187b5d5672a54d953edea19e5c5d671003e1abc0d52f26"
+    },
+    {
+      "file": "readiness_for_core.json",
+      "bytes": 672,
+      "sha256": "2be95c8acc5f101ed6c1f1c485ac7df2e9594fc7a7bc61ed101e701f6952c12f"
+    }
+  ]
+}

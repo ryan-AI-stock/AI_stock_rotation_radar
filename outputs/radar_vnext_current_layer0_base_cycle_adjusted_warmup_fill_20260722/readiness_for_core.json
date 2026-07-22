@@ -1,0 +1,18 @@
+{
+  "task": "TASK-RADAR-DATA-VNEXT-CURRENT-LAYER0-RISK-ADJUSTED-RS20-BASE-CYCLE-ADJUSTED-WARMUP-FILL-001",
+  "status": "partial_blocked_exact_ledger",
+  "candidate_keys": 10542,
+  "official_no_trade_keys": 2259,
+  "accepted_warmup_keys": 8264,
+  "blocked_warmup_keys": 19,
+  "tickers_with_at_least_119_sessions_through_20260720": 250,
+  "total_tickers": 251,
+  "raw_as_adjusted_used": false,
+  "ready_for_core_current_layer0_base_cycle_warmup_absorption": true,
+  "future_data_violation_count": 0,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "not_live_rule": true
+}

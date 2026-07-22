@@ -1,0 +1,2 @@
+future_data_violation_count,result,policy
+0,pass,exact current core plus 0050 warmup only; no substitution

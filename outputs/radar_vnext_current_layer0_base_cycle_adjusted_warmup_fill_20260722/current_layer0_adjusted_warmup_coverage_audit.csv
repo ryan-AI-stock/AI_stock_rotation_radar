@@ -1,0 +1,2 @@
+candidate_keys,official_no_trade_keys,required_trading_session_keys,accepted_warmup_keys,blocked_warmup_keys,tickers,tickers_with_at_least_119_sessions_through_20260720,raw_as_adjusted_used,future_data_violation_count
+10542,2259,8283,8264,19,251,250,False,0
