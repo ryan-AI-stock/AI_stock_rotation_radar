@@ -1,0 +1,19 @@
+{
+  "task": "TASK-RADAR-DATA-VNEXT-CURRENT-LAYER0-RISK-ADJUSTED-RS20-BASE-CYCLE-ADJUSTED-CLOSE-AND-LIQUIDITY-FILL-001",
+  "status": "partial_blocked_exact_ledger",
+  "adjusted_candidate_keys": 25602,
+  "adjusted_official_no_trade_keys": 1255,
+  "adjusted_required_trading_session_keys": 24347,
+  "adjusted_ready_keys": 24346,
+  "adjusted_blocked_keys": 1,
+  "raw_display_rows": 250,
+  "turnover_rows": 29332,
+  "raw_as_adjusted_used": false,
+  "ready_for_core_current_layer0_base_cycle_absorption": true,
+  "future_data_violation_count": 0,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "not_live_rule": true
+}

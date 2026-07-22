@@ -1,0 +1,2 @@
+ticker,date,family,classification,reason
+0050,2026-07-21,adjusted_analysis_close,trusted_adjusted_exact_key_unavailable,no accepted exact provider adjusted close; no raw or neighbor substitution

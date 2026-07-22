@@ -1,0 +1,98 @@
+{
+  "readiness": {
+    "task": "TASK-RADAR-DATA-VNEXT-CURRENT-LAYER0-RISK-ADJUSTED-RS20-BASE-CYCLE-ADJUSTED-CLOSE-AND-LIQUIDITY-FILL-001",
+    "status": "partial_blocked_exact_ledger",
+    "adjusted_candidate_keys": 25602,
+    "adjusted_official_no_trade_keys": 1255,
+    "adjusted_required_trading_session_keys": 24347,
+    "adjusted_ready_keys": 24346,
+    "adjusted_blocked_keys": 1,
+    "raw_display_rows": 250,
+    "turnover_rows": 29332,
+    "raw_as_adjusted_used": false,
+    "ready_for_core_current_layer0_base_cycle_absorption": true,
+    "future_data_violation_count": 0,
+    "formal_model_changed": false,
+    "trade_decision_changed": false,
+    "active_in_trade_decision": false,
+    "report_changed": false,
+    "not_live_rule": true
+  },
+  "files": [
+    {
+      "file": "current_layer0_adjusted_analysis_blocked_ledger.csv",
+      "bytes": 197,
+      "sha256": "79a040aaf94b593352bb83c10fb1a7d462282af412290aca207b6026cc51fb82"
+    },
+    {
+      "file": "current_layer0_adjusted_analysis_exact_rows.csv.gz",
+      "bytes": 398015,
+      "sha256": "23567b863138d8752d410fd6e8a6080b81b63cf8776187198569d793ddde2e16"
+    },
+    {
+      "file": "current_layer0_adjusted_analysis_official_no_trade_ledger.csv",
+      "bytes": 151897,
+      "sha256": "e91d9a65842ab31be837f2d465365d72190c856b10b6ced51374f0044f726f9f"
+    },
+    {
+      "file": "current_layer0_adjusted_official_no_trade_source_evidence.csv",
+      "bytes": 2973,
+      "sha256": "f26b03b4ca3958cc3e0b317e34b12d5933c66cd76fb7f493bca2d7e96bd1e66b"
+    },
+    {
+      "file": "current_layer0_adjusted_source_manifest.csv",
+      "bytes": 61206,
+      "sha256": "17e9f3047ebc68535b168e7851829a8ca27714bce403b78e077652ecb5b9a07f"
+    },
+    {
+      "file": "current_layer0_coverage_audit.csv",
+      "bytes": 394,
+      "sha256": "decd350dff7649bb7227da07600fe1828022107af9fa87fc09197b23e35d9697"
+    },
+    {
+      "file": "current_layer0_future_data_audit.csv",
+      "bytes": 94,
+      "sha256": "23b68644ea56768c229d1adab4e83b867b68aa4c3df60ec54a8ba8d3381fa3b4"
+    },
+    {
+      "file": "current_layer0_official_no_trade_ledger.csv",
+      "bytes": 1139,
+      "sha256": "892c6fb46e8e7dd88caf0dda62fe1403e2f3c37b073f07dd4976c914e3050a12"
+    },
+    {
+      "file": "current_layer0_official_turnover_daily.csv.gz",
+      "bytes": 495987,
+      "sha256": "913744a893b6cb50e44c1ec07c251f278187a3b06d5233a93f7b5b292eda0f12"
+    },
+    {
+      "file": "current_layer0_raw_display_close_20260721.csv",
+      "bytes": 67463,
+      "sha256": "9824f9bc3c8a41bfd308f6b6f6b173b9c525f682dc83683a15a977fd10caca24"
+    },
+    {
+      "file": "current_layer0_turnover_source_manifest.csv",
+      "bytes": 4337,
+      "sha256": "28a3c1a206cd1533584cc37fcd795e95cf82b49b63ee017dfb5c8d272cf7ce56"
+    },
+    {
+      "file": "current_step.txt",
+      "bytes": 94,
+      "sha256": "6c2776a68ce0988d9d2a9e553119a46ce0ad9a5d7a676a3f0aef8f94a0d08e2e"
+    },
+    {
+      "file": "final_summary_zh.md",
+      "bytes": 432,
+      "sha256": "378f08c19db2a72f964f3f51d3def46236097fa80d733c0e7939fda483a51a32"
+    },
+    {
+      "file": "progress.json",
+      "bytes": 119,
+      "sha256": "188d51bd49bcaaf281428460f3718ec9e6cde942afb04ec763f6c58923febe17"
+    },
+    {
+      "file": "readiness_for_core.json",
+      "bytes": 716,
+      "sha256": "28879ac4c9a5f1bd48aab41b9a13b35a286e7c8ebf9d6876597db2203ee939ca"
+    }
+  ]
+}
