@@ -21,6 +21,7 @@ WINDOW_START = pd.Timestamp("2026-03-02")
 STATIC_SNAPSHOT = Path("outputs/radar_vnext_current_layer0_core_top250_weekly_snapshot_fill_20260722/current_layer0_core_top250_weekly_snapshot_delta.csv")
 STATIC_PRICE = Path("outputs/radar_vnext_current_layer0_base_cycle_adjusted_close_liquidity_fill_20260722")
 STATIC_WARMUP = Path("outputs/radar_vnext_current_layer0_base_cycle_adjusted_warmup_fill_20260722")
+MEMBERSHIP_HISTORY = Path("data/current_base_cycle_weekly_core_membership_history.csv")
 REPORT_TITLE = "強勢股低基期 Top10 每日追蹤"
 
 
@@ -101,7 +102,6 @@ def build_daily_report(
         source_cache=source_cache,
         offline=offline,
     )
-    turnover = merge_core_turnover_history(core_repo, turnover, actual)
     screens = run_core_screen(core_repo, membership, current, prices, turnover, actual)
     base = screens[(screens.variant.eq("V_BASE")) & screens.final_pass & screens.final_rank.le(30)].copy()
     base = base.sort_values("final_rank")
@@ -153,13 +153,14 @@ def load_state(path: Path) -> dict:
 
 
 def load_membership(core_repo: Path, source_repo: Path) -> pd.DataFrame:
-    compact = core_repo / "outputs/vnext_layer0_compact_weekly_universe_snapshot_contract_20260707/layer0_compact_weekly_universe_snapshot.csv"
+    del core_repo
+    local_repo = Path(__file__).resolve().parents[1]
+    compact = local_repo / MEMBERSHIP_HISTORY
     base = pd.read_csv(
         compact,
-        usecols=["snapshot_date", "ticker", "name", "market", "selection_bucket", "traded_value_rank_20d"],
+        usecols=["snapshot_date", "ticker", "name", "market", "traded_value_rank_20d"],
         dtype={"ticker": str},
     )
-    base = base[base.selection_bucket.eq("core")].drop(columns="selection_bucket")
     base = base.rename(columns={"traded_value_rank_20d": "core_rank"})
     delta = pd.read_csv(source_repo / STATIC_SNAPSHOT, dtype={"ticker": str})
     delta = delta[["snapshot_date", "ticker", "name", "market", "top250_core_rank"]]
@@ -320,18 +321,6 @@ def load_official_prices_and_turnover(
     turnover["turnover_value"] = pd.to_numeric(turnover.turnover_value, errors="coerce")
     turnover = turnover.drop_duplicates(["date", "ticker"], keep="last")
     return display, turnover
-
-
-def merge_core_turnover_history(core_repo: Path, recent: pd.DataFrame, actual: pd.Timestamp) -> pd.DataFrame:
-    path = core_repo / "outputs/vnext_dynamic_candidate_pool_data_materialization_20260706/daily_market_features.csv"
-    old = pd.read_csv(path, usecols=["trade_date", "ticker", "name", "market", "traded_value"], dtype={"ticker": str})
-    old = old.rename(columns={"trade_date": "date", "traded_value": "turnover_value"})
-    old["date"] = pd.to_datetime(old.date)
-    old["ticker"] = old.ticker.str.zfill(4)
-    old = old[old.date.between(WINDOW_START, actual)]
-    merged = pd.concat([old, recent], ignore_index=True, sort=False)
-    merged["turnover_value"] = pd.to_numeric(merged.turnover_value, errors="coerce")
-    return merged.drop_duplicates(["date", "ticker"], keep="last").sort_values(["ticker", "date"])
 
 
 def run_core_screen(core_repo: Path, membership: pd.DataFrame, current: pd.DataFrame, prices: pd.DataFrame, turnover: pd.DataFrame, actual: pd.Timestamp) -> pd.DataFrame:

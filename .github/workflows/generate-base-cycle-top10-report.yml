@@ -94,14 +94,6 @@ jobs:
           set -e
           if [ "$status" -eq 0 ]; then echo "already_published=true" >> "$GITHUB_OUTPUT"; else echo "already_published=false" >> "$GITHUB_OUTPUT"; fi
 
-      - name: Checkout Core contract repository
-        if: steps.report-date.outputs.should_run == 'true' && (github.event_name == 'workflow_dispatch' || (steps.publish-marker.outputs.cache-hit != 'true' && steps.drive-completion.outputs.already_published != 'true'))
-        uses: actions/checkout@v4
-        with:
-          repository: ryan-AI-stock/AI_stock_backtest_lab
-          ref: main
-          path: AI_stock_backtest_lab
-
       - name: Restore bounded source cache
         if: steps.report-date.outputs.should_run == 'true' && (github.event_name == 'workflow_dispatch' || (steps.publish-marker.outputs.cache-hit != 'true' && steps.drive-completion.outputs.already_published != 'true'))
         uses: actions/cache@v4
@@ -125,7 +117,7 @@ jobs:
           set +e
           python -m rotation_radar.base_cycle_daily_report \
             --date "${{ steps.report-date.outputs.target_date }}" \
-            --core-repo AI_stock_backtest_lab \
+            --core-repo . \
             --source-repo . \
             --state data/current_base_cycle_top3_state.json \
             --output reports/current_base_cycle_top10_daily.html \
