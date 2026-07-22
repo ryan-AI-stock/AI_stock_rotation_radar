@@ -1,0 +1,58 @@
+{
+  "readiness": {
+    "task": "TASK-RADAR-DATA-VNEXT-CURRENT-LAYER0-CORE-TOP250-WEEKLY-SNAPSHOT-FILL-001",
+    "status": "complete",
+    "snapshot_dates": [
+      "2026-07-02",
+      "2026-07-09",
+      "2026-07-16"
+    ],
+    "core_rows": 750,
+    "ready_snapshots": 3,
+    "core_only_no_buffer": true,
+    "ready_for_core_current_layer0_top250_absorption": true,
+    "future_data_violation_count": 0,
+    "formal_model_changed": false,
+    "trade_decision_changed": false,
+    "active_in_trade_decision": false,
+    "report_changed": false,
+    "not_live_rule": true
+  },
+  "files": [
+    {
+      "file": "current_layer0_core_top250_blocked_ledger.csv",
+      "bytes": 22,
+      "sha256": "3661051907d00101a5620391b5817329d63bd7cc7fdcb3bda48719306fe805c5"
+    },
+    {
+      "file": "current_layer0_core_top250_coverage_audit.csv",
+      "bytes": 228,
+      "sha256": "dc4225cbc1474c70fd82eee59737cafaba20ac4dfa18efc29a9f7c4395a83797"
+    },
+    {
+      "file": "current_layer0_core_top250_future_data_audit.csv",
+      "bytes": 100,
+      "sha256": "16ce3535cf2daeb95a74bc3ae86e8e9e013538ba72a3ff7fb438b04a74622e65"
+    },
+    {
+      "file": "current_layer0_core_top250_source_manifest.csv",
+      "bytes": 1688,
+      "sha256": "a5b69165c902153985fed1e9635d735e5676666379a20ec78ddd8bcb63792b62"
+    },
+    {
+      "file": "current_layer0_core_top250_weekly_snapshot_delta.csv",
+      "bytes": 285095,
+      "sha256": "a8c001fe296eab7469c144b6f08e1594247abeea0cb93ea7abb97d73d68e82a2"
+    },
+    {
+      "file": "current_step.txt",
+      "bytes": 83,
+      "sha256": "2347be42a71822356ec7a67bbafee330cf3f55e53d61753a53978a3a1cda9e68"
+    },
+    {
+      "file": "readiness_for_core.json",
+      "bytes": 538,
+      "sha256": "218792ccb8b6b78e38defe24794ef561d932debec96a86905ed91705a40a9ffa"
+    }
+  ]
+}

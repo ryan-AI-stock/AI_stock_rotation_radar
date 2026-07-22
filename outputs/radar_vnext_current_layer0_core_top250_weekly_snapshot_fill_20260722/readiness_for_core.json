@@ -1,0 +1,19 @@
+{
+  "task": "TASK-RADAR-DATA-VNEXT-CURRENT-LAYER0-CORE-TOP250-WEEKLY-SNAPSHOT-FILL-001",
+  "status": "complete",
+  "snapshot_dates": [
+    "2026-07-02",
+    "2026-07-09",
+    "2026-07-16"
+  ],
+  "core_rows": 750,
+  "ready_snapshots": 3,
+  "core_only_no_buffer": true,
+  "ready_for_core_current_layer0_top250_absorption": true,
+  "future_data_violation_count": 0,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "not_live_rule": true
+}
