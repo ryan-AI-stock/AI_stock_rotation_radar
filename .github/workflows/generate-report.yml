@@ -327,7 +327,7 @@ jobs:
             git commit -m "Update formal radar candidates"
             branch="${GITHUB_REF_NAME:-main}"
             for attempt in 1 2 3; do
-              git pull --rebase origin "${branch}"
+              git pull --rebase --autostash origin "${branch}"
               if git push origin "HEAD:${branch}"; then
                 exit 0
               fi
