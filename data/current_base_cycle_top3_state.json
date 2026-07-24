@@ -6,24 +6,32 @@
       "name": "新應材",
       "first_top3_date": "2026-07-22",
       "first_top3_close": 815.0,
-      "last_close": 809.0,
-      "last_close_date": "2026-07-23"
+      "last_close": 778.0,
+      "last_close_date": "2026-07-24"
     },
     "1815": {
       "ticker": "1815",
       "name": "富喬",
       "first_top3_date": "2026-07-22",
       "first_top3_close": 80.5,
-      "last_close": 78.9,
-      "last_close_date": "2026-07-23"
+      "last_close": 73.9,
+      "last_close_date": "2026-07-24"
     },
     "3715": {
       "ticker": "3715",
       "name": "定穎投控",
       "first_top3_date": "2026-07-22",
       "first_top3_close": 125.5,
-      "last_close": 122.5,
-      "last_close_date": "2026-07-23"
+      "last_close": 116.5,
+      "last_close_date": "2026-07-24"
+    },
+    "1802": {
+      "ticker": "1802",
+      "name": "台玻",
+      "first_top3_date": "2026-07-24",
+      "first_top3_close": 51.0,
+      "last_close": 51.0,
+      "last_close_date": "2026-07-24"
     }
   },
   "daily_top10": {
@@ -170,10 +178,83 @@
         "close": 589.0,
         "normalized_position": 17.659137577002053
       }
+    ],
+    "2026-07-24": [
+      {
+        "rank": 1,
+        "ticker": "4749",
+        "name": "新應材",
+        "close": 778.0,
+        "normalized_position": 0.0
+      },
+      {
+        "rank": 2,
+        "ticker": "1802",
+        "name": "台玻",
+        "close": 51.0,
+        "normalized_position": 0.0
+      },
+      {
+        "rank": 3,
+        "ticker": "1815",
+        "name": "富喬",
+        "close": 73.9,
+        "normalized_position": 0.0
+      },
+      {
+        "rank": 4,
+        "ticker": "3715",
+        "name": "定穎投控",
+        "close": 116.5,
+        "normalized_position": 0.0
+      },
+      {
+        "rank": 5,
+        "ticker": "6510",
+        "name": "精測",
+        "close": 2590.0,
+        "normalized_position": 1.5504171742617425
+      },
+      {
+        "rank": 6,
+        "ticker": "3491",
+        "name": "昇達科",
+        "close": 1190.0,
+        "normalized_position": 4.405461698248113
+      },
+      {
+        "rank": 7,
+        "ticker": "1519",
+        "name": "華城",
+        "close": 697.0,
+        "normalized_position": 11.200000000000001
+      },
+      {
+        "rank": 8,
+        "ticker": "3529",
+        "name": "力旺",
+        "close": 2470.0,
+        "normalized_position": 11.772448194257624
+      },
+      {
+        "rank": 9,
+        "ticker": "3163",
+        "name": "波若威",
+        "close": 705.0,
+        "normalized_position": 12.332838038632987
+      },
+      {
+        "rank": 10,
+        "ticker": "6282",
+        "name": "康舒",
+        "close": 47.15,
+        "normalized_position": 15.836300357563356
+      }
     ]
   },
   "trading_dates": [
     "2026-07-22",
-    "2026-07-23"
+    "2026-07-23",
+    "2026-07-24"
   ]
 }
