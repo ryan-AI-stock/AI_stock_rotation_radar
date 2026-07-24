@@ -325,7 +325,19 @@ jobs:
             echo "Formal radar candidate interface unchanged."
           else
             git commit -m "Update formal radar candidates"
-            git push
+            branch="${GITHUB_REF_NAME:-main}"
+            for attempt in 1 2 3; do
+              git pull --rebase origin "${branch}"
+              if git push origin "HEAD:${branch}"; then
+                exit 0
+              fi
+              if [ "${attempt}" -lt 3 ]; then
+                echo "Push raced with another workflow; retrying after remote sync (${attempt}/3)."
+                sleep $((attempt * 2))
+              fi
+            done
+            echo "Unable to persist formal Radar state after 3 synchronized push attempts." >&2
+            exit 1
           fi
 
       - name: Publish PDFs to Google Drive

@@ -162,6 +162,9 @@ class ScheduleGateTests(unittest.TestCase):
         self.assertIn("Validate formal signal checkpoint", workflow)
         self.assertIn("validate_formal_signal_checkpoint(checkpoint)", workflow)
         self.assertIn("data/formal_0050_00631l_state.json", workflow)
+        self.assertIn('git pull --rebase origin "${branch}"', workflow)
+        self.assertIn('git push origin "HEAD:${branch}"', workflow)
+        self.assertIn("for attempt in 1 2 3", workflow)
         self.assertNotIn(
             'checkpoint["actual_trade_date"] != checkpoint["model_next_day_execution_date"]',
             workflow,
