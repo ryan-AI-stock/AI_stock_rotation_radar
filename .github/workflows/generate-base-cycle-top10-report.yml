@@ -1,4 +1,4 @@
-name: Generate private base-cycle Top10 report
+name: Generate private V4-D Top1 report
 
 on:
   schedule:
@@ -63,8 +63,8 @@ jobs:
         if: steps.report-date.outputs.should_run == 'true'
         uses: actions/cache/restore@v4
         with:
-          path: .github-run-state/base-cycle-top10-published
-          key: base-cycle-top10-published-${{ steps.report-date.outputs.target_key }}
+          path: .github-run-state/v4d-top1-published
+          key: v4d-top1-published-${{ steps.report-date.outputs.target_key }}
 
       - name: Set up Python
         if: steps.report-date.outputs.should_run == 'true' && (github.event_name == 'workflow_dispatch' || steps.publish-marker.outputs.cache-hit != 'true')
@@ -89,7 +89,7 @@ jobs:
         shell: bash
         run: |
           set +e
-          python -m rotation_radar.base_cycle_publish --check-current-report --date "${{ steps.report-date.outputs.target_date }}"
+          python -m rotation_radar.v4d_top1_publish --check-current-report --date "${{ steps.report-date.outputs.target_date }}"
           status=$?
           set -e
           if [ "$status" -eq 0 ]; then echo "already_published=true" >> "$GITHUB_OUTPUT"; else echo "already_published=false" >> "$GITHUB_OUTPUT"; fi
@@ -106,22 +106,21 @@ jobs:
       - name: Validate new report code
         if: steps.report-date.outputs.should_run == 'true' && (github.event_name == 'workflow_dispatch' || (steps.publish-marker.outputs.cache-hit != 'true' && steps.drive-completion.outputs.already_published != 'true'))
         run: |
-          python -m py_compile rotation_radar/base_cycle_daily_report.py rotation_radar/base_cycle_publish.py
-          python -m unittest tests.test_base_cycle_daily_report tests.test_schedule_gate tests.test_drive_publish -v
+          python -m py_compile rotation_radar/v4d_top1_daily_report.py rotation_radar/v4d_top1_publish.py
+          python -m unittest tests.test_v4d_top1_daily_report tests.test_schedule_gate tests.test_drive_publish -v
 
-      - name: Build current V_BASE Top10 report
+      - name: Build current V4-D Top1 report
         id: build-report
         if: steps.report-date.outputs.should_run == 'true' && (github.event_name == 'workflow_dispatch' || (steps.publish-marker.outputs.cache-hit != 'true' && steps.drive-completion.outputs.already_published != 'true'))
         shell: bash
         run: |
           set +e
-          python -m rotation_radar.base_cycle_daily_report \
+          python -m rotation_radar.v4d_top1_daily_report \
             --date "${{ steps.report-date.outputs.target_date }}" \
-            --core-repo . \
             --source-repo . \
-            --state data/current_base_cycle_top3_state.json \
-            --output reports/current_base_cycle_top10_daily.html \
-            --screen-output reports/current_base_cycle_top10_daily.csv
+            --state data/formal_v4d_top1_state.json \
+            --output reports/formal_v4d_top1_daily.html \
+            --tracking-output reports/formal_v4d_top1_daily.csv
           status=$?
           set -e
           if [ "$status" -eq 75 ]; then
@@ -144,20 +143,20 @@ jobs:
           GOOGLE_OAUTH_REFRESH_TOKEN: ${{ secrets.GOOGLE_OAUTH_REFRESH_TOKEN }}
           ROTATION_PRIVATE_REPORT_DRIVE_FOLDER_ID: 1O6Se-HfI7ZDTQ-LWeAO6f8vtvoLcCzIj
         run: |
-          python -m rotation_radar.base_cycle_publish \
-            --html reports/current_base_cycle_top10_daily.html \
+          python -m rotation_radar.v4d_top1_publish \
+            --html reports/formal_v4d_top1_daily.html \
             --date "${{ steps.report-date.outputs.target_date }}"
 
-      - name: Commit durable Top3 history
+      - name: Commit durable V4-D Top1 history
         if: steps.build-report.outputs.report_ready == 'true'
         shell: bash
         run: |
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/current_base_cycle_top3_state.json
+          git add data/formal_v4d_top1_state.json
           if git diff --cached --quiet; then exit 0; fi
-          git commit -m "Update base-cycle Top3 tracking state"
+          git commit -m "Update V4-D Top1 tracking state"
           git pull --rebase origin main
           git push origin HEAD:main
 
@@ -165,12 +164,12 @@ jobs:
         if: steps.build-report.outputs.report_ready == 'true'
         uses: actions/upload-artifact@v4
         with:
-          name: current-base-cycle-top10-report
+          name: formal-v4d-top1-report
           path: |
-            reports/current_base_cycle_top10_daily.html
-            reports/current_base_cycle_top10_daily.csv
-            data/current_base_cycle_top3_state.json
-            private_report/強勢股低基期Top10_每日追蹤報告.pdf
+            reports/formal_v4d_top1_daily.html
+            reports/formal_v4d_top1_daily.csv
+            data/formal_v4d_top1_state.json
+            private_report/最新版個股模型V4-D_Top1每日追蹤報告.pdf
           if-no-files-found: error
 
       - name: Create publish marker
@@ -178,11 +177,11 @@ jobs:
         shell: bash
         run: |
           mkdir -p .github-run-state
-          printf '%s\n' "${{ steps.report-date.outputs.target_key }}" > .github-run-state/base-cycle-top10-published
+          printf '%s\n' "${{ steps.report-date.outputs.target_key }}" > .github-run-state/v4d-top1-published
 
       - name: Save publish marker
         if: success() && github.event_name == 'schedule' && steps.publish-marker.outputs.cache-hit != 'true' && (steps.build-report.outputs.report_ready == 'true' || steps.drive-completion.outputs.already_published == 'true')
         uses: actions/cache/save@v4
         with:
-          path: .github-run-state/base-cycle-top10-published
-          key: base-cycle-top10-published-${{ steps.report-date.outputs.target_key }}
+          path: .github-run-state/v4d-top1-published
+          key: v4d-top1-published-${{ steps.report-date.outputs.target_key }}

@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "model": "V4-D",
+  "ticker": "2351",
+  "name": "順德",
+  "market": "TWSE",
+  "signal_date": "2026-07-24",
+  "signal_close": 161.0,
+  "execution_date": "2026-07-27",
+  "entry_close": null,
+  "status": "pending_execution_close",
+  "daily_marks": {}
+}
