@@ -77,6 +77,21 @@ class V4DTop1DailyReportTests(unittest.TestCase):
         self.assertNotIn("今日前十名", html)
         self.assertNotIn("前三名", html)
 
+    def test_pending_execution_text_uses_state_dates(self):
+        state = self.state()
+        state["signal_date"] = "2026-07-27"
+        state["execution_date"] = "2026-07-28"
+
+        html = render_html(pd.Timestamp("2026-07-27"), state, [])
+
+        self.assertIn("2026-07-28 執行買入並計為TD1", html)
+        self.assertIn(
+            "2026-07-28 執行買入後，才建立TD1第一筆正式交易紀錄",
+            html,
+        )
+        self.assertIn("2026-07-27 收盤後的結果", html)
+        self.assertNotIn("7/27依官方收盤建立TD1", html)
+
     def test_gate_plan_uses_entry_day_as_td1(self):
         plan = gate_plan(self.state(), closed_dates=set())
         self.assertEqual(plan[0]["range"], "07/27～07/31")

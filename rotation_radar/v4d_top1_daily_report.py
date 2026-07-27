@@ -415,7 +415,7 @@ def render_html(
         if latest and latest.get("after_cost_return_pct") is not None
         else "尚未開始"
     )
-    next_action = "7/27依官方收盤建立TD1"
+    next_action = f"{state['execution_date']} 執行買入並計為TD1"
     if latest:
         next_action = "持續持有，下一交易日再檢查"
     if state.get("pending_exit"):
@@ -433,7 +433,11 @@ def render_html(
         f"<td>{_daily_gate_text(item, state)}</td>"
         "</tr>"
         for item in rows
-    ) or '<tr><td colspan="6" class="empty">2026-07-27 收盤後建立TD1第一筆正式交易紀錄。</td></tr>'
+    ) or (
+        '<tr><td colspan="6" class="empty">'
+        f"{escape(state['execution_date'])} 執行買入後，才建立TD1第一筆正式交易紀錄。"
+        "</td></tr>"
+    )
     plan_rows = "".join(
         "<tr>"
         f"<td><b>{escape(item['stage'])}</b><small>{escape(item['day'])}</small></td>"
@@ -450,7 +454,7 @@ def render_html(
 <section><h2>第二部分｜正式模型唯一 Top1</h2><table><thead><tr><th>股票</th><th>訊號日</th><th>訊號日收盤</th><th>執行日</th><th>最新收盤</th></tr></thead><tbody><tr><td><b>{escape(state['ticker'])} {escape(state['name'])}</b></td><td>{escape(state['signal_date'])}</td><td>{float(state['signal_close']):,.2f}</td><td>{escape(state['execution_date'])}</td><td>{latest_close}</td></tr></tbody></table></section>
 <section><h2>第三部分｜每日持倉紀錄</h2><p class="note">單日漲跌以上一交易日收盤計算；關卡績效使用「若當日賣出並扣除買賣費用、證交稅及10bp雙邊滑價」計算。</p><table><thead><tr><th>日期</th><th>持有日</th><th>收盤</th><th>單日漲跌</th><th>after-cost</th><th>關卡判斷</th></tr></thead><tbody>{history}</tbody></table></section>
 <section class="plan"><h2>第四部分｜V4-D完整監控計畫</h2><p class="note">以下日期會依台股官方交易日曆每日重算；週末、休市與臨時停止交易不計入TD。</p><table><thead><tr><th>關卡</th><th>預計檢查日</th><th>檢查什麼</th><th>成立後動作</th></tr></thead><tbody>{plan_rows}</tbody></table></section>
-<footer>私人研究報告。Top1 為 V4-D 凍結規則在 2026-07-24 收盤後的結果；報告只追蹤唯一正式部位，不再列 Top10、Top3 或舊版 V_BASE 名單。</footer></body></html>"""
+<footer>私人研究報告。Top1 為 V4-D 凍結規則在 {escape(state['signal_date'])} 收盤後的結果；報告只追蹤唯一正式部位，不再列 Top10、Top3 或舊版 V_BASE 名單。</footer></body></html>"""
 
 
 def _holding_label(latest: dict | None) -> str:
