@@ -23,6 +23,8 @@ MODEL_NAME = (
 )
 BUY_RATE = 0.001425 + 0.001
 SELL_RATE = 0.001425 + 0.003 + 0.001
+POSITION_STREAM_PAUSED = True
+POSITION_STREAM_MESSAGE = "模型尚未正式買入，此訊息流空。"
 
 
 def main() -> None:
@@ -313,17 +315,18 @@ def build_daily_report(
     prior = ticker_rows[ticker_rows["date"].lt(latest["date"])]
     prior_close = float(prior.iloc[-1]["close"]) if not prior.empty else None
     actual = pd.Timestamp(latest["date"])
-    state = update_state(
-        state,
-        mark_date=actual.strftime("%Y-%m-%d"),
-        close=float(latest["close"]),
-        prior_close=prior_close,
-        closed_dates=fetch_twse_calendar()[1],
-    )
-    state_path.parent.mkdir(parents=True, exist_ok=True)
-    state_path.write_text(
-        json.dumps(state, ensure_ascii=False, indent=2), encoding="utf-8"
-    )
+    if not POSITION_STREAM_PAUSED:
+        state = update_state(
+            state,
+            mark_date=actual.strftime("%Y-%m-%d"),
+            close=float(latest["close"]),
+            prior_close=prior_close,
+            closed_dates=fetch_twse_calendar()[1],
+        )
+        state_path.parent.mkdir(parents=True, exist_ok=True)
+        state_path.write_text(
+            json.dumps(state, ensure_ascii=False, indent=2), encoding="utf-8"
+        )
     rows = tracking_rows(state)
     tracking_output.parent.mkdir(parents=True, exist_ok=True)
     pd.DataFrame(rows).to_csv(tracking_output, index=False, encoding="utf-8-sig")
@@ -450,10 +453,10 @@ def render_html(
     return f"""<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><style>
 @page{{size:A4;margin:12mm}}*{{box-sizing:border-box}}body{{font-family:'Noto Sans TC','Microsoft JhengHei',sans-serif;color:#1c2730;margin:0;background:#fff}}header{{background:#102e39;color:#fff;padding:24px 28px;border-bottom:6px solid #d7a12b}}h1{{font-size:26px;margin:0 0 8px}}header p{{margin:4px 0;color:#d7e5e8;font-size:12px}}section{{margin:18px 0 24px;break-inside:avoid}}h2{{font-size:19px;margin:0 0 10px;padding-left:10px;border-left:5px solid #d7a12b}}.note{{font-size:12px;color:#64727b;margin:0 0 10px}}.cards{{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}}.card{{border:1px solid #d7e0e2;border-top:4px solid #19766c;padding:12px;background:#f8faf9}}.card.action{{border-top-color:#d7a12b}}.label{{font-size:11px;color:#68767c}}.value{{font-size:17px;font-weight:700;margin-top:4px}}table{{width:100%;border-collapse:collapse;font-size:11px}}th{{background:#edf2f3;color:#28434c;text-align:left;padding:8px 7px;border-bottom:2px solid #9aabb0}}td{{padding:8px 7px;border-bottom:1px solid #dce3e5;vertical-align:top}}td small{{display:block;color:#738087;margin-top:2px}}tbody tr:nth-child(even){{background:#f8faf9}}.up{{color:#b22d2d;font-weight:700}}.down{{color:#087e69;font-weight:700}}.flat{{color:#48575e;font-weight:700}}.empty{{text-align:center;color:#758188;padding:20px}}.plan{{break-before:page}}.plan td:first-child{{width:24%}}.plan td:nth-child(2){{white-space:nowrap}}footer{{font-size:10px;color:#7b858a;border-top:1px solid #d6dddf;padding-top:8px}}</style></head><body>
 <header><h1>{REPORT_TITLE}</h1><p>最新官方收盤資料日：{actual:%Y-%m-%d}</p><p>{escape(MODEL_NAME)}</p></header>
-<section><h2>第一部分｜今天只看這四件事</h2><div class="cards"><div class="card"><div class="label">目前狀態</div><div class="value">{status}</div></div><div class="card"><div class="label">持有進度</div><div class="value">{_holding_label(latest)}</div></div><div class="card"><div class="label">若今天賣出 after-cost</div><div class="value">{latest_return}</div></div><div class="card action"><div class="label">下一步</div><div class="value">{escape(next_action)}</div></div></div><p class="note">正式買入日計為TD1。所有賣出訊號均在收盤成立，下一個台股交易日執行。</p></section>
+<section><h2>第一部分｜今天只看這四件事</h2><div class="card"><div class="value">{escape(POSITION_STREAM_MESSAGE)}</div></div></section>
 <section><h2>第二部分｜正式模型唯一 Top1</h2><table><thead><tr><th>股票</th><th>訊號日</th><th>訊號日收盤</th><th>執行日</th><th>最新收盤</th></tr></thead><tbody><tr><td><b>{escape(state['ticker'])} {escape(state['name'])}</b></td><td>{escape(state['signal_date'])}</td><td>{float(state['signal_close']):,.2f}</td><td>{escape(state['execution_date'])}</td><td>{latest_close}</td></tr></tbody></table></section>
-<section><h2>第三部分｜每日持倉紀錄</h2><p class="note">單日漲跌以上一交易日收盤計算；關卡績效使用「若當日賣出並扣除買賣費用、證交稅及10bp雙邊滑價」計算。</p><table><thead><tr><th>日期</th><th>持有日</th><th>收盤</th><th>單日漲跌</th><th>after-cost</th><th>關卡判斷</th></tr></thead><tbody>{history}</tbody></table></section>
-<section class="plan"><h2>第四部分｜V4-D完整監控計畫</h2><p class="note">以下日期會依台股官方交易日曆每日重算；週末、休市與臨時停止交易不計入TD。</p><table><thead><tr><th>關卡</th><th>預計檢查日</th><th>檢查什麼</th><th>成立後動作</th></tr></thead><tbody>{plan_rows}</tbody></table></section>
+<section><h2>第三部分｜每日持倉紀錄</h2><div class="card"><div class="value">{escape(POSITION_STREAM_MESSAGE)}</div></div></section>
+<section class="plan"><h2>第四部分｜V4-D完整監控計畫</h2><div class="card"><div class="value">{escape(POSITION_STREAM_MESSAGE)}</div></div></section>
 <footer>私人研究報告。Top1 為 V4-D 凍結規則在 {escape(state['signal_date'])} 收盤後的結果；報告只追蹤唯一正式部位，不再列 Top10、Top3 或舊版 V_BASE 名單。</footer></body></html>"""
 
 

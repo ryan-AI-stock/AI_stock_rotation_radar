@@ -71,24 +71,25 @@ class V4DTop1DailyReportTests(unittest.TestCase):
         )
         self.assertIn("正式模型唯一 Top1", html)
         self.assertIn("2351 順德", html)
-        self.assertIn("TD1", html)
         self.assertIn("V4-D完整監控計畫", html)
-        self.assertIn("after-cost 未達 +5%", html)
+        self.assertEqual(
+            html.count("模型尚未正式買入，此訊息流空。"),
+            3,
+        )
+        self.assertNotIn("after-cost 未達 +5%", html)
         self.assertNotIn("今日前十名", html)
         self.assertNotIn("前三名", html)
 
-    def test_pending_execution_text_uses_state_dates(self):
+    def test_paused_position_stream_keeps_signal_dates_only(self):
         state = self.state()
         state["signal_date"] = "2026-07-27"
         state["execution_date"] = "2026-07-28"
 
         html = render_html(pd.Timestamp("2026-07-27"), state, [])
 
-        self.assertIn("2026-07-28 執行買入並計為TD1", html)
-        self.assertIn(
-            "2026-07-28 執行買入後，才建立TD1第一筆正式交易紀錄",
-            html,
-        )
+        self.assertIn("2026-07-28", html)
+        self.assertNotIn("執行買入並計為TD1", html)
+        self.assertNotIn("建立TD1第一筆正式交易紀錄", html)
         self.assertIn("2026-07-27 收盤後的結果", html)
         self.assertNotIn("7/27依官方收盤建立TD1", html)
 
