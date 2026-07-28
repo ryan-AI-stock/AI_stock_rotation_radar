@@ -1,13 +1,13 @@
 {
   "version": 1,
   "model": "V4-D",
-  "ticker": "2351",
-  "name": "順德",
+  "ticker": "2885",
+  "name": "元大金",
   "market": "TWSE",
-  "signal_date": "2026-07-24",
-  "signal_close": 161.0,
-  "execution_date": "2026-07-27",
+  "signal_date": "2026-07-28",
+  "signal_close": 63.5,
+  "execution_date": "2026-07-29",
   "entry_close": null,
-  "status": "pending_execution_close",
+  "status": "signal_only",
   "daily_marks": {}
 }
