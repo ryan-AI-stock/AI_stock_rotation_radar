@@ -85,6 +85,16 @@ def load_state(path: Path) -> dict:
     return state
 
 
+def require_current_top1_signal(state: dict, target: pd.Timestamp) -> None:
+    signal_date = pd.Timestamp(state["signal_date"])
+    if signal_date != target:
+        raise ReportDataNotReady(
+            "V4-D formal Top1 signal is stale: "
+            f"signal_date={signal_date:%Y-%m-%d}, "
+            f"report_date={target:%Y-%m-%d}"
+        )
+
+
 def update_state(
     state: dict,
     *,
@@ -283,6 +293,7 @@ def build_daily_report(
 ) -> dict:
     target = pd.Timestamp(report_date)
     state = load_state(state_path)
+    require_current_top1_signal(state, target)
     current = pd.DataFrame(
         [
             {

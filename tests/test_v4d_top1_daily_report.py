@@ -6,8 +6,10 @@ from pathlib import Path
 import pandas as pd
 
 from rotation_radar.v4d_top1_daily_report import (
+    ReportDataNotReady,
     gate_plan,
     load_state,
+    require_current_top1_signal,
     render_html,
     tracking_rows,
     update_state,
@@ -126,6 +128,18 @@ class V4DTop1DailyReportTests(unittest.TestCase):
             path.write_text(json.dumps({"ticker": "2351"}), encoding="utf-8")
             with self.assertRaises(RuntimeError):
                 load_state(path)
+
+    def test_stale_top1_signal_cannot_be_published_as_current(self):
+        with self.assertRaises(ReportDataNotReady):
+            require_current_top1_signal(
+                self.state(),
+                pd.Timestamp("2026-07-28"),
+            )
+
+        require_current_top1_signal(
+            self.state(),
+            pd.Timestamp("2026-07-24"),
+        )
 
 
 if __name__ == "__main__":
