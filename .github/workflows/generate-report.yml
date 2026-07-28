@@ -65,7 +65,7 @@ on:
         required: false
         default: ""
       require_private_report:
-        description: "Require private strategy PDF generation and same-day Drive update"
+        description: "Compatibility input. Manual runs already fail when the private PDF upload fails."
         required: false
         default: "true"
         type: choice
@@ -362,7 +362,11 @@ jobs:
           python -m rotation_radar.drive_publish "${args[@]}"
 
       - name: Verify private strategy PDF on Google Drive
-        if: steps.generate-report.outputs.report_ready == 'true' && (github.event_name != 'workflow_dispatch' || inputs.require_private_report == 'true')
+        # Scheduled runs occur after the 15:00 reporting boundary and retain the
+        # shared same-cycle Drive check. Manual runs can execute before 15:00;
+        # their preceding upload step already fails if the private PDF was not
+        # updated, so applying the scheduled time gate would be a false failure.
+        if: steps.generate-report.outputs.report_ready == 'true' && github.event_name != 'workflow_dispatch'
         env:
           GOOGLE_OAUTH_CLIENT_ID: ${{ secrets.GOOGLE_OAUTH_CLIENT_ID }}
           GOOGLE_OAUTH_CLIENT_SECRET: ${{ secrets.GOOGLE_OAUTH_CLIENT_SECRET }}
