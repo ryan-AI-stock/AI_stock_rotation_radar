@@ -5,6 +5,7 @@ import json
 from datetime import date, timedelta
 from html import escape
 from pathlib import Path
+from urllib.request import Request, urlopen
 
 import pandas as pd
 
@@ -25,6 +26,19 @@ BUY_RATE = 0.001425 + 0.001
 SELL_RATE = 0.001425 + 0.003 + 0.001
 POSITION_STREAM_PAUSED = True
 POSITION_STREAM_MESSAGE = "模型尚未正式買入，此訊息流空。"
+MEDIAN_ROUTE_COUNT = 64
+MEDIAN_ROUTE_FINAL_CAPITAL = 1_251_832_131.3663318
+MEDIAN_ROUTE_CAGR = 0.5758699206870523
+TRADING_DAYS_PER_YEAR = 252
+MEDIAN_ROUTE_DAILY_RATE = (1 + MEDIAN_ROUTE_CAGR) ** (
+    1 / TRADING_DAYS_PER_YEAR
+) - 1
+TAIEX_MONTHLY_URL = (
+    "https://www.twse.com.tw/indicesReport/MI_5MINS_HIST"
+    "?date={month}01&response=json"
+)
+MA120_EVENT_LOOKBACK_MONTHS = 9
+MA120_EVENT_EXPIRY_TD = 40
 
 
 def main() -> None:
@@ -83,6 +97,219 @@ def load_state(path: Path) -> dict:
     if missing:
         raise RuntimeError(f"V4-D state missing required fields: {missing}")
     return state
+
+
+def _roc_date(value: str) -> pd.Timestamp:
+    year, month, day = (int(part) for part in value.split("/"))
+    return pd.Timestamp(year=year + 1911, month=month, day=day)
+
+
+def _taiex_months(target: pd.Timestamp) -> list[str]:
+    start = target.to_period("M") - (MA120_EVENT_LOOKBACK_MONTHS - 1)
+    return [
+        str(period).replace("-", "")
+        for period in pd.period_range(start, target.to_period("M"), freq="M")
+    ]
+
+
+def load_taiex_history(
+    *,
+    target: pd.Timestamp,
+    source_cache: Path,
+    offline: bool,
+) -> pd.DataFrame:
+    cache = source_cache / "taiex_monthly"
+    cache.mkdir(parents=True, exist_ok=True)
+    rows: list[dict] = []
+    for month in _taiex_months(target):
+        path = cache / f"{month}.json"
+        if path.exists():
+            payload = json.loads(path.read_text(encoding="utf-8"))
+        elif offline:
+            raise ReportDataNotReady(f"TAIEX monthly cache missing: {month}")
+        else:
+            request = Request(
+                TAIEX_MONTHLY_URL.format(month=month),
+                headers={
+                    "User-Agent": "Mozilla/5.0",
+                    "Accept": "application/json",
+                },
+            )
+            try:
+                with urlopen(request, timeout=30) as response:
+                    payload = json.loads(response.read().decode("utf-8"))
+            except Exception as exc:
+                raise ReportDataNotReady(
+                    f"TAIEX monthly source unavailable: {month}"
+                ) from exc
+            if payload.get("stat") != "OK":
+                raise ReportDataNotReady(
+                    f"TAIEX monthly source not ready: {month}"
+                )
+            path.write_text(
+                json.dumps(payload, ensure_ascii=False, indent=2),
+                encoding="utf-8",
+            )
+        for item in payload.get("data", []):
+            if len(item) < 5:
+                continue
+            rows.append(
+                {
+                    "date": _roc_date(str(item[0])),
+                    "close": float(str(item[4]).replace(",", "")),
+                }
+            )
+    frame = (
+        pd.DataFrame(rows)
+        .drop_duplicates("date", keep="last")
+        .sort_values("date")
+    )
+    frame = frame.loc[frame["date"].le(target)].reset_index(drop=True)
+    if len(frame) < 140 or frame.empty or frame.iloc[-1]["date"] < target:
+        raise ReportDataNotReady(
+            "TAIEX history is incomplete for MA60/MA120 monitoring"
+        )
+    return frame
+
+
+def evaluate_ma120_market_monitor(history: pd.DataFrame) -> dict:
+    frame = history[["date", "close"]].copy()
+    frame["date"] = pd.to_datetime(frame["date"])
+    frame = frame.dropna().drop_duplicates("date", keep="last").sort_values("date")
+    frame["ma60"] = frame["close"].rolling(60, min_periods=60).mean()
+    frame["ma120"] = frame["close"].rolling(120, min_periods=120).mean()
+    frame["close_vs_ma120"] = frame["close"] / frame["ma120"] - 1
+    frame["prior20_max_vs_ma120"] = (
+        frame["close_vs_ma120"].shift(1).rolling(20, min_periods=20).max()
+    )
+    frame["near_ma120"] = (
+        frame["close_vs_ma120"].between(0.0, 0.02, inclusive="both")
+        & frame["prior20_max_vs_ma120"].ge(0.04)
+    )
+    frame["cross_above_ma60"] = frame["close"].gt(frame["ma60"]) & frame[
+        "close"
+    ].shift(1).le(frame["ma60"].shift(1))
+
+    active: dict | None = None
+    prior_near = False
+    last_event_status = "idle"
+    last_event_date: pd.Timestamp | None = None
+    for index, row in frame.iterrows():
+        near = bool(row["near_ma120"]) if pd.notna(row["near_ma120"]) else False
+        if active is None and near and not prior_near:
+            active = {
+                "touch_index": int(index),
+                "touch_date": pd.Timestamp(row["date"]),
+                "latest_low": float(row["close"]),
+                "latest_low_index": int(index),
+                "preliminary_date": None,
+            }
+            last_event_status = "monitoring"
+            last_event_date = pd.Timestamp(row["date"])
+
+        if active is not None:
+            age = int(index) - int(active["touch_index"])
+            close = float(row["close"])
+            if age > 0 and close < float(row["ma120"]):
+                last_event_status = "invalidated"
+                last_event_date = pd.Timestamp(row["date"])
+                active = None
+            elif age > MA120_EVENT_EXPIRY_TD:
+                last_event_status = "expired"
+                last_event_date = pd.Timestamp(row["date"])
+                active = None
+            else:
+                if close < float(active["latest_low"]):
+                    active["latest_low"] = close
+                    active["latest_low_index"] = int(index)
+                    active["preliminary_date"] = None
+                days_since_low = int(index) - int(active["latest_low_index"])
+                if (
+                    active["preliminary_date"] is None
+                    and days_since_low >= 3
+                    and close >= float(row["ma120"])
+                ):
+                    active["preliminary_date"] = pd.Timestamp(row["date"])
+                    last_event_status = "preliminary_stabilized"
+                    last_event_date = pd.Timestamp(row["date"])
+                if (
+                    active["preliminary_date"] is not None
+                    and bool(row["cross_above_ma60"])
+                ):
+                    last_event_status = "ma60_confirmed"
+                    last_event_date = pd.Timestamp(row["date"])
+                    active = None
+        prior_near = near
+
+    latest = frame.iloc[-1]
+    if active is not None:
+        days_without_new_low = len(frame) - 1 - int(active["latest_low_index"])
+        state = (
+            "preliminary_stabilized"
+            if active["preliminary_date"] is not None
+            else "monitoring"
+        )
+        touch_date = pd.Timestamp(active["touch_date"]).date().isoformat()
+    else:
+        days_without_new_low = 0
+        latest_date = pd.Timestamp(latest["date"])
+        state = (
+            last_event_status
+            if last_event_date is not None and last_event_date == latest_date
+            else "idle"
+        )
+        touch_date = (
+            last_event_date.date().isoformat()
+            if last_event_date is not None
+            else ""
+        )
+    labels = {
+        "idle": "近期未發生跌至半年線附近走勢",
+        "monitoring": "半年線附近監測中，尚未止穩",
+        "preliminary_stabilized": "3TD未再破底，等待站回季線",
+        "ma60_confirmed": "已完成止穩並站回季線",
+        "invalidated": "收盤跌破半年線，本次支撐監測失效",
+        "expired": "監測逾40TD未確認，本次事件結束",
+    }
+    return {
+        "date": pd.Timestamp(latest["date"]).date().isoformat(),
+        "state": state,
+        "state_label": labels[state],
+        "close": float(latest["close"]),
+        "ma60": float(latest["ma60"]),
+        "ma120": float(latest["ma120"]),
+        "close_vs_ma120_pct": float(latest["close_vs_ma120"] * 100),
+        "prior20_max_vs_ma120_pct": float(
+            latest["prior20_max_vs_ma120"] * 100
+        ),
+        "near_ma120_pass": bool(latest["near_ma120"]),
+        "days_without_new_low": int(days_without_new_low),
+        "ma60_reclaimed": bool(latest["close"] > latest["ma60"]),
+        "touch_date": touch_date,
+        "research_refresh_trigger": state == "ma60_confirmed",
+    }
+
+
+def research_refresh_decision(monitor: dict, state: dict) -> str:
+    if not monitor.get("research_refresh_trigger"):
+        return "尚未觸發研究版刷新"
+    holding_ticker = str(state.get("holding_ticker") or "")
+    new_top1 = str(state.get("ticker") or "")
+    if not holding_ticker:
+        return "目前空手；下一交易日仍依正式V4-D Top1處理"
+    peaks = [
+        float(item["peak_after_cost_return_pct"])
+        for item in state.get("daily_marks", {}).values()
+        if item.get("peak_after_cost_return_pct") is not None
+    ]
+    peak = max(peaks) if peaks else float("-inf")
+    if peak >= 10:
+        return "持股曾達+10%；保留強股，不研究強制換股"
+    if holding_ticker == new_top1:
+        return "新Top1與持股相同；不換股"
+    if not new_top1:
+        return "沒有合格Top1；不為刷新而賣出"
+    return f"研究版符合刷新條件：{holding_ticker} → {new_top1}"
 
 
 def require_current_top1_signal(state: dict, target: pd.Timestamp) -> None:
@@ -195,21 +422,34 @@ def _current_exit_trigger(state: dict) -> str | None:
 def tracking_rows(state: dict) -> list[dict]:
     rows = []
     for day, item in sorted(state.get("daily_marks", {}).items()):
+        model_td = item.get("model_td")
+        benchmark_elapsed_td = max(int(model_td or 1) - 1, 0)
+        benchmark_cumulative_pct = (
+            (1 + MEDIAN_ROUTE_DAILY_RATE) ** benchmark_elapsed_td - 1
+        ) * 100
+        actual_cumulative_pct = item.get("cumulative_return_pct")
         rows.append(
             {
                 "date": day,
                 "ticker": state["ticker"],
                 "name": state["name"],
                 "d_index": item.get("d_index"),
-                "model_td": item.get("model_td"),
+                "model_td": model_td,
                 "close": item["close"],
                 "daily_return_pct": item.get("daily_return_pct"),
-                "cumulative_return_pct": item.get("cumulative_return_pct"),
+                "cumulative_return_pct": actual_cumulative_pct,
                 "after_cost_return_pct": item.get("after_cost_return_pct"),
                 "peak_after_cost_return_pct": item.get(
                     "peak_after_cost_return_pct"
                 ),
                 "rolling_5td_return_pct": item.get("rolling_5td_return_pct"),
+                "benchmark_elapsed_td": benchmark_elapsed_td,
+                "benchmark_cumulative_pct": benchmark_cumulative_pct,
+                "excess_vs_benchmark_pct": (
+                    float(actual_cumulative_pct) - benchmark_cumulative_pct
+                    if actual_cumulative_pct is not None
+                    else None
+                ),
             }
         )
     return rows
@@ -339,11 +579,23 @@ def build_daily_report(
             json.dumps(state, ensure_ascii=False, indent=2), encoding="utf-8"
         )
     rows = tracking_rows(state)
+    taiex_history = load_taiex_history(
+        target=actual,
+        source_cache=source_cache,
+        offline=offline,
+    )
+    market_monitor = evaluate_ma120_market_monitor(taiex_history)
     tracking_output.parent.mkdir(parents=True, exist_ok=True)
     pd.DataFrame(rows).to_csv(tracking_output, index=False, encoding="utf-8-sig")
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(
-        render_html(actual, state, rows, closed_dates=fetch_twse_calendar()[1]),
+        render_html(
+            actual,
+            state,
+            rows,
+            closed_dates=fetch_twse_calendar()[1],
+            market_monitor=market_monitor,
+        ),
         encoding="utf-8",
     )
     return {
@@ -356,6 +608,8 @@ def build_daily_report(
         "signal_date": state["signal_date"],
         "execution_date": state["execution_date"],
         "position_status": state["status"],
+        "ma120_market_state": market_monitor["state"],
+        "ma120_market_state_label": market_monitor["state_label"],
         "tracking_row_count": len(rows),
         "future_data_violation_count": 0,
     }
@@ -408,6 +662,8 @@ def render_html(
     rows: list[dict],
     *,
     closed_dates: set[date] | None = None,
+    preview_assumed_holding: bool = False,
+    market_monitor: dict | None = None,
 ) -> str:
     status_map = {
         "holding": "持有中",
@@ -429,6 +685,16 @@ def render_html(
         if latest and latest.get("after_cost_return_pct") is not None
         else "尚未開始"
     )
+    benchmark_latest = (
+        float(latest.get("benchmark_cumulative_pct") or 0) if latest else 0.0
+    )
+    actual_latest = (
+        float(latest.get("cumulative_return_pct") or 0) if latest else 0.0
+    )
+    excess_latest = actual_latest - benchmark_latest
+    stream_active = bool(rows) and (
+        not POSITION_STREAM_PAUSED or preview_assumed_holding
+    )
     next_action = f"{state['execution_date']} 執行買入並計為TD1"
     if latest:
         next_action = "持續持有，下一交易日再檢查"
@@ -442,13 +708,15 @@ def render_html(
         f"<td>{escape(item['date'])}</td>"
         f"<td><b>TD{item.get('model_td', '—')}</b></td>"
         f"<td>{float(item['close']):,.2f}</td>"
-        f"<td class=\"{_return_class(item.get('daily_return_pct'))}\">{_pct(item.get('daily_return_pct'))}</td>"
-        f"<td class=\"{_return_class(item.get('after_cost_return_pct'))}\">{_pct(item.get('after_cost_return_pct'))}</td>"
+        f"<td class=\"{_return_class(item.get('daily_return_pct'))}\">{'建倉' if int(item.get('benchmark_elapsed_td') or 0) == 0 else _pct(item.get('daily_return_pct'))}</td>"
+        f"<td class=\"{_return_class(item.get('cumulative_return_pct'))}\">{_pct(item.get('cumulative_return_pct'))}</td>"
+        f"<td class=\"benchmark\">{_pct(item.get('benchmark_cumulative_pct'))}</td>"
+        f"<td class=\"{_return_class(item.get('excess_vs_benchmark_pct'))}\">{_pct(item.get('excess_vs_benchmark_pct'))}</td>"
         f"<td>{_daily_gate_text(item, state)}</td>"
         "</tr>"
         for item in rows
     ) or (
-        '<tr><td colspan="6" class="empty">'
+        '<tr><td colspan="8" class="empty">'
         f"{escape(state['execution_date'])} 執行買入後，才建立TD1第一筆正式交易紀錄。"
         "</td></tr>"
     )
@@ -461,14 +729,94 @@ def render_html(
         "</tr>"
         for item in gate_plan(state, closed_dates)
     )
+    if not stream_active:
+        overview = (
+            f'<div class="paused">{escape(POSITION_STREAM_MESSAGE)}</div>'
+        )
+        history_section = (
+            f'<div class="paused">{escape(POSITION_STREAM_MESSAGE)}</div>'
+        )
+        plan_section = (
+            f'<div class="paused">{escape(POSITION_STREAM_MESSAGE)}</div>'
+        )
+        plan_block = ""
+        footer_block = ""
+    else:
+        overview = f"""
+<div class="hero-grid">
+  <div class="holding-card">
+    <div class="eyebrow">假設正式部位</div>
+    <div class="holding-name">{escape(state['ticker'])} {escape(state['name'])}</div>
+    <div class="holding-meta">訊號 {escape(state['signal_date'])}｜買入 {escape(state['execution_date'])}｜{_holding_label(latest)}</div>
+    <div class="holding-price">最新收盤 <b>{latest_close}</b></div>
+  </div>
+  <div class="comparison-card">
+    <div class="eyebrow">目前累積比較</div>
+    <div class="comparison-row"><span>個股實際</span><b class="{_return_class(actual_latest)}">{actual_latest:+.2f}%</b></div>
+    <div class="comparison-row"><span>中位數路徑</span><b class="benchmark">{benchmark_latest:+.2f}%</b></div>
+    <div class="comparison-row emphasis"><span>相較中位數</span><b class="{_return_class(excess_latest)}">{excess_latest:+.2f} 個百分點</b></div>
+  </div>
+</div>"""
+        history_section = f"""
+<p class="note">買入日只建立0%比較基準；下一交易日開始，將個股收盤價累積漲跌與中位數年化線逐日比較。</p>
+<table class="history"><thead><tr><th>日期</th><th>模型日</th><th>收盤</th><th>當日漲跌</th><th>個股累積</th><th>中位路徑累積</th><th>相差</th><th>V4-D狀態</th></tr></thead><tbody>{history}</tbody></table>"""
+        plan_section = f"""
+<div class="plan-head"><b>下一步：{escape(next_action)}</b><span>目前 after-cost：{latest_return}</span></div>
+<table><thead><tr><th>檢查關卡</th><th>日期</th><th>判斷條件</th><th>成立後動作</th></tr></thead><tbody>{plan_rows}</tbody></table>"""
+        plan_block = (
+            '<section class="plan"><h2>第六部分｜V4-D完整監控計畫</h2>'
+            f"{plan_section}</section>"
+        )
+        footer_block = (
+            "<footer>私人研究報告。中位數年化線與半年線監測只作研究比較，"
+            "不改變V4-D正式買賣訊號。Top1 為 V4-D 凍結規則在 "
+            f"{escape(state['signal_date'])} 收盤後的結果。</footer>"
+        )
+    benchmark_td5 = ((1 + MEDIAN_ROUTE_DAILY_RATE) ** 4 - 1) * 100
+    benchmark_td14 = ((1 + MEDIAN_ROUTE_DAILY_RATE) ** 13 - 1) * 100
+    benchmark_td22 = ((1 + MEDIAN_ROUTE_DAILY_RATE) ** 21 - 1) * 100
+    if market_monitor is None:
+        market_section = (
+            '<div class="market-monitor neutral">'
+            "<b>半年線監測資料尚未載入</b>"
+            "<span>本區塊只作研究提示，不影響正式V4-D訊號。</span>"
+            "</div>"
+        )
+    else:
+        state_class = {
+            "monitoring": "watch",
+            "preliminary_stabilized": "watch",
+            "ma60_confirmed": "confirmed",
+            "invalidated": "invalid",
+            "expired": "neutral",
+            "idle": "neutral",
+        }.get(market_monitor["state"], "neutral")
+        refresh_text = research_refresh_decision(market_monitor, state)
+        market_section = f"""
+<div class="market-monitor {state_class}">
+  <div class="market-monitor-head"><div><span>目前狀態</span><b>{escape(market_monitor['state_label'])}</b></div><strong>{float(market_monitor['close']):,.2f}</strong></div>
+  <div class="market-grid">
+    <div><small>MA120</small><b>{float(market_monitor['ma120']):,.2f}</b><span>距半年線 {float(market_monitor['close_vs_ma120_pct']):+.2f}%</span></div>
+    <div><small>前20TD高點證據</small><b>{float(market_monitor['prior20_max_vs_ma120_pct']):+.2f}%</b><span>門檻至少 +4%</span></div>
+    <div><small>不再破底進度</small><b>{int(market_monitor['days_without_new_low'])} / 3 TD</b><span>新低出現即歸零</span></div>
+    <div><small>MA60確認</small><b>{'已站回' if market_monitor['ma60_reclaimed'] else '尚未站回'}</b><span>MA60 {float(market_monitor['ma60']):,.2f}</span></div>
+  </div>
+  <div class="refresh-research"><b>未發動持股刷新研究：</b>{escape(refresh_text)}</div>
+</div>
+<p class="note">半年線事件與未發動持股刷新仍是challenger研究資訊；回測未通過前，不改變正式V4-D持股或交易指令。</p>"""
     return f"""<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><style>
-@page{{size:A4;margin:12mm}}*{{box-sizing:border-box}}body{{font-family:'Noto Sans TC','Microsoft JhengHei',sans-serif;color:#1c2730;margin:0;background:#fff}}header{{background:#102e39;color:#fff;padding:24px 28px;border-bottom:6px solid #d7a12b}}h1{{font-size:26px;margin:0 0 8px}}header p{{margin:4px 0;color:#d7e5e8;font-size:12px}}section{{margin:18px 0 24px;break-inside:avoid}}h2{{font-size:19px;margin:0 0 10px;padding-left:10px;border-left:5px solid #d7a12b}}.note{{font-size:12px;color:#64727b;margin:0 0 10px}}.cards{{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}}.card{{border:1px solid #d7e0e2;border-top:4px solid #19766c;padding:12px;background:#f8faf9}}.card.action{{border-top-color:#d7a12b}}.label{{font-size:11px;color:#68767c}}.value{{font-size:17px;font-weight:700;margin-top:4px}}table{{width:100%;border-collapse:collapse;font-size:11px}}th{{background:#edf2f3;color:#28434c;text-align:left;padding:8px 7px;border-bottom:2px solid #9aabb0}}td{{padding:8px 7px;border-bottom:1px solid #dce3e5;vertical-align:top}}td small{{display:block;color:#738087;margin-top:2px}}tbody tr:nth-child(even){{background:#f8faf9}}.up{{color:#b22d2d;font-weight:700}}.down{{color:#087e69;font-weight:700}}.flat{{color:#48575e;font-weight:700}}.empty{{text-align:center;color:#758188;padding:20px}}.plan{{break-before:page}}.plan td:first-child{{width:24%}}.plan td:nth-child(2){{white-space:nowrap}}footer{{font-size:10px;color:#7b858a;border-top:1px solid #d6dddf;padding-top:8px}}</style></head><body>
+@page{{size:A4;margin:11mm}}*{{box-sizing:border-box}}body{{font-family:'Noto Sans TC','Microsoft JhengHei',sans-serif;color:#17262d;margin:0;background:#fff}}header{{background:#102e39;color:#fff;padding:22px 26px;border-bottom:6px solid #d7a12b}}h1{{font-size:25px;margin:0 0 7px;letter-spacing:0}}header p{{margin:4px 0;color:#d7e5e8;font-size:11px}}section{{margin:17px 0 22px;break-inside:avoid}}h2{{font-size:18px;margin:0 0 10px;padding-left:10px;border-left:5px solid #d7a12b}}.note{{font-size:11px;color:#64727b;margin:0 0 9px}}.paused{{border:1px solid #d7e0e2;border-top:4px solid #19766c;padding:18px;background:#f8faf9;font-size:16px;font-weight:700}}.hero-grid{{display:grid;grid-template-columns:1.12fr .88fr;gap:12px}}.holding-card,.comparison-card{{border:1px solid #d5e0e2;padding:16px;background:#f7faf9}}.holding-card{{border-top:5px solid #19766c}}.comparison-card{{border-top:5px solid #d7a12b}}.eyebrow{{font-size:11px;color:#66767d;font-weight:700}}.holding-name{{font-size:24px;font-weight:800;margin:5px 0}}.holding-meta{{font-size:11px;color:#66767d}}.holding-price{{margin-top:14px;font-size:13px}}.holding-price b{{font-size:22px;margin-left:5px}}.comparison-row{{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #dce4e6;padding:7px 0;font-size:12px}}.comparison-row b{{font-size:17px}}.comparison-row.emphasis{{border-bottom:0;padding-top:10px}}.benchmark-panel{{border:1px solid #d8e1e3;background:#fbfaf5;padding:14px}}.benchmark-title{{display:flex;justify-content:space-between;align-items:flex-end}}.benchmark-title strong{{font-size:21px;color:#a36d00}}.benchmark-title span{{font-size:11px;color:#6e777b}}.benchmark-line{{height:6px;background:linear-gradient(90deg,#d7a12b,#f0ce72);margin:12px 0 10px;border-radius:3px}}.benchmark-stats{{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}}.benchmark-stat{{border-left:3px solid #d7a12b;padding-left:8px}}.benchmark-stat small{{display:block;color:#6f7b80;font-size:9px}}.benchmark-stat b{{font-size:14px}}.market-monitor{{border:1px solid #d6e0e2;border-top:5px solid #71808a;background:#f8faf9;padding:14px}}.market-monitor.watch{{border-top-color:#d7a12b;background:#fffbf1}}.market-monitor.confirmed{{border-top-color:#19766c;background:#f2faf7}}.market-monitor.invalid{{border-top-color:#b23a3a;background:#fff7f7}}.market-monitor-head{{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:12px}}.market-monitor-head span{{display:block;font-size:10px;color:#6b777c}}.market-monitor-head b{{font-size:17px}}.market-monitor-head strong{{font-size:23px}}.market-grid{{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}}.market-grid>div{{background:#fff;border:1px solid #dbe3e5;padding:9px}}.market-grid small,.market-grid span{{display:block;font-size:9px;color:#6c797f}}.market-grid b{{display:block;font-size:14px;margin:3px 0}}.refresh-research{{margin-top:10px;padding:9px 11px;background:#102e39;color:#fff;font-size:10px}}table{{width:100%;border-collapse:collapse;font-size:10px}}th{{background:#edf2f3;color:#28434c;text-align:left;padding:7px 6px;border-bottom:2px solid #9aabb0}}td{{padding:7px 6px;border-bottom:1px solid #dce3e5;vertical-align:top}}td small{{display:block;color:#738087;margin-top:2px}}tbody tr:nth-child(even){{background:#f8faf9}}.history th:nth-child(1),.history th:nth-child(2),.history th:nth-child(3){{white-space:nowrap}}.up{{color:#b22d2d;font-weight:700}}.down{{color:#087e69;font-weight:700}}.flat{{color:#48575e;font-weight:700}}.benchmark{{color:#a36d00;font-weight:700}}.empty{{text-align:center;color:#758188;padding:20px}}.plan{{break-before:page}}.plan-head{{display:flex;justify-content:space-between;padding:12px 14px;background:#102e39;color:#fff;margin-bottom:10px;font-size:11px}}.plan td:first-child{{width:24%}}.plan td:nth-child(2){{white-space:nowrap}}footer{{font-size:9px;color:#7b858a;border-top:1px solid #d6dddf;padding-top:8px;margin-top:16px}}</style></head><body>
 <header><h1>{REPORT_TITLE}</h1><p>最新官方收盤資料日：{actual:%Y-%m-%d}</p><p>{escape(MODEL_NAME)}</p></header>
-<section><h2>第一部分｜今天只看這四件事</h2><div class="card"><div class="value">{escape(POSITION_STREAM_MESSAGE)}</div></div></section>
+<section><h2>第一部分｜今日實際表現 vs 中位數年化線</h2>{overview}</section>
 <section><h2>第二部分｜正式模型唯一 Top1</h2><table><thead><tr><th>股票</th><th>訊號日</th><th>訊號日收盤</th><th>執行日</th><th>最新收盤</th></tr></thead><tbody><tr><td><b>{escape(state['ticker'])} {escape(state['name'])}</b></td><td>{escape(state['signal_date'])}</td><td>{float(state['signal_close']):,.2f}</td><td>{escape(state['execution_date'])}</td><td>{latest_close}</td></tr></tbody></table></section>
-<section><h2>第三部分｜每日持倉紀錄</h2><div class="card"><div class="value">{escape(POSITION_STREAM_MESSAGE)}</div></div></section>
-<section class="plan"><h2>第四部分｜V4-D完整監控計畫</h2><div class="card"><div class="value">{escape(POSITION_STREAM_MESSAGE)}</div></div></section>
-<footer>私人研究報告。Top1 為 V4-D 凍結規則在 {escape(state['signal_date'])} 收盤後的結果；報告只追蹤唯一正式部位，不再列 Top10、Top3 或舊版 V_BASE 名單。</footer></body></html>"""
+<section><h2>第三部分｜大盤半年線監測</h2>{market_section}</section>
+<section><h2>第四部分｜64條歷史路徑的中位基準</h2>
+<div class="benchmark-panel"><div class="benchmark-title"><div><span>期末剩餘資產中位數</span><br><strong>{MEDIAN_ROUTE_FINAL_CAPITAL / 100_000_000:.2f}億元</strong></div><div>年化複合成長率 <b>{MEDIAN_ROUTE_CAGR * 100:.2f}%</b><br>每交易日複合基準 <b>{MEDIAN_ROUTE_DAILY_RATE * 100:.2f}%</b></div></div><div class="benchmark-line"></div>
+<div class="benchmark-stats"><div class="benchmark-stat"><small>買入日</small><b>0.00%</b></div><div class="benchmark-stat"><small>TD5參考</small><b>+{benchmark_td5:.2f}%</b></div><div class="benchmark-stat"><small>TD14參考</small><b>+{benchmark_td14:.2f}%</b></div><div class="benchmark-stat"><small>TD22參考</small><b>+{benchmark_td22:.2f}%</b></div></div></div>
+<p class="note">基準來自64條不同進場日起始路徑；初始800萬元、每月提領7.5萬元，期末剩餘資產中位數12.52億元。年化線使用各路徑CAGR中位數57.59%換算，不包含已提領現金。</p></section>
+<section><h2>第五部分｜每日路徑比較</h2>{history_section}</section>
+{plan_block}
+{footer_block}</body></html>"""
 
 
 def _holding_label(latest: dict | None) -> str:
