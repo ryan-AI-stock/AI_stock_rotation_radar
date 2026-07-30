@@ -182,6 +182,18 @@ def extend_adjusted_with_official_raw(
     historical_raw: pd.DataFrame,
     recent_official: pd.DataFrame,
 ) -> pd.DataFrame:
+    adjusted = adjusted.copy()
+    historical_raw = historical_raw.copy()
+    recent_official = recent_official.copy()
+    adjusted["adjusted_analysis_close"] = pd.to_numeric(
+        adjusted["adjusted_analysis_close"], errors="coerce"
+    )
+    historical_raw["raw_close"] = pd.to_numeric(
+        historical_raw["raw_close"], errors="coerce"
+    )
+    recent_official["close"] = pd.to_numeric(
+        recent_official["close"], errors="coerce"
+    )
     common = adjusted.merge(
         historical_raw[["ticker", "date", "raw_close"]],
         on=["ticker", "date"],

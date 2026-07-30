@@ -36,7 +36,7 @@ class V4DTop1SignalTests(unittest.TestCase):
             {
                 "ticker": ["1234"],
                 "date": [pd.Timestamp("2026-07-23")],
-                "close": [110.0],
+                "close": ["110.0"],
             }
         )
 
