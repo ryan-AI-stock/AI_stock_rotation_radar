@@ -1,0 +1,11 @@
+required_field,purpose,required_for_acceptance
+strategy_id,keep all Sheet row 4-9 strategies on one basis,true
+variant_id,link position to frozen strategy path,true
+ticker,issuer identifier,true
+share_class,prevent preferred-share events from being applied to common-share positions,true
+position_start_date,entitlement interval boundary,true
+position_end_date,entitlement interval boundary,true
+position_units,compute cash distribution receivable and share-scale effects,true
+position_unit_basis,distinguish shares from NAV proxy or notional,true
+event_entitlement_date_policy,determine whether ex-right or record-date controls entitlement,true
+source_path,trace Core position authority,true

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-30T02:10:50+00:00",
+  "generated_at": "2026-07-30T02:16:58+00:00",
   "artifacts": [
     {
       "file": ".gitignore",
@@ -13,8 +13,8 @@
     },
     {
       "file": "current_step.txt",
-      "sha256": "e90165e264f446879636aefe3e08a3d556889f7e98ede5818d7b4bdae23d8cc0",
-      "bytes": 142
+      "sha256": "ecc6e4eca26c032125abf827c0e90c067e39cb4a781664ccdb9c621391f1197e",
+      "bytes": 426
     },
     {
       "file": "event_delta_blocked_ledger.csv",
@@ -50,6 +50,11 @@
       "file": "official_event_source_manifest.csv",
       "sha256": "9f6c64dc9be7c6c92ce0762051b0beebbc071d12ad23fd4da56441990a8d0369",
       "bytes": 793349
+    },
+    {
+      "file": "position_unit_authority_requirements.csv",
+      "sha256": "dc995c82b28c0d4016580af68113d8e4f3c8dc21d41ada7c7a9017733e4568c7",
+      "bytes": 693
     },
     {
       "file": "progress.json",
