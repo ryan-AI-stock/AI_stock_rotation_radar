@@ -1,0 +1,2 @@
+accepted_event_rows,duplicate_exact_event_rows,deduplication_policy
+7,0,no_deduplication_of_distinct_share_class_cash_amounts

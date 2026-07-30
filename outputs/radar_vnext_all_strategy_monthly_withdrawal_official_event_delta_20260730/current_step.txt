@@ -1,0 +1,3 @@
+status=complete_official_event_delta
+completed_routes=1025/1025
+resume_step=Core_event_completeness_review_then_monthly_withdrawal_rechain

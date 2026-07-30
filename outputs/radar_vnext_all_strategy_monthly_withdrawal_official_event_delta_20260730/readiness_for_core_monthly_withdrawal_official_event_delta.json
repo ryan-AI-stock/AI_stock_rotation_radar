@@ -1,0 +1,22 @@
+{
+  "task_id": "TASK-RADAR-DATA-ALL-STRATEGY-MONTHLY-WITHDRAWAL-OFFICIAL-CORPORATE-ACTION-DELTA-001",
+  "status": "official_event_delta_completed_pending_completeness_review",
+  "held_authority_rows": 5367,
+  "held_ticker_count": 157,
+  "planned_ticker_month_routes": 1025,
+  "accepted_event_delta_rows": 7,
+  "blocked_event_delta_rows": 25,
+  "cash_event_rows_with_exact_exdate_and_amount": 7,
+  "capital_event_rows_with_effective_date": 0,
+  "ready_for_core_monthly_withdrawal_event_rechain": false,
+  "future_data_violation_count": 0,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "ready_for_experiments": false,
+  "ready_for_formal": false,
+  "ready_for_strategy_replay": false,
+  "not_live_rule": true,
+  "forward_returns_live_rule_usage": false
+}

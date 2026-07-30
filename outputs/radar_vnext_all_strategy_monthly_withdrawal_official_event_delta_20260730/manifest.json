@@ -1,0 +1,65 @@
+{
+  "generated_at": "2026-07-30T02:10:50+00:00",
+  "artifacts": [
+    {
+      "file": ".gitignore",
+      "sha256": "a8558385e94cd0a33f41b56e48648213ba132fac91b032f675ca8912880a82a8",
+      "bytes": 11
+    },
+    {
+      "file": "accepted_event_delta.csv",
+      "sha256": "325cd1c6be768539fec3ac9c05eea599112c7b76df254ee6eb20f8af349bf20a",
+      "bytes": 7398
+    },
+    {
+      "file": "current_step.txt",
+      "sha256": "e90165e264f446879636aefe3e08a3d556889f7e98ede5818d7b4bdae23d8cc0",
+      "bytes": 142
+    },
+    {
+      "file": "event_delta_blocked_ledger.csv",
+      "sha256": "cae5938b9aab2b273f6fec72f5db7471e6c08e61a2834e1e72d82aa042054d2c",
+      "bytes": 22742
+    },
+    {
+      "file": "event_delta_coverage_audit.csv",
+      "sha256": "4c46e734922c42a4acc519ef8de22822a0b385031c6769f5b58c6e83c1e39201",
+      "bytes": 398
+    },
+    {
+      "file": "event_delta_duplicate_audit.csv",
+      "sha256": "9b0209d9637c0fbf16e63c2535cdf86cc66a9cd9008629914dcc12dac8f724d4",
+      "bytes": 128
+    },
+    {
+      "file": "final_summary_zh.md",
+      "sha256": "531e1e42e1902c58deb9ad8600e755b67e10cb6074ca14146a947c7b1f951b87",
+      "bytes": 686
+    },
+    {
+      "file": "future_data_audit.csv",
+      "sha256": "f39a44a04db0ddfae5bcfcf495aa697dec1be4f695bcce1902023de5dcaea7ac",
+      "bytes": 194
+    },
+    {
+      "file": "official_event_candidates.csv",
+      "sha256": "27598d9e5940b58714380f44be2277bfec511a239923a6f6f80fa976da197473",
+      "bytes": 1149202
+    },
+    {
+      "file": "official_event_source_manifest.csv",
+      "sha256": "9f6c64dc9be7c6c92ce0762051b0beebbc071d12ad23fd4da56441990a8d0369",
+      "bytes": 793349
+    },
+    {
+      "file": "progress.json",
+      "sha256": "a8a0e36958a1b4bfd8f1bd518fdad2b6811a37cd289bb4b30717b6a6047dc57c",
+      "bytes": 132
+    },
+    {
+      "file": "readiness_for_core_monthly_withdrawal_official_event_delta.json",
+      "sha256": "da0552091d6d1e0a921d0a7282b2c6f7b773b09a8de96ff8c7bb10c5f7300b2d",
+      "bytes": 863
+    }
+  ]
+}
