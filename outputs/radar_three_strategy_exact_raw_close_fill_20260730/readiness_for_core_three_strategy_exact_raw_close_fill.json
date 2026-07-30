@@ -1,0 +1,19 @@
+{
+  "task_id": "TASK-RADAR-DATA-THREE-STRATEGY-EXACT-RAW-CLOSE-MINIMUM-FILL-001",
+  "requested_unique_keys": 221,
+  "official_raw_close_ready_keys": 221,
+  "official_no_trade_keys": 0,
+  "blocked_keys": 0,
+  "partition_matches_authority": true,
+  "local_reuse_keys": 2,
+  "new_official_month_routes": 0,
+  "network_outside_authority_rows": 0,
+  "non_close_family_download_rows": 0,
+  "ready_for_core_absorption": true,
+  "future_data_violation_count": 0,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "not_live_rule": true
+}
