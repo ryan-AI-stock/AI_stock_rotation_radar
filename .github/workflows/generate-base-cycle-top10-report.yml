@@ -106,12 +106,34 @@ jobs:
       - name: Validate new report code
         if: steps.report-date.outputs.should_run == 'true' && (github.event_name == 'workflow_dispatch' || (steps.publish-marker.outputs.cache-hit != 'true' && steps.drive-completion.outputs.already_published != 'true'))
         run: |
-          python -m py_compile rotation_radar/v4d_top1_daily_report.py rotation_radar/v4d_top1_publish.py
-          python -m unittest tests.test_v4d_top1_daily_report tests.test_schedule_gate tests.test_drive_publish -v
+          python -m py_compile rotation_radar/v4d_top1_signal.py rotation_radar/v4d_top1_daily_report.py rotation_radar/v4d_top1_publish.py
+          python -m unittest tests.test_v4d_top1_signal tests.test_v4d_top1_daily_report tests.test_schedule_gate tests.test_drive_publish -v
+
+      - name: Calculate current formal V4-D Top1
+        id: calculate-top1
+        if: steps.report-date.outputs.should_run == 'true' && (github.event_name == 'workflow_dispatch' || (steps.publish-marker.outputs.cache-hit != 'true' && steps.drive-completion.outputs.already_published != 'true'))
+        shell: bash
+        run: |
+          set +e
+          python -m rotation_radar.v4d_top1_signal \
+            --date "${{ steps.report-date.outputs.target_date }}" \
+            --source-repo . \
+            --source-cache data/current_base_cycle_source_cache \
+            --state data/formal_v4d_top1_state.json \
+            --ranking-output reports/formal_v4d_top30_daily.csv
+          status=$?
+          set -e
+          if [ "$status" -eq 75 ]; then
+            echo "signal_ready=false" >> "$GITHUB_OUTPUT"
+            echo "正式V4-D當日資料尚未完整，排程稍後自動重試。" >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          if [ "$status" -ne 0 ]; then exit "$status"; fi
+          echo "signal_ready=true" >> "$GITHUB_OUTPUT"
 
       - name: Build current V4-D Top1 report
         id: build-report
-        if: steps.report-date.outputs.should_run == 'true' && (github.event_name == 'workflow_dispatch' || (steps.publish-marker.outputs.cache-hit != 'true' && steps.drive-completion.outputs.already_published != 'true'))
+        if: steps.calculate-top1.outputs.signal_ready == 'true'
         shell: bash
         run: |
           set +e
@@ -168,6 +190,7 @@ jobs:
           path: |
             reports/formal_v4d_top1_daily.html
             reports/formal_v4d_top1_daily.csv
+            reports/formal_v4d_top30_daily.csv
             data/formal_v4d_top1_state.json
             private_report/最新版個股模型V4-D_Top1每日追蹤報告.pdf
           if-no-files-found: error

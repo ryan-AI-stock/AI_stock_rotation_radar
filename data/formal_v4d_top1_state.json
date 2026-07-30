@@ -1,13 +1,16 @@
 {
-  "version": 1,
+  "version": 2,
   "model": "V4-D",
-  "ticker": "2885",
-  "name": "元大金",
+  "ticker": "2890",
+  "name": "永豐金",
   "market": "TWSE",
-  "signal_date": "2026-07-28",
-  "signal_close": 63.5,
-  "execution_date": "2026-07-29",
+  "signal_date": "2026-07-30",
+  "signal_close": 38.85,
+  "execution_date": "2026-07-31",
   "entry_close": null,
   "status": "signal_only",
-  "daily_marks": {}
+  "daily_marks": {},
+  "candidate_rank": 1,
+  "industry": "金融保險",
+  "layer1_snapshot_date": "20260728"
 }
