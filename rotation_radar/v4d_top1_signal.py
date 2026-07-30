@@ -143,7 +143,10 @@ def add_price_features(adjusted: pd.DataFrame, target: pd.Timestamp) -> pd.DataF
         recent10 = close.iloc[-10:].to_numpy()
         low_offset = 9 - int(np.argmin(recent10))
         turn_low = 1 <= low_offset <= 5
-        turn_slope = np.polyfit(np.arange(3), close.iloc[-3:].to_numpy(), 1)[0] > 0
+        # For three equally spaced closes, OLS slope is exactly
+        # (last - first) / 2. This avoids platform-specific polyfit epsilon
+        # treating a flat 1010, 1015, 1010 path as a positive slope.
+        turn_slope = (float(close.iloc[-1]) - float(close.iloc[-3])) / 2 > 0
         turn_higher_low = close.iloc[-3:].min() > close.iloc[-6:-3].min()
         values["turnup_evidence"] = int(turn_low) + int(turn_slope) + int(
             turn_higher_low

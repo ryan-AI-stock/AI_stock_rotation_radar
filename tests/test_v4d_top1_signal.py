@@ -5,6 +5,7 @@ import pandas as pd
 from rotation_radar.v4d_top1_signal import (
     EXCLUDED_INDUSTRIES,
     INDUSTRY_CODE_NAMES,
+    add_price_features,
     extend_adjusted_with_official_raw,
 )
 
@@ -49,6 +50,22 @@ class V4DTop1SignalTests(unittest.TestCase):
             "adjusted_analysis_close",
         ].iloc[0]
         self.assertEqual(value, 55.0)
+
+    def test_flat_three_day_endpoints_are_not_positive_slope(self) -> None:
+        closes = [100.0] * 177 + [1010.0, 1015.0, 1010.0]
+        adjusted = pd.DataFrame(
+            {
+                "ticker": ["2404"] * len(closes),
+                "date": pd.bdate_range("2025-11-21", periods=len(closes)),
+                "adjusted_analysis_close": closes,
+            }
+        )
+
+        result = add_price_features(adjusted, adjusted["date"].iloc[-1])
+
+        # The recent low and higher-low tests may vary with the synthetic
+        # history, but a flat first/last three-day path must not add slope.
+        self.assertLessEqual(int(result.iloc[0]["turnup_evidence"]), 1)
 
 
 if __name__ == "__main__":
