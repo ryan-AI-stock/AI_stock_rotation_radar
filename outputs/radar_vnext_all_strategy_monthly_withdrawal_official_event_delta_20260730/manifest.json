@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-30T02:16:58+00:00",
+  "generated_at": "2026-07-30T02:28:01+00:00",
   "artifacts": [
     {
       "file": ".gitignore",
@@ -13,8 +13,8 @@
     },
     {
       "file": "current_step.txt",
-      "sha256": "ecc6e4eca26c032125abf827c0e90c067e39cb4a781664ccdb9c621391f1197e",
-      "bytes": 426
+      "sha256": "59d0ce272f6b6181dd8c166ab5806a840b698c0dc526abd739978515d1c583a4",
+      "bytes": 554
     },
     {
       "file": "event_delta_blocked_ledger.csv",
@@ -53,8 +53,8 @@
     },
     {
       "file": "position_unit_authority_requirements.csv",
-      "sha256": "dc995c82b28c0d4016580af68113d8e4f3c8dc21d41ada7c7a9017733e4568c7",
-      "bytes": 693
+      "sha256": "5c505997b528808f0927f6a236cd7f5ae0b6d90db6990ce971f06b0d639e0e36",
+      "bytes": 712
     },
     {
       "file": "progress.json",
@@ -65,6 +65,11 @@
       "file": "readiness_for_core_monthly_withdrawal_official_event_delta.json",
       "sha256": "da0552091d6d1e0a921d0a7282b2c6f7b773b09a8de96ff8c7bb10c5f7300b2d",
       "bytes": 863
+    },
+    {
+      "file": "three_strategy_holder_scale_target_ledger.csv",
+      "sha256": "b48726f9cf5b1762978027c5c91a5f480ae2b9035e6ef6c6cca864a275c3e238",
+      "bytes": 1020
     }
   ]
 }
