@@ -1,0 +1,2 @@
+status=complete_inventory_only
+resume_step=request_exact_v4d_and_0050_constituent_holding_authorities_from_core_before_any_event_route_acquisition

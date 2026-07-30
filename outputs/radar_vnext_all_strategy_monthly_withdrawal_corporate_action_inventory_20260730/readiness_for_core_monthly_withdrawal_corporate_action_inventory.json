@@ -1,0 +1,37 @@
+{
+  "task_id": "TASK-RADAR-DATA-ALL-STRATEGY-MONTHLY-WITHDRAWAL-CORPORATE-ACTION-INVENTORY-001",
+  "status": "inventory_complete_event_acquisition_blocked_by_missing_strategy_authority_and_exact_event_dates",
+  "requested_period": {
+    "start": "2015-05-18",
+    "end": "2026-07-22"
+  },
+  "discovered_strategy_authority": {
+    "strategy_rows": 8,
+    "authority_ready_strategy_rows": 5,
+    "authority_blocked_strategy_rows": 3,
+    "local_actual_holding_intervals": 413,
+    "local_actual_ticker_union": 8
+  },
+  "local_event_inventory": {
+    "cash_distribution_candidate_rows": 13,
+    "corporate_action_candidate_rows": 13,
+    "exact_exdate_rows": 0,
+    "exact_payment_date_rows": 0,
+    "capital_change_exact_rows": 0
+  },
+  "cash_dividend_ledger_ready": false,
+  "capital_change_ledger_ready": false,
+  "ready_for_core_monthly_withdrawal_total_return_rechain": false,
+  "bounded_network_fill_started": false,
+  "future_data_violation_count": 0,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "ready_for_experiments": false,
+  "ready_for_formal": false,
+  "ready_for_strategy_replay": false,
+  "not_live_rule": true,
+  "forward_returns_live_rule_usage": false,
+  "next_handoff": "Core/Data must provide exact V4-D plus 0050 constituent all/top30 holding interval authority; then Radar can quantify bounded official historical event-route delta without inferring events from adjusted factors."
+}

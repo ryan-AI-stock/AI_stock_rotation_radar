@@ -1,0 +1,2 @@
+audit_scope,future_data_violation_count,policy,asof_date
+local_inventory_only,0,no_adjusted_factor_event_inference_no_current_snapshot_backfill_no_performance_calculation,2026-07-22

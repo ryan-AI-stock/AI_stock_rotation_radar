@@ -1,0 +1,60 @@
+{
+  "generated_at": "2026-07-30T00:48:21+00:00",
+  "artifacts": [
+    {
+      "file": "current_step.txt",
+      "sha256": "17cb5181afa7317beb09df65dd61d48eac70ab84c08cfae2c5aafe83a9af44f6",
+      "bytes": 149
+    },
+    {
+      "file": "final_summary_zh.md",
+      "sha256": "b271fafb986c4df765061293a13c98b7f88217bb7c6d9f6dabfe5c8b8aa5fbb6",
+      "bytes": 849
+    },
+    {
+      "file": "monthly_withdrawal_corporate_action_blocked_ledger.csv",
+      "sha256": "470036d659e7f780b0f9696bfd028d55d8cfdeacfe17bea4c2923478619b195c",
+      "bytes": 4325
+    },
+    {
+      "file": "monthly_withdrawal_corporate_action_future_data_audit.csv",
+      "sha256": "8922a71605f57c54f0a7cf181e664cfed7baf32a358ca8200baf2a9b138b8cb3",
+      "bytes": 184
+    },
+    {
+      "file": "monthly_withdrawal_corporate_action_local_coverage_audit.csv",
+      "sha256": "bd04d331ff1dbd336d4face92e31292725ec0491302d140ee68346f7fb58f733",
+      "bytes": 1101
+    },
+    {
+      "file": "monthly_withdrawal_corporate_action_source_manifest.csv",
+      "sha256": "43bc746e8eabf06fba5ecc0dfc1180d3885957ed7772d7912c03f23b8d08f736",
+      "bytes": 2311
+    },
+    {
+      "file": "monthly_withdrawal_local_cash_distribution_candidates.csv",
+      "sha256": "d3af38e9b2e6c204c092af3f7f7db26df0ced167d361a768e65284d7ce7e56d7",
+      "bytes": 49548
+    },
+    {
+      "file": "monthly_withdrawal_local_corporate_action_candidates.csv",
+      "sha256": "447c1b866370d9e36c7b3fca5f96a34ccb503a226c55e99e0fd9aa35998c95cb",
+      "bytes": 47494
+    },
+    {
+      "file": "monthly_withdrawal_strategy_authority_discovery.csv",
+      "sha256": "1529f1521660cfa8817857a6c3473d7b491e7bf7bac661d96265e13af51655bc",
+      "bytes": 1536
+    },
+    {
+      "file": "monthly_withdrawal_strategy_holding_intervals_local_authority.csv",
+      "sha256": "0cc030418791e66840768a6db99d46799082d54adf4813ef8b1a312681a1b192",
+      "bytes": 124727
+    },
+    {
+      "file": "readiness_for_core_monthly_withdrawal_corporate_action_inventory.json",
+      "sha256": "bd704f1ed6e6aa277c8468bc2ce891c9c4ebeb478f33a75e03eb349e0c2ac801",
+      "bytes": 1529
+    }
+  ]
+}
