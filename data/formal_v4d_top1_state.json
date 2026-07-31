@@ -1,16 +1,16 @@
 {
   "version": 2,
   "model": "V4-D",
-  "ticker": "2890",
-  "name": "永豐金",
+  "ticker": "8046",
+  "name": "南電",
   "market": "TWSE",
-  "signal_date": "2026-07-30",
-  "signal_close": 38.85,
-  "execution_date": "2026-07-31",
+  "signal_date": "2026-07-31",
+  "signal_close": 920.0,
+  "execution_date": "2026-08-03",
   "entry_close": null,
   "status": "signal_only",
   "daily_marks": {},
   "candidate_rank": 1,
-  "industry": "金融保險",
+  "industry": "電子零組件業",
   "layer1_snapshot_date": "20260728"
 }
