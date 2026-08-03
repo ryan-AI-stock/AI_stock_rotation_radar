@@ -13,6 +13,7 @@ from .base_cycle_daily_report import (
     ReportDataNotReady,
     load_official_prices_and_turnover,
 )
+from .disposition_gate import DispositionSourceNotReady, load_disposition_gate
 from .schedule_gate import fetch_twse_calendar, is_trading_day
 
 
@@ -20,7 +21,7 @@ REPORT_TITLE = "最新版個股模型 V4-D｜Top1 每日追蹤"
 MODEL_NAME = (
     "全市場硬篩選＋基期Top1｜TD1～5 -5%／5TD -10%／累積 -10%／"
     "TD14未達 +5%；曾達 +10%者改由高點回落10%管理／"
-    "TD22未曾達 +10%且當下未達 +8%退出"
+    "TD22未曾達 +10%且當下未達 +8%退出｜處置Top1空手且不遞補"
 )
 BUY_RATE = 0.001425 + 0.001
 SELL_RATE = 0.001425 + 0.003 + 0.001
@@ -534,6 +535,16 @@ def build_daily_report(
     target = pd.Timestamp(report_date)
     state = load_state(state_path)
     require_current_top1_signal(state, target)
+    try:
+        disposition_gate = load_disposition_gate(
+            ticker=state["ticker"],
+            signal_date=pd.Timestamp(state["signal_date"]).date(),
+            execution_date=pd.Timestamp(state["execution_date"]).date(),
+            source_cache=source_cache,
+            offline=offline,
+        )
+    except DispositionSourceNotReady as exc:
+        raise ReportDataNotReady(str(exc)) from exc
     current = pd.DataFrame(
         [
             {
@@ -595,6 +606,7 @@ def build_daily_report(
             rows,
             closed_dates=fetch_twse_calendar()[1],
             market_monitor=market_monitor,
+            disposition_gate=disposition_gate,
         ),
         encoding="utf-8",
     )
@@ -608,6 +620,8 @@ def build_daily_report(
         "signal_date": state["signal_date"],
         "execution_date": state["execution_date"],
         "position_status": state["status"],
+        "trade_feasibility_status": disposition_gate["status"],
+        "trade_feasibility_blocked": disposition_gate["blocked"],
         "ma120_market_state": market_monitor["state"],
         "ma120_market_state_label": market_monitor["state_label"],
         "tracking_row_count": len(rows),
@@ -664,6 +678,7 @@ def render_html(
     closed_dates: set[date] | None = None,
     preview_assumed_holding: bool = False,
     market_monitor: dict | None = None,
+    disposition_gate: dict | None = None,
 ) -> str:
     status_map = {
         "holding": "持有中",
@@ -764,7 +779,7 @@ def render_html(
 <div class="plan-head"><b>下一步：{escape(next_action)}</b><span>目前 after-cost：{latest_return}</span></div>
 <table><thead><tr><th>檢查關卡</th><th>日期</th><th>判斷條件</th><th>成立後動作</th></tr></thead><tbody>{plan_rows}</tbody></table>"""
         plan_block = (
-            '<section class="plan"><h2>第六部分｜V4-D完整監控計畫</h2>'
+            '<section class="plan"><h2>第七部分｜V4-D完整監控計畫</h2>'
             f"{plan_section}</section>"
         )
         footer_block = (
@@ -804,17 +819,37 @@ def render_html(
   <div class="refresh-research"><b>未發動持股刷新研究：</b>{escape(refresh_text)}</div>
 </div>
 <p class="note">半年線事件與未發動持股刷新仍是challenger研究資訊；回測未通過前，不改變正式V4-D持股或交易指令。</p>"""
+    gate = disposition_gate or {
+        "blocked": False,
+        "status": "not_checked",
+        "message": "處置股交易可行性尚未查核。",
+        "events": [],
+    }
+    gate_class = "invalid" if gate["blocked"] else "confirmed"
+    event_text = ""
+    if gate["events"]:
+        event = gate["events"][0]
+        event_text = (
+            f"<span>官方處置期間：{escape(event['start_date'])}～"
+            f"{escape(event['end_date'])}</span>"
+        )
+    trade_gate_section = f"""
+<div class="market-monitor {gate_class}">
+  <div class="market-monitor-head"><div><span>交易可行性</span><b>{escape(gate['message'])}</b></div><strong>{'空手' if gate['blocked'] else '可執行'}</strong></div>
+  {event_text}
+</div>"""
     return f"""<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><style>
 @page{{size:A4;margin:11mm}}*{{box-sizing:border-box}}body{{font-family:'Noto Sans TC','Microsoft JhengHei',sans-serif;color:#17262d;margin:0;background:#fff}}header{{background:#102e39;color:#fff;padding:22px 26px;border-bottom:6px solid #d7a12b}}h1{{font-size:25px;margin:0 0 7px;letter-spacing:0}}header p{{margin:4px 0;color:#d7e5e8;font-size:11px}}section{{margin:17px 0 22px;break-inside:avoid}}h2{{font-size:18px;margin:0 0 10px;padding-left:10px;border-left:5px solid #d7a12b}}.note{{font-size:11px;color:#64727b;margin:0 0 9px}}.paused{{border:1px solid #d7e0e2;border-top:4px solid #19766c;padding:18px;background:#f8faf9;font-size:16px;font-weight:700}}.hero-grid{{display:grid;grid-template-columns:1.12fr .88fr;gap:12px}}.holding-card,.comparison-card{{border:1px solid #d5e0e2;padding:16px;background:#f7faf9}}.holding-card{{border-top:5px solid #19766c}}.comparison-card{{border-top:5px solid #d7a12b}}.eyebrow{{font-size:11px;color:#66767d;font-weight:700}}.holding-name{{font-size:24px;font-weight:800;margin:5px 0}}.holding-meta{{font-size:11px;color:#66767d}}.holding-price{{margin-top:14px;font-size:13px}}.holding-price b{{font-size:22px;margin-left:5px}}.comparison-row{{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #dce4e6;padding:7px 0;font-size:12px}}.comparison-row b{{font-size:17px}}.comparison-row.emphasis{{border-bottom:0;padding-top:10px}}.benchmark-panel{{border:1px solid #d8e1e3;background:#fbfaf5;padding:14px}}.benchmark-title{{display:flex;justify-content:space-between;align-items:flex-end}}.benchmark-title strong{{font-size:21px;color:#a36d00}}.benchmark-title span{{font-size:11px;color:#6e777b}}.benchmark-line{{height:6px;background:linear-gradient(90deg,#d7a12b,#f0ce72);margin:12px 0 10px;border-radius:3px}}.benchmark-stats{{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}}.benchmark-stat{{border-left:3px solid #d7a12b;padding-left:8px}}.benchmark-stat small{{display:block;color:#6f7b80;font-size:9px}}.benchmark-stat b{{font-size:14px}}.market-monitor{{border:1px solid #d6e0e2;border-top:5px solid #71808a;background:#f8faf9;padding:14px}}.market-monitor.watch{{border-top-color:#d7a12b;background:#fffbf1}}.market-monitor.confirmed{{border-top-color:#19766c;background:#f2faf7}}.market-monitor.invalid{{border-top-color:#b23a3a;background:#fff7f7}}.market-monitor-head{{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:12px}}.market-monitor-head span{{display:block;font-size:10px;color:#6b777c}}.market-monitor-head b{{font-size:17px}}.market-monitor-head strong{{font-size:23px}}.market-grid{{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}}.market-grid>div{{background:#fff;border:1px solid #dbe3e5;padding:9px}}.market-grid small,.market-grid span{{display:block;font-size:9px;color:#6c797f}}.market-grid b{{display:block;font-size:14px;margin:3px 0}}.refresh-research{{margin-top:10px;padding:9px 11px;background:#102e39;color:#fff;font-size:10px}}table{{width:100%;border-collapse:collapse;font-size:10px}}th{{background:#edf2f3;color:#28434c;text-align:left;padding:7px 6px;border-bottom:2px solid #9aabb0}}td{{padding:7px 6px;border-bottom:1px solid #dce3e5;vertical-align:top}}td small{{display:block;color:#738087;margin-top:2px}}tbody tr:nth-child(even){{background:#f8faf9}}.history th:nth-child(1),.history th:nth-child(2),.history th:nth-child(3){{white-space:nowrap}}.up{{color:#b22d2d;font-weight:700}}.down{{color:#087e69;font-weight:700}}.flat{{color:#48575e;font-weight:700}}.benchmark{{color:#a36d00;font-weight:700}}.empty{{text-align:center;color:#758188;padding:20px}}.plan{{break-before:page}}.plan-head{{display:flex;justify-content:space-between;padding:12px 14px;background:#102e39;color:#fff;margin-bottom:10px;font-size:11px}}.plan td:first-child{{width:24%}}.plan td:nth-child(2){{white-space:nowrap}}footer{{font-size:9px;color:#7b858a;border-top:1px solid #d6dddf;padding-top:8px;margin-top:16px}}</style></head><body>
 <header><h1>{REPORT_TITLE}</h1><p>最新官方收盤資料日：{actual:%Y-%m-%d}</p><p>{escape(MODEL_NAME)}</p></header>
 <section><h2>第一部分｜今日實際表現 vs 中位數年化線</h2>{overview}</section>
 <section><h2>第二部分｜正式模型唯一 Top1</h2><table><thead><tr><th>股票</th><th>訊號日</th><th>訊號日收盤</th><th>執行日</th><th>最新收盤</th></tr></thead><tbody><tr><td><b>{escape(state['ticker'])} {escape(state['name'])}</b></td><td>{escape(state['signal_date'])}</td><td>{float(state['signal_close']):,.2f}</td><td>{escape(state['execution_date'])}</td><td>{latest_close}</td></tr></tbody></table></section>
-<section><h2>第三部分｜大盤半年線監測</h2>{market_section}</section>
-<section><h2>第四部分｜64條歷史路徑的中位基準</h2>
+<section><h2>第三部分｜處置股交易可行性</h2>{trade_gate_section}</section>
+<section><h2>第四部分｜大盤半年線監測</h2>{market_section}</section>
+<section><h2>第五部分｜64條歷史路徑的中位基準</h2>
 <div class="benchmark-panel"><div class="benchmark-title"><div><span>期末剩餘資產中位數</span><br><strong>{MEDIAN_ROUTE_FINAL_CAPITAL / 100_000_000:.2f}億元</strong></div><div>年化複合成長率 <b>{MEDIAN_ROUTE_CAGR * 100:.2f}%</b><br>每交易日複合基準 <b>{MEDIAN_ROUTE_DAILY_RATE * 100:.2f}%</b></div></div><div class="benchmark-line"></div>
 <div class="benchmark-stats"><div class="benchmark-stat"><small>買入日</small><b>0.00%</b></div><div class="benchmark-stat"><small>TD5參考</small><b>+{benchmark_td5:.2f}%</b></div><div class="benchmark-stat"><small>TD14參考</small><b>+{benchmark_td14:.2f}%</b></div><div class="benchmark-stat"><small>TD22參考</small><b>+{benchmark_td22:.2f}%</b></div></div></div>
 <p class="note">基準來自64條不同進場日起始路徑；初始800萬元、每月提領7.5萬元，期末剩餘資產中位數12.52億元。年化線使用各路徑CAGR中位數57.59%換算，不包含已提領現金。</p></section>
-<section><h2>第五部分｜每日路徑比較</h2>{history_section}</section>
+<section><h2>第六部分｜每日路徑比較</h2>{history_section}</section>
 {plan_block}
 {footer_block}</body></html>"""
 

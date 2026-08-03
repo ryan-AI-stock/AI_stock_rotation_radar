@@ -106,7 +106,7 @@ jobs:
       - name: Validate new report code
         if: steps.report-date.outputs.should_run == 'true' && (github.event_name == 'workflow_dispatch' || (steps.publish-marker.outputs.cache-hit != 'true' && steps.drive-completion.outputs.already_published != 'true'))
         run: |
-          python -m py_compile rotation_radar/v4d_top1_signal.py rotation_radar/v4d_top1_daily_report.py rotation_radar/v4d_top1_publish.py
+          python -m py_compile rotation_radar/v4d_top1_signal.py rotation_radar/disposition_gate.py rotation_radar/v4d_top1_daily_report.py rotation_radar/v4d_top1_publish.py
           python -m unittest tests.test_v4d_top1_signal tests.test_v4d_top1_daily_report tests.test_schedule_gate tests.test_drive_publish -v
 
       - name: Calculate current formal V4-D Top1
@@ -130,7 +130,6 @@ jobs:
           fi
           if [ "$status" -ne 0 ]; then exit "$status"; fi
           echo "signal_ready=true" >> "$GITHUB_OUTPUT"
-
       - name: Build current V4-D Top1 report
         id: build-report
         if: steps.calculate-top1.outputs.signal_ready == 'true'

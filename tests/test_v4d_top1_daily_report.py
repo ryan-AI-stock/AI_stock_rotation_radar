@@ -18,6 +18,7 @@ from rotation_radar.v4d_top1_daily_report import (
     tracking_rows,
     update_state,
 )
+from rotation_radar.disposition_gate import evaluate_disposition_gate
 
 
 class V4DTop1DailyReportTests(unittest.TestCase):
@@ -258,6 +259,52 @@ class V4DTop1DailyReportTests(unittest.TestCase):
             self.state(),
             pd.Timestamp("2026-07-24"),
         )
+
+    def test_disposition_top1_is_blocked_without_fallback(self):
+        gate = evaluate_disposition_gate(
+            [
+                {
+                    "market": "TPEX",
+                    "announce_date": pd.Timestamp("2026-08-02").date(),
+                    "ticker": "6182",
+                    "name": "合晶",
+                    "start_date": pd.Timestamp("2026-08-03").date(),
+                    "end_date": pd.Timestamp("2026-08-14").date(),
+                    "detail": "處置期間",
+                    "source_url": "official-test-source",
+                }
+            ],
+            ticker="6182",
+            signal_date=pd.Timestamp("2026-08-04").date(),
+            execution_date=pd.Timestamp("2026-08-05").date(),
+            as_of_date=pd.Timestamp("2026-08-04").date(),
+        )
+
+        self.assertTrue(gate["blocked"])
+        self.assertEqual(gate["status"], "blocked_by_disposition")
+        self.assertIn("空手", gate["message"])
+        self.assertEqual(len(gate["events"]), 1)
+
+        html = render_html(
+            pd.Timestamp("2026-08-04"),
+            self.state(),
+            [],
+            disposition_gate=gate,
+        )
+        self.assertIn("處置股交易可行性", html)
+        self.assertIn("當日空手，不遞補Top2或Top3", html)
+        self.assertIn("2026-08-03～2026-08-14", html)
+
+    def test_non_disposition_top1_remains_executable(self):
+        gate = evaluate_disposition_gate(
+            [],
+            ticker="2351",
+            signal_date=pd.Timestamp("2026-08-04").date(),
+            execution_date=pd.Timestamp("2026-08-05").date(),
+            as_of_date=pd.Timestamp("2026-08-04").date(),
+        )
+        self.assertFalse(gate["blocked"])
+        self.assertEqual(gate["status"], "executable")
 
 
 if __name__ == "__main__":
