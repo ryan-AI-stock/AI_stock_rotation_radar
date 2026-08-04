@@ -15,6 +15,7 @@ from .base_cycle_daily_report import (
 )
 from .disposition_gate import DispositionSourceNotReady, load_disposition_gate
 from .schedule_gate import fetch_twse_calendar, is_trading_day
+from .v4d_actual_trade import load_actual_trade_state
 
 
 REPORT_TITLE = "最新版個股模型 V4-D｜Top1 每日追蹤"
@@ -25,7 +26,6 @@ MODEL_NAME = (
 )
 BUY_RATE = 0.001425 + 0.001
 SELL_RATE = 0.001425 + 0.003 + 0.001
-POSITION_STREAM_PAUSED = True
 POSITION_STREAM_MESSAGE = "模型尚未正式買入，此訊息流空。"
 MEDIAN_ROUTE_COUNT = 64
 MEDIAN_ROUTE_FINAL_CAPITAL = 1_251_832_131.3663318
@@ -49,6 +49,9 @@ def main() -> None:
     parser.add_argument("--date", required=True, help="Taiwan trading date, YYYY-MM-DD")
     parser.add_argument("--source-repo", default=".")
     parser.add_argument("--state", default="data/formal_v4d_top1_state.json")
+    parser.add_argument(
+        "--position-state", default="data/formal_v4d_actual_trade_state.json"
+    )
     parser.add_argument("--output", default="reports/formal_v4d_top1_daily.html")
     parser.add_argument("--tracking-output", default="reports/formal_v4d_top1_daily.csv")
     parser.add_argument("--source-cache", default="data/current_base_cycle_source_cache")
@@ -62,6 +65,7 @@ def main() -> None:
     if args.pending_seed:
         payload = build_pending_seed_report(
             state_path=Path(args.state),
+            position_state_path=Path(args.position_state),
             output_path=Path(args.output),
             tracking_output=Path(args.tracking_output),
         )
@@ -392,9 +396,16 @@ def _refresh_holding_metrics(state: dict) -> None:
         return
     peak = None
     ordered = sorted(state.get("daily_marks", {}).items())
+    actual_units = int(state.get("shares") or 0)
+    actual_buy_fee = float(state.get("buy_fee") or 0)
+    actual_cost_basis = float(entry) * actual_units + actual_buy_fee
     for index, (_day, item) in enumerate(ordered):
         close = float(item["close"])
-        net = close / float(entry) * (1 - SELL_RATE) / (1 + BUY_RATE) - 1
+        net = (
+            close * actual_units * (1 - SELL_RATE) / actual_cost_basis - 1
+            if state.get("actual_position_confirmed") and actual_units > 0
+            else close / float(entry) * (1 - SELL_RATE) / (1 + BUY_RATE) - 1
+        )
         peak = net if peak is None else max(peak, net)
         item["d_index"] = index
         item["model_td"] = index + 1
@@ -547,33 +558,45 @@ def build_daily_report(
     report_date: str,
     source_repo: Path,
     state_path: Path,
+    position_state_path: Path,
     output_path: Path,
     tracking_output: Path,
     source_cache: Path,
     offline: bool = False,
 ) -> dict:
     target = pd.Timestamp(report_date)
-    state = load_state(state_path)
-    require_current_top1_signal(state, target)
+    signal_state = load_state(state_path)
+    require_current_top1_signal(signal_state, target)
+    actual_trade_state = load_actual_trade_state(position_state_path)
+    position_state = actual_trade_state.get("position")
     try:
         disposition_gate = load_disposition_gate(
-            ticker=state["ticker"],
-            signal_date=pd.Timestamp(state["signal_date"]).date(),
-            execution_date=pd.Timestamp(state["execution_date"]).date(),
+            ticker=signal_state["ticker"],
+            signal_date=pd.Timestamp(signal_state["signal_date"]).date(),
+            execution_date=pd.Timestamp(signal_state["execution_date"]).date(),
             source_cache=source_cache,
             offline=offline,
         )
     except DispositionSourceNotReady as exc:
         raise ReportDataNotReady(str(exc)) from exc
-    current = pd.DataFrame(
-        [
+    current_rows = [
+        {
+            "ticker": str(signal_state["ticker"]).zfill(4),
+            "name": signal_state["name"],
+            "market": signal_state.get("market", "TWSE"),
+        }
+    ]
+    if position_state and str(position_state["ticker"]).zfill(4) != str(
+        signal_state["ticker"]
+    ).zfill(4):
+        current_rows.append(
             {
-                "ticker": str(state["ticker"]).zfill(4),
-                "name": state["name"],
-                "market": state.get("market", "TWSE"),
+                "ticker": str(position_state["ticker"]).zfill(4),
+                "name": position_state["name"],
+                "market": position_state.get("market", "TWSE"),
             }
-        ]
-    )
+        )
+    current = pd.DataFrame(current_rows)
     official, _ = load_official_prices_and_turnover(
         source_repo=source_repo,
         target=target,
@@ -583,33 +606,51 @@ def build_daily_report(
     )
     official["ticker"] = official["ticker"].astype(str).str.zfill(4)
     official["date"] = pd.to_datetime(official["date"])
-    ticker_rows = official[
-        official["ticker"].eq(str(state["ticker"]).zfill(4))
+    signal_rows = official[
+        official["ticker"].eq(str(signal_state["ticker"]).zfill(4))
         & official["date"].le(target)
     ].dropna(subset=["close"]).sort_values("date")
-    if ticker_rows.empty:
-        raise ReportDataNotReady(f"No official close available for {state['ticker']}")
-    latest = ticker_rows.iloc[-1]
+    if signal_rows.empty:
+        raise ReportDataNotReady(
+            f"No official close available for {signal_state['ticker']}"
+        )
+    latest = signal_rows.iloc[-1]
     if latest["date"] < target and not offline:
         raise ReportDataNotReady(
-            f"Target-date official close is not ready for {state['ticker']}"
+            f"Target-date official close is not ready for {signal_state['ticker']}"
         )
-    prior = ticker_rows[ticker_rows["date"].lt(latest["date"])]
-    prior_close = float(prior.iloc[-1]["close"]) if not prior.empty else None
     actual = pd.Timestamp(latest["date"])
-    if not POSITION_STREAM_PAUSED:
-        state = update_state(
-            state,
+    tracking_state = position_state or signal_state
+    if position_state:
+        position_rows = official[
+            official["ticker"].eq(str(position_state["ticker"]).zfill(4))
+            & official["date"].le(target)
+        ].dropna(subset=["close"]).sort_values("date")
+        if position_rows.empty or position_rows.iloc[-1]["date"] < target:
+            raise ReportDataNotReady(
+                f"Target-date official close is not ready for held {position_state['ticker']}"
+            )
+        position_latest = position_rows.iloc[-1]
+        position_prior = position_rows[position_rows["date"].lt(position_latest["date"])]
+        prior_close = (
+            float(position_prior.iloc[-1]["close"])
+            if not position_prior.empty
+            else None
+        )
+        tracking_state = update_state(
+            position_state,
             mark_date=actual.strftime("%Y-%m-%d"),
-            close=float(latest["close"]),
+            close=float(position_latest["close"]),
             prior_close=prior_close,
             closed_dates=fetch_twse_calendar()[1],
         )
-        state_path.parent.mkdir(parents=True, exist_ok=True)
-        state_path.write_text(
-            json.dumps(state, ensure_ascii=False, indent=2), encoding="utf-8"
+        actual_trade_state["position"] = tracking_state
+        position_state_path.parent.mkdir(parents=True, exist_ok=True)
+        position_state_path.write_text(
+            json.dumps(actual_trade_state, ensure_ascii=False, indent=2),
+            encoding="utf-8",
         )
-    rows = tracking_rows(state)
+    rows = tracking_rows(tracking_state) if position_state else []
     taiex_history = load_taiex_history(
         target=actual,
         source_cache=source_cache,
@@ -622,11 +663,12 @@ def build_daily_report(
     output_path.write_text(
         render_html(
             actual,
-            state,
+            tracking_state,
             rows,
             closed_dates=fetch_twse_calendar()[1],
             market_monitor=market_monitor,
             disposition_gate=disposition_gate,
+            signal_state=signal_state,
         ),
         encoding="utf-8",
     )
@@ -635,11 +677,11 @@ def build_daily_report(
         "requested_report_date": report_date,
         "actual_report_date": actual.strftime("%Y-%m-%d"),
         "model": "V4-D",
-        "top1_ticker": state["ticker"],
-        "top1_name": state["name"],
-        "signal_date": state["signal_date"],
-        "execution_date": state["execution_date"],
-        "position_status": state["status"],
+        "top1_ticker": signal_state["ticker"],
+        "top1_name": signal_state["name"],
+        "signal_date": signal_state["signal_date"],
+        "execution_date": signal_state["execution_date"],
+        "position_status": tracking_state["status"] if position_state else "cash",
         "trade_feasibility_status": disposition_gate["status"],
         "trade_feasibility_blocked": disposition_gate["blocked"],
         "ma120_market_state": market_monitor["state"],
@@ -652,11 +694,15 @@ def build_daily_report(
 def build_pending_seed_report(
     *,
     state_path: Path,
+    position_state_path: Path,
     output_path: Path,
     tracking_output: Path,
 ) -> dict:
-    state = load_state(state_path)
-    rows = tracking_rows(state)
+    signal_state = load_state(state_path)
+    actual_trade_state = load_actual_trade_state(position_state_path)
+    position_state = actual_trade_state.get("position")
+    state = position_state or signal_state
+    rows = tracking_rows(state) if position_state else []
     tracking_output.parent.mkdir(parents=True, exist_ok=True)
     pd.DataFrame(
         rows,
@@ -674,17 +720,22 @@ def build_pending_seed_report(
     ).to_csv(tracking_output, index=False, encoding="utf-8-sig")
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(
-        render_html(pd.Timestamp(state["signal_date"]), state, rows),
+        render_html(
+            pd.Timestamp(signal_state["signal_date"]),
+            state,
+            rows,
+            signal_state=signal_state,
+        ),
         encoding="utf-8",
     )
     return {
         "status": "complete_pending_execution_close",
-        "actual_report_date": state["signal_date"],
+        "actual_report_date": signal_state["signal_date"],
         "model": "V4-D",
-        "top1_ticker": state["ticker"],
-        "top1_name": state["name"],
-        "execution_date": state["execution_date"],
-        "position_status": state["status"],
+        "top1_ticker": signal_state["ticker"],
+        "top1_name": signal_state["name"],
+        "execution_date": signal_state["execution_date"],
+        "position_status": state["status"] if position_state else "cash",
         "tracking_row_count": len(rows),
         "future_data_violation_count": 0,
     }
@@ -699,7 +750,9 @@ def render_html(
     preview_assumed_holding: bool = False,
     market_monitor: dict | None = None,
     disposition_gate: dict | None = None,
+    signal_state: dict | None = None,
 ) -> str:
+    signal_state = signal_state or state
     status_map = {
         "holding": "持有中",
         "pending_sell": "已出現賣出訊號",
@@ -727,10 +780,10 @@ def render_html(
         float(latest.get("cumulative_return_pct") or 0) if latest else 0.0
     )
     excess_latest = actual_latest - benchmark_latest
-    stream_active = bool(rows) and (
-        not POSITION_STREAM_PAUSED or preview_assumed_holding
+    stream_active = bool(rows) and bool(
+        state.get("actual_position_confirmed") or preview_assumed_holding
     )
-    next_action = f"{state['execution_date']} 執行買入並計為TD1"
+    next_action = f"{signal_state['execution_date']} 執行買入並計為TD1"
     if latest:
         next_action = "持續持有，下一交易日再檢查"
     if state.get("pending_exit"):
@@ -780,7 +833,7 @@ def render_html(
         overview = f"""
 <div class="hero-grid">
   <div class="holding-card">
-    <div class="eyebrow">假設正式部位</div>
+    <div class="eyebrow">實際正式部位</div>
     <div class="holding-name">{escape(state['ticker'])} {escape(state['name'])}</div>
     <div class="holding-meta">訊號 {escape(state['signal_date'])}｜買入 {escape(state['execution_date'])}｜{_holding_label(latest)}</div>
     <div class="holding-price">最新收盤 <b>{latest_close}</b></div>
@@ -805,7 +858,7 @@ def render_html(
         footer_block = (
             "<footer>私人研究報告。中位數年化線與半年線監測只作研究比較，"
             "不改變V4-D正式買賣訊號。Top1 為 V4-D 凍結規則在 "
-            f"{escape(state['signal_date'])} 收盤後的結果。</footer>"
+            f"{escape(signal_state['signal_date'])} 收盤後的結果。</footer>"
         )
     benchmark_td5 = ((1 + MEDIAN_ROUTE_DAILY_RATE) ** 4 - 1) * 100
     benchmark_td14 = ((1 + MEDIAN_ROUTE_DAILY_RATE) ** 13 - 1) * 100
@@ -826,7 +879,11 @@ def render_html(
             "expired": "neutral",
             "idle": "neutral",
         }.get(market_monitor["state"], "neutral")
-        refresh_text = research_refresh_decision(market_monitor, state)
+        refresh_state = dict(state)
+        refresh_state["ticker"] = signal_state["ticker"]
+        if state.get("actual_position_confirmed"):
+            refresh_state["holding_ticker"] = state["ticker"]
+        refresh_text = research_refresh_decision(market_monitor, refresh_state)
         market_section = f"""
 <div class="market-monitor {state_class}">
   <div class="market-monitor-head"><div><span>目前狀態</span><b>{escape(market_monitor['state_label'])}</b></div><strong>{float(market_monitor['close']):,.2f}</strong></div>
@@ -862,7 +919,7 @@ def render_html(
 @page{{size:A4;margin:11mm}}*{{box-sizing:border-box}}body{{font-family:'Noto Sans TC','Microsoft JhengHei',sans-serif;color:#17262d;margin:0;background:#fff}}header{{background:#102e39;color:#fff;padding:22px 26px;border-bottom:6px solid #d7a12b}}h1{{font-size:25px;margin:0 0 7px;letter-spacing:0}}header p{{margin:4px 0;color:#d7e5e8;font-size:11px}}section{{margin:17px 0 22px;break-inside:avoid}}h2{{font-size:18px;margin:0 0 10px;padding-left:10px;border-left:5px solid #d7a12b}}.note{{font-size:11px;color:#64727b;margin:0 0 9px}}.paused{{border:1px solid #d7e0e2;border-top:4px solid #19766c;padding:18px;background:#f8faf9;font-size:16px;font-weight:700}}.hero-grid{{display:grid;grid-template-columns:1.12fr .88fr;gap:12px}}.holding-card,.comparison-card{{border:1px solid #d5e0e2;padding:16px;background:#f7faf9}}.holding-card{{border-top:5px solid #19766c}}.comparison-card{{border-top:5px solid #d7a12b}}.eyebrow{{font-size:11px;color:#66767d;font-weight:700}}.holding-name{{font-size:24px;font-weight:800;margin:5px 0}}.holding-meta{{font-size:11px;color:#66767d}}.holding-price{{margin-top:14px;font-size:13px}}.holding-price b{{font-size:22px;margin-left:5px}}.comparison-row{{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #dce4e6;padding:7px 0;font-size:12px}}.comparison-row b{{font-size:17px}}.comparison-row.emphasis{{border-bottom:0;padding-top:10px}}.benchmark-panel{{border:1px solid #d8e1e3;background:#fbfaf5;padding:14px}}.benchmark-title{{display:flex;justify-content:space-between;align-items:flex-end}}.benchmark-title strong{{font-size:21px;color:#a36d00}}.benchmark-title span{{font-size:11px;color:#6e777b}}.benchmark-line{{height:6px;background:linear-gradient(90deg,#d7a12b,#f0ce72);margin:12px 0 10px;border-radius:3px}}.benchmark-stats{{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}}.benchmark-stat{{border-left:3px solid #d7a12b;padding-left:8px}}.benchmark-stat small{{display:block;color:#6f7b80;font-size:9px}}.benchmark-stat b{{font-size:14px}}.market-monitor{{border:1px solid #d6e0e2;border-top:5px solid #71808a;background:#f8faf9;padding:14px}}.market-monitor.watch{{border-top-color:#d7a12b;background:#fffbf1}}.market-monitor.confirmed{{border-top-color:#19766c;background:#f2faf7}}.market-monitor.invalid{{border-top-color:#b23a3a;background:#fff7f7}}.market-monitor-head{{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:12px}}.market-monitor-head span{{display:block;font-size:10px;color:#6b777c}}.market-monitor-head b{{font-size:17px}}.market-monitor-head strong{{font-size:23px}}.market-grid{{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}}.market-grid>div{{background:#fff;border:1px solid #dbe3e5;padding:9px}}.market-grid small,.market-grid span{{display:block;font-size:9px;color:#6c797f}}.market-grid b{{display:block;font-size:14px;margin:3px 0}}.refresh-research{{margin-top:10px;padding:9px 11px;background:#102e39;color:#fff;font-size:10px}}table{{width:100%;border-collapse:collapse;font-size:10px}}th{{background:#edf2f3;color:#28434c;text-align:left;padding:7px 6px;border-bottom:2px solid #9aabb0}}td{{padding:7px 6px;border-bottom:1px solid #dce3e5;vertical-align:top}}td small{{display:block;color:#738087;margin-top:2px}}tbody tr:nth-child(even){{background:#f8faf9}}.history th:nth-child(1),.history th:nth-child(2),.history th:nth-child(3){{white-space:nowrap}}.up{{color:#b22d2d;font-weight:700}}.down{{color:#087e69;font-weight:700}}.flat{{color:#48575e;font-weight:700}}.benchmark{{color:#a36d00;font-weight:700}}.empty{{text-align:center;color:#758188;padding:20px}}.plan{{break-before:page}}.plan-head{{display:flex;justify-content:space-between;padding:12px 14px;background:#102e39;color:#fff;margin-bottom:10px;font-size:11px}}.plan td:first-child{{width:24%}}.plan td:nth-child(2){{white-space:nowrap}}footer{{font-size:9px;color:#7b858a;border-top:1px solid #d6dddf;padding-top:8px;margin-top:16px}}</style></head><body>
 <header><h1>{REPORT_TITLE}</h1><p>最新官方收盤資料日：{actual:%Y-%m-%d}</p><p>{escape(MODEL_NAME)}</p></header>
 <section><h2>第一部分｜今日實際表現 vs 中位數年化線</h2>{overview}</section>
-<section><h2>第二部分｜正式模型唯一 Top1</h2><table><thead><tr><th>股票</th><th>訊號日</th><th>訊號日收盤</th><th>執行日</th><th>最新收盤</th></tr></thead><tbody><tr><td><b>{escape(state['ticker'])} {escape(state['name'])}</b></td><td>{escape(state['signal_date'])}</td><td>{float(state['signal_close']):,.2f}</td><td>{escape(state['execution_date'])}</td><td>{latest_close}</td></tr></tbody></table></section>
+<section><h2>第二部分｜正式模型唯一 Top1</h2><table><thead><tr><th>股票</th><th>訊號日</th><th>訊號日收盤</th><th>執行日</th><th>最新收盤</th></tr></thead><tbody><tr><td><b>{escape(signal_state['ticker'])} {escape(signal_state['name'])}</b></td><td>{escape(signal_state['signal_date'])}</td><td>{float(signal_state['signal_close']):,.2f}</td><td>{escape(signal_state['execution_date'])}</td><td>{float(signal_state['signal_close']):,.2f}</td></tr></tbody></table></section>
 <section><h2>第三部分｜處置股交易可行性</h2>{trade_gate_section}</section>
 <section><h2>第四部分｜大盤半年線監測</h2>{market_section}</section>
 <section><h2>第五部分｜64條歷史路徑的中位基準</h2>

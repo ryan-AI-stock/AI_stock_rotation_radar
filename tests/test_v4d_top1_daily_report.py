@@ -71,6 +71,30 @@ class V4DTop1DailyReportTests(unittest.TestCase):
             state["daily_marks"]["2026-07-27"]["after_cost_return_pct"], 0
         )
 
+    def test_actual_fill_uses_real_price_shares_and_fee(self):
+        state = self.state()
+        state.update(
+            {
+                "entry_close": 100.0,
+                "shares": 1000,
+                "buy_fee": 100.0,
+                "status": "holding",
+                "actual_position_confirmed": True,
+            }
+        )
+        state = update_state(
+            state,
+            mark_date="2026-07-27",
+            close=100.0,
+            prior_close=99.0,
+        )
+
+        expected = 100.0 * 1000 * (1 - 0.005425) / 100100.0 - 1
+        self.assertAlmostEqual(
+            state["daily_marks"]["2026-07-27"]["after_cost_return_pct"],
+            expected * 100,
+        )
+
     def test_mark_before_execution_does_not_create_trade(self):
         state = update_state(
             self.state(),

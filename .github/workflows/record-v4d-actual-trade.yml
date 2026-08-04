@@ -1,0 +1,94 @@
+name: Record actual V4-D trade
+
+on:
+  workflow_dispatch:
+    inputs:
+      action:
+        description: "成交類型"
+        required: true
+        type: choice
+        options: [legacy_sell, v4d_buy, v4d_sell]
+      trade_date:
+        description: "實際成交日 YYYY-MM-DD"
+        required: true
+      ticker:
+        description: "股票代號"
+        required: true
+      name:
+        description: "股票名稱"
+        required: true
+      average_price:
+        description: "實際成交均價"
+        required: true
+      shares:
+        description: "成交股數"
+        required: true
+      fee:
+        description: "本筆手續費與稅合計"
+        required: true
+        default: "0"
+      signal_date:
+        description: "V4-D訊號日；只有v4d_buy必填"
+        required: false
+      signal_close:
+        description: "V4-D訊號日收盤；只有v4d_buy必填"
+        required: false
+      note:
+        description: "備註"
+        required: false
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+  record:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Record actual fill
+        shell: bash
+        env:
+          TRADE_ACTION: ${{ inputs.action }}
+          TRADE_DATE: ${{ inputs.trade_date }}
+          TRADE_TICKER: ${{ inputs.ticker }}
+          TRADE_NAME: ${{ inputs.name }}
+          TRADE_AVERAGE_PRICE: ${{ inputs.average_price }}
+          TRADE_SHARES: ${{ inputs.shares }}
+          TRADE_FEE: ${{ inputs.fee }}
+          SIGNAL_DATE: ${{ inputs.signal_date }}
+          SIGNAL_CLOSE: ${{ inputs.signal_close }}
+          TRADE_NOTE: ${{ inputs.note }}
+        run: |
+          set -euo pipefail
+          args=(
+            --action "$TRADE_ACTION"
+            --trade-date "$TRADE_DATE"
+            --ticker "$TRADE_TICKER"
+            --name "$TRADE_NAME"
+            --average-price "$TRADE_AVERAGE_PRICE"
+            --shares "$TRADE_SHARES"
+            --fee "$TRADE_FEE"
+            --note "$TRADE_NOTE"
+          )
+          if [ -n "$SIGNAL_DATE" ]; then args+=(--signal-date "$SIGNAL_DATE"); fi
+          if [ -n "$SIGNAL_CLOSE" ]; then args+=(--signal-close "$SIGNAL_CLOSE"); fi
+          python -m rotation_radar.v4d_actual_trade "${args[@]}"
+      - name: Commit durable actual trade state
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/formal_v4d_actual_trade_state.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Record actual V4-D trade"
+          git pull --rebase origin main
+          git push origin HEAD:main
+      - name: Regenerate report for trade date
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run generate-base-cycle-top10-report.yml --ref main -f report_date="${{ inputs.trade_date }}"
