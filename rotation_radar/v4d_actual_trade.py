@@ -4,12 +4,44 @@ import argparse
 import json
 from pathlib import Path
 
+import pandas as pd
+
 
 DEFAULT_STATE = {
     "schema_version": 1,
     "actual_trades": [],
     "position": None,
 }
+
+DEFAULT_PRICE_SOURCE = Path(
+    "data/current_base_cycle_source_cache/official_recent_full_market.csv.gz"
+)
+
+
+def resolve_trade_metadata(
+    price_source: Path,
+    *,
+    ticker: str,
+    trade_date: str,
+) -> dict:
+    ticker = str(ticker).zfill(4)
+    prices = pd.read_csv(price_source, dtype={"ticker": str})
+    prices["ticker"] = prices["ticker"].str.zfill(4)
+    prices["date"] = pd.to_datetime(prices["date"])
+    prior = prices[
+        prices["ticker"].eq(ticker)
+        & prices["date"].lt(pd.Timestamp(trade_date))
+    ].sort_values("date")
+    if prior.empty:
+        raise ValueError(
+            f"No prior official price/name metadata for {ticker} before {trade_date}."
+        )
+    row = prior.iloc[-1]
+    return {
+        "name": str(row["name"]),
+        "signal_date": row["date"].date().isoformat(),
+        "signal_close": float(row["close"]),
+    }
 
 
 def load_actual_trade_state(path: Path) -> dict:
@@ -31,7 +63,7 @@ def record_actual_trade(
     name: str,
     average_price: float,
     shares: int,
-    fee: float,
+    fee: float = 0.0,
     signal_date: str = "",
     signal_close: float | None = None,
     note: str = "",
@@ -49,6 +81,7 @@ def record_actual_trade(
         "average_price": float(average_price),
         "shares": int(shares),
         "fee": float(fee),
+        "price_cost_basis": "broker_average_price_includes_transaction_cost",
         "signal_date": signal_date,
         "signal_close": signal_close,
         "note": note,
@@ -89,27 +122,28 @@ def main() -> None:
     parser.add_argument("--action", required=True)
     parser.add_argument("--trade-date", required=True)
     parser.add_argument("--ticker", required=True)
-    parser.add_argument("--name", required=True)
     parser.add_argument("--average-price", required=True, type=float)
     parser.add_argument("--shares", required=True, type=int)
-    parser.add_argument("--fee", required=True, type=float)
-    parser.add_argument("--signal-date", default="")
-    parser.add_argument("--signal-close", type=float)
-    parser.add_argument("--note", default="")
+    parser.add_argument("--price-source", default=str(DEFAULT_PRICE_SOURCE))
     args = parser.parse_args()
     path = Path(args.state)
+    metadata = resolve_trade_metadata(
+        Path(args.price_source), ticker=args.ticker, trade_date=args.trade_date
+    )
+    signal_date = metadata["signal_date"] if args.action == "v4d_buy" else ""
+    signal_close = metadata["signal_close"] if args.action == "v4d_buy" else None
     state = record_actual_trade(
         load_actual_trade_state(path),
         action=args.action,
         trade_date=args.trade_date,
         ticker=args.ticker,
-        name=args.name,
+        name=metadata["name"],
         average_price=args.average_price,
         shares=args.shares,
-        fee=args.fee,
-        signal_date=args.signal_date,
-        signal_close=args.signal_close,
-        note=args.note,
+        fee=0.0,
+        signal_date=signal_date,
+        signal_close=signal_close,
+        note="券商成交均價已反映交易成本",
     )
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(state, ensure_ascii=False, indent=2), encoding="utf-8")
