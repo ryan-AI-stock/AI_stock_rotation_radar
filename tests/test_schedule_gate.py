@@ -170,6 +170,14 @@ class ScheduleGateTests(unittest.TestCase):
             workflow,
         )
 
+    def test_manual_v4d_report_does_not_hide_incomplete_data_as_success(self) -> None:
+        workflow = Path(
+            ".github/workflows/generate-base-cycle-top10-report.yml"
+        ).read_text(encoding="utf-8")
+
+        self.assertIn('if [ "${{ github.event_name }}" = "workflow_dispatch" ]', workflow)
+        self.assertIn("未產生或上傳PDF", workflow)
+
 
 @contextmanager
 def _response(text: str):

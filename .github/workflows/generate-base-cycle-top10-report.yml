@@ -126,6 +126,10 @@ jobs:
           if [ "$status" -eq 75 ]; then
             echo "signal_ready=false" >> "$GITHUB_OUTPUT"
             echo "正式V4-D當日資料尚未完整，排程稍後自動重試。" >> "$GITHUB_STEP_SUMMARY"
+            if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+              echo "::error::正式V4-D當日資料尚未完整，未產生或上傳報告。"
+              exit 75
+            fi
             exit 0
           fi
           if [ "$status" -ne 0 ]; then exit "$status"; fi
@@ -147,6 +151,10 @@ jobs:
           if [ "$status" -eq 75 ]; then
             echo "report_ready=false" >> "$GITHUB_OUTPUT"
             echo "資料尚未完整，排程稍後自動重試。" >> "$GITHUB_STEP_SUMMARY"
+            if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+              echo "::error::V4-D報告資料尚未完整，未產生或上傳PDF。"
+              exit 75
+            fi
             exit 0
           fi
           if [ "$status" -ne 0 ]; then exit "$status"; fi

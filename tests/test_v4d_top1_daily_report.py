@@ -9,6 +9,7 @@ from rotation_radar.v4d_top1_daily_report import (
     MEDIAN_ROUTE_CAGR,
     MEDIAN_ROUTE_DAILY_RATE,
     ReportDataNotReady,
+    _taiex_payload_last_date,
     evaluate_ma120_market_monitor,
     gate_plan,
     load_state,
@@ -33,6 +34,20 @@ class V4DTop1DailyReportTests(unittest.TestCase):
             "status": "pending_execution_close",
             "daily_marks": {},
         }
+
+    def test_taiex_payload_last_date_detects_stale_current_month_cache(self):
+        payload = {
+            "stat": "OK",
+            "data": [
+                ["115/08/03", "", "", "", "43,386.41"],
+                ["115/08/04", "", "", "", "43,360.66"],
+            ],
+        }
+
+        self.assertEqual(
+            _taiex_payload_last_date(payload),
+            pd.Timestamp("2026-08-04"),
+        )
 
     def test_execution_day_sets_entry_close(self):
         state = update_state(

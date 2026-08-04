@@ -113,6 +113,18 @@ def _taiex_months(target: pd.Timestamp) -> list[str]:
     ]
 
 
+def _taiex_payload_last_date(payload: dict) -> pd.Timestamp | None:
+    dates: list[pd.Timestamp] = []
+    for item in payload.get("data", []):
+        if not item:
+            continue
+        try:
+            dates.append(_roc_date(str(item[0])))
+        except (TypeError, ValueError):
+            continue
+    return max(dates) if dates else None
+
+
 def load_taiex_history(
     *,
     target: pd.Timestamp,
@@ -124,11 +136,19 @@ def load_taiex_history(
     rows: list[dict] = []
     for month in _taiex_months(target):
         path = cache / f"{month}.json"
+        payload = None
         if path.exists():
             payload = json.loads(path.read_text(encoding="utf-8"))
-        elif offline:
+            cached_last_date = _taiex_payload_last_date(payload)
+            if (
+                not offline
+                and month == target.strftime("%Y%m")
+                and (cached_last_date is None or cached_last_date < target)
+            ):
+                payload = None
+        if payload is None and offline:
             raise ReportDataNotReady(f"TAIEX monthly cache missing: {month}")
-        else:
+        if payload is None:
             request = Request(
                 TAIEX_MONTHLY_URL.format(month=month),
                 headers={
