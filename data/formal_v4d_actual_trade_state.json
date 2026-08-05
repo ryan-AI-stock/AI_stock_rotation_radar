@@ -13,10 +13,22 @@
       "signal_date": "2026-08-04",
       "signal_close": 321.5,
       "fills": [
-        {"shares": 5000, "price": 324.5},
-        {"shares": 10000, "price": 324.0},
-        {"shares": 4000, "price": 327.0},
-        {"shares": 4000, "price": 325.5}
+        {
+          "shares": 5000,
+          "price": 324.5
+        },
+        {
+          "shares": 10000,
+          "price": 324.0
+        },
+        {
+          "shares": 4000,
+          "price": 327.0
+        },
+        {
+          "shares": 4000,
+          "price": 325.5
+        }
       ],
       "remaining_cash": 154298.0,
       "note": "券商成交均價已反映交易成本；舊持股賣出不納入V4-D績效。",
@@ -34,8 +46,21 @@
     "buy_fee": 0.0,
     "remaining_cash": 154298.0,
     "status": "holding",
-    "daily_marks": {},
+    "daily_marks": {
+      "2026-08-05": {
+        "close": 321.5,
+        "daily_return_pct": 0.0,
+        "d_index": 0,
+        "model_td": 1,
+        "cumulative_return_pct": -1.1286404034812625,
+        "after_cost_return_pct": -1.6650175292923786,
+        "peak_after_cost_return_pct": -1.6650175292923786,
+        "trailing_drawdown_pct": 0.0,
+        "rolling_5td_return_pct": null
+      }
+    },
     "pending_exit": null,
-    "actual_position_confirmed": true
+    "actual_position_confirmed": true,
+    "last_report_date": "2026-08-05"
   }
 }
