@@ -76,6 +76,7 @@ def main() -> None:
             report_date=args.date,
             source_repo=Path(args.source_repo),
             state_path=Path(args.state),
+            position_state_path=Path(args.position_state),
             output_path=Path(args.output),
             tracking_output=Path(args.tracking_output),
             source_cache=Path(args.source_cache),
