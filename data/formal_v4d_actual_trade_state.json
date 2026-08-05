@@ -1,5 +1,41 @@
 {
   "schema_version": 1,
-  "actual_trades": [],
-  "position": null
+  "actual_trades": [
+    {
+      "trade_date": "2026-08-05",
+      "action": "v4d_buy",
+      "ticker": "3413",
+      "name": "京鼎",
+      "average_price": 325.17,
+      "shares": 23000,
+      "fee": 0.0,
+      "price_cost_basis": "broker_average_price_includes_transaction_cost",
+      "signal_date": "2026-08-04",
+      "signal_close": 321.5,
+      "fills": [
+        {"shares": 5000, "price": 324.5},
+        {"shares": 10000, "price": 324.0},
+        {"shares": 4000, "price": 327.0},
+        {"shares": 4000, "price": 325.5}
+      ],
+      "remaining_cash": 154298.0,
+      "note": "券商成交均價已反映交易成本；舊持股賣出不納入V4-D績效。",
+      "source": "user_actual_trade_confirmed"
+    }
+  ],
+  "position": {
+    "ticker": "3413",
+    "name": "京鼎",
+    "signal_date": "2026-08-04",
+    "signal_close": 321.5,
+    "execution_date": "2026-08-05",
+    "entry_close": 325.17,
+    "shares": 23000,
+    "buy_fee": 0.0,
+    "remaining_cash": 154298.0,
+    "status": "holding",
+    "daily_marks": {},
+    "pending_exit": null,
+    "actual_position_confirmed": true
+  }
 }

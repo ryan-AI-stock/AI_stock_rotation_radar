@@ -764,6 +764,8 @@ def render_html(
         if state.get("entry_close") is not None
         else "尚未建立"
     )
+    actual_shares = int(state.get("shares") or 0)
+    remaining_cash = float(state.get("remaining_cash") or 0)
     latest = rows[-1] if rows else None
     latest_close = (
         f"{float(latest['close']):,.2f}" if latest else f"{float(state['signal_close']):,.2f}"
@@ -836,6 +838,7 @@ def render_html(
     <div class="eyebrow">實際正式部位</div>
     <div class="holding-name">{escape(state['ticker'])} {escape(state['name'])}</div>
     <div class="holding-meta">訊號 {escape(state['signal_date'])}｜買入 {escape(state['execution_date'])}｜{_holding_label(latest)}</div>
+    <div class="holding-meta">實際均價 {entry_close}｜持股 {actual_shares:,} 股｜剩餘現金 {remaining_cash:,.0f} 元</div>
     <div class="holding-price">最新收盤 <b>{latest_close}</b></div>
   </div>
   <div class="comparison-card">
