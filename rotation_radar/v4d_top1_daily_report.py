@@ -21,7 +21,8 @@ from .v4d_actual_trade import load_actual_trade_state
 REPORT_TITLE = "最新版個股模型 V4-D｜Top1 每日追蹤"
 MODEL_NAME = (
     "全市場硬篩選＋基期Top1｜TD1～5 -5%／5TD -10%／累積 -10%／"
-    "TD14未達 +5%；曾達 +10%者改由高點回落10%管理／"
+    "TD14未達 +5%；曾達 +7%但未達 +10%時，回落至 +1%退出／"
+    "曾達 +10%者改由高點回落10%管理／"
     "TD22未曾達 +10%且當下未達 +8%退出｜處置Top1空手且不遞補"
 )
 BUY_RATE = 0.001425 + 0.001
@@ -439,6 +440,8 @@ def _current_exit_trigger(state: dict) -> str | None:
         return "任意5TD價格下跌達10%"
     if elapsed >= 6 and net <= -10:
         return "累積 after-cost 虧損達10%"
+    if 7 <= peak < 10 and net <= 1:
+        return "曾達+7%但未達+10%，其後回落至+1%"
     if elapsed == 14 and net < 5:
         if peak >= 10:
             if trailing is not None and float(trailing) <= -10:
@@ -531,21 +534,28 @@ def gate_plan(state: dict, closed_dates: set[date] | None = None) -> list[dict]:
             "action": "收盤成立，下一交易日賣出",
         },
         {
-            "stage": "第四道｜發動檢查",
+            "stage": "第四道｜獲利保全",
+            "range": f"{days[0]:%m/%d} 起每日",
+            "day": "持有期間",
+            "rule": "曾達+7%但未達+10%，回落至+1%",
+            "action": "收盤成立，下一交易日賣出",
+        },
+        {
+            "stage": "第五道｜發動檢查",
             "range": f"{days[13]:%m/%d}",
             "day": "TD14",
             "rule": "after-cost 未達 +5%",
             "action": "未曾達+10%則下一交易日賣出",
         },
         {
-            "stage": "第五道｜獲利保護",
+            "stage": "第六道｜主升保護",
             "range": f"{days[13]:%m/%d} 起每日",
             "day": "TD14起",
             "rule": "曾達+10%後，自高點回落10%",
             "action": "收盤成立，下一交易日賣出",
         },
         {
-            "stage": "第六道｜最終檢查",
+            "stage": "第七道｜最終檢查",
             "range": f"{days[21]:%m/%d}",
             "day": "TD22",
             "rule": "從未達+10%，且當下未達+8%",

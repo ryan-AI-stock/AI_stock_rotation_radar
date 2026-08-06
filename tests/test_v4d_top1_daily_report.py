@@ -179,8 +179,29 @@ class V4DTop1DailyReportTests(unittest.TestCase):
         plan = gate_plan(self.state(), closed_dates=set())
         self.assertEqual(plan[0]["range"], "07/27～07/31")
         self.assertEqual(plan[0]["day"], "TD1～TD5")
-        self.assertEqual(plan[3]["range"], "08/13")
-        self.assertEqual(plan[5]["range"], "08/25")
+        self.assertEqual(plan[3]["rule"], "曾達+7%但未達+10%，回落至+1%")
+        self.assertEqual(plan[4]["range"], "08/13")
+        self.assertEqual(plan[6]["range"], "08/25")
+
+    def test_peak7_floor1_creates_next_day_sell(self):
+        state = self.state()
+        dates = pd.bdate_range("2026-07-27", periods=4)
+        closes = [100.0, 108.0, 105.0, 101.4]
+        prior = 100.0
+        for day, close in zip(dates, closes):
+            state = update_state(
+                state,
+                mark_date=day.strftime("%Y-%m-%d"),
+                close=close,
+                prior_close=prior,
+                closed_dates=set(),
+            )
+            prior = close
+        self.assertEqual(state["status"], "pending_sell")
+        self.assertEqual(
+            state["pending_exit"]["reason"],
+            "曾達+7%但未達+10%，其後回落至+1%",
+        )
 
     def test_ma120_monitor_recognizes_current_near_support_event(self):
         dates = pd.bdate_range("2026-01-01", periods=160)
