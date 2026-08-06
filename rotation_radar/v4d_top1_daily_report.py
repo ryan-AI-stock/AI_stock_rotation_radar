@@ -23,7 +23,8 @@ MODEL_NAME = (
     "全市場硬篩選＋基期Top1｜TD1～5 -5%／5TD -10%／累積 -10%／"
     "TD14未達 +5%；曾達 +7%但未達 +10%時，回落至 +1%退出／"
     "曾達 +10%者改由高點回落10%管理／"
-    "TD22未曾達 +10%且當下未達 +8%退出｜處置Top1空手且不遞補"
+    "TD22未曾達 +10%且當下未達 +8%退出／TD55起當下未達 +20%退出｜"
+    "處置Top1空手且不遞補"
 )
 BUY_RATE = 0.001425 + 0.001
 SELL_RATE = 0.001425 + 0.003 + 0.001
@@ -452,6 +453,8 @@ def _current_exit_trigger(state: dict) -> str | None:
         return "TD22未曾達+10%，且當下未達+8%"
     if elapsed >= 14 and peak >= 10 and trailing is not None and float(trailing) <= -10:
         return "曾達+10%，其後由高點回落達10%"
+    if elapsed >= 55 and net < 20:
+        return "TD55起，當下after-cost未達+20%"
     return None
 
 
@@ -510,7 +513,7 @@ def _trading_dates_from(
 
 def gate_plan(state: dict, closed_dates: set[date] | None = None) -> list[dict]:
     start = pd.Timestamp(state["execution_date"]).date()
-    days = _trading_dates_from(start, 22, closed_dates=closed_dates)
+    days = _trading_dates_from(start, 55, closed_dates=closed_dates)
     return [
         {
             "stage": "第一道｜買錯即退",
@@ -559,6 +562,13 @@ def gate_plan(state: dict, closed_dates: set[date] | None = None) -> list[dict]:
             "range": f"{days[21]:%m/%d}",
             "day": "TD22",
             "rule": "從未達+10%，且當下未達+8%",
+            "action": "收盤成立，下一交易日賣出",
+        },
+        {
+            "stage": "第八道｜長抱成長檢查",
+            "range": f"{days[54]:%m/%d} 起每日",
+            "day": "TD55起",
+            "rule": "當下after-cost未達+20%",
             "action": "收盤成立，下一交易日賣出",
         },
     ]

@@ -9,6 +9,7 @@ from rotation_radar.v4d_top1_daily_report import (
     MEDIAN_ROUTE_CAGR,
     MEDIAN_ROUTE_DAILY_RATE,
     ReportDataNotReady,
+    _current_exit_trigger,
     _taiex_payload_last_date,
     evaluate_ma120_market_monitor,
     gate_plan,
@@ -182,6 +183,8 @@ class V4DTop1DailyReportTests(unittest.TestCase):
         self.assertEqual(plan[3]["rule"], "曾達+7%但未達+10%，回落至+1%")
         self.assertEqual(plan[4]["range"], "08/13")
         self.assertEqual(plan[6]["range"], "08/25")
+        self.assertEqual(plan[7]["day"], "TD55起")
+        self.assertEqual(plan[7]["rule"], "當下after-cost未達+20%")
 
     def test_peak7_floor1_creates_next_day_sell(self):
         state = self.state()
@@ -201,6 +204,31 @@ class V4DTop1DailyReportTests(unittest.TestCase):
         self.assertEqual(
             state["pending_exit"]["reason"],
             "曾達+7%但未達+10%，其後回落至+1%",
+        )
+
+    def test_td55_long_hold_growth_check_starts_on_td55(self):
+        state = self.state()
+        state["daily_marks"] = {
+            "2026-10-15": {
+                "model_td": 54,
+                "after_cost_return_pct": 19.0,
+                "peak_after_cost_return_pct": 25.0,
+                "rolling_5td_return_pct": 0.0,
+                "trailing_drawdown_pct": -5.0,
+            }
+        }
+        self.assertIsNone(_current_exit_trigger(state))
+
+        state["daily_marks"]["2026-10-16"] = {
+            "model_td": 55,
+            "after_cost_return_pct": 19.0,
+            "peak_after_cost_return_pct": 25.0,
+            "rolling_5td_return_pct": 0.0,
+            "trailing_drawdown_pct": -5.0,
+        }
+        self.assertEqual(
+            _current_exit_trigger(state),
+            "TD55起，當下after-cost未達+20%",
         )
 
     def test_ma120_monitor_recognizes_current_near_support_event(self):
