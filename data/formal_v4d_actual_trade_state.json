@@ -57,10 +57,21 @@
         "peak_after_cost_return_pct": -1.6650175292923786,
         "trailing_drawdown_pct": 0.0,
         "rolling_5td_return_pct": null
+      },
+      "2026-08-06": {
+        "close": 320.0,
+        "daily_return_pct": -0.4665629860031051,
+        "d_index": 1,
+        "model_td": 2,
+        "cumulative_return_pct": -1.5899375711166508,
+        "after_cost_return_pct": -2.123812159793337,
+        "peak_after_cost_return_pct": -1.6650175292923786,
+        "trailing_drawdown_pct": -0.4665629860031051,
+        "rolling_5td_return_pct": null
       }
     },
     "pending_exit": null,
     "actual_position_confirmed": true,
-    "last_report_date": "2026-08-05"
+    "last_report_date": "2026-08-06"
   }
 }
