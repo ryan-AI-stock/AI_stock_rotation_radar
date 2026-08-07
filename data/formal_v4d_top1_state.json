@@ -1,16 +1,16 @@
 {
   "version": 2,
   "model": "V4-D",
-  "ticker": "8150",
-  "name": "南茂",
+  "ticker": "2376",
+  "name": "技嘉",
   "market": "TWSE",
-  "signal_date": "2026-08-06",
-  "signal_close": 86.9,
-  "execution_date": "2026-08-07",
+  "signal_date": "2026-08-07",
+  "signal_close": 344.0,
+  "execution_date": "2026-08-10",
   "entry_close": null,
   "status": "signal_only",
   "daily_marks": {},
   "candidate_rank": 1,
-  "industry": "半導體業",
+  "industry": "電腦及週邊設備業",
   "layer1_snapshot_date": "20260728"
 }

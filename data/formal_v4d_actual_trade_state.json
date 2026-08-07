@@ -45,7 +45,7 @@
     "shares": 23000,
     "buy_fee": 0.0,
     "remaining_cash": 154298.0,
-    "status": "holding",
+    "status": "pending_sell",
     "daily_marks": {
       "2026-08-05": {
         "close": 321.5,
@@ -68,10 +68,25 @@
         "peak_after_cost_return_pct": -1.6650175292923786,
         "trailing_drawdown_pct": -0.4665629860031051,
         "rolling_5td_return_pct": null
+      },
+      "2026-08-07": {
+        "close": 309.0,
+        "daily_return_pct": -3.4375000000000044,
+        "d_index": 2,
+        "model_td": 3,
+        "cumulative_return_pct": -4.972783467109521,
+        "after_cost_return_pct": -5.4883061168004454,
+        "peak_after_cost_return_pct": -1.6650175292923786,
+        "trailing_drawdown_pct": -3.8880248833592534,
+        "rolling_5td_return_pct": null
       }
     },
-    "pending_exit": null,
+    "pending_exit": {
+      "decision_date": "2026-08-07",
+      "execution_date": "2026-08-10",
+      "reason": "TD1～5 after-cost 虧損達5%"
+    },
     "actual_position_confirmed": true,
-    "last_report_date": "2026-08-06"
+    "last_report_date": "2026-08-07"
   }
 }
