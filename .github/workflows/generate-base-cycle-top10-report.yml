@@ -106,8 +106,8 @@ jobs:
       - name: Validate new report code
         if: steps.report-date.outputs.should_run == 'true' && (github.event_name == 'workflow_dispatch' || (steps.publish-marker.outputs.cache-hit != 'true' && steps.drive-completion.outputs.already_published != 'true'))
         run: |
-          python -m py_compile rotation_radar/v4d_top1_signal.py rotation_radar/disposition_gate.py rotation_radar/v4d_actual_trade.py rotation_radar/v4d_top1_daily_report.py rotation_radar/v4d_top1_publish.py
-          python -m unittest tests.test_v4d_top1_signal tests.test_v4d_actual_trade tests.test_v4d_top1_daily_report tests.test_schedule_gate tests.test_drive_publish -v
+          python -m py_compile rotation_radar/v4d_top1_signal.py rotation_radar/disposition_gate.py rotation_radar/v4d_actual_trade.py rotation_radar/v4d_sheet_sync.py rotation_radar/v4d_top1_daily_report.py rotation_radar/v4d_top1_publish.py
+          python -m unittest tests.test_v4d_top1_signal tests.test_v4d_actual_trade tests.test_v4d_sheet_sync tests.test_v4d_top1_daily_report tests.test_schedule_gate tests.test_drive_publish -v
 
       - name: Calculate current formal V4-D Top1
         id: calculate-top1
@@ -176,6 +176,14 @@ jobs:
           python -m rotation_radar.v4d_top1_publish \
             --html reports/formal_v4d_top1_daily.html \
             --date "${{ steps.report-date.outputs.target_date }}"
+
+      - name: Sync actual V4-D trades to Google Sheet
+        if: steps.build-report.outputs.report_ready == 'true'
+        env:
+          GOOGLE_OAUTH_CLIENT_ID: ${{ secrets.GOOGLE_OAUTH_CLIENT_ID }}
+          GOOGLE_OAUTH_CLIENT_SECRET: ${{ secrets.GOOGLE_OAUTH_CLIENT_SECRET }}
+          GOOGLE_OAUTH_REFRESH_TOKEN: ${{ secrets.GOOGLE_OAUTH_REFRESH_TOKEN }}
+        run: python -m rotation_radar.v4d_sheet_sync --state data/formal_v4d_actual_trade_state.json
 
       - name: Commit durable V4-D Top1 history
         if: steps.build-report.outputs.report_ready == 'true'
