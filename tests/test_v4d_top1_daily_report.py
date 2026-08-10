@@ -349,9 +349,29 @@ class V4DTop1DailyReportTests(unittest.TestCase):
             prior = close
         self.assertEqual(state["status"], "pending_sell")
         self.assertEqual(
-            state["pending_exit"]["reason"], "TD1～5 after-cost 虧損達5%"
+            state["pending_exit"]["reason"], "TD1～5股價相對買入價下跌達5%"
         )
         self.assertEqual(state["pending_exit"]["execution_date"], "2026-08-03")
+
+    def test_first_five_day_stop_ignores_transaction_cost_in_trigger(self):
+        state = self.state()
+        state = update_state(
+            state,
+            mark_date="2026-07-27",
+            close=100.0,
+            prior_close=100.0,
+            closed_dates=set(),
+        )
+        state = update_state(
+            state,
+            mark_date="2026-07-28",
+            close=95.3,
+            prior_close=100.0,
+            closed_dates=set(),
+        )
+        self.assertLess(state["daily_marks"]["2026-07-28"]["after_cost_return_pct"], -5)
+        self.assertGreater(state["daily_marks"]["2026-07-28"]["cumulative_return_pct"], -5)
+        self.assertEqual(state["status"], "holding")
 
     def test_state_requires_complete_seed(self):
         with tempfile.TemporaryDirectory() as folder:

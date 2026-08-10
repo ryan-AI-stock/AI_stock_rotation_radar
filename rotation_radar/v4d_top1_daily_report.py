@@ -444,8 +444,14 @@ def _current_exit_trigger(state: dict) -> str | None:
     peak = float(item["peak_after_cost_return_pct"])
     rolling = item.get("rolling_5td_return_pct")
     trailing = item.get("trailing_drawdown_pct")
-    if elapsed <= 5 and net <= -5:
-        return "TD1～5 after-cost 虧損達5%"
+    if item.get("cumulative_return_pct") is not None:
+        gross_price_return = float(item["cumulative_return_pct"])
+    elif item.get("close") is not None and state.get("entry_price") is not None:
+        gross_price_return = (float(item["close"]) / float(state["entry_price"]) - 1) * 100
+    else:
+        gross_price_return = net
+    if elapsed <= 5 and gross_price_return <= -5:
+        return "TD1～5股價相對買入價下跌達5%"
     if rolling is not None and float(rolling) <= -10:
         return "任意5TD價格下跌達10%"
     if elapsed >= 6 and net <= -10:
@@ -528,7 +534,7 @@ def gate_plan(state: dict, closed_dates: set[date] | None = None) -> list[dict]:
             "stage": "第一道｜買錯即退",
             "range": f"{days[0]:%m/%d}～{days[4]:%m/%d}",
             "day": "TD1～TD5",
-            "rule": "after-cost 虧損達 -5%",
+            "rule": "股價相對買入價下跌達 -5%（不含交易成本）",
             "action": "收盤成立，下一交易日賣出",
         },
         {
