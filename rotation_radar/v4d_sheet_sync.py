@@ -13,6 +13,7 @@ MODEL_SHEET = "V4-D完整交易明細 模型交易回合"
 EVENT_SHEET = "V4-D完整交易明細 公司行動與股利事件"
 WITHDRAWAL_SHEET = "V4-D完整交易明細 每月提領紀錄"
 ACTUAL_SECTION = "實際交易追蹤｜自2026-08-05起"
+ACTUAL_INDUSTRY = {"3413": "半導體業", "2376": "電腦及週邊設備業"}
 
 
 def _trade_rounds(state: dict) -> list[dict]:
@@ -47,11 +48,20 @@ def _actual_round_row(round_number: int, trade_round: dict, state: dict) -> list
             f"預定{pending.get('execution_date', '')}執行"
         )
     elif sell:
+        exit_decision = sell.get("exit_decision_date", "")
         reason = sell.get("note") or "實際賣出"
 
     shares = int(buy["shares"])
     entry_price = float(buy["average_price"])
     entry_total = float(buy.get("total_cost", shares * entry_price))
+    fills = buy.get("fills") or []
+    entry_gross = float(
+        buy.get("gross_amount")
+        or sum(float(fill["price"]) * int(fill["shares"]) for fill in fills)
+        or shares * entry_price
+    )
+    recorded_entry_fee = float(buy.get("fee", 0) or 0)
+    entry_fee = recorded_entry_fee if recorded_entry_fee > 0 else entry_total - entry_gross
     exit_shares = int(sell["shares"]) if sell else ""
     exit_price = float(sell["average_price"]) if sell else ""
     exit_total = float(sell.get("gross_amount", exit_shares * exit_price)) if sell else ""
@@ -64,8 +74,8 @@ def _actual_round_row(round_number: int, trade_round: dict, state: dict) -> list
     reason += "；券商成交均價已含交易成本"
     return [
         f"實盤{round_number}", status, str(buy["ticker"]).zfill(4), buy.get("name", ""),
-        buy.get("industry", ""), buy.get("signal_date", ""), pnl, return_pct,
-        buy.get("trade_date", ""), 1, shares, entry_price, entry_total, 0,
+        buy.get("industry") or ACTUAL_INDUSTRY.get(str(buy["ticker"]).zfill(4), ""), buy.get("signal_date", ""), pnl, return_pct,
+        buy.get("trade_date", ""), 1, shares, entry_price, entry_gross, entry_fee,
         exit_decision, sell.get("trade_date", "") if sell else "", exit_shares,
         exit_price, exit_total, float(sell.get("fee", 0)) if sell else "", 0, 0, 0, 0, 0, reason,
     ]
