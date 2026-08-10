@@ -87,7 +87,7 @@
     "execution_date": "2026-08-10",
     "entry_close": 349.93,
     "shares": 19000,
-    "buy_fee": 5679.0,
+    "buy_fee": 0.0,
     "position_cost": 6648679.0,
     "remaining_cash": 335295.0,
     "status": "holding",

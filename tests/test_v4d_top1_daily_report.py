@@ -96,6 +96,30 @@ class V4DTop1DailyReportTests(unittest.TestCase):
             expected * 100,
         )
 
+    def test_exact_position_cost_avoids_rounded_average_error(self):
+        state = self.state()
+        state.update(
+            {
+                "entry_close": 349.93,
+                "shares": 19000,
+                "buy_fee": 0.0,
+                "position_cost": 6648679.0,
+                "status": "holding",
+                "actual_position_confirmed": True,
+            }
+        )
+        state = update_state(
+            state,
+            mark_date="2026-08-10",
+            close=349.93,
+            prior_close=344.0,
+        )
+        expected = 349.93 * 19000 * (1 - 0.005425) / 6648679.0 - 1
+        self.assertAlmostEqual(
+            state["daily_marks"]["2026-08-10"]["after_cost_return_pct"],
+            expected * 100,
+        )
+
     def test_mark_before_execution_does_not_create_trade(self):
         state = update_state(
             self.state(),

@@ -401,7 +401,9 @@ def _refresh_holding_metrics(state: dict) -> None:
     ordered = sorted(state.get("daily_marks", {}).items())
     actual_units = int(state.get("shares") or 0)
     actual_buy_fee = float(state.get("buy_fee") or 0)
-    actual_cost_basis = float(entry) * actual_units + actual_buy_fee
+    actual_cost_basis = float(
+        state.get("position_cost") or (float(entry) * actual_units + actual_buy_fee)
+    )
     for index, (_day, item) in enumerate(ordered):
         close = float(item["close"])
         net = (
