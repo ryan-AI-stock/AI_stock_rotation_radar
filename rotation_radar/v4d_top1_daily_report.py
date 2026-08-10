@@ -26,8 +26,11 @@ MODEL_NAME = (
     "TD22未曾達 +10%且當下未達 +8%退出／TD55起當下未達 +20%退出｜"
     "處置Top1空手且不遞補"
 )
-BUY_RATE = 0.001425 + 0.001
-SELL_RATE = 0.001425 + 0.003 + 0.001
+# User's effective brokerage is 60% of the statutory 0.1425% rate.
+# Prospective model marks retain the existing 10bp slippage per side.
+BUY_RATE = 0.000855 + 0.001
+SELL_RATE = 0.000855 + 0.003 + 0.001
+ACTUAL_POSITION_ESTIMATED_SELL_RATE = 0.000855 + 0.003
 POSITION_STREAM_MESSAGE = "模型尚未正式買入，此訊息流空。"
 MEDIAN_ROUTE_COUNT = 64
 MEDIAN_ROUTE_FINAL_CAPITAL = 1_251_832_131.3663318
@@ -407,7 +410,11 @@ def _refresh_holding_metrics(state: dict) -> None:
     for index, (_day, item) in enumerate(ordered):
         close = float(item["close"])
         net = (
-            close * actual_units * (1 - SELL_RATE) / actual_cost_basis - 1
+            close
+            * actual_units
+            * (1 - ACTUAL_POSITION_ESTIMATED_SELL_RATE)
+            / actual_cost_basis
+            - 1
             if state.get("actual_position_confirmed") and actual_units > 0
             else close / float(entry) * (1 - SELL_RATE) / (1 + BUY_RATE) - 1
         )

@@ -90,7 +90,7 @@ class V4DTop1DailyReportTests(unittest.TestCase):
             prior_close=99.0,
         )
 
-        expected = 100.0 * 1000 * (1 - 0.005425) / 100100.0 - 1
+        expected = 100.0 * 1000 * (1 - 0.003855) / 100100.0 - 1
         self.assertAlmostEqual(
             state["daily_marks"]["2026-07-27"]["after_cost_return_pct"],
             expected * 100,
@@ -114,7 +114,7 @@ class V4DTop1DailyReportTests(unittest.TestCase):
             close=349.93,
             prior_close=344.0,
         )
-        expected = 349.93 * 19000 * (1 - 0.005425) / 6648679.0 - 1
+        expected = 349.93 * 19000 * (1 - 0.003855) / 6648679.0 - 1
         self.assertAlmostEqual(
             state["daily_marks"]["2026-08-10"]["after_cost_return_pct"],
             expected * 100,
