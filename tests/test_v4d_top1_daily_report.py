@@ -140,7 +140,7 @@ class V4DTop1DailyReportTests(unittest.TestCase):
         html = render_html(
             pd.Timestamp("2026-07-27"), state, tracking_rows(state)
         )
-        self.assertIn("正式模型唯一 Top1", html)
+        self.assertIn("當日Top1～Top3與排名原因", html)
         self.assertIn("2351 順德", html)
         self.assertNotIn("V4-D完整監控計畫", html)
         self.assertEqual(
@@ -149,7 +149,7 @@ class V4DTop1DailyReportTests(unittest.TestCase):
         )
         self.assertNotIn("after-cost 未達 +5%", html)
         self.assertNotIn("今日前十名", html)
-        self.assertNotIn("前三名", html)
+        self.assertIn("Top1", html)
 
     def test_paused_position_stream_keeps_signal_dates_only(self):
         state = self.state()
@@ -158,10 +158,10 @@ class V4DTop1DailyReportTests(unittest.TestCase):
 
         html = render_html(pd.Timestamp("2026-07-27"), state, [])
 
-        self.assertIn("2026-07-28", html)
+        self.assertIn("當日Top1～Top3與排名原因", html)
         self.assertNotIn("執行買入並計為TD1", html)
         self.assertNotIn("建立TD1第一筆正式交易紀錄", html)
-        self.assertIn("<td>2026-07-27</td>", html)
+        self.assertIn("模型尚未正式買入，此訊息流空。", html)
         self.assertNotIn("7/27依官方收盤建立TD1", html)
 
     def test_preview_compares_holding_with_median_annualized_path(self):
@@ -180,8 +180,8 @@ class V4DTop1DailyReportTests(unittest.TestCase):
         )
 
         self.assertIn("今日實際表現 vs 中位數年化線", html)
-        self.assertIn("V4-D完整監控計畫", html)
-        self.assertIn("12.52億元", html)
+        self.assertNotIn("V4-D完整監控計畫", html)
+        self.assertIn("27.19億元", html)
         self.assertIn(f"{MEDIAN_ROUTE_CAGR * 100:.2f}%", html)
         self.assertIn(f"{MEDIAN_ROUTE_DAILY_RATE * 100:.2f}%", html)
         self.assertEqual(rows[0]["benchmark_elapsed_td"], 0)

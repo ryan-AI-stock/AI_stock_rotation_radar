@@ -33,8 +33,8 @@ SELL_RATE = 0.000855 + 0.003 + 0.001
 ACTUAL_POSITION_ESTIMATED_SELL_RATE = 0.000855 + 0.003
 POSITION_STREAM_MESSAGE = "模型尚未正式買入，此訊息流空。"
 MEDIAN_ROUTE_COUNT = 64
-MEDIAN_ROUTE_FINAL_CAPITAL = 1_251_832_131.3663318
-MEDIAN_ROUTE_CAGR = 0.5758699206870523
+MEDIAN_ROUTE_FINAL_CAPITAL = 2_719_227_259.572438
+MEDIAN_ROUTE_CAGR = 0.6923643
 TRADING_DAYS_PER_YEAR = 252
 MEDIAN_ROUTE_DAILY_RATE = (1 + MEDIAN_ROUTE_CAGR) ** (
     1 / TRADING_DAYS_PER_YEAR
@@ -59,6 +59,7 @@ def main() -> None:
     )
     parser.add_argument("--output", default="reports/formal_v4d_top1_daily.html")
     parser.add_argument("--tracking-output", default="reports/formal_v4d_top1_daily.csv")
+    parser.add_argument("--ranking", default="reports/formal_v4d_top30_daily.csv")
     parser.add_argument("--source-cache", default="data/current_base_cycle_source_cache")
     parser.add_argument("--offline", action="store_true")
     parser.add_argument(
@@ -73,6 +74,7 @@ def main() -> None:
             position_state_path=Path(args.position_state),
             output_path=Path(args.output),
             tracking_output=Path(args.tracking_output),
+            ranking_path=Path(args.ranking),
         )
         print(json.dumps(payload, ensure_ascii=False, indent=2))
         return
@@ -84,6 +86,7 @@ def main() -> None:
             position_state_path=Path(args.position_state),
             output_path=Path(args.output),
             tracking_output=Path(args.tracking_output),
+            ranking_path=Path(args.ranking),
             source_cache=Path(args.source_cache),
             offline=args.offline,
         )
@@ -509,6 +512,58 @@ def tracking_rows(state: dict) -> list[dict]:
     return rows
 
 
+def load_top3_ranking(path: Path, signal_state: dict) -> list[dict]:
+    if not path.exists():
+        return [dict(signal_state, candidate_rank=1)]
+    ranked = pd.read_csv(path, dtype={"ticker": str})
+    if ranked.empty:
+        return [dict(signal_state, candidate_rank=1)]
+    ranked["ticker"] = ranked["ticker"].str.zfill(4)
+    return ranked.sort_values("candidate_rank").head(3).to_dict("records")
+
+
+def _ranking_reason(row: dict) -> str:
+    parts = []
+    if pd.notna(row.get("pos61_bucket")):
+        parts.append(f"基期第{int(row['pos61_bucket']) + 1}級")
+    if pd.notna(row.get("turnup_evidence")):
+        parts.append(f"止跌{int(row['turnup_evidence'])}/3")
+    if pd.notna(row.get("pre_pullback_20d_strength")):
+        parts.append(f"回檔前強度{float(row['pre_pullback_20d_strength']) * 100:+.1f}%")
+    if pd.notna(row.get("bias60_risk_tier")):
+        parts.append(f"BIAS風險{int(row['bias60_risk_tier'])}級")
+    if pd.notna(row.get("pos61")):
+        parts.append(f"Pos61 {float(row['pos61']):.1f}")
+    return "｜".join(parts) or "正式字典式排序結果"
+
+
+def _actual_trade_history(actual_trade_state: dict) -> str:
+    labels = {"v4d_buy": "買入", "v4d_sell": "賣出", "legacy_sell": "舊部位賣出"}
+    rows = []
+    for trade in actual_trade_state.get("actual_trades", []):
+        pnl = trade.get("realized_pnl")
+        ret = trade.get("realized_return_pct")
+        result = "—"
+        if pnl is not None:
+            result = f"{float(pnl):+,.0f}元"
+            if ret is not None:
+                result += f"（{float(ret):+.2f}%）"
+        rows.append(
+            "<tr>"
+            f"<td>{escape(str(trade.get('trade_date', '')))}</td>"
+            f"<td><b>{escape(labels.get(trade.get('action'), str(trade.get('action', ''))))}</b></td>"
+            f"<td>{escape(str(trade.get('ticker', '')))} {escape(str(trade.get('name', '')))}</td>"
+            f"<td>{int(trade.get('shares') or 0):,}股</td>"
+            f"<td>{float(trade.get('average_price') or 0):,.2f}</td>"
+            f"<td>{result}</td>"
+            f"<td>{escape(str(trade.get('exit_reason') or trade.get('note') or ''))}</td>"
+            "</tr>"
+        )
+    if not rows:
+        return '<tr><td colspan="7" class="empty">尚無實際成交紀錄。</td></tr>'
+    return "".join(rows)
+
+
 def _trading_dates_from(
     start: date,
     count: int,
@@ -597,6 +652,7 @@ def build_daily_report(
     position_state_path: Path,
     output_path: Path,
     tracking_output: Path,
+    ranking_path: Path,
     source_cache: Path,
     offline: bool = False,
 ) -> dict:
@@ -604,6 +660,7 @@ def build_daily_report(
     signal_state = load_state(state_path)
     require_current_top1_signal(signal_state, target)
     actual_trade_state = load_actual_trade_state(position_state_path)
+    top3_ranking = load_top3_ranking(ranking_path, signal_state)
     position_state = actual_trade_state.get("position")
     try:
         disposition_gate = load_disposition_gate(
@@ -705,6 +762,8 @@ def build_daily_report(
             market_monitor=market_monitor,
             disposition_gate=disposition_gate,
             signal_state=signal_state,
+            top3_ranking=top3_ranking,
+            actual_trade_state=actual_trade_state,
         ),
         encoding="utf-8",
     )
@@ -733,10 +792,12 @@ def build_pending_seed_report(
     position_state_path: Path,
     output_path: Path,
     tracking_output: Path,
+    ranking_path: Path,
 ) -> dict:
     signal_state = load_state(state_path)
     actual_trade_state = load_actual_trade_state(position_state_path)
     position_state = actual_trade_state.get("position")
+    top3_ranking = load_top3_ranking(ranking_path, signal_state)
     state = position_state or signal_state
     rows = tracking_rows(state) if position_state else []
     tracking_output.parent.mkdir(parents=True, exist_ok=True)
@@ -761,6 +822,8 @@ def build_pending_seed_report(
             state,
             rows,
             signal_state=signal_state,
+            top3_ranking=top3_ranking,
+            actual_trade_state=actual_trade_state,
         ),
         encoding="utf-8",
     )
@@ -787,6 +850,8 @@ def render_html(
     market_monitor: dict | None = None,
     disposition_gate: dict | None = None,
     signal_state: dict | None = None,
+    top3_ranking: list[dict] | None = None,
+    actual_trade_state: dict | None = None,
 ) -> str:
     signal_state = signal_state or state
     status_map = {
@@ -846,26 +911,27 @@ def render_html(
         f"{escape(state['execution_date'])} 執行買入後，才建立TD1第一筆正式交易紀錄。"
         "</td></tr>"
     )
-    plan_rows = "".join(
+    top3_ranking = top3_ranking or [dict(signal_state, candidate_rank=1)]
+    top3_rows = "".join(
         "<tr>"
-        f"<td><b>{escape(item['stage'])}</b><small>{escape(item['day'])}</small></td>"
-        f"<td>{escape(item['range'])}</td>"
-        f"<td>{escape(item['rule'])}</td>"
-        f"<td>{escape(item['action'])}</td>"
+        f"<td><b>Top{int(item.get('candidate_rank') or index)}</b></td>"
+        f"<td><b>{escape(str(item.get('ticker', '')).zfill(4))} {escape(str(item.get('name', '')))}</b></td>"
+        f"<td>{escape(str(item.get('industry_name') or item.get('industry') or '—'))}</td>"
+        f"<td>{escape(_ranking_reason(item))}</td>"
         "</tr>"
-        for item in gate_plan(state, closed_dates)
+        for index, item in enumerate(top3_ranking, start=1)
     )
+    actual_trade_rows = _actual_trade_history(actual_trade_state or {})
     if not stream_active:
         overview = (
             f'<div class="paused">{escape(POSITION_STREAM_MESSAGE)}</div>'
         )
         history_section = (
+            '<h3>實際交易足跡</h3>'
+            '<table><thead><tr><th>日期</th><th>動作</th><th>股票</th><th>股數</th><th>成交均價</th><th>已實現損益</th><th>原因／備註</th></tr></thead>'
+            f'<tbody>{actual_trade_rows}</tbody></table><h3>目前持股每日比較</h3>'
             f'<div class="paused">{escape(POSITION_STREAM_MESSAGE)}</div>'
         )
-        plan_section = (
-            f'<div class="paused">{escape(POSITION_STREAM_MESSAGE)}</div>'
-        )
-        plan_block = ""
         footer_block = ""
     else:
         overview = f"""
@@ -885,15 +951,11 @@ def render_html(
   </div>
 </div>"""
         history_section = f"""
+<h3>實際交易足跡</h3>
+<table><thead><tr><th>日期</th><th>動作</th><th>股票</th><th>股數</th><th>成交均價</th><th>已實現損益</th><th>原因／備註</th></tr></thead><tbody>{actual_trade_rows}</tbody></table>
+<h3>目前持股每日比較</h3>
 <p class="note">買入日只建立0%比較基準；下一交易日開始，將個股收盤價累積漲跌與中位數年化線逐日比較。</p>
 <table class="history"><thead><tr><th>日期</th><th>模型日</th><th>收盤</th><th>當日漲跌</th><th>個股累積</th><th>中位路徑累積</th><th>相差</th><th>V4-D狀態</th></tr></thead><tbody>{history}</tbody></table>"""
-        plan_section = f"""
-<div class="plan-head"><b>下一步：{escape(next_action)}</b><span>目前 after-cost：{latest_return}</span></div>
-<table><thead><tr><th>檢查關卡</th><th>日期</th><th>判斷條件</th><th>成立後動作</th></tr></thead><tbody>{plan_rows}</tbody></table>"""
-        plan_block = (
-            '<section class="plan"><h2>第七部分｜V4-D完整監控計畫</h2>'
-            f"{plan_section}</section>"
-        )
         footer_block = (
             "<footer>私人研究報告。中位數年化線與半年線監測只作研究比較，"
             "不改變V4-D正式買賣訊號。Top1 為 V4-D 凍結規則在 "
@@ -955,18 +1017,17 @@ def render_html(
   {event_text}
 </div>"""
     return f"""<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><style>
-@page{{size:A4;margin:11mm}}*{{box-sizing:border-box}}body{{font-family:'Noto Sans TC','Microsoft JhengHei',sans-serif;color:#17262d;margin:0;background:#fff}}header{{background:#102e39;color:#fff;padding:22px 26px;border-bottom:6px solid #d7a12b}}h1{{font-size:25px;margin:0 0 7px;letter-spacing:0}}header p{{margin:4px 0;color:#d7e5e8;font-size:11px}}section{{margin:17px 0 22px;break-inside:avoid}}h2{{font-size:18px;margin:0 0 10px;padding-left:10px;border-left:5px solid #d7a12b}}.note{{font-size:11px;color:#64727b;margin:0 0 9px}}.paused{{border:1px solid #d7e0e2;border-top:4px solid #19766c;padding:18px;background:#f8faf9;font-size:16px;font-weight:700}}.hero-grid{{display:grid;grid-template-columns:1.12fr .88fr;gap:12px}}.holding-card,.comparison-card{{border:1px solid #d5e0e2;padding:16px;background:#f7faf9}}.holding-card{{border-top:5px solid #19766c}}.comparison-card{{border-top:5px solid #d7a12b}}.eyebrow{{font-size:11px;color:#66767d;font-weight:700}}.holding-name{{font-size:24px;font-weight:800;margin:5px 0}}.holding-meta{{font-size:11px;color:#66767d}}.holding-price{{margin-top:14px;font-size:13px}}.holding-price b{{font-size:22px;margin-left:5px}}.comparison-row{{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #dce4e6;padding:7px 0;font-size:12px}}.comparison-row b{{font-size:17px}}.comparison-row.emphasis{{border-bottom:0;padding-top:10px}}.benchmark-panel{{border:1px solid #d8e1e3;background:#fbfaf5;padding:14px}}.benchmark-title{{display:flex;justify-content:space-between;align-items:flex-end}}.benchmark-title strong{{font-size:21px;color:#a36d00}}.benchmark-title span{{font-size:11px;color:#6e777b}}.benchmark-line{{height:6px;background:linear-gradient(90deg,#d7a12b,#f0ce72);margin:12px 0 10px;border-radius:3px}}.benchmark-stats{{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}}.benchmark-stat{{border-left:3px solid #d7a12b;padding-left:8px}}.benchmark-stat small{{display:block;color:#6f7b80;font-size:9px}}.benchmark-stat b{{font-size:14px}}.market-monitor{{border:1px solid #d6e0e2;border-top:5px solid #71808a;background:#f8faf9;padding:14px}}.market-monitor.watch{{border-top-color:#d7a12b;background:#fffbf1}}.market-monitor.confirmed{{border-top-color:#19766c;background:#f2faf7}}.market-monitor.invalid{{border-top-color:#b23a3a;background:#fff7f7}}.market-monitor-head{{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:12px}}.market-monitor-head span{{display:block;font-size:10px;color:#6b777c}}.market-monitor-head b{{font-size:17px}}.market-monitor-head strong{{font-size:23px}}.market-grid{{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}}.market-grid>div{{background:#fff;border:1px solid #dbe3e5;padding:9px}}.market-grid small,.market-grid span{{display:block;font-size:9px;color:#6c797f}}.market-grid b{{display:block;font-size:14px;margin:3px 0}}.refresh-research{{margin-top:10px;padding:9px 11px;background:#102e39;color:#fff;font-size:10px}}table{{width:100%;border-collapse:collapse;font-size:10px}}th{{background:#edf2f3;color:#28434c;text-align:left;padding:7px 6px;border-bottom:2px solid #9aabb0}}td{{padding:7px 6px;border-bottom:1px solid #dce3e5;vertical-align:top}}td small{{display:block;color:#738087;margin-top:2px}}tbody tr:nth-child(even){{background:#f8faf9}}.history th:nth-child(1),.history th:nth-child(2),.history th:nth-child(3){{white-space:nowrap}}.up{{color:#b22d2d;font-weight:700}}.down{{color:#087e69;font-weight:700}}.flat{{color:#48575e;font-weight:700}}.benchmark{{color:#a36d00;font-weight:700}}.empty{{text-align:center;color:#758188;padding:20px}}.plan{{break-before:page}}.plan-head{{display:flex;justify-content:space-between;padding:12px 14px;background:#102e39;color:#fff;margin-bottom:10px;font-size:11px}}.plan td:first-child{{width:24%}}.plan td:nth-child(2){{white-space:nowrap}}footer{{font-size:9px;color:#7b858a;border-top:1px solid #d6dddf;padding-top:8px;margin-top:16px}}</style></head><body>
+@page{{size:A4;margin:11mm}}*{{box-sizing:border-box}}body{{font-family:'Noto Sans TC','Microsoft JhengHei',sans-serif;color:#17262d;margin:0;background:#fff}}header{{background:#102e39;color:#fff;padding:22px 26px;border-bottom:6px solid #d7a12b}}h1{{font-size:25px;margin:0 0 7px;letter-spacing:0}}header p{{margin:4px 0;color:#d7e5e8;font-size:11px}}section{{margin:17px 0 22px;break-inside:avoid}}h2{{font-size:18px;margin:0 0 10px;padding-left:10px;border-left:5px solid #d7a12b}}h3{{font-size:13px;margin:14px 0 7px;color:#29434c}}.note{{font-size:11px;color:#64727b;margin:0 0 9px}}.paused{{border:1px solid #d7e0e2;border-top:4px solid #19766c;padding:18px;background:#f8faf9;font-size:16px;font-weight:700}}.hero-grid{{display:grid;grid-template-columns:1.12fr .88fr;gap:12px}}.holding-card,.comparison-card{{border:1px solid #d5e0e2;padding:16px;background:#f7faf9}}.holding-card{{border-top:5px solid #19766c}}.comparison-card{{border-top:5px solid #d7a12b}}.eyebrow{{font-size:11px;color:#66767d;font-weight:700}}.holding-name{{font-size:24px;font-weight:800;margin:5px 0}}.holding-meta{{font-size:11px;color:#66767d}}.holding-price{{margin-top:14px;font-size:13px}}.holding-price b{{font-size:22px;margin-left:5px}}.comparison-row{{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #dce4e6;padding:7px 0;font-size:12px}}.comparison-row b{{font-size:17px}}.comparison-row.emphasis{{border-bottom:0;padding-top:10px}}.benchmark-panel{{border:1px solid #d8e1e3;background:#fbfaf5;padding:14px}}.benchmark-title{{display:flex;justify-content:space-between;align-items:flex-end}}.benchmark-title strong{{font-size:21px;color:#a36d00}}.benchmark-title span{{font-size:11px;color:#6e777b}}.benchmark-line{{height:6px;background:linear-gradient(90deg,#d7a12b,#f0ce72);margin:12px 0 10px;border-radius:3px}}.benchmark-stats{{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}}.benchmark-stat{{border-left:3px solid #d7a12b;padding-left:8px}}.benchmark-stat small{{display:block;color:#6f7b80;font-size:9px}}.benchmark-stat b{{font-size:14px}}.market-monitor{{border:1px solid #d6e0e2;border-top:5px solid #71808a;background:#f8faf9;padding:14px}}.market-monitor.watch{{border-top-color:#d7a12b;background:#fffbf1}}.market-monitor.confirmed{{border-top-color:#19766c;background:#f2faf7}}.market-monitor.invalid{{border-top-color:#b23a3a;background:#fff7f7}}.market-monitor-head{{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:12px}}.market-monitor-head span{{display:block;font-size:10px;color:#6b777c}}.market-monitor-head b{{font-size:17px}}.market-monitor-head strong{{font-size:23px}}.market-grid{{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}}.market-grid>div{{background:#fff;border:1px solid #dbe3e5;padding:9px}}.market-grid small,.market-grid span{{display:block;font-size:9px;color:#6c797f}}.market-grid b{{display:block;font-size:14px;margin:3px 0}}.refresh-research{{margin-top:10px;padding:9px 11px;background:#102e39;color:#fff;font-size:10px}}table{{width:100%;border-collapse:collapse;font-size:10px}}th{{background:#edf2f3;color:#28434c;text-align:left;padding:7px 6px;border-bottom:2px solid #9aabb0}}td{{padding:7px 6px;border-bottom:1px solid #dce3e5;vertical-align:top}}td small{{display:block;color:#738087;margin-top:2px}}tbody tr:nth-child(even){{background:#f8faf9}}.history th:nth-child(1),.history th:nth-child(2),.history th:nth-child(3){{white-space:nowrap}}.up{{color:#b22d2d;font-weight:700}}.down{{color:#087e69;font-weight:700}}.flat{{color:#48575e;font-weight:700}}.benchmark{{color:#a36d00;font-weight:700}}.empty{{text-align:center;color:#758188;padding:20px}}footer{{font-size:9px;color:#7b858a;border-top:1px solid #d6dddf;padding-top:8px;margin-top:16px}}</style></head><body>
 <header><h1>{REPORT_TITLE}</h1><p>最新官方收盤資料日：{actual:%Y-%m-%d}</p><p>{escape(MODEL_NAME)}</p></header>
 <section><h2>第一部分｜今日實際表現 vs 中位數年化線</h2>{overview}</section>
-<section><h2>第二部分｜正式模型唯一 Top1</h2><table><thead><tr><th>股票</th><th>訊號日</th><th>訊號日收盤</th><th>執行日</th><th>最新收盤</th></tr></thead><tbody><tr><td><b>{escape(signal_state['ticker'])} {escape(signal_state['name'])}</b></td><td>{escape(signal_state['signal_date'])}</td><td>{float(signal_state['signal_close']):,.2f}</td><td>{escape(signal_state['execution_date'])}</td><td>{float(signal_state['signal_close']):,.2f}</td></tr></tbody></table></section>
+<section><h2>第二部分｜當日Top1～Top3與排名原因</h2><p class="note">依正式字典式排序列出；不是加權總分，也不存在滿分100分。</p><table><thead><tr><th>順位</th><th>股票</th><th>產業</th><th>排名重點</th></tr></thead><tbody>{top3_rows}</tbody></table></section>
 <section><h2>第三部分｜處置股交易可行性</h2>{trade_gate_section}</section>
 <section><h2>第四部分｜大盤半年線監測</h2>{market_section}</section>
 <section><h2>第五部分｜64條歷史路徑的中位基準</h2>
 <div class="benchmark-panel"><div class="benchmark-title"><div><span>期末剩餘資產中位數</span><br><strong>{MEDIAN_ROUTE_FINAL_CAPITAL / 100_000_000:.2f}億元</strong></div><div>年化複合成長率 <b>{MEDIAN_ROUTE_CAGR * 100:.2f}%</b><br>每交易日複合基準 <b>{MEDIAN_ROUTE_DAILY_RATE * 100:.2f}%</b></div></div><div class="benchmark-line"></div>
 <div class="benchmark-stats"><div class="benchmark-stat"><small>買入日</small><b>0.00%</b></div><div class="benchmark-stat"><small>TD5參考</small><b>+{benchmark_td5:.2f}%</b></div><div class="benchmark-stat"><small>TD14參考</small><b>+{benchmark_td14:.2f}%</b></div><div class="benchmark-stat"><small>TD22參考</small><b>+{benchmark_td22:.2f}%</b></div></div></div>
-<p class="note">基準來自64條不同進場日起始路徑；初始800萬元、每月提領7.5萬元，期末剩餘資產中位數12.52億元。年化線使用各路徑CAGR中位數57.59%換算，不包含已提領現金。</p></section>
-<section><h2>第六部分｜每日路徑比較</h2>{history_section}</section>
-{plan_block}
+<p class="note">基準來自2015-05-18至2015-08-17共64條不同起始路徑；初始800萬元、100%個股、無0050正二、無每月提領。採目前正式V4-D與TD1～5股價下跌5%觸發口徑。</p></section>
+<section><h2>第六部分｜實際交易足跡與每日路徑比較</h2>{history_section}</section>
 {footer_block}</body></html>"""
 
 
