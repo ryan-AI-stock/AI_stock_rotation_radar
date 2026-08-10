@@ -51,11 +51,12 @@ def _actual_round_row(round_number: int, trade_round: dict, state: dict) -> list
 
     shares = int(buy["shares"])
     entry_price = float(buy["average_price"])
-    entry_total = shares * entry_price
+    entry_total = float(buy.get("total_cost", shares * entry_price))
     exit_shares = int(sell["shares"]) if sell else ""
     exit_price = float(sell["average_price"]) if sell else ""
-    exit_total = exit_shares * exit_price if sell else ""
-    pnl = exit_total - entry_total if sell else ""
+    exit_total = float(sell.get("gross_amount", exit_shares * exit_price)) if sell else ""
+    exit_net = float(sell.get("net_proceeds", exit_total - float(sell.get("fee", 0)))) if sell else ""
+    pnl = float(sell.get("realized_pnl", exit_net - entry_total)) if sell else ""
     return_pct = pnl / entry_total if sell and entry_total else ""
     remaining_cash = buy.get("remaining_cash")
     if remaining_cash is not None:
@@ -66,7 +67,7 @@ def _actual_round_row(round_number: int, trade_round: dict, state: dict) -> list
         buy.get("industry", ""), buy.get("signal_date", ""), pnl, return_pct,
         buy.get("trade_date", ""), 1, shares, entry_price, entry_total, 0,
         exit_decision, sell.get("trade_date", "") if sell else "", exit_shares,
-        exit_price, exit_total, 0 if sell else "", 0, 0, 0, 0, 0, reason,
+        exit_price, exit_total, float(sell.get("fee", 0)) if sell else "", 0, 0, 0, 0, 0, reason,
     ]
 
 

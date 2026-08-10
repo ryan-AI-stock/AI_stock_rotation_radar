@@ -42,6 +42,20 @@ class V4DSheetSyncTests(unittest.TestCase):
         self.assertEqual(row[7], 0.1)
         self.assertEqual(row[15], "2026-08-10")
 
+    def test_exact_cost_and_net_proceeds_override_rounded_average(self):
+        state = {
+            "actual_trades": [
+                {"action": "v4d_buy", "ticker": "3413", "name": "京鼎", "trade_date": "2026-08-05", "signal_date": "2026-08-04", "average_price": 325.17, "shares": 23000, "total_cost": 7478910},
+                {"action": "v4d_sell", "ticker": "3413", "name": "京鼎", "trade_date": "2026-08-10", "average_price": 304.8260869565, "shares": 23000, "fee": 27004, "gross_amount": 7011000, "net_proceeds": 6983996, "realized_pnl": -494914},
+            ],
+            "position": None,
+        }
+        row = _actual_round_row(1, _trade_rounds(state)[0], state)
+        self.assertEqual(row[6], -494914)
+        self.assertEqual(row[12], 7478910)
+        self.assertEqual(row[18], 7011000)
+        self.assertEqual(row[19], 27004)
+
 
 if __name__ == "__main__":
     unittest.main()

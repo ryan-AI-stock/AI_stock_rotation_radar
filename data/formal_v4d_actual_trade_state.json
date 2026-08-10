@@ -33,60 +33,67 @@
       "remaining_cash": 154298.0,
       "note": "券商成交均價已反映交易成本；舊持股賣出不納入V4-D績效。",
       "source": "user_actual_trade_confirmed"
+    },
+    {
+      "trade_date": "2026-08-10",
+      "action": "v4d_sell",
+      "ticker": "3413",
+      "name": "京鼎",
+      "average_price": 304.82608695652175,
+      "shares": 23000,
+      "fee": 27004.0,
+      "gross_amount": 7011000.0,
+      "net_proceeds": 6983996.0,
+      "realized_pnl": -494914.0,
+      "realized_return_pct": -6.617445056834481,
+      "fills": [
+        {"shares": 8000, "price": 304.5},
+        {"shares": 15000, "price": 305.0}
+      ],
+      "exit_decision_date": "2026-08-07",
+      "exit_reason": "TD1～5 after-cost 虧損達5%",
+      "price_cost_basis": "actual_fill_gross_less_actual_sell_cost",
+      "note": "依正式V4-D賣出訊號實際成交。",
+      "source": "user_actual_trade_confirmed"
+    },
+    {
+      "trade_date": "2026-08-10",
+      "action": "v4d_buy",
+      "ticker": "2376",
+      "name": "技嘉",
+      "industry": "電腦及週邊設備業",
+      "average_price": 349.93,
+      "shares": 19000,
+      "fee": 5679.0,
+      "gross_amount": 6643000.0,
+      "total_cost": 6648679.0,
+      "price_cost_basis": "broker_average_price_includes_transaction_cost",
+      "signal_date": "2026-08-07",
+      "signal_close": 344.0,
+      "fills": [
+        {"shares": 14000, "price": 349.5},
+        {"shares": 5000, "price": 350.0}
+      ],
+      "remaining_cash": 335295.0,
+      "note": "券商均價349.93已含買進成本；精確持有成本6,648,679元。",
+      "source": "user_actual_trade_confirmed"
     }
   ],
   "position": {
-    "ticker": "3413",
-    "name": "京鼎",
-    "signal_date": "2026-08-04",
-    "signal_close": 321.5,
-    "execution_date": "2026-08-05",
-    "entry_close": 325.17,
-    "shares": 23000,
-    "buy_fee": 0.0,
-    "remaining_cash": 154298.0,
-    "status": "pending_sell",
-    "daily_marks": {
-      "2026-08-05": {
-        "close": 321.5,
-        "daily_return_pct": 0.0,
-        "d_index": 0,
-        "model_td": 1,
-        "cumulative_return_pct": -1.1286404034812625,
-        "after_cost_return_pct": -1.6650175292923786,
-        "peak_after_cost_return_pct": -1.6650175292923786,
-        "trailing_drawdown_pct": 0.0,
-        "rolling_5td_return_pct": null
-      },
-      "2026-08-06": {
-        "close": 320.0,
-        "daily_return_pct": -0.4665629860031051,
-        "d_index": 1,
-        "model_td": 2,
-        "cumulative_return_pct": -1.5899375711166508,
-        "after_cost_return_pct": -2.123812159793337,
-        "peak_after_cost_return_pct": -1.6650175292923786,
-        "trailing_drawdown_pct": -0.4665629860031051,
-        "rolling_5td_return_pct": null
-      },
-      "2026-08-07": {
-        "close": 309.0,
-        "daily_return_pct": -3.4375000000000044,
-        "d_index": 2,
-        "model_td": 3,
-        "cumulative_return_pct": -4.972783467109521,
-        "after_cost_return_pct": -5.4883061168004454,
-        "peak_after_cost_return_pct": -1.6650175292923786,
-        "trailing_drawdown_pct": -3.8880248833592534,
-        "rolling_5td_return_pct": null
-      }
-    },
-    "pending_exit": {
-      "decision_date": "2026-08-07",
-      "execution_date": "2026-08-10",
-      "reason": "TD1～5 after-cost 虧損達5%"
-    },
+    "ticker": "2376",
+    "name": "技嘉",
+    "signal_date": "2026-08-07",
+    "signal_close": 344.0,
+    "execution_date": "2026-08-10",
+    "entry_close": 349.93,
+    "shares": 19000,
+    "buy_fee": 5679.0,
+    "position_cost": 6648679.0,
+    "remaining_cash": 335295.0,
+    "status": "holding",
+    "daily_marks": {},
+    "pending_exit": null,
     "actual_position_confirmed": true,
-    "last_report_date": "2026-08-07"
+    "last_report_date": "2026-08-10"
   }
 }
