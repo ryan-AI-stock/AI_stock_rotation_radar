@@ -178,12 +178,24 @@ jobs:
             --date "${{ steps.report-date.outputs.target_date }}"
 
       - name: Sync actual V4-D trades to Google Sheet
+        id: sheet-sync
         if: steps.build-report.outputs.report_ready == 'true'
+        continue-on-error: true
         env:
           GOOGLE_OAUTH_CLIENT_ID: ${{ secrets.GOOGLE_OAUTH_CLIENT_ID }}
           GOOGLE_OAUTH_CLIENT_SECRET: ${{ secrets.GOOGLE_OAUTH_CLIENT_SECRET }}
           GOOGLE_OAUTH_REFRESH_TOKEN: ${{ secrets.GOOGLE_OAUTH_REFRESH_TOKEN }}
         run: python -m rotation_radar.v4d_sheet_sync --state data/formal_v4d_actual_trade_state.json
+
+      - name: Report non-blocking Google Sheet sync failure
+        if: steps.sheet-sync.outcome == 'failure'
+        shell: bash
+        run: |
+          echo "::warning::V4-D PDF已更新，但Google Sheet同步失敗；請確認OAuth專案已啟用Google Sheets API。"
+          {
+            echo "### V4-D Google Sheet同步警告"
+            echo "PDF與每日狀態已繼續產出；Google Sheet本次未更新。請啟用OAuth專案的Google Sheets API後重跑。"
+          } >> "$GITHUB_STEP_SUMMARY"
 
       - name: Commit durable V4-D Top1 history
         if: steps.build-report.outputs.report_ready == 'true'
