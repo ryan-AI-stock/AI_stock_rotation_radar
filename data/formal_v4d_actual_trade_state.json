@@ -47,8 +47,14 @@
       "realized_pnl": -494914.0,
       "realized_return_pct": -6.617445056834481,
       "fills": [
-        {"shares": 8000, "price": 304.5},
-        {"shares": 15000, "price": 305.0}
+        {
+          "shares": 8000,
+          "price": 304.5
+        },
+        {
+          "shares": 15000,
+          "price": 305.0
+        }
       ],
       "exit_decision_date": "2026-08-07",
       "exit_reason": "TD1～5 after-cost 虧損達5%",
@@ -71,8 +77,14 @@
       "signal_date": "2026-08-07",
       "signal_close": 344.0,
       "fills": [
-        {"shares": 14000, "price": 349.5},
-        {"shares": 5000, "price": 350.0}
+        {
+          "shares": 14000,
+          "price": 349.5
+        },
+        {
+          "shares": 5000,
+          "price": 350.0
+        }
       ],
       "remaining_cash": 335295.0,
       "note": "券商均價349.93已含買進成本；精確持有成本6,648,679元。",
@@ -91,9 +103,21 @@
     "position_cost": 6648679.0,
     "remaining_cash": 335295.0,
     "status": "holding",
-    "daily_marks": {},
+    "daily_marks": {
+      "2026-08-11": {
+        "close": 350.5,
+        "daily_return_pct": 0.28612303290413976,
+        "d_index": 0,
+        "model_td": 1,
+        "cumulative_return_pct": 0.16288972080129582,
+        "after_cost_return_pct": -0.22337328212116425,
+        "peak_after_cost_return_pct": -0.22337328212116425,
+        "trailing_drawdown_pct": 0.0,
+        "rolling_5td_return_pct": null
+      }
+    },
     "pending_exit": null,
     "actual_position_confirmed": true,
-    "last_report_date": "2026-08-10"
+    "last_report_date": "2026-08-11"
   }
 }
