@@ -11,7 +11,7 @@ on:
         default: ""
 
 concurrency:
-  group: daily-theme-rotation-report
+  group: private-v4d-top1-report
   cancel-in-progress: false
 
 jobs:
