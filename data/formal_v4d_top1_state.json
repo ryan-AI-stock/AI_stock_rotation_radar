@@ -1,16 +1,16 @@
 {
   "version": 2,
   "model": "V4-D",
-  "ticker": "2357",
-  "name": "華碩",
+  "ticker": "1326",
+  "name": "台化",
   "market": "TWSE",
-  "signal_date": "2026-08-11",
-  "signal_close": 839.0,
-  "execution_date": "2026-08-12",
+  "signal_date": "2026-08-12",
+  "signal_close": 59.6,
+  "execution_date": "2026-08-13",
   "entry_close": null,
   "status": "signal_only",
   "daily_marks": {},
-  "candidate_rank": 2,
-  "industry": "電腦及週邊設備業",
+  "candidate_rank": 1,
+  "industry": "塑膠工業",
   "layer1_snapshot_date": "20260728"
 }
