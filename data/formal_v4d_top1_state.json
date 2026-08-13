@@ -1,16 +1,16 @@
 {
   "version": 2,
   "model": "V4-D",
-  "ticker": "1326",
-  "name": "台化",
+  "ticker": "2892",
+  "name": "第一金",
   "market": "TWSE",
-  "signal_date": "2026-08-12",
-  "signal_close": 59.6,
-  "execution_date": "2026-08-13",
+  "signal_date": "2026-08-13",
+  "signal_close": 33.15,
+  "execution_date": "2026-08-14",
   "entry_close": null,
   "status": "signal_only",
   "daily_marks": {},
   "candidate_rank": 1,
-  "industry": "塑膠工業",
+  "industry": "金融保險",
   "layer1_snapshot_date": "20260728"
 }
