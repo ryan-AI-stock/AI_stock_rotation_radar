@@ -1,16 +1,16 @@
 {
   "version": 2,
   "model": "V4-D",
-  "ticker": "2892",
-  "name": "第一金",
+  "ticker": "2610",
+  "name": "華航",
   "market": "TWSE",
-  "signal_date": "2026-08-14",
-  "signal_close": 33.35,
-  "execution_date": "2026-08-17",
+  "signal_date": "2026-08-17",
+  "signal_close": 20.25,
+  "execution_date": "2026-08-18",
   "entry_close": null,
   "status": "signal_only",
   "daily_marks": {},
   "candidate_rank": 1,
-  "industry": "金融保險",
+  "industry": "航運業",
   "layer1_snapshot_date": "20260728"
 }
