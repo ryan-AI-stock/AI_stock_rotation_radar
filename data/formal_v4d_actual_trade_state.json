@@ -180,6 +180,17 @@
         "peak_after_cost_return_pct": 13.156088788464594,
         "trailing_drawdown_pct": -12.32704402515724,
         "rolling_5td_return_pct": -11.435832274459978
+      },
+      "2026-08-20": {
+        "close": 344.0,
+        "daily_return_pct": -1.2912482065997155,
+        "d_index": 7,
+        "model_td": 8,
+        "cumulative_return_pct": -1.69462463921356,
+        "after_cost_return_pct": -2.0737244195425886,
+        "peak_after_cost_return_pct": 13.156088788464594,
+        "trailing_drawdown_pct": -13.459119496855344,
+        "rolling_5td_return_pct": -13.459119496855344
       }
     },
     "pending_exit": {
@@ -188,6 +199,6 @@
       "reason": "任意5TD價格下跌達10%"
     },
     "actual_position_confirmed": true,
-    "last_report_date": "2026-08-19"
+    "last_report_date": "2026-08-20"
   }
 }
