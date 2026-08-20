@@ -97,10 +97,10 @@
     "signal_date": "2026-08-07",
     "signal_close": 344.0,
     "execution_date": "2026-08-10",
-    "entry_close": 349.93,
-    "shares": 19000,
+    "entry_close": 351.7,
+    "shares": 20000,
     "buy_fee": 0.0,
-    "position_cost": 6648679.0,
+    "position_cost": 7034000.0,
     "remaining_cash": 335295.0,
     "status": "pending_sell",
     "daily_marks": {
@@ -194,11 +194,33 @@
       }
     },
     "pending_exit": {
-      "decision_date": "2026-08-19",
-      "execution_date": "2026-08-20",
-      "reason": "任意5TD價格下跌達10%"
+      "decision_date": "2026-08-18",
+      "execution_date": "2026-08-19",
+      "reason": "曾達+10%，其後由高點回落達10%"
     },
     "actual_position_confirmed": true,
     "last_report_date": "2026-08-20"
-  }
+  },
+  "position_corrections": [
+    {
+      "confirmed_date": "2026-08-20",
+      "ticker": "2376",
+      "shares": 20000,
+      "broker_average_price": 351.7,
+      "position_cost": 7034000.0,
+      "note": "使用者確認目前總持股與券商均價；未提供新增1張的獨立成交價與日期，因此不捏造交易明細。",
+      "source": "user_actual_position_confirmed"
+    }
+  ],
+  "manual_decisions": [
+    {
+      "decision_date": "2026-08-20",
+      "ticker": "2376",
+      "model_intended_action": "sell_2376_then_buy_latest_top1_2886",
+      "actual_action": "no_trade_continue_holding",
+      "reason": "使用者因市場風險判斷與實際虧損承受度，未執行模型換股。",
+      "formal_model_path_diverged": true,
+      "source": "user_manual_override_confirmed"
+    }
+  ]
 }

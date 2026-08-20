@@ -230,6 +230,24 @@ class V4DTop1DailyReportTests(unittest.TestCase):
             "曾達+7%但未達+10%，其後回落至+1%",
         )
 
+    def test_peak10_trailing10_applies_before_td14(self):
+        state = self.state()
+        state["daily_marks"] = {
+            "2026-08-18": {
+                "model_td": 6,
+                "after_cost_return_pct": -0.94,
+                "peak_after_cost_return_pct": 13.16,
+                "rolling_5td_return_pct": -7.32,
+                "trailing_drawdown_pct": -12.45,
+                "cumulative_return_pct": -0.55,
+            }
+        }
+
+        self.assertEqual(
+            _current_exit_trigger(state),
+            "曾達+10%，其後由高點回落達10%",
+        )
+
     def test_td55_long_hold_growth_check_starts_on_td55(self):
         state = self.state()
         state["daily_marks"] = {

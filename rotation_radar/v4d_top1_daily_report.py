@@ -469,7 +469,7 @@ def _current_exit_trigger(state: dict) -> str | None:
             return "TD14 after-cost 未達+5%"
     if elapsed == 22 and peak < 10 and net < 8:
         return "TD22未曾達+10%，且當下未達+8%"
-    if elapsed >= 14 and peak >= 10 and trailing is not None and float(trailing) <= -10:
+    if peak >= 10 and trailing is not None and float(trailing) <= -10:
         return "曾達+10%，其後由高點回落達10%"
     if elapsed >= 55 and net < 20:
         return "TD55起，當下after-cost未達+20%"
@@ -1039,8 +1039,11 @@ def _holding_label(latest: dict | None) -> str:
 
 def _daily_gate_text(item: dict, state: dict) -> str:
     pending = state.get("pending_exit")
-    if pending and pending.get("decision_date") == item["date"]:
-        return f"<b class=\"down\">觸發賣出</b><small>{escape(pending['reason'])}</small>"
+    if pending:
+        if pending.get("decision_date") == item["date"]:
+            return f"<b class=\"down\">觸發賣出</b><small>{escape(pending['reason'])}</small>"
+        if item["date"] > str(pending.get("decision_date") or ""):
+            return f"<b class=\"down\">待執行賣出</b><small>{escape(pending['reason'])}</small>"
     td = int(item.get("model_td") or 0)
     if td <= 5:
         return "通過<small>前5TD -5%未觸發</small>"
