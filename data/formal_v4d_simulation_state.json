@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "account_type": "formal_v4d_forward_simulation",
+  "initial_capital": 7000000.0,
+  "cash": 11.282468500547111,
+  "transactions": [
+    {"trade_date":"2026-08-05","action":"buy","ticker":"3413","name":"京鼎","execution_price":321.5,"shares":21732,"gross_amount":6986838.0,"transaction_cost":12960.58449,"net_cash_flow":-6999798.58449,"cash_after":201.41551,"signal_date":"2026-08-04","signal_close":321.5,"reason":"2026-08-04收盤Top1，下一交易日建立模擬部位"},
+    {"trade_date":"2026-08-10","action":"sell","ticker":"3413","name":"京鼎","execution_price":307.5,"shares":21732,"gross_amount":6682590.0,"transaction_cost":32443.97445,"net_cash_flow":6650146.02555,"cash_after":6650347.44106,"realized_pnl":-349652.55894,"realized_return_pct":-4.995180285826399,"reason":"當時正式報告觸發TD1至TD5快速失敗退出"},
+    {"trade_date":"2026-08-10","action":"buy","ticker":"2376","name":"技嘉","execution_price":349.5,"shares":18992,"gross_amount":6637704.0,"transaction_cost":12312.94092,"net_cash_flow":-6650016.94092,"cash_after":330.50014,"signal_date":"2026-08-07","signal_close":344.0,"reason":"京鼎退出後依2026-08-07收盤Top1換倉"},
+    {"trade_date":"2026-08-19","action":"sell","ticker":"2376","name":"技嘉","execution_price":348.5,"shares":18992,"gross_amount":6618712.0,"transaction_cost":32133.84676,"net_cash_flow":6586578.15324,"cash_after":6586908.65338,"realized_pnl":-63438.78768,"realized_return_pct":-0.9539643017995619,"reason":"曾達+10%，其後由高點回落達10%"},
+    {"trade_date":"2026-08-19","action":"buy","ticker":"2610","name":"華航","execution_price":19.9,"shares":330387,"gross_amount":6574701.3,"transaction_cost":12196.0709115,"net_cash_flow":-6586897.3709115,"cash_after":11.2824685,"signal_date":"2026-08-18","signal_close":20.1,"reason":"技嘉退出後依2026-08-18收盤Top1換倉"}
+  ],
+  "position": {
+    "ticker":"2610","name":"華航","signal_date":"2026-08-18","signal_close":20.1,"execution_date":"2026-08-19","entry_close":19.9,"shares":330387,"buy_fee":12196.0709115,"position_cost":6586897.3709115,"status":"holding","pending_exit":null,"simulation_position":true,"last_report_date":"2026-08-21",
+    "daily_marks": {
+      "2026-08-19":{"close":19.9,"daily_return_pct":-0.9950248756219082,"d_index":0,"model_td":1,"cumulative_return_pct":0.0,"after_cost_return_pct":-0.6697575996526428,"peak_after_cost_return_pct":-0.6697575996526428,"trailing_drawdown_pct":0.0,"rolling_5td_return_pct":null},
+      "2026-08-20":{"close":20.0,"daily_return_pct":0.5025125628140836,"d_index":1,"model_td":2,"cumulative_return_pct":0.5025125628140836,"after_cost_return_pct":-0.17061065291722466,"peak_after_cost_return_pct":-0.17061065291722466,"trailing_drawdown_pct":0.0,"rolling_5td_return_pct":null},
+      "2026-08-21":{"close":20.4,"daily_return_pct":2.0,"d_index":2,"model_td":3,"cumulative_return_pct":2.5125628140703515,"after_cost_return_pct":1.8259771340244368,"peak_after_cost_return_pct":1.8259771340244368,"trailing_drawdown_pct":0.0,"rolling_5td_return_pct":null}
+    }
+  },
+  "pending_entry": null,
+  "as_of_date": "2026-08-21"
+}

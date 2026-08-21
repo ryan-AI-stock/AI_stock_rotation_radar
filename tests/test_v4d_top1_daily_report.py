@@ -144,7 +144,7 @@ class V4DTop1DailyReportTests(unittest.TestCase):
         self.assertIn("2351 順德", html)
         self.assertNotIn("V4-D完整監控計畫", html)
         self.assertEqual(
-            html.count("模型尚未正式買入，此訊息流空。"),
+            html.count("模型模擬帳戶目前空手，此訊息流空。"),
             2,
         )
         self.assertNotIn("after-cost 未達 +5%", html)
@@ -161,7 +161,7 @@ class V4DTop1DailyReportTests(unittest.TestCase):
         self.assertIn("當日Top1～Top3與排名原因", html)
         self.assertNotIn("執行買入並計為TD1", html)
         self.assertNotIn("建立TD1第一筆正式交易紀錄", html)
-        self.assertIn("模型尚未正式買入，此訊息流空。", html)
+        self.assertIn("模型模擬帳戶目前空手，此訊息流空。", html)
         self.assertNotIn("7/27依官方收盤建立TD1", html)
 
     def test_preview_compares_holding_with_median_annualized_path(self):
@@ -179,9 +179,9 @@ class V4DTop1DailyReportTests(unittest.TestCase):
             preview_assumed_holding=True,
         )
 
-        self.assertIn("今日實際表現 vs 中位數年化線", html)
+        self.assertIn("今日模型表現 vs 中位數年化線", html)
         self.assertNotIn("V4-D完整監控計畫", html)
-        self.assertIn("27.19億元", html)
+        self.assertIn("10.75億元", html)
         self.assertIn(f"{MEDIAN_ROUTE_CAGR * 100:.2f}%", html)
         self.assertIn(f"{MEDIAN_ROUTE_DAILY_RATE * 100:.2f}%", html)
         self.assertEqual(rows[0]["benchmark_elapsed_td"], 0)

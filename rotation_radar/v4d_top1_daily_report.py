@@ -15,7 +15,11 @@ from .base_cycle_daily_report import (
 )
 from .disposition_gate import DispositionSourceNotReady, load_disposition_gate
 from .schedule_gate import fetch_twse_calendar, is_trading_day
-from .v4d_actual_trade import load_actual_trade_state
+from .v4d_simulation_account import (
+    buy_position,
+    load_simulation_state,
+    sell_position,
+)
 
 
 REPORT_TITLE = "最新版個股模型 V4-D｜Top1 每日追蹤"
@@ -31,10 +35,10 @@ MODEL_NAME = (
 BUY_RATE = 0.000855 + 0.001
 SELL_RATE = 0.000855 + 0.003 + 0.001
 ACTUAL_POSITION_ESTIMATED_SELL_RATE = 0.000855 + 0.003
-POSITION_STREAM_MESSAGE = "模型尚未正式買入，此訊息流空。"
+POSITION_STREAM_MESSAGE = "模型模擬帳戶目前空手，此訊息流空。"
 MEDIAN_ROUTE_COUNT = 64
-MEDIAN_ROUTE_FINAL_CAPITAL = 2_719_227_259.572438
-MEDIAN_ROUTE_CAGR = 0.6923643
+MEDIAN_ROUTE_FINAL_CAPITAL = 1_075_187_560.6471753
+MEDIAN_ROUTE_CAGR = 0.5715521176082787
 TRADING_DAYS_PER_YEAR = 252
 MEDIAN_ROUTE_DAILY_RATE = (1 + MEDIAN_ROUTE_CAGR) ** (
     1 / TRADING_DAYS_PER_YEAR
@@ -55,7 +59,7 @@ def main() -> None:
     parser.add_argument("--source-repo", default=".")
     parser.add_argument("--state", default="data/formal_v4d_top1_state.json")
     parser.add_argument(
-        "--position-state", default="data/formal_v4d_actual_trade_state.json"
+        "--position-state", default="data/formal_v4d_simulation_state.json"
     )
     parser.add_argument("--output", default="reports/formal_v4d_top1_daily.html")
     parser.add_argument("--tracking-output", default="reports/formal_v4d_top1_daily.csv")
@@ -537,10 +541,14 @@ def _ranking_reason(row: dict) -> str:
     return "｜".join(parts) or "正式字典式排序結果"
 
 
-def _actual_trade_history(actual_trade_state: dict) -> str:
-    labels = {"v4d_buy": "買入", "v4d_sell": "賣出", "legacy_sell": "舊部位賣出"}
+def _simulation_trade_history(simulation_state: dict) -> str:
+    labels = {
+        "buy": "模型買入",
+        "sell": "模型賣出",
+        "buy_blocked_insufficient_cash": "現金不足",
+    }
     rows = []
-    for trade in actual_trade_state.get("actual_trades", []):
+    for trade in simulation_state.get("transactions", []):
         pnl = trade.get("realized_pnl")
         ret = trade.get("realized_return_pct")
         result = "—"
@@ -554,14 +562,26 @@ def _actual_trade_history(actual_trade_state: dict) -> str:
             f"<td><b>{escape(labels.get(trade.get('action'), str(trade.get('action', ''))))}</b></td>"
             f"<td>{escape(str(trade.get('ticker', '')))} {escape(str(trade.get('name', '')))}</td>"
             f"<td>{int(trade.get('shares') or 0):,}股</td>"
-            f"<td>{float(trade.get('average_price') or 0):,.2f}</td>"
+            f"<td>{float(trade.get('execution_price') or 0):,.2f}</td>"
             f"<td>{result}</td>"
-            f"<td>{escape(str(trade.get('exit_reason') or trade.get('note') or ''))}</td>"
+            f"<td>{escape(str(trade.get('reason') or ''))}</td>"
             "</tr>"
         )
     if not rows:
-        return '<tr><td colspan="7" class="empty">尚無實際成交紀錄。</td></tr>'
+        return '<tr><td colspan="7" class="empty">尚無模型模擬交易。</td></tr>'
     return "".join(rows)
+
+
+def _official_close(official: pd.DataFrame, ticker: str, target: pd.Timestamp) -> float:
+    rows = official[
+        official["ticker"].eq(str(ticker).zfill(4))
+        & official["date"].eq(target)
+    ].dropna(subset=["close"])
+    if rows.empty:
+        raise ReportDataNotReady(
+            f"Target-date official close is not ready for simulated {ticker}"
+        )
+    return float(rows.iloc[-1]["close"])
 
 
 def _trading_dates_from(
@@ -659,9 +679,9 @@ def build_daily_report(
     target = pd.Timestamp(report_date)
     signal_state = load_state(state_path)
     require_current_top1_signal(signal_state, target)
-    actual_trade_state = load_actual_trade_state(position_state_path)
+    simulation_state = load_simulation_state(position_state_path)
     top3_ranking = load_top3_ranking(ranking_path, signal_state)
-    position_state = actual_trade_state.get("position")
+    position_state = simulation_state.get("position")
     try:
         disposition_gate = load_disposition_gate(
             ticker=signal_state["ticker"],
@@ -689,6 +709,20 @@ def build_daily_report(
                 "market": position_state.get("market", "TWSE"),
             }
         )
+    pending_exit = (position_state or {}).get("pending_exit") or {}
+    replacement = pending_exit.get("replacement") or simulation_state.get(
+        "pending_entry"
+    )
+    if replacement and str(replacement.get("ticker", "")).zfill(4) not in {
+        str(item["ticker"]).zfill(4) for item in current_rows
+    }:
+        current_rows.append(
+            {
+                "ticker": str(replacement["ticker"]).zfill(4),
+                "name": replacement["name"],
+                "market": replacement.get("market", "TWSE"),
+            }
+        )
     current = pd.DataFrame(current_rows)
     official, _ = load_official_prices_and_turnover(
         source_repo=source_repo,
@@ -699,6 +733,53 @@ def build_daily_report(
     )
     official["ticker"] = official["ticker"].astype(str).str.zfill(4)
     official["date"] = pd.to_datetime(official["date"])
+
+    if position_state and pending_exit.get("execution_date") == target.strftime(
+        "%Y-%m-%d"
+    ):
+        sold_ticker = str(position_state["ticker"]).zfill(4)
+        sell_position(
+            simulation_state,
+            trade_date=target.strftime("%Y-%m-%d"),
+            price=_official_close(official, position_state["ticker"], target),
+            reason=str(pending_exit.get("reason") or "V4-D退出訊號"),
+        )
+        position_state = None
+        if (
+            replacement
+            and not replacement.get("blocked", False)
+            and str(replacement["ticker"]).zfill(4) != sold_ticker
+        ):
+            buy_position(
+                simulation_state,
+                trade_date=target.strftime("%Y-%m-%d"),
+                ticker=replacement["ticker"],
+                name=replacement["name"],
+                price=_official_close(official, replacement["ticker"], target),
+                signal_date=replacement["signal_date"],
+                signal_close=float(replacement["signal_close"]),
+                reason="前一持股退出後依前一交易日Top1換倉",
+            )
+            position_state = simulation_state.get("position")
+
+    pending_entry = simulation_state.get("pending_entry")
+    if (
+        position_state is None
+        and pending_entry
+        and pending_entry.get("execution_date") == target.strftime("%Y-%m-%d")
+        and not pending_entry.get("blocked", False)
+    ):
+        buy_position(
+            simulation_state,
+            trade_date=target.strftime("%Y-%m-%d"),
+            ticker=pending_entry["ticker"],
+            name=pending_entry["name"],
+            price=_official_close(official, pending_entry["ticker"], target),
+            signal_date=pending_entry["signal_date"],
+            signal_close=float(pending_entry["signal_close"]),
+            reason="空手時依前一交易日Top1建立模擬部位",
+        )
+        position_state = simulation_state.get("position")
     signal_rows = official[
         official["ticker"].eq(str(signal_state["ticker"]).zfill(4))
         & official["date"].le(target)
@@ -737,12 +818,32 @@ def build_daily_report(
             prior_close=prior_close,
             closed_dates=fetch_twse_calendar()[1],
         )
-        actual_trade_state["position"] = tracking_state
-        position_state_path.parent.mkdir(parents=True, exist_ok=True)
-        position_state_path.write_text(
-            json.dumps(actual_trade_state, ensure_ascii=False, indent=2),
-            encoding="utf-8",
-        )
+        simulation_state["position"] = tracking_state
+        if tracking_state.get("pending_exit"):
+            tracking_state["pending_exit"]["replacement"] = {
+                "ticker": str(signal_state["ticker"]).zfill(4),
+                "name": signal_state["name"],
+                "market": signal_state.get("market", "TWSE"),
+                "signal_date": signal_state["signal_date"],
+                "signal_close": float(signal_state["signal_close"]),
+                "execution_date": signal_state["execution_date"],
+                "blocked": bool(disposition_gate["blocked"]),
+            }
+    elif signal_state["execution_date"] > target.strftime("%Y-%m-%d"):
+        simulation_state["pending_entry"] = {
+            "ticker": str(signal_state["ticker"]).zfill(4),
+            "name": signal_state["name"],
+            "market": signal_state.get("market", "TWSE"),
+            "signal_date": signal_state["signal_date"],
+            "signal_close": float(signal_state["signal_close"]),
+            "execution_date": signal_state["execution_date"],
+            "blocked": bool(disposition_gate["blocked"]),
+        }
+    position_state_path.parent.mkdir(parents=True, exist_ok=True)
+    position_state_path.write_text(
+        json.dumps(simulation_state, ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )
     rows = tracking_rows(tracking_state) if position_state else []
     taiex_history = load_taiex_history(
         target=actual,
@@ -763,7 +864,7 @@ def build_daily_report(
             disposition_gate=disposition_gate,
             signal_state=signal_state,
             top3_ranking=top3_ranking,
-            actual_trade_state=actual_trade_state,
+            actual_trade_state=simulation_state,
         ),
         encoding="utf-8",
     )
@@ -795,8 +896,8 @@ def build_pending_seed_report(
     ranking_path: Path,
 ) -> dict:
     signal_state = load_state(state_path)
-    actual_trade_state = load_actual_trade_state(position_state_path)
-    position_state = actual_trade_state.get("position")
+    simulation_state = load_simulation_state(position_state_path)
+    position_state = simulation_state.get("position")
     top3_ranking = load_top3_ranking(ranking_path, signal_state)
     state = position_state or signal_state
     rows = tracking_rows(state) if position_state else []
@@ -823,7 +924,7 @@ def build_pending_seed_report(
             rows,
             signal_state=signal_state,
             top3_ranking=top3_ranking,
-            actual_trade_state=actual_trade_state,
+            actual_trade_state=simulation_state,
         ),
         encoding="utf-8",
     )
@@ -866,7 +967,7 @@ def render_html(
         else "尚未建立"
     )
     actual_shares = int(state.get("shares") or 0)
-    remaining_cash = float(state.get("remaining_cash") or 0)
+    remaining_cash = float((actual_trade_state or {}).get("cash") or 0)
     latest = rows[-1] if rows else None
     latest_close = (
         f"{float(latest['close']):,.2f}" if latest else f"{float(state['signal_close']):,.2f}"
@@ -884,7 +985,7 @@ def render_html(
     )
     excess_latest = actual_latest - benchmark_latest
     stream_active = bool(rows) and bool(
-        state.get("actual_position_confirmed") or preview_assumed_holding
+        state.get("simulation_position") or preview_assumed_holding
     )
     next_action = f"{signal_state['execution_date']} 執行買入並計為TD1"
     if latest:
@@ -921,13 +1022,13 @@ def render_html(
         "</tr>"
         for index, item in enumerate(top3_ranking, start=1)
     )
-    actual_trade_rows = _actual_trade_history(actual_trade_state or {})
+    actual_trade_rows = _simulation_trade_history(actual_trade_state or {})
     if not stream_active:
         overview = (
             f'<div class="paused">{escape(POSITION_STREAM_MESSAGE)}</div>'
         )
         history_section = (
-            '<h3>實際交易足跡</h3>'
+            '<h3>模型模擬交易足跡</h3>'
             '<table><thead><tr><th>日期</th><th>動作</th><th>股票</th><th>股數</th><th>成交均價</th><th>已實現損益</th><th>原因／備註</th></tr></thead>'
             f'<tbody>{actual_trade_rows}</tbody></table><h3>目前持股每日比較</h3>'
             f'<div class="paused">{escape(POSITION_STREAM_MESSAGE)}</div>'
@@ -937,27 +1038,27 @@ def render_html(
         overview = f"""
 <div class="hero-grid">
   <div class="holding-card">
-    <div class="eyebrow">實際正式部位</div>
+    <div class="eyebrow">模型模擬部位</div>
     <div class="holding-name">{escape(state['ticker'])} {escape(state['name'])}</div>
     <div class="holding-meta">訊號 {escape(state['signal_date'])}｜買入 {escape(state['execution_date'])}｜{_holding_label(latest)}</div>
-    <div class="holding-meta">實際均價 {entry_close}｜持股 {actual_shares:,} 股｜剩餘現金 {remaining_cash:,.0f} 元</div>
+    <div class="holding-meta">模擬成交價 {entry_close}｜持股 {actual_shares:,} 股｜剩餘現金 {remaining_cash:,.0f} 元</div>
     <div class="holding-price">最新收盤 <b>{latest_close}</b></div>
   </div>
   <div class="comparison-card">
     <div class="eyebrow">目前累積比較</div>
-    <div class="comparison-row"><span>個股實際</span><b class="{_return_class(actual_latest)}">{actual_latest:+.2f}%</b></div>
+    <div class="comparison-row"><span>模型模擬</span><b class="{_return_class(actual_latest)}">{actual_latest:+.2f}%</b></div>
     <div class="comparison-row"><span>中位數路徑</span><b class="benchmark">{benchmark_latest:+.2f}%</b></div>
     <div class="comparison-row emphasis"><span>相較中位數</span><b class="{_return_class(excess_latest)}">{excess_latest:+.2f} 個百分點</b></div>
   </div>
 </div>"""
         history_section = f"""
-<h3>實際交易足跡</h3>
+<h3>模型模擬交易足跡</h3>
 <table><thead><tr><th>日期</th><th>動作</th><th>股票</th><th>股數</th><th>成交均價</th><th>已實現損益</th><th>原因／備註</th></tr></thead><tbody>{actual_trade_rows}</tbody></table>
 <h3>目前持股每日比較</h3>
 <p class="note">買入日只建立0%比較基準；下一交易日開始，將個股收盤價累積漲跌與中位數年化線逐日比較。</p>
 <table class="history"><thead><tr><th>日期</th><th>模型日</th><th>收盤</th><th>當日漲跌</th><th>個股累積</th><th>中位路徑累積</th><th>相差</th><th>V4-D狀態</th></tr></thead><tbody>{history}</tbody></table>"""
         footer_block = (
-            "<footer>私人研究報告。中位數年化線與半年線監測只作研究比較，"
+            "<footer>模型forward simulation研究報告。所有成交採官方收盤價、整股限制與正式成本；不代表使用者實際交易。中位數年化線與半年線監測只作研究比較，"
             "不改變V4-D正式買賣訊號。Top1 為 V4-D 凍結規則在 "
             f"{escape(signal_state['signal_date'])} 收盤後的結果。</footer>"
         )
@@ -982,7 +1083,7 @@ def render_html(
         }.get(market_monitor["state"], "neutral")
         refresh_state = dict(state)
         refresh_state["ticker"] = signal_state["ticker"]
-        if state.get("actual_position_confirmed"):
+        if state.get("simulation_position"):
             refresh_state["holding_ticker"] = state["ticker"]
         refresh_text = research_refresh_decision(market_monitor, refresh_state)
         market_section = f"""
@@ -1019,15 +1120,15 @@ def render_html(
     return f"""<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><style>
 @page{{size:A4;margin:11mm}}*{{box-sizing:border-box}}body{{font-family:'Noto Sans TC','Microsoft JhengHei',sans-serif;color:#17262d;margin:0;background:#fff}}header{{background:#102e39;color:#fff;padding:22px 26px;border-bottom:6px solid #d7a12b}}h1{{font-size:25px;margin:0 0 7px;letter-spacing:0}}header p{{margin:4px 0;color:#d7e5e8;font-size:11px}}section{{margin:17px 0 22px;break-inside:avoid}}h2{{font-size:18px;margin:0 0 10px;padding-left:10px;border-left:5px solid #d7a12b}}h3{{font-size:13px;margin:14px 0 7px;color:#29434c}}.note{{font-size:11px;color:#64727b;margin:0 0 9px}}.paused{{border:1px solid #d7e0e2;border-top:4px solid #19766c;padding:18px;background:#f8faf9;font-size:16px;font-weight:700}}.hero-grid{{display:grid;grid-template-columns:1.12fr .88fr;gap:12px}}.holding-card,.comparison-card{{border:1px solid #d5e0e2;padding:16px;background:#f7faf9}}.holding-card{{border-top:5px solid #19766c}}.comparison-card{{border-top:5px solid #d7a12b}}.eyebrow{{font-size:11px;color:#66767d;font-weight:700}}.holding-name{{font-size:24px;font-weight:800;margin:5px 0}}.holding-meta{{font-size:11px;color:#66767d}}.holding-price{{margin-top:14px;font-size:13px}}.holding-price b{{font-size:22px;margin-left:5px}}.comparison-row{{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #dce4e6;padding:7px 0;font-size:12px}}.comparison-row b{{font-size:17px}}.comparison-row.emphasis{{border-bottom:0;padding-top:10px}}.benchmark-panel{{border:1px solid #d8e1e3;background:#fbfaf5;padding:14px}}.benchmark-title{{display:flex;justify-content:space-between;align-items:flex-end}}.benchmark-title strong{{font-size:21px;color:#a36d00}}.benchmark-title span{{font-size:11px;color:#6e777b}}.benchmark-line{{height:6px;background:linear-gradient(90deg,#d7a12b,#f0ce72);margin:12px 0 10px;border-radius:3px}}.benchmark-stats{{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}}.benchmark-stat{{border-left:3px solid #d7a12b;padding-left:8px}}.benchmark-stat small{{display:block;color:#6f7b80;font-size:9px}}.benchmark-stat b{{font-size:14px}}.market-monitor{{border:1px solid #d6e0e2;border-top:5px solid #71808a;background:#f8faf9;padding:14px}}.market-monitor.watch{{border-top-color:#d7a12b;background:#fffbf1}}.market-monitor.confirmed{{border-top-color:#19766c;background:#f2faf7}}.market-monitor.invalid{{border-top-color:#b23a3a;background:#fff7f7}}.market-monitor-head{{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:12px}}.market-monitor-head span{{display:block;font-size:10px;color:#6b777c}}.market-monitor-head b{{font-size:17px}}.market-monitor-head strong{{font-size:23px}}.market-grid{{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}}.market-grid>div{{background:#fff;border:1px solid #dbe3e5;padding:9px}}.market-grid small,.market-grid span{{display:block;font-size:9px;color:#6c797f}}.market-grid b{{display:block;font-size:14px;margin:3px 0}}.refresh-research{{margin-top:10px;padding:9px 11px;background:#102e39;color:#fff;font-size:10px}}table{{width:100%;border-collapse:collapse;font-size:10px}}th{{background:#edf2f3;color:#28434c;text-align:left;padding:7px 6px;border-bottom:2px solid #9aabb0}}td{{padding:7px 6px;border-bottom:1px solid #dce3e5;vertical-align:top}}td small{{display:block;color:#738087;margin-top:2px}}tbody tr:nth-child(even){{background:#f8faf9}}.history th:nth-child(1),.history th:nth-child(2),.history th:nth-child(3){{white-space:nowrap}}.up{{color:#b22d2d;font-weight:700}}.down{{color:#087e69;font-weight:700}}.flat{{color:#48575e;font-weight:700}}.benchmark{{color:#a36d00;font-weight:700}}.empty{{text-align:center;color:#758188;padding:20px}}footer{{font-size:9px;color:#7b858a;border-top:1px solid #d6dddf;padding-top:8px;margin-top:16px}}</style></head><body>
 <header><h1>{REPORT_TITLE}</h1><p>最新官方收盤資料日：{actual:%Y-%m-%d}</p><p>{escape(MODEL_NAME)}</p></header>
-<section><h2>第一部分｜今日實際表現 vs 中位數年化線</h2>{overview}</section>
+<section><h2>第一部分｜今日模型表現 vs 中位數年化線</h2>{overview}</section>
 <section><h2>第二部分｜當日Top1～Top3與排名原因</h2><p class="note">依正式字典式排序列出；不是加權總分，也不存在滿分100分。</p><table><thead><tr><th>順位</th><th>股票</th><th>產業</th><th>排名重點</th></tr></thead><tbody>{top3_rows}</tbody></table></section>
 <section><h2>第三部分｜處置股交易可行性</h2>{trade_gate_section}</section>
 <section><h2>第四部分｜大盤半年線監測</h2>{market_section}</section>
 <section><h2>第五部分｜64條歷史路徑的中位基準</h2>
 <div class="benchmark-panel"><div class="benchmark-title"><div><span>期末剩餘資產中位數</span><br><strong>{MEDIAN_ROUTE_FINAL_CAPITAL / 100_000_000:.2f}億元</strong></div><div>年化複合成長率 <b>{MEDIAN_ROUTE_CAGR * 100:.2f}%</b><br>每交易日複合基準 <b>{MEDIAN_ROUTE_DAILY_RATE * 100:.2f}%</b></div></div><div class="benchmark-line"></div>
 <div class="benchmark-stats"><div class="benchmark-stat"><small>買入日</small><b>0.00%</b></div><div class="benchmark-stat"><small>TD5參考</small><b>+{benchmark_td5:.2f}%</b></div><div class="benchmark-stat"><small>TD14參考</small><b>+{benchmark_td14:.2f}%</b></div><div class="benchmark-stat"><small>TD22參考</small><b>+{benchmark_td22:.2f}%</b></div></div></div>
-<p class="note">基準來自2015-05-18至2015-08-17共64條不同起始路徑；初始800萬元、100%個股、無0050正二、無每月提領。採目前正式V4-D與TD1～5股價下跌5%觸發口徑。</p></section>
-<section><h2>第六部分｜實際交易足跡與每日路徑比較</h2>{history_section}</section>
+<p class="note">基準來自2015-05-18至2015-08-17共64條不同起始路徑；初始700萬元、100%個股、無0050正二、每月底提領75,000元。採完整日價重鏈後的正式V4-D與TD1～5股價下跌5%觸發口徑。</p></section>
+<section><h2>第六部分｜模型模擬交易足跡與每日路徑比較</h2>{history_section}</section>
 {footer_block}</body></html>"""
 
 

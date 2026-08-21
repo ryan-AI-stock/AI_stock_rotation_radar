@@ -106,8 +106,8 @@ jobs:
       - name: Validate new report code
         if: steps.report-date.outputs.should_run == 'true' && (github.event_name == 'workflow_dispatch' || (steps.publish-marker.outputs.cache-hit != 'true' && steps.drive-completion.outputs.already_published != 'true'))
         run: |
-          python -m py_compile rotation_radar/v4d_top1_signal.py rotation_radar/disposition_gate.py rotation_radar/v4d_actual_trade.py rotation_radar/v4d_sheet_sync.py rotation_radar/v4d_top1_daily_report.py rotation_radar/v4d_top1_publish.py
-          python -m unittest tests.test_v4d_top1_signal tests.test_v4d_actual_trade tests.test_v4d_sheet_sync tests.test_v4d_top1_daily_report tests.test_schedule_gate tests.test_drive_publish -v
+          python -m py_compile rotation_radar/v4d_top1_signal.py rotation_radar/disposition_gate.py rotation_radar/v4d_simulation_account.py rotation_radar/v4d_top1_daily_report.py rotation_radar/v4d_top1_publish.py
+          python -m unittest tests.test_v4d_top1_signal tests.test_v4d_simulation_account tests.test_v4d_top1_daily_report tests.test_schedule_gate tests.test_drive_publish -v
 
       - name: Calculate current formal V4-D Top1
         id: calculate-top1
@@ -144,7 +144,7 @@ jobs:
             --date "${{ steps.report-date.outputs.target_date }}" \
             --source-repo . \
             --state data/formal_v4d_top1_state.json \
-            --position-state data/formal_v4d_actual_trade_state.json \
+            --position-state data/formal_v4d_simulation_state.json \
             --output reports/formal_v4d_top1_daily.html \
             --tracking-output reports/formal_v4d_top1_daily.csv
           status=$?
@@ -177,26 +177,6 @@ jobs:
             --html reports/formal_v4d_top1_daily.html \
             --date "${{ steps.report-date.outputs.target_date }}"
 
-      - name: Sync actual V4-D trades to Google Sheet
-        id: sheet-sync
-        if: steps.build-report.outputs.report_ready == 'true'
-        continue-on-error: true
-        env:
-          GOOGLE_OAUTH_CLIENT_ID: ${{ secrets.GOOGLE_OAUTH_CLIENT_ID }}
-          GOOGLE_OAUTH_CLIENT_SECRET: ${{ secrets.GOOGLE_OAUTH_CLIENT_SECRET }}
-          GOOGLE_OAUTH_REFRESH_TOKEN: ${{ secrets.GOOGLE_OAUTH_REFRESH_TOKEN }}
-        run: python -m rotation_radar.v4d_sheet_sync --state data/formal_v4d_actual_trade_state.json
-
-      - name: Report non-blocking Google Sheet sync failure
-        if: steps.sheet-sync.outcome == 'failure'
-        shell: bash
-        run: |
-          echo "::warning::V4-D PDF已更新，但Google Sheet同步失敗；請確認OAuth專案已啟用Google Sheets API。"
-          {
-            echo "### V4-D Google Sheet同步警告"
-            echo "PDF與每日狀態已繼續產出；Google Sheet本次未更新。請啟用OAuth專案的Google Sheets API後重跑。"
-          } >> "$GITHUB_STEP_SUMMARY"
-
       - name: Commit durable V4-D Top1 history
         if: steps.build-report.outputs.report_ready == 'true'
         shell: bash
@@ -204,7 +184,7 @@ jobs:
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/formal_v4d_top1_state.json data/formal_v4d_actual_trade_state.json
+          git add data/formal_v4d_top1_state.json data/formal_v4d_simulation_state.json
           if git diff --cached --quiet; then exit 0; fi
           git commit -m "Update V4-D Top1 tracking state"
           git pull --rebase origin main
@@ -220,7 +200,7 @@ jobs:
             reports/formal_v4d_top1_daily.csv
             reports/formal_v4d_top30_daily.csv
             data/formal_v4d_top1_state.json
-            data/formal_v4d_actual_trade_state.json
+            data/formal_v4d_simulation_state.json
             private_report/最新版個股模型V4-D_Top1每日追蹤報告.pdf
           if-no-files-found: error
 
