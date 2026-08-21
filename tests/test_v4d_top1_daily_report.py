@@ -200,6 +200,44 @@ class V4DTop1DailyReportTests(unittest.TestCase):
             MEDIAN_ROUTE_DAILY_RATE * 100,
         )
 
+    def test_simulation_report_shows_account_nav_pnl_and_return(self):
+        state = self.state()
+        state.update(
+            {
+                "entry_close": 100.0,
+                "shares": 69_000,
+                "buy_fee": 12_799.5,
+                "position_cost": 6_912_799.5,
+                "status": "holding",
+                "simulation_position": True,
+            }
+        )
+        state = update_state(
+            state,
+            mark_date="2026-07-27",
+            close=99.0,
+            prior_close=100.0,
+        )
+        simulation_state = {
+            "initial_capital": 7_000_000.0,
+            "cash": 87_200.5,
+            "position": state,
+            "transactions": [],
+        }
+        html = render_html(
+            pd.Timestamp("2026-07-27"),
+            state,
+            tracking_rows(state),
+            actual_trade_state=simulation_state,
+        )
+
+        expected_nav = 87_200.5 + 69_000 * 99.0 * (1 - 0.004855)
+        expected_pnl = expected_nav - 7_000_000.0
+        self.assertIn(f"{expected_nav:,.0f} 元", html)
+        self.assertIn(f"{expected_pnl:+,.0f} 元", html)
+        self.assertIn(f"{expected_pnl / 7_000_000 * 100:+.2f}%", html)
+        self.assertIn("目前持股after-cost", html)
+
     def test_gate_plan_uses_entry_day_as_td1(self):
         plan = gate_plan(self.state(), closed_dates=set())
         self.assertEqual(plan[0]["range"], "07/27～07/31")
