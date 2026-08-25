@@ -138,7 +138,9 @@ class SheetsClient:
             token_uri="https://oauth2.googleapis.com/token",
             client_id=os.environ["GOOGLE_OAUTH_CLIENT_ID"],
             client_secret=os.environ["GOOGLE_OAUTH_CLIENT_SECRET"],
-            scopes=["https://www.googleapis.com/auth/spreadsheets", "https://www.googleapis.com/auth/drive.file"],
+            # Keep the scope identical to the repository's existing OAuth token.
+            # Google Sheets accepts the full Drive scope for spreadsheet access.
+            scopes=["https://www.googleapis.com/auth/drive"],
         )
         credentials.refresh(Request())
         self.headers = {"Authorization": f"Bearer {credentials.token}", "Content-Type": "application/json"}
