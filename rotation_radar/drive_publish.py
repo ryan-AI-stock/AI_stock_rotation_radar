@@ -45,6 +45,16 @@ def main() -> None:
     parser.add_argument("--date", help="Report date, YYYY-MM-DD. Defaults to current Asia/Taipei date.")
     parser.add_argument("--skip-upload", action="store_true", help="Render PDFs only; do not upload to Google Drive.")
     parser.add_argument(
+        "--skip-private-report",
+        action="store_true",
+        help="Do not render or upload the private strategy PDF.",
+    )
+    parser.add_argument(
+        "--check-public-report",
+        action="store_true",
+        help="Exit 0 when the fixed public report is current for --date; exit 3 otherwise.",
+    )
+    parser.add_argument(
         "--check-current-report",
         action="store_true",
         help="Exit 0 when both required fixed Drive PDFs are current for --date; exit 3 otherwise.",
@@ -65,6 +75,10 @@ def main() -> None:
     public_folder_id = os.environ.get("ROTATION_PUBLIC_REPORT_DRIVE_FOLDER_ID") or PUBLIC_FOLDER_ID
     private_folder_id = os.environ.get("ROTATION_PRIVATE_REPORT_DRIVE_FOLDER_ID") or PRIVATE_FOLDER_ID
     public_file_id = os.environ.get("ROTATION_PUBLIC_REPORT_DRIVE_FILE_ID", "")
+    if args.check_public_report:
+        current = is_public_report_current(report_date.date(), public_folder_id, public_file_id.strip() or None)
+        print(f"drive_public_report_current={str(current).lower()} report_date={report_date.date().isoformat()}")
+        raise SystemExit(0 if current else 3)
     if args.check_current_report:
         public_current = is_public_report_current(
             report_date.date(),
@@ -89,7 +103,7 @@ def main() -> None:
     if not html_path.exists():
         raise SystemExit(f"Report HTML not found: {html_path}")
     private_html_path = Path(args.private_html)
-    if not private_html_path.exists():
+    if not args.skip_private_report and not private_html_path.exists():
         raise SystemExit(f"Private trading-guide HTML not found: {private_html_path}")
     assert_public_report_safe(html_path)
 
@@ -102,11 +116,13 @@ def main() -> None:
         raise SystemExit("PDF render failed; aborting Drive publish.")
 
     print(f"已產生免費觀眾固定 PDF：{public_pdf}")
-    private_pdf = Path(__file__).resolve().parent.parent / "private_report" / PRIVATE_FIXED_FILE_NAME
-    private_pdf = render_report_pdf(private_html_path, private_pdf)
-    if not private_pdf:
-        raise SystemExit("Private PDF render failed; aborting Drive publish.")
-    print(f"已產生私人操作指南 PDF：{private_pdf}")
+    private_pdf: Path | None = None
+    if not args.skip_private_report:
+        private_pdf = Path(__file__).resolve().parent.parent / "private_report" / PRIVATE_FIXED_FILE_NAME
+        private_pdf = render_report_pdf(private_html_path, private_pdf)
+        if not private_pdf:
+            raise SystemExit("Private PDF render failed; aborting Drive publish.")
+        print(f"已產生私人操作指南 PDF：{private_pdf}")
     backup_pdf: Path | None = None
     if enable_dated_backup:
         # Deprecated: kept only for manual rollback. The default publishing path
@@ -121,17 +137,18 @@ def main() -> None:
         print("skip-upload=true，僅產生 PDF，不上傳 Google Drive。")
         return
 
-    private_link = upload_file_to_drive(
-        private_pdf,
-        private_folder_id,
-        "application/pdf",
-        file_name=PRIVATE_FIXED_FILE_NAME,
-        make_public=False,
-    )
-    if private_link:
-        print(f"已上傳或更新私人操作指南 PDF：{private_link}")
-    else:
-        raise SystemExit("私人操作指南 Google Drive PDF 上傳失敗，發布流程中止。")
+    if private_pdf is not None:
+        private_link = upload_file_to_drive(
+            private_pdf,
+            private_folder_id,
+            "application/pdf",
+            file_name=PRIVATE_FIXED_FILE_NAME,
+            make_public=False,
+        )
+        if private_link:
+            print(f"已上傳或更新私人操作指南 PDF：{private_link}")
+        else:
+            raise SystemExit("私人操作指南 Google Drive PDF 上傳失敗，發布流程中止。")
 
     if enable_dated_backup and backup_pdf:
         backup_folder_id = (

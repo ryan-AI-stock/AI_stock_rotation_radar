@@ -151,7 +151,7 @@ class ScheduleGateTests(unittest.TestCase):
         self.assertIn("SCHEDULE_RULES_PATH:", workflow)
         self.assertIn("Stop scheduled retry after successful trading-date publish", workflow)
         self.assertIn("Check fixed Google Drive report completion", workflow)
-        self.assertIn("--check-current-report", workflow)
+        self.assertIn("--check-public-report", workflow)
         self.assertIn("pip install '.[test]'", workflow)
         self.assertIn("steps.drive-completion.outputs.already_published != 'true'", workflow)
         self.assertIn("github.event_name == 'schedule' && steps.daily-publish-marker.outputs.cache-hit == 'true'", workflow)
@@ -176,7 +176,7 @@ class ScheduleGateTests(unittest.TestCase):
         ).read_text(encoding="utf-8")
 
         self.assertIn('if [ "${{ github.event_name }}" = "workflow_dispatch" ]', workflow)
-        self.assertIn("未產生或上傳PDF", workflow)
+        self.assertIn("未更新Dashboard", workflow)
 
 
 @contextmanager

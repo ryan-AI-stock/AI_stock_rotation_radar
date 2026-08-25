@@ -332,6 +332,14 @@ def select_top1(
     ranked = ranked.merge(
         industries[["ticker", "industry_name"]], on="ticker", how="left"
     )
+    current_closes = official.loc[
+        pd.to_datetime(official["date"]).eq(target), ["ticker", "close"]
+    ].copy()
+    current_closes["ticker"] = current_closes["ticker"].astype(str).str.zfill(4)
+    current_closes = current_closes.drop_duplicates("ticker", keep="last").rename(
+        columns={"close": "signal_close"}
+    )
+    ranked = ranked.merge(current_closes, on="ticker", how="left")
     eligible = ranked[
         ~ranked["industry_name"].isin(EXCLUDED_INDUSTRIES)
         & ranked["candidate_rank"].le(3)

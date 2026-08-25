@@ -82,6 +82,25 @@ class DrivePublishTests(unittest.TestCase):
             self.assertEqual(public_call.kwargs["file_name"], "台股股票族群輪動雷達_每日台股報告.pdf")
             self.assertTrue(public_call.kwargs["make_public"])
 
+    def test_skip_private_report_only_renders_and_uploads_public_pdf(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            html_path = Path(tmp) / "latest.html"
+            html_path.write_text("<html></html>", encoding="utf-8")
+            public_pdf = Path(drive_publish.__file__).resolve().parent.parent / "public_report" / drive_publish.PUBLIC_FIXED_FILE_NAME
+
+            with (
+                patch.object(sys, "argv", ["drive_publish", "--html", str(html_path), "--date", "2026-08-25", "--skip-private-report"]),
+                patch.dict("os.environ", {}, clear=True),
+                patch.object(drive_publish, "render_report_pdf", return_value=public_pdf) as render_pdf,
+                patch.object(drive_publish, "upload_file_to_drive", return_value="https://drive.example/file") as upload_file,
+            ):
+                drive_publish.main()
+
+            render_pdf.assert_called_once()
+            upload_file.assert_called_once()
+            self.assertEqual(upload_file.call_args.args[0], public_pdf)
+            self.assertTrue(upload_file.call_args.kwargs["make_public"])
+
     def test_public_report_guard_rejects_private_trading_panel(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             html_path = Path(tmp) / "latest.html"
