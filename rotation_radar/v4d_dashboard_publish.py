@@ -148,19 +148,28 @@ class SheetsClient:
 
     def get(self, a1_range: str) -> list[list[object]]:
         response = requests.get(f"{self.base}/values/{a1_range}", headers=self.headers, timeout=30)
-        response.raise_for_status()
+        self._raise_for_status(response)
         return response.json().get("values", [])
 
     def clear(self, a1_range: str) -> None:
         response = requests.post(f"{self.base}/values/{a1_range}:clear", headers=self.headers, json={}, timeout=30)
-        response.raise_for_status()
+        self._raise_for_status(response)
 
     def update(self, a1_range: str, values: list[list[object]]) -> None:
         response = requests.put(
             f"{self.base}/values/{a1_range}", params={"valueInputOption": "USER_ENTERED"},
             headers=self.headers, json={"range": a1_range, "majorDimension": "ROWS", "values": values}, timeout=30,
         )
-        response.raise_for_status()
+        self._raise_for_status(response)
+
+    @staticmethod
+    def _raise_for_status(response: requests.Response) -> None:
+        if response.ok:
+            return
+        raise requests.HTTPError(
+            f"Google Sheets API {response.status_code}: {response.text}",
+            response=response,
+        )
 
 
 def publish(spreadsheet_id: str, ranking_path: Path, state_path: Path, simulation_path: Path) -> None:
