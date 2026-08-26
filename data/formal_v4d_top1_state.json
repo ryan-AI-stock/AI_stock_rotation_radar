@@ -1,16 +1,16 @@
 {
   "version": 2,
   "model": "V4-D",
-  "ticker": "2379",
-  "name": "瑞昱",
+  "ticker": "2885",
+  "name": "元大金",
   "market": "TWSE",
-  "signal_date": "2026-08-25",
-  "signal_close": 730.0,
-  "execution_date": "2026-08-26",
+  "signal_date": "2026-08-26",
+  "signal_close": 62.8,
+  "execution_date": "2026-08-27",
   "entry_close": null,
   "status": "signal_only",
   "daily_marks": {},
   "candidate_rank": 1,
-  "industry": "半導體業",
+  "industry": "金融保險",
   "layer1_snapshot_date": "20260728"
 }
