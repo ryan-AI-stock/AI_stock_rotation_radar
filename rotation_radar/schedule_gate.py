@@ -45,10 +45,17 @@ def main() -> None:
         default=None,
         help="Optional AI_stock_schedule_rules schedule_rules.json path. Defaults to SCHEDULE_RULES_PATH.",
     )
+    parser.add_argument(
+        "--recover-delayed-schedule",
+        action="store_true",
+        help="Before the daily cutoff, publish the latest prior trading day. Use only for delayed scheduled jobs.",
+    )
     args = parser.parse_args()
 
     now = _parse_now(args.now)
     rules = load_schedule_rules(args.rules)
+    if args.recover_delayed_schedule and now.time() < rules.run_after:
+        rules = ScheduleGateRules(run_after=rules.run_after, retry_until_success=True)
     open_dates, closed_dates = fetch_twse_calendar()
     if closed_dates is not None:
         closed_dates = add_recent_emergency_market_closure(now, open_dates, closed_dates, rules)

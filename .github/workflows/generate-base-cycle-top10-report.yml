@@ -51,7 +51,10 @@ jobs:
               echo "reason=manual_workflow_dispatch"
             } >> "$GITHUB_OUTPUT"
           else
-            python -m rotation_radar.schedule_gate
+            # GitHub scheduled jobs can be delayed for hours. If a post-close
+            # run starts after midnight Taiwan time, recover the prior trading
+            # date instead of reporting a successful no-op.
+            python -m rotation_radar.schedule_gate --recover-delayed-schedule
           fi
 
       - name: Stop when shared schedule gate rejects this run

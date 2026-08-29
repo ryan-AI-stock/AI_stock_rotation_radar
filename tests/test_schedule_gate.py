@@ -177,6 +177,20 @@ class ScheduleGateTests(unittest.TestCase):
 
         self.assertIn('if [ "${{ github.event_name }}" = "workflow_dispatch" ]', workflow)
         self.assertIn("未更新Dashboard", workflow)
+        self.assertIn("--recover-delayed-schedule", workflow)
+
+    def test_delayed_schedule_can_recover_previous_trading_day(self) -> None:
+        rules = ScheduleGateRules(run_after=time(15, 0), retry_until_success=True)
+        decision = evaluate_schedule_gate(
+            datetime(2026, 8, 29, 3, 8),
+            set(),
+            set(),
+            rules=rules,
+        )
+
+        self.assertTrue(decision.should_run)
+        self.assertEqual(decision.target_date, date(2026, 8, 28))
+        self.assertEqual(decision.reason, "retry_previous_trading_day_until_published")
 
 
 @contextmanager
