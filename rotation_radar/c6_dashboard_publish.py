@@ -105,7 +105,33 @@ def build_dashboard_values(
     *, model_version: str, snapshot_as_of: str, data_status: str, slots: list[dict], cash: float = 0.0,
     notes: str = "",
 ) -> list[list[object]]:
+    replay_not_materialized = (
+        "no_whole_share_replay" in data_status
+        or "replay_not_materialized" in data_status
+    )
     withdrawal = select_withdrawal_slot(slots, cash=cash)
+    if replay_not_materialized:
+        withdrawal_rows = [
+            ["提領候選槽", "無法估算｜尚無權威整股帳本"],
+            ["提領候選股票", ""],
+            ["預計賣出股數", ""],
+            ["預估成交金額", ""],
+            ["預估費稅", ""],
+            ["預估提領淨額", ""],
+            ["現金提領額", ""],
+            ["候選槽相對成本報酬", ""],
+        ]
+    else:
+        withdrawal_rows = [
+            ["提領候選槽", withdrawal["slot_id"] or "空手／現金"],
+            ["提領候選股票", withdrawal.get("ticker", "")],
+            ["預計賣出股數", withdrawal["planned_shares"]],
+            ["預估成交金額", withdrawal["gross_amount"]],
+            ["預估費稅", withdrawal["transaction_cost"]],
+            ["預估提領淨額", withdrawal["net_amount"]],
+            ["現金提領額", withdrawal.get("cash_withdrawal_amount", 0.0)],
+            ["候選槽相對成本報酬", withdrawal["relative_return_pct"]],
+        ]
     return [
         ["C6研究版｜每日候選與三槽模擬帳戶", ""],
         ["model_version", model_version],
@@ -114,14 +140,7 @@ def build_dashboard_values(
         ["初始資金", C6_INITIAL_CAPITAL],
         ["槽數", C6_SLOT_COUNT],
         ["提領規則", "每次75,000元；持股相對成本報酬最低槽優先，整股交易"],
-        ["提領候選槽", withdrawal["slot_id"] or "空手／現金"],
-        ["提領候選股票", withdrawal.get("ticker", "")],
-        ["預計賣出股數", withdrawal["planned_shares"]],
-        ["預估成交金額", withdrawal["gross_amount"]],
-        ["預估費稅", withdrawal["transaction_cost"]],
-        ["預估提領淨額", withdrawal["net_amount"]],
-        ["現金提領額", withdrawal.get("cash_withdrawal_amount", 0.0)],
-        ["候選槽相對成本報酬", withdrawal["relative_return_pct"]],
+        *withdrawal_rows,
         ["資料缺口／備註", notes],
     ]
 

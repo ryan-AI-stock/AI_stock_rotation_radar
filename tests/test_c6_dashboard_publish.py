@@ -21,7 +21,8 @@ class C6DashboardPublishTests(unittest.TestCase):
         ))
         self.assertEqual(values["model_version"], "c6-research-v1")
         self.assertEqual(values["data_status"], "blocked_source_or_replay_not_materialized")
-        self.assertEqual(values["提領候選槽"], "空手／現金")
+        self.assertEqual(values["提領候選槽"], "無法估算｜尚無權威整股帳本")
+        self.assertEqual(values["預計賣出股數"], "")
 
     def test_cash_sufficient_for_withdrawal_does_not_sell_a_slot(self):
         result = select_withdrawal_slot(
