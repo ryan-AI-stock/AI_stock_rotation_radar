@@ -4,7 +4,7 @@ import unittest
 
 import pandas as pd
 
-from rotation_radar.v4d_dashboard_publish import build_signal_rows, build_trade_rows
+from rotation_radar.v4d_dashboard_publish import build_dashboard_values, build_signal_rows, build_trade_rows
 
 
 class V4dDashboardPublishTest(unittest.TestCase):
@@ -28,6 +28,16 @@ class V4dDashboardPublishTest(unittest.TestCase):
         rows = build_trade_rows(state)
         self.assertEqual([row[1] for row in rows], ["成交", "每日持有"])
         self.assertEqual(rows[1][13], 1)
+
+    def test_dashboard_displays_next_withdrawal_estimate(self) -> None:
+        state = {
+            "cash": 100, "transactions": [],
+            "withdrawal_schedule": {"amount": 75000, "start_date": "2026-09-09", "processed_scheduled_dates": []},
+            "position": {"ticker": "2330", "name": "台積電", "shares": 1000, "daily_marks": {"2026-09-08": {"close": 100, "model_td": 1}}},
+        }
+        values = dict(build_dashboard_values([], state))
+        self.assertEqual(values["下次提領排定日"], "2026-09-09")
+        self.assertEqual(values["預計賣出股數"], 750)
 
 
 if __name__ == "__main__":

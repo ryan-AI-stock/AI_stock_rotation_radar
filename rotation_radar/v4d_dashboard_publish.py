@@ -8,6 +8,8 @@ from pathlib import Path
 import pandas as pd
 import requests
 
+from .v4d_simulation_account import withdrawal_preview
+
 
 SIGNAL_SHEET = "V4-D每日訊號資料庫"
 TRADE_SHEET = "V4-D模擬交易紀錄"
@@ -70,12 +72,22 @@ def build_signal_rows(ranking: pd.DataFrame, state: dict) -> list[list[object]]:
 def build_trade_rows(simulation: dict) -> list[list[object]]:
     rows: list[list[object]] = []
     for tx in simulation.get("transactions", []):
+        action = str(tx.get("action", ""))
+        event_type = "每月提領" if action.startswith("monthly_withdrawal") else "成交"
+        action_label = {
+            "buy": "買進",
+            "sell": "賣出",
+            "monthly_withdrawal_stock_sale": "提領賣股",
+            "monthly_withdrawal_cash": "現金提領",
+            "monthly_withdrawal_unfunded_cash": "提領未完成",
+        }.get(action, action)
         rows.append([
-            tx.get("trade_date", ""), "成交", str(tx.get("ticker", "")).zfill(4), tx.get("name", ""),
-            "買進" if tx.get("action") == "buy" else "賣出", tx.get("execution_price"), tx.get("shares"),
+            tx.get("trade_date", ""), event_type, str(tx.get("ticker", "")).zfill(4), tx.get("name", ""),
+            action_label, tx.get("execution_price"), tx.get("shares"),
             tx.get("gross_amount"), tx.get("transaction_cost"), tx.get("cash_after"), tx.get("realized_pnl"),
             None if tx.get("realized_return_pct") is None else tx.get("realized_return_pct") / 100,
-            tx.get("signal_date", ""), None, None, None, None, None, None, tx.get("reason", ""),
+            tx.get("signal_date", ""), None, None, None, None, None, None,
+            f"{tx.get('reason', '')}｜排定日={tx.get('scheduled_withdrawal_date', '')}".rstrip("｜排定日="),
         ])
     position = simulation.get("position") or {}
     for mark_date, mark in sorted((position.get("daily_marks") or {}).items()):
@@ -104,6 +116,8 @@ def build_dashboard_values(signal_rows: list[list[object]], simulation: dict) ->
     nav = cash + market_value
     latest = signal_rows[0] if signal_rows else [""] * len(SIGNAL_HEADERS)
     final_row = next((row for row in signal_rows if row[6]), latest)
+    as_of = sorted(marks)[-1] if marks else final_row[0] if signal_rows else "2026-01-01"
+    withdrawal = withdrawal_preview(simulation, as_of_date=as_of, close=latest_close)
     values = [
         ["最新版個股模型V4-D｜每日訊號與模擬追蹤", ""],
         ["最新訊號日", final_row[0]], ["最終可交易Top1", f"{final_row[2]} {final_row[3]}"],
@@ -114,6 +128,12 @@ def build_dashboard_values(signal_rows: list[list[object]], simulation: dict) ->
         ["最高after-cost報酬", None if latest_mark.get("peak_after_cost_return_pct") is None else latest_mark.get("peak_after_cost_return_pct") / 100],
         ["高點回落", None if latest_mark.get("trailing_drawdown_pct") is None else latest_mark.get("trailing_drawdown_pct") / 100],
         ["持股市值", market_value], ["現金", cash], ["模擬總資產", nav],
+        ["下次提領排定日", withdrawal["next_scheduled_date"]],
+        ["提領執行狀態", withdrawal["status"]],
+        ["預計賣出股數", withdrawal["planned_shares"]],
+        ["預估賣出金額", withdrawal["estimated_gross_amount"]],
+        ["預估費稅", withdrawal["estimated_fee_tax"]],
+        ["預估提領淨額", withdrawal["estimated_net_withdrawal"]],
         ["", ""], ["今日Top1～Top3", "產業／狀態"],
     ]
     for row in signal_rows:
@@ -193,7 +213,7 @@ def publish(spreadsheet_id: str, ranking_path: Path, state_path: Path, simulatio
     client.update(f"'{TRADE_SHEET}'!A1", [TRADE_HEADERS, *trade_rows])
 
     dashboard = build_dashboard_values(new_rows, simulation)
-    client.clear(f"'{DASHBOARD_SHEET}'!A1:B40")
+    client.clear(f"'{DASHBOARD_SHEET}'!A1:B50")
     client.update(f"'{DASHBOARD_SHEET}'!A1", dashboard)
 
 

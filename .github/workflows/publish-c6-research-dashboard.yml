@@ -1,0 +1,42 @@
+name: Publish C6 Research Dashboard
+
+on:
+  schedule:
+    - cron: "30 7-15 * * 1-5"
+  workflow_dispatch:
+
+concurrency:
+  group: c6-research-dashboard
+  cancel-in-progress: false
+
+jobs:
+  publish-c6-research-snapshot:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install publisher dependencies
+        run: pip install '.[test]'
+      - name: Validate append-only C6 publisher
+        run: |
+          python -m py_compile rotation_radar/c6_dashboard_publish.py
+          python -m unittest tests.test_c6_dashboard_publish -v
+      - name: Publish only a materialized C6 snapshot
+        env:
+          GOOGLE_OAUTH_CLIENT_ID: ${{ secrets.GOOGLE_OAUTH_CLIENT_ID }}
+          GOOGLE_OAUTH_CLIENT_SECRET: ${{ secrets.GOOGLE_OAUTH_CLIENT_SECRET }}
+          GOOGLE_OAUTH_REFRESH_TOKEN: ${{ secrets.GOOGLE_OAUTH_REFRESH_TOKEN }}
+        run: |
+          set -euo pipefail
+          if [ ! -f data/c6_current_snapshot.json ]; then
+            echo "C6 data_status=blocked_source_or_replay_not_materialized" >> "$GITHUB_STEP_SUMMARY"
+            echo "No C6 daily source/replay payload was published; no data was fabricated."
+            exit 0
+          fi
+          python -m rotation_radar.c6_dashboard_publish \
+            --spreadsheet-id 1_t5jrM0ZZArrmF67mpgHIqj_tPLFGu3Cpfcko1Qz_vQ \
+            --payload data/c6_current_snapshot.json

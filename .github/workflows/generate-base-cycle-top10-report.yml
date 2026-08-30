@@ -93,8 +93,8 @@ jobs:
       - name: Validate new report code
         if: steps.report-date.outputs.should_run == 'true' && (github.event_name == 'workflow_dispatch' || steps.publish-marker.outputs.cache-hit != 'true')
         run: |
-          python -m py_compile rotation_radar/v4d_top1_signal.py rotation_radar/disposition_gate.py rotation_radar/v4d_simulation_account.py rotation_radar/v4d_top1_daily_report.py rotation_radar/v4d_dashboard_publish.py
-          python -m unittest tests.test_v4d_top1_signal tests.test_v4d_simulation_account tests.test_v4d_top1_daily_report tests.test_v4d_dashboard_publish tests.test_schedule_gate -v
+          python -m py_compile rotation_radar/v4d_top1_signal.py rotation_radar/disposition_gate.py rotation_radar/v4d_simulation_account.py rotation_radar/v4d_top1_daily_report.py rotation_radar/v4d_dashboard_publish.py rotation_radar/c6_dashboard_publish.py
+          python -m unittest tests.test_v4d_top1_signal tests.test_v4d_simulation_account tests.test_v4d_withdrawal_schedule tests.test_v4d_top1_daily_report tests.test_v4d_dashboard_publish tests.test_c6_dashboard_publish tests.test_schedule_gate -v
 
       - name: Calculate current formal V4-D Top1
         id: calculate-top1

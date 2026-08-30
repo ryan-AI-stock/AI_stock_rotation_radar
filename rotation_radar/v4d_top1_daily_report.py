@@ -17,6 +17,7 @@ from .disposition_gate import DispositionSourceNotReady, load_disposition_gate
 from .schedule_gate import fetch_twse_calendar, is_trading_day
 from .v4d_simulation_account import (
     buy_position,
+    execute_due_withdrawal,
     load_simulation_state,
     sell_position,
 )
@@ -839,6 +840,20 @@ def build_daily_report(
             "execution_date": signal_state["execution_date"],
             "blocked": bool(disposition_gate["blocked"]),
         }
+    held_close = None
+    current_position = simulation_state.get("position")
+    if current_position:
+        current_marks = current_position.get("daily_marks") or {}
+        if actual.strftime("%Y-%m-%d") in current_marks:
+            held_close = float(current_marks[actual.strftime("%Y-%m-%d")]["close"])
+    withdrawal_event = execute_due_withdrawal(
+        simulation_state,
+        trade_date=actual.strftime("%Y-%m-%d"),
+        close=held_close,
+    )
+    position_state = simulation_state.get("position")
+    if position_state is None:
+        tracking_state = signal_state
     position_state_path.parent.mkdir(parents=True, exist_ok=True)
     position_state_path.write_text(
         json.dumps(simulation_state, ensure_ascii=False, indent=2),
@@ -883,6 +898,7 @@ def build_daily_report(
         "ma120_market_state": market_monitor["state"],
         "ma120_market_state_label": market_monitor["state_label"],
         "tracking_row_count": len(rows),
+        "withdrawal_event": withdrawal_event,
         "future_data_violation_count": 0,
     }
 
