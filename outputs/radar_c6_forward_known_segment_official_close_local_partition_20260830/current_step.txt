@@ -1,0 +1,1 @@
+complete_local_known_segment_close_partition; await_core_deduplicated_full_forward_price_event_authority

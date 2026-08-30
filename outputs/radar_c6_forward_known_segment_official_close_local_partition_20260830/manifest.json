@@ -1,0 +1,11 @@
+{
+  "task": "C6_known_segment_official_close_local_partition",
+  "source_manifest": "source_manifest.csv",
+  "checksum_manifest": "checksum_manifest.csv",
+  "accepted_rows": 12,
+  "official_no_trade_rows": 0,
+  "source_blocked_rows": 0,
+  "forward_pit_blocker_dates": 12,
+  "network_calls": 0,
+  "future_data_violation_count": 0
+}

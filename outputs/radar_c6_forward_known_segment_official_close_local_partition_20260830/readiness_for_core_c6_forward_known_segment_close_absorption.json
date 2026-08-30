@@ -1,0 +1,18 @@
+{
+  "task": "C6_known_segment_official_close_local_partition",
+  "network_calls": 0,
+  "known_segment_authority_keys": 12,
+  "accepted_exact_official_raw_close_rows": 12,
+  "official_no_trade_rows": 0,
+  "source_blocked_rows": 0,
+  "ready_for_core_known_segment_official_close_absorption": true,
+  "forward_pit_gap_dates": 12,
+  "complete_forward_whole_share_replay_ready": false,
+  "complete_forward_blocker": "2026-08-13_to_2026-08-28_need_full_C6_PIT_action_state_not_just_top3_ranking_or_raw_close",
+  "future_data_violation_count": 0,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "not_live_rule": true
+}
