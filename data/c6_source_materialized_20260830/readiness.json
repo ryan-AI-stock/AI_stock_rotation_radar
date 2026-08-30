@@ -1,0 +1,36 @@
+{
+  "status": "research_partial_source_reuse_only",
+  "requested_targets": [
+    "2026-08-13",
+    "2026-08-14",
+    "2026-08-17",
+    "2026-08-18",
+    "2026-08-19",
+    "2026-08-20",
+    "2026-08-21",
+    "2026-08-24",
+    "2026-08-25",
+    "2026-08-26",
+    "2026-08-27",
+    "2026-08-28"
+  ],
+  "covered_targets": [
+    "2026-08-13",
+    "2026-08-14",
+    "2026-08-17",
+    "2026-08-18",
+    "2026-08-19",
+    "2026-08-20",
+    "2026-08-21",
+    "2026-08-24",
+    "2026-08-25",
+    "2026-08-26",
+    "2026-08-27",
+    "2026-08-28"
+  ],
+  "missing_targets": [],
+  "network_calls": 0,
+  "layer1_basis": "accepted 2026-07-22 allow-list; not current-fresh PIT",
+  "adjusted_price_basis": "trusted extension; 0050 raw-as-adjusted research diagnostic pending event audit",
+  "future_data_violation_count": 0
+}

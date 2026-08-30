@@ -23,8 +23,8 @@ jobs:
         run: pip install '.[test]'
       - name: Validate append-only C6 publisher
         run: |
-          python -m py_compile rotation_radar/c6_dashboard_publish.py
-          python -m unittest tests.test_c6_dashboard_publish -v
+          python -m py_compile rotation_radar/c6_dashboard_publish.py rotation_radar/c6_research_payload_materializer.py
+          python -m unittest tests.test_c6_dashboard_publish tests.test_c6_dashboard_publish_cli tests.test_c6_research_payload_materializer -v
       - name: Publish only a materialized C6 snapshot
         env:
           GOOGLE_OAUTH_CLIENT_ID: ${{ secrets.GOOGLE_OAUTH_CLIENT_ID }}

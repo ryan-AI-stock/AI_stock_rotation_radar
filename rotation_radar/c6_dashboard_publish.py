@@ -210,6 +210,8 @@ def main() -> None:
     parser.add_argument("--payload", required=True, type=Path)
     args = parser.parse_args()
     payload = json.loads(args.payload.read_text(encoding="utf-8"))
+    # Coverage remains immutable payload metadata; it is not a Sheets write argument.
+    payload.pop("coverage", None)
     result = publish_snapshot(args.spreadsheet_id, **payload)
     print(json.dumps(result, ensure_ascii=False, indent=2))
 
