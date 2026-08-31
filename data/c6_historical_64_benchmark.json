@@ -1,0 +1,17 @@
+{
+  "coverage": "64個2023不同起點至2026-08-12；初始TWD7,000,000；歷史每月底提領TWD75,000",
+  "capital_and_withdrawal": "TWD7,000,000／每月底TWD75,000",
+  "statistical_median_final_nav": 51306948.88781452,
+  "statistical_median_account_nav_mdd": -0.44957865501104666,
+  "statistical_median_twr_cagr": 0.9179220097428988,
+  "statistical_median_twr_mdd": -0.3840326159160139,
+  "lower_median_actual_route_id": "R38_2023-03-09",
+  "lower_median_actual_final_nav": 51269716.62173192,
+  "lower_median_account_nav_mdd": -0.4627417066069262,
+  "lower_median_twr_cagr_and_mdd": "91.1219%／-38.5050%",
+  "source_version": "Experiments c6_v4d_00631l_withdrawal_comparison_and_64_summary_20260831",
+  "payment_date_note": "2421/3324 2023-07-27/28兩筆付款日歧義保留；四種合法情境不影響期末NAV、TWR、MDD、交易或整股units。",
+  "source_metrics_sha256": "48216db5d9479c2f254e6b69a8fb575ee558b15e772570833fb29027fc705de9",
+  "source_summary_sha256": "85b2d00e4d90d79d09be63a07b24e62d19fc7581c3fae37b3ca1a823221faa9d",
+  "future_data_violation_count": 0
+}

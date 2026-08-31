@@ -42,6 +42,17 @@ class C6DashboardPublishTests(unittest.TestCase):
         )
         self.assertEqual(additions, [])
 
+    def test_partial_dashboard_keeps_withdrawal_schedule_but_not_a_fabricated_sale(self):
+        values = dict(build_dashboard_values(
+            model_version="c6-research-v2", snapshot_as_of="2026-08-28",
+            data_status="partial_rankings_only_no_whole_share_replay", slots=[],
+            historical_benchmark={"statistical_median_final_nav": 51_306_948.89, "lower_median_actual_route_id": "R38_2023-03-09"},
+        ))
+        self.assertEqual(values["下次提領排定日"], "2026-09-09")
+        self.assertEqual(values["下下次提領排定日"], "2026-10-14")
+        self.assertEqual(values["提領候選槽"], "無法估算｜尚無權威整股帳本")
+        self.assertEqual(values["64條期末資產統計中位數"], 51_306_948.89)
+
 
 if __name__ == "__main__":
     unittest.main()

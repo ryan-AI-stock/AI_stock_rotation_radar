@@ -11,8 +11,10 @@ import argparse
 import json
 from pathlib import Path
 
+import pandas as pd
+
 from .v4d_dashboard_publish import SheetsClient
-from .v4d_simulation_account import SELL_RATE
+from .v4d_simulation_account import SELL_RATE, second_wednesday
 
 
 DASHBOARD_SHEET = "C6 Dashboard"
@@ -23,6 +25,9 @@ CURRENT_POINTER_SHEET = "C6目前版本指標"
 C6_INITIAL_CAPITAL = 7_000_000.0
 C6_SLOT_COUNT = 3
 C6_WITHDRAWAL_AMOUNT = 75_000.0
+C6_FORWARD_START_DATE = "2026-08-05"
+C6_WITHDRAWAL_START_DATE = "2026-09-09"
+DEFAULT_HISTORICAL_BENCHMARK_PATH = Path("data/c6_historical_64_benchmark.json")
 
 SNAPSHOT_HEADERS = [
     "model_version", "snapshot_as_of", "data_status", "signal_date", "rank", "ticker", "name",
@@ -101,15 +106,49 @@ def select_withdrawal_slot(
     }
 
 
+def _next_withdrawal_dates(as_of: str, *, count: int = 2) -> list[str]:
+    """Return future second-Wednesday dates without claiming market execution."""
+    cursor = pd.Timestamp(as_of).date()
+    start = pd.Timestamp(C6_WITHDRAWAL_START_DATE).date()
+    dates: list[str] = []
+    year, month = max((cursor.year, cursor.month), (start.year, start.month))
+    while len(dates) < count:
+        due = second_wednesday(year, month)
+        if due >= start and due > cursor:
+            dates.append(due.isoformat())
+        month += 1
+        if month == 13:
+            year, month = year + 1, 1
+    return dates
+
+
 def build_dashboard_values(
     *, model_version: str, snapshot_as_of: str, data_status: str, slots: list[dict], cash: float = 0.0,
-    notes: str = "",
+    notes: str = "", historical_benchmark: dict | None = None,
 ) -> list[list[object]]:
     replay_not_materialized = (
         "no_whole_share_replay" in data_status
         or "replay_not_materialized" in data_status
     )
     withdrawal = select_withdrawal_slot(slots, cash=cash)
+    next_dates = _next_withdrawal_dates(snapshot_as_of)
+    benchmark = historical_benchmark or {}
+    benchmark_rows = [
+        ["", ""],
+        ["64條歷史路徑比較基準", "不納入 forward 模擬帳戶損益"],
+        ["歷史範圍", benchmark.get("coverage", "2023不同起點至2026-08-12")],
+        ["歷史初始資金／提領", benchmark.get("capital_and_withdrawal", "TWD7,000,000／每月底TWD75,000")],
+        ["64條期末資產統計中位數", benchmark.get("statistical_median_final_nav", "")],
+        ["64條帳戶NAV MDD中位數", benchmark.get("statistical_median_account_nav_mdd", "")],
+        ["64條TWR CAGR中位數", benchmark.get("statistical_median_twr_cagr", "")],
+        ["64條TWR MDD中位數", benchmark.get("statistical_median_twr_mdd", "")],
+        ["下中位實際路徑", benchmark.get("lower_median_actual_route_id", "")],
+        ["下中位實際路徑期末資產", benchmark.get("lower_median_actual_final_nav", "")],
+        ["下中位帳戶NAV MDD", benchmark.get("lower_median_account_nav_mdd", "")],
+        ["下中位TWR CAGR／MDD", benchmark.get("lower_median_twr_cagr_and_mdd", "")],
+        ["歷史來源版本", benchmark.get("source_version", "")],
+        ["日期歧義", benchmark.get("payment_date_note", "")],
+    ]
     if replay_not_materialized:
         withdrawal_rows = [
             ["提領候選槽", "無法估算｜尚無權威整股帳本"],
@@ -137,11 +176,14 @@ def build_dashboard_values(
         ["model_version", model_version],
         ["snapshot_as_of", snapshot_as_of],
         ["data_status", data_status],
-        ["初始資金", C6_INITIAL_CAPITAL],
-        ["槽數", C6_SLOT_COUNT],
-        ["提領規則", "每次75,000元；持股相對成本報酬最低槽優先，整股交易"],
+        ["Forward起始／初始資金／槽數", f"{C6_FORWARD_START_DATE}／TWD{C6_INITIAL_CAPITAL:,.0f}／{C6_SLOT_COUNT}"],
+        ["Forward提領規則", "第二個星期三；每次目標市值TWD75,000，最低相對成本報酬槽優先，整股交易"],
+        ["下次提領排定日", next_dates[0]],
+        ["下下次提領排定日", next_dates[1]],
+        ["休市處理", "排定日無官方可交易收盤價時順延下一交易日；不假成交"],
         *withdrawal_rows,
         ["資料缺口／備註", notes],
+        *benchmark_rows,
     ]
 
 
@@ -157,6 +199,7 @@ def publish_snapshot(
     slots: list[dict],
     cash: float = 0.0,
     notes: str = "",
+    historical_benchmark: dict | None = None,
 ) -> dict:
     """Append immutable C6 data, then move the mutable dashboard pointer."""
     for row in snapshot_rows:
@@ -209,9 +252,10 @@ def publish_snapshot(
     client.clear(f"'{CURRENT_POINTER_SHEET}'!A1:D2")
     client.update(f"'{CURRENT_POINTER_SHEET}'!A1", [CURRENT_POINTER_HEADERS, *pointer])
     dashboard = build_dashboard_values(
-        model_version=model_version, snapshot_as_of=snapshot_as_of, data_status=data_status, slots=slots, cash=cash, notes=notes,
+        model_version=model_version, snapshot_as_of=snapshot_as_of, data_status=data_status, slots=slots, cash=cash,
+        notes=notes, historical_benchmark=historical_benchmark,
     )
-    client.clear(f"'{DASHBOARD_SHEET}'!A1:B40")
+    client.clear(f"'{DASHBOARD_SHEET}'!A1:B60")
     client.update(f"'{DASHBOARD_SHEET}'!A1", dashboard)
     return {
         "model_version": model_version,
@@ -231,6 +275,8 @@ def main() -> None:
     payload = json.loads(args.payload.read_text(encoding="utf-8"))
     # Coverage remains immutable payload metadata; it is not a Sheets write argument.
     payload.pop("coverage", None)
+    if "historical_benchmark" not in payload and DEFAULT_HISTORICAL_BENCHMARK_PATH.exists():
+        payload["historical_benchmark"] = json.loads(DEFAULT_HISTORICAL_BENCHMARK_PATH.read_text(encoding="utf-8"))
     result = publish_snapshot(args.spreadsheet_id, **payload)
     print(json.dumps(result, ensure_ascii=False, indent=2))
 
