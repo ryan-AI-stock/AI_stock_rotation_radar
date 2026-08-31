@@ -1,16 +1,16 @@
 {
   "version": 2,
   "model": "V4-D",
-  "ticker": "2493",
-  "name": "揚博",
+  "ticker": "3481",
+  "name": "群創",
   "market": "TWSE",
-  "signal_date": "2026-08-28",
-  "signal_close": 181.5,
-  "execution_date": "2026-08-31",
+  "signal_date": "2026-08-31",
+  "signal_close": 49.85,
+  "execution_date": "2026-09-01",
   "entry_close": null,
   "status": "signal_only",
   "daily_marks": {},
   "candidate_rank": 1,
-  "industry": "電子零組件業",
+  "industry": "光電業",
   "layer1_snapshot_date": "20260728"
 }

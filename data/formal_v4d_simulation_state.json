@@ -93,7 +93,7 @@
     "status": "holding",
     "pending_exit": null,
     "simulation_position": true,
-    "last_report_date": "2026-08-28",
+    "last_report_date": "2026-08-31",
     "daily_marks": {
       "2026-08-19": {
         "close": 19.9,
@@ -171,9 +171,25 @@
         "peak_after_cost_return_pct": 3.8225649209661094,
         "trailing_drawdown_pct": -2.163461538461564,
         "rolling_5td_return_pct": -0.2450980392156743
+      },
+      "2026-08-31": {
+        "close": 20.25,
+        "daily_return_pct": -0.49140049140049546,
+        "d_index": 7,
+        "model_td": 8,
+        "cumulative_return_pct": 1.7587939698492594,
+        "after_cost_return_pct": 1.0772567139213152,
+        "peak_after_cost_return_pct": 3.8225649209661094,
+        "trailing_drawdown_pct": -2.644230769230782,
+        "rolling_5td_return_pct": -1.2195121951219523
       }
     }
   },
   "pending_entry": null,
-  "as_of_date": "2026-08-21"
+  "as_of_date": "2026-08-21",
+  "withdrawal_schedule": {
+    "amount": 75000.0,
+    "start_date": "2026-09-09",
+    "processed_scheduled_dates": []
+  }
 }
