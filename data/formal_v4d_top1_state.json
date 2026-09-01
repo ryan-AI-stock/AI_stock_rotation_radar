@@ -1,16 +1,16 @@
 {
   "version": 2,
   "model": "V4-D",
-  "ticker": "3481",
-  "name": "群創",
+  "ticker": "2609",
+  "name": "陽明",
   "market": "TWSE",
-  "signal_date": "2026-08-31",
-  "signal_close": 49.85,
-  "execution_date": "2026-09-01",
+  "signal_date": "2026-09-01",
+  "signal_close": 57.6,
+  "execution_date": "2026-09-02",
   "entry_close": null,
   "status": "signal_only",
   "daily_marks": {},
   "candidate_rank": 1,
-  "industry": "光電業",
+  "industry": "航運業",
   "layer1_snapshot_date": "20260728"
 }
