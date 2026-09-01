@@ -229,90 +229,86 @@ def build_dashboard_values(
     notes: str = "", historical_benchmark: dict | None = None, snapshot_rows: list[dict] | None = None,
     ranking_snapshot_as_of: str | None = None, accounting_snapshot_as_of: str | None = None,
 ) -> list[list[object]]:
-    replay_not_materialized = (
-        "no_whole_share_replay" in data_status
-        or "replay_not_materialized" in data_status
-        or "whole_share_replay_pit_blocked" in data_status
-    )
-    withdrawal = select_withdrawal_slot(slots, cash=cash)
-    next_dates = _next_withdrawal_dates(snapshot_as_of)
+    replay_incomplete = any(token in data_status for token in (
+        "no_whole_share_replay", "replay_not_materialized", "whole_share_replay_pit_blocked",
+    ))
+    next_dates = _next_withdrawal_dates(ranking_snapshot_as_of or snapshot_as_of)
     benchmark = historical_benchmark or {}
-    benchmark_rows = [
-        ["", ""],
-        ["64條歷史路徑比較基準", "不納入 forward 模擬帳戶損益"],
-        ["歷史範圍", benchmark.get("coverage", "2023不同起點至2026-08-12")],
-        ["歷史初始資金／提領", benchmark.get("capital_and_withdrawal", "TWD7,000,000／每月底TWD75,000")],
-        ["64條期末資產統計中位數", benchmark.get("statistical_median_final_nav", "")],
-        ["64條帳戶NAV MDD中位數", benchmark.get("statistical_median_account_nav_mdd", "")],
-        ["64條TWR CAGR中位數", benchmark.get("statistical_median_twr_cagr", "")],
-        ["64條TWR MDD中位數", benchmark.get("statistical_median_twr_mdd", "")],
-        ["下中位實際路徑", benchmark.get("lower_median_actual_route_id", "")],
-        ["下中位實際路徑期末資產", benchmark.get("lower_median_actual_final_nav", "")],
-        ["下中位帳戶NAV MDD", benchmark.get("lower_median_account_nav_mdd", "")],
-        ["下中位TWR CAGR／MDD", benchmark.get("lower_median_twr_cagr_and_mdd", "")],
-        ["歷史來源版本", benchmark.get("source_version", "")],
-        ["日期歧義", benchmark.get("payment_date_note", "")],
-    ]
-    if replay_not_materialized:
-        withdrawal_rows = [
-            ["提領候選槽", "無法估算｜尚無權威整股帳本"],
-            ["提領候選股票", ""],
-            ["預計賣出股數", ""],
-            ["預估成交金額", ""],
-            ["預估費稅", ""],
-            ["預估提領淨額", ""],
-            ["現金提領額", ""],
-            ["候選槽相對成本報酬", ""],
-        ]
-    else:
-        withdrawal_rows = [
-            ["提領候選槽", withdrawal["slot_id"] or "空手／現金"],
-            ["提領候選股票", withdrawal.get("ticker", "")],
-            ["預計賣出股數", withdrawal["planned_shares"]],
-            ["預估成交金額", withdrawal["gross_amount"]],
-            ["預估費稅", withdrawal["transaction_cost"]],
-            ["預估提領淨額", withdrawal["net_amount"]],
-            ["現金提領額", withdrawal.get("cash_withdrawal_amount", 0.0)],
-            ["候選槽相對成本報酬", withdrawal["relative_return_pct"]],
-        ]
     current_rows = build_public_snapshot_values(snapshot_rows or [])[1:]
     current_rows = [row for row in current_rows if row[1] in {1, 2, 3}]
     latest_date = max((str(row[0]) for row in current_rows), default=snapshot_as_of)
     latest_rows = [row for row in current_rows if str(row[0]) == latest_date]
     latest_by_rank = {int(row[1]): row for row in latest_rows}
-    top_rows = [["今日Top1～Top3", "C6分數／排名說明"]]
+    top_rows = [["順位", "股票", "C6分數", "代表意義"]]
     for rank in (1, 2, 3):
         row = latest_by_rank.get(rank)
         if row:
-            score = f"{row[5]}分" if row[5] != "" else "分數資料待補"
-            top_rows.append([f"Top{rank}｜{row[2]} {row[3]}", f"{score}｜通過C6條件，當日排名第{rank}"])
+            top_rows.append([
+                f"Top{rank}", f"{row[2]} {row[3]}", row[5],
+                f"已通過C6條件，當日排名第{rank}",
+            ])
         else:
-            top_rows.append([f"Top{rank}", "資料待補"])
-    account_status = (
-        "三槽整股模擬帳戶仍在完整重算，暫不顯示持股與損益"
-        if replay_not_materialized else "三槽模擬帳戶已更新"
-    )
-    concise_note = (
-        f"目前候選排名更新至{latest_date}；缺漏日期與三槽帳本正在補齊。"
-        if replay_not_materialized else f"候選排名與三槽帳戶已更新至{latest_date}。"
+            top_rows.append([f"Top{rank}", "資料待補", "", ""])
+
+    slot_rows = [["槽位", "持股與股數", "收盤市值", "相對買進成本報酬"]]
+    total_mark = float(cash or 0.0)
+    for slot in sorted(slots, key=lambda item: int(item.get("slot_id") or 0)):
+        shares = int(slot.get("shares") or 0)
+        close = float(slot.get("raw_close") or 0.0)
+        mark = shares * close
+        cost = float(slot.get("position_cost") or 0.0)
+        relative = (mark - cost) / cost if cost else ""
+        total_mark += mark
+        slot_rows.append([
+            f"第{slot.get('slot_id')}槽",
+            f"{slot.get('ticker', '')} {slot.get('name', '')}｜{shares:,}股",
+            mark,
+            relative,
+        ])
+    while len(slot_rows) < 4:
+        slot_rows.append([f"第{len(slot_rows)}槽", "尚未建立持股", "", ""])
+
+    if replay_incomplete:
+        withdrawal_text = "帳本尚未更新至最新交易日，暫不提供可能錯誤的賣股股數"
+    else:
+        withdrawal = select_withdrawal_slot(slots, cash=cash)
+        withdrawal_text = (
+            f"預計由第{withdrawal.get('slot_id')}槽賣出"
+            f"{withdrawal.get('ticker', '')} {withdrawal.get('planned_shares', 0):,}股"
+            if withdrawal.get("slot_id") else "以帳戶現金提領"
+        )
+
+    accounting_date = accounting_snapshot_as_of or snapshot_as_of
+    status_text = (
+        f"排名已更新；持股與損益目前只核對到 {accounting_date}"
+        if replay_incomplete else f"排名與三槽帳戶均已更新至 {accounting_date}"
     )
     return [
-        ["C6研究版｜每日候選與三槽模擬帳戶", ""],
-        ["排名資料截至", ranking_snapshot_as_of or latest_date],
-        ["整股帳本截至", accounting_snapshot_as_of or snapshot_as_of],
-        ["目前進度", _human_data_status(data_status)],
-        ["Forward起始／初始資金／槽數", f"{C6_FORWARD_START_DATE}／TWD{C6_INITIAL_CAPITAL:,.0f}／{C6_SLOT_COUNT}"],
-        ["模擬帳戶狀態", account_status],
-        ["", ""],
+        ["C6 每日選股與三槽模擬帳戶", "", "", ""],
+        ["最新排名日期", ranking_snapshot_as_of or latest_date, "正式帳本日期", accounting_date],
+        ["資料狀態", status_text, "", ""],
+        ["今日 Top1～Top3", "", "", ""],
         *top_rows,
-        ["", ""],
-        ["Forward提領規則", "第二個星期三；每次目標市值TWD75,000，最低相對成本報酬槽優先，整股交易"],
-        ["下次提領排定日", next_dates[0]],
-        ["下下次提領排定日", next_dates[1]],
-        ["休市處理", "排定日無官方可交易收盤價時順延下一交易日；不假成交"],
-        *withdrawal_rows,
-        ["資料說明", concise_note],
-        *benchmark_rows,
+        ["", "", "", ""],
+        [f"三槽模擬帳戶（截至 {accounting_date[5:] if len(accounting_date) >= 10 else accounting_date}）", "", "", ""],
+        *slot_rows,
+        ["帳戶現金", float(cash or 0.0), "帳戶總資產", total_mark],
+        ["相對700萬元損益", total_mark - C6_INITIAL_CAPITAL, "報酬率", total_mark / C6_INITIAL_CAPITAL - 1],
+        ["", "", "", ""],
+        ["每月提領安排", "", "", ""],
+        ["下次預定提領日", next_dates[0], "目標金額", C6_WITHDRAWAL_AMOUNT],
+        ["賣股原則", "從三槽中報酬最低的一槽，賣出最接近7.5萬元的整股", "", ""],
+        ["目前預估", withdrawal_text, "", ""],
+        ["", "", "", ""],
+        ["64條歷史路徑比較（不計入上述模擬帳戶）", "", "", ""],
+        ["統計期間", benchmark.get("coverage", "2023年64個不同起點至2026-08-12"), "每月提領", C6_WITHDRAWAL_AMOUNT],
+        ["期末資產中位數", benchmark.get("statistical_median_final_nav", ""), "帳戶最大回撤中位數", benchmark.get("statistical_median_account_nav_mdd", "")],
+        ["TWR年化報酬中位數", benchmark.get("statistical_median_twr_cagr", ""), "TWR最大回撤中位數", benchmark.get("statistical_median_twr_mdd", "")],
+        ["下中位代表路徑", benchmark.get("lower_median_actual_route_id", ""), "期末資產", benchmark.get("lower_median_actual_final_nav", "")],
+        ["", "", "", ""],
+        ["目前限制", "", "", ""],
+        ["說明", f"{accounting_date}之後的交易判斷仍待完整資料；這不是空手，也不是確認續抱。", "", ""],
+        ["使用方式", "每日先看Top1～3；持股、損益與提領只以「正式帳本日期」為準。", "", ""],
     ]
 
 
@@ -400,7 +396,7 @@ def publish_snapshot(
         notes=notes, historical_benchmark=historical_benchmark, snapshot_rows=snapshot_rows,
         ranking_snapshot_as_of=ranking_snapshot_as_of, accounting_snapshot_as_of=accounting_snapshot_as_of,
     )
-    client.clear(f"'{DASHBOARD_SHEET}'!A1:B60")
+    client.clear(f"'{DASHBOARD_SHEET}'!A1:D60")
     client.update(f"'{DASHBOARD_SHEET}'!A1", dashboard)
     return {
         "model_version": model_version,
