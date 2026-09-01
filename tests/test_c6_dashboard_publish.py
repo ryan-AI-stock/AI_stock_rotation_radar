@@ -89,7 +89,7 @@ class C6DashboardPublishTests(unittest.TestCase):
                 {"signal_date": "2026-08-28", "rank": 3, "ticker": "3324", "name": "雙鴻", "score": 77.1},
             ],
         ))
-        self.assertEqual(values["Top1｜2301 光寶科"], "79.2分｜排名資料已完成")
+        self.assertEqual(values["Top1｜2301 光寶科"], "79.2分｜通過C6條件，當日排名第1")
         self.assertNotIn("data_status", values)
 
     def test_partial_dashboard_keeps_withdrawal_schedule_but_not_a_fabricated_sale(self):

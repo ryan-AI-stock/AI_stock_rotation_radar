@@ -37,15 +37,24 @@ PUBLIC_SNAPSHOT_HEADERS = [
     "訊號日期", "順位", "股票代號", "股票名稱", "官方收盤價", "C6分數", "合格/不合格原因", "預定執行日", "資料狀態",
 ]
 LEDGER_HEADERS = [
+    "模型版本", "帳本資料截至", "帳務日期", "當日事件順序", "槽位", "事件",
+    "股票代號", "股數", "官方收盤價", "成交或市值金額", "交易成本", "現金增減", "事件後現金",
+    "相對買進成本報酬", "原因", "事件識別碼",
+]
+VERSION_HEADERS = [
+    "版本名稱", "資料日期", "目前可用程度", "資料驗證碼", "是否顯示為目前版本",
+    "建立日期", "備註",
+]
+CURRENT_POINTER_HEADERS = ["目前版本", "正式帳本日期", "目前狀態", "最後更新"]
+LEDGER_FIELDS = [
     "model_version", "snapshot_as_of", "account_date", "event_sequence", "slot_id", "event_type",
     "ticker", "shares", "raw_close", "gross_amount", "transaction_cost", "net_amount", "cash_after",
     "relative_return_pct", "reason", "immutable_event_key",
 ]
-VERSION_HEADERS = [
+VERSION_FIELDS = [
     "model_version", "snapshot_as_of", "data_status", "source_manifest_hash", "published_as_current",
     "created_at", "notes",
 ]
-CURRENT_POINTER_HEADERS = ["current_model_version", "current_snapshot_as_of", "data_status", "updated_at"]
 
 
 def _key(row: dict, fields: tuple[str, ...]) -> tuple[str, ...]:
@@ -73,12 +82,42 @@ def _append_only(existing: list[list[object]], headers: list[str], rows: list[di
 
 def _human_data_status(data_status: str) -> str:
     if "whole_share_replay_pit_blocked" in data_status:
-        return "8/12整股帳本已建立；其後 PIT action state 尚未完成"
+        return "整股帳本已建立至目前權威日期；後續交易判斷仍待補齊"
     if "no_whole_share_replay" in data_status or "replay_not_materialized" in data_status:
         return "候選排名已完成；三槽模擬帳戶仍在完整重算"
     if data_status in {"complete", "ready", "formal_ready"}:
         return "資料完整"
     return "研究資料更新中"
+
+
+def _human_rank_reason(rank: int) -> str:
+    if rank == 0:
+        return "當日沒有股票通過C6買進條件"
+    return f"通過C6條件，列入當日Top{rank}"
+
+
+def _human_source_status(rank: int) -> str:
+    return "排名資料與官方收盤價完整" if rank else "當日候選結果已確認"
+
+
+def _human_event(event_type: str) -> str:
+    return {"buy": "買進", "sell": "賣出", "daily_mark": "每日收盤估值", "withdrawal": "每月提領"}.get(event_type, event_type)
+
+
+def _human_model_version(model_version: str) -> str:
+    if "forward-known-segment" in model_version:
+        return "C6三槽整股模擬"
+    if model_version.endswith("-v2"):
+        return "新版排名"
+    return "初版排名"
+
+
+def _human_version_status(data_status: str) -> str:
+    if "whole_share_replay_pit_blocked" in data_status:
+        return "整股帳本已核對至權威日期；後續交易尚未完成"
+    if "no_whole_share_replay" in data_status or "replay_not_materialized" in data_status:
+        return "只有候選排名，尚未建立整股交易帳本"
+    return "資料完整"
 
 
 def _human_candidate_status(row: dict) -> str:
@@ -108,8 +147,8 @@ def build_public_snapshot_values(snapshot_rows: list[dict]) -> list[list[object]
             values.append([
                 signal_date,
                 "無候選" if "no_eligible" in str(row.get("candidate_status")) else "PIT待補",
-                "", "", "", "", str(row.get("eligibility_reason") or row.get("candidate_status") or ""),
-                str(row.get("planned_execution_date") or ""), str(row.get("source_readiness") or ""),
+                "", "", "", "", _human_rank_reason(0),
+                str(row.get("planned_execution_date") or ""), _human_source_status(0),
             ])
             continue
         score = row.get("score", row.get("c6_score", row.get("selection_score", "")))
@@ -120,9 +159,9 @@ def build_public_snapshot_values(snapshot_rows: list[dict]) -> list[list[object]
             str(row.get("name") or ""),
             row.get("display_close", row.get("raw_close", row.get("close", ""))),
             score,
-            str(row.get("eligibility_reason") or _human_candidate_status(row)),
+            _human_rank_reason(rank),
             str(row.get("planned_execution_date") or _execution_date(signal_date)),
-            str(row.get("source_readiness") or "ranking_only_not_execution_authority"),
+            _human_source_status(rank),
         ])
     return values
 
@@ -241,12 +280,12 @@ def build_dashboard_values(
     latest_date = max((str(row[0]) for row in current_rows), default=snapshot_as_of)
     latest_rows = [row for row in current_rows if str(row[0]) == latest_date]
     latest_by_rank = {int(row[1]): row for row in latest_rows}
-    top_rows = [["今日Top1～Top3", "C6分數／狀態"]]
+    top_rows = [["今日Top1～Top3", "C6分數／排名說明"]]
     for rank in (1, 2, 3):
         row = latest_by_rank.get(rank)
         if row:
             score = f"{row[5]}分" if row[5] != "" else "分數資料待補"
-            top_rows.append([f"Top{rank}｜{row[2]} {row[3]}", f"{score}｜{row[6]}"])
+            top_rows.append([f"Top{rank}｜{row[2]} {row[3]}", f"{score}｜通過C6條件，當日排名第{rank}"])
         else:
             top_rows.append([f"Top{rank}", "資料待補"])
     account_status = (
@@ -314,16 +353,30 @@ def publish_snapshot(
     ledger_existing = client.get(f"'{LEDGER_SHEET}'!A1:P50000")
     version_existing = client.get(f"'{VERSION_SHEET}'!A1:G50000")
     public_snapshot_values = build_public_snapshot_values(snapshot_rows)
-    ledger_additions = _append_only(
-        ledger_existing, LEDGER_HEADERS, ledger_rows,
-        ("model_version", "snapshot_as_of", "account_date", "event_sequence"),
-    )
+    ledger_known = {str(row[15]) for row in ledger_existing[1:] if len(row) > 15 and row[15]}
+    ledger_additions = []
+    for row in ledger_rows:
+        event_key = str(row.get("immutable_event_key") or "")
+        if event_key in ledger_known:
+            continue
+        display = dict(row)
+        display["model_version"] = _human_model_version(str(row.get("model_version") or ""))
+        display["event_type"] = _human_event(str(row.get("event_type") or ""))
+        ledger_additions.append([display.get(field, "") for field in LEDGER_FIELDS])
+        ledger_known.add(event_key)
     version_row = {
         "model_version": model_version, "snapshot_as_of": snapshot_as_of, "data_status": data_status,
         "source_manifest_hash": source_manifest_hash, "published_as_current": True, "created_at": snapshot_as_of,
         "notes": notes,
     }
-    version_additions = _append_only(version_existing, VERSION_HEADERS, [version_row], ("model_version", "snapshot_as_of"))
+    known_hashes = {str(row[3]) for row in version_existing[1:] if len(row) > 3 and row[3]}
+    version_additions = []
+    if source_manifest_hash not in known_hashes:
+        display_version = dict(version_row)
+        display_version["model_version"] = _human_model_version(model_version)
+        display_version["data_status"] = _human_version_status(data_status)
+        display_version["published_as_current"] = "是"
+        version_additions.append([display_version.get(field, "") for field in VERSION_FIELDS])
     client.clear(f"'{SNAPSHOT_SHEET}'!A1:Z50000")
     client.update(f"'{SNAPSHOT_SHEET}'!A1", public_snapshot_values)
     if not ledger_existing:
@@ -334,7 +387,12 @@ def publish_snapshot(
         client.update(f"'{VERSION_SHEET}'!A1", [VERSION_HEADERS, *version_additions])
     elif version_additions:
         client.update(f"'{VERSION_SHEET}'!A{len(version_existing) + 1}", version_additions)
-    pointer = [[model_version, snapshot_as_of, data_status, snapshot_as_of]]
+    pointer = [[
+        _human_model_version(model_version),
+        accounting_snapshot_as_of or snapshot_as_of,
+        f"排名已更新至{ranking_snapshot_as_of or snapshot_as_of}；持股與損益只核對至{accounting_snapshot_as_of or snapshot_as_of}",
+        ranking_snapshot_as_of or snapshot_as_of,
+    ]]
     client.clear(f"'{CURRENT_POINTER_SHEET}'!A1:D2")
     client.update(f"'{CURRENT_POINTER_SHEET}'!A1", [CURRENT_POINTER_HEADERS, *pointer])
     dashboard = build_dashboard_values(
