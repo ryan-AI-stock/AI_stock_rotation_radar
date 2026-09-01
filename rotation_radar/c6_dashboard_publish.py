@@ -33,6 +33,9 @@ SNAPSHOT_HEADERS = [
     "model_version", "snapshot_as_of", "data_status", "signal_date", "rank", "ticker", "name",
     "market", "candidate_status", "source_manifest_hash", "immutable_snapshot_key",
 ]
+PUBLIC_SNAPSHOT_HEADERS = [
+    "訊號日期", "順位", "股票代號", "股票名稱", "C6分數", "排名狀態", "預定執行日", "說明",
+]
 LEDGER_HEADERS = [
     "model_version", "snapshot_as_of", "account_date", "event_sequence", "slot_id", "event_type",
     "ticker", "shares", "raw_close", "gross_amount", "transaction_cost", "net_amount", "cash_after",
@@ -52,7 +55,11 @@ def _key(row: dict, fields: tuple[str, ...]) -> tuple[str, ...]:
 def _append_only(existing: list[list[object]], headers: list[str], rows: list[dict], fields: tuple[str, ...]) -> list[list[object]]:
     if existing and existing[0] != headers:
         raise ValueError("Existing C6 sheet schema does not match the append-only publisher contract.")
-    known = {tuple(str(value) for value in row[:len(fields)]) for row in existing[1:] if len(row) >= len(fields)}
+    field_indexes = [headers.index(field) for field in fields]
+    known = {
+        tuple(str(row[index]) if index < len(row) else "" for index in field_indexes)
+        for row in existing[1:]
+    }
     additions: list[list[object]] = []
     for row in rows:
         key = _key(row, fields)
@@ -62,6 +69,51 @@ def _append_only(existing: list[list[object]], headers: list[str], rows: list[di
         additions.append(values)
         known.add(key)
     return additions
+
+
+def _human_data_status(data_status: str) -> str:
+    if "no_whole_share_replay" in data_status or "replay_not_materialized" in data_status:
+        return "候選排名已完成；三槽模擬帳戶仍在完整重算"
+    if data_status in {"complete", "ready", "formal_ready"}:
+        return "資料完整"
+    return "研究資料更新中"
+
+
+def _human_candidate_status(row: dict) -> str:
+    status = str(row.get("candidate_status") or "")
+    if status:
+        return "已列入當日排名"
+    return "排名資料已完成"
+
+
+def _execution_date(signal_date: str) -> str:
+    if not signal_date:
+        return ""
+    return (pd.Timestamp(signal_date) + pd.offsets.BDay(1)).date().isoformat()
+
+
+def build_public_snapshot_values(snapshot_rows: list[dict]) -> list[list[object]]:
+    """Return one current, de-duplicated, human-readable Top1~3 table."""
+    unique: dict[tuple[str, int], dict] = {}
+    for row in snapshot_rows:
+        signal_date = str(row.get("signal_date") or "")
+        rank = int(row.get("rank") or 0)
+        if signal_date and rank in {1, 2, 3}:
+            unique[(signal_date, rank)] = row
+    values = [PUBLIC_SNAPSHOT_HEADERS]
+    for (signal_date, rank), row in sorted(unique.items()):
+        score = row.get("score", row.get("c6_score", ""))
+        values.append([
+            signal_date,
+            rank,
+            str(row.get("ticker") or ""),
+            str(row.get("name") or ""),
+            score,
+            _human_candidate_status(row),
+            _execution_date(signal_date),
+            "C6研究版當日Top1～3；持股與交易動作以三槽模擬帳戶為準",
+        ])
+    return values
 
 
 def select_withdrawal_slot(
@@ -124,7 +176,7 @@ def _next_withdrawal_dates(as_of: str, *, count: int = 2) -> list[str]:
 
 def build_dashboard_values(
     *, model_version: str, snapshot_as_of: str, data_status: str, slots: list[dict], cash: float = 0.0,
-    notes: str = "", historical_benchmark: dict | None = None,
+    notes: str = "", historical_benchmark: dict | None = None, snapshot_rows: list[dict] | None = None,
 ) -> list[list[object]]:
     replay_not_materialized = (
         "no_whole_share_replay" in data_status
@@ -171,18 +223,41 @@ def build_dashboard_values(
             ["現金提領額", withdrawal.get("cash_withdrawal_amount", 0.0)],
             ["候選槽相對成本報酬", withdrawal["relative_return_pct"]],
         ]
+    current_rows = build_public_snapshot_values(snapshot_rows or [])[1:]
+    latest_date = max((str(row[0]) for row in current_rows), default=snapshot_as_of)
+    latest_rows = [row for row in current_rows if str(row[0]) == latest_date]
+    latest_by_rank = {int(row[1]): row for row in latest_rows}
+    top_rows = [["今日Top1～Top3", "C6分數／狀態"]]
+    for rank in (1, 2, 3):
+        row = latest_by_rank.get(rank)
+        if row:
+            score = f"{row[4]}分" if row[4] != "" else "分數資料待補"
+            top_rows.append([f"Top{rank}｜{row[2]} {row[3]}", f"{score}｜{row[5]}"])
+        else:
+            top_rows.append([f"Top{rank}", "資料待補"])
+    account_status = (
+        "三槽整股模擬帳戶仍在完整重算，暫不顯示持股與損益"
+        if replay_not_materialized else "三槽模擬帳戶已更新"
+    )
+    concise_note = (
+        f"目前候選排名更新至{latest_date}；缺漏日期與三槽帳本正在補齊。"
+        if replay_not_materialized else f"候選排名與三槽帳戶已更新至{latest_date}。"
+    )
     return [
         ["C6研究版｜每日候選與三槽模擬帳戶", ""],
-        ["model_version", model_version],
-        ["snapshot_as_of", snapshot_as_of],
-        ["data_status", data_status],
+        ["最新資料日期", latest_date],
+        ["目前進度", _human_data_status(data_status)],
         ["Forward起始／初始資金／槽數", f"{C6_FORWARD_START_DATE}／TWD{C6_INITIAL_CAPITAL:,.0f}／{C6_SLOT_COUNT}"],
+        ["模擬帳戶狀態", account_status],
+        ["", ""],
+        *top_rows,
+        ["", ""],
         ["Forward提領規則", "第二個星期三；每次目標市值TWD75,000，最低相對成本報酬槽優先，整股交易"],
         ["下次提領排定日", next_dates[0]],
         ["下下次提領排定日", next_dates[1]],
         ["休市處理", "排定日無官方可交易收盤價時順延下一交易日；不假成交"],
         *withdrawal_rows,
-        ["資料缺口／備註", notes],
+        ["資料說明", concise_note],
         *benchmark_rows,
     ]
 
@@ -219,13 +294,9 @@ def publish_snapshot(
             "|".join(_key(row, ("model_version", "snapshot_as_of", "account_date", "event_sequence"))),
         )
     client = SheetsClient(spreadsheet_id)
-    snapshot_existing = client.get(f"'{SNAPSHOT_SHEET}'!A1:K50000")
     ledger_existing = client.get(f"'{LEDGER_SHEET}'!A1:P50000")
     version_existing = client.get(f"'{VERSION_SHEET}'!A1:G50000")
-    snapshot_additions = _append_only(
-        snapshot_existing, SNAPSHOT_HEADERS, snapshot_rows,
-        ("model_version", "snapshot_as_of", "signal_date", "rank"),
-    )
+    public_snapshot_values = build_public_snapshot_values(snapshot_rows)
     ledger_additions = _append_only(
         ledger_existing, LEDGER_HEADERS, ledger_rows,
         ("model_version", "snapshot_as_of", "account_date", "event_sequence"),
@@ -236,10 +307,8 @@ def publish_snapshot(
         "notes": notes,
     }
     version_additions = _append_only(version_existing, VERSION_HEADERS, [version_row], ("model_version", "snapshot_as_of"))
-    if not snapshot_existing:
-        client.update(f"'{SNAPSHOT_SHEET}'!A1", [SNAPSHOT_HEADERS, *snapshot_additions])
-    elif snapshot_additions:
-        client.update(f"'{SNAPSHOT_SHEET}'!A{len(snapshot_existing) + 1}", snapshot_additions)
+    client.clear(f"'{SNAPSHOT_SHEET}'!A1:Z50000")
+    client.update(f"'{SNAPSHOT_SHEET}'!A1", public_snapshot_values)
     if not ledger_existing:
         client.update(f"'{LEDGER_SHEET}'!A1", [LEDGER_HEADERS, *ledger_additions])
     elif ledger_additions:
@@ -253,7 +322,7 @@ def publish_snapshot(
     client.update(f"'{CURRENT_POINTER_SHEET}'!A1", [CURRENT_POINTER_HEADERS, *pointer])
     dashboard = build_dashboard_values(
         model_version=model_version, snapshot_as_of=snapshot_as_of, data_status=data_status, slots=slots, cash=cash,
-        notes=notes, historical_benchmark=historical_benchmark,
+        notes=notes, historical_benchmark=historical_benchmark, snapshot_rows=snapshot_rows,
     )
     client.clear(f"'{DASHBOARD_SHEET}'!A1:B60")
     client.update(f"'{DASHBOARD_SHEET}'!A1", dashboard)
@@ -261,7 +330,7 @@ def publish_snapshot(
         "model_version": model_version,
         "snapshot_as_of": snapshot_as_of,
         "data_status": data_status,
-        "snapshot_rows_appended": len(snapshot_additions),
+        "snapshot_rows_published": len(public_snapshot_values) - 1,
         "ledger_rows_appended": len(ledger_additions),
         "version_rows_appended": len(version_additions),
     }

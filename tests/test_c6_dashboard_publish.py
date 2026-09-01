@@ -1,6 +1,11 @@
 import unittest
 
-from rotation_radar.c6_dashboard_publish import _append_only, build_dashboard_values, select_withdrawal_slot
+from rotation_radar.c6_dashboard_publish import (
+    _append_only,
+    build_dashboard_values,
+    build_public_snapshot_values,
+    select_withdrawal_slot,
+)
 
 
 class C6DashboardPublishTests(unittest.TestCase):
@@ -19,8 +24,8 @@ class C6DashboardPublishTests(unittest.TestCase):
             model_version="c6-research-v1", snapshot_as_of="2026-08-30T15:00:00+08:00",
             data_status="blocked_source_or_replay_not_materialized", slots=[], notes="C6 daily source/replay pending",
         ))
-        self.assertEqual(values["model_version"], "c6-research-v1")
-        self.assertEqual(values["data_status"], "blocked_source_or_replay_not_materialized")
+        self.assertEqual(values["最新資料日期"], "2026-08-30T15:00:00+08:00")
+        self.assertEqual(values["目前進度"], "候選排名已完成；三槽模擬帳戶仍在完整重算")
         self.assertEqual(values["提領候選槽"], "無法估算｜尚無權威整股帳本")
         self.assertEqual(values["預計賣出股數"], "")
 
@@ -41,6 +46,42 @@ class C6DashboardPublishTests(unittest.TestCase):
             ("model_version", "snapshot_as_of", "signal_date", "rank"),
         )
         self.assertEqual(additions, [])
+
+    def test_append_only_uses_named_fields_instead_of_first_columns(self):
+        headers = ["model_version", "snapshot_as_of", "data_status", "signal_date", "rank"]
+        existing = [headers, ["c6-v2", "2026-08-28", "partial", "2026-08-28", 1]]
+        additions = _append_only(
+            existing,
+            headers,
+            [{"model_version": "c6-v2", "snapshot_as_of": "2026-08-28", "data_status": "partial", "signal_date": "2026-08-28", "rank": 1}],
+            ("model_version", "snapshot_as_of", "signal_date", "rank"),
+        )
+        self.assertEqual(additions, [])
+
+    def test_public_snapshot_contains_only_one_current_row_per_date_and_rank(self):
+        values = build_public_snapshot_values([
+            {"signal_date": "2026-08-28", "rank": 1, "ticker": "2301", "name": "光寶科", "score": 79.2},
+            {"signal_date": "2026-08-28", "rank": 1, "ticker": "2301", "name": "光寶科", "score": 79.2},
+            {"signal_date": "2026-08-28", "rank": 2, "ticker": "3653", "name": "健策", "score": 78.7},
+        ])
+        self.assertEqual(values[0][0], "訊號日期")
+        self.assertEqual(len(values), 3)
+        self.assertEqual(values[1][2:5], ["2301", "光寶科", 79.2])
+
+    def test_dashboard_shows_latest_top3_in_plain_language(self):
+        values = dict(build_dashboard_values(
+            model_version="c6-v2",
+            snapshot_as_of="2026-08-28",
+            data_status="partial_rankings_only_no_whole_share_replay",
+            slots=[],
+            snapshot_rows=[
+                {"signal_date": "2026-08-28", "rank": 1, "ticker": "2301", "name": "光寶科", "score": 79.2},
+                {"signal_date": "2026-08-28", "rank": 2, "ticker": "3653", "name": "健策", "score": 78.7},
+                {"signal_date": "2026-08-28", "rank": 3, "ticker": "3324", "name": "雙鴻", "score": 77.1},
+            ],
+        ))
+        self.assertEqual(values["Top1｜2301 光寶科"], "79.2分｜排名資料已完成")
+        self.assertNotIn("data_status", values)
 
     def test_partial_dashboard_keeps_withdrawal_schedule_but_not_a_fabricated_sale(self):
         values = dict(build_dashboard_values(
