@@ -24,7 +24,8 @@ class C6DashboardPublishTests(unittest.TestCase):
             model_version="c6-research-v1", snapshot_as_of="2026-08-30T15:00:00+08:00",
             data_status="blocked_source_or_replay_not_materialized", slots=[], notes="C6 daily source/replay pending",
         ))
-        self.assertEqual(values["最新資料日期"], "2026-08-30T15:00:00+08:00")
+        self.assertEqual(values["排名資料截至"], "2026-08-30T15:00:00+08:00")
+        self.assertEqual(values["整股帳本截至"], "2026-08-30T15:00:00+08:00")
         self.assertEqual(values["目前進度"], "候選排名已完成；三槽模擬帳戶仍在完整重算")
         self.assertEqual(values["提領候選槽"], "無法估算｜尚無權威整股帳本")
         self.assertEqual(values["預計賣出股數"], "")
@@ -66,7 +67,15 @@ class C6DashboardPublishTests(unittest.TestCase):
         ])
         self.assertEqual(values[0][0], "訊號日期")
         self.assertEqual(len(values), 3)
-        self.assertEqual(values[1][2:5], ["2301", "光寶科", 79.2])
+        self.assertEqual(values[1][2:6], ["2301", "光寶科", "", 79.2])
+
+    def test_public_snapshot_keeps_explicit_no_candidate_or_pit_blocker(self):
+        values = build_public_snapshot_values([
+            {"signal_date": "2026-08-05", "rank": 0, "candidate_status": "frozen_engine_explicit_no_eligible_candidate"},
+            {"signal_date": "2026-08-31", "rank": 0, "candidate_status": "source_blocked_not_empty_candidate"},
+        ])
+        self.assertEqual(values[1][1], "無候選")
+        self.assertEqual(values[2][1], "PIT待補")
 
     def test_dashboard_shows_latest_top3_in_plain_language(self):
         values = dict(build_dashboard_values(
@@ -93,6 +102,14 @@ class C6DashboardPublishTests(unittest.TestCase):
         self.assertEqual(values["下下次提領排定日"], "2026-10-14")
         self.assertEqual(values["提領候選槽"], "無法估算｜尚無權威整股帳本")
         self.assertEqual(values["64條期末資產統計中位數"], 51_306_948.89)
+
+    def test_partial_known_segment_does_not_estimate_withdrawal_from_stale_marks(self):
+        values = dict(build_dashboard_values(
+            model_version="c6-known", snapshot_as_of="2026-08-12",
+            data_status="partial_known_segment_whole_share_replay_pit_blocked_after_20260812",
+            slots=[{"slot_id": 1, "ticker": "3653", "shares": 10, "raw_close": 100, "position_cost": 900}],
+        ))
+        self.assertEqual(values["提領候選槽"], "無法估算｜尚無權威整股帳本")
 
 
 if __name__ == "__main__":

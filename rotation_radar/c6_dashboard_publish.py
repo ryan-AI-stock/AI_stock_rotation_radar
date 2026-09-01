@@ -34,7 +34,7 @@ SNAPSHOT_HEADERS = [
     "market", "candidate_status", "source_manifest_hash", "immutable_snapshot_key",
 ]
 PUBLIC_SNAPSHOT_HEADERS = [
-    "訊號日期", "順位", "股票代號", "股票名稱", "C6分數", "排名狀態", "預定執行日", "說明",
+    "訊號日期", "順位", "股票代號", "股票名稱", "官方收盤價", "C6分數", "合格/不合格原因", "預定執行日", "資料狀態",
 ]
 LEDGER_HEADERS = [
     "model_version", "snapshot_as_of", "account_date", "event_sequence", "slot_id", "event_type",
@@ -72,6 +72,8 @@ def _append_only(existing: list[list[object]], headers: list[str], rows: list[di
 
 
 def _human_data_status(data_status: str) -> str:
+    if "whole_share_replay_pit_blocked" in data_status:
+        return "8/12整股帳本已建立；其後 PIT action state 尚未完成"
     if "no_whole_share_replay" in data_status or "replay_not_materialized" in data_status:
         return "候選排名已完成；三槽模擬帳戶仍在完整重算"
     if data_status in {"complete", "ready", "formal_ready"}:
@@ -98,20 +100,29 @@ def build_public_snapshot_values(snapshot_rows: list[dict]) -> list[list[object]
     for row in snapshot_rows:
         signal_date = str(row.get("signal_date") or "")
         rank = int(row.get("rank") or 0)
-        if signal_date and rank in {1, 2, 3}:
+        if signal_date and rank in {0, 1, 2, 3}:
             unique[(signal_date, rank)] = row
     values = [PUBLIC_SNAPSHOT_HEADERS]
     for (signal_date, rank), row in sorted(unique.items()):
-        score = row.get("score", row.get("c6_score", ""))
+        if rank == 0:
+            values.append([
+                signal_date,
+                "無候選" if "no_eligible" in str(row.get("candidate_status")) else "PIT待補",
+                "", "", "", "", str(row.get("eligibility_reason") or row.get("candidate_status") or ""),
+                str(row.get("planned_execution_date") or ""), str(row.get("source_readiness") or ""),
+            ])
+            continue
+        score = row.get("score", row.get("c6_score", row.get("selection_score", "")))
         values.append([
             signal_date,
             rank,
             str(row.get("ticker") or ""),
             str(row.get("name") or ""),
+            row.get("display_close", row.get("raw_close", row.get("close", ""))),
             score,
-            _human_candidate_status(row),
-            _execution_date(signal_date),
-            "C6研究版當日Top1～3；持股與交易動作以三槽模擬帳戶為準",
+            str(row.get("eligibility_reason") or _human_candidate_status(row)),
+            str(row.get("planned_execution_date") or _execution_date(signal_date)),
+            str(row.get("source_readiness") or "ranking_only_not_execution_authority"),
         ])
     return values
 
@@ -177,10 +188,12 @@ def _next_withdrawal_dates(as_of: str, *, count: int = 2) -> list[str]:
 def build_dashboard_values(
     *, model_version: str, snapshot_as_of: str, data_status: str, slots: list[dict], cash: float = 0.0,
     notes: str = "", historical_benchmark: dict | None = None, snapshot_rows: list[dict] | None = None,
+    ranking_snapshot_as_of: str | None = None, accounting_snapshot_as_of: str | None = None,
 ) -> list[list[object]]:
     replay_not_materialized = (
         "no_whole_share_replay" in data_status
         or "replay_not_materialized" in data_status
+        or "whole_share_replay_pit_blocked" in data_status
     )
     withdrawal = select_withdrawal_slot(slots, cash=cash)
     next_dates = _next_withdrawal_dates(snapshot_as_of)
@@ -224,6 +237,7 @@ def build_dashboard_values(
             ["候選槽相對成本報酬", withdrawal["relative_return_pct"]],
         ]
     current_rows = build_public_snapshot_values(snapshot_rows or [])[1:]
+    current_rows = [row for row in current_rows if row[1] in {1, 2, 3}]
     latest_date = max((str(row[0]) for row in current_rows), default=snapshot_as_of)
     latest_rows = [row for row in current_rows if str(row[0]) == latest_date]
     latest_by_rank = {int(row[1]): row for row in latest_rows}
@@ -231,8 +245,8 @@ def build_dashboard_values(
     for rank in (1, 2, 3):
         row = latest_by_rank.get(rank)
         if row:
-            score = f"{row[4]}分" if row[4] != "" else "分數資料待補"
-            top_rows.append([f"Top{rank}｜{row[2]} {row[3]}", f"{score}｜{row[5]}"])
+            score = f"{row[5]}分" if row[5] != "" else "分數資料待補"
+            top_rows.append([f"Top{rank}｜{row[2]} {row[3]}", f"{score}｜{row[6]}"])
         else:
             top_rows.append([f"Top{rank}", "資料待補"])
     account_status = (
@@ -245,7 +259,8 @@ def build_dashboard_values(
     )
     return [
         ["C6研究版｜每日候選與三槽模擬帳戶", ""],
-        ["最新資料日期", latest_date],
+        ["排名資料截至", ranking_snapshot_as_of or latest_date],
+        ["整股帳本截至", accounting_snapshot_as_of or snapshot_as_of],
         ["目前進度", _human_data_status(data_status)],
         ["Forward起始／初始資金／槽數", f"{C6_FORWARD_START_DATE}／TWD{C6_INITIAL_CAPITAL:,.0f}／{C6_SLOT_COUNT}"],
         ["模擬帳戶狀態", account_status],
@@ -275,6 +290,8 @@ def publish_snapshot(
     cash: float = 0.0,
     notes: str = "",
     historical_benchmark: dict | None = None,
+    ranking_snapshot_as_of: str | None = None,
+    accounting_snapshot_as_of: str | None = None,
 ) -> dict:
     """Append immutable C6 data, then move the mutable dashboard pointer."""
     for row in snapshot_rows:
@@ -323,6 +340,7 @@ def publish_snapshot(
     dashboard = build_dashboard_values(
         model_version=model_version, snapshot_as_of=snapshot_as_of, data_status=data_status, slots=slots, cash=cash,
         notes=notes, historical_benchmark=historical_benchmark, snapshot_rows=snapshot_rows,
+        ranking_snapshot_as_of=ranking_snapshot_as_of, accounting_snapshot_as_of=accounting_snapshot_as_of,
     )
     client.clear(f"'{DASHBOARD_SHEET}'!A1:B60")
     client.update(f"'{DASHBOARD_SHEET}'!A1", dashboard)
