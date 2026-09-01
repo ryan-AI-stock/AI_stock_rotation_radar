@@ -23,6 +23,8 @@ class C6DashboardPublishCliTests(unittest.TestCase):
                 "cash": 0.0,
                 "notes": "test",
                 "coverage": {"snapshot_rows": 0},
+                "formal_model_changed": False,
+                "future_data_violation_count": 0,
             }), encoding="utf-8")
             with patch.object(c6_dashboard_publish, "publish_snapshot", return_value={"ok": True}) as publish:
                 with patch.object(sys, "argv", [
@@ -30,6 +32,8 @@ class C6DashboardPublishCliTests(unittest.TestCase):
                 ]):
                     c6_dashboard_publish.main()
             self.assertNotIn("coverage", publish.call_args.kwargs)
+            self.assertNotIn("formal_model_changed", publish.call_args.kwargs)
+            self.assertNotIn("future_data_violation_count", publish.call_args.kwargs)
 
 
 if __name__ == "__main__":

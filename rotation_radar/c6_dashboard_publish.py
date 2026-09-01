@@ -364,7 +364,12 @@ def main() -> None:
     payload.pop("coverage", None)
     if "historical_benchmark" not in payload and DEFAULT_HISTORICAL_BENCHMARK_PATH.exists():
         payload["historical_benchmark"] = json.loads(DEFAULT_HISTORICAL_BENCHMARK_PATH.read_text(encoding="utf-8"))
-    result = publish_snapshot(args.spreadsheet_id, **payload)
+    contract_fields = {
+        "model_version", "snapshot_as_of", "data_status", "source_manifest_hash", "snapshot_rows",
+        "ledger_rows", "slots", "cash", "notes", "historical_benchmark", "ranking_snapshot_as_of",
+        "accounting_snapshot_as_of",
+    }
+    result = publish_snapshot(args.spreadsheet_id, **{key: value for key, value in payload.items() if key in contract_fields})
     print(json.dumps(result, ensure_ascii=False, indent=2))
 
 
