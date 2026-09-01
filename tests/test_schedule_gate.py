@@ -170,13 +170,14 @@ class ScheduleGateTests(unittest.TestCase):
             workflow,
         )
 
-    def test_manual_v4d_report_does_not_hide_incomplete_data_as_success(self) -> None:
+    def test_manual_v4d_report_defers_incomplete_data_without_failing_batch(self) -> None:
         workflow = Path(
             ".github/workflows/generate-base-cycle-top10-report.yml"
         ).read_text(encoding="utf-8")
 
         self.assertIn('if [ "${{ github.event_name }}" = "workflow_dispatch" ]', workflow)
-        self.assertIn("未更新Dashboard", workflow)
+        self.assertIn("::notice::", workflow)
+        self.assertNotIn("exit 75", workflow)
         self.assertIn("--recover-delayed-schedule", workflow)
 
     def test_delayed_schedule_can_recover_previous_trading_day(self) -> None:
@@ -191,6 +192,23 @@ class ScheduleGateTests(unittest.TestCase):
         self.assertTrue(decision.should_run)
         self.assertEqual(decision.target_date, date(2026, 8, 28))
         self.assertEqual(decision.reason, "retry_previous_trading_day_until_published")
+
+    def test_manual_workflows_recover_latest_completed_session_before_close(self) -> None:
+        for workflow_path in (
+            Path(".github/workflows/generate-report.yml"),
+            Path(".github/workflows/generate-base-cycle-top10-report.yml"),
+        ):
+            workflow = workflow_path.read_text(encoding="utf-8")
+            self.assertIn(
+                "python -m rotation_radar.schedule_gate --recover-delayed-schedule",
+                workflow,
+            )
+
+    def test_manual_v4d_data_not_ready_is_a_clean_defer(self) -> None:
+        workflow = Path(
+            ".github/workflows/generate-base-cycle-top10-report.yml"
+        ).read_text(encoding="utf-8")
+        self.assertNotIn("exit 75", workflow)
 
 
 @contextmanager

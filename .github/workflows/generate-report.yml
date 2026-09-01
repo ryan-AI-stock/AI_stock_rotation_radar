@@ -107,7 +107,8 @@ jobs:
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             report_date="${{ inputs.report_date }}"
             if [ -z "${report_date}" ]; then
-              report_date="$(TZ=Asia/Taipei date +%F)"
+              python -m rotation_radar.schedule_gate --recover-delayed-schedule
+              exit 0
             fi
             report_key="${report_date//-/}"
             echo "Target Taiwan trading date: ${report_date} (manual workflow_dispatch; fallback allowed unless exact mode is enabled)"

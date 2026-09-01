@@ -43,7 +43,10 @@ jobs:
           set -euo pipefail
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             report_date="${{ inputs.report_date }}"
-            if [ -z "${report_date}" ]; then report_date="$(TZ=Asia/Taipei date +%F)"; fi
+            if [ -z "${report_date}" ]; then
+              python -m rotation_radar.schedule_gate --recover-delayed-schedule
+              exit 0
+            fi
             {
               echo "should_run=true"
               echo "target_date=${report_date}"
@@ -114,8 +117,7 @@ jobs:
             echo "signal_ready=false" >> "$GITHUB_OUTPUT"
             echo "正式V4-D當日資料尚未完整，排程稍後自動重試。" >> "$GITHUB_STEP_SUMMARY"
             if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-              echo "::error::正式V4-D當日資料尚未完整，未產生或上傳報告。"
-              exit 75
+              echo "::notice::正式V4-D資料尚未完整；本次不更新Dashboard。"
             fi
             exit 0
           fi
@@ -140,8 +142,7 @@ jobs:
             echo "report_ready=false" >> "$GITHUB_OUTPUT"
             echo "資料尚未完整，排程稍後自動重試。" >> "$GITHUB_STEP_SUMMARY"
             if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-              echo "::error::V4-D資料尚未完整，未更新Dashboard。"
-              exit 75
+              echo "::notice::V4-D資料尚未完整；本次不更新Dashboard。"
             fi
             exit 0
           fi
