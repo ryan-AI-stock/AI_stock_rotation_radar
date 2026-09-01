@@ -121,6 +121,13 @@ class C6DashboardPublishTests(unittest.TestCase):
         ))
         self.assertIn("暫不提供", values["目前預估"])
 
+    def test_dashboard_cash_is_currency_text_not_a_sheet_date_serial(self):
+        values = self._pairs(build_dashboard_values(
+            model_version="c6-research-v1", snapshot_as_of="2026-08-12",
+            data_status="ready", slots=[], cash=168.29,
+        ))
+        self.assertEqual(values["帳戶現金"], "NT$168.29")
+
 
 if __name__ == "__main__":
     unittest.main()

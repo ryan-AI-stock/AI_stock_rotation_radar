@@ -292,7 +292,7 @@ def build_dashboard_values(
         ["", "", "", ""],
         [f"三槽模擬帳戶（截至 {accounting_date[5:] if len(accounting_date) >= 10 else accounting_date}）", "", "", ""],
         *slot_rows,
-        ["帳戶現金", float(cash or 0.0), "帳戶總資產", total_mark],
+        ["帳戶現金", f"NT${float(cash or 0.0):,.2f}", "帳戶總資產", total_mark],
         ["相對700萬元損益", total_mark - C6_INITIAL_CAPITAL, "報酬率", total_mark / C6_INITIAL_CAPITAL - 1],
         ["", "", "", ""],
         ["每月提領安排", "", "", ""],
