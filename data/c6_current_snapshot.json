@@ -2,7 +2,7 @@
   "model_version": "c6-research-score0-pit-v2-forward-known-segment",
   "snapshot_as_of": "2026-08-12",
   "data_status": "partial_known_segment_whole_share_replay_pit_blocked_after_20260812",
-  "source_manifest_hash": "e81682441e16be3d5146bfc26f5f71db1554575bcbddf8ce058a4439c95d0b98",
+  "source_manifest_hash": "b82e49a3929fe24b843804afee61c9928a81c4da217f0b91c75efe59fd95c14a",
   "snapshot_rows": [
     {
       "signal_date": "2026-08-05",
@@ -658,7 +658,7 @@
       "eligibility_reason": "frozen_C6_eligibility_passed_and_ranked",
       "score": 92.86585365853658,
       "display_close": 317.5,
-      "planned_execution_date": "",
+      "planned_execution_date": "2026-08-31",
       "source_readiness": "accepted_research_ranking_with_official_raw_display_close",
       "source_label": "persisted_C6_snapshot_re_rank"
     },
@@ -672,7 +672,7 @@
       "eligibility_reason": "frozen_C6_eligibility_passed_and_ranked",
       "score": 85.60975609756098,
       "display_close": 5785.0,
-      "planned_execution_date": "",
+      "planned_execution_date": "2026-08-31",
       "source_readiness": "accepted_research_ranking_with_official_raw_display_close",
       "source_label": "persisted_C6_snapshot_re_rank"
     },
@@ -686,23 +686,93 @@
       "eligibility_reason": "frozen_C6_eligibility_passed_and_ranked",
       "score": 82.13414634146342,
       "display_close": 1140.0,
-      "planned_execution_date": "",
+      "planned_execution_date": "2026-08-31",
       "source_readiness": "accepted_research_ranking_with_official_raw_display_close",
       "source_label": "persisted_C6_snapshot_re_rank"
     },
     {
       "signal_date": "2026-08-31",
-      "rank": 0,
-      "ticker": "",
-      "name": "",
-      "market": "",
-      "candidate_status": "missing_candidate_gate_adjusted_analysis_complete_exit_state_and_official_market_mapping",
-      "eligibility_reason": "missing_candidate_gate_adjusted_analysis_complete_exit_state_and_official_market_mapping",
-      "score": "",
-      "display_close": "",
+      "rank": 1,
+      "ticker": "2408",
+      "name": "南亞科",
+      "market": "TWSE",
+      "candidate_status": "frozen_C6_eligibility_passed_and_ranked",
+      "eligibility_reason": "frozen_C6_eligibility_passed_and_ranked",
+      "score": 88.59756097560975,
+      "display_close": 543.0,
+      "planned_execution_date": "2026-09-01",
+      "source_readiness": "accepted_research_ranking_with_official_raw_display_close",
+      "source_label": "bounded_current_C6_official_close_recompute"
+    },
+    {
+      "signal_date": "2026-08-31",
+      "rank": 2,
+      "ticker": "3653",
+      "name": "健策",
+      "market": "TWSE",
+      "candidate_status": "frozen_C6_eligibility_passed_and_ranked",
+      "eligibility_reason": "frozen_C6_eligibility_passed_and_ranked",
+      "score": 87.5,
+      "display_close": 5990.0,
+      "planned_execution_date": "2026-09-01",
+      "source_readiness": "accepted_research_ranking_with_official_raw_display_close",
+      "source_label": "bounded_current_C6_official_close_recompute"
+    },
+    {
+      "signal_date": "2026-08-31",
+      "rank": 3,
+      "ticker": "3017",
+      "name": "奇鋐",
+      "market": "TWSE",
+      "candidate_status": "frozen_C6_eligibility_passed_and_ranked",
+      "eligibility_reason": "frozen_C6_eligibility_passed_and_ranked",
+      "score": 85.0609756097561,
+      "display_close": 3425.0,
+      "planned_execution_date": "2026-09-01",
+      "source_readiness": "accepted_research_ranking_with_official_raw_display_close",
+      "source_label": "bounded_current_C6_official_close_recompute"
+    },
+    {
+      "signal_date": "2026-09-01",
+      "rank": 1,
+      "ticker": "3044",
+      "name": "健鼎",
+      "market": "TWSE",
+      "candidate_status": "frozen_C6_eligibility_passed_and_ranked",
+      "eligibility_reason": "frozen_C6_eligibility_passed_and_ranked",
+      "score": 89.26829268292683,
+      "display_close": 503.0,
       "planned_execution_date": "",
-      "source_readiness": "source_blocked_not_empty_candidate",
-      "source_label": "no_current_C6_PIT_materialization_found_locally"
+      "source_readiness": "accepted_research_ranking_with_official_raw_display_close",
+      "source_label": "bounded_current_C6_official_close_recompute"
+    },
+    {
+      "signal_date": "2026-09-01",
+      "rank": 2,
+      "ticker": "3653",
+      "name": "健策",
+      "market": "TWSE",
+      "candidate_status": "frozen_C6_eligibility_passed_and_ranked",
+      "eligibility_reason": "frozen_C6_eligibility_passed_and_ranked",
+      "score": 87.98780487804879,
+      "display_close": 5885.0,
+      "planned_execution_date": "",
+      "source_readiness": "accepted_research_ranking_with_official_raw_display_close",
+      "source_label": "bounded_current_C6_official_close_recompute"
+    },
+    {
+      "signal_date": "2026-09-01",
+      "rank": 3,
+      "ticker": "3324",
+      "name": "雙鴻",
+      "market": "TPEx",
+      "candidate_status": "frozen_C6_eligibility_passed_and_ranked",
+      "eligibility_reason": "frozen_C6_eligibility_passed_and_ranked",
+      "score": 87.01219512195122,
+      "display_close": 1375.0,
+      "planned_execution_date": "",
+      "source_readiness": "accepted_research_ranking_with_official_raw_display_close",
+      "source_label": "bounded_current_C6_official_close_recompute"
     }
   ],
   "ledger_rows": [
@@ -911,18 +981,16 @@
     }
   ],
   "cash": 2111.7496094633825,
-  "notes": "排名覆蓋：2026-08-05 explicit no eligible；2026-08-06~2026-08-28 為唯一 v2 去重排名，僅供候選展示。整股帳本僅至 2026-08-12，包含 3 個 official raw execution 與 EOD slots/cash。2026-08-13 後完整 C6 PIT exit/action state 未 materialize；不得把排名視為空候選或推定交易。2026-08-31 為 C6 PIT source blocker，不是無合格候選。",
+  "notes": "排名覆蓋：2026-08-05 explicit no eligible；其餘列為唯一 v2 去重排名，僅供候選展示。整股帳本僅至 2026-08-12，包含 3 個 official raw execution 與 EOD slots/cash。2026-08-13 後完整 C6 PIT exit/action state 未 materialize；不得把排名視為空候選或推定交易。",
   "coverage": {
-    "ranking_snapshot_as_of": "2026-08-28",
+    "ranking_snapshot_as_of": "2026-09-01",
     "accounting_snapshot_as_of": "2026-08-12",
-    "ranking_rows": 50,
-    "ranking_top3_rows": 48,
+    "ranking_rows": 55,
+    "ranking_top3_rows": 54,
     "explicit_no_eligible_dates": [
       "2026-08-05"
     ],
-    "pit_blocked_not_empty_candidate_dates": [
-      "2026-08-31"
-    ],
+    "pit_blocked_not_empty_candidate_dates": [],
     "ledger_rows": 12,
     "future_data_violation_count": 0
   },
@@ -931,6 +999,6 @@
   "active_in_trade_decision": false,
   "report_changed": false,
   "not_live_rule": true,
-  "ranking_snapshot_as_of": "2026-08-28",
+  "ranking_snapshot_as_of": "2026-09-01",
   "accounting_snapshot_as_of": "2026-08-12"
 }

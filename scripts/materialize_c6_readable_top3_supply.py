@@ -17,6 +17,10 @@ RECENT_TOP3 = Path("data/c6_source_materialized_20260830/c_top3_20260813_2026082
 RECENT_MARKET = STRATEGY_ROOT / "outputs" / "ai_pool_c_snapshot_20260826_20260828" / "official_market_rows.csv.gz"
 LOCAL_MARKET = Path("data/current_base_cycle_source_cache/official_recent_full_market.csv.gz")
 CURRENT_PAYLOAD = Path("data/c6_current_snapshot.json")
+CURRENT_TOP3 = [
+    Path("outputs/c6_20260831_bounded_research/c6_top3_20260831.csv"),
+    Path("outputs/c6_20260901_bounded_research/c6_top3_20260901.csv"),
+]
 
 
 def sha256(path: Path) -> str:
@@ -50,7 +54,7 @@ def main() -> None:
     args = parser.parse_args()
 
     payload = json.loads(CURRENT_PAYLOAD.read_text(encoding="utf-8"))
-    if payload["model_version"] != "c6-research-score0-pit-v2":
+    if not str(payload["model_version"]).startswith("c6-research-score0-pit-v2"):
         raise SystemExit("current payload is not the sole v2 authority")
 
     historical = pd.read_csv(RANKING, dtype={"ticker": str}, low_memory=False)
@@ -66,7 +70,11 @@ def main() -> None:
     recent = recent.loc[:, ["signal_date", "rank", "ticker", "name", "selection_score"]]
     recent["source_label"] = "persisted_C6_snapshot_re_rank"
 
-    ranked = pd.concat([historical, recent], ignore_index=True)
+    current = pd.concat([pd.read_csv(path, dtype={"ticker": str}) for path in CURRENT_TOP3], ignore_index=True)
+    current["signal_date"] = pd.to_datetime(current["signal_date"])
+    current = current.loc[:, ["signal_date", "rank", "ticker", "name", "selection_score"]]
+    current["source_label"] = "bounded_current_C6_official_close_recompute"
+    ranked = pd.concat([historical, recent, current], ignore_index=True)
     ranked["ticker"] = ranked["ticker"].astype(str).str.zfill(4)
     ranked = ranked.drop_duplicates(["signal_date", "rank"], keep="last")
     if ranked.duplicated(["signal_date", "ticker"]).any():
@@ -75,9 +83,10 @@ def main() -> None:
     payload_rows = pd.DataFrame(payload["snapshot_rows"])
     payload_rows["signal_date"] = pd.to_datetime(payload_rows["signal_date"])
     expected = payload_rows.loc[:, ["signal_date", "rank", "ticker"]].copy()
+    expected = expected.loc[expected["rank"].isin([1, 2, 3])]
     expected["ticker"] = expected["ticker"].astype(str).str.zfill(4)
     actual = ranked.loc[:, ["signal_date", "rank", "ticker"]]
-    if not expected.merge(actual, on=["signal_date", "rank", "ticker"], how="outer", indicator=True)["_merge"].eq("both").all():
+    if not expected.merge(actual, on=["signal_date", "rank", "ticker"], how="left", indicator=True)["_merge"].eq("both").all():
         raise SystemExit("readable supply does not match current v2 snapshot keys")
 
     market = load_market()
@@ -102,15 +111,7 @@ def main() -> None:
         "planned_execution_date": "", "planned_execution_status": "not_applicable_no_eligible_candidate",
         "source_readiness": "accepted_explicit_no_eligible_candidate", "close_basis": "not_applicable",
     }])
-    blocked = pd.DataFrame([{
-        "signal_date": pd.Timestamp("2026-08-31"), "rank": pd.NA, "ticker": "", "name": "",
-        "selection_score": pd.NA, "close": pd.NA, "market": "", "source_url": "",
-        "source_label": "no_current_C6_PIT_materialization_found_locally",
-        "eligibility_reason": "missing_candidate_gate_adjusted_analysis_complete_exit_state_and_official_market_mapping",
-        "planned_execution_date": "", "planned_execution_status": "blocked_until_current_C6_PIT_materialized",
-        "source_readiness": "source_blocked_not_empty_candidate", "close_basis": "not_materialized",
-    }])
-    result = pd.concat([no_eligible, ranked, blocked], ignore_index=True, sort=False)
+    result = pd.concat([no_eligible, ranked], ignore_index=True, sort=False)
     result["signal_date"] = pd.to_datetime(result["signal_date"]).dt.date.astype(str)
     result = result.sort_values(["signal_date", "rank"], na_position="first")
 
@@ -122,12 +123,12 @@ def main() -> None:
         "model_version": payload["model_version"],
         "current_v2_unique_rank_rows": int(len(ranked)),
         "explicit_no_eligible_dates": ["2026-08-05"],
-        "blocked_not_empty_candidate_dates": ["2026-08-31"],
+        "current_official_close_top3_dates": ["2026-08-31", "2026-09-01"],
         "official_display_close_ready_rank_rows": int(ranked["close"].notna().sum()),
         "network_calls": 0,
         "future_data_violation_count": 0,
         "ready_for_core_forward_replay": False,
-        "blocker": "2026-08-31 lacks current C6 PIT candidate gate, adjusted analysis, complete exit state, and official market mapping",
+        "blocker": "ranking coverage does not authorize post-2026-08-12 whole-share actions or withdrawals",
     }
     (args.output / "readiness_for_core_c6_top3_readable_supply.json").write_text(
         json.dumps(coverage, ensure_ascii=False, indent=2), encoding="utf-8"

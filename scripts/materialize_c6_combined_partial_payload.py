@@ -62,10 +62,9 @@ def main() -> None:
     core["accounting_snapshot_as_of"] = core["snapshot_as_of"]
     core["source_manifest_hash"] = hashlib.sha256(f"{core_hash}:{supply_hash}".encode()).hexdigest()
     core["notes"] = (
-        "排名覆蓋：2026-08-05 explicit no eligible；2026-08-06~2026-08-28 為唯一 v2 去重排名，"
+        "排名覆蓋：2026-08-05 explicit no eligible；其餘列為唯一 v2 去重排名，"
         "僅供候選展示。整股帳本僅至 2026-08-12，包含 3 個 official raw execution 與 EOD slots/cash。"
         "2026-08-13 後完整 C6 PIT exit/action state 未 materialize；不得把排名視為空候選或推定交易。"
-        "2026-08-31 為 C6 PIT source blocker，不是無合格候選。"
     )
     core["coverage"] = {
         "ranking_snapshot_as_of": ranking_as_of,
@@ -73,7 +72,7 @@ def main() -> None:
         "ranking_rows": len(source_rows),
         "ranking_top3_rows": sum(row["rank"] in {1, 2, 3} for row in source_rows),
         "explicit_no_eligible_dates": ["2026-08-05"],
-        "pit_blocked_not_empty_candidate_dates": ["2026-08-31"],
+        "pit_blocked_not_empty_candidate_dates": [],
         "ledger_rows": len(core["ledger_rows"]),
         "future_data_violation_count": 0,
     }
