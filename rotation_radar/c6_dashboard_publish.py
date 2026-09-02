@@ -81,6 +81,8 @@ def _append_only(existing: list[list[object]], headers: list[str], rows: list[di
 
 
 def _human_data_status(data_status: str) -> str:
+    if "event_coverage_pending" in data_status:
+        return "三槽帳本已更新至最新交易日；公司行動覆蓋待確認"
     if "whole_share_replay_pit_blocked" in data_status:
         return "整股帳本已建立至目前權威日期；後續交易判斷仍待補齊"
     if "no_whole_share_replay" in data_status or "replay_not_materialized" in data_status:
@@ -113,11 +115,17 @@ def _human_model_version(model_version: str) -> str:
 
 
 def _human_version_status(data_status: str) -> str:
+    if "event_coverage_pending" in data_status:
+        return "整股帳本與每日估值已更新；公司行動覆蓋待確認"
     if "whole_share_replay_pit_blocked" in data_status:
         return "整股帳本已核對至權威日期；後續交易尚未完成"
     if "no_whole_share_replay" in data_status or "replay_not_materialized" in data_status:
         return "只有候選排名，尚未建立整股交易帳本"
     return "資料完整"
+
+
+def _money(value: float) -> str:
+    return f"NT${value:,.2f}"
 
 
 def _human_candidate_status(row: dict) -> str:
@@ -279,10 +287,12 @@ def build_dashboard_values(
         )
 
     accounting_date = accounting_snapshot_as_of or snapshot_as_of
-    status_text = (
-        f"排名已更新；持股與損益目前只核對到 {accounting_date}"
-        if replay_incomplete else f"排名與三槽帳戶均已更新至 {accounting_date}"
-    )
+    if replay_incomplete:
+        status_text = f"排名已更新；持股與損益目前只核對到 {accounting_date}"
+    elif "event_coverage_pending" in data_status:
+        status_text = f"排名與三槽帳戶已更新至 {accounting_date}；公司行動覆蓋待確認"
+    else:
+        status_text = f"排名與三槽帳戶均已更新至 {accounting_date}"
     return [
         ["C6 每日選股與三槽模擬帳戶", "", "", ""],
         ["最新排名日期", ranking_snapshot_as_of or latest_date, "正式帳本日期", accounting_date],
@@ -292,11 +302,11 @@ def build_dashboard_values(
         ["", "", "", ""],
         [f"三槽模擬帳戶（截至 {accounting_date[5:] if len(accounting_date) >= 10 else accounting_date}）", "", "", ""],
         *slot_rows,
-        ["帳戶現金", f"NT${float(cash or 0.0):,.2f}", "帳戶總資產", total_mark],
-        ["相對700萬元損益", total_mark - C6_INITIAL_CAPITAL, "報酬率", total_mark / C6_INITIAL_CAPITAL - 1],
+        ["帳戶現金", _money(float(cash or 0.0)), "帳戶總資產", _money(total_mark)],
+        ["相對700萬元損益", _money(total_mark - C6_INITIAL_CAPITAL), "報酬率", total_mark / C6_INITIAL_CAPITAL - 1],
         ["", "", "", ""],
         ["每月提領安排", "", "", ""],
-        ["下次預定提領日", next_dates[0], "目標金額", C6_WITHDRAWAL_AMOUNT],
+        ["下次預定提領日", next_dates[0], "目標金額", _money(C6_WITHDRAWAL_AMOUNT)],
         ["賣股原則", "從三槽中報酬最低的一槽，賣出最接近7.5萬元的整股", "", ""],
         ["目前預估", withdrawal_text, "", ""],
         ["", "", "", ""],

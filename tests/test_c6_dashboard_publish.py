@@ -102,6 +102,9 @@ class C6DashboardPublishTests(unittest.TestCase):
         self.assertEqual(top1, ["Top1", "2301 光寶科", 79.2, "已通過C6條件，當日排名第1"])
         values = self._pairs(rows)
         self.assertNotIn("data_status", values)
+        flattened = "\n".join(str(cell) for row in rows for cell in row)
+        self.assertNotIn("partial_rankings_only", flattened)
+        self.assertNotIn("no_whole_share_replay", flattened)
 
     def test_partial_dashboard_keeps_withdrawal_schedule_but_not_a_fabricated_sale(self):
         values = self._pairs(build_dashboard_values(
@@ -127,6 +130,13 @@ class C6DashboardPublishTests(unittest.TestCase):
             data_status="ready", slots=[], cash=168.29,
         ))
         self.assertEqual(values["帳戶現金"], "NT$168.29")
+
+    def test_event_coverage_pending_is_plain_chinese(self):
+        values = self._pairs(build_dashboard_values(
+            model_version="c6-research-v2", snapshot_as_of="2026-09-01",
+            data_status="partial_whole_share_replay_event_coverage_pending", slots=[],
+        ))
+        self.assertIn("公司行動覆蓋待確認", values["資料狀態"])
 
 
 if __name__ == "__main__":
