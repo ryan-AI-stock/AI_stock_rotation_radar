@@ -17,8 +17,8 @@
   },
   "execution_ticker": "00631L",
   "formal_model_changed": true,
-  "last_completed_report_date": "2026-09-01",
-  "last_completed_signal": "entry",
+  "last_completed_report_date": "2026-09-02",
+  "last_completed_signal": "none",
   "mode_id": "0050_MA4_SLOPE7_ENTRY_MA10_SLOPE20_EXIT_CD7",
   "observed_emergency_closed_dates": [],
   "pending_signal": null,
@@ -27,5 +27,5 @@
   "signal_carry_forward_used": false,
   "signal_ticker": "0050",
   "trade_decision_changed": true,
-  "updated_at": "2026-09-01T20:15:47+08:00"
+  "updated_at": "2026-09-02T19:53:41+08:00"
 }
