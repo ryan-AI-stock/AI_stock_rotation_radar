@@ -4,13 +4,13 @@
   "ticker": "2609",
   "name": "陽明",
   "market": "TWSE",
-  "signal_date": "2026-09-02",
-  "signal_close": 57.5,
-  "execution_date": "2026-09-03",
+  "signal_date": "2026-09-03",
+  "signal_close": 57.8,
+  "execution_date": "2026-09-04",
   "entry_close": null,
   "status": "signal_only",
   "daily_marks": {},
-  "candidate_rank": 2,
+  "candidate_rank": 1,
   "industry": "航運業",
   "layer1_snapshot_date": "20260728"
 }
