@@ -256,7 +256,8 @@ def build_dashboard_values(
                 f"已通過C6條件，當日排名第{rank}",
             ])
         else:
-            top_rows.append([f"Top{rank}", "資料待補", "", ""])
+            label = "無其他合格股票" if latest_rows else "排名尚未產出"
+            top_rows.append([f"Top{rank}", label, "", ""])
 
     slot_rows = [["槽位", "持股與股數", "收盤市值", "相對買進成本報酬"]]
     total_mark = float(cash or 0.0)

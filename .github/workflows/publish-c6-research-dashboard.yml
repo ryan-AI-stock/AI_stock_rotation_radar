@@ -2,7 +2,8 @@ name: Publish C6 Research Dashboard
 
 on:
   schedule:
-    - cron: "30 7-15 * * 1-5"
+    # 17:00 Asia/Taipei, after the official close files are normally available.
+    - cron: "0 9 * * 1-5"
   workflow_dispatch:
 
 concurrency:
@@ -37,6 +38,8 @@ jobs:
             echo "No C6 daily source/replay payload was published; no data was fabricated."
             exit 0
           fi
+          python -m rotation_radar.c6_snapshot_freshness \
+            --payload data/c6_current_snapshot.json
           python -m rotation_radar.c6_dashboard_publish \
             --spreadsheet-id 1_t5jrM0ZZArrmF67mpgHIqj_tPLFGu3Cpfcko1Qz_vQ \
             --payload data/c6_current_snapshot.json

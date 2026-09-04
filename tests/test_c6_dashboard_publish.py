@@ -106,6 +106,21 @@ class C6DashboardPublishTests(unittest.TestCase):
         self.assertNotIn("partial_rankings_only", flattened)
         self.assertNotIn("no_whole_share_replay", flattened)
 
+    def test_dashboard_distinguishes_fewer_than_three_qualified_stocks_from_missing_data(self):
+        rows = build_dashboard_values(
+            model_version="c6-v2",
+            snapshot_as_of="2026-09-03",
+            data_status="ready",
+            slots=[],
+            snapshot_rows=[
+                {"signal_date": "2026-09-03", "rank": 1, "ticker": "3324", "name": "雙鴻", "score": 92.3125},
+            ],
+        )
+        top2 = next(row for row in rows if row[0] == "Top2")
+        top3 = next(row for row in rows if row[0] == "Top3")
+        self.assertEqual(top2[1], "無其他合格股票")
+        self.assertEqual(top3[1], "無其他合格股票")
+
     def test_partial_dashboard_keeps_withdrawal_schedule_but_not_a_fabricated_sale(self):
         values = self._pairs(build_dashboard_values(
             model_version="c6-research-v2", snapshot_as_of="2026-08-28",
