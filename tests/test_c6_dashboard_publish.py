@@ -1,6 +1,7 @@
 import unittest
 
 from rotation_radar.c6_dashboard_publish import (
+    MODEL_LOGIC,
     _append_only,
     build_dashboard_values,
     build_public_snapshot_values,
@@ -153,6 +154,20 @@ class C6DashboardPublishTests(unittest.TestCase):
             slots=[{"slot_id": 1, "ticker": "3653", "shares": 10, "raw_close": 100, "position_cost": 900}],
         ))
         self.assertIn("暫不提供", values["目前預估"])
+
+    def test_dashboard_row_32_contains_current_score0_research_logic(self):
+        rows = build_dashboard_values(
+            model_version="c6-research-score0-pit-v2-forward-known-segment",
+            snapshot_as_of="2026-09-03",
+            data_status="ready",
+            slots=[],
+        )
+        self.assertEqual(rows[31], [MODEL_LOGIC, "", "", ""])
+        self.assertIn("C6是研究版，不取代正式V4-D", MODEL_LOGIC)
+        self.assertIn("Bottom Score至少60分", MODEL_LOGIC)
+        self.assertIn("Launch Score至少65分", MODEL_LOGIC)
+        self.assertIn("最高報酬曾達+20%後", MODEL_LOGIC)
+        self.assertNotIn("KD風險重排", MODEL_LOGIC)
 
     def test_dashboard_cash_is_currency_text_not_a_sheet_date_serial(self):
         values = self._pairs(build_dashboard_values(

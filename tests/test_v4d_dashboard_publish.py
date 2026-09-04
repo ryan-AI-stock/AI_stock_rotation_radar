@@ -4,10 +4,36 @@ import unittest
 
 import pandas as pd
 
-from rotation_radar.v4d_dashboard_publish import build_dashboard_values, build_signal_rows, build_trade_rows
+from rotation_radar.v4d_dashboard_publish import (
+    MODEL_LOGIC,
+    build_dashboard_values,
+    build_signal_rows,
+    build_trade_rows,
+    model_logic_format_requests,
+)
 
 
 class V4dDashboardPublishTest(unittest.TestCase):
+    def test_dashboard_row_32_contains_frozen_v4d_logic(self) -> None:
+        values = build_dashboard_values([], {"cash": 7_000_000, "transactions": []})
+        self.assertEqual(values[31], [MODEL_LOGIC, ""])
+        self.assertIn("止跌轉強證據至少2／3", MODEL_LOGIC)
+        self.assertIn("TD55起", MODEL_LOGIC)
+        self.assertIn("每月底", MODEL_LOGIC)
+
+    def test_model_logic_format_targets_only_a32_b32(self) -> None:
+        requests = model_logic_format_requests(123)
+        logic_range = requests[0]["unmergeCells"]["range"]
+        self.assertEqual(logic_range, {
+            "sheetId": 123, "startRowIndex": 31, "endRowIndex": 32,
+            "startColumnIndex": 0, "endColumnIndex": 2,
+        })
+        self.assertEqual(requests[1]["mergeCells"]["range"], logic_range)
+        self.assertEqual(requests[2]["repeatCell"]["cell"]["userEnteredFormat"], {
+            "wrapStrategy": "WRAP", "horizontalAlignment": "LEFT", "verticalAlignment": "TOP",
+        })
+        self.assertGreaterEqual(requests[3]["updateDimensionProperties"]["properties"]["pixelSize"], 600)
+
     def test_signal_rows_preserve_original_top3_and_mark_final_selection(self) -> None:
         frame = pd.DataFrame([
             {"signal_date": "2026-08-11", "candidate_rank": 1, "ticker": "1216", "name": "統一", "industry_name": "食品工業", "signal_close": 80, "turnover_rank_20d": 10, "turnover_data_completeness": 1, "rank_le280_days_in_prior20": 20, "return_60d": .1, "pre_pullback_20d_strength": .1, "pos20": 10, "pos40": 20, "pos61": 30, "pos61_bucket": 3, "turnup_evidence": 2, "bias60_history_percentile": 50, "bias60_risk_tier": 0, "volatility_percentile": .2, "top30_minimum_pass": True},

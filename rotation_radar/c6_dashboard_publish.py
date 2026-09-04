@@ -25,6 +25,29 @@ C6_SLOT_COUNT = 3
 C6_WITHDRAWAL_AMOUNT = 75_000.0
 C6_FORWARD_START_DATE = "2026-08-05"
 C6_WITHDRAWAL_START_DATE = "2026-09-09"
+MODEL_LOGIC = """C6研究版｜AI硬體六大瓶頸與載體清冊 Bottom／Launch 三槽策略
+
+【候選與排序】
+選股池限定AI硬體六大瓶頸與載體清冊共48檔，涵蓋記憶體、被動元件、矽晶圓、PCB／CCL／載板、AI伺服器、AI機櫃電力與散熱六鏈。先通過V4-D同級的成交金額與PIT基本面重大風險篩選，並要求60日自身報酬大於0、月營收資料已公布且年增率不低於-20%。Bottom Score至少60分，確認跌勢收斂；Launch Score至少65分，確認價格、量能與相對強度開始發動。歷史題材資格若尚未具備當時可得的完整PIT證據，必須保留survivorship warning。
+
+合格股票以綜合分數排序：Launch當日百分位40%＋Bottom當日百分位25%＋個股相對大盤20日強度百分位20%＋所屬供應鏈相對大盤20日強度百分位15%。同分時依Launch Score、族群相對強度及股票代號排序。每日列出Top1至Top3；分數是當日合格股票之間的相對排名，不代表預測報酬率。
+
+【買進】
+初始資金700萬元，平均分成三個獨立槽位。空槽存在時，收盤後從當日排名中選擇尚未持有的最高順位股票，下一交易日依正式成交口徑買進；同一股票不可重複占用兩槽。三槽全滿時不因每日Top1至Top3改變而換股。
+
+【賣出：收盤確認，下一交易日執行】
+1. 當下報酬跌至-12%以下，退出。
+2. 最高報酬曾達+20%後，從持有高點回落12%，退出。
+3. 持有滿35TD仍未轉為正報酬，退出。
+4. 持有滿50TD仍未達+8%，退出。
+5. 最長持有60TD，退出。
+6. 持股已有至少+15%獲利，且美元位於近20TD高檔、0050 BIAS60位於近20TD高檔、距台指期結算日0至3TD三項同時成立，退出。
+
+【成本、資金與提領】
+買進使用官方未調整成交價並加入0.10%滑價及0.0855%手續費；賣出加入0.10%滑價、0.0855%手續費及0.30%證交稅。只能買整股，未使用資金保留為現金。自2026-09-09起，每月第二個星期三提領75,000元；排定日休市則順延至下一交易日。現金不足時，從三槽中相對買進成本報酬最低者賣出最接近75,000元現值的整股。
+
+【模型定位】
+C6是研究版，不取代正式V4-D。Dashboard會隨目前C6版本同步更新；每日訊號、模擬持股與損益以畫面標示的排名日期及正式帳本日期為準。"""
 DEFAULT_HISTORICAL_BENCHMARK_PATH = Path("data/c6_historical_64_benchmark.json")
 
 SNAPSHOT_HEADERS = [
@@ -406,6 +429,7 @@ def build_dashboard_values(
         ["目前限制", "", "", ""],
         ["說明", f"{accounting_date}之後的交易判斷仍待完整資料；這不是空手，也不是確認續抱。", "", ""],
         ["使用方式", "每日先看Top1～3；持股、損益與提領只以「正式帳本日期」為準。", "", ""],
+        [MODEL_LOGIC, "", "", ""],
     ]
 
 
@@ -456,6 +480,7 @@ def publish_snapshot(
     )
     client.clear(f"'{DASHBOARD_SHEET}'!A1:D60")
     client.update(f"'{DASHBOARD_SHEET}'!A1", dashboard)
+    client.format_model_logic(DASHBOARD_SHEET)
     return {
         "model_version": model_version,
         "snapshot_as_of": snapshot_as_of,

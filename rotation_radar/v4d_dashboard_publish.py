@@ -26,6 +26,70 @@ TRADE_HEADERS = [
     "交易成本", "現金餘額", "已實現損益", "已實現報酬", "訊號日期", "持有TD", "當日漲跌",
     "累積報酬", "after-cost報酬", "最高after-cost報酬", "高點回落", "原因／狀態",
 ]
+MODEL_LOGIC = """全市場硬篩選＋低基期止跌轉強Top1（64條起始路徑中位代表路徑）
+
+【候選與排序】
+成交金額使用最新20日平均Top250，且過去20TD至少18天不差於Top280；通過PIT基本面／財務重大風險、60日自身報酬>0%、回檔前20TD自身強度>0%、止跌轉強證據至少2／3、Pos20／40／61完整、BIAS60自身歷史完整及波動度非前2.5%。依Pos61級距→止跌證據→回檔前20TD強度→BIAS60自身風險→Pos61精確值→多週期基期→60日自身報酬→流動性→代號排序。排除食品工業／紡織纖維／汽車工業／電器電纜／橡膠工業；原Top1被排除時依序遞補至Top3。最終標的若仍為處置股則空手，不再遞補。
+
+【買進】
+收盤後產生訊號，下一交易日依正式日線成交口徑買入；一次只持有一檔，700萬元策略資金100%投入。持股期間不因每日Top1改變而換股；賣出後CD=0。同一換倉日不得賣出後立即買回同一檔。
+
+【賣出：收盤確認，下一交易日執行】
+1. TD1～TD5：股價相對買入價下跌達-5%，退出。
+2. 任意連續5TD：股價下跌達-10%，退出。
+3. TD6起：累積after-cost報酬達-10%，退出。
+4. 最高after-cost曾達+7%但未達+10%，其後當下回落至+1%或以下，退出。
+5. TD14：當下after-cost未達+5%，且持有期間最高未達+10%，退出。
+6. 最高after-cost曾達+10%後視為正式發動，改由持有高點回落10%管理。
+7. TD22：持有期間從未達+10%，且當下after-cost未達+8%，退出。
+8. TD55起：當下after-cost未達+20%，退出。
+9. 每年首個交易日依歷史執行外殼強制刷新Top1。
+
+【成本與資金】
+買進成本：手續費0.0855%＋滑價0.10%；賣出成本：手續費0.0855%＋證交稅0.30%＋滑價0.10%。所有資產、損益及標示為after-cost的門檻均完整扣除成本；只有TD1～TD5的-5%快速失敗門檻直接比較股票價格。初始資金700萬元，100%策略股，無0050正二／00631L核心；每月底賣出約75,000元現值持股，扣除交易成本後提領。
+
+【本列期間與代表性】
+訊號起點2015-06-22、首次買入2015-06-23，結束2026-08-12。第5列與三個V4-D明細分頁均使用64條按期末資產排序後的下中位實際路徑（2015-06-23首次買入）；64條為偶數，統計中位數是兩條中央路徑的平均，本身不是一條真實交易路徑。不是舊年度重置路徑，也不是64條績效的逐年平均。"""
+
+
+def model_logic_format_requests(sheet_id: int) -> list[dict]:
+    """Return the idempotent A32:B32 merge and readable long-text formatting."""
+    logic_range = {
+        "sheetId": sheet_id,
+        "startRowIndex": 31,
+        "endRowIndex": 32,
+        "startColumnIndex": 0,
+        "endColumnIndex": 2,
+    }
+    return [
+        {"unmergeCells": {"range": logic_range}},
+        {"mergeCells": {"range": logic_range, "mergeType": "MERGE_ALL"}},
+        {
+            "repeatCell": {
+                "range": logic_range,
+                "cell": {
+                    "userEnteredFormat": {
+                        "wrapStrategy": "WRAP",
+                        "horizontalAlignment": "LEFT",
+                        "verticalAlignment": "TOP",
+                    }
+                },
+                "fields": "userEnteredFormat(wrapStrategy,horizontalAlignment,verticalAlignment)",
+            }
+        },
+        {
+            "updateDimensionProperties": {
+                "range": {
+                    "sheetId": sheet_id,
+                    "dimension": "ROWS",
+                    "startIndex": 31,
+                    "endIndex": 32,
+                },
+                "properties": {"pixelSize": 760},
+                "fields": "pixelSize",
+            }
+        },
+    ]
 
 
 def _bool(value: object) -> bool:
@@ -143,6 +207,9 @@ def build_dashboard_values(signal_rows: list[list[object]], simulation: dict) ->
         ["期末資產中位數", 1_230_902_878.8443353], ["總報酬中位數", 174.8432684063336],
         ["CAGR中位數", 0.5907543145186337], ["MDD中位數", -0.47398678813667246],
     ])
+    while len(values) < 31:
+        values.append(["", ""])
+    values.append([MODEL_LOGIC, ""])
     return values
 
 
@@ -182,6 +249,27 @@ class SheetsClient:
         )
         self._raise_for_status(response)
 
+    def format_model_logic(self, sheet_title: str) -> None:
+        response = requests.get(
+            self.base,
+            params={"fields": "sheets(properties(sheetId,title))"},
+            headers=self.headers,
+            timeout=30,
+        )
+        self._raise_for_status(response)
+        sheet_id = next(
+            int(sheet["properties"]["sheetId"])
+            for sheet in response.json().get("sheets", [])
+            if sheet.get("properties", {}).get("title") == sheet_title
+        )
+        response = requests.post(
+            f"{self.base}:batchUpdate",
+            headers=self.headers,
+            json={"requests": model_logic_format_requests(sheet_id)},
+            timeout=30,
+        )
+        self._raise_for_status(response)
+
     @staticmethod
     def _raise_for_status(response: requests.Response) -> None:
         if response.ok:
@@ -215,6 +303,7 @@ def publish(spreadsheet_id: str, ranking_path: Path, state_path: Path, simulatio
     dashboard = build_dashboard_values(new_rows, simulation)
     client.clear(f"'{DASHBOARD_SHEET}'!A1:B50")
     client.update(f"'{DASHBOARD_SHEET}'!A1", dashboard)
+    client.format_model_logic(DASHBOARD_SHEET)
 
 
 def main() -> None:
