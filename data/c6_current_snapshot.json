@@ -1,8 +1,8 @@
 {
-  "model_version": "c6-research-score0-pit-v2-forward-known-segment",
-  "snapshot_as_of": "2026-09-03",
+  "model_version": "c6-research-score0-pit-v2-forward-daily",
+  "snapshot_as_of": "2026-09-04",
   "data_status": "partial_whole_share_replay_event_coverage_pending",
-  "source_manifest_hash": "b82e49a3929fe24b843804afee61c9928a81c4da217f0b91c75efe59fd95c14a",
+  "source_manifest_hash": "0301ebe1f329ffb3062493ebe501cce008d53241b1d9203780bb5a966c5fcb37",
   "snapshot_rows": [
     {
       "signal_date": "2026-08-05",
@@ -829,6 +829,66 @@
       "planned_execution_date": "",
       "source_readiness": "accepted_research_ranking_with_official_raw_display_close",
       "source_label": "same_day_C6_official_close_recompute"
+    },
+    {
+      "signal_date": "2026-09-04",
+      "rank": 1,
+      "ticker": "3324",
+      "name": "雙鴻",
+      "market": "TPEx",
+      "candidate_status": "frozen_C6_eligibility_passed_and_ranked",
+      "eligibility_reason": "frozen_C6_eligibility_passed_and_ranked",
+      "score": 91.92307692307693,
+      "bottom_score": 80.0,
+      "launch_score": 75.0,
+      "stock_rs20": 0.5239925883506504,
+      "sector_rs20": 0.2942643978158115,
+      "return_60d": 0.3531781185303373,
+      "monthly_revenue_yoy": 1.1669713862814595,
+      "display_close": 1485.0,
+      "planned_execution_date": "2026-09-07",
+      "source_readiness": "accepted_research_ranking_with_official_raw_display_close",
+      "source_label": "daily_C6_SCORE_0_ranking"
+    },
+    {
+      "signal_date": "2026-09-04",
+      "rank": 2,
+      "ticker": "3653",
+      "name": "健策",
+      "market": "TWSE",
+      "candidate_status": "frozen_C6_eligibility_passed_and_ranked",
+      "eligibility_reason": "frozen_C6_eligibility_passed_and_ranked",
+      "score": 91.41025641025641,
+      "bottom_score": 80.0,
+      "launch_score": 75.0,
+      "stock_rs20": 0.36826969370527407,
+      "sector_rs20": 0.2942643978158115,
+      "return_60d": 0.5022814838750398,
+      "monthly_revenue_yoy": 0.9095964446430735,
+      "display_close": 5875.0,
+      "planned_execution_date": "2026-09-07",
+      "source_readiness": "accepted_research_ranking_with_official_raw_display_close",
+      "source_label": "daily_C6_SCORE_0_ranking"
+    },
+    {
+      "signal_date": "2026-09-04",
+      "rank": 3,
+      "ticker": "3017",
+      "name": "奇鋐",
+      "market": "TWSE",
+      "candidate_status": "frozen_C6_eligibility_passed_and_ranked",
+      "eligibility_reason": "frozen_C6_eligibility_passed_and_ranked",
+      "score": 90.38461538461539,
+      "bottom_score": 80.0,
+      "launch_score": 75.0,
+      "stock_rs20": 0.3239762910885904,
+      "sector_rs20": 0.2942643978158115,
+      "return_60d": 0.4027504911591355,
+      "monthly_revenue_yoy": 0.5739113833331853,
+      "display_close": 3570.0,
+      "planned_execution_date": "2026-09-07",
+      "source_readiness": "accepted_research_ranking_with_official_raw_display_close",
+      "source_label": "daily_C6_SCORE_0_ranking"
     }
   ],
   "ledger_rows": [
@@ -1827,6 +1887,54 @@
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20260903&type=ALLBUT0999&response=json",
       "ticker": "3006",
       "transaction_cost": "0.0"
+    },
+    {
+      "account_date": "2026-09-04",
+      "event_sequence": 1,
+      "slot_id": 1,
+      "event_type": "daily_mark",
+      "ticker": "3653",
+      "shares": 531,
+      "raw_close": 5875.0,
+      "gross_amount": 3119625.0,
+      "transaction_cost": 0.0,
+      "net_amount": 0.0,
+      "cash_after": "",
+      "relative_return_pct": 0.33807745632128783,
+      "reason": "official_raw_holding_mark",
+      "signal_date": ""
+    },
+    {
+      "account_date": "2026-09-04",
+      "event_sequence": 2,
+      "slot_id": 2,
+      "event_type": "daily_mark",
+      "ticker": "5351",
+      "shares": 20418,
+      "raw_close": 112.5,
+      "gross_amount": 2297025.0,
+      "transaction_cost": 0.0,
+      "net_amount": 0.0,
+      "cash_after": "",
+      "relative_return_pct": -0.01554659708501005,
+      "reason": "official_raw_holding_mark",
+      "signal_date": ""
+    },
+    {
+      "account_date": "2026-09-04",
+      "event_sequence": 3,
+      "slot_id": 3,
+      "event_type": "daily_mark",
+      "ticker": "3006",
+      "shares": 8701,
+      "raw_close": 278.5,
+      "gross_amount": 2423228.5,
+      "transaction_cost": 0.0,
+      "net_amount": 0.0,
+      "cash_after": "",
+      "relative_return_pct": 0.038601406908345126,
+      "reason": "official_raw_holding_mark",
+      "signal_date": ""
     }
   ],
   "slots": [
@@ -1835,42 +1943,41 @@
       "ticker": "3653",
       "shares": 531,
       "position_cost": 2331423.3307364997,
-      "raw_close": 5615.0
+      "raw_close": 5875.0,
+      "slot_cash": 1910.0025968337432
     },
     {
       "slot_id": 2,
       "ticker": "5351",
       "shares": 20418,
       "position_cost": 2333299.8730041,
-      "raw_close": 110.0
+      "raw_close": 112.5,
+      "slot_cash": 33.460329233668745
     },
     {
       "slot_id": 3,
       "ticker": "3006",
       "shares": 8701,
       "position_cost": 2333165.0466499375,
-      "raw_close": 277.0
+      "raw_close": 278.5,
+      "slot_cash": 168.2866833959706
     }
   ],
   "cash": 2111.7496094633825,
-  "notes": "排名、三槽整股持股與每日官方收盤估值均更新至2026-09-03；期間未觸發買賣。公司行動完整權威清冊仍待確認。",
+  "pending_orders": [],
+  "notes": "C6固定score0排名與三槽官方收盤估值更新至2026-09-04；公司行動完整權威清冊仍待確認。",
   "coverage": {
-    "ranking_snapshot_as_of": "2026-09-03",
-    "accounting_snapshot_as_of": "2026-09-03",
-    "ranking_rows": 59,
-    "ranking_top3_rows": 58,
-    "explicit_no_eligible_dates": [
-      "2026-08-05"
-    ],
-    "pit_blocked_not_empty_candidate_dates": [],
-    "ledger_rows": 60,
+    "ranking_snapshot_as_of": "2026-09-04",
+    "accounting_snapshot_as_of": "2026-09-04",
+    "ranking_rows": 62,
+    "ledger_rows": 63,
     "future_data_violation_count": 0
   },
   "formal_model_changed": false,
-  "trade_decision_changed": false,
-  "active_in_trade_decision": false,
+  "trade_decision_changed": true,
+  "active_in_trade_decision": true,
   "report_changed": true,
   "not_live_rule": true,
-  "ranking_snapshot_as_of": "2026-09-03",
-  "accounting_snapshot_as_of": "2026-09-03"
+  "ranking_snapshot_as_of": "2026-09-04",
+  "accounting_snapshot_as_of": "2026-09-04"
 }

@@ -2,9 +2,13 @@ name: Publish C6 Research Dashboard
 
 on:
   schedule:
-    # 17:00 Asia/Taipei, after the official close files are normally available.
-    - cron: "0 9 * * 1-5"
+    - cron: "0 7-15 * * 1-5"
   workflow_dispatch:
+    inputs:
+      report_date:
+        description: "Optional report date, YYYY-MM-DD"
+        required: false
+        default: ""
 
 concurrency:
   group: c6-research-dashboard
@@ -13,48 +17,130 @@ concurrency:
 jobs:
   publish-c6-research-snapshot:
     runs-on: ubuntu-latest
-    timeout-minutes: 150
+    timeout-minutes: 45
     permissions:
-      contents: read
+      contents: write
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - name: Checkout Radar repository
+        uses: actions/checkout@v4
+      - name: Checkout shared schedule rules
+        uses: actions/checkout@v4
+        with:
+          repository: ryan-AI-stock/AI_stock_schedule_rules
+          ref: main
+          path: AI_stock_schedule_rules
+      - name: Determine target Taiwan trading date
+        id: report-date
+        shell: bash
+        env:
+          SCHEDULE_RULES_PATH: ${{ github.workspace }}/AI_stock_schedule_rules/schedule_rules.json
+        run: |
+          set -euo pipefail
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            report_date="${{ inputs.report_date }}"
+            if [ -z "${report_date}" ]; then
+              python -m rotation_radar.schedule_gate --recover-delayed-schedule
+              exit 0
+            fi
+            {
+              echo "should_run=true"
+              echo "target_date=${report_date}"
+              echo "target_key=${report_date//-/}"
+              echo "reason=manual_workflow_dispatch"
+            } >> "$GITHUB_OUTPUT"
+          else
+            python -m rotation_radar.schedule_gate --recover-delayed-schedule
+          fi
+      - name: Stop when shared schedule gate rejects this run
+        if: steps.report-date.outputs.should_run != 'true'
+        run: echo "Schedule gate skipped; reason=${{ steps.report-date.outputs.reason }}"
+      - name: Restore publish marker
+        id: publish-marker
+        if: steps.report-date.outputs.should_run == 'true'
+        uses: actions/cache/restore@v4
+        with:
+          path: .github-run-state/c6-dashboard-published
+          key: c6-dashboard-published-${{ steps.report-date.outputs.target_key }}
+      - name: Set up Python
+        if: steps.report-date.outputs.should_run == 'true' && (github.event_name == 'workflow_dispatch' || steps.publish-marker.outputs.cache-hit != 'true')
+        uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-      - name: Install publisher dependencies
+      - name: Install dependencies
+        if: steps.report-date.outputs.should_run == 'true' && (github.event_name == 'workflow_dispatch' || steps.publish-marker.outputs.cache-hit != 'true')
         run: pip install '.[test]'
-      - name: Validate append-only C6 publisher
+      - name: Restore bounded official source cache
+        if: steps.report-date.outputs.should_run == 'true' && (github.event_name == 'workflow_dispatch' || steps.publish-marker.outputs.cache-hit != 'true')
+        uses: actions/cache@v4
+        with:
+          path: data/current_base_cycle_source_cache
+          key: c6-source-${{ github.ref_name }}-${{ github.run_id }}
+          restore-keys: |
+            c6-source-${{ github.ref_name }}-
+            base-cycle-source-${{ github.ref_name }}-
+      - name: Validate C6 daily pipeline
+        if: steps.report-date.outputs.should_run == 'true' && (github.event_name == 'workflow_dispatch' || steps.publish-marker.outputs.cache-hit != 'true')
         run: |
-          python -m py_compile rotation_radar/c6_dashboard_publish.py rotation_radar/c6_research_payload_materializer.py
-          python -m unittest tests.test_c6_dashboard_publish tests.test_c6_dashboard_publish_cli tests.test_c6_research_payload_materializer -v
-      - name: Publish only a materialized C6 snapshot
+          python -m py_compile rotation_radar/c6_daily_pipeline.py rotation_radar/c6_dashboard_publish.py rotation_radar/c6_snapshot_freshness.py
+          python -m unittest tests.test_c6_daily_pipeline tests.test_c6_dashboard_publish tests.test_c6_dashboard_publish_cli tests.test_c6_snapshot_freshness tests.test_schedule_gate -v
+      - name: Materialize current C6 score0 ranking and three-slot account
+        id: materialize
+        if: steps.report-date.outputs.should_run == 'true' && (github.event_name == 'workflow_dispatch' || steps.publish-marker.outputs.cache-hit != 'true')
+        shell: bash
+        run: |
+          set +e
+          python -m rotation_radar.c6_daily_pipeline \
+            --date "${{ steps.report-date.outputs.target_date }}" \
+            --source-repo . \
+            --source-cache data/current_base_cycle_source_cache \
+            --prior-payload data/c6_current_snapshot.json \
+            --output data/c6_current_snapshot.json
+          status=$?
+          set -e
+          if [ "$status" -eq 75 ]; then
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+            echo "C6 exact PIT or official source is not ready; no stale snapshot was published." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          if [ "$status" -ne 0 ]; then exit "$status"; fi
+          echo "ready=true" >> "$GITHUB_OUTPUT"
+      - name: Validate fresh materialized payload
+        if: steps.materialize.outputs.ready == 'true'
+        run: python -m rotation_radar.c6_snapshot_freshness --payload data/c6_current_snapshot.json
+      - name: Publish and read back C6 Dashboard
+        if: steps.materialize.outputs.ready == 'true'
         env:
           GOOGLE_OAUTH_CLIENT_ID: ${{ secrets.GOOGLE_OAUTH_CLIENT_ID }}
           GOOGLE_OAUTH_CLIENT_SECRET: ${{ secrets.GOOGLE_OAUTH_CLIENT_SECRET }}
           GOOGLE_OAUTH_REFRESH_TOKEN: ${{ secrets.GOOGLE_OAUTH_REFRESH_TOKEN }}
         run: |
-          set -euo pipefail
-          if [ ! -f data/c6_current_snapshot.json ]; then
-            echo "C6 data_status=blocked_source_or_replay_not_materialized" >> "$GITHUB_STEP_SUMMARY"
-            echo "No C6 daily source/replay payload was published; no data was fabricated."
-            exit 0
-          fi
-          python -m rotation_radar.c6_snapshot_freshness \
+          python -m rotation_radar.c6_dashboard_publish \
+            --spreadsheet-id 1_t5jrM0ZZArrmF67mpgHIqj_tPLFGu3Cpfcko1Qz_vQ \
             --payload data/c6_current_snapshot.json
-          max_attempts=12
-          retry_seconds=600
-          for attempt in $(seq 1 "$max_attempts"); do
-            echo "C6 Dashboard publish attempt ${attempt}/${max_attempts}"
-            if python -m rotation_radar.c6_dashboard_publish \
-              --spreadsheet-id 1_t5jrM0ZZArrmF67mpgHIqj_tPLFGu3Cpfcko1Qz_vQ \
-              --payload data/c6_current_snapshot.json; then
-              echo "C6 Dashboard published successfully on attempt ${attempt}." >> "$GITHUB_STEP_SUMMARY"
-              exit 0
-            fi
-            if [ "$attempt" -lt "$max_attempts" ]; then
-              echo "Publish failed; retrying in ${retry_seconds} seconds."
-              sleep "$retry_seconds"
-            fi
-          done
-          echo "C6 Dashboard publish failed after ${max_attempts} attempts." >> "$GITHUB_STEP_SUMMARY"
-          exit 1
+          python -c "from rotation_radar.c6_daily_pipeline import verify_dashboard; verify_dashboard('1_t5jrM0ZZArrmF67mpgHIqj_tPLFGu3Cpfcko1Qz_vQ', '${{ steps.report-date.outputs.target_date }}')"
+      - name: Commit durable C6 daily state
+        if: steps.materialize.outputs.ready == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/c6_current_snapshot.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Update C6 daily score0 state"
+          git pull --rebase origin main
+          git push origin HEAD:main
+      - name: Create publish marker
+        if: success() && github.event_name == 'schedule' && steps.publish-marker.outputs.cache-hit != 'true' && steps.materialize.outputs.ready == 'true'
+        shell: bash
+        run: |
+          mkdir -p .github-run-state
+          printf '%s\n' "${{ steps.report-date.outputs.target_key }}" > .github-run-state/c6-dashboard-published
+      - name: Save publish marker
+        if: success() && github.event_name == 'schedule' && steps.publish-marker.outputs.cache-hit != 'true' && steps.materialize.outputs.ready == 'true'
+        uses: actions/cache/save@v4
+        with:
+          path: .github-run-state/c6-dashboard-published
+          key: c6-dashboard-published-${{ steps.report-date.outputs.target_key }}
