@@ -561,6 +561,20 @@ def verify_dashboard(spreadsheet_id: str, expected_date: str) -> None:
     flat = "\n".join(str(cell) for row in values for cell in row)
     if expected_date not in flat or "C6研究版" not in flat:
         raise RuntimeError(f"C6 Dashboard read-back failed for {expected_date}")
+    if len(values) < 32 or not values[31] or len(str(values[31][0])) < 500:
+        raise RuntimeError("C6 Dashboard model logic at A32:B32 is missing or truncated")
+    ledger = client.get("'C6模擬交易紀錄'!A1:R200")
+    ledger_dates = [str(row[0]) for row in ledger[1:] if row]
+    if expected_date not in ledger_dates:
+        raise RuntimeError(f"C6 ledger read-back has no {expected_date} row")
+    top = [row[:2] for row in values[4:7] if len(row) >= 2 and str(row[1]).strip()]
+    slots = [row[:2] for row in values[9:13] if len(row) >= 2]
+    latest_ledger = [row for row in ledger[1:] if row and str(row[0]) == expected_date]
+    print(json.dumps({
+        "dashboard_date": expected_date, "top_rows": top, "slot_rows": slots,
+        "model_logic_chars": len(str(values[31][0])), "latest_ledger_rows": len(latest_ledger),
+        "latest_ledger_reasons": [str(row[17]) for row in latest_ledger if len(row) > 17],
+    }, ensure_ascii=False))
 
 
 def main() -> None:
