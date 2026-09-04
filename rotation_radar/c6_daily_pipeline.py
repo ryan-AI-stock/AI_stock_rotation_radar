@@ -567,8 +567,8 @@ def verify_dashboard(spreadsheet_id: str, expected_date: str) -> None:
     ledger_dates = [str(row[0]) for row in ledger[1:] if row]
     if expected_date not in ledger_dates:
         raise RuntimeError(f"C6 ledger read-back has no {expected_date} row")
-    top = [row[:2] for row in values[4:7] if len(row) >= 2 and str(row[1]).strip()]
-    slots = [row[:2] for row in values[9:13] if len(row) >= 2]
+    top = [row[:2] for row in values[5:8] if len(row) >= 2]
+    slots = [row[:2] for row in values[10:14] if len(row) >= 2]
     latest_ledger = [row for row in ledger[1:] if row and str(row[0]) == expected_date]
     print(json.dumps({
         "dashboard_date": expected_date, "top_rows": top, "slot_rows": slots,
