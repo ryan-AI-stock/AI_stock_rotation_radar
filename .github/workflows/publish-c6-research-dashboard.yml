@@ -13,6 +13,7 @@ concurrency:
 jobs:
   publish-c6-research-snapshot:
     runs-on: ubuntu-latest
+    timeout-minutes: 150
     permissions:
       contents: read
     steps:
@@ -40,6 +41,20 @@ jobs:
           fi
           python -m rotation_radar.c6_snapshot_freshness \
             --payload data/c6_current_snapshot.json
-          python -m rotation_radar.c6_dashboard_publish \
-            --spreadsheet-id 1_t5jrM0ZZArrmF67mpgHIqj_tPLFGu3Cpfcko1Qz_vQ \
-            --payload data/c6_current_snapshot.json
+          max_attempts=12
+          retry_seconds=600
+          for attempt in $(seq 1 "$max_attempts"); do
+            echo "C6 Dashboard publish attempt ${attempt}/${max_attempts}"
+            if python -m rotation_radar.c6_dashboard_publish \
+              --spreadsheet-id 1_t5jrM0ZZArrmF67mpgHIqj_tPLFGu3Cpfcko1Qz_vQ \
+              --payload data/c6_current_snapshot.json; then
+              echo "C6 Dashboard published successfully on attempt ${attempt}." >> "$GITHUB_STEP_SUMMARY"
+              exit 0
+            fi
+            if [ "$attempt" -lt "$max_attempts" ]; then
+              echo "Publish failed; retrying in ${retry_seconds} seconds."
+              sleep "$retry_seconds"
+            fi
+          done
+          echo "C6 Dashboard publish failed after ${max_attempts} attempts." >> "$GITHUB_STEP_SUMMARY"
+          exit 1
