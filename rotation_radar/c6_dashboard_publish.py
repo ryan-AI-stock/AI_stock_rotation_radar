@@ -52,7 +52,7 @@ LEDGER_FIELDS = [
 TRADE_HEADERS = [
     "日期", "槽位", "事件類型", "股票代號", "股票名稱", "動作", "成交／收盤價", "股數",
     "交易／市值金額", "交易成本", "現金餘額", "已實現損益", "已實現報酬", "訊號日期",
-    "持有TD", "當日漲跌", "累積報酬", "原因",
+    "持有TD", "當日漲跌", "累積報酬", "原因／狀態",
 ]
 VERSION_FIELDS = [
     "model_version", "snapshot_as_of", "data_status", "source_manifest_hash", "published_as_current",
@@ -230,10 +230,23 @@ def build_trade_record_values(ledger_rows: list[dict], snapshot_rows: list[dict]
             daily_return = close / prior - 1 if prior else ""
             previous_mark[slot] = close
             action = "續抱"
-        reason = {
-            "ai_bottom_launch_rank1": "C6訊號買進",
-            "official_raw_holding_mark": "每日收盤估值",
-        }.get(str(row.get("reason") or ""), str(row.get("reason") or ""))
+        raw_reason = str(row.get("reason") or "")
+        if event == "buy":
+            reason = f"依{signal_date}收盤C6 Top1訊號，下一交易日建立第{slot}槽部位"
+        elif event == "daily_mark":
+            reason = (
+                f"{entry_date.get(slot, '')}買入，已持有{td_by_slot.get(slot, 0)} TD；"
+                "續抱中，未觸發賣出條件"
+            )
+        elif event == "sell":
+            reason = {
+                "macro_high_zone_exit": "高檔環境退出條件成立，下一交易日賣出",
+                "max_holding_exit": "達最長持有期限，下一交易日賣出",
+            }.get(raw_reason, f"賣出條件成立：{raw_reason}" if raw_reason else "賣出條件成立")
+        elif event == "withdrawal":
+            reason = "每月第二個星期三依規則提領約75,000元"
+        else:
+            reason = raw_reason
         output.append([
             date, slot, "成交" if event in {"buy", "sell"} else "每日持有", ticker, names.get(ticker, ""),
             action, close, shares, gross, cost, row.get("cash_after", ""), realized_pnl, realized_return,

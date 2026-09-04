@@ -132,7 +132,9 @@ class C6DashboardPublishTests(unittest.TestCase):
         self.assertEqual(values[0][0:6], ["日期", "槽位", "事件類型", "股票代號", "股票名稱", "動作"])
         self.assertEqual(values[1][4:6], ["健策", "買進"])
         self.assertEqual(values[1][13], "2026-08-06")
+        self.assertEqual(values[1][17], "依2026-08-06收盤C6 Top1訊號，下一交易日建立第1槽部位")
         self.assertEqual(values[2][5], "續抱")
+        self.assertEqual(values[2][17], "2026-08-07買入，已持有1 TD；續抱中，未觸發賣出條件")
 
     def test_partial_dashboard_keeps_withdrawal_schedule_but_not_a_fabricated_sale(self):
         values = self._pairs(build_dashboard_values(
