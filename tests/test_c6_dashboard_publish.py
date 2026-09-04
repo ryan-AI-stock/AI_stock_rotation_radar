@@ -159,6 +159,15 @@ class C6DashboardPublishTests(unittest.TestCase):
         ))
         self.assertEqual(values["帳戶現金"], "NT$168.29")
 
+    def test_dashboard_resolves_slot_name_from_signal_history(self):
+        rows = build_dashboard_values(
+            model_version="c6-v2", snapshot_as_of="2026-09-03", data_status="ready",
+            slots=[{"slot_id": 1, "ticker": "3653", "shares": 531, "raw_close": 5615, "position_cost": 2_331_423}],
+            snapshot_rows=[{"signal_date": "2026-08-06", "rank": 1, "ticker": "3653", "name": "健策", "score": 94.02}],
+        )
+        slot = next(row for row in rows if row[0] == "第1槽")
+        self.assertEqual(slot[1], "3653 健策｜531股")
+
     def test_event_coverage_pending_is_plain_chinese(self):
         values = self._pairs(build_dashboard_values(
             model_version="c6-research-v2", snapshot_as_of="2026-09-01",

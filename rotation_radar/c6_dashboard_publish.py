@@ -312,6 +312,10 @@ def build_dashboard_values(
     next_dates = _next_withdrawal_dates(ranking_snapshot_as_of or snapshot_as_of)
     benchmark = historical_benchmark or {}
     current_rows = build_public_snapshot_values(snapshot_rows or [])[1:]
+    ticker_names = {
+        str(row.get("ticker") or ""): str(row.get("name") or "")
+        for row in (snapshot_rows or []) if row.get("ticker") and row.get("name")
+    }
     current_rows = [row for row in current_rows if row[1] in {1, 2, 3}]
     latest_date = max((str(row[0]) for row in current_rows), default=snapshot_as_of)
     latest_rows = [row for row in current_rows if str(row[0]) == latest_date]
@@ -339,7 +343,7 @@ def build_dashboard_values(
         total_mark += mark
         slot_rows.append([
             f"第{slot.get('slot_id')}槽",
-            f"{slot.get('ticker', '')} {slot.get('name', '')}｜{shares:,}股",
+            f"{slot.get('ticker', '')} {slot.get('name') or ticker_names.get(str(slot.get('ticker') or ''), '')}｜{shares:,}股",
             mark,
             relative,
         ])
