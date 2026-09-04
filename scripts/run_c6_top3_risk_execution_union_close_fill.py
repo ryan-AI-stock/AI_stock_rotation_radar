@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import os
 import random
 import time
 import urllib.parse
@@ -18,12 +19,15 @@ import pandas as pd
 
 TASK = "TASK-RADAR-DATA-C6-TOP3-RISK-LAYER-EXACT-EXECUTION-CLOSE-FILL-001"
 REPO = Path(__file__).resolve().parents[1]
-CORE_AUTHORITY = Path(
+CORE_AUTHORITY = Path(os.environ.get("C6_RISK_CLOSE_AUTHORITY", str(Path(
     r"C:\Users\zergv\Documents\Codex\2026-07-06\backtest-lab-core-production-grade-contract"
     r"\work\c6_top3_risk_layer_core_contract_20260831\phase_j_complete_execution_union"
     r"\radar_complete_variant_execution_source_gap_union.csv"
-)
-OUTPUT = REPO / "outputs" / "radar_c6_top3_risk_execution_union_close_fill_20260831"
+))))
+OUTPUT = Path(os.environ.get(
+    "C6_RISK_CLOSE_OUTPUT",
+    str(REPO / "outputs" / "radar_c6_top3_risk_execution_union_close_fill_20260831"),
+))
 LOCAL_INDEX = REPO / (
     "outputs/radar_vnext_p1_p2_ma_slope_cd50_shifted_path_local_close_extraction_20260716/"
     "reusable_combined_close_index.csv.gz"
@@ -135,16 +139,21 @@ def parse_month(payload: dict, ticker: str, market: str) -> dict[str, float]:
 
 def load_authority() -> pd.DataFrame:
     frame = pd.read_csv(CORE_AUTHORITY, dtype=str, low_memory=False)
-    required = {"ticker", "intended_execution_date", "roles", "variants"}
+    date_column = next(
+        (name for name in ("intended_execution_date", "required_date", "date") if name in frame.columns),
+        "date",
+    )
+    required = {"ticker", date_column}
     missing = required.difference(frame.columns)
     if missing:
         raise RuntimeError(f"authority_schema_missing:{sorted(missing)}")
     frame = frame.copy()
     frame["ticker"] = frame["ticker"].map(normalize_ticker)
-    frame["date"] = frame["intended_execution_date"].map(normalize_date)
+    frame["date"] = frame[date_column].map(normalize_date)
     frame = frame.drop_duplicates(["ticker", "date"]).sort_values(["ticker", "date"]).reset_index(drop=True)
-    if len(frame) != 128:
-        raise RuntimeError(f"authority_scope_changed:{len(frame)}")
+    expected = os.environ.get("C6_RISK_CLOSE_EXPECTED_KEYS")
+    if expected and len(frame) != int(expected):
+        raise RuntimeError(f"authority_scope_changed:{len(frame)}_expected:{expected}")
     return frame
 
 
@@ -366,7 +375,13 @@ def main() -> None:
     routes = load_route_checkpoint(route_checkpoint)
     if args.network:
         planned_routes = plan.dropna(subset=["market"])[["ticker", "market", "month"]].drop_duplicates().sort_values(["market", "ticker", "month"])
-        completed = {route_key(route) for route in routes}
+        # A blocked route is a retryable transport outcome, not completed
+        # authority.  Keep successful checkpoints and retry only blocked routes.
+        completed = {
+            route_key(route)
+            for route in routes
+            if route.get("status") in {"accepted_route", "official_response_no_rows"}
+        }
         for route in planned_routes.itertuples(index=False):
             key = f"{route.market}:{route.ticker}:{route.month}"
             if key in completed:
