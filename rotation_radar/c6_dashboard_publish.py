@@ -18,10 +18,8 @@ from .v4d_simulation_account import SELL_RATE, second_wednesday
 
 
 DASHBOARD_SHEET = "C6 Dashboard"
-SNAPSHOT_SHEET = "C6每日Top1~3資料庫"
-LEDGER_SHEET = "C6模擬帳戶流水"
-VERSION_SHEET = "C6版本快照索引"
-CURRENT_POINTER_SHEET = "C6目前版本指標"
+SNAPSHOT_SHEET = "C6每日訊號資料庫"
+LEDGER_SHEET = "C6模擬交易紀錄"
 C6_INITIAL_CAPITAL = 7_000_000.0
 C6_SLOT_COUNT = 3
 C6_WITHDRAWAL_AMOUNT = 75_000.0
@@ -50,6 +48,11 @@ LEDGER_FIELDS = [
     "model_version", "snapshot_as_of", "account_date", "event_sequence", "slot_id", "event_type",
     "ticker", "shares", "raw_close", "gross_amount", "transaction_cost", "net_amount", "cash_after",
     "relative_return_pct", "reason", "immutable_event_key",
+]
+TRADE_HEADERS = [
+    "日期", "槽位", "事件類型", "股票代號", "股票名稱", "動作", "成交／收盤價", "股數",
+    "交易／市值金額", "交易成本", "現金餘額", "已實現損益", "已實現報酬", "訊號日期",
+    "持有TD", "當日漲跌", "累積報酬", "原因",
 ]
 VERSION_FIELDS = [
     "model_version", "snapshot_as_of", "data_status", "source_manifest_hash", "published_as_current",
@@ -172,6 +175,72 @@ def build_public_snapshot_values(snapshot_rows: list[dict]) -> list[list[object]
             _human_source_status(rank),
         ])
     return values
+
+
+def build_trade_record_values(ledger_rows: list[dict], snapshot_rows: list[dict]) -> list[list[object]]:
+    """Convert the latest account ledger into one readable, de-duplicated trade history."""
+    names = {str(row.get("ticker") or ""): str(row.get("name") or "") for row in snapshot_rows}
+    signal_by_execution = {
+        (str(row.get("planned_execution_date") or _execution_date(str(row.get("signal_date") or ""))), str(row.get("ticker") or "")):
+        str(row.get("signal_date") or "")
+        for row in snapshot_rows if int(row.get("rank") or 0) > 0
+    }
+    latest: dict[tuple[str, int], dict] = {}
+    for row in ledger_rows:
+        date = str(row.get("account_date") or "")
+        sequence = int(row.get("event_sequence") or 0)
+        if date:
+            latest[(date, sequence)] = row
+    position_cost: dict[int, float] = {}
+    entry_date: dict[int, str] = {}
+    previous_mark: dict[int, float] = {}
+    td_by_slot: dict[int, int] = {}
+    output = [TRADE_HEADERS]
+    for (_, _), row in sorted(latest.items()):
+        date = str(row.get("account_date") or "")
+        slot = int(row.get("slot_id") or 0)
+        ticker = str(row.get("ticker") or "")
+        event = str(row.get("event_type") or "")
+        shares = int(float(row.get("shares") or 0))
+        close = float(row.get("raw_close") or 0)
+        gross = float(row.get("gross_amount") or 0)
+        cost = float(row.get("transaction_cost") or 0)
+        relative = row.get("relative_return_pct")
+        signal_date = signal_by_execution.get((date, ticker), "") if event == "buy" else ""
+        realized_pnl: object = ""
+        realized_return: object = ""
+        daily_return: object = ""
+        if event == "buy":
+            position_cost[slot] = gross + cost
+            entry_date[slot] = date
+            td_by_slot[slot] = 0
+            previous_mark[slot] = close
+            action = "買進"
+        elif event == "sell":
+            net = float(row.get("net_amount") or 0)
+            basis = position_cost.get(slot, 0)
+            realized_pnl = net - basis if basis else ""
+            realized_return = realized_pnl / basis if basis else ""
+            action = "賣出"
+        elif event == "withdrawal":
+            action = "每月提領"
+        else:
+            td_by_slot[slot] = td_by_slot.get(slot, 0) + 1
+            prior = previous_mark.get(slot)
+            daily_return = close / prior - 1 if prior else ""
+            previous_mark[slot] = close
+            action = "續抱"
+        reason = {
+            "ai_bottom_launch_rank1": "C6訊號買進",
+            "official_raw_holding_mark": "每日收盤估值",
+        }.get(str(row.get("reason") or ""), str(row.get("reason") or ""))
+        output.append([
+            date, slot, "成交" if event in {"buy", "sell"} else "每日持有", ticker, names.get(ticker, ""),
+            action, close, shares, gross, cost, row.get("cash_after", ""), realized_pnl, realized_return,
+            signal_date, td_by_slot.get(slot, "") if event == "daily_mark" else "", daily_return,
+            float(relative) if relative not in {None, ""} else "", reason,
+        ])
+    return output
 
 
 def select_withdrawal_slot(
@@ -357,51 +426,12 @@ def publish_snapshot(
             "|".join(_key(row, ("model_version", "snapshot_as_of", "account_date", "event_sequence"))),
         )
     client = SheetsClient(spreadsheet_id)
-    ledger_existing = client.get(f"'{LEDGER_SHEET}'!A1:P50000")
-    version_existing = client.get(f"'{VERSION_SHEET}'!A1:G50000")
     public_snapshot_values = build_public_snapshot_values(snapshot_rows)
-    ledger_known = {str(row[15]) for row in ledger_existing[1:] if len(row) > 15 and row[15]}
-    ledger_additions = []
-    for row in ledger_rows:
-        event_key = str(row.get("immutable_event_key") or "")
-        if event_key in ledger_known:
-            continue
-        display = dict(row)
-        display["model_version"] = _human_model_version(str(row.get("model_version") or ""))
-        display["event_type"] = _human_event(str(row.get("event_type") or ""))
-        ledger_additions.append([display.get(field, "") for field in LEDGER_FIELDS])
-        ledger_known.add(event_key)
-    version_row = {
-        "model_version": model_version, "snapshot_as_of": snapshot_as_of, "data_status": data_status,
-        "source_manifest_hash": source_manifest_hash, "published_as_current": True, "created_at": snapshot_as_of,
-        "notes": notes,
-    }
-    known_hashes = {str(row[3]) for row in version_existing[1:] if len(row) > 3 and row[3]}
-    version_additions = []
-    if source_manifest_hash not in known_hashes:
-        display_version = dict(version_row)
-        display_version["model_version"] = _human_model_version(model_version)
-        display_version["data_status"] = _human_version_status(data_status)
-        display_version["published_as_current"] = "是"
-        version_additions.append([display_version.get(field, "") for field in VERSION_FIELDS])
+    trade_values = build_trade_record_values(ledger_rows, snapshot_rows)
     client.clear(f"'{SNAPSHOT_SHEET}'!A1:Z50000")
     client.update(f"'{SNAPSHOT_SHEET}'!A1", public_snapshot_values)
-    if not ledger_existing:
-        client.update(f"'{LEDGER_SHEET}'!A1", [LEDGER_HEADERS, *ledger_additions])
-    elif ledger_additions:
-        client.update(f"'{LEDGER_SHEET}'!A{len(ledger_existing) + 1}", ledger_additions)
-    if not version_existing:
-        client.update(f"'{VERSION_SHEET}'!A1", [VERSION_HEADERS, *version_additions])
-    elif version_additions:
-        client.update(f"'{VERSION_SHEET}'!A{len(version_existing) + 1}", version_additions)
-    pointer = [[
-        _human_model_version(model_version),
-        accounting_snapshot_as_of or snapshot_as_of,
-        f"排名已更新至{ranking_snapshot_as_of or snapshot_as_of}；持股與損益只核對至{accounting_snapshot_as_of or snapshot_as_of}",
-        ranking_snapshot_as_of or snapshot_as_of,
-    ]]
-    client.clear(f"'{CURRENT_POINTER_SHEET}'!A1:D2")
-    client.update(f"'{CURRENT_POINTER_SHEET}'!A1", [CURRENT_POINTER_HEADERS, *pointer])
+    client.clear(f"'{LEDGER_SHEET}'!A1:R50000")
+    client.update(f"'{LEDGER_SHEET}'!A1", trade_values)
     dashboard = build_dashboard_values(
         model_version=model_version, snapshot_as_of=snapshot_as_of, data_status=data_status, slots=slots, cash=cash,
         notes=notes, historical_benchmark=historical_benchmark, snapshot_rows=snapshot_rows,
@@ -414,8 +444,7 @@ def publish_snapshot(
         "snapshot_as_of": snapshot_as_of,
         "data_status": data_status,
         "snapshot_rows_published": len(public_snapshot_values) - 1,
-        "ledger_rows_appended": len(ledger_additions),
-        "version_rows_appended": len(version_additions),
+        "trade_rows_published": len(trade_values) - 1,
     }
 
 

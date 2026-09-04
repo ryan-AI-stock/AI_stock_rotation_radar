@@ -4,6 +4,7 @@ from rotation_radar.c6_dashboard_publish import (
     _append_only,
     build_dashboard_values,
     build_public_snapshot_values,
+    build_trade_record_values,
     select_withdrawal_slot,
 )
 
@@ -120,6 +121,18 @@ class C6DashboardPublishTests(unittest.TestCase):
         top3 = next(row for row in rows if row[0] == "Top3")
         self.assertEqual(top2[1], "無其他合格股票")
         self.assertEqual(top3[1], "無其他合格股票")
+
+    def test_trade_record_is_readable_and_deduplicated(self):
+        ledger = [
+            {"account_date": "2026-08-07", "event_sequence": 1, "slot_id": 1, "event_type": "buy", "ticker": "3653", "shares": 531, "raw_close": 4380, "gross_amount": 2328105.78, "transaction_cost": 3317.55, "cash_after": 1910, "reason": "ai_bottom_launch_rank1"},
+            {"account_date": "2026-08-07", "event_sequence": 2, "slot_id": 1, "event_type": "daily_mark", "ticker": "3653", "shares": 531, "raw_close": 4380, "gross_amount": 2325780, "relative_return_pct": -0.0024, "reason": "official_raw_holding_mark"},
+        ]
+        snapshots = [{"signal_date": "2026-08-06", "planned_execution_date": "2026-08-07", "rank": 1, "ticker": "3653", "name": "健策"}]
+        values = build_trade_record_values(ledger, snapshots)
+        self.assertEqual(values[0][0:6], ["日期", "槽位", "事件類型", "股票代號", "股票名稱", "動作"])
+        self.assertEqual(values[1][4:6], ["健策", "買進"])
+        self.assertEqual(values[1][13], "2026-08-06")
+        self.assertEqual(values[2][5], "續抱")
 
     def test_partial_dashboard_keeps_withdrawal_schedule_but_not_a_fabricated_sale(self):
         values = self._pairs(build_dashboard_values(
