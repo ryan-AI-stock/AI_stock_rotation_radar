@@ -1,6 +1,6 @@
 {
   "model_version": "c6-research-score0-pit-v2-forward-known-segment",
-  "snapshot_as_of": "2026-09-01",
+  "snapshot_as_of": "2026-09-03",
   "data_status": "partial_whole_share_replay_event_coverage_pending",
   "source_manifest_hash": "b82e49a3929fe24b843804afee61c9928a81c4da217f0b91c75efe59fd95c14a",
   "snapshot_rows": [
@@ -773,6 +773,62 @@
       "planned_execution_date": "",
       "source_readiness": "accepted_research_ranking_with_official_raw_display_close",
       "source_label": "bounded_current_C6_official_close_recompute"
+    },
+    {
+      "signal_date": "2026-09-02",
+      "rank": 1,
+      "ticker": "3044",
+      "name": "健鼎",
+      "market": "TWSE",
+      "candidate_status": "frozen_C6_eligibility_passed_and_ranked",
+      "eligibility_reason": "通過C6買進條件",
+      "score": 89.1875,
+      "display_close": 502.0,
+      "planned_execution_date": "",
+      "source_readiness": "accepted_research_ranking_with_official_raw_display_close",
+      "source_label": "same_day_C6_official_close_recompute"
+    },
+    {
+      "signal_date": "2026-09-02",
+      "rank": 2,
+      "ticker": "3324",
+      "name": "雙鴻",
+      "market": "TPEx",
+      "candidate_status": "frozen_C6_eligibility_passed_and_ranked",
+      "eligibility_reason": "通過C6買進條件",
+      "score": 88.6875,
+      "display_close": 1435.0,
+      "planned_execution_date": "",
+      "source_readiness": "accepted_research_ranking_with_official_raw_display_close",
+      "source_label": "same_day_C6_official_close_recompute"
+    },
+    {
+      "signal_date": "2026-09-02",
+      "rank": 3,
+      "ticker": "3706",
+      "name": "神達",
+      "market": "TWSE",
+      "candidate_status": "frozen_C6_eligibility_passed_and_ranked",
+      "eligibility_reason": "通過C6買進條件",
+      "score": 70.875,
+      "display_close": 94.7,
+      "planned_execution_date": "",
+      "source_readiness": "accepted_research_ranking_with_official_raw_display_close",
+      "source_label": "same_day_C6_official_close_recompute"
+    },
+    {
+      "signal_date": "2026-09-03",
+      "rank": 1,
+      "ticker": "3324",
+      "name": "雙鴻",
+      "market": "TPEx",
+      "candidate_status": "frozen_C6_eligibility_passed_and_ranked",
+      "eligibility_reason": "通過C6買進條件",
+      "score": 92.3125,
+      "display_close": 1350.0,
+      "planned_execution_date": "",
+      "source_readiness": "accepted_research_ranking_with_official_raw_display_close",
+      "source_label": "same_day_C6_official_close_recompute"
     }
   ],
   "ledger_rows": [
@@ -968,7 +1024,7 @@
       "relative_return_pct": "0.05565770383815649",
       "shares": "531",
       "slot_id": "1",
-      "source_hash": "",
+      "source_hash": "nan",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20260813&type=ALLBUT0999&response=json",
       "ticker": "3653",
       "transaction_cost": "0.0"
@@ -985,7 +1041,7 @@
       "relative_return_pct": "0.1288399020091886",
       "shares": "20418",
       "slot_id": "2",
-      "source_hash": "",
+      "source_hash": "nan",
       "source_url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2026/08/13&response=json",
       "ticker": "5351",
       "transaction_cost": "0.0"
@@ -1002,7 +1058,7 @@
       "relative_return_pct": "0.03487213794278565",
       "shares": "8701",
       "slot_id": "3",
-      "source_hash": "",
+      "source_hash": "nan",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20260813&type=ALLBUT0999&response=json",
       "ticker": "3006",
       "transaction_cost": "0.0"
@@ -1019,7 +1075,7 @@
       "relative_return_pct": "0.10576443411742154",
       "shares": "531",
       "slot_id": "1",
-      "source_hash": "",
+      "source_hash": "nan",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20260814&type=ALLBUT0999&response=json",
       "ticker": "3653",
       "transaction_cost": "0.0"
@@ -1036,7 +1092,7 @@
       "relative_return_pct": "0.16384268966838822",
       "shares": "20418",
       "slot_id": "2",
-      "source_hash": "",
+      "source_hash": "nan",
       "source_url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2026/08/14&response=json",
       "ticker": "5351",
       "transaction_cost": "0.0"
@@ -1053,7 +1109,7 @@
       "relative_return_pct": "0.019955062080547314",
       "shares": "8701",
       "slot_id": "3",
-      "source_hash": "",
+      "source_hash": "nan",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20260814&type=ALLBUT0999&response=json",
       "ticker": "3006",
       "transaction_cost": "0.0"
@@ -1070,7 +1126,7 @@
       "relative_return_pct": "0.2162269985967109",
       "shares": "531",
       "slot_id": "1",
-      "source_hash": "",
+      "source_hash": "nan",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20260817&type=ALLBUT0999&response=json",
       "ticker": "3653",
       "transaction_cost": "0.0"
@@ -1087,7 +1143,7 @@
       "relative_return_pct": "0.18571943195538787",
       "shares": "20418",
       "slot_id": "2",
-      "source_hash": "",
+      "source_hash": "nan",
       "source_url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2026/08/17&response=json",
       "ticker": "5351",
       "transaction_cost": "0.0"
@@ -1104,7 +1160,7 @@
       "relative_return_pct": "0.018090427597767578",
       "shares": "8701",
       "slot_id": "3",
-      "source_hash": "",
+      "source_hash": "nan",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20260817&type=ALLBUT0999&response=json",
       "ticker": "3006",
       "transaction_cost": "0.0"
@@ -1121,7 +1177,7 @@
       "relative_return_pct": "0.17295300426461813",
       "shares": "531",
       "slot_id": "1",
-      "source_hash": "",
+      "source_hash": "nan",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20260818&type=ALLBUT0999&response=json",
       "ticker": "3653",
       "transaction_cost": "0.0"
@@ -1138,7 +1194,7 @@
       "relative_return_pct": "0.06758502360558905",
       "shares": "20418",
       "slot_id": "2",
-      "source_hash": "",
+      "source_hash": "nan",
       "source_url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2026/08/18&response=json",
       "ticker": "5351",
       "transaction_cost": "0.0"
@@ -1155,7 +1211,7 @@
       "relative_return_pct": "-0.07514129654122226",
       "shares": "8701",
       "slot_id": "3",
-      "source_hash": "",
+      "source_hash": "nan",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20260818&type=ALLBUT0999&response=json",
       "ticker": "3006",
       "transaction_cost": "0.0"
@@ -1172,7 +1228,7 @@
       "relative_return_pct": "0.24355794238540107",
       "shares": "531",
       "slot_id": "1",
-      "source_hash": "",
+      "source_hash": "nan",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20260819&type=ALLBUT0999&response=json",
       "ticker": "3653",
       "transaction_cost": "0.0"
@@ -1189,7 +1245,7 @@
       "relative_return_pct": "0.10696315972218873",
       "shares": "20418",
       "slot_id": "2",
-      "source_hash": "",
+      "source_hash": "nan",
       "source_url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2026/08/19&response=json",
       "ticker": "5351",
       "transaction_cost": "0.0"
@@ -1206,7 +1262,7 @@
       "relative_return_pct": "-0.08446446895512116",
       "shares": "8701",
       "slot_id": "3",
-      "source_hash": "",
+      "source_hash": "nan",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20260819&type=ALLBUT0999&response=json",
       "ticker": "3006",
       "transaction_cost": "0.0"
@@ -1223,7 +1279,7 @@
       "relative_return_pct": "0.2754440434722063",
       "shares": "531",
       "slot_id": "1",
-      "source_hash": "",
+      "source_hash": "nan",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20260820&type=ALLBUT0999&response=json",
       "ticker": "3653",
       "transaction_cost": "0.0"
@@ -1240,7 +1296,7 @@
       "relative_return_pct": "0.032582235946389426",
       "shares": "20418",
       "slot_id": "2",
-      "source_hash": "",
+      "source_hash": "nan",
       "source_url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2026/08/20&response=json",
       "ticker": "5351",
       "transaction_cost": "0.0"
@@ -1257,7 +1313,7 @@
       "relative_return_pct": "-0.06581812412732324",
       "shares": "8701",
       "slot_id": "3",
-      "source_hash": "",
+      "source_hash": "nan",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20260820&type=ALLBUT0999&response=json",
       "ticker": "3006",
       "transaction_cost": "0.0"
@@ -1274,7 +1330,7 @@
       "relative_return_pct": "0.22875368116652717",
       "shares": "531",
       "slot_id": "1",
-      "source_hash": "",
+      "source_hash": "nan",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20260821&type=ALLBUT0999&response=json",
       "ticker": "3653",
       "transaction_cost": "0.0"
@@ -1291,7 +1347,7 @@
       "relative_return_pct": "0.07633572052038895",
       "shares": "20418",
       "slot_id": "2",
-      "source_hash": "",
+      "source_hash": "nan",
       "source_url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2026/08/21&response=json",
       "ticker": "5351",
       "transaction_cost": "0.0"
@@ -1308,7 +1364,7 @@
       "relative_return_pct": "-0.043442510333965734",
       "shares": "8701",
       "slot_id": "3",
-      "source_hash": "",
+      "source_hash": "nan",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20260821&type=ALLBUT0999&response=json",
       "ticker": "3006",
       "transaction_cost": "0.0"
@@ -1325,7 +1381,7 @@
       "relative_return_pct": "0.17409179358914706",
       "shares": "531",
       "slot_id": "1",
-      "source_hash": "",
+      "source_hash": "nan",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20260824&type=ALLBUT0999&response=json",
       "ticker": "3653",
       "transaction_cost": "0.0"
@@ -1342,7 +1398,7 @@
       "relative_return_pct": "0.032582235946389426",
       "shares": "20418",
       "slot_id": "2",
-      "source_hash": "",
+      "source_hash": "nan",
       "source_url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2026/08/24&response=json",
       "ticker": "5351",
       "transaction_cost": "0.0"
@@ -1359,7 +1415,7 @@
       "relative_return_pct": "0.05165384828780373",
       "shares": "8701",
       "slot_id": "3",
-      "source_hash": "",
+      "source_hash": "nan",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20260824&type=ALLBUT0999&response=json",
       "ticker": "3006",
       "transaction_cost": "0.0"
@@ -1376,7 +1432,7 @@
       "relative_return_pct": "0.1854796868344346",
       "shares": "531",
       "slot_id": "1",
-      "source_hash": "",
+      "source_hash": "nan",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20260825&type=ALLBUT0999&response=json",
       "ticker": "3653",
       "transaction_cost": "0.0"
@@ -1393,7 +1449,7 @@
       "relative_return_pct": "0.010705493659389775",
       "shares": "20418",
       "slot_id": "2",
-      "source_hash": "",
+      "source_hash": "nan",
       "source_url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2026/08/25&response=json",
       "ticker": "5351",
       "transaction_cost": "0.0"
@@ -1410,7 +1466,7 @@
       "relative_return_pct": "0.006902620701088713",
       "shares": "8701",
       "slot_id": "3",
-      "source_hash": "",
+      "source_hash": "nan",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20260825&type=ALLBUT0999&response=json",
       "ticker": "3006",
       "transaction_cost": "0.0"
@@ -1427,7 +1483,7 @@
       "relative_return_pct": "0.3039137765854252",
       "shares": "531",
       "slot_id": "1",
-      "source_hash": "",
+      "source_hash": "nan",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20260826&type=ALLBUT0999&response=json",
       "ticker": "3653",
       "transaction_cost": "0.0"
@@ -1444,7 +1500,7 @@
       "relative_return_pct": "0.02383153903158952",
       "shares": "20418",
       "slot_id": "2",
-      "source_hash": "",
+      "source_hash": "nan",
       "source_url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2026/08/26&response=json",
       "ticker": "5351",
       "transaction_cost": "0.0"
@@ -1461,7 +1517,7 @@
       "relative_return_pct": "0.019955062080547314",
       "shares": "8701",
       "slot_id": "3",
-      "source_hash": "",
+      "source_hash": "nan",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20260826&type=ALLBUT0999&response=json",
       "ticker": "3006",
       "transaction_cost": "0.0"
@@ -1478,7 +1534,7 @@
       "relative_return_pct": "0.2856931473929649",
       "shares": "531",
       "slot_id": "1",
-      "source_hash": "",
+      "source_hash": "nan",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20260827&type=ALLBUT0999&response=json",
       "ticker": "3653",
       "transaction_cost": "0.0"
@@ -1495,7 +1551,7 @@
       "relative_return_pct": "0.01945619057418968",
       "shares": "20418",
       "slot_id": "2",
-      "source_hash": "",
+      "source_hash": "nan",
       "source_url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2026/08/27&response=json",
       "ticker": "5351",
       "transaction_cost": "0.0"
@@ -1512,7 +1568,7 @@
       "relative_return_pct": "0.02181969656332705",
       "shares": "8701",
       "slot_id": "3",
-      "source_hash": "",
+      "source_hash": "nan",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20260827&type=ALLBUT0999&response=json",
       "ticker": "3006",
       "transaction_cost": "0.0"
@@ -1529,7 +1585,7 @@
       "relative_return_pct": "0.31757924847977015",
       "shares": "531",
       "slot_id": "1",
-      "source_hash": "",
+      "source_hash": "nan",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20260828&type=ALLBUT0999&response=json",
       "ticker": "3653",
       "transaction_cost": "0.0"
@@ -1546,7 +1602,7 @@
       "relative_return_pct": "0.015080842116789617",
       "shares": "20418",
       "slot_id": "2",
-      "source_hash": "",
+      "source_hash": "nan",
       "source_url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2026/08/28&response=json",
       "ticker": "5351",
       "transaction_cost": "0.0"
@@ -1563,7 +1619,7 @@
       "relative_return_pct": "0.005037986218308976",
       "shares": "8701",
       "slot_id": "3",
-      "source_hash": "",
+      "source_hash": "nan",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20260828&type=ALLBUT0999&response=json",
       "ticker": "3006",
       "transaction_cost": "0.0"
@@ -1580,7 +1636,7 @@
       "relative_return_pct": "0.36426961078544906",
       "shares": "531",
       "slot_id": "1",
-      "source_hash": "",
+      "source_hash": "nan",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20260831&type=ALLBUT0999&response=json",
       "ticker": "3653",
       "transaction_cost": "0.0"
@@ -1597,7 +1653,7 @@
       "relative_return_pct": "0.032582235946389426",
       "shares": "20418",
       "slot_id": "2",
-      "source_hash": "",
+      "source_hash": "nan",
       "source_url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2026/08/31&response=json",
       "ticker": "5351",
       "transaction_cost": "0.0"
@@ -1614,7 +1670,7 @@
       "relative_return_pct": "0.09081117242617953",
       "shares": "8701",
       "slot_id": "3",
-      "source_hash": "",
+      "source_hash": "nan",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20260831&type=ALLBUT0999&response=json",
       "ticker": "3006",
       "transaction_cost": "0.0"
@@ -1631,7 +1687,7 @@
       "relative_return_pct": "0.34035503497034525",
       "shares": "531",
       "slot_id": "1",
-      "source_hash": "",
+      "source_hash": "nan",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20260901&type=ALLBUT0999&response=json",
       "ticker": "3653",
       "transaction_cost": "0.0"
@@ -1648,7 +1704,7 @@
       "relative_return_pct": "0.045708281318589394",
       "shares": "20418",
       "slot_id": "2",
-      "source_hash": "",
+      "source_hash": "nan",
       "source_url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2026/09/01&response=json",
       "ticker": "5351",
       "transaction_cost": "0.0"
@@ -1665,8 +1721,110 @@
       "relative_return_pct": "0.038601406908345126",
       "shares": "8701",
       "slot_id": "3",
-      "source_hash": "",
+      "source_hash": "nan",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20260901&type=ALLBUT0999&response=json",
+      "ticker": "3006",
+      "transaction_cost": "0.0"
+    },
+    {
+      "account_date": "2026-09-02",
+      "cash_after": "1910.0025968337432",
+      "event_sequence": "1",
+      "event_type": "daily_mark",
+      "gross_amount": "3063870.0",
+      "net_amount": "0.0",
+      "raw_close": "5770.0",
+      "reason": "official_raw_holding_mark",
+      "relative_return_pct": "0.314162880506184",
+      "shares": "531",
+      "slot_id": "1",
+      "source_hash": "656821e9383357e3e6f543c4762d3f8a8c77da4a89f07f27e1b11e819fdef6d2",
+      "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20260902&type=ALLBUT0999&response=json",
+      "ticker": "3653",
+      "transaction_cost": "0.0"
+    },
+    {
+      "account_date": "2026-09-02",
+      "cash_after": "33.460329233668745",
+      "event_sequence": "2",
+      "event_type": "daily_mark",
+      "gross_amount": "2388906.0",
+      "net_amount": "0.0",
+      "raw_close": "117.0",
+      "reason": "official_raw_holding_mark",
+      "relative_return_pct": "0.02383153903158952",
+      "shares": "20418",
+      "slot_id": "2",
+      "source_hash": "574eca9c70d1a7c96142f1cee7062e7c25413eef31b8561c7947d0a55ed75963",
+      "source_url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2026/09/02&response=json",
+      "ticker": "5351",
+      "transaction_cost": "0.0"
+    },
+    {
+      "account_date": "2026-09-02",
+      "cash_after": "168.2866833959706",
+      "event_sequence": "3",
+      "event_type": "daily_mark",
+      "gross_amount": "2449331.5",
+      "net_amount": "0.0",
+      "raw_close": "281.5",
+      "reason": "official_raw_holding_mark",
+      "relative_return_pct": "0.04978921380502399",
+      "shares": "8701",
+      "slot_id": "3",
+      "source_hash": "656821e9383357e3e6f543c4762d3f8a8c77da4a89f07f27e1b11e819fdef6d2",
+      "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20260902&type=ALLBUT0999&response=json",
+      "ticker": "3006",
+      "transaction_cost": "0.0"
+    },
+    {
+      "account_date": "2026-09-03",
+      "cash_after": "1910.0025968337432",
+      "event_sequence": "1",
+      "event_type": "daily_mark",
+      "gross_amount": "2981565.0",
+      "net_amount": "0.0",
+      "raw_close": "5615.0",
+      "reason": "official_raw_holding_mark",
+      "relative_return_pct": "0.27886041144579243",
+      "shares": "531",
+      "slot_id": "1",
+      "source_hash": "53de448a45ea30050c11a3cc9f33d8f76ab59dee00c2d17b48ab0e699c1cf90d",
+      "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20260903&type=ALLBUT0999&response=json",
+      "ticker": "3653",
+      "transaction_cost": "0.0"
+    },
+    {
+      "account_date": "2026-09-03",
+      "cash_after": "33.460329233668745",
+      "event_sequence": "2",
+      "event_type": "daily_mark",
+      "gross_amount": "2245980.0",
+      "net_amount": "0.0",
+      "raw_close": "110.0",
+      "reason": "official_raw_holding_mark",
+      "relative_return_pct": "-0.03742333937200981",
+      "shares": "20418",
+      "slot_id": "2",
+      "source_hash": "4253c57c6c4d829e4ea4d7eb4d614b45b928126aa46357e7cd8edb0804a64450",
+      "source_url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2026/09/03&response=json",
+      "ticker": "5351",
+      "transaction_cost": "0.0"
+    },
+    {
+      "account_date": "2026-09-03",
+      "cash_after": "168.2866833959706",
+      "event_sequence": "3",
+      "event_type": "daily_mark",
+      "gross_amount": "2410177.0",
+      "net_amount": "0.0",
+      "raw_close": "277.0",
+      "reason": "official_raw_holding_mark",
+      "relative_return_pct": "0.033007503460005916",
+      "shares": "8701",
+      "slot_id": "3",
+      "source_hash": "53de448a45ea30050c11a3cc9f33d8f76ab59dee00c2d17b48ab0e699c1cf90d",
+      "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20260903&type=ALLBUT0999&response=json",
       "ticker": "3006",
       "transaction_cost": "0.0"
     }
@@ -1677,35 +1835,35 @@
       "ticker": "3653",
       "shares": 531,
       "position_cost": 2331423.3307364997,
-      "raw_close": 5885.0
+      "raw_close": 5615.0
     },
     {
       "slot_id": 2,
       "ticker": "5351",
       "shares": 20418,
       "position_cost": 2333299.8730041,
-      "raw_close": 119.5
+      "raw_close": 110.0
     },
     {
       "slot_id": 3,
       "ticker": "3006",
       "shares": 8701,
       "position_cost": 2333165.0466499375,
-      "raw_close": 278.5
+      "raw_close": 277.0
     }
   ],
   "cash": 2111.7496094633825,
-  "notes": "排名、三槽整股持股與每日官方收盤估值均更新至2026-09-01；期間未觸發買賣。公司行動完整權威清冊仍待確認。",
+  "notes": "排名、三槽整股持股與每日官方收盤估值均更新至2026-09-03；期間未觸發買賣。公司行動完整權威清冊仍待確認。",
   "coverage": {
-    "ranking_snapshot_as_of": "2026-09-01",
-    "accounting_snapshot_as_of": "2026-09-01",
-    "ranking_rows": 55,
-    "ranking_top3_rows": 54,
+    "ranking_snapshot_as_of": "2026-09-03",
+    "accounting_snapshot_as_of": "2026-09-03",
+    "ranking_rows": 59,
+    "ranking_top3_rows": 58,
     "explicit_no_eligible_dates": [
       "2026-08-05"
     ],
     "pit_blocked_not_empty_candidate_dates": [],
-    "ledger_rows": 54,
+    "ledger_rows": 60,
     "future_data_violation_count": 0
   },
   "formal_model_changed": false,
@@ -1713,6 +1871,6 @@
   "active_in_trade_decision": false,
   "report_changed": true,
   "not_live_rule": true,
-  "ranking_snapshot_as_of": "2026-09-01",
-  "accounting_snapshot_as_of": "2026-09-01"
+  "ranking_snapshot_as_of": "2026-09-03",
+  "accounting_snapshot_as_of": "2026-09-03"
 }
