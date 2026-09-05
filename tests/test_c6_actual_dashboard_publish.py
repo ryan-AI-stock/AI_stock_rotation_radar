@@ -6,6 +6,18 @@ from rotation_radar import sheets_retry
 
 
 class ActualSignalsTests(unittest.TestCase):
+    def test_quotes_require_exact_date_price_and_lineage(self):
+        rows = [[], []] + [[1, f'{ticker} 名稱'] for ticker in ['2327', '2376', '3037', '6488']]
+        value = actual.holding_quote_text(rows, {'ranking_snapshot_as_of': '2026-09-04', 'market_rows': [
+            {'ticker': '2327', 'date': '2026-09-04', 'close': 100, 'source_hash': 'hash'},
+            {'ticker': '2376', 'date': '2026-09-03', 'close': 101, 'source_hash': 'hash'},
+            {'ticker': '3037', 'date': '2026-09-04', 'close': 102, 'source_hash': ''},
+        ]})
+        self.assertIn('2327：100', value)
+        self.assertIn('2376：官方來源待補', value)
+        self.assertIn('3037：官方來源待補', value)
+        self.assertIn('6488：官方來源待補', value)
+
     def test_formulas_reference_database_not_simulation_account(self):
         formulas = str(actual.signal_formulas())
         self.assertIn('C6每日訊號資料庫', formulas)

@@ -543,6 +543,13 @@ def build_daily_payload(*, target: pd.Timestamp, source_repo: Path, source_cache
         "data_status": "partial_whole_share_replay_event_coverage_pending", "source_manifest_hash": source_hash,
         "snapshot_rows": snapshot_rows, "ledger_rows": ledger, "slots": slots, "cash": cash,
         "pending_orders": pending,
+        "market_rows": [
+            {"date": target.date().isoformat(), "ticker": str(row.ticker),
+             "close": float(row.close), "source_hash": str(getattr(row, "source_hash", ""))}
+            for row in official.loc[official.date.eq(target) & official.ticker.isin(POOL)]
+            .drop_duplicates("ticker", keep="last").itertuples(index=False)
+            if pd.notna(row.close)
+        ],
         "notes": f"C6固定score0排名與三槽官方收盤估值更新至{target.date().isoformat()}；公司行動完整權威清冊仍待確認。",
         "coverage": {"ranking_snapshot_as_of": target.date().isoformat(), "accounting_snapshot_as_of": target.date().isoformat(),
                      "ranking_rows": len(snapshot_rows), "ledger_rows": len(ledger), "future_data_violation_count": 0},

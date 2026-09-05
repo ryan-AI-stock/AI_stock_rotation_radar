@@ -7,6 +7,8 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
+import re
 from pathlib import Path
 
 from .c6_dashboard_publish import build_public_snapshot_values
@@ -15,6 +17,25 @@ from .v4d_dashboard_publish import SheetsClient
 SIGNALS = 'C6每日訊號資料庫'
 DASHBOARD = 'C6 Dashboard'
 ACTUAL_TRADES = 'C6實際交易紀錄'
+
+
+def holding_quote_text(account_rows: list, payload: dict) -> str:
+    """Display only same-session source quotes, never carry or account valuation."""
+    target = payload['ranking_snapshot_as_of']
+    prices = {str(row['ticker']): row for row in payload.get('market_rows', [])
+              if str(row.get('date')) == target}
+    lines = []
+    for row in account_rows[2:6]:  # existing account A12:D15
+        label = str(row[1]) if len(row) > 1 else ''
+        match = re.match(r'^(\d{4})\s', label)
+        if not match:
+            raise ValueError('Actual holding identifier needs review')
+        ticker = match.group(1)
+        record = prices.get(ticker)
+        value = record.get('close') if record else None
+        accepted = isinstance(value, (int, float)) and math.isfinite(value) and value > 0 and bool(record.get('source_hash'))
+        lines.append(f'{ticker}：{value:g}' if accepted else f'{ticker}：官方來源待補')
+    return f'{target}｜' + '；'.join(lines) + '（非已驗證帳戶市值）'
 
 
 def signal_formulas() -> dict[str, list[list[object]]]:
@@ -48,6 +69,8 @@ def publish(spreadsheet_id: str, payload: dict) -> dict:
     client.update(f"'{SIGNALS}'!A1", rows)
     for address, values in signal_formulas().items():
         client.update(address, values)
+    quote_text = holding_quote_text(before, payload)
+    client.update(f"'{DASHBOARD}'!A18:B18", [['當日官方收盤', quote_text]])
     client.update(f"'{DASHBOARD}'!B27", [['每日排名已接通共用C6來源；持倉退出與公司行動核對尚未完成']])
     db = client.get(f"'{SIGNALS}'!A1:G{len(rows)}")
     actual = [row for row in db[1:] if row and str(row[0]) == expected_date]
@@ -67,6 +90,7 @@ def publish(spreadsheet_id: str, payload: dict) -> dict:
     # The only allowed change in this rectangle is the integration status B27.
     after = client.get(f"'{DASHBOARD}'!A10:D31")
     before[17][1] = after[17][1]
+    before[8] = ['當日官方收盤', quote_text]
     if before != after:
         raise RuntimeError('Actual account fields changed during signal publication')
     return {'signal_date': expected_date, 'signal_readback_verified': True,
