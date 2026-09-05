@@ -2,7 +2,7 @@ name: Publish C6 Research Dashboard
 
 on:
   schedule:
-    - cron: "0 7-15 * * 1-5"
+    - cron: "0 7 * * 1-5"
   workflow_dispatch:
     inputs:
       report_date:
@@ -84,7 +84,7 @@ jobs:
         if: steps.report-date.outputs.should_run == 'true' && (github.event_name == 'workflow_dispatch' || steps.publish-marker.outputs.cache-hit != 'true')
         run: |
           python -m py_compile rotation_radar/c6_daily_pipeline.py rotation_radar/c6_dashboard_publish.py rotation_radar/c6_snapshot_freshness.py
-          python -m unittest tests.test_c6_daily_pipeline tests.test_c6_dashboard_publish tests.test_c6_dashboard_publish_cli tests.test_c6_snapshot_freshness tests.test_schedule_gate -v
+          python -m unittest tests.test_c6_daily_pipeline tests.test_c6_dashboard_publish tests.test_c6_dashboard_publish_cli tests.test_c6_actual_dashboard_publish tests.test_c6_snapshot_freshness tests.test_schedule_gate -v
       - name: Materialize current C6 score0 ranking and three-slot account
         id: materialize
         if: steps.report-date.outputs.should_run == 'true' && (github.event_name == 'workflow_dispatch' || steps.publish-marker.outputs.cache-hit != 'true')
@@ -102,7 +102,7 @@ jobs:
           if [ "$status" -eq 75 ]; then
             echo "ready=false" >> "$GITHUB_OUTPUT"
             echo "C6 exact PIT or official source is not ready; no stale snapshot was published." >> "$GITHUB_STEP_SUMMARY"
-            exit 0
+            exit 75
           fi
           if [ "$status" -ne 0 ]; then exit "$status"; fi
           echo "ready=true" >> "$GITHUB_OUTPUT"
@@ -120,6 +120,9 @@ jobs:
             --spreadsheet-id 1_t5jrM0ZZArrmF67mpgHIqj_tPLFGu3Cpfcko1Qz_vQ \
             --payload data/c6_current_snapshot.json
           python -c "from rotation_radar.c6_daily_pipeline import verify_dashboard; verify_dashboard('1_t5jrM0ZZArrmF67mpgHIqj_tPLFGu3Cpfcko1Qz_vQ', '${{ steps.report-date.outputs.target_date }}')"
+          python -m rotation_radar.c6_actual_dashboard_publish \
+            --spreadsheet-id 19Xls-N_835V98_pM2TfLJSLlzKdXc6RztZfhJFEC1Dg \
+            --payload data/c6_current_snapshot.json
       - name: Commit durable C6 daily state
         if: steps.materialize.outputs.ready == 'true'
         shell: bash

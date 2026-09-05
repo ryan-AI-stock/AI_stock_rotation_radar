@@ -481,6 +481,18 @@ def publish_snapshot(
     client.clear(f"'{DASHBOARD_SHEET}'!A1:D60")
     client.update(f"'{DASHBOARD_SHEET}'!A1", dashboard)
     client.format_model_logic(DASHBOARD_SHEET)
+    from .c6_actual_dashboard_publish import signal_formulas
+    for address, values in signal_formulas().items():
+        client.update(address, values)
+    expected_date = ranking_snapshot_as_of or snapshot_as_of
+    if client.get(f"'{DASHBOARD_SHEET}'!B2") != [[expected_date]]:
+        raise RuntimeError('C6 Dashboard ranking date read-back mismatch')
+    for rank in range(1, 4):
+        row = next((r for r in public_snapshot_values[1:]
+                    if str(r[0]) == expected_date and str(r[1]) == str(rank)), None)
+        expected = f'{row[2]} {row[3]}' if row else '無其他合格股票'
+        if client.get(f"'{DASHBOARD_SHEET}'!B{rank+5}") != [[expected]]:
+            raise RuntimeError('C6 Dashboard ranking read-back mismatch')
     return {
         "model_version": model_version,
         "snapshot_as_of": snapshot_as_of,

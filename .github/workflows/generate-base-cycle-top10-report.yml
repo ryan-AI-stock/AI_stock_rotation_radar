@@ -2,7 +2,7 @@ name: Update V4-D Top1 Dashboard
 
 on:
   schedule:
-    - cron: "0 7-15 * * 1-5"
+    - cron: "0 7 * * 1-5"
   workflow_dispatch:
     inputs:
       report_date:

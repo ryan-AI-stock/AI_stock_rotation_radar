@@ -9,6 +9,7 @@ import pandas as pd
 import requests
 
 from .v4d_simulation_account import withdrawal_preview
+from .sheets_retry import request as retry_request
 
 
 SIGNAL_SHEET = "V4-D每日訊號資料庫"
@@ -234,23 +235,23 @@ class SheetsClient:
         self.base = f"https://sheets.googleapis.com/v4/spreadsheets/{spreadsheet_id}"
 
     def get(self, a1_range: str) -> list[list[object]]:
-        response = requests.get(f"{self.base}/values/{a1_range}", headers=self.headers, timeout=30)
+        response = retry_request(requests.get, f"{self.base}/values/{a1_range}", headers=self.headers, timeout=30)
         self._raise_for_status(response)
         return response.json().get("values", [])
 
     def clear(self, a1_range: str) -> None:
-        response = requests.post(f"{self.base}/values/{a1_range}:clear", headers=self.headers, json={}, timeout=30)
+        response = retry_request(requests.post, f"{self.base}/values/{a1_range}:clear", headers=self.headers, json={}, timeout=30)
         self._raise_for_status(response)
 
     def update(self, a1_range: str, values: list[list[object]]) -> None:
-        response = requests.put(
+        response = retry_request(requests.put,
             f"{self.base}/values/{a1_range}", params={"valueInputOption": "USER_ENTERED"},
             headers=self.headers, json={"range": a1_range, "majorDimension": "ROWS", "values": values}, timeout=30,
         )
         self._raise_for_status(response)
 
     def format_model_logic(self, sheet_title: str) -> None:
-        response = requests.get(
+        response = retry_request(requests.get,
             self.base,
             params={"fields": "sheets(properties(sheetId,title))"},
             headers=self.headers,
@@ -262,7 +263,7 @@ class SheetsClient:
             for sheet in response.json().get("sheets", [])
             if sheet.get("properties", {}).get("title") == sheet_title
         )
-        response = requests.post(
+        response = retry_request(requests.post,
             f"{self.base}:batchUpdate",
             headers=self.headers,
             json={"requests": model_logic_format_requests(sheet_id)},
@@ -304,6 +305,20 @@ def publish(spreadsheet_id: str, ranking_path: Path, state_path: Path, simulatio
     client.clear(f"'{DASHBOARD_SHEET}'!A1:B50")
     client.update(f"'{DASHBOARD_SHEET}'!A1", dashboard)
     client.format_model_logic(DASHBOARD_SHEET)
+    source = f"'{SIGNAL_SHEET}'"
+    client.update(f"'{DASHBOARD_SHEET}'!B2", [[f'=MAX({source}!A2:A)']])
+    for rank in range(1, 4):
+        condition = f'{source}!A2:A=$B$2,{source}!B2:B={rank}'
+        formula = f'=IFNA("Top{rank}｜"&INDEX(FILTER({source}!C2:C&" "&{source}!D2:D,{condition}),1),"無其他合格股票")'
+        client.update(f"'{DASHBOARD_SHEET}'!A{rank+22}", [[formula]])
+    expected_date = str(new_rows[0][0])
+    if client.get(f"'{DASHBOARD_SHEET}'!B2") != [[expected_date]]:
+        raise RuntimeError('V4-D Dashboard signal date read-back mismatch')
+    for rank, row in enumerate(new_rows, 1):
+        if client.get(f"'{DASHBOARD_SHEET}'!A{rank+22}") != [[f'Top{rank}｜{row[2]} {row[3]}']]:
+            raise RuntimeError('V4-D Dashboard ranking read-back mismatch')
+    if client.get(f"'{DASHBOARD_SHEET}'!B6") != [[dashboard[5][1]]]:
+        raise RuntimeError('V4-D Dashboard holding read-back mismatch')
 
 
 def main() -> None:
