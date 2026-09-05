@@ -1945,6 +1945,296 @@
   ],
   "cash": 2111.7496094633825,
   "pending_orders": [],
+  "market_rows": [
+    {
+      "date": "2026-09-04",
+      "ticker": "2301",
+      "close": 308.0,
+      "source_hash": "nan"
+    },
+    {
+      "date": "2026-09-04",
+      "ticker": "2308",
+      "close": 1825.0,
+      "source_hash": "nan"
+    },
+    {
+      "date": "2026-09-04",
+      "ticker": "2317",
+      "close": 256.0,
+      "source_hash": "nan"
+    },
+    {
+      "date": "2026-09-04",
+      "ticker": "2327",
+      "close": 562.0,
+      "source_hash": "nan"
+    },
+    {
+      "date": "2026-09-04",
+      "ticker": "2337",
+      "close": 121.5,
+      "source_hash": "nan"
+    },
+    {
+      "date": "2026-09-04",
+      "ticker": "2344",
+      "close": 174.0,
+      "source_hash": "nan"
+    },
+    {
+      "date": "2026-09-04",
+      "ticker": "2356",
+      "close": 67.5,
+      "source_hash": "nan"
+    },
+    {
+      "date": "2026-09-04",
+      "ticker": "2368",
+      "close": 1045.0,
+      "source_hash": "nan"
+    },
+    {
+      "date": "2026-09-04",
+      "ticker": "2375",
+      "close": 125.0,
+      "source_hash": "nan"
+    },
+    {
+      "date": "2026-09-04",
+      "ticker": "2376",
+      "close": 361.0,
+      "source_hash": "nan"
+    },
+    {
+      "date": "2026-09-04",
+      "ticker": "2382",
+      "close": 345.0,
+      "source_hash": "nan"
+    },
+    {
+      "date": "2026-09-04",
+      "ticker": "2383",
+      "close": 5415.0,
+      "source_hash": "nan"
+    },
+    {
+      "date": "2026-09-04",
+      "ticker": "2408",
+      "close": 496.0,
+      "source_hash": "nan"
+    },
+    {
+      "date": "2026-09-04",
+      "ticker": "2421",
+      "close": 178.0,
+      "source_hash": "nan"
+    },
+    {
+      "date": "2026-09-04",
+      "ticker": "2451",
+      "close": 284.5,
+      "source_hash": "nan"
+    },
+    {
+      "date": "2026-09-04",
+      "ticker": "2472",
+      "close": 225.0,
+      "source_hash": "nan"
+    },
+    {
+      "date": "2026-09-04",
+      "ticker": "2478",
+      "close": 125.5,
+      "source_hash": "nan"
+    },
+    {
+      "date": "2026-09-04",
+      "ticker": "2492",
+      "close": 298.5,
+      "source_hash": "nan"
+    },
+    {
+      "date": "2026-09-04",
+      "ticker": "3006",
+      "close": 278.5,
+      "source_hash": "nan"
+    },
+    {
+      "date": "2026-09-04",
+      "ticker": "3017",
+      "close": 3570.0,
+      "source_hash": "nan"
+    },
+    {
+      "date": "2026-09-04",
+      "ticker": "3026",
+      "close": 701.0,
+      "source_hash": "nan"
+    },
+    {
+      "date": "2026-09-04",
+      "ticker": "3037",
+      "close": 902.0,
+      "source_hash": "nan"
+    },
+    {
+      "date": "2026-09-04",
+      "ticker": "3044",
+      "close": 488.5,
+      "source_hash": "nan"
+    },
+    {
+      "date": "2026-09-04",
+      "ticker": "3231",
+      "close": 198.0,
+      "source_hash": "nan"
+    },
+    {
+      "date": "2026-09-04",
+      "ticker": "3532",
+      "close": 399.0,
+      "source_hash": "nan"
+    },
+    {
+      "date": "2026-09-04",
+      "ticker": "3653",
+      "close": 5875.0,
+      "source_hash": "nan"
+    },
+    {
+      "date": "2026-09-04",
+      "ticker": "3706",
+      "close": 92.5,
+      "source_hash": "nan"
+    },
+    {
+      "date": "2026-09-04",
+      "ticker": "4958",
+      "close": 463.0,
+      "source_hash": "nan"
+    },
+    {
+      "date": "2026-09-04",
+      "ticker": "4967",
+      "close": 276.0,
+      "source_hash": "nan"
+    },
+    {
+      "date": "2026-09-04",
+      "ticker": "6669",
+      "close": 2565.0,
+      "source_hash": "nan"
+    },
+    {
+      "date": "2026-09-04",
+      "ticker": "6770",
+      "close": 68.5,
+      "source_hash": "nan"
+    },
+    {
+      "date": "2026-09-04",
+      "ticker": "8046",
+      "close": 1055.0,
+      "source_hash": "nan"
+    },
+    {
+      "date": "2026-09-04",
+      "ticker": "8271",
+      "close": 217.0,
+      "source_hash": "nan"
+    },
+    {
+      "date": "2026-09-04",
+      "ticker": "3260",
+      "close": 400.5,
+      "source_hash": "nan"
+    },
+    {
+      "date": "2026-09-04",
+      "ticker": "3324",
+      "close": 1485.0,
+      "source_hash": "nan"
+    },
+    {
+      "date": "2026-09-04",
+      "ticker": "3357",
+      "close": 214.0,
+      "source_hash": "nan"
+    },
+    {
+      "date": "2026-09-04",
+      "ticker": "5351",
+      "close": 112.5,
+      "source_hash": "nan"
+    },
+    {
+      "date": "2026-09-04",
+      "ticker": "5439",
+      "close": 261.5,
+      "source_hash": "nan"
+    },
+    {
+      "date": "2026-09-04",
+      "ticker": "5483",
+      "close": 183.5,
+      "source_hash": "nan"
+    },
+    {
+      "date": "2026-09-04",
+      "ticker": "6127",
+      "close": 49.05,
+      "source_hash": "nan"
+    },
+    {
+      "date": "2026-09-04",
+      "ticker": "6173",
+      "close": 260.5,
+      "source_hash": "nan"
+    },
+    {
+      "date": "2026-09-04",
+      "ticker": "6175",
+      "close": 71.8,
+      "source_hash": "nan"
+    },
+    {
+      "date": "2026-09-04",
+      "ticker": "6182",
+      "close": 111.0,
+      "source_hash": "nan"
+    },
+    {
+      "date": "2026-09-04",
+      "ticker": "6274",
+      "close": 1365.0,
+      "source_hash": "nan"
+    },
+    {
+      "date": "2026-09-04",
+      "ticker": "6284",
+      "close": 79.1,
+      "source_hash": "nan"
+    },
+    {
+      "date": "2026-09-04",
+      "ticker": "6488",
+      "close": 981.0,
+      "source_hash": "nan"
+    },
+    {
+      "date": "2026-09-04",
+      "ticker": "8043",
+      "close": 142.0,
+      "source_hash": "nan"
+    },
+    {
+      "date": "2026-09-04",
+      "ticker": "8299",
+      "close": 2015.0,
+      "source_hash": "nan"
+    }
+  ],
   "notes": "C6固定score0排名與三槽官方收盤估值更新至2026-09-04；公司行動完整權威清冊仍待確認。",
   "coverage": {
     "ranking_snapshot_as_of": "2026-09-04",
