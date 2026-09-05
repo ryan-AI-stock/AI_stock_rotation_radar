@@ -1,4 +1,6 @@
 import unittest
+from datetime import date
+from unittest.mock import patch
 
 import pandas as pd
 
@@ -27,7 +29,8 @@ class C6DailyPipelineTests(unittest.TestCase):
         self.assertEqual(ranked.ticker.tolist(), ["3653", "3324"])
         self.assertEqual(ranked["rank"].tolist(), [1, 2])
 
-    def test_three_slot_account_marks_positions_and_schedules_next_day_exit(self):
+    @patch('rotation_radar.c6_daily_pipeline.next_trading_day', return_value=date(2026, 9, 7))
+    def test_three_slot_account_marks_positions_and_schedules_next_day_exit(self, next_day):
         day = pd.Timestamp("2026-09-04")
         payload = {
             "cash": 100,
