@@ -4,13 +4,13 @@
   "ticker": "8046",
   "name": "南電",
   "market": "TWSE",
-  "signal_date": "2026-09-10",
-  "signal_close": 1070.0,
-  "execution_date": "2026-09-11",
+  "signal_date": "2026-09-11",
+  "signal_close": 1080.0,
+  "execution_date": "2026-09-14",
   "entry_close": null,
   "status": "signal_only",
   "daily_marks": {},
-  "candidate_rank": 2,
+  "candidate_rank": 1,
   "industry": "電子零組件業",
   "layer1_snapshot_date": "20260728"
 }
