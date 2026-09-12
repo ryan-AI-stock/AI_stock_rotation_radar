@@ -87,7 +87,7 @@ jobs:
         if: steps.report-date.outputs.should_run == 'true' && (github.event_name == 'workflow_dispatch' || steps.publish-marker.outputs.cache-hit != 'true')
         run: |
           python -m py_compile rotation_radar/c6_daily_pipeline.py rotation_radar/c6_dashboard_publish.py rotation_radar/c6_snapshot_freshness.py
-          python -m unittest tests.test_c6_daily_pipeline tests.test_c6_dashboard_publish tests.test_c6_dashboard_publish_cli tests.test_c6_actual_dashboard_publish tests.test_c6_snapshot_freshness tests.test_schedule_gate -v
+          python -m unittest tests.test_c6_macro tests.test_c6_daily_pipeline tests.test_c6_dashboard_publish tests.test_c6_dashboard_publish_cli tests.test_c6_actual_dashboard_publish tests.test_c6_snapshot_freshness tests.test_schedule_gate -v
       - name: Materialize current C6 score0 ranking and three-slot account
         id: materialize
         if: steps.report-date.outputs.should_run == 'true' && (github.event_name == 'workflow_dispatch' || steps.publish-marker.outputs.cache-hit != 'true')

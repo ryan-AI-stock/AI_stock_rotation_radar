@@ -265,6 +265,7 @@ def advance_account(
     ranked: pd.DataFrame,
     official: pd.DataFrame,
     adjusted: pd.DataFrame,
+    macro_resolver=None,
 ) -> tuple[list[dict], list[dict], float, list[str], list[dict]]:
     target_text = target.date().isoformat()
     # An accounting snapshot already includes all executions and withdrawals
@@ -375,8 +376,16 @@ def advance_account(
         # Macro exit is irrelevant unless profit >=15% and the date is within
         # three trading sessions of settlement.  That bounded authority is
         # intentionally not guessed here.
-        if current_return >= 0.15 and 0 <= (_third_wednesday(target) - target).days <= 5:
-            blockers.append(f"macro_triple_authority_required:{target_text}:{ticker}")
+        if not reason and current_return >= 0.15:
+            if macro_resolver is None:
+                blockers.append(f"macro_triple_authority_required:{target_text}:{ticker}")
+            else:
+                try:
+                    macro = macro_resolver()
+                    if macro['macro_triple']:
+                        reason = 'profitable_macro_triple_high_zone'
+                except ReportDataNotReady as exc:
+                    blockers.append(f"{exc}:{target_text}:{ticker}")
         close = float(raw_map[ticker].close)
         slot["raw_close"] = close
         ledger.append({
@@ -582,7 +591,12 @@ def build_daily_payload(*, target: pd.Timestamp, source_repo: Path, source_cache
                 "source_readiness": "accepted_research_ranking_with_official_raw_display_close",
                 "source_label": "daily_C6_SCORE_0_ranking",
             })
-    slots, ledger, cash, blockers, pending = advance_account(prior, target, top3, official, adjusted)
+    from functools import lru_cache
+    from .c6_macro import resolve
+    @lru_cache(maxsize=1)
+    def macro_resolver():
+        return resolve(target, adjusted, source_cache / 'c6_macro', offline)
+    slots, ledger, cash, blockers, pending = advance_account(prior, target, top3, official, adjusted, macro_resolver)
     if blockers:
         raise ReportDataNotReady(";".join(blockers))
     official_hashes = sorted(set(str(value) for value in official.get("source_hash", pd.Series(dtype=str)).dropna()))
