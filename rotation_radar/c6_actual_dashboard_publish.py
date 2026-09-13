@@ -74,7 +74,8 @@ def daily_observation_rows(account_rows: list, payload: dict, actual_ledger: lis
     records = payload.get('market_rows', [])
     entries = {}
     for event in (actual_ledger or [])[1:]:
-        if len(event) >= 18 and event[2] == '期初持倉登錄':
+        if len(event) >= 18 and (event[2] == '期初持倉登錄' or
+                (event[2] == '實際成交（人工）' and event[5] == '買進')):
             match = re.search(r'實際買入日(\d{4}-\d{2}-\d{2})', str(event[17]))
             if match:
                 key = str(event[3])

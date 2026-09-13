@@ -6,6 +6,16 @@ from rotation_radar import sheets_retry
 
 
 class ActualSignalsTests(unittest.TestCase):
+    def test_manual_buy_has_entry_date_without_becoming_initial_registration(self):
+        rows=[[],[]]+[[i,'未持有／預留位置'] for i in range(1,5)]+[[5,'2344 華邦電｜1000股',179.65,179650]]
+        ledger=[['header'],['2026-09-10',5,'實際成交（人工）','2344','華邦電','買進']+['']*11+['實際買入日2026-09-10；含費']]
+        prices=[dict(ticker='2344',date=d,close=p,source_hash='a'*64) for d,p in [('2026-09-10',179),('2026-09-11',171.5)]]
+        payload=dict(ranking_snapshot_as_of='2026-09-11',market_rows=prices[1:],actual_holding_history=dict(end='2026-09-11',calendar_complete=True,trading_dates=['2026-09-10','2026-09-11'],official_rows=prices))
+        observed=actual.daily_observation_rows(rows,payload,ledger)
+        self.assertEqual(observed[0][14],2)
+        self.assertEqual(observed[0][8],171500)
+        self.assertEqual(ledger[1][2],'實際成交（人工）')
+
     def test_daily_rows_use_confirmed_entries_and_market_td(self):
         tickers = ['2327', '2376', '3037', '6488']
         rows = [[], []] + [[i, f'{t} 名稱｜10股', 100, 1000] for i, t in enumerate(tickers, 1)]
