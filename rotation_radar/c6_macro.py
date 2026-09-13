@@ -36,31 +36,48 @@ def evaluate(target, adjusted, fx, sessions, settlement):
     high = bool(values.iloc[-1] >= values.quantile(.8))
     return dict(result, usd_high20=high, macro_triple=high)
 
-def load_cbc(cache, target, offline=False):
-    path = Path(cache) / f'cbc-{target:%Y%m%d}.json'
-    if not path.exists():
-        if offline: raise ReportDataNotReady('macro_CBC_cache_missing')
-        for attempt in range(3):
-            try:
-                with urlopen(CBC_URL,timeout=30) as response: raw=response.read()
-                data=json.loads(raw)
-                if not isinstance(data,list): raise ValueError('CBC schema')
-                path.parent.mkdir(parents=True,exist_ok=True);path.write_bytes(raw)
-                break
-            except (OSError,ValueError) as exc:
-                if attempt==2: raise ReportDataNotReady(f'macro_CBC_fetch_failed:{exc}') from exc
-                time.sleep(2)
-    raw=path.read_bytes(); rows=[]
-    for item in json.loads(raw):
+def parse_cbc(raw, required_dates):
+    data=json.loads(raw)
+    if not isinstance(data,list): raise ValueError('CBC schema')
+    rows=[]
+    for item in data:
         dates=[str(v) for k,v in item.items() if k!='NTD_USD' and re.fullmatch(r'\d{8}',str(v))]
-        if len(dates)!=1: raise ReportDataNotReady('macro_CBC_date_schema')
+        if len(dates)!=1: raise ValueError('macro_CBC_date_schema')
         rows.append({'date':pd.to_datetime(dates[0]),'ntd_per_usd':float(item['NTD_USD'])})
-    frame=pd.DataFrame(rows)
-    if frame.date.duplicated().any(): raise ReportDataNotReady('macro_CBC_duplicate_date')
+    frame=pd.DataFrame(rows,columns=['date','ntd_per_usd'])
+    if frame.date.duplicated().any(): raise ValueError('macro_CBC_duplicate_date')
+    if not set(pd.to_datetime(required_dates)).issubset(set(frame.date)):
+        raise ValueError('macro_CBC_required_dates_missing')
+    if not frame.ntd_per_usd.map(lambda v: bool(pd.notna(v) and 0 < v < float('inf'))).all():
+        raise ValueError('macro_CBC_invalid_value')
+    return frame
+
+def load_cbc(cache, target, offline=False, required_dates=None):
+    required_dates=[target] if required_dates is None else required_dates
+    path = Path(cache) / f'cbc-{target:%Y%m%d}.json'
+    if path.exists():
+        try:
+            raw=path.read_bytes();frame=parse_cbc(raw,required_dates)
+            return frame,hashlib.sha256(raw).hexdigest()
+        except (ValueError,KeyError,TypeError):
+            pass  # A partial response is not a completed cache.
+    if offline: raise ReportDataNotReady('macro_CBC_cache_missing_or_incomplete')
+    for attempt in range(3):
+        try:
+            with urlopen(CBC_URL,timeout=30) as response: raw=response.read()
+            frame=parse_cbc(raw,required_dates)
+            path.parent.mkdir(parents=True,exist_ok=True);path.write_bytes(raw)
+            break
+        except (OSError,ValueError,KeyError,TypeError) as exc:
+            if attempt==2: raise ReportDataNotReady(f'macro_CBC_fetch_failed:{exc}') from exc
+            time.sleep(2)
     return frame,hashlib.sha256(raw).hexdigest()
 
 def resolve(target, adjusted, cache, offline=False):
-    opened,closed=fetch_twse_calendar()
+    for attempt in range(3):
+        opened,closed=fetch_twse_calendar()
+        if closed is not None: break
+        if attempt<2: time.sleep(2)
     if closed is None: raise ReportDataNotReady('macro_calendar_unavailable')
     settlement=target.replace(day=1)+pd.offsets.WeekOfMonth(week=2,weekday=2)
     # Exceptional settlement changes require explicit authority, not inference.
@@ -72,5 +89,6 @@ def resolve(target, adjusted, cache, offline=False):
         return evaluate(target,adjusted,empty,sessions,settlement)
     except ReportDataNotReady as exc:
         if str(exc)!='macro_CBC_exact_20_session_window_missing': raise
-    fx,digest=load_cbc(cache,target,offline)
+    required=[d for d in sessions if d<=target][-20:]
+    fx,digest=load_cbc(cache,target,offline,required_dates=required)
     return dict(evaluate(target,adjusted,fx,sessions,settlement),cbc_source_url=CBC_URL,cbc_source_hash=digest)

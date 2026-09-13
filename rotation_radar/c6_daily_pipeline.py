@@ -9,6 +9,7 @@ import argparse
 import hashlib
 import json
 import math
+import time
 from datetime import date
 from pathlib import Path
 from urllib.request import Request, urlopen
@@ -26,6 +27,7 @@ from .formal_sources.point_in_time_revenue import (
 )
 from .v4d_dashboard_publish import SheetsClient
 from .schedule_gate import fetch_twse_calendar, is_trading_day
+from .public_sources import SourceFetchError
 from .v4d_top1_signal import (
     LAYER1_SNAPSHOT,
     LIQUIDITY_WARMUP,
@@ -180,6 +182,16 @@ def load_official_0050(start: pd.Timestamp, target: pd.Timestamp, cache_dir: Pat
     return frame
 
 
+def fetch_c6_revenue_with_retry(url):
+    for attempt in range(3):
+        try:
+            return fetch_mops_text(url)
+        except SourceFetchError as exc:
+            if attempt==2:
+                raise ReportDataNotReady(f'C6_revenue_fetch_failed_after_3_attempts:{url}:{exc}') from exc
+            time.sleep(2)
+
+
 def load_revenue_yoy(target: pd.Timestamp, official: pd.DataFrame, cache_dir: Path) -> tuple[pd.DataFrame, list[str]]:
     # MOPS monthly revenue is conservatively available on day 10 of the next month.
     latest_lag = 1 if target.day >= 10 else 2
@@ -196,7 +208,7 @@ def load_revenue_yoy(target: pd.Timestamp, official: pd.DataFrame, cache_dir: Pa
             for company_type in (0, 1):
                 url = build_mops_revenue_url(market=market, period=period, company_type=company_type)
                 path = cache_dir / f"{period}-{market}-{company_type}.html"
-                text = path.read_text(encoding="utf-8") if path.exists() else fetch_mops_text(url)
+                text = path.read_text(encoding="utf-8") if path.exists() else fetch_c6_revenue_with_retry(url)
                 if not path.exists():
                     path.write_text(text, encoding="utf-8")
                 hashes.append(hashlib.sha256(text.encode("utf-8")).hexdigest())
