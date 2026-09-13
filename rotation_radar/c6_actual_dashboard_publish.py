@@ -63,8 +63,8 @@ def build_actual_dashboard(account_rows, payload, actual_ledger):
         top_rows=top, holdings=holdings, cash=cash, realized=realized, withdrawals=withdrawals,
         model_logic='實際帳戶：8/5開始計算；9/3為原建檔日。京鼎為V4-D已結束交易，僅納入實際損益，不是C6績效。已有持股不重新均分；未成交不入帳。\n\n'+MODEL_LOGIC,
         history=historical, details=[['成交原則', '長期回歸三檔；可加碼或第五檔，由Ryan人工選擇並回報。'],
-                 ['現金確認', '9/7回報305,358元，已扣交割；預留75,000元，可用230,358元。尚無實際提領回報。'],
-                 ['原持倉建檔日', '2026-09-03'], ['實際買入日期', '技嘉8/10；國巨、欣興9/1；環球晶9/2'],
+                 ['現金確認', f'帳面現金{cash:,.2f}元；以已確認餘額及成交更新，未回報實際提領不自行扣款。'],
+                 ['原持倉建檔日', '2026-09-03'], ['實際買入日期', '依實際交易紀錄的期初登錄與已確認人工買進；詳見各檔R欄。'],
                  ['持有高點／退出狀態', '逐檔完整資料見實際交易紀錄R欄；未知條件不標為未觸發。']])
 
 
