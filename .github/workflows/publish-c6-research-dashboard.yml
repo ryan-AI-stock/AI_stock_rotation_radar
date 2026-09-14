@@ -138,6 +138,13 @@ jobs:
           git commit -m "Update C6 daily score0 state"
           git pull --rebase origin main
           git push origin HEAD:main
+      - name: Preserve computed snapshot even when Google publication fails
+        if: always() && steps.materialize.outputs.ready == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: c6-computed-snapshot-${{ steps.report-date.outputs.target_date }}
+          path: data/c6_current_snapshot.json
+          if-no-files-found: error
       - name: Create publish marker
         if: success() && github.event_name == 'schedule' && steps.publish-marker.outputs.cache-hit != 'true' && steps.materialize.outputs.ready == 'true'
         shell: bash
