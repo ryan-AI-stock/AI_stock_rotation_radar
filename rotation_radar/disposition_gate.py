@@ -2,6 +2,8 @@ from __future__ import annotations
 
 import json
 import re
+import subprocess
+from urllib.error import URLError
 import urllib.parse
 from datetime import date, timedelta
 from pathlib import Path
@@ -120,8 +122,18 @@ def _fetch_json(url: str, data: dict[str, str] | None = None) -> dict:
         data=body,
         headers={"User-Agent": "Mozilla/5.0", "Accept": "application/json"},
     )
-    with urlopen(request, timeout=90) as response:
-        return json.load(response)
+    try:
+        with urlopen(request, timeout=45) as response:
+            return json.load(response)
+    except (URLError, TimeoutError, json.JSONDecodeError):
+        # Same official endpoint, alternative TLS stack; never disable verification.
+        command = ["curl", "--fail", "--silent", "--show-error", "--max-time", "45",
+                   "--retry", "2", "--retry-delay", "2"]
+        if body:
+            command += ["--data", body.decode("ascii")]
+        command.append(url)
+        result = subprocess.run(command, capture_output=True, check=True, timeout=145)
+        return json.loads(result.stdout.decode("utf-8-sig"))
 
 
 def load_disposition_gate(
@@ -171,7 +183,7 @@ def load_disposition_gate(
             )
         except Exception as exc:
             raise DispositionSourceNotReady(
-                "Official disposition source is unavailable"
+                f"Official disposition source is unavailable: {type(exc).__name__}: {exc}"
             ) from exc
         payload = {"twse": twse, "tpex": tpex}
         cache_path.write_text(
