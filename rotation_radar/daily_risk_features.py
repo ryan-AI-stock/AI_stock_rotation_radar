@@ -12,6 +12,7 @@ import gzip
 import hashlib
 import json
 import os
+import subprocess
 import tempfile
 import time
 from datetime import date, datetime, time as dt_time, timedelta, timezone
@@ -72,6 +73,16 @@ def request(method: str, url: str, retries: int = 3, **kwargs) -> tuple[bytes, i
             last = (response.content, response.status_code, error, response.url, retrieved)
         except requests.RequestException as exc:
             last = (b"", 0, type(exc).__name__, url, retrieved)
+            if isinstance(exc, requests.exceptions.SSLError) and method == "GET" and not kwargs:
+                try:
+                    result = subprocess.run(
+                        ["curl", "--fail", "--silent", "--show-error", "--max-time", "45", url],
+                        capture_output=True, check=True, timeout=50,
+                    )
+                    # curl still verifies TLS. Preserve the exact response bytes for lineage.
+                    return result.stdout, 200, "", url, retrieved
+                except (OSError, subprocess.SubprocessError) as fallback:
+                    last = (b"", 0, f"SSLError;curl_{type(fallback).__name__}", url, retrieved)
         time.sleep(2 ** attempt)
     return last
 
