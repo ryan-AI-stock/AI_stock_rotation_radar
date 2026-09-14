@@ -23,6 +23,7 @@ import requests
 from bs4 import BeautifulSoup
 
 from rotation_radar.schedule_gate import fetch_twse_calendar
+from rotation_radar.official_tls import ca_bundle
 
 
 TAIPEI = ZoneInfo("Asia/Taipei")
@@ -67,7 +68,8 @@ def request(method: str, url: str, retries: int = 3, **kwargs) -> tuple[bytes, i
     for attempt in range(retries):
         retrieved = utc_now()
         try:
-            response = requests.request(method, url, timeout=45, headers={"User-Agent": "Mozilla/5.0 RadarDailyRisk/1.0", "Accept": "application/json,text/html,*/*"}, **kwargs)
+            tls = {"verify": ca_bundle()} if url.startswith("https://www.tpex.org.tw/") else {}
+            response = requests.request(method, url, timeout=45, headers={"User-Agent": "Mozilla/5.0 RadarDailyRisk/1.0", "Accept": "application/json,text/html,*/*"}, **tls, **kwargs)
             error = "" if response.ok else f"HTTP_{response.status_code}"
             if response.ok: return response.content, response.status_code, error, response.url, retrieved
             last = (response.content, response.status_code, error, response.url, retrieved)

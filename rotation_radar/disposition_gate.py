@@ -3,6 +3,8 @@ from __future__ import annotations
 import json
 import re
 import subprocess
+import ssl
+from .official_tls import ca_bundle
 from urllib.error import URLError
 import urllib.parse
 from datetime import date, timedelta
@@ -123,7 +125,8 @@ def _fetch_json(url: str, data: dict[str, str] | None = None) -> dict:
         headers={"User-Agent": "Mozilla/5.0", "Accept": "application/json"},
     )
     try:
-        with urlopen(request, timeout=45) as response:
+        context = ssl.create_default_context(cafile=ca_bundle()) if url.startswith("https://www.tpex.org.tw/") else None
+        with urlopen(request, timeout=45, context=context) as response:
             return json.load(response)
     except (URLError, TimeoutError, json.JSONDecodeError):
         # Same official endpoint, alternative TLS stack; never disable verification.
