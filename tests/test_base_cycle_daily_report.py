@@ -10,6 +10,17 @@ from rotation_radar.base_cycle_daily_report import load_official_prices_and_turn
 
 
 class BaseCycleDailyReportTests(unittest.TestCase):
+    def test_partial_target_cache_is_refetched(self):
+        with tempfile.TemporaryDirectory() as folder:
+            cache = Path(folder)
+            (cache / 'official_recent_full_market.csv.gz').touch()
+            row = dict(date='2026-09-14', ticker='2344', name='Winbond', market='TWSE', close=160, turnover_value=1000)
+            missing = dict(row, ticker='5351', market='TPEx', close=106)
+            with patch('rotation_radar.base_cycle_daily_report.pd.read_csv', return_value=pd.DataFrame([row])), patch('rotation_radar.base_cycle_daily_report.fetch_price', return_value=([row, missing], [{'market': m, 'status': 'accepted'} for m in ['TWSE', 'TPEx']])) as fetch:
+                display, _ = load_official_prices_and_turnover(source_repo=cache, target=pd.Timestamp('2026-09-14'), current=pd.DataFrame(), source_cache=cache, offline=False)
+            self.assertEqual(fetch.call_count, 1)
+            self.assertEqual(set(display.ticker), {'2344', '5351'})
+
     def test_official_display_preserves_price_lineage(self):
         with tempfile.TemporaryDirectory() as folder:
             cache = Path(folder)

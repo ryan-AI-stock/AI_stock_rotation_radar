@@ -290,11 +290,17 @@ def load_official_prices_and_turnover(
     rows = []
     if not offline:
         known_max = max(static.date.max(), cached.date.max() if not cached.empty else pd.Timestamp.min)
-        start = max(pd.Timestamp("2026-06-30"), known_max + pd.Timedelta(days=1))
+        # A maximum date does not prove both exchanges were downloaded.
+        # Re-fetch the requested session even when a partial cache contains it.
+        start = min(target, max(pd.Timestamp("2026-06-30"), known_max + pd.Timedelta(days=1)))
         for day in pd.date_range(start, target, freq="D"):
             if day.weekday() >= 5:
                 continue
             fetched, meta = fetch_price(day.date(), {str(code) for code in range(1000, 10000)})
+            if day == target:
+                accepted_markets = {m.get("market") for m in meta if m.get("status") == "accepted"}
+                if not {"TWSE", "TPEx"}.issubset(accepted_markets):
+                    raise ReportDataNotReady(f"Target-date official exchanges incomplete: {meta}")
             if fetched:
                 rows.extend(fetched)
             elif day == target:
