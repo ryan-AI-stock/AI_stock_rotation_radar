@@ -6,10 +6,19 @@ from unittest.mock import patch
 import pandas as pd
 
 from rotation_radar.base_cycle_daily_report import load_state, render_html, update_state
-from rotation_radar.base_cycle_daily_report import load_official_prices_and_turnover
+from rotation_radar.base_cycle_daily_report import load_official_prices_and_turnover, ReportDataNotReady
 
 
 class BaseCycleDailyReportTests(unittest.TestCase):
+    def test_partial_exchange_response_is_not_cached_as_complete(self):
+        with tempfile.TemporaryDirectory() as folder:
+            cache = Path(folder)
+            row = dict(date='2026-09-14', ticker='2344', name='Winbond', market='TWSE', close=160, turnover_value=1000)
+            with patch('rotation_radar.base_cycle_daily_report.pd.read_csv', return_value=pd.DataFrame([row])), patch('rotation_radar.base_cycle_daily_report.fetch_price', return_value=([row], [{'market': 'TWSE', 'status': 'accepted'}, {'market': 'TPEx', 'status': 'blocked'}])):
+                with self.assertRaisesRegex(ReportDataNotReady, 'exchanges incomplete'):
+                    load_official_prices_and_turnover(source_repo=cache, target=pd.Timestamp('2026-09-14'), current=pd.DataFrame(), source_cache=cache, offline=False)
+            self.assertFalse((cache / 'official_recent_full_market.csv.gz').exists())
+
     def test_partial_target_cache_is_refetched(self):
         with tempfile.TemporaryDirectory() as folder:
             cache = Path(folder)
