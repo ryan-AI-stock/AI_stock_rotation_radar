@@ -37,6 +37,27 @@ def number(value):
     return float(str(value).replace('NT$', '').replace(',', ''))
 
 
+def guard_unconfirmed_cash(rows, actual_ledger):
+    """An unconfirmed post-trade balance must survive daily republication."""
+    pending = any(len(r) > 10 and r[2] == '實際成交（人工）' and r[10] == '待確認'
+                  for r in actual_ledger[1:])
+    if not pending:
+        return rows
+    for row in rows:
+        if not row:
+            continue
+        if row[0] == '資料狀態':
+            row[1] += '；新增成交後現金／資金來源待確認，總資產與總報酬暫不結算。'
+        if row[0] == '現金餘額':
+            row[0] = '前次帳面現金（成交前）'
+            row[3] = '待現金與資金來源核對'
+        if len(row) > 3 and row[2] == '相對期初本金損益（含提領）':
+            row[3] = '待資金來源核對'
+        if row[0] == '現金確認':
+            row[1] = '新增成交後餘額待Ryan確認；前次現金不是目前可用資金，不自行推定入金。'
+    return rows
+
+
 def build_actual_dashboard(account_rows, payload, actual_ledger):
     from .c6_dashboard_layout import layout
     from .c6_dashboard_publish import MODEL_LOGIC
@@ -58,7 +79,7 @@ def build_actual_dashboard(account_rows, payload, actual_ledger):
     benchmark = json.loads(benchmark_path.read_text(encoding='utf-8')) if benchmark_path.exists() else {}
     historical = _legacy_dashboard_values(model_version='score0', snapshot_as_of=payload['ranking_snapshot_as_of'],
         data_status='ready', slots=[], historical_benchmark=benchmark)[23:27]
-    return layout(title='Ryan｜C6實際帳戶（含V4-D歷史成交）', date=payload['ranking_snapshot_as_of'],
+    rows = layout(title='Ryan｜C6實際帳戶（含V4-D歷史成交）', date=payload['ranking_snapshot_as_of'],
         status='排名與官方收盤已接通；現金為最近回報餘額，完整退出及公司行動覆蓋仍待完成。',
         top_rows=top, holdings=holdings, cash=cash, realized=realized, withdrawals=withdrawals,
         model_logic='實際帳戶：8/5開始計算；9/3為原建檔日。京鼎為V4-D已結束交易，僅納入實際損益，不是C6績效。已有持股不重新均分；未成交不入帳。\n\n'+MODEL_LOGIC,
@@ -66,6 +87,7 @@ def build_actual_dashboard(account_rows, payload, actual_ledger):
                  ['現金確認', f'帳面現金{cash:,.2f}元；以已確認餘額及成交更新，未回報實際提領不自行扣款。'],
                  ['原持倉建檔日', '2026-09-03'], ['實際買入日期', '依實際交易紀錄的期初登錄與已確認人工買進；詳見各檔R欄。'],
                  ['持有高點／退出狀態', '逐檔完整資料見實際交易紀錄R欄；未知條件不標為未觸發。']])
+    return guard_unconfirmed_cash(rows, actual_ledger)
 
 
 def daily_observation_rows(account_rows: list, payload: dict, actual_ledger: list | None = None) -> list:

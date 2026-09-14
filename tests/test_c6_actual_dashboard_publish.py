@@ -6,6 +6,15 @@ from rotation_radar import sheets_retry
 
 
 class ActualSignalsTests(unittest.TestCase):
+    def test_pending_cash_is_not_republished_as_current_nav(self):
+        rows=[['資料狀態','ready'],['現金餘額',125708,'帳戶總資產（參考估值）',7000000],
+              ['期初總資產',7676961.04,'相對期初本金損益（含提領）',-1]]
+        ledger=[['header'],['2026-09-14',5,'實際成交（人工）','2344','華邦電','加碼',164.14,2000,328280,'','待確認']]
+        result=actual.guard_unconfirmed_cash(rows,ledger)
+        self.assertEqual(result[1][1],125708)
+        self.assertEqual(result[1][3],'待現金與資金來源核對')
+        self.assertEqual(result[2][3],'待資金來源核對')
+
     def test_manual_buy_has_entry_date_without_becoming_initial_registration(self):
         rows=[[],[]]+[[i,'未持有／預留位置'] for i in range(1,5)]+[[5,'2344 華邦電｜1000股',179.65,179650]]
         ledger=[['header'],['2026-09-10',5,'實際成交（人工）','2344','華邦電','買進']+['']*11+['實際買入日2026-09-10；含費']]
