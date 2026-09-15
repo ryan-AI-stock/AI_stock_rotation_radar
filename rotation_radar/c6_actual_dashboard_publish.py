@@ -43,18 +43,26 @@ def guard_unconfirmed_cash(rows, actual_ledger):
                   for r in actual_ledger[1:])
     if not pending:
         return rows
+    pnl = next((number(r[1]) + number(r[3]) for r in rows
+                if len(r) > 3 and r[0] == '已實現交易損益'), None)
     for row in rows:
         if not row:
             continue
         if row[0] == '資料狀態':
-            row[1] += '；新增成交後現金／資金來源待確認，總資產與總報酬暫不結算。'
+            row[1] = '排名、官方收盤與持股估值已更新；新增資金來源已說明，無須再次提供。未登錄精確現金及入金金額，不列帳戶總資產與報酬率；完整退出及公司行動覆蓋仍待完成。'
         if row[0] == '現金餘額':
             row[0] = '前次帳面現金（成交前）'
-            row[3] = '待現金與資金來源核對'
+            row[3] = '不列示（現金未完整登錄）'
         if len(row) > 3 and row[2] == '相對期初本金損益（含提領）':
-            row[3] = '待資金來源核對'
+            row[2] = '股票累計損益（已實現＋未實現）'
+            row[3] = round(pnl, 2) if pnl is not None else '無可用損益'
+            if len(row) > 5:
+                row[4] = '帳戶報酬率'
+                row[5] = '不列示（入金未完整登錄）'
         if row[0] == '現金確認':
-            row[1] = '新增成交後餘額待Ryan確認；前次現金不是目前可用資金，不自行推定入金。'
+            row[1] = 'Ryan已說明另有現金來源，無須再次提供；保留前次餘額作紀錄，不當成目前可用現金，不推算入金。'
+        if row[0] == '損益口徑':
+            row[1] = '股票累計損益＝已實現交易損益＋未實現持股損益；不含未核對股利與未發生賣出費用，不是完整帳戶報酬。提領不是虧損。'
     return rows
 
 
