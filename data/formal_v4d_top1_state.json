@@ -1,16 +1,16 @@
 {
   "version": 2,
   "model": "V4-D",
-  "ticker": "2484",
-  "name": "希華",
+  "ticker": "6446",
+  "name": "藥華藥",
   "market": "TWSE",
-  "signal_date": "2026-09-16",
-  "signal_close": 71.4,
-  "execution_date": "2026-09-17",
+  "signal_date": "2026-09-17",
+  "signal_close": 1195.0,
+  "execution_date": "2026-09-18",
   "entry_close": null,
   "status": "signal_only",
   "daily_marks": {},
   "candidate_rank": 1,
-  "industry": "電子零組件業",
+  "industry": "生技醫療業",
   "layer1_snapshot_date": "20260728"
 }

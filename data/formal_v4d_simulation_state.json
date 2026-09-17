@@ -139,7 +139,7 @@
     "shares": 1234,
     "buy_fee": 12303.75125,
     "position_cost": 6645053.75125,
-    "status": "holding",
+    "status": "pending_sell",
     "daily_marks": {
       "2026-09-09": {
         "close": 5375.0,
@@ -206,11 +206,35 @@
         "peak_after_cost_return_pct": -0.6697575996526428,
         "trailing_drawdown_pct": -5.395348837209301,
         "rolling_5td_return_pct": -5.395348837209301
+      },
+      "2026-09-17": {
+        "close": 4695.0,
+        "daily_return_pct": -7.669616519174038,
+        "d_index": 6,
+        "model_td": 7,
+        "cumulative_return_pct": -12.65116279069768,
+        "after_cost_return_pct": -13.236188266115201,
+        "peak_after_cost_return_pct": -0.6697575996526428,
+        "trailing_drawdown_pct": -12.65116279069768,
+        "rolling_5td_return_pct": -12.488350419384897
       }
     },
-    "pending_exit": null,
+    "pending_exit": {
+      "decision_date": "2026-09-17",
+      "execution_date": "2026-09-18",
+      "reason": "任意5TD價格下跌達10%",
+      "replacement": {
+        "ticker": "6446",
+        "name": "藥華藥",
+        "market": "TWSE",
+        "signal_date": "2026-09-17",
+        "signal_close": 1195.0,
+        "execution_date": "2026-09-18",
+        "blocked": false
+      }
+    },
     "simulation_position": true,
-    "last_report_date": "2026-09-16"
+    "last_report_date": "2026-09-17"
   },
   "pending_entry": null,
   "as_of_date": "2026-08-21",
