@@ -2,7 +2,7 @@
   "schema_version": 1,
   "account_type": "formal_v4d_forward_simulation",
   "initial_capital": 7000000.0,
-  "cash": 3179.701770249754,
+  "cash": 259.37967025022954,
   "transactions": [
     {
       "trade_date": "2026-08-05",
@@ -127,23 +127,53 @@
       "realized_return_pct": -0.669757599652632,
       "cash_after": 3179.701770249754,
       "reason": "每月提領：第二個星期三，整股賣出後提領淨額"
+    },
+    {
+      "trade_date": "2026-09-18",
+      "action": "sell",
+      "ticker": "2383",
+      "name": "台光電",
+      "execution_price": 4890.0,
+      "shares": 1234,
+      "gross_amount": 6034260.0,
+      "transaction_cost": 29296.3323,
+      "net_cash_flow": 6004963.6677,
+      "cash_after": 6008143.36947025,
+      "realized_pnl": -640090.0835499996,
+      "realized_return_pct": -9.632579472056076,
+      "reason": "任意5TD價格下跌達10%"
+    },
+    {
+      "trade_date": "2026-09-18",
+      "action": "buy",
+      "ticker": "6446",
+      "name": "藥華藥",
+      "execution_price": 1180.0,
+      "shares": 5082,
+      "gross_amount": 5996760.0,
+      "transaction_cost": 11123.9898,
+      "net_cash_flow": -6007883.9898,
+      "cash_after": 259.37967025022954,
+      "signal_date": "2026-09-17",
+      "signal_close": 1195.0,
+      "reason": "前一持股退出後依前一交易日Top1換倉"
     }
   ],
   "position": {
-    "ticker": "2383",
-    "name": "台光電",
-    "signal_date": "2026-09-08",
-    "signal_close": 5340.0,
-    "execution_date": "2026-09-09",
-    "entry_close": 5375.0,
-    "shares": 1234,
-    "buy_fee": 12303.75125,
-    "position_cost": 6645053.75125,
-    "status": "pending_sell",
+    "ticker": "6446",
+    "name": "藥華藥",
+    "signal_date": "2026-09-17",
+    "signal_close": 1195.0,
+    "execution_date": "2026-09-18",
+    "entry_close": 1180.0,
+    "shares": 5082,
+    "buy_fee": 11123.9898,
+    "position_cost": 6007883.9898,
+    "status": "holding",
     "daily_marks": {
-      "2026-09-09": {
-        "close": 5375.0,
-        "daily_return_pct": 0.655430711610494,
+      "2026-09-18": {
+        "close": 1180.0,
+        "daily_return_pct": -1.2552301255230103,
         "d_index": 0,
         "model_td": 1,
         "cumulative_return_pct": 0.0,
@@ -151,90 +181,11 @@
         "peak_after_cost_return_pct": -0.6697575996526428,
         "trailing_drawdown_pct": 0.0,
         "rolling_5td_return_pct": null
-      },
-      "2026-09-10": {
-        "close": 5375.0,
-        "daily_return_pct": 0.0,
-        "d_index": 1,
-        "model_td": 2,
-        "cumulative_return_pct": 0.0,
-        "after_cost_return_pct": -0.6697575996526428,
-        "peak_after_cost_return_pct": -0.6697575996526428,
-        "trailing_drawdown_pct": 0.0,
-        "rolling_5td_return_pct": null
-      },
-      "2026-09-11": {
-        "close": 5365.0,
-        "daily_return_pct": -0.18604651162790198,
-        "d_index": 2,
-        "model_td": 3,
-        "cumulative_return_pct": -0.18604651162790198,
-        "after_cost_return_pct": -0.8545580506300277,
-        "peak_after_cost_return_pct": -0.6697575996526428,
-        "trailing_drawdown_pct": -0.18604651162790198,
-        "rolling_5td_return_pct": null
-      },
-      "2026-09-14": {
-        "close": 5345.0,
-        "daily_return_pct": -0.37278657968312645,
-        "d_index": 3,
-        "model_td": 4,
-        "cumulative_return_pct": -0.558139534883717,
-        "after_cost_return_pct": -1.2241589525848195,
-        "peak_after_cost_return_pct": -0.6697575996526428,
-        "trailing_drawdown_pct": -0.5581395348837281,
-        "rolling_5td_return_pct": null
-      },
-      "2026-09-15": {
-        "close": 5115.0,
-        "daily_return_pct": -4.303086997193639,
-        "d_index": 4,
-        "model_td": 5,
-        "cumulative_return_pct": -4.837209302325585,
-        "after_cost_return_pct": -5.474569325064804,
-        "peak_after_cost_return_pct": -0.6697575996526428,
-        "trailing_drawdown_pct": -4.837209302325595,
-        "rolling_5td_return_pct": -4.837209302325585
-      },
-      "2026-09-16": {
-        "close": 5085.0,
-        "daily_return_pct": -0.5865102639296182,
-        "d_index": 5,
-        "model_td": 6,
-        "cumulative_return_pct": -5.395348837209301,
-        "after_cost_return_pct": -6.02897067799697,
-        "peak_after_cost_return_pct": -0.6697575996526428,
-        "trailing_drawdown_pct": -5.395348837209301,
-        "rolling_5td_return_pct": -5.395348837209301
-      },
-      "2026-09-17": {
-        "close": 4695.0,
-        "daily_return_pct": -7.669616519174038,
-        "d_index": 6,
-        "model_td": 7,
-        "cumulative_return_pct": -12.65116279069768,
-        "after_cost_return_pct": -13.236188266115201,
-        "peak_after_cost_return_pct": -0.6697575996526428,
-        "trailing_drawdown_pct": -12.65116279069768,
-        "rolling_5td_return_pct": -12.488350419384897
       }
     },
-    "pending_exit": {
-      "decision_date": "2026-09-17",
-      "execution_date": "2026-09-18",
-      "reason": "任意5TD價格下跌達10%",
-      "replacement": {
-        "ticker": "6446",
-        "name": "藥華藥",
-        "market": "TWSE",
-        "signal_date": "2026-09-17",
-        "signal_close": 1195.0,
-        "execution_date": "2026-09-18",
-        "blocked": false
-      }
-    },
+    "pending_exit": null,
     "simulation_position": true,
-    "last_report_date": "2026-09-17"
+    "last_report_date": "2026-09-18"
   },
   "pending_entry": null,
   "as_of_date": "2026-08-21",

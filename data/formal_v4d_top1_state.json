@@ -1,16 +1,16 @@
 {
   "version": 2,
   "model": "V4-D",
-  "ticker": "6446",
-  "name": "藥華藥",
+  "ticker": "2324",
+  "name": "仁寶",
   "market": "TWSE",
-  "signal_date": "2026-09-17",
-  "signal_close": 1195.0,
-  "execution_date": "2026-09-18",
+  "signal_date": "2026-09-18",
+  "signal_close": 37.7,
+  "execution_date": "2026-09-21",
   "entry_close": null,
   "status": "signal_only",
   "daily_marks": {},
   "candidate_rank": 1,
-  "industry": "生技醫療業",
+  "industry": "電腦及週邊設備業",
   "layer1_snapshot_date": "20260728"
 }
