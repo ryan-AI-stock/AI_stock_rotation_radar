@@ -9,7 +9,7 @@ def request(method, *args, **kwargs):
             response = method(*args, **kwargs)
             if response.status_code not in {408, 429, 500, 502, 503, 504} or attempt == 2:
                 return response
-        except (requests.Timeout, requests.ConnectionError):
+        except (requests.Timeout, requests.ConnectionError, requests.exceptions.ChunkedEncodingError):
             if attempt == 2:
                 raise
         time.sleep(2 ** attempt)

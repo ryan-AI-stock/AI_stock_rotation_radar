@@ -1,6 +1,11 @@
 name: Update V4-D Top1 Dashboard
 
 on:
+  workflow_dispatch:
+    inputs:
+      report_date:
+        required: true
+        type: string
   workflow_call:
     inputs:
       report_date:
@@ -102,7 +107,7 @@ jobs:
         shell: bash
         run: |
           set +e
-          python -m rotation_radar.v4d_top1_signal \
+          python -m rotation_radar.retry_command -- python -m rotation_radar.v4d_top1_signal \
             --date "${{ steps.report-date.outputs.target_date }}" \
             --source-repo . \
             --source-cache data/current_base_cycle_source_cache \
@@ -112,7 +117,7 @@ jobs:
           set -e
           if [ "$status" -eq 75 ]; then
             echo "signal_ready=false" >> "$GITHUB_OUTPUT"
-            echo "正式V4-D當日資料尚未完整，排程稍後自動重試。" >> "$GITHUB_STEP_SUMMARY"
+            echo "正式V4-D資料下載已重試3次仍不完整；保持失敗，交由逐項發布稽核補救。" >> "$GITHUB_STEP_SUMMARY"
             if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
               echo "::notice::正式V4-D資料尚未完整；本次不更新Dashboard。"
             fi
@@ -126,7 +131,7 @@ jobs:
         shell: bash
         run: |
           set +e
-          python -m rotation_radar.v4d_top1_daily_report \
+          python -m rotation_radar.retry_command -- python -m rotation_radar.v4d_top1_daily_report \
             --date "${{ steps.report-date.outputs.target_date }}" \
             --source-repo . \
             --state data/formal_v4d_top1_state.json \
@@ -137,7 +142,7 @@ jobs:
           set -e
           if [ "$status" -eq 75 ]; then
             echo "report_ready=false" >> "$GITHUB_OUTPUT"
-            echo "資料尚未完整，排程稍後自動重試。" >> "$GITHUB_STEP_SUMMARY"
+            echo "帳戶資料已重試3次仍不完整；不發布舊資料。" >> "$GITHUB_STEP_SUMMARY"
             if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
               echo "::notice::V4-D資料尚未完整；本次不更新Dashboard。"
             fi

@@ -94,7 +94,7 @@ jobs:
         shell: bash
         run: |
           set +e
-          python -m rotation_radar.c6_daily_pipeline \
+          python -m rotation_radar.retry_command -- python -m rotation_radar.c6_daily_pipeline \
             --date "${{ steps.report-date.outputs.target_date }}" \
             --source-repo . \
             --source-cache data/current_base_cycle_source_cache \
