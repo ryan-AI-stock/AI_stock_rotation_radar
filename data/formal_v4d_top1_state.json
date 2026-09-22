@@ -4,13 +4,13 @@
   "ticker": "2324",
   "name": "仁寶",
   "market": "TWSE",
-  "signal_date": "2026-09-21",
-  "signal_close": 37.6,
-  "execution_date": "2026-09-22",
+  "signal_date": "2026-09-22",
+  "signal_close": 37.05,
+  "execution_date": "2026-09-23",
   "entry_close": null,
   "status": "signal_only",
   "daily_marks": {},
-  "candidate_rank": 1,
+  "candidate_rank": 2,
   "industry": "電腦及週邊設備業",
   "layer1_snapshot_date": "20260728"
 }
