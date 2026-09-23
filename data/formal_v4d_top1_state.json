@@ -1,16 +1,16 @@
 {
   "version": 2,
   "model": "V4-D",
-  "ticker": "2324",
-  "name": "仁寶",
+  "ticker": "2618",
+  "name": "長榮航",
   "market": "TWSE",
-  "signal_date": "2026-09-22",
-  "signal_close": 37.05,
-  "execution_date": "2026-09-23",
+  "signal_date": "2026-09-23",
+  "signal_close": 42.85,
+  "execution_date": "2026-09-24",
   "entry_close": null,
   "status": "signal_only",
   "daily_marks": {},
-  "candidate_rank": 2,
-  "industry": "電腦及週邊設備業",
+  "candidate_rank": 1,
+  "industry": "航運業",
   "layer1_snapshot_date": "20260728"
 }
