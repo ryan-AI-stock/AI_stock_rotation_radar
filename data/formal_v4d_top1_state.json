@@ -1,16 +1,16 @@
 {
   "version": 2,
   "model": "V4-D",
-  "ticker": "6182",
-  "name": "合晶",
-  "market": "TPEx",
-  "signal_date": "2026-09-24",
-  "signal_close": 120.5,
-  "execution_date": "2026-09-29",
+  "ticker": "3167",
+  "name": "大量",
+  "market": "TWSE",
+  "signal_date": "2026-09-29",
+  "signal_close": 903.0,
+  "execution_date": "2026-09-30",
   "entry_close": null,
   "status": "signal_only",
   "daily_marks": {},
   "candidate_rank": 1,
-  "industry": "半導體業",
+  "industry": "電機機械",
   "layer1_snapshot_date": "20260728"
 }
