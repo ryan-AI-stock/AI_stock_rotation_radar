@@ -1,16 +1,16 @@
 {
   "version": 2,
   "model": "V4-D",
-  "ticker": "3167",
-  "name": "大量",
+  "ticker": "1326",
+  "name": "台化",
   "market": "TWSE",
-  "signal_date": "2026-09-29",
-  "signal_close": 903.0,
-  "execution_date": "2026-09-30",
+  "signal_date": "2026-09-30",
+  "signal_close": 69.7,
+  "execution_date": "2026-10-01",
   "entry_close": null,
   "status": "signal_only",
   "daily_marks": {},
   "candidate_rank": 1,
-  "industry": "電機機械",
+  "industry": "塑膠工業",
   "layer1_snapshot_date": "20260728"
 }
