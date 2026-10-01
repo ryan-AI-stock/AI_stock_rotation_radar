@@ -14,6 +14,16 @@ class ConsensusLoadResult:
     rejected: tuple[dict[str, str], ...]
 
 
+@dataclass(frozen=True)
+class ConsensusEvidence:
+    ticker: str
+    fiscal_year: int
+    source_url: str
+    source_family: str
+    source_tier: int
+    available_at: str
+
+
 def load_consensus_csv(path: str | Path, *, as_of_date: str) -> ConsensusLoadResult:
     """Read public estimate evidence with strict PIT and quality gates."""
     records: list[ConsensusRecord] = []
@@ -49,10 +59,38 @@ def load_consensus_csv(path: str | Path, *, as_of_date: str) -> ConsensusLoadRes
     return ConsensusLoadResult(tuple(records), tuple(rejected))
 
 
+def load_consensus_evidence(path: str | Path, *, as_of_date: str) -> tuple[list[ConsensusEvidence], list[dict[str, str]]]:
+    accepted: list[ConsensusEvidence] = []
+    rejected: list[dict[str, str]] = []
+    with Path(path).open(encoding="utf-8-sig", newline="") as handle:
+        for line_no, row in enumerate(csv.DictReader(handle), start=2):
+            try:
+                required = ("ticker", "fiscal_year", "source_url", "source_family", "source_tier", "available_at")
+                missing = [key for key in required if not str(row.get(key, "")).strip()]
+                if missing:
+                    raise ValueError("missing:" + ",".join(missing))
+                if date.fromisoformat(row["available_at"][:10]) > date.fromisoformat(as_of_date):
+                    raise ValueError("future_data")
+                accepted.append(ConsensusEvidence(
+                    ticker=row["ticker"].strip(), fiscal_year=int(row["fiscal_year"]),
+                    source_url=row["source_url"].strip(), source_family=row["source_family"].strip(),
+                    source_tier=int(row["source_tier"]), available_at=row["available_at"],
+                ))
+            except (KeyError, TypeError, ValueError) as exc:
+                rejected.append({"line": str(line_no), "ticker": row.get("ticker", ""), "error": str(exc)})
+    return accepted, rejected
+
+
 def consensus_actionable(records: list[ConsensusRecord] | tuple[ConsensusRecord, ...], *, ticker: str,
-                         fiscal_year: int) -> bool:
+                         fiscal_year: int, evidence: list[ConsensusEvidence] | None = None) -> bool:
     rows = [row for row in records if row.ticker == ticker and row.fiscal_year == fiscal_year]
-    return any(row.quality in {"MEDIUM", "HIGH"} and row.analyst_count >= 2 and row.status == "READY" for row in rows)
+    record_ready = any(row.quality in {"MEDIUM", "HIGH"} and row.analyst_count >= 2 and row.status == "READY" for row in rows)
+    if not record_ready:
+        return False
+    if evidence is None:
+        return True
+    support = [row for row in evidence if row.ticker == ticker and row.fiscal_year == fiscal_year]
+    return len({row.source_family for row in support}) >= 2 and any(row.source_tier <= 2 for row in support)
 
 
 def _optional_float(value: str | None) -> float | None:

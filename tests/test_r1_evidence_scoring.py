@@ -2,7 +2,7 @@ import unittest
 from pathlib import Path
 from tempfile import TemporaryDirectory
 
-from r1.consensus import consensus_actionable, load_consensus_csv
+from r1.consensus import ConsensusEvidence, consensus_actionable, load_consensus_csv
 from r1.evidence import CatalystEvent, discovery_eligible, load_catalyst_csv
 from r1.scoring import action, score
 
@@ -59,6 +59,11 @@ class R1EvidenceScoringTest(unittest.TestCase):
             result = load_consensus_csv(path, as_of_date="2026-10-01")
             self.assertEqual(result.records[0].status, "EVIDENCE_ONLY")
             self.assertFalse(consensus_actionable(result.records, ticker="2408", fiscal_year=2027))
+
+    def test_ready_consensus_still_requires_two_source_families(self):
+        evidence = [ConsensusEvidence("2408", 2027, "a", "same", 1, "2026-09-01"),
+                    ConsensusEvidence("2408", 2027, "b", "same", 2, "2026-09-02")]
+        self.assertFalse(consensus_actionable([], ticker="2408", fiscal_year=2027, evidence=evidence))
 
 
 if __name__ == "__main__":

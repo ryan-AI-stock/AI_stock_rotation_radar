@@ -1,0 +1,7 @@
+ticker,fiscal_year,source_url,source_family,source_tier,available_at,note
+2330,2027,https://toalpha.tw/stock/2330/eps,toalpha_consensus,2,2026-09-09,35家共識平均142.33
+2330,2027,https://www.megasia.com.tw/emegaResearch/openReportPDF.do?id=6903f77ff40000008560,mega_research,1,2026-04-30,兆豐研究2027 EPS 131.6
+2327,2027,https://toalpha.tw/stock/2327/estimates,toalpha_consensus,2,2026-09-09,16家共識平均31.43
+2327,2027,https://www.scribd.com/document/1038946203/%E5%AF%8C%E9%82%A6-2327-%E5%9C%8B%E5%B7%A8-20260416,fubon_research,2,2026-04-16,富邦研究2027 EPS 19.31
+2344,2027,https://toalpha.tw/stock/2344/valuation,toalpha_consensus,2,2026-09-30,9家共識平均52.01
+2344,2027,https://hk.finance.yahoo.com/quote/2344.TW/analysis/,lseg_yahoo_consensus,2,2026-09-30,7家共識平均52.28

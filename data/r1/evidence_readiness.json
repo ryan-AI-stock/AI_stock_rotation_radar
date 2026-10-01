@@ -3,14 +3,11 @@
   "as_of_date": "2026-10-01",
   "fiscal_year": 2027,
   "requested_ticker_count": 14,
-  "consensus_ready_count": 0,
+  "consensus_ready_count": 3,
   "catalyst_ready_count": 0,
   "trade_ready_count": 0,
-  "consensus_rejected": [
-    {
-      "error": "file_missing"
-    }
-  ],
+  "consensus_rejected": [],
+  "consensus_evidence_rejected": [],
   "catalyst_rejected": [
     {
       "error": "file_missing"
@@ -19,19 +16,19 @@
   "rows": [
     {
       "ticker": "2330",
-      "consensus_ready": false,
+      "consensus_ready": true,
       "catalyst_ready": false,
       "trade_ready": false
     },
     {
       "ticker": "2327",
-      "consensus_ready": false,
+      "consensus_ready": true,
       "catalyst_ready": false,
       "trade_ready": false
     },
     {
       "ticker": "2344",
-      "consensus_ready": false,
+      "consensus_ready": true,
       "catalyst_ready": false,
       "trade_ready": false
     },

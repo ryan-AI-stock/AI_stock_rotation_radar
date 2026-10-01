@@ -1,0 +1,4 @@
+ticker,fiscal_year,mean_eps,median_eps,high_eps,low_eps,analyst_count,source,published_at,available_at,retrieved_at,quality,status
+2330,2027,142.33,142.33,,,35,ToAlpha public consensus,2026-09-09,2026-09-09,2026-10-01,MEDIUM,READY
+2327,2027,31.43,31.43,35.40,24.48,16,ToAlpha public consensus,2026-09-09,2026-09-09,2026-10-01,MEDIUM,READY
+2344,2027,52.01,52.01,,,9,ToAlpha public consensus,2026-09-30,2026-09-30,2026-10-01,MEDIUM,READY
