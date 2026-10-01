@@ -10,8 +10,10 @@ from r1.providers import MissingConsensusProvider
 
 def build_weekly_snapshot(
     *, date: str, config_path: str | Path, market_path: str | Path,
-    daily_source_root: str | Path, output_root: str | Path,
+    daily_source_root: str | Path, output_root: str | Path, week_final_confirmed: bool = False,
 ) -> Path:
+    if not week_final_confirmed:
+        raise ValueError("formal weekly snapshot requires week_final_confirmed=true")
     config = R1Config.load(config_path)
     market = json.loads(Path(market_path).read_text(encoding="utf-8"))
     if market.get("date") != date:
@@ -84,9 +86,11 @@ def main() -> None:
     parser.add_argument("--market", required=True)
     parser.add_argument("--daily-source-root", default="data/r1/daily_sources")
     parser.add_argument("--output-root", default="data/r1/weekly")
+    parser.add_argument("--week-final-confirmed", action="store_true")
     args = parser.parse_args()
     print(build_weekly_snapshot(date=args.date, config_path=args.config, market_path=args.market,
-                                daily_source_root=args.daily_source_root, output_root=args.output_root))
+                                daily_source_root=args.daily_source_root, output_root=args.output_root,
+                                week_final_confirmed=args.week_final_confirmed))
 
 
 if __name__ == "__main__":
