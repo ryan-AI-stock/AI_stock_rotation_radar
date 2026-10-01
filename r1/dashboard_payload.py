@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import argparse
 import json
 from pathlib import Path
 
@@ -48,3 +49,20 @@ def build_dashboard_payload(*, config_path: str | Path, market_path: str | Path)
     return {"model": "R1", "date": market["date"], "tabs": tabs,
             "formal_model_changed": False, "trade_decision_changed": False,
             "active_in_trade_decision": False, "report_changed": False}
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description="Build the local R1 dashboard payload.")
+    parser.add_argument("--config", default="config/r1.json")
+    parser.add_argument("--market", required=True)
+    parser.add_argument("--output", default="data/r1/dashboard_payload.json")
+    args = parser.parse_args()
+    payload = build_dashboard_payload(config_path=args.config, market_path=args.market)
+    output = Path(args.output)
+    output.parent.mkdir(parents=True, exist_ok=True)
+    output.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    print(output)
+
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,20 @@
+{
+  "version": "r1-bottleneck-seed-0.1",
+  "status": "hypothesis_only_needs_evidence",
+  "rows": [
+    {"ticker": "2330", "categories": ["Compute", "Advanced Packaging"], "stage": "FINANCIAL_PROOF", "evidence_status": "NEEDS_CURRENT_EVIDENCE"},
+    {"ticker": "2327", "categories": ["Passive Components"], "stage": "THESIS", "evidence_status": "NEEDS_CURRENT_EVIDENCE"},
+    {"ticker": "2344", "categories": ["Memory"], "stage": "THESIS", "evidence_status": "NEEDS_CURRENT_EVIDENCE"},
+    {"ticker": "2376", "categories": ["AI Server / Rack"], "stage": "FINANCIAL_PROOF", "evidence_status": "NEEDS_CURRENT_EVIDENCE"},
+    {"ticker": "2454", "categories": ["Compute", "Custom ASIC"], "stage": "THESIS", "evidence_status": "NEEDS_CURRENT_EVIDENCE"},
+    {"ticker": "3037", "categories": ["Substrate", "PCB"], "stage": "FINANCIAL_PROOF", "evidence_status": "NEEDS_CURRENT_EVIDENCE"},
+    {"ticker": "6488", "categories": ["Wafer"], "stage": "THESIS", "evidence_status": "NEEDS_CURRENT_EVIDENCE"},
+    {"ticker": "2408", "categories": ["Memory"], "stage": "THESIS", "evidence_status": "NEEDS_CURRENT_EVIDENCE"},
+    {"ticker": "2303", "categories": ["Wafer", "Foundry"], "stage": "FINANCIAL_PROOF", "evidence_status": "NEEDS_CURRENT_EVIDENCE"},
+    {"ticker": "3363", "categories": ["Optical / CPO"], "stage": "QUALIFICATION", "evidence_status": "NEEDS_CURRENT_EVIDENCE"},
+    {"ticker": "3081", "categories": ["Optical / CPO"], "stage": "QUALIFICATION", "evidence_status": "NEEDS_CURRENT_EVIDENCE"},
+    {"ticker": "3711", "categories": ["Advanced Packaging"], "stage": "FINANCIAL_PROOF", "evidence_status": "NEEDS_CURRENT_EVIDENCE"},
+    {"ticker": "2308", "categories": ["Power", "Cooling"], "stage": "FINANCIAL_PROOF", "evidence_status": "NEEDS_CURRENT_EVIDENCE"},
+    {"ticker": "2379", "categories": ["Networking"], "stage": "FINANCIAL_PROOF", "evidence_status": "NEEDS_CURRENT_EVIDENCE"}
+  ]
+}

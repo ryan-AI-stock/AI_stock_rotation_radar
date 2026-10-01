@@ -1,0 +1,73 @@
+name: R1 Daily Market Update
+
+on:
+  schedule:
+    - cron: "0 9-15 * * 1-5"
+  workflow_dispatch:
+    inputs:
+      report_date:
+        description: "Optional Taiwan trading date, YYYY-MM-DD"
+        required: false
+        default: ""
+
+concurrency:
+  group: r1-daily
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          repository: ryan-AI-stock/AI_stock_schedule_rules
+          ref: main
+          path: AI_stock_schedule_rules
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install '.[test]'
+      - name: Resolve target trading date
+        id: gate
+        shell: bash
+        run: |
+          if [ -n "${{ inputs.report_date }}" ]; then
+            d="${{ inputs.report_date }}"
+            printf 'should_run=true\ntarget_date=%s\ntarget_key=%s\nreason=manual\n' "$d" "${d//-/}" >> "$GITHUB_OUTPUT"
+          else
+            python -m r1.schedule --profile daily --rules AI_stock_schedule_rules/schedule_rules.json
+          fi
+      - name: Restore source cache
+        if: steps.gate.outputs.should_run == 'true'
+        uses: actions/cache@v4
+        with:
+          path: data/current_base_cycle_source_cache
+          key: r1-source-${{ github.ref_name }}-${{ github.run_id }}
+          restore-keys: |
+            r1-source-${{ github.ref_name }}-
+            c6-source-${{ github.ref_name }}-
+      - name: Validate R1
+        if: steps.gate.outputs.should_run == 'true'
+        run: python -m unittest discover -s tests -p 'test_r1*.py' -v
+      - name: Materialize official R1 daily data
+        if: steps.gate.outputs.should_run == 'true'
+        run: |
+          python -m r1.market_snapshot --date "${{ steps.gate.outputs.target_date }}" --output data/r1/daily_market_latest.json
+          python -m r1.daily_sources --start "${{ steps.gate.outputs.target_date }}" --end "${{ steps.gate.outputs.target_date }}" --retry-incomplete
+          python -m r1.dashboard_payload --market data/r1/daily_market_latest.json --output data/r1/dashboard_payload.json
+      - name: Commit durable R1 source state
+        if: steps.gate.outputs.should_run == 'true'
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/r1/daily_market_latest.json data/r1/daily_sources data/r1/dashboard_payload.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Update R1 daily source state"
+          git pull --rebase origin main
+          git push origin HEAD:main
+

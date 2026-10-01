@@ -11,6 +11,7 @@ from rotation_radar.daily_risk_features import fetch_chip_family, fetch_price
 
 def materialize_daily_sources(
     *, start: date, end: date, config_path: str | Path, output_root: str | Path,
+    retry_incomplete: bool = False,
 ) -> dict:
     config = R1Config.load(config_path)
     wanted = {security.ticker for security in config.securities}
@@ -28,6 +29,8 @@ def materialize_daily_sources(
         if path.exists():
             payload = json.loads(path.read_text(encoding="utf-8"))
         else:
+            payload = {}
+        if not payload or (retry_incomplete and not _chip_ready(payload)):
             price_rows, price_sources = fetch_price(current, wanted)
             chip_rows, chip_sources = fetch_chip_family(current, wanted)
             payload = {
@@ -68,16 +71,25 @@ def materialize_daily_sources(
     return manifest
 
 
+def _chip_ready(payload: dict) -> bool:
+    wanted = {("institutional", market) for market in ("TWSE", "TPEx")} | {
+        ("margin_short", market) for market in ("TWSE", "TPEx")
+    }
+    states = {(row.get("family"), row.get("market")): row.get("status") for row in payload.get("sources", [])}
+    return all(states.get(key) == "accepted" for key in wanted)
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Materialize checkpointed official R1 daily sources.")
     parser.add_argument("--start", required=True)
     parser.add_argument("--end", required=True)
     parser.add_argument("--config", default="config/r1.json")
     parser.add_argument("--output-root", default="data/r1/daily_sources")
+    parser.add_argument("--retry-incomplete", action="store_true")
     args = parser.parse_args()
     result = materialize_daily_sources(
         start=date.fromisoformat(args.start), end=date.fromisoformat(args.end),
-        config_path=args.config, output_root=args.output_root,
+        config_path=args.config, output_root=args.output_root, retry_incomplete=args.retry_incomplete,
     )
     print(json.dumps(result, ensure_ascii=False))
     if result["blocked"]:
