@@ -27,12 +27,14 @@ def score(*, components: dict[str, float | None], weights: dict[str, float], con
 def action(
     *, total_score: float | None, core_lock: bool, consensus_allowed: bool,
     eps_revision: float | None, base_upside: float | None, overheat_high: bool,
-    thesis_broken: bool, rotation_advantage: float | None,
+    thesis_broken: bool, rotation_advantage: float | None, policy_approved: bool = False,
 ) -> tuple[str, str]:
     if core_lock:
         return "CORE", "CORE_LOCK"
     if not consensus_allowed or total_score is None:
         return "DATA_MISSING", "CONSENSUS_OR_SCORE_NOT_READY"
+    if not policy_approved:
+        return "WATCH", "ACTION_THRESHOLDS_NOT_APPROVED"
     if thesis_broken or (eps_revision is not None and eps_revision < 0):
         return "EXIT", "THESIS_BROKEN_OR_EPS_REVISION_NEGATIVE"
     if overheat_high:
