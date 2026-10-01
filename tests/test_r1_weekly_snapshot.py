@@ -35,6 +35,23 @@ class R1WeeklySnapshotTest(unittest.TestCase):
             with self.assertRaises(FileExistsError):
                 build_weekly_snapshot(**kwargs)
 
+    def test_verified_consensus_enters_snapshot_as_watch_only(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            output = build_weekly_snapshot(
+                date="2026-10-01", config_path=ROOT / "config/r1.json",
+                market_path=ROOT / "data/r1/daily_market_20261001.json",
+                daily_source_root=root / "daily", output_root=root / "weekly", week_final_confirmed=True,
+                consensus_path=ROOT / "data/r1/consensus/consensus.csv",
+                consensus_evidence_path=ROOT / "data/r1/consensus/evidence.csv",
+            )
+            payload = json.loads(output.read_text(encoding="utf-8"))
+            mediatek = next(row for row in payload["rows"] if row["ticker"] == "2454")
+            self.assertEqual(mediatek["next_year_eps"], 141.32)
+            self.assertTrue(mediatek["consensus_allowed"])
+            self.assertEqual(mediatek["action"], "WATCH")
+            self.assertEqual(mediatek["action_reason"], "ACTION_THRESHOLDS_NOT_APPROVED")
+
     def test_unconfirmed_midweek_snapshot_is_rejected(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
