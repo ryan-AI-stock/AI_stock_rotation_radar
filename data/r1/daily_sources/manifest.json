@@ -1,9 +1,9 @@
 {
-  "start": "2026-09-01",
+  "start": "2026-10-01",
   "end": "2026-10-01",
   "requested_ticker_count": 14,
-  "completed_trading_dates": 21,
-  "market_closed_dates": 2,
+  "completed_trading_dates": 1,
+  "market_closed_dates": 0,
   "blocked": [],
   "chip_source_gaps": [
     {
