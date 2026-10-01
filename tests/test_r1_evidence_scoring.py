@@ -1,6 +1,9 @@
 import unittest
+from pathlib import Path
+from tempfile import TemporaryDirectory
 
-from r1.evidence import CatalystEvent, discovery_eligible
+from r1.consensus import consensus_actionable, load_consensus_csv
+from r1.evidence import CatalystEvent, discovery_eligible, load_catalyst_csv
 from r1.scoring import action, score
 
 
@@ -32,6 +35,30 @@ class R1EvidenceScoringTest(unittest.TestCase):
         decision = action(total_score=1, core_lock=True, consensus_allowed=True, eps_revision=-1,
                           base_upside=-1, overheat_high=True, thesis_broken=True, rotation_advantage=-1)
         self.assertEqual(decision, ("CORE", "CORE_LOCK"))
+
+    def test_catalyst_loader_rejects_future_available_data(self):
+        with TemporaryDirectory() as folder:
+            path = Path(folder) / "events.csv"
+            path.write_text(
+                "event_date,ticker,event_type,description,source_url,source_tier,impact_direction,impact_score,confidence,expiry_weeks,affected_bottleneck,published_at,available_at,retrieved_at\n"
+                "2026-09-30,2408,SUPPLY_SHORTAGE,x,https://a,1,UP,80,0.8,12,memory,2026-09-30,2026-10-02,2026-10-02\n",
+                encoding="utf-8",
+            )
+            accepted, rejected = load_catalyst_csv(path, as_of_date="2026-10-01")
+            self.assertEqual(accepted, [])
+            self.assertEqual(rejected[0]["error"], "future_data")
+
+    def test_low_quality_consensus_is_evidence_only(self):
+        with TemporaryDirectory() as folder:
+            path = Path(folder) / "consensus.csv"
+            path.write_text(
+                "ticker,fiscal_year,mean_eps,median_eps,high_eps,low_eps,analyst_count,source,published_at,available_at,retrieved_at,quality,status\n"
+                "2408,2027,10,,,,1,broker-a,2026-09-30,2026-09-30,2026-10-01,LOW,READY\n",
+                encoding="utf-8",
+            )
+            result = load_consensus_csv(path, as_of_date="2026-10-01")
+            self.assertEqual(result.records[0].status, "EVIDENCE_ONLY")
+            self.assertFalse(consensus_actionable(result.records, ticker="2408", fiscal_year=2027))
 
 
 if __name__ == "__main__":

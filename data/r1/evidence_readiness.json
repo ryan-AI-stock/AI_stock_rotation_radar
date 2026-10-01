@@ -1,0 +1,109 @@
+{
+  "model": "R1",
+  "as_of_date": "2026-10-01",
+  "fiscal_year": 2027,
+  "requested_ticker_count": 14,
+  "consensus_ready_count": 0,
+  "catalyst_ready_count": 0,
+  "trade_ready_count": 0,
+  "consensus_rejected": [
+    {
+      "error": "file_missing"
+    }
+  ],
+  "catalyst_rejected": [
+    {
+      "error": "file_missing"
+    }
+  ],
+  "rows": [
+    {
+      "ticker": "2330",
+      "consensus_ready": false,
+      "catalyst_ready": false,
+      "trade_ready": false
+    },
+    {
+      "ticker": "2327",
+      "consensus_ready": false,
+      "catalyst_ready": false,
+      "trade_ready": false
+    },
+    {
+      "ticker": "2344",
+      "consensus_ready": false,
+      "catalyst_ready": false,
+      "trade_ready": false
+    },
+    {
+      "ticker": "2376",
+      "consensus_ready": false,
+      "catalyst_ready": false,
+      "trade_ready": false
+    },
+    {
+      "ticker": "2454",
+      "consensus_ready": false,
+      "catalyst_ready": false,
+      "trade_ready": false
+    },
+    {
+      "ticker": "3037",
+      "consensus_ready": false,
+      "catalyst_ready": false,
+      "trade_ready": false
+    },
+    {
+      "ticker": "6488",
+      "consensus_ready": false,
+      "catalyst_ready": false,
+      "trade_ready": false
+    },
+    {
+      "ticker": "2408",
+      "consensus_ready": false,
+      "catalyst_ready": false,
+      "trade_ready": false
+    },
+    {
+      "ticker": "2303",
+      "consensus_ready": false,
+      "catalyst_ready": false,
+      "trade_ready": false
+    },
+    {
+      "ticker": "3363",
+      "consensus_ready": false,
+      "catalyst_ready": false,
+      "trade_ready": false
+    },
+    {
+      "ticker": "3081",
+      "consensus_ready": false,
+      "catalyst_ready": false,
+      "trade_ready": false
+    },
+    {
+      "ticker": "3711",
+      "consensus_ready": false,
+      "catalyst_ready": false,
+      "trade_ready": false
+    },
+    {
+      "ticker": "2308",
+      "consensus_ready": false,
+      "catalyst_ready": false,
+      "trade_ready": false
+    },
+    {
+      "ticker": "2379",
+      "consensus_ready": false,
+      "catalyst_ready": false,
+      "trade_ready": false
+    }
+  ],
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false
+}
