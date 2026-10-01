@@ -8,13 +8,6 @@
   "chip_source_gaps": [
     {
       "date": "2026-10-01",
-      "family": "institutional",
-      "market": "TWSE",
-      "status": "no_rows",
-      "error": ""
-    },
-    {
-      "date": "2026-10-01",
       "family": "margin_short",
       "market": "TWSE",
       "status": "no_rows",
