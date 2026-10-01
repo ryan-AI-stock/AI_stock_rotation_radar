@@ -1,0 +1,51 @@
+{
+  "start": "2026-09-01",
+  "end": "2026-10-01",
+  "requested_ticker_count": 14,
+  "completed_trading_dates": 21,
+  "market_closed_dates": 2,
+  "blocked": [],
+  "chip_source_gaps": [
+    {
+      "date": "2026-10-01",
+      "family": "institutional",
+      "market": "TWSE",
+      "status": "no_rows",
+      "error": ""
+    },
+    {
+      "date": "2026-10-01",
+      "family": "margin_short",
+      "market": "TWSE",
+      "status": "no_rows",
+      "error": ""
+    },
+    {
+      "date": "2026-10-01",
+      "family": "securities_lending",
+      "market": "TWSE",
+      "status": "no_rows",
+      "error": ""
+    },
+    {
+      "date": "2026-10-01",
+      "family": "margin_short",
+      "market": "TPEx",
+      "status": "no_rows",
+      "error": ""
+    },
+    {
+      "date": "2026-10-01",
+      "family": "securities_lending",
+      "market": "TPEx",
+      "status": "no_rows",
+      "error": ""
+    }
+  ],
+  "chip_data_ready": false,
+  "future_data_violation_count": 0,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false
+}
