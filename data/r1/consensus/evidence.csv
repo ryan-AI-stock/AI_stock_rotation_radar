@@ -7,3 +7,7 @@ ticker,fiscal_year,source_url,source_family,source_tier,available_at,note
 2344,2027,https://hk.finance.yahoo.com/quote/2344.TW/analysis/,lseg_yahoo_consensus,2,2026-09-30,7家共識平均52.28
 2454,2027,https://toalpha.tw/stock/2454/estimates,toalpha_consensus,2,2026-09-30,27家共識平均141.32
 2454,2027,https://scm.sinotrade.com.tw/Article/GetFile/b6690bb5-b7fa-4fa0-9513-f235bba56fc4,sinopac_research,1,2026-04-30,永豐研究2027 EPS 112.01
+2308,2027,https://toalpha.tw/stock/2308/valuation,toalpha_consensus,2,2026-09-30,23家共識平均63.96
+2308,2027,https://scm.sinotrade.com.tw/Article/GetFile/b6690bb5-b7fa-4fa0-9513-f235bba56fc4,sinopac_research,1,2026-04-30,永豐研究2027 EPS 64.07
+3711,2027,https://toalpha.tw/stock/3711/statements,toalpha_consensus,2,2026-09-09,21家共識平均27.79
+3711,2027,https://cmnews.com.tw/article/zhouzhehan-b6085f47-adf2-11f1-bc62-9ecdb6d924a0,cmoney_named_brokers,2,2026-09-16,公開多券商整理與2027共識27.85
