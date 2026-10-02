@@ -7,6 +7,7 @@
   "catalyst_ready_count": 12,
   "catalyst_score_ready_count": 0,
   "bottleneck_ready_count": 12,
+  "price_chip_ready_count": 14,
   "component_score_ready_count": 0,
   "trade_ready_count": 0,
   "action_policy_approved": false,
@@ -27,12 +28,17 @@
       "catalyst_score_ready": false,
       "bottleneck_ready": true,
       "valuation_ready": false,
-      "price_chip_ready": false,
+      "price_chip_ready": true,
+      "price_chip_coverage": {
+        "price_days": 21,
+        "institutional_days": 21,
+        "margin_short_days": 21,
+        "ready": true
+      },
       "component_score_ready": false,
       "trade_ready": false,
       "blocked_reasons": [
         "VALUATION_HISTORY_NOT_READY",
-        "PRICE_CHIP_HISTORY_NOT_READY",
         "ACTION_POLICY_NOT_APPROVED"
       ]
     },
@@ -43,12 +49,17 @@
       "catalyst_score_ready": false,
       "bottleneck_ready": true,
       "valuation_ready": false,
-      "price_chip_ready": false,
+      "price_chip_ready": true,
+      "price_chip_coverage": {
+        "price_days": 21,
+        "institutional_days": 21,
+        "margin_short_days": 21,
+        "ready": true
+      },
       "component_score_ready": false,
       "trade_ready": false,
       "blocked_reasons": [
         "VALUATION_HISTORY_NOT_READY",
-        "PRICE_CHIP_HISTORY_NOT_READY",
         "ACTION_POLICY_NOT_APPROVED"
       ]
     },
@@ -59,12 +70,17 @@
       "catalyst_score_ready": false,
       "bottleneck_ready": true,
       "valuation_ready": false,
-      "price_chip_ready": false,
+      "price_chip_ready": true,
+      "price_chip_coverage": {
+        "price_days": 21,
+        "institutional_days": 21,
+        "margin_short_days": 21,
+        "ready": true
+      },
       "component_score_ready": false,
       "trade_ready": false,
       "blocked_reasons": [
         "VALUATION_HISTORY_NOT_READY",
-        "PRICE_CHIP_HISTORY_NOT_READY",
         "ACTION_POLICY_NOT_APPROVED"
       ]
     },
@@ -75,12 +91,17 @@
       "catalyst_score_ready": false,
       "bottleneck_ready": true,
       "valuation_ready": false,
-      "price_chip_ready": false,
+      "price_chip_ready": true,
+      "price_chip_coverage": {
+        "price_days": 21,
+        "institutional_days": 21,
+        "margin_short_days": 21,
+        "ready": true
+      },
       "component_score_ready": false,
       "trade_ready": false,
       "blocked_reasons": [
         "VALUATION_HISTORY_NOT_READY",
-        "PRICE_CHIP_HISTORY_NOT_READY",
         "ACTION_POLICY_NOT_APPROVED"
       ]
     },
@@ -91,12 +112,17 @@
       "catalyst_score_ready": false,
       "bottleneck_ready": true,
       "valuation_ready": false,
-      "price_chip_ready": false,
+      "price_chip_ready": true,
+      "price_chip_coverage": {
+        "price_days": 21,
+        "institutional_days": 21,
+        "margin_short_days": 21,
+        "ready": true
+      },
       "component_score_ready": false,
       "trade_ready": false,
       "blocked_reasons": [
         "VALUATION_HISTORY_NOT_READY",
-        "PRICE_CHIP_HISTORY_NOT_READY",
         "ACTION_POLICY_NOT_APPROVED"
       ]
     },
@@ -107,12 +133,17 @@
       "catalyst_score_ready": false,
       "bottleneck_ready": true,
       "valuation_ready": false,
-      "price_chip_ready": false,
+      "price_chip_ready": true,
+      "price_chip_coverage": {
+        "price_days": 21,
+        "institutional_days": 21,
+        "margin_short_days": 21,
+        "ready": true
+      },
       "component_score_ready": false,
       "trade_ready": false,
       "blocked_reasons": [
         "VALUATION_HISTORY_NOT_READY",
-        "PRICE_CHIP_HISTORY_NOT_READY",
         "ACTION_POLICY_NOT_APPROVED"
       ]
     },
@@ -123,12 +154,17 @@
       "catalyst_score_ready": false,
       "bottleneck_ready": true,
       "valuation_ready": false,
-      "price_chip_ready": false,
+      "price_chip_ready": true,
+      "price_chip_coverage": {
+        "price_days": 21,
+        "institutional_days": 21,
+        "margin_short_days": 21,
+        "ready": true
+      },
       "component_score_ready": false,
       "trade_ready": false,
       "blocked_reasons": [
         "VALUATION_HISTORY_NOT_READY",
-        "PRICE_CHIP_HISTORY_NOT_READY",
         "ACTION_POLICY_NOT_APPROVED"
       ]
     },
@@ -139,12 +175,17 @@
       "catalyst_score_ready": false,
       "bottleneck_ready": true,
       "valuation_ready": false,
-      "price_chip_ready": false,
+      "price_chip_ready": true,
+      "price_chip_coverage": {
+        "price_days": 21,
+        "institutional_days": 21,
+        "margin_short_days": 21,
+        "ready": true
+      },
       "component_score_ready": false,
       "trade_ready": false,
       "blocked_reasons": [
         "VALUATION_HISTORY_NOT_READY",
-        "PRICE_CHIP_HISTORY_NOT_READY",
         "ACTION_POLICY_NOT_APPROVED"
       ]
     },
@@ -155,12 +196,17 @@
       "catalyst_score_ready": false,
       "bottleneck_ready": true,
       "valuation_ready": false,
-      "price_chip_ready": false,
+      "price_chip_ready": true,
+      "price_chip_coverage": {
+        "price_days": 21,
+        "institutional_days": 21,
+        "margin_short_days": 21,
+        "ready": true
+      },
       "component_score_ready": false,
       "trade_ready": false,
       "blocked_reasons": [
         "VALUATION_HISTORY_NOT_READY",
-        "PRICE_CHIP_HISTORY_NOT_READY",
         "ACTION_POLICY_NOT_APPROVED"
       ]
     },
@@ -171,7 +217,13 @@
       "catalyst_score_ready": false,
       "bottleneck_ready": false,
       "valuation_ready": false,
-      "price_chip_ready": false,
+      "price_chip_ready": true,
+      "price_chip_coverage": {
+        "price_days": 21,
+        "institutional_days": 21,
+        "margin_short_days": 21,
+        "ready": true
+      },
       "component_score_ready": false,
       "trade_ready": false,
       "blocked_reasons": [
@@ -179,7 +231,6 @@
         "CATALYST_EVIDENCE_NOT_READY",
         "BOTTLENECK_EVIDENCE_NOT_READY",
         "VALUATION_HISTORY_NOT_READY",
-        "PRICE_CHIP_HISTORY_NOT_READY",
         "ACTION_POLICY_NOT_APPROVED"
       ]
     },
@@ -190,12 +241,17 @@
       "catalyst_score_ready": false,
       "bottleneck_ready": true,
       "valuation_ready": false,
-      "price_chip_ready": false,
+      "price_chip_ready": true,
+      "price_chip_coverage": {
+        "price_days": 21,
+        "institutional_days": 21,
+        "margin_short_days": 21,
+        "ready": true
+      },
       "component_score_ready": false,
       "trade_ready": false,
       "blocked_reasons": [
         "VALUATION_HISTORY_NOT_READY",
-        "PRICE_CHIP_HISTORY_NOT_READY",
         "ACTION_POLICY_NOT_APPROVED"
       ]
     },
@@ -206,12 +262,17 @@
       "catalyst_score_ready": false,
       "bottleneck_ready": true,
       "valuation_ready": false,
-      "price_chip_ready": false,
+      "price_chip_ready": true,
+      "price_chip_coverage": {
+        "price_days": 21,
+        "institutional_days": 21,
+        "margin_short_days": 21,
+        "ready": true
+      },
       "component_score_ready": false,
       "trade_ready": false,
       "blocked_reasons": [
         "VALUATION_HISTORY_NOT_READY",
-        "PRICE_CHIP_HISTORY_NOT_READY",
         "ACTION_POLICY_NOT_APPROVED"
       ]
     },
@@ -222,12 +283,17 @@
       "catalyst_score_ready": false,
       "bottleneck_ready": true,
       "valuation_ready": false,
-      "price_chip_ready": false,
+      "price_chip_ready": true,
+      "price_chip_coverage": {
+        "price_days": 21,
+        "institutional_days": 21,
+        "margin_short_days": 21,
+        "ready": true
+      },
       "component_score_ready": false,
       "trade_ready": false,
       "blocked_reasons": [
         "VALUATION_HISTORY_NOT_READY",
-        "PRICE_CHIP_HISTORY_NOT_READY",
         "ACTION_POLICY_NOT_APPROVED"
       ]
     },
@@ -238,14 +304,19 @@
       "catalyst_score_ready": false,
       "bottleneck_ready": false,
       "valuation_ready": false,
-      "price_chip_ready": false,
+      "price_chip_ready": true,
+      "price_chip_coverage": {
+        "price_days": 21,
+        "institutional_days": 21,
+        "margin_short_days": 21,
+        "ready": true
+      },
       "component_score_ready": false,
       "trade_ready": false,
       "blocked_reasons": [
         "CATALYST_EVIDENCE_NOT_READY",
         "BOTTLENECK_EVIDENCE_NOT_READY",
         "VALUATION_HISTORY_NOT_READY",
-        "PRICE_CHIP_HISTORY_NOT_READY",
         "ACTION_POLICY_NOT_APPROVED"
       ]
     }

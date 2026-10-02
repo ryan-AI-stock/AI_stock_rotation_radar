@@ -48,11 +48,36 @@ class R1EvidenceReadinessTest(unittest.TestCase):
                 config_path="config/r1.json", consensus_path=consensus,
                 catalyst_path=catalysts, consensus_evidence_path=evidence,
                 catalyst_evidence_path=root / "missing-catalyst-evidence.csv",
+                daily_source_root=root / "missing-daily-sources",
                 as_of_date="2026-10-01",
             )
             row = next(item for item in result["rows"] if item["ticker"] == "2330")
             self.assertTrue(row["consensus_ready"])
             self.assertFalse(row["catalyst_ready"])
+
+    def test_price_chip_requires_twenty_complete_dates(self):
+        with TemporaryDirectory() as folder:
+            root = Path(folder)
+            daily = root / "daily"
+            daily.mkdir()
+            for day in range(1, 21):
+                target = f"2026-09-{day:02d}"
+                (daily / f"{target}.json").write_text(json.dumps({
+                    "date": target,
+                    "price_rows": [{"ticker": "2330", "close": 100}],
+                    "chip_rows": [
+                        {"ticker": "2330", "family": "institutional"},
+                        {"ticker": "2330", "family": "margin_short"},
+                    ],
+                }), encoding="utf-8")
+            result = materialize(
+                config_path="config/r1.json", consensus_path=root / "none.csv",
+                catalyst_path=root / "none2.csv", daily_source_root=daily,
+                as_of_date="2026-10-01",
+            )
+            row = next(item for item in result["rows"] if item["ticker"] == "2330")
+            self.assertTrue(row["price_chip_ready"])
+            self.assertEqual(row["price_chip_coverage"]["institutional_days"], 20)
 
 
 if __name__ == "__main__":

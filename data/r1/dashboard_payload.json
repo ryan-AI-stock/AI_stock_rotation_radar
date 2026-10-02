@@ -60,6 +60,13 @@
         "2026-10-01"
       ],
       [
+        "資料品質",
+        "價量籌碼序列",
+        "14/14",
+        "READY",
+        "2026-10-01"
+      ],
+      [
         "模型狀態",
         "交易建議",
         "0/14",
@@ -124,7 +131,7 @@
         true,
         true,
         false,
-        false,
+        true,
         null,
         "CORE",
         "CORE_LOCK"
@@ -151,10 +158,10 @@
         true,
         true,
         false,
-        false,
+        true,
         null,
         "DATA_MISSING",
-        "VALUATION_HISTORY_NOT_READY;PRICE_CHIP_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
+        "VALUATION_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
       ],
       [
         "2026-10-01",
@@ -178,10 +185,10 @@
         true,
         true,
         false,
-        false,
+        true,
         null,
         "DATA_MISSING",
-        "VALUATION_HISTORY_NOT_READY;PRICE_CHIP_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
+        "VALUATION_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
       ],
       [
         "2026-10-01",
@@ -205,10 +212,10 @@
         true,
         true,
         false,
-        false,
+        true,
         null,
         "DATA_MISSING",
-        "VALUATION_HISTORY_NOT_READY;PRICE_CHIP_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
+        "VALUATION_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
       ],
       [
         "2026-10-01",
@@ -232,10 +239,10 @@
         true,
         true,
         false,
-        false,
+        true,
         null,
         "DATA_MISSING",
-        "VALUATION_HISTORY_NOT_READY;PRICE_CHIP_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
+        "VALUATION_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
       ],
       [
         "2026-10-01",
@@ -259,10 +266,10 @@
         true,
         true,
         false,
-        false,
+        true,
         null,
         "DATA_MISSING",
-        "VALUATION_HISTORY_NOT_READY;PRICE_CHIP_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
+        "VALUATION_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
       ],
       [
         "2026-10-01",
@@ -286,10 +293,10 @@
         true,
         true,
         false,
-        false,
+        true,
         null,
         "DATA_MISSING",
-        "VALUATION_HISTORY_NOT_READY;PRICE_CHIP_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
+        "VALUATION_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
       ],
       [
         "2026-10-01",
@@ -313,10 +320,10 @@
         true,
         true,
         false,
-        false,
+        true,
         null,
         "DATA_MISSING",
-        "VALUATION_HISTORY_NOT_READY;PRICE_CHIP_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
+        "VALUATION_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
       ],
       [
         "2026-10-01",
@@ -340,10 +347,10 @@
         true,
         true,
         false,
-        false,
+        true,
         null,
         "DATA_MISSING",
-        "VALUATION_HISTORY_NOT_READY;PRICE_CHIP_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
+        "VALUATION_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
       ],
       [
         "2026-10-01",
@@ -367,10 +374,10 @@
         false,
         false,
         false,
-        false,
+        true,
         null,
         "DATA_MISSING",
-        "CONSENSUS_NOT_READY;CATALYST_EVIDENCE_NOT_READY;BOTTLENECK_EVIDENCE_NOT_READY;VALUATION_HISTORY_NOT_READY;PRICE_CHIP_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
+        "CONSENSUS_NOT_READY;CATALYST_EVIDENCE_NOT_READY;BOTTLENECK_EVIDENCE_NOT_READY;VALUATION_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
       ],
       [
         "2026-10-01",
@@ -394,10 +401,10 @@
         true,
         true,
         false,
-        false,
+        true,
         null,
         "DATA_MISSING",
-        "VALUATION_HISTORY_NOT_READY;PRICE_CHIP_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
+        "VALUATION_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
       ],
       [
         "2026-10-01",
@@ -421,10 +428,10 @@
         true,
         true,
         false,
-        false,
+        true,
         null,
         "DATA_MISSING",
-        "VALUATION_HISTORY_NOT_READY;PRICE_CHIP_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
+        "VALUATION_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
       ],
       [
         "2026-10-01",
@@ -448,10 +455,10 @@
         true,
         true,
         false,
-        false,
+        true,
         null,
         "DATA_MISSING",
-        "VALUATION_HISTORY_NOT_READY;PRICE_CHIP_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
+        "VALUATION_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
       ],
       [
         "2026-10-01",
@@ -475,10 +482,10 @@
         false,
         false,
         false,
-        false,
+        true,
         null,
         "DATA_MISSING",
-        "CATALYST_EVIDENCE_NOT_READY;BOTTLENECK_EVIDENCE_NOT_READY;VALUATION_HISTORY_NOT_READY;PRICE_CHIP_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
+        "CATALYST_EVIDENCE_NOT_READY;BOTTLENECK_EVIDENCE_NOT_READY;VALUATION_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
       ]
     ],
     "R1模擬交易紀錄": [

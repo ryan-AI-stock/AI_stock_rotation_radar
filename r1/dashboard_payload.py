@@ -26,7 +26,8 @@ def build_dashboard_payload(
     readiness_file = Path(readiness_path)
     readiness = json.loads(readiness_file.read_text(encoding="utf-8")) if readiness_file.exists() else {
         "requested_ticker_count": len(config.securities), "consensus_ready_count": 0,
-        "catalyst_ready_count": 0, "bottleneck_ready_count": 0, "trade_ready_count": 0,
+        "catalyst_ready_count": 0, "bottleneck_ready_count": 0, "price_chip_ready_count": 0,
+        "trade_ready_count": 0,
         "action_policy_approved": False, "rows": [],
     }
     readiness_by_ticker = {row["ticker"]: row for row in readiness.get("rows", [])}
@@ -48,6 +49,8 @@ def build_dashboard_payload(
          "READY" if readiness["catalyst_ready_count"] == readiness["requested_ticker_count"] else "PARTIAL", market["date"]],
         ["資料品質", "瓶頸證據", f"{readiness['bottleneck_ready_count']}/{readiness['requested_ticker_count']}",
          "READY" if readiness["bottleneck_ready_count"] == readiness["requested_ticker_count"] else "PARTIAL", market["date"]],
+        ["資料品質", "價量籌碼序列", f"{readiness.get('price_chip_ready_count', 0)}/{readiness['requested_ticker_count']}",
+         "READY" if readiness.get("price_chip_ready_count") == readiness["requested_ticker_count"] else "PARTIAL", market["date"]],
         ["模型狀態", "交易建議", f"{readiness['trade_ready_count']}/{readiness['requested_ticker_count']}",
          "READY" if readiness["trade_ready_count"] else "BLOCKED", market["date"]],
         ["模型狀態", "說明", "資料與Action門檻未完整核准前，只顯示研究資料，不產生模擬成交。",

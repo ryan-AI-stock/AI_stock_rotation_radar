@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import json
+from datetime import date
 from pathlib import Path
 
 from r1.config import R1Config
@@ -11,12 +12,47 @@ from r1.consensus import consensus_actionable, load_consensus_csv, load_consensu
 from r1.evidence import load_catalyst_csv
 
 
+def _price_chip_coverage(root: str | Path, *, as_of_date: str, minimum_days: int = 20) -> dict[str, dict]:
+    """Count complete PIT trading dates; this is source readiness, not a trading score."""
+    coverage: dict[str, dict[str, set[str]]] = {}
+    for path in sorted(Path(root).glob("????-??-??.json")):
+        if date.fromisoformat(path.stem) > date.fromisoformat(as_of_date):
+            continue
+        payload = json.loads(path.read_text(encoding="utf-8"))
+        payload_date = str(payload.get("date", ""))[:10]
+        if not payload_date or payload_date != path.stem:
+            continue
+        for row in payload.get("price_rows", []):
+            ticker = str(row.get("ticker", "")).zfill(4)
+            if ticker and row.get("close") not in {None, ""}:
+                coverage.setdefault(ticker, {"price": set(), "institutional": set(), "margin_short": set()})[
+                    "price"
+                ].add(payload_date)
+        for row in payload.get("chip_rows", []):
+            ticker = str(row.get("ticker", "")).zfill(4)
+            family = str(row.get("family", ""))
+            if ticker and family in {"institutional", "margin_short"}:
+                coverage.setdefault(ticker, {"price": set(), "institutional": set(), "margin_short": set()})[
+                    family
+                ].add(payload_date)
+    return {
+        ticker: {
+            "price_days": len(families["price"]),
+            "institutional_days": len(families["institutional"]),
+            "margin_short_days": len(families["margin_short"]),
+            "ready": all(len(families[family]) >= minimum_days for family in families),
+        }
+        for ticker, families in coverage.items()
+    }
+
+
 def materialize(*, config_path: str | Path, consensus_path: str | Path,
                 catalyst_path: str | Path, as_of_date: str,
                 consensus_evidence_path: str | Path = "data/r1/consensus/evidence.csv",
                 bottleneck_path: str | Path = "data/r1/bottleneck_map.json",
                 catalyst_evidence_path: str | Path = "data/r1/catalyst_events/evidence.csv",
-                bottleneck_evidence_path: str | Path = "data/r1/bottleneck_evidence.csv") -> dict:
+                bottleneck_evidence_path: str | Path = "data/r1/bottleneck_evidence.csv",
+                daily_source_root: str | Path = "data/r1/daily_sources") -> dict:
     config = R1Config.load(config_path)
     consensus_file = Path(consensus_path)
     catalyst_file = Path(catalyst_path)
@@ -35,6 +71,7 @@ def materialize(*, config_path: str | Path, consensus_path: str | Path,
     bottleneck_evidence, bottleneck_evidence_rejected = load_bottleneck_evidence(
         bottleneck_evidence_file, as_of_date=as_of_date
     ) if bottleneck_evidence_file.exists() else ([], [])
+    price_chip_coverage = _price_chip_coverage(daily_source_root, as_of_date=as_of_date)
     fiscal_year = int(as_of_date[:4]) + 1
     rows = []
     for security in config.securities:
@@ -50,7 +87,10 @@ def materialize(*, config_path: str | Path, consensus_path: str | Path,
         )
         # These components need historical PIT series and an approved calibration contract.
         valuation_ready = False
-        price_chip_ready = False
+        price_chip_state = price_chip_coverage.get(security.ticker, {
+            "price_days": 0, "institutional_days": 0, "margin_short_days": 0, "ready": False,
+        })
+        price_chip_ready = bool(price_chip_state["ready"])
         component_score_ready = consensus_ready and catalyst_score_ready and bottleneck_ready and valuation_ready and price_chip_ready
         trade_ready = component_score_ready and config.action_policy_approved
         blocked_reasons = []
@@ -74,6 +114,7 @@ def materialize(*, config_path: str | Path, consensus_path: str | Path,
             "bottleneck_ready": bottleneck_ready,
             "valuation_ready": valuation_ready,
             "price_chip_ready": price_chip_ready,
+            "price_chip_coverage": price_chip_state,
             "component_score_ready": component_score_ready,
             "trade_ready": trade_ready,
             "blocked_reasons": blocked_reasons,
@@ -85,6 +126,7 @@ def materialize(*, config_path: str | Path, consensus_path: str | Path,
         "catalyst_ready_count": sum(row["catalyst_ready"] for row in rows),
         "catalyst_score_ready_count": sum(row["catalyst_score_ready"] for row in rows),
         "bottleneck_ready_count": sum(row["bottleneck_ready"] for row in rows),
+        "price_chip_ready_count": sum(row["price_chip_ready"] for row in rows),
         "component_score_ready_count": sum(row["component_score_ready"] for row in rows),
         "trade_ready_count": sum(row["trade_ready"] for row in rows),
         "action_policy_approved": config.action_policy_approved,
@@ -108,13 +150,15 @@ def main() -> None:
     parser.add_argument("--catalyst-evidence", default="data/r1/catalyst_events/evidence.csv")
     parser.add_argument("--bottleneck-evidence", default="data/r1/bottleneck_evidence.csv")
     parser.add_argument("--consensus-evidence", default="data/r1/consensus/evidence.csv")
+    parser.add_argument("--daily-source-root", default="data/r1/daily_sources")
     parser.add_argument("--output", default="data/r1/evidence_readiness.json")
     args = parser.parse_args()
     payload = materialize(config_path=args.config, consensus_path=args.consensus,
                           catalyst_path=args.catalysts, as_of_date=args.date,
                           consensus_evidence_path=args.consensus_evidence,
                           catalyst_evidence_path=args.catalyst_evidence,
-                          bottleneck_evidence_path=args.bottleneck_evidence)
+                          bottleneck_evidence_path=args.bottleneck_evidence,
+                          daily_source_root=args.daily_source_root)
     output = Path(args.output)
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
