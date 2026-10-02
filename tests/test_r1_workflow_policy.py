@@ -13,6 +13,7 @@ class R1WorkflowPolicyTest(unittest.TestCase):
         self.assertIn("--retry-incomplete", workflow)
         self.assertIn("r1.dashboard_publish", workflow)
         self.assertIn("GOOGLE_OAUTH_REFRESH_TOKEN", workflow)
+        self.assertIn("Sync latest main after concurrency wait", workflow)
 
     def test_weekly_requires_week_final_confirmation(self):
         workflow = (ROOT / ".github/workflows/r1-weekly.yml").read_text(encoding="utf-8")
@@ -20,6 +21,7 @@ class R1WorkflowPolicyTest(unittest.TestCase):
         self.assertIn("--week-final-confirmed", workflow)
         self.assertIn("r1.weekly_snapshot", workflow)
         self.assertIn("r1.dashboard_publish", workflow)
+        self.assertIn("Sync latest main after concurrency wait", workflow)
         self.assertIn('0 11-15 * * *', workflow)
 
 
