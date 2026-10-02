@@ -27,14 +27,28 @@
       [
         "Data Quality",
         "EPS Consensus",
-        "Not configured",
+        "9/14",
+        "PARTIAL",
+        "2026-10-01"
+      ],
+      [
+        "Data Quality",
+        "Catalyst evidence",
+        "4/14",
+        "PARTIAL",
+        "2026-10-01"
+      ],
+      [
+        "Data Quality",
+        "Bottleneck evidence",
+        "0/14",
         "DATA_MISSING",
         "2026-10-01"
       ],
       [
         "Actions",
         "Trade decisions",
-        "Disabled until consensus and evidence are ready",
+        "0/14; action policy approved=False",
         "BLOCKED",
         "2026-10-01"
       ]
@@ -74,7 +88,7 @@
         0.16611135255203052,
         null,
         "DATA_MISSING",
-        "EPS_CONSENSUS_NOT_CONFIGURED"
+        "CATALYST_EVIDENCE_NOT_READY;BOTTLENECK_EVIDENCE_NOT_READY;VALUATION_HISTORY_NOT_READY;PRICE_CHIP_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
       ],
       [
         "2344",
@@ -86,7 +100,7 @@
         0.03725088470851183,
         null,
         "DATA_MISSING",
-        "EPS_CONSENSUS_NOT_CONFIGURED"
+        "CATALYST_EVIDENCE_NOT_READY;BOTTLENECK_EVIDENCE_NOT_READY;VALUATION_HISTORY_NOT_READY;PRICE_CHIP_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
       ],
       [
         "2376",
@@ -98,7 +112,7 @@
         0.17794195760297454,
         null,
         "DATA_MISSING",
-        "EPS_CONSENSUS_NOT_CONFIGURED"
+        "BOTTLENECK_EVIDENCE_NOT_READY;VALUATION_HISTORY_NOT_READY;PRICE_CHIP_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
       ],
       [
         "2454",
@@ -110,7 +124,7 @@
         0.006527182798369239,
         null,
         "DATA_MISSING",
-        "EPS_CONSENSUS_NOT_CONFIGURED"
+        "BOTTLENECK_EVIDENCE_NOT_READY;VALUATION_HISTORY_NOT_READY;PRICE_CHIP_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
       ],
       [
         "3037",
@@ -122,7 +136,7 @@
         0.0985658409387223,
         null,
         "DATA_MISSING",
-        "EPS_CONSENSUS_NOT_CONFIGURED"
+        "CONSENSUS_NOT_READY;CATALYST_EVIDENCE_NOT_READY;BOTTLENECK_EVIDENCE_NOT_READY;VALUATION_HISTORY_NOT_READY;PRICE_CHIP_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
       ],
       [
         "6488",
@@ -134,7 +148,7 @@
         0.07484668501617654,
         null,
         "DATA_MISSING",
-        "EPS_CONSENSUS_NOT_CONFIGURED"
+        "CONSENSUS_NOT_READY;CATALYST_EVIDENCE_NOT_READY;BOTTLENECK_EVIDENCE_NOT_READY;VALUATION_HISTORY_NOT_READY;PRICE_CHIP_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
       ],
       [
         "2408",
@@ -146,7 +160,7 @@
         0.0,
         null,
         "DATA_MISSING",
-        "EPS_CONSENSUS_NOT_CONFIGURED"
+        "CONSENSUS_NOT_READY;CATALYST_EVIDENCE_NOT_READY;BOTTLENECK_EVIDENCE_NOT_READY;VALUATION_HISTORY_NOT_READY;PRICE_CHIP_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
       ],
       [
         "2303",
@@ -158,7 +172,7 @@
         0.0,
         null,
         "DATA_MISSING",
-        "EPS_CONSENSUS_NOT_CONFIGURED"
+        "BOTTLENECK_EVIDENCE_NOT_READY;VALUATION_HISTORY_NOT_READY;PRICE_CHIP_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
       ],
       [
         "3363",
@@ -170,7 +184,7 @@
         0.0,
         null,
         "DATA_MISSING",
-        "EPS_CONSENSUS_NOT_CONFIGURED"
+        "CONSENSUS_NOT_READY;CATALYST_EVIDENCE_NOT_READY;BOTTLENECK_EVIDENCE_NOT_READY;VALUATION_HISTORY_NOT_READY;PRICE_CHIP_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
       ],
       [
         "3081",
@@ -182,7 +196,7 @@
         0.0,
         null,
         "DATA_MISSING",
-        "EPS_CONSENSUS_NOT_CONFIGURED"
+        "CATALYST_EVIDENCE_NOT_READY;BOTTLENECK_EVIDENCE_NOT_READY;VALUATION_HISTORY_NOT_READY;PRICE_CHIP_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
       ],
       [
         "3711",
@@ -194,7 +208,7 @@
         0.0,
         null,
         "DATA_MISSING",
-        "EPS_CONSENSUS_NOT_CONFIGURED"
+        "CATALYST_EVIDENCE_NOT_READY;BOTTLENECK_EVIDENCE_NOT_READY;VALUATION_HISTORY_NOT_READY;PRICE_CHIP_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
       ],
       [
         "2308",
@@ -206,7 +220,7 @@
         0.0,
         null,
         "DATA_MISSING",
-        "EPS_CONSENSUS_NOT_CONFIGURED"
+        "CATALYST_EVIDENCE_NOT_READY;BOTTLENECK_EVIDENCE_NOT_READY;VALUATION_HISTORY_NOT_READY;PRICE_CHIP_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
       ],
       [
         "2379",
@@ -218,7 +232,7 @@
         0.0,
         null,
         "DATA_MISSING",
-        "EPS_CONSENSUS_NOT_CONFIGURED"
+        "CONSENSUS_NOT_READY;CATALYST_EVIDENCE_NOT_READY;BOTTLENECK_EVIDENCE_NOT_READY;VALUATION_HISTORY_NOT_READY;PRICE_CHIP_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
       ]
     ],
     "Universe": [
@@ -240,7 +254,7 @@
         null,
         "ACTIVE",
         null,
-        "DATA_MISSING"
+        "PARTIAL"
       ],
       [
         "2330",
@@ -250,7 +264,7 @@
         null,
         "ACTIVE",
         null,
-        "DATA_MISSING"
+        "PARTIAL"
       ],
       [
         "2327",
@@ -260,7 +274,7 @@
         null,
         "ACTIVE",
         null,
-        "DATA_MISSING"
+        "PARTIAL"
       ],
       [
         "2327",
@@ -270,7 +284,7 @@
         null,
         "ACTIVE",
         null,
-        "DATA_MISSING"
+        "PARTIAL"
       ],
       [
         "2344",
@@ -280,7 +294,7 @@
         null,
         "ACTIVE",
         null,
-        "DATA_MISSING"
+        "PARTIAL"
       ],
       [
         "2344",
@@ -290,7 +304,7 @@
         null,
         "ACTIVE",
         null,
-        "DATA_MISSING"
+        "PARTIAL"
       ],
       [
         "2376",
@@ -300,7 +314,7 @@
         null,
         "ACTIVE",
         null,
-        "DATA_MISSING"
+        "PARTIAL"
       ],
       [
         "2376",
@@ -310,7 +324,7 @@
         null,
         "ACTIVE",
         null,
-        "DATA_MISSING"
+        "PARTIAL"
       ],
       [
         "2454",
@@ -320,7 +334,7 @@
         null,
         "ACTIVE",
         null,
-        "DATA_MISSING"
+        "PARTIAL"
       ],
       [
         "2454",
@@ -330,7 +344,7 @@
         null,
         "ACTIVE",
         null,
-        "DATA_MISSING"
+        "PARTIAL"
       ],
       [
         "3037",
@@ -390,7 +404,7 @@
         null,
         "ACTIVE",
         null,
-        "DATA_MISSING"
+        "PARTIAL"
       ],
       [
         "3363",
@@ -410,7 +424,7 @@
         null,
         "ACTIVE",
         null,
-        "DATA_MISSING"
+        "PARTIAL"
       ],
       [
         "3711",
@@ -420,7 +434,7 @@
         null,
         "ACTIVE",
         null,
-        "DATA_MISSING"
+        "PARTIAL"
       ],
       [
         "2308",
@@ -430,7 +444,7 @@
         null,
         "ACTIVE",
         null,
-        "DATA_MISSING"
+        "PARTIAL"
       ],
       [
         "2379",

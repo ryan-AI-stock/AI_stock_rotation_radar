@@ -15,6 +15,9 @@ class R1DashboardPayloadTest(unittest.TestCase):
         self.assertEqual(set(payload["tabs"]), set(TAB_SCHEMAS))
         validate_tabs(payload["tabs"])
         self.assertEqual(len(payload["tabs"]["Portfolio"]), 15)
+        dashboard = payload["tabs"]["R1 Dashboard"]
+        self.assertIn("9/14", [row[2] for row in dashboard])
+        self.assertIn("4/14", [row[2] for row in dashboard])
 
     def test_dashboard_cannot_claim_trade_ready(self):
         payload = build_dashboard_payload(config_path=ROOT / "config/r1.json",
