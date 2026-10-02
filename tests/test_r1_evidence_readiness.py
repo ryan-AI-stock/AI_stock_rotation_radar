@@ -47,6 +47,7 @@ class R1EvidenceReadinessTest(unittest.TestCase):
             result = materialize(
                 config_path="config/r1.json", consensus_path=consensus,
                 catalyst_path=catalysts, consensus_evidence_path=evidence,
+                catalyst_evidence_path=root / "missing-catalyst-evidence.csv",
                 as_of_date="2026-10-01",
             )
             row = next(item for item in result["rows"] if item["ticker"] == "2330")
