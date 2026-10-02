@@ -46,6 +46,21 @@ def _price_chip_coverage(root: str | Path, *, as_of_date: str, minimum_days: int
     }
 
 
+def _current_chip_coverage(root: str | Path, *, as_of_date: str) -> dict[str, bool]:
+    """Exact-date PIT readiness. Historical sequence readiness is intentionally separate."""
+    path = Path(root) / f"{as_of_date}.json"
+    if not path.exists():
+        return {}
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    families: dict[str, set[str]] = {}
+    for row in payload.get("chip_rows", []):
+        ticker = str(row.get("ticker", "")).zfill(4)
+        family = str(row.get("family", ""))
+        if ticker and family in {"institutional", "margin_short"}:
+            families.setdefault(ticker, set()).add(family)
+    return {ticker: values == {"institutional", "margin_short"} for ticker, values in families.items()}
+
+
 def materialize(*, config_path: str | Path, consensus_path: str | Path,
                 catalyst_path: str | Path, as_of_date: str,
                 consensus_evidence_path: str | Path = "data/r1/consensus/evidence.csv",
@@ -72,6 +87,7 @@ def materialize(*, config_path: str | Path, consensus_path: str | Path,
         bottleneck_evidence_file, as_of_date=as_of_date
     ) if bottleneck_evidence_file.exists() else ([], [])
     price_chip_coverage = _price_chip_coverage(daily_source_root, as_of_date=as_of_date)
+    current_chip_coverage = _current_chip_coverage(daily_source_root, as_of_date=as_of_date)
     fiscal_year = int(as_of_date[:4]) + 1
     rows = []
     for security in config.securities:
@@ -91,6 +107,7 @@ def materialize(*, config_path: str | Path, consensus_path: str | Path,
             "price_days": 0, "institutional_days": 0, "margin_short_days": 0, "ready": False,
         })
         price_chip_ready = bool(price_chip_state["ready"])
+        current_chip_ready = bool(current_chip_coverage.get(security.ticker, False))
         component_score_ready = consensus_ready and catalyst_score_ready and bottleneck_ready and valuation_ready and price_chip_ready
         trade_ready = component_score_ready and config.action_policy_approved
         blocked_reasons = []
@@ -114,6 +131,7 @@ def materialize(*, config_path: str | Path, consensus_path: str | Path,
             "bottleneck_ready": bottleneck_ready,
             "valuation_ready": valuation_ready,
             "price_chip_ready": price_chip_ready,
+            "current_chip_ready": current_chip_ready,
             "price_chip_coverage": price_chip_state,
             "component_score_ready": component_score_ready,
             "trade_ready": trade_ready,
@@ -127,6 +145,7 @@ def materialize(*, config_path: str | Path, consensus_path: str | Path,
         "catalyst_score_ready_count": sum(row["catalyst_score_ready"] for row in rows),
         "bottleneck_ready_count": sum(row["bottleneck_ready"] for row in rows),
         "price_chip_ready_count": sum(row["price_chip_ready"] for row in rows),
+        "current_chip_ready_count": sum(row["current_chip_ready"] for row in rows),
         "component_score_ready_count": sum(row["component_score_ready"] for row in rows),
         "trade_ready_count": sum(row["trade_ready"] for row in rows),
         "action_policy_approved": config.action_policy_approved,

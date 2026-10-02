@@ -53,6 +53,23 @@ def build_weekly_snapshot(
         raise ValueError("weekly snapshot requires complete market coverage")
     daily_paths = sorted(Path(daily_source_root).glob("????-??-??.json"))
     daily_payloads = [json.loads(path.read_text(encoding="utf-8")) for path in daily_paths if path.stem <= date]
+    current_payload = next((payload for payload in daily_payloads if payload.get("date") == date), None)
+    if current_payload is None:
+        raise ValueError("weekly snapshot requires exact-date daily sources")
+    current_families = {
+        (str(row.get("ticker", "")).zfill(4), str(row.get("family", "")))
+        for row in current_payload.get("chip_rows", [])
+    }
+    missing_chip = [
+        security.ticker for security in config.securities
+        if (security.ticker, "institutional") not in current_families
+        or (security.ticker, "margin_short") not in current_families
+    ]
+    if missing_chip:
+        raise ValueError(
+            "weekly snapshot requires exact-date institutional and margin data: "
+            + ",".join(missing_chip)
+        )
     market_by_ticker = {row["ticker"]: row for row in market["rows"]}
     fiscal_year = int(date[:4]) + 1
     if consensus_path and Path(consensus_path).exists():

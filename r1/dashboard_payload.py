@@ -23,7 +23,7 @@ EPS預估修正30%、前瞻估值25%、AI瓶頸程度20%、可驗證催化事件
 研究設定每週換倉上限10%，主部位目標3檔，現金目標5%～20%。台積電核心部位不因短期訊號退出；其餘買進、減碼與退出門檻尚待完整資料累積與回測核准。
 
 【目前狀態】
-官方價格、價量籌碼、瓶頸與催化證據已接通；EPS共識仍有1檔不足，估值歷史與EPS修正序列仍在累積。Action門檻核准前，只顯示資料與觀察狀態，不產生Top1～Top3、模擬成交或實際操作指令。"""
+官方價格、價量籌碼歷史序列、瓶頸與催化證據已接通；當日籌碼另行驗收，不能用歷史序列完整代替。EPS共識仍有1檔不足，估值歷史與EPS修正序列仍在累積。Action門檻核准前，只顯示資料與觀察狀態，不產生Top1～Top3、模擬成交或實際操作指令。"""
 
 
 def _latest_valuation_rows(root: str | Path, target_date: str) -> dict[str, dict]:
@@ -45,6 +45,7 @@ def build_dashboard_payload(
     readiness = json.loads(readiness_file.read_text(encoding="utf-8")) if readiness_file.exists() else {
         "requested_ticker_count": len(config.securities), "consensus_ready_count": 0,
         "catalyst_ready_count": 0, "bottleneck_ready_count": 0, "price_chip_ready_count": 0,
+        "current_chip_ready_count": 0,
         "trade_ready_count": 0,
         "action_policy_approved": False, "rows": [],
     }
@@ -62,7 +63,7 @@ def build_dashboard_payload(
     dashboard.extend([
         ["R1研究版｜AI瓶頸預期差輪動"],
         ["最新資料日期", market["date"], "模型定位", "研究挑戰版", "尚未啟用交易"],
-        ["資料狀態", "官方價格與價量籌碼已更新；估值歷史與EPS修正序列仍在累積，不產生買賣指令。"],
+        ["資料狀態", "官方價格已更新；當日籌碼須獨立驗收，估值歷史與EPS修正序列仍在累積，不產生買賣指令。"],
         ["01｜今日候選排名"],
         ["順位", "股票", "R1分數", "代表意義", "狀態"],
         ["Top1", "尚未產生", "", "Action門檻尚未核准", "研究資料累積中"],
@@ -96,9 +97,12 @@ def build_dashboard_payload(
         ["瓶頸證據", f"{readiness['bottleneck_ready_count']}/{readiness['requested_ticker_count']}",
          "完整" if readiness["bottleneck_ready_count"] == readiness["requested_ticker_count"] else "部分完成",
          "AI剛性需求驗證", market["date"]],
-        ["價量籌碼序列", f"{readiness.get('price_chip_ready_count', 0)}/{readiness['requested_ticker_count']}",
+        ["20日價量籌碼序列", f"{readiness.get('price_chip_ready_count', 0)}/{readiness['requested_ticker_count']}",
          "完整" if readiness.get("price_chip_ready_count") == readiness["requested_ticker_count"] else "部分完成",
-         "價格與籌碼構面", market["date"]],
+         "歷史價格與籌碼構面", market["date"]],
+        ["當日法人與融資", f"{readiness.get('current_chip_ready_count', 0)}/{readiness['requested_ticker_count']}",
+         "完整" if readiness.get("current_chip_ready_count") == readiness["requested_ticker_count"] else "等待官方資料",
+         "當期訊號驗收；不可由舊資料代替", market["date"]],
         ["估值歷史", f"{readiness.get('component_score_ready_count', 0)}/{readiness['requested_ticker_count']}",
          "累積中", "建立歷史位階，禁止用單日資料代替", market["date"]],
         ["交易建議", f"{readiness['trade_ready_count']}/{readiness['requested_ticker_count']}",

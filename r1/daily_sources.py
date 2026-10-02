@@ -78,11 +78,18 @@ def materialize_daily_sources(
                         "error": source.get("error", ""),
                     })
         current += timedelta(days=1)
+    required_chip_gaps = [
+        row for row in chip_source_gaps if row["family"] in {"institutional", "margin_short"}
+    ]
+    optional_chip_gaps = [
+        row for row in chip_source_gaps if row["family"] == "securities_lending"
+    ]
     manifest = {
         "start": start.isoformat(), "end": end.isoformat(), "requested_ticker_count": len(wanted),
         "completed_trading_dates": completed, "market_closed_dates": market_closed,
         "blocked": blocked, "chip_source_gaps": chip_source_gaps,
-        "chip_data_ready": not chip_source_gaps, "future_data_violation_count": 0,
+        "required_chip_gaps": required_chip_gaps, "optional_chip_gaps": optional_chip_gaps,
+        "chip_data_ready": not required_chip_gaps, "future_data_violation_count": 0,
         "formal_model_changed": False, "trade_decision_changed": False,
         "active_in_trade_decision": False, "report_changed": False,
     }
@@ -129,7 +136,7 @@ def main() -> None:
         max_attempts=args.max_attempts, retry_wait_seconds=args.retry_wait_seconds,
     )
     print(json.dumps(result, ensure_ascii=False))
-    if result["blocked"]:
+    if result["blocked"] or not result["chip_data_ready"]:
         raise SystemExit(75)
 
 

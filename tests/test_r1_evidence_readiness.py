@@ -77,7 +77,31 @@ class R1EvidenceReadinessTest(unittest.TestCase):
             )
             row = next(item for item in result["rows"] if item["ticker"] == "2330")
             self.assertTrue(row["price_chip_ready"])
+            self.assertFalse(row["current_chip_ready"])
             self.assertEqual(row["price_chip_coverage"]["institutional_days"], 20)
+
+    def test_current_chip_requires_both_exact_date_families(self):
+        with TemporaryDirectory() as folder:
+            root = Path(folder)
+            daily = root / "daily"
+            daily.mkdir()
+            target = "2026-10-01"
+            (daily / f"{target}.json").write_text(json.dumps({
+                "date": target,
+                "price_rows": [{"ticker": "2330", "close": 100}],
+                "chip_rows": [
+                    {"ticker": "2330", "family": "institutional"},
+                    {"ticker": "2330", "family": "margin_short"},
+                ],
+            }), encoding="utf-8")
+            result = materialize(
+                config_path="config/r1.json", consensus_path=root / "none.csv",
+                catalyst_path=root / "none2.csv", daily_source_root=daily,
+                as_of_date=target,
+            )
+            row = next(item for item in result["rows"] if item["ticker"] == "2330")
+            self.assertTrue(row["current_chip_ready"])
+            self.assertEqual(result["current_chip_ready_count"], 1)
 
 
 if __name__ == "__main__":
