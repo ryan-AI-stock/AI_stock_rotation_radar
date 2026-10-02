@@ -6,6 +6,7 @@ from pathlib import Path
 
 from r1.config import R1Config
 from r1.catalyst_evidence import evidence_ready, load_catalyst_evidence
+from r1.bottleneck_evidence import evidence_ready as bottleneck_evidence_ready, load_bottleneck_evidence
 from r1.consensus import consensus_actionable, load_consensus_csv, load_consensus_evidence
 from r1.evidence import load_catalyst_csv
 
@@ -14,7 +15,8 @@ def materialize(*, config_path: str | Path, consensus_path: str | Path,
                 catalyst_path: str | Path, as_of_date: str,
                 consensus_evidence_path: str | Path = "data/r1/consensus/evidence.csv",
                 bottleneck_path: str | Path = "data/r1/bottleneck_map.json",
-                catalyst_evidence_path: str | Path = "data/r1/catalyst_events/evidence.csv") -> dict:
+                catalyst_evidence_path: str | Path = "data/r1/catalyst_events/evidence.csv",
+                bottleneck_evidence_path: str | Path = "data/r1/bottleneck_evidence.csv") -> dict:
     config = R1Config.load(config_path)
     consensus_file = Path(consensus_path)
     catalyst_file = Path(catalyst_path)
@@ -29,6 +31,10 @@ def materialize(*, config_path: str | Path, consensus_path: str | Path,
     bottleneck_file = Path(bottleneck_path)
     bottleneck_payload = json.loads(bottleneck_file.read_text(encoding="utf-8")) if bottleneck_file.exists() else {"rows": []}
     bottleneck_by_ticker = {str(row.get("ticker", "")).zfill(4): row for row in bottleneck_payload.get("rows", [])}
+    bottleneck_evidence_file = Path(bottleneck_evidence_path)
+    bottleneck_evidence, bottleneck_evidence_rejected = load_bottleneck_evidence(
+        bottleneck_evidence_file, as_of_date=as_of_date
+    ) if bottleneck_evidence_file.exists() else ([], [])
     fiscal_year = int(as_of_date[:4]) + 1
     rows = []
     for security in config.securities:
@@ -38,7 +44,10 @@ def materialize(*, config_path: str | Path, consensus_path: str | Path,
         catalyst_score_ready = len({row.source_family for row in ticker_events}) >= 2 and any(
             row.event.source_tier <= 2 for row in ticker_events)
         catalyst_ready = evidence_ready(catalyst_evidence, ticker=security.ticker)
-        bottleneck_ready = bottleneck_by_ticker.get(security.ticker, {}).get("evidence_status") == "VERIFIED"
+        bottleneck_ready = (
+            bottleneck_by_ticker.get(security.ticker, {}).get("evidence_status") == "VERIFIED"
+            or bottleneck_evidence_ready(bottleneck_evidence, ticker=security.ticker)
+        )
         # These components need historical PIT series and an approved calibration contract.
         valuation_ready = False
         price_chip_ready = False
@@ -83,6 +92,7 @@ def materialize(*, config_path: str | Path, consensus_path: str | Path,
         "consensus_evidence_rejected": support_rejected if support_file.exists() else [{"error": "file_missing"}],
         "catalyst_rejected": catalyst_rejected if catalyst_file.exists() else [{"error": "file_missing"}],
         "catalyst_evidence_rejected": catalyst_evidence_rejected if catalyst_evidence_file.exists() else [{"error": "file_missing"}],
+        "bottleneck_evidence_rejected": bottleneck_evidence_rejected if bottleneck_evidence_file.exists() else [{"error": "file_missing"}],
         "rows": rows,
         "formal_model_changed": False, "trade_decision_changed": False,
         "active_in_trade_decision": False, "report_changed": False,
@@ -96,13 +106,15 @@ def main() -> None:
     parser.add_argument("--consensus", default="data/r1/consensus/consensus.csv")
     parser.add_argument("--catalysts", default="data/r1/catalyst_events/events.csv")
     parser.add_argument("--catalyst-evidence", default="data/r1/catalyst_events/evidence.csv")
+    parser.add_argument("--bottleneck-evidence", default="data/r1/bottleneck_evidence.csv")
     parser.add_argument("--consensus-evidence", default="data/r1/consensus/evidence.csv")
     parser.add_argument("--output", default="data/r1/evidence_readiness.json")
     args = parser.parse_args()
     payload = materialize(config_path=args.config, consensus_path=args.consensus,
                           catalyst_path=args.catalysts, as_of_date=args.date,
                           consensus_evidence_path=args.consensus_evidence,
-                          catalyst_evidence_path=args.catalyst_evidence)
+                          catalyst_evidence_path=args.catalyst_evidence,
+                          bottleneck_evidence_path=args.bottleneck_evidence)
     output = Path(args.output)
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")

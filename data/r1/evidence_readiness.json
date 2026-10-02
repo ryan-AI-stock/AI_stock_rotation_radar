@@ -6,7 +6,7 @@
   "consensus_ready_count": 9,
   "catalyst_ready_count": 4,
   "catalyst_score_ready_count": 0,
-  "bottleneck_ready_count": 0,
+  "bottleneck_ready_count": 4,
   "component_score_ready_count": 0,
   "trade_ready_count": 0,
   "action_policy_approved": false,
@@ -18,19 +18,19 @@
     }
   ],
   "catalyst_evidence_rejected": [],
+  "bottleneck_evidence_rejected": [],
   "rows": [
     {
       "ticker": "2330",
       "consensus_ready": true,
       "catalyst_ready": true,
       "catalyst_score_ready": false,
-      "bottleneck_ready": false,
+      "bottleneck_ready": true,
       "valuation_ready": false,
       "price_chip_ready": false,
       "component_score_ready": false,
       "trade_ready": false,
       "blocked_reasons": [
-        "BOTTLENECK_EVIDENCE_NOT_READY",
         "VALUATION_HISTORY_NOT_READY",
         "PRICE_CHIP_HISTORY_NOT_READY",
         "ACTION_POLICY_NOT_APPROVED"
@@ -77,13 +77,12 @@
       "consensus_ready": true,
       "catalyst_ready": true,
       "catalyst_score_ready": false,
-      "bottleneck_ready": false,
+      "bottleneck_ready": true,
       "valuation_ready": false,
       "price_chip_ready": false,
       "component_score_ready": false,
       "trade_ready": false,
       "blocked_reasons": [
-        "BOTTLENECK_EVIDENCE_NOT_READY",
         "VALUATION_HISTORY_NOT_READY",
         "PRICE_CHIP_HISTORY_NOT_READY",
         "ACTION_POLICY_NOT_APPROVED"
@@ -94,13 +93,12 @@
       "consensus_ready": true,
       "catalyst_ready": true,
       "catalyst_score_ready": false,
-      "bottleneck_ready": false,
+      "bottleneck_ready": true,
       "valuation_ready": false,
       "price_chip_ready": false,
       "component_score_ready": false,
       "trade_ready": false,
       "blocked_reasons": [
-        "BOTTLENECK_EVIDENCE_NOT_READY",
         "VALUATION_HISTORY_NOT_READY",
         "PRICE_CHIP_HISTORY_NOT_READY",
         "ACTION_POLICY_NOT_APPROVED"
@@ -168,13 +166,12 @@
       "consensus_ready": true,
       "catalyst_ready": true,
       "catalyst_score_ready": false,
-      "bottleneck_ready": false,
+      "bottleneck_ready": true,
       "valuation_ready": false,
       "price_chip_ready": false,
       "component_score_ready": false,
       "trade_ready": false,
       "blocked_reasons": [
-        "BOTTLENECK_EVIDENCE_NOT_READY",
         "VALUATION_HISTORY_NOT_READY",
         "PRICE_CHIP_HISTORY_NOT_READY",
         "ACTION_POLICY_NOT_APPROVED"
