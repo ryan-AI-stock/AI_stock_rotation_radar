@@ -20,12 +20,12 @@ class R1ConsensusSnapshotTest(unittest.TestCase):
                 output_root=directory,
             )
             payload = json.loads(output.read_text(encoding="utf-8"))
-            self.assertEqual(payload["ready_count"], 13)
+            self.assertEqual(payload["ready_count"], 14)
             self.assertEqual(payload["snapshot_policy"], "append_only_source_available_at")
             rows = {row["ticker"]: row for row in payload["rows"]}
             self.assertEqual(rows["2408"]["mean_eps"], 102.56)
-            self.assertEqual(rows["3363"]["status"], "DATA_MISSING")
-            self.assertIsNone(rows["3363"]["mean_eps"])
+            self.assertEqual(rows["3363"]["status"], "READY")
+            self.assertEqual(rows["3363"]["mean_eps"], 16.93)
 
     def test_snapshot_is_append_only(self):
         with tempfile.TemporaryDirectory() as directory:

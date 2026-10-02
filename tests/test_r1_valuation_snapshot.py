@@ -21,12 +21,12 @@ class R1ValuationSnapshotTest(unittest.TestCase):
                 output_root=temp_dir,
             )
             payload = json.loads(output.read_text(encoding="utf-8"))
-            self.assertEqual(payload["ready_count"], 13)
+            self.assertEqual(payload["ready_count"], 14)
             self.assertFalse(payload["historical_percentile_ready"])
             rows = {row["ticker"]: row for row in payload["rows"]}
             self.assertAlmostEqual(rows["2330"]["forward_pe"], 2510 / 142.33)
-            self.assertEqual(rows["3363"]["status"], "DATA_MISSING")
-            self.assertIsNone(rows["3363"]["forward_pe"])
+            self.assertEqual(rows["3363"]["status"], "BASELINE_RECORDED")
+            self.assertAlmostEqual(rows["3363"]["forward_pe"], 641 / 16.93)
 
     def test_rejects_market_date_mismatch(self):
         with tempfile.TemporaryDirectory() as temp_dir:

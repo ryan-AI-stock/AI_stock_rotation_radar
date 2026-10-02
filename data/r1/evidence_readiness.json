@@ -3,7 +3,7 @@
   "as_of_date": "2026-10-02",
   "fiscal_year": 2027,
   "requested_ticker_count": 14,
-  "consensus_ready_count": 13,
+  "consensus_ready_count": 14,
   "catalyst_ready_count": 14,
   "catalyst_score_ready_count": 0,
   "bottleneck_ready_count": 14,
@@ -222,7 +222,7 @@
     },
     {
       "ticker": "3363",
-      "consensus_ready": false,
+      "consensus_ready": true,
       "catalyst_ready": true,
       "catalyst_score_ready": false,
       "bottleneck_ready": true,
@@ -238,7 +238,6 @@
       "component_score_ready": false,
       "trade_ready": false,
       "blocked_reasons": [
-        "CONSENSUS_NOT_READY",
         "VALUATION_HISTORY_NOT_READY",
         "ACTION_POLICY_NOT_APPROVED"
       ]

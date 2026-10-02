@@ -21,7 +21,7 @@ class R1DashboardPayloadTest(unittest.TestCase):
         readiness = {row[0]: row[1] for row in dashboard if len(row) >= 2 and row[0] in {
             "EPS共識", "催化證據", "瓶頸證據", "20日價量籌碼序列", "當日法人與融資"
         }}
-        self.assertEqual(readiness["EPS共識"], "13/14")
+        self.assertEqual(readiness["EPS共識"], "14/14")
         self.assertEqual(readiness["催化證據"], "14/14")
         self.assertEqual(readiness["瓶頸證據"], "14/14")
         self.assertEqual(readiness["20日價量籌碼序列"], "14/14")
