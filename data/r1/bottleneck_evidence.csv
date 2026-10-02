@@ -17,3 +17,9 @@ ticker,category,stage,thesis,source_url,source_family,source_tier,published_at,a
 2308,Power / Cooling,FINANCIAL_PROOF,CSP擴建AI資料中心持續推升高功率電源與液冷需求,https://www.trendforce.com/research/download/RP260528DS,trendforce_research,2,2026-05-28,2026-05-28,2026-10-02,VERIFIED
 3081,Optical Interconnect,MASS_PRODUCTION,800G與1.6T矽光產品已進入放量階段且公司持續擴充產能與研發,https://doc.twse.com.tw/pdf/2025_3081_20260527F04_20260714_045320.pdf,mops_company_filing,1,2026-05-27,2026-05-27,2026-10-02,VERIFIED
 3081,Optical Interconnect,FINANCIAL_PROOF,高速光傳輸規格升級使CW Laser需求增加且供需仍吃緊,https://www.moneydj.com/kmdj/news/newsviewer.aspx?a=cef30e33-e97c-4fd5-8505-145ffde6a40c,moneydj_industry,2,2026-02-03,2026-02-03,2026-10-02,VERIFIED
+3037,PCB / CCL / Substrate,FINANCIAL_PROOF,ABF載板與AI資料中心需求已在欣興第二季營運結構與獲利顯現,https://www.unimicron.com/files/money/Earnings/en/2026-Q2-consolidated-en.pdf,unimicron_ir,1,2026-07-29,2026-07-29,2026-10-02,VERIFIED
+3037,PCB / CCL / Substrate,FINANCIAL_PROOF,AI高速傳輸推升高階ABF載板需求且玻纖短缺已導致價格傳導,https://www.digitimes.com/news/a20260226PD219/unimicron-demand-2026-price-transmission.html,digitimes_industry,2,2026-02-26,2026-02-26,2026-10-02,VERIFIED
+2408,Memory,FINANCIAL_PROOF,DRAM價格與獲利已回升且AI UWIO開始貢獻營收、客戶入股確保長期供應,https://www.nanya.com/tw/IR/16/%E6%96%B0%E8%81%9E%E7%A8%BF?IRId=12105,nanya_ir,1,2026-04-13,2026-04-13,2026-10-02,VERIFIED
+2408,Memory,FINANCIAL_PROOF,AI伺服器為DRAM需求主力且產能擴充有限使供給持續吃緊,https://www.trendforce.com/presscenter/news/20260730-13158.html,trendforce_research,2,2026-07-30,2026-07-30,2026-10-02,VERIFIED
+6488,Silicon Wafer,MASS_PRODUCTION,AI需求推升12吋矽晶圓需求能見度且環球晶持續擴建美國產能,https://mopsov.twse.com.tw/nas/STR/648820260505M002.pdf,mops_company_filing,1,2026-05-05,2026-05-05,2026-10-02,VERIFIED
+6488,Silicon Wafer,FINANCIAL_PROOF,Micron以戰略投資及10年供應協議鎖定環球晶300mm矽晶圓產能,https://www.tomshardware.com/tech-industry/semiconductors/micron-takes-a-500-million-position-in-americas-only-300mm-wafer-plant,toms_hardware_industry,2,2026-07-10,2026-07-10,2026-10-02,VERIFIED
