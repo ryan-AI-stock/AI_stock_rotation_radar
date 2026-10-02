@@ -1,6 +1,7 @@
 {
   "version": "r1-0.1.0",
   "status": "challenger",
+  "action_policy_approved": false,
   "timezone": "Asia/Taipei",
   "weights": {
     "eps_revision": 0.30,

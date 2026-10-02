@@ -24,6 +24,7 @@ class Security:
 class R1Config:
     version: str
     timezone: str
+    action_policy_approved: bool
     weights: dict[str, float]
     max_weekly_rotation: float
     securities: tuple[Security, ...]
@@ -46,6 +47,7 @@ class R1Config:
         return cls(
             version=str(payload["version"]),
             timezone=str(payload["timezone"]),
+            action_policy_approved=bool(payload["action_policy_approved"]),
             weights={key: float(value) for key, value in payload["weights"].items()},
             max_weekly_rotation=float(payload["rotation"]["max_weekly_rotation"]),
             securities=securities,
@@ -53,6 +55,8 @@ class R1Config:
 
 
 def validate_payload(payload: dict[str, Any]) -> None:
+    if not isinstance(payload.get("action_policy_approved"), bool):
+        raise ValueError("action_policy_approved must be a boolean")
     weights = payload.get("weights", {})
     if set(weights) != REQUIRED_WEIGHTS:
         raise ValueError(f"R1 weights must be exactly {sorted(REQUIRED_WEIGHTS)}")

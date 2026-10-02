@@ -14,6 +14,8 @@ class R1EvidenceReadinessTest(unittest.TestCase):
                                  catalyst_path=Path(folder) / "none2.csv", as_of_date="2026-10-01")
         self.assertEqual(result["requested_ticker_count"], 14)
         self.assertEqual(result["trade_ready_count"], 0)
+        self.assertEqual(result["component_score_ready_count"], 0)
+        self.assertFalse(result["action_policy_approved"])
         self.assertFalse(result["active_in_trade_decision"])
 
     def test_catalyst_requires_two_independent_source_families(self):

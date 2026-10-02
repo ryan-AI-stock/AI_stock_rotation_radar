@@ -13,6 +13,7 @@ class R1ConfigTest(unittest.TestCase):
     def test_seed_config_preserves_contract(self):
         config = R1Config.load(ROOT / "config" / "r1.json")
         self.assertEqual(config.version, "r1-0.1.0")
+        self.assertFalse(config.action_policy_approved)
         self.assertAlmostEqual(sum(config.weights.values()), 1.0)
         self.assertEqual(len(config.securities), 14)
         core = [security for security in config.securities if security.core_lock]
