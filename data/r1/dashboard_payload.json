@@ -48,15 +48,15 @@
       [
         "資料品質",
         "催化證據",
-        "12/14",
-        "PARTIAL",
+        "14/14",
+        "READY",
         "2026-10-02"
       ],
       [
         "資料品質",
         "瓶頸證據",
-        "12/14",
-        "PARTIAL",
+        "14/14",
+        "READY",
         "2026-10-02"
       ],
       [
@@ -371,13 +371,13 @@
         null,
         null,
         false,
-        false,
-        false,
+        true,
+        true,
         false,
         true,
         null,
         "DATA_MISSING",
-        "CONSENSUS_NOT_READY;CATALYST_EVIDENCE_NOT_READY;BOTTLENECK_EVIDENCE_NOT_READY;VALUATION_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
+        "CONSENSUS_NOT_READY;VALUATION_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
       ],
       [
         "2026-10-02",
@@ -479,13 +479,13 @@
         37.6,
         20.0531914893617,
         true,
-        false,
-        false,
+        true,
+        true,
         false,
         true,
         null,
         "DATA_MISSING",
-        "CATALYST_EVIDENCE_NOT_READY;BOTTLENECK_EVIDENCE_NOT_READY;VALUATION_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
+        "VALUATION_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
       ]
     ],
     "R1模擬交易紀錄": [
