@@ -12,3 +12,4 @@ ticker,fiscal_year,mean_eps,median_eps,high_eps,low_eps,analyst_count,source,pub
 6488,2027,32.70,32.70,45.09,20.24,16,ToAlpha public consensus,2026-09-09,2026-09-09,2026-10-02,MEDIUM,READY
 2408,2027,102.56,110.23,145.96,50.86,14,FactSet consensus via Anue,2026-09-18,2026-09-18,2026-10-02,MEDIUM,READY
 2379,2027,37.60,37.60,,,18,ToAlpha public consensus,2026-09-24,2026-09-24,2026-10-02,MEDIUM,READY
+3363,2027,16.93,16.93,,,2,ToAlpha public consensus,2026-09-09,2026-09-09,2026-10-02,MEDIUM,READY

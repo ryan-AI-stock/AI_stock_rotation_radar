@@ -25,3 +25,4 @@ ticker,fiscal_year,source_url,source_family,source_tier,available_at,note
 2408,2027,https://toalpha.tw/stock/2408/estimates,toalpha_consensus,2,2026-09-09,15家2027 EPS共識平均93.24
 2379,2027,https://toalpha.tw/stock/2379,toalpha_consensus,2,2026-09-24,18位分析師2027 EPS共識約37.60
 2379,2027,https://scm.sinotrade.com.tw/Article/GetFile/b6690bb5-b7fa-4fa0-9513-f235bba56fc4,sinopac_research,1,2026-04-30,永豐研究2027 EPS 28.95
+3363,2027,https://toalpha.tw/stock/3363/eps,toalpha_consensus,2,2026-09-09,2位分析師2027 EPS共識平均16.93；尚缺獨立第二來源故不得成為可交易共識
