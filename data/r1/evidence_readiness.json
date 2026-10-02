@@ -1,9 +1,9 @@
 {
   "model": "R1",
-  "as_of_date": "2026-10-01",
+  "as_of_date": "2026-10-02",
   "fiscal_year": 2027,
   "requested_ticker_count": 14,
-  "consensus_ready_count": 6,
+  "consensus_ready_count": 9,
   "catalyst_ready_count": 0,
   "trade_ready_count": 0,
   "consensus_rejected": [],
@@ -34,7 +34,7 @@
     },
     {
       "ticker": "2376",
-      "consensus_ready": false,
+      "consensus_ready": true,
       "catalyst_ready": false,
       "trade_ready": false
     },
@@ -64,7 +64,7 @@
     },
     {
       "ticker": "2303",
-      "consensus_ready": false,
+      "consensus_ready": true,
       "catalyst_ready": false,
       "trade_ready": false
     },
@@ -76,7 +76,7 @@
     },
     {
       "ticker": "3081",
-      "consensus_ready": false,
+      "consensus_ready": true,
       "catalyst_ready": false,
       "trade_ready": false
     },
