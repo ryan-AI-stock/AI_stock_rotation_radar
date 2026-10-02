@@ -1,6 +1,6 @@
 import unittest
 
-from r1.daily_sources import _chip_ready
+from r1.daily_sources import _chip_ready, _price_market_closed, _price_ready
 
 
 class R1DailySourcesTest(unittest.TestCase):
@@ -10,6 +10,18 @@ class R1DailySourcesTest(unittest.TestCase):
         self.assertTrue(_chip_ready({"sources": rows}))
         rows[-1]["status"] = "no_rows"
         self.assertFalse(_chip_ready({"sources": rows}))
+
+    def test_price_ready_requires_exact_universe(self):
+        wanted = {"2330", "6488", "3363"}
+        self.assertTrue(_price_ready({"price_rows": [{"ticker": ticker} for ticker in wanted]}, wanted))
+        self.assertFalse(_price_ready({"price_rows": [{"ticker": "2330"}, {"ticker": "6488"}]}, wanted))
+
+    def test_market_closed_requires_both_official_markets_and_no_rows(self):
+        sources = [{"family": "official_raw_execution_ohlcv", "market": market, "status": "no_rows"}
+                   for market in ("TWSE", "TPEx")]
+        self.assertTrue(_price_market_closed({"price_rows": [], "sources": sources}))
+        sources[-1]["status"] = "accepted"
+        self.assertFalse(_price_market_closed({"price_rows": [], "sources": sources}))
 
 
 if __name__ == "__main__":
