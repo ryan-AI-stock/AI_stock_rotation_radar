@@ -1,1 +1,1 @@
-event_date,ticker,event_type,description,source_url,source_tier,impact_direction,impact_score,confidence,expiry_weeks,affected_bottleneck,published_at,available_at,retrieved_at
+event_date,ticker,event_type,description,source_url,source_family,source_tier,impact_direction,impact_score,confidence,expiry_weeks,affected_bottleneck,published_at,available_at,retrieved_at

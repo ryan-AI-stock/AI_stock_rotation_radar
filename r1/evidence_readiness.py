@@ -25,7 +25,7 @@ def materialize(*, config_path: str | Path, consensus_path: str | Path,
         consensus_ready = bool(consensus and consensus_actionable(
             consensus.records, ticker=security.ticker, fiscal_year=fiscal_year, evidence=support))
         ticker_events = [row for row in catalysts if row.event.ticker == security.ticker]
-        catalyst_ready = len({row.event.source_url for row in ticker_events}) >= 2 and any(
+        catalyst_ready = len({row.source_family for row in ticker_events}) >= 2 and any(
             row.event.source_tier <= 2 for row in ticker_events)
         rows.append({
             "ticker": security.ticker,

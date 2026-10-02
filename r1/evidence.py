@@ -46,6 +46,7 @@ class CatalystEvent:
 @dataclass(frozen=True)
 class CatalystRecord:
     event: CatalystEvent
+    source_family: str
     description: str
     impact_direction: str
     affected_bottleneck: str
@@ -61,7 +62,7 @@ def load_catalyst_csv(path: str | Path, *, as_of_date: str) -> tuple[list[Cataly
     with Path(path).open(encoding="utf-8-sig", newline="") as handle:
         for line_no, row in enumerate(csv.DictReader(handle), start=2):
             try:
-                required = ("event_date", "ticker", "event_type", "source_url", "source_tier",
+                required = ("event_date", "ticker", "event_type", "source_url", "source_family", "source_tier",
                             "impact_score", "confidence", "expiry_weeks", "published_at",
                             "available_at", "retrieved_at")
                 missing = [key for key in required if not str(row.get(key, "")).strip()]
@@ -77,7 +78,8 @@ def load_catalyst_csv(path: str | Path, *, as_of_date: str) -> tuple[list[Cataly
                 )
                 event.score_at(as_of_date)
                 accepted.append(CatalystRecord(
-                    event=event, description=row.get("description", "").strip(),
+                    event=event, source_family=row["source_family"].strip(),
+                    description=row.get("description", "").strip(),
                     impact_direction=row.get("impact_direction", "").strip(),
                     affected_bottleneck=row.get("affected_bottleneck", "").strip(),
                     published_at=row["published_at"], available_at=row["available_at"],
@@ -89,6 +91,6 @@ def load_catalyst_csv(path: str | Path, *, as_of_date: str) -> tuple[list[Cataly
 
 
 def discovery_eligible(evidence: list[dict]) -> bool:
-    independent = {row.get("source_url") for row in evidence if row.get("source_url")}
+    independent = {row.get("source_family") for row in evidence if row.get("source_family")}
     authoritative = any(int(row.get("source_tier", 9)) <= 2 for row in evidence)
     return len(independent) >= 2 and authoritative

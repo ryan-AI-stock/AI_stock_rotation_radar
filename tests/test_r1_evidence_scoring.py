@@ -22,8 +22,9 @@ class R1EvidenceScoringTest(unittest.TestCase):
             event.score_at("2026-08-31")
 
     def test_discovery_requires_two_sources_and_one_high_quality(self):
-        self.assertTrue(discovery_eligible([{"source_url": "a", "source_tier": 1}, {"source_url": "b", "source_tier": 3}]))
-        self.assertFalse(discovery_eligible([{"source_url": "a", "source_tier": 3}, {"source_url": "b", "source_tier": 3}]))
+        self.assertTrue(discovery_eligible([{"source_family": "a", "source_tier": 1}, {"source_family": "b", "source_tier": 3}]))
+        self.assertFalse(discovery_eligible([{"source_family": "a", "source_tier": 3}, {"source_family": "b", "source_tier": 3}]))
+        self.assertFalse(discovery_eligible([{"source_family": "same", "source_tier": 1}, {"source_family": "same", "source_tier": 2}]))
 
     def test_missing_component_blocks_score(self):
         result = score(components={"eps_revision": None, "forward_valuation": 70, "bottleneck": 70,
@@ -40,8 +41,8 @@ class R1EvidenceScoringTest(unittest.TestCase):
         with TemporaryDirectory() as folder:
             path = Path(folder) / "events.csv"
             path.write_text(
-                "event_date,ticker,event_type,description,source_url,source_tier,impact_direction,impact_score,confidence,expiry_weeks,affected_bottleneck,published_at,available_at,retrieved_at\n"
-                "2026-09-30,2408,SUPPLY_SHORTAGE,x,https://a,1,UP,80,0.8,12,memory,2026-09-30,2026-10-02,2026-10-02\n",
+                "event_date,ticker,event_type,description,source_url,source_family,source_tier,impact_direction,impact_score,confidence,expiry_weeks,affected_bottleneck,published_at,available_at,retrieved_at\n"
+                "2026-09-30,2408,SUPPLY_SHORTAGE,x,https://a,official,1,UP,80,0.8,12,memory,2026-09-30,2026-10-02,2026-10-02\n",
                 encoding="utf-8",
             )
             accepted, rejected = load_catalyst_csv(path, as_of_date="2026-10-01")
