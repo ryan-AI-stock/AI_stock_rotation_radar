@@ -41,7 +41,7 @@
       [
         "資料品質",
         "EPS共識",
-        "9/14",
+        "13/14",
         "PARTIAL",
         "2026-10-01"
       ],
@@ -255,14 +255,14 @@
         18322922580.5,
         null,
         null,
-        false,
+        true,
         false,
         false,
         false,
         false,
         null,
         "DATA_MISSING",
-        "CONSENSUS_NOT_READY;CATALYST_EVIDENCE_NOT_READY;BOTTLENECK_EVIDENCE_NOT_READY;VALUATION_HISTORY_NOT_READY;PRICE_CHIP_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
+        "CATALYST_EVIDENCE_NOT_READY;BOTTLENECK_EVIDENCE_NOT_READY;VALUATION_HISTORY_NOT_READY;PRICE_CHIP_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
       ],
       [
         "2026-10-01",
@@ -282,14 +282,14 @@
         10770764115.5,
         null,
         null,
-        false,
+        true,
         false,
         false,
         false,
         false,
         null,
         "DATA_MISSING",
-        "CONSENSUS_NOT_READY;CATALYST_EVIDENCE_NOT_READY;BOTTLENECK_EVIDENCE_NOT_READY;VALUATION_HISTORY_NOT_READY;PRICE_CHIP_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
+        "CATALYST_EVIDENCE_NOT_READY;BOTTLENECK_EVIDENCE_NOT_READY;VALUATION_HISTORY_NOT_READY;PRICE_CHIP_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
       ],
       [
         "2026-10-01",
@@ -309,14 +309,14 @@
         26245265226.25,
         null,
         null,
-        false,
+        true,
         false,
         false,
         false,
         false,
         null,
         "DATA_MISSING",
-        "CONSENSUS_NOT_READY;CATALYST_EVIDENCE_NOT_READY;BOTTLENECK_EVIDENCE_NOT_READY;VALUATION_HISTORY_NOT_READY;PRICE_CHIP_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
+        "CATALYST_EVIDENCE_NOT_READY;BOTTLENECK_EVIDENCE_NOT_READY;VALUATION_HISTORY_NOT_READY;PRICE_CHIP_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
       ],
       [
         "2026-10-01",
@@ -471,14 +471,14 @@
         2124327258.95,
         null,
         null,
-        false,
+        true,
         false,
         false,
         false,
         false,
         null,
         "DATA_MISSING",
-        "CONSENSUS_NOT_READY;CATALYST_EVIDENCE_NOT_READY;BOTTLENECK_EVIDENCE_NOT_READY;VALUATION_HISTORY_NOT_READY;PRICE_CHIP_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
+        "CATALYST_EVIDENCE_NOT_READY;BOTTLENECK_EVIDENCE_NOT_READY;VALUATION_HISTORY_NOT_READY;PRICE_CHIP_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
       ]
     ],
     "R1模擬交易紀錄": [

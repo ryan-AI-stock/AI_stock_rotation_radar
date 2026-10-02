@@ -17,3 +17,11 @@ ticker,fiscal_year,source_url,source_family,source_tier,available_at,note
 3081,2027,https://www.ftnn.com.tw/news/535987,local_broker_ftnn,2,2026-09-23,本土券商估2027 EPS 38.50
 2303,2027,https://toalpha.tw/stock/2303/estimates,toalpha_consensus,2,2026-09-29,25家2027 EPS共識平均6.83
 2303,2027,https://www.yuanta.com.tw/eYuanta/Securities/News/GetAPItem?Type=StockHotNews&id=202604300120602,named_foreign_broker_yuanta,2,2026-04-30,外資報告估2027 EPS 4.87
+3037,2027,https://toalpha.tw/stock/3037/estimates,toalpha_consensus,2,2026-09-09,21家2027 EPS共識平均38.79
+3037,2027,https://gfemobile.cnyes.com/news/id/6530518,factset_cnyes,2,2026-07-10,FactSet 21位分析師2027 EPS平均31.70中位31.21
+6488,2027,https://toalpha.tw/stock/6488/estimates,toalpha_consensus,2,2026-09-09,16家2027 EPS共識平均32.70
+6488,2027,https://www.cnyes.com/twstock/6488/research/finirating,factset_cnyes,2,2026-09-30,FactSet 2027 EPS共識中位數33.22
+2408,2027,https://gfe-desktop.cnyes.com/news/id/6610540/print,factset_cnyes,2,2026-09-18,FactSet 14位分析師2027 EPS平均102.56中位110.23
+2408,2027,https://toalpha.tw/stock/2408/estimates,toalpha_consensus,2,2026-09-09,15家2027 EPS共識平均93.24
+2379,2027,https://toalpha.tw/stock/2379,toalpha_consensus,2,2026-09-24,18位分析師2027 EPS共識約37.60
+2379,2027,https://scm.sinotrade.com.tw/Article/GetFile/b6690bb5-b7fa-4fa0-9513-f235bba56fc4,sinopac_research,1,2026-04-30,永豐研究2027 EPS 28.95

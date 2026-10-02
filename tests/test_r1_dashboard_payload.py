@@ -19,7 +19,7 @@ class R1DashboardPayloadTest(unittest.TestCase):
         self.assertEqual(len(payload["tabs"]["R1模擬交易紀錄"]), 1)
         dashboard = payload["tabs"]["R1 Dashboard"]
         readiness = {row[1]: row[2] for row in dashboard[1:]}
-        self.assertEqual(readiness["EPS共識"], "9/14")
+        self.assertEqual(readiness["EPS共識"], "13/14")
         self.assertEqual(readiness["催化證據"], "9/14")
         self.assertEqual(readiness["瓶頸證據"], "9/14")
 
