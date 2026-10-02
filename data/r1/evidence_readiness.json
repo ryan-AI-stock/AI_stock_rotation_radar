@@ -9,7 +9,7 @@
   "catalyst_score_ready_count": 0,
   "bottleneck_ready_count": 14,
   "price_chip_ready_count": 14,
-  "current_chip_ready_count": 0,
+  "current_chip_ready_count": 14,
   "component_score_ready_count": 0,
   "trade_ready_count": 0,
   "action_policy_approved": false,
@@ -32,11 +32,11 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": false,
+      "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 22,
         "institutional_days": 22,
-        "margin_short_days": 21,
+        "margin_short_days": 22,
         "ready": true
       },
       "component_score_ready": false,
@@ -55,11 +55,11 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": false,
+      "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 22,
         "institutional_days": 22,
-        "margin_short_days": 21,
+        "margin_short_days": 22,
         "ready": true
       },
       "component_score_ready": false,
@@ -78,11 +78,11 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": false,
+      "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 22,
         "institutional_days": 22,
-        "margin_short_days": 21,
+        "margin_short_days": 22,
         "ready": true
       },
       "component_score_ready": false,
@@ -101,11 +101,11 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": false,
+      "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 22,
         "institutional_days": 22,
-        "margin_short_days": 21,
+        "margin_short_days": 22,
         "ready": true
       },
       "component_score_ready": false,
@@ -124,11 +124,11 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": false,
+      "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 22,
         "institutional_days": 22,
-        "margin_short_days": 21,
+        "margin_short_days": 22,
         "ready": true
       },
       "component_score_ready": false,
@@ -147,11 +147,11 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": false,
+      "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 22,
         "institutional_days": 22,
-        "margin_short_days": 21,
+        "margin_short_days": 22,
         "ready": true
       },
       "component_score_ready": false,
@@ -170,11 +170,11 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": false,
+      "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 22,
         "institutional_days": 22,
-        "margin_short_days": 21,
+        "margin_short_days": 22,
         "ready": true
       },
       "component_score_ready": false,
@@ -193,11 +193,11 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": false,
+      "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 22,
         "institutional_days": 22,
-        "margin_short_days": 21,
+        "margin_short_days": 22,
         "ready": true
       },
       "component_score_ready": false,
@@ -216,11 +216,11 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": false,
+      "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 22,
         "institutional_days": 22,
-        "margin_short_days": 21,
+        "margin_short_days": 22,
         "ready": true
       },
       "component_score_ready": false,
@@ -239,11 +239,11 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": false,
+      "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 22,
         "institutional_days": 22,
-        "margin_short_days": 21,
+        "margin_short_days": 22,
         "ready": true
       },
       "component_score_ready": false,
@@ -262,11 +262,11 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": false,
+      "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 22,
         "institutional_days": 22,
-        "margin_short_days": 21,
+        "margin_short_days": 22,
         "ready": true
       },
       "component_score_ready": false,
@@ -285,11 +285,11 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": false,
+      "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 22,
         "institutional_days": 22,
-        "margin_short_days": 21,
+        "margin_short_days": 22,
         "ready": true
       },
       "component_score_ready": false,
@@ -308,11 +308,11 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": false,
+      "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 22,
         "institutional_days": 22,
-        "margin_short_days": 21,
+        "margin_short_days": 22,
         "ready": true
       },
       "component_score_ready": false,
@@ -331,11 +331,11 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": false,
+      "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 22,
         "institutional_days": 22,
-        "margin_short_days": 21,
+        "margin_short_days": 22,
         "ready": true
       },
       "component_score_ready": false,
