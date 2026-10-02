@@ -24,6 +24,12 @@ def validate_tabs(tabs: dict[str, list[list[object]]]) -> None:
         raise ValueError(f"R1 tab topology mismatch missing={sorted(missing)} extra={sorted(extra)}")
     for title, schema in TAB_SCHEMAS.items():
         rows = tabs[title]
+        if title == "R1 Dashboard":
+            if not rows or not rows[0] or rows[0][0] != "R1研究版｜AI瓶頸預期差輪動":
+                raise ValueError("R1 Dashboard title mismatch")
+            if any(len(row) > len(schema) for row in rows):
+                raise ValueError("R1 Dashboard row width mismatch")
+            continue
         if not rows or tuple(rows[0]) != schema:
             raise ValueError(f"R1 tab header mismatch: {title}")
         width = len(schema)

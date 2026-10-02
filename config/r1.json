@@ -3,6 +3,10 @@
   "status": "challenger",
   "action_policy_approved": false,
   "timezone": "Asia/Taipei",
+  "dashboard": {
+    "spreadsheet_id": "1j-Uh_hR3VgIqW-0ZdXuPPTrXN7arxAc_BxyA_h5U95M",
+    "parent_folder_id": "1O6Se-HfI7ZDTQ-LWeAO6f8vtvoLcCzIj"
+  },
   "weights": {
     "eps_revision": 0.30,
     "forward_valuation": 0.25,

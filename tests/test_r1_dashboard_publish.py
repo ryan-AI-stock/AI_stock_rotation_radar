@@ -33,7 +33,8 @@ class FakeSheetsClient:
 class R1DashboardPublishTest(unittest.TestCase):
     def test_publishes_current_date_preserves_signal_history_and_keeps_transactions_empty(self):
         date = "2026-10-02"
-        dashboard = [list(TAB_SCHEMAS["R1 Dashboard"]), ["模型狀態", "說明", "研究資料", "CHALLENGER", date]]
+        dashboard = [["R1研究版｜AI瓶頸預期差輪動"], ["最新資料日期", date, "模型定位", "研究挑戰版", "尚未啟用交易"]]
+        dashboard.extend([[f"section-{i}"] for i in range(18)])
         signals = [list(TAB_SCHEMAS["R1每日訊號資料庫"])]
         for index in range(14):
             signals.append([date, f"{2300 + index:04d}", "測試", *([None] * 20), "DATA_MISSING", "blocked"])
@@ -50,7 +51,8 @@ class R1DashboardPublishTest(unittest.TestCase):
             path.write_text(json.dumps(payload), encoding="utf-8")
             fake = FakeSheetsClient("sheet")
             with patch.object(dashboard_publish, "SheetsClient", return_value=fake):
-                result = dashboard_publish.publish_payload("sheet", path)
+                with patch.object(dashboard_publish, "_format_workbook"):
+                    result = dashboard_publish.publish_payload("sheet", path)
         self.assertEqual(result["signal_rows_for_date"], 14)
         self.assertEqual(result["transaction_rows"], 0)
         self.assertEqual(len(fake.values["R1每日訊號資料庫"]), 16)

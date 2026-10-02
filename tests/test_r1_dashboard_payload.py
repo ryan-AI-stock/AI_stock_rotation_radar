@@ -18,7 +18,9 @@ class R1DashboardPayloadTest(unittest.TestCase):
         self.assertEqual(len(payload["tabs"]["R1每日訊號資料庫"]), 15)
         self.assertEqual(len(payload["tabs"]["R1模擬交易紀錄"]), 1)
         dashboard = payload["tabs"]["R1 Dashboard"]
-        readiness = {row[1]: row[2] for row in dashboard[1:]}
+        readiness = {row[0]: row[1] for row in dashboard if len(row) >= 2 and row[0] in {
+            "EPS共識", "催化證據", "瓶頸證據", "價量籌碼序列"
+        }}
         self.assertEqual(readiness["EPS共識"], "13/14")
         self.assertEqual(readiness["催化證據"], "14/14")
         self.assertEqual(readiness["瓶頸證據"], "14/14")
@@ -28,12 +30,13 @@ class R1DashboardPayloadTest(unittest.TestCase):
         payload = build_dashboard_payload(config_path=ROOT / "config/r1.json",
                                           market_path=ROOT / "data/r1/daily_market_20261001.json")
         actions = payload["tabs"]["R1 Dashboard"]
-        self.assertIn("BLOCKED", [row[3] for row in actions[1:]])
+        self.assertIn("尚未啟用", [cell for row in actions for cell in row])
         signals = payload["tabs"]["R1每日訊號資料庫"]
         self.assertEqual(next(row for row in signals if row[1] == "2330")[23], "CORE")
 
     def test_header_mismatch_is_rejected(self):
         tabs = {title: [list(headers)] for title, headers in TAB_SCHEMAS.items()}
+        tabs["R1 Dashboard"] = [["R1研究版｜AI瓶頸預期差輪動"]]
         tabs["R1每日訊號資料庫"][0][0] = "wrong"
         with self.assertRaisesRegex(ValueError, "header mismatch"):
             validate_tabs(tabs)
