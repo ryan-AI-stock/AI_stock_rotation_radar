@@ -60,6 +60,50 @@ class R1WeeklySnapshotTest(unittest.TestCase):
                                       market_path=ROOT / "data/r1/daily_market_20261001.json",
                                       daily_source_root=root / "daily", output_root=root / "weekly")
 
+    def test_revision_remains_missing_until_prior_snapshot_exists(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            history = root / "history"
+            history.mkdir()
+            history.joinpath("2026-10-01.json").write_text(json.dumps({
+                "rows": [{"ticker": "2408", "fiscal_year": 2027, "mean_eps": 100, "status": "READY"}],
+            }), encoding="utf-8")
+            output = build_weekly_snapshot(
+                date="2026-10-01", config_path=ROOT / "config/r1.json",
+                market_path=ROOT / "data/r1/daily_market_20261001.json",
+                daily_source_root=root / "daily", output_root=root / "weekly", week_final_confirmed=True,
+                consensus_path=ROOT / "data/r1/consensus/consensus.csv",
+                consensus_evidence_path=ROOT / "data/r1/consensus/evidence.csv",
+                consensus_history_root=history,
+            )
+            payload = json.loads(output.read_text(encoding="utf-8"))
+            nanya = next(row for row in payload["rows"] if row["ticker"] == "2408")
+            self.assertIsNone(nanya["eps_revision_1w"])
+            self.assertIsNone(nanya["eps_revision_4w"])
+            self.assertEqual(nanya["eps_history_current_date"], "2026-10-01")
+
+    def test_revision_uses_latest_snapshot_on_or_before_horizon(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            history = root / "history"
+            history.mkdir()
+            for snapshot_date, eps in (("2026-09-01", 100), ("2026-10-01", 120)):
+                history.joinpath(f"{snapshot_date}.json").write_text(json.dumps({
+                    "rows": [{"ticker": "2408", "fiscal_year": 2027, "mean_eps": eps, "status": "READY"}],
+                }), encoding="utf-8")
+            output = build_weekly_snapshot(
+                date="2026-10-01", config_path=ROOT / "config/r1.json",
+                market_path=ROOT / "data/r1/daily_market_20261001.json",
+                daily_source_root=root / "daily", output_root=root / "weekly", week_final_confirmed=True,
+                consensus_path=ROOT / "data/r1/consensus/consensus.csv",
+                consensus_evidence_path=ROOT / "data/r1/consensus/evidence.csv",
+                consensus_history_root=history,
+            )
+            payload = json.loads(output.read_text(encoding="utf-8"))
+            nanya = next(row for row in payload["rows"] if row["ticker"] == "2408")
+            self.assertAlmostEqual(nanya["eps_revision_4w"], 0.20)
+            self.assertEqual(nanya["eps_revision_4w_base_date"], "2026-09-01")
+
 
 if __name__ == "__main__":
     unittest.main()
