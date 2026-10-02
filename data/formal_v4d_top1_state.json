@@ -1,16 +1,16 @@
 {
   "version": 2,
   "model": "V4-D",
-  "ticker": "1326",
-  "name": "台化",
+  "ticker": "2351",
+  "name": "順德",
   "market": "TWSE",
-  "signal_date": "2026-10-01",
-  "signal_close": 67.7,
-  "execution_date": "2026-10-02",
+  "signal_date": "2026-10-02",
+  "signal_close": 211.5,
+  "execution_date": "2026-10-05",
   "entry_close": null,
   "status": "signal_only",
   "daily_marks": {},
   "candidate_rank": 1,
-  "industry": "塑膠工業",
+  "industry": "半導體業",
   "layer1_snapshot_date": "20260728"
 }
