@@ -16,8 +16,10 @@ class R1DashboardPayloadTest(unittest.TestCase):
         validate_tabs(payload["tabs"])
         self.assertEqual(len(payload["tabs"]["Portfolio"]), 15)
         dashboard = payload["tabs"]["R1 Dashboard"]
-        self.assertIn("9/14", [row[2] for row in dashboard])
-        self.assertIn("4/14", [row[2] for row in dashboard])
+        readiness = {row[1]: row[2] for row in dashboard[1:]}
+        self.assertEqual(readiness["EPS Consensus"], "9/14")
+        self.assertEqual(readiness["Catalyst evidence"], "9/14")
+        self.assertEqual(readiness["Bottleneck evidence"], "9/14")
 
     def test_dashboard_cannot_claim_trade_ready(self):
         payload = build_dashboard_payload(config_path=ROOT / "config/r1.json",
