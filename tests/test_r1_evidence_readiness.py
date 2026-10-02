@@ -103,6 +103,34 @@ class R1EvidenceReadinessTest(unittest.TestCase):
             self.assertTrue(row["current_chip_ready"])
             self.assertEqual(result["current_chip_ready_count"], 1)
 
+    def test_valuation_and_all_revision_horizons_are_independent_readiness_gates(self):
+        with TemporaryDirectory() as folder:
+            root = Path(folder)
+            history = root / "history"
+            history.mkdir()
+            for snapshot_date in ("2026-07-01", "2026-09-01", "2026-09-25", "2026-10-02"):
+                history.joinpath(f"{snapshot_date}.json").write_text(json.dumps({
+                    "rows": [{
+                        "ticker": "2330", "fiscal_year": 2027,
+                        "mean_eps": 100, "status": "READY",
+                    }],
+                }), encoding="utf-8")
+            valuation = root / "valuation.csv"
+            valuation.write_text(
+                "ticker,data_date,next_year_forward_pe,five_year_percentile,five_year_median_pe,source_url,retrieved_at,quality\n"
+                "2330,2026-10-02,17.6,0.77,16.0,https://example.test,2026-10-02,HIGH\n",
+                encoding="utf-8",
+            )
+            result = materialize(
+                config_path="config/r1.json", consensus_path=root / "none.csv",
+                catalyst_path=root / "none2.csv", daily_source_root=root / "daily",
+                valuation_reference_path=valuation, consensus_history_root=history,
+                as_of_date="2026-10-02",
+            )
+            row = next(item for item in result["rows"] if item["ticker"] == "2330")
+            self.assertTrue(row["valuation_ready"])
+            self.assertTrue(row["eps_revision_ready"])
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -19,13 +19,16 @@ class R1DashboardPayloadTest(unittest.TestCase):
         self.assertEqual(len(payload["tabs"]["R1模擬交易紀錄"]), 1)
         dashboard = payload["tabs"]["R1 Dashboard"]
         readiness = {row[0]: row[1] for row in dashboard if len(row) >= 2 and row[0] in {
-            "EPS共識", "催化證據", "瓶頸證據", "20日價量籌碼序列", "當日法人與融資"
+            "EPS共識", "EPS修正歷史", "催化證據", "瓶頸證據", "20日價量籌碼序列",
+            "當日法人與融資", "五年估值定位"
         }}
         self.assertEqual(readiness["EPS共識"], "14/14")
+        self.assertEqual(readiness["EPS修正歷史"], "0/14")
         self.assertEqual(readiness["催化證據"], "14/14")
         self.assertEqual(readiness["瓶頸證據"], "14/14")
         self.assertEqual(readiness["20日價量籌碼序列"], "14/14")
         self.assertIn("當日法人與融資", readiness)
+        self.assertEqual(readiness["五年估值定位"], "14/14")
 
     def test_dashboard_cannot_claim_trade_ready(self):
         payload = build_dashboard_payload(config_path=ROOT / "config/r1.json",

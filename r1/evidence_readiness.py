@@ -1,8 +1,9 @@
 from __future__ import annotations
 
 import argparse
+import csv
 import json
-from datetime import date
+from datetime import date, timedelta
 from pathlib import Path
 
 from r1.config import R1Config
@@ -61,13 +62,63 @@ def _current_chip_coverage(root: str | Path, *, as_of_date: str) -> dict[str, bo
     return {ticker: values == {"institutional", "margin_short"} for ticker, values in families.items()}
 
 
+def _valuation_reference(path: str | Path, *, as_of_date: str) -> dict[str, dict]:
+    source = Path(path)
+    if not source.exists():
+        return {}
+    rows: dict[str, dict] = {}
+    with source.open(encoding="utf-8-sig", newline="") as handle:
+        for row in csv.DictReader(handle):
+            ticker = str(row.get("ticker", "")).zfill(4)
+            data_date = str(row.get("data_date", ""))[:10]
+            try:
+                percentile = float(row["five_year_percentile"])
+            except (KeyError, TypeError, ValueError):
+                continue
+            if ticker and data_date and data_date <= as_of_date and 0 <= percentile <= 1:
+                rows[ticker] = {**row, "five_year_percentile": percentile}
+    return rows
+
+
+def _eps_revision_coverage(root: str | Path, *, as_of_date: str, fiscal_year: int) -> dict[str, bool]:
+    snapshots: list[tuple[str, dict]] = []
+    for path in sorted(Path(root).glob("????-??-??.json")):
+        if path.stem <= as_of_date:
+            snapshots.append((path.stem, json.loads(path.read_text(encoding="utf-8"))))
+    horizons = (7, 28, 84)
+    current_day = date.fromisoformat(as_of_date)
+    result: dict[str, bool] = {}
+    tickers = {
+        str(row.get("ticker", "")).zfill(4)
+        for _, payload in snapshots for row in payload.get("rows", [])
+    }
+    for ticker in tickers:
+        ready = True
+        for days in horizons:
+            cutoff = (current_day - timedelta(days=days)).isoformat()
+            found = any(
+                snapshot_date <= cutoff and any(
+                    str(row.get("ticker", "")).zfill(4) == ticker
+                    and int(row.get("fiscal_year", 0)) == fiscal_year
+                    and row.get("status") == "READY" and row.get("mean_eps") not in {None, 0}
+                    for row in payload.get("rows", [])
+                )
+                for snapshot_date, payload in snapshots
+            )
+            ready = ready and found
+        result[ticker] = ready
+    return result
+
+
 def materialize(*, config_path: str | Path, consensus_path: str | Path,
                 catalyst_path: str | Path, as_of_date: str,
                 consensus_evidence_path: str | Path = "data/r1/consensus/evidence.csv",
                 bottleneck_path: str | Path = "data/r1/bottleneck_map.json",
                 catalyst_evidence_path: str | Path = "data/r1/catalyst_events/evidence.csv",
                 bottleneck_evidence_path: str | Path = "data/r1/bottleneck_evidence.csv",
-                daily_source_root: str | Path = "data/r1/daily_sources") -> dict:
+                daily_source_root: str | Path = "data/r1/daily_sources",
+                valuation_reference_path: str | Path = "data/r1/valuation_reference.csv",
+                consensus_history_root: str | Path = "data/r1/consensus_history") -> dict:
     config = R1Config.load(config_path)
     consensus_file = Path(consensus_path)
     catalyst_file = Path(catalyst_path)
@@ -89,6 +140,10 @@ def materialize(*, config_path: str | Path, consensus_path: str | Path,
     price_chip_coverage = _price_chip_coverage(daily_source_root, as_of_date=as_of_date)
     current_chip_coverage = _current_chip_coverage(daily_source_root, as_of_date=as_of_date)
     fiscal_year = int(as_of_date[:4]) + 1
+    valuation_reference = _valuation_reference(valuation_reference_path, as_of_date=as_of_date)
+    eps_revision_coverage = _eps_revision_coverage(
+        consensus_history_root, as_of_date=as_of_date, fiscal_year=fiscal_year,
+    )
     rows = []
     for security in config.securities:
         consensus_ready = bool(consensus and consensus_actionable(
@@ -101,18 +156,23 @@ def materialize(*, config_path: str | Path, consensus_path: str | Path,
             bottleneck_by_ticker.get(security.ticker, {}).get("evidence_status") == "VERIFIED"
             or bottleneck_evidence_ready(bottleneck_evidence, ticker=security.ticker)
         )
-        # These components need historical PIT series and an approved calibration contract.
-        valuation_ready = False
+        valuation_ready = security.ticker in valuation_reference
+        eps_revision_ready = bool(eps_revision_coverage.get(security.ticker, False))
         price_chip_state = price_chip_coverage.get(security.ticker, {
             "price_days": 0, "institutional_days": 0, "margin_short_days": 0, "ready": False,
         })
         price_chip_ready = bool(price_chip_state["ready"])
         current_chip_ready = bool(current_chip_coverage.get(security.ticker, False))
-        component_score_ready = consensus_ready and catalyst_score_ready and bottleneck_ready and valuation_ready and price_chip_ready
+        component_score_ready = (
+            consensus_ready and eps_revision_ready and catalyst_score_ready and bottleneck_ready
+            and valuation_ready and price_chip_ready
+        )
         trade_ready = component_score_ready and config.action_policy_approved
         blocked_reasons = []
         if not consensus_ready:
             blocked_reasons.append("CONSENSUS_NOT_READY")
+        if not eps_revision_ready:
+            blocked_reasons.append("EPS_REVISION_HISTORY_NOT_READY")
         if not catalyst_ready:
             blocked_reasons.append("CATALYST_EVIDENCE_NOT_READY")
         if not bottleneck_ready:
@@ -126,6 +186,7 @@ def materialize(*, config_path: str | Path, consensus_path: str | Path,
         rows.append({
             "ticker": security.ticker,
             "consensus_ready": consensus_ready,
+            "eps_revision_ready": eps_revision_ready,
             "catalyst_ready": catalyst_ready,
             "catalyst_score_ready": catalyst_score_ready,
             "bottleneck_ready": bottleneck_ready,
@@ -141,6 +202,7 @@ def materialize(*, config_path: str | Path, consensus_path: str | Path,
         "model": "R1", "as_of_date": as_of_date, "fiscal_year": fiscal_year,
         "requested_ticker_count": len(rows),
         "consensus_ready_count": sum(row["consensus_ready"] for row in rows),
+        "eps_revision_ready_count": sum(row["eps_revision_ready"] for row in rows),
         "catalyst_ready_count": sum(row["catalyst_ready"] for row in rows),
         "catalyst_score_ready_count": sum(row["catalyst_score_ready"] for row in rows),
         "bottleneck_ready_count": sum(row["bottleneck_ready"] for row in rows),
@@ -170,6 +232,8 @@ def main() -> None:
     parser.add_argument("--bottleneck-evidence", default="data/r1/bottleneck_evidence.csv")
     parser.add_argument("--consensus-evidence", default="data/r1/consensus/evidence.csv")
     parser.add_argument("--daily-source-root", default="data/r1/daily_sources")
+    parser.add_argument("--valuation-reference", default="data/r1/valuation_reference.csv")
+    parser.add_argument("--consensus-history-root", default="data/r1/consensus_history")
     parser.add_argument("--output", default="data/r1/evidence_readiness.json")
     args = parser.parse_args()
     payload = materialize(config_path=args.config, consensus_path=args.consensus,
@@ -177,7 +241,9 @@ def main() -> None:
                           consensus_evidence_path=args.consensus_evidence,
                           catalyst_evidence_path=args.catalyst_evidence,
                           bottleneck_evidence_path=args.bottleneck_evidence,
-                          daily_source_root=args.daily_source_root)
+                          daily_source_root=args.daily_source_root,
+                          valuation_reference_path=args.valuation_reference,
+                          consensus_history_root=args.consensus_history_root)
     output = Path(args.output)
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")

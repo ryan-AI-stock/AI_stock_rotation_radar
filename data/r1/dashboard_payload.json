@@ -136,6 +136,13 @@
         "2026-10-02"
       ],
       [
+        "EPS修正歷史",
+        "0/14",
+        "累積中",
+        "至少具備1W、4W及12W PIT基準",
+        "2026-10-02"
+      ],
+      [
         "催化證據",
         "14/14",
         "完整",
@@ -164,10 +171,10 @@
         "2026-10-02"
       ],
       [
-        "估值歷史",
-        "0/14",
-        "累積中",
-        "建立歷史位階，禁止用單日資料代替",
+        "五年估值定位",
+        "14/14",
+        "完整",
+        "下年度Forward PE自身五年百分位",
         "2026-10-02"
       ],
       [
@@ -233,7 +240,7 @@
         true,
         true,
         true,
-        false,
+        true,
         true,
         null,
         "CORE",
@@ -260,11 +267,11 @@
         true,
         true,
         true,
-        false,
+        true,
         true,
         null,
         "DATA_MISSING",
-        "VALUATION_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
+        "EPS_REVISION_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
       ],
       [
         "2026-10-02",
@@ -287,11 +294,11 @@
         true,
         true,
         true,
-        false,
+        true,
         true,
         null,
         "DATA_MISSING",
-        "VALUATION_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
+        "EPS_REVISION_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
       ],
       [
         "2026-10-02",
@@ -314,11 +321,11 @@
         true,
         true,
         true,
-        false,
+        true,
         true,
         null,
         "DATA_MISSING",
-        "VALUATION_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
+        "EPS_REVISION_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
       ],
       [
         "2026-10-02",
@@ -341,11 +348,11 @@
         true,
         true,
         true,
-        false,
+        true,
         true,
         null,
         "DATA_MISSING",
-        "VALUATION_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
+        "EPS_REVISION_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
       ],
       [
         "2026-10-02",
@@ -368,11 +375,11 @@
         true,
         true,
         true,
-        false,
+        true,
         true,
         null,
         "DATA_MISSING",
-        "VALUATION_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
+        "EPS_REVISION_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
       ],
       [
         "2026-10-02",
@@ -395,11 +402,11 @@
         true,
         true,
         true,
-        false,
+        true,
         true,
         null,
         "DATA_MISSING",
-        "VALUATION_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
+        "EPS_REVISION_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
       ],
       [
         "2026-10-02",
@@ -422,11 +429,11 @@
         true,
         true,
         true,
-        false,
+        true,
         true,
         null,
         "DATA_MISSING",
-        "VALUATION_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
+        "EPS_REVISION_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
       ],
       [
         "2026-10-02",
@@ -449,11 +456,11 @@
         true,
         true,
         true,
-        false,
+        true,
         true,
         null,
         "DATA_MISSING",
-        "VALUATION_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
+        "EPS_REVISION_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
       ],
       [
         "2026-10-02",
@@ -476,11 +483,11 @@
         true,
         true,
         true,
-        false,
+        true,
         true,
         null,
         "DATA_MISSING",
-        "VALUATION_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
+        "EPS_REVISION_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
       ],
       [
         "2026-10-02",
@@ -503,11 +510,11 @@
         true,
         true,
         true,
-        false,
+        true,
         true,
         null,
         "DATA_MISSING",
-        "VALUATION_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
+        "EPS_REVISION_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
       ],
       [
         "2026-10-02",
@@ -530,11 +537,11 @@
         true,
         true,
         true,
-        false,
+        true,
         true,
         null,
         "DATA_MISSING",
-        "VALUATION_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
+        "EPS_REVISION_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
       ],
       [
         "2026-10-02",
@@ -557,11 +564,11 @@
         true,
         true,
         true,
-        false,
+        true,
         true,
         null,
         "DATA_MISSING",
-        "VALUATION_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
+        "EPS_REVISION_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
       ],
       [
         "2026-10-02",
@@ -584,11 +591,11 @@
         true,
         true,
         true,
-        false,
+        true,
         true,
         null,
         "DATA_MISSING",
-        "VALUATION_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
+        "EPS_REVISION_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
       ]
     ],
     "R1模擬交易紀錄": [

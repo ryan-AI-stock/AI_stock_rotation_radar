@@ -36,7 +36,7 @@ def _format_workbook(client: SheetsClient) -> None:
     navy = {"red": 0.0784, "green": 0.2, "blue": 0.2863}
     light = {"red": 0.91, "green": 0.957, "blue": 0.957}
     requests_body: list[dict] = []
-    for start, end in ((0, 1), (3, 4), (9, 10), (18, 19), (28, 29)):
+    for start, end in ((0, 1), (3, 4), (9, 10), (18, 19), (29, 30)):
         requests_body.append({"repeatCell": {
             "range": {"sheetId": dashboard_id, "startRowIndex": start, "endRowIndex": end,
                       "startColumnIndex": 0, "endColumnIndex": 5},
@@ -53,7 +53,7 @@ def _format_workbook(client: SheetsClient) -> None:
         }})
     requests_body.extend([
         {"repeatCell": {
-            "range": {"sheetId": dashboard_id, "startRowIndex": 0, "endRowIndex": 31,
+            "range": {"sheetId": dashboard_id, "startRowIndex": 0, "endRowIndex": 32,
                       "startColumnIndex": 0, "endColumnIndex": 5},
             "cell": {"userEnteredFormat": {"wrapStrategy": "WRAP", "verticalAlignment": "MIDDLE"}},
             "fields": "userEnteredFormat(wrapStrategy,verticalAlignment)",
@@ -68,7 +68,7 @@ def _format_workbook(client: SheetsClient) -> None:
         {"updateDimensionProperties": {"range": {"sheetId": dashboard_id, "dimension": "COLUMNS",
           "startIndex": 2, "endIndex": 5}, "properties": {"pixelSize": 190}, "fields": "pixelSize"}},
         {"updateDimensionProperties": {"range": {"sheetId": dashboard_id, "dimension": "ROWS",
-          "startIndex": 29, "endIndex": 30}, "properties": {"pixelSize": 560}, "fields": "pixelSize"}},
+          "startIndex": 30, "endIndex": 31}, "properties": {"pixelSize": 560}, "fields": "pixelSize"}},
     ])
     for title in (SIGNALS, TRADES):
         requests_body.extend([
