@@ -1,8 +1,11 @@
 import unittest
+import json
+from pathlib import Path
+from tempfile import TemporaryDirectory
 
 import pandas as pd
 
-from r1.market_snapshot import _ratio, _return
+from r1.market_snapshot import _ratio, _return, load_exact_complete_snapshot
 
 
 class R1MarketSnapshotTest(unittest.TestCase):
@@ -16,6 +19,20 @@ class R1MarketSnapshotTest(unittest.TestCase):
     def test_bias_is_ratio_not_percentage_points(self):
         self.assertAlmostEqual(_ratio(110.0, 100.0), 0.10)
         self.assertIsNone(_ratio(100.0, float("nan")))
+
+    def test_reuses_only_exact_complete_snapshot(self):
+        with TemporaryDirectory() as folder:
+            path = Path(folder) / "snapshot.json"
+            tickers = ["2330", "2327", "2344", "2376", "2454", "3037", "6488",
+                       "2408", "2303", "3363", "3081", "3711", "2308", "2379"]
+            path.write_text(json.dumps({
+                "date": "2026-10-02", "requested_ticker_count": 14, "actual_ticker_count": 14,
+                "gaps": [], "rows": [{"ticker": ticker, "raw_close": 1} for ticker in tickers],
+            }), encoding="utf-8")
+            self.assertIsNotNone(load_exact_complete_snapshot(
+                output=path, target="2026-10-02", config_path="config/r1.json"))
+            self.assertIsNone(load_exact_complete_snapshot(
+                output=path, target="2026-10-03", config_path="config/r1.json"))
 
 
 if __name__ == "__main__":

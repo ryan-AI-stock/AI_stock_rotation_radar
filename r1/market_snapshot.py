@@ -15,6 +15,23 @@ from rotation_radar.v4d_top1_signal import ADJUSTED_WARMUP, LIQUIDITY_WARMUP, ex
 RETURN_WINDOWS = {"daily_return": 1, "return_1w": 5, "return_1m": 20, "return_3m": 60, "return_6m": 120}
 
 
+def load_exact_complete_snapshot(*, output: str | Path, target: str,
+                                 config_path: str | Path) -> dict | None:
+    """Reuse only a complete snapshot for the exact requested date."""
+    path = Path(output)
+    if not path.exists():
+        return None
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    expected = {security.ticker for security in R1Config.load(config_path).securities}
+    rows = payload.get("rows", [])
+    actual = {str(row.get("ticker", "")).zfill(4) for row in rows if row.get("raw_close") is not None}
+    if payload.get("date") != target or actual != expected or payload.get("gaps"):
+        return None
+    if payload.get("requested_ticker_count") != len(expected) or payload.get("actual_ticker_count") != len(expected):
+        return None
+    return payload
+
+
 def build_market_snapshot(
     *, target: str, config_path: str | Path, source_repo: str | Path,
     source_cache: str | Path, output: str | Path, offline: bool = False,
@@ -136,11 +153,16 @@ def main() -> None:
     parser.add_argument("--source-cache", default="data/current_base_cycle_source_cache")
     parser.add_argument("--output", default="data/r1/daily_market_latest.json")
     parser.add_argument("--offline", action="store_true")
+    parser.add_argument("--reuse-exact-complete", action="store_true")
     args = parser.parse_args()
-    payload = build_market_snapshot(
-        target=args.date, config_path=args.config, source_repo=args.source_repo,
-        source_cache=args.source_cache, output=args.output, offline=args.offline,
-    )
+    payload = load_exact_complete_snapshot(
+        output=args.output, target=args.date, config_path=args.config,
+    ) if args.reuse_exact_complete else None
+    if payload is None:
+        payload = build_market_snapshot(
+            target=args.date, config_path=args.config, source_repo=args.source_repo,
+            source_cache=args.source_cache, output=args.output, offline=args.offline,
+        )
     if payload["actual_ticker_count"] != payload["requested_ticker_count"]:
         raise SystemExit(75)
     print(json.dumps({"date": payload["date"], "ticker_count": payload["actual_ticker_count"]}))
