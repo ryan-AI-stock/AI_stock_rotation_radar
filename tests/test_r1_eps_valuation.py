@@ -5,7 +5,7 @@ from pathlib import Path
 
 from r1.eps_revision import revision_features
 from r1.providers import CsvConsensusProvider
-from r1.valuation import valuation_scenarios
+from r1.valuation import load_valuation_reference, valuation_position, valuation_scenarios
 
 
 FIELDS = ["ticker", "fiscal_year", "mean_eps", "median_eps", "high_eps", "low_eps", "analyst_count",
@@ -37,6 +37,21 @@ class R1EpsValuationTest(unittest.TestCase):
         self.assertIsNone(result["bear_fair_value"])
         self.assertEqual(result["base_fair_value"], 150)
         self.assertEqual(result["forward_pe"], 10)
+
+    def test_reference_is_pit_bounded_and_position_is_raw_not_a_score(self):
+        with tempfile.TemporaryDirectory() as folder:
+            path = Path(folder) / "valuation.csv"
+            path.write_text(
+                "ticker,data_date,five_year_percentile,five_year_median_forward_pe\n"
+                "2408,2026-10-01,0.29,10\n"
+                "2330,2026-10-03,0.77,16\n",
+                encoding="utf-8",
+            )
+            rows = load_valuation_reference(path, as_of_date="2026-10-02")
+            self.assertEqual(set(rows), {"2408"})
+            result = valuation_position(forward_pe=5.6, reference=rows["2408"])
+            self.assertEqual(result["forward_pe_percentile_5y"], 0.29)
+            self.assertAlmostEqual(result["forward_pe_vs_median"], -0.44)
 
 
 if __name__ == "__main__":
