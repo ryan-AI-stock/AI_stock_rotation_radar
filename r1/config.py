@@ -28,6 +28,7 @@ class R1Config:
     weights: dict[str, float]
     score_policy: dict[str, Any]
     max_weekly_rotation: float
+    rotation_policy: dict[str, Any]
     securities: tuple[Security, ...]
 
     @classmethod
@@ -52,6 +53,7 @@ class R1Config:
             weights={key: float(value) for key, value in payload["weights"].items()},
             score_policy=payload["score_policy"],
             max_weekly_rotation=float(payload["rotation"]["max_weekly_rotation"]),
+            rotation_policy=payload["rotation"],
             securities=securities,
         )
 
@@ -80,6 +82,17 @@ def validate_payload(payload: dict[str, Any]) -> None:
     max_rotation = float(payload.get("rotation", {}).get("max_weekly_rotation", -1))
     if not 0 <= max_rotation <= 1:
         raise ValueError("max_weekly_rotation must be between 0 and 1")
+    rotation = payload.get("rotation", {})
+    if rotation.get("shadow_policy_approved") is not True:
+        raise ValueError("R1 shadow rotation policy must be explicitly approved")
+    if not 0 < float(rotation.get("overheat_percentile", 0)) < 1:
+        raise ValueError("R1 overheat_percentile must be between 0 and 1")
+    if float(rotation.get("minimum_score_advantage", -1)) < 0:
+        raise ValueError("R1 minimum_score_advantage must be nonnegative")
+    if not 0 < float(rotation.get("staged_transfer_fraction", 0)) <= 1:
+        raise ValueError("R1 staged_transfer_fraction must be in (0,1]")
+    if int(rotation.get("max_holdings", 0)) != 5:
+        raise ValueError("R1 max_holdings must be 5")
     seen: set[str] = set()
     for row in payload.get("securities", []):
         ticker = str(row.get("ticker", "")).zfill(4)

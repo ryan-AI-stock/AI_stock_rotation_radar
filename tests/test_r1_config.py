@@ -16,6 +16,10 @@ class R1ConfigTest(unittest.TestCase):
         self.assertFalse(config.action_policy_approved)
         self.assertAlmostEqual(sum(config.weights.values()), 1.0)
         self.assertEqual(config.score_policy["version"], "r1-score-v0.1-research")
+        self.assertTrue(config.rotation_policy["shadow_policy_approved"])
+        self.assertEqual(config.rotation_policy["minimum_score_advantage"], 10.0)
+        self.assertEqual(config.rotation_policy["staged_transfer_fraction"], 0.25)
+        self.assertEqual(config.rotation_policy["max_holdings"], 5)
         self.assertEqual(len(config.securities), 14)
         core = [security for security in config.securities if security.core_lock]
         self.assertEqual([security.ticker for security in core], ["2330"])

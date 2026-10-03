@@ -37,6 +37,13 @@
   },
   "rotation": {
     "max_weekly_rotation": 0.10,
+    "shadow_policy_approved": true,
+    "overheat_percentile": 0.95,
+    "minimum_score_advantage": 10.0,
+    "staged_transfer_fraction": 0.25,
+    "target_signal_stage": "CONFIRMED",
+    "source_signal_stage": "DETERIORATING",
+    "max_holdings": 5,
     "target_main_positions": 3,
     "target_cash_weight_min": 0.05,
     "target_cash_weight_max": 0.20
