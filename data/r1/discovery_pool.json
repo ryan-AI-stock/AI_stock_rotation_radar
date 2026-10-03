@@ -1,0 +1,11 @@
+{
+  "as_of_date": "2026-10-03",
+  "status": "DISCOVERY_REVIEW_ONLY",
+  "policy": "Ryan approval is required; discovery evidence never changes the R1 universe automatically.",
+  "candidates": [],
+  "rejected_rows": [],
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false
+}
