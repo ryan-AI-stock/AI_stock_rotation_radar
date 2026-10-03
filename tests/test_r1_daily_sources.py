@@ -1,6 +1,6 @@
 import unittest
 
-from r1.daily_sources import _chip_ready, _price_market_closed, _price_ready
+from r1.daily_sources import _chip_ready, _price_market_closed, _price_ready, publication_exit_code
 
 
 class R1DailySourcesTest(unittest.TestCase):
@@ -22,6 +22,15 @@ class R1DailySourcesTest(unittest.TestCase):
         self.assertTrue(_price_market_closed({"price_rows": [], "sources": sources}))
         sources[-1]["status"] = "accepted"
         self.assertFalse(_price_market_closed({"price_rows": [], "sources": sources}))
+
+    def test_daily_can_publish_prices_while_weekly_remains_blocked_on_chip_gap(self):
+        manifest = {"blocked": [], "chip_data_ready": False}
+        self.assertEqual(publication_exit_code(manifest, allow_chip_gaps=True), 0)
+        self.assertEqual(publication_exit_code(manifest, allow_chip_gaps=False), 75)
+
+    def test_price_gap_always_blocks(self):
+        manifest = {"blocked": [{"reason": "incomplete_price_universe"}], "chip_data_ready": True}
+        self.assertEqual(publication_exit_code(manifest, allow_chip_gaps=True), 75)
 
 
 if __name__ == "__main__":

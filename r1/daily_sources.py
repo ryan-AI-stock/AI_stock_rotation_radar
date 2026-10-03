@@ -120,6 +120,15 @@ def _family_sources(payload: dict, family: str) -> list[dict]:
     return [row for row in payload.get("sources", []) if row.get("family") == family]
 
 
+def publication_exit_code(manifest: dict, *, allow_chip_gaps: bool) -> int:
+    """Daily reporting may publish prices; weekly scoring still requires exact chip data."""
+    if manifest["blocked"]:
+        return 75
+    if not manifest["chip_data_ready"] and not allow_chip_gaps:
+        return 75
+    return 0
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Materialize checkpointed official R1 daily sources.")
     parser.add_argument("--start", required=True)
@@ -129,6 +138,7 @@ def main() -> None:
     parser.add_argument("--retry-incomplete", action="store_true")
     parser.add_argument("--max-attempts", type=int, default=3)
     parser.add_argument("--retry-wait-seconds", type=float, default=15.0)
+    parser.add_argument("--allow-chip-gaps", action="store_true")
     args = parser.parse_args()
     result = materialize_daily_sources(
         start=date.fromisoformat(args.start), end=date.fromisoformat(args.end),
@@ -136,8 +146,9 @@ def main() -> None:
         max_attempts=args.max_attempts, retry_wait_seconds=args.retry_wait_seconds,
     )
     print(json.dumps(result, ensure_ascii=False))
-    if result["blocked"] or not result["chip_data_ready"]:
-        raise SystemExit(75)
+    exit_code = publication_exit_code(result, allow_chip_gaps=args.allow_chip_gaps)
+    if exit_code:
+        raise SystemExit(exit_code)
 
 
 if __name__ == "__main__":

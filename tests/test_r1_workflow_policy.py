@@ -11,6 +11,8 @@ class R1WorkflowPolicyTest(unittest.TestCase):
         self.assertIn("AI_stock_schedule_rules/schedule_rules.json", workflow)
         self.assertIn("r1.market_snapshot", workflow)
         self.assertIn("--retry-incomplete", workflow)
+        self.assertIn("--allow-chip-gaps", workflow)
+        self.assertIn("group: r1-publication", workflow)
         self.assertIn("r1.dashboard_publish", workflow)
         self.assertIn("GOOGLE_OAUTH_REFRESH_TOKEN", workflow)
         self.assertIn("Sync latest main after concurrency wait", workflow)
@@ -23,6 +25,8 @@ class R1WorkflowPolicyTest(unittest.TestCase):
         self.assertIn("r1.dashboard_publish", workflow)
         self.assertIn("Sync latest main after concurrency wait", workflow)
         self.assertIn('0 11-15 * * *', workflow)
+        self.assertNotIn("--allow-chip-gaps", workflow)
+        self.assertIn("group: r1-publication", workflow)
 
 
 if __name__ == "__main__":
