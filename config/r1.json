@@ -14,6 +14,27 @@
     "catalyst": 0.15,
     "price_chip": 0.10
   },
+  "score_policy": {
+    "version": "r1-score-v0.1-research",
+    "eps_revision": {
+      "weights": {"1w": 0.20, "4w": 0.50, "12w": 0.30},
+      "negative_4w_cap": 45.0,
+      "positive_4w_12w_floor": 55.0,
+      "double_negative_cap": 30.0
+    },
+    "forward_valuation": {
+      "weights": {"own_forward_pe": 0.45, "base_upside": 0.35, "next_year_eps_growth": 0.20},
+      "nonpositive_base_upside_cap": 35.0
+    },
+    "bottleneck": {
+      "weights": {"stage": 0.60, "tightness": 0.20, "financial_proof": 0.20},
+      "stage_scores": {"THESIS": 15.0, "QUALIFICATION": 30.0, "SAMPLE": 45.0, "TAPE_OUT": 60.0, "SMALL_VOLUME": 75.0, "MASS_PRODUCTION": 90.0, "FINANCIAL_PROOF": 100.0}
+    },
+    "catalyst": {"neutral_score": 50.0, "minimum_score": 0.0, "maximum_score": 100.0},
+    "price_chip": {
+      "weights": {"earnings_vs_price": 0.40, "overheat_safety": 0.30, "institutional": 0.20, "leverage_structure": 0.10}
+    }
+  },
   "rotation": {
     "max_weekly_rotation": 0.10,
     "target_main_positions": 3,

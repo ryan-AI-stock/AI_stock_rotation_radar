@@ -26,6 +26,7 @@ class R1Config:
     timezone: str
     action_policy_approved: bool
     weights: dict[str, float]
+    score_policy: dict[str, Any]
     max_weekly_rotation: float
     securities: tuple[Security, ...]
 
@@ -49,6 +50,7 @@ class R1Config:
             timezone=str(payload["timezone"]),
             action_policy_approved=bool(payload["action_policy_approved"]),
             weights={key: float(value) for key, value in payload["weights"].items()},
+            score_policy=payload["score_policy"],
             max_weekly_rotation=float(payload["rotation"]["max_weekly_rotation"]),
             securities=securities,
         )
@@ -62,6 +64,19 @@ def validate_payload(payload: dict[str, Any]) -> None:
         raise ValueError(f"R1 weights must be exactly {sorted(REQUIRED_WEIGHTS)}")
     if abs(sum(float(value) for value in weights.values()) - 1.0) > 1e-9:
         raise ValueError("R1 weights must sum to 1.0")
+    policy = payload.get("score_policy", {})
+    if policy.get("version") != "r1-score-v0.1-research":
+        raise ValueError("R1 score_policy version mismatch")
+    expected_subweights = {
+        "eps_revision": {"1w", "4w", "12w"},
+        "forward_valuation": {"own_forward_pe", "base_upside", "next_year_eps_growth"},
+        "bottleneck": {"stage", "tightness", "financial_proof"},
+        "price_chip": {"earnings_vs_price", "overheat_safety", "institutional", "leverage_structure"},
+    }
+    for component, expected in expected_subweights.items():
+        subweights = policy.get(component, {}).get("weights", {})
+        if set(subweights) != expected or abs(sum(float(value) for value in subweights.values()) - 1.0) > 1e-9:
+            raise ValueError(f"R1 {component} subweights must be exactly {sorted(expected)} and sum to 1.0")
     max_rotation = float(payload.get("rotation", {}).get("max_weekly_rotation", -1))
     if not 0 <= max_rotation <= 1:
         raise ValueError("max_weekly_rotation must be between 0 and 1")

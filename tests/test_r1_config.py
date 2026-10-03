@@ -15,6 +15,7 @@ class R1ConfigTest(unittest.TestCase):
         self.assertEqual(config.version, "r1-0.1.0")
         self.assertFalse(config.action_policy_approved)
         self.assertAlmostEqual(sum(config.weights.values()), 1.0)
+        self.assertEqual(config.score_policy["version"], "r1-score-v0.1-research")
         self.assertEqual(len(config.securities), 14)
         core = [security for security in config.securities if security.core_lock]
         self.assertEqual([security.ticker for security in core], ["2330"])

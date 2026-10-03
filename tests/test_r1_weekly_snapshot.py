@@ -140,6 +140,7 @@ class R1WeeklySnapshotTest(unittest.TestCase):
             nanya = next(row for row in payload["rows"] if row["ticker"] == "2408")
             self.assertAlmostEqual(nanya["eps_revision_4w"], 0.20)
             self.assertEqual(nanya["eps_revision_4w_base_date"], "2026-09-01")
+            self.assertIsNone(nanya["eps_score"])
 
 
 if __name__ == "__main__":

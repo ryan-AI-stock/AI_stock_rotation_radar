@@ -7,6 +7,7 @@ from pathlib import Path
 
 from r1.config import R1Config
 from r1.consensus import consensus_actionable, load_consensus_csv, load_consensus_evidence
+from r1.component_scores import eps_revision_composite, eps_revision_score
 from r1.providers import MissingConsensusProvider
 from r1.valuation import load_valuation_reference, valuation_position
 
@@ -145,6 +146,19 @@ def build_weekly_snapshot(
             "target_weight": None,
             "suggested_transfer": None,
         })
+    eligible_eps_composites = [
+        composite for row in rows
+        if (composite := eps_revision_composite(
+            revision_1w=row["eps_revision_1w"], revision_4w=row["eps_revision_4w"],
+            revision_12w=row["eps_revision_12w"], policy=config.score_policy["eps_revision"],
+        )) is not None
+    ]
+    for row in rows:
+        row["eps_score"] = eps_revision_score(
+            revision_1w=row["eps_revision_1w"], revision_4w=row["eps_revision_4w"],
+            revision_12w=row["eps_revision_12w"], eligible_composites=eligible_eps_composites,
+            policy=config.score_policy["eps_revision"],
+        )
     payload = {
         "model": "R1", "date": date, "snapshot_policy": "append_only",
         "rows": rows, "future_data_violation_count": 0,
