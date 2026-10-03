@@ -12,6 +12,46 @@ class RotationOrder:
     suggested_transfer: float
 
 
+@dataclass(frozen=True)
+class RotationComparison:
+    source_ticker: str
+    target_ticker: str
+    score_advantage: float | None
+    eps_revision_4w_advantage: float | None
+    base_upside_advantage: float | None
+    price_eps_gap_4w_advantage: float | None
+    decision: str
+    reason: str
+
+
+def compare_rotation_pair(
+    *, source: dict, target: dict, minimum_score_advantage: float | None = None,
+) -> RotationComparison:
+    fields = ("total_score", "eps_revision_4w", "base_upside", "price_eps_gap_4w")
+    if any(source.get(field) is None or target.get(field) is None for field in fields):
+        return RotationComparison(
+            str(source.get("ticker", "")), str(target.get("ticker", "")),
+            None, None, None, None, "DATA_MISSING", "PAIRWISE_INPUT_MISSING",
+        )
+    comparison = RotationComparison(
+        str(source["ticker"]), str(target["ticker"]),
+        float(target["total_score"]) - float(source["total_score"]),
+        float(target["eps_revision_4w"]) - float(source["eps_revision_4w"]),
+        float(target["base_upside"]) - float(source["base_upside"]),
+        float(target["price_eps_gap_4w"]) - float(source["price_eps_gap_4w"]),
+        "WAIT", "ROTATION_THRESHOLD_NOT_APPROVED",
+    )
+    if minimum_score_advantage is None:
+        return comparison
+    if comparison.score_advantage >= minimum_score_advantage:
+        return RotationComparison(
+            **{**comparison.__dict__, "decision": "ROTATION_CANDIDATE", "reason": "TARGET_ADVANTAGE_PASSES"}
+        )
+    return RotationComparison(
+        **{**comparison.__dict__, "decision": "KEEP_SOURCE", "reason": "TARGET_ADVANTAGE_INSUFFICIENT"}
+    )
+
+
 def build_rotation_orders(
     *, current_values: dict[str, float], target_weights: dict[str, float],
     managed_value: float, max_weekly_rotation: float, core_locked: set[str],

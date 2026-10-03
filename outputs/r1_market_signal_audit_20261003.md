@@ -15,7 +15,7 @@
 | Trend Confirmation | PARTIAL | `r1/market_signal_state.py`, `r1/weekly_snapshot.py` | 跨週快照 | 否 | 否 | 自新快照累積 | EPS連續週數、stage及confidence已建立；多構面Trend 1W/2W/4W/12W待建 |
 | Price vs Earnings | PARTIAL | `r1/price_eps.py`, `r1/weekly_snapshot.py` | 價格＋EPS快照；每週 | 尚未 | 否 | EPS歷史累積中 | 已統一為 earnings minus price，新增正／負背離；尚未進Action |
 | Signal Stage | PARTIAL | `r1/market_signal_state.py` | 每週 | 否 | 否 | 自新快照累積 | WAIT/EARLY/CONFIRMING/CONFIRMED/DETERIORATING已用EPS持續週數產生；尚未結合產業與估值 |
-| Source vs Target rotation | MISSING | `r1/rotation.py`僅有金額差與10%上限 | 需完整Score/Trend | 否 | 否 | 無 | 尚無成對ROTATION_ADVANTAGE比較 |
+| Source vs Target rotation | PARTIAL | `r1/rotation.py` | 需完整Score/Trend | 比較總分與關鍵差值 | 門檻未核准 | 無 | 已輸出Score、EPS 4W、Base Upside、Price/EPS Gap成對差距；明顯優勢門檻與Trend gate待核准 |
 | Staged rotation | MISSING | `r1/scoring.py`目前只有ADD/KEEP/TRIM/EXIT骨架 | 每週 | 否 | 未核准 | 無 | TRIM_1/TRIM_2與ADD_1/ADD_2/FULL_POSITION待建 |
 | Natural Convergence | MISSING | 尚無 | Portfolio週評估 | 否 | 否 | 無 | 現有持股不強砍的收斂狀態機待建 |
 | Dashboard market message | PARTIAL | `r1/dashboard_payload.py`, `r1/dashboard_schema.py` | 每日發布 | 不適用 | 顯示用 | 讀取最近有效週快照 | 已顯示Price/EPS、EPS stage/confidence/持續週數、估值與籌碼狀態；動態trigger尚未完成 |
@@ -27,7 +27,7 @@
 1. 每天監控→每週判斷→2至4週確認→換倉：**否**。前兩段已有排程，Trend與換倉決策未完成。
 2. 股價漲但EPS漲更快所以不賣：**PARTIAL**。可計算`EARNINGS_LEADS_PRICE`，尚未進Action。
 3. 股價漲但EPS未跟上所以TRIM：**PARTIAL**。可計算`PRICE_LEADS_EARNINGS`／`NEGATIVE_DIVERGENCE`，尚未進Action。
-4. 欣興與南亞科成對比較：**否**。目前不是pairwise rotation engine。
+4. 欣興與南亞科成對比較：**PARTIAL**。已能成對列出四項優勢差距；門檻與實際換倉尚未核准。
 5. 是否避免單週雜訊過度交易：**目前不會交易**；正式Trend防抖尚未完成。
 6. Natural Convergence：**否**。
 7. Dashboard解釋訊號、持續時間、可信度與下一觸發：**PARTIAL**。前3項已接；下一觸發尚未完成。

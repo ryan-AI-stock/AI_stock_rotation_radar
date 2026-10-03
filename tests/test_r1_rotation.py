@@ -1,9 +1,29 @@
 import unittest
 
-from r1.rotation import build_rotation_orders
+from r1.rotation import build_rotation_orders, compare_rotation_pair
 
 
 class R1RotationTest(unittest.TestCase):
+    def test_pairwise_comparison_is_visible_but_cannot_rotate_without_approved_threshold(self):
+        source = {"ticker": "3037", "total_score": 70, "eps_revision_4w": .02,
+                  "base_upside": .10, "price_eps_gap_4w": -.05}
+        target = {"ticker": "2408", "total_score": 82, "eps_revision_4w": .12,
+                  "base_upside": .30, "price_eps_gap_4w": .08}
+        result = compare_rotation_pair(source=source, target=target)
+        self.assertEqual(result.source_ticker, "3037")
+        self.assertEqual(result.target_ticker, "2408")
+        self.assertEqual(result.score_advantage, 12)
+        self.assertAlmostEqual(result.eps_revision_4w_advantage, .10)
+        self.assertEqual(result.decision, "WAIT")
+        self.assertEqual(result.reason, "ROTATION_THRESHOLD_NOT_APPROVED")
+
+    def test_pairwise_comparison_blocks_missing_data(self):
+        result = compare_rotation_pair(
+            source={"ticker": "3037", "total_score": None},
+            target={"ticker": "2408", "total_score": 82},
+        )
+        self.assertEqual(result.decision, "DATA_MISSING")
+
     def test_weekly_rotation_is_capped_and_core_excluded(self):
         orders = build_rotation_orders(
             current_values={"2330": 5_000_000, "2327": 3_000_000, "2408": 0},
