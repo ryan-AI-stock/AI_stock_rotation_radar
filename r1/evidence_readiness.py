@@ -110,6 +110,41 @@ def _eps_revision_coverage(root: str | Path, *, as_of_date: str, fiscal_year: in
     return result
 
 
+def _eps_revision_progress(root: str | Path, *, as_of_date: str, fiscal_year: int) -> dict:
+    first_dates: dict[str, str] = {}
+    ready_counts = {"1w": 0, "4w": 0, "12w": 0}
+    horizons = {"1w": 7, "4w": 28, "12w": 84}
+    snapshots: list[tuple[str, dict]] = []
+    for path in sorted(Path(root).glob("????-??-??.json")):
+        if path.stem <= as_of_date:
+            snapshots.append((path.stem, json.loads(path.read_text(encoding="utf-8"))))
+    tickers = set()
+    for snapshot_date, payload in snapshots:
+        for row in payload.get("rows", []):
+            ticker = str(row.get("ticker", "")).zfill(4)
+            if (ticker and int(row.get("fiscal_year", 0)) == fiscal_year
+                    and row.get("status") == "READY" and row.get("mean_eps") not in {None, 0}):
+                tickers.add(ticker)
+                first_dates.setdefault(ticker, snapshot_date)
+    current_day = date.fromisoformat(as_of_date)
+    for label, days in horizons.items():
+        cutoff = (current_day - timedelta(days=days)).isoformat()
+        ready_counts[label] = sum(first_date <= cutoff for first_date in first_dates.values())
+    first_observation = min(first_dates.values()) if first_dates else None
+    return {
+        "first_observation_date": first_observation,
+        "observed_ticker_count": len(tickers),
+        "ready_counts": ready_counts,
+        "earliest_calendar_eligibility": {
+            label: None if first_observation is None else (
+                date.fromisoformat(first_observation) + timedelta(days=days)
+            ).isoformat()
+            for label, days in horizons.items()
+        },
+        "note": "Calendar eligibility does not guarantee a usable snapshot; the first later weekly run must still contain valid PIT consensus.",
+    }
+
+
 def materialize(*, config_path: str | Path, consensus_path: str | Path,
                 catalyst_path: str | Path, as_of_date: str,
                 consensus_evidence_path: str | Path = "data/r1/consensus/evidence.csv",
@@ -142,6 +177,9 @@ def materialize(*, config_path: str | Path, consensus_path: str | Path,
     fiscal_year = int(as_of_date[:4]) + 1
     valuation_reference = _valuation_reference(valuation_reference_path, as_of_date=as_of_date)
     eps_revision_coverage = _eps_revision_coverage(
+        consensus_history_root, as_of_date=as_of_date, fiscal_year=fiscal_year,
+    )
+    eps_revision_progress = _eps_revision_progress(
         consensus_history_root, as_of_date=as_of_date, fiscal_year=fiscal_year,
     )
     rows = []
@@ -203,6 +241,7 @@ def materialize(*, config_path: str | Path, consensus_path: str | Path,
         "requested_ticker_count": len(rows),
         "consensus_ready_count": sum(row["consensus_ready"] for row in rows),
         "eps_revision_ready_count": sum(row["eps_revision_ready"] for row in rows),
+        "eps_revision_progress": eps_revision_progress,
         "catalyst_ready_count": sum(row["catalyst_ready"] for row in rows),
         "catalyst_score_ready_count": sum(row["catalyst_score_ready"] for row in rows),
         "bottleneck_ready_count": sum(row["bottleneck_ready"] for row in rows),

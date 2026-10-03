@@ -8,6 +8,19 @@ from r1.evidence_readiness import materialize
 
 
 class R1EvidenceReadinessTest(unittest.TestCase):
+    def test_eps_revision_progress_exposes_horizon_dates_without_backfill(self):
+        from r1.evidence_readiness import _eps_revision_progress
+        with TemporaryDirectory() as directory:
+            root = Path(directory)
+            root.joinpath("2026-10-02.json").write_text(json.dumps({
+                "rows": [{"ticker": "2408", "fiscal_year": 2027, "mean_eps": 100, "status": "READY"}],
+            }), encoding="utf-8")
+            result = _eps_revision_progress(root, as_of_date="2026-10-03", fiscal_year=2027)
+            self.assertEqual(result["first_observation_date"], "2026-10-02")
+            self.assertEqual(result["earliest_calendar_eligibility"], {
+                "1w": "2026-10-09", "4w": "2026-10-30", "12w": "2026-12-25",
+            })
+            self.assertEqual(result["ready_counts"], {"1w": 0, "4w": 0, "12w": 0})
     def test_missing_files_block_every_ticker(self):
         with TemporaryDirectory() as folder:
             result = materialize(config_path="config/r1.json", consensus_path=Path(folder) / "none.csv",

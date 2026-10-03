@@ -53,6 +53,8 @@ def build_dashboard_payload(
     readiness_by_ticker = {row["ticker"]: row for row in readiness.get("rows", [])}
     market_by_ticker = {row["ticker"]: row for row in market["rows"]}
     valuation_by_ticker = _latest_valuation_rows(valuation_root, market["date"])
+    revision_progress = readiness.get("eps_revision_progress", {})
+    revision_dates = revision_progress.get("earliest_calendar_eligibility", {})
     tabs: dict[str, list[list[object]]] = {
         title: ([] if title == "R1 Dashboard" else [list(headers)])
         for title, headers in TAB_SCHEMAS.items()
@@ -94,7 +96,9 @@ def build_dashboard_payload(
          "EPS修正與前瞻估值", market["date"]],
         ["EPS修正歷史", f"{readiness.get('eps_revision_ready_count', 0)}/{readiness['requested_ticker_count']}",
          "完整" if readiness.get("eps_revision_ready_count") == readiness["requested_ticker_count"] else "累積中",
-         "至少具備1W、4W及12W PIT基準", market["date"]],
+         "至少具備1W、4W及12W PIT基準；最早日："
+         f"1W {revision_dates.get('1w') or '待首筆'}／4W {revision_dates.get('4w') or '待首筆'}／"
+         f"12W {revision_dates.get('12w') or '待首筆'}", market["date"]],
         ["催化證據", f"{readiness['catalyst_ready_count']}/{readiness['requested_ticker_count']}",
          "完整" if readiness["catalyst_ready_count"] == readiness["requested_ticker_count"] else "部分完成",
          "需求與事件驗證", market["date"]],

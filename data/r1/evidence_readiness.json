@@ -5,6 +5,21 @@
   "requested_ticker_count": 14,
   "consensus_ready_count": 14,
   "eps_revision_ready_count": 0,
+  "eps_revision_progress": {
+    "first_observation_date": "2026-10-02",
+    "observed_ticker_count": 13,
+    "ready_counts": {
+      "1w": 0,
+      "4w": 0,
+      "12w": 0
+    },
+    "earliest_calendar_eligibility": {
+      "1w": "2026-10-09",
+      "4w": "2026-10-30",
+      "12w": "2026-12-25"
+    },
+    "note": "Calendar eligibility does not guarantee a usable snapshot; the first later weekly run must still contain valid PIT consensus."
+  },
   "catalyst_ready_count": 14,
   "catalyst_score_ready_count": 0,
   "bottleneck_ready_count": 14,
