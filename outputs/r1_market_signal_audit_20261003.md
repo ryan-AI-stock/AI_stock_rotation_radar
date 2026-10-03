@@ -7,11 +7,11 @@
 | 功能 | 狀態 | 程式位置 | 資料來源／頻率 | Score | Action | 歷史 | 缺失與修改 |
 |---|---|---|---|---|---|---|---|
 | Price Signal | PARTIAL | `r1/market_snapshot.py`, `r1/daily_sources.py` | TWSE/TPEx官方；每日 | 價格籌碼骨架 | 否 | 約20TD | Close、報酬、MA、BIAS、成交額已具備；BIAS百分位、真實成交量比率、異常狀態未完成 |
-| Chip / Flow | PARTIAL | `r1/daily_sources.py`, `r1/weekly_snapshot.py` | 官方三大法人、融資融券；每日 | 欄位存在，完整分數未落地 | 否 | 約20TD | 當日值已接；5D/20D累積與FLOW_STATE未完成 |
+| Chip / Flow | PARTIAL | `r1/daily_sources.py`, `r1/weekly_snapshot.py`, `r1/market_signal_state.py` | 官方三大法人、融資融券；每日 | 欄位存在，完整分數未落地 | 否 | 約20TD | 當日值、外資加投信5D/20D及FLOW_STATE已接；dealer可靠性與更多流向交叉驗證未完成 |
 | EPS / Fundamental | PARTIAL | `r1/consensus_snapshot.py`, `r1/weekly_snapshot.py` | 公開法人共識；每週 | EPS score骨架已接 | 否 | 自2026-10起累積 | 目前主要為下年度EPS；本年度、下下年度及完整1W/4W/12W尚未成熟 |
-| Forward valuation | PARTIAL | `r1/valuation.py`, `r1/valuation_snapshot.py` | 五年Forward PE定位；每週 | 估值score骨架 | 否 | 快照開始累積 | Base公允價值已接；Bear/Bull PE分位、PE/Fair Value/Upside跨週變化未完成 |
+| Forward valuation | PARTIAL | `r1/valuation.py`, `r1/valuation_snapshot.py`, `r1/weekly_snapshot.py` | 五年Forward PE定位；每週 | 估值score骨架 | 否 | 快照開始累積 | Base公允價值及PE/Fair Value/Upside 1W變化已接；Bear/Bull PE分位與4W/12W變化未完成 |
 | Industry / Event | PARTIAL | `r1/catalyst_evidence.py`, `r1/bottleneck_evidence.py` | 公告／證據表；事件／每週 | 構面骨架 | 否 | 證據有日期 | 事件類別與證據存在；訂單→稼動率→ASP→營收→毛利→EPS傳導鏈未物化 |
-| Market Signal State | PARTIAL | `r1/market_signal_state.py`, `r1/weekly_snapshot.py` | 週快照 | 否 | 否 | 自新快照累積 | EPS_STATE已建立；PRICE/VALUATION/FLOW/BOTTLENECK/CATALYST_STATE待建 |
+| Market Signal State | PARTIAL | `r1/market_signal_state.py`, `r1/weekly_snapshot.py` | 週快照 | 否 | 否 | 自新快照累積 | EPS_STATE、VALUATION_STATE、FLOW_STATE已建立；PRICE/BOTTLENECK/CATALYST_STATE待建 |
 | Trend Confirmation | PARTIAL | `r1/market_signal_state.py`, `r1/weekly_snapshot.py` | 跨週快照 | 否 | 否 | 自新快照累積 | EPS連續週數、stage及confidence已建立；多構面Trend 1W/2W/4W/12W待建 |
 | Price vs Earnings | PARTIAL | `r1/price_eps.py`, `r1/weekly_snapshot.py` | 價格＋EPS快照；每週 | 尚未 | 否 | EPS歷史累積中 | 已統一為 earnings minus price，新增正／負背離；尚未進Action |
 | Signal Stage | PARTIAL | `r1/market_signal_state.py` | 每週 | 否 | 否 | 自新快照累積 | WAIT/EARLY/CONFIRMING/CONFIRMED/DETERIORATING已用EPS持續週數產生；尚未結合產業與估值 |

@@ -13,6 +13,28 @@ def eps_state(revision_4w: float | None) -> str:
     return "STABLE"
 
 
+def flow_state(flow_5d: float | None, flow_20d: float | None) -> str:
+    if flow_5d is None or flow_20d is None:
+        return "DATA_MISSING"
+    if flow_5d > 0 and flow_20d > 0:
+        return "ACCUMULATING"
+    if flow_5d < 0 and flow_20d < 0:
+        return "DISTRIBUTING"
+    return "NEUTRAL"
+
+
+def valuation_state(
+    *, forward_pe_change: float | None, base_upside_change: float | None,
+) -> str:
+    if forward_pe_change is None or base_upside_change is None:
+        return "DATA_MISSING"
+    if forward_pe_change < 0 and base_upside_change > 0:
+        return "CHEAPENING"
+    if forward_pe_change > 0 and base_upside_change < 0:
+        return "EXPANDING"
+    return "FAIR"
+
+
 @dataclass(frozen=True)
 class TrendConfirmation:
     stage: str

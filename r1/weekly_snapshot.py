@@ -10,7 +10,7 @@ from r1.consensus import consensus_actionable, load_consensus_csv, load_consensu
 from r1.component_scores import eps_revision_composite, eps_revision_score
 from r1.providers import MissingConsensusProvider
 from r1.price_eps import price_eps_gap
-from r1.market_signal_state import confirm_eps_trend, eps_state
+from r1.market_signal_state import confirm_eps_trend, eps_state, flow_state, valuation_state
 from r1.required_data import enforce_required_data, required_data_gaps
 from r1.valuation import load_valuation_reference, valuation_position, valuation_scenarios
 
@@ -89,14 +89,17 @@ def build_weekly_snapshot(
         evidence = []
     rows = []
     prior_eps_states: dict[str, list[str]] = {}
+    prior_weekly_rows: dict[str, dict] = {}
     for prior_path in sorted(Path(output_root).glob("weekly_snapshot_????-??-??.json")):
         if prior_path.stem.rsplit("_", 1)[-1] >= date:
             continue
         prior_payload = json.loads(prior_path.read_text(encoding="utf-8"))
         for prior_row in prior_payload.get("rows", []):
+            ticker = str(prior_row.get("ticker", "")).zfill(4)
+            prior_weekly_rows[ticker] = prior_row
             state = prior_row.get("eps_state")
             if state:
-                prior_eps_states.setdefault(str(prior_row.get("ticker", "")).zfill(4), []).append(state)
+                prior_eps_states.setdefault(ticker, []).append(state)
     for security in config.securities:
         market_row = market_by_ticker[security.ticker]
         price_history = [row for payload in daily_payloads for row in payload.get("price_rows", [])
@@ -107,6 +110,17 @@ def build_weekly_snapshot(
         latest_by_family = {row["family"]: row for row in chip_today}
         institution = latest_by_family.get("institutional", {})
         margin = latest_by_family.get("margin_short", {})
+        ticker_chip_history = [
+            row for payload in daily_payloads for row in payload.get("chip_rows", [])
+            if row.get("ticker") == security.ticker and row.get("family") == "institutional"
+        ]
+        institutional_flows = [
+            float(row.get("foreign_net") or 0) + float(row.get("trust_net") or 0)
+            for row in ticker_chip_history
+            if row.get("foreign_net") is not None and row.get("trust_net") is not None
+        ]
+        flow_5d = sum(institutional_flows[-5:]) if len(institutional_flows) >= 5 else None
+        flow_20d = sum(institutional_flows[-20:]) if len(institutional_flows) >= 20 else None
         record = consensus.get(security.ticker)
         consensus_ready = bool(record and consensus_actionable(
             tuple(consensus.values()), ticker=security.ticker, fiscal_year=fiscal_year, evidence=evidence))
@@ -139,6 +153,16 @@ def build_weekly_snapshot(
         )
         current_eps_state = eps_state(revision["eps_revision_4w"])
         eps_trend = confirm_eps_trend(prior_eps_states.get(security.ticker, []) + [current_eps_state])
+        prior_row = prior_weekly_rows.get(security.ticker, {})
+        prior_forward_pe = prior_row.get("forward_pe")
+        prior_base_fair_value = prior_row.get("base_fair_value")
+        prior_base_upside = prior_row.get("base_upside")
+        forward_pe_change = None if forward_pe is None or prior_forward_pe in {None, 0} \
+            else forward_pe / prior_forward_pe - 1
+        base_fair_value_change = None if scenarios["base_fair_value"] is None or prior_base_fair_value in {None, 0} \
+            else scenarios["base_fair_value"] / prior_base_fair_value - 1
+        base_upside_change = None if scenarios["base_upside"] is None or prior_base_upside is None \
+            else scenarios["base_upside"] - prior_base_upside
         rows.append({
             **market_row,
             "position_shares": security.shares,
@@ -146,11 +170,14 @@ def build_weekly_snapshot(
             "position_value": market_row["raw_close"] * security.shares if market_row["raw_close"] is not None else None,
             "volume": volumes[-1] if volumes else None,
             "avg_volume_20d": sum(volumes[-20:]) / 20 if len(volumes) >= 20 else None,
-            "foreign_net": institution.get("foreign_net") or None,
-            "trust_net": institution.get("trust_net") or None,
-            "dealer_net": institution.get("dealer_net") or None,
-            "margin_balance": margin.get("margin_balance") or None,
-            "margin_change": margin.get("margin_change") or None,
+            "foreign_net": institution.get("foreign_net"),
+            "trust_net": institution.get("trust_net"),
+            "dealer_net": institution.get("dealer_net"),
+            "margin_balance": margin.get("margin_balance"),
+            "margin_change": margin.get("margin_change"),
+            "institutional_flow_5d": flow_5d,
+            "institutional_flow_20d": flow_20d,
+            "flow_state": flow_state(flow_5d, flow_20d),
             "chip_data_status": "AVAILABLE" if institution and margin else "DATA_MISSING",
             "next_year_eps": next_year_eps,
             "analyst_count": record.analyst_count if record else None,
@@ -170,6 +197,12 @@ def build_weekly_snapshot(
             "bull_pe": None,
             "valuation_scenario_status": "BASE_READY_PE_BANDS_MISSING"
             if scenarios["base_fair_value"] is not None else "DATA_MISSING",
+            "forward_pe_change_1w": forward_pe_change,
+            "base_fair_value_change_1w": base_fair_value_change,
+            "base_upside_change_1w": base_upside_change,
+            "valuation_state": valuation_state(
+                forward_pe_change=forward_pe_change, base_upside_change=base_upside_change,
+            ),
             "price_eps_gap_1w": gap_1w.earnings_minus_price,
             "price_eps_state_1w": gap_1w.state,
             "price_eps_gap_4w": gap_4w.earnings_minus_price,

@@ -1,6 +1,6 @@
 import unittest
 
-from r1.market_signal_state import confirm_eps_trend, eps_state
+from r1.market_signal_state import confirm_eps_trend, eps_state, flow_state, valuation_state
 
 
 class R1MarketSignalStateTest(unittest.TestCase):
@@ -25,6 +25,23 @@ class R1MarketSignalStateTest(unittest.TestCase):
     def test_missing_observations_do_not_fake_continuity(self):
         result = confirm_eps_trend(["DATA_MISSING"])
         self.assertEqual((result.stage, result.consecutive_weeks), ("WAIT", 0))
+
+    def test_flow_requires_consistent_5d_and_20d_direction(self):
+        self.assertEqual(flow_state(10, 30), "ACCUMULATING")
+        self.assertEqual(flow_state(-10, -30), "DISTRIBUTING")
+        self.assertEqual(flow_state(10, -30), "NEUTRAL")
+        self.assertEqual(flow_state(None, 30), "DATA_MISSING")
+
+    def test_valuation_uses_change_not_only_current_level(self):
+        self.assertEqual(
+            valuation_state(forward_pe_change=-.1, base_upside_change=.2), "CHEAPENING"
+        )
+        self.assertEqual(
+            valuation_state(forward_pe_change=.1, base_upside_change=-.2), "EXPANDING"
+        )
+        self.assertEqual(
+            valuation_state(forward_pe_change=.1, base_upside_change=.1), "FAIR"
+        )
 
 
 if __name__ == "__main__":
