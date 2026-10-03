@@ -37,10 +37,22 @@ def _latest_valuation_rows(root: str | Path, target_date: str) -> dict[str, dict
     return {row["ticker"]: row for row in payload.get("rows", [])}
 
 
+def _latest_weekly_rows(root: str | Path, target_date: str) -> dict[str, dict]:
+    files = sorted(
+        path for path in Path(root).glob("weekly_snapshot_????-??-??.json")
+        if path.stem.rsplit("_", 1)[-1] <= target_date
+    )
+    if not files:
+        return {}
+    payload = json.loads(files[-1].read_text(encoding="utf-8"))
+    return {str(row.get("ticker", "")).zfill(4): row for row in payload.get("rows", [])}
+
+
 def build_dashboard_payload(
     *, config_path: str | Path, market_path: str | Path,
     readiness_path: str | Path = "data/r1/evidence_readiness.json",
     valuation_root: str | Path = "data/r1/valuation_history",
+    weekly_root: str | Path = "data/r1/weekly",
 ) -> dict:
     config = R1Config.load(config_path)
     market = json.loads(Path(market_path).read_text(encoding="utf-8"))
@@ -56,6 +68,7 @@ def build_dashboard_payload(
     readiness_by_ticker = {row["ticker"]: row for row in readiness.get("rows", [])}
     market_by_ticker = {row["ticker"]: row for row in market["rows"]}
     valuation_by_ticker = _latest_valuation_rows(valuation_root, market["date"])
+    weekly_by_ticker = _latest_weekly_rows(weekly_root, market["date"])
     revision_progress = readiness.get("eps_revision_progress", {})
     revision_dates = revision_progress.get("earliest_calendar_eligibility", {})
     tabs: dict[str, list[list[object]]] = {
@@ -90,7 +103,23 @@ def build_dashboard_payload(
             "核心持股" if security.core_lock else "既有持股／等待R1規則核准",
         ])
     dashboard.extend([
-        ["03｜資料與模型狀態"],
+        ["03｜市場正在告訴我們什麼"],
+        ["股票", "Price/EPS 4W", "EPS趨勢", "估值狀態", "籌碼狀態"],
+    ])
+    for security in config.securities:
+        weekly = weekly_by_ticker.get(security.ticker, {})
+        dashboard.append([
+            f"{security.ticker} {security.company}",
+            weekly.get("price_eps_state_4w") or "等待4W資料",
+            (
+                f"{weekly.get('signal_stage')}／{weekly.get('trend_confidence')}／"
+                f"{weekly.get('eps_trend_consecutive_weeks')}週"
+            ) if weekly.get("signal_stage") else "等待跨週資料",
+            weekly.get("valuation_state") or "等待跨週資料",
+            weekly.get("flow_state") or "等待20TD資料",
+        ])
+    dashboard.extend([
+        ["04｜資料與模型狀態"],
         ["項目", "完成度", "顯示狀態", "用途", "資料日期"],
         ["官方市場資料", f"{market['actual_ticker_count']}/{market['requested_ticker_count']}",
          "完整" if not market["gaps"] else "資料不足", "收盤與技術資料", market["date"]],
@@ -119,7 +148,7 @@ def build_dashboard_payload(
          "下年度Forward PE自身五年百分位", market["date"]],
         ["交易建議", f"{readiness['trade_ready_count']}/{readiness['requested_ticker_count']}",
          "尚未啟用", "Action規則核准後才產生", market["date"]],
-        ["04｜模型完整說明"],
+        ["05｜模型完整說明"],
         [MODEL_LOGIC],
     ])
 
@@ -159,11 +188,12 @@ def main() -> None:
     parser.add_argument("--market", required=True)
     parser.add_argument("--readiness", default="data/r1/evidence_readiness.json")
     parser.add_argument("--valuation-root", default="data/r1/valuation_history")
+    parser.add_argument("--weekly-root", default="data/r1/weekly")
     parser.add_argument("--output", default="data/r1/dashboard_payload.json")
     args = parser.parse_args()
     payload = build_dashboard_payload(
         config_path=args.config, market_path=args.market, readiness_path=args.readiness,
-        valuation_root=args.valuation_root,
+        valuation_root=args.valuation_root, weekly_root=args.weekly_root,
     )
     output = Path(args.output)
     output.parent.mkdir(parents=True, exist_ok=True)

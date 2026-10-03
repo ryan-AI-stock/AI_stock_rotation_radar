@@ -18,7 +18,7 @@
 | Source vs Target rotation | MISSING | `r1/rotation.py`僅有金額差與10%上限 | 需完整Score/Trend | 否 | 否 | 無 | 尚無成對ROTATION_ADVANTAGE比較 |
 | Staged rotation | MISSING | `r1/scoring.py`目前只有ADD/KEEP/TRIM/EXIT骨架 | 每週 | 否 | 未核准 | 無 | TRIM_1/TRIM_2與ADD_1/ADD_2/FULL_POSITION待建 |
 | Natural Convergence | MISSING | 尚無 | Portfolio週評估 | 否 | 否 | 無 | 現有持股不強砍的收斂狀態機待建 |
-| Dashboard market message | MISSING | `r1/dashboard_payload.py`, `r1/dashboard_schema.py` | 每日發布 | 不適用 | 顯示用 | 只存靜態列 | 尚未顯示跨週訊號、持續週數、confidence及動態trigger |
+| Dashboard market message | PARTIAL | `r1/dashboard_payload.py`, `r1/dashboard_schema.py` | 每日發布 | 不適用 | 顯示用 | 讀取最近有效週快照 | 已顯示Price/EPS、EPS stage/confidence/持續週數、估值與籌碼狀態；動態trigger尚未完成 |
 | Required-data failure contract | DONE | `r1/required_data.py`, `r1/weekly_snapshot.py` | 每週 | 不補0 | 啟用Action後強制 | 缺口逐檔保存 | challenger可累積NA；`action_policy_approved=true`後任何必要欄位缺失會報股票與欄位並中止決策 |
 | Scheduling | PARTIAL | `.github/workflows/r1-daily.yml`, `r1-weekly.yml` | 每日收盤後／每週末 | 是 | 尚未交易 | Git持久化 | 每日與每週分流已存在；重大事件即時重評與完整異常偵測未完成 |
 
@@ -30,7 +30,7 @@
 4. 欣興與南亞科成對比較：**否**。目前不是pairwise rotation engine。
 5. 是否避免單週雜訊過度交易：**目前不會交易**；正式Trend防抖尚未完成。
 6. Natural Convergence：**否**。
-7. Dashboard解釋訊號、持續時間、可信度與下一觸發：**否**。
+7. Dashboard解釋訊號、持續時間、可信度與下一觸發：**PARTIAL**。前3項已接；下一觸發尚未完成。
 
 ## 修改順序
 
