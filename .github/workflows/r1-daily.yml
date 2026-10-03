@@ -62,6 +62,7 @@ jobs:
           python -m r1.market_snapshot --date "${{ steps.gate.outputs.target_date }}" --output data/r1/daily_market_latest.json
           python -m r1.daily_sources --start "${{ steps.gate.outputs.target_date }}" --end "${{ steps.gate.outputs.target_date }}" --retry-incomplete
           python -m r1.evidence_readiness --date "${{ steps.gate.outputs.target_date }}"
+          python -m r1.forward_outcomes --date "${{ steps.gate.outputs.target_date }}"
           python -m r1.dashboard_payload --market data/r1/daily_market_latest.json --output data/r1/dashboard_payload.json
       - name: Publish and read back R1 Dashboard
         if: steps.gate.outputs.should_run == 'true'
@@ -79,7 +80,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/r1/daily_market_latest.json data/r1/daily_sources data/r1/evidence_readiness.json data/r1/dashboard_payload.json
+          git add data/r1/daily_market_latest.json data/r1/daily_sources data/r1/evidence_readiness.json data/r1/forward_outcomes.json data/r1/dashboard_payload.json
           if git diff --cached --quiet; then exit 0; fi
           git commit -m "Update R1 daily source state"
           git pull --rebase origin main
