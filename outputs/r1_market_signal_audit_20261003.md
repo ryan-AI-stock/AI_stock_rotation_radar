@@ -11,10 +11,10 @@
 | EPS / Fundamental | PARTIAL | `r1/consensus_snapshot.py`, `r1/weekly_snapshot.py` | 公開法人共識；每週 | EPS score骨架已接 | 否 | 自2026-10起累積 | 目前主要為下年度EPS；本年度、下下年度及完整1W/4W/12W尚未成熟 |
 | Forward valuation | PARTIAL | `r1/valuation.py`, `r1/valuation_snapshot.py` | 五年Forward PE定位；每週 | 估值score骨架 | 否 | 快照開始累積 | Base公允價值已接；Bear/Bull PE分位、PE/Fair Value/Upside跨週變化未完成 |
 | Industry / Event | PARTIAL | `r1/catalyst_evidence.py`, `r1/bottleneck_evidence.py` | 公告／證據表；事件／每週 | 構面骨架 | 否 | 證據有日期 | 事件類別與證據存在；訂單→稼動率→ASP→營收→毛利→EPS傳導鏈未物化 |
-| Market Signal State | MISSING | 尚無 | 應由週快照生成 | 否 | 否 | 無 | 六類PRICE/EPS/VALUATION/FLOW/BOTTLENECK/CATALYST_STATE待建 |
-| Trend Confirmation | MISSING | 尚無 | 需跨週快照 | 否 | 否 | 不足 | TREND_1W/2W/4W/12W、confidence及持續週數待建 |
+| Market Signal State | PARTIAL | `r1/market_signal_state.py`, `r1/weekly_snapshot.py` | 週快照 | 否 | 否 | 自新快照累積 | EPS_STATE已建立；PRICE/VALUATION/FLOW/BOTTLENECK/CATALYST_STATE待建 |
+| Trend Confirmation | PARTIAL | `r1/market_signal_state.py`, `r1/weekly_snapshot.py` | 跨週快照 | 否 | 否 | 自新快照累積 | EPS連續週數、stage及confidence已建立；多構面Trend 1W/2W/4W/12W待建 |
 | Price vs Earnings | PARTIAL | `r1/price_eps.py`, `r1/weekly_snapshot.py` | 價格＋EPS快照；每週 | 尚未 | 否 | EPS歷史累積中 | 已統一為 earnings minus price，新增正／負背離；尚未進Action |
-| Signal Stage | MISSING | 尚無 | 需Trend輸出 | 否 | 否 | 無 | WAIT/EARLY/CONFIRMING/CONFIRMED/DETERIORATING待建 |
+| Signal Stage | PARTIAL | `r1/market_signal_state.py` | 每週 | 否 | 否 | 自新快照累積 | WAIT/EARLY/CONFIRMING/CONFIRMED/DETERIORATING已用EPS持續週數產生；尚未結合產業與估值 |
 | Source vs Target rotation | MISSING | `r1/rotation.py`僅有金額差與10%上限 | 需完整Score/Trend | 否 | 否 | 無 | 尚無成對ROTATION_ADVANTAGE比較 |
 | Staged rotation | MISSING | `r1/scoring.py`目前只有ADD/KEEP/TRIM/EXIT骨架 | 每週 | 否 | 未核准 | 無 | TRIM_1/TRIM_2與ADD_1/ADD_2/FULL_POSITION待建 |
 | Natural Convergence | MISSING | 尚無 | Portfolio週評估 | 否 | 否 | 無 | 現有持股不強砍的收斂狀態機待建 |

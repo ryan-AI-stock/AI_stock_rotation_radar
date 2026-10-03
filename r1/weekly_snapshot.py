@@ -10,6 +10,7 @@ from r1.consensus import consensus_actionable, load_consensus_csv, load_consensu
 from r1.component_scores import eps_revision_composite, eps_revision_score
 from r1.providers import MissingConsensusProvider
 from r1.price_eps import price_eps_gap
+from r1.market_signal_state import confirm_eps_trend, eps_state
 from r1.required_data import enforce_required_data, required_data_gaps
 from r1.valuation import load_valuation_reference, valuation_position, valuation_scenarios
 
@@ -87,6 +88,15 @@ def build_weekly_snapshot(
         consensus = {row.ticker: row for row in MissingConsensusProvider().fetch(market_by_ticker, date)}
         evidence = []
     rows = []
+    prior_eps_states: dict[str, list[str]] = {}
+    for prior_path in sorted(Path(output_root).glob("weekly_snapshot_????-??-??.json")):
+        if prior_path.stem.rsplit("_", 1)[-1] >= date:
+            continue
+        prior_payload = json.loads(prior_path.read_text(encoding="utf-8"))
+        for prior_row in prior_payload.get("rows", []):
+            state = prior_row.get("eps_state")
+            if state:
+                prior_eps_states.setdefault(str(prior_row.get("ticker", "")).zfill(4), []).append(state)
     for security in config.securities:
         market_row = market_by_ticker[security.ticker]
         price_history = [row for payload in daily_payloads for row in payload.get("price_rows", [])
@@ -127,6 +137,8 @@ def build_weekly_snapshot(
         gap_12w = price_eps_gap(
             price_change=market_row["return_3m"], eps_revision=revision["eps_revision_12w"],
         )
+        current_eps_state = eps_state(revision["eps_revision_4w"])
+        eps_trend = confirm_eps_trend(prior_eps_states.get(security.ticker, []) + [current_eps_state])
         rows.append({
             **market_row,
             "position_shares": security.shares,
@@ -146,6 +158,10 @@ def build_weekly_snapshot(
             "consensus_quality": record.quality if record else "LOW",
             "consensus_allowed": consensus_ready,
             **revision,
+            "eps_state": current_eps_state,
+            "signal_stage": eps_trend.stage,
+            "trend_confidence": eps_trend.confidence,
+            "eps_trend_consecutive_weeks": eps_trend.consecutive_weeks,
             "forward_pe": forward_pe,
             **valuation,
             **scenarios,
