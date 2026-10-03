@@ -37,6 +37,19 @@ class R1EvidenceScoringTest(unittest.TestCase):
                           base_upside=-1, overheat_high=True, thesis_broken=True, rotation_advantage=-1)
         self.assertEqual(decision, ("CORE", "CORE_LOCK"))
 
+    def test_approved_switch_without_explicit_thresholds_still_cannot_add(self):
+        decision = action(total_score=99, core_lock=False, consensus_allowed=True, eps_revision=.1,
+                          base_upside=.5, overheat_high=False, thesis_broken=False,
+                          rotation_advantage=1, policy_approved=True)
+        self.assertEqual(decision, ("WATCH", "ACTION_THRESHOLD_VALUES_MISSING"))
+
+    def test_explicit_research_thresholds_are_required_for_add(self):
+        decision = action(total_score=80, core_lock=False, consensus_allowed=True, eps_revision=.1,
+                          base_upside=.3, overheat_high=False, thesis_broken=False,
+                          rotation_advantage=1, policy_approved=True,
+                          add_min_score=75, add_min_base_upside=.2)
+        self.assertEqual(decision, ("ADD", "REVISION_VALUATION_AND_UPSIDE_PASS"))
+
     def test_catalyst_loader_rejects_future_available_data(self):
         with TemporaryDirectory() as folder:
             path = Path(folder) / "events.csv"

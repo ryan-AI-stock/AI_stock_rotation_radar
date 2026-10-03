@@ -28,6 +28,7 @@ def action(
     *, total_score: float | None, core_lock: bool, consensus_allowed: bool,
     eps_revision: float | None, base_upside: float | None, overheat_high: bool,
     thesis_broken: bool, rotation_advantage: float | None, policy_approved: bool = False,
+    add_min_score: float | None = None, add_min_base_upside: float | None = None,
 ) -> tuple[str, str]:
     if core_lock:
         return "CORE", "CORE_LOCK"
@@ -35,12 +36,14 @@ def action(
         return "DATA_MISSING", "CONSENSUS_OR_SCORE_NOT_READY"
     if not policy_approved:
         return "WATCH", "ACTION_THRESHOLDS_NOT_APPROVED"
+    if add_min_score is None or add_min_base_upside is None:
+        return "WATCH", "ACTION_THRESHOLD_VALUES_MISSING"
     if thesis_broken or (eps_revision is not None and eps_revision < 0):
         return "EXIT", "THESIS_BROKEN_OR_EPS_REVISION_NEGATIVE"
     if overheat_high:
         return "TRIM", "OVERHEAT_HIGH_NO_NEW_ADD"
     if rotation_advantage is not None and rotation_advantage < 0:
         return "TRIM", "BETTER_ALTERNATIVE"
-    if total_score >= 75 and base_upside is not None and base_upside > 0.20:
+    if total_score >= add_min_score and base_upside is not None and base_upside > add_min_base_upside:
         return "ADD", "REVISION_VALUATION_AND_UPSIDE_PASS"
     return "KEEP", "NO_MATERIAL_CHANGE"
