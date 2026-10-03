@@ -13,6 +13,9 @@ from r1.price_eps import price_eps_gap
 from r1.market_signal_state import confirm_eps_trend, eps_state, flow_state, valuation_state
 from r1.required_data import enforce_required_data, required_data_gaps
 from r1.staged_action import dynamic_triggers
+from r1.bottleneck_evidence import load_bottleneck_evidence
+from r1.catalyst_evidence import load_catalyst_evidence
+from r1.industry_state import STAGE_ORDER, bottleneck_state, catalyst_state
 from r1.valuation import load_valuation_reference, valuation_position, valuation_scenarios
 
 
@@ -49,6 +52,8 @@ def build_weekly_snapshot(
     consensus_path: str | Path | None = None, consensus_evidence_path: str | Path | None = None,
     consensus_history_root: str | Path = "data/r1/consensus_history",
     valuation_reference_path: str | Path = "data/r1/valuation_reference.csv",
+    bottleneck_evidence_path: str | Path = "data/r1/bottleneck_evidence.csv",
+    catalyst_evidence_path: str | Path = "data/r1/catalyst_events/evidence.csv",
 ) -> Path:
     if not week_final_confirmed:
         raise ValueError("formal weekly snapshot requires week_final_confirmed=true")
@@ -80,6 +85,8 @@ def build_weekly_snapshot(
     market_by_ticker = {row["ticker"]: row for row in market["rows"]}
     fiscal_year = int(date[:4]) + 1
     valuation_reference = load_valuation_reference(valuation_reference_path, as_of_date=date)
+    bottleneck_evidence, _ = load_bottleneck_evidence(bottleneck_evidence_path, as_of_date=date)
+    catalyst_evidence, _ = load_catalyst_evidence(catalyst_evidence_path, as_of_date=date)
     if consensus_path and Path(consensus_path).exists():
         consensus_result = load_consensus_csv(consensus_path, as_of_date=date)
         consensus = {row.ticker: row for row in consensus_result.records if row.fiscal_year == fiscal_year}
@@ -164,14 +171,26 @@ def build_weekly_snapshot(
             else scenarios["base_fair_value"] / prior_base_fair_value - 1
         base_upside_change = None if scenarios["base_upside"] is None or prior_base_upside is None \
             else scenarios["base_upside"] - prior_base_upside
+        ticker_bottlenecks = [row for row in bottleneck_evidence if row.ticker == security.ticker]
+        current_bottleneck_stage = max(
+            (row.stage for row in ticker_bottlenecks), key=lambda stage: STAGE_ORDER[stage], default=None,
+        )
+        current_bottleneck_state = bottleneck_state(
+            current_bottleneck_stage, prior_row.get("bottleneck_stage"),
+        )
+        ticker_catalysts = [row for row in catalyst_evidence if row.ticker == security.ticker]
+        current_catalyst_state = catalyst_state(
+            directions=[row.impact_direction for row in ticker_catalysts],
+            source_families={row.source_family for row in ticker_catalysts},
+        )
         triggers = dynamic_triggers(
             eps_state=current_eps_state,
             valuation_state=valuation_state(
                 forward_pe_change=forward_pe_change, base_upside_change=base_upside_change,
             ),
             flow_state=flow_state(flow_5d, flow_20d),
-            bottleneck_state="DATA_MISSING",
-            catalyst_state="DATA_MISSING",
+            bottleneck_state=current_bottleneck_state,
+            catalyst_state=current_catalyst_state,
         )
         rows.append({
             **market_row,
@@ -199,6 +218,9 @@ def build_weekly_snapshot(
             "signal_stage": eps_trend.stage,
             "trend_confidence": eps_trend.confidence,
             "eps_trend_consecutive_weeks": eps_trend.consecutive_weeks,
+            "bottleneck_stage": current_bottleneck_stage,
+            "bottleneck_state": current_bottleneck_state,
+            "catalyst_state": current_catalyst_state,
             **triggers,
             "forward_pe": forward_pe,
             **valuation,
@@ -287,6 +309,8 @@ def main() -> None:
     parser.add_argument("--consensus-evidence", default="data/r1/consensus/evidence.csv")
     parser.add_argument("--consensus-history-root", default="data/r1/consensus_history")
     parser.add_argument("--valuation-reference", default="data/r1/valuation_reference.csv")
+    parser.add_argument("--bottleneck-evidence", default="data/r1/bottleneck_evidence.csv")
+    parser.add_argument("--catalyst-evidence", default="data/r1/catalyst_events/evidence.csv")
     args = parser.parse_args()
     print(build_weekly_snapshot(date=args.date, config_path=args.config, market_path=args.market,
                                 daily_source_root=args.daily_source_root, output_root=args.output_root,
@@ -294,7 +318,9 @@ def main() -> None:
                                 consensus_path=args.consensus,
                                 consensus_evidence_path=args.consensus_evidence,
                                 consensus_history_root=args.consensus_history_root,
-                                valuation_reference_path=args.valuation_reference))
+                                valuation_reference_path=args.valuation_reference,
+                                bottleneck_evidence_path=args.bottleneck_evidence,
+                                catalyst_evidence_path=args.catalyst_evidence))
 
 
 if __name__ == "__main__":

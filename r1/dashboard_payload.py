@@ -119,7 +119,20 @@ def build_dashboard_payload(
             weekly.get("flow_state") or "等待20TD資料",
         ])
     dashboard.extend([
-        ["04｜下一個動態觸發條件"],
+        ["04｜產業瓶頸與催化狀態"],
+        ["股票", "瓶頸階段", "瓶頸趨勢", "催化狀態", "資料說明"],
+    ])
+    for security in config.securities:
+        weekly = weekly_by_ticker.get(security.ticker, {})
+        dashboard.append([
+            f"{security.ticker} {security.company}",
+            weekly.get("bottleneck_stage") or "等待證據",
+            weekly.get("bottleneck_state") or "等待跨週資料",
+            weekly.get("catalyst_state") or "等待事件資料",
+            "僅使用截至資料日已驗證證據",
+        ])
+    dashboard.extend([
+        ["05｜下一個動態觸發條件"],
         ["股票", "下一次加碼", "下一次減碼", "退出", "目前輸入"],
     ])
     for security in config.securities:
@@ -134,7 +147,7 @@ def build_dashboard_payload(
             weekly.get("current_trigger_inputs") or "等待跨週資料",
         ])
     dashboard.extend([
-        ["05｜資料與模型狀態"],
+        ["06｜資料與模型狀態"],
         ["項目", "完成度", "顯示狀態", "用途", "資料日期"],
         ["官方市場資料", f"{market['actual_ticker_count']}/{market['requested_ticker_count']}",
          "完整" if not market["gaps"] else "資料不足", "收盤與技術資料", market["date"]],
@@ -163,7 +176,7 @@ def build_dashboard_payload(
          "下年度Forward PE自身五年百分位", market["date"]],
         ["交易建議", f"{readiness['trade_ready_count']}/{readiness['requested_ticker_count']}",
          "尚未啟用", "Action規則核准後才產生", market["date"]],
-        ["06｜模型完整說明"],
+        ["07｜模型完整說明"],
         [MODEL_LOGIC],
     ])
 
