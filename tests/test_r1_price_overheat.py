@@ -9,11 +9,15 @@ class R1PriceOverheatTest(unittest.TestCase):
     def test_earnings_leading_price_is_visible(self):
         result = price_eps_gap(price_change=0.08, eps_revision=0.18)
         self.assertAlmostEqual(result.earnings_minus_price, 0.10)
-        self.assertEqual(result.state, "EARNINGS_CATCH_UP")
+        self.assertEqual(result.state, "EARNINGS_LEADS_PRICE")
 
     def test_price_leading_earnings_is_valuation_expansion(self):
         result = price_eps_gap(price_change=0.24, eps_revision=0.03)
-        self.assertEqual(result.state, "VALUATION_EXPANSION")
+        self.assertEqual(result.state, "PRICE_LEADS_EARNINGS")
+
+    def test_positive_and_negative_divergence_are_explicit(self):
+        self.assertEqual(price_eps_gap(price_change=-.10, eps_revision=.10).state, "POSITIVE_DIVERGENCE")
+        self.assertEqual(price_eps_gap(price_change=.20, eps_revision=-.05).state, "NEGATIVE_DIVERGENCE")
 
     def test_percentile_uses_only_supplied_history(self):
         self.assertEqual(percentile_rank([1, 2, 3, 4], 3), 0.75)

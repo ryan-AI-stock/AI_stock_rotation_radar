@@ -9,6 +9,8 @@ from r1.config import R1Config
 from r1.consensus import consensus_actionable, load_consensus_csv, load_consensus_evidence
 from r1.component_scores import eps_revision_composite, eps_revision_score
 from r1.providers import MissingConsensusProvider
+from r1.price_eps import price_eps_gap
+from r1.required_data import enforce_required_data, required_data_gaps
 from r1.valuation import load_valuation_reference, valuation_position, valuation_scenarios
 
 
@@ -116,10 +118,15 @@ def build_weekly_snapshot(
             base_pe=valuation["forward_pe_median_5y"],
             bull_pe=None,
         )
-        price_eps_gap_4w = None if revision["eps_revision_4w"] is None \
-            else market_row["return_1m"] - revision["eps_revision_4w"]
-        price_eps_gap_12w = None if revision["eps_revision_12w"] is None \
-            else market_row["return_3m"] - revision["eps_revision_12w"]
+        gap_1w = price_eps_gap(
+            price_change=market_row["return_1w"], eps_revision=revision["eps_revision_1w"],
+        )
+        gap_4w = price_eps_gap(
+            price_change=market_row["return_1m"], eps_revision=revision["eps_revision_4w"],
+        )
+        gap_12w = price_eps_gap(
+            price_change=market_row["return_3m"], eps_revision=revision["eps_revision_12w"],
+        )
         rows.append({
             **market_row,
             "position_shares": security.shares,
@@ -147,8 +154,12 @@ def build_weekly_snapshot(
             "bull_pe": None,
             "valuation_scenario_status": "BASE_READY_PE_BANDS_MISSING"
             if scenarios["base_fair_value"] is not None else "DATA_MISSING",
-            "price_eps_gap_4w": price_eps_gap_4w,
-            "price_eps_gap_12w": price_eps_gap_12w,
+            "price_eps_gap_1w": gap_1w.earnings_minus_price,
+            "price_eps_state_1w": gap_1w.state,
+            "price_eps_gap_4w": gap_4w.earnings_minus_price,
+            "price_eps_state_4w": gap_4w.state,
+            "price_eps_gap_12w": gap_12w.earnings_minus_price,
+            "price_eps_state_12w": gap_12w.state,
             "eps_score": None,
             "valuation_score": None,
             "bottleneck_score": None,
@@ -174,9 +185,22 @@ def build_weekly_snapshot(
             revision_12w=row["eps_revision_12w"], eligible_composites=eligible_eps_composites,
             policy=config.score_policy["eps_revision"],
         )
+    decision_required_fields = (
+        "eps_revision_1w", "eps_revision_4w", "eps_revision_12w",
+        "forward_pe", "forward_pe_percentile_5y", "base_fair_value", "base_upside",
+        "foreign_net", "trust_net", "margin_balance", "margin_change",
+    )
+    decision_gaps = required_data_gaps(rows, decision_required_fields)
+    if config.action_policy_approved:
+        enforce_required_data(
+            rows, decision_required_fields, date=date, context="weekly_decision",
+        )
     payload = {
         "model": "R1", "date": date, "snapshot_policy": "append_only",
         "rows": rows, "future_data_violation_count": 0,
+        "required_data_gap_count": len(decision_gaps),
+        "required_data_gaps": decision_gaps,
+        "required_data_enforced": config.action_policy_approved,
         "formal_model_changed": False, "trade_decision_changed": False,
         "active_in_trade_decision": False, "report_changed": False,
     }

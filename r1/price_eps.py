@@ -16,10 +16,14 @@ def price_eps_gap(*, price_change: float | None, eps_revision: float | None) -> 
     if price_change is None or eps_revision is None:
         return PriceEpsGap(price_change, eps_revision, None, "DATA_MISSING")
     gap = eps_revision - price_change
-    if gap > 0:
-        state = "EARNINGS_CATCH_UP"
+    if price_change < 0 < eps_revision:
+        state = "POSITIVE_DIVERGENCE"
+    elif eps_revision < 0 < price_change:
+        state = "NEGATIVE_DIVERGENCE"
+    elif gap > 0:
+        state = "EARNINGS_LEADS_PRICE"
     elif gap < 0:
-        state = "VALUATION_EXPANSION"
+        state = "PRICE_LEADS_EARNINGS"
     else:
         state = "ALIGNED"
     return PriceEpsGap(price_change, eps_revision, gap, state)
