@@ -9,7 +9,7 @@ from r1.config import R1Config
 from r1.consensus import consensus_actionable, load_consensus_csv, load_consensus_evidence
 from r1.component_scores import eps_revision_composite, eps_revision_score
 from r1.providers import MissingConsensusProvider
-from r1.valuation import load_valuation_reference, valuation_position
+from r1.valuation import load_valuation_reference, valuation_position, valuation_scenarios
 
 
 def _consensus_history_features(
@@ -107,6 +107,15 @@ def build_weekly_snapshot(
         valuation = valuation_position(
             forward_pe=forward_pe, reference=valuation_reference.get(security.ticker),
         )
+        scenarios = valuation_scenarios(
+            price=market_row["raw_close"],
+            bear_eps=record.low_eps if consensus_ready else None,
+            base_eps=record.mean_eps if consensus_ready else None,
+            bull_eps=record.high_eps if consensus_ready else None,
+            bear_pe=None,
+            base_pe=valuation["forward_pe_median_5y"],
+            bull_pe=None,
+        )
         price_eps_gap_4w = None if revision["eps_revision_4w"] is None \
             else market_row["return_1m"] - revision["eps_revision_4w"]
         price_eps_gap_12w = None if revision["eps_revision_12w"] is None \
@@ -132,6 +141,12 @@ def build_weekly_snapshot(
             **revision,
             "forward_pe": forward_pe,
             **valuation,
+            **scenarios,
+            "bear_pe": None,
+            "base_pe": valuation["forward_pe_median_5y"],
+            "bull_pe": None,
+            "valuation_scenario_status": "BASE_READY_PE_BANDS_MISSING"
+            if scenarios["base_fair_value"] is not None else "DATA_MISSING",
             "price_eps_gap_4w": price_eps_gap_4w,
             "price_eps_gap_12w": price_eps_gap_12w,
             "eps_score": None,

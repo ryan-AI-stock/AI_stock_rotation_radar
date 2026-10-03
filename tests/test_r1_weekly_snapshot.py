@@ -72,6 +72,11 @@ class R1WeeklySnapshotTest(unittest.TestCase):
             nanya = next(row for row in payload["rows"] if row["ticker"] == "2408")
             self.assertEqual(nanya["forward_pe_percentile_5y"], .29)
             self.assertEqual(nanya["forward_pe_median_5y"], 10.0)
+            self.assertAlmostEqual(nanya["base_fair_value"], 102.56 * 10.0)
+            self.assertAlmostEqual(nanya["base_upside"], 102.56 * 10.0 / 519 - 1)
+            self.assertIsNone(nanya["bear_fair_value"])
+            self.assertIsNone(nanya["bull_fair_value"])
+            self.assertEqual(nanya["valuation_scenario_status"], "BASE_READY_PE_BANDS_MISSING")
 
     def test_unconfirmed_midweek_snapshot_is_rejected(self):
         with tempfile.TemporaryDirectory() as directory:
