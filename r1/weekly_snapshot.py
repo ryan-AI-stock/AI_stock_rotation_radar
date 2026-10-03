@@ -12,6 +12,7 @@ from r1.providers import MissingConsensusProvider
 from r1.price_eps import price_eps_gap
 from r1.market_signal_state import confirm_eps_trend, eps_state, flow_state, valuation_state
 from r1.required_data import enforce_required_data, required_data_gaps
+from r1.staged_action import dynamic_triggers
 from r1.valuation import load_valuation_reference, valuation_position, valuation_scenarios
 
 
@@ -163,6 +164,15 @@ def build_weekly_snapshot(
             else scenarios["base_fair_value"] / prior_base_fair_value - 1
         base_upside_change = None if scenarios["base_upside"] is None or prior_base_upside is None \
             else scenarios["base_upside"] - prior_base_upside
+        triggers = dynamic_triggers(
+            eps_state=current_eps_state,
+            valuation_state=valuation_state(
+                forward_pe_change=forward_pe_change, base_upside_change=base_upside_change,
+            ),
+            flow_state=flow_state(flow_5d, flow_20d),
+            bottleneck_state="DATA_MISSING",
+            catalyst_state="DATA_MISSING",
+        )
         rows.append({
             **market_row,
             "position_shares": security.shares,
@@ -189,6 +199,7 @@ def build_weekly_snapshot(
             "signal_stage": eps_trend.stage,
             "trend_confidence": eps_trend.confidence,
             "eps_trend_consecutive_weeks": eps_trend.consecutive_weeks,
+            **triggers,
             "forward_pe": forward_pe,
             **valuation,
             **scenarios,

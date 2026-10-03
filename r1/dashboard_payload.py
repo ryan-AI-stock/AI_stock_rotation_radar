@@ -119,7 +119,22 @@ def build_dashboard_payload(
             weekly.get("flow_state") or "等待20TD資料",
         ])
     dashboard.extend([
-        ["04｜資料與模型狀態"],
+        ["04｜下一個動態觸發條件"],
+        ["股票", "下一次加碼", "下一次減碼", "退出", "目前輸入"],
+    ])
+    for security in config.securities:
+        if security.shares <= 0:
+            continue
+        weekly = weekly_by_ticker.get(security.ticker, {})
+        dashboard.append([
+            f"{security.ticker} {security.company}",
+            weekly.get("next_add_trigger") or "等待跨週資料",
+            weekly.get("next_trim_trigger") or "等待跨週資料",
+            weekly.get("next_exit_trigger") or "等待跨週資料",
+            weekly.get("current_trigger_inputs") or "等待跨週資料",
+        ])
+    dashboard.extend([
+        ["05｜資料與模型狀態"],
         ["項目", "完成度", "顯示狀態", "用途", "資料日期"],
         ["官方市場資料", f"{market['actual_ticker_count']}/{market['requested_ticker_count']}",
          "完整" if not market["gaps"] else "資料不足", "收盤與技術資料", market["date"]],
@@ -148,7 +163,7 @@ def build_dashboard_payload(
          "下年度Forward PE自身五年百分位", market["date"]],
         ["交易建議", f"{readiness['trade_ready_count']}/{readiness['requested_ticker_count']}",
          "尚未啟用", "Action規則核准後才產生", market["date"]],
-        ["05｜模型完整說明"],
+        ["06｜模型完整說明"],
         [MODEL_LOGIC],
     ])
 

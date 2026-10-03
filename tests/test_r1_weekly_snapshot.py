@@ -77,6 +77,8 @@ class R1WeeklySnapshotTest(unittest.TestCase):
             self.assertIsNone(nanya["bear_fair_value"])
             self.assertIsNone(nanya["bull_fair_value"])
             self.assertEqual(nanya["valuation_scenario_status"], "BASE_READY_PE_BANDS_MISSING")
+            self.assertIn("EPS=", nanya["current_trigger_inputs"])
+            self.assertIn("EPS維持上修", nanya["next_add_trigger"])
 
     def test_unconfirmed_midweek_snapshot_is_rejected(self):
         with tempfile.TemporaryDirectory() as directory:
