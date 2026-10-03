@@ -66,8 +66,12 @@ class R1WeeklySnapshotTest(unittest.TestCase):
             mediatek = next(row for row in payload["rows"] if row["ticker"] == "2454")
             self.assertEqual(mediatek["next_year_eps"], 141.32)
             self.assertTrue(mediatek["consensus_allowed"])
+            self.assertIsNone(mediatek["forward_pe_percentile_5y"])
             self.assertEqual(mediatek["action"], "WATCH")
             self.assertEqual(mediatek["action_reason"], "ACTION_THRESHOLDS_NOT_APPROVED")
+            nanya = next(row for row in payload["rows"] if row["ticker"] == "2408")
+            self.assertEqual(nanya["forward_pe_percentile_5y"], .29)
+            self.assertEqual(nanya["forward_pe_median_5y"], 10.0)
 
     def test_unconfirmed_midweek_snapshot_is_rejected(self):
         with tempfile.TemporaryDirectory() as directory:

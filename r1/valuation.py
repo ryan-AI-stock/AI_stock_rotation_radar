@@ -32,7 +32,8 @@ def load_valuation_reference(path: str | Path, *, as_of_date: str) -> dict[str, 
                 continue
             try:
                 percentile = float(row["five_year_percentile"])
-                median = float(row["five_year_median_forward_pe"])
+                median_value = row.get("five_year_median_forward_pe") or row.get("five_year_median_pe")
+                median = float(median_value)
             except (KeyError, TypeError, ValueError):
                 continue
             if 0 <= percentile <= 1 and median > 0:

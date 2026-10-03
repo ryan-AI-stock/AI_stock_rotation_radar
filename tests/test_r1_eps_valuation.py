@@ -13,6 +13,13 @@ FIELDS = ["ticker", "fiscal_year", "mean_eps", "median_eps", "high_eps", "low_ep
 
 
 class R1EpsValuationTest(unittest.TestCase):
+    def test_repository_valuation_reference_normalizes_median_column(self):
+        reference = load_valuation_reference(
+            Path(__file__).resolve().parents[1] / "data/r1/valuation_reference.csv",
+            as_of_date="2026-10-02",
+        )
+        self.assertEqual(len(reference), 14)
+        self.assertEqual(reference["2330"]["five_year_median_forward_pe"], 16.0)
     def test_provider_respects_available_at_and_revision(self):
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / "eps.csv"
