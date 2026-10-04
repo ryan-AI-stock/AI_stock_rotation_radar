@@ -20,7 +20,7 @@ class R1ConsensusSnapshotTest(unittest.TestCase):
                 output_root=directory,
             )
             payload = json.loads(output.read_text(encoding="utf-8"))
-            self.assertEqual(payload["ready_count"], 14)
+            self.assertEqual(payload["ready_count"], 41)
             self.assertEqual(payload["requested_record_count"], 42)
             self.assertEqual(payload["fiscal_years"], [2026, 2027, 2028])
             self.assertEqual(payload["snapshot_policy"], "append_only_source_available_at")
@@ -28,6 +28,8 @@ class R1ConsensusSnapshotTest(unittest.TestCase):
             self.assertEqual(rows["2408"]["mean_eps"], 102.56)
             self.assertEqual(rows["3363"]["status"], "READY")
             self.assertEqual(rows["3363"]["mean_eps"], 16.93)
+            far_rows = {row["ticker"]: row for row in payload["rows"] if row["fiscal_year"] == 2028}
+            self.assertEqual(far_rows["3363"]["status"], "EVIDENCE_GAP")
 
     def test_snapshot_is_append_only(self):
         with tempfile.TemporaryDirectory() as directory:

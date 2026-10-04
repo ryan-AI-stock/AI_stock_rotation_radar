@@ -41,7 +41,9 @@ def build_consensus_snapshot(
             "available_at": record.available_at if actionable else None,
             "retrieved_at": record.retrieved_at if actionable else None,
             "quality": record.quality if actionable else "LOW",
-            "status": "READY" if actionable else "DATA_MISSING",
+            "status": "READY" if actionable else "EVIDENCE_GAP" if record else "DATA_MISSING",
+            "observed_mean_eps": record.mean_eps if record else None,
+            "observed_source": record.source if record else None,
         })
     payload = {
         "model": "R1",

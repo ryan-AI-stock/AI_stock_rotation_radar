@@ -7,7 +7,9 @@ from pathlib import Path
 
 from r1.config import R1Config
 from r1.consensus import consensus_actionable, load_consensus_csv, load_consensus_evidence
-from r1.component_scores import eps_revision_composite, eps_revision_score
+from r1.component_scores import (
+    eps_revision_composite, eps_revision_score, forward_valuation_score,
+)
 from r1.providers import MissingConsensusProvider
 from r1.price_eps import price_eps_gap
 from r1.market_signal_state import confirm_eps_trend, eps_state, flow_state, valuation_state
@@ -280,6 +282,22 @@ def build_weekly_snapshot(
             revision_1w=row["eps_revision_1w"], revision_4w=row["eps_revision_4w"],
             revision_12w=row["eps_revision_12w"], eligible_composites=eligible_eps_composites,
             policy=config.score_policy["eps_revision"],
+        )
+    eligible_base_upside = [
+        float(row["base_upside"]) for row in rows if row["base_upside"] is not None
+    ]
+    eligible_eps_growth = [
+        float(row["next_year_eps_growth"]) for row in rows
+        if row["next_year_eps_growth"] is not None
+    ]
+    for row in rows:
+        row["valuation_score"] = forward_valuation_score(
+            own_forward_pe_percentile=row["forward_pe_percentile_5y"],
+            base_upside=row["base_upside"],
+            next_year_eps_growth=row["next_year_eps_growth"],
+            eligible_base_upside=eligible_base_upside,
+            eligible_eps_growth=eligible_eps_growth,
+            policy=config.score_policy["forward_valuation"],
         )
     decision_required_fields = (
         "eps_revision_1w", "eps_revision_4w", "eps_revision_12w",
