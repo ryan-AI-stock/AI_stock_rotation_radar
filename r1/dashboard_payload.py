@@ -83,6 +83,13 @@ def build_dashboard_payload(
 
     total_value = sum((market_by_ticker[s.ticker]["raw_close"] or 0) * s.shares for s in config.securities)
     held_count = sum(security.shares > 0 for security in config.securities)
+    ranked = sorted(
+        (
+            row for row in weekly_by_ticker.values()
+            if row.get("total_score") is not None and not row.get("core_lock")
+        ),
+        key=lambda row: (-float(row["total_score"]), str(row.get("ticker", ""))),
+    )
     dashboard = tabs["R1 Dashboard"]
     dashboard.extend([
         ["R1研究版｜AI瓶頸預期差輪動"],
@@ -90,9 +97,18 @@ def build_dashboard_payload(
         ["資料狀態", "官方價格與五年估值定位已更新；當日籌碼獨立驗收，EPS修正序列仍在累積，不產生買賣指令。"],
         ["01｜今日候選排名"],
         ["順位", "股票", "R1分數", "代表意義", "狀態"],
-        ["Top1", "尚未產生", "", "Action門檻尚未核准", "研究資料累積中"],
-        ["Top2", "尚未產生", "", "Action門檻尚未核准", "研究資料累積中"],
-        ["Top3", "尚未產生", "", "Action門檻尚未核准", "研究資料累積中"],
+        *([
+            [
+                f"Top{index}",
+                f"{row['ticker']} {market_by_ticker[row['ticker']]['company']}",
+                row["total_score"], "研究總分排名，不是交易指令", row.get("score_status", "READY"),
+            ]
+            for index, row in enumerate(ranked[:3], start=1)
+        ] if ranked else [
+            ["Top1", "尚未產生", "", "必要構面尚未完整", "研究資料累積中"],
+            ["Top2", "尚未產生", "", "必要構面尚未完整", "研究資料累積中"],
+            ["Top3", "尚未產生", "", "必要構面尚未完整", "研究資料累積中"],
+        ]),
         ["排名不是交易指令", "R1核准前不會依排名自動買進、賣出或加碼。"],
         ["02｜目前追蹤持股（非R1成交）"],
         ["股票", "股數", "官方收盤", "參考市值", "狀態"],
@@ -125,16 +141,18 @@ def build_dashboard_payload(
         ])
     dashboard.extend([
         ["04｜產業瓶頸與催化狀態"],
-        ["股票", "瓶頸階段", "瓶頸趨勢", "催化狀態", "資料說明"],
+        ["股票", "瓶頸階段／分數", "催化狀態／分數", "價量籌碼分數", "R1總分"],
     ])
     for security in config.securities:
         weekly = weekly_by_ticker.get(security.ticker, {})
         dashboard.append([
             f"{security.ticker} {security.company}",
-            weekly.get("bottleneck_stage") or "等待證據",
-            weekly.get("bottleneck_state") or "等待跨週資料",
-            weekly.get("catalyst_state") or "等待事件資料",
-            "僅使用截至資料日已驗證證據",
+            f"{weekly.get('bottleneck_stage')}／{weekly.get('bottleneck_score')}"
+            if weekly.get("bottleneck_score") is not None else "等待證據或新週快照",
+            f"{weekly.get('catalyst_state')}／{weekly.get('catalyst_score')}"
+            if weekly.get("catalyst_score") is not None else "等待事件或新週快照",
+            weekly.get("price_chip_score") if weekly.get("price_chip_score") is not None else "等待EPS 4W與籌碼",
+            weekly.get("total_score") if weekly.get("total_score") is not None else "必要構面未完整",
         ])
     dashboard.extend([
         ["05｜下一個動態觸發條件"],
@@ -220,7 +238,8 @@ def build_dashboard_payload(
             valuation_row.get("forward_eps_mean"), valuation_row.get("forward_pe"),
             bool(readiness_row.get("consensus_ready")), bool(readiness_row.get("catalyst_ready")),
             bool(readiness_row.get("bottleneck_ready")), bool(readiness_row.get("valuation_ready")),
-            bool(readiness_row.get("price_chip_ready")), None, action, reason,
+            bool(readiness_row.get("price_chip_ready")), weekly_by_ticker.get(security.ticker, {}).get("total_score"),
+            action, reason,
         ])
 
     # No transaction row is emitted until the action policy and execution ledger are both approved.

@@ -24,7 +24,17 @@ def _keyed_signal_rows(rows: list[list[object]]) -> dict[tuple[str, str], list[o
     }
 
 
-def _format_workbook(client: SheetsClient) -> None:
+def _section_rows(rows: list[list[object]]) -> tuple[list[int], list[int], int | None]:
+    sections = [
+        index for index, row in enumerate(rows)
+        if row and isinstance(row[0], str) and row[0][:2].isdigit() and "｜" in row[0]
+    ]
+    headers = [index + 1 for index in sections if index + 1 < len(rows) and len(rows[index + 1]) > 1]
+    logic_row = next((index + 1 for index in sections if str(rows[index][0]).startswith("08｜")), None)
+    return sections, headers, logic_row
+
+
+def _format_workbook(client: SheetsClient, dashboard_rows: list[list[object]]) -> None:
     response = retry_request(
         requests.get, client.base,
         params={"fields": "sheets(properties(sheetId,title))"},
@@ -36,7 +46,9 @@ def _format_workbook(client: SheetsClient) -> None:
     navy = {"red": 0.0784, "green": 0.2, "blue": 0.2863}
     light = {"red": 0.91, "green": 0.957, "blue": 0.957}
     requests_body: list[dict] = []
-    for start, end in ((0, 1), (3, 4), (9, 10), (18, 19), (29, 30)):
+    section_rows, header_rows, logic_row = _section_rows(dashboard_rows)
+    for start in [0, *section_rows]:
+        end = start + 1
         requests_body.append({"repeatCell": {
             "range": {"sheetId": dashboard_id, "startRowIndex": start, "endRowIndex": end,
                       "startColumnIndex": 0, "endColumnIndex": 5},
@@ -44,7 +56,8 @@ def _format_workbook(client: SheetsClient) -> None:
                 "foregroundColor": {"red": 1, "green": 1, "blue": 1}, "bold": True, "fontSize": 12}}},
             "fields": "userEnteredFormat(backgroundColor,textFormat)",
         }})
-    for start, end in ((4, 5), (10, 11), (19, 20)):
+    for start in header_rows:
+        end = start + 1
         requests_body.append({"repeatCell": {
             "range": {"sheetId": dashboard_id, "startRowIndex": start, "endRowIndex": end,
                       "startColumnIndex": 0, "endColumnIndex": 5},
@@ -53,7 +66,7 @@ def _format_workbook(client: SheetsClient) -> None:
         }})
     requests_body.extend([
         {"repeatCell": {
-            "range": {"sheetId": dashboard_id, "startRowIndex": 0, "endRowIndex": 32,
+            "range": {"sheetId": dashboard_id, "startRowIndex": 0, "endRowIndex": len(dashboard_rows),
                       "startColumnIndex": 0, "endColumnIndex": 5},
             "cell": {"userEnteredFormat": {"wrapStrategy": "WRAP", "verticalAlignment": "MIDDLE"}},
             "fields": "userEnteredFormat(wrapStrategy,verticalAlignment)",
@@ -67,9 +80,13 @@ def _format_workbook(client: SheetsClient) -> None:
           "startIndex": 1, "endIndex": 2}, "properties": {"pixelSize": 285}, "fields": "pixelSize"}},
         {"updateDimensionProperties": {"range": {"sheetId": dashboard_id, "dimension": "COLUMNS",
           "startIndex": 2, "endIndex": 5}, "properties": {"pixelSize": 190}, "fields": "pixelSize"}},
-        {"updateDimensionProperties": {"range": {"sheetId": dashboard_id, "dimension": "ROWS",
-          "startIndex": 30, "endIndex": 31}, "properties": {"pixelSize": 560}, "fields": "pixelSize"}},
     ])
+    if logic_row is not None:
+        requests_body.append({"updateDimensionProperties": {
+            "range": {"sheetId": dashboard_id, "dimension": "ROWS",
+                      "startIndex": logic_row, "endIndex": logic_row + 1},
+            "properties": {"pixelSize": 560}, "fields": "pixelSize",
+        }})
     for title in (SIGNALS, TRADES):
         requests_body.extend([
             {"repeatCell": {"range": {"sheetId": ids[title], "startRowIndex": 0, "endRowIndex": 1},
@@ -94,7 +111,7 @@ def publish_payload(spreadsheet_id: str, payload_path: str | Path) -> dict[str, 
     dashboard_rows = tabs[DASHBOARD]
     client.clear(f"'{DASHBOARD}'!A1:E100")
     client.update(f"'{DASHBOARD}'!A1", dashboard_rows)
-    _format_workbook(client)
+    _format_workbook(client, dashboard_rows)
 
     signal_header = list(TAB_SCHEMAS[SIGNALS])
     existing = client.get(f"'{SIGNALS}'!A1:Y10000")

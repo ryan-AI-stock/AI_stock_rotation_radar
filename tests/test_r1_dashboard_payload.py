@@ -43,6 +43,30 @@ class R1DashboardPayloadTest(unittest.TestCase):
         signals = payload["tabs"]["R1每日訊號資料庫"]
         self.assertEqual(next(row for row in signals if row[1] == "2330")[23], "CORE")
 
+    def test_completed_weekly_scores_materialize_research_ranking_and_database_score(self):
+        import json
+        import tempfile
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            rows = [
+                {"ticker": "2408", "company": "南亞科", "total_score": 81.5, "core_lock": False,
+                 "score_status": "READY", "bottleneck_stage": "FINANCIAL_PROOF", "bottleneck_score": 100,
+                 "catalyst_state": "POSITIVE", "catalyst_score": 60, "price_chip_score": 70},
+                {"ticker": "2330", "company": "台積電", "total_score": 99, "core_lock": True},
+            ]
+            root.joinpath("weekly_snapshot_2026-10-01.json").write_text(
+                json.dumps({"rows": rows}), encoding="utf-8",
+            )
+            payload = build_dashboard_payload(
+                config_path=ROOT / "config/r1.json", market_path=ROOT / "data/r1/daily_market_20261001.json",
+                weekly_root=root,
+            )
+        dashboard = payload["tabs"]["R1 Dashboard"]
+        self.assertIn("2408 南亞科", [cell for row in dashboard for cell in row])
+        self.assertNotIn("2330 台積電", [row[1] for row in dashboard if row and row[0] == "Top1"])
+        signal = next(row for row in payload["tabs"]["R1每日訊號資料庫"] if row[1] == "2408")
+        self.assertEqual(signal[22], 81.5)
+
     def test_header_mismatch_is_rejected(self):
         tabs = {title: [list(headers)] for title, headers in TAB_SCHEMAS.items()}
         tabs["R1 Dashboard"] = [["R1研究版｜AI瓶頸預期差輪動"]]

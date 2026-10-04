@@ -102,3 +102,15 @@ jobs:
           git commit -m "Append R1 weekly snapshot"
           git pull --rebase origin main
           git push origin HEAD:main
+      - name: Report R1 weekly failure context
+        if: failure()
+        shell: bash
+        run: |
+          target="${{ steps.gate.outputs.target_date }}"
+          echo "::error title=R1 weekly publication failed::target_date=${target:-unresolved}; inspect the first failed consensus, score, publish, or readback step. Weekly snapshot was not accepted as complete."
+          {
+            echo "## R1 Weekly failure"
+            echo "- target_date: ${target:-unresolved}"
+            echo "- completion: not accepted"
+            echo "- policy: missing PIT history remains NA; the next scheduled wake-up retries without fabricating a score"
+          } >> "$GITHUB_STEP_SUMMARY"

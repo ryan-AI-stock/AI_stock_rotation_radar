@@ -91,4 +91,16 @@ jobs:
           git commit -m "Update R1 daily source state"
           git pull --rebase origin main
           git push origin HEAD:main
+      - name: Report R1 daily failure context
+        if: failure()
+        shell: bash
+        run: |
+          target="${{ steps.gate.outputs.target_date }}"
+          echo "::error title=R1 daily publication failed::target_date=${target:-unresolved}; inspect the first failed acquisition, validation, publish, or readback step. Dashboard was not accepted as complete."
+          {
+            echo "## R1 Daily failure"
+            echo "- target_date: ${target:-unresolved}"
+            echo "- completion: not accepted"
+            echo "- policy: missing data is not converted to zero; the next scheduled wake-up will retry the incomplete date"
+          } >> "$GITHUB_STEP_SUMMARY"
 
