@@ -138,8 +138,8 @@ def build_dashboard_payload(
         supplemental_text = "等待補充歷史"
         if supplemental:
             supplemental_text = (
-                f"{float(supplemental['revision_30d']):+.1%}／"
-                f"{float(supplemental['revision_90d']):+.1%}（不計分）"
+                f"30D {float(supplemental['revision_30d']):+.1%}／"
+                f"90D {float(supplemental['revision_90d']):+.1%}（不計分）"
             )
         dashboard.append([
             f"{security.ticker} {security.company}",

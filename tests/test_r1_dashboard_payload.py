@@ -94,7 +94,7 @@ class R1DashboardPayloadTest(unittest.TestCase):
             row for row in payload["tabs"]["R1 Dashboard"]
             if row and row[0] == "2330 台積電" and isinstance(row[1], str) and "不計分" in row[1]
         )
-        self.assertEqual(row[1], "+10.0%／+22.2%（不計分）")
+        self.assertEqual(row[1], "30D +10.0%／90D +22.2%（不計分）")
         self.assertFalse(payload["active_in_trade_decision"])
 
 
