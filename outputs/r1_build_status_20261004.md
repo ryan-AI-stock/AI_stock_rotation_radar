@@ -31,8 +31,8 @@ R1仍是challenger與shadow tracking，不是正式交易模型。資料管線�
 
 ## GitHub排程
 
-- Daily workflow於台灣時間17:00至23:00每小時喚醒，並讀取中央`AI_stock_schedule_rules`的daily profile。
-- Weekly workflow於台灣時間19:00至23:00每小時喚醒，並讀取同一中央規則的weekly profile。
+- Daily workflow於台灣時間17:15至23:15每小時喚醒，與共同Dashboard起跑時間一致，並讀取中央`AI_stock_schedule_rules`的daily profile。
+- Weekly workflow於台灣時間19:15至23:15每小時喚醒，並讀取同一中央規則的weekly profile。
 - 中央規則以Asia/Taipei、15:00後、正常交易日／當週最後交易日為gate；cron只負責喚醒，不自行認定交易日。
 
 ## 邊界

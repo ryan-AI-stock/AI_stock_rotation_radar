@@ -19,7 +19,7 @@ class R1WorkflowPolicyTest(unittest.TestCase):
         self.assertIn("r1.dashboard_publish", workflow)
         self.assertIn("GOOGLE_OAUTH_REFRESH_TOKEN", workflow)
         self.assertIn("Sync latest main after concurrency wait", workflow)
-        self.assertIn('0 9-15 * * 1-5', workflow)
+        self.assertIn('15 9-15 * * 1-5', workflow)
         self.assertIn("repository: ryan-AI-stock/AI_stock_schedule_rules", workflow)
         self.assertIn("--profile daily --rules AI_stock_schedule_rules/schedule_rules.json", workflow)
 
@@ -33,7 +33,7 @@ class R1WorkflowPolicyTest(unittest.TestCase):
         self.assertIn("--reuse-exact-complete", workflow)
         self.assertIn("r1.dashboard_publish", workflow)
         self.assertIn("Sync latest main after concurrency wait", workflow)
-        self.assertIn('0 11-15 * * *', workflow)
+        self.assertIn('15 11-15 * * *', workflow)
         self.assertIn("repository: ryan-AI-stock/AI_stock_schedule_rules", workflow)
         self.assertIn("--profile weekly --rules AI_stock_schedule_rules/schedule_rules.json", workflow)
         self.assertNotIn("--allow-chip-gaps", workflow)
