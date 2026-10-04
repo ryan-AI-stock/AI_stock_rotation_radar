@@ -23,6 +23,7 @@ from r1.industry_state import STAGE_ORDER, bottleneck_state, catalyst_state
 from r1.shadow_rotation import evaluate_shadow_rotation
 from r1.valuation import load_valuation_reference, valuation_position, valuation_scenarios
 from r1.scoring import score as total_model_score
+from r1.toalpha_revision_history import latest_rows as latest_supplemental_revision_rows
 
 
 def _consensus_history_features(
@@ -60,6 +61,7 @@ def build_weekly_snapshot(
     valuation_reference_path: str | Path = "data/r1/valuation_reference.csv",
     bottleneck_evidence_path: str | Path = "data/r1/bottleneck_evidence.csv",
     catalyst_evidence_path: str | Path = "data/r1/catalyst_events/evidence.csv",
+    supplemental_revision_path: str | Path = "data/r1/consensus/current_year_revision_history.csv",
 ) -> Path:
     if not week_final_confirmed:
         raise ValueError("formal weekly snapshot requires week_final_confirmed=true")
@@ -93,6 +95,9 @@ def build_weekly_snapshot(
     valuation_reference = load_valuation_reference(valuation_reference_path, as_of_date=date)
     bottleneck_evidence, _ = load_bottleneck_evidence(bottleneck_evidence_path, as_of_date=date)
     catalyst_evidence, _ = load_catalyst_evidence(catalyst_evidence_path, as_of_date=date)
+    supplemental_revisions = latest_supplemental_revision_rows(
+        supplemental_revision_path, as_of_date=date,
+    )
     if consensus_path and Path(consensus_path).exists():
         consensus_result = load_consensus_csv(consensus_path, as_of_date=date)
         consensus = {(row.ticker, row.fiscal_year): row for row in consensus_result.records}
@@ -116,6 +121,7 @@ def build_weekly_snapshot(
                 prior_eps_states.setdefault(ticker, []).append(state)
     for security in config.securities:
         market_row = market_by_ticker[security.ticker]
+        supplemental_revision = supplemental_revisions.get(security.ticker, {})
         price_history = [row for payload in daily_payloads for row in payload.get("price_rows", [])
                          if row.get("ticker") == security.ticker]
         chip_today = [row for payload in daily_payloads if payload.get("date") == date
@@ -220,6 +226,15 @@ def build_weekly_snapshot(
         )
         rows.append({
             **market_row,
+            "current_year_eps_revision_30d": (
+                float(supplemental_revision["revision_30d"]) if supplemental_revision else None
+            ),
+            "current_year_eps_revision_90d": (
+                float(supplemental_revision["revision_90d"]) if supplemental_revision else None
+            ),
+            "current_year_eps_revision_status": (
+                "SUPPLEMENTAL_NOT_TOTAL_SCORE" if supplemental_revision else "DATA_MISSING"
+            ),
             "position_shares": security.shares,
             "core_lock": security.core_lock,
             "position_value": market_row["raw_close"] * security.shares if market_row["raw_close"] is not None else None,
@@ -467,6 +482,7 @@ def main() -> None:
     parser.add_argument("--valuation-reference", default="data/r1/valuation_reference.csv")
     parser.add_argument("--bottleneck-evidence", default="data/r1/bottleneck_evidence.csv")
     parser.add_argument("--catalyst-evidence", default="data/r1/catalyst_events/evidence.csv")
+    parser.add_argument("--supplemental-revision", default="data/r1/consensus/current_year_revision_history.csv")
     args = parser.parse_args()
     print(build_weekly_snapshot(date=args.date, config_path=args.config, market_path=args.market,
                                 daily_source_root=args.daily_source_root, output_root=args.output_root,
@@ -476,7 +492,8 @@ def main() -> None:
                                 consensus_history_root=args.consensus_history_root,
                                 valuation_reference_path=args.valuation_reference,
                                 bottleneck_evidence_path=args.bottleneck_evidence,
-                                catalyst_evidence_path=args.catalyst_evidence))
+                                catalyst_evidence_path=args.catalyst_evidence,
+                                supplemental_revision_path=args.supplemental_revision))
 
 
 if __name__ == "__main__":

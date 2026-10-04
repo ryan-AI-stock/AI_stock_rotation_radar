@@ -74,6 +74,29 @@ class R1DashboardPayloadTest(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "header mismatch"):
             validate_tabs(tabs)
 
+    def test_current_year_revision_is_supplemental_and_visible(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as folder:
+            history = Path(folder) / "revision.csv"
+            history.write_text(
+                "ticker,fiscal_year,source_data_date,eps_90d,eps_60d,eps_30d,eps_current,"
+                "revision_30d,revision_90d,source_url,available_at,retrieved_at,basis,status\n"
+                "2330,2026,2026-10-01,90,95,100,110,.1,.222,x,2026-10-01,2026-10-02,"
+                "SOURCE_REPORTED_OFFSETS,SUPPLEMENTAL_NOT_TOTAL_SCORE\n",
+                encoding="utf-8",
+            )
+            payload = build_dashboard_payload(
+                config_path=ROOT / "config/r1.json",
+                market_path=ROOT / "data/r1/daily_market_20261001.json",
+                supplemental_revision_path=history,
+            )
+        row = next(
+            row for row in payload["tabs"]["R1 Dashboard"]
+            if row and row[0] == "2330 台積電" and isinstance(row[1], str) and "不計分" in row[1]
+        )
+        self.assertEqual(row[1], "+10.0%／+22.2%（不計分）")
+        self.assertFalse(payload["active_in_trade_decision"])
+
 
 if __name__ == "__main__":
     unittest.main()

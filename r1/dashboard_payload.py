@@ -6,6 +6,7 @@ from pathlib import Path
 
 from r1.config import R1Config
 from r1.dashboard_schema import TAB_SCHEMAS, validate_tabs
+from r1.toalpha_revision_history import latest_rows as latest_supplemental_revision_rows
 
 
 MODEL_LOGIC = """R1研究版｜AI瓶頸／預期差動態輪動
@@ -26,7 +27,7 @@ EPS修正內部分配為1W 20%、4W 50%、12W 30%，並限制下修股票僅因�
 研究設定每週換倉上限10%，主部位目標3檔，現金目標5%～20%。台積電核心部位不因短期訊號退出；其餘買進、減碼與退出門檻尚待完整資料累積與回測核准。
 
 【目前狀態】
-官方價格、價量籌碼歷史序列、EPS共識、五年估值定位、瓶頸與催化證據已接通；當日籌碼另行驗收，不能用歷史序列完整代替。EPS修正序列仍在累積。Action門檻核准前，只顯示資料與觀察狀態，不產生Top1～Top3、模擬成交或實際操作指令。"""
+官方價格、價量籌碼歷史序列、EPS共識、五年估值定位、瓶頸與催化證據已接通；當日籌碼另行驗收，不能用歷史序列完整代替。下年度EPS修正序列仍在累積；畫面另列當年度30／90日修正作補充觀察，但不納入R1總分。Action門檻核准前，只顯示資料與觀察狀態，不產生Top1～Top3、模擬成交或實際操作指令。"""
 
 
 def _latest_valuation_rows(root: str | Path, target_date: str) -> dict[str, dict]:
@@ -57,6 +58,7 @@ def build_dashboard_payload(
     readiness_path: str | Path = "data/r1/evidence_readiness.json",
     valuation_root: str | Path = "data/r1/valuation_history",
     weekly_root: str | Path = "data/r1/weekly",
+    supplemental_revision_path: str | Path = "data/r1/consensus/current_year_revision_history.csv",
 ) -> dict:
     config = R1Config.load(config_path)
     market = json.loads(Path(market_path).read_text(encoding="utf-8"))
@@ -74,6 +76,9 @@ def build_dashboard_payload(
     valuation_by_ticker = _latest_valuation_rows(valuation_root, market["date"])
     weekly_by_ticker = _latest_weekly_rows(weekly_root, market["date"])
     weekly_payload = _latest_weekly_payload(weekly_root, market["date"])
+    supplemental_revisions = latest_supplemental_revision_rows(
+        supplemental_revision_path, as_of_date=market["date"],
+    )
     revision_progress = readiness.get("eps_revision_progress", {})
     revision_dates = revision_progress.get("earliest_calendar_eligibility", {})
     tabs: dict[str, list[list[object]]] = {
@@ -125,13 +130,20 @@ def build_dashboard_payload(
         ])
     dashboard.extend([
         ["03｜市場正在告訴我們什麼"],
-        ["股票", "Price/EPS 4W", "EPS趨勢", "估值狀態", "籌碼狀態"],
+        ["股票", "當年度EPS 30D／90D", "下年度EPS趨勢", "估值狀態", "籌碼狀態"],
     ])
     for security in config.securities:
         weekly = weekly_by_ticker.get(security.ticker, {})
+        supplemental = supplemental_revisions.get(security.ticker, {})
+        supplemental_text = "等待補充歷史"
+        if supplemental:
+            supplemental_text = (
+                f"{float(supplemental['revision_30d']):+.1%}／"
+                f"{float(supplemental['revision_90d']):+.1%}（不計分）"
+            )
         dashboard.append([
             f"{security.ticker} {security.company}",
-            weekly.get("price_eps_state_4w") or "等待4W資料",
+            supplemental_text,
             (
                 f"{weekly.get('signal_stage')}／{weekly.get('trend_confidence')}／"
                 f"{weekly.get('eps_trend_consecutive_weeks')}週"
@@ -258,11 +270,13 @@ def main() -> None:
     parser.add_argument("--readiness", default="data/r1/evidence_readiness.json")
     parser.add_argument("--valuation-root", default="data/r1/valuation_history")
     parser.add_argument("--weekly-root", default="data/r1/weekly")
+    parser.add_argument("--supplemental-revision", default="data/r1/consensus/current_year_revision_history.csv")
     parser.add_argument("--output", default="data/r1/dashboard_payload.json")
     args = parser.parse_args()
     payload = build_dashboard_payload(
         config_path=args.config, market_path=args.market, readiness_path=args.readiness,
         valuation_root=args.valuation_root, weekly_root=args.weekly_root,
+        supplemental_revision_path=args.supplemental_revision,
     )
     output = Path(args.output)
     output.parent.mkdir(parents=True, exist_ok=True)

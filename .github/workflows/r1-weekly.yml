@@ -74,6 +74,13 @@ jobs:
             if [ "$attempt" -eq 3 ]; then exit 75; fi
             sleep 20
           done
+          for attempt in 1 2 3; do
+            if python -m r1.toalpha_revision_history --require-complete; then
+              break
+            fi
+            if [ "$attempt" -eq 3 ]; then exit 75; fi
+            sleep 20
+          done
           python -m r1.consensus_snapshot --date "${{ steps.gate.outputs.target_date }}"
           python -m r1.valuation_snapshot --date "${{ steps.gate.outputs.target_date }}"
           python -m r1.weekly_snapshot --date "${{ steps.gate.outputs.target_date }}" --market data/r1/daily_market_latest.json --week-final-confirmed
