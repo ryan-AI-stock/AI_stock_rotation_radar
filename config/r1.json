@@ -28,9 +28,48 @@
     },
     "bottleneck": {
       "weights": {"stage": 0.60, "tightness": 0.20, "financial_proof": 0.20},
-      "stage_scores": {"THESIS": 15.0, "QUALIFICATION": 30.0, "SAMPLE": 45.0, "TAPE_OUT": 60.0, "SMALL_VOLUME": 75.0, "MASS_PRODUCTION": 90.0, "FINANCIAL_PROOF": 100.0}
+      "stage_scores": {"THESIS": 15.0, "QUALIFICATION": 30.0, "SAMPLE": 45.0, "TAPE_OUT": 60.0, "SMALL_VOLUME": 75.0, "MASS_PRODUCTION": 90.0, "FINANCIAL_PROOF": 100.0},
+      "tightness_event_scores": {
+        "SUPPLY_SHORTAGE": 100.0, "CAPACITY_TIGHTNESS": 100.0,
+        "CUSTOMER_PREPAY": 100.0, "LONG_TERM_AGREEMENT": 100.0,
+        "PRICE_INCREASE": 85.0, "ASP_INCREASE": 85.0,
+        "CAPACITY_EXPANSION": 65.0, "CAPEX_UP": 65.0,
+        "STRATEGIC_INVESTMENT": 65.0, "MASS_PRODUCTION": 60.0,
+        "GUIDANCE_UP": 60.0
+      },
+      "financial_proof_stage_scores": {
+        "THESIS": 20.0, "QUALIFICATION": 25.0, "SAMPLE": 35.0,
+        "TAPE_OUT": 45.0, "SMALL_VOLUME": 55.0,
+        "MASS_PRODUCTION": 70.0, "FINANCIAL_PROOF": 100.0
+      }
     },
-    "catalyst": {"neutral_score": 50.0, "minimum_score": 0.0, "maximum_score": 100.0},
+    "catalyst": {
+      "neutral_score": 50.0, "minimum_score": 0.0, "maximum_score": 100.0,
+      "event_policy": {
+        "DESIGN_WIN": {"impact": 20.0, "expiry_weeks": 26},
+        "CUSTOMER_PREPAY": {"impact": 20.0, "expiry_weeks": 26},
+        "LONG_TERM_AGREEMENT": {"impact": 20.0, "expiry_weeks": 26},
+        "STRATEGIC_INVESTMENT": {"impact": 20.0, "expiry_weeks": 26},
+        "MASS_PRODUCTION": {"impact": 20.0, "expiry_weeks": 26},
+        "CAPACITY_TIGHTNESS": {"impact": 12.0, "expiry_weeks": 13},
+        "PRICE_INCREASE": {"impact": 12.0, "expiry_weeks": 13},
+        "ASP_INCREASE": {"impact": 12.0, "expiry_weeks": 13},
+        "CAPACITY_EXPANSION": {"impact": 12.0, "expiry_weeks": 13},
+        "SUPPLY_SHORTAGE": {"impact": 12.0, "expiry_weeks": 13},
+        "GUIDANCE_UP": {"impact": 12.0, "expiry_weeks": 13},
+        "CAPEX_UP": {"impact": 12.0, "expiry_weeks": 13},
+        "QUALIFICATION": {"impact": 12.0, "expiry_weeks": 13},
+        "TAPE_OUT": {"impact": 12.0, "expiry_weeks": 13},
+        "NEW_PRODUCT": {"impact": 12.0, "expiry_weeks": 13},
+        "CUSTOMER_LOSS": {"impact": 20.0, "expiry_weeks": 26},
+        "DELAY": {"impact": 20.0, "expiry_weeks": 26},
+        "NEGATIVE": {"impact": 20.0, "expiry_weeks": 26},
+        "CAPEX_DOWN": {"impact": 12.0, "expiry_weeks": 13},
+        "GUIDANCE_DOWN": {"impact": 12.0, "expiry_weeks": 13},
+        "COMPETITOR_EXPANSION": {"impact": 12.0, "expiry_weeks": 13},
+        "SUPPLY_NORMALIZATION": {"impact": 12.0, "expiry_weeks": 13}
+      }
+    },
     "price_chip": {
       "weights": {"earnings_vs_price": 0.40, "overheat_safety": 0.30, "institutional": 0.20, "leverage_structure": 0.10}
     }

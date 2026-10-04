@@ -8,18 +8,21 @@ from pathlib import Path
 from r1.config import R1Config
 from r1.consensus import consensus_actionable, load_consensus_csv, load_consensus_evidence
 from r1.component_scores import (
-    eps_revision_composite, eps_revision_score, forward_valuation_score,
+    bottleneck_score, catalyst_score, eps_revision_composite, eps_revision_score,
+    forward_valuation_score, percentile_score, price_chip_score,
 )
 from r1.providers import MissingConsensusProvider
 from r1.price_eps import price_eps_gap
 from r1.market_signal_state import confirm_eps_trend, eps_state, flow_state, valuation_state
 from r1.required_data import enforce_required_data, required_data_gaps
 from r1.staged_action import dynamic_triggers
-from r1.bottleneck_evidence import load_bottleneck_evidence
-from r1.catalyst_evidence import load_catalyst_evidence
+from r1.bottleneck_evidence import evidence_ready as bottleneck_evidence_ready, load_bottleneck_evidence
+from r1.catalyst_evidence import evidence_ready as catalyst_evidence_ready, load_catalyst_evidence
+from r1.evidence import CatalystEvent
 from r1.industry_state import STAGE_ORDER, bottleneck_state, catalyst_state
 from r1.shadow_rotation import evaluate_shadow_rotation
 from r1.valuation import load_valuation_reference, valuation_position, valuation_scenarios
+from r1.scoring import score as total_model_score
 
 
 def _consensus_history_features(
@@ -132,6 +135,16 @@ def build_weekly_snapshot(
         ]
         flow_5d = sum(institutional_flows[-5:]) if len(institutional_flows) >= 5 else None
         flow_20d = sum(institutional_flows[-20:]) if len(institutional_flows) >= 20 else None
+        margin_history = [
+            row for payload in daily_payloads for row in payload.get("chip_rows", [])
+            if row.get("ticker") == security.ticker and row.get("family") == "margin_short"
+            and row.get("margin_balance") not in {None, ""}
+        ]
+        margin_20d_change = None
+        if len(margin_history) >= 20 and float(margin_history[-20]["margin_balance"]) != 0:
+            margin_20d_change = (
+                float(margin_history[-1]["margin_balance"]) / float(margin_history[-20]["margin_balance"]) - 1
+            )
         current_record = consensus.get((security.ticker, int(date[:4])))
         record = consensus.get((security.ticker, fiscal_year))
         next_next_record = consensus.get((security.ticker, fiscal_year + 1))
@@ -219,6 +232,9 @@ def build_weekly_snapshot(
             "margin_change": margin.get("margin_change"),
             "institutional_flow_5d": flow_5d,
             "institutional_flow_20d": flow_20d,
+            "institutional_flow_ratio_20d": None if flow_20d is None or len(volumes) < 20
+            or sum(volumes[-20:]) == 0 else flow_20d / sum(volumes[-20:]),
+            "margin_balance_change_20d": margin_20d_change,
             "flow_state": flow_state(flow_5d, flow_20d),
             "chip_data_status": "AVAILABLE" if institution and margin else "DATA_MISSING",
             "next_year_eps": next_year_eps,
@@ -263,6 +279,14 @@ def build_weekly_snapshot(
             "bottleneck_score": None,
             "catalyst_score": None,
             "price_chip_score": None,
+            "bottleneck_tightness_score": None,
+            "bottleneck_financial_proof_score": None,
+            "catalyst_positive_decayed": None,
+            "catalyst_negative_decayed": None,
+            "earnings_vs_price_score": None,
+            "overheat_safety_score": None,
+            "institutional_score": None,
+            "leverage_structure_score": None,
             "total_score": None,
             "action": "CORE" if security.core_lock else "WATCH" if consensus_ready else "DATA_MISSING",
             "action_reason": "CORE_LOCK" if security.core_lock else
@@ -299,6 +323,87 @@ def build_weekly_snapshot(
             eligible_eps_growth=eligible_eps_growth,
             policy=config.score_policy["forward_valuation"],
         )
+    bias20_values = [float(row["bias20"]) for row in rows if row.get("bias20") is not None]
+    gap4w_values = [float(row["price_eps_gap_4w"]) for row in rows if row.get("price_eps_gap_4w") is not None]
+    flow_ratio_values = [
+        float(row["institutional_flow_ratio_20d"]) for row in rows
+        if row.get("institutional_flow_ratio_20d") is not None
+    ]
+    margin_change_values = [
+        float(row["margin_balance_change_20d"]) for row in rows
+        if row.get("margin_balance_change_20d") is not None
+    ]
+    for row in rows:
+        ticker_bottlenecks = [item for item in bottleneck_evidence if item.ticker == row["ticker"]]
+        ticker_catalysts = [item for item in catalyst_evidence if item.ticker == row["ticker"]]
+        stage = row.get("bottleneck_stage")
+        bottleneck_policy = config.score_policy["bottleneck"]
+        tightness_candidates = [
+            float(bottleneck_policy["tightness_event_scores"][item.event_type])
+            for item in ticker_catalysts
+            if item.impact_direction == "UP"
+            and item.event_type in bottleneck_policy["tightness_event_scores"]
+        ]
+        row["bottleneck_tightness_score"] = max(tightness_candidates, default=None)
+        row["bottleneck_financial_proof_score"] = (
+            float(bottleneck_policy["financial_proof_stage_scores"][stage]) if stage else None
+        )
+        row["bottleneck_score"] = None if stage is None else bottleneck_score(
+            stage=stage,
+            tightness_score=row["bottleneck_tightness_score"],
+            financial_proof_score=row["bottleneck_financial_proof_score"],
+            evidence_verified=bottleneck_evidence_ready(bottleneck_evidence, ticker=row["ticker"]),
+            policy=bottleneck_policy,
+        )
+        positive_scores, negative_scores = [], []
+        catalyst_policy = config.score_policy["catalyst"]
+        for item in ticker_catalysts:
+            event_policy = catalyst_policy["event_policy"].get(item.event_type)
+            if event_policy is None:
+                continue
+            value = CatalystEvent(
+                event_date=item.event_date, ticker=item.ticker, event_type=item.event_type,
+                impact_score=float(event_policy["impact"]), confidence=1.0,
+                expiry_weeks=int(event_policy["expiry_weeks"]), source_tier=item.source_tier,
+                source_url=item.source_url,
+            ).score_at(date)
+            (positive_scores if item.impact_direction == "UP" else negative_scores).append(value)
+        row["catalyst_positive_decayed"] = round(sum(positive_scores), 6)
+        row["catalyst_negative_decayed"] = round(sum(negative_scores), 6)
+        row["catalyst_score"] = catalyst_score(
+            positive_decayed_scores=positive_scores, negative_decayed_scores=negative_scores,
+            evidence_ready=catalyst_evidence_ready(catalyst_evidence, ticker=row["ticker"]),
+            policy=catalyst_policy,
+        )
+        row["earnings_vs_price_score"] = percentile_score(gap4w_values, row.get("price_eps_gap_4w"))
+        bias_rank = percentile_score(bias20_values, row.get("bias20"))
+        pe_percentile = row.get("forward_pe_percentile_5y")
+        row["overheat_safety_score"] = None if bias_rank is None or pe_percentile is None else round(
+            ((100.0 - bias_rank) + (1.0 - float(pe_percentile)) * 100.0) / 2.0, 6,
+        )
+        row["institutional_score"] = percentile_score(
+            flow_ratio_values, row.get("institutional_flow_ratio_20d"),
+        )
+        margin_rank = percentile_score(margin_change_values, row.get("margin_balance_change_20d"))
+        row["leverage_structure_score"] = None if margin_rank is None else round(100.0 - margin_rank, 6)
+        row["price_chip_score"] = price_chip_score(
+            earnings_vs_price_score=row["earnings_vs_price_score"],
+            overheat_safety_score=row["overheat_safety_score"],
+            institutional_score=row["institutional_score"],
+            leverage_structure_score=row["leverage_structure_score"],
+            policy=config.score_policy["price_chip"],
+        )
+        total = total_model_score(
+            components={
+                "eps_revision": row["eps_score"], "forward_valuation": row["valuation_score"],
+                "bottleneck": row["bottleneck_score"], "catalyst": row["catalyst_score"],
+                "price_chip": row["price_chip_score"],
+            },
+            weights=config.weights, consensus_allowed=bool(row["consensus_allowed"]),
+        )
+        row["total_score"] = total.total_score
+        row["score_status"] = total.reason
+        row["score_missing_components"] = list(total.missing_components)
     decision_required_fields = (
         "eps_revision_1w", "eps_revision_4w", "eps_revision_12w",
         "forward_pe", "forward_pe_percentile_5y", "base_fair_value", "base_upside",

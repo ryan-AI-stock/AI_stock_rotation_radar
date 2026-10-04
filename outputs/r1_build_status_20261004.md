@@ -2,7 +2,7 @@
 
 ## 結論
 
-R1仍是challenger與shadow tracking，不是正式交易模型。資料管線、週狀態、分階段換倉與自然收斂已建立；尚未完成的是三個構面內部欄位轉成0至100分的契約，以及必須靠未來週快照自然累積的EPS 1W／4W／12W序列。
+R1仍是challenger與shadow tracking，不是正式交易模型。資料管線、週狀態、分階段換倉、自然收斂及五構面計分契約已建立；尚未完成的是必須靠未來週快照自然累積的EPS 1W／4W／12W序列。
 
 ## 已完成
 
@@ -11,6 +11,8 @@ R1仍是challenger與shadow tracking，不是正式交易模型。資料管線�
 - 上詮2028E有數值但缺第二個獨立來源，狀態固定為`EVIDENCE_GAP`，不進決策。
 - 每週共識下載器具checkpoint、resume、逐檔錯誤及完整性檢查；已接入R1 weekly workflow。
 - Forward valuation score已按核准權重物化，2026-10-02為14／14可計算。
+- Bottleneck與Catalyst score已按核准的事件強度、證據階段及13／26週線性衰減物化，2026-10-02均為14／14可計算。
+- Price/Chip已固定為earnings-vs-price、過熱安全、法人20TD流量與融資20TD結構的池內百分位；缺任一子項時整項維持NA。
 - EPS、估值、籌碼、瓶頸、催化狀態，以及WAIT／EARLY_SIGNAL／CONFIRMING／CONFIRMED／DETERIORATING。
 - Shadow pairwise rotation、25%分段換倉、每週最多10%、最多5檔與Natural Convergence。
 
@@ -21,13 +23,17 @@ R1仍是challenger與shadow tracking，不是正式交易模型。資料管線�
 - EPS revision 12W最早需2026-12-25後的有效週快照。
 - 未到日期前維持NA；正式Action開啟後若仍缺，會報`R1_REQUIRED_DATA_MISSING`並中止決策。
 
-## 唯一待核准的計分契約
+## 目前資料結果
 
-1. Bottleneck：tightness與financial proof如何由已驗證證據轉成0至100。
-2. Catalyst：各事件類型的impact、confidence及expiry weeks。
-3. Price/Chip：earnings-vs-price、overheat safety、institutional與leverage structure的百分位方向及極端值上限。
+- 2026-10-02獨立重建：Bottleneck 14／14、Catalyst 14／14。
+- Price/Chip 0／14，主因EPS 4W revision尚未到自然可觀測日；不以0分或推估補值。
+- 因EPS revision與Price/Chip仍不完整，總分維持0／14可用，R1不產生ADD／TRIM／EXIT或真實換倉指令。
 
-上述三項沒有核准前，R1不產生總分、ADD／TRIM／EXIT或真實換倉指令。
+## GitHub排程
+
+- Daily workflow於台灣時間17:00至23:00每小時喚醒，並讀取中央`AI_stock_schedule_rules`的daily profile。
+- Weekly workflow於台灣時間19:00至23:00每小時喚醒，並讀取同一中央規則的weekly profile。
+- 中央規則以Asia/Taipei、15:00後、正常交易日／當週最後交易日為gate；cron只負責喚醒，不自行認定交易日。
 
 ## 邊界
 

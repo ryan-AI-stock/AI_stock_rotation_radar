@@ -82,6 +82,9 @@ class R1WeeklySnapshotTest(unittest.TestCase):
             self.assertEqual(payload["shadow_rotation_status"], "DATA_MISSING_COMPONENT_SCORES")
             self.assertTrue(payload["shadow_only"])
             self.assertGreater(payload["shadow_rotation_blocked_pair_count"], 0)
+            self.assertIsNotNone(nanya["bottleneck_score"])
+            self.assertIsNotNone(nanya["catalyst_score"])
+            self.assertIn("eps_revision", nanya["score_missing_components"])
 
     def test_unconfirmed_midweek_snapshot_is_rejected(self):
         with tempfile.TemporaryDirectory() as directory:

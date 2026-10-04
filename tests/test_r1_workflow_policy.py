@@ -19,6 +19,9 @@ class R1WorkflowPolicyTest(unittest.TestCase):
         self.assertIn("r1.dashboard_publish", workflow)
         self.assertIn("GOOGLE_OAUTH_REFRESH_TOKEN", workflow)
         self.assertIn("Sync latest main after concurrency wait", workflow)
+        self.assertIn('0 9-15 * * 1-5', workflow)
+        self.assertIn("repository: ryan-AI-stock/AI_stock_schedule_rules", workflow)
+        self.assertIn("--profile daily --rules AI_stock_schedule_rules/schedule_rules.json", workflow)
 
     def test_weekly_requires_week_final_confirmation(self):
         workflow = (ROOT / ".github/workflows/r1-weekly.yml").read_text(encoding="utf-8")
@@ -31,6 +34,8 @@ class R1WorkflowPolicyTest(unittest.TestCase):
         self.assertIn("r1.dashboard_publish", workflow)
         self.assertIn("Sync latest main after concurrency wait", workflow)
         self.assertIn('0 11-15 * * *', workflow)
+        self.assertIn("repository: ryan-AI-stock/AI_stock_schedule_rules", workflow)
+        self.assertIn("--profile weekly --rules AI_stock_schedule_rules/schedule_rules.json", workflow)
         self.assertNotIn("--allow-chip-gaps", workflow)
         self.assertIn("group: r1-publication", workflow)
 

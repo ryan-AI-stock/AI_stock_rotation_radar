@@ -79,6 +79,17 @@ def validate_payload(payload: dict[str, Any]) -> None:
         subweights = policy.get(component, {}).get("weights", {})
         if set(subweights) != expected or abs(sum(float(value) for value in subweights.values()) - 1.0) > 1e-9:
             raise ValueError(f"R1 {component} subweights must be exactly {sorted(expected)} and sum to 1.0")
+    bottleneck = policy.get("bottleneck", {})
+    if set(bottleneck.get("financial_proof_stage_scores", {})) != set(bottleneck.get("stage_scores", {})):
+        raise ValueError("R1 bottleneck financial proof stages must match stage scores")
+    if not bottleneck.get("tightness_event_scores"):
+        raise ValueError("R1 bottleneck tightness event mapping is required")
+    catalyst_events = policy.get("catalyst", {}).get("event_policy", {})
+    if not catalyst_events or any(
+        float(value.get("impact", 0)) <= 0 or int(value.get("expiry_weeks", 0)) <= 0
+        for value in catalyst_events.values()
+    ):
+        raise ValueError("R1 catalyst events require positive impact and expiry")
     max_rotation = float(payload.get("rotation", {}).get("max_weekly_rotation", -1))
     if not 0 <= max_rotation <= 1:
         raise ValueError("max_weekly_rotation must be between 0 and 1")
