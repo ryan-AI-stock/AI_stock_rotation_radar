@@ -16,6 +16,7 @@ from r1.staged_action import dynamic_triggers
 from r1.bottleneck_evidence import load_bottleneck_evidence
 from r1.catalyst_evidence import load_catalyst_evidence
 from r1.industry_state import STAGE_ORDER, bottleneck_state, catalyst_state
+from r1.shadow_rotation import evaluate_shadow_rotation
 from r1.valuation import load_valuation_reference, valuation_position, valuation_scenarios
 
 
@@ -277,12 +278,31 @@ def build_weekly_snapshot(
         enforce_required_data(
             rows, decision_required_fields, date=date, context="weekly_decision",
         )
+    held_sources = [row for row in rows if row["position_shares"] > 0 and not row["core_lock"]]
+    unheld_targets = [row for row in rows if row["position_shares"] == 0 and not row["core_lock"]]
+    shadow_candidates = []
+    shadow_blocked_pairs = 0
+    for source in held_sources:
+        for target in unheld_targets:
+            candidate = evaluate_shadow_rotation(
+                source=source, target=target, policy=config.rotation_policy,
+                holding_count=sum(row["position_shares"] > 0 for row in rows),
+            )
+            if candidate["status"] == "DATA_MISSING":
+                shadow_blocked_pairs += 1
+            else:
+                shadow_candidates.append(candidate)
+    shadow_candidates.sort(key=lambda row: row.get("score_advantage", float("-inf")), reverse=True)
     payload = {
         "model": "R1", "date": date, "snapshot_policy": "append_only",
         "rows": rows, "future_data_violation_count": 0,
         "required_data_gap_count": len(decision_gaps),
         "required_data_gaps": decision_gaps,
         "required_data_enforced": config.action_policy_approved,
+        "shadow_rotation_status": "READY" if shadow_candidates else "DATA_MISSING_COMPONENT_SCORES",
+        "shadow_rotation_candidates": shadow_candidates,
+        "shadow_rotation_blocked_pair_count": shadow_blocked_pairs,
+        "shadow_only": True,
         "formal_model_changed": False, "trade_decision_changed": False,
         "active_in_trade_decision": False, "report_changed": False,
     }

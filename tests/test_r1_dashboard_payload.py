@@ -21,6 +21,7 @@ class R1DashboardPayloadTest(unittest.TestCase):
         self.assertIn("03｜市場正在告訴我們什麼", [row[0] for row in dashboard])
         self.assertIn("04｜產業瓶頸與催化狀態", [row[0] for row in dashboard])
         self.assertIn("05｜下一個動態觸發條件", [row[0] for row in dashboard])
+        self.assertIn("06｜Shadow換倉候選（非交易指令）", [row[0] for row in dashboard])
         self.assertIn("等待跨週資料", [cell for row in dashboard for cell in row])
         readiness = {row[0]: row[1] for row in dashboard if len(row) >= 2 and row[0] in {
             "EPS共識", "EPS修正歷史", "催化證據", "瓶頸證據", "20日價量籌碼序列",

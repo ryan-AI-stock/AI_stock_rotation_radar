@@ -38,14 +38,18 @@ def _latest_valuation_rows(root: str | Path, target_date: str) -> dict[str, dict
 
 
 def _latest_weekly_rows(root: str | Path, target_date: str) -> dict[str, dict]:
+    payload = _latest_weekly_payload(root, target_date)
+    return {str(row.get("ticker", "")).zfill(4): row for row in payload.get("rows", [])}
+
+
+def _latest_weekly_payload(root: str | Path, target_date: str) -> dict:
     files = sorted(
         path for path in Path(root).glob("weekly_snapshot_????-??-??.json")
         if path.stem.rsplit("_", 1)[-1] <= target_date
     )
     if not files:
         return {}
-    payload = json.loads(files[-1].read_text(encoding="utf-8"))
-    return {str(row.get("ticker", "")).zfill(4): row for row in payload.get("rows", [])}
+    return json.loads(files[-1].read_text(encoding="utf-8"))
 
 
 def build_dashboard_payload(
@@ -69,6 +73,7 @@ def build_dashboard_payload(
     market_by_ticker = {row["ticker"]: row for row in market["rows"]}
     valuation_by_ticker = _latest_valuation_rows(valuation_root, market["date"])
     weekly_by_ticker = _latest_weekly_rows(weekly_root, market["date"])
+    weekly_payload = _latest_weekly_payload(weekly_root, market["date"])
     revision_progress = readiness.get("eps_revision_progress", {})
     revision_dates = revision_progress.get("earliest_calendar_eligibility", {})
     tabs: dict[str, list[list[object]]] = {
@@ -147,7 +152,24 @@ def build_dashboard_payload(
             weekly.get("current_trigger_inputs") or "等待跨週資料",
         ])
     dashboard.extend([
-        ["06｜資料與模型狀態"],
+        ["06｜Shadow換倉候選（非交易指令）"],
+        ["來源股", "目標股", "總分優勢", "Shadow狀態", "原因"],
+    ])
+    shadow_candidates = weekly_payload.get("shadow_rotation_candidates", [])
+    if shadow_candidates:
+        for candidate in shadow_candidates[:5]:
+            dashboard.append([
+                candidate.get("source"), candidate.get("target"), candidate.get("score_advantage"),
+                candidate.get("status"), candidate.get("reason"),
+            ])
+    else:
+        dashboard.append([
+            "尚未產生", "尚未產生", "",
+            weekly_payload.get("shadow_rotation_status", "等待新週快照"),
+            f"缺資料配對數：{weekly_payload.get('shadow_rotation_blocked_pair_count', 0)}",
+        ])
+    dashboard.extend([
+        ["07｜資料與模型狀態"],
         ["項目", "完成度", "顯示狀態", "用途", "資料日期"],
         ["官方市場資料", f"{market['actual_ticker_count']}/{market['requested_ticker_count']}",
          "完整" if not market["gaps"] else "資料不足", "收盤與技術資料", market["date"]],
@@ -176,7 +198,7 @@ def build_dashboard_payload(
          "下年度Forward PE自身五年百分位", market["date"]],
         ["交易建議", f"{readiness['trade_ready_count']}/{readiness['requested_ticker_count']}",
          "尚未啟用", "Action規則核准後才產生", market["date"]],
-        ["07｜模型完整說明"],
+        ["08｜模型完整說明"],
         [MODEL_LOGIC],
     ])
 

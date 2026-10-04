@@ -79,6 +79,9 @@ class R1WeeklySnapshotTest(unittest.TestCase):
             self.assertEqual(nanya["valuation_scenario_status"], "BASE_READY_PE_BANDS_MISSING")
             self.assertIn("EPS=", nanya["current_trigger_inputs"])
             self.assertIn("EPS維持上修", nanya["next_add_trigger"])
+            self.assertEqual(payload["shadow_rotation_status"], "DATA_MISSING_COMPONENT_SCORES")
+            self.assertTrue(payload["shadow_only"])
+            self.assertGreater(payload["shadow_rotation_blocked_pair_count"], 0)
 
     def test_unconfirmed_midweek_snapshot_is_rejected(self):
         with tempfile.TemporaryDirectory() as directory:
