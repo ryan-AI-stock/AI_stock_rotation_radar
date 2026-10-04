@@ -17,18 +17,20 @@ def build_consensus_snapshot(
     result = load_consensus_csv(consensus_path, as_of_date=date)
     evidence, evidence_rejected = load_consensus_evidence(consensus_evidence_path, as_of_date=date)
     fiscal_year = int(date[:4]) + 1
+    fiscal_years = (int(date[:4]), fiscal_year, fiscal_year + 1)
     records = {(row.ticker, row.fiscal_year): row for row in result.records}
     rows = []
     for security in config.securities:
-        record = records.get((security.ticker, fiscal_year))
+      for target_year in fiscal_years:
+        record = records.get((security.ticker, target_year))
         actionable = bool(record and consensus_actionable(
-            result.records, ticker=security.ticker, fiscal_year=fiscal_year, evidence=evidence,
+            result.records, ticker=security.ticker, fiscal_year=target_year, evidence=evidence,
         ))
         rows.append({
             "snapshot_date": date,
             "ticker": security.ticker,
             "company": security.company,
-            "fiscal_year": fiscal_year,
+            "fiscal_year": target_year,
             "mean_eps": record.mean_eps if actionable else None,
             "median_eps": record.median_eps if actionable else None,
             "high_eps": record.high_eps if actionable else None,
@@ -45,10 +47,13 @@ def build_consensus_snapshot(
         "model": "R1",
         "snapshot_date": date,
         "fiscal_year": fiscal_year,
+        "fiscal_years": list(fiscal_years),
         "snapshot_policy": "append_only_source_available_at",
         "rows": rows,
         "ready_count": sum(row["status"] == "READY" for row in rows),
-        "requested_ticker_count": len(rows),
+        "requested_ticker_count": len(config.securities),
+        "requested_security_count": len(config.securities),
+        "requested_record_count": len(config.securities) * len(fiscal_years),
         "consensus_rejected": list(result.rejected),
         "consensus_evidence_rejected": evidence_rejected,
         "future_data_violation_count": 0,

@@ -90,11 +90,11 @@ def build_weekly_snapshot(
     catalyst_evidence, _ = load_catalyst_evidence(catalyst_evidence_path, as_of_date=date)
     if consensus_path and Path(consensus_path).exists():
         consensus_result = load_consensus_csv(consensus_path, as_of_date=date)
-        consensus = {row.ticker: row for row in consensus_result.records if row.fiscal_year == fiscal_year}
+        consensus = {(row.ticker, row.fiscal_year): row for row in consensus_result.records}
         evidence, _ = load_consensus_evidence(consensus_evidence_path, as_of_date=date) \
             if consensus_evidence_path and Path(consensus_evidence_path).exists() else ([], [])
     else:
-        consensus = {row.ticker: row for row in MissingConsensusProvider().fetch(market_by_ticker, date)}
+        consensus = {(row.ticker, row.fiscal_year): row for row in MissingConsensusProvider().fetch(market_by_ticker, date)}
         evidence = []
     rows = []
     prior_eps_states: dict[str, list[str]] = {}
@@ -130,13 +130,23 @@ def build_weekly_snapshot(
         ]
         flow_5d = sum(institutional_flows[-5:]) if len(institutional_flows) >= 5 else None
         flow_20d = sum(institutional_flows[-20:]) if len(institutional_flows) >= 20 else None
-        record = consensus.get(security.ticker)
+        current_record = consensus.get((security.ticker, int(date[:4])))
+        record = consensus.get((security.ticker, fiscal_year))
+        next_next_record = consensus.get((security.ticker, fiscal_year + 1))
         consensus_ready = bool(record and consensus_actionable(
             tuple(consensus.values()), ticker=security.ticker, fiscal_year=fiscal_year, evidence=evidence))
+        current_consensus_ready = bool(current_record and consensus_actionable(
+            tuple(consensus.values()), ticker=security.ticker, fiscal_year=int(date[:4]), evidence=evidence))
+        next_next_consensus_ready = bool(next_next_record and consensus_actionable(
+            tuple(consensus.values()), ticker=security.ticker, fiscal_year=fiscal_year + 1, evidence=evidence))
         revision = _consensus_history_features(
             consensus_history_root, ticker=security.ticker, fiscal_year=fiscal_year, as_of_date=date,
         )
         next_year_eps = record.mean_eps if record else None
+        current_year_eps = current_record.mean_eps if current_consensus_ready else None
+        next_next_year_eps = next_next_record.mean_eps if next_next_consensus_ready else None
+        next_year_eps_growth = None if current_year_eps in {None, 0} or next_year_eps is None \
+            else next_year_eps / current_year_eps - 1
         forward_pe = None if next_year_eps in {None, 0} or market_row["raw_close"] is None \
             else market_row["raw_close"] / next_year_eps
         valuation = valuation_position(
@@ -210,6 +220,9 @@ def build_weekly_snapshot(
             "flow_state": flow_state(flow_5d, flow_20d),
             "chip_data_status": "AVAILABLE" if institution and margin else "DATA_MISSING",
             "next_year_eps": next_year_eps,
+            "current_year_eps": current_year_eps,
+            "next_next_year_eps": next_next_year_eps,
+            "next_year_eps_growth": next_year_eps_growth,
             "analyst_count": record.analyst_count if record else None,
             "consensus_status": "READY" if consensus_ready else (record.status if record else "DATA_MISSING"),
             "consensus_quality": record.quality if record else "LOW",
