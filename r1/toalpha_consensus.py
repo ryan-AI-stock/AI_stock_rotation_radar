@@ -97,6 +97,8 @@ def acquire(*, tickers: list[str], consensus_path: str | Path, evidence_path: st
     progress = json.loads(checkpoint.read_text(encoding="utf-8")) if checkpoint.exists() else {
         "retrieved_at": retrieved_at, "completed": {}, "failed": {},
     }
+    if progress.get("retrieved_at") != retrieved_at:
+        progress = {"retrieved_at": retrieved_at, "completed": {}, "failed": {}}
     for ticker in tickers:
         expected_years = {str(int(retrieved_at[:4]) + offset) for offset in range(3)}
         completed_years = {
@@ -121,6 +123,9 @@ def acquire(*, tickers: list[str], consensus_path: str | Path, evidence_path: st
             by_year = {row["fiscal_year"]: row for row in fallback}
             by_year.update({row["fiscal_year"]: row for row in rows})
             rows = sorted(by_year.values(), key=lambda row: row["fiscal_year"])
+            missing_years = sorted(expected_years - set(by_year))
+            if missing_years:
+                raise ValueError("missing_fiscal_years:" + ",".join(missing_years))
             progress["completed"][ticker] = {"url": url, "rows": rows}
             progress["failed"].pop(ticker, None)
         except (requests.RequestException, ValueError) as exc:
@@ -152,14 +157,17 @@ def _write_csv(path: Path, fields: tuple[str, ...], rows: list[dict[str, str]]) 
 
 def _upsert_missing(progress: dict, consensus_path: Path, evidence_path: Path) -> None:
     consensus = _read_csv(consensus_path)
-    existing = {(row["ticker"], row["fiscal_year"]) for row in consensus}
+    existing = {
+        (row["ticker"], row["fiscal_year"], row["available_at"], row["source"])
+        for row in consensus
+    }
     evidence = _read_csv(evidence_path)
     existing_evidence = {
         (row["ticker"], row["fiscal_year"], row["source_family"]) for row in evidence
     }
     for ticker, payload in progress["completed"].items():
         for row in payload["rows"]:
-            key = (ticker, row["fiscal_year"])
+            key = (ticker, row["fiscal_year"], row["available_at"], row["source"])
             if key not in existing:
                 consensus.append(row)
                 existing.add(key)
@@ -175,7 +183,7 @@ def _upsert_missing(progress: dict, consensus_path: Path, evidence_path: Path) -
                     "note": f"{row['analyst_count']}家共識平均{row['mean_eps']}；單一來源，不單獨形成可交易共識",
                 })
                 existing_evidence.add(evidence_key)
-    consensus.sort(key=lambda row: (row["ticker"], int(row["fiscal_year"])))
+    consensus.sort(key=lambda row: (row["ticker"], int(row["fiscal_year"]), row["available_at"], row["source"]))
     evidence.sort(key=lambda row: (row["ticker"], int(row["fiscal_year"]), row["source_family"]))
     _write_csv(consensus_path, CONSENSUS_FIELDS, consensus)
     _write_csv(evidence_path, EVIDENCE_FIELDS, evidence)
@@ -183,18 +191,27 @@ def _upsert_missing(progress: dict, consensus_path: Path, evidence_path: Path) -
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Acquire public R1 EPS consensus with resumable checkpointing.")
-    parser.add_argument("--tickers", required=True, help="Comma-separated tickers")
+    parser.add_argument("--tickers", help="Comma-separated tickers")
+    parser.add_argument("--config", default="config/r1.json")
     parser.add_argument("--consensus", default="data/r1/consensus/consensus.csv")
     parser.add_argument("--evidence", default="data/r1/consensus/evidence.csv")
     parser.add_argument("--checkpoint", default="data/r1/consensus/toalpha_checkpoint.json")
     parser.add_argument("--retrieved-at")
+    parser.add_argument("--require-complete", action="store_true")
     args = parser.parse_args()
+    if args.tickers:
+        tickers = [item.strip() for item in args.tickers.split(",") if item.strip()]
+    else:
+        config = json.loads(Path(args.config).read_text(encoding="utf-8"))
+        tickers = [str(row["ticker"]).zfill(4) for row in config["securities"]]
     result = acquire(
-        tickers=[item.strip() for item in args.tickers.split(",") if item.strip()],
+        tickers=tickers,
         consensus_path=args.consensus, evidence_path=args.evidence,
         checkpoint_path=args.checkpoint, retrieved_at=args.retrieved_at,
     )
     print(json.dumps(result, ensure_ascii=False, indent=2))
+    if args.require_complete and result["failed_ticker_count"]:
+        raise SystemExit(75)
 
 
 if __name__ == "__main__":

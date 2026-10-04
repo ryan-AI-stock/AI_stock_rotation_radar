@@ -23,7 +23,7 @@ class ToAlphaConsensusTest(unittest.TestCase):
                          [("2026", "10.5", "8"), ("2027", "14.0", "6")])
         self.assertEqual(rows[0]["available_at"], "2026-10-02")
 
-    def test_existing_year_is_not_overwritten(self):
+    def test_new_observation_does_not_overwrite_history(self):
         with tempfile.TemporaryDirectory() as folder:
             consensus = Path(folder) / "consensus.csv"
             evidence = Path(folder) / "evidence.csv"
@@ -37,7 +37,7 @@ class ToAlphaConsensusTest(unittest.TestCase):
             _upsert_missing(progress, consensus, evidence)
             text = consensus.read_text(encoding="utf-8")
             self.assertIn("2330,2027,99", text)
-            self.assertNotIn("2330,2027,14.0", text)
+            self.assertIn("2330,2027,14.0", text)
             self.assertIn("2330,2026,10.5", text)
 
     def test_parse_low_coverage_eps_fallback(self):
