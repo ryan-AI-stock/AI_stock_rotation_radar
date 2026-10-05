@@ -1,0 +1,609 @@
+{
+  "model": "R1",
+  "version": "r1-theme-leader-v0.2",
+  "date": "2026-10-02",
+  "cadence": {
+    "daily_accumulation": true,
+    "weekly_risk_and_replacement_review": true,
+    "quarterly_leader_review_due": true,
+    "quarterly_anchor": "2026-08-15",
+    "semiannual_membership_review_due": true,
+    "membership_anchor": "2026-08-15"
+  },
+  "theme_count": 9,
+  "ready_theme_count": 0,
+  "status": "DATA_MISSING",
+  "themes": [
+    {
+      "theme_id": "compute_foundry",
+      "theme_name": "AI運算晶片／ASIC／先進製程",
+      "status": "DATA_MISSING",
+      "top1": null,
+      "ranked": [],
+      "data_gaps": [
+        {
+          "ticker": "2330",
+          "missing_fields": [
+            "bottleneck_moat",
+            "competitive_position",
+            "ai_revenue_realization",
+            "earnings_quality",
+            "financial_strength",
+            "supply_visibility"
+          ]
+        },
+        {
+          "ticker": "2454",
+          "missing_fields": [
+            "bottleneck_moat",
+            "competitive_position",
+            "ai_revenue_realization",
+            "earnings_quality",
+            "financial_strength",
+            "supply_visibility"
+          ]
+        },
+        {
+          "ticker": "3661",
+          "missing_fields": [
+            "bottleneck_moat",
+            "competitive_position",
+            "ai_revenue_realization",
+            "earnings_quality",
+            "financial_strength",
+            "supply_visibility"
+          ]
+        },
+        {
+          "ticker": "3443",
+          "missing_fields": [
+            "bottleneck_moat",
+            "competitive_position",
+            "ai_revenue_realization",
+            "earnings_quality",
+            "financial_strength",
+            "supply_visibility"
+          ]
+        },
+        {
+          "ticker": "3035",
+          "missing_fields": [
+            "bottleneck_moat",
+            "competitive_position",
+            "ai_revenue_realization",
+            "earnings_quality",
+            "financial_strength",
+            "supply_visibility"
+          ]
+        }
+      ]
+    },
+    {
+      "theme_id": "advanced_packaging",
+      "theme_name": "先進封裝／測試／設備",
+      "status": "DATA_MISSING",
+      "top1": null,
+      "ranked": [],
+      "data_gaps": [
+        {
+          "ticker": "3711",
+          "missing_fields": [
+            "bottleneck_moat",
+            "competitive_position",
+            "ai_revenue_realization",
+            "earnings_quality",
+            "financial_strength",
+            "supply_visibility"
+          ]
+        },
+        {
+          "ticker": "2449",
+          "missing_fields": [
+            "bottleneck_moat",
+            "competitive_position",
+            "ai_revenue_realization",
+            "earnings_quality",
+            "financial_strength",
+            "supply_visibility"
+          ]
+        },
+        {
+          "ticker": "6223",
+          "missing_fields": [
+            "bottleneck_moat",
+            "competitive_position",
+            "ai_revenue_realization",
+            "earnings_quality",
+            "financial_strength",
+            "supply_visibility"
+          ]
+        },
+        {
+          "ticker": "6187",
+          "missing_fields": [
+            "bottleneck_moat",
+            "competitive_position",
+            "ai_revenue_realization",
+            "earnings_quality",
+            "financial_strength",
+            "supply_visibility"
+          ]
+        },
+        {
+          "ticker": "3583",
+          "missing_fields": [
+            "bottleneck_moat",
+            "competitive_position",
+            "ai_revenue_realization",
+            "earnings_quality",
+            "financial_strength",
+            "supply_visibility"
+          ]
+        }
+      ]
+    },
+    {
+      "theme_id": "memory_storage",
+      "theme_name": "HBM／記憶體／高速儲存",
+      "status": "DATA_MISSING",
+      "top1": null,
+      "ranked": [],
+      "data_gaps": [
+        {
+          "ticker": "2408",
+          "missing_fields": [
+            "bottleneck_moat",
+            "competitive_position",
+            "ai_revenue_realization",
+            "earnings_quality",
+            "financial_strength",
+            "supply_visibility"
+          ]
+        },
+        {
+          "ticker": "2344",
+          "missing_fields": [
+            "bottleneck_moat",
+            "competitive_position",
+            "ai_revenue_realization",
+            "earnings_quality",
+            "financial_strength",
+            "supply_visibility"
+          ]
+        },
+        {
+          "ticker": "2337",
+          "missing_fields": [
+            "bottleneck_moat",
+            "competitive_position",
+            "ai_revenue_realization",
+            "earnings_quality",
+            "financial_strength",
+            "supply_visibility"
+          ]
+        },
+        {
+          "ticker": "8299",
+          "missing_fields": [
+            "bottleneck_moat",
+            "competitive_position",
+            "ai_revenue_realization",
+            "earnings_quality",
+            "financial_strength",
+            "supply_visibility"
+          ]
+        },
+        {
+          "ticker": "3260",
+          "missing_fields": [
+            "bottleneck_moat",
+            "competitive_position",
+            "ai_revenue_realization",
+            "earnings_quality",
+            "financial_strength",
+            "supply_visibility"
+          ]
+        }
+      ]
+    },
+    {
+      "theme_id": "pcb_substrate",
+      "theme_name": "高速PCB／CCL／ABF載板",
+      "status": "DATA_MISSING",
+      "top1": null,
+      "ranked": [],
+      "data_gaps": [
+        {
+          "ticker": "2383",
+          "missing_fields": [
+            "bottleneck_moat",
+            "competitive_position",
+            "ai_revenue_realization",
+            "earnings_quality",
+            "financial_strength",
+            "supply_visibility"
+          ]
+        },
+        {
+          "ticker": "6274",
+          "missing_fields": [
+            "bottleneck_moat",
+            "competitive_position",
+            "ai_revenue_realization",
+            "earnings_quality",
+            "financial_strength",
+            "supply_visibility"
+          ]
+        },
+        {
+          "ticker": "3037",
+          "missing_fields": [
+            "bottleneck_moat",
+            "competitive_position",
+            "ai_revenue_realization",
+            "earnings_quality",
+            "financial_strength",
+            "supply_visibility"
+          ]
+        },
+        {
+          "ticker": "3189",
+          "missing_fields": [
+            "bottleneck_moat",
+            "competitive_position",
+            "ai_revenue_realization",
+            "earnings_quality",
+            "financial_strength",
+            "supply_visibility"
+          ]
+        },
+        {
+          "ticker": "2368",
+          "missing_fields": [
+            "bottleneck_moat",
+            "competitive_position",
+            "ai_revenue_realization",
+            "earnings_quality",
+            "financial_strength",
+            "supply_visibility"
+          ]
+        }
+      ]
+    },
+    {
+      "theme_id": "network_optics",
+      "theme_name": "高速網路／光通訊／CPO",
+      "status": "DATA_MISSING",
+      "top1": null,
+      "ranked": [],
+      "data_gaps": [
+        {
+          "ticker": "2345",
+          "missing_fields": [
+            "bottleneck_moat",
+            "competitive_position",
+            "ai_revenue_realization",
+            "earnings_quality",
+            "financial_strength",
+            "supply_visibility"
+          ]
+        },
+        {
+          "ticker": "2379",
+          "missing_fields": [
+            "bottleneck_moat",
+            "competitive_position",
+            "ai_revenue_realization",
+            "earnings_quality",
+            "financial_strength",
+            "supply_visibility"
+          ]
+        },
+        {
+          "ticker": "4979",
+          "missing_fields": [
+            "bottleneck_moat",
+            "competitive_position",
+            "ai_revenue_realization",
+            "earnings_quality",
+            "financial_strength",
+            "supply_visibility"
+          ]
+        },
+        {
+          "ticker": "3363",
+          "missing_fields": [
+            "bottleneck_moat",
+            "competitive_position",
+            "ai_revenue_realization",
+            "earnings_quality",
+            "financial_strength",
+            "supply_visibility"
+          ]
+        },
+        {
+          "ticker": "6442",
+          "missing_fields": [
+            "bottleneck_moat",
+            "competitive_position",
+            "ai_revenue_realization",
+            "earnings_quality",
+            "financial_strength",
+            "supply_visibility"
+          ]
+        },
+        {
+          "ticker": "3163",
+          "missing_fields": [
+            "bottleneck_moat",
+            "competitive_position",
+            "ai_revenue_realization",
+            "earnings_quality",
+            "financial_strength",
+            "supply_visibility"
+          ]
+        }
+      ]
+    },
+    {
+      "theme_id": "power_delivery",
+      "theme_name": "電源供應／HVDC／BBU",
+      "status": "DATA_MISSING",
+      "top1": null,
+      "ranked": [],
+      "data_gaps": [
+        {
+          "ticker": "2308",
+          "missing_fields": [
+            "bottleneck_moat",
+            "competitive_position",
+            "ai_revenue_realization",
+            "earnings_quality",
+            "financial_strength",
+            "supply_visibility"
+          ]
+        },
+        {
+          "ticker": "2301",
+          "missing_fields": [
+            "bottleneck_moat",
+            "competitive_position",
+            "ai_revenue_realization",
+            "earnings_quality",
+            "financial_strength",
+            "supply_visibility"
+          ]
+        },
+        {
+          "ticker": "6282",
+          "missing_fields": [
+            "bottleneck_moat",
+            "competitive_position",
+            "ai_revenue_realization",
+            "earnings_quality",
+            "financial_strength",
+            "supply_visibility"
+          ]
+        },
+        {
+          "ticker": "6412",
+          "missing_fields": [
+            "bottleneck_moat",
+            "competitive_position",
+            "ai_revenue_realization",
+            "earnings_quality",
+            "financial_strength",
+            "supply_visibility"
+          ]
+        },
+        {
+          "ticker": "6781",
+          "missing_fields": [
+            "bottleneck_moat",
+            "competitive_position",
+            "ai_revenue_realization",
+            "earnings_quality",
+            "financial_strength",
+            "supply_visibility"
+          ]
+        }
+      ]
+    },
+    {
+      "theme_id": "thermal_management",
+      "theme_name": "液冷／高階散熱",
+      "status": "DATA_MISSING",
+      "top1": null,
+      "ranked": [],
+      "data_gaps": [
+        {
+          "ticker": "3653",
+          "missing_fields": [
+            "bottleneck_moat",
+            "competitive_position",
+            "ai_revenue_realization",
+            "earnings_quality",
+            "financial_strength",
+            "supply_visibility"
+          ]
+        },
+        {
+          "ticker": "3017",
+          "missing_fields": [
+            "bottleneck_moat",
+            "competitive_position",
+            "ai_revenue_realization",
+            "earnings_quality",
+            "financial_strength",
+            "supply_visibility"
+          ]
+        },
+        {
+          "ticker": "3324",
+          "missing_fields": [
+            "bottleneck_moat",
+            "competitive_position",
+            "ai_revenue_realization",
+            "earnings_quality",
+            "financial_strength",
+            "supply_visibility"
+          ]
+        },
+        {
+          "ticker": "6230",
+          "missing_fields": [
+            "bottleneck_moat",
+            "competitive_position",
+            "ai_revenue_realization",
+            "earnings_quality",
+            "financial_strength",
+            "supply_visibility"
+          ]
+        },
+        {
+          "ticker": "3338",
+          "missing_fields": [
+            "bottleneck_moat",
+            "competitive_position",
+            "ai_revenue_realization",
+            "earnings_quality",
+            "financial_strength",
+            "supply_visibility"
+          ]
+        }
+      ]
+    },
+    {
+      "theme_id": "server_rack",
+      "theme_name": "AI伺服器／機櫃系統",
+      "status": "DATA_MISSING",
+      "top1": null,
+      "ranked": [],
+      "data_gaps": [
+        {
+          "ticker": "2382",
+          "missing_fields": [
+            "bottleneck_moat",
+            "competitive_position",
+            "ai_revenue_realization",
+            "earnings_quality",
+            "financial_strength",
+            "supply_visibility"
+          ]
+        },
+        {
+          "ticker": "3231",
+          "missing_fields": [
+            "bottleneck_moat",
+            "competitive_position",
+            "ai_revenue_realization",
+            "earnings_quality",
+            "financial_strength",
+            "supply_visibility"
+          ]
+        },
+        {
+          "ticker": "6669",
+          "missing_fields": [
+            "bottleneck_moat",
+            "competitive_position",
+            "ai_revenue_realization",
+            "earnings_quality",
+            "financial_strength",
+            "supply_visibility"
+          ]
+        },
+        {
+          "ticker": "2317",
+          "missing_fields": [
+            "bottleneck_moat",
+            "competitive_position",
+            "ai_revenue_realization",
+            "earnings_quality",
+            "financial_strength",
+            "supply_visibility"
+          ]
+        },
+        {
+          "ticker": "2356",
+          "missing_fields": [
+            "bottleneck_moat",
+            "competitive_position",
+            "ai_revenue_realization",
+            "earnings_quality",
+            "financial_strength",
+            "supply_visibility"
+          ]
+        }
+      ]
+    },
+    {
+      "theme_id": "critical_materials",
+      "theme_name": "關鍵半導體材料／矽晶圓／製程耗材",
+      "status": "DATA_MISSING",
+      "top1": null,
+      "ranked": [],
+      "data_gaps": [
+        {
+          "ticker": "6488",
+          "missing_fields": [
+            "bottleneck_moat",
+            "competitive_position",
+            "ai_revenue_realization",
+            "earnings_quality",
+            "financial_strength",
+            "supply_visibility"
+          ]
+        },
+        {
+          "ticker": "3532",
+          "missing_fields": [
+            "bottleneck_moat",
+            "competitive_position",
+            "ai_revenue_realization",
+            "earnings_quality",
+            "financial_strength",
+            "supply_visibility"
+          ]
+        },
+        {
+          "ticker": "6182",
+          "missing_fields": [
+            "bottleneck_moat",
+            "competitive_position",
+            "ai_revenue_realization",
+            "earnings_quality",
+            "financial_strength",
+            "supply_visibility"
+          ]
+        },
+        {
+          "ticker": "1560",
+          "missing_fields": [
+            "bottleneck_moat",
+            "competitive_position",
+            "ai_revenue_realization",
+            "earnings_quality",
+            "financial_strength",
+            "supply_visibility"
+          ]
+        },
+        {
+          "ticker": "3131",
+          "missing_fields": [
+            "bottleneck_moat",
+            "competitive_position",
+            "ai_revenue_realization",
+            "earnings_quality",
+            "financial_strength",
+            "supply_visibility"
+          ]
+        }
+      ]
+    }
+  ],
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": true
+}

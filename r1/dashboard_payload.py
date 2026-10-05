@@ -23,8 +23,11 @@ EPS預估修正30%、前瞻估值25%、AI瓶頸程度20%、可驗證催化事件
 【R1 Score v0.1研究計分】
 EPS修正內部分配為1W 20%、4W 50%、12W 30%，並限制下修股票僅因相對排名取得高分。估值以自身五年Forward PE、Base Upside與下年度EPS成長組合；瓶頸依可驗證Stage、供需緊張與財務兌現；催化事件隨時間衰減；價格籌碼只占10%，用來控制追高與擁擠風險。所有必要輸入完整前，構面與總分維持NA，不重新分配權重。
 
-【輪動與風險限制】
-研究設定每週換倉上限10%，主部位目標3檔，現金目標5%～20%。台積電核心部位不因短期訊號退出；其餘買進、減碼與退出門檻尚待完整資料累積與回測核准。
+【R1 v0.2長抱題材龍頭】
+研究池依AI工廠結構拆成9個瓶頸題材，每個題材保留3～6檔公司。每日累積官方價格、籌碼、營收與事件；每週檢查持股風險、題材強弱及替代候選；每季在財報揭露後重評各題材Top1；每半年才允許增刪題材成分。最多持有5檔，同一題材最多1檔。
+
+【換股與風險限制】
+一般換股必須同時具備持股風險過高、原題材連續轉弱、替代題材Top1低風險且優勢連續兩週成立。重大基本面、治理、客戶或需求論點破壞可直接退至現金，不等待替代股。12W EPS修正改作中期趨勢確認，不再單獨阻擋題材Top1研究排名。所有門檻完成回測核准前只顯示研究狀態，不產生交易指令。
 
 【目前狀態】
 官方價格、價量籌碼歷史序列、EPS共識、五年估值定位、瓶頸與催化證據已接通；當日籌碼另行驗收，不能用歷史序列完整代替。下年度EPS修正序列仍在累積；畫面另列當年度30／90日修正作補充觀察，但不納入R1總分。Action門檻核准前，只顯示資料與觀察狀態，不產生Top1～Top3、模擬成交或實際操作指令。"""
@@ -59,6 +62,7 @@ def build_dashboard_payload(
     valuation_root: str | Path = "data/r1/valuation_history",
     weekly_root: str | Path = "data/r1/weekly",
     supplemental_revision_path: str | Path = "data/r1/consensus/current_year_revision_history.csv",
+    theme_review_path: str | Path = "data/r1/theme_reviews/latest.json",
 ) -> dict:
     config = R1Config.load(config_path)
     market = json.loads(Path(market_path).read_text(encoding="utf-8"))
@@ -79,6 +83,8 @@ def build_dashboard_payload(
     supplemental_revisions = latest_supplemental_revision_rows(
         supplemental_revision_path, as_of_date=market["date"],
     )
+    theme_file = Path(theme_review_path)
+    theme_review = json.loads(theme_file.read_text(encoding="utf-8")) if theme_file.exists() else {}
     revision_progress = readiness.get("eps_revision_progress", {})
     revision_dates = revision_progress.get("earliest_calendar_eligibility", {})
     tabs: dict[str, list[list[object]]] = {
@@ -152,7 +158,23 @@ def build_dashboard_payload(
             weekly.get("flow_state") or "等待20TD資料",
         ])
     dashboard.extend([
-        ["04｜產業瓶頸與催化狀態"],
+        ["04｜AI瓶頸題材Top1（季度評估）"],
+        ["題材", "目前Top1", "龍頭分數", "評估狀態", "資料缺口"],
+    ])
+    for theme in theme_review.get("themes", []):
+        top1 = theme.get("top1") or {}
+        gaps = theme.get("data_gaps", [])
+        dashboard.append([
+            theme.get("theme_name"),
+            f"{top1.get('ticker')} {top1.get('company', '')}" if top1 else "尚未核准",
+            top1.get("leader_score", ""),
+            "季度Top1已完成" if theme.get("status") == "READY" else "必要資料未完整",
+            f"{len(gaps)}檔待補" if gaps else "無",
+        ])
+    if not theme_review.get("themes"):
+        dashboard.append(["題材契約已建立", "尚未核准", "", "等待題材資料建檔", "9個題材"])
+    dashboard.extend([
+        ["05｜產業瓶頸與催化狀態"],
         ["股票", "瓶頸階段／分數", "催化狀態／分數", "價量籌碼分數", "R1總分"],
     ])
     for security in config.securities:
@@ -167,7 +189,7 @@ def build_dashboard_payload(
             weekly.get("total_score") if weekly.get("total_score") is not None else "必要構面未完整",
         ])
     dashboard.extend([
-        ["05｜下一個動態觸發條件"],
+        ["06｜下一個動態觸發條件"],
         ["股票", "下一次加碼", "下一次減碼", "退出", "目前輸入"],
     ])
     for security in config.securities:
@@ -182,7 +204,7 @@ def build_dashboard_payload(
             weekly.get("current_trigger_inputs") or "等待跨週資料",
         ])
     dashboard.extend([
-        ["06｜Shadow換倉候選（非交易指令）"],
+        ["07｜Shadow換倉候選（非交易指令）"],
         ["來源股", "目標股", "總分優勢", "Shadow狀態", "原因"],
     ])
     shadow_candidates = weekly_payload.get("shadow_rotation_candidates", [])
@@ -199,7 +221,7 @@ def build_dashboard_payload(
             f"缺資料配對數：{weekly_payload.get('shadow_rotation_blocked_pair_count', 0)}",
         ])
     dashboard.extend([
-        ["07｜資料與模型狀態"],
+        ["08｜資料與模型狀態"],
         ["項目", "完成度", "顯示狀態", "用途", "資料日期"],
         ["官方市場資料", f"{market['actual_ticker_count']}/{market['requested_ticker_count']}",
          "完整" if not market["gaps"] else "資料不足", "收盤與技術資料", market["date"]],
@@ -228,7 +250,7 @@ def build_dashboard_payload(
          "下年度Forward PE自身五年百分位", market["date"]],
         ["交易建議", f"{readiness['trade_ready_count']}/{readiness['requested_ticker_count']}",
          "尚未啟用", "Action規則核准後才產生", market["date"]],
-        ["08｜模型完整說明"],
+        ["09｜模型完整說明"],
         [MODEL_LOGIC],
     ])
 
@@ -271,12 +293,14 @@ def main() -> None:
     parser.add_argument("--valuation-root", default="data/r1/valuation_history")
     parser.add_argument("--weekly-root", default="data/r1/weekly")
     parser.add_argument("--supplemental-revision", default="data/r1/consensus/current_year_revision_history.csv")
+    parser.add_argument("--theme-review", default="data/r1/theme_reviews/latest.json")
     parser.add_argument("--output", default="data/r1/dashboard_payload.json")
     args = parser.parse_args()
     payload = build_dashboard_payload(
         config_path=args.config, market_path=args.market, readiness_path=args.readiness,
         valuation_root=args.valuation_root, weekly_root=args.weekly_root,
         supplemental_revision_path=args.supplemental_revision,
+        theme_review_path=args.theme_review,
     )
     output = Path(args.output)
     output.parent.mkdir(parents=True, exist_ok=True)

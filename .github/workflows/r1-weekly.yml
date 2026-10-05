@@ -84,6 +84,7 @@ jobs:
           python -m r1.consensus_snapshot --date "${{ steps.gate.outputs.target_date }}"
           python -m r1.valuation_snapshot --date "${{ steps.gate.outputs.target_date }}"
           python -m r1.weekly_snapshot --date "${{ steps.gate.outputs.target_date }}" --market data/r1/daily_market_latest.json --week-final-confirmed
+          python -m r1.theme_review --date "${{ steps.gate.outputs.target_date }}"
           python -m r1.forward_outcomes --date "${{ steps.gate.outputs.target_date }}"
           python -m r1.evidence_readiness --date "${{ steps.gate.outputs.target_date }}"
           python -m r1.discovery --date "${{ steps.gate.outputs.target_date }}"

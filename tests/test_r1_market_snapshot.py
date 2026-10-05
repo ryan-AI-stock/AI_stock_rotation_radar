@@ -5,7 +5,7 @@ from tempfile import TemporaryDirectory
 
 import pandas as pd
 
-from r1.market_snapshot import _ratio, _return, load_exact_complete_snapshot
+from r1.market_snapshot import _load_universe, _ratio, _return, load_exact_complete_snapshot
 
 
 class R1MarketSnapshotTest(unittest.TestCase):
@@ -33,6 +33,20 @@ class R1MarketSnapshotTest(unittest.TestCase):
                 output=path, target="2026-10-02", config_path="config/r1.json"))
             self.assertIsNone(load_exact_complete_snapshot(
                 output=path, target="2026-10-03", config_path="config/r1.json"))
+
+    def test_theme_universe_is_independent_and_complete(self):
+        universe = _load_universe(
+            config_path="config/r1.json", theme_path="config/r1_v02_themes.json")
+        self.assertEqual(len(universe), 46)
+        self.assertIn("2330", universe)
+        self.assertIn("3131", universe)
+
+    def test_theme_universe_does_not_change_original_r1_universe(self):
+        original = _load_universe(config_path="config/r1.json")
+        themed = _load_universe(
+            config_path="config/r1.json", theme_path="config/r1_v02_themes.json")
+        self.assertEqual(len(original), 14)
+        self.assertEqual(len(themed), 46)
 
 
 if __name__ == "__main__":

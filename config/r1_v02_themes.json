@@ -1,0 +1,65 @@
+{
+  "version": "r1-theme-universe-v0.2",
+  "as_of_date": "2026-10-05",
+  "status": "challenger",
+  "membership_review": "semiannual",
+  "leader_review": "quarterly_after_financial_disclosure",
+  "max_holdings": 5,
+  "max_holdings_per_theme": 1,
+  "themes": [
+    {
+      "id": "compute_foundry",
+      "name": "AI運算晶片／ASIC／先進製程",
+      "bottleneck_thesis": "AI運算效率、先進製程產能與客製ASIC設計能力",
+      "members": [["2330","台積電","TWSE"],["2454","聯發科","TWSE"],["3661","世芯-KY","TWSE"],["3443","創意","TWSE"],["3035","智原","TWSE"]]
+    },
+    {
+      "id": "advanced_packaging",
+      "name": "先進封裝／測試／設備",
+      "bottleneck_thesis": "先進封裝、測試與相關設備決定AI晶片能否量產交付",
+      "members": [["3711","日月光投控","TWSE"],["2449","京元電子","TWSE"],["6223","旺矽","TPEx"],["6187","萬潤","TPEx"],["3583","辛耘","TWSE"]]
+    },
+    {
+      "id": "memory_storage",
+      "name": "HBM／記憶體／高速儲存",
+      "bottleneck_thesis": "模型訓練、推論與長上下文需要高頻寬記憶體及高速資料供應",
+      "members": [["2408","南亞科","TWSE"],["2344","華邦電","TWSE"],["2337","旺宏","TWSE"],["8299","群聯","TPEx"],["3260","威剛","TPEx"]]
+    },
+    {
+      "id": "pcb_substrate",
+      "name": "高速PCB／CCL／ABF載板",
+      "bottleneck_thesis": "高速低損耗材料、PCB與載板承載高頻寬及高功率系統互連",
+      "members": [["2383","台光電","TWSE"],["6274","台燿","TWSE"],["3037","欣興","TWSE"],["3189","景碩","TWSE"],["2368","金像電","TWSE"]]
+    },
+    {
+      "id": "network_optics",
+      "name": "高速網路／光通訊／CPO",
+      "bottleneck_thesis": "大規模AI叢集需要低延遲、高頻寬、低功耗的交換與光互連",
+      "members": [["2345","智邦","TWSE"],["2379","瑞昱","TWSE"],["4979","華星光","TPEx"],["3363","上詮","TPEx"],["6442","光聖","TWSE"],["3163","波若威","TPEx"]]
+    },
+    {
+      "id": "power_delivery",
+      "name": "電源供應／HVDC／BBU",
+      "bottleneck_thesis": "AI機櫃功率密度快速提高，供電效率、備援與配電能力限制算力部署",
+      "members": [["2308","台達電","TWSE"],["2301","光寶科","TWSE"],["6282","康舒","TWSE"],["6412","群電","TWSE"],["6781","AES-KY","TWSE"]]
+    },
+    {
+      "id": "thermal_management",
+      "name": "液冷／高階散熱",
+      "bottleneck_thesis": "高功率AI機櫃必須持續移除熱量，避免降頻並提高可用算力",
+      "members": [["3653","健策","TWSE"],["3017","奇鋐","TWSE"],["3324","雙鴻","TPEx"],["6230","尼得科超眾","TWSE"],["3338","泰碩","TWSE"]]
+    },
+    {
+      "id": "server_rack",
+      "name": "AI伺服器／機櫃系統",
+      "bottleneck_thesis": "機櫃整合、量產、測試與交付能力決定AI基礎設施落地速度",
+      "members": [["2382","廣達","TWSE"],["3231","緯創","TWSE"],["6669","緯穎","TWSE"],["2317","鴻海","TWSE"],["2356","英業達","TWSE"]]
+    },
+    {
+      "id": "critical_materials",
+      "name": "關鍵半導體材料／矽晶圓／製程耗材",
+      "bottleneck_thesis": "矽晶圓、研磨耗材與關鍵製程設備限制先進晶片及封裝擴產",
+      "members": [["6488","環球晶","TPEx"],["3532","台勝科","TWSE"],["6182","合晶","TPEx"],["1560","中砂","TWSE"],["3131","弘塑","TPEx"]]
+    }
+  ]
+}

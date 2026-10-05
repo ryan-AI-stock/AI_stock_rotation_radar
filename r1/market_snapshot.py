@@ -8,6 +8,7 @@ from pathlib import Path
 import pandas as pd
 
 from r1.config import R1Config
+from r1.theme_policy import load_themes
 from rotation_radar.base_cycle_daily_report import load_official_prices_and_turnover
 from rotation_radar.v4d_top1_signal import ADJUSTED_WARMUP, LIQUIDITY_WARMUP, extend_adjusted_with_official_raw
 
@@ -15,14 +16,27 @@ from rotation_radar.v4d_top1_signal import ADJUSTED_WARMUP, LIQUIDITY_WARMUP, ex
 RETURN_WINDOWS = {"daily_return": 1, "return_1w": 5, "return_1m": 20, "return_3m": 60, "return_6m": 120}
 
 
+def _load_universe(*, config_path: str | Path, theme_path: str | Path | None = None) -> dict[str, dict]:
+    if theme_path:
+        return {
+            member.ticker: {"company": member.company, "market": member.market}
+            for theme in load_themes(theme_path) for member in theme.members
+        }
+    return {
+        security.ticker: {"company": security.company, "market": security.market}
+        for security in R1Config.load(config_path).securities
+    }
+
+
 def load_exact_complete_snapshot(*, output: str | Path, target: str,
-                                 config_path: str | Path) -> dict | None:
+                                 config_path: str | Path,
+                                 theme_path: str | Path | None = None) -> dict | None:
     """Reuse only a complete snapshot for the exact requested date."""
     path = Path(output)
     if not path.exists():
         return None
     payload = json.loads(path.read_text(encoding="utf-8"))
-    expected = {security.ticker for security in R1Config.load(config_path).securities}
+    expected = set(_load_universe(config_path=config_path, theme_path=theme_path))
     rows = payload.get("rows", [])
     actual = {str(row.get("ticker", "")).zfill(4) for row in rows if row.get("raw_close") is not None}
     if payload.get("date") != target or actual != expected or payload.get("gaps"):
@@ -35,10 +49,11 @@ def load_exact_complete_snapshot(*, output: str | Path, target: str,
 def build_market_snapshot(
     *, target: str, config_path: str | Path, source_repo: str | Path,
     source_cache: str | Path, output: str | Path, offline: bool = False,
+    theme_path: str | Path | None = None,
 ) -> dict:
     target_day = pd.Timestamp(target)
-    config = R1Config.load(config_path)
-    universe = {security.ticker for security in config.securities}
+    universe_meta = _load_universe(config_path=config_path, theme_path=theme_path)
+    universe = set(universe_meta)
     official, recent_turnover = load_official_prices_and_turnover(
         source_repo=Path(source_repo), target=target_day,
         current=pd.DataFrame(columns=["ticker", "name", "market"]),
@@ -78,22 +93,50 @@ def build_market_snapshot(
     retrieved_at = datetime.now(timezone.utc).isoformat()
     rows = []
     gaps = []
-    by_ticker = {security.ticker: security for security in config.securities}
+    analysis_gaps = []
     for ticker in sorted(universe):
         frame = prices[(prices.ticker == ticker) & prices.date.le(target_day)].copy()
-        if frame.empty or frame.iloc[-1].date != target_day:
+        raw = official[(official.ticker == ticker) & (official.date == target_day)]
+        if raw.empty:
             gaps.append({"ticker": ticker, "field_group": "market_price", "status": "DATA_MISSING"})
+            continue
+        raw_close = float(raw.iloc[-1].close)
+        if frame.empty or frame.iloc[-1].date != target_day:
+            raw_turnover = turnover[(turnover.ticker == ticker) & (turnover.date == target_day)]
+            analysis_gaps.append({
+                "ticker": ticker,
+                "field_group": "adjusted_price_history",
+                "status": "DATA_MISSING",
+                "note": "official raw close retained; adjusted analytics not substituted",
+            })
+            item = {
+                "date": target, "ticker": ticker,
+                "company": universe_meta[ticker]["company"],
+                "market": universe_meta[ticker]["market"],
+                "raw_close": raw_close, "adjusted_analysis_close": None,
+                "ma20": None, "ma60": None, "bias20": None, "bias60": None,
+                "source": "TWSE/TPEx official raw; adjusted history unavailable",
+                "as_of_date": target, "published_at": None,
+                "available_at": f"{target}T13:30:00+08:00", "retrieved_at": retrieved_at,
+                "quality": "RAW_PRICE_READY_ADJUSTED_ANALYTICS_MISSING",
+                "future_data_violation_count": 0,
+                **{name: None for name in RETURN_WINDOWS},
+                "turnover_value": _finite(raw_turnover.iloc[-1].turnover_value)
+                if not raw_turnover.empty else None,
+                "avg_turnover_20d": None,
+                "volume": None, "avg_volume_20d": None,
+                "volume_status": "DATA_MISSING_NOT_IN_REUSED_TURNOVER_CONTRACT",
+            }
+            rows.append(item)
             continue
         frame["ma20"] = frame.adjusted_analysis_close.rolling(20, min_periods=20).mean()
         frame["ma60"] = frame.adjusted_analysis_close.rolling(60, min_periods=60).mean()
         latest = frame.iloc[-1]
-        raw = official[(official.ticker == ticker) & (official.date == target_day)]
-        raw_close = float(raw.iloc[-1].close) if not raw.empty else None
         item = {
             "date": target,
             "ticker": ticker,
-            "company": by_ticker[ticker].company,
-            "market": by_ticker[ticker].market,
+            "company": universe_meta[ticker]["company"],
+            "market": universe_meta[ticker]["market"],
             "raw_close": raw_close,
             "adjusted_analysis_close": float(latest.adjusted_analysis_close),
             "ma20": _finite(latest.ma20),
@@ -120,8 +163,9 @@ def build_market_snapshot(
 
     payload = {
         "model": "R1", "status": "challenger", "date": target,
+        "universe_version": "r1-theme-universe-v0.2" if theme_path else "r1-0.1.0",
         "requested_ticker_count": len(universe), "actual_ticker_count": len(rows),
-        "rows": rows, "gaps": gaps,
+        "rows": rows, "gaps": gaps, "analysis_gaps": analysis_gaps,
         "formal_model_changed": False, "trade_decision_changed": False,
         "active_in_trade_decision": False, "report_changed": False,
     }
@@ -149,6 +193,8 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Build an R1 official daily market snapshot.")
     parser.add_argument("--date", required=True)
     parser.add_argument("--config", default="config/r1.json")
+    parser.add_argument("--themes", default=None,
+                        help="Optional R1 v0.2 theme universe, kept separate from v0.1 scoring.")
     parser.add_argument("--source-repo", default=".")
     parser.add_argument("--source-cache", default="data/current_base_cycle_source_cache")
     parser.add_argument("--output", default="data/r1/daily_market_latest.json")
@@ -156,12 +202,13 @@ def main() -> None:
     parser.add_argument("--reuse-exact-complete", action="store_true")
     args = parser.parse_args()
     payload = load_exact_complete_snapshot(
-        output=args.output, target=args.date, config_path=args.config,
+        output=args.output, target=args.date, config_path=args.config, theme_path=args.themes,
     ) if args.reuse_exact_complete else None
     if payload is None:
         payload = build_market_snapshot(
             target=args.date, config_path=args.config, source_repo=args.source_repo,
             source_cache=args.source_cache, output=args.output, offline=args.offline,
+            theme_path=args.themes,
         )
     if payload["actual_ticker_count"] != payload["requested_ticker_count"]:
         raise SystemExit(75)
