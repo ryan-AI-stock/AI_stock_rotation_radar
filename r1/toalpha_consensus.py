@@ -22,6 +22,12 @@ EVIDENCE_FIELDS = (
 )
 
 
+def required_fiscal_years(as_of_date: str) -> set[str]:
+    """R1 needs current and next-year EPS; the second forward year is optional."""
+    year = int(as_of_date[:4])
+    return {str(year), str(year + 1)}
+
+
 def parse_estimates_page(text: str, *, ticker: str, retrieved_at: str) -> list[dict[str, str]]:
     """Parse only the labelled forward-estimate table; never infer absent values."""
     clean = html.unescape(re.sub(r"<!--.*?-->", "", text, flags=re.S))
@@ -100,7 +106,7 @@ def acquire(*, tickers: list[str], consensus_path: str | Path, evidence_path: st
     if progress.get("retrieved_at") != retrieved_at:
         progress = {"retrieved_at": retrieved_at, "completed": {}, "failed": {}}
     for ticker in tickers:
-        expected_years = {str(int(retrieved_at[:4]) + offset) for offset in range(3)}
+        expected_years = required_fiscal_years(retrieved_at)
         completed_years = {
             row["fiscal_year"] for row in progress["completed"].get(ticker, {}).get("rows", [])
         }

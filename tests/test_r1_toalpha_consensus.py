@@ -2,7 +2,9 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from r1.toalpha_consensus import _upsert_missing, parse_eps_page, parse_estimates_page
+from r1.toalpha_consensus import (
+    _upsert_missing, parse_eps_page, parse_estimates_page, required_fiscal_years,
+)
 
 
 HTML = '''<b>2026-10-02</b><span>資料日期</span>
@@ -17,6 +19,9 @@ EPS_HTML = '''<b>2026-10-02</b><span>資料日期</span><tbody>
 
 
 class ToAlphaConsensusTest(unittest.TestCase):
+    def test_current_and_next_year_are_required_but_second_forward_year_is_optional(self):
+        self.assertEqual(required_fiscal_years("2026-10-02"), {"2026", "2027"})
+
     def test_parse_labelled_table(self):
         rows = parse_estimates_page(HTML, ticker="2330", retrieved_at="2026-10-04")
         self.assertEqual([(row["fiscal_year"], row["mean_eps"], row["analyst_count"]) for row in rows],

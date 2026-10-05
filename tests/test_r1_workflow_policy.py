@@ -44,6 +44,8 @@ class R1WorkflowPolicyTest(unittest.TestCase):
         self.assertIn("Report R1 weekly failure context", workflow)
         self.assertIn("Weekly snapshot was not accepted as complete", workflow)
         self.assertNotIn("--allow-chip-gaps", workflow)
+        self.assertNotIn("toalpha_consensus --require-complete", workflow)
+        self.assertNotIn("toalpha_revision_history --require-complete", workflow)
         self.assertIn("group: r1-publication", workflow)
 
 
