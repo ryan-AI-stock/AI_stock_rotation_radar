@@ -1,7 +1,7 @@
 {
   "model": "R1",
-  "version": "r1-official-financial-snapshot-v0.1",
-  "as_of_date": "2026-10-02",
+  "version": "r1-official-financial-snapshot-v0.2",
+  "as_of_date": "2026-10-05",
   "requested_ticker_count": 50,
   "actual_ticker_count": 50,
   "rows": [
@@ -11,7 +11,7 @@
       "market": "TWSE",
       "report_year_roc": "115",
       "quarter": "2",
-      "source_date_roc": "1151005",
+      "source_date_roc": "1151006",
       "revenue": 4785896.0,
       "gross_profit": 1800757.0,
       "operating_income": 1048097.0,
@@ -22,11 +22,13 @@
       "total_assets": 14894528.0,
       "total_liabilities": 5457971.0,
       "total_equity": 9436557.0,
-      "operating_cash_flow": null,
-      "status": "READY_EXCEPT_CASH_FLOW",
+      "operating_cash_flow": 1256630000.0,
+      "operating_cash_flow_context": "From20260101To20260630",
+      "status": "READY",
       "source_urls": [
         "https://openapi.twse.com.tw/v1/opendata/t187ap06_L_ci",
-        "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci"
+        "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci",
+        "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=1560&SYEAR=2026&SSEASON=2&REPORT_ID=C"
       ]
     },
     {
@@ -35,7 +37,7 @@
       "market": "TWSE",
       "report_year_roc": "115",
       "quarter": "2",
-      "source_date_roc": "1151005",
+      "source_date_roc": "1151006",
       "revenue": 96110746.0,
       "gross_profit": 23751390.0,
       "operating_income": 12301855.0,
@@ -46,11 +48,13 @@
       "total_assets": 239164413.0,
       "total_liabilities": 142552447.0,
       "total_equity": 96611966.0,
-      "operating_cash_flow": null,
-      "status": "READY_EXCEPT_CASH_FLOW",
+      "operating_cash_flow": -4238093000.0,
+      "operating_cash_flow_context": "From20260101To20260630",
+      "status": "READY",
       "source_urls": [
         "https://openapi.twse.com.tw/v1/opendata/t187ap06_L_ci",
-        "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci"
+        "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci",
+        "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=2301&SYEAR=2026&SSEASON=2&REPORT_ID=C"
       ]
     },
     {
@@ -59,7 +63,7 @@
       "market": "TWSE",
       "report_year_roc": "115",
       "quarter": "2",
-      "source_date_roc": "1151005",
+      "source_date_roc": "1151006",
       "revenue": 342608732.0,
       "gross_profit": 124268821.0,
       "operating_income": 58987345.0,
@@ -70,11 +74,13 @@
       "total_assets": 754433332.0,
       "total_liabilities": 404208440.0,
       "total_equity": 350224892.0,
-      "operating_cash_flow": null,
-      "status": "READY_EXCEPT_CASH_FLOW",
+      "operating_cash_flow": 63100603000.0,
+      "operating_cash_flow_context": "From20260101To20260630",
+      "status": "READY",
       "source_urls": [
         "https://openapi.twse.com.tw/v1/opendata/t187ap06_L_ci",
-        "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci"
+        "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci",
+        "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=2308&SYEAR=2026&SSEASON=2&REPORT_ID=C"
       ]
     },
     {
@@ -83,7 +89,7 @@
       "market": "TWSE",
       "report_year_roc": "115",
       "quarter": "2",
-      "source_date_roc": "1151005",
+      "source_date_roc": "1151006",
       "revenue": 4645427824.0,
       "gross_profit": 285513881.0,
       "operating_income": 170451721.0,
@@ -94,11 +100,13 @@
       "total_assets": 5622576474.0,
       "total_liabilities": 3502988890.0,
       "total_equity": 2119587584.0,
-      "operating_cash_flow": null,
-      "status": "READY_EXCEPT_CASH_FLOW",
+      "operating_cash_flow": -69122283000.0,
+      "operating_cash_flow_context": "From20260101To20260630",
+      "status": "READY",
       "source_urls": [
         "https://openapi.twse.com.tw/v1/opendata/t187ap06_L_ci",
-        "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci"
+        "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci",
+        "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=2317&SYEAR=2026&SSEASON=2&REPORT_ID=C"
       ]
     },
     {
@@ -107,7 +115,7 @@
       "market": "TWSE",
       "report_year_roc": "115",
       "quarter": "2",
-      "source_date_roc": "1151005",
+      "source_date_roc": "1151006",
       "revenue": 82621975.0,
       "gross_profit": 31658084.0,
       "operating_income": 21361624.0,
@@ -118,11 +126,13 @@
       "total_assets": 507342236.0,
       "total_liabilities": 328393749.0,
       "total_equity": 178948487.0,
-      "operating_cash_flow": null,
-      "status": "READY_EXCEPT_CASH_FLOW",
+      "operating_cash_flow": 16478788000.0,
+      "operating_cash_flow_context": "From20260101To20260630",
+      "status": "READY",
       "source_urls": [
         "https://openapi.twse.com.tw/v1/opendata/t187ap06_L_ci",
-        "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci"
+        "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci",
+        "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=2327&SYEAR=2026&SSEASON=2&REPORT_ID=C"
       ]
     },
     {
@@ -131,7 +141,7 @@
       "market": "TWSE",
       "report_year_roc": "115",
       "quarter": "2",
-      "source_date_roc": "1151005",
+      "source_date_roc": "1151006",
       "revenue": 2404483690.0,
       "gross_profit": 1611606116.0,
       "operating_income": 1425568793.0,
@@ -142,11 +152,13 @@
       "total_assets": 9375654727.0,
       "total_liabilities": 2901183746.0,
       "total_equity": 6474470981.0,
-      "operating_cash_flow": null,
-      "status": "READY_EXCEPT_CASH_FLOW",
+      "operating_cash_flow": 1482341242000.0,
+      "operating_cash_flow_context": "From20260101To20260630",
+      "status": "READY",
       "source_urls": [
         "https://openapi.twse.com.tw/v1/opendata/t187ap06_L_ci",
-        "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci"
+        "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci",
+        "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=2330&SYEAR=2026&SSEASON=2&REPORT_ID=C"
       ]
     },
     {
@@ -155,7 +167,7 @@
       "market": "TWSE",
       "report_year_roc": "115",
       "quarter": "2",
-      "source_date_roc": "1151005",
+      "source_date_roc": "1151006",
       "revenue": 29593392.0,
       "gross_profit": 16591374.0,
       "operating_income": 10900108.0,
@@ -166,11 +178,13 @@
       "total_assets": 96446487.0,
       "total_liabilities": 34502007.0,
       "total_equity": 61944480.0,
-      "operating_cash_flow": null,
-      "status": "READY_EXCEPT_CASH_FLOW",
+      "operating_cash_flow": 10033607000.0,
+      "operating_cash_flow_context": "From20260101To20260630",
+      "status": "READY",
       "source_urls": [
         "https://openapi.twse.com.tw/v1/opendata/t187ap06_L_ci",
-        "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci"
+        "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci",
+        "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=2337&SYEAR=2026&SSEASON=2&REPORT_ID=C"
       ]
     },
     {
@@ -179,7 +193,7 @@
       "market": "TWSE",
       "report_year_roc": "115",
       "quarter": "2",
-      "source_date_roc": "1151005",
+      "source_date_roc": "1151006",
       "revenue": 98096329.0,
       "gross_profit": 60060282.0,
       "operating_income": 41529830.0,
@@ -190,11 +204,13 @@
       "total_assets": 293034319.0,
       "total_liabilities": 119491802.0,
       "total_equity": 173542517.0,
-      "operating_cash_flow": null,
-      "status": "READY_EXCEPT_CASH_FLOW",
+      "operating_cash_flow": 35672052000.0,
+      "operating_cash_flow_context": "From20260101To20260630",
+      "status": "READY",
       "source_urls": [
         "https://openapi.twse.com.tw/v1/opendata/t187ap06_L_ci",
-        "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci"
+        "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci",
+        "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=2344&SYEAR=2026&SSEASON=2&REPORT_ID=C"
       ]
     },
     {
@@ -203,7 +219,7 @@
       "market": "TWSE",
       "report_year_roc": "115",
       "quarter": "2",
-      "source_date_roc": "1151005",
+      "source_date_roc": "1151006",
       "revenue": 165658435.0,
       "gross_profit": 32523633.0,
       "operating_income": 24380007.0,
@@ -214,11 +230,13 @@
       "total_assets": 199340809.0,
       "total_liabilities": 130217930.0,
       "total_equity": 69122879.0,
-      "operating_cash_flow": null,
-      "status": "READY_EXCEPT_CASH_FLOW",
+      "operating_cash_flow": -15452605000.0,
+      "operating_cash_flow_context": "From20260101To20260630",
+      "status": "READY",
       "source_urls": [
         "https://openapi.twse.com.tw/v1/opendata/t187ap06_L_ci",
-        "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci"
+        "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci",
+        "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=2345&SYEAR=2026&SSEASON=2&REPORT_ID=C"
       ]
     },
     {
@@ -227,7 +245,7 @@
       "market": "TWSE",
       "report_year_roc": "115",
       "quarter": "2",
-      "source_date_roc": "1151005",
+      "source_date_roc": "1151006",
       "revenue": 470167600.0,
       "gross_profit": 21592770.0,
       "operating_income": 8356310.0,
@@ -238,11 +256,13 @@
       "total_assets": 475331025.0,
       "total_liabilities": 397367413.0,
       "total_equity": 77963612.0,
-      "operating_cash_flow": null,
-      "status": "READY_EXCEPT_CASH_FLOW",
+      "operating_cash_flow": -25399083000.0,
+      "operating_cash_flow_context": "From20260101To20260630",
+      "status": "READY",
       "source_urls": [
         "https://openapi.twse.com.tw/v1/opendata/t187ap06_L_ci",
-        "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci"
+        "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci",
+        "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=2356&SYEAR=2026&SSEASON=2&REPORT_ID=C"
       ]
     },
     {
@@ -251,7 +271,7 @@
       "market": "TWSE",
       "report_year_roc": "115",
       "quarter": "2",
-      "source_date_roc": "1151005",
+      "source_date_roc": "1151006",
       "revenue": 43592084.0,
       "gross_profit": 15135609.0,
       "operating_income": 11602221.0,
@@ -262,11 +282,13 @@
       "total_assets": 97062481.0,
       "total_liabilities": 54869555.0,
       "total_equity": 42192926.0,
-      "operating_cash_flow": null,
-      "status": "READY_EXCEPT_CASH_FLOW",
+      "operating_cash_flow": 9003395000.0,
+      "operating_cash_flow_context": "From20260101To20260630",
+      "status": "READY",
       "source_urls": [
         "https://openapi.twse.com.tw/v1/opendata/t187ap06_L_ci",
-        "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci"
+        "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci",
+        "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=2368&SYEAR=2026&SSEASON=2&REPORT_ID=C"
       ]
     },
     {
@@ -275,7 +297,7 @@
       "market": "TWSE",
       "report_year_roc": "115",
       "quarter": "2",
-      "source_date_roc": "1151005",
+      "source_date_roc": "1151006",
       "revenue": 249271763.0,
       "gross_profit": 26487759.0,
       "operating_income": 15533953.0,
@@ -286,11 +308,13 @@
       "total_assets": 271256869.0,
       "total_liabilities": 201983297.0,
       "total_equity": 69273572.0,
-      "operating_cash_flow": null,
-      "status": "READY_EXCEPT_CASH_FLOW",
+      "operating_cash_flow": -79384238000.0,
+      "operating_cash_flow_context": "From20260101To20260630",
+      "status": "READY",
       "source_urls": [
         "https://openapi.twse.com.tw/v1/opendata/t187ap06_L_ci",
-        "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci"
+        "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci",
+        "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=2376&SYEAR=2026&SSEASON=2&REPORT_ID=C"
       ]
     },
     {
@@ -299,7 +323,7 @@
       "market": "TWSE",
       "report_year_roc": "115",
       "quarter": "2",
-      "source_date_roc": "1151005",
+      "source_date_roc": "1151006",
       "revenue": 73975769.0,
       "gross_profit": 35738410.0,
       "operating_income": 8057128.0,
@@ -310,11 +334,13 @@
       "total_assets": 147269310.0,
       "total_liabilities": 96827154.0,
       "total_equity": 50442156.0,
-      "operating_cash_flow": null,
-      "status": "READY_EXCEPT_CASH_FLOW",
+      "operating_cash_flow": 10935109000.0,
+      "operating_cash_flow_context": "From20260101To20260630",
+      "status": "READY",
       "source_urls": [
         "https://openapi.twse.com.tw/v1/opendata/t187ap06_L_ci",
-        "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci"
+        "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci",
+        "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=2379&SYEAR=2026&SSEASON=2&REPORT_ID=C"
       ]
     },
     {
@@ -323,7 +349,7 @@
       "market": "TWSE",
       "report_year_roc": "115",
       "quarter": "2",
-      "source_date_roc": "1151005",
+      "source_date_roc": "1151006",
       "revenue": 1845813767.0,
       "gross_profit": 90775884.0,
       "operating_income": 57268079.0,
@@ -334,11 +360,13 @@
       "total_assets": 2062526949.0,
       "total_liabilities": 1806710619.0,
       "total_equity": 255816330.0,
-      "operating_cash_flow": null,
-      "status": "READY_EXCEPT_CASH_FLOW",
+      "operating_cash_flow": 45928980000.0,
+      "operating_cash_flow_context": "From20260101To20260630",
+      "status": "READY",
       "source_urls": [
         "https://openapi.twse.com.tw/v1/opendata/t187ap06_L_ci",
-        "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci"
+        "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci",
+        "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=2382&SYEAR=2026&SSEASON=2&REPORT_ID=C"
       ]
     },
     {
@@ -347,7 +375,7 @@
       "market": "TWSE",
       "report_year_roc": "115",
       "quarter": "2",
-      "source_date_roc": "1151005",
+      "source_date_roc": "1151006",
       "revenue": 80342455.0,
       "gross_profit": 25732144.0,
       "operating_income": 19862153.0,
@@ -358,11 +386,13 @@
       "total_assets": 158577444.0,
       "total_liabilities": 100265367.0,
       "total_equity": 58312077.0,
-      "operating_cash_flow": null,
-      "status": "READY_EXCEPT_CASH_FLOW",
+      "operating_cash_flow": 5044825000.0,
+      "operating_cash_flow_context": "From20260101To20260630",
+      "status": "READY",
       "source_urls": [
         "https://openapi.twse.com.tw/v1/opendata/t187ap06_L_ci",
-        "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci"
+        "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci",
+        "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=2383&SYEAR=2026&SSEASON=2&REPORT_ID=C"
       ]
     },
     {
@@ -371,7 +401,7 @@
       "market": "TWSE",
       "report_year_roc": "115",
       "quarter": "2",
-      "source_date_roc": "1151005",
+      "source_date_roc": "1151006",
       "revenue": 131636005.0,
       "gross_profit": 98935333.0,
       "operating_income": 90937560.0,
@@ -382,11 +412,13 @@
       "total_assets": 387758196.0,
       "total_liabilities": 65059683.0,
       "total_equity": 322698513.0,
-      "operating_cash_flow": null,
-      "status": "READY_EXCEPT_CASH_FLOW",
+      "operating_cash_flow": 87407707000.0,
+      "operating_cash_flow_context": "From20260101To20260630",
+      "status": "READY",
       "source_urls": [
         "https://openapi.twse.com.tw/v1/opendata/t187ap06_L_ci",
-        "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci"
+        "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci",
+        "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=2408&SYEAR=2026&SSEASON=2&REPORT_ID=C"
       ]
     },
     {
@@ -395,7 +427,7 @@
       "market": "TWSE",
       "report_year_roc": "115",
       "quarter": "2",
-      "source_date_roc": "1151005",
+      "source_date_roc": "1151006",
       "revenue": 21333559.0,
       "gross_profit": 8450706.0,
       "operating_income": 5599760.0,
@@ -406,11 +438,13 @@
       "total_assets": 128748650.0,
       "total_liabilities": 66076165.0,
       "total_equity": 62672485.0,
-      "operating_cash_flow": null,
-      "status": "READY_EXCEPT_CASH_FLOW",
+      "operating_cash_flow": 6373084000.0,
+      "operating_cash_flow_context": "From20260101To20260630",
+      "status": "READY",
       "source_urls": [
         "https://openapi.twse.com.tw/v1/opendata/t187ap06_L_ci",
-        "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci"
+        "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci",
+        "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=2449&SYEAR=2026&SSEASON=2&REPORT_ID=C"
       ]
     },
     {
@@ -419,7 +453,7 @@
       "market": "TWSE",
       "report_year_roc": "115",
       "quarter": "2",
-      "source_date_roc": "1151005",
+      "source_date_roc": "1151006",
       "revenue": 301333121.0,
       "gross_profit": 139362969.0,
       "operating_income": 45758626.0,
@@ -430,11 +464,13 @@
       "total_assets": 787448372.0,
       "total_liabilities": 354806672.0,
       "total_equity": 432641700.0,
-      "operating_cash_flow": null,
-      "status": "READY_EXCEPT_CASH_FLOW",
+      "operating_cash_flow": 6593980000.0,
+      "operating_cash_flow_context": "From20260101To20260630",
+      "status": "READY",
       "source_urls": [
         "https://openapi.twse.com.tw/v1/opendata/t187ap06_L_ci",
-        "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci"
+        "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci",
+        "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=2454&SYEAR=2026&SSEASON=2&REPORT_ID=C"
       ]
     },
     {
@@ -443,7 +479,7 @@
       "market": "TWSE",
       "report_year_roc": "115",
       "quarter": "2",
-      "source_date_roc": "1151005",
+      "source_date_roc": "1151006",
       "revenue": 20848667.0,
       "gross_profit": 4041376.0,
       "operating_income": 1880650.0,
@@ -454,11 +490,13 @@
       "total_assets": 119857069.0,
       "total_liabilities": 41284268.0,
       "total_equity": 78572801.0,
-      "operating_cash_flow": null,
-      "status": "READY_EXCEPT_CASH_FLOW",
+      "operating_cash_flow": 2224753000.0,
+      "operating_cash_flow_context": "From20260101To20260630",
+      "status": "READY",
       "source_urls": [
         "https://openapi.twse.com.tw/v1/opendata/t187ap06_L_ci",
-        "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci"
+        "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci",
+        "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=2492&SYEAR=2026&SSEASON=2&REPORT_ID=C"
       ]
     },
     {
@@ -467,7 +505,7 @@
       "market": "TWSE",
       "report_year_roc": "115",
       "quarter": "2",
-      "source_date_roc": "1151005",
+      "source_date_roc": "1151006",
       "revenue": 98158910.0,
       "gross_profit": 30596099.0,
       "operating_income": 25496649.0,
@@ -478,11 +516,13 @@
       "total_assets": 194577196.0,
       "total_liabilities": 132451558.0,
       "total_equity": 62125638.0,
-      "operating_cash_flow": null,
-      "status": "READY_EXCEPT_CASH_FLOW",
+      "operating_cash_flow": 26290591000.0,
+      "operating_cash_flow_context": "From20260101To20260630",
+      "status": "READY",
       "source_urls": [
         "https://openapi.twse.com.tw/v1/opendata/t187ap06_L_ci",
-        "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci"
+        "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci",
+        "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3017&SYEAR=2026&SSEASON=2&REPORT_ID=C"
       ]
     },
     {
@@ -491,7 +531,7 @@
       "market": "TWSE",
       "report_year_roc": "115",
       "quarter": "2",
-      "source_date_roc": "1151005",
+      "source_date_roc": "1151006",
       "revenue": 5902036.0,
       "gross_profit": 2722980.0,
       "operating_income": 366506.0,
@@ -502,11 +542,13 @@
       "total_assets": 25115433.0,
       "total_liabilities": 7188707.0,
       "total_equity": 17926726.0,
-      "operating_cash_flow": null,
-      "status": "READY_EXCEPT_CASH_FLOW",
+      "operating_cash_flow": 2157112000.0,
+      "operating_cash_flow_context": "From20260101To20260630",
+      "status": "READY",
       "source_urls": [
         "https://openapi.twse.com.tw/v1/opendata/t187ap06_L_ci",
-        "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci"
+        "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci",
+        "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3035&SYEAR=2026&SSEASON=2&REPORT_ID=C"
       ]
     },
     {
@@ -515,7 +557,7 @@
       "market": "TWSE",
       "report_year_roc": "115",
       "quarter": "2",
-      "source_date_roc": "1151005",
+      "source_date_roc": "1151006",
       "revenue": 80336273.0,
       "gross_profit": 17364180.0,
       "operating_income": 9407786.0,
@@ -526,11 +568,13 @@
       "total_assets": 313242650.0,
       "total_liabilities": 185522162.0,
       "total_equity": 127720488.0,
-      "operating_cash_flow": null,
-      "status": "READY_EXCEPT_CASH_FLOW",
+      "operating_cash_flow": 13323412000.0,
+      "operating_cash_flow_context": "From20260101To20260630",
+      "status": "READY",
       "source_urls": [
         "https://openapi.twse.com.tw/v1/opendata/t187ap06_L_ci",
-        "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci"
+        "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci",
+        "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3037&SYEAR=2026&SSEASON=2&REPORT_ID=C"
       ]
     },
     {
@@ -550,11 +594,13 @@
       "total_assets": 15356827.0,
       "total_liabilities": 12169991.0,
       "total_equity": 3186836.0,
-      "operating_cash_flow": null,
-      "status": "READY_EXCEPT_CASH_FLOW",
+      "operating_cash_flow": 673286000.0,
+      "operating_cash_flow_context": "From20260101To20260630",
+      "status": "READY",
       "source_urls": [
         "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap06_O_ci",
-        "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap07_O_ci"
+        "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap07_O_ci",
+        "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3131&SYEAR=2026&SSEASON=2&REPORT_ID=C"
       ]
     },
     {
@@ -574,11 +620,13 @@
       "total_assets": 4388671.0,
       "total_liabilities": 1102550.0,
       "total_equity": 3286121.0,
-      "operating_cash_flow": null,
-      "status": "READY_EXCEPT_CASH_FLOW",
+      "operating_cash_flow": -176173000.0,
+      "operating_cash_flow_context": "From20260101To20260630",
+      "status": "READY",
       "source_urls": [
         "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap06_O_ci",
-        "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap07_O_ci"
+        "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap07_O_ci",
+        "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3163&SYEAR=2026&SSEASON=2&REPORT_ID=C"
       ]
     },
     {
@@ -587,7 +635,7 @@
       "market": "TWSE",
       "report_year_roc": "115",
       "quarter": "2",
-      "source_date_roc": "1151005",
+      "source_date_roc": "1151006",
       "revenue": 23601219.0,
       "gross_profit": 5610319.0,
       "operating_income": 2569277.0,
@@ -598,11 +646,13 @@
       "total_assets": 84534498.0,
       "total_liabilities": 31548092.0,
       "total_equity": 52986406.0,
-      "operating_cash_flow": null,
-      "status": "READY_EXCEPT_CASH_FLOW",
+      "operating_cash_flow": 3943497000.0,
+      "operating_cash_flow_context": "From20260101To20260630",
+      "status": "READY",
       "source_urls": [
         "https://openapi.twse.com.tw/v1/opendata/t187ap06_L_ci",
-        "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci"
+        "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci",
+        "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3189&SYEAR=2026&SSEASON=2&REPORT_ID=C"
       ]
     },
     {
@@ -611,7 +661,7 @@
       "market": "TWSE",
       "report_year_roc": "115",
       "quarter": "2",
-      "source_date_roc": "1151005",
+      "source_date_roc": "1151006",
       "revenue": 1741745642.0,
       "gross_profit": 94757576.0,
       "operating_income": 62584549.0,
@@ -622,11 +672,13 @@
       "total_assets": 1573108981.0,
       "total_liabilities": 1295840944.0,
       "total_equity": 277268037.0,
-      "operating_cash_flow": null,
-      "status": "READY_EXCEPT_CASH_FLOW",
+      "operating_cash_flow": -251356473000.0,
+      "operating_cash_flow_context": "From20260101To20260630",
+      "status": "READY",
       "source_urls": [
         "https://openapi.twse.com.tw/v1/opendata/t187ap06_L_ci",
-        "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci"
+        "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci",
+        "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3231&SYEAR=2026&SSEASON=2&REPORT_ID=C"
       ]
     },
     {
@@ -646,11 +698,13 @@
       "total_assets": 110656822.0,
       "total_liabilities": 69608962.0,
       "total_equity": 41047860.0,
-      "operating_cash_flow": null,
-      "status": "READY_EXCEPT_CASH_FLOW",
+      "operating_cash_flow": -8392303000.0,
+      "operating_cash_flow_context": "From20260101To20260630",
+      "status": "READY",
       "source_urls": [
         "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap06_O_ci",
-        "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap07_O_ci"
+        "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap07_O_ci",
+        "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3260&SYEAR=2026&SSEASON=2&REPORT_ID=C"
       ]
     },
     {
@@ -670,11 +724,13 @@
       "total_assets": 33901834.0,
       "total_liabilities": 20049278.0,
       "total_equity": 13852556.0,
-      "operating_cash_flow": null,
-      "status": "READY_EXCEPT_CASH_FLOW",
+      "operating_cash_flow": 376071000.0,
+      "operating_cash_flow_context": "From20260101To20260630",
+      "status": "READY",
       "source_urls": [
         "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap06_O_ci",
-        "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap07_O_ci"
+        "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap07_O_ci",
+        "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3324&SYEAR=2026&SSEASON=2&REPORT_ID=C"
       ]
     },
     {
@@ -683,7 +739,7 @@
       "market": "TWSE",
       "report_year_roc": "115",
       "quarter": "2",
-      "source_date_roc": "1151005",
+      "source_date_roc": "1151006",
       "revenue": 1887922.0,
       "gross_profit": 337250.0,
       "operating_income": 50087.0,
@@ -694,11 +750,13 @@
       "total_assets": 3745875.0,
       "total_liabilities": 1785882.0,
       "total_equity": 1959993.0,
-      "operating_cash_flow": null,
-      "status": "READY_EXCEPT_CASH_FLOW",
+      "operating_cash_flow": -75239000.0,
+      "operating_cash_flow_context": "From20260101To20260630",
+      "status": "READY",
       "source_urls": [
         "https://openapi.twse.com.tw/v1/opendata/t187ap06_L_ci",
-        "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci"
+        "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci",
+        "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3338&SYEAR=2026&SSEASON=2&REPORT_ID=C"
       ]
     },
     {
@@ -718,11 +776,13 @@
       "total_assets": 16713384.0,
       "total_liabilities": 4999667.0,
       "total_equity": 11713717.0,
-      "operating_cash_flow": null,
-      "status": "READY_EXCEPT_CASH_FLOW",
+      "operating_cash_flow": 343756000.0,
+      "operating_cash_flow_context": "From20260101To20260630",
+      "status": "READY",
       "source_urls": [
         "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap06_O_ci",
-        "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap07_O_ci"
+        "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap07_O_ci",
+        "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3357&SYEAR=2026&SSEASON=2&REPORT_ID=C"
       ]
     },
     {
@@ -742,11 +802,13 @@
       "total_assets": 6430987.0,
       "total_liabilities": 713835.0,
       "total_equity": 5717152.0,
-      "operating_cash_flow": null,
-      "status": "READY_EXCEPT_CASH_FLOW",
+      "operating_cash_flow": -151980000.0,
+      "operating_cash_flow_context": "From20260101To20260630",
+      "status": "READY",
       "source_urls": [
         "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap06_O_ci",
-        "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap07_O_ci"
+        "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap07_O_ci",
+        "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3363&SYEAR=2026&SSEASON=2&REPORT_ID=C"
       ]
     },
     {
@@ -755,7 +817,7 @@
       "market": "TWSE",
       "report_year_roc": "115",
       "quarter": "2",
-      "source_date_roc": "1151005",
+      "source_date_roc": "1151006",
       "revenue": 25344369.0,
       "gross_profit": 6107324.0,
       "operating_income": 3500524.0,
@@ -766,11 +828,13 @@
       "total_assets": 37385404.0,
       "total_liabilities": 23920056.0,
       "total_equity": 13465348.0,
-      "operating_cash_flow": null,
-      "status": "READY_EXCEPT_CASH_FLOW",
+      "operating_cash_flow": 5223546000.0,
+      "operating_cash_flow_context": "From20260101To20260630",
+      "status": "READY",
       "source_urls": [
         "https://openapi.twse.com.tw/v1/opendata/t187ap06_L_ci",
-        "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci"
+        "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci",
+        "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3443&SYEAR=2026&SSEASON=2&REPORT_ID=C"
       ]
     },
     {
@@ -779,7 +843,7 @@
       "market": "TWSE",
       "report_year_roc": "115",
       "quarter": "2",
-      "source_date_roc": "1151005",
+      "source_date_roc": "1151006",
       "revenue": 6918905.0,
       "gross_profit": 276561.0,
       "operating_income": -9722.0,
@@ -790,11 +854,13 @@
       "total_assets": 51283543.0,
       "total_liabilities": 26988973.0,
       "total_equity": 24294570.0,
-      "operating_cash_flow": null,
-      "status": "READY_EXCEPT_CASH_FLOW",
+      "operating_cash_flow": 968188000.0,
+      "operating_cash_flow_context": "From20260101To20260630",
+      "status": "READY",
       "source_urls": [
         "https://openapi.twse.com.tw/v1/opendata/t187ap06_L_ci",
-        "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci"
+        "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci",
+        "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3532&SYEAR=2026&SSEASON=2&REPORT_ID=C"
       ]
     },
     {
@@ -803,7 +869,7 @@
       "market": "TWSE",
       "report_year_roc": "115",
       "quarter": "2",
-      "source_date_roc": "1151005",
+      "source_date_roc": "1151006",
       "revenue": 6115365.0,
       "gross_profit": 2256289.0,
       "operating_income": 907596.0,
@@ -814,11 +880,13 @@
       "total_assets": 29898314.0,
       "total_liabilities": 19373138.0,
       "total_equity": 10525176.0,
-      "operating_cash_flow": null,
-      "status": "READY_EXCEPT_CASH_FLOW",
+      "operating_cash_flow": 1213434000.0,
+      "operating_cash_flow_context": "From20260101To20260630",
+      "status": "READY",
       "source_urls": [
         "https://openapi.twse.com.tw/v1/opendata/t187ap06_L_ci",
-        "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci"
+        "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci",
+        "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3583&SYEAR=2026&SSEASON=2&REPORT_ID=C"
       ]
     },
     {
@@ -827,7 +895,7 @@
       "market": "TWSE",
       "report_year_roc": "115",
       "quarter": "2",
-      "source_date_roc": "1151005",
+      "source_date_roc": "1151006",
       "revenue": 12579732.0,
       "gross_profit": 5621541.0,
       "operating_income": 4445751.0,
@@ -838,11 +906,13 @@
       "total_assets": 33382738.0,
       "total_liabilities": 9576127.0,
       "total_equity": 23806611.0,
-      "operating_cash_flow": null,
-      "status": "READY_EXCEPT_CASH_FLOW",
+      "operating_cash_flow": 2774875000.0,
+      "operating_cash_flow_context": "From20260101To20260630",
+      "status": "READY",
       "source_urls": [
         "https://openapi.twse.com.tw/v1/opendata/t187ap06_L_ci",
-        "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci"
+        "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci",
+        "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3653&SYEAR=2026&SSEASON=2&REPORT_ID=C"
       ]
     },
     {
@@ -851,7 +921,7 @@
       "market": "TWSE",
       "report_year_roc": "115",
       "quarter": "2",
-      "source_date_roc": "1151005",
+      "source_date_roc": "1151006",
       "revenue": 11826622.0,
       "gross_profit": 4762873.0,
       "operating_income": 3014290.0,
@@ -862,11 +932,13 @@
       "total_assets": 89633514.0,
       "total_liabilities": 29290317.0,
       "total_equity": 60343197.0,
-      "operating_cash_flow": null,
-      "status": "READY_EXCEPT_CASH_FLOW",
+      "operating_cash_flow": -3863029000.0,
+      "operating_cash_flow_context": "From20260101To20260630",
+      "status": "READY",
       "source_urls": [
         "https://openapi.twse.com.tw/v1/opendata/t187ap06_L_ci",
-        "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci"
+        "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci",
+        "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3661&SYEAR=2026&SSEASON=2&REPORT_ID=C"
       ]
     },
     {
@@ -875,7 +947,7 @@
       "market": "TWSE",
       "report_year_roc": "115",
       "quarter": "2",
-      "source_date_roc": "1151005",
+      "source_date_roc": "1151006",
       "revenue": 364725674.0,
       "gross_profit": 74968194.0,
       "operating_income": 38626544.0,
@@ -886,11 +958,13 @@
       "total_assets": 1071334427.0,
       "total_liabilities": 652136648.0,
       "total_equity": 419197779.0,
-      "operating_cash_flow": null,
-      "status": "READY_EXCEPT_CASH_FLOW",
+      "operating_cash_flow": 83401251000.0,
+      "operating_cash_flow_context": "From20260101To20260630",
+      "status": "READY",
       "source_urls": [
         "https://openapi.twse.com.tw/v1/opendata/t187ap06_L_ci",
-        "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci"
+        "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci",
+        "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3711&SYEAR=2026&SSEASON=2&REPORT_ID=C"
       ]
     },
     {
@@ -910,11 +984,13 @@
       "total_assets": 6267442.0,
       "total_liabilities": 1815302.0,
       "total_equity": 4452140.0,
-      "operating_cash_flow": null,
-      "status": "READY_EXCEPT_CASH_FLOW",
+      "operating_cash_flow": 527866000.0,
+      "operating_cash_flow_context": "From20260101To20260630",
+      "status": "READY",
       "source_urls": [
         "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap06_O_ci",
-        "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap07_O_ci"
+        "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap07_O_ci",
+        "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=4979&SYEAR=2026&SSEASON=2&REPORT_ID=C"
       ]
     },
     {
@@ -934,11 +1010,13 @@
       "total_assets": 42540905.0,
       "total_liabilities": 14444812.0,
       "total_equity": 28096093.0,
-      "operating_cash_flow": null,
-      "status": "READY_EXCEPT_CASH_FLOW",
+      "operating_cash_flow": 857647000.0,
+      "operating_cash_flow_context": "From20260101To20260630",
+      "status": "READY",
       "source_urls": [
         "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap06_O_ci",
-        "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap07_O_ci"
+        "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap07_O_ci",
+        "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=6182&SYEAR=2026&SSEASON=2&REPORT_ID=C"
       ]
     },
     {
@@ -958,11 +1036,13 @@
       "total_assets": 13516570.0,
       "total_liabilities": 4749277.0,
       "total_equity": 8767293.0,
-      "operating_cash_flow": null,
-      "status": "READY_EXCEPT_CASH_FLOW",
+      "operating_cash_flow": 1447057000.0,
+      "operating_cash_flow_context": "From20260101To20260630",
+      "status": "READY",
       "source_urls": [
         "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap06_O_ci",
-        "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap07_O_ci"
+        "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap07_O_ci",
+        "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=6187&SYEAR=2026&SSEASON=2&REPORT_ID=C"
       ]
     },
     {
@@ -982,11 +1062,13 @@
       "total_assets": 35415477.0,
       "total_liabilities": 19510842.0,
       "total_equity": 15904635.0,
-      "operating_cash_flow": null,
-      "status": "READY_EXCEPT_CASH_FLOW",
+      "operating_cash_flow": 2646835000.0,
+      "operating_cash_flow_context": "From20260101To20260630",
+      "status": "READY",
       "source_urls": [
         "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap06_O_ci",
-        "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap07_O_ci"
+        "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap07_O_ci",
+        "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=6223&SYEAR=2026&SSEASON=2&REPORT_ID=C"
       ]
     },
     {
@@ -995,7 +1077,7 @@
       "market": "TWSE",
       "report_year_roc": "115",
       "quarter": "2",
-      "source_date_roc": "1151005",
+      "source_date_roc": "1151006",
       "revenue": 4678093.0,
       "gross_profit": 812056.0,
       "operating_income": 31860.0,
@@ -1006,11 +1088,13 @@
       "total_assets": 10466780.0,
       "total_liabilities": 4660064.0,
       "total_equity": 5806716.0,
-      "operating_cash_flow": null,
-      "status": "READY_EXCEPT_CASH_FLOW",
+      "operating_cash_flow": -130552000.0,
+      "operating_cash_flow_context": "From20260101To20260630",
+      "status": "READY",
       "source_urls": [
         "https://openapi.twse.com.tw/v1/opendata/t187ap06_L_ci",
-        "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci"
+        "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci",
+        "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=6230&SYEAR=2026&SSEASON=2&REPORT_ID=C"
       ]
     },
     {
@@ -1030,11 +1114,13 @@
       "total_assets": 46942730.0,
       "total_liabilities": 22788654.0,
       "total_equity": 24154076.0,
-      "operating_cash_flow": null,
-      "status": "READY_EXCEPT_CASH_FLOW",
+      "operating_cash_flow": -2282493000.0,
+      "operating_cash_flow_context": "From20260101To20260630",
+      "status": "READY",
       "source_urls": [
         "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap06_O_ci",
-        "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap07_O_ci"
+        "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap07_O_ci",
+        "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=6274&SYEAR=2026&SSEASON=2&REPORT_ID=C"
       ]
     },
     {
@@ -1043,7 +1129,7 @@
       "market": "TWSE",
       "report_year_roc": "115",
       "quarter": "2",
-      "source_date_roc": "1151005",
+      "source_date_roc": "1151006",
       "revenue": 18095950.0,
       "gross_profit": 4113845.0,
       "operating_income": 391043.0,
@@ -1054,11 +1140,13 @@
       "total_assets": 53591070.0,
       "total_liabilities": 30562485.0,
       "total_equity": 23028585.0,
-      "operating_cash_flow": null,
-      "status": "READY_EXCEPT_CASH_FLOW",
+      "operating_cash_flow": 344830000.0,
+      "operating_cash_flow_context": "From20260101To20260630",
+      "status": "READY",
       "source_urls": [
         "https://openapi.twse.com.tw/v1/opendata/t187ap06_L_ci",
-        "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci"
+        "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci",
+        "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=6282&SYEAR=2026&SSEASON=2&REPORT_ID=C"
       ]
     },
     {
@@ -1067,7 +1155,7 @@
       "market": "TWSE",
       "report_year_roc": "115",
       "quarter": "2",
-      "source_date_roc": "1151005",
+      "source_date_roc": "1151006",
       "revenue": 16227361.0,
       "gross_profit": 2343765.0,
       "operating_income": 530035.0,
@@ -1078,11 +1166,13 @@
       "total_assets": 35034764.0,
       "total_liabilities": 19587117.0,
       "total_equity": 15447647.0,
-      "operating_cash_flow": null,
-      "status": "READY_EXCEPT_CASH_FLOW",
+      "operating_cash_flow": -193150000.0,
+      "operating_cash_flow_context": "From20260101To20260630",
+      "status": "READY",
       "source_urls": [
         "https://openapi.twse.com.tw/v1/opendata/t187ap06_L_ci",
-        "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci"
+        "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci",
+        "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=6412&SYEAR=2026&SSEASON=2&REPORT_ID=C"
       ]
     },
     {
@@ -1091,7 +1181,7 @@
       "market": "TWSE",
       "report_year_roc": "115",
       "quarter": "2",
-      "source_date_roc": "1151005",
+      "source_date_roc": "1151006",
       "revenue": 6386649.0,
       "gross_profit": 3800205.0,
       "operating_income": 1894217.0,
@@ -1102,11 +1192,13 @@
       "total_assets": 19984668.0,
       "total_liabilities": 6394070.0,
       "total_equity": 13590598.0,
-      "operating_cash_flow": null,
-      "status": "READY_EXCEPT_CASH_FLOW",
+      "operating_cash_flow": 1236035000.0,
+      "operating_cash_flow_context": "From20260101To20260630",
+      "status": "READY",
       "source_urls": [
         "https://openapi.twse.com.tw/v1/opendata/t187ap06_L_ci",
-        "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci"
+        "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci",
+        "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=6442&SYEAR=2026&SSEASON=2&REPORT_ID=C"
       ]
     },
     {
@@ -1126,11 +1218,13 @@
       "total_assets": 219220426.0,
       "total_liabilities": 122499929.0,
       "total_equity": 96720497.0,
-      "operating_cash_flow": null,
-      "status": "READY_EXCEPT_CASH_FLOW",
+      "operating_cash_flow": 2812066000.0,
+      "operating_cash_flow_context": "From20260101To20260630",
+      "status": "READY",
       "source_urls": [
         "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap06_O_ci",
-        "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap07_O_ci"
+        "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap07_O_ci",
+        "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=6488&SYEAR=2026&SSEASON=2&REPORT_ID=C"
       ]
     },
     {
@@ -1139,7 +1233,7 @@
       "market": "TWSE",
       "report_year_roc": "115",
       "quarter": "2",
-      "source_date_roc": "1151005",
+      "source_date_roc": "1151006",
       "revenue": 554660326.0,
       "gross_profit": 46644117.0,
       "operating_income": 37676176.0,
@@ -1150,11 +1244,13 @@
       "total_assets": 556925715.0,
       "total_liabilities": 419663002.0,
       "total_equity": 137262713.0,
-      "operating_cash_flow": null,
-      "status": "READY_EXCEPT_CASH_FLOW",
+      "operating_cash_flow": -61567715000.0,
+      "operating_cash_flow_context": "From20260101To20260630",
+      "status": "READY",
       "source_urls": [
         "https://openapi.twse.com.tw/v1/opendata/t187ap06_L_ci",
-        "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci"
+        "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci",
+        "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=6669&SYEAR=2026&SSEASON=2&REPORT_ID=C"
       ]
     },
     {
@@ -1163,7 +1259,7 @@
       "market": "TWSE",
       "report_year_roc": "115",
       "quarter": "2",
-      "source_date_roc": "1151005",
+      "source_date_roc": "1151006",
       "revenue": 9337903.0,
       "gross_profit": 3513483.0,
       "operating_income": 2405359.0,
@@ -1174,11 +1270,13 @@
       "total_assets": 27284012.0,
       "total_liabilities": 9585343.0,
       "total_equity": 17698669.0,
-      "operating_cash_flow": null,
-      "status": "READY_EXCEPT_CASH_FLOW",
+      "operating_cash_flow": 3042726000.0,
+      "operating_cash_flow_context": "From20260101To20260630",
+      "status": "READY",
       "source_urls": [
         "https://openapi.twse.com.tw/v1/opendata/t187ap06_L_ci",
-        "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci"
+        "https://openapi.twse.com.tw/v1/opendata/t187ap07_L_ci",
+        "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=6781&SYEAR=2026&SSEASON=2&REPORT_ID=C"
       ]
     },
     {
@@ -1198,15 +1296,17 @@
       "total_assets": 193716918.0,
       "total_liabilities": 91644702.0,
       "total_equity": 102072216.0,
-      "operating_cash_flow": null,
-      "status": "READY_EXCEPT_CASH_FLOW",
+      "operating_cash_flow": -14872559000.0,
+      "operating_cash_flow_context": "From20260101To20260630",
+      "status": "READY",
       "source_urls": [
         "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap06_O_ci",
-        "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap07_O_ci"
+        "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap07_O_ci",
+        "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=8299&SYEAR=2026&SSEASON=2&REPORT_ID=C"
       ]
     }
   ],
   "gaps": [],
-  "known_missing_field": "operating_cash_flow",
+  "known_missing_field": null,
   "future_data_violation_count": 0
 }
