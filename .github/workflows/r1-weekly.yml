@@ -88,6 +88,7 @@ jobs:
           python -m r1.forward_outcomes --date "${{ steps.gate.outputs.target_date }}"
           python -m r1.evidence_readiness --date "${{ steps.gate.outputs.target_date }}"
           python -m r1.discovery --date "${{ steps.gate.outputs.target_date }}"
+          python -m r1.membership_review --date "${{ steps.gate.outputs.target_date }}"
           python -m r1.dashboard_payload --market data/r1/daily_market_latest.json --output data/r1/dashboard_payload.json
       - name: Publish and read back R1 Dashboard
         if: steps.gate.outputs.should_run == 'true'
