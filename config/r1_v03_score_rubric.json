@@ -1,0 +1,113 @@
+{
+  "version": "r1-theme-score-rubric-v0.1",
+  "status": "challenger_draft",
+  "principles": {
+    "missing_value": "NA_NO_ZERO_NO_REWEIGHT",
+    "point_in_time_required": true,
+    "future_data_forbidden": true,
+    "minimum_independent_source_families_for_qualitative_75_plus": 2,
+    "score_is_probability": false,
+    "automatic_trade_enabled": false
+  },
+  "quarterly": {
+    "bottleneck_directness": {
+      "weight": 0.25,
+      "method": "evidence_ladder",
+      "levels": {
+        "0": "無可驗證AI需求連結",
+        "25": "間接受惠或僅有題材敘述",
+        "50": "產品直接用於AI供應鏈，但尚非限制擴產的關鍵環節",
+        "75": "產品直接限制AI系統擴產、效能、功耗、頻寬或交付",
+        "100": "已驗證的關鍵瓶頸，且具客戶認證、量產或財務兌現證據"
+      }
+    },
+    "industry_technology_position": {
+      "weight": 0.25,
+      "method": "weighted_subscores",
+      "subweights": {
+        "verified_market_position": 0.30,
+        "technology_barrier": 0.30,
+        "customer_qualification": 0.20,
+        "capacity_and_delivery": 0.20
+      }
+    },
+    "ai_revenue_realization": {
+      "weight": 0.20,
+      "method": "weighted_subscores",
+      "subweights": {
+        "ai_revenue_or_shipment_proof": 0.50,
+        "ai_revenue_growth": 0.30,
+        "order_or_utilization_visibility": 0.20
+      }
+    },
+    "financial_earnings_quality": {
+      "weight": 0.20,
+      "method": "absolute_anchors_then_theme_percentile",
+      "subweights": {
+        "revenue_growth_quality": 0.20,
+        "gross_and_operating_margin_quality": 0.25,
+        "eps_growth_quality": 0.20,
+        "operating_cash_flow_quality": 0.20,
+        "balance_sheet_safety": 0.15
+      }
+    },
+    "market_representation": {
+      "weight": 0.10,
+      "method": "theme_percentile",
+      "subweights": {
+        "market_cap": 0.50,
+        "average_turnover_60td": 0.30,
+        "institutional_coverage_or_ownership": 0.20
+      }
+    }
+  },
+  "daily": {
+    "structural_leader": {
+      "weight": 0.30,
+      "method": "carry_latest_completed_quarterly_score"
+    },
+    "revenue_earnings_growth": {
+      "weight": 0.25,
+      "method": "weighted_subscores",
+      "subweights": {
+        "monthly_revenue_yoy": 0.30,
+        "three_month_revenue_yoy": 0.25,
+        "latest_pit_eps_growth": 0.25,
+        "forward_eps_revision_when_available": 0.20
+      },
+      "forward_eps_rule": "缺乏合法歷史共識時維持NA，不以媒體目標價或目前共識倒填"
+    },
+    "self_historical_valuation": {
+      "weight": 0.20,
+      "method": "own_history_percentile",
+      "lookback": "5Y_OR_MAX_AVAILABLE_MIN_3Y",
+      "required_metrics": ["forward_pe_or_pit_trailing_pe", "price_to_book", "ev_to_sales_or_price_to_sales"],
+      "rule": "只和公司自身歷史比較；虧損使PE失效時不得以0代替"
+    },
+    "price_risk_safety": {
+      "weight": 0.15,
+      "method": "own_history_percentile",
+      "subweights": {
+        "bias20_safety": 0.25,
+        "bias60_safety": 0.25,
+        "position_120td_safety": 0.25,
+        "volatility_and_drawdown_safety": 0.25
+      },
+      "rule": "分數越高代表相對自身歷史越不過熱，不等於預測不會下跌"
+    },
+    "demand_order_catalyst": {
+      "weight": 0.10,
+      "method": "evidence_event_decay",
+      "neutral_score": 50,
+      "strong_event_expiry_weeks": 26,
+      "normal_event_expiry_weeks": 13,
+      "rule": "正負事件都要記錄；公司官方、法說與主管機關來源優先"
+    }
+  },
+  "publication_gates": {
+    "quarterly_top3": "同題材全體候選的季度五構面完整",
+    "daily_priority": "個股每日五構面完整",
+    "partial_result": "只能顯示coverage與缺口，不得顯示暫定名次",
+    "minimum_history": "歷史百分位未達規定期間即NA"
+  }
+}
