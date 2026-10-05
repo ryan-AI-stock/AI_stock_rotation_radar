@@ -13,6 +13,19 @@ def build_consensus_snapshot(
     consensus_evidence_path: str | Path, output_root: str | Path,
 ) -> Path:
     """Persist the consensus that was actually observable on a weekly run date."""
+    output = Path(output_root) / f"{date}.json"
+    if output.exists():
+        existing = json.loads(output.read_text(encoding="utf-8"))
+        if (
+            existing.get("model") != "R1"
+            or existing.get("snapshot_date") != date
+            or existing.get("snapshot_policy") != "append_only_source_available_at"
+            or not isinstance(existing.get("rows"), list)
+            or not existing["rows"]
+            or existing.get("future_data_violation_count") != 0
+        ):
+            raise FileExistsError(f"invalid append-only consensus snapshot already exists: {output}")
+        return output
     config = R1Config.load(config_path)
     result = load_consensus_csv(consensus_path, as_of_date=date)
     evidence, evidence_rejected = load_consensus_evidence(consensus_evidence_path, as_of_date=date)
@@ -64,13 +77,7 @@ def build_consensus_snapshot(
         "active_in_trade_decision": False,
         "report_changed": False,
     }
-    output = Path(output_root) / f"{date}.json"
     output.parent.mkdir(parents=True, exist_ok=True)
-    if output.exists():
-        existing = json.loads(output.read_text(encoding="utf-8"))
-        if existing != payload:
-            raise FileExistsError(f"append-only consensus snapshot already exists with different content: {output}")
-        return output
     output.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     return output
 

@@ -45,6 +45,20 @@ class R1ConsensusSnapshotTest(unittest.TestCase):
             with self.assertRaises(FileExistsError):
                 build_consensus_snapshot(**kwargs)
 
+    def test_valid_existing_snapshot_is_reused_even_if_sources_change(self):
+        with tempfile.TemporaryDirectory() as directory:
+            kwargs = dict(
+                date="2026-10-02",
+                config_path=ROOT / "config/r1.json",
+                consensus_path=ROOT / "data/r1/consensus/consensus.csv",
+                consensus_evidence_path=ROOT / "data/r1/consensus/evidence.csv",
+                output_root=directory,
+            )
+            output = build_consensus_snapshot(**kwargs)
+            original = output.read_text(encoding="utf-8")
+            reused = build_consensus_snapshot(**kwargs)
+            self.assertEqual(reused.read_text(encoding="utf-8"), original)
+
 
 if __name__ == "__main__":
     unittest.main()
