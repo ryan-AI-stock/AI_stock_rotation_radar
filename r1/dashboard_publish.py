@@ -30,8 +30,16 @@ def _section_rows(rows: list[list[object]]) -> tuple[list[int], list[int], int |
         if row and isinstance(row[0], str) and row[0][:2].isdigit() and "｜" in row[0]
     ]
     headers = [index + 1 for index in sections if index + 1 < len(rows) and len(rows[index + 1]) > 1]
-    logic_row = next((index + 1 for index in sections if str(rows[index][0]).startswith("08｜")), None)
+    logic_row = next((index + 1 for index in sections if str(rows[index][0]).startswith("05｜")), None)
     return sections, headers, logic_row
+
+
+def _holding_rows(rows: list[list[object]]) -> list[int]:
+    return [
+        index for index, row in enumerate(rows)
+        if len(row) >= 4 and str(row[1]).strip() != "股票"
+        and str(row[3]).strip() == "實際持有"
+    ]
 
 
 def _format_workbook(client: SheetsClient, dashboard_rows: list[list[object]]) -> None:
@@ -62,6 +70,14 @@ def _format_workbook(client: SheetsClient, dashboard_rows: list[list[object]]) -
             "range": {"sheetId": dashboard_id, "startRowIndex": start, "endRowIndex": end,
                       "startColumnIndex": 0, "endColumnIndex": 5},
             "cell": {"userEnteredFormat": {"backgroundColor": light, "textFormat": {"bold": True}}},
+            "fields": "userEnteredFormat(backgroundColor,textFormat)",
+        }})
+    holding = {"red": 1.0, "green": 0.925, "blue": 0.68}
+    for start in _holding_rows(dashboard_rows):
+        requests_body.append({"repeatCell": {
+            "range": {"sheetId": dashboard_id, "startRowIndex": start, "endRowIndex": start + 1,
+                      "startColumnIndex": 0, "endColumnIndex": 5},
+            "cell": {"userEnteredFormat": {"backgroundColor": holding, "textFormat": {"bold": True}}},
             "fields": "userEnteredFormat(backgroundColor,textFormat)",
         }})
     requests_body.extend([

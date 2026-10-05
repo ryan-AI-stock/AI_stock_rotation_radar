@@ -18,55 +18,45 @@ class R1DashboardPayloadTest(unittest.TestCase):
         self.assertEqual(len(payload["tabs"]["R1每日訊號資料庫"]), 15)
         self.assertEqual(len(payload["tabs"]["R1模擬交易紀錄"]), 1)
         dashboard = payload["tabs"]["R1 Dashboard"]
-        self.assertIn("03｜市場正在告訴我們什麼", [row[0] for row in dashboard])
-        self.assertIn("04｜AI瓶頸題材Top1（季度評估）", [row[0] for row in dashboard])
-        self.assertIn("05｜產業瓶頸與催化狀態", [row[0] for row in dashboard])
-        self.assertIn("06｜下一個動態觸發條件", [row[0] for row in dashboard])
-        self.assertIn("07｜Shadow換倉候選（非交易指令）", [row[0] for row in dashboard])
-        self.assertIn("等待跨週資料", [cell for row in dashboard for cell in row])
-        readiness = {row[0]: row[1] for row in dashboard if len(row) >= 2 and row[0] in {
-            "EPS共識", "EPS修正歷史", "催化證據", "瓶頸證據", "20日價量籌碼序列",
-            "當日法人與融資", "五年估值定位"
-        }}
-        self.assertEqual(readiness["EPS共識"], "14/14")
-        self.assertEqual(readiness["EPS修正歷史"], "0/14")
-        self.assertEqual(readiness["催化證據"], "14/14")
-        self.assertEqual(readiness["瓶頸證據"], "14/14")
-        self.assertEqual(readiness["20日價量籌碼序列"], "14/14")
-        self.assertIn("當日法人與融資", readiness)
-        self.assertEqual(readiness["五年估值定位"], "14/14")
+        sections = [row[0] for row in dashboard]
+        self.assertIn("01｜九大AI瓶頸題材Top3", sections)
+        self.assertIn("02｜實際持股補充", sections)
+        self.assertIn("03｜分數規則", sections)
+        self.assertIn("04｜更新排程", sections)
+        self.assertIn("05｜模型完整說明", sections)
+        self.assertNotIn("06｜下一個動態觸發條件", sections)
+        self.assertNotIn("07｜Shadow換倉候選（非交易指令）", sections)
+        self.assertEqual(sum(1 for row in dashboard if row and " Top" in str(row[0])), 27)
 
     def test_dashboard_cannot_claim_trade_ready(self):
         payload = build_dashboard_payload(config_path=ROOT / "config/r1.json",
                                           market_path=ROOT / "data/r1/daily_market_20261001.json")
         actions = payload["tabs"]["R1 Dashboard"]
-        self.assertIn("尚未啟用", [cell for row in actions for cell in row])
+        self.assertIn("非交易指令", [cell for row in actions for cell in row])
         signals = payload["tabs"]["R1每日訊號資料庫"]
         self.assertEqual(next(row for row in signals if row[1] == "2330")[23], "CORE")
 
-    def test_completed_weekly_scores_materialize_research_ranking_and_database_score(self):
+    def test_complete_theme_review_materializes_top3_and_priority_score(self):
         import json
         import tempfile
         with tempfile.TemporaryDirectory() as folder:
             root = Path(folder)
-            rows = [
-                {"ticker": "2408", "company": "南亞科", "total_score": 81.5, "core_lock": False,
-                 "score_status": "READY", "bottleneck_stage": "FINANCIAL_PROOF", "bottleneck_score": 100,
-                 "catalyst_state": "POSITIVE", "catalyst_score": 60, "price_chip_score": 70},
-                {"ticker": "2330", "company": "台積電", "total_score": 99, "core_lock": True},
-            ]
-            root.joinpath("weekly_snapshot_2026-10-01.json").write_text(
-                json.dumps({"rows": rows}), encoding="utf-8",
-            )
+            review = root / "theme_review.json"
+            review.write_text(json.dumps({"themes": [{
+                "theme_id": "memory_storage", "status": "READY", "top3": [
+                    {"ticker": "2408", "company": "南亞科", "leader_score": 90, "priority_score": 81.5},
+                    {"ticker": "2344", "company": "華邦電", "leader_score": 85, "priority_score": 75},
+                    {"ticker": "2337", "company": "旺宏", "leader_score": 80, "priority_score": 70},
+                ]
+            }]}), encoding="utf-8")
             payload = build_dashboard_payload(
                 config_path=ROOT / "config/r1.json", market_path=ROOT / "data/r1/daily_market_20261001.json",
-                weekly_root=root,
+                theme_review_path=review,
             )
         dashboard = payload["tabs"]["R1 Dashboard"]
         self.assertIn("2408 南亞科", [cell for row in dashboard for cell in row])
-        self.assertNotIn("2330 台積電", [row[1] for row in dashboard if row and row[0] == "Top1"])
-        signal = next(row for row in payload["tabs"]["R1每日訊號資料庫"] if row[1] == "2408")
-        self.assertEqual(signal[22], 81.5)
+        row = next(row for row in dashboard if row and row[0] == "HBM／記憶體／高速儲存 Top1")
+        self.assertEqual(row[2], 81.5)
 
     def test_header_mismatch_is_rejected(self):
         tabs = {title: [list(headers)] for title, headers in TAB_SCHEMAS.items()}
@@ -75,7 +65,7 @@ class R1DashboardPayloadTest(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "header mismatch"):
             validate_tabs(tabs)
 
-    def test_current_year_revision_is_supplemental_and_visible(self):
+    def test_legacy_revision_data_is_not_exposed_in_v03_dashboard(self):
         import tempfile
         with tempfile.TemporaryDirectory() as folder:
             history = Path(folder) / "revision.csv"
@@ -91,11 +81,8 @@ class R1DashboardPayloadTest(unittest.TestCase):
                 market_path=ROOT / "data/r1/daily_market_20261001.json",
                 supplemental_revision_path=history,
             )
-        row = next(
-            row for row in payload["tabs"]["R1 Dashboard"]
-            if row and row[0] == "2330 台積電" and isinstance(row[1], str) and "不計分" in row[1]
-        )
-        self.assertEqual(row[1], "30D +10.0%／90D +22.2%（不計分）")
+        self.assertNotIn("30D +10.0%／90D +22.2%（不計分）",
+                         [cell for row in payload["tabs"]["R1 Dashboard"] for cell in row])
         self.assertFalse(payload["active_in_trade_decision"])
 
 

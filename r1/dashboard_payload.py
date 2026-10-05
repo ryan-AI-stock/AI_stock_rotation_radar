@@ -7,30 +7,89 @@ from pathlib import Path
 from r1.config import R1Config
 from r1.dashboard_schema import TAB_SCHEMAS, validate_tabs
 from r1.toalpha_revision_history import latest_rows as latest_supplemental_revision_rows
+from r1.theme_policy import load_themes
 
 
-MODEL_LOGIC = """R1研究版｜AI瓶頸／預期差動態輪動
+MODEL_LOGIC = """R1 v0.3研究版｜AI瓶頸題材持有優先序
 
-【模型定位】
-R1是獨立研究challenger，用來尋找AI剛性需求、基本面與財務面仍強，但市場預期尚未完全反映的股票。R1不取代正式V4-D，也不改C6每日交易決策。
+【模型任務】
+R1只負責辨識AI發展瓶頸題材、每個題材的結構性Top1～Top3，以及各股票0～100分的優先持有參考值。R1不產生買進、賣出、加碼或減碼指令，實際操作由Ryan自行決定。
 
-【目前研究池】
-目前追蹤14檔；台積電為CORE_LOCK核心部位，其餘股票屬可研究候選。畫面中的既有股數只用於參考市值，不代表R1已產生成交。
+【季度Top3】
+結構性龍頭評分：AI瓶頸直接性25%、產業與技術地位25%、AI營收兌現20%、財務與獲利品質20%、市場代表性10%。官方與公司正式揭露優先；分析師與市場共識只能補充，不能單獨決定排名。任一成分股必要證據不足時，該題材Top3維持待資料。
 
-【五個評分構面】
-EPS預估修正30%、前瞻估值25%、AI瓶頸程度20%、可驗證催化事件15%、價格與籌碼10%。每一項都必須使用當時可取得的PIT資料；缺資料不補0，也不推估成安全。
+【每日優先持有參考值】
+結構性龍頭30%、營收與獲利成長25%、估值相對自身歷史20%、股價風險安全度15%、需求訂單與催化10%。分數越高代表當下相對持有吸引力越高，不代表預測上漲機率。
 
-【R1 Score v0.1研究計分】
-EPS修正內部分配為1W 20%、4W 50%、12W 30%，並限制下修股票僅因相對排名取得高分。估值以自身五年Forward PE、Base Upside與下年度EPS成長組合；瓶頸依可驗證Stage、供需緊張與財務兌現；催化事件隨時間衰減；價格籌碼只占10%，用來控制追高與擁擠風險。所有必要輸入完整前，構面與總分維持NA，不重新分配權重。
+【更新頻率】
+每個交易日累積官方價格與市場資料；每週更新需求、事件與風險；每季財報揭露後重評Top3；每半年檢討題材與成分股。缺資料不補0、不重配權重、不以媒體稱號代替證據。
 
-【R1 v0.2長抱題材龍頭】
-研究池依AI工廠結構拆成9個瓶頸題材，每個題材保留3～6檔公司。每日累積官方價格、籌碼、營收與事件；每週檢查持股風險、題材強弱及替代候選；每季在財報揭露後重評各題材Top1；每半年才允許增刪題材成分。最多持有5檔，同一題材最多1檔。
+【模型邊界】
+R1是研究challenger，不取代正式V4-D，也不改C6每日交易決策。舊買賣與換倉程式暫時保留，但不顯示於Dashboard，也不啟用交易。"""
 
-【換股與風險限制】
-一般換股必須同時具備持股風險過高、原題材連續轉弱、替代題材Top1低風險且優勢連續兩週成立。重大基本面、治理、客戶或需求論點破壞可直接退至現金，不等待替代股。12W EPS修正改作中期趨勢確認，不再單獨阻擋題材Top1研究排名。所有門檻完成回測核准前只顯示研究狀態，不產生交易指令。
 
-【目前狀態】
-官方價格、價量籌碼歷史序列、EPS共識、五年估值定位、瓶頸與催化證據已接通；當日籌碼另行驗收，不能用歷史序列完整代替。下年度EPS修正序列仍在累積；畫面另列當年度30／90日修正作補充觀察，但不納入R1總分。Action門檻核准前，只顯示資料與觀察狀態，不產生Top1～Top3、模擬成交或實際操作指令。"""
+def _build_v03_dashboard(*, config: R1Config, market: dict, theme_review: dict,
+                         theme_path: str | Path) -> list[list[object]]:
+    themes = load_themes(theme_path)
+    reviews = {row.get("theme_id"): row for row in theme_review.get("themes", [])}
+    held = {security.ticker: security for security in config.securities if security.shares > 0}
+    membership = {
+        member.ticker: theme.name for theme in themes for member in theme.members
+    }
+    ranked_tickers: set[str] = set()
+    rows: list[list[object]] = [
+        ["R1研究版｜AI瓶頸預期差輪動"],
+        ["最新資料日期", market["date"], "模型定位", "題材Top3與持有優先序", "非交易指令"],
+        ["資料狀態", "每日行情持續累積；季度Top3與優先持有參考值只在必要證據完整時公布。"],
+        ["01｜九大AI瓶頸題材Top3"],
+        ["題材／順位", "股票", "優先持有參考值", "實際持有", "資料狀態"],
+    ]
+    for theme in themes:
+        review = reviews.get(theme.theme_id, {})
+        top3 = review.get("top3", [])
+        if top3:
+            for position, item in enumerate(top3, start=1):
+                ticker = str(item.get("ticker", "")).zfill(4)
+                ranked_tickers.add(ticker)
+                rows.append([
+                    f"{theme.name} Top{position}", f"{ticker} {item.get('company', '')}",
+                    item.get("priority_score") if item.get("priority_score") is not None else "待資料",
+                    "實際持有" if ticker in held else "", "完整" if item.get("priority_score") is not None else "參考值待資料",
+                ])
+        else:
+            for position in range(1, 4):
+                rows.append([f"{theme.name} Top{position}", "尚未產生", "待資料", "", "季度證據未完整"])
+    held_not_ranked = [security for security in held.values() if security.ticker not in ranked_tickers]
+    rows.extend([
+        ["02｜實際持股補充"],
+        ["所屬題材", "股票", "優先持有參考值", "實際持有", "說明"],
+    ])
+    if held_not_ranked:
+        for security in held_not_ranked:
+            rows.append([
+                membership.get(security.ticker, "尚未納入九大題材池"),
+                f"{security.ticker} {security.company}", "待資料", "實際持有",
+                "非Top3或Top3尚未完成，不代表賣出建議",
+            ])
+    else:
+        rows.append(["無", "所有持股均已列於Top3", "", "", ""])
+    rows.extend([
+        ["03｜分數規則"],
+        ["分數", "構成", "權重", "更新頻率", "用途"],
+        ["季度結構性龍頭", "瓶頸直接性／產業技術地位／AI營收兌現／財務獲利品質／市場代表性",
+         "25%／25%／20%／20%／10%", "每季", "決定每個題材Top1～Top3"],
+        ["優先持有參考值", "結構性龍頭／營收獲利成長／自身歷史估值／價格風險安全度／需求訂單催化",
+         "30%／25%／20%／15%／10%", "每日資料＋週月季事件", "提供Ryan自行比較持有優先序"],
+        ["04｜更新排程"],
+        ["頻率", "工作", "產出", "失敗處理", "交易影響"],
+        ["每日收盤後", "累積46檔官方價格與市場資料", "每日資料庫", "缺資料重抓並列明缺口", "無"],
+        ["每週最後交易日", "更新需求、訂單、事件與風險", "週度證據狀態", "證據不足維持原值或待資料", "無"],
+        ["每季財報揭露後", "重評九題材Top3", "季度排名", "全題材成分證據完整才發布", "無"],
+        ["每半年", "檢討題材與成分股", "增刪建議與證據", "保留歷史版本", "無"],
+        ["05｜模型完整說明"],
+        [MODEL_LOGIC],
+    ])
+    return rows
 
 
 def _latest_valuation_rows(root: str | Path, target_date: str) -> dict[str, dict]:
@@ -63,6 +122,7 @@ def build_dashboard_payload(
     weekly_root: str | Path = "data/r1/weekly",
     supplemental_revision_path: str | Path = "data/r1/consensus/current_year_revision_history.csv",
     theme_review_path: str | Path = "data/r1/theme_reviews/latest.json",
+    theme_path: str | Path = "config/r1_v02_themes.json",
 ) -> dict:
     config = R1Config.load(config_path)
     market = json.loads(Path(market_path).read_text(encoding="utf-8"))
@@ -124,6 +184,12 @@ def build_dashboard_payload(
         ["02｜目前追蹤持股（非R1成交）"],
         ["股票", "股數", "官方收盤", "參考市值", "狀態"],
     ])
+    # R1 v0.3 replaces the legacy trade-oriented dashboard with a read-only
+    # theme Top3 and holding-priority view. Legacy engines remain available but hidden.
+    tabs["R1 Dashboard"] = _build_v03_dashboard(
+        config=config, market=market, theme_review=theme_review, theme_path=theme_path,
+    )
+
     for security in config.securities:
         if security.shares <= 0:
             continue
@@ -294,6 +360,7 @@ def main() -> None:
     parser.add_argument("--weekly-root", default="data/r1/weekly")
     parser.add_argument("--supplemental-revision", default="data/r1/consensus/current_year_revision_history.csv")
     parser.add_argument("--theme-review", default="data/r1/theme_reviews/latest.json")
+    parser.add_argument("--themes", default="config/r1_v02_themes.json")
     parser.add_argument("--output", default="data/r1/dashboard_payload.json")
     args = parser.parse_args()
     payload = build_dashboard_payload(
@@ -301,6 +368,7 @@ def main() -> None:
         valuation_root=args.valuation_root, weekly_root=args.weekly_root,
         supplemental_revision_path=args.supplemental_revision,
         theme_review_path=args.theme_review,
+        theme_path=args.themes,
     )
     output = Path(args.output)
     output.parent.mkdir(parents=True, exist_ok=True)

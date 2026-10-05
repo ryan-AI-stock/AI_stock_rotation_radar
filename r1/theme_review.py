@@ -25,7 +25,7 @@ def build_review(*, as_of_date: str, theme_path: str | Path, inputs_path: str | 
     reviews = [rank_theme(theme, rows) for theme in themes]
     ready = [row for row in reviews if row["status"] == "READY"]
     return {
-        "model": "R1", "version": "r1-theme-leader-v0.2", "date": as_of_date,
+        "model": "R1", "version": "r1-theme-leader-v0.3", "date": as_of_date,
         "cadence": due, "theme_count": len(themes), "ready_theme_count": len(ready),
         "status": "READY" if len(ready) == len(themes) else "DATA_MISSING",
         "themes": reviews,
@@ -35,7 +35,7 @@ def build_review(*, as_of_date: str, theme_path: str | Path, inputs_path: str | 
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Build R1 v0.2 theme leader review without fabricating missing scores.")
+    parser = argparse.ArgumentParser(description="Build R1 v0.3 theme Top3 review without fabricating missing scores.")
     parser.add_argument("--date", required=True)
     parser.add_argument("--themes", default="config/r1_v02_themes.json")
     parser.add_argument("--inputs", default="data/r1/theme_leader_inputs/latest.json")

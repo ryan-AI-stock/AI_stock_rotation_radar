@@ -33,8 +33,14 @@ class FakeSheetsClient:
 class R1DashboardPublishTest(unittest.TestCase):
     def test_dashboard_section_formatting_is_derived_from_content(self):
         rows = [["R1研究版｜AI瓶頸預期差輪動"], ["資料"], ["01｜排名"], ["順位", "股票"],
-                ["Top1"], ["08｜模型完整說明"], ["說明"]]
+                ["Top1"], ["05｜模型完整說明"], ["說明"]]
         self.assertEqual(dashboard_publish._section_rows(rows), ([2, 5], [3], 6))
+
+    def test_actual_holding_rows_are_detected_for_highlight(self):
+        rows = [["標題"], ["題材", "股票", "分數", "實際持有"],
+                ["記憶體 Top1", "2408 南亞科", 90, ""],
+                ["載板 Top1", "3037 欣興", 88, "實際持有"]]
+        self.assertEqual(dashboard_publish._holding_rows(rows), [3])
 
     def test_publishes_current_date_preserves_signal_history_and_keeps_transactions_empty(self):
         date = "2026-10-02"

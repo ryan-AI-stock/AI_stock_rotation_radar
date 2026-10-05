@@ -7,16 +7,26 @@ from pathlib import Path
 
 
 LEADER_FIELDS = (
-    "bottleneck_moat", "competitive_position", "ai_revenue_realization",
-    "earnings_quality", "financial_strength", "supply_visibility",
+    "bottleneck_directness", "industry_technology_position", "ai_revenue_realization",
+    "financial_earnings_quality", "market_representation",
 )
 LEADER_WEIGHTS = {
-    "bottleneck_moat": 0.25,
-    "competitive_position": 0.20,
+    "bottleneck_directness": 0.25,
+    "industry_technology_position": 0.25,
     "ai_revenue_realization": 0.20,
-    "earnings_quality": 0.15,
-    "financial_strength": 0.10,
-    "supply_visibility": 0.10,
+    "financial_earnings_quality": 0.20,
+    "market_representation": 0.10,
+}
+PRIORITY_FIELDS = (
+    "structural_leader", "revenue_earnings_growth", "self_historical_valuation",
+    "price_risk_safety", "demand_order_catalyst",
+)
+PRIORITY_WEIGHTS = {
+    "structural_leader": 0.30,
+    "revenue_earnings_growth": 0.25,
+    "self_historical_valuation": 0.20,
+    "price_risk_safety": 0.15,
+    "demand_order_catalyst": 0.10,
 }
 DISCLOSURE_ANCHORS = ((4, 1), (5, 16), (8, 15), (11, 15))
 MEMBERSHIP_ANCHORS = ((4, 1), (8, 15))
@@ -71,6 +81,15 @@ def leader_score(row: dict) -> float | None:
     return round(sum(values[field] * LEADER_WEIGHTS[field] for field in LEADER_FIELDS), 6)
 
 
+def priority_score(row: dict) -> float | None:
+    if any(row.get(field) is None for field in PRIORITY_FIELDS):
+        return None
+    values = {field: float(row[field]) for field in PRIORITY_FIELDS}
+    if any(not 0 <= value <= 100 for value in values.values()):
+        raise ValueError("R1 priority component scores must be within 0..100")
+    return round(sum(values[field] * PRIORITY_WEIGHTS[field] for field in PRIORITY_FIELDS), 6)
+
+
 def rank_theme(theme: Theme, rows: list[dict]) -> dict:
     allowed = {member.ticker for member in theme.members}
     ranked = []
@@ -83,7 +102,8 @@ def rank_theme(theme: Theme, rows: list[dict]) -> dict:
         if score is None:
             missing.append({"ticker": ticker, "missing_fields": [field for field in LEADER_FIELDS if row.get(field) is None]})
         else:
-            ranked.append({**row, "ticker": ticker, "leader_score": score})
+            ranked.append({**row, "ticker": ticker, "leader_score": score,
+                           "priority_score": priority_score(row)})
     observed = {str(row.get("ticker", "")).zfill(4) for row in rows}
     for member in theme.members:
         if member.ticker not in observed:
@@ -94,7 +114,9 @@ def rank_theme(theme: Theme, rows: list[dict]) -> dict:
         "theme_name": theme.name,
         "status": "READY" if not missing and ranked else "DATA_MISSING",
         "top1": ranked[0] if not missing and ranked else None,
+        "top3": ranked[:3] if not missing and len(ranked) >= 3 else [],
         "ranked": ranked if not missing else [],
+        "evaluated": ranked,
         "data_gaps": missing,
     }
 

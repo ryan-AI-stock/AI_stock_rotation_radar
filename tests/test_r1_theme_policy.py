@@ -2,7 +2,7 @@ import unittest
 from datetime import date
 from pathlib import Path
 
-from r1.theme_policy import cadence, leader_score, load_themes, rank_theme, rotation_decision
+from r1.theme_policy import cadence, leader_score, load_themes, priority_score, rank_theme, rotation_decision
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -18,18 +18,27 @@ class R1ThemePolicyTest(unittest.TestCase):
 
     def test_leader_requires_every_stable_component(self):
         complete = {field: 80 for field in (
-            "bottleneck_moat", "competitive_position", "ai_revenue_realization",
-            "earnings_quality", "financial_strength", "supply_visibility",
+            "bottleneck_directness", "industry_technology_position", "ai_revenue_realization",
+            "financial_earnings_quality", "market_representation",
         )}
         self.assertEqual(leader_score(complete), 80)
-        incomplete = dict(complete, supply_visibility=None)
+        incomplete = dict(complete, market_representation=None)
         self.assertIsNone(leader_score(incomplete))
+
+    def test_priority_score_uses_confirmed_weights_and_requires_all_fields(self):
+        row = {
+            "structural_leader": 100, "revenue_earnings_growth": 80,
+            "self_historical_valuation": 70, "price_risk_safety": 60,
+            "demand_order_catalyst": 50,
+        }
+        self.assertEqual(priority_score(row), 78)
+        self.assertIsNone(priority_score(dict(row, self_historical_valuation=None)))
 
     def test_theme_top1_is_not_published_from_partial_membership(self):
         theme = load_themes(ROOT / "config/r1_v02_themes.json")[0]
         row = {"ticker": theme.members[0].ticker, **{field: 90 for field in (
-            "bottleneck_moat", "competitive_position", "ai_revenue_realization",
-            "earnings_quality", "financial_strength", "supply_visibility",
+            "bottleneck_directness", "industry_technology_position", "ai_revenue_realization",
+            "financial_earnings_quality", "market_representation",
         )}}
         result = rank_theme(theme, [row])
         self.assertEqual(result["status"], "DATA_MISSING")
