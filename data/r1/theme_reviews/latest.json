@@ -1,7 +1,7 @@
 {
   "model": "R1",
   "version": "r1-theme-leader-v0.3",
-  "date": "2026-10-02",
+  "date": "2026-10-05",
   "cadence": {
     "daily_accumulation": true,
     "weekly_risk_and_replacement_review": true,
@@ -402,7 +402,6 @@
         {
           "ticker": "2327",
           "missing_fields": [
-            "bottleneck_directness",
             "industry_technology_position",
             "ai_revenue_realization",
             "financial_earnings_quality",

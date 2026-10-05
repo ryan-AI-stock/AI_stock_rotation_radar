@@ -1,0 +1,30 @@
+{
+  "version": "r1-theme-leader-source-v0.1",
+  "as_of_date": "2026-10-05",
+  "rows": [
+    {
+      "ticker": "2327",
+      "bottleneck_directness": 100,
+      "evidence": {
+        "bottleneck_directness": {
+          "sources": [
+            {
+              "source_url": "https://yageogroup.com/content/Resource%20Library/Financial/Yageo%202025%20Annual%20Report_c.pdf",
+              "source_date": "2026-05-08",
+              "available_at": "2026-05-08",
+              "source_family": "company_annual_report",
+              "evidence_note": "國巨年報揭露AI伺服器高階被動元件需求及財務兌現。"
+            },
+            {
+              "source_url": "https://finance.technews.tw/2026/07/23/ai-mlcc/",
+              "source_date": "2026-07-23",
+              "available_at": "2026-07-23",
+              "source_family": "independent_industry_report",
+              "evidence_note": "獨立產業報導確認AI伺服器高階MLCC需求與供給壓力。"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
