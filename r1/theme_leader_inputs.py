@@ -10,6 +10,10 @@ from r1.theme_score_rubric import load_and_validate
 
 ALL_FIELDS = (*LEADER_FIELDS, *PRIORITY_FIELDS)
 EVIDENCE_FIELDS = ("source_url", "source_date", "available_at", "source_family", "evidence_note")
+MULTISOURCE_QUALITATIVE_FIELDS = {
+    "bottleneck_directness", "industry_technology_position",
+    "ai_revenue_realization", "demand_order_catalyst",
+}
 
 
 def materialize(*, as_of_date: str, theme_path: str | Path,
@@ -46,11 +50,13 @@ def materialize(*, as_of_date: str, theme_path: str | Path,
                 if not 0 <= value <= 100:
                     raise ValueError(f"{ticker} {field} score must be within 0..100")
                 proof = evidence.get(field)
-                missing = [name for name in EVIDENCE_FIELDS if not isinstance(proof, dict) or not proof.get(name)]
-                if missing:
-                    raise ValueError(f"{ticker} {field} missing evidence fields: {missing}")
-                if str(proof["available_at"]) > as_of_date:
-                    raise ValueError(f"{ticker} {field} uses future evidence")
+                sources = _validate_evidence(ticker=ticker, field=field, proof=proof, as_of_date=as_of_date)
+                if field in MULTISOURCE_QUALITATIVE_FIELDS and value >= 75:
+                    families = {str(item["source_family"]) for item in sources}
+                    if len(families) < int(rubric["principles"][
+                        "minimum_independent_source_families_for_qualitative_75_plus"
+                    ]):
+                        raise ValueError(f"{ticker} {field} score 75+ requires independent source families")
             row[field] = value
         structural = leader_score(row)
         if structural is not None:
@@ -75,6 +81,20 @@ def materialize(*, as_of_date: str, theme_path: str | Path,
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     return payload
+
+
+def _validate_evidence(*, ticker: str, field: str, proof: object, as_of_date: str) -> list[dict]:
+    if not isinstance(proof, dict):
+        raise ValueError(f"{ticker} {field} missing evidence fields: {list(EVIDENCE_FIELDS)}")
+    sources = proof.get("sources")
+    source_rows = sources if isinstance(sources, list) and sources else [proof]
+    for source in source_rows:
+        missing = [name for name in EVIDENCE_FIELDS if not isinstance(source, dict) or not source.get(name)]
+        if missing:
+            raise ValueError(f"{ticker} {field} missing evidence fields: {missing}")
+        if str(source["available_at"]) > as_of_date:
+            raise ValueError(f"{ticker} {field} uses future evidence")
+    return source_rows
 
 
 def main() -> None:

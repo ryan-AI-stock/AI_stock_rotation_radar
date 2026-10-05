@@ -54,6 +54,50 @@ class R1ThemeLeaderInputsTest(unittest.TestCase):
                     rubric_path=ROOT / "config/r1_v03_score_rubric.json",
                 )
 
+    def test_qualitative_score_75_plus_requires_two_source_families(self):
+        with tempfile.TemporaryDirectory() as directory:
+            source = Path(directory) / "source.json"
+            source.write_text(json.dumps({"rows": [{
+                "ticker": "2330", "bottleneck_directness": 75,
+                "evidence": {"bottleneck_directness": {
+                    "source_url": "https://example.test", "source_date": "2026-10-01",
+                    "available_at": "2026-10-01", "source_family": "company_ir",
+                    "evidence_note": "one family only",
+                }},
+            }]}), encoding="utf-8")
+            with self.assertRaisesRegex(ValueError, "independent source families"):
+                materialize(
+                    as_of_date="2026-10-02", theme_path=ROOT / "config/r1_v02_themes.json",
+                    source_path=source, output_path=Path(directory) / "latest.json",
+                    rubric_path=ROOT / "config/r1_v03_score_rubric.json",
+                )
+
+    def test_qualitative_score_75_plus_accepts_two_source_families(self):
+        with tempfile.TemporaryDirectory() as directory:
+            source = Path(directory) / "source.json"
+            proof = {
+                "sources": [{
+                    "source_url": "https://company.test", "source_date": "2026-10-01",
+                    "available_at": "2026-10-01", "source_family": "company_ir",
+                    "evidence_note": "company evidence",
+                }, {
+                    "source_url": "https://industry.test", "source_date": "2026-10-01",
+                    "available_at": "2026-10-01", "source_family": "industry_research",
+                    "evidence_note": "independent evidence",
+                }]
+            }
+            source.write_text(json.dumps({"rows": [{
+                "ticker": "2330", "bottleneck_directness": 75,
+                "evidence": {"bottleneck_directness": proof},
+            }]}), encoding="utf-8")
+            payload = materialize(
+                as_of_date="2026-10-02", theme_path=ROOT / "config/r1_v02_themes.json",
+                source_path=source, output_path=Path(directory) / "latest.json",
+                rubric_path=ROOT / "config/r1_v03_score_rubric.json",
+            )
+        row = next(item for item in payload["rows"] if item["ticker"] == "2330")
+        self.assertEqual(row["bottleneck_directness"], 75)
+
 
 if __name__ == "__main__":
     unittest.main()
