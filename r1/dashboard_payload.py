@@ -31,6 +31,7 @@ R1是研究challenger，不取代正式V4-D，也不改C6每日交易決策。�
 def _build_v03_dashboard(*, config: R1Config, market: dict, theme_review: dict,
                          theme_path: str | Path) -> list[list[object]]:
     themes = load_themes(theme_path)
+    universe_count = sum(len(theme.members) for theme in themes)
     reviews = {row.get("theme_id"): row for row in theme_review.get("themes", [])}
     held = {security.ticker: security for security in config.securities if security.shares > 0}
     membership = {
@@ -67,9 +68,10 @@ def _build_v03_dashboard(*, config: R1Config, market: dict, theme_review: dict,
     if held_not_ranked:
         for security in held_not_ranked:
             rows.append([
-                membership.get(security.ticker, "尚未納入九大題材池"),
+                membership.get(security.ticker, "池外持股｜Ryan設定優先檢視轉換"),
                 f"{security.ticker} {security.company}", "待資料", "實際持有",
-                "非Top3或Top3尚未完成，不代表賣出建議",
+                ("尚未納入題材池，優先檢視是否轉換；仍由Ryan決定"
+                 if security.ticker not in membership else "非Top3或Top3尚未完成，不代表賣出建議"),
             ])
     else:
         rows.append(["無", "所有持股均已列於Top3", "", "", ""])
@@ -82,7 +84,7 @@ def _build_v03_dashboard(*, config: R1Config, market: dict, theme_review: dict,
          "30%／25%／20%／15%／10%", "每日資料＋週月季事件", "提供Ryan自行比較持有優先序"],
         ["04｜更新排程"],
         ["頻率", "工作", "產出", "失敗處理", "交易影響"],
-        ["每日收盤後", "累積46檔官方價格與市場資料", "每日資料庫", "缺資料重抓並列明缺口", "無"],
+        ["每日收盤後", f"累積{universe_count}檔官方價格與市場資料", "每日資料庫", "缺資料重抓並列明缺口", "無"],
         ["每週最後交易日", "更新需求、訂單、事件與風險", "週度證據狀態", "證據不足維持原值或待資料", "無"],
         ["每季財報揭露後", "重評九題材Top3", "季度排名", "全題材成分證據完整才發布", "無"],
         ["每半年", "檢討題材與成分股", "增刪建議與證據", "保留歷史版本", "無"],

@@ -14,6 +14,7 @@ class R1ThemePolicyTest(unittest.TestCase):
         self.assertEqual(len(themes), 9)
         tickers = [member.ticker for theme in themes for member in theme.members]
         self.assertEqual(len(tickers), len(set(tickers)))
+        self.assertIn("2376", tickers)
         self.assertTrue(all(3 <= len(theme.members) <= 6 for theme in themes))
 
     def test_leader_requires_every_stable_component(self):

@@ -1,0 +1,29 @@
+{
+  "version": "r1-theme-membership-evidence-v0.1",
+  "as_of_date": "2026-10-05",
+  "rows": [
+    {
+      "ticker": "2376",
+      "company": "技嘉",
+      "theme_id": "server_rack",
+      "decision": "ADD_INITIAL_POOL_CORRECTION",
+      "reason": "公司官方簡報揭露2026Q1主要成長動能來自AI伺服器需求，年增110%；官方年報亦記載HGX AI伺服器與NVIDIA認證系統產品。",
+      "sources": [
+        {
+          "source_family": "company_investor_presentation",
+          "source_date": "2026-05-15",
+          "url": "https://www.gigabyte.com/FileUpload/TW/SiteMap/83/images/2026Q1-0515.en.pdf"
+        },
+        {
+          "source_family": "company_annual_report",
+          "source_date": "2024-01-01",
+          "url": "https://www.gigabyte.com/FileUpload/Global/SiteMap/83/images/AnnualReportEng-2023.pdf"
+        }
+      ],
+      "formal_model_changed": false,
+      "trade_decision_changed": false,
+      "active_in_trade_decision": false,
+      "report_changed": true
+    }
+  ]
+}
