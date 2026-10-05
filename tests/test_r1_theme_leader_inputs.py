@@ -16,6 +16,7 @@ class R1ThemeLeaderInputsTest(unittest.TestCase):
             payload = materialize(
                 as_of_date="2026-10-02", theme_path=ROOT / "config/r1_v02_themes.json",
                 source_path=Path(directory) / "missing.json", output_path=output,
+                rubric_path=ROOT / "config/r1_v03_score_rubric.json",
             )
         self.assertEqual(payload["requested_ticker_count"], 50)
         self.assertEqual(payload["actual_ticker_count"], 50)
@@ -32,6 +33,7 @@ class R1ThemeLeaderInputsTest(unittest.TestCase):
                 materialize(
                     as_of_date="2026-10-02", theme_path=ROOT / "config/r1_v02_themes.json",
                     source_path=source, output_path=Path(directory) / "latest.json",
+                    rubric_path=ROOT / "config/r1_v03_score_rubric.json",
                 )
 
     def test_future_evidence_is_rejected(self):
@@ -49,6 +51,7 @@ class R1ThemeLeaderInputsTest(unittest.TestCase):
                 materialize(
                     as_of_date="2026-10-02", theme_path=ROOT / "config/r1_v02_themes.json",
                     source_path=source, output_path=Path(directory) / "latest.json",
+                    rubric_path=ROOT / "config/r1_v03_score_rubric.json",
                 )
 
 

@@ -5,6 +5,7 @@ import json
 from pathlib import Path
 
 from r1.theme_policy import LEADER_FIELDS, PRIORITY_FIELDS, leader_score, load_themes
+from r1.theme_score_rubric import load_and_validate
 
 
 ALL_FIELDS = (*LEADER_FIELDS, *PRIORITY_FIELDS)
@@ -12,7 +13,9 @@ EVIDENCE_FIELDS = ("source_url", "source_date", "available_at", "source_family",
 
 
 def materialize(*, as_of_date: str, theme_path: str | Path,
-                source_path: str | Path, output_path: str | Path) -> dict:
+                source_path: str | Path, output_path: str | Path,
+                rubric_path: str | Path = "config/r1_v03_score_rubric.json") -> dict:
+    rubric = load_and_validate(rubric_path)
     themes = load_themes(theme_path)
     members = {
         member.ticker: (member.company, theme.theme_id)
@@ -60,7 +63,8 @@ def materialize(*, as_of_date: str, theme_path: str | Path,
         rows.append(row)
 
     payload = {
-        "model": "R1", "version": "r1-theme-leader-input-v0.1", "as_of_date": as_of_date,
+        "model": "R1", "version": "r1-theme-leader-input-v0.2", "as_of_date": as_of_date,
+        "score_rubric_version": rubric["version"],
         "requested_ticker_count": len(members), "actual_ticker_count": len(rows),
         "complete_ticker_count": sum(row["status"] == "READY" for row in rows),
         "rows": rows, "data_gaps": rejected, "future_data_violation_count": 0,
@@ -79,10 +83,11 @@ def main() -> None:
     parser.add_argument("--themes", default="config/r1_v02_themes.json")
     parser.add_argument("--source", default="data/r1/theme_leader_inputs/source.json")
     parser.add_argument("--output", default="data/r1/theme_leader_inputs/latest.json")
+    parser.add_argument("--rubric", default="config/r1_v03_score_rubric.json")
     args = parser.parse_args()
     payload = materialize(
         as_of_date=args.date, theme_path=args.themes,
-        source_path=args.source, output_path=args.output,
+        source_path=args.source, output_path=args.output, rubric_path=args.rubric,
     )
     print(json.dumps({
         "requested_ticker_count": payload["requested_ticker_count"],
