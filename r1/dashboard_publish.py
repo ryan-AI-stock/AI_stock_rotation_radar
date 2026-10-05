@@ -53,7 +53,15 @@ def _format_workbook(client: SheetsClient, dashboard_rows: list[list[object]]) -
     dashboard_id = ids[DASHBOARD]
     navy = {"red": 0.0784, "green": 0.2, "blue": 0.2863}
     light = {"red": 0.91, "green": 0.957, "blue": 0.957}
-    requests_body: list[dict] = []
+    white = {"red": 1.0, "green": 1.0, "blue": 1.0}
+    black = {"red": 0.0, "green": 0.0, "blue": 0.0}
+    requests_body: list[dict] = [{"repeatCell": {
+        "range": {"sheetId": dashboard_id, "startRowIndex": 0, "endRowIndex": len(dashboard_rows),
+                  "startColumnIndex": 0, "endColumnIndex": 5},
+        "cell": {"userEnteredFormat": {"backgroundColor": white, "textFormat": {
+            "foregroundColor": black, "bold": False, "fontSize": 10}}},
+        "fields": "userEnteredFormat(backgroundColor,textFormat)",
+    }}]
     section_rows, header_rows, logic_row = _section_rows(dashboard_rows)
     for start in [0, *section_rows]:
         end = start + 1
