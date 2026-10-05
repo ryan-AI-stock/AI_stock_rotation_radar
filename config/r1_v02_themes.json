@@ -44,6 +44,12 @@
       "members": [["2308","台達電","TWSE"],["2301","光寶科","TWSE"],["6282","康舒","TWSE"],["6412","群電","TWSE"],["6781","AES-KY","TWSE"]]
     },
     {
+      "id": "passive_components",
+      "name": "高階被動元件／電源與訊號完整性",
+      "bottleneck_thesis": "高功率、高頻寬AI伺服器需要高可靠度電阻、電容、電感及保護元件，以維持電源與高速訊號完整性",
+      "members": [["2327","國巨","TWSE"],["2492","華新科","TWSE"],["3357","臺慶科","TPEx"]]
+    },
+    {
       "id": "thermal_management",
       "name": "液冷／高階散熱",
       "bottleneck_thesis": "高功率AI機櫃必須持續移除熱量，避免降頻並提高可用算力",

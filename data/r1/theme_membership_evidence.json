@@ -24,6 +24,65 @@
       "trade_decision_changed": false,
       "active_in_trade_decision": false,
       "report_changed": true
+    },
+    {
+      "ticker": "2327",
+      "company": "國巨",
+      "theme_id": "passive_components",
+      "decision": "ADD_INITIAL_POOL_CORRECTION",
+      "reason": "原九題材分類漏列高階被動元件；公司官方投資人活動已設AI專題，產品組合涵蓋AI系統所需電阻、電容、磁性與電路保護元件。",
+      "sources": [
+        {
+          "source_family": "company_investor_conference",
+          "source_date": "2024-09-26",
+          "url": "https://yageogroup.com/jp/Download/Index/investor_conference?param1=2021"
+        }
+      ],
+      "formal_model_changed": false,
+      "trade_decision_changed": false,
+      "active_in_trade_decision": false,
+      "report_changed": true
+    },
+    {
+      "ticker": "2492",
+      "company": "華新科",
+      "theme_id": "passive_components",
+      "decision": "ADD_INITIAL_POOL_CORRECTION",
+      "reason": "公司官方揭露AI相關伺服器與電源管理應用需求，足以支持納入高階被動元件題材候選。",
+      "sources": [
+        {
+          "source_family": "company_quarterly_report",
+          "source_date": "2026-05-01",
+          "url": "https://www.passivecomponent.com/?s=2026"
+        }
+      ],
+      "formal_model_changed": false,
+      "trade_decision_changed": false,
+      "active_in_trade_decision": false,
+      "report_changed": true
+    },
+    {
+      "ticker": "3357",
+      "company": "臺慶科",
+      "theme_id": "passive_components",
+      "decision": "ADD_INITIAL_POOL_CORRECTION",
+      "reason": "公司官方產品與股東會資料明列AI伺服器GPU、CPU與記憶體供電所需高電流電感及TLVR應用。",
+      "sources": [
+        {
+          "source_family": "company_product_application",
+          "source_date": "2026-09-01",
+          "url": "https://www.tai-tech.com.tw/ai-server"
+        },
+        {
+          "source_family": "company_shareholder_material",
+          "source_date": "2025-05-23",
+          "url": "https://www.tai-tech.com.tw/pdf/455375/114%EF%A6%8E%E8%82%A1%E6%9D%B1%E6%9C%83%E8%AD%B0%E4%BA%8B%E9%8C%84%E8%82%A1%E6%9D%B1%E6%9C%83%E7%9B%B8%E9%97%9C%E8%B3%87%E6%96%99%E7%94%B3%E5%A0%B1%28%E4%B8%AD%29.pdf"
+        }
+      ],
+      "formal_model_changed": false,
+      "trade_decision_changed": false,
+      "active_in_trade_decision": false,
+      "report_changed": true
     }
   ]
 }

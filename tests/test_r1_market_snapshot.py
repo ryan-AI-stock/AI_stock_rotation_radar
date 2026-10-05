@@ -37,7 +37,7 @@ class R1MarketSnapshotTest(unittest.TestCase):
     def test_theme_universe_is_independent_and_complete(self):
         universe = _load_universe(
             config_path="config/r1.json", theme_path="config/r1_v02_themes.json")
-        self.assertEqual(len(universe), 47)
+        self.assertEqual(len(universe), 50)
         self.assertIn("2330", universe)
         self.assertIn("3131", universe)
 
@@ -46,7 +46,7 @@ class R1MarketSnapshotTest(unittest.TestCase):
         themed = _load_universe(
             config_path="config/r1.json", theme_path="config/r1_v02_themes.json")
         self.assertEqual(len(original), 14)
-        self.assertEqual(len(themed), 47)
+        self.assertEqual(len(themed), 50)
 
 
 if __name__ == "__main__":

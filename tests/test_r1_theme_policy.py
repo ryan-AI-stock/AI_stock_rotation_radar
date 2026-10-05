@@ -11,10 +11,12 @@ ROOT = Path(__file__).resolve().parents[1]
 class R1ThemePolicyTest(unittest.TestCase):
     def test_structural_theme_universe_is_bounded_and_unique(self):
         themes = load_themes(ROOT / "config/r1_v02_themes.json")
-        self.assertEqual(len(themes), 9)
+        self.assertEqual(len(themes), 10)
         tickers = [member.ticker for theme in themes for member in theme.members]
         self.assertEqual(len(tickers), len(set(tickers)))
         self.assertIn("2376", tickers)
+        self.assertIn("2327", tickers)
+        self.assertEqual(len(tickers), 50)
         self.assertTrue(all(3 <= len(theme.members) <= 6 for theme in themes))
 
     def test_leader_requires_every_stable_component(self):

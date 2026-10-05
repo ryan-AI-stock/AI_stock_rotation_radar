@@ -19,14 +19,14 @@ class R1DashboardPayloadTest(unittest.TestCase):
         self.assertEqual(len(payload["tabs"]["R1模擬交易紀錄"]), 1)
         dashboard = payload["tabs"]["R1 Dashboard"]
         sections = [row[0] for row in dashboard]
-        self.assertIn("01｜九大AI瓶頸題材Top3", sections)
+        self.assertIn("01｜10大AI瓶頸題材Top3", sections)
         self.assertIn("02｜實際持股補充", sections)
         self.assertIn("03｜分數規則", sections)
         self.assertIn("04｜更新排程", sections)
         self.assertIn("05｜模型完整說明", sections)
         self.assertNotIn("06｜下一個動態觸發條件", sections)
         self.assertNotIn("07｜Shadow換倉候選（非交易指令）", sections)
-        self.assertEqual(sum(1 for row in dashboard if row and " Top" in str(row[0])), 27)
+        self.assertEqual(sum(1 for row in dashboard if row and " Top" in str(row[0])), 30)
 
     def test_dashboard_cannot_claim_trade_ready(self):
         payload = build_dashboard_payload(config_path=ROOT / "config/r1.json",
