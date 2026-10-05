@@ -51,6 +51,18 @@ class R1WeeklySnapshotTest(unittest.TestCase):
             with self.assertRaises(FileExistsError):
                 build_weekly_snapshot(**kwargs)
 
+    def test_valid_existing_weekly_snapshot_is_reused(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self._write_complete_chip_day(root)
+            kwargs = dict(date="2026-10-01", config_path=ROOT / "config/r1.json",
+                          market_path=ROOT / "data/r1/daily_market_20261001.json",
+                          daily_source_root=root / "daily", output_root=root / "weekly",
+                          week_final_confirmed=True)
+            output = build_weekly_snapshot(**kwargs)
+            original = output.read_text(encoding="utf-8")
+            self.assertEqual(build_weekly_snapshot(**kwargs).read_text(encoding="utf-8"), original)
+
     def test_verified_consensus_enters_snapshot_as_watch_only(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)

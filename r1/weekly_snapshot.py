@@ -65,6 +65,19 @@ def build_weekly_snapshot(
 ) -> Path:
     if not week_final_confirmed:
         raise ValueError("formal weekly snapshot requires week_final_confirmed=true")
+    output = Path(output_root) / f"weekly_snapshot_{date}.json"
+    if output.exists():
+        existing = json.loads(output.read_text(encoding="utf-8"))
+        if (
+            existing.get("model") != "R1"
+            or existing.get("date") != date
+            or existing.get("snapshot_policy") != "append_only"
+            or not isinstance(existing.get("rows"), list)
+            or not existing["rows"]
+            or existing.get("future_data_violation_count") != 0
+        ):
+            raise FileExistsError(f"invalid append-only weekly snapshot already exists: {output}")
+        return output
     config = R1Config.load(config_path)
     market = json.loads(Path(market_path).read_text(encoding="utf-8"))
     if market.get("date") != date:
@@ -457,13 +470,7 @@ def build_weekly_snapshot(
         "formal_model_changed": False, "trade_decision_changed": False,
         "active_in_trade_decision": False, "report_changed": False,
     }
-    output = Path(output_root) / f"weekly_snapshot_{date}.json"
     output.parent.mkdir(parents=True, exist_ok=True)
-    if output.exists():
-        existing = json.loads(output.read_text(encoding="utf-8"))
-        if existing != payload:
-            raise FileExistsError(f"append-only snapshot already exists with different content: {output}")
-        return output
     output.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     return output
 
