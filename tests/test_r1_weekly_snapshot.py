@@ -10,7 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class R1WeeklySnapshotTest(unittest.TestCase):
-    def _write_complete_chip_day(self, root: Path, target: str = "2026-10-01") -> None:
+    def _write_complete_chip_day(self, root: Path, target: str = "2026-10-02") -> None:
         daily = root / "daily"
         daily.mkdir(parents=True, exist_ok=True)
         config = json.loads((ROOT / "config/r1.json").read_text(encoding="utf-8"))
@@ -29,12 +29,12 @@ class R1WeeklySnapshotTest(unittest.TestCase):
             root = Path(directory)
             self._write_complete_chip_day(root)
             output = build_weekly_snapshot(
-                date="2026-10-01", config_path=ROOT / "config/r1.json",
-                market_path=ROOT / "data/r1/daily_market_20261001.json",
+                date="2026-10-02", config_path=ROOT / "config/r1.json",
+                market_path=ROOT / "data/r1/theme_daily_market_latest.json",
                 daily_source_root=root / "daily", output_root=root / "weekly", week_final_confirmed=True,
             )
             payload = json.loads(output.read_text(encoding="utf-8"))
-            self.assertEqual(len(payload["rows"]), 14)
+            self.assertEqual(len(payload["rows"]), 50)
             self.assertEqual(next(row for row in payload["rows"] if row["ticker"] == "2330")["action"], "CORE")
             self.assertTrue(all(row["action"] == "DATA_MISSING" for row in payload["rows"] if row["ticker"] != "2330"))
             self.assertTrue(all(row["chip_data_status"] == "AVAILABLE" for row in payload["rows"]))
@@ -43,8 +43,8 @@ class R1WeeklySnapshotTest(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             self._write_complete_chip_day(root)
-            kwargs = dict(date="2026-10-01", config_path=ROOT / "config/r1.json",
-                          market_path=ROOT / "data/r1/daily_market_20261001.json",
+            kwargs = dict(date="2026-10-02", config_path=ROOT / "config/r1.json",
+                          market_path=ROOT / "data/r1/theme_daily_market_latest.json",
                           daily_source_root=root / "daily", output_root=root / "weekly", week_final_confirmed=True)
             first = build_weekly_snapshot(**kwargs)
             first.write_text("{}", encoding="utf-8")
@@ -55,8 +55,8 @@ class R1WeeklySnapshotTest(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             self._write_complete_chip_day(root)
-            kwargs = dict(date="2026-10-01", config_path=ROOT / "config/r1.json",
-                          market_path=ROOT / "data/r1/daily_market_20261001.json",
+            kwargs = dict(date="2026-10-02", config_path=ROOT / "config/r1.json",
+                          market_path=ROOT / "data/r1/theme_daily_market_latest.json",
                           daily_source_root=root / "daily", output_root=root / "weekly",
                           week_final_confirmed=True)
             output = build_weekly_snapshot(**kwargs)
@@ -68,8 +68,8 @@ class R1WeeklySnapshotTest(unittest.TestCase):
             root = Path(directory)
             self._write_complete_chip_day(root)
             output = build_weekly_snapshot(
-                date="2026-10-01", config_path=ROOT / "config/r1.json",
-                market_path=ROOT / "data/r1/daily_market_20261001.json",
+                date="2026-10-02", config_path=ROOT / "config/r1.json",
+                market_path=ROOT / "data/r1/theme_daily_market_latest.json",
                 daily_source_root=root / "daily", output_root=root / "weekly", week_final_confirmed=True,
                 consensus_path=ROOT / "data/r1/consensus/consensus.csv",
                 consensus_evidence_path=ROOT / "data/r1/consensus/evidence.csv",
@@ -78,14 +78,15 @@ class R1WeeklySnapshotTest(unittest.TestCase):
             mediatek = next(row for row in payload["rows"] if row["ticker"] == "2454")
             self.assertEqual(mediatek["next_year_eps"], 141.32)
             self.assertTrue(mediatek["consensus_allowed"])
-            self.assertIsNone(mediatek["forward_pe_percentile_5y"])
+            self.assertEqual(mediatek["forward_pe_percentile_5y"], 1.0)
+            self.assertEqual(mediatek["forward_pe_median_5y"], 14.7)
             self.assertEqual(mediatek["action"], "WATCH")
             self.assertEqual(mediatek["action_reason"], "ACTION_THRESHOLDS_NOT_APPROVED")
             nanya = next(row for row in payload["rows"] if row["ticker"] == "2408")
             self.assertEqual(nanya["forward_pe_percentile_5y"], .29)
             self.assertEqual(nanya["forward_pe_median_5y"], 10.0)
-            self.assertAlmostEqual(nanya["base_fair_value"], 102.56 * 10.0)
-            self.assertAlmostEqual(nanya["base_upside"], 102.56 * 10.0 / 519 - 1)
+            self.assertAlmostEqual(nanya["base_fair_value"], 93.24 * 10.0)
+            self.assertAlmostEqual(nanya["base_upside"], 93.24 * 10.0 / nanya["raw_close"] - 1)
             self.assertIsNone(nanya["bear_fair_value"])
             self.assertIsNone(nanya["bull_fair_value"])
             self.assertEqual(nanya["valuation_scenario_status"], "BASE_READY_PE_BANDS_MISSING")
@@ -103,8 +104,8 @@ class R1WeeklySnapshotTest(unittest.TestCase):
             root = Path(directory)
             self._write_complete_chip_day(root)
             with self.assertRaisesRegex(ValueError, "week_final_confirmed"):
-                build_weekly_snapshot(date="2026-10-01", config_path=ROOT / "config/r1.json",
-                                      market_path=ROOT / "data/r1/daily_market_20261001.json",
+                build_weekly_snapshot(date="2026-10-02", config_path=ROOT / "config/r1.json",
+                                      market_path=ROOT / "data/r1/theme_daily_market_latest.json",
                                       daily_source_root=root / "daily", output_root=root / "weekly")
 
     def test_snapshot_rejects_incomplete_exact_date_chip_data(self):
@@ -112,15 +113,15 @@ class R1WeeklySnapshotTest(unittest.TestCase):
             root = Path(directory)
             daily = root / "daily"
             daily.mkdir()
-            daily.joinpath("2026-10-01.json").write_text(json.dumps({
-                "date": "2026-10-01", "chip_rows": [
+            daily.joinpath("2026-10-02.json").write_text(json.dumps({
+                "date": "2026-10-02", "chip_rows": [
                     {"ticker": "2330", "family": "institutional"},
                 ],
             }), encoding="utf-8")
             with self.assertRaisesRegex(ValueError, "exact-date institutional and margin"):
                 build_weekly_snapshot(
-                    date="2026-10-01", config_path=ROOT / "config/r1.json",
-                    market_path=ROOT / "data/r1/daily_market_20261001.json",
+                    date="2026-10-02", config_path=ROOT / "config/r1.json",
+                    market_path=ROOT / "data/r1/theme_daily_market_latest.json",
                     daily_source_root=daily, output_root=root / "weekly", week_final_confirmed=True,
                 )
 
@@ -130,12 +131,12 @@ class R1WeeklySnapshotTest(unittest.TestCase):
             self._write_complete_chip_day(root)
             history = root / "history"
             history.mkdir()
-            history.joinpath("2026-10-01.json").write_text(json.dumps({
+            history.joinpath("2026-10-02.json").write_text(json.dumps({
                 "rows": [{"ticker": "2408", "fiscal_year": 2027, "mean_eps": 100, "status": "READY"}],
             }), encoding="utf-8")
             output = build_weekly_snapshot(
-                date="2026-10-01", config_path=ROOT / "config/r1.json",
-                market_path=ROOT / "data/r1/daily_market_20261001.json",
+                date="2026-10-02", config_path=ROOT / "config/r1.json",
+                market_path=ROOT / "data/r1/theme_daily_market_latest.json",
                 daily_source_root=root / "daily", output_root=root / "weekly", week_final_confirmed=True,
                 consensus_path=ROOT / "data/r1/consensus/consensus.csv",
                 consensus_evidence_path=ROOT / "data/r1/consensus/evidence.csv",
@@ -145,7 +146,7 @@ class R1WeeklySnapshotTest(unittest.TestCase):
             nanya = next(row for row in payload["rows"] if row["ticker"] == "2408")
             self.assertIsNone(nanya["eps_revision_1w"])
             self.assertIsNone(nanya["eps_revision_4w"])
-            self.assertEqual(nanya["eps_history_current_date"], "2026-10-01")
+            self.assertEqual(nanya["eps_history_current_date"], "2026-10-02")
 
     def test_revision_uses_latest_snapshot_on_or_before_horizon(self):
         with tempfile.TemporaryDirectory() as directory:
@@ -153,13 +154,13 @@ class R1WeeklySnapshotTest(unittest.TestCase):
             self._write_complete_chip_day(root)
             history = root / "history"
             history.mkdir()
-            for snapshot_date, eps in (("2026-09-01", 100), ("2026-10-01", 120)):
+            for snapshot_date, eps in (("2026-09-01", 100), ("2026-10-02", 120)):
                 history.joinpath(f"{snapshot_date}.json").write_text(json.dumps({
                     "rows": [{"ticker": "2408", "fiscal_year": 2027, "mean_eps": eps, "status": "READY"}],
                 }), encoding="utf-8")
             output = build_weekly_snapshot(
-                date="2026-10-01", config_path=ROOT / "config/r1.json",
-                market_path=ROOT / "data/r1/daily_market_20261001.json",
+                date="2026-10-02", config_path=ROOT / "config/r1.json",
+                market_path=ROOT / "data/r1/theme_daily_market_latest.json",
                 daily_source_root=root / "daily", output_root=root / "weekly", week_final_confirmed=True,
                 consensus_path=ROOT / "data/r1/consensus/consensus.csv",
                 consensus_evidence_path=ROOT / "data/r1/consensus/evidence.csv",

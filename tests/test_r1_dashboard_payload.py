@@ -11,11 +11,11 @@ ROOT = Path(__file__).resolve().parents[1]
 class R1DashboardPayloadTest(unittest.TestCase):
     def test_exact_three_tabs_exist_and_validate(self):
         payload = build_dashboard_payload(config_path=ROOT / "config/r1.json",
-                                          market_path=ROOT / "data/r1/daily_market_20261001.json")
+                                          market_path=ROOT / "data/r1/theme_daily_market_latest.json")
         self.assertEqual(set(payload["tabs"]), set(TAB_SCHEMAS))
         validate_tabs(payload["tabs"])
         self.assertEqual(set(payload["tabs"]), {"R1 Dashboard", "R1每日訊號資料庫", "R1模擬交易紀錄"})
-        self.assertEqual(len(payload["tabs"]["R1每日訊號資料庫"]), 15)
+        self.assertEqual(len(payload["tabs"]["R1每日訊號資料庫"]), 51)
         self.assertEqual(len(payload["tabs"]["R1模擬交易紀錄"]), 1)
         dashboard = payload["tabs"]["R1 Dashboard"]
         sections = [row[0] for row in dashboard]
@@ -30,7 +30,7 @@ class R1DashboardPayloadTest(unittest.TestCase):
 
     def test_dashboard_cannot_claim_trade_ready(self):
         payload = build_dashboard_payload(config_path=ROOT / "config/r1.json",
-                                          market_path=ROOT / "data/r1/daily_market_20261001.json")
+                                          market_path=ROOT / "data/r1/theme_daily_market_latest.json")
         actions = payload["tabs"]["R1 Dashboard"]
         self.assertIn("非交易指令", [cell for row in actions for cell in row])
         signals = payload["tabs"]["R1每日訊號資料庫"]
@@ -50,7 +50,7 @@ class R1DashboardPayloadTest(unittest.TestCase):
                 ]
             }]}), encoding="utf-8")
             payload = build_dashboard_payload(
-                config_path=ROOT / "config/r1.json", market_path=ROOT / "data/r1/daily_market_20261001.json",
+                config_path=ROOT / "config/r1.json", market_path=ROOT / "data/r1/theme_daily_market_latest.json",
                 theme_review_path=review,
             )
         dashboard = payload["tabs"]["R1 Dashboard"]
@@ -78,7 +78,7 @@ class R1DashboardPayloadTest(unittest.TestCase):
             )
             payload = build_dashboard_payload(
                 config_path=ROOT / "config/r1.json",
-                market_path=ROOT / "data/r1/daily_market_20261001.json",
+                market_path=ROOT / "data/r1/theme_daily_market_latest.json",
                 supplemental_revision_path=history,
             )
         self.assertNotIn("30D +10.0%／90D +22.2%（不計分）",

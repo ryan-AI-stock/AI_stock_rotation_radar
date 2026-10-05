@@ -60,19 +60,13 @@ jobs:
         if: steps.gate.outputs.should_run == 'true'
         run: |
           for attempt in 1 2 3; do
-            if python -m r1.market_snapshot --date "${{ steps.gate.outputs.target_date }}" --output data/r1/daily_market_latest.json --reuse-exact-complete; then
+            if python -m r1.market_snapshot --date "${{ steps.gate.outputs.target_date }}" --themes config/r1_v02_themes.json --output data/r1/daily_market_latest.json --reuse-exact-complete; then
               break
             fi
             if [ "$attempt" -eq 3 ]; then exit 75; fi
             sleep 20
           done
-          for attempt in 1 2 3; do
-            if python -m r1.market_snapshot --date "${{ steps.gate.outputs.target_date }}" --themes config/r1_v02_themes.json --output data/r1/theme_daily_market_latest.json --reuse-exact-complete; then
-              break
-            fi
-            if [ "$attempt" -eq 3 ]; then exit 75; fi
-            sleep 20
-          done
+          cp data/r1/daily_market_latest.json data/r1/theme_daily_market_latest.json
           python -m r1.daily_sources --start "${{ steps.gate.outputs.target_date }}" --end "${{ steps.gate.outputs.target_date }}" --retry-incomplete --allow-chip-gaps
           python -m r1.evidence_readiness --date "${{ steps.gate.outputs.target_date }}"
           python -m r1.forward_outcomes --date "${{ steps.gate.outputs.target_date }}"

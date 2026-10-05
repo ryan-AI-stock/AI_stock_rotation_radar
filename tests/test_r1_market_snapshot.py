@@ -23,10 +23,9 @@ class R1MarketSnapshotTest(unittest.TestCase):
     def test_reuses_only_exact_complete_snapshot(self):
         with TemporaryDirectory() as folder:
             path = Path(folder) / "snapshot.json"
-            tickers = ["2330", "2327", "2344", "2376", "2454", "3037", "6488",
-                       "2408", "2303", "3363", "3081", "3711", "2308", "2379"]
+            tickers = list(_load_universe(config_path="config/r1.json"))
             path.write_text(json.dumps({
-                "date": "2026-10-02", "requested_ticker_count": 14, "actual_ticker_count": 14,
+                "date": "2026-10-02", "requested_ticker_count": 50, "actual_ticker_count": 50,
                 "gaps": [], "rows": [{"ticker": ticker, "raw_close": 1} for ticker in tickers],
             }), encoding="utf-8")
             self.assertIsNotNone(load_exact_complete_snapshot(
@@ -41,12 +40,13 @@ class R1MarketSnapshotTest(unittest.TestCase):
         self.assertIn("2330", universe)
         self.assertIn("3131", universe)
 
-    def test_theme_universe_does_not_change_original_r1_universe(self):
+    def test_primary_and_theme_universe_are_aligned(self):
         original = _load_universe(config_path="config/r1.json")
         themed = _load_universe(
             config_path="config/r1.json", theme_path="config/r1_v02_themes.json")
-        self.assertEqual(len(original), 14)
+        self.assertEqual(len(original), 50)
         self.assertEqual(len(themed), 50)
+        self.assertEqual(set(original), set(themed))
 
 
 if __name__ == "__main__":

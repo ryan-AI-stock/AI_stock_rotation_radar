@@ -25,7 +25,7 @@ class R1EvidenceReadinessTest(unittest.TestCase):
         with TemporaryDirectory() as folder:
             result = materialize(config_path="config/r1.json", consensus_path=Path(folder) / "none.csv",
                                  catalyst_path=Path(folder) / "none2.csv", as_of_date="2026-10-01")
-        self.assertEqual(result["requested_ticker_count"], 14)
+        self.assertEqual(result["requested_ticker_count"], 50)
         self.assertEqual(result["trade_ready_count"], 0)
         self.assertEqual(result["component_score_ready_count"], 0)
         self.assertFalse(result["action_policy_approved"])

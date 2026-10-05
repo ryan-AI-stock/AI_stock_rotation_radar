@@ -20,7 +20,7 @@ class R1ConfigTest(unittest.TestCase):
         self.assertEqual(config.rotation_policy["minimum_score_advantage"], 10.0)
         self.assertEqual(config.rotation_policy["staged_transfer_fraction"], 0.25)
         self.assertEqual(config.rotation_policy["max_holdings"], 5)
-        self.assertEqual(len(config.securities), 14)
+        self.assertEqual(len(config.securities), 50)
         core = [security for security in config.securities if security.core_lock]
         self.assertEqual([security.ticker for security in core], ["2330"])
         self.assertEqual(core[0].shares, 2534)

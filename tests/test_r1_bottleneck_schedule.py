@@ -24,7 +24,7 @@ class R1BottleneckScheduleTest(unittest.TestCase):
 
     def test_seed_map_covers_universe_but_scores_are_missing(self):
         payload = load_bottleneck_map(ROOT / "data/r1/bottleneck_map.json", ROOT / "config/r1.json")
-        self.assertEqual(len(payload["rows"]), 14)
+        self.assertEqual(len(payload["rows"]), 50)
         self.assertTrue(all(row["bottleneck_score"] is None for row in payload["rows"]))
 
     def test_weekly_rejects_thursday_when_friday_open(self):
