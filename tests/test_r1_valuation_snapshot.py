@@ -50,3 +50,31 @@ class R1ValuationSnapshotTest(unittest.TestCase):
                     valuation_reference_path=ROOT / "data/r1/valuation_reference.csv",
                     output_root=temp_dir,
                 )
+
+    def test_valid_existing_snapshot_is_reused(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            kwargs = dict(
+                date="2026-10-01", config_path=ROOT / "config/r1.json",
+                market_path=ROOT / "data/r1/daily_market_20261001.json",
+                consensus_path=ROOT / "data/r1/consensus/consensus.csv",
+                consensus_evidence_path=ROOT / "data/r1/consensus/evidence.csv",
+                valuation_reference_path=ROOT / "data/r1/valuation_reference.csv",
+                output_root=temp_dir,
+            )
+            output = build_valuation_snapshot(**kwargs)
+            original = output.read_text(encoding="utf-8")
+            self.assertEqual(build_valuation_snapshot(**kwargs).read_text(encoding="utf-8"), original)
+
+    def test_invalid_existing_snapshot_is_rejected(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            output = Path(temp_dir) / "2026-10-01.json"
+            output.write_text("{}", encoding="utf-8")
+            with self.assertRaises(FileExistsError):
+                build_valuation_snapshot(
+                    date="2026-10-01", config_path=ROOT / "config/r1.json",
+                    market_path=ROOT / "data/r1/daily_market_20261001.json",
+                    consensus_path=ROOT / "data/r1/consensus/consensus.csv",
+                    consensus_evidence_path=ROOT / "data/r1/consensus/evidence.csv",
+                    valuation_reference_path=ROOT / "data/r1/valuation_reference.csv",
+                    output_root=temp_dir,
+                )

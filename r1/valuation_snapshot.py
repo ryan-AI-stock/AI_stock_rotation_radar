@@ -19,6 +19,18 @@ def build_valuation_snapshot(
     output_root: str | Path,
     valuation_reference_path: str | Path = "data/r1/valuation_reference.csv",
 ) -> Path:
+    output = Path(output_root) / f"{date}.json"
+    if output.exists():
+        existing = json.loads(output.read_text(encoding="utf-8"))
+        if (
+            existing.get("model") != "R1"
+            or existing.get("date") != date
+            or not isinstance(existing.get("rows"), list)
+            or not existing["rows"]
+            or existing.get("future_data_violation_count") != 0
+        ):
+            raise FileExistsError(f"invalid append-only valuation snapshot already exists: {output}")
+        return output
     config = R1Config.load(config_path)
     market = json.loads(Path(market_path).read_text(encoding="utf-8"))
     if market.get("date") != date:
@@ -100,13 +112,7 @@ def build_valuation_snapshot(
         "active_in_trade_decision": False,
         "report_changed": False,
     }
-    output = Path(output_root) / f"{date}.json"
     output.parent.mkdir(parents=True, exist_ok=True)
-    if output.exists():
-        existing = json.loads(output.read_text(encoding="utf-8"))
-        if existing != payload:
-            raise FileExistsError(f"append-only valuation snapshot already exists with different content: {output}")
-        return output
     output.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     return output
 
