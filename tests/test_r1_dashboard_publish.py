@@ -12,7 +12,11 @@ class FakeSheetsClient:
     def __init__(self, _spreadsheet_id: str):
         self.values = {
             "R1 Dashboard": [],
-            "R1每日訊號資料庫": [list(TAB_SCHEMAS["R1每日訊號資料庫"]), ["2026-10-01", "2330"]],
+            "R1每日訊號資料庫": [
+                list(TAB_SCHEMAS["R1每日訊號資料庫"]),
+                ["2026-10-01", "2330"],
+                ["2026-10-02", "9999"],
+            ],
             "R1模擬交易紀錄": [list(TAB_SCHEMAS["R1模擬交易紀錄"])],
         }
 

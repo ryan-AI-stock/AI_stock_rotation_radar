@@ -140,6 +140,13 @@ def publish_payload(spreadsheet_id: str, payload_path: str | Path) -> dict[str, 
     signal_header = list(TAB_SCHEMAS[SIGNALS])
     existing = client.get(f"'{SIGNALS}'!A1:Y10000")
     existing_rows = existing[1:] if existing and existing[0] == signal_header else []
+    # A universe revision can remove tickers. Replace the complete report-date
+    # partition so obsolete rows from an older universe cannot survive beside
+    # the newly materialized exact-date snapshot.
+    existing_rows = [
+        row for row in existing_rows
+        if not row or str(row[0]) != report_date
+    ]
     keyed = _keyed_signal_rows(existing_rows)
     keyed.update(_keyed_signal_rows(tabs[SIGNALS][1:]))
     merged = [keyed[key] for key in sorted(keyed)]
