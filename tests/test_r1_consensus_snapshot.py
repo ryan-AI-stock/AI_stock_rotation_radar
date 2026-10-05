@@ -27,11 +27,10 @@ class R1ConsensusSnapshotTest(unittest.TestCase):
             self.assertEqual(payload["snapshot_policy"], "append_only_source_available_at")
             rows = {row["ticker"]: row for row in payload["rows"] if row["fiscal_year"] == 2027}
             source = load_consensus_csv(ROOT / "data/r1/consensus/consensus.csv", as_of_date="2026-10-02")
-            expected = next(row.mean_eps for row in source.records if row.ticker == "2408" and row.fiscal_year == 2027)
-            self.assertEqual(rows["2408"]["mean_eps"], expected)
+            expected = {(row.ticker, row.fiscal_year): row for row in source.records}
+            self.assertEqual(rows["2408"]["mean_eps"], expected[("2408", 2027)].mean_eps)
             self.assertEqual(rows["3363"]["status"], "READY")
-            expected_3363 = next(row.mean_eps for row in source.records if row.ticker == "3363" and row.fiscal_year == 2027)
-            self.assertEqual(rows["3363"]["mean_eps"], expected_3363)
+            self.assertEqual(rows["3363"]["mean_eps"], expected[("3363", 2027)].mean_eps)
             far_rows = {row["ticker"]: row for row in payload["rows"] if row["fiscal_year"] == 2028}
             self.assertEqual(far_rows["3363"]["status"], "EVIDENCE_GAP")
 
