@@ -1,7 +1,7 @@
 {
   "model": "R1",
   "version": "r1-official-financial-snapshot-v0.1",
-  "as_of_date": "2026-10-05",
+  "as_of_date": "2026-10-02",
   "requested_ticker_count": 50,
   "actual_ticker_count": 50,
   "rows": [

@@ -401,56 +401,6 @@
         }
       ]
     },
-    "2303": {
-      "url": "https://toalpha.tw/stock/2303/estimates",
-      "rows": [
-        {
-          "ticker": "2303",
-          "fiscal_year": "2026",
-          "mean_eps": "6.45",
-          "median_eps": "6.45",
-          "high_eps": "8.15",
-          "low_eps": "3.42",
-          "analyst_count": "28",
-          "source": "ToAlpha public consensus",
-          "published_at": "2026-10-02",
-          "available_at": "2026-10-02",
-          "retrieved_at": "2026-10-05",
-          "quality": "MEDIUM",
-          "status": "READY"
-        },
-        {
-          "ticker": "2303",
-          "fiscal_year": "2027",
-          "mean_eps": "6.83",
-          "median_eps": "6.83",
-          "high_eps": "8.49",
-          "low_eps": "3.99",
-          "analyst_count": "25",
-          "source": "ToAlpha public consensus",
-          "published_at": "2026-10-02",
-          "available_at": "2026-10-02",
-          "retrieved_at": "2026-10-05",
-          "quality": "MEDIUM",
-          "status": "READY"
-        },
-        {
-          "ticker": "2303",
-          "fiscal_year": "2028",
-          "mean_eps": "8.35",
-          "median_eps": "8.35",
-          "high_eps": "11.95",
-          "low_eps": "6.12",
-          "analyst_count": "15",
-          "source": "ToAlpha public consensus",
-          "published_at": "2026-10-02",
-          "available_at": "2026-10-02",
-          "retrieved_at": "2026-10-05",
-          "quality": "MEDIUM",
-          "status": "READY"
-        }
-      ]
-    },
     "3363": {
       "url": "https://toalpha.tw/stock/3363/estimates",
       "rows": [
@@ -492,56 +442,6 @@
           "high_eps": "",
           "low_eps": "",
           "analyst_count": "2",
-          "source": "ToAlpha public consensus",
-          "published_at": "2026-10-02",
-          "available_at": "2026-10-02",
-          "retrieved_at": "2026-10-05",
-          "quality": "MEDIUM",
-          "status": "READY"
-        }
-      ]
-    },
-    "3081": {
-      "url": "https://toalpha.tw/stock/3081/estimates",
-      "rows": [
-        {
-          "ticker": "3081",
-          "fiscal_year": "2026",
-          "mean_eps": "19.66",
-          "median_eps": "19.66",
-          "high_eps": "23.10",
-          "low_eps": "16.02",
-          "analyst_count": "12",
-          "source": "ToAlpha public consensus",
-          "published_at": "2026-10-02",
-          "available_at": "2026-10-02",
-          "retrieved_at": "2026-10-05",
-          "quality": "MEDIUM",
-          "status": "READY"
-        },
-        {
-          "ticker": "3081",
-          "fiscal_year": "2027",
-          "mean_eps": "41.36",
-          "median_eps": "41.36",
-          "high_eps": "50.46",
-          "low_eps": "25.92",
-          "analyst_count": "12",
-          "source": "ToAlpha public consensus",
-          "published_at": "2026-10-02",
-          "available_at": "2026-10-02",
-          "retrieved_at": "2026-10-05",
-          "quality": "MEDIUM",
-          "status": "READY"
-        },
-        {
-          "ticker": "3081",
-          "fiscal_year": "2028",
-          "mean_eps": "60.00",
-          "median_eps": "60.00",
-          "high_eps": "88.72",
-          "low_eps": "27.55",
-          "analyst_count": "5",
           "source": "ToAlpha public consensus",
           "published_at": "2026-10-02",
           "available_at": "2026-10-02",
