@@ -1,0 +1,295 @@
+{
+  "model": "R1",
+  "version": "r1-membership-review-v0.1",
+  "as_of_date": "2026-10-02",
+  "status": "NOT_DUE",
+  "membership_anchor": "2026-08-15",
+  "last_membership_review": "2026-10-05",
+  "theme_count": 10,
+  "member_count": 50,
+  "current_members_without_dedicated_evidence_row": [
+    {
+      "ticker": "1560",
+      "company": "中砂",
+      "theme_id": "critical_materials",
+      "theme_name": "關鍵半導體材料／矽晶圓／製程耗材"
+    },
+    {
+      "ticker": "2301",
+      "company": "光寶科",
+      "theme_id": "power_delivery",
+      "theme_name": "電源供應／HVDC／BBU"
+    },
+    {
+      "ticker": "2308",
+      "company": "台達電",
+      "theme_id": "power_delivery",
+      "theme_name": "電源供應／HVDC／BBU"
+    },
+    {
+      "ticker": "2317",
+      "company": "鴻海",
+      "theme_id": "server_rack",
+      "theme_name": "AI伺服器／機櫃系統"
+    },
+    {
+      "ticker": "2330",
+      "company": "台積電",
+      "theme_id": "compute_foundry",
+      "theme_name": "AI運算晶片／ASIC／先進製程"
+    },
+    {
+      "ticker": "2337",
+      "company": "旺宏",
+      "theme_id": "memory_storage",
+      "theme_name": "HBM／記憶體／高速儲存"
+    },
+    {
+      "ticker": "2344",
+      "company": "華邦電",
+      "theme_id": "memory_storage",
+      "theme_name": "HBM／記憶體／高速儲存"
+    },
+    {
+      "ticker": "2345",
+      "company": "智邦",
+      "theme_id": "network_optics",
+      "theme_name": "高速網路／光通訊／CPO"
+    },
+    {
+      "ticker": "2356",
+      "company": "英業達",
+      "theme_id": "server_rack",
+      "theme_name": "AI伺服器／機櫃系統"
+    },
+    {
+      "ticker": "2368",
+      "company": "金像電",
+      "theme_id": "pcb_substrate",
+      "theme_name": "高速PCB／CCL／ABF載板"
+    },
+    {
+      "ticker": "2379",
+      "company": "瑞昱",
+      "theme_id": "network_optics",
+      "theme_name": "高速網路／光通訊／CPO"
+    },
+    {
+      "ticker": "2382",
+      "company": "廣達",
+      "theme_id": "server_rack",
+      "theme_name": "AI伺服器／機櫃系統"
+    },
+    {
+      "ticker": "2383",
+      "company": "台光電",
+      "theme_id": "pcb_substrate",
+      "theme_name": "高速PCB／CCL／ABF載板"
+    },
+    {
+      "ticker": "2408",
+      "company": "南亞科",
+      "theme_id": "memory_storage",
+      "theme_name": "HBM／記憶體／高速儲存"
+    },
+    {
+      "ticker": "2449",
+      "company": "京元電子",
+      "theme_id": "advanced_packaging",
+      "theme_name": "先進封裝／測試／設備"
+    },
+    {
+      "ticker": "2454",
+      "company": "聯發科",
+      "theme_id": "compute_foundry",
+      "theme_name": "AI運算晶片／ASIC／先進製程"
+    },
+    {
+      "ticker": "3017",
+      "company": "奇鋐",
+      "theme_id": "thermal_management",
+      "theme_name": "液冷／高階散熱"
+    },
+    {
+      "ticker": "3035",
+      "company": "智原",
+      "theme_id": "compute_foundry",
+      "theme_name": "AI運算晶片／ASIC／先進製程"
+    },
+    {
+      "ticker": "3037",
+      "company": "欣興",
+      "theme_id": "pcb_substrate",
+      "theme_name": "高速PCB／CCL／ABF載板"
+    },
+    {
+      "ticker": "3131",
+      "company": "弘塑",
+      "theme_id": "critical_materials",
+      "theme_name": "關鍵半導體材料／矽晶圓／製程耗材"
+    },
+    {
+      "ticker": "3163",
+      "company": "波若威",
+      "theme_id": "network_optics",
+      "theme_name": "高速網路／光通訊／CPO"
+    },
+    {
+      "ticker": "3189",
+      "company": "景碩",
+      "theme_id": "pcb_substrate",
+      "theme_name": "高速PCB／CCL／ABF載板"
+    },
+    {
+      "ticker": "3231",
+      "company": "緯創",
+      "theme_id": "server_rack",
+      "theme_name": "AI伺服器／機櫃系統"
+    },
+    {
+      "ticker": "3260",
+      "company": "威剛",
+      "theme_id": "memory_storage",
+      "theme_name": "HBM／記憶體／高速儲存"
+    },
+    {
+      "ticker": "3324",
+      "company": "雙鴻",
+      "theme_id": "thermal_management",
+      "theme_name": "液冷／高階散熱"
+    },
+    {
+      "ticker": "3338",
+      "company": "泰碩",
+      "theme_id": "thermal_management",
+      "theme_name": "液冷／高階散熱"
+    },
+    {
+      "ticker": "3363",
+      "company": "上詮",
+      "theme_id": "network_optics",
+      "theme_name": "高速網路／光通訊／CPO"
+    },
+    {
+      "ticker": "3443",
+      "company": "創意",
+      "theme_id": "compute_foundry",
+      "theme_name": "AI運算晶片／ASIC／先進製程"
+    },
+    {
+      "ticker": "3532",
+      "company": "台勝科",
+      "theme_id": "critical_materials",
+      "theme_name": "關鍵半導體材料／矽晶圓／製程耗材"
+    },
+    {
+      "ticker": "3583",
+      "company": "辛耘",
+      "theme_id": "advanced_packaging",
+      "theme_name": "先進封裝／測試／設備"
+    },
+    {
+      "ticker": "3653",
+      "company": "健策",
+      "theme_id": "thermal_management",
+      "theme_name": "液冷／高階散熱"
+    },
+    {
+      "ticker": "3661",
+      "company": "世芯-KY",
+      "theme_id": "compute_foundry",
+      "theme_name": "AI運算晶片／ASIC／先進製程"
+    },
+    {
+      "ticker": "3711",
+      "company": "日月光投控",
+      "theme_id": "advanced_packaging",
+      "theme_name": "先進封裝／測試／設備"
+    },
+    {
+      "ticker": "4979",
+      "company": "華星光",
+      "theme_id": "network_optics",
+      "theme_name": "高速網路／光通訊／CPO"
+    },
+    {
+      "ticker": "6182",
+      "company": "合晶",
+      "theme_id": "critical_materials",
+      "theme_name": "關鍵半導體材料／矽晶圓／製程耗材"
+    },
+    {
+      "ticker": "6187",
+      "company": "萬潤",
+      "theme_id": "advanced_packaging",
+      "theme_name": "先進封裝／測試／設備"
+    },
+    {
+      "ticker": "6223",
+      "company": "旺矽",
+      "theme_id": "advanced_packaging",
+      "theme_name": "先進封裝／測試／設備"
+    },
+    {
+      "ticker": "6230",
+      "company": "尼得科超眾",
+      "theme_id": "thermal_management",
+      "theme_name": "液冷／高階散熱"
+    },
+    {
+      "ticker": "6274",
+      "company": "台燿",
+      "theme_id": "pcb_substrate",
+      "theme_name": "高速PCB／CCL／ABF載板"
+    },
+    {
+      "ticker": "6282",
+      "company": "康舒",
+      "theme_id": "power_delivery",
+      "theme_name": "電源供應／HVDC／BBU"
+    },
+    {
+      "ticker": "6412",
+      "company": "群電",
+      "theme_id": "power_delivery",
+      "theme_name": "電源供應／HVDC／BBU"
+    },
+    {
+      "ticker": "6442",
+      "company": "光聖",
+      "theme_id": "network_optics",
+      "theme_name": "高速網路／光通訊／CPO"
+    },
+    {
+      "ticker": "6488",
+      "company": "環球晶",
+      "theme_id": "critical_materials",
+      "theme_name": "關鍵半導體材料／矽晶圓／製程耗材"
+    },
+    {
+      "ticker": "6669",
+      "company": "緯穎",
+      "theme_id": "server_rack",
+      "theme_name": "AI伺服器／機櫃系統"
+    },
+    {
+      "ticker": "6781",
+      "company": "AES-KY",
+      "theme_id": "power_delivery",
+      "theme_name": "電源供應／HVDC／BBU"
+    },
+    {
+      "ticker": "8299",
+      "company": "群聯",
+      "theme_id": "memory_storage",
+      "theme_name": "HBM／記憶體／高速儲存"
+    }
+  ],
+  "addition_candidates_for_ryan_review": [],
+  "automatic_changes_applied": false,
+  "policy": "每週累積證據；每半年提出增刪建議。Ryan核准前不修改候選池。",
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false
+}

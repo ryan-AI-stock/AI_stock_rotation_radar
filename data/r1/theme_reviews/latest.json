@@ -7,10 +7,10 @@
     "weekly_risk_and_replacement_review": true,
     "quarterly_leader_review_due": true,
     "quarterly_anchor": "2026-08-15",
-    "semiannual_membership_review_due": true,
+    "semiannual_membership_review_due": false,
     "membership_anchor": "2026-08-15"
   },
-  "theme_count": 9,
+  "theme_count": 10,
   "ready_theme_count": 0,
   "status": "DATA_MISSING",
   "themes": [
@@ -380,6 +380,47 @@
         },
         {
           "ticker": "6781",
+          "missing_fields": [
+            "bottleneck_directness",
+            "industry_technology_position",
+            "ai_revenue_realization",
+            "financial_earnings_quality",
+            "market_representation"
+          ]
+        }
+      ]
+    },
+    {
+      "theme_id": "passive_components",
+      "theme_name": "高階被動元件／電源與訊號完整性",
+      "status": "DATA_MISSING",
+      "top1": null,
+      "top3": [],
+      "ranked": [],
+      "evaluated": [],
+      "data_gaps": [
+        {
+          "ticker": "2327",
+          "missing_fields": [
+            "bottleneck_directness",
+            "industry_technology_position",
+            "ai_revenue_realization",
+            "financial_earnings_quality",
+            "market_representation"
+          ]
+        },
+        {
+          "ticker": "2492",
+          "missing_fields": [
+            "bottleneck_directness",
+            "industry_technology_position",
+            "ai_revenue_realization",
+            "financial_earnings_quality",
+            "market_representation"
+          ]
+        },
+        {
+          "ticker": "3357",
           "missing_fields": [
             "bottleneck_directness",
             "industry_technology_position",
