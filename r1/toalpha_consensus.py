@@ -28,6 +28,17 @@ def required_fiscal_years(as_of_date: str) -> set[str]:
     return {str(year), str(year + 1)}
 
 
+def _prune_progress(progress: dict, tickers: list[str]) -> dict:
+    allowed = {str(ticker).zfill(4) for ticker in tickers}
+    progress["completed"] = {
+        ticker: value for ticker, value in progress.get("completed", {}).items() if ticker in allowed
+    }
+    progress["failed"] = {
+        ticker: value for ticker, value in progress.get("failed", {}).items() if ticker in allowed
+    }
+    return progress
+
+
 def parse_estimates_page(text: str, *, ticker: str, retrieved_at: str) -> list[dict[str, str]]:
     """Parse only the labelled forward-estimate table; never infer absent values."""
     clean = html.unescape(re.sub(r"<!--.*?-->", "", text, flags=re.S))
@@ -105,6 +116,7 @@ def acquire(*, tickers: list[str], consensus_path: str | Path, evidence_path: st
     }
     if progress.get("retrieved_at") != retrieved_at:
         progress = {"retrieved_at": retrieved_at, "completed": {}, "failed": {}}
+    progress = _prune_progress(progress, tickers)
     for ticker in tickers:
         expected_years = required_fiscal_years(retrieved_at)
         completed_years = {

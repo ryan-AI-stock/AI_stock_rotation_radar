@@ -3,7 +3,7 @@ import unittest
 from pathlib import Path
 
 from r1.toalpha_consensus import (
-    _upsert_missing, parse_eps_page, parse_estimates_page, required_fiscal_years,
+    _prune_progress, _upsert_missing, parse_eps_page, parse_estimates_page, required_fiscal_years,
 )
 
 
@@ -21,6 +21,14 @@ EPS_HTML = '''<b>2026-10-02</b><span>資料日期</span><tbody>
 class ToAlphaConsensusTest(unittest.TestCase):
     def test_current_and_next_year_are_required_but_second_forward_year_is_optional(self):
         self.assertEqual(required_fiscal_years("2026-10-02"), {"2026", "2027"})
+
+    def test_checkpoint_is_pruned_to_current_universe(self):
+        progress = _prune_progress({
+            "completed": {"2330": {}, "2303": {}},
+            "failed": {"2408": {}, "3081": {}},
+        }, ["2330", "2408"])
+        self.assertEqual(set(progress["completed"]), {"2330"})
+        self.assertEqual(set(progress["failed"]), {"2408"})
 
     def test_parse_labelled_table(self):
         rows = parse_estimates_page(HTML, ticker="2330", retrieved_at="2026-10-04")

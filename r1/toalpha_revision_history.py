@@ -92,6 +92,13 @@ def acquire(*, tickers: list[str], output_path: str | Path, checkpoint_path: str
     progress = json.loads(checkpoint.read_text(encoding="utf-8")) if checkpoint.exists() else {}
     if progress.get("retrieved_at") != retrieved_at:
         progress = {"retrieved_at": retrieved_at, "completed": {}, "failed": {}}
+    allowed = {str(ticker).zfill(4) for ticker in tickers}
+    progress["completed"] = {
+        ticker: value for ticker, value in progress.get("completed", {}).items() if ticker in allowed
+    }
+    progress["failed"] = {
+        ticker: value for ticker, value in progress.get("failed", {}).items() if ticker in allowed
+    }
     for ticker in tickers:
         if ticker in progress["completed"]:
             continue
