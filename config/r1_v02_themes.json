@@ -29,7 +29,7 @@
       "id": "pcb_substrate",
       "name": "高速PCB／CCL／ABF載板",
       "bottleneck_thesis": "高速低損耗材料、PCB與載板承載高頻寬及高功率系統互連",
-      "members": [["2383","台光電","TWSE"],["6274","台燿","TWSE"],["3037","欣興","TWSE"],["3189","景碩","TWSE"],["2368","金像電","TWSE"]]
+      "members": [["2383","台光電","TWSE"],["6274","台燿","TPEx"],["3037","欣興","TWSE"],["3189","景碩","TWSE"],["2368","金像電","TWSE"]]
     },
     {
       "id": "network_optics",
