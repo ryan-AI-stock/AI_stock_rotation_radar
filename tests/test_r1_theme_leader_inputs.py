@@ -1,0 +1,56 @@
+import json
+import tempfile
+import unittest
+from pathlib import Path
+
+from r1.theme_leader_inputs import materialize
+
+
+ROOT = Path(__file__).resolve().parents[1]
+
+
+class R1ThemeLeaderInputsTest(unittest.TestCase):
+    def test_missing_source_materializes_exact_universe_as_na(self):
+        with tempfile.TemporaryDirectory() as directory:
+            output = Path(directory) / "latest.json"
+            payload = materialize(
+                as_of_date="2026-10-02", theme_path=ROOT / "config/r1_v02_themes.json",
+                source_path=Path(directory) / "missing.json", output_path=output,
+            )
+        self.assertEqual(payload["requested_ticker_count"], 50)
+        self.assertEqual(payload["actual_ticker_count"], 50)
+        self.assertEqual(payload["complete_ticker_count"], 0)
+        self.assertTrue(all(row["status"] == "DATA_MISSING" for row in payload["rows"]))
+
+    def test_score_without_traceable_evidence_is_rejected(self):
+        with tempfile.TemporaryDirectory() as directory:
+            source = Path(directory) / "source.json"
+            source.write_text(json.dumps({"rows": [{
+                "ticker": "2330", "bottleneck_directness": 90,
+            }]}), encoding="utf-8")
+            with self.assertRaisesRegex(ValueError, "missing evidence fields"):
+                materialize(
+                    as_of_date="2026-10-02", theme_path=ROOT / "config/r1_v02_themes.json",
+                    source_path=source, output_path=Path(directory) / "latest.json",
+                )
+
+    def test_future_evidence_is_rejected(self):
+        with tempfile.TemporaryDirectory() as directory:
+            source = Path(directory) / "source.json"
+            source.write_text(json.dumps({"rows": [{
+                "ticker": "2330", "bottleneck_directness": 90,
+                "evidence": {"bottleneck_directness": {
+                    "source_url": "https://example.test", "source_date": "2026-10-03",
+                    "available_at": "2026-10-03", "source_family": "company_ir",
+                    "evidence_note": "test",
+                }},
+            }]}), encoding="utf-8")
+            with self.assertRaisesRegex(ValueError, "future evidence"):
+                materialize(
+                    as_of_date="2026-10-02", theme_path=ROOT / "config/r1_v02_themes.json",
+                    source_path=source, output_path=Path(directory) / "latest.json",
+                )
+
+
+if __name__ == "__main__":
+    unittest.main()

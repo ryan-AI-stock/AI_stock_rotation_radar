@@ -34,6 +34,7 @@ class R1WorkflowPolicyTest(unittest.TestCase):
         self.assertIn("r1.weekly_snapshot", workflow)
         self.assertIn("r1.discovery", workflow)
         self.assertIn("r1.theme_review", workflow)
+        self.assertIn("r1.theme_leader_inputs", workflow)
         self.assertIn("for attempt in 1 2 3", workflow)
         self.assertIn("--reuse-exact-complete", workflow)
         self.assertIn("r1.dashboard_publish", workflow)
