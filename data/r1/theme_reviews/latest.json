@@ -411,7 +411,6 @@
         {
           "ticker": "2492",
           "missing_fields": [
-            "bottleneck_directness",
             "industry_technology_position",
             "ai_revenue_realization",
             "financial_earnings_quality",
@@ -421,7 +420,6 @@
         {
           "ticker": "3357",
           "missing_fields": [
-            "bottleneck_directness",
             "industry_technology_position",
             "ai_revenue_realization",
             "financial_earnings_quality",

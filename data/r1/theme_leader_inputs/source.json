@@ -25,6 +25,43 @@
           ]
         }
       }
+    },
+    {
+      "ticker": "2492",
+      "bottleneck_directness": 75,
+      "evidence": {
+        "bottleneck_directness": {
+          "sources": [
+            {
+              "source_url": "https://www.passivecomponent.com/zh-hant/",
+              "source_date": "2026-05-27",
+              "available_at": "2026-05-27",
+              "source_family": "company_investor_material",
+              "evidence_note": "公司資料列出AI伺服器、資料中心及高功率電源所需MLCC、電阻與電感應用。"
+            },
+            {
+              "source_url": "https://www.cna.com.tw/news/afe/202606120157.aspx",
+              "source_date": "2026-06-12",
+              "available_at": "2026-06-12",
+              "source_family": "independent_news_interview",
+              "evidence_note": "中央社引述公司說明接單出貨比高於1、AI需求增加及被動元件供需缺口可能延續。"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "3357",
+      "bottleneck_directness": 50,
+      "evidence": {
+        "bottleneck_directness": {
+          "source_url": "https://www.tai-tech.com.tw/ai-server",
+          "source_date": "2026-09-01",
+          "available_at": "2026-09-01",
+          "source_family": "company_product_application",
+          "evidence_note": "公司產品頁明列AI伺服器GPU、CPU與記憶體供電所需高電流電感及TLVR應用；尚缺獨立瓶頸與財務兌現證據。"
+        }
+      }
     }
   ]
 }
