@@ -18,7 +18,8 @@ MULTISOURCE_QUALITATIVE_FIELDS = {
 
 def materialize(*, as_of_date: str, theme_path: str | Path,
                 source_path: str | Path, output_path: str | Path,
-                rubric_path: str | Path = "config/r1_v03_score_rubric.json") -> dict:
+                rubric_path: str | Path = "config/r1_v03_score_rubric.json",
+                financial_quality_path: str | Path | None = None) -> dict:
     rubric = load_and_validate(rubric_path)
     themes = load_themes(theme_path)
     members = {
@@ -30,6 +31,7 @@ def materialize(*, as_of_date: str, theme_path: str | Path,
     source_rows = {
         str(row.get("ticker", "")).zfill(4): row for row in source_payload.get("rows", [])
     }
+    financial_rows = _load_financial_quality(financial_quality_path, as_of_date)
     extras = sorted(set(source_rows) - set(members))
     if extras:
         raise ValueError(f"theme leader input contains out-of-universe tickers: {extras}")
@@ -38,7 +40,12 @@ def materialize(*, as_of_date: str, theme_path: str | Path,
     rejected = []
     for ticker, (company, theme_id) in members.items():
         source = source_rows.get(ticker, {})
-        evidence = source.get("evidence", {}) if isinstance(source.get("evidence"), dict) else {}
+        evidence = dict(source.get("evidence", {})) if isinstance(source.get("evidence"), dict) else {}
+        financial = financial_rows.get(ticker)
+        if financial is not None and source.get("financial_earnings_quality") is None:
+            source = dict(source)
+            source["financial_earnings_quality"] = financial["financial_earnings_quality"]
+            evidence["financial_earnings_quality"] = financial["evidence"]
         row = {
             "ticker": ticker, "company": company, "theme_id": theme_id,
             "as_of_date": as_of_date, "evidence": evidence,
@@ -83,6 +90,37 @@ def materialize(*, as_of_date: str, theme_path: str | Path,
     return payload
 
 
+def _load_financial_quality(path: str | Path | None, as_of_date: str) -> dict[str, dict]:
+    if path is None:
+        return {}
+    file = Path(path)
+    if not file.exists():
+        return {}
+    payload = json.loads(file.read_text(encoding="utf-8"))
+    if str(payload.get("as_of_date", "")) > as_of_date:
+        raise ValueError("financial quality snapshot uses future data")
+    rows = {}
+    for row in payload.get("rows", []):
+        score = row.get("financial_earnings_quality")
+        if row.get("status") != "READY" or score is None:
+            continue
+        ticker = str(row["ticker"]).zfill(4)
+        rows[ticker] = {
+            "financial_earnings_quality": score,
+            "evidence": {
+                "source_url": row["source_url"],
+                "source_date": payload["as_of_date"],
+                "available_at": payload["as_of_date"],
+                "source_family": "MOPS_XBRL_OFFICIAL",
+                "evidence_note": (
+                    f"{payload['rubric_version']}；本期與去年同期財報、營業現金流及資產負債比率；"
+                    "challenger草案，未啟用交易。"
+                ),
+            },
+        }
+    return rows
+
+
 def _validate_evidence(*, ticker: str, field: str, proof: object, as_of_date: str) -> list[dict]:
     if not isinstance(proof, dict):
         raise ValueError(f"{ticker} {field} missing evidence fields: {list(EVIDENCE_FIELDS)}")
@@ -104,10 +142,12 @@ def main() -> None:
     parser.add_argument("--source", default="data/r1/theme_leader_inputs/source.json")
     parser.add_argument("--output", default="data/r1/theme_leader_inputs/latest.json")
     parser.add_argument("--rubric", default="config/r1_v03_score_rubric.json")
+    parser.add_argument("--financial-quality", default="data/r1/financial_quality_latest.json")
     args = parser.parse_args()
     payload = materialize(
         as_of_date=args.date, theme_path=args.themes,
         source_path=args.source, output_path=args.output, rubric_path=args.rubric,
+        financial_quality_path=args.financial_quality,
     )
     print(json.dumps({
         "requested_ticker_count": payload["requested_ticker_count"],

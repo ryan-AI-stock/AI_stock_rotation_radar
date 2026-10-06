@@ -1,0 +1,29 @@
+{
+  "version": "r1-financial-quality-rubric-v0.1",
+  "status": "challenger_draft",
+  "method": "absolute_anchors_then_theme_percentile",
+  "absolute_weight": 0.6,
+  "theme_percentile_weight": 0.4,
+  "subweights": {
+    "revenue_growth_quality": 0.2,
+    "gross_and_operating_margin_quality": 0.25,
+    "eps_growth_quality": 0.2,
+    "operating_cash_flow_quality": 0.2,
+    "balance_sheet_safety": 0.15
+  },
+  "anchors": {
+    "revenue_yoy_pct": [-20.0, 30.0],
+    "margin_change_pp": [-5.0, 5.0],
+    "eps_yoy_pct": [-30.0, 40.0],
+    "cash_conversion": [0.0, 1.2],
+    "current_ratio": [0.75, 2.0],
+    "liabilities_to_assets_pct": [80.0, 40.0]
+  },
+  "rules": {
+    "negative_current_operating_margin_cap": 25.0,
+    "negative_current_eps_cap": 20.0,
+    "negative_current_operating_cash_flow_cap": 20.0,
+    "missing_value": "NA_NO_ZERO_NO_REWEIGHT",
+    "note": "固定經濟意義錨點，未依歷史報酬最佳化；正式發布前須做敏感度與跨期驗證。"
+  }
+}
