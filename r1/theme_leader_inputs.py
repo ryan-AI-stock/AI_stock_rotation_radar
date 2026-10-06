@@ -19,7 +19,8 @@ MULTISOURCE_QUALITATIVE_FIELDS = {
 def materialize(*, as_of_date: str, theme_path: str | Path,
                 source_path: str | Path, output_path: str | Path,
                 rubric_path: str | Path = "config/r1_v03_score_rubric.json",
-                financial_quality_path: str | Path | None = None) -> dict:
+                financial_quality_path: str | Path | None = None,
+                market_representation_path: str | Path | None = None) -> dict:
     rubric = load_and_validate(rubric_path)
     themes = load_themes(theme_path)
     members = {
@@ -32,6 +33,10 @@ def materialize(*, as_of_date: str, theme_path: str | Path,
         str(row.get("ticker", "")).zfill(4): row for row in source_payload.get("rows", [])
     }
     financial_rows = _load_financial_quality(financial_quality_path, as_of_date)
+    market_rows = _load_scored_input(
+        market_representation_path, as_of_date, score_field="market_representation",
+        date_field="date", source_family="TWSE_TPEX_OFFICIAL_MARKET_AND_OWNERSHIP",
+    )
     extras = sorted(set(source_rows) - set(members))
     if extras:
         raise ValueError(f"theme leader input contains out-of-universe tickers: {extras}")
@@ -46,6 +51,11 @@ def materialize(*, as_of_date: str, theme_path: str | Path,
             source = dict(source)
             source["financial_earnings_quality"] = financial["financial_earnings_quality"]
             evidence["financial_earnings_quality"] = financial["evidence"]
+        market_score = market_rows.get(ticker)
+        if market_score is not None and source.get("market_representation") is None:
+            source = dict(source)
+            source["market_representation"] = market_score["market_representation"]
+            evidence["market_representation"] = market_score["evidence"]
         row = {
             "ticker": ticker, "company": company, "theme_id": theme_id,
             "as_of_date": as_of_date, "evidence": evidence,
@@ -121,6 +131,32 @@ def _load_financial_quality(path: str | Path | None, as_of_date: str) -> dict[st
     return rows
 
 
+def _load_scored_input(path: str | Path | None, as_of_date: str, *, score_field: str,
+                       date_field: str, source_family: str) -> dict[str, dict]:
+    if path is None or not Path(path).exists():
+        return {}
+    payload = json.loads(Path(path).read_text(encoding="utf-8"))
+    source_date = str(payload.get(date_field, ""))
+    if source_date > as_of_date:
+        raise ValueError(f"{score_field} snapshot uses future data")
+    result = {}
+    for row in payload.get("rows", []):
+        score = row.get(score_field)
+        if score is None:
+            continue
+        urls = row.get("source_urls", [])
+        result[str(row["ticker"]).zfill(4)] = {
+            score_field: score,
+            "evidence": {
+                "source_url": urls[0] if urls else "https://www.twse.com.tw/",
+                "source_date": source_date, "available_at": source_date,
+                "source_family": source_family,
+                "evidence_note": "同題材內市值、20TD平均成交金額與官方外資持股比例百分位。",
+            },
+        }
+    return result
+
+
 def _validate_evidence(*, ticker: str, field: str, proof: object, as_of_date: str) -> list[dict]:
     if not isinstance(proof, dict):
         raise ValueError(f"{ticker} {field} missing evidence fields: {list(EVIDENCE_FIELDS)}")
@@ -143,11 +179,13 @@ def main() -> None:
     parser.add_argument("--output", default="data/r1/theme_leader_inputs/latest.json")
     parser.add_argument("--rubric", default="config/r1_v03_score_rubric.json")
     parser.add_argument("--financial-quality", default="data/r1/financial_quality_latest.json")
+    parser.add_argument("--market-representation", default="data/r1/market_representation_latest.json")
     args = parser.parse_args()
     payload = materialize(
         as_of_date=args.date, theme_path=args.themes,
         source_path=args.source, output_path=args.output, rubric_path=args.rubric,
         financial_quality_path=args.financial_quality,
+        market_representation_path=args.market_representation,
     )
     print(json.dumps({
         "requested_ticker_count": payload["requested_ticker_count"],
