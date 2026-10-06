@@ -10,6 +10,13 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class R1WeeklySnapshotTest(unittest.TestCase):
+    def _market(self, root: Path, target: str = "2026-10-02") -> Path:
+        payload = json.loads((ROOT / "data/r1/theme_daily_market_latest.json").read_text(encoding="utf-8"))
+        payload["date"] = target
+        path = root / "market.json"
+        path.write_text(json.dumps(payload), encoding="utf-8")
+        return path
+
     def _write_complete_chip_day(self, root: Path, target: str = "2026-10-02") -> None:
         daily = root / "daily"
         daily.mkdir(parents=True, exist_ok=True)
@@ -28,9 +35,10 @@ class R1WeeklySnapshotTest(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             self._write_complete_chip_day(root)
+            market = self._market(root)
             output = build_weekly_snapshot(
                 date="2026-10-02", config_path=ROOT / "config/r1.json",
-                market_path=ROOT / "data/r1/theme_daily_market_latest.json",
+                market_path=market,
                 daily_source_root=root / "daily", output_root=root / "weekly", week_final_confirmed=True,
             )
             payload = json.loads(output.read_text(encoding="utf-8"))
@@ -43,8 +51,9 @@ class R1WeeklySnapshotTest(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             self._write_complete_chip_day(root)
+            market = self._market(root)
             kwargs = dict(date="2026-10-02", config_path=ROOT / "config/r1.json",
-                          market_path=ROOT / "data/r1/theme_daily_market_latest.json",
+                          market_path=market,
                           daily_source_root=root / "daily", output_root=root / "weekly", week_final_confirmed=True)
             first = build_weekly_snapshot(**kwargs)
             first.write_text("{}", encoding="utf-8")
@@ -55,8 +64,9 @@ class R1WeeklySnapshotTest(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             self._write_complete_chip_day(root)
+            market = self._market(root)
             kwargs = dict(date="2026-10-02", config_path=ROOT / "config/r1.json",
-                          market_path=ROOT / "data/r1/theme_daily_market_latest.json",
+                          market_path=market,
                           daily_source_root=root / "daily", output_root=root / "weekly",
                           week_final_confirmed=True)
             output = build_weekly_snapshot(**kwargs)
@@ -67,9 +77,10 @@ class R1WeeklySnapshotTest(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             self._write_complete_chip_day(root)
+            market = self._market(root)
             output = build_weekly_snapshot(
                 date="2026-10-02", config_path=ROOT / "config/r1.json",
-                market_path=ROOT / "data/r1/theme_daily_market_latest.json",
+                market_path=market,
                 daily_source_root=root / "daily", output_root=root / "weekly", week_final_confirmed=True,
                 consensus_path=ROOT / "data/r1/consensus/consensus.csv",
                 consensus_evidence_path=ROOT / "data/r1/consensus/evidence.csv",
@@ -103,14 +114,16 @@ class R1WeeklySnapshotTest(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             self._write_complete_chip_day(root)
+            market = self._market(root)
             with self.assertRaisesRegex(ValueError, "week_final_confirmed"):
                 build_weekly_snapshot(date="2026-10-02", config_path=ROOT / "config/r1.json",
-                                      market_path=ROOT / "data/r1/theme_daily_market_latest.json",
+                                      market_path=market,
                                       daily_source_root=root / "daily", output_root=root / "weekly")
 
     def test_snapshot_rejects_incomplete_exact_date_chip_data(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
+            market = self._market(root)
             daily = root / "daily"
             daily.mkdir()
             daily.joinpath("2026-10-02.json").write_text(json.dumps({
@@ -121,7 +134,7 @@ class R1WeeklySnapshotTest(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "exact-date institutional and margin"):
                 build_weekly_snapshot(
                     date="2026-10-02", config_path=ROOT / "config/r1.json",
-                    market_path=ROOT / "data/r1/theme_daily_market_latest.json",
+                    market_path=market,
                     daily_source_root=daily, output_root=root / "weekly", week_final_confirmed=True,
                 )
 
@@ -129,6 +142,7 @@ class R1WeeklySnapshotTest(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             self._write_complete_chip_day(root)
+            market = self._market(root)
             history = root / "history"
             history.mkdir()
             history.joinpath("2026-10-02.json").write_text(json.dumps({
@@ -136,7 +150,7 @@ class R1WeeklySnapshotTest(unittest.TestCase):
             }), encoding="utf-8")
             output = build_weekly_snapshot(
                 date="2026-10-02", config_path=ROOT / "config/r1.json",
-                market_path=ROOT / "data/r1/theme_daily_market_latest.json",
+                market_path=market,
                 daily_source_root=root / "daily", output_root=root / "weekly", week_final_confirmed=True,
                 consensus_path=ROOT / "data/r1/consensus/consensus.csv",
                 consensus_evidence_path=ROOT / "data/r1/consensus/evidence.csv",
@@ -152,6 +166,7 @@ class R1WeeklySnapshotTest(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             self._write_complete_chip_day(root)
+            market = self._market(root)
             history = root / "history"
             history.mkdir()
             for snapshot_date, eps in (("2026-09-01", 100), ("2026-10-02", 120)):
@@ -160,7 +175,7 @@ class R1WeeklySnapshotTest(unittest.TestCase):
                 }), encoding="utf-8")
             output = build_weekly_snapshot(
                 date="2026-10-02", config_path=ROOT / "config/r1.json",
-                market_path=ROOT / "data/r1/theme_daily_market_latest.json",
+                market_path=market,
                 daily_source_root=root / "daily", output_root=root / "weekly", week_final_confirmed=True,
                 consensus_path=ROOT / "data/r1/consensus/consensus.csv",
                 consensus_evidence_path=ROOT / "data/r1/consensus/evidence.csv",
