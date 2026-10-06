@@ -2119,7 +2119,7 @@
     },
     "2492": {
       "url": "https://toalpha.tw/stock/2492/estimates",
-      "error": "HTTPSConnectionPool(host='toalpha.tw', port=443): Read timed out. (read timeout=30)"
+      "error": "annual_eps_estimate_rows_missing"
     },
     "6230": {
       "url": "https://toalpha.tw/stock/6230/estimates",
