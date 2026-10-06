@@ -26,10 +26,10 @@ class MigrationTests(unittest.TestCase):
         ledger = [[] ,['2026-08-10','歷史','實際成交（V4-D）','3413','京鼎','賣出','','','','','',-494914]]
         rows = build_actual_dashboard(account,p,ledger)
         self.assertEqual(len(daily_observation_rows(account,p,ledger)),5)
-        self.assertEqual(rows[17][1],305358)
-        self.assertEqual(rows[17][3],310858)
-        self.assertEqual(rows[19][1],-494914)
-        self.assertEqual(rows[18][1], INITIAL_CAPITAL)
+        self.assertEqual(rows[18][1],305358)
+        self.assertEqual(rows[18][3],310858)
+        self.assertEqual(rows[20][1],-494914)
+        self.assertEqual(rows[19][1], INITIAL_CAPITAL)
         account[2][1]='2327 名稱｜5股'
         obs = daily_observation_rows(account,p,ledger)
         self.assertAlmostEqual(obs[0][16],.1)

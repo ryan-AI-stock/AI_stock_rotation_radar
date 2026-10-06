@@ -22,7 +22,8 @@ ACTUAL_TRADES = 'C6實際交易紀錄'
 
 def reported_holdings(account_rows):
     for row in account_rows[2:]:
-        if row and (str(row[0]).startswith('03｜帳戶資產與損益') or row[0] == '已知持股成本'):
+        if row and (str(row[0]).startswith('03｜帳戶資產與損益') or
+                    row[0] in ('已知持股成本', '現金餘額', '前次帳面現金（成交前）')):
             break
         label = str(row[1]) if len(row) > 1 else ''
         if re.fullmatch(r'(\d{4})\s+(.+?)｜(\d+)股', label):
