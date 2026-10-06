@@ -21,14 +21,14 @@ ACTUAL_TRADES = 'C6實際交易紀錄'
 
 
 def reported_holdings(account_rows):
-    for row in account_rows[2:7]:
+    for row in account_rows[2:]:
+        if row and (str(row[0]).startswith('03｜帳戶資產與損益') or row[0] == '已知持股成本'):
+            break
         label = str(row[1]) if len(row) > 1 else ''
         if re.fullmatch(r'(\d{4})\s+(.+?)｜(\d+)股', label):
             yield row
         elif label in ('未持有／預留位置', '尚未建立持股', ''):
             continue
-        elif row and row[0] == '已知持股成本':
-            break
         else:
             raise ValueError('Actual holding layout changed; refusing partial valuation')
 
@@ -73,8 +73,11 @@ def build_actual_dashboard(account_rows, payload, actual_ledger):
     source = list(reported_holdings(account_rows))
     holdings = [dict(slot_id=r[1], ticker=r[3], name=r[4], shares=r[7], raw_close=r[6],
                      position_cost=r[7]*number(s[2])) for r, s in zip(observations, source)]
-    upgraded = '預留五格' in str(account_rows[0][0])
-    cash = number(account_rows[8][1] if upgraded else account_rows[6][3])
+    upgraded = '預留' in str(account_rows[0][0]) or '目前六檔' in str(account_rows[0][0])
+    cash_row = next((row for row in account_rows if row and row[0] in ('現金餘額', '前次帳面現金（成交前）')), None)
+    if not cash_row:
+        raise ValueError('Actual cash row is missing')
+    cash = number(cash_row[1])
     ranked = [r for r in build_public_snapshot_values(payload['snapshot_rows'])[1:] if str(r[0]) == payload['ranking_snapshot_as_of']]
     top = []
     for rank in (1, 2, 3):
@@ -105,7 +108,8 @@ def daily_observation_rows(account_rows: list, payload: dict, actual_ledger: lis
     entries = {}
     for event in (actual_ledger or [])[1:]:
         if len(event) >= 18 and (event[2] == '期初持倉登錄' or
-                (event[2] == '實際成交（人工）' and event[5] == '買進')):
+                (event[2] == '實際成交（人工）' and event[5] == '買進') or
+                event[2] == 'Ryan人工買進'):
             match = re.search(r'實際買入日(\d{4}-\d{2}-\d{2})', str(event[17]))
             if match:
                 key = str(event[3])
@@ -207,7 +211,7 @@ def publish(spreadsheet_id: str, payload: dict) -> dict:
     if not before:
         raise ValueError('Actual account holdings scaffold is missing')
     observations = daily_observation_rows(before, payload, actual_ledger)
-    if '預留五格' in str(before[0][0]):
+    if '預留' in str(before[0][0]) or '目前六檔' in str(before[0][0]):
         return publish_upgraded(client, before, payload, actual_ledger, observations, rows)
     # Upsert only our own same-day observation rows; preserve every real event.
     observation_writes = []
@@ -277,7 +281,7 @@ def publish_upgraded(client, before, payload, ledger, observations, rows):
         client.update(address, values)
     if client.get(f"'{DASHBOARD}'!B2") != [[payload['ranking_snapshot_as_of']]]:
         raise RuntimeError('Actual dashboard date mismatch')
-    for row_number, column in ((18, 'B'), (19, 'B'), (20, 'B')):
+    for row_number, column in ((19, 'B'), (20, 'B'), (21, 'B')):
         actual = client.get(f"'{DASHBOARD}'!{column}{row_number}")
         if not actual or abs(number(actual[0][0])-dashboard[row_number-1][1]) > .01:
             raise RuntimeError('Actual dashboard accounting readback mismatch')

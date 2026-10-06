@@ -55,7 +55,7 @@ def _build_v03_dashboard(*, config: R1Config, market: dict, theme_review: dict,
                 rows.append([
                     f"{theme.name} Top{position}", f"{ticker} {item.get('company', '')}",
                     item.get("priority_score") if item.get("priority_score") is not None else "待資料",
-                    "實際持有" if ticker in held else "", "完整" if item.get("priority_score") is not None else "參考值待資料",
+                    f"實際持有｜{held[ticker].shares}股" if ticker in held else "", "完整" if item.get("priority_score") is not None else "參考值待資料",
                 ])
         else:
             for position in range(1, 4):
@@ -69,7 +69,7 @@ def _build_v03_dashboard(*, config: R1Config, market: dict, theme_review: dict,
         for security in held_not_ranked:
             rows.append([
                 membership.get(security.ticker, "池外持股｜Ryan設定優先檢視轉換"),
-                f"{security.ticker} {security.company}", "待資料", "實際持有",
+                f"{security.ticker} {security.company}", "待資料", f"實際持有｜{security.shares}股",
                 ("尚未納入題材池，優先檢視是否轉換；仍由Ryan決定"
                  if security.ticker not in membership else "非Top3或Top3尚未完成，不代表賣出建議"),
             ])
