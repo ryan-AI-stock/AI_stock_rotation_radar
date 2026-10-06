@@ -617,14 +617,14 @@
         9658769130.75,
         41.36,
         70.72050290135397,
-        false,
-        false,
-        false,
-        false,
-        false,
+        true,
+        true,
+        true,
+        true,
+        true,
         null,
         "DATA_MISSING",
-        "READINESS_NOT_MATERIALIZED"
+        "EPS_REVISION_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
       ],
       [
         "2026-10-06",
@@ -644,14 +644,14 @@
         28868185519.1,
         6.83,
         23.64568081991215,
-        false,
-        false,
-        false,
-        false,
-        false,
+        true,
+        true,
+        true,
+        true,
+        true,
         null,
         "DATA_MISSING",
-        "READINESS_NOT_MATERIALIZED"
+        "EPS_REVISION_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
       ],
       [
         "2026-10-06",
@@ -678,7 +678,7 @@
         false,
         null,
         "DATA_MISSING",
-        "READINESS_NOT_MATERIALIZED"
+        "CONSENSUS_NOT_READY;EPS_REVISION_HISTORY_NOT_READY;CATALYST_EVIDENCE_NOT_READY;BOTTLENECK_EVIDENCE_NOT_READY;VALUATION_HISTORY_NOT_READY;PRICE_CHIP_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
       ],
       [
         "2026-10-06",
@@ -705,7 +705,7 @@
         false,
         null,
         "DATA_MISSING",
-        "READINESS_NOT_MATERIALIZED"
+        "CONSENSUS_NOT_READY;EPS_REVISION_HISTORY_NOT_READY;CATALYST_EVIDENCE_NOT_READY;BOTTLENECK_EVIDENCE_NOT_READY;VALUATION_HISTORY_NOT_READY;PRICE_CHIP_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
       ],
       [
         "2026-10-06",
