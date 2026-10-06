@@ -9,15 +9,17 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class R1ThemePolicyTest(unittest.TestCase):
-    def test_structural_theme_universe_is_bounded_and_unique(self):
+    def test_structural_theme_universe_allows_cross_theme_membership(self):
         themes = load_themes(ROOT / "config/r1_v02_themes.json")
-        self.assertEqual(len(themes), 10)
+        self.assertEqual(len(themes), 11)
         tickers = [member.ticker for theme in themes for member in theme.members]
-        self.assertEqual(len(tickers), len(set(tickers)))
+        self.assertEqual(len(tickers), 57)
+        self.assertEqual(len(set(tickers)), 54)
         self.assertIn("2376", tickers)
         self.assertIn("2327", tickers)
-        self.assertEqual(len(tickers), 50)
-        self.assertTrue(all(3 <= len(theme.members) <= 6 for theme in themes))
+        self.assertIn("3081", tickers)
+        self.assertTrue(all(3 <= len(theme.members) <= 8 for theme in themes))
+        self.assertEqual(tickers.count("6442"), 2)
 
     def test_leader_requires_every_stable_component(self):
         complete = {field: 80 for field in (

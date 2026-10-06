@@ -30,7 +30,7 @@ def _section_rows(rows: list[list[object]]) -> tuple[list[int], list[int], int |
         if row and isinstance(row[0], str) and row[0][:2].isdigit() and "｜" in row[0]
     ]
     headers = [index + 1 for index in sections if index + 1 < len(rows) and len(rows[index + 1]) > 1]
-    logic_row = next((index + 1 for index in sections if str(rows[index][0]).startswith("05｜")), None)
+    logic_row = next((index + 1 for index in sections if "模型完整說明" in str(rows[index][0])), None)
     return sections, headers, logic_row
 
 
@@ -38,7 +38,7 @@ def _holding_rows(rows: list[list[object]]) -> list[int]:
     return [
         index for index, row in enumerate(rows)
         if len(row) >= 4 and str(row[1]).strip() != "股票"
-        and str(row[3]).strip() == "實際持有"
+        and str(row[3]).strip().startswith("實際持有")
     ]
 
 

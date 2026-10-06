@@ -15,18 +15,18 @@ class R1DashboardPayloadTest(unittest.TestCase):
         self.assertEqual(set(payload["tabs"]), set(TAB_SCHEMAS))
         validate_tabs(payload["tabs"])
         self.assertEqual(set(payload["tabs"]), {"R1 Dashboard", "R1每日訊號資料庫", "R1模擬交易紀錄"})
-        self.assertEqual(len(payload["tabs"]["R1每日訊號資料庫"]), 51)
+        self.assertEqual(len(payload["tabs"]["R1每日訊號資料庫"]), 55)
         self.assertEqual(len(payload["tabs"]["R1模擬交易紀錄"]), 1)
         dashboard = payload["tabs"]["R1 Dashboard"]
         sections = [row[0] for row in dashboard]
-        self.assertIn("01｜10大AI瓶頸題材Top3", sections)
-        self.assertIn("02｜實際持股補充", sections)
-        self.assertIn("03｜分數規則", sections)
-        self.assertIn("04｜更新排程", sections)
-        self.assertIn("05｜模型完整說明", sections)
+        self.assertIn("01｜實際持股與未來半年目標持股", sections)
+        self.assertIn("02｜分數規則", sections)
+        self.assertIn("03｜更新排程", sections)
+        self.assertIn("04｜模型完整說明", sections)
         self.assertNotIn("06｜下一個動態觸發條件", sections)
         self.assertNotIn("07｜Shadow換倉候選（非交易指令）", sections)
-        self.assertEqual(sum(1 for row in dashboard if row and " Top" in str(row[0])), 30)
+        shown = {str(row[1]).split()[0] for row in dashboard if len(row) >= 5 and str(row[0]) not in ("所屬題材",)}
+        self.assertTrue({"2454", "2408", "3081", "2308", "3037"} <= shown)
 
     def test_dashboard_cannot_claim_trade_ready(self):
         payload = build_dashboard_payload(config_path=ROOT / "config/r1.json",
@@ -55,7 +55,7 @@ class R1DashboardPayloadTest(unittest.TestCase):
             )
         dashboard = payload["tabs"]["R1 Dashboard"]
         self.assertIn("2408 南亞科", [cell for row in dashboard for cell in row])
-        row = next(row for row in dashboard if row and row[0] == "HBM／記憶體／高速儲存 Top1")
+        row = next(row for row in dashboard if len(row) > 1 and row[1] == "2408 南亞科")
         self.assertEqual(row[2], 81.5)
 
     def test_header_mismatch_is_rejected(self):

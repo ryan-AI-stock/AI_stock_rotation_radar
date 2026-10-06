@@ -13,7 +13,7 @@ from r1.theme_policy import load_themes
 MODEL_LOGIC = """R1 v0.3研究版｜AI瓶頸題材持有優先序
 
 【模型任務】
-R1只負責辨識AI發展瓶頸題材、每個題材的結構性Top1～Top3，以及各股票0～100分的優先持有參考值。R1不產生買進、賣出、加碼或減碼指令，實際操作由Ryan自行決定。
+R1負責維護11個AI發展瓶頸題材、每個題材的結構性Top1～Top3，以及各股票0～100分的優先持有參考值。Dashboard只顯示Ryan實際持股與未來半年五檔目標持股；完整題材池與Top3仍在模型資料中維護。R1不產生買進、賣出、加碼或減碼指令，實際操作由Ryan自行決定。
 
 【季度Top3】
 結構性龍頭評分：AI瓶頸直接性25%、產業與技術地位25%、AI營收兌現20%、財務與獲利品質20%、市場代表性10%。官方與公司正式揭露優先；分析師與市場共識只能補充，不能單獨決定排名。任一成分股必要證據不足時，該題材Top3維持待資料。
@@ -31,64 +31,59 @@ R1是研究challenger，不取代正式V4-D，也不改C6每日交易決策。�
 def _build_v03_dashboard(*, config: R1Config, market: dict, theme_review: dict,
                          theme_path: str | Path) -> list[list[object]]:
     themes = load_themes(theme_path)
-    universe_count = sum(len(theme.members) for theme in themes)
+    membership_count = sum(len(theme.members) for theme in themes)
+    universe_count = len({member.ticker for theme in themes for member in theme.members})
     reviews = {row.get("theme_id"): row for row in theme_review.get("themes", [])}
     held = {security.ticker: security for security in config.securities if security.shares > 0}
-    membership = {
-        member.ticker: theme.name for theme in themes for member in theme.members
-    }
-    ranked_tickers: set[str] = set()
+    membership: dict[str, list[str]] = {}
+    for theme in themes:
+        for member in theme.members:
+            membership.setdefault(member.ticker, []).append(theme.name)
+    theme_payload = json.loads(Path(theme_path).read_text(encoding="utf-8"))
+    targets = [str(ticker).zfill(4) for ticker in theme_payload.get("target_portfolio_6m", [])]
+    if len(targets) != 5 or len(set(targets)) != 5:
+        raise ValueError("R1 six-month target portfolio must contain five unique tickers")
+    securities = {security.ticker: security for security in config.securities}
+    if any(ticker not in securities for ticker in targets):
+        raise ValueError("R1 target portfolio contains ticker outside configured universe")
+    priority_by_ticker: dict[str, object] = {}
+    for review in reviews.values():
+        for item in review.get("top3", []):
+            ticker = str(item.get("ticker", "")).zfill(4)
+            priority_by_ticker[ticker] = item.get("priority_score")
+    display_tickers = targets + [
+        ticker for ticker in held if ticker not in set(targets)
+    ]
     rows: list[list[object]] = [
         ["R1研究版｜AI瓶頸預期差輪動"],
-        ["最新資料日期", market["date"], "模型定位", "題材Top3與持有優先序", "非交易指令"],
-        ["資料狀態", "每日行情持續累積；季度Top3與優先持有參考值只在必要證據完整時公布。"],
-        [f"01｜{len(themes)}大AI瓶頸題材Top3"],
-        ["題材／順位", "股票", "優先持有參考值", "實際持有", "資料狀態"],
+        ["最新資料日期", market["date"], "模型定位", "實際持股與半年目標持股", "非交易指令"],
+        ["資料狀態", f"{len(themes)}題材、{universe_count}檔股票、{membership_count}筆題材歸屬（跨題材可重複）；Dashboard只顯示實際持股與五檔目標。"],
+        ["01｜實際持股與未來半年目標持股"],
+        ["所屬題材", "股票", "優先持有參考值", "實際持有", "半年目標"],
     ]
-    for theme in themes:
-        review = reviews.get(theme.theme_id, {})
-        top3 = review.get("top3", [])
-        if top3:
-            for position, item in enumerate(top3, start=1):
-                ticker = str(item.get("ticker", "")).zfill(4)
-                ranked_tickers.add(ticker)
-                rows.append([
-                    f"{theme.name} Top{position}", f"{ticker} {item.get('company', '')}",
-                    item.get("priority_score") if item.get("priority_score") is not None else "待資料",
-                    f"實際持有｜{held[ticker].shares}股" if ticker in held else "", "完整" if item.get("priority_score") is not None else "參考值待資料",
-                ])
-        else:
-            for position in range(1, 4):
-                rows.append([f"{theme.name} Top{position}", "尚未產生", "待資料", "", "季度證據未完整"])
-    held_not_ranked = [security for security in held.values() if security.ticker not in ranked_tickers]
+    for ticker in display_tickers:
+        security = securities[ticker]
+        rows.append([
+            "；".join(membership.get(ticker, ["尚未納入11題材池"])),
+            f"{ticker} {security.company}",
+            priority_by_ticker.get(ticker) if priority_by_ticker.get(ticker) is not None else "待資料",
+            f"實際持有｜{security.shares}股" if ticker in held else "",
+            "未來半年目標" if ticker in targets else "既有實際持股",
+        ])
     rows.extend([
-        ["02｜實際持股補充"],
-        ["所屬題材", "股票", "優先持有參考值", "實際持有", "說明"],
-    ])
-    if held_not_ranked:
-        for security in held_not_ranked:
-            rows.append([
-                membership.get(security.ticker, "池外持股｜Ryan設定優先檢視轉換"),
-                f"{security.ticker} {security.company}", "待資料", f"實際持有｜{security.shares}股",
-                ("尚未納入題材池，優先檢視是否轉換；仍由Ryan決定"
-                 if security.ticker not in membership else "非Top3或Top3尚未完成，不代表賣出建議"),
-            ])
-    else:
-        rows.append(["無", "所有持股均已列於Top3", "", "", ""])
-    rows.extend([
-        ["03｜分數規則"],
+        ["02｜分數規則"],
         ["分數", "構成", "權重", "更新頻率", "用途"],
         ["季度結構性龍頭", "瓶頸直接性／產業技術地位／AI營收兌現／財務獲利品質／市場代表性",
          "25%／25%／20%／20%／10%", "每季", "決定每個題材Top1～Top3"],
         ["優先持有參考值", "結構性龍頭／營收獲利成長／自身歷史估值／價格風險安全度／需求訂單催化",
          "30%／25%／20%／15%／10%", "每日資料＋週月季事件", "提供Ryan自行比較持有優先序"],
-        ["04｜更新排程"],
+        ["03｜更新排程"],
         ["頻率", "工作", "產出", "失敗處理", "交易影響"],
         ["每日收盤後", f"累積{universe_count}檔官方價格與市場資料", "每日資料庫", "缺資料重抓並列明缺口", "無"],
         ["每週最後交易日", "更新需求、訂單、事件與風險", "週度證據狀態", "證據不足維持原值或待資料", "無"],
         ["每季財報揭露後", f"重評{len(themes)}題材Top3", "季度排名", "全題材成分證據完整才發布", "無"],
         ["每半年", "檢討題材與成分股", "增刪建議與證據", "保留歷史版本", "無"],
-        ["05｜模型完整說明"],
+        ["04｜模型完整說明"],
         [MODEL_LOGIC],
     ])
     return rows

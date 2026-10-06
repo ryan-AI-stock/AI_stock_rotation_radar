@@ -42,7 +42,7 @@ class R1WeeklySnapshotTest(unittest.TestCase):
                 daily_source_root=root / "daily", output_root=root / "weekly", week_final_confirmed=True,
             )
             payload = json.loads(output.read_text(encoding="utf-8"))
-            self.assertEqual(len(payload["rows"]), 50)
+            self.assertEqual(len(payload["rows"]), 54)
             self.assertEqual(next(row for row in payload["rows"] if row["ticker"] == "2330")["action"], "CORE")
             self.assertTrue(all(row["action"] == "DATA_MISSING" for row in payload["rows"] if row["ticker"] != "2330"))
             self.assertTrue(all(row["chip_data_status"] == "AVAILABLE" for row in payload["rows"]))

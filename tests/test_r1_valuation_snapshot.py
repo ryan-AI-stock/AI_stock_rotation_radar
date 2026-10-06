@@ -30,11 +30,11 @@ class R1ValuationSnapshotTest(unittest.TestCase):
                 output_root=temp_dir,
             )
             payload = json.loads(output.read_text(encoding="utf-8"))
-            self.assertEqual(payload["ready_count"], 12)
+            self.assertEqual(payload["ready_count"], 14)
             self.assertFalse(payload["historical_percentile_ready"])
             rows = {row["ticker"]: row for row in payload["rows"]}
             self.assertAlmostEqual(rows["2330"]["forward_pe"], rows["2330"]["price"] / 142.33)
-            self.assertEqual(payload["base_scenario_ready_count"], 12)
+            self.assertEqual(payload["base_scenario_ready_count"], 14)
             self.assertEqual(payload["complete_scenario_ready_count"], 0)
             self.assertEqual(payload["scenario_gap"], "5Y_FORWARD_PE_LOW_HIGH_BANDS_MISSING")
             self.assertAlmostEqual(rows["2408"]["base_fair_value"], 93.24 * 10.0)

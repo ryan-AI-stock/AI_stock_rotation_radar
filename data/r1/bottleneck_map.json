@@ -51,6 +51,10 @@
     {"ticker":"3532","categories":["Wafer"],"stage":"THESIS","evidence_status":"NEEDS_CURRENT_EVIDENCE"},
     {"ticker":"6182","categories":["Wafer"],"stage":"THESIS","evidence_status":"NEEDS_CURRENT_EVIDENCE"},
     {"ticker":"1560","categories":["Materials","Consumables"],"stage":"THESIS","evidence_status":"NEEDS_CURRENT_EVIDENCE"},
-    {"ticker":"3131","categories":["Equipment","Materials"],"stage":"THESIS","evidence_status":"NEEDS_CURRENT_EVIDENCE"}
+    {"ticker":"3131","categories":["Equipment","Materials"],"stage":"THESIS","evidence_status":"NEEDS_CURRENT_EVIDENCE"},
+    {"ticker":"3081","categories":["Optical","CPO"],"stage":"THESIS","evidence_status":"NEEDS_CURRENT_EVIDENCE"},
+    {"ticker":"2303","categories":["Foundry","Optical Integration"],"stage":"THESIS","evidence_status":"NEEDS_CURRENT_EVIDENCE"},
+    {"ticker":"3008","categories":["Optical"],"stage":"THESIS","evidence_status":"NEEDS_CURRENT_EVIDENCE"},
+    {"ticker":"3406","categories":["Optical"],"stage":"THESIS","evidence_status":"NEEDS_CURRENT_EVIDENCE"}
   ]
 }

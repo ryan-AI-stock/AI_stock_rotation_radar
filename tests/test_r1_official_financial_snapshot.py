@@ -33,7 +33,7 @@ class R1OfficialFinancialSnapshotTest(unittest.TestCase):
                 payloads={"TWSE_income": sample_income, "TWSE_balance": sample_balance,
                           "TPEx_income": [], "TPEx_balance": []},
             )
-        self.assertEqual(payload["requested_ticker_count"], 50)
+        self.assertEqual(payload["requested_ticker_count"], 54)
         self.assertEqual(payload["actual_ticker_count"], 0)
         self.assertEqual(next(row for row in payload["rows"] if row["ticker"] == "2330")["eps"], 2)
         self.assertTrue(payload["gaps"])

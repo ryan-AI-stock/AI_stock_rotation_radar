@@ -21,8 +21,8 @@ class R1ConsensusSnapshotTest(unittest.TestCase):
                 output_root=directory,
             )
             payload = json.loads(output.read_text(encoding="utf-8"))
-            self.assertEqual(payload["ready_count"], 35)
-            self.assertEqual(payload["requested_record_count"], 150)
+            self.assertEqual(payload["ready_count"], 41)
+            self.assertEqual(payload["requested_record_count"], 162)
             self.assertEqual(payload["fiscal_years"], [2026, 2027, 2028])
             self.assertEqual(payload["snapshot_policy"], "append_only_source_available_at")
             rows = {row["ticker"]: row for row in payload["rows"] if row["fiscal_year"] == 2027}

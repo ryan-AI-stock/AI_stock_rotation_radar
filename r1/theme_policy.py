@@ -52,17 +52,17 @@ def load_themes(path: str | Path) -> tuple[Theme, ...]:
     if payload.get("version") != "r1-theme-universe-v0.2":
         raise ValueError("R1 theme universe version mismatch")
     themes = []
-    seen_tickers: set[str] = set()
     for row in payload.get("themes", []):
         members = tuple(
             ThemeMember(str(item[0]).zfill(4), str(item[1]), str(item[2]))
             for item in row.get("members", [])
         )
-        if not 3 <= len(members) <= 6:
-            raise ValueError(f"R1 theme {row.get('id')} must contain 3 to 6 members")
+        if not 3 <= len(members) <= 8:
+            raise ValueError(f"R1 theme {row.get('id')} must contain 3 to 8 members")
+        seen_tickers: set[str] = set()
         for member in members:
             if member.ticker in seen_tickers:
-                raise ValueError(f"duplicate primary R1 theme ticker: {member.ticker}")
+                raise ValueError(f"duplicate ticker within R1 theme {row.get('id')}: {member.ticker}")
             if member.market not in {"TWSE", "TPEx"}:
                 raise ValueError(f"invalid R1 theme market: {member.ticker}")
             seen_tickers.add(member.ticker)

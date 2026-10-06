@@ -1,11 +1,12 @@
 {
   "version": "r1-theme-universe-v0.2",
-  "as_of_date": "2026-10-05",
+  "as_of_date": "2026-10-06",
   "status": "challenger",
   "membership_review": "semiannual",
   "leader_review": "quarterly_after_financial_disclosure",
   "max_holdings": 5,
   "max_holdings_per_theme": 1,
+  "target_portfolio_6m": ["2454", "2408", "3081", "2308", "3037"],
   "themes": [
     {
       "id": "compute_foundry",
@@ -21,7 +22,7 @@
     },
     {
       "id": "memory_storage",
-      "name": "HBM／記憶體／高速儲存",
+      "name": "HBM／DRAM／高速儲存",
       "bottleneck_thesis": "模型訓練、推論與長上下文需要高頻寬記憶體及高速資料供應",
       "members": [["2408","南亞科","TWSE"],["2344","華邦電","TWSE"],["2337","旺宏","TWSE"],["8299","群聯","TPEx"],["3260","威剛","TPEx"]]
     },
@@ -33,9 +34,9 @@
     },
     {
       "id": "network_optics",
-      "name": "高速網路／光通訊／CPO",
+      "name": "高速網路／交換器／光模組",
       "bottleneck_thesis": "大規模AI叢集需要低延遲、高頻寬、低功耗的交換與光互連",
-      "members": [["2345","智邦","TWSE"],["2379","瑞昱","TWSE"],["4979","華星光","TPEx"],["3363","上詮","TPEx"],["6442","光聖","TWSE"],["3163","波若威","TPEx"]]
+      "members": [["2345","智邦","TWSE"],["2379","瑞昱","TWSE"],["4979","華星光","TPEx"],["6442","光聖","TWSE"],["3163","波若威","TPEx"]]
     },
     {
       "id": "power_delivery",
@@ -45,7 +46,7 @@
     },
     {
       "id": "passive_components",
-      "name": "高階被動元件／電源與訊號完整性",
+      "name": "高階被動元件",
       "bottleneck_thesis": "高功率、高頻寬AI伺服器需要高可靠度電阻、電容、電感及保護元件，以維持電源與高速訊號完整性",
       "members": [["2327","國巨","TWSE"],["2492","華新科","TWSE"],["3357","臺慶科","TPEx"]]
     },
@@ -63,9 +64,15 @@
     },
     {
       "id": "critical_materials",
-      "name": "關鍵半導體材料／矽晶圓／製程耗材",
+      "name": "半導體材料／矽晶圓／製程耗材",
       "bottleneck_thesis": "矽晶圓、研磨耗材與關鍵製程設備限制先進晶片及封裝擴產",
       "members": [["6488","環球晶","TPEx"],["3532","台勝科","TWSE"],["6182","合晶","TPEx"],["1560","中砂","TWSE"],["3131","弘塑","TPEx"]]
+    },
+    {
+      "id": "silicon_photonics_cpo",
+      "name": "矽光子／CPO／高速光互連",
+      "bottleneck_thesis": "AI叢集持續擴大後，短距高速光互連、CPO整合與光學元件效率限制資料搬運能力及功耗",
+      "members": [["3081","聯亞","TPEx"],["3363","上詮","TPEx"],["2303","聯電","TWSE"],["3008","大立光","TWSE"],["3406","玉晶光","TWSE"],["6442","光聖","TWSE"],["3163","波若威","TPEx"],["4979","華星光","TPEx"]]
     }
   ]
 }
