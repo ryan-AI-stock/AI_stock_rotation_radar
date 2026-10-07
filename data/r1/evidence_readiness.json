@@ -1,6 +1,6 @@
 {
   "model": "R1",
-  "as_of_date": "2026-10-02",
+  "as_of_date": "2026-10-07",
   "fiscal_year": 2027,
   "requested_ticker_count": 54,
   "consensus_ready_count": 14,
@@ -24,1814 +24,12 @@
   "catalyst_score_ready_count": 0,
   "bottleneck_ready_count": 14,
   "price_chip_ready_count": 14,
-  "current_chip_ready_count": 14,
+  "current_chip_ready_count": 0,
   "component_score_ready_count": 0,
   "trade_ready_count": 0,
   "action_policy_approved": false,
-  "consensus_rejected": [
-    {
-      "line": "2",
-      "ticker": "1560",
-      "error": "future_data"
-    },
-    {
-      "line": "3",
-      "ticker": "1560",
-      "error": "future_data"
-    },
-    {
-      "line": "4",
-      "ticker": "1560",
-      "error": "future_data"
-    },
-    {
-      "line": "5",
-      "ticker": "1560",
-      "error": "future_data"
-    },
-    {
-      "line": "6",
-      "ticker": "1560",
-      "error": "future_data"
-    },
-    {
-      "line": "7",
-      "ticker": "1560",
-      "error": "future_data"
-    },
-    {
-      "line": "8",
-      "ticker": "2301",
-      "error": "future_data"
-    },
-    {
-      "line": "9",
-      "ticker": "2301",
-      "error": "future_data"
-    },
-    {
-      "line": "10",
-      "ticker": "2301",
-      "error": "future_data"
-    },
-    {
-      "line": "11",
-      "ticker": "2301",
-      "error": "future_data"
-    },
-    {
-      "line": "12",
-      "ticker": "2301",
-      "error": "future_data"
-    },
-    {
-      "line": "13",
-      "ticker": "2301",
-      "error": "future_data"
-    },
-    {
-      "line": "15",
-      "ticker": "2303",
-      "error": "future_data"
-    },
-    {
-      "line": "18",
-      "ticker": "2303",
-      "error": "future_data"
-    },
-    {
-      "line": "20",
-      "ticker": "2303",
-      "error": "future_data"
-    },
-    {
-      "line": "22",
-      "ticker": "2308",
-      "error": "future_data"
-    },
-    {
-      "line": "23",
-      "ticker": "2308",
-      "error": "future_data"
-    },
-    {
-      "line": "26",
-      "ticker": "2308",
-      "error": "future_data"
-    },
-    {
-      "line": "27",
-      "ticker": "2308",
-      "error": "future_data"
-    },
-    {
-      "line": "29",
-      "ticker": "2308",
-      "error": "future_data"
-    },
-    {
-      "line": "30",
-      "ticker": "2308",
-      "error": "future_data"
-    },
-    {
-      "line": "31",
-      "ticker": "2317",
-      "error": "future_data"
-    },
-    {
-      "line": "32",
-      "ticker": "2317",
-      "error": "future_data"
-    },
-    {
-      "line": "33",
-      "ticker": "2317",
-      "error": "future_data"
-    },
-    {
-      "line": "34",
-      "ticker": "2317",
-      "error": "future_data"
-    },
-    {
-      "line": "35",
-      "ticker": "2317",
-      "error": "future_data"
-    },
-    {
-      "line": "36",
-      "ticker": "2317",
-      "error": "future_data"
-    },
-    {
-      "line": "38",
-      "ticker": "2327",
-      "error": "future_data"
-    },
-    {
-      "line": "39",
-      "ticker": "2327",
-      "error": "future_data"
-    },
-    {
-      "line": "42",
-      "ticker": "2327",
-      "error": "future_data"
-    },
-    {
-      "line": "43",
-      "ticker": "2327",
-      "error": "future_data"
-    },
-    {
-      "line": "45",
-      "ticker": "2327",
-      "error": "future_data"
-    },
-    {
-      "line": "46",
-      "ticker": "2327",
-      "error": "future_data"
-    },
-    {
-      "line": "48",
-      "ticker": "2330",
-      "error": "future_data"
-    },
-    {
-      "line": "49",
-      "ticker": "2330",
-      "error": "future_data"
-    },
-    {
-      "line": "52",
-      "ticker": "2330",
-      "error": "future_data"
-    },
-    {
-      "line": "53",
-      "ticker": "2330",
-      "error": "future_data"
-    },
-    {
-      "line": "55",
-      "ticker": "2330",
-      "error": "future_data"
-    },
-    {
-      "line": "56",
-      "ticker": "2330",
-      "error": "future_data"
-    },
-    {
-      "line": "57",
-      "ticker": "2337",
-      "error": "future_data"
-    },
-    {
-      "line": "58",
-      "ticker": "2337",
-      "error": "future_data"
-    },
-    {
-      "line": "59",
-      "ticker": "2337",
-      "error": "future_data"
-    },
-    {
-      "line": "60",
-      "ticker": "2337",
-      "error": "future_data"
-    },
-    {
-      "line": "61",
-      "ticker": "2337",
-      "error": "future_data"
-    },
-    {
-      "line": "62",
-      "ticker": "2337",
-      "error": "future_data"
-    },
-    {
-      "line": "64",
-      "ticker": "2344",
-      "error": "future_data"
-    },
-    {
-      "line": "65",
-      "ticker": "2344",
-      "error": "future_data"
-    },
-    {
-      "line": "68",
-      "ticker": "2344",
-      "error": "future_data"
-    },
-    {
-      "line": "69",
-      "ticker": "2344",
-      "error": "future_data"
-    },
-    {
-      "line": "71",
-      "ticker": "2344",
-      "error": "future_data"
-    },
-    {
-      "line": "72",
-      "ticker": "2344",
-      "error": "future_data"
-    },
-    {
-      "line": "73",
-      "ticker": "2345",
-      "error": "future_data"
-    },
-    {
-      "line": "74",
-      "ticker": "2345",
-      "error": "future_data"
-    },
-    {
-      "line": "75",
-      "ticker": "2345",
-      "error": "future_data"
-    },
-    {
-      "line": "76",
-      "ticker": "2345",
-      "error": "future_data"
-    },
-    {
-      "line": "77",
-      "ticker": "2345",
-      "error": "future_data"
-    },
-    {
-      "line": "78",
-      "ticker": "2345",
-      "error": "future_data"
-    },
-    {
-      "line": "79",
-      "ticker": "2356",
-      "error": "future_data"
-    },
-    {
-      "line": "80",
-      "ticker": "2356",
-      "error": "future_data"
-    },
-    {
-      "line": "81",
-      "ticker": "2356",
-      "error": "future_data"
-    },
-    {
-      "line": "82",
-      "ticker": "2356",
-      "error": "future_data"
-    },
-    {
-      "line": "83",
-      "ticker": "2356",
-      "error": "future_data"
-    },
-    {
-      "line": "84",
-      "ticker": "2356",
-      "error": "future_data"
-    },
-    {
-      "line": "85",
-      "ticker": "2368",
-      "error": "future_data"
-    },
-    {
-      "line": "86",
-      "ticker": "2368",
-      "error": "future_data"
-    },
-    {
-      "line": "87",
-      "ticker": "2368",
-      "error": "future_data"
-    },
-    {
-      "line": "88",
-      "ticker": "2368",
-      "error": "future_data"
-    },
-    {
-      "line": "89",
-      "ticker": "2368",
-      "error": "future_data"
-    },
-    {
-      "line": "90",
-      "ticker": "2368",
-      "error": "future_data"
-    },
-    {
-      "line": "92",
-      "ticker": "2376",
-      "error": "future_data"
-    },
-    {
-      "line": "93",
-      "ticker": "2376",
-      "error": "future_data"
-    },
-    {
-      "line": "96",
-      "ticker": "2376",
-      "error": "future_data"
-    },
-    {
-      "line": "97",
-      "ticker": "2376",
-      "error": "future_data"
-    },
-    {
-      "line": "99",
-      "ticker": "2376",
-      "error": "future_data"
-    },
-    {
-      "line": "100",
-      "ticker": "2376",
-      "error": "future_data"
-    },
-    {
-      "line": "102",
-      "ticker": "2379",
-      "error": "future_data"
-    },
-    {
-      "line": "103",
-      "ticker": "2379",
-      "error": "future_data"
-    },
-    {
-      "line": "106",
-      "ticker": "2379",
-      "error": "future_data"
-    },
-    {
-      "line": "107",
-      "ticker": "2379",
-      "error": "future_data"
-    },
-    {
-      "line": "109",
-      "ticker": "2379",
-      "error": "future_data"
-    },
-    {
-      "line": "110",
-      "ticker": "2379",
-      "error": "future_data"
-    },
-    {
-      "line": "111",
-      "ticker": "2382",
-      "error": "future_data"
-    },
-    {
-      "line": "112",
-      "ticker": "2382",
-      "error": "future_data"
-    },
-    {
-      "line": "113",
-      "ticker": "2382",
-      "error": "future_data"
-    },
-    {
-      "line": "114",
-      "ticker": "2382",
-      "error": "future_data"
-    },
-    {
-      "line": "115",
-      "ticker": "2382",
-      "error": "future_data"
-    },
-    {
-      "line": "116",
-      "ticker": "2382",
-      "error": "future_data"
-    },
-    {
-      "line": "117",
-      "ticker": "2383",
-      "error": "future_data"
-    },
-    {
-      "line": "118",
-      "ticker": "2383",
-      "error": "future_data"
-    },
-    {
-      "line": "119",
-      "ticker": "2383",
-      "error": "future_data"
-    },
-    {
-      "line": "120",
-      "ticker": "2383",
-      "error": "future_data"
-    },
-    {
-      "line": "121",
-      "ticker": "2383",
-      "error": "future_data"
-    },
-    {
-      "line": "122",
-      "ticker": "2383",
-      "error": "future_data"
-    },
-    {
-      "line": "124",
-      "ticker": "2408",
-      "error": "future_data"
-    },
-    {
-      "line": "125",
-      "ticker": "2408",
-      "error": "future_data"
-    },
-    {
-      "line": "128",
-      "ticker": "2408",
-      "error": "future_data"
-    },
-    {
-      "line": "129",
-      "ticker": "2408",
-      "error": "future_data"
-    },
-    {
-      "line": "131",
-      "ticker": "2408",
-      "error": "future_data"
-    },
-    {
-      "line": "132",
-      "ticker": "2408",
-      "error": "future_data"
-    },
-    {
-      "line": "133",
-      "ticker": "2449",
-      "error": "future_data"
-    },
-    {
-      "line": "134",
-      "ticker": "2449",
-      "error": "future_data"
-    },
-    {
-      "line": "135",
-      "ticker": "2449",
-      "error": "future_data"
-    },
-    {
-      "line": "136",
-      "ticker": "2449",
-      "error": "future_data"
-    },
-    {
-      "line": "137",
-      "ticker": "2449",
-      "error": "future_data"
-    },
-    {
-      "line": "138",
-      "ticker": "2449",
-      "error": "future_data"
-    },
-    {
-      "line": "140",
-      "ticker": "2454",
-      "error": "future_data"
-    },
-    {
-      "line": "141",
-      "ticker": "2454",
-      "error": "future_data"
-    },
-    {
-      "line": "144",
-      "ticker": "2454",
-      "error": "future_data"
-    },
-    {
-      "line": "145",
-      "ticker": "2454",
-      "error": "future_data"
-    },
-    {
-      "line": "147",
-      "ticker": "2454",
-      "error": "future_data"
-    },
-    {
-      "line": "148",
-      "ticker": "2454",
-      "error": "future_data"
-    },
-    {
-      "line": "149",
-      "ticker": "3008",
-      "error": "future_data"
-    },
-    {
-      "line": "150",
-      "ticker": "3008",
-      "error": "future_data"
-    },
-    {
-      "line": "151",
-      "ticker": "3008",
-      "error": "future_data"
-    },
-    {
-      "line": "152",
-      "ticker": "3017",
-      "error": "future_data"
-    },
-    {
-      "line": "153",
-      "ticker": "3017",
-      "error": "future_data"
-    },
-    {
-      "line": "154",
-      "ticker": "3017",
-      "error": "future_data"
-    },
-    {
-      "line": "155",
-      "ticker": "3017",
-      "error": "future_data"
-    },
-    {
-      "line": "156",
-      "ticker": "3017",
-      "error": "future_data"
-    },
-    {
-      "line": "157",
-      "ticker": "3017",
-      "error": "future_data"
-    },
-    {
-      "line": "158",
-      "ticker": "3035",
-      "error": "future_data"
-    },
-    {
-      "line": "159",
-      "ticker": "3035",
-      "error": "future_data"
-    },
-    {
-      "line": "160",
-      "ticker": "3035",
-      "error": "future_data"
-    },
-    {
-      "line": "161",
-      "ticker": "3035",
-      "error": "future_data"
-    },
-    {
-      "line": "162",
-      "ticker": "3035",
-      "error": "future_data"
-    },
-    {
-      "line": "163",
-      "ticker": "3035",
-      "error": "future_data"
-    },
-    {
-      "line": "165",
-      "ticker": "3037",
-      "error": "future_data"
-    },
-    {
-      "line": "166",
-      "ticker": "3037",
-      "error": "future_data"
-    },
-    {
-      "line": "169",
-      "ticker": "3037",
-      "error": "future_data"
-    },
-    {
-      "line": "170",
-      "ticker": "3037",
-      "error": "future_data"
-    },
-    {
-      "line": "172",
-      "ticker": "3037",
-      "error": "future_data"
-    },
-    {
-      "line": "173",
-      "ticker": "3037",
-      "error": "future_data"
-    },
-    {
-      "line": "175",
-      "ticker": "3081",
-      "error": "future_data"
-    },
-    {
-      "line": "178",
-      "ticker": "3081",
-      "error": "future_data"
-    },
-    {
-      "line": "180",
-      "ticker": "3081",
-      "error": "future_data"
-    },
-    {
-      "line": "181",
-      "ticker": "3131",
-      "error": "future_data"
-    },
-    {
-      "line": "182",
-      "ticker": "3131",
-      "error": "future_data"
-    },
-    {
-      "line": "183",
-      "ticker": "3131",
-      "error": "future_data"
-    },
-    {
-      "line": "184",
-      "ticker": "3131",
-      "error": "future_data"
-    },
-    {
-      "line": "185",
-      "ticker": "3131",
-      "error": "future_data"
-    },
-    {
-      "line": "186",
-      "ticker": "3131",
-      "error": "future_data"
-    },
-    {
-      "line": "187",
-      "ticker": "3163",
-      "error": "future_data"
-    },
-    {
-      "line": "188",
-      "ticker": "3163",
-      "error": "future_data"
-    },
-    {
-      "line": "189",
-      "ticker": "3163",
-      "error": "future_data"
-    },
-    {
-      "line": "190",
-      "ticker": "3163",
-      "error": "future_data"
-    },
-    {
-      "line": "191",
-      "ticker": "3189",
-      "error": "future_data"
-    },
-    {
-      "line": "192",
-      "ticker": "3189",
-      "error": "future_data"
-    },
-    {
-      "line": "193",
-      "ticker": "3189",
-      "error": "future_data"
-    },
-    {
-      "line": "194",
-      "ticker": "3189",
-      "error": "future_data"
-    },
-    {
-      "line": "195",
-      "ticker": "3189",
-      "error": "future_data"
-    },
-    {
-      "line": "196",
-      "ticker": "3189",
-      "error": "future_data"
-    },
-    {
-      "line": "197",
-      "ticker": "3231",
-      "error": "future_data"
-    },
-    {
-      "line": "198",
-      "ticker": "3231",
-      "error": "future_data"
-    },
-    {
-      "line": "199",
-      "ticker": "3231",
-      "error": "future_data"
-    },
-    {
-      "line": "200",
-      "ticker": "3231",
-      "error": "future_data"
-    },
-    {
-      "line": "201",
-      "ticker": "3231",
-      "error": "future_data"
-    },
-    {
-      "line": "202",
-      "ticker": "3231",
-      "error": "future_data"
-    },
-    {
-      "line": "203",
-      "ticker": "3260",
-      "error": "future_data"
-    },
-    {
-      "line": "204",
-      "ticker": "3260",
-      "error": "future_data"
-    },
-    {
-      "line": "205",
-      "ticker": "3260",
-      "error": "future_data"
-    },
-    {
-      "line": "206",
-      "ticker": "3260",
-      "error": "future_data"
-    },
-    {
-      "line": "207",
-      "ticker": "3324",
-      "error": "future_data"
-    },
-    {
-      "line": "208",
-      "ticker": "3324",
-      "error": "future_data"
-    },
-    {
-      "line": "209",
-      "ticker": "3324",
-      "error": "future_data"
-    },
-    {
-      "line": "210",
-      "ticker": "3324",
-      "error": "future_data"
-    },
-    {
-      "line": "211",
-      "ticker": "3324",
-      "error": "future_data"
-    },
-    {
-      "line": "212",
-      "ticker": "3324",
-      "error": "future_data"
-    },
-    {
-      "line": "213",
-      "ticker": "3357",
-      "error": "future_data"
-    },
-    {
-      "line": "214",
-      "ticker": "3357",
-      "error": "future_data"
-    },
-    {
-      "line": "215",
-      "ticker": "3357",
-      "error": "future_data"
-    },
-    {
-      "line": "216",
-      "ticker": "3357",
-      "error": "future_data"
-    },
-    {
-      "line": "218",
-      "ticker": "3363",
-      "error": "future_data"
-    },
-    {
-      "line": "219",
-      "ticker": "3363",
-      "error": "future_data"
-    },
-    {
-      "line": "222",
-      "ticker": "3363",
-      "error": "future_data"
-    },
-    {
-      "line": "223",
-      "ticker": "3363",
-      "error": "future_data"
-    },
-    {
-      "line": "225",
-      "ticker": "3363",
-      "error": "future_data"
-    },
-    {
-      "line": "226",
-      "ticker": "3363",
-      "error": "future_data"
-    },
-    {
-      "line": "227",
-      "ticker": "3406",
-      "error": "future_data"
-    },
-    {
-      "line": "228",
-      "ticker": "3406",
-      "error": "future_data"
-    },
-    {
-      "line": "229",
-      "ticker": "3406",
-      "error": "future_data"
-    },
-    {
-      "line": "230",
-      "ticker": "3443",
-      "error": "future_data"
-    },
-    {
-      "line": "231",
-      "ticker": "3443",
-      "error": "future_data"
-    },
-    {
-      "line": "232",
-      "ticker": "3443",
-      "error": "future_data"
-    },
-    {
-      "line": "233",
-      "ticker": "3443",
-      "error": "future_data"
-    },
-    {
-      "line": "234",
-      "ticker": "3443",
-      "error": "future_data"
-    },
-    {
-      "line": "235",
-      "ticker": "3443",
-      "error": "future_data"
-    },
-    {
-      "line": "236",
-      "ticker": "3583",
-      "error": "future_data"
-    },
-    {
-      "line": "237",
-      "ticker": "3583",
-      "error": "future_data"
-    },
-    {
-      "line": "238",
-      "ticker": "3583",
-      "error": "future_data"
-    },
-    {
-      "line": "239",
-      "ticker": "3583",
-      "error": "future_data"
-    },
-    {
-      "line": "240",
-      "ticker": "3583",
-      "error": "future_data"
-    },
-    {
-      "line": "241",
-      "ticker": "3583",
-      "error": "future_data"
-    },
-    {
-      "line": "242",
-      "ticker": "3653",
-      "error": "future_data"
-    },
-    {
-      "line": "243",
-      "ticker": "3653",
-      "error": "future_data"
-    },
-    {
-      "line": "244",
-      "ticker": "3653",
-      "error": "future_data"
-    },
-    {
-      "line": "245",
-      "ticker": "3653",
-      "error": "future_data"
-    },
-    {
-      "line": "246",
-      "ticker": "3653",
-      "error": "future_data"
-    },
-    {
-      "line": "247",
-      "ticker": "3653",
-      "error": "future_data"
-    },
-    {
-      "line": "248",
-      "ticker": "3661",
-      "error": "future_data"
-    },
-    {
-      "line": "249",
-      "ticker": "3661",
-      "error": "future_data"
-    },
-    {
-      "line": "250",
-      "ticker": "3661",
-      "error": "future_data"
-    },
-    {
-      "line": "251",
-      "ticker": "3661",
-      "error": "future_data"
-    },
-    {
-      "line": "252",
-      "ticker": "3661",
-      "error": "future_data"
-    },
-    {
-      "line": "253",
-      "ticker": "3661",
-      "error": "future_data"
-    },
-    {
-      "line": "255",
-      "ticker": "3711",
-      "error": "future_data"
-    },
-    {
-      "line": "256",
-      "ticker": "3711",
-      "error": "future_data"
-    },
-    {
-      "line": "259",
-      "ticker": "3711",
-      "error": "future_data"
-    },
-    {
-      "line": "260",
-      "ticker": "3711",
-      "error": "future_data"
-    },
-    {
-      "line": "262",
-      "ticker": "3711",
-      "error": "future_data"
-    },
-    {
-      "line": "263",
-      "ticker": "3711",
-      "error": "future_data"
-    },
-    {
-      "line": "264",
-      "ticker": "4979",
-      "error": "future_data"
-    },
-    {
-      "line": "265",
-      "ticker": "4979",
-      "error": "future_data"
-    },
-    {
-      "line": "266",
-      "ticker": "4979",
-      "error": "future_data"
-    },
-    {
-      "line": "267",
-      "ticker": "4979",
-      "error": "future_data"
-    },
-    {
-      "line": "268",
-      "ticker": "6187",
-      "error": "future_data"
-    },
-    {
-      "line": "269",
-      "ticker": "6187",
-      "error": "future_data"
-    },
-    {
-      "line": "270",
-      "ticker": "6187",
-      "error": "future_data"
-    },
-    {
-      "line": "271",
-      "ticker": "6187",
-      "error": "future_data"
-    },
-    {
-      "line": "272",
-      "ticker": "6187",
-      "error": "future_data"
-    },
-    {
-      "line": "273",
-      "ticker": "6187",
-      "error": "future_data"
-    },
-    {
-      "line": "274",
-      "ticker": "6223",
-      "error": "future_data"
-    },
-    {
-      "line": "275",
-      "ticker": "6223",
-      "error": "future_data"
-    },
-    {
-      "line": "276",
-      "ticker": "6223",
-      "error": "future_data"
-    },
-    {
-      "line": "277",
-      "ticker": "6223",
-      "error": "future_data"
-    },
-    {
-      "line": "278",
-      "ticker": "6223",
-      "error": "future_data"
-    },
-    {
-      "line": "279",
-      "ticker": "6223",
-      "error": "future_data"
-    },
-    {
-      "line": "280",
-      "ticker": "6274",
-      "error": "future_data"
-    },
-    {
-      "line": "281",
-      "ticker": "6274",
-      "error": "future_data"
-    },
-    {
-      "line": "282",
-      "ticker": "6274",
-      "error": "future_data"
-    },
-    {
-      "line": "283",
-      "ticker": "6274",
-      "error": "future_data"
-    },
-    {
-      "line": "284",
-      "ticker": "6274",
-      "error": "future_data"
-    },
-    {
-      "line": "285",
-      "ticker": "6274",
-      "error": "future_data"
-    },
-    {
-      "line": "286",
-      "ticker": "6412",
-      "error": "future_data"
-    },
-    {
-      "line": "287",
-      "ticker": "6412",
-      "error": "future_data"
-    },
-    {
-      "line": "288",
-      "ticker": "6412",
-      "error": "future_data"
-    },
-    {
-      "line": "289",
-      "ticker": "6412",
-      "error": "future_data"
-    },
-    {
-      "line": "290",
-      "ticker": "6442",
-      "error": "future_data"
-    },
-    {
-      "line": "291",
-      "ticker": "6442",
-      "error": "future_data"
-    },
-    {
-      "line": "292",
-      "ticker": "6442",
-      "error": "future_data"
-    },
-    {
-      "line": "293",
-      "ticker": "6442",
-      "error": "future_data"
-    },
-    {
-      "line": "295",
-      "ticker": "6488",
-      "error": "future_data"
-    },
-    {
-      "line": "296",
-      "ticker": "6488",
-      "error": "future_data"
-    },
-    {
-      "line": "299",
-      "ticker": "6488",
-      "error": "future_data"
-    },
-    {
-      "line": "300",
-      "ticker": "6488",
-      "error": "future_data"
-    },
-    {
-      "line": "302",
-      "ticker": "6488",
-      "error": "future_data"
-    },
-    {
-      "line": "303",
-      "ticker": "6488",
-      "error": "future_data"
-    },
-    {
-      "line": "304",
-      "ticker": "6669",
-      "error": "future_data"
-    },
-    {
-      "line": "305",
-      "ticker": "6669",
-      "error": "future_data"
-    },
-    {
-      "line": "306",
-      "ticker": "6669",
-      "error": "future_data"
-    },
-    {
-      "line": "307",
-      "ticker": "6669",
-      "error": "future_data"
-    },
-    {
-      "line": "308",
-      "ticker": "6669",
-      "error": "future_data"
-    },
-    {
-      "line": "309",
-      "ticker": "6669",
-      "error": "future_data"
-    },
-    {
-      "line": "310",
-      "ticker": "6781",
-      "error": "future_data"
-    },
-    {
-      "line": "311",
-      "ticker": "6781",
-      "error": "future_data"
-    },
-    {
-      "line": "312",
-      "ticker": "6781",
-      "error": "future_data"
-    },
-    {
-      "line": "313",
-      "ticker": "6781",
-      "error": "future_data"
-    },
-    {
-      "line": "314",
-      "ticker": "6781",
-      "error": "future_data"
-    },
-    {
-      "line": "315",
-      "ticker": "6781",
-      "error": "future_data"
-    },
-    {
-      "line": "316",
-      "ticker": "8299",
-      "error": "future_data"
-    },
-    {
-      "line": "317",
-      "ticker": "8299",
-      "error": "future_data"
-    },
-    {
-      "line": "318",
-      "ticker": "8299",
-      "error": "future_data"
-    },
-    {
-      "line": "319",
-      "ticker": "8299",
-      "error": "future_data"
-    },
-    {
-      "line": "320",
-      "ticker": "8299",
-      "error": "future_data"
-    },
-    {
-      "line": "321",
-      "ticker": "8299",
-      "error": "future_data"
-    }
-  ],
-  "consensus_evidence_rejected": [
-    {
-      "line": "2",
-      "ticker": "1560",
-      "error": "future_data"
-    },
-    {
-      "line": "3",
-      "ticker": "1560",
-      "error": "future_data"
-    },
-    {
-      "line": "4",
-      "ticker": "1560",
-      "error": "future_data"
-    },
-    {
-      "line": "5",
-      "ticker": "2301",
-      "error": "future_data"
-    },
-    {
-      "line": "6",
-      "ticker": "2301",
-      "error": "future_data"
-    },
-    {
-      "line": "7",
-      "ticker": "2301",
-      "error": "future_data"
-    },
-    {
-      "line": "20",
-      "ticker": "2317",
-      "error": "future_data"
-    },
-    {
-      "line": "21",
-      "ticker": "2317",
-      "error": "future_data"
-    },
-    {
-      "line": "22",
-      "ticker": "2317",
-      "error": "future_data"
-    },
-    {
-      "line": "35",
-      "ticker": "2337",
-      "error": "future_data"
-    },
-    {
-      "line": "36",
-      "ticker": "2337",
-      "error": "future_data"
-    },
-    {
-      "line": "37",
-      "ticker": "2337",
-      "error": "future_data"
-    },
-    {
-      "line": "44",
-      "ticker": "2345",
-      "error": "future_data"
-    },
-    {
-      "line": "45",
-      "ticker": "2345",
-      "error": "future_data"
-    },
-    {
-      "line": "46",
-      "ticker": "2345",
-      "error": "future_data"
-    },
-    {
-      "line": "47",
-      "ticker": "2356",
-      "error": "future_data"
-    },
-    {
-      "line": "48",
-      "ticker": "2356",
-      "error": "future_data"
-    },
-    {
-      "line": "49",
-      "ticker": "2356",
-      "error": "future_data"
-    },
-    {
-      "line": "50",
-      "ticker": "2368",
-      "error": "future_data"
-    },
-    {
-      "line": "51",
-      "ticker": "2368",
-      "error": "future_data"
-    },
-    {
-      "line": "52",
-      "ticker": "2368",
-      "error": "future_data"
-    },
-    {
-      "line": "66",
-      "ticker": "2382",
-      "error": "future_data"
-    },
-    {
-      "line": "67",
-      "ticker": "2382",
-      "error": "future_data"
-    },
-    {
-      "line": "68",
-      "ticker": "2382",
-      "error": "future_data"
-    },
-    {
-      "line": "69",
-      "ticker": "2383",
-      "error": "future_data"
-    },
-    {
-      "line": "70",
-      "ticker": "2383",
-      "error": "future_data"
-    },
-    {
-      "line": "71",
-      "ticker": "2383",
-      "error": "future_data"
-    },
-    {
-      "line": "78",
-      "ticker": "2449",
-      "error": "future_data"
-    },
-    {
-      "line": "79",
-      "ticker": "2449",
-      "error": "future_data"
-    },
-    {
-      "line": "80",
-      "ticker": "2449",
-      "error": "future_data"
-    },
-    {
-      "line": "87",
-      "ticker": "3008",
-      "error": "future_data"
-    },
-    {
-      "line": "88",
-      "ticker": "3008",
-      "error": "future_data"
-    },
-    {
-      "line": "89",
-      "ticker": "3008",
-      "error": "future_data"
-    },
-    {
-      "line": "90",
-      "ticker": "3017",
-      "error": "future_data"
-    },
-    {
-      "line": "91",
-      "ticker": "3017",
-      "error": "future_data"
-    },
-    {
-      "line": "92",
-      "ticker": "3017",
-      "error": "future_data"
-    },
-    {
-      "line": "93",
-      "ticker": "3035",
-      "error": "future_data"
-    },
-    {
-      "line": "94",
-      "ticker": "3035",
-      "error": "future_data"
-    },
-    {
-      "line": "95",
-      "ticker": "3035",
-      "error": "future_data"
-    },
-    {
-      "line": "108",
-      "ticker": "3131",
-      "error": "future_data"
-    },
-    {
-      "line": "109",
-      "ticker": "3131",
-      "error": "future_data"
-    },
-    {
-      "line": "110",
-      "ticker": "3131",
-      "error": "future_data"
-    },
-    {
-      "line": "111",
-      "ticker": "3163",
-      "error": "future_data"
-    },
-    {
-      "line": "112",
-      "ticker": "3163",
-      "error": "future_data"
-    },
-    {
-      "line": "113",
-      "ticker": "3189",
-      "error": "future_data"
-    },
-    {
-      "line": "114",
-      "ticker": "3189",
-      "error": "future_data"
-    },
-    {
-      "line": "115",
-      "ticker": "3189",
-      "error": "future_data"
-    },
-    {
-      "line": "116",
-      "ticker": "3231",
-      "error": "future_data"
-    },
-    {
-      "line": "117",
-      "ticker": "3231",
-      "error": "future_data"
-    },
-    {
-      "line": "118",
-      "ticker": "3231",
-      "error": "future_data"
-    },
-    {
-      "line": "119",
-      "ticker": "3260",
-      "error": "future_data"
-    },
-    {
-      "line": "120",
-      "ticker": "3260",
-      "error": "future_data"
-    },
-    {
-      "line": "121",
-      "ticker": "3324",
-      "error": "future_data"
-    },
-    {
-      "line": "122",
-      "ticker": "3324",
-      "error": "future_data"
-    },
-    {
-      "line": "123",
-      "ticker": "3324",
-      "error": "future_data"
-    },
-    {
-      "line": "124",
-      "ticker": "3357",
-      "error": "future_data"
-    },
-    {
-      "line": "125",
-      "ticker": "3357",
-      "error": "future_data"
-    },
-    {
-      "line": "131",
-      "ticker": "3406",
-      "error": "future_data"
-    },
-    {
-      "line": "132",
-      "ticker": "3406",
-      "error": "future_data"
-    },
-    {
-      "line": "133",
-      "ticker": "3406",
-      "error": "future_data"
-    },
-    {
-      "line": "134",
-      "ticker": "3443",
-      "error": "future_data"
-    },
-    {
-      "line": "135",
-      "ticker": "3443",
-      "error": "future_data"
-    },
-    {
-      "line": "136",
-      "ticker": "3443",
-      "error": "future_data"
-    },
-    {
-      "line": "137",
-      "ticker": "3583",
-      "error": "future_data"
-    },
-    {
-      "line": "138",
-      "ticker": "3583",
-      "error": "future_data"
-    },
-    {
-      "line": "139",
-      "ticker": "3583",
-      "error": "future_data"
-    },
-    {
-      "line": "140",
-      "ticker": "3653",
-      "error": "future_data"
-    },
-    {
-      "line": "141",
-      "ticker": "3653",
-      "error": "future_data"
-    },
-    {
-      "line": "142",
-      "ticker": "3653",
-      "error": "future_data"
-    },
-    {
-      "line": "143",
-      "ticker": "3661",
-      "error": "future_data"
-    },
-    {
-      "line": "144",
-      "ticker": "3661",
-      "error": "future_data"
-    },
-    {
-      "line": "145",
-      "ticker": "3661",
-      "error": "future_data"
-    },
-    {
-      "line": "152",
-      "ticker": "4979",
-      "error": "future_data"
-    },
-    {
-      "line": "153",
-      "ticker": "4979",
-      "error": "future_data"
-    },
-    {
-      "line": "154",
-      "ticker": "6187",
-      "error": "future_data"
-    },
-    {
-      "line": "155",
-      "ticker": "6187",
-      "error": "future_data"
-    },
-    {
-      "line": "156",
-      "ticker": "6187",
-      "error": "future_data"
-    },
-    {
-      "line": "157",
-      "ticker": "6223",
-      "error": "future_data"
-    },
-    {
-      "line": "158",
-      "ticker": "6223",
-      "error": "future_data"
-    },
-    {
-      "line": "159",
-      "ticker": "6223",
-      "error": "future_data"
-    },
-    {
-      "line": "160",
-      "ticker": "6274",
-      "error": "future_data"
-    },
-    {
-      "line": "161",
-      "ticker": "6274",
-      "error": "future_data"
-    },
-    {
-      "line": "162",
-      "ticker": "6274",
-      "error": "future_data"
-    },
-    {
-      "line": "163",
-      "ticker": "6412",
-      "error": "future_data"
-    },
-    {
-      "line": "164",
-      "ticker": "6412",
-      "error": "future_data"
-    },
-    {
-      "line": "165",
-      "ticker": "6442",
-      "error": "future_data"
-    },
-    {
-      "line": "166",
-      "ticker": "6442",
-      "error": "future_data"
-    },
-    {
-      "line": "173",
-      "ticker": "6669",
-      "error": "future_data"
-    },
-    {
-      "line": "174",
-      "ticker": "6669",
-      "error": "future_data"
-    },
-    {
-      "line": "175",
-      "ticker": "6669",
-      "error": "future_data"
-    },
-    {
-      "line": "176",
-      "ticker": "6781",
-      "error": "future_data"
-    },
-    {
-      "line": "177",
-      "ticker": "6781",
-      "error": "future_data"
-    },
-    {
-      "line": "178",
-      "ticker": "6781",
-      "error": "future_data"
-    },
-    {
-      "line": "179",
-      "ticker": "8299",
-      "error": "future_data"
-    },
-    {
-      "line": "180",
-      "ticker": "8299",
-      "error": "future_data"
-    },
-    {
-      "line": "181",
-      "ticker": "8299",
-      "error": "future_data"
-    }
-  ],
+  "consensus_rejected": [],
+  "consensus_evidence_rejected": [],
   "catalyst_rejected": [
     {
       "error": "file_missing"
@@ -1849,11 +47,11 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": true,
+      "current_chip_ready": false,
       "price_chip_coverage": {
-        "price_days": 22,
-        "institutional_days": 22,
-        "margin_short_days": 22,
+        "price_days": 25,
+        "institutional_days": 25,
+        "margin_short_days": 24,
         "ready": true
       },
       "component_score_ready": false,
@@ -1872,11 +70,11 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": true,
+      "current_chip_ready": false,
       "price_chip_coverage": {
-        "price_days": 22,
-        "institutional_days": 22,
-        "margin_short_days": 22,
+        "price_days": 25,
+        "institutional_days": 25,
+        "margin_short_days": 24,
         "ready": true
       },
       "component_score_ready": false,
@@ -1895,11 +93,11 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": true,
+      "current_chip_ready": false,
       "price_chip_coverage": {
-        "price_days": 22,
-        "institutional_days": 22,
-        "margin_short_days": 22,
+        "price_days": 25,
+        "institutional_days": 25,
+        "margin_short_days": 24,
         "ready": true
       },
       "component_score_ready": false,
@@ -1918,11 +116,11 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": true,
+      "current_chip_ready": false,
       "price_chip_coverage": {
-        "price_days": 22,
-        "institutional_days": 22,
-        "margin_short_days": 22,
+        "price_days": 25,
+        "institutional_days": 25,
+        "margin_short_days": 24,
         "ready": true
       },
       "component_score_ready": false,
@@ -1941,11 +139,11 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": true,
+      "current_chip_ready": false,
       "price_chip_coverage": {
-        "price_days": 22,
-        "institutional_days": 22,
-        "margin_short_days": 22,
+        "price_days": 25,
+        "institutional_days": 25,
+        "margin_short_days": 24,
         "ready": true
       },
       "component_score_ready": false,
@@ -1964,11 +162,11 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": true,
+      "current_chip_ready": false,
       "price_chip_coverage": {
-        "price_days": 22,
-        "institutional_days": 22,
-        "margin_short_days": 22,
+        "price_days": 25,
+        "institutional_days": 25,
+        "margin_short_days": 24,
         "ready": true
       },
       "component_score_ready": false,
@@ -1987,11 +185,11 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": true,
+      "current_chip_ready": false,
       "price_chip_coverage": {
-        "price_days": 22,
-        "institutional_days": 22,
-        "margin_short_days": 22,
+        "price_days": 25,
+        "institutional_days": 25,
+        "margin_short_days": 24,
         "ready": true
       },
       "component_score_ready": false,
@@ -2012,9 +210,9 @@
       "price_chip_ready": false,
       "current_chip_ready": false,
       "price_chip_coverage": {
-        "price_days": 1,
-        "institutional_days": 0,
-        "margin_short_days": 0,
+        "price_days": 4,
+        "institutional_days": 3,
+        "margin_short_days": 2,
         "ready": false
       },
       "component_score_ready": false,
@@ -2040,9 +238,9 @@
       "price_chip_ready": false,
       "current_chip_ready": false,
       "price_chip_coverage": {
-        "price_days": 1,
-        "institutional_days": 0,
-        "margin_short_days": 0,
+        "price_days": 4,
+        "institutional_days": 3,
+        "margin_short_days": 2,
         "ready": false
       },
       "component_score_ready": false,
@@ -2068,9 +266,9 @@
       "price_chip_ready": false,
       "current_chip_ready": false,
       "price_chip_coverage": {
-        "price_days": 1,
-        "institutional_days": 0,
-        "margin_short_days": 0,
+        "price_days": 4,
+        "institutional_days": 3,
+        "margin_short_days": 2,
         "ready": false
       },
       "component_score_ready": false,
@@ -2096,9 +294,9 @@
       "price_chip_ready": false,
       "current_chip_ready": false,
       "price_chip_coverage": {
-        "price_days": 1,
-        "institutional_days": 0,
-        "margin_short_days": 0,
+        "price_days": 4,
+        "institutional_days": 3,
+        "margin_short_days": 2,
         "ready": false
       },
       "component_score_ready": false,
@@ -2124,9 +322,9 @@
       "price_chip_ready": false,
       "current_chip_ready": false,
       "price_chip_coverage": {
-        "price_days": 1,
-        "institutional_days": 0,
-        "margin_short_days": 0,
+        "price_days": 4,
+        "institutional_days": 3,
+        "margin_short_days": 2,
         "ready": false
       },
       "component_score_ready": false,
@@ -2152,9 +350,9 @@
       "price_chip_ready": false,
       "current_chip_ready": false,
       "price_chip_coverage": {
-        "price_days": 1,
-        "institutional_days": 0,
-        "margin_short_days": 0,
+        "price_days": 4,
+        "institutional_days": 3,
+        "margin_short_days": 2,
         "ready": false
       },
       "component_score_ready": false,
@@ -2180,9 +378,9 @@
       "price_chip_ready": false,
       "current_chip_ready": false,
       "price_chip_coverage": {
-        "price_days": 1,
-        "institutional_days": 0,
-        "margin_short_days": 0,
+        "price_days": 4,
+        "institutional_days": 3,
+        "margin_short_days": 2,
         "ready": false
       },
       "component_score_ready": false,
@@ -2206,11 +404,11 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": true,
+      "current_chip_ready": false,
       "price_chip_coverage": {
-        "price_days": 22,
-        "institutional_days": 22,
-        "margin_short_days": 22,
+        "price_days": 25,
+        "institutional_days": 25,
+        "margin_short_days": 24,
         "ready": true
       },
       "component_score_ready": false,
@@ -2229,11 +427,11 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": true,
+      "current_chip_ready": false,
       "price_chip_coverage": {
-        "price_days": 22,
-        "institutional_days": 22,
-        "margin_short_days": 22,
+        "price_days": 24,
+        "institutional_days": 24,
+        "margin_short_days": 23,
         "ready": true
       },
       "component_score_ready": false,
@@ -2252,11 +450,11 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": true,
+      "current_chip_ready": false,
       "price_chip_coverage": {
-        "price_days": 22,
-        "institutional_days": 22,
-        "margin_short_days": 22,
+        "price_days": 24,
+        "institutional_days": 24,
+        "margin_short_days": 23,
         "ready": true
       },
       "component_score_ready": false,
@@ -2277,9 +475,9 @@
       "price_chip_ready": false,
       "current_chip_ready": false,
       "price_chip_coverage": {
-        "price_days": 1,
-        "institutional_days": 0,
-        "margin_short_days": 0,
+        "price_days": 3,
+        "institutional_days": 2,
+        "margin_short_days": 1,
         "ready": false
       },
       "component_score_ready": false,
@@ -2305,9 +503,9 @@
       "price_chip_ready": false,
       "current_chip_ready": false,
       "price_chip_coverage": {
-        "price_days": 1,
-        "institutional_days": 0,
-        "margin_short_days": 0,
+        "price_days": 3,
+        "institutional_days": 2,
+        "margin_short_days": 1,
         "ready": false
       },
       "component_score_ready": false,
@@ -2333,9 +531,9 @@
       "price_chip_ready": false,
       "current_chip_ready": false,
       "price_chip_coverage": {
-        "price_days": 1,
-        "institutional_days": 0,
-        "margin_short_days": 0,
+        "price_days": 4,
+        "institutional_days": 3,
+        "margin_short_days": 2,
         "ready": false
       },
       "component_score_ready": false,
@@ -2361,9 +559,9 @@
       "price_chip_ready": false,
       "current_chip_ready": false,
       "price_chip_coverage": {
-        "price_days": 1,
-        "institutional_days": 0,
-        "margin_short_days": 0,
+        "price_days": 4,
+        "institutional_days": 3,
+        "margin_short_days": 2,
         "ready": false
       },
       "component_score_ready": false,
@@ -2389,9 +587,9 @@
       "price_chip_ready": false,
       "current_chip_ready": false,
       "price_chip_coverage": {
-        "price_days": 1,
-        "institutional_days": 0,
-        "margin_short_days": 0,
+        "price_days": 4,
+        "institutional_days": 3,
+        "margin_short_days": 2,
         "ready": false
       },
       "component_score_ready": false,
@@ -2417,9 +615,9 @@
       "price_chip_ready": false,
       "current_chip_ready": false,
       "price_chip_coverage": {
-        "price_days": 1,
-        "institutional_days": 0,
-        "margin_short_days": 0,
+        "price_days": 4,
+        "institutional_days": 3,
+        "margin_short_days": 2,
         "ready": false
       },
       "component_score_ready": false,
@@ -2445,9 +643,9 @@
       "price_chip_ready": false,
       "current_chip_ready": false,
       "price_chip_coverage": {
-        "price_days": 1,
-        "institutional_days": 0,
-        "margin_short_days": 0,
+        "price_days": 4,
+        "institutional_days": 3,
+        "margin_short_days": 2,
         "ready": false
       },
       "component_score_ready": false,
@@ -2473,9 +671,9 @@
       "price_chip_ready": false,
       "current_chip_ready": false,
       "price_chip_coverage": {
-        "price_days": 1,
-        "institutional_days": 0,
-        "margin_short_days": 0,
+        "price_days": 4,
+        "institutional_days": 3,
+        "margin_short_days": 2,
         "ready": false
       },
       "component_score_ready": false,
@@ -2501,9 +699,9 @@
       "price_chip_ready": false,
       "current_chip_ready": false,
       "price_chip_coverage": {
-        "price_days": 1,
-        "institutional_days": 0,
-        "margin_short_days": 0,
+        "price_days": 4,
+        "institutional_days": 3,
+        "margin_short_days": 2,
         "ready": false
       },
       "component_score_ready": false,
@@ -2529,9 +727,9 @@
       "price_chip_ready": false,
       "current_chip_ready": false,
       "price_chip_coverage": {
-        "price_days": 1,
-        "institutional_days": 0,
-        "margin_short_days": 0,
+        "price_days": 4,
+        "institutional_days": 3,
+        "margin_short_days": 2,
         "ready": false
       },
       "component_score_ready": false,
@@ -2555,11 +753,11 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": true,
+      "current_chip_ready": false,
       "price_chip_coverage": {
-        "price_days": 22,
-        "institutional_days": 22,
-        "margin_short_days": 22,
+        "price_days": 25,
+        "institutional_days": 25,
+        "margin_short_days": 24,
         "ready": true
       },
       "component_score_ready": false,
@@ -2580,9 +778,9 @@
       "price_chip_ready": false,
       "current_chip_ready": false,
       "price_chip_coverage": {
-        "price_days": 1,
-        "institutional_days": 0,
-        "margin_short_days": 0,
+        "price_days": 4,
+        "institutional_days": 3,
+        "margin_short_days": 2,
         "ready": false
       },
       "component_score_ready": false,
@@ -2608,9 +806,9 @@
       "price_chip_ready": false,
       "current_chip_ready": false,
       "price_chip_coverage": {
-        "price_days": 1,
-        "institutional_days": 0,
-        "margin_short_days": 0,
+        "price_days": 4,
+        "institutional_days": 3,
+        "margin_short_days": 2,
         "ready": false
       },
       "component_score_ready": false,
@@ -2636,9 +834,9 @@
       "price_chip_ready": false,
       "current_chip_ready": false,
       "price_chip_coverage": {
-        "price_days": 1,
-        "institutional_days": 0,
-        "margin_short_days": 0,
+        "price_days": 4,
+        "institutional_days": 3,
+        "margin_short_days": 2,
         "ready": false
       },
       "component_score_ready": false,
@@ -2664,9 +862,9 @@
       "price_chip_ready": false,
       "current_chip_ready": false,
       "price_chip_coverage": {
-        "price_days": 1,
-        "institutional_days": 0,
-        "margin_short_days": 0,
+        "price_days": 4,
+        "institutional_days": 3,
+        "margin_short_days": 2,
         "ready": false
       },
       "component_score_ready": false,
@@ -2692,9 +890,9 @@
       "price_chip_ready": false,
       "current_chip_ready": false,
       "price_chip_coverage": {
-        "price_days": 1,
-        "institutional_days": 0,
-        "margin_short_days": 0,
+        "price_days": 4,
+        "institutional_days": 3,
+        "margin_short_days": 2,
         "ready": false
       },
       "component_score_ready": false,
@@ -2720,9 +918,9 @@
       "price_chip_ready": false,
       "current_chip_ready": false,
       "price_chip_coverage": {
-        "price_days": 1,
-        "institutional_days": 0,
-        "margin_short_days": 0,
+        "price_days": 4,
+        "institutional_days": 3,
+        "margin_short_days": 2,
         "ready": false
       },
       "component_score_ready": false,
@@ -2748,9 +946,9 @@
       "price_chip_ready": false,
       "current_chip_ready": false,
       "price_chip_coverage": {
-        "price_days": 1,
-        "institutional_days": 0,
-        "margin_short_days": 0,
+        "price_days": 4,
+        "institutional_days": 3,
+        "margin_short_days": 2,
         "ready": false
       },
       "component_score_ready": false,
@@ -2776,9 +974,9 @@
       "price_chip_ready": false,
       "current_chip_ready": false,
       "price_chip_coverage": {
-        "price_days": 1,
-        "institutional_days": 0,
-        "margin_short_days": 0,
+        "price_days": 4,
+        "institutional_days": 3,
+        "margin_short_days": 2,
         "ready": false
       },
       "component_score_ready": false,
@@ -2804,9 +1002,9 @@
       "price_chip_ready": false,
       "current_chip_ready": false,
       "price_chip_coverage": {
-        "price_days": 1,
-        "institutional_days": 0,
-        "margin_short_days": 0,
+        "price_days": 4,
+        "institutional_days": 3,
+        "margin_short_days": 2,
         "ready": false
       },
       "component_score_ready": false,
@@ -2832,9 +1030,9 @@
       "price_chip_ready": false,
       "current_chip_ready": false,
       "price_chip_coverage": {
-        "price_days": 1,
-        "institutional_days": 0,
-        "margin_short_days": 0,
+        "price_days": 4,
+        "institutional_days": 3,
+        "margin_short_days": 2,
         "ready": false
       },
       "component_score_ready": false,
@@ -2860,9 +1058,9 @@
       "price_chip_ready": false,
       "current_chip_ready": false,
       "price_chip_coverage": {
-        "price_days": 1,
-        "institutional_days": 0,
-        "margin_short_days": 0,
+        "price_days": 4,
+        "institutional_days": 3,
+        "margin_short_days": 2,
         "ready": false
       },
       "component_score_ready": false,
@@ -2888,9 +1086,9 @@
       "price_chip_ready": false,
       "current_chip_ready": false,
       "price_chip_coverage": {
-        "price_days": 1,
-        "institutional_days": 0,
-        "margin_short_days": 0,
+        "price_days": 4,
+        "institutional_days": 3,
+        "margin_short_days": 2,
         "ready": false
       },
       "component_score_ready": false,
@@ -2916,9 +1114,9 @@
       "price_chip_ready": false,
       "current_chip_ready": false,
       "price_chip_coverage": {
-        "price_days": 1,
-        "institutional_days": 0,
-        "margin_short_days": 0,
+        "price_days": 4,
+        "institutional_days": 3,
+        "margin_short_days": 2,
         "ready": false
       },
       "component_score_ready": false,
@@ -2944,9 +1142,9 @@
       "price_chip_ready": false,
       "current_chip_ready": false,
       "price_chip_coverage": {
-        "price_days": 1,
-        "institutional_days": 0,
-        "margin_short_days": 0,
+        "price_days": 4,
+        "institutional_days": 3,
+        "margin_short_days": 2,
         "ready": false
       },
       "component_score_ready": false,
@@ -2972,9 +1170,9 @@
       "price_chip_ready": false,
       "current_chip_ready": false,
       "price_chip_coverage": {
-        "price_days": 1,
-        "institutional_days": 0,
-        "margin_short_days": 0,
+        "price_days": 4,
+        "institutional_days": 3,
+        "margin_short_days": 2,
         "ready": false
       },
       "component_score_ready": false,
@@ -3000,9 +1198,9 @@
       "price_chip_ready": false,
       "current_chip_ready": false,
       "price_chip_coverage": {
-        "price_days": 1,
-        "institutional_days": 0,
-        "margin_short_days": 0,
+        "price_days": 4,
+        "institutional_days": 3,
+        "margin_short_days": 2,
         "ready": false
       },
       "component_score_ready": false,
@@ -3028,9 +1226,9 @@
       "price_chip_ready": false,
       "current_chip_ready": false,
       "price_chip_coverage": {
-        "price_days": 1,
-        "institutional_days": 0,
-        "margin_short_days": 0,
+        "price_days": 4,
+        "institutional_days": 3,
+        "margin_short_days": 2,
         "ready": false
       },
       "component_score_ready": false,
@@ -3056,9 +1254,9 @@
       "price_chip_ready": false,
       "current_chip_ready": false,
       "price_chip_coverage": {
-        "price_days": 1,
-        "institutional_days": 0,
-        "margin_short_days": 0,
+        "price_days": 4,
+        "institutional_days": 3,
+        "margin_short_days": 2,
         "ready": false
       },
       "component_score_ready": false,
@@ -3084,9 +1282,9 @@
       "price_chip_ready": false,
       "current_chip_ready": false,
       "price_chip_coverage": {
-        "price_days": 1,
-        "institutional_days": 0,
-        "margin_short_days": 0,
+        "price_days": 4,
+        "institutional_days": 3,
+        "margin_short_days": 2,
         "ready": false
       },
       "component_score_ready": false,
@@ -3110,11 +1308,11 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": true,
+      "current_chip_ready": false,
       "price_chip_coverage": {
-        "price_days": 22,
-        "institutional_days": 22,
-        "margin_short_days": 22,
+        "price_days": 25,
+        "institutional_days": 25,
+        "margin_short_days": 24,
         "ready": true
       },
       "component_score_ready": false,
@@ -3133,11 +1331,11 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": true,
+      "current_chip_ready": false,
       "price_chip_coverage": {
-        "price_days": 22,
-        "institutional_days": 22,
-        "margin_short_days": 22,
+        "price_days": 25,
+        "institutional_days": 25,
+        "margin_short_days": 24,
         "ready": true
       },
       "component_score_ready": false,
@@ -3156,11 +1354,11 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": true,
+      "current_chip_ready": false,
       "price_chip_coverage": {
-        "price_days": 22,
-        "institutional_days": 22,
-        "margin_short_days": 22,
+        "price_days": 25,
+        "institutional_days": 25,
+        "margin_short_days": 24,
         "ready": true
       },
       "component_score_ready": false,
@@ -3181,9 +1379,9 @@
       "price_chip_ready": false,
       "current_chip_ready": false,
       "price_chip_coverage": {
-        "price_days": 1,
-        "institutional_days": 0,
-        "margin_short_days": 0,
+        "price_days": 4,
+        "institutional_days": 3,
+        "margin_short_days": 2,
         "ready": false
       },
       "component_score_ready": false,
@@ -3209,9 +1407,9 @@
       "price_chip_ready": false,
       "current_chip_ready": false,
       "price_chip_coverage": {
-        "price_days": 1,
-        "institutional_days": 0,
-        "margin_short_days": 0,
+        "price_days": 4,
+        "institutional_days": 3,
+        "margin_short_days": 2,
         "ready": false
       },
       "component_score_ready": false,
@@ -3237,9 +1435,9 @@
       "price_chip_ready": false,
       "current_chip_ready": false,
       "price_chip_coverage": {
-        "price_days": 1,
-        "institutional_days": 0,
-        "margin_short_days": 0,
+        "price_days": 4,
+        "institutional_days": 3,
+        "margin_short_days": 2,
         "ready": false
       },
       "component_score_ready": false,
@@ -3265,9 +1463,9 @@
       "price_chip_ready": false,
       "current_chip_ready": false,
       "price_chip_coverage": {
-        "price_days": 1,
-        "institutional_days": 0,
-        "margin_short_days": 0,
+        "price_days": 4,
+        "institutional_days": 3,
+        "margin_short_days": 2,
         "ready": false
       },
       "component_score_ready": false,
