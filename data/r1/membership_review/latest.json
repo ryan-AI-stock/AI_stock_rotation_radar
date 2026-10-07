@@ -5,20 +5,26 @@
   "status": "NOT_DUE",
   "membership_anchor": "2026-08-15",
   "last_membership_review": "2026-10-05",
-  "theme_count": 10,
-  "member_count": 50,
+  "theme_count": 11,
+  "member_count": 54,
   "current_members_without_dedicated_evidence_row": [
     {
       "ticker": "1560",
       "company": "中砂",
       "theme_id": "critical_materials",
-      "theme_name": "關鍵半導體材料／矽晶圓／製程耗材"
+      "theme_name": "半導體材料／矽晶圓／製程耗材"
     },
     {
       "ticker": "2301",
       "company": "光寶科",
       "theme_id": "power_delivery",
       "theme_name": "電源供應／HVDC／BBU"
+    },
+    {
+      "ticker": "2303",
+      "company": "聯電",
+      "theme_id": "silicon_photonics_cpo",
+      "theme_name": "矽光子／CPO／高速光互連"
     },
     {
       "ticker": "2308",
@@ -42,19 +48,19 @@
       "ticker": "2337",
       "company": "旺宏",
       "theme_id": "memory_storage",
-      "theme_name": "HBM／記憶體／高速儲存"
+      "theme_name": "HBM／DRAM／高速儲存"
     },
     {
       "ticker": "2344",
       "company": "華邦電",
       "theme_id": "memory_storage",
-      "theme_name": "HBM／記憶體／高速儲存"
+      "theme_name": "HBM／DRAM／高速儲存"
     },
     {
       "ticker": "2345",
       "company": "智邦",
       "theme_id": "network_optics",
-      "theme_name": "高速網路／光通訊／CPO"
+      "theme_name": "高速網路／交換器／光模組"
     },
     {
       "ticker": "2356",
@@ -72,7 +78,7 @@
       "ticker": "2379",
       "company": "瑞昱",
       "theme_id": "network_optics",
-      "theme_name": "高速網路／光通訊／CPO"
+      "theme_name": "高速網路／交換器／光模組"
     },
     {
       "ticker": "2382",
@@ -90,7 +96,7 @@
       "ticker": "2408",
       "company": "南亞科",
       "theme_id": "memory_storage",
-      "theme_name": "HBM／記憶體／高速儲存"
+      "theme_name": "HBM／DRAM／高速儲存"
     },
     {
       "ticker": "2449",
@@ -103,6 +109,12 @@
       "company": "聯發科",
       "theme_id": "compute_foundry",
       "theme_name": "AI運算晶片／ASIC／先進製程"
+    },
+    {
+      "ticker": "3008",
+      "company": "大立光",
+      "theme_id": "silicon_photonics_cpo",
+      "theme_name": "矽光子／CPO／高速光互連"
     },
     {
       "ticker": "3017",
@@ -123,16 +135,22 @@
       "theme_name": "高速PCB／CCL／ABF載板"
     },
     {
+      "ticker": "3081",
+      "company": "聯亞",
+      "theme_id": "silicon_photonics_cpo",
+      "theme_name": "矽光子／CPO／高速光互連"
+    },
+    {
       "ticker": "3131",
       "company": "弘塑",
       "theme_id": "critical_materials",
-      "theme_name": "關鍵半導體材料／矽晶圓／製程耗材"
+      "theme_name": "半導體材料／矽晶圓／製程耗材"
     },
     {
       "ticker": "3163",
       "company": "波若威",
-      "theme_id": "network_optics",
-      "theme_name": "高速網路／光通訊／CPO"
+      "theme_id": "silicon_photonics_cpo",
+      "theme_name": "矽光子／CPO／高速光互連"
     },
     {
       "ticker": "3189",
@@ -150,7 +168,7 @@
       "ticker": "3260",
       "company": "威剛",
       "theme_id": "memory_storage",
-      "theme_name": "HBM／記憶體／高速儲存"
+      "theme_name": "HBM／DRAM／高速儲存"
     },
     {
       "ticker": "3324",
@@ -167,8 +185,14 @@
     {
       "ticker": "3363",
       "company": "上詮",
-      "theme_id": "network_optics",
-      "theme_name": "高速網路／光通訊／CPO"
+      "theme_id": "silicon_photonics_cpo",
+      "theme_name": "矽光子／CPO／高速光互連"
+    },
+    {
+      "ticker": "3406",
+      "company": "玉晶光",
+      "theme_id": "silicon_photonics_cpo",
+      "theme_name": "矽光子／CPO／高速光互連"
     },
     {
       "ticker": "3443",
@@ -180,7 +204,7 @@
       "ticker": "3532",
       "company": "台勝科",
       "theme_id": "critical_materials",
-      "theme_name": "關鍵半導體材料／矽晶圓／製程耗材"
+      "theme_name": "半導體材料／矽晶圓／製程耗材"
     },
     {
       "ticker": "3583",
@@ -209,14 +233,14 @@
     {
       "ticker": "4979",
       "company": "華星光",
-      "theme_id": "network_optics",
-      "theme_name": "高速網路／光通訊／CPO"
+      "theme_id": "silicon_photonics_cpo",
+      "theme_name": "矽光子／CPO／高速光互連"
     },
     {
       "ticker": "6182",
       "company": "合晶",
       "theme_id": "critical_materials",
-      "theme_name": "關鍵半導體材料／矽晶圓／製程耗材"
+      "theme_name": "半導體材料／矽晶圓／製程耗材"
     },
     {
       "ticker": "6187",
@@ -257,14 +281,14 @@
     {
       "ticker": "6442",
       "company": "光聖",
-      "theme_id": "network_optics",
-      "theme_name": "高速網路／光通訊／CPO"
+      "theme_id": "silicon_photonics_cpo",
+      "theme_name": "矽光子／CPO／高速光互連"
     },
     {
       "ticker": "6488",
       "company": "環球晶",
       "theme_id": "critical_materials",
-      "theme_name": "關鍵半導體材料／矽晶圓／製程耗材"
+      "theme_name": "半導體材料／矽晶圓／製程耗材"
     },
     {
       "ticker": "6669",
@@ -282,7 +306,7 @@
       "ticker": "8299",
       "company": "群聯",
       "theme_id": "memory_storage",
-      "theme_name": "HBM／記憶體／高速儲存"
+      "theme_name": "HBM／DRAM／高速儲存"
     }
   ],
   "addition_candidates_for_ryan_review": [],

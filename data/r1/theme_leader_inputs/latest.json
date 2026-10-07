@@ -3,8 +3,8 @@
   "version": "r1-theme-leader-input-v0.2",
   "as_of_date": "2026-10-02",
   "score_rubric_version": "r1-theme-score-rubric-v0.1",
-  "requested_ticker_count": 50,
-  "actual_ticker_count": 50,
+  "requested_ticker_count": 54,
+  "actual_ticker_count": 54,
   "complete_ticker_count": 0,
   "rows": [
     {
@@ -891,7 +891,7 @@
       "bottleneck_directness": null,
       "industry_technology_position": null,
       "ai_revenue_realization": null,
-      "financial_earnings_quality": 59.4094,
+      "financial_earnings_quality": 69.0094,
       "market_representation": 100.0,
       "structural_leader": null,
       "revenue_earnings_growth": null,
@@ -934,8 +934,8 @@
       "bottleneck_directness": null,
       "industry_technology_position": null,
       "ai_revenue_realization": null,
-      "financial_earnings_quality": 42.7098,
-      "market_representation": 62.0,
+      "financial_earnings_quality": 38.3098,
+      "market_representation": 0.0,
       "structural_leader": null,
       "revenue_earnings_growth": null,
       "self_historical_valuation": null,
@@ -956,7 +956,7 @@
     {
       "ticker": "4979",
       "company": "華星光",
-      "theme_id": "network_optics",
+      "theme_id": "silicon_photonics_cpo",
       "as_of_date": "2026-10-02",
       "evidence": {
         "financial_earnings_quality": {
@@ -977,51 +977,8 @@
       "bottleneck_directness": null,
       "industry_technology_position": null,
       "ai_revenue_realization": null,
-      "financial_earnings_quality": 79.1598,
-      "market_representation": 48.0,
-      "structural_leader": null,
-      "revenue_earnings_growth": null,
-      "self_historical_valuation": null,
-      "price_risk_safety": null,
-      "demand_order_catalyst": null,
-      "status": "DATA_MISSING",
-      "missing_fields": [
-        "bottleneck_directness",
-        "industry_technology_position",
-        "ai_revenue_realization",
-        "structural_leader",
-        "revenue_earnings_growth",
-        "self_historical_valuation",
-        "price_risk_safety",
-        "demand_order_catalyst"
-      ]
-    },
-    {
-      "ticker": "3363",
-      "company": "上詮",
-      "theme_id": "network_optics",
-      "as_of_date": "2026-10-02",
-      "evidence": {
-        "financial_earnings_quality": {
-          "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3363&SYEAR=2026&SSEASON=2&REPORT_ID=C",
-          "source_date": "2026-10-02",
-          "available_at": "2026-10-02",
-          "source_family": "MOPS_XBRL_OFFICIAL",
-          "evidence_note": "r1-financial-quality-rubric-v0.1；本期與去年同期財報、營業現金流及資產負債比率；challenger草案，未啟用交易。"
-        },
-        "market_representation": {
-          "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/qfii?date=2026%2F10%2F02&response=json",
-          "source_date": "2026-10-02",
-          "available_at": "2026-10-02",
-          "source_family": "TWSE_TPEX_OFFICIAL_MARKET_AND_OWNERSHIP",
-          "evidence_note": "同題材內市值、20TD平均成交金額與官方外資持股比例百分位。"
-        }
-      },
-      "bottleneck_directness": null,
-      "industry_technology_position": null,
-      "ai_revenue_realization": null,
-      "financial_earnings_quality": 19.1956,
-      "market_representation": 30.0,
+      "financial_earnings_quality": 76.6931,
+      "market_representation": 52.8571,
       "structural_leader": null,
       "revenue_earnings_growth": null,
       "self_historical_valuation": null,
@@ -1042,7 +999,7 @@
     {
       "ticker": "6442",
       "company": "光聖",
-      "theme_id": "network_optics",
+      "theme_id": "silicon_photonics_cpo",
       "as_of_date": "2026-10-02",
       "evidence": {
         "financial_earnings_quality": {
@@ -1063,8 +1020,8 @@
       "bottleneck_directness": null,
       "industry_technology_position": null,
       "ai_revenue_realization": null,
-      "financial_earnings_quality": 87.7828,
-      "market_representation": 60.0,
+      "financial_earnings_quality": 84.9828,
+      "market_representation": 78.5714,
       "structural_leader": null,
       "revenue_earnings_growth": null,
       "self_historical_valuation": null,
@@ -1085,7 +1042,7 @@
     {
       "ticker": "3163",
       "company": "波若威",
-      "theme_id": "network_optics",
+      "theme_id": "silicon_photonics_cpo",
       "as_of_date": "2026-10-02",
       "evidence": {
         "financial_earnings_quality": {
@@ -1106,7 +1063,7 @@
       "bottleneck_directness": null,
       "industry_technology_position": null,
       "ai_revenue_realization": null,
-      "financial_earnings_quality": 56.0845,
+      "financial_earnings_quality": 54.2178,
       "market_representation": 0.0,
       "structural_leader": null,
       "revenue_earnings_growth": null,
@@ -2196,6 +2153,190 @@
         "price_risk_safety",
         "demand_order_catalyst"
       ]
+    },
+    {
+      "ticker": "3081",
+      "company": "聯亞",
+      "theme_id": "silicon_photonics_cpo",
+      "as_of_date": "2026-10-02",
+      "evidence": {},
+      "bottleneck_directness": null,
+      "industry_technology_position": null,
+      "ai_revenue_realization": null,
+      "financial_earnings_quality": null,
+      "market_representation": null,
+      "structural_leader": null,
+      "revenue_earnings_growth": null,
+      "self_historical_valuation": null,
+      "price_risk_safety": null,
+      "demand_order_catalyst": null,
+      "status": "DATA_MISSING",
+      "missing_fields": [
+        "bottleneck_directness",
+        "industry_technology_position",
+        "ai_revenue_realization",
+        "financial_earnings_quality",
+        "market_representation",
+        "structural_leader",
+        "revenue_earnings_growth",
+        "self_historical_valuation",
+        "price_risk_safety",
+        "demand_order_catalyst"
+      ]
+    },
+    {
+      "ticker": "3363",
+      "company": "上詮",
+      "theme_id": "silicon_photonics_cpo",
+      "as_of_date": "2026-10-02",
+      "evidence": {
+        "financial_earnings_quality": {
+          "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3363&SYEAR=2026&SSEASON=2&REPORT_ID=C",
+          "source_date": "2026-10-02",
+          "available_at": "2026-10-02",
+          "source_family": "MOPS_XBRL_OFFICIAL",
+          "evidence_note": "r1-financial-quality-rubric-v0.1；本期與去年同期財報、營業現金流及資產負債比率；challenger草案，未啟用交易。"
+        },
+        "market_representation": {
+          "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/qfii?date=2026%2F10%2F02&response=json",
+          "source_date": "2026-10-02",
+          "available_at": "2026-10-02",
+          "source_family": "TWSE_TPEX_OFFICIAL_MARKET_AND_OWNERSHIP",
+          "evidence_note": "同題材內市值、20TD平均成交金額與官方外資持股比例百分位。"
+        }
+      },
+      "bottleneck_directness": null,
+      "industry_technology_position": null,
+      "ai_revenue_realization": null,
+      "financial_earnings_quality": 16.1289,
+      "market_representation": 34.2857,
+      "structural_leader": null,
+      "revenue_earnings_growth": null,
+      "self_historical_valuation": null,
+      "price_risk_safety": null,
+      "demand_order_catalyst": null,
+      "status": "DATA_MISSING",
+      "missing_fields": [
+        "bottleneck_directness",
+        "industry_technology_position",
+        "ai_revenue_realization",
+        "structural_leader",
+        "revenue_earnings_growth",
+        "self_historical_valuation",
+        "price_risk_safety",
+        "demand_order_catalyst"
+      ]
+    },
+    {
+      "ticker": "2303",
+      "company": "聯電",
+      "theme_id": "silicon_photonics_cpo",
+      "as_of_date": "2026-10-02",
+      "evidence": {
+        "financial_earnings_quality": {
+          "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=2303&SYEAR=2026&SSEASON=2&REPORT_ID=C",
+          "source_date": "2026-10-02",
+          "available_at": "2026-10-02",
+          "source_family": "MOPS_XBRL_OFFICIAL",
+          "evidence_note": "r1-financial-quality-rubric-v0.1；本期與去年同期財報、營業現金流及資產負債比率；challenger草案，未啟用交易。"
+        }
+      },
+      "bottleneck_directness": null,
+      "industry_technology_position": null,
+      "ai_revenue_realization": null,
+      "financial_earnings_quality": 71.0944,
+      "market_representation": null,
+      "structural_leader": null,
+      "revenue_earnings_growth": null,
+      "self_historical_valuation": null,
+      "price_risk_safety": null,
+      "demand_order_catalyst": null,
+      "status": "DATA_MISSING",
+      "missing_fields": [
+        "bottleneck_directness",
+        "industry_technology_position",
+        "ai_revenue_realization",
+        "market_representation",
+        "structural_leader",
+        "revenue_earnings_growth",
+        "self_historical_valuation",
+        "price_risk_safety",
+        "demand_order_catalyst"
+      ]
+    },
+    {
+      "ticker": "3008",
+      "company": "大立光",
+      "theme_id": "silicon_photonics_cpo",
+      "as_of_date": "2026-10-02",
+      "evidence": {
+        "financial_earnings_quality": {
+          "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3008&SYEAR=2026&SSEASON=2&REPORT_ID=C",
+          "source_date": "2026-10-02",
+          "available_at": "2026-10-02",
+          "source_family": "MOPS_XBRL_OFFICIAL",
+          "evidence_note": "r1-financial-quality-rubric-v0.1；本期與去年同期財報、營業現金流及資產負債比率；challenger草案，未啟用交易。"
+        }
+      },
+      "bottleneck_directness": null,
+      "industry_technology_position": null,
+      "ai_revenue_realization": null,
+      "financial_earnings_quality": 59.2392,
+      "market_representation": null,
+      "structural_leader": null,
+      "revenue_earnings_growth": null,
+      "self_historical_valuation": null,
+      "price_risk_safety": null,
+      "demand_order_catalyst": null,
+      "status": "DATA_MISSING",
+      "missing_fields": [
+        "bottleneck_directness",
+        "industry_technology_position",
+        "ai_revenue_realization",
+        "market_representation",
+        "structural_leader",
+        "revenue_earnings_growth",
+        "self_historical_valuation",
+        "price_risk_safety",
+        "demand_order_catalyst"
+      ]
+    },
+    {
+      "ticker": "3406",
+      "company": "玉晶光",
+      "theme_id": "silicon_photonics_cpo",
+      "as_of_date": "2026-10-02",
+      "evidence": {
+        "financial_earnings_quality": {
+          "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3406&SYEAR=2026&SSEASON=2&REPORT_ID=C",
+          "source_date": "2026-10-02",
+          "available_at": "2026-10-02",
+          "source_family": "MOPS_XBRL_OFFICIAL",
+          "evidence_note": "r1-financial-quality-rubric-v0.1；本期與去年同期財報、營業現金流及資產負債比率；challenger草案，未啟用交易。"
+        }
+      },
+      "bottleneck_directness": null,
+      "industry_technology_position": null,
+      "ai_revenue_realization": null,
+      "financial_earnings_quality": 81.5043,
+      "market_representation": null,
+      "structural_leader": null,
+      "revenue_earnings_growth": null,
+      "self_historical_valuation": null,
+      "price_risk_safety": null,
+      "demand_order_catalyst": null,
+      "status": "DATA_MISSING",
+      "missing_fields": [
+        "bottleneck_directness",
+        "industry_technology_position",
+        "ai_revenue_realization",
+        "market_representation",
+        "structural_leader",
+        "revenue_earnings_growth",
+        "self_historical_valuation",
+        "price_risk_safety",
+        "demand_order_catalyst"
+      ]
     }
   ],
   "data_gaps": [
@@ -2487,19 +2628,6 @@
     },
     {
       "ticker": "4979",
-      "missing_fields": [
-        "bottleneck_directness",
-        "industry_technology_position",
-        "ai_revenue_realization",
-        "structural_leader",
-        "revenue_earnings_growth",
-        "self_historical_valuation",
-        "price_risk_safety",
-        "demand_order_catalyst"
-      ]
-    },
-    {
-      "ticker": "3363",
       "missing_fields": [
         "bottleneck_directness",
         "industry_technology_position",
@@ -2839,6 +2967,76 @@
         "bottleneck_directness",
         "industry_technology_position",
         "ai_revenue_realization",
+        "structural_leader",
+        "revenue_earnings_growth",
+        "self_historical_valuation",
+        "price_risk_safety",
+        "demand_order_catalyst"
+      ]
+    },
+    {
+      "ticker": "3081",
+      "missing_fields": [
+        "bottleneck_directness",
+        "industry_technology_position",
+        "ai_revenue_realization",
+        "financial_earnings_quality",
+        "market_representation",
+        "structural_leader",
+        "revenue_earnings_growth",
+        "self_historical_valuation",
+        "price_risk_safety",
+        "demand_order_catalyst"
+      ]
+    },
+    {
+      "ticker": "3363",
+      "missing_fields": [
+        "bottleneck_directness",
+        "industry_technology_position",
+        "ai_revenue_realization",
+        "structural_leader",
+        "revenue_earnings_growth",
+        "self_historical_valuation",
+        "price_risk_safety",
+        "demand_order_catalyst"
+      ]
+    },
+    {
+      "ticker": "2303",
+      "missing_fields": [
+        "bottleneck_directness",
+        "industry_technology_position",
+        "ai_revenue_realization",
+        "market_representation",
+        "structural_leader",
+        "revenue_earnings_growth",
+        "self_historical_valuation",
+        "price_risk_safety",
+        "demand_order_catalyst"
+      ]
+    },
+    {
+      "ticker": "3008",
+      "missing_fields": [
+        "bottleneck_directness",
+        "industry_technology_position",
+        "ai_revenue_realization",
+        "market_representation",
+        "structural_leader",
+        "revenue_earnings_growth",
+        "self_historical_valuation",
+        "price_risk_safety",
+        "demand_order_catalyst"
+      ]
+    },
+    {
+      "ticker": "3406",
+      "missing_fields": [
+        "bottleneck_directness",
+        "industry_technology_position",
+        "ai_revenue_realization",
+        "market_representation",
         "structural_leader",
         "revenue_earnings_growth",
         "self_historical_valuation",

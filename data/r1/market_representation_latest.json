@@ -3,7 +3,7 @@
   "version": "r1-market-representation-v0.1",
   "status": "challenger_draft",
   "date": "2026-10-02",
-  "requested_ticker_count": 50,
+  "requested_ticker_count": 54,
   "actual_ticker_count": 50,
   "rows": [
     {
@@ -47,6 +47,28 @@
         "foreign_ownership": 50.0
       },
       "market_representation": 70.0
+    },
+    {
+      "ticker": "2303",
+      "theme_id": "silicon_photonics_cpo",
+      "date": "2026-10-02",
+      "official_close": 161.5,
+      "issued_shares": null,
+      "market_cap_twd": null,
+      "average_turnover_20td_twd": 25816581896.95,
+      "foreign_ownership_pct": null,
+      "source_urls": [],
+      "status": "DATA_MISSING",
+      "missing_fields": [
+        "issued_shares",
+        "foreign_ownership"
+      ],
+      "subscores": {
+        "market_cap": null,
+        "average_turnover_20td": 100.0,
+        "foreign_ownership": null
+      },
+      "market_representation": null
     },
     {
       "ticker": "2308",
@@ -273,11 +295,11 @@
       "status": "READY",
       "missing_fields": [],
       "subscores": {
-        "market_cap": 80.0,
-        "average_turnover_20td": 20.0,
-        "foreign_ownership": 80.0
+        "market_cap": 0.0,
+        "average_turnover_20td": 0.0,
+        "foreign_ownership": 0.0
       },
-      "market_representation": 62.0
+      "market_representation": 0.0
     },
     {
       "ticker": "2382",
@@ -406,6 +428,28 @@
       "market_representation": 40.0
     },
     {
+      "ticker": "3008",
+      "theme_id": "silicon_photonics_cpo",
+      "date": "2026-10-02",
+      "official_close": 6290.0,
+      "issued_shares": null,
+      "market_cap_twd": null,
+      "average_turnover_20td_twd": 13099716947.35,
+      "foreign_ownership_pct": null,
+      "source_urls": [],
+      "status": "DATA_MISSING",
+      "missing_fields": [
+        "issued_shares",
+        "foreign_ownership"
+      ],
+      "subscores": {
+        "market_cap": null,
+        "average_turnover_20td": 85.71428571428571,
+        "foreign_ownership": null
+      },
+      "market_representation": null
+    },
+    {
       "ticker": "3017",
       "theme_id": "thermal_management",
       "date": "2026-10-02",
@@ -469,6 +513,28 @@
       "market_representation": 95.0
     },
     {
+      "ticker": "3081",
+      "theme_id": "silicon_photonics_cpo",
+      "date": "2026-10-02",
+      "official_close": 2925.0,
+      "issued_shares": null,
+      "market_cap_twd": null,
+      "average_turnover_20td_twd": 9778574811.0,
+      "foreign_ownership_pct": null,
+      "source_urls": [],
+      "status": "DATA_MISSING",
+      "missing_fields": [
+        "issued_shares",
+        "foreign_ownership"
+      ],
+      "subscores": {
+        "market_cap": null,
+        "average_turnover_20td": 71.42857142857143,
+        "foreign_ownership": null
+      },
+      "market_representation": null
+    },
+    {
       "ticker": "3131",
       "theme_id": "critical_materials",
       "date": "2026-10-02",
@@ -491,7 +557,7 @@
     },
     {
       "ticker": "3163",
-      "theme_id": "network_optics",
+      "theme_id": "silicon_photonics_cpo",
       "date": "2026-10-02",
       "official_close": 713.0,
       "issued_shares": 94635370.0,
@@ -638,7 +704,7 @@
     },
     {
       "ticker": "3363",
-      "theme_id": "network_optics",
+      "theme_id": "silicon_photonics_cpo",
       "date": "2026-10-02",
       "official_close": 671.0,
       "issued_shares": 113640567.0,
@@ -651,11 +717,33 @@
       "status": "READY",
       "missing_fields": [],
       "subscores": {
-        "market_cap": 20.0,
-        "average_turnover_20td": 40.0,
-        "foreign_ownership": 40.0
+        "market_cap": 33.33333333333333,
+        "average_turnover_20td": 14.285714285714285,
+        "foreign_ownership": 66.66666666666666
       },
-      "market_representation": 30.0
+      "market_representation": 34.2857
+    },
+    {
+      "ticker": "3406",
+      "theme_id": "silicon_photonics_cpo",
+      "date": "2026-10-02",
+      "official_close": 961.0,
+      "issued_shares": null,
+      "market_cap_twd": null,
+      "average_turnover_20td_twd": 5365024021.7,
+      "foreign_ownership_pct": null,
+      "source_urls": [],
+      "status": "DATA_MISSING",
+      "missing_fields": [
+        "issued_shares",
+        "foreign_ownership"
+      ],
+      "subscores": {
+        "market_cap": null,
+        "average_turnover_20td": 57.14285714285714,
+        "foreign_ownership": null
+      },
+      "market_representation": null
     },
     {
       "ticker": "3443",
@@ -785,7 +873,7 @@
     },
     {
       "ticker": "4979",
-      "theme_id": "network_optics",
+      "theme_id": "silicon_photonics_cpo",
       "date": "2026-10-02",
       "official_close": 585.0,
       "issued_shares": 142359284.0,
@@ -798,11 +886,11 @@
       "status": "READY",
       "missing_fields": [],
       "subscores": {
-        "market_cap": 40.0,
-        "average_turnover_20td": 80.0,
-        "foreign_ownership": 20.0
+        "market_cap": 66.66666666666666,
+        "average_turnover_20td": 42.857142857142854,
+        "foreign_ownership": 33.33333333333333
       },
-      "market_representation": 48.0
+      "market_representation": 52.8571
     },
     {
       "ticker": "6182",
@@ -955,7 +1043,7 @@
     },
     {
       "ticker": "6442",
-      "theme_id": "network_optics",
+      "theme_id": "silicon_photonics_cpo",
       "date": "2026-10-02",
       "official_close": 1625.0,
       "issued_shares": 80450155.0,
@@ -968,11 +1056,11 @@
       "status": "READY",
       "missing_fields": [],
       "subscores": {
-        "market_cap": 60.0,
-        "average_turnover_20td": 60.0,
-        "foreign_ownership": 60.0
+        "market_cap": 100.0,
+        "average_turnover_20td": 28.57142857142857,
+        "foreign_ownership": 100.0
       },
-      "market_representation": 60.0
+      "market_representation": 78.5714
     },
     {
       "ticker": "6488",
@@ -1059,7 +1147,36 @@
       "market_representation": 60.0
     }
   ],
-  "gaps": [],
+  "gaps": [
+    {
+      "ticker": "2303",
+      "missing_fields": [
+        "issued_shares",
+        "foreign_ownership"
+      ]
+    },
+    {
+      "ticker": "3008",
+      "missing_fields": [
+        "issued_shares",
+        "foreign_ownership"
+      ]
+    },
+    {
+      "ticker": "3081",
+      "missing_fields": [
+        "issued_shares",
+        "foreign_ownership"
+      ]
+    },
+    {
+      "ticker": "3406",
+      "missing_fields": [
+        "issued_shares",
+        "foreign_ownership"
+      ]
+    }
+  ],
   "ownership_sources": [
     {
       "family": "foreign_ownership",

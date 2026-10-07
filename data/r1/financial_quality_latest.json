@@ -2,7 +2,7 @@
   "model": "R1",
   "version": "r1-financial-quality-v0.1",
   "status": "challenger_draft",
-  "as_of_date": "2026-10-06",
+  "as_of_date": "2026-10-02",
   "rubric_version": "r1-financial-quality-rubric-v0.1",
   "requested_ticker_count": 54,
   "actual_ticker_count": 53,

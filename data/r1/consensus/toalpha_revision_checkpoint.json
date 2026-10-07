@@ -725,39 +725,39 @@
   "failed": {
     "6442": {
       "url": "https://toalpha.tw/stock/6442",
-      "error": "revision_base_zero"
+      "error": "403 Client Error: Forbidden for url: https://toalpha.tw/stock/6442"
     },
     "3163": {
       "url": "https://toalpha.tw/stock/3163",
-      "error": "revision_panel_anchor_missing"
+      "error": "403 Client Error: Forbidden for url: https://toalpha.tw/stock/3163"
     },
     "6282": {
       "url": "https://toalpha.tw/stock/6282",
-      "error": "revision_panel_anchor_missing"
+      "error": "403 Client Error: Forbidden for url: https://toalpha.tw/stock/6282"
     },
     "2492": {
       "url": "https://toalpha.tw/stock/2492",
-      "error": "revision_base_zero"
+      "error": "403 Client Error: Forbidden for url: https://toalpha.tw/stock/2492"
     },
     "3357": {
       "url": "https://toalpha.tw/stock/3357",
-      "error": "revision_base_zero"
+      "error": "403 Client Error: Forbidden for url: https://toalpha.tw/stock/3357"
     },
     "6230": {
       "url": "https://toalpha.tw/stock/6230",
-      "error": "revision_panel_anchor_missing"
+      "error": "403 Client Error: Forbidden for url: https://toalpha.tw/stock/6230"
     },
     "3338": {
       "url": "https://toalpha.tw/stock/3338",
-      "error": "revision_panel_anchor_missing"
+      "error": "403 Client Error: Forbidden for url: https://toalpha.tw/stock/3338"
     },
     "3532": {
       "url": "https://toalpha.tw/stock/3532",
-      "error": "revision_base_zero"
+      "error": "403 Client Error: Forbidden for url: https://toalpha.tw/stock/3532"
     },
     "6182": {
       "url": "https://toalpha.tw/stock/6182",
-      "error": "revision_panel_anchor_missing"
+      "error": "403 Client Error: Forbidden for url: https://toalpha.tw/stock/6182"
     }
   }
 }

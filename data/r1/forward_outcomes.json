@@ -1,6 +1,6 @@
 {
   "model": "R1",
-  "as_of_date": "2026-10-06",
+  "as_of_date": "2026-10-02",
   "horizon_semantics": "exact Nth later Taiwan trading observation, close-to-close, research only",
   "rows": [
     {

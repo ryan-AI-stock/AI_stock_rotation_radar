@@ -10,7 +10,7 @@
     "semiannual_membership_review_due": false,
     "membership_anchor": "2026-08-15"
   },
-  "theme_count": 10,
+  "theme_count": 11,
   "ready_theme_count": 0,
   "status": "DATA_MISSING",
   "themes": [
@@ -118,7 +118,7 @@
     },
     {
       "theme_id": "memory_storage",
-      "theme_name": "HBM／記憶體／高速儲存",
+      "theme_name": "HBM／DRAM／高速儲存",
       "status": "DATA_MISSING",
       "top1": null,
       "top3": [],
@@ -220,7 +220,7 @@
     },
     {
       "theme_id": "network_optics",
-      "theme_name": "高速網路／光通訊／CPO",
+      "theme_name": "高速網路／交換器／光模組",
       "status": "DATA_MISSING",
       "top1": null,
       "top3": [],
@@ -245,14 +245,6 @@
         },
         {
           "ticker": "4979",
-          "missing_fields": [
-            "bottleneck_directness",
-            "industry_technology_position",
-            "ai_revenue_realization"
-          ]
-        },
-        {
-          "ticker": "3363",
           "missing_fields": [
             "bottleneck_directness",
             "industry_technology_position",
@@ -330,7 +322,7 @@
     },
     {
       "theme_id": "passive_components",
-      "theme_name": "高階被動元件／電源與訊號完整性",
+      "theme_name": "高階被動元件",
       "status": "DATA_MISSING",
       "top1": null,
       "top3": [],
@@ -472,7 +464,7 @@
     },
     {
       "theme_id": "critical_materials",
-      "theme_name": "關鍵半導體材料／矽晶圓／製程耗材",
+      "theme_name": "半導體材料／矽晶圓／製程耗材",
       "status": "DATA_MISSING",
       "top1": null,
       "top3": [],
@@ -517,6 +509,86 @@
             "bottleneck_directness",
             "industry_technology_position",
             "ai_revenue_realization"
+          ]
+        }
+      ]
+    },
+    {
+      "theme_id": "silicon_photonics_cpo",
+      "theme_name": "矽光子／CPO／高速光互連",
+      "status": "DATA_MISSING",
+      "top1": null,
+      "top3": [],
+      "ranked": [],
+      "evaluated": [],
+      "data_gaps": [
+        {
+          "ticker": "4979",
+          "missing_fields": [
+            "bottleneck_directness",
+            "industry_technology_position",
+            "ai_revenue_realization"
+          ]
+        },
+        {
+          "ticker": "6442",
+          "missing_fields": [
+            "bottleneck_directness",
+            "industry_technology_position",
+            "ai_revenue_realization"
+          ]
+        },
+        {
+          "ticker": "3163",
+          "missing_fields": [
+            "bottleneck_directness",
+            "industry_technology_position",
+            "ai_revenue_realization"
+          ]
+        },
+        {
+          "ticker": "3081",
+          "missing_fields": [
+            "bottleneck_directness",
+            "industry_technology_position",
+            "ai_revenue_realization",
+            "financial_earnings_quality",
+            "market_representation"
+          ]
+        },
+        {
+          "ticker": "3363",
+          "missing_fields": [
+            "bottleneck_directness",
+            "industry_technology_position",
+            "ai_revenue_realization"
+          ]
+        },
+        {
+          "ticker": "2303",
+          "missing_fields": [
+            "bottleneck_directness",
+            "industry_technology_position",
+            "ai_revenue_realization",
+            "market_representation"
+          ]
+        },
+        {
+          "ticker": "3008",
+          "missing_fields": [
+            "bottleneck_directness",
+            "industry_technology_position",
+            "ai_revenue_realization",
+            "market_representation"
+          ]
+        },
+        {
+          "ticker": "3406",
+          "missing_fields": [
+            "bottleneck_directness",
+            "industry_technology_position",
+            "ai_revenue_realization",
+            "market_representation"
           ]
         }
       ]

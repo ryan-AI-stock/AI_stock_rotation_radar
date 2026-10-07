@@ -15,7 +15,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20261002&type=ALLBUT0999&response=json",
       "source_hash": "cecf0d4e4ad34cf1c6068177ba5219afe88ec685e1c236f81ca5f56ea5d7a6ab",
-      "retrieved_at_utc": "2026-10-05T09:08:23+00:00"
+      "retrieved_at_utc": "2026-10-07T01:22:01+00:00"
     },
     {
       "date": "2026-10-02",
@@ -31,7 +31,23 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20261002&type=ALLBUT0999&response=json",
       "source_hash": "cecf0d4e4ad34cf1c6068177ba5219afe88ec685e1c236f81ca5f56ea5d7a6ab",
-      "retrieved_at_utc": "2026-10-05T09:08:23+00:00"
+      "retrieved_at_utc": "2026-10-07T01:22:01+00:00"
+    },
+    {
+      "date": "2026-10-02",
+      "ticker": "2303",
+      "name": "聯電",
+      "market": "TWSE",
+      "open": "159.0",
+      "high": "162.5",
+      "low": "157.5",
+      "close": "161.5",
+      "volume": "100339050",
+      "turnover_value": "16066163882",
+      "price_basis": "official_raw_execution_unadjusted",
+      "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20261002&type=ALLBUT0999&response=json",
+      "source_hash": "cecf0d4e4ad34cf1c6068177ba5219afe88ec685e1c236f81ca5f56ea5d7a6ab",
+      "retrieved_at_utc": "2026-10-07T01:22:01+00:00"
     },
     {
       "date": "2026-10-02",
@@ -47,7 +63,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20261002&type=ALLBUT0999&response=json",
       "source_hash": "cecf0d4e4ad34cf1c6068177ba5219afe88ec685e1c236f81ca5f56ea5d7a6ab",
-      "retrieved_at_utc": "2026-10-05T09:08:23+00:00"
+      "retrieved_at_utc": "2026-10-07T01:22:01+00:00"
     },
     {
       "date": "2026-10-02",
@@ -63,7 +79,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20261002&type=ALLBUT0999&response=json",
       "source_hash": "cecf0d4e4ad34cf1c6068177ba5219afe88ec685e1c236f81ca5f56ea5d7a6ab",
-      "retrieved_at_utc": "2026-10-05T09:08:23+00:00"
+      "retrieved_at_utc": "2026-10-07T01:22:01+00:00"
     },
     {
       "date": "2026-10-02",
@@ -79,7 +95,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20261002&type=ALLBUT0999&response=json",
       "source_hash": "cecf0d4e4ad34cf1c6068177ba5219afe88ec685e1c236f81ca5f56ea5d7a6ab",
-      "retrieved_at_utc": "2026-10-05T09:08:23+00:00"
+      "retrieved_at_utc": "2026-10-07T01:22:01+00:00"
     },
     {
       "date": "2026-10-02",
@@ -95,7 +111,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20261002&type=ALLBUT0999&response=json",
       "source_hash": "cecf0d4e4ad34cf1c6068177ba5219afe88ec685e1c236f81ca5f56ea5d7a6ab",
-      "retrieved_at_utc": "2026-10-05T09:08:23+00:00"
+      "retrieved_at_utc": "2026-10-07T01:22:01+00:00"
     },
     {
       "date": "2026-10-02",
@@ -111,7 +127,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20261002&type=ALLBUT0999&response=json",
       "source_hash": "cecf0d4e4ad34cf1c6068177ba5219afe88ec685e1c236f81ca5f56ea5d7a6ab",
-      "retrieved_at_utc": "2026-10-05T09:08:23+00:00"
+      "retrieved_at_utc": "2026-10-07T01:22:01+00:00"
     },
     {
       "date": "2026-10-02",
@@ -127,7 +143,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20261002&type=ALLBUT0999&response=json",
       "source_hash": "cecf0d4e4ad34cf1c6068177ba5219afe88ec685e1c236f81ca5f56ea5d7a6ab",
-      "retrieved_at_utc": "2026-10-05T09:08:23+00:00"
+      "retrieved_at_utc": "2026-10-07T01:22:01+00:00"
     },
     {
       "date": "2026-10-02",
@@ -143,7 +159,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20261002&type=ALLBUT0999&response=json",
       "source_hash": "cecf0d4e4ad34cf1c6068177ba5219afe88ec685e1c236f81ca5f56ea5d7a6ab",
-      "retrieved_at_utc": "2026-10-05T09:08:23+00:00"
+      "retrieved_at_utc": "2026-10-07T01:22:01+00:00"
     },
     {
       "date": "2026-10-02",
@@ -159,7 +175,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20261002&type=ALLBUT0999&response=json",
       "source_hash": "cecf0d4e4ad34cf1c6068177ba5219afe88ec685e1c236f81ca5f56ea5d7a6ab",
-      "retrieved_at_utc": "2026-10-05T09:08:23+00:00"
+      "retrieved_at_utc": "2026-10-07T01:22:01+00:00"
     },
     {
       "date": "2026-10-02",
@@ -175,7 +191,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20261002&type=ALLBUT0999&response=json",
       "source_hash": "cecf0d4e4ad34cf1c6068177ba5219afe88ec685e1c236f81ca5f56ea5d7a6ab",
-      "retrieved_at_utc": "2026-10-05T09:08:23+00:00"
+      "retrieved_at_utc": "2026-10-07T01:22:01+00:00"
     },
     {
       "date": "2026-10-02",
@@ -191,7 +207,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20261002&type=ALLBUT0999&response=json",
       "source_hash": "cecf0d4e4ad34cf1c6068177ba5219afe88ec685e1c236f81ca5f56ea5d7a6ab",
-      "retrieved_at_utc": "2026-10-05T09:08:23+00:00"
+      "retrieved_at_utc": "2026-10-07T01:22:01+00:00"
     },
     {
       "date": "2026-10-02",
@@ -207,7 +223,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20261002&type=ALLBUT0999&response=json",
       "source_hash": "cecf0d4e4ad34cf1c6068177ba5219afe88ec685e1c236f81ca5f56ea5d7a6ab",
-      "retrieved_at_utc": "2026-10-05T09:08:23+00:00"
+      "retrieved_at_utc": "2026-10-07T01:22:01+00:00"
     },
     {
       "date": "2026-10-02",
@@ -223,7 +239,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20261002&type=ALLBUT0999&response=json",
       "source_hash": "cecf0d4e4ad34cf1c6068177ba5219afe88ec685e1c236f81ca5f56ea5d7a6ab",
-      "retrieved_at_utc": "2026-10-05T09:08:23+00:00"
+      "retrieved_at_utc": "2026-10-07T01:22:01+00:00"
     },
     {
       "date": "2026-10-02",
@@ -239,7 +255,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20261002&type=ALLBUT0999&response=json",
       "source_hash": "cecf0d4e4ad34cf1c6068177ba5219afe88ec685e1c236f81ca5f56ea5d7a6ab",
-      "retrieved_at_utc": "2026-10-05T09:08:23+00:00"
+      "retrieved_at_utc": "2026-10-07T01:22:01+00:00"
     },
     {
       "date": "2026-10-02",
@@ -255,7 +271,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20261002&type=ALLBUT0999&response=json",
       "source_hash": "cecf0d4e4ad34cf1c6068177ba5219afe88ec685e1c236f81ca5f56ea5d7a6ab",
-      "retrieved_at_utc": "2026-10-05T09:08:23+00:00"
+      "retrieved_at_utc": "2026-10-07T01:22:01+00:00"
     },
     {
       "date": "2026-10-02",
@@ -271,7 +287,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20261002&type=ALLBUT0999&response=json",
       "source_hash": "cecf0d4e4ad34cf1c6068177ba5219afe88ec685e1c236f81ca5f56ea5d7a6ab",
-      "retrieved_at_utc": "2026-10-05T09:08:23+00:00"
+      "retrieved_at_utc": "2026-10-07T01:22:01+00:00"
     },
     {
       "date": "2026-10-02",
@@ -287,7 +303,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20261002&type=ALLBUT0999&response=json",
       "source_hash": "cecf0d4e4ad34cf1c6068177ba5219afe88ec685e1c236f81ca5f56ea5d7a6ab",
-      "retrieved_at_utc": "2026-10-05T09:08:23+00:00"
+      "retrieved_at_utc": "2026-10-07T01:22:01+00:00"
     },
     {
       "date": "2026-10-02",
@@ -303,7 +319,23 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20261002&type=ALLBUT0999&response=json",
       "source_hash": "cecf0d4e4ad34cf1c6068177ba5219afe88ec685e1c236f81ca5f56ea5d7a6ab",
-      "retrieved_at_utc": "2026-10-05T09:08:23+00:00"
+      "retrieved_at_utc": "2026-10-07T01:22:01+00:00"
+    },
+    {
+      "date": "2026-10-02",
+      "ticker": "3008",
+      "name": "大立光",
+      "market": "TWSE",
+      "open": "6205.0",
+      "high": "6395.0",
+      "low": "6090.0",
+      "close": "6290.0",
+      "volume": "1683166",
+      "turnover_value": "10461357370",
+      "price_basis": "official_raw_execution_unadjusted",
+      "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20261002&type=ALLBUT0999&response=json",
+      "source_hash": "cecf0d4e4ad34cf1c6068177ba5219afe88ec685e1c236f81ca5f56ea5d7a6ab",
+      "retrieved_at_utc": "2026-10-07T01:22:01+00:00"
     },
     {
       "date": "2026-10-02",
@@ -319,7 +351,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20261002&type=ALLBUT0999&response=json",
       "source_hash": "cecf0d4e4ad34cf1c6068177ba5219afe88ec685e1c236f81ca5f56ea5d7a6ab",
-      "retrieved_at_utc": "2026-10-05T09:08:23+00:00"
+      "retrieved_at_utc": "2026-10-07T01:22:01+00:00"
     },
     {
       "date": "2026-10-02",
@@ -335,7 +367,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20261002&type=ALLBUT0999&response=json",
       "source_hash": "cecf0d4e4ad34cf1c6068177ba5219afe88ec685e1c236f81ca5f56ea5d7a6ab",
-      "retrieved_at_utc": "2026-10-05T09:08:23+00:00"
+      "retrieved_at_utc": "2026-10-07T01:22:01+00:00"
     },
     {
       "date": "2026-10-02",
@@ -351,7 +383,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20261002&type=ALLBUT0999&response=json",
       "source_hash": "cecf0d4e4ad34cf1c6068177ba5219afe88ec685e1c236f81ca5f56ea5d7a6ab",
-      "retrieved_at_utc": "2026-10-05T09:08:23+00:00"
+      "retrieved_at_utc": "2026-10-07T01:22:01+00:00"
     },
     {
       "date": "2026-10-02",
@@ -367,7 +399,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20261002&type=ALLBUT0999&response=json",
       "source_hash": "cecf0d4e4ad34cf1c6068177ba5219afe88ec685e1c236f81ca5f56ea5d7a6ab",
-      "retrieved_at_utc": "2026-10-05T09:08:23+00:00"
+      "retrieved_at_utc": "2026-10-07T01:22:01+00:00"
     },
     {
       "date": "2026-10-02",
@@ -383,7 +415,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20261002&type=ALLBUT0999&response=json",
       "source_hash": "cecf0d4e4ad34cf1c6068177ba5219afe88ec685e1c236f81ca5f56ea5d7a6ab",
-      "retrieved_at_utc": "2026-10-05T09:08:23+00:00"
+      "retrieved_at_utc": "2026-10-07T01:22:01+00:00"
     },
     {
       "date": "2026-10-02",
@@ -399,7 +431,23 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20261002&type=ALLBUT0999&response=json",
       "source_hash": "cecf0d4e4ad34cf1c6068177ba5219afe88ec685e1c236f81ca5f56ea5d7a6ab",
-      "retrieved_at_utc": "2026-10-05T09:08:23+00:00"
+      "retrieved_at_utc": "2026-10-07T01:22:01+00:00"
+    },
+    {
+      "date": "2026-10-02",
+      "ticker": "3406",
+      "name": "玉晶光",
+      "market": "TWSE",
+      "open": "941.0",
+      "high": "974.0",
+      "low": "929.0",
+      "close": "961.0",
+      "volume": "4816591",
+      "turnover_value": "4588516401",
+      "price_basis": "official_raw_execution_unadjusted",
+      "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20261002&type=ALLBUT0999&response=json",
+      "source_hash": "cecf0d4e4ad34cf1c6068177ba5219afe88ec685e1c236f81ca5f56ea5d7a6ab",
+      "retrieved_at_utc": "2026-10-07T01:22:01+00:00"
     },
     {
       "date": "2026-10-02",
@@ -415,7 +463,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20261002&type=ALLBUT0999&response=json",
       "source_hash": "cecf0d4e4ad34cf1c6068177ba5219afe88ec685e1c236f81ca5f56ea5d7a6ab",
-      "retrieved_at_utc": "2026-10-05T09:08:23+00:00"
+      "retrieved_at_utc": "2026-10-07T01:22:01+00:00"
     },
     {
       "date": "2026-10-02",
@@ -431,7 +479,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20261002&type=ALLBUT0999&response=json",
       "source_hash": "cecf0d4e4ad34cf1c6068177ba5219afe88ec685e1c236f81ca5f56ea5d7a6ab",
-      "retrieved_at_utc": "2026-10-05T09:08:23+00:00"
+      "retrieved_at_utc": "2026-10-07T01:22:01+00:00"
     },
     {
       "date": "2026-10-02",
@@ -447,7 +495,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20261002&type=ALLBUT0999&response=json",
       "source_hash": "cecf0d4e4ad34cf1c6068177ba5219afe88ec685e1c236f81ca5f56ea5d7a6ab",
-      "retrieved_at_utc": "2026-10-05T09:08:23+00:00"
+      "retrieved_at_utc": "2026-10-07T01:22:01+00:00"
     },
     {
       "date": "2026-10-02",
@@ -463,7 +511,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20261002&type=ALLBUT0999&response=json",
       "source_hash": "cecf0d4e4ad34cf1c6068177ba5219afe88ec685e1c236f81ca5f56ea5d7a6ab",
-      "retrieved_at_utc": "2026-10-05T09:08:23+00:00"
+      "retrieved_at_utc": "2026-10-07T01:22:01+00:00"
     },
     {
       "date": "2026-10-02",
@@ -479,7 +527,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20261002&type=ALLBUT0999&response=json",
       "source_hash": "cecf0d4e4ad34cf1c6068177ba5219afe88ec685e1c236f81ca5f56ea5d7a6ab",
-      "retrieved_at_utc": "2026-10-05T09:08:23+00:00"
+      "retrieved_at_utc": "2026-10-07T01:22:01+00:00"
     },
     {
       "date": "2026-10-02",
@@ -495,7 +543,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20261002&type=ALLBUT0999&response=json",
       "source_hash": "cecf0d4e4ad34cf1c6068177ba5219afe88ec685e1c236f81ca5f56ea5d7a6ab",
-      "retrieved_at_utc": "2026-10-05T09:08:23+00:00"
+      "retrieved_at_utc": "2026-10-07T01:22:01+00:00"
     },
     {
       "date": "2026-10-02",
@@ -511,7 +559,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20261002&type=ALLBUT0999&response=json",
       "source_hash": "cecf0d4e4ad34cf1c6068177ba5219afe88ec685e1c236f81ca5f56ea5d7a6ab",
-      "retrieved_at_utc": "2026-10-05T09:08:23+00:00"
+      "retrieved_at_utc": "2026-10-07T01:22:01+00:00"
     },
     {
       "date": "2026-10-02",
@@ -527,7 +575,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20261002&type=ALLBUT0999&response=json",
       "source_hash": "cecf0d4e4ad34cf1c6068177ba5219afe88ec685e1c236f81ca5f56ea5d7a6ab",
-      "retrieved_at_utc": "2026-10-05T09:08:23+00:00"
+      "retrieved_at_utc": "2026-10-07T01:22:01+00:00"
     },
     {
       "date": "2026-10-02",
@@ -543,7 +591,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20261002&type=ALLBUT0999&response=json",
       "source_hash": "cecf0d4e4ad34cf1c6068177ba5219afe88ec685e1c236f81ca5f56ea5d7a6ab",
-      "retrieved_at_utc": "2026-10-05T09:08:23+00:00"
+      "retrieved_at_utc": "2026-10-07T01:22:01+00:00"
     },
     {
       "date": "2026-10-02",
@@ -559,7 +607,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20261002&type=ALLBUT0999&response=json",
       "source_hash": "cecf0d4e4ad34cf1c6068177ba5219afe88ec685e1c236f81ca5f56ea5d7a6ab",
-      "retrieved_at_utc": "2026-10-05T09:08:23+00:00"
+      "retrieved_at_utc": "2026-10-07T01:22:01+00:00"
     },
     {
       "date": "2026-10-02",
@@ -575,7 +623,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20261002&type=ALLBUT0999&response=json",
       "source_hash": "cecf0d4e4ad34cf1c6068177ba5219afe88ec685e1c236f81ca5f56ea5d7a6ab",
-      "retrieved_at_utc": "2026-10-05T09:08:23+00:00"
+      "retrieved_at_utc": "2026-10-07T01:22:01+00:00"
     },
     {
       "date": "2026-10-02",
@@ -591,7 +639,23 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20261002&type=ALLBUT0999&response=json",
       "source_hash": "cecf0d4e4ad34cf1c6068177ba5219afe88ec685e1c236f81ca5f56ea5d7a6ab",
-      "retrieved_at_utc": "2026-10-05T09:08:23+00:00"
+      "retrieved_at_utc": "2026-10-07T01:22:01+00:00"
+    },
+    {
+      "date": "2026-10-02",
+      "ticker": "3081",
+      "name": "聯亞",
+      "market": "TPEx",
+      "open": "2780.0",
+      "high": "2925.0",
+      "low": "2735.0",
+      "close": "2925.0",
+      "volume": "4649434",
+      "turnover_value": "13251354385",
+      "price_basis": "official_raw_execution_unadjusted",
+      "source_url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2026/10/02&response=json",
+      "source_hash": "1694fade3a2f98a433376b7a0410e5114aed2a4bf891bbc1036b142ba89888c1",
+      "retrieved_at_utc": "2026-10-07T01:22:02+00:00"
     },
     {
       "date": "2026-10-02",
@@ -607,7 +671,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2026/10/02&response=json",
       "source_hash": "1694fade3a2f98a433376b7a0410e5114aed2a4bf891bbc1036b142ba89888c1",
-      "retrieved_at_utc": "2026-10-05T09:08:24+00:00"
+      "retrieved_at_utc": "2026-10-07T01:22:02+00:00"
     },
     {
       "date": "2026-10-02",
@@ -623,7 +687,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2026/10/02&response=json",
       "source_hash": "1694fade3a2f98a433376b7a0410e5114aed2a4bf891bbc1036b142ba89888c1",
-      "retrieved_at_utc": "2026-10-05T09:08:24+00:00"
+      "retrieved_at_utc": "2026-10-07T01:22:02+00:00"
     },
     {
       "date": "2026-10-02",
@@ -639,7 +703,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2026/10/02&response=json",
       "source_hash": "1694fade3a2f98a433376b7a0410e5114aed2a4bf891bbc1036b142ba89888c1",
-      "retrieved_at_utc": "2026-10-05T09:08:24+00:00"
+      "retrieved_at_utc": "2026-10-07T01:22:02+00:00"
     },
     {
       "date": "2026-10-02",
@@ -655,7 +719,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2026/10/02&response=json",
       "source_hash": "1694fade3a2f98a433376b7a0410e5114aed2a4bf891bbc1036b142ba89888c1",
-      "retrieved_at_utc": "2026-10-05T09:08:24+00:00"
+      "retrieved_at_utc": "2026-10-07T01:22:02+00:00"
     },
     {
       "date": "2026-10-02",
@@ -671,7 +735,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2026/10/02&response=json",
       "source_hash": "1694fade3a2f98a433376b7a0410e5114aed2a4bf891bbc1036b142ba89888c1",
-      "retrieved_at_utc": "2026-10-05T09:08:24+00:00"
+      "retrieved_at_utc": "2026-10-07T01:22:02+00:00"
     },
     {
       "date": "2026-10-02",
@@ -687,7 +751,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2026/10/02&response=json",
       "source_hash": "1694fade3a2f98a433376b7a0410e5114aed2a4bf891bbc1036b142ba89888c1",
-      "retrieved_at_utc": "2026-10-05T09:08:24+00:00"
+      "retrieved_at_utc": "2026-10-07T01:22:02+00:00"
     },
     {
       "date": "2026-10-02",
@@ -703,7 +767,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2026/10/02&response=json",
       "source_hash": "1694fade3a2f98a433376b7a0410e5114aed2a4bf891bbc1036b142ba89888c1",
-      "retrieved_at_utc": "2026-10-05T09:08:24+00:00"
+      "retrieved_at_utc": "2026-10-07T01:22:02+00:00"
     },
     {
       "date": "2026-10-02",
@@ -719,7 +783,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2026/10/02&response=json",
       "source_hash": "1694fade3a2f98a433376b7a0410e5114aed2a4bf891bbc1036b142ba89888c1",
-      "retrieved_at_utc": "2026-10-05T09:08:24+00:00"
+      "retrieved_at_utc": "2026-10-07T01:22:02+00:00"
     },
     {
       "date": "2026-10-02",
@@ -735,7 +799,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2026/10/02&response=json",
       "source_hash": "1694fade3a2f98a433376b7a0410e5114aed2a4bf891bbc1036b142ba89888c1",
-      "retrieved_at_utc": "2026-10-05T09:08:24+00:00"
+      "retrieved_at_utc": "2026-10-07T01:22:02+00:00"
     },
     {
       "date": "2026-10-02",
@@ -751,7 +815,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2026/10/02&response=json",
       "source_hash": "1694fade3a2f98a433376b7a0410e5114aed2a4bf891bbc1036b142ba89888c1",
-      "retrieved_at_utc": "2026-10-05T09:08:24+00:00"
+      "retrieved_at_utc": "2026-10-07T01:22:02+00:00"
     },
     {
       "date": "2026-10-02",
@@ -767,7 +831,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2026/10/02&response=json",
       "source_hash": "1694fade3a2f98a433376b7a0410e5114aed2a4bf891bbc1036b142ba89888c1",
-      "retrieved_at_utc": "2026-10-05T09:08:24+00:00"
+      "retrieved_at_utc": "2026-10-07T01:22:02+00:00"
     },
     {
       "date": "2026-10-02",
@@ -783,7 +847,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2026/10/02&response=json",
       "source_hash": "1694fade3a2f98a433376b7a0410e5114aed2a4bf891bbc1036b142ba89888c1",
-      "retrieved_at_utc": "2026-10-05T09:08:24+00:00"
+      "retrieved_at_utc": "2026-10-07T01:22:02+00:00"
     },
     {
       "date": "2026-10-02",
@@ -799,7 +863,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2026/10/02&response=json",
       "source_hash": "1694fade3a2f98a433376b7a0410e5114aed2a4bf891bbc1036b142ba89888c1",
-      "retrieved_at_utc": "2026-10-05T09:08:24+00:00"
+      "retrieved_at_utc": "2026-10-07T01:22:02+00:00"
     }
   ],
   "chip_rows": [
@@ -1711,12 +1775,12 @@
       "requested_date": "2026-10-02",
       "actual_source_date": "2026-10-02",
       "status": "accepted",
-      "row_count": 37,
+      "row_count": 40,
       "http_status": 200,
       "response_bytes": 247435,
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20261002&type=ALLBUT0999&response=json",
       "source_hash": "cecf0d4e4ad34cf1c6068177ba5219afe88ec685e1c236f81ca5f56ea5d7a6ab",
-      "retrieved_at_utc": "2026-10-05T09:08:23+00:00",
+      "retrieved_at_utc": "2026-10-07T01:22:01+00:00",
       "error": ""
     },
     {
@@ -1725,12 +1789,12 @@
       "requested_date": "2026-10-02",
       "actual_source_date": "2026-10-02",
       "status": "accepted",
-      "row_count": 13,
+      "row_count": 14,
       "http_status": 200,
       "response_bytes": 1796554,
       "source_url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2026/10/02&response=json",
       "source_hash": "1694fade3a2f98a433376b7a0410e5114aed2a4bf891bbc1036b142ba89888c1",
-      "retrieved_at_utc": "2026-10-05T09:08:24+00:00",
+      "retrieved_at_utc": "2026-10-07T01:22:02+00:00",
       "error": ""
     },
     {
