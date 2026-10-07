@@ -84,6 +84,9 @@ ticker,fiscal_year,source_url,source_family,source_tier,available_at,note
 2454,2027,https://toalpha.tw/stock/2454/estimates,toalpha_consensus,2,2026-09-30,27家共識平均141.32
 2454,2028,https://news.cnyes.com/news/print/6557957,factset_cnyes,2,2026-08-04,FactSet同篇列示2028 EPS高低平均與中位數
 2454,2028,https://toalpha.tw/stock/2454/estimates,toalpha_consensus,2,2026-10-02,18家共識平均265.33；單一來源，不單獨形成可交易共識
+3008,2026,https://toalpha.tw/stock/3008/estimates,toalpha_consensus,2,2026-10-06,21家共識平均184.63；單一來源，不單獨形成可交易共識
+3008,2027,https://toalpha.tw/stock/3008/estimates,toalpha_consensus,2,2026-10-06,19家共識平均204.05；單一來源，不單獨形成可交易共識
+3008,2028,https://toalpha.tw/stock/3008/estimates,toalpha_consensus,2,2026-10-06,12家共識平均232.99；單一來源，不單獨形成可交易共識
 3017,2026,https://toalpha.tw/stock/3017/estimates,toalpha_consensus,2,2026-10-05,18家共識平均102.34；單一來源，不單獨形成可交易共識
 3017,2027,https://toalpha.tw/stock/3017/estimates,toalpha_consensus,2,2026-10-05,17家共識平均152.35；單一來源，不單獨形成可交易共識
 3017,2028,https://toalpha.tw/stock/3017/estimates,toalpha_consensus,2,2026-10-05,9家共識平均187.40；單一來源，不單獨形成可交易共識
@@ -125,6 +128,9 @@ ticker,fiscal_year,source_url,source_family,source_tier,available_at,note
 3363,2027,https://cmnews.com.tw/article/marketwatcher-6f70134c-790b-11f1-b150-f792be6f7f34,cmoney_marketwatcher,3,2026-07-06,獨立公開文章記錄市場對明年EPS預估由2.76元上修至16.77元；僅作第二來源交叉驗證，不取代ToAlpha共識平均
 3363,2027,https://toalpha.tw/stock/3363/eps,toalpha_consensus,2,2026-09-09,2位分析師2027 EPS共識平均16.93；作為主要共識數值來源
 3363,2028,https://toalpha.tw/stock/3363/estimates,toalpha_consensus,2,2026-10-02,2家共識平均48.74；單一來源，不單獨形成可交易共識
+3406,2026,https://toalpha.tw/stock/3406/estimates,toalpha_consensus,2,2026-10-06,9家共識平均36.50；單一來源，不單獨形成可交易共識
+3406,2027,https://toalpha.tw/stock/3406/estimates,toalpha_consensus,2,2026-10-06,8家共識平均40.20；單一來源，不單獨形成可交易共識
+3406,2028,https://toalpha.tw/stock/3406/estimates,toalpha_consensus,2,2026-10-06,4家共識平均44.40；單一來源，不單獨形成可交易共識
 3443,2026,https://toalpha.tw/stock/3443/estimates,toalpha_consensus,2,2026-10-05,19家共識平均51.22；單一來源，不單獨形成可交易共識
 3443,2027,https://toalpha.tw/stock/3443/estimates,toalpha_consensus,2,2026-10-05,18家共識平均111.22；單一來源，不單獨形成可交易共識
 3443,2028,https://toalpha.tw/stock/3443/estimates,toalpha_consensus,2,2026-10-05,10家共識平均169.90；單一來源，不單獨形成可交易共識

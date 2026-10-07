@@ -1,0 +1,19 @@
+{
+  "version": "r1-v0.4-active-pool-research-v0.1",
+  "status": "challenger_draft",
+  "active_in_trade_decision": false,
+  "target_pool_size": {"minimum": 12, "maximum": 18, "force_fill": false},
+  "catalyst_window_calendar_days": 31,
+  "estimate_dispersion": {"medium": 0.20, "high": 0.35, "minimum_analyst_count": 3},
+  "earnings_revision": {"flat_band": 0.02, "fail_4w": -0.10, "fail_12w": -0.15},
+  "valuation": {"extreme_percentile": 0.95},
+  "bottleneck_stage": {
+    "DISCOVERY": "LOW",
+    "QUALIFICATION": "MEDIUM",
+    "SMALL_VOLUME": "MEDIUM",
+    "MASS_PRODUCTION": "HIGH",
+    "FINANCIAL_PROOF": "HIGH"
+  },
+  "missing_value_policy": "NA_NO_ZERO_NO_REWEIGHT",
+  "ranking_policy": "ORDINAL_LEXICOGRAPHIC_NO_OPAQUE_TOTAL_SCORE"
+}
