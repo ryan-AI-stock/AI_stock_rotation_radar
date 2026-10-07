@@ -120,6 +120,7 @@ def build_dashboard_payload(
     supplemental_revision_path: str | Path = "data/r1/consensus/current_year_revision_history.csv",
     theme_review_path: str | Path = "data/r1/theme_reviews/latest.json",
     theme_path: str | Path = "config/r1_v02_themes.json",
+    actual_transactions_path: str | Path = "data/r1/actual_transactions.json",
 ) -> dict:
     config = R1Config.load(config_path)
     market = json.loads(Path(market_path).read_text(encoding="utf-8"))
@@ -339,7 +340,16 @@ def build_dashboard_payload(
             action, reason,
         ])
 
-    # No transaction row is emitted until the action policy and execution ledger are both approved.
+    actual_file = Path(actual_transactions_path)
+    if actual_file.exists():
+        actual_payload = json.loads(actual_file.read_text(encoding="utf-8"))
+        for item in actual_payload.get("transactions", []):
+            tabs["R1模擬交易紀錄"].append([
+                item["transaction_date"], "", f"USER_CONFIRMED_{item['action']}", item["ticker"],
+                item["company"], item["shares"], item["price"], item["gross_amount"],
+                item.get("fees"), item.get("tax"), item.get("net_cash_flow"), "ACTUAL", "",
+                item.get("realized_pnl"), 0, item["reason_status"],
+            ])
     validate_tabs(tabs)
     return {
         "model": "R1", "date": market["date"], "tabs": tabs,
@@ -358,6 +368,7 @@ def main() -> None:
     parser.add_argument("--supplemental-revision", default="data/r1/consensus/current_year_revision_history.csv")
     parser.add_argument("--theme-review", default="data/r1/theme_reviews/latest.json")
     parser.add_argument("--themes", default="config/r1_v02_themes.json")
+    parser.add_argument("--actual-transactions", default="data/r1/actual_transactions.json")
     parser.add_argument("--output", default="data/r1/dashboard_payload.json")
     args = parser.parse_args()
     payload = build_dashboard_payload(
@@ -366,6 +377,7 @@ def main() -> None:
         supplemental_revision_path=args.supplemental_revision,
         theme_review_path=args.theme_review,
         theme_path=args.themes,
+        actual_transactions_path=args.actual_transactions,
     )
     output = Path(args.output)
     output.parent.mkdir(parents=True, exist_ok=True)

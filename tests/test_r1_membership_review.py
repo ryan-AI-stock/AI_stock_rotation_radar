@@ -26,7 +26,7 @@ class R1MembershipReviewTest(unittest.TestCase):
                 evidence_path=evidence, discovery_path=discovery, state_path=state,
             )
         self.assertEqual(result["status"], "REVIEW_DUE")
-        self.assertEqual(result["member_count"], 54)
+        self.assertEqual(result["member_count"], 52)
         self.assertEqual(result["addition_candidates_for_ryan_review"][0]["ticker"], "9999")
         self.assertFalse(result["automatic_changes_applied"])
 

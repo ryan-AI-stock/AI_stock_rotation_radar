@@ -13,13 +13,15 @@ class R1ThemePolicyTest(unittest.TestCase):
         themes = load_themes(ROOT / "config/r1_v02_themes.json")
         self.assertEqual(len(themes), 11)
         tickers = [member.ticker for theme in themes for member in theme.members]
-        self.assertEqual(len(tickers), 57)
-        self.assertEqual(len(set(tickers)), 54)
+        self.assertEqual(len(tickers), 55)
+        self.assertEqual(len(set(tickers)), 52)
         self.assertIn("2376", tickers)
         self.assertIn("2327", tickers)
         self.assertIn("3081", tickers)
         self.assertTrue(all(3 <= len(theme.members) <= 8 for theme in themes))
         self.assertEqual(tickers.count("6442"), 2)
+        self.assertNotIn("3008", tickers)
+        self.assertNotIn("3406", tickers)
 
     def test_leader_requires_every_stable_component(self):
         complete = {field: 80 for field in (

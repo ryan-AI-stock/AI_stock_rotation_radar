@@ -16,7 +16,7 @@ class R1DashboardPayloadTest(unittest.TestCase):
         validate_tabs(payload["tabs"])
         self.assertEqual(set(payload["tabs"]), {"R1 Dashboard", "R1每日訊號資料庫", "R1模擬交易紀錄"})
         self.assertEqual(len(payload["tabs"]["R1每日訊號資料庫"]), 55)
-        self.assertEqual(len(payload["tabs"]["R1模擬交易紀錄"]), 1)
+        self.assertEqual(len(payload["tabs"]["R1模擬交易紀錄"]), 3)
         dashboard = payload["tabs"]["R1 Dashboard"]
         sections = [row[0] for row in dashboard]
         self.assertIn("01｜實際持股與未來半年目標持股", sections)
@@ -27,6 +27,8 @@ class R1DashboardPayloadTest(unittest.TestCase):
         self.assertNotIn("07｜Shadow換倉候選（非交易指令）", sections)
         shown = {str(row[1]).split()[0] for row in dashboard if len(row) >= 5 and str(row[0]) not in ("所屬題材",)}
         self.assertTrue({"2454", "2408", "3081", "2308", "3037"} <= shown)
+        self.assertIn("2303", shown)
+        self.assertNotIn("2327", shown)
 
     def test_dashboard_cannot_claim_trade_ready(self):
         payload = build_dashboard_payload(config_path=ROOT / "config/r1.json",

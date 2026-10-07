@@ -18,10 +18,15 @@ RETURN_WINDOWS = {"daily_return": 1, "return_1w": 5, "return_1m": 20, "return_3m
 
 def _load_universe(*, config_path: str | Path, theme_path: str | Path | None = None) -> dict[str, dict]:
     if theme_path:
-        return {
+        universe = {
             member.ticker: {"company": member.company, "market": member.market}
             for theme in load_themes(theme_path) for member in theme.members
         }
+        raw = json.loads(Path(theme_path).read_text(encoding="utf-8"))
+        for theme in raw.get("themes", []):
+            for ticker, company, market in theme.get("watch_discovery", []):
+                universe[str(ticker).zfill(4)] = {"company": company, "market": market}
+        return universe
     return {
         security.ticker: {"company": security.company, "market": security.market}
         for security in R1Config.load(config_path).securities

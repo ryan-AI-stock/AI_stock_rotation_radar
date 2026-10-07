@@ -18,8 +18,8 @@ class R1ThemeLeaderInputsTest(unittest.TestCase):
                 source_path=Path(directory) / "missing.json", output_path=output,
                 rubric_path=ROOT / "config/r1_v03_score_rubric.json",
             )
-        self.assertEqual(payload["requested_ticker_count"], 54)
-        self.assertEqual(payload["actual_ticker_count"], 54)
+            self.assertEqual(payload["requested_ticker_count"], 52)
+            self.assertEqual(payload["actual_ticker_count"], 52)
         self.assertEqual(payload["complete_ticker_count"], 0)
         self.assertTrue(all(row["status"] == "DATA_MISSING" for row in payload["rows"]))
 

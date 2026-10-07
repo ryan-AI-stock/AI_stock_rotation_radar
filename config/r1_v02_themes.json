@@ -1,6 +1,6 @@
 {
   "version": "r1-theme-universe-v0.2",
-  "as_of_date": "2026-10-06",
+  "as_of_date": "2026-10-07",
   "status": "challenger",
   "membership_review": "semiannual",
   "leader_review": "quarterly_after_financial_disclosure",
@@ -72,7 +72,8 @@
       "id": "silicon_photonics_cpo",
       "name": "矽光子／CPO／高速光互連",
       "bottleneck_thesis": "AI叢集持續擴大後，短距高速光互連、CPO整合與光學元件效率限制資料搬運能力及功耗",
-      "members": [["3081","聯亞","TPEx"],["3363","上詮","TPEx"],["2303","聯電","TWSE"],["3008","大立光","TWSE"],["3406","玉晶光","TWSE"],["6442","光聖","TWSE"],["3163","波若威","TPEx"],["4979","華星光","TPEx"]]
+      "members": [["3081","聯亞","TPEx"],["3363","上詮","TPEx"],["2303","聯電","TWSE"],["6442","光聖","TWSE"],["3163","波若威","TPEx"],["4979","華星光","TPEx"]],
+      "watch_discovery": [["3008","大立光","TWSE"],["3406","玉晶光","TWSE"]]
     }
   ]
 }

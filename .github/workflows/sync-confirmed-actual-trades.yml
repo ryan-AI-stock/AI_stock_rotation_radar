@@ -1,0 +1,30 @@
+name: Sync Confirmed Actual Trades
+
+on:
+  workflow_dispatch:
+    inputs:
+      trade_date:
+        description: "Confirmed trade date"
+        required: true
+        default: "2026-10-07"
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install '.[test]'
+      - name: Sync C6 actual account and verify readback
+        env:
+          GOOGLE_OAUTH_CLIENT_ID: ${{ secrets.GOOGLE_OAUTH_CLIENT_ID }}
+          GOOGLE_OAUTH_CLIENT_SECRET: ${{ secrets.GOOGLE_OAUTH_CLIENT_SECRET }}
+          GOOGLE_OAUTH_REFRESH_TOKEN: ${{ secrets.GOOGLE_OAUTH_REFRESH_TOKEN }}
+        run: |
+          python -m rotation_radar.sync_confirmed_actual_trades \
+            --spreadsheet-id 19Xls-N_835V98_pM2TfLJSLlzKdXc6RztZfhJFEC1Dg \
+            --trade-date "${{ inputs.trade_date }}"

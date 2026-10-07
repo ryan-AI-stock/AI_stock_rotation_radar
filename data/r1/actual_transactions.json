@@ -1,0 +1,38 @@
+{
+  "as_of_date": "2026-10-07",
+  "source": "ryan_user_confirmed_actual_trade",
+  "transactions": [
+    {
+      "transaction_date": "2026-10-07",
+      "action": "SELL",
+      "ticker": "2327",
+      "company": "國巨",
+      "shares": 5000,
+      "price": 651.0,
+      "gross_amount": 3255000.0,
+      "fees": null,
+      "tax": null,
+      "net_cash_flow": null,
+      "realized_pnl": null,
+      "reason_status": "Ryan人工成交；舊帳持股4,000股與本次賣出5,000股存在1,000股歷史差異，淨收、成本與已實現損益待券商資料，不回填推估值。"
+    },
+    {
+      "transaction_date": "2026-10-07",
+      "action": "BUY",
+      "ticker": "2303",
+      "company": "聯電",
+      "shares": 1200,
+      "price": 148.13,
+      "gross_amount": 177756.0,
+      "fees": null,
+      "tax": 0.0,
+      "net_cash_flow": -177756.0,
+      "realized_pnl": null,
+      "reason_status": "Ryan人工成交；每股成本148.13元含交易成本，非R1模型指令。"
+    }
+  ],
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": true
+}
