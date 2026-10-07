@@ -150,7 +150,8 @@ def risk_gate(row: dict, *, earnings_state: str, policy: dict,
 def materialize(*, as_of_date: str, theme_path: str | Path, weekly_path: str | Path,
                 catalyst_path: str | Path, bottleneck_path: str | Path,
                 policy_path: str | Path, output_path: str | Path,
-                financial_path: str | Path | None = "data/r1/official_financial_latest.json") -> dict:
+                financial_path: str | Path | None = "data/r1/official_financial_latest.json",
+                monthly_revenue_path: str | Path | None = "data/r1/monthly_revenue/latest.json") -> dict:
     policy = json.loads(Path(policy_path).read_text(encoding="utf-8"))
     themes = load_themes(theme_path)
     theme_names: dict[str, list[str]] = {}
@@ -168,6 +169,14 @@ def materialize(*, as_of_date: str, theme_path: str | Path, weekly_path: str | P
     if financial_path and Path(financial_path).exists():
         financial_payload = json.loads(Path(financial_path).read_text(encoding="utf-8"))
         financial_rows = {str(row.get("ticker", "")).zfill(4): row for row in financial_payload.get("rows", [])}
+    monthly_revenue_rows: dict[str, dict] = {}
+    if monthly_revenue_path and Path(monthly_revenue_path).exists():
+        monthly_payload = json.loads(Path(monthly_revenue_path).read_text(encoding="utf-8"))
+        if monthly_payload.get("date") != as_of_date:
+            raise ValueError("active pool requires exact-date monthly revenue evidence")
+        monthly_revenue_rows = {
+            str(item.get("ticker", "")).zfill(4): item for item in monthly_payload.get("rows", [])
+        }
     weekly_rows = {str(row.get("ticker", "")).zfill(4): row for row in weekly.get("rows", [])}
     output_rows = []
     for ticker in sorted(theme_names):
@@ -178,6 +187,10 @@ def materialize(*, as_of_date: str, theme_path: str | Path, weekly_path: str | P
             catalysts, as_of_date=as_of_date,
             window_days=int(policy["catalyst_window_calendar_days"]),
         )
+        revenue_state = monthly_revenue_rows.get(ticker, {}).get("state", "DATA_MISSING")
+        if catalyst == "DATA_MISSING" and revenue_state == "ACCELERATING":
+            catalyst = "POSITIVE"
+            catalyst_reasons = ["MONTHLY_REVENUE_ACCELERATION"]
         bottlenecks = [item for item in bottleneck_rows if item.ticker == ticker]
         scarcity, scarcity_reasons = bottleneck_scarcity(bottlenecks, policy)
         catchup, catchup_details = catch_up_state(row)
@@ -201,6 +214,7 @@ def materialize(*, as_of_date: str, theme_path: str | Path, weekly_path: str | P
             "themes": theme_names.get(ticker, []), "active_pool_eligible": eligible,
             "active_pool_rank": None,
             "one_month_catalyst_state": catalyst, "recent_catalyst_event_count": event_count,
+            "monthly_revenue_acceleration": revenue_state,
             "six_month_earnings_visibility": visibility,
             "bottleneck_scarcity": scarcity, "price_catch_up": catchup,
             "six_month_risk_gate": gate, "data_confidence": confidence,
@@ -266,12 +280,14 @@ def main() -> None:
     parser.add_argument("--bottlenecks", default="data/r1/bottleneck_evidence.csv")
     parser.add_argument("--policy", default="config/r1_v04_active_pool.json")
     parser.add_argument("--financial", default="data/r1/official_financial_latest.json")
+    parser.add_argument("--monthly-revenue", default="data/r1/monthly_revenue/latest.json")
     parser.add_argument("--output", default="data/r1/active_pool/latest.json")
     args = parser.parse_args()
     payload = materialize(
         as_of_date=args.date, theme_path=args.themes, weekly_path=args.weekly,
         catalyst_path=args.catalysts, bottleneck_path=args.bottlenecks,
         policy_path=args.policy, output_path=args.output, financial_path=args.financial,
+        monthly_revenue_path=args.monthly_revenue,
     )
     print(json.dumps({"date": payload["date"], "active_pool_count": payload["active_pool_count"],
                       "status": payload["active_pool_status"]}, ensure_ascii=False))

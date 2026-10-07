@@ -1,0 +1,2842 @@
+{
+  "model": "R1",
+  "date": "2026-10-02",
+  "periods": [
+    "2026-06",
+    "2026-07",
+    "2026-08"
+  ],
+  "rows": [
+    {
+      "ticker": "1560",
+      "state": "ACCELERATING",
+      "periods": [
+        "2026-06",
+        "2026-07",
+        "2026-08"
+      ],
+      "observations": [
+        {
+          "ticker": "1560",
+          "company": "中砂",
+          "market": "TWSE",
+          "revenue_year_month": "2026-06",
+          "revenue_twd": 832959000,
+          "prior_year_revenue_twd": 0,
+          "yoy": 0.16390000000000002,
+          "available_date": "2026-07-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_6_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "1560",
+          "company": "中砂",
+          "market": "TWSE",
+          "revenue_year_month": "2026-07",
+          "revenue_twd": 886323000,
+          "prior_year_revenue_twd": 6000,
+          "yoy": 0.2656,
+          "available_date": "2026-08-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_7_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "1560",
+          "company": "中砂",
+          "market": "TWSE",
+          "revenue_year_month": "2026-08",
+          "revenue_twd": 899115000,
+          "prior_year_revenue_twd": 1000,
+          "yoy": 0.3037,
+          "available_date": "2026-09-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_8_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        }
+      ],
+      "reasons": [
+        "YOY_RISING_THREE_MONTHS",
+        "LATEST_YOY_POSITIVE"
+      ]
+    },
+    {
+      "ticker": "2301",
+      "state": "NOT_ACCELERATING",
+      "periods": [
+        "2026-06",
+        "2026-07",
+        "2026-08"
+      ],
+      "observations": [
+        {
+          "ticker": "2301",
+          "company": "光寶科",
+          "market": "TWSE",
+          "revenue_year_month": "2026-06",
+          "revenue_twd": 18655552000,
+          "prior_year_revenue_twd": 7000,
+          "yoy": 0.3697,
+          "available_date": "2026-07-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_6_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "2301",
+          "company": "光寶科",
+          "market": "TWSE",
+          "revenue_year_month": "2026-07",
+          "revenue_twd": 19005536000,
+          "prior_year_revenue_twd": 1000,
+          "yoy": 0.376,
+          "available_date": "2026-08-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_7_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "2301",
+          "company": "光寶科",
+          "market": "TWSE",
+          "revenue_year_month": "2026-08",
+          "revenue_twd": 19592400000,
+          "prior_year_revenue_twd": 3000,
+          "yoy": 0.252,
+          "available_date": "2026-09-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_8_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        }
+      ],
+      "reasons": [
+        "THREE_MONTH_YOY_RULE_NOT_MET"
+      ]
+    },
+    {
+      "ticker": "2303",
+      "state": "NOT_ACCELERATING",
+      "periods": [
+        "2026-06",
+        "2026-07",
+        "2026-08"
+      ],
+      "observations": [
+        {
+          "ticker": "2303",
+          "company": "聯電",
+          "market": "TWSE",
+          "revenue_year_month": "2026-06",
+          "revenue_twd": 23124962000,
+          "prior_year_revenue_twd": 0,
+          "yoy": 0.2285,
+          "available_date": "2026-07-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_6_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "2303",
+          "company": "聯電",
+          "market": "TWSE",
+          "revenue_year_month": "2026-07",
+          "revenue_twd": 23844045000,
+          "prior_year_revenue_twd": 3000,
+          "yoy": 0.1898,
+          "available_date": "2026-08-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_7_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "2303",
+          "company": "聯電",
+          "market": "TWSE",
+          "revenue_year_month": "2026-08",
+          "revenue_twd": 25044641000,
+          "prior_year_revenue_twd": 5000,
+          "yoy": 0.3071,
+          "available_date": "2026-09-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_8_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        }
+      ],
+      "reasons": [
+        "THREE_MONTH_YOY_RULE_NOT_MET"
+      ]
+    },
+    {
+      "ticker": "2308",
+      "state": "NOT_ACCELERATING",
+      "periods": [
+        "2026-06",
+        "2026-07",
+        "2026-08"
+      ],
+      "observations": [
+        {
+          "ticker": "2308",
+          "company": "台達電",
+          "market": "TWSE",
+          "revenue_year_month": "2026-06",
+          "revenue_twd": 65602611000,
+          "prior_year_revenue_twd": 11000,
+          "yoy": 0.5542,
+          "available_date": "2026-07-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_6_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "2308",
+          "company": "台達電",
+          "market": "TWSE",
+          "revenue_year_month": "2026-07",
+          "revenue_twd": 67073192000,
+          "prior_year_revenue_twd": 2000,
+          "yoy": 0.47740000000000005,
+          "available_date": "2026-08-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_7_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "2308",
+          "company": "台達電",
+          "market": "TWSE",
+          "revenue_year_month": "2026-08",
+          "revenue_twd": 64586049000,
+          "prior_year_revenue_twd": -3000,
+          "yoy": 0.3494,
+          "available_date": "2026-09-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_8_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        }
+      ],
+      "reasons": [
+        "THREE_MONTH_YOY_RULE_NOT_MET"
+      ]
+    },
+    {
+      "ticker": "2317",
+      "state": "NOT_ACCELERATING",
+      "periods": [
+        "2026-06",
+        "2026-07",
+        "2026-08"
+      ],
+      "observations": [
+        {
+          "ticker": "2317",
+          "company": "鴻海",
+          "market": "TWSE",
+          "revenue_year_month": "2026-06",
+          "revenue_twd": 821762936000,
+          "prior_year_revenue_twd": -4000,
+          "yoy": 0.5211,
+          "available_date": "2026-07-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_6_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "2317",
+          "company": "鴻海",
+          "market": "TWSE",
+          "revenue_year_month": "2026-07",
+          "revenue_twd": 946512543000,
+          "prior_year_revenue_twd": 15000,
+          "yoy": 0.5418,
+          "available_date": "2026-08-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_7_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "2317",
+          "company": "鴻海",
+          "market": "TWSE",
+          "revenue_year_month": "2026-08",
+          "revenue_twd": 921766023000,
+          "prior_year_revenue_twd": -2000,
+          "yoy": 0.5196999999999999,
+          "available_date": "2026-09-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_8_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        }
+      ],
+      "reasons": [
+        "THREE_MONTH_YOY_RULE_NOT_MET"
+      ]
+    },
+    {
+      "ticker": "2327",
+      "state": "ACCELERATING",
+      "periods": [
+        "2026-06",
+        "2026-07",
+        "2026-08"
+      ],
+      "observations": [
+        {
+          "ticker": "2327",
+          "company": "國巨*",
+          "market": "TWSE",
+          "revenue_year_month": "2026-06",
+          "revenue_twd": 15359009000,
+          "prior_year_revenue_twd": 1000,
+          "yoy": 0.38909999999999995,
+          "available_date": "2026-07-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_6_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "2327",
+          "company": "國巨*",
+          "market": "TWSE",
+          "revenue_year_month": "2026-07",
+          "revenue_twd": 16131188000,
+          "prior_year_revenue_twd": 5000,
+          "yoy": 0.5151,
+          "available_date": "2026-08-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_7_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "2327",
+          "company": "國巨*",
+          "market": "TWSE",
+          "revenue_year_month": "2026-08",
+          "revenue_twd": 16332196000,
+          "prior_year_revenue_twd": 1000,
+          "yoy": 0.5179,
+          "available_date": "2026-09-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_8_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        }
+      ],
+      "reasons": [
+        "YOY_RISING_THREE_MONTHS",
+        "LATEST_YOY_POSITIVE"
+      ]
+    },
+    {
+      "ticker": "2330",
+      "state": "NOT_ACCELERATING",
+      "periods": [
+        "2026-06",
+        "2026-07",
+        "2026-08"
+      ],
+      "observations": [
+        {
+          "ticker": "2330",
+          "company": "台積電",
+          "market": "TWSE",
+          "revenue_year_month": "2026-06",
+          "revenue_twd": 442679969000,
+          "prior_year_revenue_twd": 6000,
+          "yoy": 0.6786,
+          "available_date": "2026-07-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_6_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "2330",
+          "company": "台積電",
+          "market": "TWSE",
+          "revenue_year_month": "2026-07",
+          "revenue_twd": 467580548000,
+          "prior_year_revenue_twd": 5000,
+          "yoy": 0.4468,
+          "available_date": "2026-08-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_7_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "2330",
+          "company": "台積電",
+          "market": "TWSE",
+          "revenue_year_month": "2026-08",
+          "revenue_twd": 514805337000,
+          "prior_year_revenue_twd": 10000,
+          "yoy": 0.5332,
+          "available_date": "2026-09-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_8_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        }
+      ],
+      "reasons": [
+        "THREE_MONTH_YOY_RULE_NOT_MET"
+      ]
+    },
+    {
+      "ticker": "2337",
+      "state": "NOT_ACCELERATING",
+      "periods": [
+        "2026-06",
+        "2026-07",
+        "2026-08"
+      ],
+      "observations": [
+        {
+          "ticker": "2337",
+          "company": "旺宏",
+          "market": "TWSE",
+          "revenue_year_month": "2026-06",
+          "revenue_twd": 6956348000,
+          "prior_year_revenue_twd": 11000,
+          "yoy": 2.1609,
+          "available_date": "2026-07-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_6_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "2337",
+          "company": "旺宏",
+          "market": "TWSE",
+          "revenue_year_month": "2026-07",
+          "revenue_twd": 7724730000,
+          "prior_year_revenue_twd": 11000,
+          "yoy": 1.8047,
+          "available_date": "2026-08-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_7_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "2337",
+          "company": "旺宏",
+          "market": "TWSE",
+          "revenue_year_month": "2026-08",
+          "revenue_twd": 8145267000,
+          "prior_year_revenue_twd": 5000,
+          "yoy": 2.1853,
+          "available_date": "2026-09-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_8_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        }
+      ],
+      "reasons": [
+        "THREE_MONTH_YOY_RULE_NOT_MET"
+      ]
+    },
+    {
+      "ticker": "2344",
+      "state": "NOT_ACCELERATING",
+      "periods": [
+        "2026-06",
+        "2026-07",
+        "2026-08"
+      ],
+      "observations": [
+        {
+          "ticker": "2344",
+          "company": "華邦電",
+          "market": "TWSE",
+          "revenue_year_month": "2026-06",
+          "revenue_twd": 20596799000,
+          "prior_year_revenue_twd": 2000,
+          "yoy": 1.8987,
+          "available_date": "2026-07-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_6_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "2344",
+          "company": "華邦電",
+          "market": "TWSE",
+          "revenue_year_month": "2026-07",
+          "revenue_twd": 26773179000,
+          "prior_year_revenue_twd": 29000,
+          "yoy": 2.9154,
+          "available_date": "2026-08-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_7_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "2344",
+          "company": "華邦電",
+          "market": "TWSE",
+          "revenue_year_month": "2026-08",
+          "revenue_twd": 27308717000,
+          "prior_year_revenue_twd": 2000,
+          "yoy": 2.8942,
+          "available_date": "2026-09-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_8_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        }
+      ],
+      "reasons": [
+        "THREE_MONTH_YOY_RULE_NOT_MET"
+      ]
+    },
+    {
+      "ticker": "2345",
+      "state": "NOT_ACCELERATING",
+      "periods": [
+        "2026-06",
+        "2026-07",
+        "2026-08"
+      ],
+      "observations": [
+        {
+          "ticker": "2345",
+          "company": "智邦",
+          "market": "TWSE",
+          "revenue_year_month": "2026-06",
+          "revenue_twd": 39554529000,
+          "prior_year_revenue_twd": 38000,
+          "yoy": 0.6115999999999999,
+          "available_date": "2026-07-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_6_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "2345",
+          "company": "智邦",
+          "market": "TWSE",
+          "revenue_year_month": "2026-07",
+          "revenue_twd": 39472637000,
+          "prior_year_revenue_twd": 0,
+          "yoy": 0.7168000000000001,
+          "available_date": "2026-08-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_7_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "2345",
+          "company": "智邦",
+          "market": "TWSE",
+          "revenue_year_month": "2026-08",
+          "revenue_twd": 40872511000,
+          "prior_year_revenue_twd": 3000,
+          "yoy": 0.5942000000000001,
+          "available_date": "2026-09-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_8_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        }
+      ],
+      "reasons": [
+        "THREE_MONTH_YOY_RULE_NOT_MET"
+      ]
+    },
+    {
+      "ticker": "2356",
+      "state": "NOT_ACCELERATING",
+      "periods": [
+        "2026-06",
+        "2026-07",
+        "2026-08"
+      ],
+      "observations": [
+        {
+          "ticker": "2356",
+          "company": "英業達",
+          "market": "TWSE",
+          "revenue_year_month": "2026-06",
+          "revenue_twd": 102262391000,
+          "prior_year_revenue_twd": 23000,
+          "yoy": 0.6161,
+          "available_date": "2026-07-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_6_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "2356",
+          "company": "英業達",
+          "market": "TWSE",
+          "revenue_year_month": "2026-07",
+          "revenue_twd": 90190327000,
+          "prior_year_revenue_twd": -11000,
+          "yoy": 0.6572,
+          "available_date": "2026-08-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_7_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "2356",
+          "company": "英業達",
+          "market": "TWSE",
+          "revenue_year_month": "2026-08",
+          "revenue_twd": 83267681000,
+          "prior_year_revenue_twd": -7000,
+          "yoy": 0.3582,
+          "available_date": "2026-09-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_8_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        }
+      ],
+      "reasons": [
+        "THREE_MONTH_YOY_RULE_NOT_MET"
+      ]
+    },
+    {
+      "ticker": "2368",
+      "state": "NOT_ACCELERATING",
+      "periods": [
+        "2026-06",
+        "2026-07",
+        "2026-08"
+      ],
+      "observations": [
+        {
+          "ticker": "2368",
+          "company": "金像電",
+          "market": "TWSE",
+          "revenue_year_month": "2026-06",
+          "revenue_twd": 8255188000,
+          "prior_year_revenue_twd": -5000,
+          "yoy": 0.7822,
+          "available_date": "2026-07-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_6_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "2368",
+          "company": "金像電",
+          "market": "TWSE",
+          "revenue_year_month": "2026-07",
+          "revenue_twd": 10014527000,
+          "prior_year_revenue_twd": 21000,
+          "yoy": 0.7737999999999999,
+          "available_date": "2026-08-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_7_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "2368",
+          "company": "金像電",
+          "market": "TWSE",
+          "revenue_year_month": "2026-08",
+          "revenue_twd": 10383971000,
+          "prior_year_revenue_twd": 3000,
+          "yoy": 0.7637999999999999,
+          "available_date": "2026-09-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_8_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        }
+      ],
+      "reasons": [
+        "THREE_MONTH_YOY_RULE_NOT_MET"
+      ]
+    },
+    {
+      "ticker": "2376",
+      "state": "NOT_ACCELERATING",
+      "periods": [
+        "2026-06",
+        "2026-07",
+        "2026-08"
+      ],
+      "observations": [
+        {
+          "ticker": "2376",
+          "company": "技嘉",
+          "market": "TWSE",
+          "revenue_year_month": "2026-06",
+          "revenue_twd": 42892460000,
+          "prior_year_revenue_twd": -12000,
+          "yoy": 0.6855,
+          "available_date": "2026-07-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_6_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "2376",
+          "company": "技嘉",
+          "market": "TWSE",
+          "revenue_year_month": "2026-07",
+          "revenue_twd": 44213037000,
+          "prior_year_revenue_twd": 3000,
+          "yoy": 0.5967,
+          "available_date": "2026-08-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_7_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "2376",
+          "company": "技嘉",
+          "market": "TWSE",
+          "revenue_year_month": "2026-08",
+          "revenue_twd": 47400848000,
+          "prior_year_revenue_twd": 7000,
+          "yoy": 0.9842,
+          "available_date": "2026-09-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_8_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        }
+      ],
+      "reasons": [
+        "THREE_MONTH_YOY_RULE_NOT_MET"
+      ]
+    },
+    {
+      "ticker": "2379",
+      "state": "NOT_ACCELERATING",
+      "periods": [
+        "2026-06",
+        "2026-07",
+        "2026-08"
+      ],
+      "observations": [
+        {
+          "ticker": "2379",
+          "company": "瑞昱",
+          "market": "TWSE",
+          "revenue_year_month": "2026-06",
+          "revenue_twd": 12310586000,
+          "prior_year_revenue_twd": -1000,
+          "yoy": 0.20600000000000002,
+          "available_date": "2026-07-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_6_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "2379",
+          "company": "瑞昱",
+          "market": "TWSE",
+          "revenue_year_month": "2026-07",
+          "revenue_twd": 12895149000,
+          "prior_year_revenue_twd": 4000,
+          "yoy": 0.32530000000000003,
+          "available_date": "2026-08-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_7_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "2379",
+          "company": "瑞昱",
+          "market": "TWSE",
+          "revenue_year_month": "2026-08",
+          "revenue_twd": 12459133000,
+          "prior_year_revenue_twd": -3000,
+          "yoy": 0.2808,
+          "available_date": "2026-09-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_8_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        }
+      ],
+      "reasons": [
+        "THREE_MONTH_YOY_RULE_NOT_MET"
+      ]
+    },
+    {
+      "ticker": "2382",
+      "state": "ACCELERATING",
+      "periods": [
+        "2026-06",
+        "2026-07",
+        "2026-08"
+      ],
+      "observations": [
+        {
+          "ticker": "2382",
+          "company": "廣達",
+          "market": "TWSE",
+          "revenue_year_month": "2026-06",
+          "revenue_twd": 385190820000,
+          "prior_year_revenue_twd": 23000,
+          "yoy": 1.0287,
+          "available_date": "2026-07-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_6_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "2382",
+          "company": "廣達",
+          "market": "TWSE",
+          "revenue_year_month": "2026-07",
+          "revenue_twd": 366274080000,
+          "prior_year_revenue_twd": -4000,
+          "yoy": 1.3131,
+          "available_date": "2026-08-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_7_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "2382",
+          "company": "廣達",
+          "market": "TWSE",
+          "revenue_year_month": "2026-08",
+          "revenue_twd": 423970932000,
+          "prior_year_revenue_twd": 15000,
+          "yoy": 1.7745,
+          "available_date": "2026-09-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_8_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        }
+      ],
+      "reasons": [
+        "YOY_RISING_THREE_MONTHS",
+        "LATEST_YOY_POSITIVE"
+      ]
+    },
+    {
+      "ticker": "2383",
+      "state": "ACCELERATING",
+      "periods": [
+        "2026-06",
+        "2026-07",
+        "2026-08"
+      ],
+      "observations": [
+        {
+          "ticker": "2383",
+          "company": "台光電",
+          "market": "TWSE",
+          "revenue_year_month": "2026-06",
+          "revenue_twd": 17732956000,
+          "prior_year_revenue_twd": 13000,
+          "yoy": 1.2069,
+          "available_date": "2026-07-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_6_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "2383",
+          "company": "台光電",
+          "market": "TWSE",
+          "revenue_year_month": "2026-07",
+          "revenue_twd": 19206698000,
+          "prior_year_revenue_twd": 8000,
+          "yoy": 1.294,
+          "available_date": "2026-08-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_7_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "2383",
+          "company": "台光電",
+          "market": "TWSE",
+          "revenue_year_month": "2026-08",
+          "revenue_twd": 20145589000,
+          "prior_year_revenue_twd": 4000,
+          "yoy": 1.2984,
+          "available_date": "2026-09-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_8_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        }
+      ],
+      "reasons": [
+        "YOY_RISING_THREE_MONTHS",
+        "LATEST_YOY_POSITIVE"
+      ]
+    },
+    {
+      "ticker": "2408",
+      "state": "NOT_ACCELERATING",
+      "periods": [
+        "2026-06",
+        "2026-07",
+        "2026-08"
+      ],
+      "observations": [
+        {
+          "ticker": "2408",
+          "company": "南亞科",
+          "market": "TWSE",
+          "revenue_year_month": "2026-06",
+          "revenue_twd": 29388309000,
+          "prior_year_revenue_twd": 6000,
+          "yoy": 6.2133,
+          "available_date": "2026-07-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_6_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "2408",
+          "company": "南亞科",
+          "market": "TWSE",
+          "revenue_year_month": "2026-07",
+          "revenue_twd": 43867609000,
+          "prior_year_revenue_twd": 49000,
+          "yoy": 7.1961,
+          "available_date": "2026-08-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_7_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "2408",
+          "company": "南亞科",
+          "market": "TWSE",
+          "revenue_year_month": "2026-08",
+          "revenue_twd": 44690268000,
+          "prior_year_revenue_twd": 1000,
+          "yoy": 5.6085,
+          "available_date": "2026-09-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_8_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        }
+      ],
+      "reasons": [
+        "THREE_MONTH_YOY_RULE_NOT_MET"
+      ]
+    },
+    {
+      "ticker": "2449",
+      "state": "NOT_ACCELERATING",
+      "periods": [
+        "2026-06",
+        "2026-07",
+        "2026-08"
+      ],
+      "observations": [
+        {
+          "ticker": "2449",
+          "company": "京元電子",
+          "market": "TWSE",
+          "revenue_year_month": "2026-06",
+          "revenue_twd": 3621671000,
+          "prior_year_revenue_twd": -4000,
+          "yoy": 0.2863,
+          "available_date": "2026-07-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_6_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "2449",
+          "company": "京元電子",
+          "market": "TWSE",
+          "revenue_year_month": "2026-07",
+          "revenue_twd": 3990702000,
+          "prior_year_revenue_twd": 10000,
+          "yoy": 0.3674,
+          "available_date": "2026-08-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_7_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "2449",
+          "company": "京元電子",
+          "market": "TWSE",
+          "revenue_year_month": "2026-08",
+          "revenue_twd": 4080093000,
+          "prior_year_revenue_twd": 2000,
+          "yoy": 0.3157,
+          "available_date": "2026-09-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_8_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        }
+      ],
+      "reasons": [
+        "THREE_MONTH_YOY_RULE_NOT_MET"
+      ]
+    },
+    {
+      "ticker": "2454",
+      "state": "ACCELERATING",
+      "periods": [
+        "2026-06",
+        "2026-07",
+        "2026-08"
+      ],
+      "observations": [
+        {
+          "ticker": "2454",
+          "company": "聯發科",
+          "market": "TWSE",
+          "revenue_year_month": "2026-06",
+          "revenue_twd": 58011756000,
+          "prior_year_revenue_twd": 22000,
+          "yoy": 0.0279,
+          "available_date": "2026-07-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_6_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "2454",
+          "company": "聯發科",
+          "market": "TWSE",
+          "revenue_year_month": "2026-07",
+          "revenue_twd": 48474930000,
+          "prior_year_revenue_twd": -16000,
+          "yoy": 0.1215,
+          "available_date": "2026-08-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_7_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "2454",
+          "company": "聯發科",
+          "market": "TWSE",
+          "revenue_year_month": "2026-08",
+          "revenue_twd": 64183361000,
+          "prior_year_revenue_twd": 32000,
+          "yoy": 0.44079999999999997,
+          "available_date": "2026-09-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_8_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        }
+      ],
+      "reasons": [
+        "YOY_RISING_THREE_MONTHS",
+        "LATEST_YOY_POSITIVE"
+      ]
+    },
+    {
+      "ticker": "2492",
+      "state": "ACCELERATING",
+      "periods": [
+        "2026-06",
+        "2026-07",
+        "2026-08"
+      ],
+      "observations": [
+        {
+          "ticker": "2492",
+          "company": "華新科",
+          "market": "TWSE",
+          "revenue_year_month": "2026-06",
+          "revenue_twd": 3960936000,
+          "prior_year_revenue_twd": 7000,
+          "yoy": 0.2584,
+          "available_date": "2026-07-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_6_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "2492",
+          "company": "華新科",
+          "market": "TWSE",
+          "revenue_year_month": "2026-07",
+          "revenue_twd": 4443982000,
+          "prior_year_revenue_twd": 12000,
+          "yoy": 0.41950000000000004,
+          "available_date": "2026-08-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_7_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "2492",
+          "company": "華新科",
+          "market": "TWSE",
+          "revenue_year_month": "2026-08",
+          "revenue_twd": 4568665000,
+          "prior_year_revenue_twd": 2000,
+          "yoy": 0.45539999999999997,
+          "available_date": "2026-09-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_8_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        }
+      ],
+      "reasons": [
+        "YOY_RISING_THREE_MONTHS",
+        "LATEST_YOY_POSITIVE"
+      ]
+    },
+    {
+      "ticker": "3008",
+      "state": "NOT_ACCELERATING",
+      "periods": [
+        "2026-06",
+        "2026-07",
+        "2026-08"
+      ],
+      "observations": [
+        {
+          "ticker": "3008",
+          "company": "大立光",
+          "market": "TWSE",
+          "revenue_year_month": "2026-06",
+          "revenue_twd": 3712024000,
+          "prior_year_revenue_twd": -19000,
+          "yoy": -0.10460000000000001,
+          "available_date": "2026-07-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_6_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "3008",
+          "company": "大立光",
+          "market": "TWSE",
+          "revenue_year_month": "2026-07",
+          "revenue_twd": 4877118000,
+          "prior_year_revenue_twd": 31000,
+          "yoy": -0.1065,
+          "available_date": "2026-08-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_7_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "3008",
+          "company": "大立光",
+          "market": "TWSE",
+          "revenue_year_month": "2026-08",
+          "revenue_twd": 5011942000,
+          "prior_year_revenue_twd": 2000,
+          "yoy": -0.1623,
+          "available_date": "2026-09-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_8_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        }
+      ],
+      "reasons": [
+        "THREE_MONTH_YOY_RULE_NOT_MET"
+      ]
+    },
+    {
+      "ticker": "3017",
+      "state": "NOT_ACCELERATING",
+      "periods": [
+        "2026-06",
+        "2026-07",
+        "2026-08"
+      ],
+      "observations": [
+        {
+          "ticker": "3017",
+          "company": "奇鋐",
+          "market": "TWSE",
+          "revenue_year_month": "2026-06",
+          "revenue_twd": 17618119000,
+          "prior_year_revenue_twd": 11000,
+          "yoy": 0.6611,
+          "available_date": "2026-07-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_6_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "3017",
+          "company": "奇鋐",
+          "market": "TWSE",
+          "revenue_year_month": "2026-07",
+          "revenue_twd": 18590152000,
+          "prior_year_revenue_twd": 5000,
+          "yoy": 0.5739,
+          "available_date": "2026-08-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_7_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "3017",
+          "company": "奇鋐",
+          "market": "TWSE",
+          "revenue_year_month": "2026-08",
+          "revenue_twd": 19481068000,
+          "prior_year_revenue_twd": 4000,
+          "yoy": 0.5434,
+          "available_date": "2026-09-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_8_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        }
+      ],
+      "reasons": [
+        "THREE_MONTH_YOY_RULE_NOT_MET"
+      ]
+    },
+    {
+      "ticker": "3035",
+      "state": "NOT_ACCELERATING",
+      "periods": [
+        "2026-06",
+        "2026-07",
+        "2026-08"
+      ],
+      "observations": [
+        {
+          "ticker": "3035",
+          "company": "智原",
+          "market": "TWSE",
+          "revenue_year_month": "2026-06",
+          "revenue_twd": 1416828000,
+          "prior_year_revenue_twd": 52000,
+          "yoy": 0.2657,
+          "available_date": "2026-07-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_6_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "3035",
+          "company": "智原",
+          "market": "TWSE",
+          "revenue_year_month": "2026-07",
+          "revenue_twd": 1062105000,
+          "prior_year_revenue_twd": -25000,
+          "yoy": 0.09960000000000001,
+          "available_date": "2026-08-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_7_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "3035",
+          "company": "智原",
+          "market": "TWSE",
+          "revenue_year_month": "2026-08",
+          "revenue_twd": 1183747000,
+          "prior_year_revenue_twd": 11000,
+          "yoy": 0.2988,
+          "available_date": "2026-09-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_8_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        }
+      ],
+      "reasons": [
+        "THREE_MONTH_YOY_RULE_NOT_MET"
+      ]
+    },
+    {
+      "ticker": "3037",
+      "state": "ACCELERATING",
+      "periods": [
+        "2026-06",
+        "2026-07",
+        "2026-08"
+      ],
+      "observations": [
+        {
+          "ticker": "3037",
+          "company": "欣興",
+          "market": "TWSE",
+          "revenue_year_month": "2026-06",
+          "revenue_twd": 14897030000,
+          "prior_year_revenue_twd": 5000,
+          "yoy": 0.36310000000000003,
+          "available_date": "2026-07-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_6_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "3037",
+          "company": "欣興",
+          "market": "TWSE",
+          "revenue_year_month": "2026-07",
+          "revenue_twd": 16253637000,
+          "prior_year_revenue_twd": 9000,
+          "yoy": 0.43689999999999996,
+          "available_date": "2026-08-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_7_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "3037",
+          "company": "欣興",
+          "market": "TWSE",
+          "revenue_year_month": "2026-08",
+          "revenue_twd": 17745519000,
+          "prior_year_revenue_twd": 9000,
+          "yoy": 0.5625,
+          "available_date": "2026-09-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_8_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        }
+      ],
+      "reasons": [
+        "YOY_RISING_THREE_MONTHS",
+        "LATEST_YOY_POSITIVE"
+      ]
+    },
+    {
+      "ticker": "3081",
+      "state": "ACCELERATING",
+      "periods": [
+        "2026-06",
+        "2026-07",
+        "2026-08"
+      ],
+      "observations": [
+        {
+          "ticker": "3081",
+          "company": "聯亞",
+          "market": "TPEx",
+          "revenue_year_month": "2026-06",
+          "revenue_twd": 420507000,
+          "prior_year_revenue_twd": 3000,
+          "yoy": 1.2812999999999999,
+          "available_date": "2026-07-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/otc/t21sc03_115_6_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "3081",
+          "company": "聯亞",
+          "market": "TPEx",
+          "revenue_year_month": "2026-07",
+          "revenue_twd": 501210000,
+          "prior_year_revenue_twd": 19000,
+          "yoy": 1.7653,
+          "available_date": "2026-08-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/otc/t21sc03_115_7_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "3081",
+          "company": "聯亞",
+          "market": "TPEx",
+          "revenue_year_month": "2026-08",
+          "revenue_twd": 520469000,
+          "prior_year_revenue_twd": 3000,
+          "yoy": 1.8090000000000002,
+          "available_date": "2026-09-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/otc/t21sc03_115_8_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        }
+      ],
+      "reasons": [
+        "YOY_RISING_THREE_MONTHS",
+        "LATEST_YOY_POSITIVE"
+      ]
+    },
+    {
+      "ticker": "3131",
+      "state": "ACCELERATING",
+      "periods": [
+        "2026-06",
+        "2026-07",
+        "2026-08"
+      ],
+      "observations": [
+        {
+          "ticker": "3131",
+          "company": "弘塑",
+          "market": "TPEx",
+          "revenue_year_month": "2026-06",
+          "revenue_twd": 631051000,
+          "prior_year_revenue_twd": 12000,
+          "yoy": 0.1521,
+          "available_date": "2026-07-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/otc/t21sc03_115_6_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "3131",
+          "company": "弘塑",
+          "market": "TPEx",
+          "revenue_year_month": "2026-07",
+          "revenue_twd": 792895000,
+          "prior_year_revenue_twd": 25000,
+          "yoy": 0.424,
+          "available_date": "2026-08-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/otc/t21sc03_115_7_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "3131",
+          "company": "弘塑",
+          "market": "TPEx",
+          "revenue_year_month": "2026-08",
+          "revenue_twd": 681351000,
+          "prior_year_revenue_twd": -14000,
+          "yoy": 0.4334,
+          "available_date": "2026-09-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/otc/t21sc03_115_8_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        }
+      ],
+      "reasons": [
+        "YOY_RISING_THREE_MONTHS",
+        "LATEST_YOY_POSITIVE"
+      ]
+    },
+    {
+      "ticker": "3163",
+      "state": "NOT_ACCELERATING",
+      "periods": [
+        "2026-06",
+        "2026-07",
+        "2026-08"
+      ],
+      "observations": [
+        {
+          "ticker": "3163",
+          "company": "波若威",
+          "market": "TPEx",
+          "revenue_year_month": "2026-06",
+          "revenue_twd": 181188000,
+          "prior_year_revenue_twd": -14000,
+          "yoy": -0.1153,
+          "available_date": "2026-07-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/otc/t21sc03_115_6_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "3163",
+          "company": "波若威",
+          "market": "TPEx",
+          "revenue_year_month": "2026-07",
+          "revenue_twd": 210064000,
+          "prior_year_revenue_twd": 15000,
+          "yoy": 0.2865,
+          "available_date": "2026-08-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/otc/t21sc03_115_7_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "3163",
+          "company": "波若威",
+          "market": "TPEx",
+          "revenue_year_month": "2026-08",
+          "revenue_twd": 205091000,
+          "prior_year_revenue_twd": -2000,
+          "yoy": 0.0969,
+          "available_date": "2026-09-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/otc/t21sc03_115_8_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        }
+      ],
+      "reasons": [
+        "THREE_MONTH_YOY_RULE_NOT_MET"
+      ]
+    },
+    {
+      "ticker": "3189",
+      "state": "ACCELERATING",
+      "periods": [
+        "2026-06",
+        "2026-07",
+        "2026-08"
+      ],
+      "observations": [
+        {
+          "ticker": "3189",
+          "company": "景碩",
+          "market": "TWSE",
+          "revenue_year_month": "2026-06",
+          "revenue_twd": 4224069000,
+          "prior_year_revenue_twd": 0,
+          "yoy": 0.3226,
+          "available_date": "2026-07-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_6_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "3189",
+          "company": "景碩",
+          "market": "TWSE",
+          "revenue_year_month": "2026-07",
+          "revenue_twd": 4548833000,
+          "prior_year_revenue_twd": 7000,
+          "yoy": 0.35850000000000004,
+          "available_date": "2026-08-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_7_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "3189",
+          "company": "景碩",
+          "market": "TWSE",
+          "revenue_year_month": "2026-08",
+          "revenue_twd": 4809631000,
+          "prior_year_revenue_twd": 5000,
+          "yoy": 0.4057,
+          "available_date": "2026-09-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_8_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        }
+      ],
+      "reasons": [
+        "YOY_RISING_THREE_MONTHS",
+        "LATEST_YOY_POSITIVE"
+      ]
+    },
+    {
+      "ticker": "3231",
+      "state": "ACCELERATING",
+      "periods": [
+        "2026-06",
+        "2026-07",
+        "2026-08"
+      ],
+      "observations": [
+        {
+          "ticker": "3231",
+          "company": "緯創",
+          "market": "TWSE",
+          "revenue_year_month": "2026-06",
+          "revenue_twd": 321821969000,
+          "prior_year_revenue_twd": 10000,
+          "yoy": 0.5384,
+          "available_date": "2026-07-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_6_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "3231",
+          "company": "緯創",
+          "market": "TWSE",
+          "revenue_year_month": "2026-07",
+          "revenue_twd": 308219198000,
+          "prior_year_revenue_twd": -4000,
+          "yoy": 0.6076,
+          "available_date": "2026-08-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_7_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "3231",
+          "company": "緯創",
+          "market": "TWSE",
+          "revenue_year_month": "2026-08",
+          "revenue_twd": 460065063000,
+          "prior_year_revenue_twd": 49000,
+          "yoy": 1.6647999999999998,
+          "available_date": "2026-09-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_8_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        }
+      ],
+      "reasons": [
+        "YOY_RISING_THREE_MONTHS",
+        "LATEST_YOY_POSITIVE"
+      ]
+    },
+    {
+      "ticker": "3260",
+      "state": "NOT_ACCELERATING",
+      "periods": [
+        "2026-06",
+        "2026-07",
+        "2026-08"
+      ],
+      "observations": [
+        {
+          "ticker": "3260",
+          "company": "威剛",
+          "market": "TPEx",
+          "revenue_year_month": "2026-06",
+          "revenue_twd": 14661310000,
+          "prior_year_revenue_twd": 13000,
+          "yoy": 2.1205000000000003,
+          "available_date": "2026-07-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/otc/t21sc03_115_6_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "3260",
+          "company": "威剛",
+          "market": "TPEx",
+          "revenue_year_month": "2026-07",
+          "revenue_twd": 18379079000,
+          "prior_year_revenue_twd": 25000,
+          "yoy": 3.3129000000000004,
+          "available_date": "2026-08-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/otc/t21sc03_115_7_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "3260",
+          "company": "威剛",
+          "market": "TPEx",
+          "revenue_year_month": "2026-08",
+          "revenue_twd": 18925261000,
+          "prior_year_revenue_twd": 2000,
+          "yoy": 2.798,
+          "available_date": "2026-09-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/otc/t21sc03_115_8_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        }
+      ],
+      "reasons": [
+        "THREE_MONTH_YOY_RULE_NOT_MET"
+      ]
+    },
+    {
+      "ticker": "3324",
+      "state": "NOT_ACCELERATING",
+      "periods": [
+        "2026-06",
+        "2026-07",
+        "2026-08"
+      ],
+      "observations": [
+        {
+          "ticker": "3324",
+          "company": "雙鴻",
+          "market": "TPEx",
+          "revenue_year_month": "2026-06",
+          "revenue_twd": 2718035000,
+          "prior_year_revenue_twd": -13000,
+          "yoy": 0.6213000000000001,
+          "available_date": "2026-07-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/otc/t21sc03_115_6_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "3324",
+          "company": "雙鴻",
+          "market": "TPEx",
+          "revenue_year_month": "2026-07",
+          "revenue_twd": 3765466000,
+          "prior_year_revenue_twd": 38000,
+          "yoy": 1.1669,
+          "available_date": "2026-08-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/otc/t21sc03_115_7_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "3324",
+          "company": "雙鴻",
+          "market": "TPEx",
+          "revenue_year_month": "2026-08",
+          "revenue_twd": 3141249000,
+          "prior_year_revenue_twd": -16000,
+          "yoy": 0.6717,
+          "available_date": "2026-09-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/otc/t21sc03_115_8_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        }
+      ],
+      "reasons": [
+        "THREE_MONTH_YOY_RULE_NOT_MET"
+      ]
+    },
+    {
+      "ticker": "3338",
+      "state": "ACCELERATING",
+      "periods": [
+        "2026-06",
+        "2026-07",
+        "2026-08"
+      ],
+      "observations": [
+        {
+          "ticker": "3338",
+          "company": "泰碩",
+          "market": "TWSE",
+          "revenue_year_month": "2026-06",
+          "revenue_twd": 378370000,
+          "prior_year_revenue_twd": 16000,
+          "yoy": 0.20829999999999999,
+          "available_date": "2026-07-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_6_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "3338",
+          "company": "泰碩",
+          "market": "TWSE",
+          "revenue_year_month": "2026-07",
+          "revenue_twd": 406479000,
+          "prior_year_revenue_twd": 7000,
+          "yoy": 0.396,
+          "available_date": "2026-08-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_7_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "3338",
+          "company": "泰碩",
+          "market": "TWSE",
+          "revenue_year_month": "2026-08",
+          "revenue_twd": 462010000,
+          "prior_year_revenue_twd": 13000,
+          "yoy": 0.6199,
+          "available_date": "2026-09-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_8_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        }
+      ],
+      "reasons": [
+        "YOY_RISING_THREE_MONTHS",
+        "LATEST_YOY_POSITIVE"
+      ]
+    },
+    {
+      "ticker": "3357",
+      "state": "NOT_ACCELERATING",
+      "periods": [
+        "2026-06",
+        "2026-07",
+        "2026-08"
+      ],
+      "observations": [
+        {
+          "ticker": "3357",
+          "company": "臺慶科",
+          "market": "TPEx",
+          "revenue_year_month": "2026-06",
+          "revenue_twd": 764513000,
+          "prior_year_revenue_twd": 7000,
+          "yoy": 0.5744,
+          "available_date": "2026-07-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/otc/t21sc03_115_6_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "3357",
+          "company": "臺慶科",
+          "market": "TPEx",
+          "revenue_year_month": "2026-07",
+          "revenue_twd": 875885000,
+          "prior_year_revenue_twd": 14000,
+          "yoy": 0.6331,
+          "available_date": "2026-08-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/otc/t21sc03_115_7_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "3357",
+          "company": "臺慶科",
+          "market": "TPEx",
+          "revenue_year_month": "2026-08",
+          "revenue_twd": 815423000,
+          "prior_year_revenue_twd": -6000,
+          "yoy": 0.5306000000000001,
+          "available_date": "2026-09-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/otc/t21sc03_115_8_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        }
+      ],
+      "reasons": [
+        "THREE_MONTH_YOY_RULE_NOT_MET"
+      ]
+    },
+    {
+      "ticker": "3363",
+      "state": "ACCELERATING",
+      "periods": [
+        "2026-06",
+        "2026-07",
+        "2026-08"
+      ],
+      "observations": [
+        {
+          "ticker": "3363",
+          "company": "上詮",
+          "market": "TPEx",
+          "revenue_year_month": "2026-06",
+          "revenue_twd": 157445000,
+          "prior_year_revenue_twd": 9000,
+          "yoy": -0.157,
+          "available_date": "2026-07-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/otc/t21sc03_115_6_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "3363",
+          "company": "上詮",
+          "market": "TPEx",
+          "revenue_year_month": "2026-07",
+          "revenue_twd": 170843000,
+          "prior_year_revenue_twd": 8000,
+          "yoy": 0.1209,
+          "available_date": "2026-08-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/otc/t21sc03_115_7_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "3363",
+          "company": "上詮",
+          "market": "TPEx",
+          "revenue_year_month": "2026-08",
+          "revenue_twd": 204482000,
+          "prior_year_revenue_twd": 19000,
+          "yoy": 0.1319,
+          "available_date": "2026-09-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/otc/t21sc03_115_8_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        }
+      ],
+      "reasons": [
+        "YOY_RISING_THREE_MONTHS",
+        "LATEST_YOY_POSITIVE"
+      ]
+    },
+    {
+      "ticker": "3406",
+      "state": "NOT_ACCELERATING",
+      "periods": [
+        "2026-06",
+        "2026-07",
+        "2026-08"
+      ],
+      "observations": [
+        {
+          "ticker": "3406",
+          "company": "玉晶光",
+          "market": "TWSE",
+          "revenue_year_month": "2026-06",
+          "revenue_twd": 1739246000,
+          "prior_year_revenue_twd": 6000,
+          "yoy": 0.045,
+          "available_date": "2026-07-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_6_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "3406",
+          "company": "玉晶光",
+          "market": "TWSE",
+          "revenue_year_month": "2026-07",
+          "revenue_twd": 2422368000,
+          "prior_year_revenue_twd": 39000,
+          "yoy": 0.016200000000000003,
+          "available_date": "2026-08-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_7_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "3406",
+          "company": "玉晶光",
+          "market": "TWSE",
+          "revenue_year_month": "2026-08",
+          "revenue_twd": 2719294000,
+          "prior_year_revenue_twd": 12000,
+          "yoy": 0.0072,
+          "available_date": "2026-09-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_8_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        }
+      ],
+      "reasons": [
+        "THREE_MONTH_YOY_RULE_NOT_MET"
+      ]
+    },
+    {
+      "ticker": "3443",
+      "state": "NOT_ACCELERATING",
+      "periods": [
+        "2026-06",
+        "2026-07",
+        "2026-08"
+      ],
+      "observations": [
+        {
+          "ticker": "3443",
+          "company": "創意",
+          "market": "TWSE",
+          "revenue_year_month": "2026-06",
+          "revenue_twd": 4928512000,
+          "prior_year_revenue_twd": 5000,
+          "yoy": 1.0371,
+          "available_date": "2026-07-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_6_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "3443",
+          "company": "創意",
+          "market": "TWSE",
+          "revenue_year_month": "2026-07",
+          "revenue_twd": 5769170000,
+          "prior_year_revenue_twd": 17000,
+          "yoy": 1.5837999999999999,
+          "available_date": "2026-08-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_7_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "3443",
+          "company": "創意",
+          "market": "TWSE",
+          "revenue_year_month": "2026-08",
+          "revenue_twd": 5840094000,
+          "prior_year_revenue_twd": 1000,
+          "yoy": 1.1101999999999999,
+          "available_date": "2026-09-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_8_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        }
+      ],
+      "reasons": [
+        "THREE_MONTH_YOY_RULE_NOT_MET"
+      ]
+    },
+    {
+      "ticker": "3532",
+      "state": "ACCELERATING",
+      "periods": [
+        "2026-06",
+        "2026-07",
+        "2026-08"
+      ],
+      "observations": [
+        {
+          "ticker": "3532",
+          "company": "台勝科",
+          "market": "TWSE",
+          "revenue_year_month": "2026-06",
+          "revenue_twd": 1224081000,
+          "prior_year_revenue_twd": 0,
+          "yoy": 0.2371,
+          "available_date": "2026-07-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_6_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "3532",
+          "company": "台勝科",
+          "market": "TWSE",
+          "revenue_year_month": "2026-07",
+          "revenue_twd": 1303041000,
+          "prior_year_revenue_twd": 6000,
+          "yoy": 0.2877,
+          "available_date": "2026-08-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_7_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "3532",
+          "company": "台勝科",
+          "market": "TWSE",
+          "revenue_year_month": "2026-08",
+          "revenue_twd": 1331863000,
+          "prior_year_revenue_twd": 2000,
+          "yoy": 0.2927,
+          "available_date": "2026-09-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_8_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        }
+      ],
+      "reasons": [
+        "YOY_RISING_THREE_MONTHS",
+        "LATEST_YOY_POSITIVE"
+      ]
+    },
+    {
+      "ticker": "3583",
+      "state": "ACCELERATING",
+      "periods": [
+        "2026-06",
+        "2026-07",
+        "2026-08"
+      ],
+      "observations": [
+        {
+          "ticker": "3583",
+          "company": "辛耘",
+          "market": "TWSE",
+          "revenue_year_month": "2026-06",
+          "revenue_twd": 1034997000,
+          "prior_year_revenue_twd": 6000,
+          "yoy": -0.026699999999999998,
+          "available_date": "2026-07-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_6_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "3583",
+          "company": "辛耘",
+          "market": "TWSE",
+          "revenue_year_month": "2026-07",
+          "revenue_twd": 973288000,
+          "prior_year_revenue_twd": -5000,
+          "yoy": 0.0658,
+          "available_date": "2026-08-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_7_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "3583",
+          "company": "辛耘",
+          "market": "TWSE",
+          "revenue_year_month": "2026-08",
+          "revenue_twd": 1068346000,
+          "prior_year_revenue_twd": 9000,
+          "yoy": 0.1805,
+          "available_date": "2026-09-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_8_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        }
+      ],
+      "reasons": [
+        "YOY_RISING_THREE_MONTHS",
+        "LATEST_YOY_POSITIVE"
+      ]
+    },
+    {
+      "ticker": "3653",
+      "state": "NOT_ACCELERATING",
+      "periods": [
+        "2026-06",
+        "2026-07",
+        "2026-08"
+      ],
+      "observations": [
+        {
+          "ticker": "3653",
+          "company": "健策",
+          "market": "TWSE",
+          "revenue_year_month": "2026-06",
+          "revenue_twd": 2649918000,
+          "prior_year_revenue_twd": 14000,
+          "yoy": 0.5764,
+          "available_date": "2026-07-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_6_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "3653",
+          "company": "健策",
+          "market": "TWSE",
+          "revenue_year_month": "2026-07",
+          "revenue_twd": 3213171000,
+          "prior_year_revenue_twd": 21000,
+          "yoy": 0.9095,
+          "available_date": "2026-08-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_7_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "3653",
+          "company": "健策",
+          "market": "TWSE",
+          "revenue_year_month": "2026-08",
+          "revenue_twd": 3225888000,
+          "prior_year_revenue_twd": 0,
+          "yoy": 0.909,
+          "available_date": "2026-09-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_8_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        }
+      ],
+      "reasons": [
+        "THREE_MONTH_YOY_RULE_NOT_MET"
+      ]
+    },
+    {
+      "ticker": "3661",
+      "state": "ACCELERATING",
+      "periods": [
+        "2026-06",
+        "2026-07",
+        "2026-08"
+      ],
+      "observations": [
+        {
+          "ticker": "3661",
+          "company": "世芯-KY",
+          "market": "TWSE",
+          "revenue_year_month": "2026-06",
+          "revenue_twd": 3572404000,
+          "prior_year_revenue_twd": 84000,
+          "yoy": 0.1539,
+          "available_date": "2026-07-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_6_1.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "3661",
+          "company": "世芯-KY",
+          "market": "TWSE",
+          "revenue_year_month": "2026-07",
+          "revenue_twd": 7433152000,
+          "prior_year_revenue_twd": 108000,
+          "yoy": 1.8178,
+          "available_date": "2026-08-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_7_1.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "3661",
+          "company": "世芯-KY",
+          "market": "TWSE",
+          "revenue_year_month": "2026-08",
+          "revenue_twd": 8776286000,
+          "prior_year_revenue_twd": 18000,
+          "yoy": 2.7361,
+          "available_date": "2026-09-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_8_1.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        }
+      ],
+      "reasons": [
+        "YOY_RISING_THREE_MONTHS",
+        "LATEST_YOY_POSITIVE"
+      ]
+    },
+    {
+      "ticker": "3711",
+      "state": "ACCELERATING",
+      "periods": [
+        "2026-06",
+        "2026-07",
+        "2026-08"
+      ],
+      "observations": [
+        {
+          "ticker": "3711",
+          "company": "日月光投控",
+          "market": "TWSE",
+          "revenue_year_month": "2026-06",
+          "revenue_twd": 65783102000,
+          "prior_year_revenue_twd": 4000,
+          "yoy": 0.3286,
+          "available_date": "2026-07-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_6_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "3711",
+          "company": "日月光投控",
+          "market": "TWSE",
+          "revenue_year_month": "2026-07",
+          "revenue_twd": 73783701000,
+          "prior_year_revenue_twd": 12000,
+          "yoy": 0.4315,
+          "available_date": "2026-08-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_7_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "3711",
+          "company": "日月光投控",
+          "market": "TWSE",
+          "revenue_year_month": "2026-08",
+          "revenue_twd": 82247374000,
+          "prior_year_revenue_twd": 11000,
+          "yoy": 0.45649999999999996,
+          "available_date": "2026-09-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_8_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        }
+      ],
+      "reasons": [
+        "YOY_RISING_THREE_MONTHS",
+        "LATEST_YOY_POSITIVE"
+      ]
+    },
+    {
+      "ticker": "4979",
+      "state": "ACCELERATING",
+      "periods": [
+        "2026-06",
+        "2026-07",
+        "2026-08"
+      ],
+      "observations": [
+        {
+          "ticker": "4979",
+          "company": "華星光",
+          "market": "TPEx",
+          "revenue_year_month": "2026-06",
+          "revenue_twd": 455083000,
+          "prior_year_revenue_twd": 8000,
+          "yoy": 0.2768,
+          "available_date": "2026-07-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/otc/t21sc03_115_6_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "4979",
+          "company": "華星光",
+          "market": "TPEx",
+          "revenue_year_month": "2026-07",
+          "revenue_twd": 508777000,
+          "prior_year_revenue_twd": 11000,
+          "yoy": 0.31010000000000004,
+          "available_date": "2026-08-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/otc/t21sc03_115_7_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "4979",
+          "company": "華星光",
+          "market": "TPEx",
+          "revenue_year_month": "2026-08",
+          "revenue_twd": 545866000,
+          "prior_year_revenue_twd": 7000,
+          "yoy": 0.37439999999999996,
+          "available_date": "2026-09-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/otc/t21sc03_115_8_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        }
+      ],
+      "reasons": [
+        "YOY_RISING_THREE_MONTHS",
+        "LATEST_YOY_POSITIVE"
+      ]
+    },
+    {
+      "ticker": "6182",
+      "state": "ACCELERATING",
+      "periods": [
+        "2026-06",
+        "2026-07",
+        "2026-08"
+      ],
+      "observations": [
+        {
+          "ticker": "6182",
+          "company": "合晶",
+          "market": "TPEx",
+          "revenue_year_month": "2026-06",
+          "revenue_twd": 966318000,
+          "prior_year_revenue_twd": 8000,
+          "yoy": 0.141,
+          "available_date": "2026-07-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/otc/t21sc03_115_6_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "6182",
+          "company": "合晶",
+          "market": "TPEx",
+          "revenue_year_month": "2026-07",
+          "revenue_twd": 994362000,
+          "prior_year_revenue_twd": 2000,
+          "yoy": 0.1889,
+          "available_date": "2026-08-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/otc/t21sc03_115_7_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "6182",
+          "company": "合晶",
+          "market": "TPEx",
+          "revenue_year_month": "2026-08",
+          "revenue_twd": 1004466000,
+          "prior_year_revenue_twd": 1000,
+          "yoy": 0.1996,
+          "available_date": "2026-09-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/otc/t21sc03_115_8_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        }
+      ],
+      "reasons": [
+        "YOY_RISING_THREE_MONTHS",
+        "LATEST_YOY_POSITIVE"
+      ]
+    },
+    {
+      "ticker": "6187",
+      "state": "NOT_ACCELERATING",
+      "periods": [
+        "2026-06",
+        "2026-07",
+        "2026-08"
+      ],
+      "observations": [
+        {
+          "ticker": "6187",
+          "company": "萬潤",
+          "market": "TPEx",
+          "revenue_year_month": "2026-06",
+          "revenue_twd": 1012415000,
+          "prior_year_revenue_twd": 38000,
+          "yoy": 0.8706,
+          "available_date": "2026-07-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/otc/t21sc03_115_6_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "6187",
+          "company": "萬潤",
+          "market": "TPEx",
+          "revenue_year_month": "2026-07",
+          "revenue_twd": 1054680000,
+          "prior_year_revenue_twd": 4000,
+          "yoy": 0.7343999999999999,
+          "available_date": "2026-08-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/otc/t21sc03_115_7_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "6187",
+          "company": "萬潤",
+          "market": "TPEx",
+          "revenue_year_month": "2026-08",
+          "revenue_twd": 1108737000,
+          "prior_year_revenue_twd": 5000,
+          "yoy": 1.0306,
+          "available_date": "2026-09-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/otc/t21sc03_115_8_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        }
+      ],
+      "reasons": [
+        "THREE_MONTH_YOY_RULE_NOT_MET"
+      ]
+    },
+    {
+      "ticker": "6223",
+      "state": "ACCELERATING",
+      "periods": [
+        "2026-06",
+        "2026-07",
+        "2026-08"
+      ],
+      "observations": [
+        {
+          "ticker": "6223",
+          "company": "旺矽",
+          "market": "TPEx",
+          "revenue_year_month": "2026-06",
+          "revenue_twd": 1832915000,
+          "prior_year_revenue_twd": -3000,
+          "yoy": 0.6506000000000001,
+          "available_date": "2026-07-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/otc/t21sc03_115_6_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "6223",
+          "company": "旺矽",
+          "market": "TPEx",
+          "revenue_year_month": "2026-07",
+          "revenue_twd": 1805362000,
+          "prior_year_revenue_twd": -1000,
+          "yoy": 0.6648999999999999,
+          "available_date": "2026-08-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/otc/t21sc03_115_7_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "6223",
+          "company": "旺矽",
+          "market": "TPEx",
+          "revenue_year_month": "2026-08",
+          "revenue_twd": 2048171000,
+          "prior_year_revenue_twd": 13000,
+          "yoy": 0.6987000000000001,
+          "available_date": "2026-09-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/otc/t21sc03_115_8_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        }
+      ],
+      "reasons": [
+        "YOY_RISING_THREE_MONTHS",
+        "LATEST_YOY_POSITIVE"
+      ]
+    },
+    {
+      "ticker": "6230",
+      "state": "NOT_ACCELERATING",
+      "periods": [
+        "2026-06",
+        "2026-07",
+        "2026-08"
+      ],
+      "observations": [
+        {
+          "ticker": "6230",
+          "company": "尼得科超眾",
+          "market": "TWSE",
+          "revenue_year_month": "2026-06",
+          "revenue_twd": 757527000,
+          "prior_year_revenue_twd": -13000,
+          "yoy": -0.0315,
+          "available_date": "2026-07-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_6_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "6230",
+          "company": "尼得科超眾",
+          "market": "TWSE",
+          "revenue_year_month": "2026-07",
+          "revenue_twd": 788510000,
+          "prior_year_revenue_twd": 4000,
+          "yoy": -0.0033,
+          "available_date": "2026-08-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_7_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "6230",
+          "company": "尼得科超眾",
+          "market": "TWSE",
+          "revenue_year_month": "2026-08",
+          "revenue_twd": 759277000,
+          "prior_year_revenue_twd": -3000,
+          "yoy": -0.0085,
+          "available_date": "2026-09-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_8_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        }
+      ],
+      "reasons": [
+        "THREE_MONTH_YOY_RULE_NOT_MET"
+      ]
+    },
+    {
+      "ticker": "6274",
+      "state": "ACCELERATING",
+      "periods": [
+        "2026-06",
+        "2026-07",
+        "2026-08"
+      ],
+      "observations": [
+        {
+          "ticker": "6274",
+          "company": "台燿",
+          "market": "TPEx",
+          "revenue_year_month": "2026-06",
+          "revenue_twd": 4895221000,
+          "prior_year_revenue_twd": 2000,
+          "yoy": 1.0771,
+          "available_date": "2026-07-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/otc/t21sc03_115_6_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "6274",
+          "company": "台燿",
+          "market": "TPEx",
+          "revenue_year_month": "2026-07",
+          "revenue_twd": 5908074000,
+          "prior_year_revenue_twd": 20000,
+          "yoy": 1.2152,
+          "available_date": "2026-08-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/otc/t21sc03_115_7_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "6274",
+          "company": "台燿",
+          "market": "TPEx",
+          "revenue_year_month": "2026-08",
+          "revenue_twd": 5914540000,
+          "prior_year_revenue_twd": 0,
+          "yoy": 1.3248,
+          "available_date": "2026-09-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/otc/t21sc03_115_8_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        }
+      ],
+      "reasons": [
+        "YOY_RISING_THREE_MONTHS",
+        "LATEST_YOY_POSITIVE"
+      ]
+    },
+    {
+      "ticker": "6282",
+      "state": "NOT_ACCELERATING",
+      "periods": [
+        "2026-06",
+        "2026-07",
+        "2026-08"
+      ],
+      "observations": [
+        {
+          "ticker": "6282",
+          "company": "康舒",
+          "market": "TWSE",
+          "revenue_year_month": "2026-06",
+          "revenue_twd": 3423036000,
+          "prior_year_revenue_twd": 16000,
+          "yoy": 0.2827,
+          "available_date": "2026-07-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_6_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "6282",
+          "company": "康舒",
+          "market": "TWSE",
+          "revenue_year_month": "2026-07",
+          "revenue_twd": 3263384000,
+          "prior_year_revenue_twd": -4000,
+          "yoy": 0.42450000000000004,
+          "available_date": "2026-08-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_7_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "6282",
+          "company": "康舒",
+          "market": "TWSE",
+          "revenue_year_month": "2026-08",
+          "revenue_twd": 3708827000,
+          "prior_year_revenue_twd": 13000,
+          "yoy": 0.3847,
+          "available_date": "2026-09-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_8_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        }
+      ],
+      "reasons": [
+        "THREE_MONTH_YOY_RULE_NOT_MET"
+      ]
+    },
+    {
+      "ticker": "6412",
+      "state": "NOT_ACCELERATING",
+      "periods": [
+        "2026-06",
+        "2026-07",
+        "2026-08"
+      ],
+      "observations": [
+        {
+          "ticker": "6412",
+          "company": "群電",
+          "market": "TWSE",
+          "revenue_year_month": "2026-06",
+          "revenue_twd": 3099991000,
+          "prior_year_revenue_twd": 14000,
+          "yoy": -0.0076,
+          "available_date": "2026-07-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_6_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "6412",
+          "company": "群電",
+          "market": "TWSE",
+          "revenue_year_month": "2026-07",
+          "revenue_twd": 2531200000,
+          "prior_year_revenue_twd": -18000,
+          "yoy": -0.12990000000000002,
+          "available_date": "2026-08-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_7_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "6412",
+          "company": "群電",
+          "market": "TWSE",
+          "revenue_year_month": "2026-08",
+          "revenue_twd": 2469056000,
+          "prior_year_revenue_twd": -2000,
+          "yoy": -0.1966,
+          "available_date": "2026-09-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_8_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        }
+      ],
+      "reasons": [
+        "THREE_MONTH_YOY_RULE_NOT_MET"
+      ]
+    },
+    {
+      "ticker": "6442",
+      "state": "ACCELERATING",
+      "periods": [
+        "2026-06",
+        "2026-07",
+        "2026-08"
+      ],
+      "observations": [
+        {
+          "ticker": "6442",
+          "company": "光聖",
+          "market": "TWSE",
+          "revenue_year_month": "2026-06",
+          "revenue_twd": 1069405000,
+          "prior_year_revenue_twd": -38000,
+          "yoy": 0.016399999999999998,
+          "available_date": "2026-07-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_6_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "6442",
+          "company": "光聖",
+          "market": "TWSE",
+          "revenue_year_month": "2026-07",
+          "revenue_twd": 1229355000,
+          "prior_year_revenue_twd": 14000,
+          "yoy": 0.4925,
+          "available_date": "2026-08-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_7_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "6442",
+          "company": "光聖",
+          "market": "TWSE",
+          "revenue_year_month": "2026-08",
+          "revenue_twd": 1628177000,
+          "prior_year_revenue_twd": 32000,
+          "yoy": 1.5224000000000002,
+          "available_date": "2026-09-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_8_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        }
+      ],
+      "reasons": [
+        "YOY_RISING_THREE_MONTHS",
+        "LATEST_YOY_POSITIVE"
+      ]
+    },
+    {
+      "ticker": "6488",
+      "state": "NOT_ACCELERATING",
+      "periods": [
+        "2026-06",
+        "2026-07",
+        "2026-08"
+      ],
+      "observations": [
+        {
+          "ticker": "6488",
+          "company": "環球晶",
+          "market": "TPEx",
+          "revenue_year_month": "2026-06",
+          "revenue_twd": 5624376000,
+          "prior_year_revenue_twd": 16000,
+          "yoy": -0.016200000000000003,
+          "available_date": "2026-07-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/otc/t21sc03_115_6_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "6488",
+          "company": "環球晶",
+          "market": "TPEx",
+          "revenue_year_month": "2026-07",
+          "revenue_twd": 4977758000,
+          "prior_year_revenue_twd": -11000,
+          "yoy": 0.1959,
+          "available_date": "2026-08-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/otc/t21sc03_115_7_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "6488",
+          "company": "環球晶",
+          "market": "TPEx",
+          "revenue_year_month": "2026-08",
+          "revenue_twd": 4764363000,
+          "prior_year_revenue_twd": -4000,
+          "yoy": 0.076,
+          "available_date": "2026-09-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/otc/t21sc03_115_8_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        }
+      ],
+      "reasons": [
+        "THREE_MONTH_YOY_RULE_NOT_MET"
+      ]
+    },
+    {
+      "ticker": "6669",
+      "state": "ACCELERATING",
+      "periods": [
+        "2026-06",
+        "2026-07",
+        "2026-08"
+      ],
+      "observations": [
+        {
+          "ticker": "6669",
+          "company": "緯穎",
+          "market": "TWSE",
+          "revenue_year_month": "2026-06",
+          "revenue_twd": 111371123000,
+          "prior_year_revenue_twd": 32000,
+          "yoy": 0.2979,
+          "available_date": "2026-07-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_6_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "6669",
+          "company": "緯穎",
+          "market": "TWSE",
+          "revenue_year_month": "2026-07",
+          "revenue_twd": 117685530000,
+          "prior_year_revenue_twd": 5000,
+          "yoy": 0.3922,
+          "available_date": "2026-08-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_7_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "6669",
+          "company": "緯穎",
+          "market": "TWSE",
+          "revenue_year_month": "2026-08",
+          "revenue_twd": 144311808000,
+          "prior_year_revenue_twd": 22000,
+          "yoy": 0.5035000000000001,
+          "available_date": "2026-09-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_8_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        }
+      ],
+      "reasons": [
+        "YOY_RISING_THREE_MONTHS",
+        "LATEST_YOY_POSITIVE"
+      ]
+    },
+    {
+      "ticker": "6781",
+      "state": "NOT_ACCELERATING",
+      "periods": [
+        "2026-06",
+        "2026-07",
+        "2026-08"
+      ],
+      "observations": [
+        {
+          "ticker": "6781",
+          "company": "AES-KY",
+          "market": "TWSE",
+          "revenue_year_month": "2026-06",
+          "revenue_twd": 1685061000,
+          "prior_year_revenue_twd": 5000,
+          "yoy": 0.25579999999999997,
+          "available_date": "2026-07-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_6_1.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "6781",
+          "company": "AES-KY",
+          "market": "TWSE",
+          "revenue_year_month": "2026-07",
+          "revenue_twd": 1723107000,
+          "prior_year_revenue_twd": 2000,
+          "yoy": 0.2823,
+          "available_date": "2026-08-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_7_1.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "6781",
+          "company": "AES-KY",
+          "market": "TWSE",
+          "revenue_year_month": "2026-08",
+          "revenue_twd": 1750881000,
+          "prior_year_revenue_twd": 1000,
+          "yoy": 0.2663,
+          "available_date": "2026-09-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_8_1.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        }
+      ],
+      "reasons": [
+        "THREE_MONTH_YOY_RULE_NOT_MET"
+      ]
+    },
+    {
+      "ticker": "8299",
+      "state": "NOT_ACCELERATING",
+      "periods": [
+        "2026-06",
+        "2026-07",
+        "2026-08"
+      ],
+      "observations": [
+        {
+          "ticker": "8299",
+          "company": "群聯",
+          "market": "TPEx",
+          "revenue_year_month": "2026-06",
+          "revenue_twd": 24852784000,
+          "prior_year_revenue_twd": 8000,
+          "yoy": 3.01,
+          "available_date": "2026-07-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/otc/t21sc03_115_6_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "8299",
+          "company": "群聯",
+          "market": "TPEx",
+          "revenue_year_month": "2026-07",
+          "revenue_twd": 27161687000,
+          "prior_year_revenue_twd": 9000,
+          "yoy": 3.7755,
+          "available_date": "2026-08-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/otc/t21sc03_115_7_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        },
+        {
+          "ticker": "8299",
+          "company": "群聯",
+          "market": "TPEx",
+          "revenue_year_month": "2026-08",
+          "revenue_twd": 28275661000,
+          "prior_year_revenue_twd": 4000,
+          "yoy": 3.7651,
+          "available_date": "2026-09-10",
+          "source_url": "https://mopsov.twse.com.tw/nas/t21/otc/t21sc03_115_8_0.html",
+          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
+        }
+      ],
+      "reasons": [
+        "THREE_MONTH_YOY_RULE_NOT_MET"
+      ]
+    }
+  ],
+  "coverage": {
+    "actual": 54,
+    "requested": 54
+  },
+  "attempts": [
+    {
+      "period": "2026-06",
+      "market": "TWSE",
+      "company_type": 0,
+      "status": "OK",
+      "row_count": 989,
+      "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_6_0.html"
+    },
+    {
+      "period": "2026-06",
+      "market": "TWSE",
+      "company_type": 1,
+      "status": "OK",
+      "row_count": 92,
+      "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_6_1.html"
+    },
+    {
+      "period": "2026-06",
+      "market": "TPEx",
+      "company_type": 0,
+      "status": "OK",
+      "row_count": 856,
+      "source_url": "https://mopsov.twse.com.tw/nas/t21/otc/t21sc03_115_6_0.html"
+    },
+    {
+      "period": "2026-06",
+      "market": "TPEx",
+      "company_type": 1,
+      "status": "OK",
+      "row_count": 30,
+      "source_url": "https://mopsov.twse.com.tw/nas/t21/otc/t21sc03_115_6_1.html"
+    },
+    {
+      "period": "2026-07",
+      "market": "TWSE",
+      "company_type": 0,
+      "status": "OK",
+      "row_count": 988,
+      "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_7_0.html"
+    },
+    {
+      "period": "2026-07",
+      "market": "TWSE",
+      "company_type": 1,
+      "status": "OK",
+      "row_count": 92,
+      "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_7_1.html"
+    },
+    {
+      "period": "2026-07",
+      "market": "TPEx",
+      "company_type": 0,
+      "status": "OK",
+      "row_count": 858,
+      "source_url": "https://mopsov.twse.com.tw/nas/t21/otc/t21sc03_115_7_0.html"
+    },
+    {
+      "period": "2026-07",
+      "market": "TPEx",
+      "company_type": 1,
+      "status": "OK",
+      "row_count": 30,
+      "source_url": "https://mopsov.twse.com.tw/nas/t21/otc/t21sc03_115_7_1.html"
+    },
+    {
+      "period": "2026-08",
+      "market": "TWSE",
+      "company_type": 0,
+      "status": "OK",
+      "row_count": 989,
+      "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_8_0.html"
+    },
+    {
+      "period": "2026-08",
+      "market": "TWSE",
+      "company_type": 1,
+      "status": "OK",
+      "row_count": 92,
+      "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_8_1.html"
+    },
+    {
+      "period": "2026-08",
+      "market": "TPEx",
+      "company_type": 0,
+      "status": "OK",
+      "row_count": 857,
+      "source_url": "https://mopsov.twse.com.tw/nas/t21/otc/t21sc03_115_8_0.html"
+    },
+    {
+      "period": "2026-08",
+      "market": "TPEx",
+      "company_type": 1,
+      "status": "OK",
+      "row_count": 30,
+      "source_url": "https://mopsov.twse.com.tw/nas/t21/otc/t21sc03_115_8_1.html"
+    }
+  ],
+  "future_data_violation_count": 0,
+  "generated_at": "2026-10-07T01:19:12.908396+00:00",
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false
+}
