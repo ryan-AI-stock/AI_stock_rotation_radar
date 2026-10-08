@@ -40,6 +40,7 @@ from .v4d_top1_signal import (
 MODEL_VERSION = "c6-research-score0-pit-v2-forward-daily"
 C6_ADJUSTED_SEED = Path("data/c6_score0_adjusted_seed_20260903.csv.gz")
 C6_TURNOVER_SEED = Path("data/c6_score0_turnover_seed_20260903.csv.gz")
+R1_CONFIG = Path("config/r1.json")
 COMMISSION = 0.000855
 SLIPPAGE = 0.001
 SELL_TAX = 0.003
@@ -68,6 +69,26 @@ POOL = {
     "3017": ("奇鋐", "AI機櫃電力與散熱"), "3324": ("雙鴻", "AI機櫃電力與散熱"),
     "3653": ("健策", "AI機櫃電力與散熱"), "2421": ("建準", "AI機櫃電力與散熱"),
 }
+
+
+def actual_tracking_tickers(path: Path = R1_CONFIG) -> set[str]:
+    """Return confirmed live portfolio symbols without changing C6's universe.
+
+    The R1 configuration is the durable local record shared by the two actual
+    account dashboards.  These symbols are used only for official marks and
+    holding history; they never enter C6 eligibility or ranking.
+    """
+    if not path.exists():
+        return set()
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    result = set()
+    for row in payload.get("companies", []):
+        roles = set(row.get("roles", []))
+        shares = row.get("shares", 0)
+        ticker = str(row.get("ticker", "")).zfill(4)
+        if "PORTFOLIO" in roles and isinstance(shares, (int, float)) and not isinstance(shares, bool) and shares > 0:
+            result.add(ticker)
+    return result
 
 
 def _rolling_low_offset(values: pd.Series, window: int) -> pd.Series:
@@ -501,7 +522,8 @@ def _third_wednesday(target: pd.Timestamp) -> pd.Timestamp:
     return first + pd.offsets.WeekOfMonth(week=2, weekday=2)
 
 
-def actual_history_payload(official: pd.DataFrame, target: pd.Timestamp) -> dict:
+def actual_history_payload(official: pd.DataFrame, target: pd.Timestamp,
+                           tracking_tickers: set[str] | None = None) -> dict:
     """Reuse downloaded raw history; do not infer actual fills or event coverage."""
     start = pd.Timestamp('2026-07-01')
     open_dates, closed_dates = fetch_twse_calendar()
@@ -510,10 +532,11 @@ def actual_history_payload(official: pd.DataFrame, target: pd.Timestamp) -> dict
         if is_trading_day(day.date(), open_dates, closed_dates)]
     benchmark_dates = set(official.loc[official.ticker.eq('0050'), 'date'].dt.strftime('%Y-%m-%d'))
     complete = bool(sessions) and set(sessions).issubset(benchmark_dates)
+    tracked = set(POOL) | set(tracking_tickers or actual_tracking_tickers())
     rows = [
         {'ticker': str(row.ticker), 'date': row.date.date().isoformat(),
          'close': float(row.close), 'source_hash': str(getattr(row, 'source_hash', ''))}
-        for row in official.loc[official.date.between(start, target) & official.ticker.isin(POOL)]
+        for row in official.loc[official.date.between(start, target) & official.ticker.isin(tracked)]
         .itertuples(index=False) if pd.notna(row.close)]
     return {'start': start.date().isoformat(), 'end': target.date().isoformat(),
             'calendar_complete': complete, 'trading_dates': sessions, 'official_rows': rows,
@@ -628,7 +651,9 @@ def build_daily_payload(*, target: pd.Timestamp, source_repo: Path, source_cache
         "market_rows": [
             {"date": target.date().isoformat(), "ticker": str(row.ticker),
              "close": float(row.close), "source_hash": str(getattr(row, "source_hash", ""))}
-            for row in official.loc[official.date.eq(target) & official.ticker.isin(POOL)]
+            # Keep the whole official session for actual-account valuation.
+            # C6 ranking remains restricted by POOL in rank_score0 above.
+            for row in official.loc[official.date.eq(target)]
             .drop_duplicates("ticker", keep="last").itertuples(index=False)
             if pd.notna(row.close)
         ],

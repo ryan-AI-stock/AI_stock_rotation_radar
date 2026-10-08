@@ -7,10 +7,21 @@ from unittest.mock import patch
 
 import pandas as pd
 
-from rotation_radar.c6_daily_pipeline import advance_account, rank_score0, load_official_0050, actual_history_payload
+from rotation_radar.c6_daily_pipeline import (advance_account, rank_score0, load_official_0050,
+                                               actual_history_payload, actual_tracking_tickers)
 
 
 class C6DailyPipelineTests(unittest.TestCase):
+    def test_actual_tracking_tickers_reads_positive_portfolio_positions_only(self):
+        with TemporaryDirectory() as folder:
+            path = Path(folder) / 'r1.json'
+            path.write_text(json.dumps({'companies': [
+                {'ticker': '2303', 'shares': 1200, 'roles': ['PORTFOLIO', 'UNIVERSE']},
+                {'ticker': '2327', 'shares': 0, 'roles': ['UNIVERSE']},
+                {'ticker': '9999', 'shares': 10, 'roles': ['UNIVERSE']},
+            ]}), encoding='utf-8')
+            self.assertEqual(actual_tracking_tickers(path), {'2303'})
+
     @patch('rotation_radar.c6_daily_pipeline.next_trading_day', return_value=date(2026, 9, 10))
     def test_withdrawal_sale_reduces_basis_without_false_loss(self, next_day):
         day = pd.Timestamp('2026-09-09')
@@ -59,6 +70,15 @@ class C6DailyPipelineTests(unittest.TestCase):
         self.assertTrue(result['calendar_complete'])
         self.assertEqual(result['official_rows'][0]['source_hash'], 'b' * 64)
         self.assertFalse(actual_history_payload(frame, pd.Timestamp('2026-07-03'))['calendar_complete'])
+
+    @patch('rotation_radar.c6_daily_pipeline.fetch_twse_calendar', return_value=(set(), {date(2026, 7, 1)}))
+    def test_actual_history_includes_live_holding_outside_c6_pool(self, calendar):
+        frame = pd.DataFrame([
+            {'date': pd.Timestamp('2026-07-01'), 'ticker': '0050', 'close': 100, 'source_hash': 'a' * 64},
+            {'date': pd.Timestamp('2026-07-01'), 'ticker': '2303', 'close': 50, 'source_hash': 'b' * 64},
+        ])
+        result = actual_history_payload(frame, pd.Timestamp('2026-07-01'), {'2303'})
+        self.assertEqual([row['ticker'] for row in result['official_rows']], ['2303'])
 
     @patch('rotation_radar.c6_daily_pipeline.fetch_twse_calendar', return_value=(set(), {date(2026, 1, 1)}))
     @patch('rotation_radar.c6_daily_pipeline.urlopen')
