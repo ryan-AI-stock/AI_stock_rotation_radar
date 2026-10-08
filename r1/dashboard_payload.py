@@ -21,6 +21,9 @@ R1負責維護11個AI發展瓶頸題材、每個題材的結構性Top1～Top3，
 【每日優先持有參考值】
 結構性龍頭30%、營收與獲利成長25%、估值相對自身歷史20%、股價風險安全度15%、需求訂單與催化10%。分數越高代表當下相對持有吸引力越高，不代表預測上漲機率。
 
+【無差別殺盤過渡層】
+未來半年五檔目標維持不變。當加權指數或十一題材候選池出現廣泛急跌時，R1開放全候選池進行過渡比較，包括五檔目標本身。跌深不是買進理由；候選仍須通過財務、題材催化及風險資料。盤中只列觀察，收盤後以官方資料確認；模型不自動成交。
+
 【更新頻率】
 每個交易日累積官方價格與市場資料；每週更新需求、事件與風險；每季財報揭露後重評Top3；每半年檢討題材與成分股。缺資料不補0、不重配權重、不以媒體稱號代替證據。
 
@@ -76,6 +79,16 @@ def _build_v03_dashboard(*, config: R1Config, market: dict, theme_review: dict,
         ["02｜無差別殺盤過渡層（研究觀察）"],
         ["狀態", transition_status, "候選池下跌比例", transition.get("negative_share", "待資料"),
          f"報酬中位數：{transition.get('universe_median_return', '待資料')}"],
+        ["加權指數單日報酬", transition.get("taiex_return", "待資料"), "是否啟動",
+         "是｜等待Ryan檢視" if transition.get("triggered") else "否", "五檔長期目標維持不變"],
+        ["過渡候選狀態", transition.get("candidate_status", "待資料"), "候選數",
+         transition.get("candidate_count", 0), "只列比較，不自動成交"],
+        *([
+            [f"候選{index}", f"{item['ticker']} {item.get('company') or ''}",
+             f"優先值 {item['priority_score']}", f"當日 {item['daily_return']:+.2%}",
+             f"BIAS20 {item['bias20']:+.2%}"]
+            for index, item in enumerate(transition.get("candidates", []), start=1)
+        ]),
         ["執行邊界", "盤中只觀察；收盤後重算；不自動交易，長期五檔目標不變。"],
         ["03｜分數規則"],
         ["分數", "構成", "權重", "更新頻率", "用途"],
