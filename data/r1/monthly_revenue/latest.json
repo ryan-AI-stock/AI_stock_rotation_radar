@@ -1,6 +1,6 @@
 {
   "model": "R1",
-  "date": "2026-10-02",
+  "date": "2026-10-08",
   "periods": [
     "2026-06",
     "2026-07",
@@ -1014,56 +1014,6 @@
       ]
     },
     {
-      "ticker": "3008",
-      "state": "NOT_ACCELERATING",
-      "periods": [
-        "2026-06",
-        "2026-07",
-        "2026-08"
-      ],
-      "observations": [
-        {
-          "ticker": "3008",
-          "company": "大立光",
-          "market": "TWSE",
-          "revenue_year_month": "2026-06",
-          "revenue_twd": 3712024000,
-          "prior_year_revenue_twd": -19000,
-          "yoy": -0.10460000000000001,
-          "available_date": "2026-07-10",
-          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_6_0.html",
-          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
-        },
-        {
-          "ticker": "3008",
-          "company": "大立光",
-          "market": "TWSE",
-          "revenue_year_month": "2026-07",
-          "revenue_twd": 4877118000,
-          "prior_year_revenue_twd": 31000,
-          "yoy": -0.1065,
-          "available_date": "2026-08-10",
-          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_7_0.html",
-          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
-        },
-        {
-          "ticker": "3008",
-          "company": "大立光",
-          "market": "TWSE",
-          "revenue_year_month": "2026-08",
-          "revenue_twd": 5011942000,
-          "prior_year_revenue_twd": 2000,
-          "yoy": -0.1623,
-          "available_date": "2026-09-10",
-          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_8_0.html",
-          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
-        }
-      ],
-      "reasons": [
-        "THREE_MONTH_YOY_RULE_NOT_MET"
-      ]
-    },
-    {
       "ticker": "3017",
       "state": "NOT_ACCELERATING",
       "periods": [
@@ -1718,56 +1668,6 @@
       "reasons": [
         "YOY_RISING_THREE_MONTHS",
         "LATEST_YOY_POSITIVE"
-      ]
-    },
-    {
-      "ticker": "3406",
-      "state": "NOT_ACCELERATING",
-      "periods": [
-        "2026-06",
-        "2026-07",
-        "2026-08"
-      ],
-      "observations": [
-        {
-          "ticker": "3406",
-          "company": "玉晶光",
-          "market": "TWSE",
-          "revenue_year_month": "2026-06",
-          "revenue_twd": 1739246000,
-          "prior_year_revenue_twd": 6000,
-          "yoy": 0.045,
-          "available_date": "2026-07-10",
-          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_6_0.html",
-          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
-        },
-        {
-          "ticker": "3406",
-          "company": "玉晶光",
-          "market": "TWSE",
-          "revenue_year_month": "2026-07",
-          "revenue_twd": 2422368000,
-          "prior_year_revenue_twd": 39000,
-          "yoy": 0.016200000000000003,
-          "available_date": "2026-08-10",
-          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_7_0.html",
-          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
-        },
-        {
-          "ticker": "3406",
-          "company": "玉晶光",
-          "market": "TWSE",
-          "revenue_year_month": "2026-08",
-          "revenue_twd": 2719294000,
-          "prior_year_revenue_twd": 12000,
-          "yoy": 0.0072,
-          "available_date": "2026-09-10",
-          "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_8_0.html",
-          "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML"
-        }
-      ],
-      "reasons": [
-        "THREE_MONTH_YOY_RULE_NOT_MET"
       ]
     },
     {
@@ -2732,8 +2632,8 @@
     }
   ],
   "coverage": {
-    "actual": 54,
-    "requested": 54
+    "actual": 52,
+    "requested": 52
   },
   "attempts": [
     {
@@ -2834,7 +2734,7 @@
     }
   ],
   "future_data_violation_count": 0,
-  "generated_at": "2026-10-07T01:23:17.930897+00:00",
+  "generated_at": "2026-10-08T17:53:25.359656+00:00",
   "formal_model_changed": false,
   "trade_decision_changed": false,
   "active_in_trade_decision": false,

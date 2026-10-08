@@ -1,7 +1,7 @@
 {
   "model": "R1",
   "version": "r1-theme-leader-v0.3",
-  "date": "2026-10-02",
+  "date": "2026-10-08",
   "cadence": {
     "daily_accumulation": true,
     "weekly_risk_and_replacement_review": true,
@@ -552,8 +552,7 @@
             "bottleneck_directness",
             "industry_technology_position",
             "ai_revenue_realization",
-            "financial_earnings_quality",
-            "market_representation"
+            "financial_earnings_quality"
           ]
         },
         {
@@ -569,26 +568,7 @@
           "missing_fields": [
             "bottleneck_directness",
             "industry_technology_position",
-            "ai_revenue_realization",
-            "market_representation"
-          ]
-        },
-        {
-          "ticker": "3008",
-          "missing_fields": [
-            "bottleneck_directness",
-            "industry_technology_position",
-            "ai_revenue_realization",
-            "market_representation"
-          ]
-        },
-        {
-          "ticker": "3406",
-          "missing_fields": [
-            "bottleneck_directness",
-            "industry_technology_position",
-            "ai_revenue_realization",
-            "market_representation"
+            "ai_revenue_realization"
           ]
         }
       ]

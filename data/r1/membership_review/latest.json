@@ -1,12 +1,12 @@
 {
   "model": "R1",
   "version": "r1-membership-review-v0.1",
-  "as_of_date": "2026-10-02",
+  "as_of_date": "2026-10-08",
   "status": "NOT_DUE",
   "membership_anchor": "2026-08-15",
   "last_membership_review": "2026-10-05",
   "theme_count": 11,
-  "member_count": 54,
+  "member_count": 52,
   "current_members_without_dedicated_evidence_row": [
     {
       "ticker": "1560",
@@ -111,12 +111,6 @@
       "theme_name": "AI運算晶片／ASIC／先進製程"
     },
     {
-      "ticker": "3008",
-      "company": "大立光",
-      "theme_id": "silicon_photonics_cpo",
-      "theme_name": "矽光子／CPO／高速光互連"
-    },
-    {
       "ticker": "3017",
       "company": "奇鋐",
       "theme_id": "thermal_management",
@@ -185,12 +179,6 @@
     {
       "ticker": "3363",
       "company": "上詮",
-      "theme_id": "silicon_photonics_cpo",
-      "theme_name": "矽光子／CPO／高速光互連"
-    },
-    {
-      "ticker": "3406",
-      "company": "玉晶光",
       "theme_id": "silicon_photonics_cpo",
       "theme_name": "矽光子／CPO／高速光互連"
     },
