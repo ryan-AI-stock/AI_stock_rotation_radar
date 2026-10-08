@@ -1,6 +1,6 @@
 {
   "model": "R1",
-  "as_of_date": "2026-10-07",
+  "as_of_date": "2026-10-08",
   "fiscal_year": 2027,
   "requested_ticker_count": 54,
   "consensus_ready_count": 14,
@@ -49,9 +49,9 @@
       "price_chip_ready": true,
       "current_chip_ready": true,
       "price_chip_coverage": {
-        "price_days": 25,
-        "institutional_days": 25,
-        "margin_short_days": 25,
+        "price_days": 26,
+        "institutional_days": 26,
+        "margin_short_days": 26,
         "ready": true
       },
       "component_score_ready": false,
@@ -72,9 +72,9 @@
       "price_chip_ready": true,
       "current_chip_ready": true,
       "price_chip_coverage": {
-        "price_days": 25,
-        "institutional_days": 25,
-        "margin_short_days": 25,
+        "price_days": 26,
+        "institutional_days": 26,
+        "margin_short_days": 26,
         "ready": true
       },
       "component_score_ready": false,
@@ -95,9 +95,9 @@
       "price_chip_ready": true,
       "current_chip_ready": true,
       "price_chip_coverage": {
-        "price_days": 25,
-        "institutional_days": 25,
-        "margin_short_days": 25,
+        "price_days": 26,
+        "institutional_days": 26,
+        "margin_short_days": 26,
         "ready": true
       },
       "component_score_ready": false,
@@ -118,9 +118,9 @@
       "price_chip_ready": true,
       "current_chip_ready": true,
       "price_chip_coverage": {
-        "price_days": 25,
-        "institutional_days": 25,
-        "margin_short_days": 25,
+        "price_days": 26,
+        "institutional_days": 26,
+        "margin_short_days": 26,
         "ready": true
       },
       "component_score_ready": false,
@@ -141,9 +141,9 @@
       "price_chip_ready": true,
       "current_chip_ready": true,
       "price_chip_coverage": {
-        "price_days": 25,
-        "institutional_days": 25,
-        "margin_short_days": 25,
+        "price_days": 26,
+        "institutional_days": 26,
+        "margin_short_days": 26,
         "ready": true
       },
       "component_score_ready": false,
@@ -164,9 +164,9 @@
       "price_chip_ready": true,
       "current_chip_ready": true,
       "price_chip_coverage": {
-        "price_days": 25,
-        "institutional_days": 25,
-        "margin_short_days": 25,
+        "price_days": 26,
+        "institutional_days": 26,
+        "margin_short_days": 26,
         "ready": true
       },
       "component_score_ready": false,
@@ -187,9 +187,9 @@
       "price_chip_ready": true,
       "current_chip_ready": true,
       "price_chip_coverage": {
-        "price_days": 25,
-        "institutional_days": 25,
-        "margin_short_days": 25,
+        "price_days": 26,
+        "institutional_days": 26,
+        "margin_short_days": 26,
         "ready": true
       },
       "component_score_ready": false,
@@ -210,9 +210,9 @@
       "price_chip_ready": false,
       "current_chip_ready": true,
       "price_chip_coverage": {
-        "price_days": 4,
-        "institutional_days": 3,
-        "margin_short_days": 3,
+        "price_days": 5,
+        "institutional_days": 4,
+        "margin_short_days": 4,
         "ready": false
       },
       "component_score_ready": false,
@@ -238,9 +238,9 @@
       "price_chip_ready": false,
       "current_chip_ready": true,
       "price_chip_coverage": {
-        "price_days": 4,
-        "institutional_days": 3,
-        "margin_short_days": 3,
+        "price_days": 5,
+        "institutional_days": 4,
+        "margin_short_days": 4,
         "ready": false
       },
       "component_score_ready": false,
@@ -266,9 +266,9 @@
       "price_chip_ready": false,
       "current_chip_ready": true,
       "price_chip_coverage": {
-        "price_days": 4,
-        "institutional_days": 3,
-        "margin_short_days": 3,
+        "price_days": 5,
+        "institutional_days": 4,
+        "margin_short_days": 4,
         "ready": false
       },
       "component_score_ready": false,
@@ -294,9 +294,9 @@
       "price_chip_ready": false,
       "current_chip_ready": true,
       "price_chip_coverage": {
-        "price_days": 4,
-        "institutional_days": 3,
-        "margin_short_days": 3,
+        "price_days": 5,
+        "institutional_days": 4,
+        "margin_short_days": 4,
         "ready": false
       },
       "component_score_ready": false,
@@ -322,9 +322,9 @@
       "price_chip_ready": false,
       "current_chip_ready": true,
       "price_chip_coverage": {
-        "price_days": 4,
-        "institutional_days": 3,
-        "margin_short_days": 3,
+        "price_days": 5,
+        "institutional_days": 4,
+        "margin_short_days": 4,
         "ready": false
       },
       "component_score_ready": false,
@@ -350,9 +350,9 @@
       "price_chip_ready": false,
       "current_chip_ready": true,
       "price_chip_coverage": {
-        "price_days": 4,
-        "institutional_days": 3,
-        "margin_short_days": 3,
+        "price_days": 5,
+        "institutional_days": 4,
+        "margin_short_days": 4,
         "ready": false
       },
       "component_score_ready": false,
@@ -378,9 +378,9 @@
       "price_chip_ready": false,
       "current_chip_ready": true,
       "price_chip_coverage": {
-        "price_days": 4,
-        "institutional_days": 3,
-        "margin_short_days": 3,
+        "price_days": 5,
+        "institutional_days": 4,
+        "margin_short_days": 4,
         "ready": false
       },
       "component_score_ready": false,
@@ -406,9 +406,9 @@
       "price_chip_ready": true,
       "current_chip_ready": true,
       "price_chip_coverage": {
-        "price_days": 25,
-        "institutional_days": 25,
-        "margin_short_days": 25,
+        "price_days": 26,
+        "institutional_days": 26,
+        "margin_short_days": 26,
         "ready": true
       },
       "component_score_ready": false,
@@ -429,9 +429,9 @@
       "price_chip_ready": true,
       "current_chip_ready": true,
       "price_chip_coverage": {
-        "price_days": 24,
-        "institutional_days": 24,
-        "margin_short_days": 24,
+        "price_days": 25,
+        "institutional_days": 25,
+        "margin_short_days": 25,
         "ready": true
       },
       "component_score_ready": false,
@@ -452,9 +452,9 @@
       "price_chip_ready": true,
       "current_chip_ready": true,
       "price_chip_coverage": {
-        "price_days": 24,
-        "institutional_days": 24,
-        "margin_short_days": 24,
+        "price_days": 25,
+        "institutional_days": 25,
+        "margin_short_days": 25,
         "ready": true
       },
       "component_score_ready": false,
@@ -475,9 +475,9 @@
       "price_chip_ready": false,
       "current_chip_ready": true,
       "price_chip_coverage": {
-        "price_days": 3,
-        "institutional_days": 2,
-        "margin_short_days": 2,
+        "price_days": 4,
+        "institutional_days": 3,
+        "margin_short_days": 3,
         "ready": false
       },
       "component_score_ready": false,
@@ -503,9 +503,9 @@
       "price_chip_ready": false,
       "current_chip_ready": true,
       "price_chip_coverage": {
-        "price_days": 3,
-        "institutional_days": 2,
-        "margin_short_days": 2,
+        "price_days": 4,
+        "institutional_days": 3,
+        "margin_short_days": 3,
         "ready": false
       },
       "component_score_ready": false,
@@ -531,9 +531,9 @@
       "price_chip_ready": false,
       "current_chip_ready": true,
       "price_chip_coverage": {
-        "price_days": 4,
-        "institutional_days": 3,
-        "margin_short_days": 3,
+        "price_days": 5,
+        "institutional_days": 4,
+        "margin_short_days": 4,
         "ready": false
       },
       "component_score_ready": false,
@@ -559,9 +559,9 @@
       "price_chip_ready": false,
       "current_chip_ready": true,
       "price_chip_coverage": {
-        "price_days": 4,
-        "institutional_days": 3,
-        "margin_short_days": 3,
+        "price_days": 5,
+        "institutional_days": 4,
+        "margin_short_days": 4,
         "ready": false
       },
       "component_score_ready": false,
@@ -587,9 +587,9 @@
       "price_chip_ready": false,
       "current_chip_ready": true,
       "price_chip_coverage": {
-        "price_days": 4,
-        "institutional_days": 3,
-        "margin_short_days": 3,
+        "price_days": 5,
+        "institutional_days": 4,
+        "margin_short_days": 4,
         "ready": false
       },
       "component_score_ready": false,
@@ -615,9 +615,9 @@
       "price_chip_ready": false,
       "current_chip_ready": true,
       "price_chip_coverage": {
-        "price_days": 4,
-        "institutional_days": 3,
-        "margin_short_days": 3,
+        "price_days": 5,
+        "institutional_days": 4,
+        "margin_short_days": 4,
         "ready": false
       },
       "component_score_ready": false,
@@ -643,9 +643,9 @@
       "price_chip_ready": false,
       "current_chip_ready": true,
       "price_chip_coverage": {
-        "price_days": 4,
-        "institutional_days": 3,
-        "margin_short_days": 3,
+        "price_days": 5,
+        "institutional_days": 4,
+        "margin_short_days": 4,
         "ready": false
       },
       "component_score_ready": false,
@@ -671,9 +671,9 @@
       "price_chip_ready": false,
       "current_chip_ready": true,
       "price_chip_coverage": {
-        "price_days": 4,
-        "institutional_days": 3,
-        "margin_short_days": 3,
+        "price_days": 5,
+        "institutional_days": 4,
+        "margin_short_days": 4,
         "ready": false
       },
       "component_score_ready": false,
@@ -699,9 +699,9 @@
       "price_chip_ready": false,
       "current_chip_ready": true,
       "price_chip_coverage": {
-        "price_days": 4,
-        "institutional_days": 3,
-        "margin_short_days": 3,
+        "price_days": 5,
+        "institutional_days": 4,
+        "margin_short_days": 4,
         "ready": false
       },
       "component_score_ready": false,
@@ -727,9 +727,9 @@
       "price_chip_ready": false,
       "current_chip_ready": true,
       "price_chip_coverage": {
-        "price_days": 4,
-        "institutional_days": 3,
-        "margin_short_days": 3,
+        "price_days": 5,
+        "institutional_days": 4,
+        "margin_short_days": 4,
         "ready": false
       },
       "component_score_ready": false,
@@ -755,9 +755,9 @@
       "price_chip_ready": true,
       "current_chip_ready": true,
       "price_chip_coverage": {
-        "price_days": 25,
-        "institutional_days": 25,
-        "margin_short_days": 25,
+        "price_days": 26,
+        "institutional_days": 26,
+        "margin_short_days": 26,
         "ready": true
       },
       "component_score_ready": false,
@@ -778,9 +778,9 @@
       "price_chip_ready": false,
       "current_chip_ready": true,
       "price_chip_coverage": {
-        "price_days": 4,
-        "institutional_days": 3,
-        "margin_short_days": 3,
+        "price_days": 5,
+        "institutional_days": 4,
+        "margin_short_days": 4,
         "ready": false
       },
       "component_score_ready": false,
@@ -806,9 +806,9 @@
       "price_chip_ready": false,
       "current_chip_ready": true,
       "price_chip_coverage": {
-        "price_days": 4,
-        "institutional_days": 3,
-        "margin_short_days": 3,
+        "price_days": 5,
+        "institutional_days": 4,
+        "margin_short_days": 4,
         "ready": false
       },
       "component_score_ready": false,
@@ -834,9 +834,9 @@
       "price_chip_ready": false,
       "current_chip_ready": true,
       "price_chip_coverage": {
-        "price_days": 4,
-        "institutional_days": 3,
-        "margin_short_days": 3,
+        "price_days": 5,
+        "institutional_days": 4,
+        "margin_short_days": 4,
         "ready": false
       },
       "component_score_ready": false,
@@ -862,9 +862,9 @@
       "price_chip_ready": false,
       "current_chip_ready": true,
       "price_chip_coverage": {
-        "price_days": 4,
-        "institutional_days": 3,
-        "margin_short_days": 3,
+        "price_days": 5,
+        "institutional_days": 4,
+        "margin_short_days": 4,
         "ready": false
       },
       "component_score_ready": false,
@@ -890,9 +890,9 @@
       "price_chip_ready": false,
       "current_chip_ready": true,
       "price_chip_coverage": {
-        "price_days": 4,
-        "institutional_days": 3,
-        "margin_short_days": 3,
+        "price_days": 5,
+        "institutional_days": 4,
+        "margin_short_days": 4,
         "ready": false
       },
       "component_score_ready": false,
@@ -918,9 +918,9 @@
       "price_chip_ready": false,
       "current_chip_ready": true,
       "price_chip_coverage": {
-        "price_days": 4,
-        "institutional_days": 3,
-        "margin_short_days": 3,
+        "price_days": 5,
+        "institutional_days": 4,
+        "margin_short_days": 4,
         "ready": false
       },
       "component_score_ready": false,
@@ -946,9 +946,9 @@
       "price_chip_ready": false,
       "current_chip_ready": true,
       "price_chip_coverage": {
-        "price_days": 4,
-        "institutional_days": 3,
-        "margin_short_days": 3,
+        "price_days": 5,
+        "institutional_days": 4,
+        "margin_short_days": 4,
         "ready": false
       },
       "component_score_ready": false,
@@ -974,9 +974,9 @@
       "price_chip_ready": false,
       "current_chip_ready": true,
       "price_chip_coverage": {
-        "price_days": 4,
-        "institutional_days": 3,
-        "margin_short_days": 3,
+        "price_days": 5,
+        "institutional_days": 4,
+        "margin_short_days": 4,
         "ready": false
       },
       "component_score_ready": false,
@@ -1002,9 +1002,9 @@
       "price_chip_ready": false,
       "current_chip_ready": true,
       "price_chip_coverage": {
-        "price_days": 4,
-        "institutional_days": 3,
-        "margin_short_days": 3,
+        "price_days": 5,
+        "institutional_days": 4,
+        "margin_short_days": 4,
         "ready": false
       },
       "component_score_ready": false,
@@ -1030,9 +1030,9 @@
       "price_chip_ready": false,
       "current_chip_ready": true,
       "price_chip_coverage": {
-        "price_days": 4,
-        "institutional_days": 3,
-        "margin_short_days": 3,
+        "price_days": 5,
+        "institutional_days": 4,
+        "margin_short_days": 4,
         "ready": false
       },
       "component_score_ready": false,
@@ -1058,9 +1058,9 @@
       "price_chip_ready": false,
       "current_chip_ready": true,
       "price_chip_coverage": {
-        "price_days": 4,
-        "institutional_days": 3,
-        "margin_short_days": 3,
+        "price_days": 5,
+        "institutional_days": 4,
+        "margin_short_days": 4,
         "ready": false
       },
       "component_score_ready": false,
@@ -1086,9 +1086,9 @@
       "price_chip_ready": false,
       "current_chip_ready": true,
       "price_chip_coverage": {
-        "price_days": 4,
-        "institutional_days": 3,
-        "margin_short_days": 3,
+        "price_days": 5,
+        "institutional_days": 4,
+        "margin_short_days": 4,
         "ready": false
       },
       "component_score_ready": false,
@@ -1114,9 +1114,9 @@
       "price_chip_ready": false,
       "current_chip_ready": true,
       "price_chip_coverage": {
-        "price_days": 4,
-        "institutional_days": 3,
-        "margin_short_days": 3,
+        "price_days": 5,
+        "institutional_days": 4,
+        "margin_short_days": 4,
         "ready": false
       },
       "component_score_ready": false,
@@ -1142,9 +1142,9 @@
       "price_chip_ready": false,
       "current_chip_ready": true,
       "price_chip_coverage": {
-        "price_days": 4,
-        "institutional_days": 3,
-        "margin_short_days": 3,
+        "price_days": 5,
+        "institutional_days": 4,
+        "margin_short_days": 4,
         "ready": false
       },
       "component_score_ready": false,
@@ -1170,9 +1170,9 @@
       "price_chip_ready": false,
       "current_chip_ready": true,
       "price_chip_coverage": {
-        "price_days": 4,
-        "institutional_days": 3,
-        "margin_short_days": 3,
+        "price_days": 5,
+        "institutional_days": 4,
+        "margin_short_days": 4,
         "ready": false
       },
       "component_score_ready": false,
@@ -1198,9 +1198,9 @@
       "price_chip_ready": false,
       "current_chip_ready": true,
       "price_chip_coverage": {
-        "price_days": 4,
-        "institutional_days": 3,
-        "margin_short_days": 3,
+        "price_days": 5,
+        "institutional_days": 4,
+        "margin_short_days": 4,
         "ready": false
       },
       "component_score_ready": false,
@@ -1226,9 +1226,9 @@
       "price_chip_ready": false,
       "current_chip_ready": true,
       "price_chip_coverage": {
-        "price_days": 4,
-        "institutional_days": 3,
-        "margin_short_days": 3,
+        "price_days": 5,
+        "institutional_days": 4,
+        "margin_short_days": 4,
         "ready": false
       },
       "component_score_ready": false,
@@ -1254,9 +1254,9 @@
       "price_chip_ready": false,
       "current_chip_ready": true,
       "price_chip_coverage": {
-        "price_days": 4,
-        "institutional_days": 3,
-        "margin_short_days": 3,
+        "price_days": 5,
+        "institutional_days": 4,
+        "margin_short_days": 4,
         "ready": false
       },
       "component_score_ready": false,
@@ -1282,9 +1282,9 @@
       "price_chip_ready": false,
       "current_chip_ready": true,
       "price_chip_coverage": {
-        "price_days": 4,
-        "institutional_days": 3,
-        "margin_short_days": 3,
+        "price_days": 5,
+        "institutional_days": 4,
+        "margin_short_days": 4,
         "ready": false
       },
       "component_score_ready": false,
@@ -1310,9 +1310,9 @@
       "price_chip_ready": true,
       "current_chip_ready": true,
       "price_chip_coverage": {
-        "price_days": 25,
-        "institutional_days": 25,
-        "margin_short_days": 25,
+        "price_days": 26,
+        "institutional_days": 26,
+        "margin_short_days": 26,
         "ready": true
       },
       "component_score_ready": false,
@@ -1333,9 +1333,9 @@
       "price_chip_ready": true,
       "current_chip_ready": true,
       "price_chip_coverage": {
-        "price_days": 25,
-        "institutional_days": 25,
-        "margin_short_days": 25,
+        "price_days": 26,
+        "institutional_days": 26,
+        "margin_short_days": 26,
         "ready": true
       },
       "component_score_ready": false,
@@ -1356,9 +1356,9 @@
       "price_chip_ready": true,
       "current_chip_ready": true,
       "price_chip_coverage": {
-        "price_days": 25,
-        "institutional_days": 25,
-        "margin_short_days": 25,
+        "price_days": 26,
+        "institutional_days": 26,
+        "margin_short_days": 26,
         "ready": true
       },
       "component_score_ready": false,
@@ -1379,9 +1379,9 @@
       "price_chip_ready": false,
       "current_chip_ready": true,
       "price_chip_coverage": {
-        "price_days": 4,
-        "institutional_days": 3,
-        "margin_short_days": 3,
+        "price_days": 5,
+        "institutional_days": 4,
+        "margin_short_days": 4,
         "ready": false
       },
       "component_score_ready": false,
@@ -1407,9 +1407,9 @@
       "price_chip_ready": false,
       "current_chip_ready": true,
       "price_chip_coverage": {
-        "price_days": 4,
-        "institutional_days": 3,
-        "margin_short_days": 3,
+        "price_days": 5,
+        "institutional_days": 4,
+        "margin_short_days": 4,
         "ready": false
       },
       "component_score_ready": false,
@@ -1435,9 +1435,9 @@
       "price_chip_ready": false,
       "current_chip_ready": true,
       "price_chip_coverage": {
-        "price_days": 4,
-        "institutional_days": 3,
-        "margin_short_days": 3,
+        "price_days": 5,
+        "institutional_days": 4,
+        "margin_short_days": 4,
         "ready": false
       },
       "component_score_ready": false,
@@ -1463,9 +1463,9 @@
       "price_chip_ready": false,
       "current_chip_ready": true,
       "price_chip_coverage": {
-        "price_days": 4,
-        "institutional_days": 3,
-        "margin_short_days": 3,
+        "price_days": 5,
+        "institutional_days": 4,
+        "margin_short_days": 4,
         "ready": false
       },
       "component_score_ready": false,
