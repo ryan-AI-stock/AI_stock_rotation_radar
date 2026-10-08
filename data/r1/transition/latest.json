@@ -1,0 +1,18 @@
+{
+  "model": "R1",
+  "layer": "broad_selloff_transition_v0.1",
+  "date": "2026-10-07",
+  "status": "NOT_TRIGGERED",
+  "triggered": false,
+  "session_complete": true,
+  "coverage": 0.9814814814814815,
+  "negative_share": 0.5283018867924528,
+  "universe_median_return": -0.0028288543140029265,
+  "taiex_return": null,
+  "automatic_trade_allowed": false,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false,
+  "note": "after-close pool breadth only; index input is not yet part of the official daily snapshot"
+}
