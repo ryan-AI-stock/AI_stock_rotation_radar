@@ -20,9 +20,10 @@ class R1DashboardPayloadTest(unittest.TestCase):
         dashboard = payload["tabs"]["R1 Dashboard"]
         sections = [row[0] for row in dashboard]
         self.assertIn("01｜實際持股與未來半年目標持股", sections)
-        self.assertIn("02｜分數規則", sections)
-        self.assertIn("03｜更新排程", sections)
-        self.assertIn("04｜模型完整說明", sections)
+        self.assertIn("02｜無差別殺盤過渡層（研究觀察）", sections)
+        self.assertIn("03｜分數規則", sections)
+        self.assertIn("04｜更新排程", sections)
+        self.assertIn("05｜模型完整說明", sections)
         self.assertNotIn("06｜下一個動態觸發條件", sections)
         self.assertNotIn("07｜Shadow換倉候選（非交易指令）", sections)
         shown = {str(row[1]).split()[0] for row in dashboard if len(row) >= 5 and str(row[0]) not in ("所屬題材",)}

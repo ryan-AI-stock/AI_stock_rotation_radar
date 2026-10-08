@@ -29,7 +29,7 @@ R1是研究challenger，不取代正式V4-D，也不改C6每日交易決策。�
 
 
 def _build_v03_dashboard(*, config: R1Config, market: dict, theme_review: dict,
-                         theme_path: str | Path) -> list[list[object]]:
+                         theme_path: str | Path, transition: dict | None = None) -> list[list[object]]:
     themes = load_themes(theme_path)
     membership_count = sum(len(theme.members) for theme in themes)
     universe_count = len({member.ticker for theme in themes for member in theme.members})
@@ -70,20 +70,26 @@ def _build_v03_dashboard(*, config: R1Config, market: dict, theme_review: dict,
             f"實際持有｜{security.shares}股" if ticker in held else "",
             "未來半年目標" if ticker in targets else "既有實際持股",
         ])
+    transition = transition or {}
+    transition_status = transition.get("status", "尚未建立")
     rows.extend([
-        ["02｜分數規則"],
+        ["02｜無差別殺盤過渡層（研究觀察）"],
+        ["狀態", transition_status, "候選池下跌比例", transition.get("negative_share", "待資料"),
+         f"報酬中位數：{transition.get('universe_median_return', '待資料')}"],
+        ["執行邊界", "盤中只觀察；收盤後重算；不自動交易，長期五檔目標不變。"],
+        ["03｜分數規則"],
         ["分數", "構成", "權重", "更新頻率", "用途"],
         ["季度結構性龍頭", "瓶頸直接性／產業技術地位／AI營收兌現／財務獲利品質／市場代表性",
          "25%／25%／20%／20%／10%", "每季", "決定每個題材Top1～Top3"],
         ["優先持有參考值", "結構性龍頭／營收獲利成長／自身歷史估值／價格風險安全度／需求訂單催化",
          "30%／25%／20%／15%／10%", "每日資料＋週月季事件", "提供Ryan自行比較持有優先序"],
-        ["03｜更新排程"],
+        ["04｜更新排程"],
         ["頻率", "工作", "產出", "失敗處理", "交易影響"],
         ["每日收盤後", f"累積{universe_count}檔官方價格與市場資料", "每日資料庫", "缺資料重抓並列明缺口", "無"],
         ["每週最後交易日", "更新需求、訂單、事件與風險", "週度證據狀態", "證據不足維持原值或待資料", "無"],
         ["每季財報揭露後", f"重評{len(themes)}題材Top3", "季度排名", "全題材成分證據完整才發布", "無"],
         ["每半年", "檢討題材與成分股", "增刪建議與證據", "保留歷史版本", "無"],
-        ["04｜模型完整說明"],
+        ["05｜模型完整說明"],
         [MODEL_LOGIC],
     ])
     return rows
@@ -121,6 +127,7 @@ def build_dashboard_payload(
     theme_review_path: str | Path = "data/r1/theme_reviews/latest.json",
     theme_path: str | Path = "config/r1_v02_themes.json",
     actual_transactions_path: str | Path = "data/r1/actual_transactions.json",
+    transition_path: str | Path = "data/r1/transition/latest.json",
 ) -> dict:
     config = R1Config.load(config_path)
     market = json.loads(Path(market_path).read_text(encoding="utf-8"))
@@ -143,6 +150,10 @@ def build_dashboard_payload(
     )
     theme_file = Path(theme_review_path)
     theme_review = json.loads(theme_file.read_text(encoding="utf-8")) if theme_file.exists() else {}
+    transition_file = Path(transition_path)
+    transition = json.loads(transition_file.read_text(encoding="utf-8")) if transition_file.exists() else {}
+    if transition.get("date") != market.get("date"):
+        transition = {}
     revision_progress = readiness.get("eps_revision_progress", {})
     revision_dates = revision_progress.get("earliest_calendar_eligibility", {})
     tabs: dict[str, list[list[object]]] = {
@@ -186,6 +197,7 @@ def build_dashboard_payload(
     # theme Top3 and holding-priority view. Legacy engines remain available but hidden.
     tabs["R1 Dashboard"] = _build_v03_dashboard(
         config=config, market=market, theme_review=theme_review, theme_path=theme_path,
+        transition=transition,
     )
 
     for security in config.securities:
@@ -369,6 +381,7 @@ def main() -> None:
     parser.add_argument("--theme-review", default="data/r1/theme_reviews/latest.json")
     parser.add_argument("--themes", default="config/r1_v02_themes.json")
     parser.add_argument("--actual-transactions", default="data/r1/actual_transactions.json")
+    parser.add_argument("--transition", default="data/r1/transition/latest.json")
     parser.add_argument("--output", default="data/r1/dashboard_payload.json")
     args = parser.parse_args()
     payload = build_dashboard_payload(
@@ -378,6 +391,7 @@ def main() -> None:
         theme_review_path=args.theme_review,
         theme_path=args.themes,
         actual_transactions_path=args.actual_transactions,
+        transition_path=args.transition,
     )
     output = Path(args.output)
     output.parent.mkdir(parents=True, exist_ok=True)
