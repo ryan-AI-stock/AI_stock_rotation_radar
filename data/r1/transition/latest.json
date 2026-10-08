@@ -8,11 +8,15 @@
   "coverage": 0.9814814814814815,
   "negative_share": 0.5283018867924528,
   "universe_median_return": -0.0028288543140029265,
-  "taiex_return": null,
+  "taiex_return": -0.0003247525467885426,
   "automatic_trade_allowed": false,
   "formal_model_changed": false,
   "trade_decision_changed": false,
   "active_in_trade_decision": false,
   "report_changed": false,
-  "note": "after-close pool breadth only; index input is not yet part of the official daily snapshot"
+  "candidate_status": "NOT_TRIGGERED",
+  "candidate_count": 0,
+  "candidates": [],
+  "active_pool_as_of": "2026-10-02",
+  "note": "after-close official TAIEX return plus R1-universe breadth; research-only"
 }
