@@ -86,9 +86,17 @@ jobs:
           GOOGLE_OAUTH_CLIENT_SECRET: ${{ secrets.GOOGLE_OAUTH_CLIENT_SECRET }}
           GOOGLE_OAUTH_REFRESH_TOKEN: ${{ secrets.GOOGLE_OAUTH_REFRESH_TOKEN }}
         run: |
-          python -m r1.dashboard_publish \
+          set +e
+          output=$(python -m r1.dashboard_publish \
             --spreadsheet-id 1j-Uh_hR3VgIqW-0ZdXuPPTrXN7arxAc_BxyA_h5U95M \
-            --payload data/r1/dashboard_payload.json
+            --payload data/r1/dashboard_payload.json 2>&1)
+          status=$?
+          printf '%s\n' "$output"
+          if [ "$status" -ne 0 ]; then
+            compact=$(printf '%s' "$output" | tail -n 8 | tr '\n' ' ')
+            echo "::error title=R1 Sheet publish/readback failed::$compact"
+            exit "$status"
+          fi
       - name: Commit durable R1 source state
         if: steps.gate.outputs.should_run == 'true'
         shell: bash
