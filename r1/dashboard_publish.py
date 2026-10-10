@@ -68,6 +68,18 @@ def _holding_rows(rows: list[list[object]]) -> list[int]:
     ]
 
 
+def _equivalent_sheet_rows(actual: list[list[object]], expected: list[list[object]]) -> bool:
+    if len(actual) != len(expected):
+        return False
+    for got, want in zip(actual, expected):
+        width = max(len(got), len(want))
+        got_values = [None if value in (None, "") else value for value in [*got, *([None] * (width - len(got)))]]
+        want_values = [None if value in (None, "") else value for value in [*want, *([None] * (width - len(want)))]]
+        if got_values != want_values:
+            return False
+    return True
+
+
 def _format_workbook(client: SheetsClient, dashboard_rows: list[list[object]]) -> None:
     response = retry_request(
         requests.get, client.base,
@@ -213,9 +225,9 @@ def publish_payload(spreadsheet_id: str, payload_path: str | Path) -> dict[str, 
         )
     if not trade_check or trade_check[0] != trade_header:
         raise RuntimeError("R1 transaction readback header mismatch")
-    if performance_check != tabs[PERFORMANCE]:
+    if not _equivalent_sheet_rows(performance_check, tabs[PERFORMANCE]):
         raise RuntimeError("R1 performance comparison readback mismatch")
-    if recommendations_check != tabs[RECOMMENDATIONS]:
+    if not _equivalent_sheet_rows(recommendations_check, tabs[RECOMMENDATIONS]):
         raise RuntimeError("R1 recommendation readback mismatch")
     return {
         "spreadsheet_id": spreadsheet_id,

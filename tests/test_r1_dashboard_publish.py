@@ -48,6 +48,12 @@ class R1DashboardPublishTest(unittest.TestCase):
                 ["載板 Top1", "3037 欣興", 88, "實際持有"]]
         self.assertEqual(dashboard_publish._holding_rows(rows), [3])
 
+    def test_readback_treats_empty_cells_and_omitted_trailing_cells_as_blank(self):
+        self.assertTrue(dashboard_publish._equivalent_sheet_rows(
+            [["date", "value", "note"], ["2026-10-08", "", "ok"], ["x"]],
+            [["date", "value", "note"], ["2026-10-08", None, "ok"], ["x", None, None]],
+        ))
+
     def test_publishes_current_date_preserves_signal_history_and_keeps_transactions_empty(self):
         date = "2026-10-02"
         dashboard = [["Ryan｜R1實際帳戶總覽與換倉顧問"], ["最新資料日期", date, "模型定位", "研究挑戰版", "尚未啟用交易"]]
