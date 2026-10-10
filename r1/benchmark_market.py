@@ -20,10 +20,13 @@ def build_snapshot(*, date: str, source_repo: str | Path = ".",
         current=pd.DataFrame(columns=["ticker", "name", "market"]),
         source_cache=Path(source_cache), offline=False,
     )
-    official["ticker"] = official.ticker.astype(str).map(
-        lambda value: "00631" if value.replace(".0", "").lstrip("0") == "631"
-        else value.replace(".0", "").zfill(4)
-    )
+    def normalize(value: object) -> str:
+        token = str(value).replace(".0", "").upper()
+        if token in {"00631L", "00631"} or token.lstrip("0") in {"631", "631L"}:
+            return "00631"
+        return token.zfill(4)
+
+    official["ticker"] = official.ticker.map(normalize)
     official["date"] = pd.to_datetime(official.date)
     rows, gaps = [], []
     for ticker, company in TICKERS.items():
