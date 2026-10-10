@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "paused": true,
+  "paused_at": "2026-10-10",
+  "paused_by": "Ryan",
+  "scope": [
+    "V4-D Dashboard",
+    "C6 Research Dashboard",
+    "C6 Actual Holdings Dashboard"
+  ],
+  "reason": "User requested suspension of daily signal, transaction and Dashboard updates until explicit resume.",
+  "manual_resume_required": true
+}

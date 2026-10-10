@@ -1,8 +1,6 @@
 name: Publish all stock Dashboards
 
 on:
-  schedule:
-    - cron: "15 9 * * 1-5"
   workflow_dispatch:
     inputs:
       report_date:
@@ -27,16 +25,28 @@ jobs:
   target:
     runs-on: ubuntu-latest
     outputs:
-      should_run: ${{ steps.date.outputs.should_run }}
-      target_date: ${{ steps.request.outputs.target_date }}
+      should_run: ${{ steps.final.outputs.should_run }}
+      target_date: ${{ steps.final.outputs.target_date }}
     steps:
       - uses: actions/checkout@v4
+      - name: Respect Ryan publication pause
+        id: pause
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json, os
+          state = json.load(open('config/dashboard_publication_state.json', encoding='utf-8'))
+          with open(os.environ['GITHUB_OUTPUT'], 'a', encoding='utf-8') as output:
+              output.write(f"paused={'true' if state.get('paused') else 'false'}\n")
+          PY
       - uses: actions/checkout@v4
+        if: steps.pause.outputs.paused != 'true'
         with:
           repository: ryan-AI-stock/AI_stock_schedule_rules
           ref: main
           path: AI_stock_schedule_rules
       - name: Resolve one completed Taiwan session for every Dashboard
+        if: steps.pause.outputs.paused != 'true'
         id: date
         env:
           SCHEDULE_RULES_PATH: ${{ github.workspace }}/AI_stock_schedule_rules/schedule_rules.json
@@ -54,9 +64,10 @@ jobs:
           echo "::error::Official calendar unavailable after three attempts; no publication allowed"
           exit 1
       - name: Reject unavailable calendar instead of successful no-op
-        if: steps.date.outputs.reason == 'calendar_unavailable'
+        if: steps.pause.outputs.paused != 'true' && steps.date.outputs.reason == 'calendar_unavailable'
         run: exit 1
       - name: Validate requested date against completed session
+        if: steps.pause.outputs.paused != 'true'
         id: request
         env:
           REQUESTED_DATE: ${{ inputs.report_date }}
@@ -72,6 +83,20 @@ jobs:
           with open(os.environ['GITHUB_OUTPUT'], 'a') as output:
               output.write(f'target_date={requested}\n')
           PY
+      - name: Finalize publication decision
+        id: final
+        shell: bash
+        env:
+          PAUSED: ${{ steps.pause.outputs.paused }}
+          GATE_SHOULD_RUN: ${{ steps.date.outputs.should_run }}
+          TARGET_DATE: ${{ steps.request.outputs.target_date }}
+        run: |
+          if [ "$PAUSED" = true ]; then
+            printf 'should_run=false\ntarget_date=\n' >> "$GITHUB_OUTPUT"
+            echo "V4-D and both C6 Dashboards are paused by Ryan; no data or Sheet was updated." >> "$GITHUB_STEP_SUMMARY"
+          else
+            printf 'should_run=%s\ntarget_date=%s\n' "$GATE_SHOULD_RUN" "$TARGET_DATE" >> "$GITHUB_OUTPUT"
+          fi
 
   v4d:
     needs: target
@@ -103,7 +128,7 @@ jobs:
         run: |
           test "$TARGET_RESULT" = success
           if [ "$SHOULD_RUN" != true ]; then
-            echo "No eligible completed trading session." >> "$GITHUB_STEP_SUMMARY"
+            echo "No publication requested: paused or no eligible completed trading session." >> "$GITHUB_STEP_SUMMARY"
             exit 0
           fi
           test "$V4D_RESULT" = success
