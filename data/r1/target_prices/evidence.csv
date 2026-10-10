@@ -4,3 +4,9 @@ ticker,institution,target_price,horizon,available_at,source_url,retrieved_at,not
 2454,JPMorgan,5600.0,12M,2026-09-01,https://hk.investing.com/equities/mediatek-consensus-estimates,2026-10-10,公開分析師評級表；機構可識別
 2454,Citi,6055.0,12M,2026-07-07,https://hk.investing.com/equities/mediatek-consensus-estimates,2026-10-10,距10/8已超過90日；保留歷史但不進當週共識
 2454,Nomura/Instinet,5800.0,12M,2026-06-30,https://hk.investing.com/equities/mediatek-consensus-estimates,2026-10-10,距10/8已超過90日；保留歷史但不進當週共識
+3037,Macquarie,1700.0,12M,2026-07-31,https://hk.investing.com/equities/unimicron-tech,2026-10-10,公開分析師評級表；機構可識別
+3037,Nomura/Instinet,1400.0,12M,2026-07-30,https://hk.investing.com/equities/unimicron-tech,2026-10-10,公開分析師評級表；機構可識別
+3037,JPMorgan,1225.0,12M,2026-07-30,https://hk.investing.com/equities/unimicron-tech,2026-10-10,公開分析師評級表；機構可識別
+3081,Macquarie,3345.0,12M,2026-08-14,https://hk.investing.com/equities/landmark-optoelectronics,2026-10-10,公開分析師評級表；機構可識別
+2344,JPMorgan,360.0,12M,2026-07-15,https://hk.investing.com/equities/winbond-consensus-estimates,2026-10-10,公開分析師評級表；機構可識別
+2376,Citi,595.0,12M,2026-08-18,https://hk.investing.com/equities/gigabyte-tech,2026-10-10,公開分析師評級表；機構可識別

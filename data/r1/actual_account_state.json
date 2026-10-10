@@ -37,6 +37,13 @@
       "market_value": 1493520.0
     },
     {
+      "ticker": "6488",
+      "company": "環球晶",
+      "shares": 500,
+      "raw_close": 1130.0,
+      "market_value": 565000.0
+    },
+    {
       "ticker": "2408",
       "company": "南亞科",
       "shares": 1147,
@@ -51,7 +58,7 @@
       "market_value": 177000.0
     }
   ],
-  "equity_market_value": 11903534.0,
+  "equity_market_value": 12468534.0,
   "cash": null,
   "nav": null,
   "status": "CASH_RECONCILIATION_REQUIRED",

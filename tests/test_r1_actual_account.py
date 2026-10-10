@@ -7,6 +7,16 @@ from r1.actual_account import build_actual_account
 
 
 class ActualAccountTest(unittest.TestCase):
+    def test_current_confirmed_positions_keep_remaining_globalwafers_shares(self):
+        root = Path(__file__).resolve().parents[1]
+        result = build_actual_account(
+            date="2026-10-08", config_path=root / "config/r1.json",
+            market_path=root / "data/r1/daily_market_latest.json",
+        )
+        globalwafers = next(row for row in result["positions"] if row["ticker"] == "6488")
+        self.assertEqual(globalwafers["shares"], 500)
+        self.assertEqual(result["equity_market_value"], 12468534.0)
+
     def test_equity_is_visible_while_unknown_cash_blocks_nav(self):
         with tempfile.TemporaryDirectory() as folder:
             root = Path(folder)

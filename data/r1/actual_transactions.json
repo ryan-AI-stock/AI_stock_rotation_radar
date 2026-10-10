@@ -3,7 +3,7 @@
   "source": "ryan_user_confirmed_actual_trade",
   "transactions": [
     {
-      "transaction_date": "2026-10-07",
+      "transaction_date": "2026-10-06",
       "action": "SELL",
       "ticker": "6488",
       "company": "環球晶",
@@ -14,19 +14,19 @@
       "tax": null,
       "net_cash_flow": null,
       "realized_pnl": null,
-      "reason_status": "Ryan人工成交；賣出原持股剩餘500股。淨收與已實現損益待券商資料，不以估算值回填。"
+      "reason_status": "Ryan人工成交；原持有1000股，本次賣出500股，仍持有500股。淨收與已實現損益待券商資料，不以估算值回填。"
     },
     {
-      "transaction_date": "2026-10-07",
+      "transaction_date": "2026-10-06",
       "action": "BUY",
       "ticker": "2408",
       "company": "南亞科",
       "shares": 1147,
       "price": 530.45,
-      "gross_amount": 608626.15,
+      "gross_amount": 608426.15,
       "fees": null,
       "tax": 0.0,
-      "net_cash_flow": -608626.15,
+      "net_cash_flow": -608426.15,
       "realized_pnl": null,
       "reason_status": "Ryan人工成交；每股成本530.45元含交易成本，非R1模型指令。"
     },

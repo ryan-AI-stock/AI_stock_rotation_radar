@@ -525,7 +525,7 @@
       "company": "欣興",
       "structural_bottleneck": 97.0,
       "revenue_earnings_realization": 64.027149,
-      "consensus_target_upside": null,
+      "consensus_target_upside": 30.23622,
       "target_revision_and_breadth": null,
       "theme_momentum_and_catalyst": 52.637363,
       "relative_valuation": 35.0,
@@ -533,11 +533,10 @@
       "v05_total_score": null,
       "v05_status": "DATA_MISSING",
       "v05_missing_components": [
-        "consensus_target_upside",
         "target_revision_and_breadth",
         "price_chip_risk"
       ],
-      "v05_reason": "缺少：consensus_target_upside、target_revision_and_breadth、price_chip_risk"
+      "v05_reason": "缺少：target_revision_and_breadth、price_chip_risk"
     },
     {
       "date": "2026-10-08",

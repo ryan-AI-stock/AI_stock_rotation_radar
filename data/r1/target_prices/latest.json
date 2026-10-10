@@ -28,8 +28,8 @@
     {
       "ticker": "2344",
       "as_of_date": "2026-10-08",
-      "institution_count": 0,
-      "consensus_target_price": null,
+      "institution_count": 1,
+      "consensus_target_price": 360.0,
       "consensus_upside": null,
       "dispersion": null,
       "status": "DATA_MISSING",
@@ -40,8 +40,8 @@
     {
       "ticker": "2376",
       "as_of_date": "2026-10-08",
-      "institution_count": 0,
-      "consensus_target_price": null,
+      "institution_count": 1,
+      "consensus_target_price": 595.0,
       "consensus_upside": null,
       "dispersion": null,
       "status": "DATA_MISSING",
@@ -73,12 +73,12 @@
     {
       "ticker": "3037",
       "as_of_date": "2026-10-08",
-      "institution_count": 0,
-      "consensus_target_price": null,
-      "consensus_upside": null,
-      "dispersion": null,
-      "status": "DATA_MISSING",
-      "scoreable": false,
+      "institution_count": 3,
+      "consensus_target_price": 1400.0,
+      "consensus_upside": 0.10236220472440949,
+      "dispersion": 0.3392857142857143,
+      "status": "READY",
+      "scoreable": true,
       "rejected": [],
       "source_policy": "12M median; independent identifiable institutions; PIT max 90 days"
     },
@@ -193,8 +193,8 @@
     {
       "ticker": "3081",
       "as_of_date": "2026-10-08",
-      "institution_count": 0,
-      "consensus_target_price": null,
+      "institution_count": 1,
+      "consensus_target_price": 3345.0,
       "consensus_upside": null,
       "dispersion": null,
       "status": "DATA_MISSING",
@@ -660,6 +660,6 @@
     }
   ],
   "requested_ticker_count": 54,
-  "ready_ticker_count": 0,
+  "ready_ticker_count": 1,
   "source": "data/r1/target_prices/evidence.csv"
 }
