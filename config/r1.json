@@ -94,7 +94,7 @@
     {"ticker": "2376", "company": "技嘉", "market": "TWSE", "shares": 7000, "core_lock": false, "roles": ["PORTFOLIO", "UNIVERSE"]},
     {"ticker": "2454", "company": "聯發科", "market": "TWSE", "shares": 19, "core_lock": false, "roles": ["PORTFOLIO", "UNIVERSE"]},
     {"ticker": "3037", "company": "欣興", "market": "TWSE", "shares": 1176, "core_lock": false, "roles": ["PORTFOLIO", "UNIVERSE"]},
-    {"ticker": "6488", "company": "環球晶", "market": "TPEx", "shares": 500, "core_lock": false, "roles": ["PORTFOLIO", "UNIVERSE"]},
+    {"ticker": "6488", "company": "環球晶", "market": "TPEx", "shares": 0, "core_lock": false, "roles": ["UNIVERSE"]},
     {"ticker": "3661", "company": "世芯-KY", "market": "TWSE", "shares": 0, "core_lock": false, "roles": ["UNIVERSE"]},
     {"ticker": "3443", "company": "創意", "market": "TWSE", "shares": 0, "core_lock": false, "roles": ["UNIVERSE"]},
     {"ticker": "3035", "company": "智原", "market": "TWSE", "shares": 0, "core_lock": false, "roles": ["UNIVERSE"]},
