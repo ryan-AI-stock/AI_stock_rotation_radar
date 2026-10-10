@@ -7,6 +7,7 @@ from pathlib import Path
 import pandas as pd
 
 from rotation_radar.base_cycle_daily_report import load_official_prices_and_turnover
+from rotation_radar.daily_risk_features import fetch_price
 
 
 TICKERS = {"00631": "元大台灣50正2", "2308": "台達電", "2317": "鴻海"}
@@ -28,6 +29,12 @@ def build_snapshot(*, date: str, source_repo: str | Path = ".",
 
     official["ticker"] = official.ticker.map(normalize)
     official["date"] = pd.to_datetime(official.date)
+    if official[official.ticker.eq("00631") & official.date.eq(target)].empty:
+        etf_rows, _ = fetch_price(target.date(), {"00631L"})
+        if etf_rows:
+            official = pd.concat([official, pd.DataFrame([{
+                "ticker": "00631", "date": target, "close": etf_rows[-1]["close"],
+            }])], ignore_index=True, sort=False)
     rows, gaps = [], []
     for ticker, company in TICKERS.items():
         exact = official[(official.ticker == ticker) & (official.date == target)]
