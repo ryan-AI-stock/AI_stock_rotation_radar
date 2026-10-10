@@ -1,0 +1,29 @@
+{
+  "date": "2026-10-08",
+  "rows": [
+    {
+      "date": "2026-10-08",
+      "ticker": "00631",
+      "company": "元大台灣50正2",
+      "raw_close": 40.9,
+      "source": "official_raw_close"
+    },
+    {
+      "date": "2026-10-08",
+      "ticker": "2308",
+      "company": "台達電",
+      "raw_close": 1965.0,
+      "source": "official_raw_close"
+    },
+    {
+      "date": "2026-10-08",
+      "ticker": "2317",
+      "company": "鴻海",
+      "raw_close": 249.0,
+      "source": "official_raw_close"
+    }
+  ],
+  "gaps": [],
+  "requested_ticker_count": 3,
+  "actual_ticker_count": 3
+}
