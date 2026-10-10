@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import unittest
 
-from r1.target_price_consensus import TargetPriceRecord, build_consensus
+from r1.target_price_consensus import TargetPriceRecord, build_consensus, build_snapshot
 
 
 def row(institution: str, price: float, available: str = "2026-10-01") -> TargetPriceRecord:
@@ -34,6 +34,14 @@ class R1TargetPriceConsensusTest(unittest.TestCase):
         )
         self.assertEqual(result["institution_count"], 0)
         self.assertEqual({item["error"] for item in result["rejected"]}, {"future_data", "stale"})
+
+    def test_snapshot_keeps_incomplete_ticker_explicit(self) -> None:
+        result = build_snapshot(
+            date="2026-10-10", tickers=["2330", "2454"], evidence_path="missing.csv",
+            market={"rows": [{"ticker": "2330", "raw_close": 1000}, {"ticker": "2454", "raw_close": 1500}]},
+        )
+        self.assertEqual(result["ready_ticker_count"], 0)
+        self.assertEqual([row["status"] for row in result["rows"]], ["DATA_MISSING", "DATA_MISSING"])
 
 
 if __name__ == "__main__":

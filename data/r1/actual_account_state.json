@@ -1,0 +1,65 @@
+{
+  "date": "2026-10-08",
+  "positions": [
+    {
+      "ticker": "2330",
+      "company": "台積電",
+      "shares": 2534,
+      "raw_close": 2550.0,
+      "market_value": 6461700.0
+    },
+    {
+      "ticker": "2344",
+      "company": "華邦電",
+      "shares": 3000,
+      "raw_close": 177.0,
+      "market_value": 531000.0
+    },
+    {
+      "ticker": "2376",
+      "company": "技嘉",
+      "shares": 7000,
+      "raw_close": 363.0,
+      "market_value": 2541000.0
+    },
+    {
+      "ticker": "2454",
+      "company": "聯發科",
+      "shares": 19,
+      "raw_close": 4690.0,
+      "market_value": 89110.0
+    },
+    {
+      "ticker": "3037",
+      "company": "欣興",
+      "shares": 1176,
+      "raw_close": 1270.0,
+      "market_value": 1493520.0
+    },
+    {
+      "ticker": "2408",
+      "company": "南亞科",
+      "shares": 1147,
+      "raw_close": 532.0,
+      "market_value": 610204.0
+    },
+    {
+      "ticker": "2303",
+      "company": "聯電",
+      "shares": 1200,
+      "raw_close": 147.5,
+      "market_value": 177000.0
+    }
+  ],
+  "equity_market_value": 11903534.0,
+  "cash": null,
+  "nav": null,
+  "status": "CASH_RECONCILIATION_REQUIRED",
+  "gaps": [
+    {
+      "field": "cash",
+      "reason": "USER_CONFIRMED_CASH_NOT_AVAILABLE"
+    }
+  ],
+  "source": "r1_config_confirmed_shares_plus_official_raw_close"
+}

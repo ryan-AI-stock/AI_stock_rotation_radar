@@ -16,7 +16,7 @@ class R1DashboardPayloadTest(unittest.TestCase):
         validate_tabs(payload["tabs"])
         self.assertEqual(set(payload["tabs"]), {"R1 Dashboard", "R1績效每日比較", "R1每日換倉建議", "R1每日訊號資料庫", "R1實際交易紀錄"})
         self.assertEqual(len(payload["tabs"]["R1每日訊號資料庫"]), 55)
-        self.assertEqual(len(payload["tabs"]["R1實際交易紀錄"]), 3)
+        self.assertEqual(len(payload["tabs"]["R1實際交易紀錄"]), 5)
         dashboard = payload["tabs"]["R1 Dashboard"]
         sections = [row[0] for row in dashboard]
         self.assertIn("01｜實際持股與未來半年目標持股", sections)

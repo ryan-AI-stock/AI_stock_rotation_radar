@@ -3,6 +3,10 @@ from __future__ import annotations
 from dataclasses import dataclass
 from datetime import date
 from statistics import median
+import csv
+import json
+from pathlib import Path
+from typing import Any
 
 
 @dataclass(frozen=True)
@@ -57,3 +61,50 @@ def build_consensus(*, records: list[TargetPriceRecord], ticker: str, current_pr
         "rejected": rejected,
         "source_policy": "12M median; independent identifiable institutions; PIT max 90 days",
     }
+
+
+def load_records(path: str | Path) -> list[TargetPriceRecord]:
+    source = Path(path)
+    if not source.exists():
+        return []
+    rows: list[TargetPriceRecord] = []
+    with source.open(encoding="utf-8-sig", newline="") as handle:
+        for row in csv.DictReader(handle):
+            try:
+                rows.append(TargetPriceRecord(
+                    ticker=str(row["ticker"]).zfill(4), institution=row["institution"].strip(),
+                    target_price=float(row["target_price"]), horizon=row["horizon"].strip(),
+                    available_at=row["available_at"].strip(), source_url=row["source_url"].strip(),
+                ))
+            except (KeyError, TypeError, ValueError):
+                continue
+    return rows
+
+
+def build_snapshot(*, date: str, market: dict[str, Any], tickers: list[str],
+                   evidence_path: str | Path) -> dict[str, Any]:
+    records = load_records(evidence_path)
+    closes = {str(row["ticker"]).zfill(4): row.get("raw_close") for row in market.get("rows", [])}
+    rows = [build_consensus(
+        records=records, ticker=ticker, current_price=float(closes.get(ticker) or 0), as_of_date=date,
+    ) for ticker in tickers]
+    return {
+        "date": date, "rows": rows, "requested_ticker_count": len(tickers),
+        "ready_ticker_count": sum(row["status"] == "READY" for row in rows),
+        "source": str(evidence_path),
+    }
+
+
+def write_snapshot(*, date: str, market_path: str | Path, config_path: str | Path,
+                   evidence_path: str | Path, output_path: str | Path) -> dict[str, Any]:
+    from r1.config import R1Config
+    market = json.loads(Path(market_path).read_text(encoding="utf-8"))
+    config = R1Config.load(config_path)
+    payload = build_snapshot(
+        date=date, market=market, tickers=[row.ticker for row in config.securities],
+        evidence_path=evidence_path,
+    )
+    output = Path(output_path)
+    output.parent.mkdir(parents=True, exist_ok=True)
+    output.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    return payload

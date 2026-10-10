@@ -9,21 +9,32 @@
     "external_cash_flow_policy": "must_be_user_confirmed"
   },
   "benchmark_00631l_all_in": {
-    "status": "SEED_RECONCILIATION_REQUIRED",
+    "status": "READY",
     "description": "Convert the complete confirmed 2026-08-05 comparison capital to 00631L and hold.",
     "ticker": "00631L",
     "execution_date": "2026-08-05",
     "whole_share_only": true,
+    "start_raw_close": 34.7,
+    "buy_slippage_rate": 0.001,
+    "buy_fee_rate": 0.000855,
+    "shares": 220828,
+    "cash": 8.52124648168683,
+    "seed_formula": "floor(7676961.04 / (34.70 * 1.001 * 1.000855))",
+    "source_note": "8/5官方未調整收盤34.70；整股、0.10%滑價與0.0855%手續費",
     "dividends_and_corporate_actions": "official_event_ledger"
   },
   "benchmark_original_holdings": {
-    "status": "SEED_RECONCILIATION_REQUIRED",
+    "status": "READY",
     "description": "Keep every confirmed holding immediately before 2026-08-05 sales unchanged.",
     "known_positions": [
       {"ticker": "00631L", "shares": 139000},
       {"ticker": "2308", "shares": 748},
       {"ticker": "2317", "shares": 6120, "note": "from prior Ryan-confirmed comparison context; exact broker reconciliation retained"}
     ],
+    "cash": 24181.04,
+    "seed_reference_prices": {"00631L": 34.7, "2308": 1680.0, "2317": 257.0},
+    "cash_formula": "7676961.04 - (139000*34.70 + 748*1680 + 6120*257)",
+    "source_note": "股數與8/5價格由Ryan券商截圖及確認；餘現金為共同起始NAV的平衡數，不列為獲利",
     "dividends_and_corporate_actions": "official_event_ledger"
   },
   "comparability_gate": "All three lines must use the same confirmed starting NAV and external cash-flow treatment before relative performance is published."

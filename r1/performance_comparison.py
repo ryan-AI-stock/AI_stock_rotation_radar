@@ -18,9 +18,13 @@ def build_comparison(*, date: str, market: dict[str, Any], benchmark_config: dic
     seed_ready = isinstance(seed, (int, float)) and seed > 0
 
     actual_nav = actual_snapshot.get("nav")
+    actual_equity = actual_snapshot.get("equity_market_value")
     actual_ready = seed_ready and isinstance(actual_nav, (int, float))
     rows.append(_row(date, "ACTUAL", actual_nav, seed, actual_ready,
-                     "實際成交帳本與現金已對帳" if actual_ready else "實際交易／現金或共同起始NAV尚未完整對帳"))
+                     "實際成交帳本與現金已對帳" if actual_ready else
+                     f"已確認股票市值 {actual_equity:,.2f} 元；現金與完整交易帳本尚待對帳"
+                     if isinstance(actual_equity, (int, float)) else "實際交易／現金或共同起始NAV尚未完整對帳"))
+    rows[-1]["equity_market_value"] = actual_equity
 
     all_in = benchmark_config.get("benchmarks", {}).get(
         "00631l_buy_hold", benchmark_config.get("benchmark_00631l_all_in", {})

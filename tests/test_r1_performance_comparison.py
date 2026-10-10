@@ -20,6 +20,16 @@ class PerformanceComparisonTest(unittest.TestCase):
         self.assertTrue(result["comparison_ready"])
         self.assertEqual([round(row["return_pct"], 2) for row in result["rows"]], [0.2, 0.1, 0.1])
 
+    def test_actual_equity_is_exposed_without_publishing_return(self):
+        result = build_comparison(
+            date="2026-10-10", market={"rows": []}, benchmark_config={"common_starting_nav": 1000},
+            actual_snapshot={"equity_market_value": 900, "nav": None},
+        )
+        actual = result["rows"][0]
+        self.assertEqual(actual["equity_market_value"], 900)
+        self.assertIsNone(actual["return_pct"])
+        self.assertIn("已確認股票市值", actual["source_note"])
+
 
 if __name__ == "__main__":
     unittest.main()

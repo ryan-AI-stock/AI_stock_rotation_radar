@@ -82,9 +82,11 @@ def _build_v03_dashboard(*, config: R1Config, market: dict, theme_review: dict,
     rows.extend([
         ["02｜三條績效線"],
         ["比較線", "當日NAV", "共同起始NAV", "累積報酬", "狀態"],
-        *[[item["line"], item.get("nav") or "待對帳", item.get("starting_nav") or "待對帳",
+        *[[item["line"], item.get("nav") or item.get("equity_market_value") or "待對帳", item.get("starting_nav") or "待對帳",
            item.get("return_pct") if item.get("return_pct") is not None else "不發布",
-           item.get("status")] for item in comparison.get("rows", [])],
+           ("僅股票市值；現金待對帳" if item["line"] == "ACTUAL" and item.get("nav") is None
+            and item.get("equity_market_value") is not None else item.get("status"))]
+          for item in comparison.get("rows", [])],
         ["03｜今日換倉建議"],
         ["優先序", "動作", "換出", "換入", "理由／狀態"],
         *[[item["priority"], item["action"], item.get("source_ticker", ""),
@@ -162,6 +164,7 @@ def build_dashboard_payload(
     benchmark_config_path: str | Path = "config/r1_performance_benchmarks.json",
     actual_account_path: str | Path = "data/r1/actual_account_state.json",
     benchmark_market_path: str | Path = "data/r1/benchmark_market_latest.json",
+    target_price_path: str | Path = "data/r1/target_prices/latest.json",
 ) -> dict:
     config = R1Config.load(config_path)
     market = json.loads(Path(market_path).read_text(encoding="utf-8"))
@@ -205,6 +208,9 @@ def build_dashboard_payload(
         date=market["date"], market=comparison_market, benchmark_config=benchmark_config,
         actual_snapshot=actual_account,
     )
+    target_price_file = Path(target_price_path)
+    target_prices = json.loads(target_price_file.read_text(encoding="utf-8")) if target_price_file.exists() else {"rows": []}
+    target_price_by_ticker = {str(row.get("ticker", "")).zfill(4): row for row in target_prices.get("rows", [])}
     for item in comparison["rows"]:
         tabs["R1績效每日比較"].append([item[key] for key in TAB_SCHEMAS["R1績效每日比較"]])
 
@@ -215,7 +221,8 @@ def build_dashboard_payload(
     for ticker, weekly in weekly_by_ticker.items():
         recommendation_candidates.append({
             "ticker": ticker, "company": market_by_ticker.get(ticker, {}).get("company", ""),
-            "score": weekly.get("v05_total_score"), "target_upside": weekly.get("target_price_upside"),
+            "score": weekly.get("v05_total_score"),
+            "target_upside": target_price_by_ticker.get(ticker, {}).get("consensus_upside"),
             "reason": weekly.get("v05_reason"),
         })
     recommendations = build_recommendations(
@@ -449,6 +456,7 @@ def main() -> None:
     parser.add_argument("--benchmarks", default="config/r1_performance_benchmarks.json")
     parser.add_argument("--actual-account", default="data/r1/actual_account_state.json")
     parser.add_argument("--benchmark-market", default="data/r1/benchmark_market_latest.json")
+    parser.add_argument("--target-prices", default="data/r1/target_prices/latest.json")
     parser.add_argument("--output", default="data/r1/dashboard_payload.json")
     args = parser.parse_args()
     payload = build_dashboard_payload(
@@ -461,7 +469,7 @@ def main() -> None:
         transition_path=args.transition,
         benchmark_config_path=args.benchmarks,
         actual_account_path=args.actual_account,
-        benchmark_market_path=args.benchmark_market,
+        benchmark_market_path=args.benchmark_market, target_price_path=args.target_prices,
     )
     output = Path(args.output)
     output.parent.mkdir(parents=True, exist_ok=True)
