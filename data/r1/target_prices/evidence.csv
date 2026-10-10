@@ -1,1 +1,6 @@
 ticker,institution,target_price,horizon,available_at,source_url,retrieved_at,note
+2408,Macquarie,681.4,12M,2026-10-08,https://hk.investing.com/equities/nanya-tech-consensus-estimates,2026-10-10,公開分析師評級表；機構可識別
+2408,JPMorgan,850.0,12M,2026-08-10,https://hk.investing.com/equities/nanya-tech-consensus-estimates,2026-10-10,公開分析師評級表；機構可識別
+2454,JPMorgan,5600.0,12M,2026-09-01,https://hk.investing.com/equities/mediatek-consensus-estimates,2026-10-10,公開分析師評級表；機構可識別
+2454,Citi,6055.0,12M,2026-07-07,https://hk.investing.com/equities/mediatek-consensus-estimates,2026-10-10,距10/8已超過90日；保留歷史但不進當週共識
+2454,Nomura/Instinet,5800.0,12M,2026-06-30,https://hk.investing.com/equities/mediatek-consensus-estimates,2026-10-10,距10/8已超過90日；保留歷史但不進當週共識

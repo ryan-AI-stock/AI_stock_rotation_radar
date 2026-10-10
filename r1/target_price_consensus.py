@@ -107,4 +107,7 @@ def write_snapshot(*, date: str, market_path: str | Path, config_path: str | Pat
     output = Path(output_path)
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    history = output.parent / "history" / f"{date}.json"
+    history.parent.mkdir(parents=True, exist_ok=True)
+    history.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     return payload

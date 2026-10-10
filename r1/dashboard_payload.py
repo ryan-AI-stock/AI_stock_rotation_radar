@@ -165,6 +165,7 @@ def build_dashboard_payload(
     actual_account_path: str | Path = "data/r1/actual_account_state.json",
     benchmark_market_path: str | Path = "data/r1/benchmark_market_latest.json",
     target_price_path: str | Path = "data/r1/target_prices/latest.json",
+    v05_rank_path: str | Path = "data/r1/v05/latest.json",
 ) -> dict:
     config = R1Config.load(config_path)
     market = json.loads(Path(market_path).read_text(encoding="utf-8"))
@@ -211,6 +212,11 @@ def build_dashboard_payload(
     target_price_file = Path(target_price_path)
     target_prices = json.loads(target_price_file.read_text(encoding="utf-8")) if target_price_file.exists() else {"rows": []}
     target_price_by_ticker = {str(row.get("ticker", "")).zfill(4): row for row in target_prices.get("rows", [])}
+    v05_file = Path(v05_rank_path)
+    v05_payload = json.loads(v05_file.read_text(encoding="utf-8")) if v05_file.exists() else {"rows": []}
+    if v05_payload.get("date") != market.get("date"):
+        v05_payload = {"rows": []}
+    v05_by_ticker = {str(row.get("ticker", "")).zfill(4): row for row in v05_payload.get("rows", [])}
     for item in comparison["rows"]:
         tabs["R1績效每日比較"].append([item[key] for key in TAB_SCHEMAS["R1績效每日比較"]])
 
@@ -219,11 +225,12 @@ def build_dashboard_payload(
     held_tickers = {security.ticker for security in config.securities if security.shares > 0}
     recommendation_candidates = []
     for ticker, weekly in weekly_by_ticker.items():
+        v05 = v05_by_ticker.get(ticker, {})
         recommendation_candidates.append({
             "ticker": ticker, "company": market_by_ticker.get(ticker, {}).get("company", ""),
-            "score": weekly.get("v05_total_score"),
+            "score": v05.get("v05_total_score"),
             "target_upside": target_price_by_ticker.get(ticker, {}).get("consensus_upside"),
-            "reason": weekly.get("v05_reason"),
+            "reason": v05.get("v05_reason"),
         })
     recommendations = build_recommendations(
         date=market["date"], candidates=recommendation_candidates,
