@@ -73,7 +73,6 @@ jobs:
           python -m r1.target_price_snapshot --date "${{ steps.gate.outputs.target_date }}"
           python -m r1.valuation_snapshot --date "${{ steps.gate.outputs.target_date }}"
           python -m r1.weekly_snapshot --date "${{ steps.gate.outputs.target_date }}" --market data/r1/daily_market_latest.json --week-final-confirmed
-          python -m r1.v05_rank --date "${{ steps.gate.outputs.target_date }}"
           python -m r1.monthly_revenue --date "${{ steps.gate.outputs.target_date }}"
           python -m r1.official_financial_snapshot --date "${{ steps.gate.outputs.target_date }}"
           python -m r1.financial_quality --date "${{ steps.gate.outputs.target_date }}"
@@ -83,6 +82,7 @@ jobs:
           python -m r1.active_pool --date "${{ steps.gate.outputs.target_date }}" --weekly "data/r1/weekly/weekly_snapshot_${{ steps.gate.outputs.target_date }}.json"
           python -m r1.forward_outcomes --date "${{ steps.gate.outputs.target_date }}"
           python -m r1.evidence_readiness --date "${{ steps.gate.outputs.target_date }}"
+          python -m r1.v05_rank --date "${{ steps.gate.outputs.target_date }}"
           python -m r1.discovery --date "${{ steps.gate.outputs.target_date }}"
           python -m r1.membership_review --date "${{ steps.gate.outputs.target_date }}"
           python -m r1.benchmark_market --date "${{ steps.gate.outputs.target_date }}"

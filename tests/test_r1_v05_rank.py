@@ -15,6 +15,7 @@ class R1V05RankTest(unittest.TestCase):
                 "valuation_score": 70, "price_chip_score": None,
             }]},
             target_prices={"rows": []},
+            monthly_revenue={"rows": [{"ticker": "2330", "observations": [{"yoy": .2}]}]},
         )
         row = result["rows"][0]
         self.assertIsNone(row["v05_total_score"])
@@ -36,7 +37,11 @@ class R1V05RankTest(unittest.TestCase):
         prior = {"rows": [{"ticker": "2454", "scoreable": True,
                             "consensus_target_price": 100, "institution_count": 3}]}
         result = build_v05_rank(as_of_date="2026-10-08", weekly=weekly,
-                                target_prices=current, prior_target_prices=prior)
+                                target_prices=current, prior_target_prices=prior,
+                                monthly_revenue={"rows": [
+                                    {"ticker": "2330", "observations": [{"yoy": .05}]},
+                                    {"ticker": "2454", "observations": [{"yoy": .30}]},
+                                ]})
         row = next(item for item in result["rows"] if item["ticker"] == "2454")
         self.assertEqual(row["v05_status"], "READY")
         self.assertIsNotNone(row["v05_total_score"])

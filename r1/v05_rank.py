@@ -49,6 +49,7 @@ def _revision_breadth_score(current: dict[str, Any], prior: dict[str, Any] | Non
 
 
 def build_v05_rank(*, as_of_date: str, weekly: dict[str, Any], target_prices: dict[str, Any],
+                   monthly_revenue: dict[str, Any] | None = None,
                    prior_target_prices: dict[str, Any] | None = None) -> dict[str, Any]:
     weekly_rows = {str(row.get("ticker", "")).zfill(4): row for row in weekly.get("rows", [])}
     targets = {str(row.get("ticker", "")).zfill(4): row for row in target_prices.get("rows", [])}
@@ -60,12 +61,26 @@ def build_v05_rank(*, as_of_date: str, weekly: dict[str, Any], target_prices: di
         ticker: float(row["next_year_eps_growth"])
         for ticker, row in weekly_rows.items() if row.get("next_year_eps_growth") is not None
     })
+    revenue_rows = {
+        str(row.get("ticker", "")).zfill(4): row
+        for row in (monthly_revenue or {}).get("rows", [])
+    }
+    revenue_yoy = {}
+    for ticker, row in revenue_rows.items():
+        observations = row.get("observations") or []
+        latest_yoy = observations[-1].get("yoy") if observations else None
+        if latest_yoy is not None:
+            revenue_yoy[ticker] = float(latest_yoy)
+    revenue_percentiles = _percentile_scores(revenue_yoy)
     rows = []
     for ticker, weekly_row in sorted(weekly_rows.items()):
         target = targets.get(ticker, {})
+        realization = None
+        if ticker in growth_percentiles and ticker in revenue_percentiles:
+            realization = round((growth_percentiles[ticker] + revenue_percentiles[ticker]) / 2, 6)
         components = {
             "structural_bottleneck": weekly_row.get("bottleneck_score"),
-            "revenue_earnings_realization": growth_percentiles.get(ticker),
+            "revenue_earnings_realization": realization,
             "consensus_target_upside": (
                 _upside_score(target["consensus_upside"])
                 if target.get("scoreable") and target.get("consensus_upside") is not None else None
@@ -124,12 +139,18 @@ def main() -> None:
     parser.add_argument("--weekly-root", default="data/r1/weekly")
     parser.add_argument("--target-prices", default="data/r1/target_prices/latest.json")
     parser.add_argument("--target-history", default="data/r1/target_prices/history")
+    parser.add_argument("--monthly-revenue", default="data/r1/monthly_revenue/latest.json")
     parser.add_argument("--output", default="data/r1/v05/latest.json")
     args = parser.parse_args()
     weekly = json.loads(_latest_weekly(Path(args.weekly_root), args.date).read_text(encoding="utf-8"))
     targets = json.loads(Path(args.target_prices).read_text(encoding="utf-8"))
+    monthly_path = Path(args.monthly_revenue)
+    monthly = json.loads(monthly_path.read_text(encoding="utf-8")) if monthly_path.exists() else {}
+    if monthly.get("date", args.date) > args.date:
+        monthly = {}
     prior = _prior_target_snapshot(Path(args.target_history), args.date)
     payload = build_v05_rank(as_of_date=args.date, weekly=weekly, target_prices=targets,
+                             monthly_revenue=monthly,
                              prior_target_prices=prior)
     output = Path(args.output)
     output.parent.mkdir(parents=True, exist_ok=True)

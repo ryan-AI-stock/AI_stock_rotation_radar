@@ -16,6 +16,15 @@
     "relative_valuation": 0.10,
     "price_chip_risk": 0.10
   },
+  "ranking_component_methods": {
+    "structural_bottleneck": "既有bottleneck_score，須有可追溯瓶頸證據",
+    "revenue_earnings_realization": "最新PIT月營收年增率與下年度EPS成長率之候選池百分位各50%",
+    "consensus_target_upside": "90日內至少3家可識別機構之12M目標價中位數，上行空間截尾-20%至+80%後映射0至100",
+    "target_revision_and_breadth": "相隔至少28日之目標價中位數修正50%＋有效機構家數廣度50%",
+    "theme_momentum_and_catalyst": "既有catalyst_score",
+    "relative_valuation": "既有valuation_score",
+    "price_chip_risk": "既有price_chip_score"
+  },
   "target_price_policy": {
     "horizon": "12M",
     "minimum_independent_institutions": 3,
