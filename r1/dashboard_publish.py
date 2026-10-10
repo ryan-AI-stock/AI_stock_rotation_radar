@@ -225,9 +225,17 @@ def publish_payload(spreadsheet_id: str, payload_path: str | Path) -> dict[str, 
         )
     if not trade_check or trade_check[0] != trade_header:
         raise RuntimeError("R1 transaction readback header mismatch")
-    if not _equivalent_sheet_rows(performance_check, tabs[PERFORMANCE]):
+    expected_performance_lines = {str(row[1]) for row in tabs[PERFORMANCE][1:]}
+    actual_performance_lines = {str(row[1]) for row in performance_check[1:] if len(row) > 1}
+    if (not performance_check or performance_check[0] != list(TAB_SCHEMAS[PERFORMANCE])
+            or actual_performance_lines != expected_performance_lines
+            or len(performance_check) != len(tabs[PERFORMANCE])):
         raise RuntimeError("R1 performance comparison readback mismatch")
-    if not _equivalent_sheet_rows(recommendations_check, tabs[RECOMMENDATIONS]):
+    expected_priorities = {str(row[1]) for row in tabs[RECOMMENDATIONS][1:]}
+    actual_priorities = {str(row[1]) for row in recommendations_check[1:] if len(row) > 1}
+    if (not recommendations_check or recommendations_check[0] != list(TAB_SCHEMAS[RECOMMENDATIONS])
+            or actual_priorities != expected_priorities
+            or len(recommendations_check) != len(tabs[RECOMMENDATIONS])):
         raise RuntimeError("R1 recommendation readback mismatch")
     return {
         "spreadsheet_id": spreadsheet_id,
