@@ -8,31 +8,35 @@ from r1.config import R1Config
 from r1.dashboard_schema import TAB_SCHEMAS, validate_tabs
 from r1.toalpha_revision_history import latest_rows as latest_supplemental_revision_rows
 from r1.theme_policy import load_themes
+from r1.performance_comparison import build_comparison
+from r1.recommendations import build_recommendations
 
 
-MODEL_LOGIC = """R1 v0.3研究版｜AI瓶頸題材持有優先序
+MODEL_LOGIC = """R1 v0.5｜實際帳戶總覽與AI瓶頸換倉顧問
 
 【模型任務】
-R1負責維護11個AI發展瓶頸題材、每個題材的結構性Top1～Top3，以及各股票0～100分的優先持有參考值。Dashboard只顯示Ryan實際持股與未來半年五檔目標持股；完整題材池與Top3仍在模型資料中維護。R1不產生買進、賣出、加碼或減碼指令，實際操作由Ryan自行決定。
+R1記錄Ryan實際成交與帳戶結果，並與「8/5全部轉為0050正二後抱住」及「8/5原持股完全不動」兩條同起點基準每日比較。三條線未完成共同起始NAV與現金流對帳前，不發布誰勝誰負。
 
 【季度Top3】
 結構性龍頭評分：AI瓶頸直接性25%、產業與技術地位25%、AI營收兌現20%、財務與獲利品質20%、市場代表性10%。官方與公司正式揭露優先；分析師與市場共識只能補充，不能單獨決定排名。任一成分股必要證據不足時，該題材Top3維持待資料。
 
-【每日優先持有參考值】
-結構性龍頭30%、營收與獲利成長25%、估值相對自身歷史20%、股價風險安全度15%、需求訂單與催化10%。分數越高代表當下相對持有吸引力越高，不代表預測上漲機率。
+【每日換倉優先序】
+結構瓶頸20%、營收獲利兌現20%、12個月目標價上行空間20%、目標價修正與機構廣度10%、題材動能與催化10%、相對估值10%、價格籌碼風險10%。缺一構面不補0、不重配權重。建議與實際成交分離，只有Ryan確認成交才更新持股。
 
 【無差別殺盤過渡層】
 未來半年五檔目標維持不變。當加權指數或十一題材候選池出現廣泛急跌時，R1開放全候選池進行過渡比較，包括五檔目標本身。跌深不是買進理由；候選仍須通過財務、題材催化及風險資料。盤中只列觀察，收盤後以官方資料確認；模型不自動成交。
 
 【更新頻率】
-每個交易日累積官方價格與市場資料；每週更新需求、事件與風險；每季財報揭露後重評Top3；每半年檢討題材與成分股。缺資料不補0、不重配權重、不以媒體稱號代替證據。
+每個交易日更新三條績效線與換倉建議；每週更新12個月目標價共識、題材催化與風險；每季重評AI瓶頸題材、成分股與Top3。目標價採90日內至少3家可識別機構的中位數，單一外資只展示、不計分。
 
 【模型邊界】
-R1是研究challenger，不取代正式V4-D，也不改C6每日交易決策。舊買賣與換倉程式暫時保留，但不顯示於Dashboard，也不啟用交易。"""
+R1是report-only顧問，不自動下單。V4-D與C6程式保留但每日發布已暫停，直到Ryan明確要求恢復。"""
 
 
 def _build_v03_dashboard(*, config: R1Config, market: dict, theme_review: dict,
-                         theme_path: str | Path, transition: dict | None = None) -> list[list[object]]:
+                         theme_path: str | Path, transition: dict | None = None,
+                         comparison: dict | None = None,
+                         recommendations: list[dict] | None = None) -> list[list[object]]:
     themes = load_themes(theme_path)
     membership_count = sum(len(theme.members) for theme in themes)
     universe_count = len({member.ticker for theme in themes for member in theme.members})
@@ -58,8 +62,8 @@ def _build_v03_dashboard(*, config: R1Config, market: dict, theme_review: dict,
         ticker for ticker in held if ticker not in set(targets)
     ]
     rows: list[list[object]] = [
-        ["R1研究版｜AI瓶頸預期差輪動"],
-        ["最新資料日期", market["date"], "模型定位", "實際持股與半年目標持股", "非交易指令"],
+        ["Ryan｜R1實際帳戶總覽與換倉顧問"],
+        ["最新資料日期", market["date"], "模型定位", "實際績效追蹤＋report-only換倉建議", "不自動成交"],
         ["資料狀態", f"{len(themes)}題材、{universe_count}檔股票、{membership_count}筆題材歸屬（跨題材可重複）；Dashboard只顯示實際持股與五檔目標。"],
         ["01｜實際持股與未來半年目標持股"],
         ["所屬題材", "股票", "優先持有參考值", "實際持有", "半年目標"],
@@ -73,10 +77,24 @@ def _build_v03_dashboard(*, config: R1Config, market: dict, theme_review: dict,
             f"實際持有｜{security.shares}股" if ticker in held else "",
             "未來半年目標" if ticker in targets else "既有實際持股",
         ])
+    comparison = comparison or {"rows": [], "comparison_ready": False}
+    recommendations = recommendations or []
+    rows.extend([
+        ["02｜三條績效線"],
+        ["比較線", "當日NAV", "共同起始NAV", "累積報酬", "狀態"],
+        *[[item["line"], item.get("nav") or "待對帳", item.get("starting_nav") or "待對帳",
+           item.get("return_pct") if item.get("return_pct") is not None else "不發布",
+           item.get("status")] for item in comparison.get("rows", [])],
+        ["03｜今日換倉建議"],
+        ["優先序", "動作", "換出", "換入", "理由／狀態"],
+        *[[item["priority"], item["action"], item.get("source_ticker", ""),
+           f"{item.get('target_ticker', '')} {item.get('target_company', '')}".strip(), item["reason"]]
+          for item in recommendations],
+    ])
     transition = transition or {}
     transition_status = transition.get("status", "尚未建立")
     rows.extend([
-        ["02｜無差別殺盤過渡層（研究觀察）"],
+        ["04｜無差別殺盤過渡層（研究觀察）"],
         ["狀態", transition_status, "候選池下跌比例", transition.get("negative_share", "待資料"),
          f"報酬中位數：{transition.get('universe_median_return', '待資料')}"],
         ["加權指數單日報酬", transition.get("taiex_return", "待資料"), "是否啟動",
@@ -90,19 +108,19 @@ def _build_v03_dashboard(*, config: R1Config, market: dict, theme_review: dict,
             for index, item in enumerate(transition.get("candidates", []), start=1)
         ]),
         ["執行邊界", "盤中只觀察；收盤後重算；不自動交易，長期五檔目標不變。"],
-        ["03｜分數規則"],
+        ["05｜分數規則"],
         ["分數", "構成", "權重", "更新頻率", "用途"],
         ["季度結構性龍頭", "瓶頸直接性／產業技術地位／AI營收兌現／財務獲利品質／市場代表性",
          "25%／25%／20%／20%／10%", "每季", "決定每個題材Top1～Top3"],
         ["優先持有參考值", "結構性龍頭／營收獲利成長／自身歷史估值／價格風險安全度／需求訂單催化",
          "30%／25%／20%／15%／10%", "每日資料＋週月季事件", "提供Ryan自行比較持有優先序"],
-        ["04｜更新排程"],
+        ["06｜更新排程"],
         ["頻率", "工作", "產出", "失敗處理", "交易影響"],
         ["每日收盤後", f"累積{universe_count}檔官方價格與市場資料", "每日資料庫", "缺資料重抓並列明缺口", "無"],
         ["每週最後交易日", "更新需求、訂單、事件與風險", "週度證據狀態", "證據不足維持原值或待資料", "無"],
         ["每季財報揭露後", f"重評{len(themes)}題材Top3", "季度排名", "全題材成分證據完整才發布", "無"],
         ["每半年", "檢討題材與成分股", "增刪建議與證據", "保留歷史版本", "無"],
-        ["05｜模型完整說明"],
+        ["07｜模型完整說明"],
         [MODEL_LOGIC],
     ])
     return rows
@@ -141,6 +159,9 @@ def build_dashboard_payload(
     theme_path: str | Path = "config/r1_v02_themes.json",
     actual_transactions_path: str | Path = "data/r1/actual_transactions.json",
     transition_path: str | Path = "data/r1/transition/latest.json",
+    benchmark_config_path: str | Path = "config/r1_performance_benchmarks.json",
+    actual_account_path: str | Path = "data/r1/actual_account_state.json",
+    benchmark_market_path: str | Path = "data/r1/benchmark_market_latest.json",
 ) -> dict:
     config = R1Config.load(config_path)
     market = json.loads(Path(market_path).read_text(encoding="utf-8"))
@@ -173,6 +194,36 @@ def build_dashboard_payload(
         title: ([] if title == "R1 Dashboard" else [list(headers)])
         for title, headers in TAB_SCHEMAS.items()
     }
+
+    benchmark_config = json.loads(Path(benchmark_config_path).read_text(encoding="utf-8"))
+    actual_account_file = Path(actual_account_path)
+    actual_account = json.loads(actual_account_file.read_text(encoding="utf-8")) if actual_account_file.exists() else {}
+    benchmark_market_file = Path(benchmark_market_path)
+    benchmark_market = json.loads(benchmark_market_file.read_text(encoding="utf-8")) if benchmark_market_file.exists() else {"rows": []}
+    comparison_market = {"rows": [*market.get("rows", []), *benchmark_market.get("rows", [])]}
+    comparison = build_comparison(
+        date=market["date"], market=comparison_market, benchmark_config=benchmark_config,
+        actual_snapshot=actual_account,
+    )
+    for item in comparison["rows"]:
+        tabs["R1績效每日比較"].append([item[key] for key in TAB_SCHEMAS["R1績效每日比較"]])
+
+    target_payload = json.loads(Path(theme_path).read_text(encoding="utf-8"))
+    target_tickers = {str(value).zfill(4) for value in target_payload.get("target_portfolio_6m", [])}
+    held_tickers = {security.ticker for security in config.securities if security.shares > 0}
+    recommendation_candidates = []
+    for ticker, weekly in weekly_by_ticker.items():
+        recommendation_candidates.append({
+            "ticker": ticker, "company": market_by_ticker.get(ticker, {}).get("company", ""),
+            "score": weekly.get("v05_total_score"), "target_upside": weekly.get("target_price_upside"),
+            "reason": weekly.get("v05_reason"),
+        })
+    recommendations = build_recommendations(
+        date=market["date"], candidates=recommendation_candidates,
+        held_tickers=held_tickers, target_tickers=target_tickers,
+    )
+    for item in recommendations:
+        tabs["R1每日換倉建議"].append([item[key] for key in TAB_SCHEMAS["R1每日換倉建議"]])
 
     total_value = sum((market_by_ticker[s.ticker]["raw_close"] or 0) * s.shares for s in config.securities)
     held_count = sum(security.shares > 0 for security in config.securities)
@@ -210,7 +261,7 @@ def build_dashboard_payload(
     # theme Top3 and holding-priority view. Legacy engines remain available but hidden.
     tabs["R1 Dashboard"] = _build_v03_dashboard(
         config=config, market=market, theme_review=theme_review, theme_path=theme_path,
-        transition=transition,
+        transition=transition, comparison=comparison, recommendations=recommendations,
     )
 
     for security in config.securities:
@@ -369,7 +420,7 @@ def build_dashboard_payload(
     if actual_file.exists():
         actual_payload = json.loads(actual_file.read_text(encoding="utf-8"))
         for item in actual_payload.get("transactions", []):
-            tabs["R1模擬交易紀錄"].append([
+            tabs["R1實際交易紀錄"].append([
                 item["transaction_date"], "", f"USER_CONFIRMED_{item['action']}", item["ticker"],
                 item["company"], item["shares"], item["price"], item["gross_amount"],
                 item.get("fees"), item.get("tax"), item.get("net_cash_flow"), "ACTUAL", "",
@@ -384,7 +435,7 @@ def build_dashboard_payload(
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Build the three-tab R1 dashboard payload.")
+    parser = argparse.ArgumentParser(description="Build the five-tab R1 actual-account advisory dashboard payload.")
     parser.add_argument("--config", default="config/r1.json")
     parser.add_argument("--market", required=True)
     parser.add_argument("--readiness", default="data/r1/evidence_readiness.json")
@@ -395,6 +446,9 @@ def main() -> None:
     parser.add_argument("--themes", default="config/r1_v02_themes.json")
     parser.add_argument("--actual-transactions", default="data/r1/actual_transactions.json")
     parser.add_argument("--transition", default="data/r1/transition/latest.json")
+    parser.add_argument("--benchmarks", default="config/r1_performance_benchmarks.json")
+    parser.add_argument("--actual-account", default="data/r1/actual_account_state.json")
+    parser.add_argument("--benchmark-market", default="data/r1/benchmark_market_latest.json")
     parser.add_argument("--output", default="data/r1/dashboard_payload.json")
     args = parser.parse_args()
     payload = build_dashboard_payload(
@@ -405,6 +459,9 @@ def main() -> None:
         theme_path=args.themes,
         actual_transactions_path=args.actual_transactions,
         transition_path=args.transition,
+        benchmark_config_path=args.benchmarks,
+        actual_account_path=args.actual_account,
+        benchmark_market_path=args.benchmark_market,
     )
     output = Path(args.output)
     output.parent.mkdir(parents=True, exist_ok=True)

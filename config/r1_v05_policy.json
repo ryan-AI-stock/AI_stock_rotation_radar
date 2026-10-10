@@ -1,0 +1,42 @@
+{
+  "version": "r1-v0.5-actual-portfolio-advisor-research",
+  "status": "challenger_report_only",
+  "portfolio_start_date": "2026-08-05",
+  "cadence": {
+    "daily": ["official_close", "actual_portfolio_nav", "two_benchmark_navs", "recommendation_rank"],
+    "weekly": ["target_price_consensus", "theme_momentum", "catalyst_and_risk_review"],
+    "quarterly": ["theme_bottleneck_review", "theme_membership_review", "theme_top3_review"]
+  },
+  "ranking_weights": {
+    "structural_bottleneck": 0.20,
+    "revenue_earnings_realization": 0.20,
+    "consensus_target_upside": 0.20,
+    "target_revision_and_breadth": 0.10,
+    "theme_momentum_and_catalyst": 0.10,
+    "relative_valuation": 0.10,
+    "price_chip_risk": 0.10
+  },
+  "target_price_policy": {
+    "horizon": "12M",
+    "minimum_independent_institutions": 3,
+    "maximum_age_calendar_days": 90,
+    "aggregation": "median",
+    "single_broker_is_scoreable": false,
+    "winsorized_upside_floor": -0.20,
+    "winsorized_upside_cap": 0.80
+  },
+  "recommendation_priority": {
+    "P1": "可執行優先換倉；資料完整且候選優勢明顯",
+    "P2": "分批換倉；優勢存在但仍需觀察成交與盤勢",
+    "P3": "觀察；不建議立即成交",
+    "NO_ACTION": "沒有足夠優勢或資料不足"
+  },
+  "execution_boundary": {
+    "automatic_order": false,
+    "actual_fill_required_to_update_holdings": true,
+    "failed_or_partial_fill_does_not_assume_execution": true,
+    "maximum_core_holdings": 5,
+    "long_term_targets_unchanged": true
+  },
+  "missing_value_policy": "NA_BLOCKS_COMPONENT_NO_ZERO_NO_WEIGHT_REDISTRIBUTION"
+}

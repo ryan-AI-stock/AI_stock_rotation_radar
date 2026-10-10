@@ -9,21 +9,23 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class R1DashboardPayloadTest(unittest.TestCase):
-    def test_exact_three_tabs_exist_and_validate(self):
+    def test_exact_five_tabs_exist_and_validate(self):
         payload = build_dashboard_payload(config_path=ROOT / "config/r1.json",
                                           market_path=ROOT / "data/r1/theme_daily_market_latest.json")
         self.assertEqual(set(payload["tabs"]), set(TAB_SCHEMAS))
         validate_tabs(payload["tabs"])
-        self.assertEqual(set(payload["tabs"]), {"R1 Dashboard", "R1每日訊號資料庫", "R1模擬交易紀錄"})
+        self.assertEqual(set(payload["tabs"]), {"R1 Dashboard", "R1績效每日比較", "R1每日換倉建議", "R1每日訊號資料庫", "R1實際交易紀錄"})
         self.assertEqual(len(payload["tabs"]["R1每日訊號資料庫"]), 55)
-        self.assertEqual(len(payload["tabs"]["R1模擬交易紀錄"]), 3)
+        self.assertEqual(len(payload["tabs"]["R1實際交易紀錄"]), 3)
         dashboard = payload["tabs"]["R1 Dashboard"]
         sections = [row[0] for row in dashboard]
         self.assertIn("01｜實際持股與未來半年目標持股", sections)
-        self.assertIn("02｜無差別殺盤過渡層（研究觀察）", sections)
-        self.assertIn("03｜分數規則", sections)
-        self.assertIn("04｜更新排程", sections)
-        self.assertIn("05｜模型完整說明", sections)
+        self.assertIn("02｜三條績效線", sections)
+        self.assertIn("03｜今日換倉建議", sections)
+        self.assertIn("04｜無差別殺盤過渡層（研究觀察）", sections)
+        self.assertIn("05｜分數規則", sections)
+        self.assertIn("06｜更新排程", sections)
+        self.assertIn("07｜模型完整說明", sections)
         self.assertNotIn("06｜下一個動態觸發條件", sections)
         self.assertNotIn("07｜Shadow換倉候選（非交易指令）", sections)
         shown = {str(row[1]).split()[0] for row in dashboard if len(row) >= 5 and str(row[0]) not in ("所屬題材",)}
@@ -35,7 +37,7 @@ class R1DashboardPayloadTest(unittest.TestCase):
         payload = build_dashboard_payload(config_path=ROOT / "config/r1.json",
                                           market_path=ROOT / "data/r1/theme_daily_market_latest.json")
         actions = payload["tabs"]["R1 Dashboard"]
-        self.assertIn("非交易指令", [cell for row in actions for cell in row])
+        self.assertIn("不自動成交", [cell for row in actions for cell in row])
         signals = payload["tabs"]["R1每日訊號資料庫"]
         self.assertEqual(next(row for row in signals if row[1] == "2330")[23], "CORE")
 
@@ -63,7 +65,7 @@ class R1DashboardPayloadTest(unittest.TestCase):
 
     def test_header_mismatch_is_rejected(self):
         tabs = {title: [list(headers)] for title, headers in TAB_SCHEMAS.items()}
-        tabs["R1 Dashboard"] = [["R1研究版｜AI瓶頸預期差輪動"]]
+        tabs["R1 Dashboard"] = [["Ryan｜R1實際帳戶總覽與換倉顧問"]]
         tabs["R1每日訊號資料庫"][0][0] = "wrong"
         with self.assertRaisesRegex(ValueError, "header mismatch"):
             validate_tabs(tabs)

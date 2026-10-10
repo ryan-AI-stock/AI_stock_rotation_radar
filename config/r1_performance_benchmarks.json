@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "start_date": "2026-08-05",
+  "common_starting_nav": 7676961.04,
+  "common_starting_nav_source": "Ryan confirmed initial account basis; benchmark share/cash reconciliation remains required",
+  "actual_portfolio": {
+    "status": "PARTIAL_LEDGER_REQUIRES_FULL_2026_08_05_ONWARD_TRANSACTION_IMPORT",
+    "valuation": "official_unadjusted_close_plus_confirmed_cash",
+    "external_cash_flow_policy": "must_be_user_confirmed"
+  },
+  "benchmark_00631l_all_in": {
+    "status": "SEED_RECONCILIATION_REQUIRED",
+    "description": "Convert the complete confirmed 2026-08-05 comparison capital to 00631L and hold.",
+    "ticker": "00631L",
+    "execution_date": "2026-08-05",
+    "whole_share_only": true,
+    "dividends_and_corporate_actions": "official_event_ledger"
+  },
+  "benchmark_original_holdings": {
+    "status": "SEED_RECONCILIATION_REQUIRED",
+    "description": "Keep every confirmed holding immediately before 2026-08-05 sales unchanged.",
+    "known_positions": [
+      {"ticker": "00631L", "shares": 139000},
+      {"ticker": "2308", "shares": 748},
+      {"ticker": "2317", "shares": 6120, "note": "from prior Ryan-confirmed comparison context; exact broker reconciliation retained"}
+    ],
+    "dividends_and_corporate_actions": "official_event_ledger"
+  },
+  "comparability_gate": "All three lines must use the same confirmed starting NAV and external cash-flow treatment before relative performance is published."
+}

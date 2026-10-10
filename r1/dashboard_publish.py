@@ -12,8 +12,34 @@ from rotation_radar.v4d_dashboard_publish import SheetsClient
 
 
 DASHBOARD = "R1 Dashboard"
+PERFORMANCE = "R1績效每日比較"
+RECOMMENDATIONS = "R1每日換倉建議"
 SIGNALS = "R1每日訊號資料庫"
-TRADES = "R1模擬交易紀錄"
+TRADES = "R1實際交易紀錄"
+LEGACY_TRADES = "R1模擬交易紀錄"
+
+
+def _ensure_tab_topology(client: SheetsClient) -> None:
+    response = retry_request(requests.get, client.base,
+                             params={"fields": "sheets(properties(sheetId,title,index))"},
+                             headers=client.headers, timeout=30)
+    client._raise_for_status(response)
+    sheets = response.json().get("sheets", [])
+    by_title = {item["properties"]["title"]: item["properties"] for item in sheets}
+    requests_body: list[dict] = []
+    if TRADES not in by_title and LEGACY_TRADES in by_title:
+        requests_body.append({"updateSheetProperties": {
+            "properties": {"sheetId": by_title[LEGACY_TRADES]["sheetId"], "title": TRADES},
+            "fields": "title",
+        }})
+        by_title[TRADES] = by_title[LEGACY_TRADES]
+    for title in TAB_SCHEMAS:
+        if title not in by_title:
+            requests_body.append({"addSheet": {"properties": {"title": title}}})
+    if requests_body:
+        response = retry_request(requests.post, f"{client.base}:batchUpdate", headers=client.headers,
+                                 json={"requests": requests_body}, timeout=30)
+        client._raise_for_status(response)
 
 
 def _keyed_signal_rows(rows: list[list[object]]) -> dict[tuple[str, str], list[object]]:
@@ -111,7 +137,7 @@ def _format_workbook(client: SheetsClient, dashboard_rows: list[list[object]]) -
                       "startIndex": logic_row, "endIndex": logic_row + 1},
             "properties": {"pixelSize": 560}, "fields": "pixelSize",
         }})
-    for title in (SIGNALS, TRADES):
+    for title in (PERFORMANCE, RECOMMENDATIONS, SIGNALS, TRADES):
         requests_body.extend([
             {"repeatCell": {"range": {"sheetId": ids[title], "startRowIndex": 0, "endRowIndex": 1},
               "cell": {"userEnteredFormat": {"backgroundColor": navy, "textFormat": {
@@ -131,11 +157,18 @@ def publish_payload(spreadsheet_id: str, payload_path: str | Path) -> dict[str, 
     validate_tabs(tabs)
     report_date = str(payload["date"])
     client = SheetsClient(spreadsheet_id)
+    if hasattr(client, "base"):
+        _ensure_tab_topology(client)
 
     dashboard_rows = tabs[DASHBOARD]
     client.clear(f"'{DASHBOARD}'!A1:E100")
     client.update(f"'{DASHBOARD}'!A1", dashboard_rows)
     _format_workbook(client, dashboard_rows)
+
+    for title, end_column in ((PERFORMANCE, "I"), (RECOMMENDATIONS, "L")):
+        rows = tabs[title]
+        client.clear(f"'{title}'!A1:{end_column}10000")
+        client.update(f"'{title}'!A1", rows)
 
     signal_header = list(TAB_SCHEMAS[SIGNALS])
     existing = client.get(f"'{SIGNALS}'!A1:Y10000")
@@ -166,9 +199,11 @@ def publish_payload(spreadsheet_id: str, payload_path: str | Path) -> dict[str, 
     dashboard_check = client.get(f"'{DASHBOARD}'!A1:E100")
     signal_check = client.get(f"'{SIGNALS}'!A1:Y10000")
     trade_check = client.get(f"'{TRADES}'!A1:P10000")
+    performance_check = client.get(f"'{PERFORMANCE}'!A1:I10000")
+    recommendations_check = client.get(f"'{RECOMMENDATIONS}'!A1:L10000")
     current_signals = [row for row in signal_check[1:] if row and str(row[0]) == report_date]
     expected_signals = len(tabs[SIGNALS]) - 1
-    if not dashboard_check or dashboard_check[0][0] != "R1研究版｜AI瓶頸預期差輪動":
+    if not dashboard_check or dashboard_check[0][0] != "Ryan｜R1實際帳戶總覽與換倉顧問":
         raise RuntimeError("R1 Dashboard readback title mismatch")
     if len(dashboard_check) < 20 or str(dashboard_check[1][1]) != report_date:
         raise RuntimeError("R1 Dashboard readback date or section mismatch")
@@ -178,19 +213,23 @@ def publish_payload(spreadsheet_id: str, payload_path: str | Path) -> dict[str, 
         )
     if not trade_check or trade_check[0] != trade_header:
         raise RuntimeError("R1 transaction readback header mismatch")
-    if not trade_rows and len(trade_check) != 1:
-        raise RuntimeError("R1 transaction tab must remain header-only before action approval")
+    if performance_check != tabs[PERFORMANCE]:
+        raise RuntimeError("R1 performance comparison readback mismatch")
+    if recommendations_check != tabs[RECOMMENDATIONS]:
+        raise RuntimeError("R1 recommendation readback mismatch")
     return {
         "spreadsheet_id": spreadsheet_id,
         "date": report_date,
         "dashboard_rows": len(dashboard_check) - 1,
         "signal_rows_for_date": len(current_signals),
         "transaction_rows": len(trade_check) - 1,
+        "performance_rows": len(performance_check) - 1,
+        "recommendation_rows": len(recommendations_check) - 1,
     }
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Publish and read back the three-tab R1 research dashboard.")
+    parser = argparse.ArgumentParser(description="Publish and read back the five-tab R1 actual-account dashboard.")
     parser.add_argument("--spreadsheet-id", required=True)
     parser.add_argument("--payload", default="data/r1/dashboard_payload.json")
     args = parser.parse_args()

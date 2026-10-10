@@ -12,12 +12,14 @@ class FakeSheetsClient:
     def __init__(self, _spreadsheet_id: str):
         self.values = {
             "R1 Dashboard": [],
+            "R1績效每日比較": [list(TAB_SCHEMAS["R1績效每日比較"])],
+            "R1每日換倉建議": [list(TAB_SCHEMAS["R1每日換倉建議"])],
             "R1每日訊號資料庫": [
                 list(TAB_SCHEMAS["R1每日訊號資料庫"]),
                 ["2026-10-01", "2330"],
                 ["2026-10-02", "9999"],
             ],
-            "R1模擬交易紀錄": [list(TAB_SCHEMAS["R1模擬交易紀錄"])],
+            "R1實際交易紀錄": [list(TAB_SCHEMAS["R1實際交易紀錄"])],
         }
 
     @staticmethod
@@ -36,7 +38,7 @@ class FakeSheetsClient:
 
 class R1DashboardPublishTest(unittest.TestCase):
     def test_dashboard_section_formatting_is_derived_from_content(self):
-        rows = [["R1研究版｜AI瓶頸預期差輪動"], ["資料"], ["01｜排名"], ["順位", "股票"],
+        rows = [["Ryan｜R1實際帳戶總覽與換倉顧問"], ["資料"], ["01｜排名"], ["順位", "股票"],
                 ["Top1"], ["05｜模型完整說明"], ["說明"]]
         self.assertEqual(dashboard_publish._section_rows(rows), ([2, 5], [3], 6))
 
@@ -48,7 +50,7 @@ class R1DashboardPublishTest(unittest.TestCase):
 
     def test_publishes_current_date_preserves_signal_history_and_keeps_transactions_empty(self):
         date = "2026-10-02"
-        dashboard = [["R1研究版｜AI瓶頸預期差輪動"], ["最新資料日期", date, "模型定位", "研究挑戰版", "尚未啟用交易"]]
+        dashboard = [["Ryan｜R1實際帳戶總覽與換倉顧問"], ["最新資料日期", date, "模型定位", "研究挑戰版", "尚未啟用交易"]]
         dashboard.extend([[f"section-{i}"] for i in range(18)])
         signals = [list(TAB_SCHEMAS["R1每日訊號資料庫"])]
         for index in range(14):
@@ -57,8 +59,12 @@ class R1DashboardPublishTest(unittest.TestCase):
             "date": date,
             "tabs": {
                 "R1 Dashboard": dashboard,
+                "R1績效每日比較": [list(TAB_SCHEMAS["R1績效每日比較"]),
+                    [date, "ACTUAL", None, None, None, None, None, "SEED_RECONCILIATION_REQUIRED", "待對帳"]],
+                "R1每日換倉建議": [list(TAB_SCHEMAS["R1每日換倉建議"]),
+                    [date, "NO_ACTION", "HOLD", "", "", "", None, None, "LOW", "資料不足", "資料不足", "不執行"]],
                 "R1每日訊號資料庫": signals,
-                "R1模擬交易紀錄": [list(TAB_SCHEMAS["R1模擬交易紀錄"])],
+                "R1實際交易紀錄": [list(TAB_SCHEMAS["R1實際交易紀錄"])],
             },
         }
         with tempfile.TemporaryDirectory() as folder:
@@ -70,6 +76,8 @@ class R1DashboardPublishTest(unittest.TestCase):
                     result = dashboard_publish.publish_payload("sheet", path)
         self.assertEqual(result["signal_rows_for_date"], 14)
         self.assertEqual(result["transaction_rows"], 0)
+        self.assertEqual(result["performance_rows"], 1)
+        self.assertEqual(result["recommendation_rows"], 1)
         self.assertEqual(len(fake.values["R1每日訊號資料庫"]), 16)
 
 
