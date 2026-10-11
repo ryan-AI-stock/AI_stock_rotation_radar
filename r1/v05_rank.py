@@ -92,12 +92,19 @@ def build_v05_rank(*, as_of_date: str, weekly: dict[str, Any], target_prices: di
         }
         missing = [name for name in WEIGHTS if components.get(name) is None]
         total = None if missing else round(sum(float(components[name]) * WEIGHTS[name] for name in WEIGHTS), 6)
+        observed_weight = round(sum(WEIGHTS[name] for name in WEIGHTS if components.get(name) is not None), 6)
+        observed_points = round(
+            sum(float(components[name]) * WEIGHTS[name] for name in WEIGHTS if components.get(name) is not None), 6
+        )
         rows.append({
             "date": as_of_date,
             "ticker": ticker,
             "company": weekly_row.get("company", ""),
             **components,
             "v05_total_score": total,
+            "v05_observed_points": observed_points,
+            "v05_observed_max_points": round(observed_weight * 100, 6),
+            "v05_observed_weight": observed_weight,
             "v05_status": "READY" if total is not None else "DATA_MISSING",
             "v05_missing_components": missing,
             "v05_reason": (
@@ -112,7 +119,7 @@ def build_v05_rank(*, as_of_date: str, weekly: dict[str, Any], target_prices: di
         "rows": rows,
         "requested_ticker_count": len(rows),
         "ready_ticker_count": sum(row["v05_status"] == "READY" for row in rows),
-        "missing_value_policy": "NA_BLOCKS_COMPONENT_NO_ZERO_NO_WEIGHT_REDISTRIBUTION",
+        "missing_value_policy": "NA_BLOCKS_COMPONENT_NO_ZERO_NO_WEIGHT_REDISTRIBUTION; observed points retain original weights and are not a complete score",
         "formal_model_changed": False,
         "trade_decision_changed": False,
         "active_in_trade_decision": False,

@@ -40,6 +40,9 @@ PERFORMANCE_LINE_LABELS = {
 
 RECOMMENDATION_DISPLAY = {
     ("NO_ACTION", "HOLD"): ("資料不足", "尚無法產生換倉建議"),
+    ("WATCH1", "OBSERVE_ONLY"): ("觀察1", "僅觀察"),
+    ("WATCH2", "OBSERVE_ONLY"): ("觀察2", "僅觀察"),
+    ("WATCH3", "OBSERVE_ONLY"): ("觀察3", "僅觀察"),
 }
 
 
@@ -269,6 +272,9 @@ def build_dashboard_payload(
         recommendation_candidates.append({
             "ticker": ticker, "company": market_by_ticker.get(ticker, {}).get("company", ""),
             "score": v05.get("v05_total_score"),
+            "observed_points": v05.get("v05_observed_points"),
+            "observed_max_points": v05.get("v05_observed_max_points"),
+            "missing_components": v05.get("v05_missing_components", []),
             "target_upside": target_price_by_ticker.get(ticker, {}).get("consensus_upside"),
             "reason": v05.get("v05_reason"),
         })

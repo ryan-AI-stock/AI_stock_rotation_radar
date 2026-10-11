@@ -9,7 +9,34 @@ def build_recommendations(*, date: str, candidates: list[dict[str, Any]], held_t
     eligible = [row for row in candidates if row.get("score") is not None and row.get("target_upside") is not None]
     eligible.sort(key=lambda row: (-float(row["score"]), -float(row["target_upside"]), str(row["ticker"])))
     if not eligible:
-        return [_no_action(date, "目標價共識或必要評分資料不足，不以NA推導交易")]
+        observed = [
+            row for row in candidates
+            if isinstance(row.get("observed_points"), (int, float))
+            and isinstance(row.get("observed_max_points"), (int, float))
+            and row.get("observed_max_points", 0) > 0
+        ]
+        if not observed:
+            return [_no_action(date, "目標價共識或必要評分資料不足，不以NA推導交易")]
+        unheld = [row for row in observed if str(row["ticker"]).zfill(4) not in held_tickers]
+        if not unheld:
+            return [_no_action(date, "目前有觀察分的股票均已持有；資料未完整前不換倉")]
+        max_coverage = max(float(row["observed_max_points"]) for row in unheld)
+        comparable = [row for row in unheld if float(row["observed_max_points"]) == max_coverage]
+        comparable.sort(key=lambda row: (-float(row["observed_points"]), str(row["ticker"])))
+        watches = []
+        for row in comparable:
+            ticker = str(row["ticker"]).zfill(4)
+            watches.append({
+                "date": date, "priority": f"WATCH{len(watches) + 1}", "action": "OBSERVE_ONLY",
+                "source_ticker": "", "target_ticker": ticker, "target_company": row.get("company", ""),
+                "target_score": row["observed_points"], "target_upside": None, "confidence": "LOW",
+                "reason": f"現有證據觀察分 {row['observed_points']:.1f}/{row['observed_max_points']:.1f}；尚缺完整構面，不構成換倉建議",
+                "blocking_gaps": "、".join(row.get("missing_components", [])),
+                "execution_status": "只觀察，不執行",
+            })
+            if len(watches) >= max_items:
+                break
+        return watches or [_no_action(date, "目前較高觀察分股票均已持有；資料未完整前不換倉")]
     results = []
     for row in eligible:
         ticker = str(row["ticker"]).zfill(4)

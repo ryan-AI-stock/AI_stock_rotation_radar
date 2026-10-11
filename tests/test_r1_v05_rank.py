@@ -21,6 +21,8 @@ class R1V05RankTest(unittest.TestCase):
         self.assertIsNone(row["v05_total_score"])
         self.assertIn("price_chip_risk", row["v05_missing_components"])
         self.assertIn("consensus_target_upside", row["v05_missing_components"])
+        self.assertGreater(row["v05_observed_points"], 0)
+        self.assertLess(row["v05_observed_max_points"], 100)
 
     def test_complete_components_produce_weighted_score(self) -> None:
         weekly = {"rows": [

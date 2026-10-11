@@ -15,6 +15,9 @@
       "relative_valuation": null,
       "price_chip_risk": null,
       "v05_total_score": null,
+      "v05_observed_points": 0,
+      "v05_observed_max_points": 0,
+      "v05_observed_weight": 0,
       "v05_status": "DATA_MISSING",
       "v05_missing_components": [
         "structural_bottleneck",
@@ -39,6 +42,9 @@
       "relative_valuation": null,
       "price_chip_risk": null,
       "v05_total_score": null,
+      "v05_observed_points": 0,
+      "v05_observed_max_points": 0,
+      "v05_observed_weight": 0,
       "v05_status": "DATA_MISSING",
       "v05_missing_components": [
         "structural_bottleneck",
@@ -63,6 +69,9 @@
       "relative_valuation": 4.464286,
       "price_chip_risk": null,
       "v05_total_score": null,
+      "v05_observed_points": 29.050393,
+      "v05_observed_max_points": 60.0,
+      "v05_observed_weight": 0.6,
       "v05_status": "DATA_MISSING",
       "v05_missing_components": [
         "consensus_target_upside",
@@ -83,6 +92,9 @@
       "relative_valuation": 27.864286,
       "price_chip_risk": null,
       "v05_total_score": null,
+      "v05_observed_points": 36.112221,
+      "v05_observed_max_points": 60.0,
+      "v05_observed_weight": 0.6,
       "v05_status": "DATA_MISSING",
       "v05_missing_components": [
         "consensus_target_upside",
@@ -103,6 +115,9 @@
       "relative_valuation": null,
       "price_chip_risk": null,
       "v05_total_score": null,
+      "v05_observed_points": 0,
+      "v05_observed_max_points": 0,
+      "v05_observed_weight": 0,
       "v05_status": "DATA_MISSING",
       "v05_missing_components": [
         "structural_bottleneck",
@@ -127,6 +142,9 @@
       "relative_valuation": 25.892857,
       "price_chip_risk": null,
       "v05_total_score": null,
+      "v05_observed_points": 38.792785,
+      "v05_observed_max_points": 60.0,
+      "v05_observed_weight": 0.6,
       "v05_status": "DATA_MISSING",
       "v05_missing_components": [
         "consensus_target_upside",
@@ -147,6 +165,9 @@
       "relative_valuation": 35.0,
       "price_chip_risk": null,
       "v05_total_score": null,
+      "v05_observed_points": 36.390196,
+      "v05_observed_max_points": 60.0,
+      "v05_observed_weight": 0.6,
       "v05_status": "DATA_MISSING",
       "v05_missing_components": [
         "consensus_target_upside",
@@ -167,6 +188,9 @@
       "relative_valuation": null,
       "price_chip_risk": null,
       "v05_total_score": null,
+      "v05_observed_points": 0,
+      "v05_observed_max_points": 0,
+      "v05_observed_weight": 0,
       "v05_status": "DATA_MISSING",
       "v05_missing_components": [
         "structural_bottleneck",
@@ -191,6 +215,9 @@
       "relative_valuation": 92.4,
       "price_chip_risk": null,
       "v05_total_score": null,
+      "v05_observed_points": 52.173118,
+      "v05_observed_max_points": 60.0,
+      "v05_observed_weight": 0.6,
       "v05_status": "DATA_MISSING",
       "v05_missing_components": [
         "consensus_target_upside",
@@ -211,6 +238,9 @@
       "relative_valuation": null,
       "price_chip_risk": null,
       "v05_total_score": null,
+      "v05_observed_points": 0,
+      "v05_observed_max_points": 0,
+      "v05_observed_weight": 0,
       "v05_status": "DATA_MISSING",
       "v05_missing_components": [
         "structural_bottleneck",
@@ -235,6 +265,9 @@
       "relative_valuation": null,
       "price_chip_risk": null,
       "v05_total_score": null,
+      "v05_observed_points": 0,
+      "v05_observed_max_points": 0,
+      "v05_observed_weight": 0,
       "v05_status": "DATA_MISSING",
       "v05_missing_components": [
         "structural_bottleneck",
@@ -259,6 +292,9 @@
       "relative_valuation": null,
       "price_chip_risk": null,
       "v05_total_score": null,
+      "v05_observed_points": 0,
+      "v05_observed_max_points": 0,
+      "v05_observed_weight": 0,
       "v05_status": "DATA_MISSING",
       "v05_missing_components": [
         "structural_bottleneck",
@@ -283,6 +319,9 @@
       "relative_valuation": 69.142857,
       "price_chip_risk": null,
       "v05_total_score": null,
+      "v05_observed_points": 39.161276,
+      "v05_observed_max_points": 60.0,
+      "v05_observed_weight": 0.6,
       "v05_status": "DATA_MISSING",
       "v05_missing_components": [
         "consensus_target_upside",
@@ -303,6 +342,9 @@
       "relative_valuation": 27.721429,
       "price_chip_risk": null,
       "v05_total_score": null,
+      "v05_observed_points": 29.47531,
+      "v05_observed_max_points": 60.0,
+      "v05_observed_weight": 0.6,
       "v05_status": "DATA_MISSING",
       "v05_missing_components": [
         "consensus_target_upside",
@@ -323,6 +365,9 @@
       "relative_valuation": null,
       "price_chip_risk": null,
       "v05_total_score": null,
+      "v05_observed_points": 0,
+      "v05_observed_max_points": 0,
+      "v05_observed_weight": 0,
       "v05_status": "DATA_MISSING",
       "v05_missing_components": [
         "structural_bottleneck",
@@ -347,6 +392,9 @@
       "relative_valuation": null,
       "price_chip_risk": null,
       "v05_total_score": null,
+      "v05_observed_points": 0,
+      "v05_observed_max_points": 0,
+      "v05_observed_weight": 0,
       "v05_status": "DATA_MISSING",
       "v05_missing_components": [
         "structural_bottleneck",
@@ -371,6 +419,9 @@
       "relative_valuation": 71.057143,
       "price_chip_risk": null,
       "v05_total_score": null,
+      "v05_observed_points": 46.173407,
+      "v05_observed_max_points": 60.0,
+      "v05_observed_weight": 0.6,
       "v05_status": "DATA_MISSING",
       "v05_missing_components": [
         "consensus_target_upside",
@@ -391,6 +442,9 @@
       "relative_valuation": null,
       "price_chip_risk": null,
       "v05_total_score": null,
+      "v05_observed_points": 0,
+      "v05_observed_max_points": 0,
+      "v05_observed_weight": 0,
       "v05_status": "DATA_MISSING",
       "v05_missing_components": [
         "structural_bottleneck",
@@ -415,6 +469,9 @@
       "relative_valuation": 17.678572,
       "price_chip_risk": null,
       "v05_total_score": null,
+      "v05_observed_points": 36.569021,
+      "v05_observed_max_points": 60.0,
+      "v05_observed_weight": 0.6,
       "v05_status": "DATA_MISSING",
       "v05_missing_components": [
         "consensus_target_upside",
@@ -435,6 +492,9 @@
       "relative_valuation": null,
       "price_chip_risk": null,
       "v05_total_score": null,
+      "v05_observed_points": 0,
+      "v05_observed_max_points": 0,
+      "v05_observed_weight": 0,
       "v05_status": "DATA_MISSING",
       "v05_missing_components": [
         "structural_bottleneck",
@@ -459,6 +519,9 @@
       "relative_valuation": null,
       "price_chip_risk": null,
       "v05_total_score": null,
+      "v05_observed_points": 0,
+      "v05_observed_max_points": 0,
+      "v05_observed_weight": 0,
       "v05_status": "DATA_MISSING",
       "v05_missing_components": [
         "structural_bottleneck",
@@ -483,6 +546,9 @@
       "relative_valuation": null,
       "price_chip_risk": null,
       "v05_total_score": null,
+      "v05_observed_points": 0,
+      "v05_observed_max_points": 0,
+      "v05_observed_weight": 0,
       "v05_status": "DATA_MISSING",
       "v05_missing_components": [
         "structural_bottleneck",
@@ -507,6 +573,9 @@
       "relative_valuation": null,
       "price_chip_risk": null,
       "v05_total_score": null,
+      "v05_observed_points": 0,
+      "v05_observed_max_points": 0,
+      "v05_observed_weight": 0,
       "v05_status": "DATA_MISSING",
       "v05_missing_components": [
         "structural_bottleneck",
@@ -531,6 +600,9 @@
       "relative_valuation": 35.0,
       "price_chip_risk": null,
       "v05_total_score": null,
+      "v05_observed_points": 47.01641,
+      "v05_observed_max_points": 80.0,
+      "v05_observed_weight": 0.8,
       "v05_status": "DATA_MISSING",
       "v05_missing_components": [
         "target_revision_and_breadth",
@@ -550,6 +622,9 @@
       "relative_valuation": 69.307143,
       "price_chip_risk": null,
       "v05_total_score": null,
+      "v05_observed_points": 50.512485,
+      "v05_observed_max_points": 60.0,
+      "v05_observed_weight": 0.6,
       "v05_status": "DATA_MISSING",
       "v05_missing_components": [
         "consensus_target_upside",
@@ -570,6 +645,9 @@
       "relative_valuation": null,
       "price_chip_risk": null,
       "v05_total_score": null,
+      "v05_observed_points": 0,
+      "v05_observed_max_points": 0,
+      "v05_observed_weight": 0,
       "v05_status": "DATA_MISSING",
       "v05_missing_components": [
         "structural_bottleneck",
@@ -594,6 +672,9 @@
       "relative_valuation": null,
       "price_chip_risk": null,
       "v05_total_score": null,
+      "v05_observed_points": 0,
+      "v05_observed_max_points": 0,
+      "v05_observed_weight": 0,
       "v05_status": "DATA_MISSING",
       "v05_missing_components": [
         "structural_bottleneck",
@@ -618,6 +699,9 @@
       "relative_valuation": null,
       "price_chip_risk": null,
       "v05_total_score": null,
+      "v05_observed_points": 0,
+      "v05_observed_max_points": 0,
+      "v05_observed_weight": 0,
       "v05_status": "DATA_MISSING",
       "v05_missing_components": [
         "structural_bottleneck",
@@ -642,6 +726,9 @@
       "relative_valuation": null,
       "price_chip_risk": null,
       "v05_total_score": null,
+      "v05_observed_points": 0,
+      "v05_observed_max_points": 0,
+      "v05_observed_weight": 0,
       "v05_status": "DATA_MISSING",
       "v05_missing_components": [
         "structural_bottleneck",
@@ -666,6 +753,9 @@
       "relative_valuation": null,
       "price_chip_risk": null,
       "v05_total_score": null,
+      "v05_observed_points": 0,
+      "v05_observed_max_points": 0,
+      "v05_observed_weight": 0,
       "v05_status": "DATA_MISSING",
       "v05_missing_components": [
         "structural_bottleneck",
@@ -690,6 +780,9 @@
       "relative_valuation": null,
       "price_chip_risk": null,
       "v05_total_score": null,
+      "v05_observed_points": 0,
+      "v05_observed_max_points": 0,
+      "v05_observed_weight": 0,
       "v05_status": "DATA_MISSING",
       "v05_missing_components": [
         "structural_bottleneck",
@@ -714,6 +807,9 @@
       "relative_valuation": null,
       "price_chip_risk": null,
       "v05_total_score": null,
+      "v05_observed_points": 0,
+      "v05_observed_max_points": 0,
+      "v05_observed_weight": 0,
       "v05_status": "DATA_MISSING",
       "v05_missing_components": [
         "structural_bottleneck",
@@ -738,6 +834,9 @@
       "relative_valuation": null,
       "price_chip_risk": null,
       "v05_total_score": null,
+      "v05_observed_points": 0,
+      "v05_observed_max_points": 0,
+      "v05_observed_weight": 0,
       "v05_status": "DATA_MISSING",
       "v05_missing_components": [
         "structural_bottleneck",
@@ -762,6 +861,9 @@
       "relative_valuation": 35.0,
       "price_chip_risk": null,
       "v05_total_score": null,
+      "v05_observed_points": 33.666731,
+      "v05_observed_max_points": 60.0,
+      "v05_observed_weight": 0.6,
       "v05_status": "DATA_MISSING",
       "v05_missing_components": [
         "consensus_target_upside",
@@ -782,6 +884,9 @@
       "relative_valuation": null,
       "price_chip_risk": null,
       "v05_total_score": null,
+      "v05_observed_points": 0,
+      "v05_observed_max_points": 0,
+      "v05_observed_weight": 0,
       "v05_status": "DATA_MISSING",
       "v05_missing_components": [
         "structural_bottleneck",
@@ -806,6 +911,9 @@
       "relative_valuation": null,
       "price_chip_risk": null,
       "v05_total_score": null,
+      "v05_observed_points": 0,
+      "v05_observed_max_points": 0,
+      "v05_observed_weight": 0,
       "v05_status": "DATA_MISSING",
       "v05_missing_components": [
         "structural_bottleneck",
@@ -830,6 +938,9 @@
       "relative_valuation": null,
       "price_chip_risk": null,
       "v05_total_score": null,
+      "v05_observed_points": 0,
+      "v05_observed_max_points": 0,
+      "v05_observed_weight": 0,
       "v05_status": "DATA_MISSING",
       "v05_missing_components": [
         "structural_bottleneck",
@@ -854,6 +965,9 @@
       "relative_valuation": null,
       "price_chip_risk": null,
       "v05_total_score": null,
+      "v05_observed_points": 0,
+      "v05_observed_max_points": 0,
+      "v05_observed_weight": 0,
       "v05_status": "DATA_MISSING",
       "v05_missing_components": [
         "structural_bottleneck",
@@ -878,6 +992,9 @@
       "relative_valuation": null,
       "price_chip_risk": null,
       "v05_total_score": null,
+      "v05_observed_points": 0,
+      "v05_observed_max_points": 0,
+      "v05_observed_weight": 0,
       "v05_status": "DATA_MISSING",
       "v05_missing_components": [
         "structural_bottleneck",
@@ -902,6 +1019,9 @@
       "relative_valuation": null,
       "price_chip_risk": null,
       "v05_total_score": null,
+      "v05_observed_points": 0,
+      "v05_observed_max_points": 0,
+      "v05_observed_weight": 0,
       "v05_status": "DATA_MISSING",
       "v05_missing_components": [
         "structural_bottleneck",
@@ -926,6 +1046,9 @@
       "relative_valuation": 12.678571,
       "price_chip_risk": null,
       "v05_total_score": null,
+      "v05_observed_points": 32.686672,
+      "v05_observed_max_points": 60.0,
+      "v05_observed_weight": 0.6,
       "v05_status": "DATA_MISSING",
       "v05_missing_components": [
         "consensus_target_upside",
@@ -946,6 +1069,9 @@
       "relative_valuation": null,
       "price_chip_risk": null,
       "v05_total_score": null,
+      "v05_observed_points": 0,
+      "v05_observed_max_points": 0,
+      "v05_observed_weight": 0,
       "v05_status": "DATA_MISSING",
       "v05_missing_components": [
         "structural_bottleneck",
@@ -970,6 +1096,9 @@
       "relative_valuation": null,
       "price_chip_risk": null,
       "v05_total_score": null,
+      "v05_observed_points": 0,
+      "v05_observed_max_points": 0,
+      "v05_observed_weight": 0,
       "v05_status": "DATA_MISSING",
       "v05_missing_components": [
         "structural_bottleneck",
@@ -994,6 +1123,9 @@
       "relative_valuation": null,
       "price_chip_risk": null,
       "v05_total_score": null,
+      "v05_observed_points": 0,
+      "v05_observed_max_points": 0,
+      "v05_observed_weight": 0,
       "v05_status": "DATA_MISSING",
       "v05_missing_components": [
         "structural_bottleneck",
@@ -1018,6 +1150,9 @@
       "relative_valuation": null,
       "price_chip_risk": null,
       "v05_total_score": null,
+      "v05_observed_points": 0,
+      "v05_observed_max_points": 0,
+      "v05_observed_weight": 0,
       "v05_status": "DATA_MISSING",
       "v05_missing_components": [
         "structural_bottleneck",
@@ -1042,6 +1177,9 @@
       "relative_valuation": null,
       "price_chip_risk": null,
       "v05_total_score": null,
+      "v05_observed_points": 0,
+      "v05_observed_max_points": 0,
+      "v05_observed_weight": 0,
       "v05_status": "DATA_MISSING",
       "v05_missing_components": [
         "structural_bottleneck",
@@ -1066,6 +1204,9 @@
       "relative_valuation": null,
       "price_chip_risk": null,
       "v05_total_score": null,
+      "v05_observed_points": 0,
+      "v05_observed_max_points": 0,
+      "v05_observed_weight": 0,
       "v05_status": "DATA_MISSING",
       "v05_missing_components": [
         "structural_bottleneck",
@@ -1090,6 +1231,9 @@
       "relative_valuation": null,
       "price_chip_risk": null,
       "v05_total_score": null,
+      "v05_observed_points": 0,
+      "v05_observed_max_points": 0,
+      "v05_observed_weight": 0,
       "v05_status": "DATA_MISSING",
       "v05_missing_components": [
         "structural_bottleneck",
@@ -1114,6 +1258,9 @@
       "relative_valuation": null,
       "price_chip_risk": null,
       "v05_total_score": null,
+      "v05_observed_points": 0,
+      "v05_observed_max_points": 0,
+      "v05_observed_weight": 0,
       "v05_status": "DATA_MISSING",
       "v05_missing_components": [
         "structural_bottleneck",
@@ -1138,6 +1285,9 @@
       "relative_valuation": null,
       "price_chip_risk": null,
       "v05_total_score": null,
+      "v05_observed_points": 0,
+      "v05_observed_max_points": 0,
+      "v05_observed_weight": 0,
       "v05_status": "DATA_MISSING",
       "v05_missing_components": [
         "structural_bottleneck",
@@ -1162,6 +1312,9 @@
       "relative_valuation": 24.785714,
       "price_chip_risk": null,
       "v05_total_score": null,
+      "v05_observed_points": 31.894904,
+      "v05_observed_max_points": 60.0,
+      "v05_observed_weight": 0.6,
       "v05_status": "DATA_MISSING",
       "v05_missing_components": [
         "consensus_target_upside",
@@ -1182,6 +1335,9 @@
       "relative_valuation": null,
       "price_chip_risk": null,
       "v05_total_score": null,
+      "v05_observed_points": 0,
+      "v05_observed_max_points": 0,
+      "v05_observed_weight": 0,
       "v05_status": "DATA_MISSING",
       "v05_missing_components": [
         "structural_bottleneck",
@@ -1206,6 +1362,9 @@
       "relative_valuation": null,
       "price_chip_risk": null,
       "v05_total_score": null,
+      "v05_observed_points": 0,
+      "v05_observed_max_points": 0,
+      "v05_observed_weight": 0,
       "v05_status": "DATA_MISSING",
       "v05_missing_components": [
         "structural_bottleneck",
@@ -1230,6 +1389,9 @@
       "relative_valuation": null,
       "price_chip_risk": null,
       "v05_total_score": null,
+      "v05_observed_points": 0,
+      "v05_observed_max_points": 0,
+      "v05_observed_weight": 0,
       "v05_status": "DATA_MISSING",
       "v05_missing_components": [
         "structural_bottleneck",
@@ -1245,7 +1407,7 @@
   ],
   "requested_ticker_count": 54,
   "ready_ticker_count": 0,
-  "missing_value_policy": "NA_BLOCKS_COMPONENT_NO_ZERO_NO_WEIGHT_REDISTRIBUTION",
+  "missing_value_policy": "NA_BLOCKS_COMPONENT_NO_ZERO_NO_WEIGHT_REDISTRIBUTION; observed points retain original weights and are not a complete score",
   "formal_model_changed": false,
   "trade_decision_changed": false,
   "active_in_trade_decision": false,

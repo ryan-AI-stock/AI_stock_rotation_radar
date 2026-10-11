@@ -16,6 +16,15 @@ class RecommendationTest(unittest.TestCase):
         self.assertEqual(rows[0]["target_ticker"], "3081")
         self.assertEqual(rows[0]["confidence"], "HIGH")
 
+    def test_partial_evidence_is_observation_only(self):
+        rows = build_recommendations(date="2026-10-10", candidates=[
+            {"ticker": "2308", "company": "台達電", "score": None, "target_upside": None,
+             "observed_points": 42, "observed_max_points": 60,
+             "missing_components": ["consensus_target_upside"]},
+        ], held_tickers=set(), target_tickers={"2308"})
+        self.assertEqual(rows[0]["action"], "OBSERVE_ONLY")
+        self.assertEqual(rows[0]["execution_status"], "只觀察，不執行")
+
 
 if __name__ == "__main__":
     unittest.main()
