@@ -43,6 +43,11 @@ class R1DashboardPayloadTest(unittest.TestCase):
         self.assertIn("2327", shown)
         self.assertIn("3081", shown)
         self.assertIn("2303", shown)
+        header = next(row for row in dashboard if row and row[0] == "所屬題材")
+        self.assertEqual(header[4:8], ["當日收盤", "持股市值", "持股占比", "半年目標"])
+        umc = next(row for row in dashboard if len(row) > 1 and row[1] == "2303 聯電")
+        self.assertEqual(umc[2], "評分資料未齊")
+        self.assertEqual(umc[4:7], ["147.5", "737,500.0", "5.0%"])
 
     def test_dashboard_cannot_claim_trade_ready(self):
         payload = build_dashboard_payload(config_path=ROOT / "config/r1.json",

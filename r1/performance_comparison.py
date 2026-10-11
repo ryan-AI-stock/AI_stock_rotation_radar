@@ -34,7 +34,7 @@ def build_comparison(*, date: str, market: dict[str, Any], benchmark_config: dic
                      "實際成交帳本與現金已對帳" if actual_ready else
                      f"券商股票市值已確認；截圖可見持股明細仍差 {holding_gap:,.2f} 元，現金亦待對帳"
                      if isinstance(holding_gap, (int, float)) else
-                     f"已確認股票市值 {actual_equity:,.2f} 元；現金與完整交易帳本尚待對帳"
+                     f"已確認股票市值 {actual_equity:,.1f} 元；現金與完整交易帳本尚待對帳"
                      if isinstance(actual_equity, (int, float)) else "實際交易／現金或共同起始NAV尚未完整對帳"))
     rows[-1]["equity_market_value"] = actual_equity
     rows[-1]["external_cash_flow"] = external_cash_flow

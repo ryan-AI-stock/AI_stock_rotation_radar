@@ -43,6 +43,14 @@ RECOMMENDATION_DISPLAY = {
 }
 
 
+def _money(value: object) -> str:
+    return f"{float(value):,.1f}" if isinstance(value, (int, float)) else str(value)
+
+
+def _percent(value: object) -> str:
+    return f"{float(value):.1%}" if isinstance(value, (int, float)) else str(value)
+
+
 def _build_v03_dashboard(*, config: R1Config, market: dict, theme_review: dict,
                          theme_path: str | Path, transition: dict | None = None,
                          comparison: dict | None = None,
@@ -68,6 +76,14 @@ def _build_v03_dashboard(*, config: R1Config, market: dict, theme_review: dict,
         for item in review.get("top3", []):
             ticker = str(item.get("ticker", "")).zfill(4)
             priority_by_ticker[ticker] = item.get("priority_score")
+    closes = {
+        str(item.get("ticker", "")).zfill(4): item.get("raw_close")
+        for item in market.get("rows", [])
+    }
+    actual_equity = next(
+        (item.get("equity_market_value") for item in (comparison or {}).get("rows", [])
+         if item.get("line") == "ACTUAL"), None
+    )
     display_tickers = targets + [
         ticker for ticker in held if ticker not in set(targets)
     ]
@@ -76,15 +92,21 @@ def _build_v03_dashboard(*, config: R1Config, market: dict, theme_review: dict,
         ["最新資料日期", market["date"], "模型定位", "實際績效追蹤＋report-only換倉建議", "不自動成交"],
         ["資料狀態", f"{len(themes)}題材、{universe_count}檔股票、{membership_count}筆題材歸屬（跨題材可重複）；Dashboard只顯示實際持股與五檔目標。"],
         ["01｜實際持股與未來半年目標持股"],
-        ["所屬題材", "股票", "優先持有參考值", "實際持有", "半年目標"],
+        ["所屬題材", "股票", "優先持有參考值", "實際持有", "當日收盤", "持股市值", "持股占比", "半年目標"],
     ]
     for ticker in display_tickers:
         security = securities[ticker]
+        close = closes.get(ticker)
+        market_value = security.shares * close if ticker in held and isinstance(close, (int, float)) else None
+        weight = market_value / actual_equity if market_value is not None and isinstance(actual_equity, (int, float)) and actual_equity else None
         rows.append([
             "；".join(membership.get(ticker, ["尚未納入11題材池"])),
             f"{ticker} {security.company}",
-            priority_by_ticker.get(ticker) if priority_by_ticker.get(ticker) is not None else "待資料",
-            f"實際持有｜{security.shares}股" if ticker in held else "",
+            priority_by_ticker.get(ticker) if priority_by_ticker.get(ticker) is not None else "評分資料未齊",
+            f"實際持有｜{security.shares:,}股" if ticker in held else "",
+            _money(close) if ticker in held and close is not None else "",
+            _money(market_value) if market_value is not None else "",
+            _percent(weight) if weight is not None else "",
             "未來半年目標" if ticker in targets else "既有實際持股",
         ])
     comparison = comparison or {"rows": [], "comparison_ready": False}
@@ -93,8 +115,10 @@ def _build_v03_dashboard(*, config: R1Config, market: dict, theme_review: dict,
         ["02｜三條績效線"],
         ["比較線", "當日NAV", "累計投入本金", "累積報酬", "狀態"],
         *[[PERFORMANCE_LINE_LABELS.get(item["line"], item["line"]),
-           item.get("nav") or item.get("equity_market_value") or "待對帳", item.get("starting_nav") or "待對帳",
-           item.get("return_pct") if item.get("return_pct") is not None else "不發布",
+           _money(item.get("nav") or item.get("equity_market_value")) if
+           (item.get("nav") or item.get("equity_market_value")) is not None else "待對帳",
+           _money(item.get("starting_nav")) if item.get("starting_nav") is not None else "待對帳",
+           _percent(item.get("return_pct")) if item.get("return_pct") is not None else "不發布",
            (item.get("source_note") if item["line"] == "ACTUAL" and item.get("nav") is None
             and item.get("equity_market_value") is not None else item.get("status"))]
           for item in comparison.get("rows", [])],
@@ -112,16 +136,16 @@ def _build_v03_dashboard(*, config: R1Config, market: dict, theme_review: dict,
     transition_status = transition.get("status", "尚未建立")
     rows.extend([
         ["04｜無差別殺盤過渡層（研究觀察）"],
-        ["狀態", transition_status, "候選池下跌比例", transition.get("negative_share", "待資料"),
-         f"報酬中位數：{transition.get('universe_median_return', '待資料')}"],
-        ["加權指數單日報酬", transition.get("taiex_return", "待資料"), "是否啟動",
+        ["狀態", transition_status, "候選池下跌比例", _percent(transition.get("negative_share")) if isinstance(transition.get("negative_share"), (int, float)) else "待資料",
+         f"報酬中位數：{_percent(transition.get('universe_median_return')) if isinstance(transition.get('universe_median_return'), (int, float)) else '待資料'}"],
+        ["加權指數單日報酬", _percent(transition.get("taiex_return")) if isinstance(transition.get("taiex_return"), (int, float)) else "待資料", "是否啟動",
          "是｜等待Ryan檢視" if transition.get("triggered") else "否", "五檔長期目標維持不變"],
         ["過渡候選狀態", transition.get("candidate_status", "待資料"), "候選數",
          transition.get("candidate_count", 0), "只列比較，不自動成交"],
         *([
             [f"候選{index}", f"{item['ticker']} {item.get('company') or ''}",
-             f"優先值 {item['priority_score']}", f"當日 {item['daily_return']:+.2%}",
-             f"BIAS20 {item['bias20']:+.2%}"]
+             f"優先值 {float(item['priority_score']):.1f}", f"當日 {float(item['daily_return']):+.1%}",
+             f"BIAS20 {float(item['bias20']):+.1%}"]
             for index, item in enumerate(transition.get("candidates", []), start=1)
         ]),
         ["執行邊界", "盤中只觀察；收盤後重算；不自動交易，長期五檔目標不變。"],

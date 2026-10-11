@@ -89,13 +89,14 @@ def _format_workbook(client: SheetsClient, dashboard_rows: list[list[object]]) -
     client._raise_for_status(response)
     ids = {row["properties"]["title"]: int(row["properties"]["sheetId"]) for row in response.json()["sheets"]}
     dashboard_id = ids[DASHBOARD]
+    dashboard_width = max(len(row) for row in dashboard_rows)
     navy = {"red": 0.0784, "green": 0.2, "blue": 0.2863}
     light = {"red": 0.91, "green": 0.957, "blue": 0.957}
     white = {"red": 1.0, "green": 1.0, "blue": 1.0}
     black = {"red": 0.0, "green": 0.0, "blue": 0.0}
     requests_body: list[dict] = [{"repeatCell": {
         "range": {"sheetId": dashboard_id, "startRowIndex": 0, "endRowIndex": len(dashboard_rows),
-                  "startColumnIndex": 0, "endColumnIndex": 5},
+                  "startColumnIndex": 0, "endColumnIndex": dashboard_width},
         "cell": {"userEnteredFormat": {"backgroundColor": white, "textFormat": {
             "foregroundColor": black, "bold": False, "fontSize": 10}}},
         "fields": "userEnteredFormat(backgroundColor,textFormat)",
@@ -105,7 +106,7 @@ def _format_workbook(client: SheetsClient, dashboard_rows: list[list[object]]) -
         end = start + 1
         requests_body.append({"repeatCell": {
             "range": {"sheetId": dashboard_id, "startRowIndex": start, "endRowIndex": end,
-                      "startColumnIndex": 0, "endColumnIndex": 5},
+                      "startColumnIndex": 0, "endColumnIndex": dashboard_width},
             "cell": {"userEnteredFormat": {"backgroundColor": navy, "textFormat": {
                 "foregroundColor": {"red": 1, "green": 1, "blue": 1}, "bold": True, "fontSize": 12}}},
             "fields": "userEnteredFormat(backgroundColor,textFormat)",
@@ -114,7 +115,7 @@ def _format_workbook(client: SheetsClient, dashboard_rows: list[list[object]]) -
         end = start + 1
         requests_body.append({"repeatCell": {
             "range": {"sheetId": dashboard_id, "startRowIndex": start, "endRowIndex": end,
-                      "startColumnIndex": 0, "endColumnIndex": 5},
+                      "startColumnIndex": 0, "endColumnIndex": dashboard_width},
             "cell": {"userEnteredFormat": {"backgroundColor": light, "textFormat": {"bold": True}}},
             "fields": "userEnteredFormat(backgroundColor,textFormat)",
         }})
@@ -122,14 +123,14 @@ def _format_workbook(client: SheetsClient, dashboard_rows: list[list[object]]) -
     for start in _holding_rows(dashboard_rows):
         requests_body.append({"repeatCell": {
             "range": {"sheetId": dashboard_id, "startRowIndex": start, "endRowIndex": start + 1,
-                      "startColumnIndex": 0, "endColumnIndex": 5},
+                      "startColumnIndex": 0, "endColumnIndex": dashboard_width},
             "cell": {"userEnteredFormat": {"backgroundColor": holding, "textFormat": {"bold": True}}},
             "fields": "userEnteredFormat(backgroundColor,textFormat)",
         }})
     requests_body.extend([
         {"repeatCell": {
             "range": {"sheetId": dashboard_id, "startRowIndex": 0, "endRowIndex": len(dashboard_rows),
-                      "startColumnIndex": 0, "endColumnIndex": 5},
+                      "startColumnIndex": 0, "endColumnIndex": dashboard_width},
             "cell": {"userEnteredFormat": {"wrapStrategy": "WRAP", "verticalAlignment": "MIDDLE"}},
             "fields": "userEnteredFormat(wrapStrategy,verticalAlignment)",
         }},
@@ -141,7 +142,11 @@ def _format_workbook(client: SheetsClient, dashboard_rows: list[list[object]]) -
         {"updateDimensionProperties": {"range": {"sheetId": dashboard_id, "dimension": "COLUMNS",
           "startIndex": 1, "endIndex": 2}, "properties": {"pixelSize": 285}, "fields": "pixelSize"}},
         {"updateDimensionProperties": {"range": {"sheetId": dashboard_id, "dimension": "COLUMNS",
-          "startIndex": 2, "endIndex": 5}, "properties": {"pixelSize": 190}, "fields": "pixelSize"}},
+          "startIndex": 2, "endIndex": 4}, "properties": {"pixelSize": 180}, "fields": "pixelSize"}},
+        {"updateDimensionProperties": {"range": {"sheetId": dashboard_id, "dimension": "COLUMNS",
+          "startIndex": 4, "endIndex": 7}, "properties": {"pixelSize": 125}, "fields": "pixelSize"}},
+        {"updateDimensionProperties": {"range": {"sheetId": dashboard_id, "dimension": "COLUMNS",
+          "startIndex": 7, "endIndex": 8}, "properties": {"pixelSize": 165}, "fields": "pixelSize"}},
     ])
     if logic_row is not None:
         requests_body.append({"updateDimensionProperties": {
@@ -183,7 +188,7 @@ def publish_payload(spreadsheet_id: str, payload_path: str | Path) -> dict[str, 
         _ensure_tab_topology(client)
 
     dashboard_rows = tabs[DASHBOARD]
-    client.clear(f"'{DASHBOARD}'!A1:E100")
+    client.clear(f"'{DASHBOARD}'!A1:H100")
     client.update(f"'{DASHBOARD}'!A1", dashboard_rows)
     _format_workbook(client, dashboard_rows)
 

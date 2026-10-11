@@ -24,6 +24,8 @@ TAB_SCHEMAS = {
     ),
 }
 
+DASHBOARD_MAX_COLUMNS = 8
+
 
 def validate_tabs(tabs: dict[str, list[list[object]]]) -> None:
     missing = set(TAB_SCHEMAS) - set(tabs)
@@ -35,7 +37,7 @@ def validate_tabs(tabs: dict[str, list[list[object]]]) -> None:
         if title == "R1 Dashboard":
             if not rows or not rows[0] or rows[0][0] != "Ryan｜R1實際帳戶總覽與換倉顧問":
                 raise ValueError("R1 Dashboard title mismatch")
-            if any(len(row) > len(schema) for row in rows):
+            if any(len(row) > DASHBOARD_MAX_COLUMNS for row in rows):
                 raise ValueError("R1 Dashboard row width mismatch")
             continue
         if not rows or tuple(rows[0]) != schema:
