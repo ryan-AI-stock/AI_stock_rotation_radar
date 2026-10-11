@@ -48,6 +48,26 @@ class R1DashboardPublishTest(unittest.TestCase):
                 ["載板 Top1", "3037 欣興", 88, "實際持有"]]
         self.assertEqual(dashboard_publish._holding_rows(rows), [3])
 
+    def test_performance_rows_receive_readable_height(self):
+        rows = [["Ryan｜R1實際帳戶總覽與換倉顧問"], ["02｜三條績效線"],
+                ["比較線", "當日NAV"], ["Ryan實際操作帳戶"], ["0050正二"], ["原持股"]]
+        client = unittest.mock.Mock()
+        client.base = "https://sheets.googleapis.com/v4/spreadsheets/x"
+        client.headers = {}
+        metadata = {"sheets": [{"properties": {"sheetId": index + 1, "title": title}}
+                               for index, title in enumerate(("R1 Dashboard", "R1績效每日比較",
+                                                              "R1每日換倉建議", "R1每日訊號資料庫",
+                                                              "R1實際交易紀錄"))]}
+        with patch.object(dashboard_publish, "retry_request") as request:
+            request.return_value.json.return_value = metadata
+            dashboard_publish._format_workbook(client, rows)
+        body = request.call_args_list[-1].kwargs["json"]["requests"]
+        heights = [item["updateDimensionProperties"] for item in body
+                   if "updateDimensionProperties" in item
+                   and item["updateDimensionProperties"]["range"]["dimension"] == "ROWS"]
+        self.assertTrue(any(item["range"].get("startIndex") == 3
+                            and item["properties"]["pixelSize"] >= 60 for item in heights))
+
     def test_readback_treats_empty_cells_and_omitted_trailing_cells_as_blank(self):
         self.assertTrue(dashboard_publish._equivalent_sheet_rows(
             [["date", "value", "note"], ["2026-10-08", "", "ok"], ["x"]],

@@ -149,6 +149,16 @@ def _format_workbook(client: SheetsClient, dashboard_rows: list[list[object]]) -
                       "startIndex": logic_row, "endIndex": logic_row + 1},
             "properties": {"pixelSize": 560}, "fields": "pixelSize",
         }})
+    performance_section = next(
+        (index for index, row in enumerate(dashboard_rows) if row and row[0] == "02｜三條績效線"), None
+    )
+    if performance_section is not None:
+        requests_body.append({"updateDimensionProperties": {
+            "range": {"sheetId": dashboard_id, "dimension": "ROWS",
+                      "startIndex": performance_section + 2,
+                      "endIndex": min(performance_section + 5, len(dashboard_rows))},
+            "properties": {"pixelSize": 64}, "fields": "pixelSize",
+        }})
     for title in (PERFORMANCE, RECOMMENDATIONS, SIGNALS, TRADES):
         requests_body.extend([
             {"repeatCell": {"range": {"sheetId": ids[title], "startRowIndex": 0, "endRowIndex": 1},
