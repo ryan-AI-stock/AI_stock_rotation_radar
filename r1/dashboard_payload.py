@@ -434,6 +434,9 @@ def build_dashboard_payload(
          "至少具備1W、4W及12W PIT基準；最早日："
          f"1W {revision_dates.get('1w') or '待首筆'}／4W {revision_dates.get('4w') or '待首筆'}／"
          f"12W {revision_dates.get('12w') or '待首筆'}", market["date"]],
+        ["12個月目標價共識", f"{target_prices.get('ready_ticker_count', 0)}/{readiness['requested_ticker_count']}",
+         "完整" if target_prices.get("ready_ticker_count", 0) == readiness["requested_ticker_count"] else "部分完成",
+         "90日內至少3家可識別機構的中位數；不足不評分", target_prices.get("date", market["date"])],
         ["催化證據", f"{readiness['catalyst_ready_count']}/{readiness['requested_ticker_count']}",
          "完整" if readiness["catalyst_ready_count"] == readiness["requested_ticker_count"] else "部分完成",
          "需求與事件驗證", market["date"]],
