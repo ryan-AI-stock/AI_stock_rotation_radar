@@ -1,0 +1,20 @@
+{
+  "as_of_date": "2026-10-08",
+  "source": "Ryan broker screenshots supplied 2026-10-11",
+  "reported_equity_market_value": 14874768.0,
+  "visible_positions_market_value": 14085734.0,
+  "unidentified_market_value_gap": 789034.0,
+  "status": "PARTIAL_HOLDING_DETAIL_RECONCILIATION_REQUIRED",
+  "positions": [
+    {"ticker": "2327", "company": "國巨", "shares": 1800, "average_cost": 568.49, "display_price": 635.0},
+    {"ticker": "2330", "company": "台積電", "shares": 2534, "average_cost": 2052.67, "display_price": 2550.0},
+    {"ticker": "2344", "company": "華邦電", "shares": 3000, "average_cost": 169.31, "display_price": 177.0},
+    {"ticker": "2376", "company": "技嘉", "shares": 7000, "average_cost": 354.87, "display_price": 363.0},
+    {"ticker": "2408", "company": "南亞科", "shares": 1147, "average_cost": 530.45, "display_price": 532.0},
+    {"ticker": "2454", "company": "聯發科", "shares": 19, "average_cost": 5254.47, "display_price": 4690.0},
+    {"ticker": "3037", "company": "欣興", "shares": 1176, "average_cost": 984.54, "display_price": 1270.0},
+    {"ticker": "3081", "company": "聯亞", "shares": 220, "average_cost": 2992.55, "display_price": 2960.0},
+    {"ticker": "6488", "company": "環球晶", "shares": 500, "average_cost": 960.82, "display_price": 1130.0}
+  ],
+  "note": "券商總股票市值與截圖可見九檔明細相差789,034元；未取得缺少持股前，不將可見明細宣稱為完整持倉。"
+}

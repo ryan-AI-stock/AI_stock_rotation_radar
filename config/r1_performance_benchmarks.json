@@ -3,6 +3,26 @@
   "start_date": "2026-08-05",
   "common_starting_nav": 7676961.04,
   "common_starting_nav_source": "Ryan confirmed initial account basis; benchmark share/cash reconciliation remains required",
+  "external_cash_flows": [
+    {
+      "date": "2026-09-14",
+      "amount": 328279.0,
+      "source": "Ryan confirmed external income used for two Winbond purchases",
+      "benchmark_ticker": "00631L",
+      "official_raw_close": 35.4,
+      "shares": 9256,
+      "cash_remainder": 8.506096648052335
+    },
+    {
+      "date": "2026-09-24",
+      "amount": 99835.0,
+      "source": "Ryan confirmed external income used for MediaTek purchase",
+      "benchmark_ticker": "00631L",
+      "official_raw_close": 38.87,
+      "shares": 2563,
+      "cash_remainder": 26.302654092462035
+    }
+  ],
   "actual_portfolio": {
     "status": "PARTIAL_LEDGER_REQUIRES_FULL_2026_08_05_ONWARD_TRANSACTION_IMPORT",
     "valuation": "official_unadjusted_close_plus_confirmed_cash",
@@ -20,7 +40,7 @@
     "shares": 220828,
     "cash": 8.52124648168683,
     "seed_formula": "floor(7676961.04 / (34.70 * 1.001 * 1.000855))",
-    "source_note": "8/5官方未調整收盤34.70；整股、0.10%滑價與0.0855%手續費",
+    "source_note": "8/5官方未調整收盤34.70；後續外部入金於各自入金日以官方收盤、整股、0.10%滑價與0.0855%手續費轉入00631L",
     "dividends_and_corporate_actions": "official_event_ledger"
   },
   "benchmark_original_holdings": {
@@ -34,7 +54,7 @@
     "cash": 24181.04,
     "seed_reference_prices": {"00631L": 34.7, "2308": 1680.0, "2317": 257.0},
     "cash_formula": "7676961.04 - (139000*34.70 + 748*1680 + 6120*257)",
-    "source_note": "股數與8/5價格由Ryan券商截圖及確認；餘現金為共同起始NAV的平衡數，不列為獲利",
+    "source_note": "股數與8/5價格由Ryan券商截圖及確認；餘現金為共同起始NAV的平衡數；後續外部入金同樣在入金日轉入00631L",
     "dividends_and_corporate_actions": "official_event_ledger"
   },
   "comparability_gate": "All three lines must use the same confirmed starting NAV and external cash-flow treatment before relative performance is published."

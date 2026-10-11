@@ -30,6 +30,26 @@ class PerformanceComparisonTest(unittest.TestCase):
         self.assertIsNone(actual["return_pct"])
         self.assertIn("已確認股票市值", actual["source_note"])
 
+    def test_external_flows_raise_capital_and_add_same_benchmark_units(self):
+        config = {
+            "common_starting_nav": 1000,
+            "external_cash_flows": [
+                {"date": "2026-09-14", "amount": 100, "shares": 2, "cash_remainder": 4},
+                {"date": "2026-09-24", "amount": 50, "shares": 1, "cash_remainder": 2},
+            ],
+            "benchmarks": {
+                "00631l_buy_hold": {"status": "READY", "shares": 10, "cash": 0},
+                "original_hold": {"status": "READY", "positions": [{"ticker": "2308", "shares": 5}], "cash": 0},
+            },
+        }
+        market = {"rows": [{"ticker": "00631", "raw_close": 10}, {"ticker": "2308", "raw_close": 200}]}
+        result = build_comparison(date="2026-09-20", market=market, benchmark_config=config)
+        all_in, original = result["rows"][1:]
+        self.assertEqual(all_in["starting_nav"], 1100)
+        self.assertEqual(all_in["nav"], 124)
+        self.assertEqual(original["nav"], 1024)
+        self.assertEqual(all_in["external_cash_flow"], 100)
+
 
 if __name__ == "__main__":
     unittest.main()

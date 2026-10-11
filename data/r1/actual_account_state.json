@@ -9,6 +9,13 @@
       "market_value": 6461700.0
     },
     {
+      "ticker": "2327",
+      "company": "國巨",
+      "shares": 1800,
+      "raw_close": 635.0,
+      "market_value": 1143000.0
+    },
+    {
       "ticker": "2344",
       "company": "華邦電",
       "shares": 3000,
@@ -51,21 +58,27 @@
       "market_value": 610204.0
     },
     {
-      "ticker": "2303",
-      "company": "聯電",
-      "shares": 1200,
-      "raw_close": 147.5,
-      "market_value": 177000.0
+      "ticker": "3081",
+      "company": "聯亞",
+      "shares": 220,
+      "raw_close": 2960.0,
+      "market_value": 651200.0
     }
   ],
-  "equity_market_value": 12468534.0,
+  "equity_market_value": 14874768.0,
+  "visible_positions_market_value": 14085734.0,
   "cash": null,
   "nav": null,
-  "status": "CASH_RECONCILIATION_REQUIRED",
+  "status": "HOLDING_DETAIL_RECONCILIATION_REQUIRED",
   "gaps": [
     {
       "field": "cash",
       "reason": "USER_CONFIRMED_CASH_NOT_AVAILABLE"
+    },
+    {
+      "field": "holdings",
+      "reason": "BROKER_TOTAL_EXCEEDS_VISIBLE_POSITION_DETAILS",
+      "amount": 789034.0
     }
   ],
   "source": "r1_config_confirmed_shares_plus_official_raw_close"

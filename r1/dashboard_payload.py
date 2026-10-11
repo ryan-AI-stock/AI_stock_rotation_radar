@@ -91,11 +91,11 @@ def _build_v03_dashboard(*, config: R1Config, market: dict, theme_review: dict,
     recommendations = recommendations or []
     rows.extend([
         ["02｜三條績效線"],
-        ["比較線", "當日NAV", "共同起始NAV", "累積報酬", "狀態"],
+        ["比較線", "當日NAV", "累計投入本金", "累積報酬", "狀態"],
         *[[PERFORMANCE_LINE_LABELS.get(item["line"], item["line"]),
            item.get("nav") or item.get("equity_market_value") or "待對帳", item.get("starting_nav") or "待對帳",
            item.get("return_pct") if item.get("return_pct") is not None else "不發布",
-           ("僅股票市值；現金待對帳" if item["line"] == "ACTUAL" and item.get("nav") is None
+           (item.get("source_note") if item["line"] == "ACTUAL" and item.get("nav") is None
             and item.get("equity_market_value") is not None else item.get("status"))]
           for item in comparison.get("rows", [])],
         ["03｜今日換倉建議"],

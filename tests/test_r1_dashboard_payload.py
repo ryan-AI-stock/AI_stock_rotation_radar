@@ -40,8 +40,9 @@ class R1DashboardPayloadTest(unittest.TestCase):
         self.assertNotIn("07｜Shadow換倉候選（非交易指令）", sections)
         shown = {str(row[1]).split()[0] for row in dashboard if len(row) >= 5 and str(row[0]) not in ("所屬題材",)}
         self.assertTrue({"2454", "2408", "3081", "2308", "3037"} <= shown)
-        self.assertIn("2303", shown)
-        self.assertNotIn("2327", shown)
+        self.assertIn("2327", shown)
+        self.assertIn("3081", shown)
+        self.assertNotIn("2303", shown)
 
     def test_dashboard_cannot_claim_trade_ready(self):
         payload = build_dashboard_payload(config_path=ROOT / "config/r1.json",

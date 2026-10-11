@@ -15,7 +15,26 @@ class ActualAccountTest(unittest.TestCase):
         )
         globalwafers = next(row for row in result["positions"] if row["ticker"] == "6488")
         self.assertEqual(globalwafers["shares"], 500)
-        self.assertEqual(result["equity_market_value"], 12468534.0)
+        self.assertEqual(result["equity_market_value"], 14085734.0)
+
+    def test_exact_date_broker_total_is_exposed_without_hiding_position_gap(self):
+        import json
+        import tempfile
+        with tempfile.TemporaryDirectory() as folder:
+            snapshot = Path(folder) / "snapshot.json"
+            snapshot.write_text(json.dumps({
+                "as_of_date": "2026-10-08", "reported_equity_market_value": 1200,
+                "unidentified_market_value_gap": 200,
+                "status": "PARTIAL_HOLDING_DETAIL_RECONCILIATION_REQUIRED",
+            }), encoding="utf-8")
+            result = build_actual_account(
+                date="2026-10-08", config_path=Path(__file__).resolve().parents[1] / "config/r1.json",
+                market_path=Path(__file__).resolve().parents[1] / "data/r1/daily_market_latest.json",
+                broker_snapshot_path=snapshot,
+            )
+        self.assertEqual(result["equity_market_value"], 1200)
+        self.assertEqual(result["status"], "HOLDING_DETAIL_RECONCILIATION_REQUIRED")
+        self.assertIn("BROKER_TOTAL_EXCEEDS_VISIBLE_POSITION_DETAILS", [gap["reason"] for gap in result["gaps"]])
 
     def test_equity_is_visible_while_unknown_cash_blocks_nav(self):
         with tempfile.TemporaryDirectory() as folder:
