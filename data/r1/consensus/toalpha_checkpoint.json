@@ -2315,27 +2315,27 @@
   "failed": {
     "6282": {
       "url": "https://toalpha.tw/stock/6282/estimates",
-      "error": "annual_eps_estimate_rows_missing"
+      "error": "HTTP Error 403: "
     },
     "2492": {
       "url": "https://toalpha.tw/stock/2492/estimates",
-      "error": "annual_eps_estimate_rows_missing"
+      "error": "HTTP Error 403: "
     },
     "6230": {
       "url": "https://toalpha.tw/stock/6230/estimates",
-      "error": "annual_eps_estimate_rows_missing"
+      "error": "HTTP Error 403: "
     },
     "3338": {
       "url": "https://toalpha.tw/stock/3338/estimates",
-      "error": "annual_eps_estimate_rows_missing"
+      "error": "HTTP Error 403: "
     },
     "3532": {
       "url": "https://toalpha.tw/stock/3532/estimates",
-      "error": "annual_eps_estimate_rows_missing"
+      "error": "HTTP Error 403: "
     },
     "6182": {
       "url": "https://toalpha.tw/stock/6182/estimates",
-      "error": "annual_eps_estimate_rows_missing"
+      "error": "HTTP Error 403: "
     }
   }
 }
