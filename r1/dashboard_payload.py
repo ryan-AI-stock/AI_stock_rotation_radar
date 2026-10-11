@@ -15,7 +15,7 @@ from r1.recommendations import build_recommendations
 MODEL_LOGIC = """R1 v0.5｜實際帳戶總覽與AI瓶頸換倉顧問
 
 【模型任務】
-R1記錄Ryan實際成交與帳戶結果，並與「8/5全部轉為0050正二後抱住」及「8/5原持股完全不動」兩條同起點基準每日比較。三條線未完成共同起始NAV與現金流對帳前，不發布誰勝誰負。
+R1記錄Ryan實際成交與帳戶結果，並與「8/5全部轉為0050正二後抱住」及「8/5原持股完全不動」兩條同起點基準每日比較。績效比較排除未包含於8/5共同本金的既有台積電持股及其配息；總持股區仍完整顯示。三條線未完成共同起始NAV與現金流對帳前，不發布誰勝誰負。
 
 【季度Top3】
 結構性龍頭評分：AI瓶頸直接性25%、產業與技術地位25%、AI營收兌現20%、財務與獲利品質20%、市場代表性10%。官方與公司正式揭露優先；分析師與市場共識只能補充，不能單獨決定排名。任一成分股必要證據不足時，該題材Top3維持待資料。
@@ -33,7 +33,7 @@ R1記錄Ryan實際成交與帳戶結果，並與「8/5全部轉為0050正二後�
 R1是report-only顧問，不自動下單。V4-D與C6程式保留但每日發布已暫停，直到Ryan明確要求恢復。"""
 
 PERFORMANCE_LINE_LABELS = {
-    "ACTUAL": "Ryan實際操作帳戶",
+    "ACTUAL": "Ryan 8/5後操作範圍（排除既有台積電）",
     "00631L_BUY_HOLD": "8/5全部轉0050正二後長抱",
     "ORIGINAL_HOLD": "8/5原持股完全不動",
 }
@@ -54,7 +54,8 @@ def _percent(value: object) -> str:
 def _build_v03_dashboard(*, config: R1Config, market: dict, theme_review: dict,
                          theme_path: str | Path, transition: dict | None = None,
                          comparison: dict | None = None,
-                         recommendations: list[dict] | None = None) -> list[list[object]]:
+                         recommendations: list[dict] | None = None,
+                         total_actual_equity: float | None = None) -> list[list[object]]:
     themes = load_themes(theme_path)
     membership_count = sum(len(theme.members) for theme in themes)
     universe_count = len({member.ticker for theme in themes for member in theme.members})
@@ -80,7 +81,7 @@ def _build_v03_dashboard(*, config: R1Config, market: dict, theme_review: dict,
         str(item.get("ticker", "")).zfill(4): item.get("raw_close")
         for item in market.get("rows", [])
     }
-    actual_equity = next(
+    actual_equity = total_actual_equity if isinstance(total_actual_equity, (int, float)) else next(
         (item.get("equity_market_value") for item in (comparison or {}).get("rows", [])
          if item.get("line") == "ACTUAL"), None
     )
@@ -315,6 +316,7 @@ def build_dashboard_payload(
     tabs["R1 Dashboard"] = _build_v03_dashboard(
         config=config, market=market, theme_review=theme_review, theme_path=theme_path,
         transition=transition, comparison=comparison, recommendations=recommendations,
+        total_actual_equity=actual_account.get("equity_market_value"),
     )
 
     for security in config.securities:
@@ -473,11 +475,14 @@ def build_dashboard_payload(
     if actual_file.exists():
         actual_payload = json.loads(actual_file.read_text(encoding="utf-8"))
         for item in actual_payload.get("transactions", []):
+            gross_amount = item.get("gross_amount")
+            if gross_amount is None and isinstance(item.get("net_cash_flow"), (int, float)):
+                gross_amount = abs(float(item["net_cash_flow"]))
             tabs["R1實際交易紀錄"].append([
                 item["transaction_date"], "", f"USER_CONFIRMED_{item['action']}", item["ticker"],
-                item["company"], item["shares"], item["price"], item["gross_amount"],
+                item["company"], item["shares"], item["price"], gross_amount,
                 item.get("fees"), item.get("tax"), item.get("net_cash_flow"), "ACTUAL", "",
-                item.get("realized_pnl"), 0, item["reason_status"],
+                item.get("realized_pnl"), 0, item.get("reason_status", "Ryan券商截圖確認；金額已含交易成本。"),
             ])
     validate_tabs(tabs)
     return {

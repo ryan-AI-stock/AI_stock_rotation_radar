@@ -4,27 +4,14 @@
   "common_starting_nav": 7676961.04,
   "common_starting_nav_source": "Ryan confirmed initial account basis; benchmark share/cash reconciliation remains required",
   "external_cash_flows": [
-    {
-      "date": "2026-09-14",
-      "amount": 328279.0,
-      "source": "Ryan confirmed external income used for two Winbond purchases",
-      "benchmark_ticker": "00631L",
-      "official_raw_close": 35.4,
-      "shares": 9256,
-      "cash_remainder": 8.506096648052335
-    },
-    {
-      "date": "2026-09-24",
-      "amount": 99835.0,
-      "source": "Ryan confirmed external income used for MediaTek purchase",
-      "benchmark_ticker": "00631L",
-      "official_raw_close": 38.87,
-      "shares": 2563,
-      "cash_remainder": 26.302654092462035
-    }
+    {"date":"2026-08-17","received_date":"2026-08-16","amount":14954.0,"source":"Ryan confirmed fund monthly distribution; next-trading-day benchmark execution","benchmark_ticker":"00631L","official_raw_close":35.95,"shares":415,"cash_remainder":7.06203529125014},
+    {"date":"2026-08-19","amount":11470.0,"source":"Ryan confirmed insurance claim","benchmark_ticker":"00631L","official_raw_close":33.96,"shares":337,"cash_remainder":4.240630335401875},
+    {"date":"2026-08-25","amount":52396.0,"source":"Ryan confirmed final salary","benchmark_ticker":"00631L","official_raw_close":34.68,"shares":1508,"cash_remainder":1.5035344888019608},
+    {"date":"2026-09-11","amount":14929.0,"source":"Ryan confirmed fund monthly distribution","benchmark_ticker":"00631L","official_raw_close":35.98,"shares":414,"cash_remainder":5.6357035594028275},
+    {"date":"2026-09-14","amount":570330.0,"source":"Ryan confirmed proceeds from selling employer shares acquired while employed","benchmark_ticker":"00631L","official_raw_close":35.4,"shares":16081,"cash_remainder":6.122249373118393}
   ],
   "actual_portfolio": {
-    "status": "PARTIAL_LEDGER_REQUIRES_FULL_2026_08_05_ONWARD_TRANSACTION_IMPORT",
+    "status": "READY_THROUGH_2026_10_08",
     "valuation": "official_unadjusted_close_plus_confirmed_cash",
     "external_cash_flow_policy": "must_be_user_confirmed"
   },

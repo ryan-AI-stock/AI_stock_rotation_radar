@@ -63,11 +63,40 @@ def main() -> None:
     parser.add_argument("--config", default="config/r1.json")
     parser.add_argument("--market", default="data/r1/daily_market_latest.json")
     parser.add_argument("--cash", type=float)
+    parser.add_argument("--cash-ledger", default="data/r1/actual_cash_flows.json")
     parser.add_argument("--broker-snapshot", default="data/r1/actual_holdings_snapshot_20261008.json")
     parser.add_argument("--output", default="data/r1/actual_account_state.json")
     args = parser.parse_args()
-    payload = build_actual_account(date=args.date, config_path=args.config, market_path=args.market, cash=args.cash,
+    cash = args.cash
+    cash_ledger = Path(args.cash_ledger)
+    if cash is None and cash_ledger.exists():
+        ledger = json.loads(cash_ledger.read_text(encoding="utf-8"))
+        if str(ledger.get("as_of_date", "")) <= args.date:
+            confirmed_cash = ledger.get("confirmed_cash")
+            if isinstance(confirmed_cash, (int, float)):
+                cash = float(confirmed_cash)
+    payload = build_actual_account(date=args.date, config_path=args.config, market_path=args.market, cash=cash,
                                    broker_snapshot_path=args.broker_snapshot)
+    if cash_ledger.exists() and isinstance(payload.get("nav"), (int, float)):
+        ledger = json.loads(cash_ledger.read_text(encoding="utf-8"))
+        exclusions = ledger.get("comparison_scope_exclusions", {})
+        excluded_equity = 0.0
+        positions = {row["ticker"]: row for row in payload.get("positions", [])}
+        for exclusion in exclusions.get("positions", []):
+            row = positions.get(str(exclusion.get("ticker", "")).zfill(4))
+            shares = exclusion.get("shares")
+            close = row.get("raw_close") if row else None
+            if isinstance(shares, (int, float)) and isinstance(close, (int, float)):
+                excluded_equity += float(shares) * float(close)
+        excluded_cash_income = sum(
+            float(row["amount"]) for row in exclusions.get("cash_income", [])
+            if str(row.get("date", "")) <= args.date and isinstance(row.get("amount"), (int, float))
+        )
+        payload["comparison_excluded_equity"] = excluded_equity
+        payload["comparison_excluded_cash_income"] = excluded_cash_income
+        payload["comparison_equity_market_value"] = payload["equity_market_value"] - excluded_equity
+        payload["comparison_cash"] = float(payload["cash"]) - excluded_cash_income
+        payload["comparison_nav"] = payload["nav"] - excluded_equity - excluded_cash_income
     output = Path(args.output)
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")

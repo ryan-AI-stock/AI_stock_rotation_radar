@@ -25,8 +25,8 @@ def build_comparison(*, date: str, market: dict[str, Any], benchmark_config: dic
     added_shares = sum(int(flow.get("shares", 0)) for flow in flows)
     added_cash = sum(float(flow.get("cash_remainder", 0) or 0) for flow in flows)
 
-    actual_nav = actual_snapshot.get("nav")
-    actual_equity = actual_snapshot.get("equity_market_value")
+    actual_nav = actual_snapshot.get("comparison_nav", actual_snapshot.get("nav"))
+    actual_equity = actual_snapshot.get("comparison_equity_market_value", actual_snapshot.get("equity_market_value"))
     actual_ready = seed_ready and isinstance(actual_nav, (int, float))
     holding_gap = next((gap.get("amount") for gap in actual_snapshot.get("gaps", [])
                         if gap.get("reason") == "BROKER_TOTAL_EXCEEDS_VISIBLE_POSITION_DETAILS"), None)

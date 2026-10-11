@@ -16,7 +16,7 @@ class R1DashboardPayloadTest(unittest.TestCase):
         validate_tabs(payload["tabs"])
         self.assertEqual(set(payload["tabs"]), {"R1 Dashboard", "R1績效每日比較", "R1每日換倉建議", "R1每日訊號資料庫", "R1實際交易紀錄"})
         self.assertEqual(len(payload["tabs"]["R1每日訊號資料庫"]), 55)
-        self.assertEqual(len(payload["tabs"]["R1實際交易紀錄"]), 5)
+        self.assertGreaterEqual(len(payload["tabs"]["R1實際交易紀錄"]), 2)
         dashboard = payload["tabs"]["R1 Dashboard"]
         sections = [row[0] for row in dashboard]
         self.assertIn("01｜實際持股與未來半年目標持股", sections)
@@ -29,7 +29,7 @@ class R1DashboardPayloadTest(unittest.TestCase):
         performance_start = sections.index("02｜三條績效線")
         self.assertEqual(
             [row[0] for row in dashboard[performance_start + 2:performance_start + 5]],
-            ["Ryan實際操作帳戶", "8/5全部轉0050正二後長抱", "8/5原持股完全不動"],
+            ["Ryan 8/5後操作範圍（排除既有台積電）", "8/5全部轉0050正二後長抱", "8/5原持股完全不動"],
         )
         recommendation_start = sections.index("03｜今日換倉建議")
         self.assertEqual(

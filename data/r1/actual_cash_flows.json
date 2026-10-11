@@ -1,0 +1,25 @@
+{
+  "as_of_date": "2026-10-08",
+  "opening_nav": 7676961.04,
+  "external_contributions": [
+    {"date":"2026-08-16","amount":14954.0,"description":"基金月配息"},
+    {"date":"2026-08-19","amount":11470.0,"description":"保險理賠"},
+    {"date":"2026-08-25","amount":52396.0,"description":"離職前最後一筆薪資"},
+    {"date":"2026-09-11","amount":14929.0,"description":"基金月配息"},
+    {"date":"2026-09-14","amount":570330.0,"description":"在職期間公司股票離職後賣出款"}
+  ],
+  "portfolio_income": [
+    {"date":"2026-10-08","amount":17733.0,"description":"台積電現金股利；屬投資收益，不列外部入金"}
+  ],
+  "comparison_scope_exclusions": {
+    "positions": [
+      {"ticker":"2330","shares":2534,"reason":"8/5以前既有持股，未包含於7,676,961.04元比較本金"}
+    ],
+    "cash_income": [
+      {"date":"2026-10-08","amount":17733.0,"reason":"來自比較範圍外台積電持股"}
+    ]
+  },
+  "confirmed_cash": 236454.0,
+  "cumulative_contributed_capital": 8341040.04,
+  "source": "Ryan confirmed cash-flow list and current cash on 2026-10-11"
+}
