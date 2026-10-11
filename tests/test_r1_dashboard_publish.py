@@ -68,6 +68,38 @@ class R1DashboardPublishTest(unittest.TestCase):
         self.assertTrue(any(item["range"].get("startIndex") == 3
                             and item["properties"]["pixelSize"] >= 60 for item in heights))
 
+    def test_dashboard_numeric_formats_use_one_decimal(self):
+        rows = [
+            ["Ryan｜R1實際帳戶總覽與換倉顧問"],
+            ["01｜實際持股與未來半年目標持股"],
+            ["所屬題材", "股票", "優先持有參考值", "實際持有", "當日收盤", "持股市值", "持股占比", "半年目標"],
+            ["記憶體", "2408 南亞科", "評分資料未齊", "實際持有｜1,147股", 532, 610204, .041, "目標"],
+            ["02｜三條績效線"],
+            ["比較線", "當日NAV", "累計投入本金", "累積報酬", "狀態"],
+            ["Ryan實際操作帳戶", 14823234, 8105075, "不發布", "待對帳"],
+            ["0050正二", 9515305.6, 8105075, .174, "READY"],
+            ["原持股", 9186412.9, 8105075, .133, "READY"],
+            ["04｜無差別殺盤過渡層（研究觀察）"],
+            ["狀態", "NOT_TRIGGERED", "候選池下跌比例", .698],
+            ["加權指數單日報酬", -.01],
+        ]
+        client = unittest.mock.Mock()
+        client.base = "https://sheets.googleapis.com/v4/spreadsheets/x"
+        client.headers = {}
+        metadata = {"sheets": [{"properties": {"sheetId": index + 1, "title": title}}
+                               for index, title in enumerate(("R1 Dashboard", "R1績效每日比較",
+                                                              "R1每日換倉建議", "R1每日訊號資料庫",
+                                                              "R1實際交易紀錄"))]}
+        with patch.object(dashboard_publish, "retry_request") as request:
+            request.return_value.json.return_value = metadata
+            dashboard_publish._format_workbook(client, rows)
+        body = request.call_args_list[-1].kwargs["json"]["requests"]
+        patterns = [item["repeatCell"]["cell"]["userEnteredFormat"]["numberFormat"]["pattern"]
+                    for item in body if "repeatCell" in item
+                    and "numberFormat" in item["repeatCell"]["cell"].get("userEnteredFormat", {})]
+        self.assertIn("#,##0.0", patterns)
+        self.assertIn("0.0%", patterns)
+
     def test_readback_treats_empty_cells_and_omitted_trailing_cells_as_blank(self):
         self.assertTrue(dashboard_publish._equivalent_sheet_rows(
             [["date", "value", "note"], ["2026-10-08", "", "ok"], ["x"]],
