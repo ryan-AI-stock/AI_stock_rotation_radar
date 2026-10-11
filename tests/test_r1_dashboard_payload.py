@@ -26,6 +26,11 @@ class R1DashboardPayloadTest(unittest.TestCase):
         self.assertIn("05｜分數規則", sections)
         self.assertIn("06｜更新排程", sections)
         self.assertIn("07｜模型完整說明", sections)
+        performance_start = sections.index("02｜三條績效線")
+        self.assertEqual(
+            [row[0] for row in dashboard[performance_start + 2:performance_start + 5]],
+            ["Ryan實際操作帳戶", "8/5全部轉0050正二後長抱", "8/5原持股完全不動"],
+        )
         self.assertNotIn("06｜下一個動態觸發條件", sections)
         self.assertNotIn("07｜Shadow換倉候選（非交易指令）", sections)
         shown = {str(row[1]).split()[0] for row in dashboard if len(row) >= 5 and str(row[0]) not in ("所屬題材",)}

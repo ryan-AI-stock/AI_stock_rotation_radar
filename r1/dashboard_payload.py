@@ -32,6 +32,12 @@ R1記錄Ryan實際成交與帳戶結果，並與「8/5全部轉為0050正二後�
 【模型邊界】
 R1是report-only顧問，不自動下單。V4-D與C6程式保留但每日發布已暫停，直到Ryan明確要求恢復。"""
 
+PERFORMANCE_LINE_LABELS = {
+    "ACTUAL": "Ryan實際操作帳戶",
+    "00631L_BUY_HOLD": "8/5全部轉0050正二後長抱",
+    "ORIGINAL_HOLD": "8/5原持股完全不動",
+}
+
 
 def _build_v03_dashboard(*, config: R1Config, market: dict, theme_review: dict,
                          theme_path: str | Path, transition: dict | None = None,
@@ -82,7 +88,8 @@ def _build_v03_dashboard(*, config: R1Config, market: dict, theme_review: dict,
     rows.extend([
         ["02｜三條績效線"],
         ["比較線", "當日NAV", "共同起始NAV", "累積報酬", "狀態"],
-        *[[item["line"], item.get("nav") or item.get("equity_market_value") or "待對帳", item.get("starting_nav") or "待對帳",
+        *[[PERFORMANCE_LINE_LABELS.get(item["line"], item["line"]),
+           item.get("nav") or item.get("equity_market_value") or "待對帳", item.get("starting_nav") or "待對帳",
            item.get("return_pct") if item.get("return_pct") is not None else "不發布",
            ("僅股票市值；現金待對帳" if item["line"] == "ACTUAL" and item.get("nav") is None
             and item.get("equity_market_value") is not None else item.get("status"))]
