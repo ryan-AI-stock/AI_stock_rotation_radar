@@ -11,6 +11,17 @@ class R1DailySourcesTest(unittest.TestCase):
         rows[-1]["status"] = "no_rows"
         self.assertFalse(_chip_ready({"sources": rows}))
 
+    def test_chip_ready_rejects_stale_smaller_universe(self):
+        sources = [{"family": family, "market": market, "status": "accepted"}
+                   for family in ("institutional", "margin_short") for market in ("TWSE", "TPEx")]
+        chip_rows = [
+            {"ticker": "2330", "family": family}
+            for family in ("institutional", "margin_short")
+        ]
+        payload = {"sources": sources, "chip_rows": chip_rows}
+        self.assertTrue(_chip_ready(payload, {"2330"}))
+        self.assertFalse(_chip_ready(payload, {"2330", "6488"}))
+
     def test_price_ready_requires_exact_universe(self):
         wanted = {"2330", "6488", "3363"}
         self.assertTrue(_price_ready({"price_rows": [{"ticker": ticker} for ticker in wanted]}, wanted))

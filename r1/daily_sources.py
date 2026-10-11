@@ -35,7 +35,7 @@ def materialize_daily_sources(
         for attempt in range(attempts):
             price_complete = _price_ready(payload, wanted)
             price_closed = _price_market_closed(payload)
-            chip_complete = _chip_ready(payload)
+            chip_complete = _chip_ready(payload, wanted)
             if payload and (not retry_incomplete or ((price_complete or price_closed) and chip_complete)):
                 break
 
@@ -58,7 +58,7 @@ def materialize_daily_sources(
             path.parent.mkdir(parents=True, exist_ok=True)
             path.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
             if ((not _price_ready(payload, wanted) and not _price_market_closed(payload))
-                    or not _chip_ready(payload)) and attempt + 1 < attempts and retry_wait_seconds > 0:
+                    or not _chip_ready(payload, wanted)) and attempt + 1 < attempts and retry_wait_seconds > 0:
                 time.sleep(retry_wait_seconds)
         price_markets = {row.get("market"): row.get("status") for row in payload["sources"]
                          if row.get("family") == "official_raw_execution_ohlcv"}
@@ -98,12 +98,25 @@ def materialize_daily_sources(
     return manifest
 
 
-def _chip_ready(payload: dict) -> bool:
+def _chip_ready(payload: dict, wanted_tickers: set[str] | None = None) -> bool:
     wanted = {("institutional", market) for market in ("TWSE", "TPEx")} | {
         ("margin_short", market) for market in ("TWSE", "TPEx")
     }
     states = {(row.get("family"), row.get("market")): row.get("status") for row in payload.get("sources", [])}
-    return all(states.get(key) == "accepted" for key in wanted)
+    if not all(states.get(key) == "accepted" for key in wanted):
+        return False
+    if wanted_tickers is None:
+        return True
+    observed = {
+        (str(row.get("ticker", "")).zfill(4), str(row.get("family", "")))
+        for row in payload.get("chip_rows", [])
+        if row.get("ticker") and row.get("family") in {"institutional", "margin_short"}
+    }
+    required = {
+        (ticker, family) for ticker in wanted_tickers
+        for family in ("institutional", "margin_short")
+    }
+    return required <= observed
 
 
 def _price_ready(payload: dict, wanted: set[str]) -> bool:

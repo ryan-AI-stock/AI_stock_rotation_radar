@@ -15,7 +15,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20261005&type=ALLBUT0999&response=json",
       "source_hash": "6b77e7e5a727f5e32dd1ae530197727f54976477543c3eb751a70578b7cc599d",
-      "retrieved_at_utc": "2026-10-05T18:32:28+00:00"
+      "retrieved_at_utc": "2026-10-11T23:55:12+00:00"
     },
     {
       "date": "2026-10-05",
@@ -31,7 +31,23 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20261005&type=ALLBUT0999&response=json",
       "source_hash": "6b77e7e5a727f5e32dd1ae530197727f54976477543c3eb751a70578b7cc599d",
-      "retrieved_at_utc": "2026-10-05T18:32:28+00:00"
+      "retrieved_at_utc": "2026-10-11T23:55:12+00:00"
+    },
+    {
+      "date": "2026-10-05",
+      "ticker": "2303",
+      "name": "聯電",
+      "market": "TWSE",
+      "open": "164.5",
+      "high": "165.0",
+      "low": "152.0",
+      "close": "152.5",
+      "volume": "328772084",
+      "turnover_value": "51160542375",
+      "price_basis": "official_raw_execution_unadjusted",
+      "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20261005&type=ALLBUT0999&response=json",
+      "source_hash": "6b77e7e5a727f5e32dd1ae530197727f54976477543c3eb751a70578b7cc599d",
+      "retrieved_at_utc": "2026-10-11T23:55:12+00:00"
     },
     {
       "date": "2026-10-05",
@@ -47,7 +63,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20261005&type=ALLBUT0999&response=json",
       "source_hash": "6b77e7e5a727f5e32dd1ae530197727f54976477543c3eb751a70578b7cc599d",
-      "retrieved_at_utc": "2026-10-05T18:32:28+00:00"
+      "retrieved_at_utc": "2026-10-11T23:55:12+00:00"
     },
     {
       "date": "2026-10-05",
@@ -63,7 +79,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20261005&type=ALLBUT0999&response=json",
       "source_hash": "6b77e7e5a727f5e32dd1ae530197727f54976477543c3eb751a70578b7cc599d",
-      "retrieved_at_utc": "2026-10-05T18:32:28+00:00"
+      "retrieved_at_utc": "2026-10-11T23:55:12+00:00"
     },
     {
       "date": "2026-10-05",
@@ -79,7 +95,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20261005&type=ALLBUT0999&response=json",
       "source_hash": "6b77e7e5a727f5e32dd1ae530197727f54976477543c3eb751a70578b7cc599d",
-      "retrieved_at_utc": "2026-10-05T18:32:28+00:00"
+      "retrieved_at_utc": "2026-10-11T23:55:12+00:00"
     },
     {
       "date": "2026-10-05",
@@ -95,7 +111,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20261005&type=ALLBUT0999&response=json",
       "source_hash": "6b77e7e5a727f5e32dd1ae530197727f54976477543c3eb751a70578b7cc599d",
-      "retrieved_at_utc": "2026-10-05T18:32:28+00:00"
+      "retrieved_at_utc": "2026-10-11T23:55:12+00:00"
     },
     {
       "date": "2026-10-05",
@@ -111,7 +127,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20261005&type=ALLBUT0999&response=json",
       "source_hash": "6b77e7e5a727f5e32dd1ae530197727f54976477543c3eb751a70578b7cc599d",
-      "retrieved_at_utc": "2026-10-05T18:32:28+00:00"
+      "retrieved_at_utc": "2026-10-11T23:55:12+00:00"
     },
     {
       "date": "2026-10-05",
@@ -127,7 +143,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20261005&type=ALLBUT0999&response=json",
       "source_hash": "6b77e7e5a727f5e32dd1ae530197727f54976477543c3eb751a70578b7cc599d",
-      "retrieved_at_utc": "2026-10-05T18:32:28+00:00"
+      "retrieved_at_utc": "2026-10-11T23:55:12+00:00"
     },
     {
       "date": "2026-10-05",
@@ -143,7 +159,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20261005&type=ALLBUT0999&response=json",
       "source_hash": "6b77e7e5a727f5e32dd1ae530197727f54976477543c3eb751a70578b7cc599d",
-      "retrieved_at_utc": "2026-10-05T18:32:28+00:00"
+      "retrieved_at_utc": "2026-10-11T23:55:12+00:00"
     },
     {
       "date": "2026-10-05",
@@ -159,7 +175,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20261005&type=ALLBUT0999&response=json",
       "source_hash": "6b77e7e5a727f5e32dd1ae530197727f54976477543c3eb751a70578b7cc599d",
-      "retrieved_at_utc": "2026-10-05T18:32:28+00:00"
+      "retrieved_at_utc": "2026-10-11T23:55:12+00:00"
     },
     {
       "date": "2026-10-05",
@@ -175,7 +191,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20261005&type=ALLBUT0999&response=json",
       "source_hash": "6b77e7e5a727f5e32dd1ae530197727f54976477543c3eb751a70578b7cc599d",
-      "retrieved_at_utc": "2026-10-05T18:32:28+00:00"
+      "retrieved_at_utc": "2026-10-11T23:55:12+00:00"
     },
     {
       "date": "2026-10-05",
@@ -191,7 +207,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20261005&type=ALLBUT0999&response=json",
       "source_hash": "6b77e7e5a727f5e32dd1ae530197727f54976477543c3eb751a70578b7cc599d",
-      "retrieved_at_utc": "2026-10-05T18:32:28+00:00"
+      "retrieved_at_utc": "2026-10-11T23:55:12+00:00"
     },
     {
       "date": "2026-10-05",
@@ -207,7 +223,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20261005&type=ALLBUT0999&response=json",
       "source_hash": "6b77e7e5a727f5e32dd1ae530197727f54976477543c3eb751a70578b7cc599d",
-      "retrieved_at_utc": "2026-10-05T18:32:28+00:00"
+      "retrieved_at_utc": "2026-10-11T23:55:12+00:00"
     },
     {
       "date": "2026-10-05",
@@ -223,7 +239,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20261005&type=ALLBUT0999&response=json",
       "source_hash": "6b77e7e5a727f5e32dd1ae530197727f54976477543c3eb751a70578b7cc599d",
-      "retrieved_at_utc": "2026-10-05T18:32:28+00:00"
+      "retrieved_at_utc": "2026-10-11T23:55:12+00:00"
     },
     {
       "date": "2026-10-05",
@@ -239,7 +255,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20261005&type=ALLBUT0999&response=json",
       "source_hash": "6b77e7e5a727f5e32dd1ae530197727f54976477543c3eb751a70578b7cc599d",
-      "retrieved_at_utc": "2026-10-05T18:32:28+00:00"
+      "retrieved_at_utc": "2026-10-11T23:55:12+00:00"
     },
     {
       "date": "2026-10-05",
@@ -255,7 +271,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20261005&type=ALLBUT0999&response=json",
       "source_hash": "6b77e7e5a727f5e32dd1ae530197727f54976477543c3eb751a70578b7cc599d",
-      "retrieved_at_utc": "2026-10-05T18:32:28+00:00"
+      "retrieved_at_utc": "2026-10-11T23:55:12+00:00"
     },
     {
       "date": "2026-10-05",
@@ -271,7 +287,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20261005&type=ALLBUT0999&response=json",
       "source_hash": "6b77e7e5a727f5e32dd1ae530197727f54976477543c3eb751a70578b7cc599d",
-      "retrieved_at_utc": "2026-10-05T18:32:28+00:00"
+      "retrieved_at_utc": "2026-10-11T23:55:12+00:00"
     },
     {
       "date": "2026-10-05",
@@ -287,7 +303,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20261005&type=ALLBUT0999&response=json",
       "source_hash": "6b77e7e5a727f5e32dd1ae530197727f54976477543c3eb751a70578b7cc599d",
-      "retrieved_at_utc": "2026-10-05T18:32:28+00:00"
+      "retrieved_at_utc": "2026-10-11T23:55:12+00:00"
     },
     {
       "date": "2026-10-05",
@@ -303,7 +319,23 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20261005&type=ALLBUT0999&response=json",
       "source_hash": "6b77e7e5a727f5e32dd1ae530197727f54976477543c3eb751a70578b7cc599d",
-      "retrieved_at_utc": "2026-10-05T18:32:28+00:00"
+      "retrieved_at_utc": "2026-10-11T23:55:12+00:00"
+    },
+    {
+      "date": "2026-10-05",
+      "ticker": "3008",
+      "name": "大立光",
+      "market": "TWSE",
+      "open": "6490.0",
+      "high": "6850.0",
+      "low": "6460.0",
+      "close": "6730.0",
+      "volume": "2621621",
+      "turnover_value": "17633444790",
+      "price_basis": "official_raw_execution_unadjusted",
+      "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20261005&type=ALLBUT0999&response=json",
+      "source_hash": "6b77e7e5a727f5e32dd1ae530197727f54976477543c3eb751a70578b7cc599d",
+      "retrieved_at_utc": "2026-10-11T23:55:12+00:00"
     },
     {
       "date": "2026-10-05",
@@ -319,7 +351,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20261005&type=ALLBUT0999&response=json",
       "source_hash": "6b77e7e5a727f5e32dd1ae530197727f54976477543c3eb751a70578b7cc599d",
-      "retrieved_at_utc": "2026-10-05T18:32:28+00:00"
+      "retrieved_at_utc": "2026-10-11T23:55:12+00:00"
     },
     {
       "date": "2026-10-05",
@@ -335,7 +367,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20261005&type=ALLBUT0999&response=json",
       "source_hash": "6b77e7e5a727f5e32dd1ae530197727f54976477543c3eb751a70578b7cc599d",
-      "retrieved_at_utc": "2026-10-05T18:32:28+00:00"
+      "retrieved_at_utc": "2026-10-11T23:55:12+00:00"
     },
     {
       "date": "2026-10-05",
@@ -351,7 +383,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20261005&type=ALLBUT0999&response=json",
       "source_hash": "6b77e7e5a727f5e32dd1ae530197727f54976477543c3eb751a70578b7cc599d",
-      "retrieved_at_utc": "2026-10-05T18:32:28+00:00"
+      "retrieved_at_utc": "2026-10-11T23:55:12+00:00"
     },
     {
       "date": "2026-10-05",
@@ -367,7 +399,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20261005&type=ALLBUT0999&response=json",
       "source_hash": "6b77e7e5a727f5e32dd1ae530197727f54976477543c3eb751a70578b7cc599d",
-      "retrieved_at_utc": "2026-10-05T18:32:28+00:00"
+      "retrieved_at_utc": "2026-10-11T23:55:12+00:00"
     },
     {
       "date": "2026-10-05",
@@ -383,7 +415,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20261005&type=ALLBUT0999&response=json",
       "source_hash": "6b77e7e5a727f5e32dd1ae530197727f54976477543c3eb751a70578b7cc599d",
-      "retrieved_at_utc": "2026-10-05T18:32:28+00:00"
+      "retrieved_at_utc": "2026-10-11T23:55:12+00:00"
     },
     {
       "date": "2026-10-05",
@@ -399,7 +431,23 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20261005&type=ALLBUT0999&response=json",
       "source_hash": "6b77e7e5a727f5e32dd1ae530197727f54976477543c3eb751a70578b7cc599d",
-      "retrieved_at_utc": "2026-10-05T18:32:28+00:00"
+      "retrieved_at_utc": "2026-10-11T23:55:12+00:00"
+    },
+    {
+      "date": "2026-10-05",
+      "ticker": "3406",
+      "name": "玉晶光",
+      "market": "TWSE",
+      "open": "971.0",
+      "high": "1055.0",
+      "low": "971.0",
+      "close": "1055.0",
+      "volume": "5365739",
+      "turnover_value": "5490142326",
+      "price_basis": "official_raw_execution_unadjusted",
+      "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20261005&type=ALLBUT0999&response=json",
+      "source_hash": "6b77e7e5a727f5e32dd1ae530197727f54976477543c3eb751a70578b7cc599d",
+      "retrieved_at_utc": "2026-10-11T23:55:12+00:00"
     },
     {
       "date": "2026-10-05",
@@ -415,7 +463,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20261005&type=ALLBUT0999&response=json",
       "source_hash": "6b77e7e5a727f5e32dd1ae530197727f54976477543c3eb751a70578b7cc599d",
-      "retrieved_at_utc": "2026-10-05T18:32:28+00:00"
+      "retrieved_at_utc": "2026-10-11T23:55:12+00:00"
     },
     {
       "date": "2026-10-05",
@@ -431,7 +479,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20261005&type=ALLBUT0999&response=json",
       "source_hash": "6b77e7e5a727f5e32dd1ae530197727f54976477543c3eb751a70578b7cc599d",
-      "retrieved_at_utc": "2026-10-05T18:32:28+00:00"
+      "retrieved_at_utc": "2026-10-11T23:55:12+00:00"
     },
     {
       "date": "2026-10-05",
@@ -447,7 +495,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20261005&type=ALLBUT0999&response=json",
       "source_hash": "6b77e7e5a727f5e32dd1ae530197727f54976477543c3eb751a70578b7cc599d",
-      "retrieved_at_utc": "2026-10-05T18:32:28+00:00"
+      "retrieved_at_utc": "2026-10-11T23:55:12+00:00"
     },
     {
       "date": "2026-10-05",
@@ -463,7 +511,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20261005&type=ALLBUT0999&response=json",
       "source_hash": "6b77e7e5a727f5e32dd1ae530197727f54976477543c3eb751a70578b7cc599d",
-      "retrieved_at_utc": "2026-10-05T18:32:28+00:00"
+      "retrieved_at_utc": "2026-10-11T23:55:12+00:00"
     },
     {
       "date": "2026-10-05",
@@ -479,7 +527,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20261005&type=ALLBUT0999&response=json",
       "source_hash": "6b77e7e5a727f5e32dd1ae530197727f54976477543c3eb751a70578b7cc599d",
-      "retrieved_at_utc": "2026-10-05T18:32:28+00:00"
+      "retrieved_at_utc": "2026-10-11T23:55:12+00:00"
     },
     {
       "date": "2026-10-05",
@@ -495,7 +543,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20261005&type=ALLBUT0999&response=json",
       "source_hash": "6b77e7e5a727f5e32dd1ae530197727f54976477543c3eb751a70578b7cc599d",
-      "retrieved_at_utc": "2026-10-05T18:32:28+00:00"
+      "retrieved_at_utc": "2026-10-11T23:55:12+00:00"
     },
     {
       "date": "2026-10-05",
@@ -511,7 +559,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20261005&type=ALLBUT0999&response=json",
       "source_hash": "6b77e7e5a727f5e32dd1ae530197727f54976477543c3eb751a70578b7cc599d",
-      "retrieved_at_utc": "2026-10-05T18:32:28+00:00"
+      "retrieved_at_utc": "2026-10-11T23:55:12+00:00"
     },
     {
       "date": "2026-10-05",
@@ -527,7 +575,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20261005&type=ALLBUT0999&response=json",
       "source_hash": "6b77e7e5a727f5e32dd1ae530197727f54976477543c3eb751a70578b7cc599d",
-      "retrieved_at_utc": "2026-10-05T18:32:28+00:00"
+      "retrieved_at_utc": "2026-10-11T23:55:12+00:00"
     },
     {
       "date": "2026-10-05",
@@ -543,7 +591,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20261005&type=ALLBUT0999&response=json",
       "source_hash": "6b77e7e5a727f5e32dd1ae530197727f54976477543c3eb751a70578b7cc599d",
-      "retrieved_at_utc": "2026-10-05T18:32:28+00:00"
+      "retrieved_at_utc": "2026-10-11T23:55:12+00:00"
     },
     {
       "date": "2026-10-05",
@@ -559,7 +607,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20261005&type=ALLBUT0999&response=json",
       "source_hash": "6b77e7e5a727f5e32dd1ae530197727f54976477543c3eb751a70578b7cc599d",
-      "retrieved_at_utc": "2026-10-05T18:32:28+00:00"
+      "retrieved_at_utc": "2026-10-11T23:55:12+00:00"
     },
     {
       "date": "2026-10-05",
@@ -575,7 +623,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20261005&type=ALLBUT0999&response=json",
       "source_hash": "6b77e7e5a727f5e32dd1ae530197727f54976477543c3eb751a70578b7cc599d",
-      "retrieved_at_utc": "2026-10-05T18:32:28+00:00"
+      "retrieved_at_utc": "2026-10-11T23:55:12+00:00"
     },
     {
       "date": "2026-10-05",
@@ -591,7 +639,23 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20261005&type=ALLBUT0999&response=json",
       "source_hash": "6b77e7e5a727f5e32dd1ae530197727f54976477543c3eb751a70578b7cc599d",
-      "retrieved_at_utc": "2026-10-05T18:32:28+00:00"
+      "retrieved_at_utc": "2026-10-11T23:55:12+00:00"
+    },
+    {
+      "date": "2026-10-05",
+      "ticker": "3081",
+      "name": "聯亞",
+      "market": "TPEx",
+      "open": "3000.0",
+      "high": "3105.0",
+      "low": "2900.0",
+      "close": "3000.0",
+      "volume": "7078580",
+      "turnover_value": "21282318945",
+      "price_basis": "official_raw_execution_unadjusted",
+      "source_url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2026/10/05&response=json",
+      "source_hash": "c387e24da79739db89b1e26bf01ab30a81241a695d345857d426e4f2bf0bbb21",
+      "retrieved_at_utc": "2026-10-11T23:55:12+00:00"
     },
     {
       "date": "2026-10-05",
@@ -607,7 +671,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2026/10/05&response=json",
       "source_hash": "c387e24da79739db89b1e26bf01ab30a81241a695d345857d426e4f2bf0bbb21",
-      "retrieved_at_utc": "2026-10-05T18:32:30+00:00"
+      "retrieved_at_utc": "2026-10-11T23:55:12+00:00"
     },
     {
       "date": "2026-10-05",
@@ -623,7 +687,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2026/10/05&response=json",
       "source_hash": "c387e24da79739db89b1e26bf01ab30a81241a695d345857d426e4f2bf0bbb21",
-      "retrieved_at_utc": "2026-10-05T18:32:30+00:00"
+      "retrieved_at_utc": "2026-10-11T23:55:12+00:00"
     },
     {
       "date": "2026-10-05",
@@ -639,7 +703,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2026/10/05&response=json",
       "source_hash": "c387e24da79739db89b1e26bf01ab30a81241a695d345857d426e4f2bf0bbb21",
-      "retrieved_at_utc": "2026-10-05T18:32:30+00:00"
+      "retrieved_at_utc": "2026-10-11T23:55:12+00:00"
     },
     {
       "date": "2026-10-05",
@@ -655,7 +719,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2026/10/05&response=json",
       "source_hash": "c387e24da79739db89b1e26bf01ab30a81241a695d345857d426e4f2bf0bbb21",
-      "retrieved_at_utc": "2026-10-05T18:32:30+00:00"
+      "retrieved_at_utc": "2026-10-11T23:55:12+00:00"
     },
     {
       "date": "2026-10-05",
@@ -671,7 +735,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2026/10/05&response=json",
       "source_hash": "c387e24da79739db89b1e26bf01ab30a81241a695d345857d426e4f2bf0bbb21",
-      "retrieved_at_utc": "2026-10-05T18:32:30+00:00"
+      "retrieved_at_utc": "2026-10-11T23:55:12+00:00"
     },
     {
       "date": "2026-10-05",
@@ -687,7 +751,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2026/10/05&response=json",
       "source_hash": "c387e24da79739db89b1e26bf01ab30a81241a695d345857d426e4f2bf0bbb21",
-      "retrieved_at_utc": "2026-10-05T18:32:30+00:00"
+      "retrieved_at_utc": "2026-10-11T23:55:12+00:00"
     },
     {
       "date": "2026-10-05",
@@ -703,7 +767,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2026/10/05&response=json",
       "source_hash": "c387e24da79739db89b1e26bf01ab30a81241a695d345857d426e4f2bf0bbb21",
-      "retrieved_at_utc": "2026-10-05T18:32:30+00:00"
+      "retrieved_at_utc": "2026-10-11T23:55:12+00:00"
     },
     {
       "date": "2026-10-05",
@@ -719,7 +783,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2026/10/05&response=json",
       "source_hash": "c387e24da79739db89b1e26bf01ab30a81241a695d345857d426e4f2bf0bbb21",
-      "retrieved_at_utc": "2026-10-05T18:32:30+00:00"
+      "retrieved_at_utc": "2026-10-11T23:55:12+00:00"
     },
     {
       "date": "2026-10-05",
@@ -735,7 +799,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2026/10/05&response=json",
       "source_hash": "c387e24da79739db89b1e26bf01ab30a81241a695d345857d426e4f2bf0bbb21",
-      "retrieved_at_utc": "2026-10-05T18:32:30+00:00"
+      "retrieved_at_utc": "2026-10-11T23:55:12+00:00"
     },
     {
       "date": "2026-10-05",
@@ -751,7 +815,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2026/10/05&response=json",
       "source_hash": "c387e24da79739db89b1e26bf01ab30a81241a695d345857d426e4f2bf0bbb21",
-      "retrieved_at_utc": "2026-10-05T18:32:30+00:00"
+      "retrieved_at_utc": "2026-10-11T23:55:12+00:00"
     },
     {
       "date": "2026-10-05",
@@ -767,7 +831,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2026/10/05&response=json",
       "source_hash": "c387e24da79739db89b1e26bf01ab30a81241a695d345857d426e4f2bf0bbb21",
-      "retrieved_at_utc": "2026-10-05T18:32:30+00:00"
+      "retrieved_at_utc": "2026-10-11T23:55:12+00:00"
     },
     {
       "date": "2026-10-05",
@@ -783,7 +847,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2026/10/05&response=json",
       "source_hash": "c387e24da79739db89b1e26bf01ab30a81241a695d345857d426e4f2bf0bbb21",
-      "retrieved_at_utc": "2026-10-05T18:32:30+00:00"
+      "retrieved_at_utc": "2026-10-11T23:55:12+00:00"
     },
     {
       "date": "2026-10-05",
@@ -799,7 +863,7 @@
       "price_basis": "official_raw_execution_unadjusted",
       "source_url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2026/10/05&response=json",
       "source_hash": "c387e24da79739db89b1e26bf01ab30a81241a695d345857d426e4f2bf0bbb21",
-      "retrieved_at_utc": "2026-10-05T18:32:30+00:00"
+      "retrieved_at_utc": "2026-10-11T23:55:12+00:00"
     }
   ],
   "chip_rows": [
@@ -820,8 +884,8 @@
       "sbl_change": "",
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/fund/T86?date=20261005&selectType=ALLBUT0999&response=json",
-      "source_hash": "3c01f5923b3039da31e9e133a2f87decd2b8a85095c94d224659c3ccbc4bf882",
-      "retrieved_at_utc": "2026-10-05T18:32:37+00:00"
+      "source_hash": "853565dedb4eecb280b63eef934e9e1fb9dc6ea3a9fea0e3ea5057a72645f100",
+      "retrieved_at_utc": "2026-10-11T23:58:15+00:00"
     },
     {
       "date": "2026-10-05",
@@ -840,8 +904,8 @@
       "sbl_change": "",
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/fund/T86?date=20261005&selectType=ALLBUT0999&response=json",
-      "source_hash": "3c01f5923b3039da31e9e133a2f87decd2b8a85095c94d224659c3ccbc4bf882",
-      "retrieved_at_utc": "2026-10-05T18:32:37+00:00"
+      "source_hash": "853565dedb4eecb280b63eef934e9e1fb9dc6ea3a9fea0e3ea5057a72645f100",
+      "retrieved_at_utc": "2026-10-11T23:58:15+00:00"
     },
     {
       "date": "2026-10-05",
@@ -860,8 +924,8 @@
       "sbl_change": "",
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/fund/T86?date=20261005&selectType=ALLBUT0999&response=json",
-      "source_hash": "3c01f5923b3039da31e9e133a2f87decd2b8a85095c94d224659c3ccbc4bf882",
-      "retrieved_at_utc": "2026-10-05T18:32:37+00:00"
+      "source_hash": "853565dedb4eecb280b63eef934e9e1fb9dc6ea3a9fea0e3ea5057a72645f100",
+      "retrieved_at_utc": "2026-10-11T23:58:15+00:00"
     },
     {
       "date": "2026-10-05",
@@ -880,8 +944,8 @@
       "sbl_change": "",
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/fund/T86?date=20261005&selectType=ALLBUT0999&response=json",
-      "source_hash": "3c01f5923b3039da31e9e133a2f87decd2b8a85095c94d224659c3ccbc4bf882",
-      "retrieved_at_utc": "2026-10-05T18:32:37+00:00"
+      "source_hash": "853565dedb4eecb280b63eef934e9e1fb9dc6ea3a9fea0e3ea5057a72645f100",
+      "retrieved_at_utc": "2026-10-11T23:58:15+00:00"
     },
     {
       "date": "2026-10-05",
@@ -900,8 +964,8 @@
       "sbl_change": "",
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/fund/T86?date=20261005&selectType=ALLBUT0999&response=json",
-      "source_hash": "3c01f5923b3039da31e9e133a2f87decd2b8a85095c94d224659c3ccbc4bf882",
-      "retrieved_at_utc": "2026-10-05T18:32:37+00:00"
+      "source_hash": "853565dedb4eecb280b63eef934e9e1fb9dc6ea3a9fea0e3ea5057a72645f100",
+      "retrieved_at_utc": "2026-10-11T23:58:15+00:00"
     },
     {
       "date": "2026-10-05",
@@ -920,8 +984,8 @@
       "sbl_change": "",
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/fund/T86?date=20261005&selectType=ALLBUT0999&response=json",
-      "source_hash": "3c01f5923b3039da31e9e133a2f87decd2b8a85095c94d224659c3ccbc4bf882",
-      "retrieved_at_utc": "2026-10-05T18:32:37+00:00"
+      "source_hash": "853565dedb4eecb280b63eef934e9e1fb9dc6ea3a9fea0e3ea5057a72645f100",
+      "retrieved_at_utc": "2026-10-11T23:58:15+00:00"
     },
     {
       "date": "2026-10-05",
@@ -940,8 +1004,8 @@
       "sbl_change": "",
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/fund/T86?date=20261005&selectType=ALLBUT0999&response=json",
-      "source_hash": "3c01f5923b3039da31e9e133a2f87decd2b8a85095c94d224659c3ccbc4bf882",
-      "retrieved_at_utc": "2026-10-05T18:32:37+00:00"
+      "source_hash": "853565dedb4eecb280b63eef934e9e1fb9dc6ea3a9fea0e3ea5057a72645f100",
+      "retrieved_at_utc": "2026-10-11T23:58:15+00:00"
     },
     {
       "date": "2026-10-05",
@@ -960,8 +1024,8 @@
       "sbl_change": "",
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/fund/T86?date=20261005&selectType=ALLBUT0999&response=json",
-      "source_hash": "3c01f5923b3039da31e9e133a2f87decd2b8a85095c94d224659c3ccbc4bf882",
-      "retrieved_at_utc": "2026-10-05T18:32:37+00:00"
+      "source_hash": "853565dedb4eecb280b63eef934e9e1fb9dc6ea3a9fea0e3ea5057a72645f100",
+      "retrieved_at_utc": "2026-10-11T23:58:15+00:00"
     },
     {
       "date": "2026-10-05",
@@ -980,8 +1044,8 @@
       "sbl_change": "",
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/fund/T86?date=20261005&selectType=ALLBUT0999&response=json",
-      "source_hash": "3c01f5923b3039da31e9e133a2f87decd2b8a85095c94d224659c3ccbc4bf882",
-      "retrieved_at_utc": "2026-10-05T18:32:37+00:00"
+      "source_hash": "853565dedb4eecb280b63eef934e9e1fb9dc6ea3a9fea0e3ea5057a72645f100",
+      "retrieved_at_utc": "2026-10-11T23:58:15+00:00"
     },
     {
       "date": "2026-10-05",
@@ -1000,8 +1064,8 @@
       "sbl_change": "",
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/fund/T86?date=20261005&selectType=ALLBUT0999&response=json",
-      "source_hash": "3c01f5923b3039da31e9e133a2f87decd2b8a85095c94d224659c3ccbc4bf882",
-      "retrieved_at_utc": "2026-10-05T18:32:37+00:00"
+      "source_hash": "853565dedb4eecb280b63eef934e9e1fb9dc6ea3a9fea0e3ea5057a72645f100",
+      "retrieved_at_utc": "2026-10-11T23:58:15+00:00"
     },
     {
       "date": "2026-10-05",
@@ -1020,8 +1084,8 @@
       "sbl_change": "",
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/fund/T86?date=20261005&selectType=ALLBUT0999&response=json",
-      "source_hash": "3c01f5923b3039da31e9e133a2f87decd2b8a85095c94d224659c3ccbc4bf882",
-      "retrieved_at_utc": "2026-10-05T18:32:37+00:00"
+      "source_hash": "853565dedb4eecb280b63eef934e9e1fb9dc6ea3a9fea0e3ea5057a72645f100",
+      "retrieved_at_utc": "2026-10-11T23:58:15+00:00"
     },
     {
       "date": "2026-10-05",
@@ -1040,8 +1104,8 @@
       "sbl_change": "",
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/fund/T86?date=20261005&selectType=ALLBUT0999&response=json",
-      "source_hash": "3c01f5923b3039da31e9e133a2f87decd2b8a85095c94d224659c3ccbc4bf882",
-      "retrieved_at_utc": "2026-10-05T18:32:37+00:00"
+      "source_hash": "853565dedb4eecb280b63eef934e9e1fb9dc6ea3a9fea0e3ea5057a72645f100",
+      "retrieved_at_utc": "2026-10-11T23:58:15+00:00"
     },
     {
       "date": "2026-10-05",
@@ -1060,8 +1124,8 @@
       "sbl_change": "",
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/fund/T86?date=20261005&selectType=ALLBUT0999&response=json",
-      "source_hash": "3c01f5923b3039da31e9e133a2f87decd2b8a85095c94d224659c3ccbc4bf882",
-      "retrieved_at_utc": "2026-10-05T18:32:37+00:00"
+      "source_hash": "853565dedb4eecb280b63eef934e9e1fb9dc6ea3a9fea0e3ea5057a72645f100",
+      "retrieved_at_utc": "2026-10-11T23:58:15+00:00"
     },
     {
       "date": "2026-10-05",
@@ -1080,8 +1144,8 @@
       "sbl_change": "",
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/fund/T86?date=20261005&selectType=ALLBUT0999&response=json",
-      "source_hash": "3c01f5923b3039da31e9e133a2f87decd2b8a85095c94d224659c3ccbc4bf882",
-      "retrieved_at_utc": "2026-10-05T18:32:37+00:00"
+      "source_hash": "853565dedb4eecb280b63eef934e9e1fb9dc6ea3a9fea0e3ea5057a72645f100",
+      "retrieved_at_utc": "2026-10-11T23:58:15+00:00"
     },
     {
       "date": "2026-10-05",
@@ -1100,8 +1164,8 @@
       "sbl_change": "",
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/fund/T86?date=20261005&selectType=ALLBUT0999&response=json",
-      "source_hash": "3c01f5923b3039da31e9e133a2f87decd2b8a85095c94d224659c3ccbc4bf882",
-      "retrieved_at_utc": "2026-10-05T18:32:37+00:00"
+      "source_hash": "853565dedb4eecb280b63eef934e9e1fb9dc6ea3a9fea0e3ea5057a72645f100",
+      "retrieved_at_utc": "2026-10-11T23:58:15+00:00"
     },
     {
       "date": "2026-10-05",
@@ -1120,8 +1184,8 @@
       "sbl_change": "",
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/fund/T86?date=20261005&selectType=ALLBUT0999&response=json",
-      "source_hash": "3c01f5923b3039da31e9e133a2f87decd2b8a85095c94d224659c3ccbc4bf882",
-      "retrieved_at_utc": "2026-10-05T18:32:37+00:00"
+      "source_hash": "853565dedb4eecb280b63eef934e9e1fb9dc6ea3a9fea0e3ea5057a72645f100",
+      "retrieved_at_utc": "2026-10-11T23:58:15+00:00"
     },
     {
       "date": "2026-10-05",
@@ -1140,8 +1204,8 @@
       "sbl_change": "",
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/fund/T86?date=20261005&selectType=ALLBUT0999&response=json",
-      "source_hash": "3c01f5923b3039da31e9e133a2f87decd2b8a85095c94d224659c3ccbc4bf882",
-      "retrieved_at_utc": "2026-10-05T18:32:37+00:00"
+      "source_hash": "853565dedb4eecb280b63eef934e9e1fb9dc6ea3a9fea0e3ea5057a72645f100",
+      "retrieved_at_utc": "2026-10-11T23:58:15+00:00"
     },
     {
       "date": "2026-10-05",
@@ -1160,8 +1224,8 @@
       "sbl_change": "",
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/fund/T86?date=20261005&selectType=ALLBUT0999&response=json",
-      "source_hash": "3c01f5923b3039da31e9e133a2f87decd2b8a85095c94d224659c3ccbc4bf882",
-      "retrieved_at_utc": "2026-10-05T18:32:37+00:00"
+      "source_hash": "853565dedb4eecb280b63eef934e9e1fb9dc6ea3a9fea0e3ea5057a72645f100",
+      "retrieved_at_utc": "2026-10-11T23:58:15+00:00"
     },
     {
       "date": "2026-10-05",
@@ -1180,8 +1244,8 @@
       "sbl_change": "",
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/fund/T86?date=20261005&selectType=ALLBUT0999&response=json",
-      "source_hash": "3c01f5923b3039da31e9e133a2f87decd2b8a85095c94d224659c3ccbc4bf882",
-      "retrieved_at_utc": "2026-10-05T18:32:37+00:00"
+      "source_hash": "853565dedb4eecb280b63eef934e9e1fb9dc6ea3a9fea0e3ea5057a72645f100",
+      "retrieved_at_utc": "2026-10-11T23:58:15+00:00"
     },
     {
       "date": "2026-10-05",
@@ -1200,8 +1264,8 @@
       "sbl_change": "",
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/fund/T86?date=20261005&selectType=ALLBUT0999&response=json",
-      "source_hash": "3c01f5923b3039da31e9e133a2f87decd2b8a85095c94d224659c3ccbc4bf882",
-      "retrieved_at_utc": "2026-10-05T18:32:37+00:00"
+      "source_hash": "853565dedb4eecb280b63eef934e9e1fb9dc6ea3a9fea0e3ea5057a72645f100",
+      "retrieved_at_utc": "2026-10-11T23:58:15+00:00"
     },
     {
       "date": "2026-10-05",
@@ -1220,8 +1284,8 @@
       "sbl_change": "",
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/fund/T86?date=20261005&selectType=ALLBUT0999&response=json",
-      "source_hash": "3c01f5923b3039da31e9e133a2f87decd2b8a85095c94d224659c3ccbc4bf882",
-      "retrieved_at_utc": "2026-10-05T18:32:37+00:00"
+      "source_hash": "853565dedb4eecb280b63eef934e9e1fb9dc6ea3a9fea0e3ea5057a72645f100",
+      "retrieved_at_utc": "2026-10-11T23:58:15+00:00"
     },
     {
       "date": "2026-10-05",
@@ -1240,8 +1304,8 @@
       "sbl_change": "",
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/fund/T86?date=20261005&selectType=ALLBUT0999&response=json",
-      "source_hash": "3c01f5923b3039da31e9e133a2f87decd2b8a85095c94d224659c3ccbc4bf882",
-      "retrieved_at_utc": "2026-10-05T18:32:37+00:00"
+      "source_hash": "853565dedb4eecb280b63eef934e9e1fb9dc6ea3a9fea0e3ea5057a72645f100",
+      "retrieved_at_utc": "2026-10-11T23:58:15+00:00"
     },
     {
       "date": "2026-10-05",
@@ -1260,8 +1324,8 @@
       "sbl_change": "",
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/fund/T86?date=20261005&selectType=ALLBUT0999&response=json",
-      "source_hash": "3c01f5923b3039da31e9e133a2f87decd2b8a85095c94d224659c3ccbc4bf882",
-      "retrieved_at_utc": "2026-10-05T18:32:37+00:00"
+      "source_hash": "853565dedb4eecb280b63eef934e9e1fb9dc6ea3a9fea0e3ea5057a72645f100",
+      "retrieved_at_utc": "2026-10-11T23:58:15+00:00"
     },
     {
       "date": "2026-10-05",
@@ -1280,8 +1344,8 @@
       "sbl_change": "",
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/fund/T86?date=20261005&selectType=ALLBUT0999&response=json",
-      "source_hash": "3c01f5923b3039da31e9e133a2f87decd2b8a85095c94d224659c3ccbc4bf882",
-      "retrieved_at_utc": "2026-10-05T18:32:37+00:00"
+      "source_hash": "853565dedb4eecb280b63eef934e9e1fb9dc6ea3a9fea0e3ea5057a72645f100",
+      "retrieved_at_utc": "2026-10-11T23:58:15+00:00"
     },
     {
       "date": "2026-10-05",
@@ -1300,8 +1364,8 @@
       "sbl_change": "",
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/fund/T86?date=20261005&selectType=ALLBUT0999&response=json",
-      "source_hash": "3c01f5923b3039da31e9e133a2f87decd2b8a85095c94d224659c3ccbc4bf882",
-      "retrieved_at_utc": "2026-10-05T18:32:37+00:00"
+      "source_hash": "853565dedb4eecb280b63eef934e9e1fb9dc6ea3a9fea0e3ea5057a72645f100",
+      "retrieved_at_utc": "2026-10-11T23:58:15+00:00"
     },
     {
       "date": "2026-10-05",
@@ -1320,8 +1384,8 @@
       "sbl_change": "",
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/fund/T86?date=20261005&selectType=ALLBUT0999&response=json",
-      "source_hash": "3c01f5923b3039da31e9e133a2f87decd2b8a85095c94d224659c3ccbc4bf882",
-      "retrieved_at_utc": "2026-10-05T18:32:37+00:00"
+      "source_hash": "853565dedb4eecb280b63eef934e9e1fb9dc6ea3a9fea0e3ea5057a72645f100",
+      "retrieved_at_utc": "2026-10-11T23:58:15+00:00"
     },
     {
       "date": "2026-10-05",
@@ -1340,8 +1404,8 @@
       "sbl_change": "",
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/fund/T86?date=20261005&selectType=ALLBUT0999&response=json",
-      "source_hash": "3c01f5923b3039da31e9e133a2f87decd2b8a85095c94d224659c3ccbc4bf882",
-      "retrieved_at_utc": "2026-10-05T18:32:37+00:00"
+      "source_hash": "853565dedb4eecb280b63eef934e9e1fb9dc6ea3a9fea0e3ea5057a72645f100",
+      "retrieved_at_utc": "2026-10-11T23:58:15+00:00"
     },
     {
       "date": "2026-10-05",
@@ -1360,8 +1424,48 @@
       "sbl_change": "",
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/fund/T86?date=20261005&selectType=ALLBUT0999&response=json",
-      "source_hash": "3c01f5923b3039da31e9e133a2f87decd2b8a85095c94d224659c3ccbc4bf882",
-      "retrieved_at_utc": "2026-10-05T18:32:37+00:00"
+      "source_hash": "853565dedb4eecb280b63eef934e9e1fb9dc6ea3a9fea0e3ea5057a72645f100",
+      "retrieved_at_utc": "2026-10-11T23:58:15+00:00"
+    },
+    {
+      "date": "2026-10-05",
+      "ticker": "3406",
+      "name": "玉晶光",
+      "market": "TWSE",
+      "family": "institutional",
+      "foreign_net": "-222862",
+      "trust_net": "0",
+      "dealer_net": "148000",
+      "margin_balance": "",
+      "margin_change": "",
+      "short_balance": "",
+      "short_change": "",
+      "sbl_balance": "",
+      "sbl_change": "",
+      "available_at_policy": "official post-close; next-trading-day eligible",
+      "source_url": "https://www.twse.com.tw/fund/T86?date=20261005&selectType=ALLBUT0999&response=json",
+      "source_hash": "853565dedb4eecb280b63eef934e9e1fb9dc6ea3a9fea0e3ea5057a72645f100",
+      "retrieved_at_utc": "2026-10-11T23:58:15+00:00"
+    },
+    {
+      "date": "2026-10-05",
+      "ticker": "3008",
+      "name": "大立光",
+      "market": "TWSE",
+      "family": "institutional",
+      "foreign_net": "-318236",
+      "trust_net": "0",
+      "dealer_net": "167000",
+      "margin_balance": "",
+      "margin_change": "",
+      "short_balance": "",
+      "short_change": "",
+      "sbl_balance": "",
+      "sbl_change": "",
+      "available_at_policy": "official post-close; next-trading-day eligible",
+      "source_url": "https://www.twse.com.tw/fund/T86?date=20261005&selectType=ALLBUT0999&response=json",
+      "source_hash": "853565dedb4eecb280b63eef934e9e1fb9dc6ea3a9fea0e3ea5057a72645f100",
+      "retrieved_at_utc": "2026-10-11T23:58:15+00:00"
     },
     {
       "date": "2026-10-05",
@@ -1380,8 +1484,8 @@
       "sbl_change": "",
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/fund/T86?date=20261005&selectType=ALLBUT0999&response=json",
-      "source_hash": "3c01f5923b3039da31e9e133a2f87decd2b8a85095c94d224659c3ccbc4bf882",
-      "retrieved_at_utc": "2026-10-05T18:32:37+00:00"
+      "source_hash": "853565dedb4eecb280b63eef934e9e1fb9dc6ea3a9fea0e3ea5057a72645f100",
+      "retrieved_at_utc": "2026-10-11T23:58:15+00:00"
     },
     {
       "date": "2026-10-05",
@@ -1400,8 +1504,8 @@
       "sbl_change": "",
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/fund/T86?date=20261005&selectType=ALLBUT0999&response=json",
-      "source_hash": "3c01f5923b3039da31e9e133a2f87decd2b8a85095c94d224659c3ccbc4bf882",
-      "retrieved_at_utc": "2026-10-05T18:32:37+00:00"
+      "source_hash": "853565dedb4eecb280b63eef934e9e1fb9dc6ea3a9fea0e3ea5057a72645f100",
+      "retrieved_at_utc": "2026-10-11T23:58:15+00:00"
     },
     {
       "date": "2026-10-05",
@@ -1420,8 +1524,8 @@
       "sbl_change": "",
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/fund/T86?date=20261005&selectType=ALLBUT0999&response=json",
-      "source_hash": "3c01f5923b3039da31e9e133a2f87decd2b8a85095c94d224659c3ccbc4bf882",
-      "retrieved_at_utc": "2026-10-05T18:32:37+00:00"
+      "source_hash": "853565dedb4eecb280b63eef934e9e1fb9dc6ea3a9fea0e3ea5057a72645f100",
+      "retrieved_at_utc": "2026-10-11T23:58:15+00:00"
     },
     {
       "date": "2026-10-05",
@@ -1440,8 +1544,8 @@
       "sbl_change": "",
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/fund/T86?date=20261005&selectType=ALLBUT0999&response=json",
-      "source_hash": "3c01f5923b3039da31e9e133a2f87decd2b8a85095c94d224659c3ccbc4bf882",
-      "retrieved_at_utc": "2026-10-05T18:32:37+00:00"
+      "source_hash": "853565dedb4eecb280b63eef934e9e1fb9dc6ea3a9fea0e3ea5057a72645f100",
+      "retrieved_at_utc": "2026-10-11T23:58:15+00:00"
     },
     {
       "date": "2026-10-05",
@@ -1460,8 +1564,8 @@
       "sbl_change": "",
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/fund/T86?date=20261005&selectType=ALLBUT0999&response=json",
-      "source_hash": "3c01f5923b3039da31e9e133a2f87decd2b8a85095c94d224659c3ccbc4bf882",
-      "retrieved_at_utc": "2026-10-05T18:32:37+00:00"
+      "source_hash": "853565dedb4eecb280b63eef934e9e1fb9dc6ea3a9fea0e3ea5057a72645f100",
+      "retrieved_at_utc": "2026-10-11T23:58:15+00:00"
     },
     {
       "date": "2026-10-05",
@@ -1480,8 +1584,8 @@
       "sbl_change": "",
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/fund/T86?date=20261005&selectType=ALLBUT0999&response=json",
-      "source_hash": "3c01f5923b3039da31e9e133a2f87decd2b8a85095c94d224659c3ccbc4bf882",
-      "retrieved_at_utc": "2026-10-05T18:32:37+00:00"
+      "source_hash": "853565dedb4eecb280b63eef934e9e1fb9dc6ea3a9fea0e3ea5057a72645f100",
+      "retrieved_at_utc": "2026-10-11T23:58:15+00:00"
     },
     {
       "date": "2026-10-05",
@@ -1500,8 +1604,8 @@
       "sbl_change": "",
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/fund/T86?date=20261005&selectType=ALLBUT0999&response=json",
-      "source_hash": "3c01f5923b3039da31e9e133a2f87decd2b8a85095c94d224659c3ccbc4bf882",
-      "retrieved_at_utc": "2026-10-05T18:32:37+00:00"
+      "source_hash": "853565dedb4eecb280b63eef934e9e1fb9dc6ea3a9fea0e3ea5057a72645f100",
+      "retrieved_at_utc": "2026-10-11T23:58:15+00:00"
     },
     {
       "date": "2026-10-05",
@@ -1520,8 +1624,8 @@
       "sbl_change": "",
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/fund/T86?date=20261005&selectType=ALLBUT0999&response=json",
-      "source_hash": "3c01f5923b3039da31e9e133a2f87decd2b8a85095c94d224659c3ccbc4bf882",
-      "retrieved_at_utc": "2026-10-05T18:32:37+00:00"
+      "source_hash": "853565dedb4eecb280b63eef934e9e1fb9dc6ea3a9fea0e3ea5057a72645f100",
+      "retrieved_at_utc": "2026-10-11T23:58:15+00:00"
     },
     {
       "date": "2026-10-05",
@@ -1540,8 +1644,28 @@
       "sbl_change": "",
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/fund/T86?date=20261005&selectType=ALLBUT0999&response=json",
-      "source_hash": "3c01f5923b3039da31e9e133a2f87decd2b8a85095c94d224659c3ccbc4bf882",
-      "retrieved_at_utc": "2026-10-05T18:32:37+00:00"
+      "source_hash": "853565dedb4eecb280b63eef934e9e1fb9dc6ea3a9fea0e3ea5057a72645f100",
+      "retrieved_at_utc": "2026-10-11T23:58:15+00:00"
+    },
+    {
+      "date": "2026-10-05",
+      "ticker": "2303",
+      "name": "聯電",
+      "market": "TWSE",
+      "family": "institutional",
+      "foreign_net": "-81562142",
+      "trust_net": "0",
+      "dealer_net": "2697000",
+      "margin_balance": "",
+      "margin_change": "",
+      "short_balance": "",
+      "short_change": "",
+      "sbl_balance": "",
+      "sbl_change": "",
+      "available_at_policy": "official post-close; next-trading-day eligible",
+      "source_url": "https://www.twse.com.tw/fund/T86?date=20261005&selectType=ALLBUT0999&response=json",
+      "source_hash": "853565dedb4eecb280b63eef934e9e1fb9dc6ea3a9fea0e3ea5057a72645f100",
+      "retrieved_at_utc": "2026-10-11T23:58:15+00:00"
     },
     {
       "date": "2026-10-05",
@@ -1561,7 +1685,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_MARGN?date=20261005&selectType=ALL&response=json",
       "source_hash": "a53959a16deb815e3b0a9e211ea50d2fba5aaa8b26eb44c23fedd96e3893038a",
-      "retrieved_at_utc": "2026-10-05T18:32:40+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:16+00:00"
     },
     {
       "date": "2026-10-05",
@@ -1581,7 +1705,27 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_MARGN?date=20261005&selectType=ALL&response=json",
       "source_hash": "a53959a16deb815e3b0a9e211ea50d2fba5aaa8b26eb44c23fedd96e3893038a",
-      "retrieved_at_utc": "2026-10-05T18:32:40+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:16+00:00"
+    },
+    {
+      "date": "2026-10-05",
+      "ticker": "2303",
+      "name": "聯電",
+      "market": "TWSE",
+      "family": "margin_short",
+      "foreign_net": "",
+      "trust_net": "",
+      "dealer_net": "",
+      "margin_balance": "180464",
+      "margin_change": "32102",
+      "short_balance": "4900",
+      "short_change": "1473",
+      "sbl_balance": "",
+      "sbl_change": "",
+      "available_at_policy": "official post-close; next-trading-day eligible",
+      "source_url": "https://www.twse.com.tw/exchangeReport/MI_MARGN?date=20261005&selectType=ALL&response=json",
+      "source_hash": "a53959a16deb815e3b0a9e211ea50d2fba5aaa8b26eb44c23fedd96e3893038a",
+      "retrieved_at_utc": "2026-10-11T23:58:16+00:00"
     },
     {
       "date": "2026-10-05",
@@ -1601,7 +1745,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_MARGN?date=20261005&selectType=ALL&response=json",
       "source_hash": "a53959a16deb815e3b0a9e211ea50d2fba5aaa8b26eb44c23fedd96e3893038a",
-      "retrieved_at_utc": "2026-10-05T18:32:40+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:16+00:00"
     },
     {
       "date": "2026-10-05",
@@ -1621,7 +1765,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_MARGN?date=20261005&selectType=ALL&response=json",
       "source_hash": "a53959a16deb815e3b0a9e211ea50d2fba5aaa8b26eb44c23fedd96e3893038a",
-      "retrieved_at_utc": "2026-10-05T18:32:40+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:16+00:00"
     },
     {
       "date": "2026-10-05",
@@ -1641,7 +1785,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_MARGN?date=20261005&selectType=ALL&response=json",
       "source_hash": "a53959a16deb815e3b0a9e211ea50d2fba5aaa8b26eb44c23fedd96e3893038a",
-      "retrieved_at_utc": "2026-10-05T18:32:40+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:16+00:00"
     },
     {
       "date": "2026-10-05",
@@ -1661,7 +1805,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_MARGN?date=20261005&selectType=ALL&response=json",
       "source_hash": "a53959a16deb815e3b0a9e211ea50d2fba5aaa8b26eb44c23fedd96e3893038a",
-      "retrieved_at_utc": "2026-10-05T18:32:40+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:16+00:00"
     },
     {
       "date": "2026-10-05",
@@ -1681,7 +1825,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_MARGN?date=20261005&selectType=ALL&response=json",
       "source_hash": "a53959a16deb815e3b0a9e211ea50d2fba5aaa8b26eb44c23fedd96e3893038a",
-      "retrieved_at_utc": "2026-10-05T18:32:40+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:16+00:00"
     },
     {
       "date": "2026-10-05",
@@ -1701,7 +1845,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_MARGN?date=20261005&selectType=ALL&response=json",
       "source_hash": "a53959a16deb815e3b0a9e211ea50d2fba5aaa8b26eb44c23fedd96e3893038a",
-      "retrieved_at_utc": "2026-10-05T18:32:40+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:16+00:00"
     },
     {
       "date": "2026-10-05",
@@ -1721,7 +1865,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_MARGN?date=20261005&selectType=ALL&response=json",
       "source_hash": "a53959a16deb815e3b0a9e211ea50d2fba5aaa8b26eb44c23fedd96e3893038a",
-      "retrieved_at_utc": "2026-10-05T18:32:40+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:16+00:00"
     },
     {
       "date": "2026-10-05",
@@ -1741,7 +1885,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_MARGN?date=20261005&selectType=ALL&response=json",
       "source_hash": "a53959a16deb815e3b0a9e211ea50d2fba5aaa8b26eb44c23fedd96e3893038a",
-      "retrieved_at_utc": "2026-10-05T18:32:40+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:16+00:00"
     },
     {
       "date": "2026-10-05",
@@ -1761,7 +1905,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_MARGN?date=20261005&selectType=ALL&response=json",
       "source_hash": "a53959a16deb815e3b0a9e211ea50d2fba5aaa8b26eb44c23fedd96e3893038a",
-      "retrieved_at_utc": "2026-10-05T18:32:40+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:16+00:00"
     },
     {
       "date": "2026-10-05",
@@ -1781,7 +1925,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_MARGN?date=20261005&selectType=ALL&response=json",
       "source_hash": "a53959a16deb815e3b0a9e211ea50d2fba5aaa8b26eb44c23fedd96e3893038a",
-      "retrieved_at_utc": "2026-10-05T18:32:40+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:16+00:00"
     },
     {
       "date": "2026-10-05",
@@ -1801,7 +1945,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_MARGN?date=20261005&selectType=ALL&response=json",
       "source_hash": "a53959a16deb815e3b0a9e211ea50d2fba5aaa8b26eb44c23fedd96e3893038a",
-      "retrieved_at_utc": "2026-10-05T18:32:40+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:16+00:00"
     },
     {
       "date": "2026-10-05",
@@ -1821,7 +1965,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_MARGN?date=20261005&selectType=ALL&response=json",
       "source_hash": "a53959a16deb815e3b0a9e211ea50d2fba5aaa8b26eb44c23fedd96e3893038a",
-      "retrieved_at_utc": "2026-10-05T18:32:40+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:16+00:00"
     },
     {
       "date": "2026-10-05",
@@ -1841,7 +1985,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_MARGN?date=20261005&selectType=ALL&response=json",
       "source_hash": "a53959a16deb815e3b0a9e211ea50d2fba5aaa8b26eb44c23fedd96e3893038a",
-      "retrieved_at_utc": "2026-10-05T18:32:40+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:16+00:00"
     },
     {
       "date": "2026-10-05",
@@ -1861,7 +2005,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_MARGN?date=20261005&selectType=ALL&response=json",
       "source_hash": "a53959a16deb815e3b0a9e211ea50d2fba5aaa8b26eb44c23fedd96e3893038a",
-      "retrieved_at_utc": "2026-10-05T18:32:40+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:16+00:00"
     },
     {
       "date": "2026-10-05",
@@ -1881,7 +2025,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_MARGN?date=20261005&selectType=ALL&response=json",
       "source_hash": "a53959a16deb815e3b0a9e211ea50d2fba5aaa8b26eb44c23fedd96e3893038a",
-      "retrieved_at_utc": "2026-10-05T18:32:40+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:16+00:00"
     },
     {
       "date": "2026-10-05",
@@ -1901,7 +2045,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_MARGN?date=20261005&selectType=ALL&response=json",
       "source_hash": "a53959a16deb815e3b0a9e211ea50d2fba5aaa8b26eb44c23fedd96e3893038a",
-      "retrieved_at_utc": "2026-10-05T18:32:40+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:16+00:00"
     },
     {
       "date": "2026-10-05",
@@ -1921,7 +2065,27 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_MARGN?date=20261005&selectType=ALL&response=json",
       "source_hash": "a53959a16deb815e3b0a9e211ea50d2fba5aaa8b26eb44c23fedd96e3893038a",
-      "retrieved_at_utc": "2026-10-05T18:32:40+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:16+00:00"
+    },
+    {
+      "date": "2026-10-05",
+      "ticker": "3008",
+      "name": "大立光",
+      "market": "TWSE",
+      "family": "margin_short",
+      "foreign_net": "",
+      "trust_net": "",
+      "dealer_net": "",
+      "margin_balance": "4546",
+      "margin_change": "222",
+      "short_balance": "50",
+      "short_change": "1",
+      "sbl_balance": "",
+      "sbl_change": "",
+      "available_at_policy": "official post-close; next-trading-day eligible",
+      "source_url": "https://www.twse.com.tw/exchangeReport/MI_MARGN?date=20261005&selectType=ALL&response=json",
+      "source_hash": "a53959a16deb815e3b0a9e211ea50d2fba5aaa8b26eb44c23fedd96e3893038a",
+      "retrieved_at_utc": "2026-10-11T23:58:16+00:00"
     },
     {
       "date": "2026-10-05",
@@ -1941,7 +2105,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_MARGN?date=20261005&selectType=ALL&response=json",
       "source_hash": "a53959a16deb815e3b0a9e211ea50d2fba5aaa8b26eb44c23fedd96e3893038a",
-      "retrieved_at_utc": "2026-10-05T18:32:40+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:16+00:00"
     },
     {
       "date": "2026-10-05",
@@ -1961,7 +2125,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_MARGN?date=20261005&selectType=ALL&response=json",
       "source_hash": "a53959a16deb815e3b0a9e211ea50d2fba5aaa8b26eb44c23fedd96e3893038a",
-      "retrieved_at_utc": "2026-10-05T18:32:40+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:16+00:00"
     },
     {
       "date": "2026-10-05",
@@ -1981,7 +2145,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_MARGN?date=20261005&selectType=ALL&response=json",
       "source_hash": "a53959a16deb815e3b0a9e211ea50d2fba5aaa8b26eb44c23fedd96e3893038a",
-      "retrieved_at_utc": "2026-10-05T18:32:40+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:16+00:00"
     },
     {
       "date": "2026-10-05",
@@ -2001,7 +2165,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_MARGN?date=20261005&selectType=ALL&response=json",
       "source_hash": "a53959a16deb815e3b0a9e211ea50d2fba5aaa8b26eb44c23fedd96e3893038a",
-      "retrieved_at_utc": "2026-10-05T18:32:40+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:16+00:00"
     },
     {
       "date": "2026-10-05",
@@ -2021,7 +2185,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_MARGN?date=20261005&selectType=ALL&response=json",
       "source_hash": "a53959a16deb815e3b0a9e211ea50d2fba5aaa8b26eb44c23fedd96e3893038a",
-      "retrieved_at_utc": "2026-10-05T18:32:40+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:16+00:00"
     },
     {
       "date": "2026-10-05",
@@ -2041,7 +2205,27 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_MARGN?date=20261005&selectType=ALL&response=json",
       "source_hash": "a53959a16deb815e3b0a9e211ea50d2fba5aaa8b26eb44c23fedd96e3893038a",
-      "retrieved_at_utc": "2026-10-05T18:32:40+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:16+00:00"
+    },
+    {
+      "date": "2026-10-05",
+      "ticker": "3406",
+      "name": "玉晶光",
+      "market": "TWSE",
+      "family": "margin_short",
+      "foreign_net": "",
+      "trust_net": "",
+      "dealer_net": "",
+      "margin_balance": "4036",
+      "margin_change": "668",
+      "short_balance": "213",
+      "short_change": "-37",
+      "sbl_balance": "",
+      "sbl_change": "",
+      "available_at_policy": "official post-close; next-trading-day eligible",
+      "source_url": "https://www.twse.com.tw/exchangeReport/MI_MARGN?date=20261005&selectType=ALL&response=json",
+      "source_hash": "a53959a16deb815e3b0a9e211ea50d2fba5aaa8b26eb44c23fedd96e3893038a",
+      "retrieved_at_utc": "2026-10-11T23:58:16+00:00"
     },
     {
       "date": "2026-10-05",
@@ -2061,7 +2245,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_MARGN?date=20261005&selectType=ALL&response=json",
       "source_hash": "a53959a16deb815e3b0a9e211ea50d2fba5aaa8b26eb44c23fedd96e3893038a",
-      "retrieved_at_utc": "2026-10-05T18:32:40+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:16+00:00"
     },
     {
       "date": "2026-10-05",
@@ -2081,7 +2265,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_MARGN?date=20261005&selectType=ALL&response=json",
       "source_hash": "a53959a16deb815e3b0a9e211ea50d2fba5aaa8b26eb44c23fedd96e3893038a",
-      "retrieved_at_utc": "2026-10-05T18:32:40+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:16+00:00"
     },
     {
       "date": "2026-10-05",
@@ -2101,7 +2285,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_MARGN?date=20261005&selectType=ALL&response=json",
       "source_hash": "a53959a16deb815e3b0a9e211ea50d2fba5aaa8b26eb44c23fedd96e3893038a",
-      "retrieved_at_utc": "2026-10-05T18:32:40+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:16+00:00"
     },
     {
       "date": "2026-10-05",
@@ -2121,7 +2305,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_MARGN?date=20261005&selectType=ALL&response=json",
       "source_hash": "a53959a16deb815e3b0a9e211ea50d2fba5aaa8b26eb44c23fedd96e3893038a",
-      "retrieved_at_utc": "2026-10-05T18:32:40+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:16+00:00"
     },
     {
       "date": "2026-10-05",
@@ -2141,7 +2325,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_MARGN?date=20261005&selectType=ALL&response=json",
       "source_hash": "a53959a16deb815e3b0a9e211ea50d2fba5aaa8b26eb44c23fedd96e3893038a",
-      "retrieved_at_utc": "2026-10-05T18:32:40+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:16+00:00"
     },
     {
       "date": "2026-10-05",
@@ -2161,7 +2345,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_MARGN?date=20261005&selectType=ALL&response=json",
       "source_hash": "a53959a16deb815e3b0a9e211ea50d2fba5aaa8b26eb44c23fedd96e3893038a",
-      "retrieved_at_utc": "2026-10-05T18:32:40+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:16+00:00"
     },
     {
       "date": "2026-10-05",
@@ -2181,7 +2365,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_MARGN?date=20261005&selectType=ALL&response=json",
       "source_hash": "a53959a16deb815e3b0a9e211ea50d2fba5aaa8b26eb44c23fedd96e3893038a",
-      "retrieved_at_utc": "2026-10-05T18:32:40+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:16+00:00"
     },
     {
       "date": "2026-10-05",
@@ -2201,7 +2385,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_MARGN?date=20261005&selectType=ALL&response=json",
       "source_hash": "a53959a16deb815e3b0a9e211ea50d2fba5aaa8b26eb44c23fedd96e3893038a",
-      "retrieved_at_utc": "2026-10-05T18:32:40+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:16+00:00"
     },
     {
       "date": "2026-10-05",
@@ -2221,7 +2405,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_MARGN?date=20261005&selectType=ALL&response=json",
       "source_hash": "a53959a16deb815e3b0a9e211ea50d2fba5aaa8b26eb44c23fedd96e3893038a",
-      "retrieved_at_utc": "2026-10-05T18:32:40+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:16+00:00"
     },
     {
       "date": "2026-10-05",
@@ -2241,7 +2425,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_MARGN?date=20261005&selectType=ALL&response=json",
       "source_hash": "a53959a16deb815e3b0a9e211ea50d2fba5aaa8b26eb44c23fedd96e3893038a",
-      "retrieved_at_utc": "2026-10-05T18:32:40+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:16+00:00"
     },
     {
       "date": "2026-10-05",
@@ -2261,7 +2445,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_MARGN?date=20261005&selectType=ALL&response=json",
       "source_hash": "a53959a16deb815e3b0a9e211ea50d2fba5aaa8b26eb44c23fedd96e3893038a",
-      "retrieved_at_utc": "2026-10-05T18:32:40+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:16+00:00"
     },
     {
       "date": "2026-10-05",
@@ -2281,7 +2465,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_MARGN?date=20261005&selectType=ALL&response=json",
       "source_hash": "a53959a16deb815e3b0a9e211ea50d2fba5aaa8b26eb44c23fedd96e3893038a",
-      "retrieved_at_utc": "2026-10-05T18:32:40+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:16+00:00"
     },
     {
       "date": "2026-10-05",
@@ -2301,7 +2485,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/TWT72U?date=20261005&response=json",
       "source_hash": "54003a28b28deeedffd4f39dcf9cdbae41953749aba0363db89c7a6d8eb69ee0",
-      "retrieved_at_utc": "2026-10-05T18:32:41+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:17+00:00"
     },
     {
       "date": "2026-10-05",
@@ -2321,7 +2505,27 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/TWT72U?date=20261005&response=json",
       "source_hash": "54003a28b28deeedffd4f39dcf9cdbae41953749aba0363db89c7a6d8eb69ee0",
-      "retrieved_at_utc": "2026-10-05T18:32:41+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:17+00:00"
+    },
+    {
+      "date": "2026-10-05",
+      "ticker": "2303",
+      "name": "聯電",
+      "market": "TWSE",
+      "family": "securities_lending",
+      "foreign_net": "",
+      "trust_net": "",
+      "dealer_net": "",
+      "margin_balance": "",
+      "margin_change": "",
+      "short_balance": "",
+      "short_change": "",
+      "sbl_balance": "352992000",
+      "sbl_change": "5700000",
+      "available_at_policy": "official post-close; next-trading-day eligible",
+      "source_url": "https://www.twse.com.tw/exchangeReport/TWT72U?date=20261005&response=json",
+      "source_hash": "54003a28b28deeedffd4f39dcf9cdbae41953749aba0363db89c7a6d8eb69ee0",
+      "retrieved_at_utc": "2026-10-11T23:58:17+00:00"
     },
     {
       "date": "2026-10-05",
@@ -2341,7 +2545,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/TWT72U?date=20261005&response=json",
       "source_hash": "54003a28b28deeedffd4f39dcf9cdbae41953749aba0363db89c7a6d8eb69ee0",
-      "retrieved_at_utc": "2026-10-05T18:32:41+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:17+00:00"
     },
     {
       "date": "2026-10-05",
@@ -2361,7 +2565,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/TWT72U?date=20261005&response=json",
       "source_hash": "54003a28b28deeedffd4f39dcf9cdbae41953749aba0363db89c7a6d8eb69ee0",
-      "retrieved_at_utc": "2026-10-05T18:32:41+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:17+00:00"
     },
     {
       "date": "2026-10-05",
@@ -2381,7 +2585,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/TWT72U?date=20261005&response=json",
       "source_hash": "54003a28b28deeedffd4f39dcf9cdbae41953749aba0363db89c7a6d8eb69ee0",
-      "retrieved_at_utc": "2026-10-05T18:32:41+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:17+00:00"
     },
     {
       "date": "2026-10-05",
@@ -2401,7 +2605,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/TWT72U?date=20261005&response=json",
       "source_hash": "54003a28b28deeedffd4f39dcf9cdbae41953749aba0363db89c7a6d8eb69ee0",
-      "retrieved_at_utc": "2026-10-05T18:32:41+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:17+00:00"
     },
     {
       "date": "2026-10-05",
@@ -2421,7 +2625,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/TWT72U?date=20261005&response=json",
       "source_hash": "54003a28b28deeedffd4f39dcf9cdbae41953749aba0363db89c7a6d8eb69ee0",
-      "retrieved_at_utc": "2026-10-05T18:32:41+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:17+00:00"
     },
     {
       "date": "2026-10-05",
@@ -2441,7 +2645,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/TWT72U?date=20261005&response=json",
       "source_hash": "54003a28b28deeedffd4f39dcf9cdbae41953749aba0363db89c7a6d8eb69ee0",
-      "retrieved_at_utc": "2026-10-05T18:32:41+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:17+00:00"
     },
     {
       "date": "2026-10-05",
@@ -2461,7 +2665,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/TWT72U?date=20261005&response=json",
       "source_hash": "54003a28b28deeedffd4f39dcf9cdbae41953749aba0363db89c7a6d8eb69ee0",
-      "retrieved_at_utc": "2026-10-05T18:32:41+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:17+00:00"
     },
     {
       "date": "2026-10-05",
@@ -2481,7 +2685,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/TWT72U?date=20261005&response=json",
       "source_hash": "54003a28b28deeedffd4f39dcf9cdbae41953749aba0363db89c7a6d8eb69ee0",
-      "retrieved_at_utc": "2026-10-05T18:32:41+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:17+00:00"
     },
     {
       "date": "2026-10-05",
@@ -2501,7 +2705,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/TWT72U?date=20261005&response=json",
       "source_hash": "54003a28b28deeedffd4f39dcf9cdbae41953749aba0363db89c7a6d8eb69ee0",
-      "retrieved_at_utc": "2026-10-05T18:32:41+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:17+00:00"
     },
     {
       "date": "2026-10-05",
@@ -2521,7 +2725,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/TWT72U?date=20261005&response=json",
       "source_hash": "54003a28b28deeedffd4f39dcf9cdbae41953749aba0363db89c7a6d8eb69ee0",
-      "retrieved_at_utc": "2026-10-05T18:32:41+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:17+00:00"
     },
     {
       "date": "2026-10-05",
@@ -2541,7 +2745,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/TWT72U?date=20261005&response=json",
       "source_hash": "54003a28b28deeedffd4f39dcf9cdbae41953749aba0363db89c7a6d8eb69ee0",
-      "retrieved_at_utc": "2026-10-05T18:32:41+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:17+00:00"
     },
     {
       "date": "2026-10-05",
@@ -2561,7 +2765,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/TWT72U?date=20261005&response=json",
       "source_hash": "54003a28b28deeedffd4f39dcf9cdbae41953749aba0363db89c7a6d8eb69ee0",
-      "retrieved_at_utc": "2026-10-05T18:32:41+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:17+00:00"
     },
     {
       "date": "2026-10-05",
@@ -2581,7 +2785,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/TWT72U?date=20261005&response=json",
       "source_hash": "54003a28b28deeedffd4f39dcf9cdbae41953749aba0363db89c7a6d8eb69ee0",
-      "retrieved_at_utc": "2026-10-05T18:32:41+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:17+00:00"
     },
     {
       "date": "2026-10-05",
@@ -2601,7 +2805,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/TWT72U?date=20261005&response=json",
       "source_hash": "54003a28b28deeedffd4f39dcf9cdbae41953749aba0363db89c7a6d8eb69ee0",
-      "retrieved_at_utc": "2026-10-05T18:32:41+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:17+00:00"
     },
     {
       "date": "2026-10-05",
@@ -2621,7 +2825,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/TWT72U?date=20261005&response=json",
       "source_hash": "54003a28b28deeedffd4f39dcf9cdbae41953749aba0363db89c7a6d8eb69ee0",
-      "retrieved_at_utc": "2026-10-05T18:32:41+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:17+00:00"
     },
     {
       "date": "2026-10-05",
@@ -2641,7 +2845,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/TWT72U?date=20261005&response=json",
       "source_hash": "54003a28b28deeedffd4f39dcf9cdbae41953749aba0363db89c7a6d8eb69ee0",
-      "retrieved_at_utc": "2026-10-05T18:32:41+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:17+00:00"
     },
     {
       "date": "2026-10-05",
@@ -2661,7 +2865,27 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/TWT72U?date=20261005&response=json",
       "source_hash": "54003a28b28deeedffd4f39dcf9cdbae41953749aba0363db89c7a6d8eb69ee0",
-      "retrieved_at_utc": "2026-10-05T18:32:41+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:17+00:00"
+    },
+    {
+      "date": "2026-10-05",
+      "ticker": "3008",
+      "name": "大立光",
+      "market": "TWSE",
+      "family": "securities_lending",
+      "foreign_net": "",
+      "trust_net": "",
+      "dealer_net": "",
+      "margin_balance": "",
+      "margin_change": "",
+      "short_balance": "",
+      "short_change": "",
+      "sbl_balance": "5219000",
+      "sbl_change": "-180000",
+      "available_at_policy": "official post-close; next-trading-day eligible",
+      "source_url": "https://www.twse.com.tw/exchangeReport/TWT72U?date=20261005&response=json",
+      "source_hash": "54003a28b28deeedffd4f39dcf9cdbae41953749aba0363db89c7a6d8eb69ee0",
+      "retrieved_at_utc": "2026-10-11T23:58:17+00:00"
     },
     {
       "date": "2026-10-05",
@@ -2681,7 +2905,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/TWT72U?date=20261005&response=json",
       "source_hash": "54003a28b28deeedffd4f39dcf9cdbae41953749aba0363db89c7a6d8eb69ee0",
-      "retrieved_at_utc": "2026-10-05T18:32:41+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:17+00:00"
     },
     {
       "date": "2026-10-05",
@@ -2701,7 +2925,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/TWT72U?date=20261005&response=json",
       "source_hash": "54003a28b28deeedffd4f39dcf9cdbae41953749aba0363db89c7a6d8eb69ee0",
-      "retrieved_at_utc": "2026-10-05T18:32:41+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:17+00:00"
     },
     {
       "date": "2026-10-05",
@@ -2721,7 +2945,27 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/TWT72U?date=20261005&response=json",
       "source_hash": "54003a28b28deeedffd4f39dcf9cdbae41953749aba0363db89c7a6d8eb69ee0",
-      "retrieved_at_utc": "2026-10-05T18:32:41+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:17+00:00"
+    },
+    {
+      "date": "2026-10-05",
+      "ticker": "3081",
+      "name": "聯亞",
+      "market": "TWSE",
+      "family": "securities_lending",
+      "foreign_net": "",
+      "trust_net": "",
+      "dealer_net": "",
+      "margin_balance": "",
+      "margin_change": "",
+      "short_balance": "",
+      "short_change": "",
+      "sbl_balance": "6836000",
+      "sbl_change": "532000",
+      "available_at_policy": "official post-close; next-trading-day eligible",
+      "source_url": "https://www.twse.com.tw/exchangeReport/TWT72U?date=20261005&response=json",
+      "source_hash": "54003a28b28deeedffd4f39dcf9cdbae41953749aba0363db89c7a6d8eb69ee0",
+      "retrieved_at_utc": "2026-10-11T23:58:17+00:00"
     },
     {
       "date": "2026-10-05",
@@ -2741,7 +2985,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/TWT72U?date=20261005&response=json",
       "source_hash": "54003a28b28deeedffd4f39dcf9cdbae41953749aba0363db89c7a6d8eb69ee0",
-      "retrieved_at_utc": "2026-10-05T18:32:41+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:17+00:00"
     },
     {
       "date": "2026-10-05",
@@ -2761,7 +3005,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/TWT72U?date=20261005&response=json",
       "source_hash": "54003a28b28deeedffd4f39dcf9cdbae41953749aba0363db89c7a6d8eb69ee0",
-      "retrieved_at_utc": "2026-10-05T18:32:41+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:17+00:00"
     },
     {
       "date": "2026-10-05",
@@ -2781,7 +3025,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/TWT72U?date=20261005&response=json",
       "source_hash": "54003a28b28deeedffd4f39dcf9cdbae41953749aba0363db89c7a6d8eb69ee0",
-      "retrieved_at_utc": "2026-10-05T18:32:41+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:17+00:00"
     },
     {
       "date": "2026-10-05",
@@ -2801,7 +3045,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/TWT72U?date=20261005&response=json",
       "source_hash": "54003a28b28deeedffd4f39dcf9cdbae41953749aba0363db89c7a6d8eb69ee0",
-      "retrieved_at_utc": "2026-10-05T18:32:41+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:17+00:00"
     },
     {
       "date": "2026-10-05",
@@ -2821,7 +3065,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/TWT72U?date=20261005&response=json",
       "source_hash": "54003a28b28deeedffd4f39dcf9cdbae41953749aba0363db89c7a6d8eb69ee0",
-      "retrieved_at_utc": "2026-10-05T18:32:41+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:17+00:00"
     },
     {
       "date": "2026-10-05",
@@ -2841,7 +3085,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/TWT72U?date=20261005&response=json",
       "source_hash": "54003a28b28deeedffd4f39dcf9cdbae41953749aba0363db89c7a6d8eb69ee0",
-      "retrieved_at_utc": "2026-10-05T18:32:41+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:17+00:00"
     },
     {
       "date": "2026-10-05",
@@ -2861,7 +3105,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/TWT72U?date=20261005&response=json",
       "source_hash": "54003a28b28deeedffd4f39dcf9cdbae41953749aba0363db89c7a6d8eb69ee0",
-      "retrieved_at_utc": "2026-10-05T18:32:41+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:17+00:00"
     },
     {
       "date": "2026-10-05",
@@ -2881,7 +3125,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/TWT72U?date=20261005&response=json",
       "source_hash": "54003a28b28deeedffd4f39dcf9cdbae41953749aba0363db89c7a6d8eb69ee0",
-      "retrieved_at_utc": "2026-10-05T18:32:41+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:17+00:00"
     },
     {
       "date": "2026-10-05",
@@ -2901,7 +3145,27 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/TWT72U?date=20261005&response=json",
       "source_hash": "54003a28b28deeedffd4f39dcf9cdbae41953749aba0363db89c7a6d8eb69ee0",
-      "retrieved_at_utc": "2026-10-05T18:32:41+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:17+00:00"
+    },
+    {
+      "date": "2026-10-05",
+      "ticker": "3406",
+      "name": "玉晶光",
+      "market": "TWSE",
+      "family": "securities_lending",
+      "foreign_net": "",
+      "trust_net": "",
+      "dealer_net": "",
+      "margin_balance": "",
+      "margin_change": "",
+      "short_balance": "",
+      "short_change": "",
+      "sbl_balance": "7028000",
+      "sbl_change": "-20000",
+      "available_at_policy": "official post-close; next-trading-day eligible",
+      "source_url": "https://www.twse.com.tw/exchangeReport/TWT72U?date=20261005&response=json",
+      "source_hash": "54003a28b28deeedffd4f39dcf9cdbae41953749aba0363db89c7a6d8eb69ee0",
+      "retrieved_at_utc": "2026-10-11T23:58:17+00:00"
     },
     {
       "date": "2026-10-05",
@@ -2921,7 +3185,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/TWT72U?date=20261005&response=json",
       "source_hash": "54003a28b28deeedffd4f39dcf9cdbae41953749aba0363db89c7a6d8eb69ee0",
-      "retrieved_at_utc": "2026-10-05T18:32:41+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:17+00:00"
     },
     {
       "date": "2026-10-05",
@@ -2941,7 +3205,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/TWT72U?date=20261005&response=json",
       "source_hash": "54003a28b28deeedffd4f39dcf9cdbae41953749aba0363db89c7a6d8eb69ee0",
-      "retrieved_at_utc": "2026-10-05T18:32:41+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:17+00:00"
     },
     {
       "date": "2026-10-05",
@@ -2961,7 +3225,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/TWT72U?date=20261005&response=json",
       "source_hash": "54003a28b28deeedffd4f39dcf9cdbae41953749aba0363db89c7a6d8eb69ee0",
-      "retrieved_at_utc": "2026-10-05T18:32:41+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:17+00:00"
     },
     {
       "date": "2026-10-05",
@@ -2981,7 +3245,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/TWT72U?date=20261005&response=json",
       "source_hash": "54003a28b28deeedffd4f39dcf9cdbae41953749aba0363db89c7a6d8eb69ee0",
-      "retrieved_at_utc": "2026-10-05T18:32:41+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:17+00:00"
     },
     {
       "date": "2026-10-05",
@@ -3001,7 +3265,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/TWT72U?date=20261005&response=json",
       "source_hash": "54003a28b28deeedffd4f39dcf9cdbae41953749aba0363db89c7a6d8eb69ee0",
-      "retrieved_at_utc": "2026-10-05T18:32:41+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:17+00:00"
     },
     {
       "date": "2026-10-05",
@@ -3021,7 +3285,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/TWT72U?date=20261005&response=json",
       "source_hash": "54003a28b28deeedffd4f39dcf9cdbae41953749aba0363db89c7a6d8eb69ee0",
-      "retrieved_at_utc": "2026-10-05T18:32:41+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:17+00:00"
     },
     {
       "date": "2026-10-05",
@@ -3041,7 +3305,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/TWT72U?date=20261005&response=json",
       "source_hash": "54003a28b28deeedffd4f39dcf9cdbae41953749aba0363db89c7a6d8eb69ee0",
-      "retrieved_at_utc": "2026-10-05T18:32:41+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:17+00:00"
     },
     {
       "date": "2026-10-05",
@@ -3061,7 +3325,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/TWT72U?date=20261005&response=json",
       "source_hash": "54003a28b28deeedffd4f39dcf9cdbae41953749aba0363db89c7a6d8eb69ee0",
-      "retrieved_at_utc": "2026-10-05T18:32:41+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:17+00:00"
     },
     {
       "date": "2026-10-05",
@@ -3081,7 +3345,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/TWT72U?date=20261005&response=json",
       "source_hash": "54003a28b28deeedffd4f39dcf9cdbae41953749aba0363db89c7a6d8eb69ee0",
-      "retrieved_at_utc": "2026-10-05T18:32:41+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:17+00:00"
     },
     {
       "date": "2026-10-05",
@@ -3101,7 +3365,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/TWT72U?date=20261005&response=json",
       "source_hash": "54003a28b28deeedffd4f39dcf9cdbae41953749aba0363db89c7a6d8eb69ee0",
-      "retrieved_at_utc": "2026-10-05T18:32:41+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:17+00:00"
     },
     {
       "date": "2026-10-05",
@@ -3121,7 +3385,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/TWT72U?date=20261005&response=json",
       "source_hash": "54003a28b28deeedffd4f39dcf9cdbae41953749aba0363db89c7a6d8eb69ee0",
-      "retrieved_at_utc": "2026-10-05T18:32:41+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:17+00:00"
     },
     {
       "date": "2026-10-05",
@@ -3141,7 +3405,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/TWT72U?date=20261005&response=json",
       "source_hash": "54003a28b28deeedffd4f39dcf9cdbae41953749aba0363db89c7a6d8eb69ee0",
-      "retrieved_at_utc": "2026-10-05T18:32:41+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:17+00:00"
     },
     {
       "date": "2026-10-05",
@@ -3161,7 +3425,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/TWT72U?date=20261005&response=json",
       "source_hash": "54003a28b28deeedffd4f39dcf9cdbae41953749aba0363db89c7a6d8eb69ee0",
-      "retrieved_at_utc": "2026-10-05T18:32:41+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:17+00:00"
     },
     {
       "date": "2026-10-05",
@@ -3181,7 +3445,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/TWT72U?date=20261005&response=json",
       "source_hash": "54003a28b28deeedffd4f39dcf9cdbae41953749aba0363db89c7a6d8eb69ee0",
-      "retrieved_at_utc": "2026-10-05T18:32:41+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:17+00:00"
     },
     {
       "date": "2026-10-05",
@@ -3201,7 +3465,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/TWT72U?date=20261005&response=json",
       "source_hash": "54003a28b28deeedffd4f39dcf9cdbae41953749aba0363db89c7a6d8eb69ee0",
-      "retrieved_at_utc": "2026-10-05T18:32:41+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:17+00:00"
     },
     {
       "date": "2026-10-05",
@@ -3221,7 +3485,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/TWT72U?date=20261005&response=json",
       "source_hash": "54003a28b28deeedffd4f39dcf9cdbae41953749aba0363db89c7a6d8eb69ee0",
-      "retrieved_at_utc": "2026-10-05T18:32:41+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:17+00:00"
     },
     {
       "date": "2026-10-05",
@@ -3241,7 +3505,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/TWT72U?date=20261005&response=json",
       "source_hash": "54003a28b28deeedffd4f39dcf9cdbae41953749aba0363db89c7a6d8eb69ee0",
-      "retrieved_at_utc": "2026-10-05T18:32:41+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:17+00:00"
     },
     {
       "date": "2026-10-05",
@@ -3261,7 +3525,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/TWT72U?date=20261005&response=json",
       "source_hash": "54003a28b28deeedffd4f39dcf9cdbae41953749aba0363db89c7a6d8eb69ee0",
-      "retrieved_at_utc": "2026-10-05T18:32:41+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:17+00:00"
     },
     {
       "date": "2026-10-05",
@@ -3281,7 +3545,27 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.twse.com.tw/exchangeReport/TWT72U?date=20261005&response=json",
       "source_hash": "54003a28b28deeedffd4f39dcf9cdbae41953749aba0363db89c7a6d8eb69ee0",
-      "retrieved_at_utc": "2026-10-05T18:32:41+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:17+00:00"
+    },
+    {
+      "date": "2026-10-05",
+      "ticker": "3081",
+      "name": "聯亞",
+      "market": "TPEx",
+      "family": "institutional",
+      "foreign_net": "-846718",
+      "trust_net": "0",
+      "dealer_net": "-846718",
+      "margin_balance": "",
+      "margin_change": "",
+      "short_balance": "",
+      "short_change": "",
+      "sbl_balance": "",
+      "sbl_change": "",
+      "available_at_policy": "official post-close; next-trading-day eligible",
+      "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/dailyTrade",
+      "source_hash": "8f03c933e8df25e374cafb392acde41922f62aa1adc8544d57efd858a68b86cb",
+      "retrieved_at_utc": "2026-10-11T23:58:17+00:00"
     },
     {
       "date": "2026-10-05",
@@ -3301,7 +3585,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/dailyTrade",
       "source_hash": "8f03c933e8df25e374cafb392acde41922f62aa1adc8544d57efd858a68b86cb",
-      "retrieved_at_utc": "2026-10-05T18:32:43+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:17+00:00"
     },
     {
       "date": "2026-10-05",
@@ -3321,7 +3605,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/dailyTrade",
       "source_hash": "8f03c933e8df25e374cafb392acde41922f62aa1adc8544d57efd858a68b86cb",
-      "retrieved_at_utc": "2026-10-05T18:32:43+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:17+00:00"
     },
     {
       "date": "2026-10-05",
@@ -3341,7 +3625,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/dailyTrade",
       "source_hash": "8f03c933e8df25e374cafb392acde41922f62aa1adc8544d57efd858a68b86cb",
-      "retrieved_at_utc": "2026-10-05T18:32:43+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:17+00:00"
     },
     {
       "date": "2026-10-05",
@@ -3361,7 +3645,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/dailyTrade",
       "source_hash": "8f03c933e8df25e374cafb392acde41922f62aa1adc8544d57efd858a68b86cb",
-      "retrieved_at_utc": "2026-10-05T18:32:43+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:17+00:00"
     },
     {
       "date": "2026-10-05",
@@ -3381,7 +3665,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/dailyTrade",
       "source_hash": "8f03c933e8df25e374cafb392acde41922f62aa1adc8544d57efd858a68b86cb",
-      "retrieved_at_utc": "2026-10-05T18:32:43+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:17+00:00"
     },
     {
       "date": "2026-10-05",
@@ -3401,7 +3685,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/dailyTrade",
       "source_hash": "8f03c933e8df25e374cafb392acde41922f62aa1adc8544d57efd858a68b86cb",
-      "retrieved_at_utc": "2026-10-05T18:32:43+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:17+00:00"
     },
     {
       "date": "2026-10-05",
@@ -3421,7 +3705,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/dailyTrade",
       "source_hash": "8f03c933e8df25e374cafb392acde41922f62aa1adc8544d57efd858a68b86cb",
-      "retrieved_at_utc": "2026-10-05T18:32:43+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:17+00:00"
     },
     {
       "date": "2026-10-05",
@@ -3441,7 +3725,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/dailyTrade",
       "source_hash": "8f03c933e8df25e374cafb392acde41922f62aa1adc8544d57efd858a68b86cb",
-      "retrieved_at_utc": "2026-10-05T18:32:43+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:17+00:00"
     },
     {
       "date": "2026-10-05",
@@ -3461,7 +3745,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/dailyTrade",
       "source_hash": "8f03c933e8df25e374cafb392acde41922f62aa1adc8544d57efd858a68b86cb",
-      "retrieved_at_utc": "2026-10-05T18:32:43+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:17+00:00"
     },
     {
       "date": "2026-10-05",
@@ -3481,7 +3765,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/dailyTrade",
       "source_hash": "8f03c933e8df25e374cafb392acde41922f62aa1adc8544d57efd858a68b86cb",
-      "retrieved_at_utc": "2026-10-05T18:32:43+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:17+00:00"
     },
     {
       "date": "2026-10-05",
@@ -3501,7 +3785,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/dailyTrade",
       "source_hash": "8f03c933e8df25e374cafb392acde41922f62aa1adc8544d57efd858a68b86cb",
-      "retrieved_at_utc": "2026-10-05T18:32:43+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:17+00:00"
     },
     {
       "date": "2026-10-05",
@@ -3521,7 +3805,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/dailyTrade",
       "source_hash": "8f03c933e8df25e374cafb392acde41922f62aa1adc8544d57efd858a68b86cb",
-      "retrieved_at_utc": "2026-10-05T18:32:43+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:17+00:00"
     },
     {
       "date": "2026-10-05",
@@ -3541,7 +3825,27 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/dailyTrade",
       "source_hash": "8f03c933e8df25e374cafb392acde41922f62aa1adc8544d57efd858a68b86cb",
-      "retrieved_at_utc": "2026-10-05T18:32:43+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:17+00:00"
+    },
+    {
+      "date": "2026-10-05",
+      "ticker": "3081",
+      "name": "聯亞",
+      "market": "TPEx",
+      "family": "margin_short",
+      "foreign_net": "",
+      "trust_net": "",
+      "dealer_net": "",
+      "margin_balance": "6500",
+      "margin_change": "302",
+      "short_balance": "138",
+      "short_change": "-13",
+      "sbl_balance": "",
+      "sbl_change": "",
+      "available_at_policy": "official post-close; next-trading-day eligible",
+      "source_url": "https://www.tpex.org.tw/www/zh-tw/margin/balance",
+      "source_hash": "4d11556d9df877e74e016e934863ee914c111378b90eb3822c4fe9d6e1afe8b0",
+      "retrieved_at_utc": "2026-10-11T23:58:18+00:00"
     },
     {
       "date": "2026-10-05",
@@ -3561,7 +3865,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.tpex.org.tw/www/zh-tw/margin/balance",
       "source_hash": "4d11556d9df877e74e016e934863ee914c111378b90eb3822c4fe9d6e1afe8b0",
-      "retrieved_at_utc": "2026-10-05T18:32:44+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:18+00:00"
     },
     {
       "date": "2026-10-05",
@@ -3581,7 +3885,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.tpex.org.tw/www/zh-tw/margin/balance",
       "source_hash": "4d11556d9df877e74e016e934863ee914c111378b90eb3822c4fe9d6e1afe8b0",
-      "retrieved_at_utc": "2026-10-05T18:32:44+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:18+00:00"
     },
     {
       "date": "2026-10-05",
@@ -3601,7 +3905,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.tpex.org.tw/www/zh-tw/margin/balance",
       "source_hash": "4d11556d9df877e74e016e934863ee914c111378b90eb3822c4fe9d6e1afe8b0",
-      "retrieved_at_utc": "2026-10-05T18:32:44+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:18+00:00"
     },
     {
       "date": "2026-10-05",
@@ -3621,7 +3925,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.tpex.org.tw/www/zh-tw/margin/balance",
       "source_hash": "4d11556d9df877e74e016e934863ee914c111378b90eb3822c4fe9d6e1afe8b0",
-      "retrieved_at_utc": "2026-10-05T18:32:44+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:18+00:00"
     },
     {
       "date": "2026-10-05",
@@ -3641,7 +3945,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.tpex.org.tw/www/zh-tw/margin/balance",
       "source_hash": "4d11556d9df877e74e016e934863ee914c111378b90eb3822c4fe9d6e1afe8b0",
-      "retrieved_at_utc": "2026-10-05T18:32:44+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:18+00:00"
     },
     {
       "date": "2026-10-05",
@@ -3661,7 +3965,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.tpex.org.tw/www/zh-tw/margin/balance",
       "source_hash": "4d11556d9df877e74e016e934863ee914c111378b90eb3822c4fe9d6e1afe8b0",
-      "retrieved_at_utc": "2026-10-05T18:32:44+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:18+00:00"
     },
     {
       "date": "2026-10-05",
@@ -3681,7 +3985,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.tpex.org.tw/www/zh-tw/margin/balance",
       "source_hash": "4d11556d9df877e74e016e934863ee914c111378b90eb3822c4fe9d6e1afe8b0",
-      "retrieved_at_utc": "2026-10-05T18:32:44+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:18+00:00"
     },
     {
       "date": "2026-10-05",
@@ -3701,7 +4005,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.tpex.org.tw/www/zh-tw/margin/balance",
       "source_hash": "4d11556d9df877e74e016e934863ee914c111378b90eb3822c4fe9d6e1afe8b0",
-      "retrieved_at_utc": "2026-10-05T18:32:44+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:18+00:00"
     },
     {
       "date": "2026-10-05",
@@ -3721,7 +4025,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.tpex.org.tw/www/zh-tw/margin/balance",
       "source_hash": "4d11556d9df877e74e016e934863ee914c111378b90eb3822c4fe9d6e1afe8b0",
-      "retrieved_at_utc": "2026-10-05T18:32:44+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:18+00:00"
     },
     {
       "date": "2026-10-05",
@@ -3741,7 +4045,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.tpex.org.tw/www/zh-tw/margin/balance",
       "source_hash": "4d11556d9df877e74e016e934863ee914c111378b90eb3822c4fe9d6e1afe8b0",
-      "retrieved_at_utc": "2026-10-05T18:32:44+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:18+00:00"
     },
     {
       "date": "2026-10-05",
@@ -3761,7 +4065,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.tpex.org.tw/www/zh-tw/margin/balance",
       "source_hash": "4d11556d9df877e74e016e934863ee914c111378b90eb3822c4fe9d6e1afe8b0",
-      "retrieved_at_utc": "2026-10-05T18:32:44+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:18+00:00"
     },
     {
       "date": "2026-10-05",
@@ -3781,7 +4085,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.tpex.org.tw/www/zh-tw/margin/balance",
       "source_hash": "4d11556d9df877e74e016e934863ee914c111378b90eb3822c4fe9d6e1afe8b0",
-      "retrieved_at_utc": "2026-10-05T18:32:44+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:18+00:00"
     },
     {
       "date": "2026-10-05",
@@ -3801,7 +4105,27 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.tpex.org.tw/www/zh-tw/margin/balance",
       "source_hash": "4d11556d9df877e74e016e934863ee914c111378b90eb3822c4fe9d6e1afe8b0",
-      "retrieved_at_utc": "2026-10-05T18:32:44+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:18+00:00"
+    },
+    {
+      "date": "2026-10-05",
+      "ticker": "3081",
+      "name": "聯亞",
+      "market": "TPEx",
+      "family": "securities_lending",
+      "foreign_net": "",
+      "trust_net": "",
+      "dealer_net": "",
+      "margin_balance": "",
+      "margin_change": "",
+      "short_balance": "",
+      "short_change": "",
+      "sbl_balance": "5957600",
+      "sbl_change": "421000",
+      "available_at_policy": "official post-close; next-trading-day eligible",
+      "source_url": "https://www.tpex.org.tw/www/zh-tw/margin/sbl",
+      "source_hash": "ac447c504fcd1b28110affe21d44a0db9dcfb44fd9ce39227adb23d493a6870f",
+      "retrieved_at_utc": "2026-10-11T23:58:18+00:00"
     },
     {
       "date": "2026-10-05",
@@ -3821,7 +4145,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.tpex.org.tw/www/zh-tw/margin/sbl",
       "source_hash": "ac447c504fcd1b28110affe21d44a0db9dcfb44fd9ce39227adb23d493a6870f",
-      "retrieved_at_utc": "2026-10-05T18:32:46+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:18+00:00"
     },
     {
       "date": "2026-10-05",
@@ -3841,7 +4165,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.tpex.org.tw/www/zh-tw/margin/sbl",
       "source_hash": "ac447c504fcd1b28110affe21d44a0db9dcfb44fd9ce39227adb23d493a6870f",
-      "retrieved_at_utc": "2026-10-05T18:32:46+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:18+00:00"
     },
     {
       "date": "2026-10-05",
@@ -3861,7 +4185,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.tpex.org.tw/www/zh-tw/margin/sbl",
       "source_hash": "ac447c504fcd1b28110affe21d44a0db9dcfb44fd9ce39227adb23d493a6870f",
-      "retrieved_at_utc": "2026-10-05T18:32:46+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:18+00:00"
     },
     {
       "date": "2026-10-05",
@@ -3881,7 +4205,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.tpex.org.tw/www/zh-tw/margin/sbl",
       "source_hash": "ac447c504fcd1b28110affe21d44a0db9dcfb44fd9ce39227adb23d493a6870f",
-      "retrieved_at_utc": "2026-10-05T18:32:46+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:18+00:00"
     },
     {
       "date": "2026-10-05",
@@ -3901,7 +4225,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.tpex.org.tw/www/zh-tw/margin/sbl",
       "source_hash": "ac447c504fcd1b28110affe21d44a0db9dcfb44fd9ce39227adb23d493a6870f",
-      "retrieved_at_utc": "2026-10-05T18:32:46+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:18+00:00"
     },
     {
       "date": "2026-10-05",
@@ -3921,7 +4245,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.tpex.org.tw/www/zh-tw/margin/sbl",
       "source_hash": "ac447c504fcd1b28110affe21d44a0db9dcfb44fd9ce39227adb23d493a6870f",
-      "retrieved_at_utc": "2026-10-05T18:32:46+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:18+00:00"
     },
     {
       "date": "2026-10-05",
@@ -3941,7 +4265,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.tpex.org.tw/www/zh-tw/margin/sbl",
       "source_hash": "ac447c504fcd1b28110affe21d44a0db9dcfb44fd9ce39227adb23d493a6870f",
-      "retrieved_at_utc": "2026-10-05T18:32:46+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:18+00:00"
     },
     {
       "date": "2026-10-05",
@@ -3961,7 +4285,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.tpex.org.tw/www/zh-tw/margin/sbl",
       "source_hash": "ac447c504fcd1b28110affe21d44a0db9dcfb44fd9ce39227adb23d493a6870f",
-      "retrieved_at_utc": "2026-10-05T18:32:46+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:18+00:00"
     },
     {
       "date": "2026-10-05",
@@ -3981,7 +4305,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.tpex.org.tw/www/zh-tw/margin/sbl",
       "source_hash": "ac447c504fcd1b28110affe21d44a0db9dcfb44fd9ce39227adb23d493a6870f",
-      "retrieved_at_utc": "2026-10-05T18:32:46+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:18+00:00"
     },
     {
       "date": "2026-10-05",
@@ -4001,7 +4325,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.tpex.org.tw/www/zh-tw/margin/sbl",
       "source_hash": "ac447c504fcd1b28110affe21d44a0db9dcfb44fd9ce39227adb23d493a6870f",
-      "retrieved_at_utc": "2026-10-05T18:32:46+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:18+00:00"
     },
     {
       "date": "2026-10-05",
@@ -4021,7 +4345,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.tpex.org.tw/www/zh-tw/margin/sbl",
       "source_hash": "ac447c504fcd1b28110affe21d44a0db9dcfb44fd9ce39227adb23d493a6870f",
-      "retrieved_at_utc": "2026-10-05T18:32:46+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:18+00:00"
     },
     {
       "date": "2026-10-05",
@@ -4041,7 +4365,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.tpex.org.tw/www/zh-tw/margin/sbl",
       "source_hash": "ac447c504fcd1b28110affe21d44a0db9dcfb44fd9ce39227adb23d493a6870f",
-      "retrieved_at_utc": "2026-10-05T18:32:46+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:18+00:00"
     },
     {
       "date": "2026-10-05",
@@ -4061,7 +4385,7 @@
       "available_at_policy": "official post-close; next-trading-day eligible",
       "source_url": "https://www.tpex.org.tw/www/zh-tw/margin/sbl",
       "source_hash": "ac447c504fcd1b28110affe21d44a0db9dcfb44fd9ce39227adb23d493a6870f",
-      "retrieved_at_utc": "2026-10-05T18:32:46+00:00"
+      "retrieved_at_utc": "2026-10-11T23:58:18+00:00"
     }
   ],
   "sources": [
@@ -4071,12 +4395,12 @@
       "requested_date": "2026-10-05",
       "actual_source_date": "2026-10-05",
       "status": "accepted",
-      "row_count": 37,
+      "row_count": 40,
       "http_status": 200,
       "response_bytes": 248528,
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20261005&type=ALLBUT0999&response=json",
       "source_hash": "6b77e7e5a727f5e32dd1ae530197727f54976477543c3eb751a70578b7cc599d",
-      "retrieved_at_utc": "2026-10-05T18:32:28+00:00",
+      "retrieved_at_utc": "2026-10-11T23:55:12+00:00",
       "error": ""
     },
     {
@@ -4085,12 +4409,12 @@
       "requested_date": "2026-10-05",
       "actual_source_date": "2026-10-05",
       "status": "accepted",
-      "row_count": 13,
+      "row_count": 14,
       "http_status": 200,
       "response_bytes": 1826202,
       "source_url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2026/10/05&response=json",
       "source_hash": "c387e24da79739db89b1e26bf01ab30a81241a695d345857d426e4f2bf0bbb21",
-      "retrieved_at_utc": "2026-10-05T18:32:30+00:00",
+      "retrieved_at_utc": "2026-10-11T23:55:12+00:00",
       "error": ""
     },
     {
@@ -4099,12 +4423,12 @@
       "requested_date": "2026-10-05",
       "actual_source_date": "2026-10-05",
       "status": "accepted",
-      "row_count": 37,
+      "row_count": 40,
       "http_status": 200,
       "response_bytes": 192194,
       "source_url": "https://www.twse.com.tw/fund/T86?date=20261005&selectType=ALLBUT0999&response=json",
-      "source_hash": "3c01f5923b3039da31e9e133a2f87decd2b8a85095c94d224659c3ccbc4bf882",
-      "retrieved_at_utc": "2026-10-05T18:32:37+00:00",
+      "source_hash": "853565dedb4eecb280b63eef934e9e1fb9dc6ea3a9fea0e3ea5057a72645f100",
+      "retrieved_at_utc": "2026-10-11T23:58:15+00:00",
       "error": ""
     },
     {
@@ -4113,12 +4437,12 @@
       "requested_date": "2026-10-05",
       "actual_source_date": "2026-10-05",
       "status": "accepted",
-      "row_count": 37,
+      "row_count": 40,
       "http_status": 200,
       "response_bytes": 129101,
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_MARGN?date=20261005&selectType=ALL&response=json",
       "source_hash": "a53959a16deb815e3b0a9e211ea50d2fba5aaa8b26eb44c23fedd96e3893038a",
-      "retrieved_at_utc": "2026-10-05T18:32:40+00:00",
+      "retrieved_at_utc": "2026-10-11T23:58:16+00:00",
       "error": ""
     },
     {
@@ -4127,12 +4451,12 @@
       "requested_date": "2026-10-05",
       "actual_source_date": "2026-10-05",
       "status": "accepted",
-      "row_count": 50,
+      "row_count": 54,
       "http_status": 200,
       "response_bytes": 201618,
       "source_url": "https://www.twse.com.tw/exchangeReport/TWT72U?date=20261005&response=json",
       "source_hash": "54003a28b28deeedffd4f39dcf9cdbae41953749aba0363db89c7a6d8eb69ee0",
-      "retrieved_at_utc": "2026-10-05T18:32:41+00:00",
+      "retrieved_at_utc": "2026-10-11T23:58:17+00:00",
       "error": ""
     },
     {
@@ -4141,12 +4465,12 @@
       "requested_date": "2026-10-05",
       "actual_source_date": "2026-10-05",
       "status": "accepted",
-      "row_count": 13,
+      "row_count": 14,
       "http_status": 200,
       "response_bytes": 148099,
       "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/dailyTrade",
       "source_hash": "8f03c933e8df25e374cafb392acde41922f62aa1adc8544d57efd858a68b86cb",
-      "retrieved_at_utc": "2026-10-05T18:32:43+00:00",
+      "retrieved_at_utc": "2026-10-11T23:58:17+00:00",
       "error": ""
     },
     {
@@ -4155,12 +4479,12 @@
       "requested_date": "2026-10-05",
       "actual_source_date": "2026-10-05",
       "status": "accepted",
-      "row_count": 13,
+      "row_count": 14,
       "http_status": 200,
       "response_bytes": 107421,
       "source_url": "https://www.tpex.org.tw/www/zh-tw/margin/balance",
       "source_hash": "4d11556d9df877e74e016e934863ee914c111378b90eb3822c4fe9d6e1afe8b0",
-      "retrieved_at_utc": "2026-10-05T18:32:44+00:00",
+      "retrieved_at_utc": "2026-10-11T23:58:18+00:00",
       "error": ""
     },
     {
@@ -4169,12 +4493,12 @@
       "requested_date": "2026-10-05",
       "actual_source_date": "2026-10-05",
       "status": "accepted",
-      "row_count": 13,
+      "row_count": 14,
       "http_status": 200,
       "response_bytes": 99437,
       "source_url": "https://www.tpex.org.tw/www/zh-tw/margin/sbl",
       "source_hash": "ac447c504fcd1b28110affe21d44a0db9dcfb44fd9ce39227adb23d493a6870f",
-      "retrieved_at_utc": "2026-10-05T18:32:46+00:00",
+      "retrieved_at_utc": "2026-10-11T23:58:18+00:00",
       "error": ""
     }
   ],

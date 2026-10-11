@@ -42,7 +42,7 @@
       "response_bytes": 61,
       "source_url": "https://www.twse.com.tw/fund/T86?date=20260925&selectType=ALLBUT0999&response=json",
       "source_hash": "b32125d0522389d773814d2be85a9d7363b2c21185aab3d55708a2a8014a18a9",
-      "retrieved_at_utc": "2026-10-01T07:15:09+00:00",
+      "retrieved_at_utc": "2026-10-11T23:57:44+00:00",
       "error": ""
     },
     {
@@ -56,7 +56,7 @@
       "response_bytes": 50,
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_MARGN?date=20260925&selectType=ALL&response=json",
       "source_hash": "1857ef3a55678c4757560d15a68c3b7823fd0023b6762656faa31acce2d13538",
-      "retrieved_at_utc": "2026-10-01T07:15:10+00:00",
+      "retrieved_at_utc": "2026-10-11T23:57:45+00:00",
       "error": ""
     },
     {
@@ -70,7 +70,7 @@
       "response_bytes": 61,
       "source_url": "https://www.twse.com.tw/exchangeReport/TWT72U?date=20260925&response=json",
       "source_hash": "b32125d0522389d773814d2be85a9d7363b2c21185aab3d55708a2a8014a18a9",
-      "retrieved_at_utc": "2026-10-01T07:15:11+00:00",
+      "retrieved_at_utc": "2026-10-11T23:57:45+00:00",
       "error": ""
     },
     {
@@ -84,7 +84,7 @@
       "response_bytes": 641,
       "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/dailyTrade",
       "source_hash": "110d16d7d2971fd88d558405e2df5981f3f0b90ef38541d989c960561ad080c1",
-      "retrieved_at_utc": "2026-10-01T07:15:11+00:00",
+      "retrieved_at_utc": "2026-10-11T23:57:46+00:00",
       "error": ""
     },
     {
@@ -98,7 +98,7 @@
       "response_bytes": 419,
       "source_url": "https://www.tpex.org.tw/www/zh-tw/margin/balance",
       "source_hash": "2fb320713b8b97f186c6145140e0a54107fe178eebca6b408e5c8a841a6e06aa",
-      "retrieved_at_utc": "2026-10-01T07:15:11+00:00",
+      "retrieved_at_utc": "2026-10-11T23:57:46+00:00",
       "error": ""
     },
     {
@@ -112,7 +112,7 @@
       "response_bytes": 379,
       "source_url": "https://www.tpex.org.tw/www/zh-tw/margin/sbl",
       "source_hash": "77cf9aec365a3f9285ce373d7fded7fcba3e2ae8c5211b5a4fe06dcc46862140",
-      "retrieved_at_utc": "2026-10-01T07:15:12+00:00",
+      "retrieved_at_utc": "2026-10-11T23:57:46+00:00",
       "error": ""
     }
   ],
