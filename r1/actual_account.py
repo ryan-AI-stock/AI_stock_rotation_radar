@@ -37,7 +37,7 @@ def build_actual_account(*, date: str, config_path: str | Path,
         candidate = json.loads(Path(broker_snapshot_path).read_text(encoding="utf-8"))
         if candidate.get("as_of_date") == date:
             broker_snapshot = candidate
-            reported = candidate.get("reported_equity_market_value")
+            reported = candidate.get("owner_equity_market_value", candidate.get("reported_equity_market_value"))
             if isinstance(reported, (int, float)):
                 equity_market_value = float(reported)
     holding_detail_gap = bool(broker_snapshot and broker_snapshot.get("status") != "READY")

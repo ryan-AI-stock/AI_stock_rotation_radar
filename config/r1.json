@@ -104,7 +104,7 @@
     {"ticker": "3583", "company": "辛耘", "market": "TWSE", "shares": 0, "core_lock": false, "roles": ["UNIVERSE"]},
     {"ticker": "2408", "company": "南亞科", "market": "TWSE", "shares": 1147, "core_lock": false, "roles": ["PORTFOLIO", "UNIVERSE"]},
     {"ticker": "3081", "company": "聯亞", "market": "TPEx", "shares": 220, "core_lock": false, "roles": ["PORTFOLIO", "UNIVERSE"]},
-    {"ticker": "2303", "company": "聯電", "market": "TWSE", "shares": 0, "core_lock": false, "roles": ["UNIVERSE"]},
+    {"ticker": "2303", "company": "聯電", "market": "TWSE", "shares": 5000, "core_lock": false, "roles": ["PORTFOLIO", "UNIVERSE"]},
     {"ticker": "3008", "company": "大立光", "market": "TWSE", "shares": 0, "core_lock": false, "roles": ["DISCOVERY_CANDIDATE"]},
     {"ticker": "3406", "company": "玉晶光", "market": "TWSE", "shares": 0, "core_lock": false, "roles": ["DISCOVERY_CANDIDATE"]},
     {"ticker": "2337", "company": "旺宏", "market": "TWSE", "shares": 0, "core_lock": false, "roles": ["UNIVERSE"]},

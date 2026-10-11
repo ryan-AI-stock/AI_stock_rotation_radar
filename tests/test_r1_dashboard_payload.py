@@ -42,7 +42,7 @@ class R1DashboardPayloadTest(unittest.TestCase):
         self.assertTrue({"2454", "2408", "3081", "2308", "3037"} <= shown)
         self.assertIn("2327", shown)
         self.assertIn("3081", shown)
-        self.assertNotIn("2303", shown)
+        self.assertIn("2303", shown)
 
     def test_dashboard_cannot_claim_trade_ready(self):
         payload = build_dashboard_payload(config_path=ROOT / "config/r1.json",
