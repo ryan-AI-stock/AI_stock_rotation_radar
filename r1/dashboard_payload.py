@@ -38,6 +38,10 @@ PERFORMANCE_LINE_LABELS = {
     "ORIGINAL_HOLD": "8/5原持股完全不動",
 }
 
+RECOMMENDATION_DISPLAY = {
+    ("NO_ACTION", "HOLD"): ("資料不足", "尚無法產生換倉建議"),
+}
+
 
 def _build_v03_dashboard(*, config: R1Config, market: dict, theme_review: dict,
                          theme_path: str | Path, transition: dict | None = None,
@@ -96,7 +100,11 @@ def _build_v03_dashboard(*, config: R1Config, market: dict, theme_review: dict,
           for item in comparison.get("rows", [])],
         ["03｜今日換倉建議"],
         ["優先序", "動作", "換出", "換入", "理由／狀態"],
-        *[[item["priority"], item["action"], item.get("source_ticker", ""),
+        *[[RECOMMENDATION_DISPLAY.get((item["priority"], item["action"]),
+                                     (item["priority"], item["action"]))[0],
+           RECOMMENDATION_DISPLAY.get((item["priority"], item["action"]),
+                                     (item["priority"], item["action"]))[1],
+           item.get("source_ticker", ""),
            f"{item.get('target_ticker', '')} {item.get('target_company', '')}".strip(), item["reason"]]
           for item in recommendations],
     ])
