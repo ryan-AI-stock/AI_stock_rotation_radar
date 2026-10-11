@@ -5,6 +5,7 @@ description = "Taiwan market-theme rotation radar and swing-trading HTML report 
 requires-python = ">=3.11"
 dependencies = [
     "beautifulsoup4",
+    "curl-cffi",
     "google-api-python-client",
     "google-auth",
     "playwright",

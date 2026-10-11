@@ -9,12 +9,23 @@ from datetime import date
 from pathlib import Path
 
 import requests
+from curl_cffi import requests as browser_requests
 
 FIELDS = (
     "ticker", "fiscal_year", "source_data_date", "eps_90d", "eps_60d",
     "eps_30d", "eps_current", "revision_30d", "revision_90d", "source_url",
     "available_at", "retrieved_at", "basis", "status",
 )
+
+
+def _get_public_page(url: str, *, timeout: int, headers: dict[str, str]):
+    response = requests.get(url, timeout=timeout, headers=headers)
+    if response.status_code != 403:
+        response.raise_for_status()
+        return response
+    fallback = browser_requests.get(url, timeout=timeout, impersonate="chrome")
+    fallback.raise_for_status()
+    return fallback
 
 
 def parse_revision_panel(text: str, *, ticker: str) -> dict[str, str]:
@@ -105,8 +116,7 @@ def acquire(*, tickers: list[str], output_path: str | Path, checkpoint_path: str
         main_url = f"https://toalpha.tw/stock/{ticker}"
         try:
             headers = {"User-Agent": "Mozilla/5.0 R1 research"}
-            response = requests.get(main_url, timeout=timeout, headers=headers)
-            response.raise_for_status()
+            response = _get_public_page(main_url, timeout=timeout, headers=headers)
             row = parse_revision_panel(response.text, ticker=ticker)
             source_data_date = row["source_data_date"]
             row.update({
@@ -119,7 +129,7 @@ def acquire(*, tickers: list[str], output_path: str | Path, checkpoint_path: str
             })
             progress["completed"][ticker] = row
             progress["failed"].pop(ticker, None)
-        except (requests.RequestException, ValueError) as exc:
+        except (requests.RequestException, browser_requests.errors.RequestsError, ValueError) as exc:
             progress["failed"][ticker] = {"url": main_url, "error": str(exc)}
         checkpoint.write_text(json.dumps(progress, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     _upsert(Path(output_path), list(progress["completed"].values()))

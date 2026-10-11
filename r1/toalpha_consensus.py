@@ -9,6 +9,7 @@ from datetime import date
 from pathlib import Path
 
 import requests
+from curl_cffi import requests as browser_requests
 
 
 CONSENSUS_FIELDS = (
@@ -20,6 +21,16 @@ EVIDENCE_FIELDS = (
     "ticker", "fiscal_year", "source_url", "source_family", "source_tier",
     "available_at", "note",
 )
+
+
+def _get_public_page(url: str, *, timeout: int):
+    response = requests.get(url, timeout=timeout, headers={"User-Agent": "Mozilla/5.0 R1 research"})
+    if response.status_code != 403:
+        response.raise_for_status()
+        return response
+    fallback = browser_requests.get(url, timeout=timeout, impersonate="chrome")
+    fallback.raise_for_status()
+    return fallback
 
 
 def required_fiscal_years(as_of_date: str) -> set[str]:
@@ -126,17 +137,12 @@ def acquire(*, tickers: list[str], consensus_path: str | Path, evidence_path: st
             continue
         url = f"https://toalpha.tw/stock/{ticker}/estimates"
         try:
-            response = requests.get(url, timeout=timeout, headers={"User-Agent": "Mozilla/5.0 R1 research"})
-            response.raise_for_status()
+            response = _get_public_page(url, timeout=timeout)
             try:
                 rows = parse_estimates_page(response.text, ticker=ticker, retrieved_at=retrieved_at)
             except ValueError:
                 rows = []
-            eps_response = requests.get(
-                f"https://toalpha.tw/stock/{ticker}/eps", timeout=timeout,
-                headers={"User-Agent": "Mozilla/5.0 R1 research"},
-            )
-            eps_response.raise_for_status()
+            eps_response = _get_public_page(f"https://toalpha.tw/stock/{ticker}/eps", timeout=timeout)
             fallback = parse_eps_page(eps_response.text, ticker=ticker, retrieved_at=retrieved_at)
             by_year = {row["fiscal_year"]: row for row in fallback}
             by_year.update({row["fiscal_year"]: row for row in rows})
@@ -146,7 +152,7 @@ def acquire(*, tickers: list[str], consensus_path: str | Path, evidence_path: st
                 raise ValueError("missing_fiscal_years:" + ",".join(missing_years))
             progress["completed"][ticker] = {"url": url, "rows": rows}
             progress["failed"].pop(ticker, None)
-        except (requests.RequestException, ValueError) as exc:
+        except (requests.RequestException, browser_requests.errors.RequestsError, ValueError) as exc:
             progress["failed"][ticker] = {"url": url, "error": str(exc)}
         checkpoint.write_text(json.dumps(progress, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     _upsert_missing(progress, Path(consensus_path), Path(evidence_path))
