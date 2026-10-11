@@ -90,13 +90,13 @@ def _format_workbook(client: SheetsClient, dashboard_rows: list[list[object]]) -
     ids = {row["properties"]["title"]: int(row["properties"]["sheetId"]) for row in response.json()["sheets"]}
     dashboard_id = ids[DASHBOARD]
     dashboard_width = max(len(row) for row in dashboard_rows)
-    holding_header = next(index for index, row in enumerate(dashboard_rows)
-                          if row and row[0] == "所屬題材")
+    holding_header = next((index for index, row in enumerate(dashboard_rows)
+                           if row and row[0] == "所屬題材"), -1)
     performance_section = next(index for index, row in enumerate(dashboard_rows)
                                if row and row[0] == "02｜三條績效線")
-    transition_status = next(index for index, row in enumerate(dashboard_rows)
-                             if row and row[0] == "狀態" and len(row) > 2
-                             and row[2] == "候選池下跌比例")
+    transition_status = next((index for index, row in enumerate(dashboard_rows)
+                              if row and row[0] == "狀態" and len(row) > 2
+                              and row[2] == "候選池下跌比例"), max(len(dashboard_rows) - 2, 0))
     navy = {"red": 0.0784, "green": 0.2, "blue": 0.2863}
     light = {"red": 0.91, "green": 0.957, "blue": 0.957}
     white = {"red": 1.0, "green": 1.0, "blue": 1.0}
