@@ -357,26 +357,25 @@
       "company": "廣達",
       "structural_bottleneck": null,
       "revenue_earnings_realization": null,
-      "consensus_target_upside": null,
+      "consensus_target_upside": 0.0,
       "target_revision_and_breadth": null,
       "theme_momentum_and_catalyst": null,
       "relative_valuation": null,
       "price_chip_risk": null,
       "v05_total_score": null,
-      "v05_observed_points": 0,
-      "v05_observed_max_points": 0,
-      "v05_observed_weight": 0,
+      "v05_observed_points": 0.0,
+      "v05_observed_max_points": 20.0,
+      "v05_observed_weight": 0.2,
       "v05_status": "DATA_MISSING",
       "v05_missing_components": [
         "structural_bottleneck",
         "revenue_earnings_realization",
-        "consensus_target_upside",
         "target_revision_and_breadth",
         "theme_momentum_and_catalyst",
         "relative_valuation",
         "price_chip_risk"
       ],
-      "v05_reason": "缺少：structural_bottleneck、revenue_earnings_realization、consensus_target_upside、target_revision_and_breadth、theme_momentum_and_catalyst、relative_valuation、price_chip_risk"
+      "v05_reason": "缺少：structural_bottleneck、revenue_earnings_realization、target_revision_and_breadth、theme_momentum_and_catalyst、relative_valuation、price_chip_risk"
     },
     {
       "date": "2026-10-08",

@@ -704,13 +704,18 @@
     {
       "ticker": "2382",
       "as_of_date": "2026-10-08",
-      "institution_count": 0,
-      "consensus_target_price": null,
-      "consensus_upside": null,
-      "dispersion": null,
-      "status": "DATA_MISSING",
-      "scoreable": false,
-      "rejected": [],
+      "institution_count": 3,
+      "consensus_target_price": 75.0,
+      "consensus_upside": -0.7695852534562212,
+      "dispersion": 0.12466666666666659,
+      "status": "READY",
+      "scoreable": true,
+      "rejected": [
+        {
+          "institution": "BofA Securities",
+          "error": "stale"
+        }
+      ],
       "source_policy": "12M median; independent identifiable institutions; PIT max 90 days"
     },
     {
@@ -861,6 +866,6 @@
     }
   ],
   "requested_ticker_count": 54,
-  "ready_ticker_count": 8,
+  "ready_ticker_count": 9,
   "source": "data/r1/target_prices/evidence.csv"
 }
