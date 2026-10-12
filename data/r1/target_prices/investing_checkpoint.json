@@ -10,7 +10,7 @@
       "retrieved_at": "2026-10-12",
       "row_count": 0,
       "status": "SOURCE_GAP",
-      "error": "ValueError:identifiable_analyst_target_rows_missing"
+      "error": "HTTPError:HTTP Error 403: "
     },
     "2344": {
       "retrieved_at": "2026-10-12",
@@ -40,13 +40,13 @@
       "retrieved_at": "2026-10-12",
       "row_count": 0,
       "status": "SOURCE_GAP",
-      "error": "ValueError:identifiable_analyst_target_rows_missing"
+      "error": "HTTPError:HTTP Error 403: "
     },
     "3661": {
       "retrieved_at": "2026-10-12",
       "row_count": 0,
       "status": "SOURCE_GAP",
-      "error": "ValueError:identifiable_analyst_target_rows_missing"
+      "error": "HTTPError:HTTP Error 403: "
     },
     "3443": {
       "retrieved_at": "2026-10-12",
@@ -70,7 +70,7 @@
       "retrieved_at": "2026-10-12",
       "row_count": 0,
       "status": "SOURCE_GAP",
-      "error": "ValueError:identifiable_analyst_target_rows_missing"
+      "error": "HTTPError:HTTP Error 403: "
     },
     "6187": {
       "retrieved_at": "2026-10-12",
@@ -82,13 +82,13 @@
       "retrieved_at": "2026-10-12",
       "row_count": 0,
       "status": "SOURCE_GAP",
-      "error": "ValueError:identifiable_analyst_target_rows_missing"
+      "error": "HTTPError:HTTP Error 403: "
     },
     "2408": {
       "retrieved_at": "2026-10-12",
       "row_count": 0,
       "status": "SOURCE_GAP",
-      "error": "HTTPError:HTTP Error 403: "
+      "error": "ValueError:identifiable_analyst_target_rows_missing"
     },
     "3081": {
       "retrieved_at": "2026-10-12",
@@ -124,7 +124,7 @@
       "retrieved_at": "2026-10-12",
       "row_count": 0,
       "status": "SOURCE_GAP",
-      "error": "ValueError:identifiable_analyst_target_rows_missing"
+      "error": "HTTPError:HTTP Error 403: "
     },
     "3260": {
       "retrieved_at": "2026-10-12",
@@ -136,7 +136,7 @@
       "retrieved_at": "2026-10-12",
       "row_count": 0,
       "status": "SOURCE_GAP",
-      "error": "ValueError:identifiable_analyst_target_rows_missing"
+      "error": "HTTPError:HTTP Error 403: "
     },
     "6274": {
       "retrieved_at": "2026-10-12",
@@ -154,7 +154,7 @@
       "retrieved_at": "2026-10-12",
       "row_count": 0,
       "status": "SOURCE_GAP",
-      "error": "HTTPError:HTTP Error 403: "
+      "error": "ValueError:identifiable_analyst_target_rows_missing"
     },
     "2345": {
       "retrieved_at": "2026-10-12",
@@ -166,13 +166,13 @@
       "retrieved_at": "2026-10-12",
       "row_count": 0,
       "status": "SOURCE_GAP",
-      "error": "ValueError:identifiable_analyst_target_rows_missing"
+      "error": "HTTPError:HTTP Error 403: "
     },
     "4979": {
       "retrieved_at": "2026-10-12",
       "row_count": 0,
       "status": "SOURCE_GAP",
-      "error": "ValueError:identifiable_analyst_target_rows_missing"
+      "error": "HTTPError:HTTP Error 403: "
     },
     "6442": {
       "retrieved_at": "2026-10-12",
@@ -184,7 +184,7 @@
       "retrieved_at": "2026-10-12",
       "row_count": 0,
       "status": "SOURCE_GAP",
-      "error": "ValueError:identifiable_analyst_target_rows_missing"
+      "error": "HTTPError:HTTP Error 403: "
     },
     "2301": {
       "retrieved_at": "2026-10-12",
@@ -268,7 +268,7 @@
       "retrieved_at": "2026-10-12",
       "row_count": 0,
       "status": "SOURCE_GAP",
-      "error": "ValueError:identifiable_analyst_target_rows_missing"
+      "error": "HTTPError:HTTP Error 403: "
     },
     "2317": {
       "retrieved_at": "2026-10-12",
@@ -286,7 +286,7 @@
       "retrieved_at": "2026-10-12",
       "row_count": 0,
       "status": "SOURCE_GAP",
-      "error": "ValueError:identifiable_analyst_target_rows_missing"
+      "error": "HTTPError:HTTP Error 403: "
     },
     "2308": {
       "retrieved_at": "2026-10-12",
@@ -304,25 +304,25 @@
       "retrieved_at": "2026-10-12",
       "row_count": 0,
       "status": "SOURCE_GAP",
-      "error": "ValueError:identifiable_analyst_target_rows_missing"
+      "error": "HTTPError:HTTP Error 403: "
     },
     "6182": {
       "retrieved_at": "2026-10-12",
       "row_count": 0,
       "status": "SOURCE_GAP",
-      "error": "ValueError:identifiable_analyst_target_rows_missing"
+      "error": "HTTPError:HTTP Error 403: "
     },
     "1560": {
       "retrieved_at": "2026-10-12",
       "row_count": 0,
       "status": "SOURCE_GAP",
-      "error": "ValueError:identifiable_analyst_target_rows_missing"
+      "error": "HTTPError:HTTP Error 403: "
     },
     "3131": {
       "retrieved_at": "2026-10-12",
       "row_count": 0,
       "status": "SOURCE_GAP",
-      "error": "ValueError:identifiable_analyst_target_rows_missing"
+      "error": "HTTPError:HTTP Error 403: "
     }
   },
   "last_summary": {
@@ -334,22 +334,22 @@
     "total_evidence_row_count": 111,
     "failures": {
       "2330": "HTTPError:HTTP Error 403: ",
-      "2327": "ValueError:identifiable_analyst_target_rows_missing",
+      "2327": "HTTPError:HTTP Error 403: ",
       "2376": "HTTPError:HTTP Error 403: ",
-      "6488": "ValueError:identifiable_analyst_target_rows_missing",
-      "3661": "ValueError:identifiable_analyst_target_rows_missing",
-      "6223": "ValueError:identifiable_analyst_target_rows_missing",
-      "3583": "ValueError:identifiable_analyst_target_rows_missing",
-      "2408": "HTTPError:HTTP Error 403: ",
+      "6488": "HTTPError:HTTP Error 403: ",
+      "3661": "HTTPError:HTTP Error 403: ",
+      "6223": "HTTPError:HTTP Error 403: ",
+      "3583": "HTTPError:HTTP Error 403: ",
+      "2408": "ValueError:identifiable_analyst_target_rows_missing",
       "2337": "HTTPError:HTTP Error 403: ",
-      "8299": "ValueError:identifiable_analyst_target_rows_missing",
+      "8299": "HTTPError:HTTP Error 403: ",
       "3260": "HTTPError:HTTP Error 403: ",
-      "2383": "ValueError:identifiable_analyst_target_rows_missing",
-      "2368": "HTTPError:HTTP Error 403: ",
-      "3363": "ValueError:identifiable_analyst_target_rows_missing",
-      "4979": "ValueError:identifiable_analyst_target_rows_missing",
+      "2383": "HTTPError:HTTP Error 403: ",
+      "2368": "ValueError:identifiable_analyst_target_rows_missing",
+      "3363": "HTTPError:HTTP Error 403: ",
+      "4979": "HTTPError:HTTP Error 403: ",
       "6442": "ValueError:identifiable_analyst_target_rows_missing",
-      "3163": "ValueError:identifiable_analyst_target_rows_missing",
+      "3163": "HTTPError:HTTP Error 403: ",
       "6282": "HTTPError:HTTP Error 403: ",
       "6412": "ValueError:identifiable_analyst_target_rows_missing",
       "2492": "HTTPError:HTTP Error 403: ",
@@ -357,14 +357,14 @@
       "6230": "HTTPError:HTTP Error 403: ",
       "3338": "ValueError:identifiable_analyst_target_rows_missing",
       "3231": "HTTPError:HTTP Error 403: ",
-      "6669": "ValueError:identifiable_analyst_target_rows_missing",
+      "6669": "HTTPError:HTTP Error 403: ",
       "2317": "HTTPError:HTTP Error 403: ",
-      "3711": "ValueError:identifiable_analyst_target_rows_missing",
+      "3711": "HTTPError:HTTP Error 403: ",
       "2379": "HTTPError:HTTP Error 403: ",
-      "3532": "ValueError:identifiable_analyst_target_rows_missing",
-      "6182": "ValueError:identifiable_analyst_target_rows_missing",
-      "1560": "ValueError:identifiable_analyst_target_rows_missing",
-      "3131": "ValueError:identifiable_analyst_target_rows_missing"
+      "3532": "HTTPError:HTTP Error 403: ",
+      "6182": "HTTPError:HTTP Error 403: ",
+      "1560": "HTTPError:HTTP Error 403: ",
+      "3131": "HTTPError:HTTP Error 403: "
     }
   }
 }

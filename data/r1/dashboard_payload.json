@@ -651,13 +651,13 @@
         null,
         null,
         false,
-        false,
-        false,
+        true,
+        true,
         false,
         true,
         null,
         "DATA_MISSING",
-        "CONSENSUS_NOT_READY;EPS_REVISION_HISTORY_NOT_READY;CATALYST_EVIDENCE_NOT_READY;BOTTLENECK_EVIDENCE_NOT_READY;VALUATION_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
+        "CONSENSUS_NOT_READY;EPS_REVISION_HISTORY_NOT_READY;VALUATION_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
       ],
       [
         "2026-10-08",
@@ -678,13 +678,13 @@
         null,
         null,
         false,
-        false,
-        false,
+        true,
+        true,
         false,
         true,
         null,
         "DATA_MISSING",
-        "CONSENSUS_NOT_READY;EPS_REVISION_HISTORY_NOT_READY;CATALYST_EVIDENCE_NOT_READY;BOTTLENECK_EVIDENCE_NOT_READY;VALUATION_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
+        "CONSENSUS_NOT_READY;EPS_REVISION_HISTORY_NOT_READY;VALUATION_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
       ],
       [
         "2026-10-08",
@@ -1623,13 +1623,13 @@
         null,
         null,
         false,
-        false,
-        false,
+        true,
+        true,
         false,
         true,
         null,
         "DATA_MISSING",
-        "CONSENSUS_NOT_READY;EPS_REVISION_HISTORY_NOT_READY;CATALYST_EVIDENCE_NOT_READY;BOTTLENECK_EVIDENCE_NOT_READY;VALUATION_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
+        "CONSENSUS_NOT_READY;EPS_REVISION_HISTORY_NOT_READY;VALUATION_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
       ],
       [
         "2026-10-08",

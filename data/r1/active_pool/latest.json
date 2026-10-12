@@ -213,7 +213,7 @@
       "recent_catalyst_event_count": 0,
       "monthly_revenue_acceleration": "NOT_ACCELERATING",
       "six_month_earnings_visibility": "DATA_MISSING",
-      "bottleneck_scarcity": "DATA_MISSING",
+      "bottleneck_scarcity": "HIGH",
       "price_catch_up": "DATA_MISSING",
       "six_month_risk_gate": "DATA_MISSING",
       "data_confidence": "LOW_CONFIDENCE",
@@ -242,7 +242,7 @@
       "reasons": [
         "CONSENSUS_NOT_ACTIONABLE",
         "NO_VERIFIED_EVENT_IN_WINDOW",
-        "NO_VERIFIED_BOTTLENECK_EVIDENCE",
+        "EVIDENCE_FAMILIES_2",
         "EARNINGS_VISIBILITY_NOT_READY"
       ]
     },
@@ -811,7 +811,7 @@
       "recent_catalyst_event_count": 0,
       "monthly_revenue_acceleration": "NOT_ACCELERATING",
       "six_month_earnings_visibility": "DATA_MISSING",
-      "bottleneck_scarcity": "DATA_MISSING",
+      "bottleneck_scarcity": "HIGH",
       "price_catch_up": "DATA_MISSING",
       "six_month_risk_gate": "DATA_MISSING",
       "data_confidence": "LOW_CONFIDENCE",
@@ -840,7 +840,7 @@
       "reasons": [
         "CONSENSUS_NOT_ACTIONABLE",
         "NO_VERIFIED_EVENT_IN_WINDOW",
-        "NO_VERIFIED_BOTTLENECK_EVIDENCE",
+        "EVIDENCE_FAMILIES_2",
         "EARNINGS_VISIBILITY_NOT_READY"
       ]
     },
@@ -995,7 +995,7 @@
       "recent_catalyst_event_count": 0,
       "monthly_revenue_acceleration": "NOT_ACCELERATING",
       "six_month_earnings_visibility": "DATA_MISSING",
-      "bottleneck_scarcity": "DATA_MISSING",
+      "bottleneck_scarcity": "HIGH",
       "price_catch_up": "DATA_MISSING",
       "six_month_risk_gate": "DATA_MISSING",
       "data_confidence": "LOW_CONFIDENCE",
@@ -1024,7 +1024,7 @@
       "reasons": [
         "CONSENSUS_NOT_ACTIONABLE",
         "NO_VERIFIED_EVENT_IN_WINDOW",
-        "NO_VERIFIED_BOTTLENECK_EVIDENCE",
+        "EVIDENCE_FAMILIES_2",
         "EARNINGS_VISIBILITY_NOT_READY"
       ]
     },
