@@ -1,10 +1,11 @@
 import json
+import inspect
 import tempfile
 import unittest
 from pathlib import Path
 from unittest.mock import patch
 
-from r1 import dashboard_publish
+from r1 import dashboard_payload, dashboard_publish
 from r1.dashboard_schema import TAB_SCHEMAS
 
 
@@ -37,6 +38,12 @@ class FakeSheetsClient:
 
 
 class R1DashboardPublishTest(unittest.TestCase):
+    def test_dashboard_uses_v05_seven_component_rotation_weights(self):
+        source = inspect.getsource(dashboard_payload._build_v03_dashboard)
+        self.assertIn("每日換倉優先序", source)
+        self.assertIn("20%／20%／20%／10%／10%／10%／10%", source)
+        self.assertNotIn("30%／25%／20%／15%／10%", source)
+
     def test_dashboard_section_formatting_is_derived_from_content(self):
         rows = [["Ryan｜R1實際帳戶總覽與換倉顧問"], ["資料"], ["01｜排名"], ["順位", "股票"],
                 ["Top1"], ["05｜模型完整說明"], ["說明"]]
