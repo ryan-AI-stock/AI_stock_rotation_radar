@@ -1,4 +1,4 @@
-name: Audit six stock publications
+name: Audit active stock publications
 on:
   workflow_dispatch:
 concurrency:
@@ -16,7 +16,7 @@ jobs:
         with:
           python-version: '3.11'
       - run: pip install '.[test]' pypdf
-      - name: Read actual PDF dates and every Dashboard plus database
+      - name: Read three PDF dates and R1 Dashboard plus database
         env:
           GOOGLE_OAUTH_CLIENT_ID: ${{ secrets.GOOGLE_OAUTH_CLIENT_ID }}
           GOOGLE_OAUTH_CLIENT_SECRET: ${{ secrets.GOOGLE_OAUTH_CLIENT_SECRET }}

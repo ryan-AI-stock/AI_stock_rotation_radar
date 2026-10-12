@@ -13,9 +13,8 @@ from .sheets_retry import request
 from .v4d_dashboard_publish import SheetsClient
 
 SHEETS = {
-    'v4d': ('1CXwlB2ywUxOzLH5aAqymJSJJq-V5jTl_zOJAuuGk5Uk', 'V4-D Dashboard', 'V4-D每日訊號資料庫'),
-    'c6_simulation': ('1_t5jrM0ZZArrmF67mpgHIqj_tPLFGu3Cpfcko1Qz_vQ', 'C6 Dashboard', 'C6每日訊號資料庫'),
-    'c6_actual': ('19Xls-N_835V98_pM2TfLJSLlzKdXc6RztZfhJFEC1Dg', 'C6 Dashboard', 'C6每日訊號資料庫'),
+    # V4-D and both C6 publications are intentionally paused by Ryan.
+    'r1': ('1j-Uh_hR3VgIqW-0ZdXuPPTrXN7arxAc_BxyA_h5U95M', 'R1 Dashboard', 'R1每日訊號資料庫'),
 }
 PDFS = {
     'daily_pdf': '1qZXv2cB6Rf-7_zKh0DzbGW-ZFebRuD0Z',
@@ -71,7 +70,7 @@ def audit():
     if target is None:
         raise RuntimeError('No completed session')
     weekly = last_completed_week(target, opens, closed)
-    client = SheetsClient(SHEETS['v4d'][0])
+    client = SheetsClient(SHEETS['r1'][0])
     headers = client.headers
     results = {}
     for key, (sid, dashboard, database) in SHEETS.items():

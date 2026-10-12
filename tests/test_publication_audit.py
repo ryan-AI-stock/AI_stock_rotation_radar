@@ -1,9 +1,14 @@
 import unittest
 from datetime import date
+from rotation_radar import publication_audit
 from rotation_radar.publication_audit import pdf_date, last_completed_week, assess
 
 
 class PublicationAuditTests(unittest.TestCase):
+    def test_only_currently_active_publications_are_audited(self):
+        self.assertEqual(set(publication_audit.SHEETS), {'r1'})
+        self.assertEqual(set(publication_audit.PDFS), {'daily_pdf', 'weekly_pdf', 'radar_pdf'})
+
     def test_dates_from_labels_not_news(self):
         self.assertEqual(pdf_date('daily_pdf', '新聞2026-09-21\n2026/09/18 收盤後整理'), '2026-09-18')
         self.assertEqual(pdf_date('weekly_pdf', '2026/09/18｜第38週'), '2026-09-18')

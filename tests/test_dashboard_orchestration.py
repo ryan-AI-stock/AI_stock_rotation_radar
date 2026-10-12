@@ -6,9 +6,10 @@ from rotation_radar.schedule_gate import ScheduleGateRules, evaluate_schedule_ga
 ROOT = Path(__file__).resolve().parents[1]
 
 class DashboardOrchestrationTests(unittest.TestCase):
-    def test_single_schedule_and_parallel_children(self):
+    def test_paused_dashboards_have_no_schedule_and_keep_manual_workers(self):
         parent = (ROOT / '.github/workflows/publish-all-stock-dashboards.yml').read_text(encoding='utf-8')
-        self.assertIn('cron: "15 9 * * 1-5"', parent)
+        self.assertNotIn('cron:', parent)
+        self.assertIn('Respect Ryan publication pause', parent)
         self.assertEqual(parent.count('needs: target'), 2)
         self.assertIn('needs: [target, v4d, c6]', parent)
         self.assertIn('test "$V4D_RESULT" = success', parent)
