@@ -20,9 +20,9 @@
     },
     "note": "Calendar eligibility does not guarantee a usable snapshot; the first later weekly run must still contain valid PIT consensus."
   },
-  "catalyst_ready_count": 17,
+  "catalyst_ready_count": 20,
   "catalyst_score_ready_count": 0,
-  "bottleneck_ready_count": 17,
+  "bottleneck_ready_count": 20,
   "price_chip_ready_count": 54,
   "current_chip_ready_count": 54,
   "component_score_ready_count": 0,
@@ -253,9 +253,9 @@
       "ticker": "3035",
       "consensus_ready": false,
       "eps_revision_ready": false,
-      "catalyst_ready": false,
+      "catalyst_ready": true,
       "catalyst_score_ready": false,
-      "bottleneck_ready": false,
+      "bottleneck_ready": true,
       "valuation_ready": false,
       "price_chip_ready": true,
       "current_chip_ready": true,
@@ -270,8 +270,6 @@
       "blocked_reasons": [
         "CONSENSUS_NOT_READY",
         "EPS_REVISION_HISTORY_NOT_READY",
-        "CATALYST_EVIDENCE_NOT_READY",
-        "BOTTLENECK_EVIDENCE_NOT_READY",
         "VALUATION_HISTORY_NOT_READY",
         "ACTION_POLICY_NOT_APPROVED"
       ]
@@ -280,9 +278,9 @@
       "ticker": "2449",
       "consensus_ready": false,
       "eps_revision_ready": false,
-      "catalyst_ready": false,
+      "catalyst_ready": true,
       "catalyst_score_ready": false,
-      "bottleneck_ready": false,
+      "bottleneck_ready": true,
       "valuation_ready": false,
       "price_chip_ready": true,
       "current_chip_ready": true,
@@ -297,8 +295,6 @@
       "blocked_reasons": [
         "CONSENSUS_NOT_READY",
         "EPS_REVISION_HISTORY_NOT_READY",
-        "CATALYST_EVIDENCE_NOT_READY",
-        "BOTTLENECK_EVIDENCE_NOT_READY",
         "VALUATION_HISTORY_NOT_READY",
         "ACTION_POLICY_NOT_APPROVED"
       ]
@@ -1207,9 +1203,9 @@
       "ticker": "2317",
       "consensus_ready": false,
       "eps_revision_ready": false,
-      "catalyst_ready": false,
+      "catalyst_ready": true,
       "catalyst_score_ready": false,
-      "bottleneck_ready": false,
+      "bottleneck_ready": true,
       "valuation_ready": false,
       "price_chip_ready": true,
       "current_chip_ready": true,
@@ -1224,8 +1220,6 @@
       "blocked_reasons": [
         "CONSENSUS_NOT_READY",
         "EPS_REVISION_HISTORY_NOT_READY",
-        "CATALYST_EVIDENCE_NOT_READY",
-        "BOTTLENECK_EVIDENCE_NOT_READY",
         "VALUATION_HISTORY_NOT_READY",
         "ACTION_POLICY_NOT_APPROVED"
       ]

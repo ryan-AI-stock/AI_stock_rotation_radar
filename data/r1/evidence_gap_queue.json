@@ -3,40 +3,13 @@
   "version": "r1-evidence-gap-queue-v0.1",
   "as_of_date": "2026-10-08",
   "requested_ticker_count": 54,
-  "ready_ticker_count": 17,
-  "pending_ticker_count": 37,
+  "ready_ticker_count": 20,
+  "pending_ticker_count": 34,
   "rejected_evidence": {
     "catalyst": [],
     "bottleneck": []
   },
   "rows": [
-    {
-      "ticker": "2449",
-      "company": "京元電子",
-      "theme_id": "advanced_packaging",
-      "priority": 1,
-      "catalyst": {
-        "source_family_count": 0,
-        "source_families": [],
-        "best_source_tier": null,
-        "ready": false,
-        "missing_independent_source_families": 2,
-        "missing_tier_1_or_2_source": true
-      },
-      "bottleneck": {
-        "source_family_count": 0,
-        "source_families": [],
-        "best_source_tier": null,
-        "ready": false,
-        "missing_independent_source_families": 2,
-        "missing_tier_1_or_2_source": true
-      },
-      "missing": [
-        "CATALYST_EVIDENCE",
-        "BOTTLENECK_EVIDENCE"
-      ],
-      "status": "NEEDS_EVIDENCE"
-    },
     {
       "ticker": "3583",
       "company": "辛耘",
@@ -68,33 +41,6 @@
       "ticker": "6187",
       "company": "萬潤",
       "theme_id": "advanced_packaging",
-      "priority": 1,
-      "catalyst": {
-        "source_family_count": 0,
-        "source_families": [],
-        "best_source_tier": null,
-        "ready": false,
-        "missing_independent_source_families": 2,
-        "missing_tier_1_or_2_source": true
-      },
-      "bottleneck": {
-        "source_family_count": 0,
-        "source_families": [],
-        "best_source_tier": null,
-        "ready": false,
-        "missing_independent_source_families": 2,
-        "missing_tier_1_or_2_source": true
-      },
-      "missing": [
-        "CATALYST_EVIDENCE",
-        "BOTTLENECK_EVIDENCE"
-      ],
-      "status": "NEEDS_EVIDENCE"
-    },
-    {
-      "ticker": "3035",
-      "company": "智原",
-      "theme_id": "compute_foundry",
       "priority": 1,
       "catalyst": {
         "source_family_count": 0,
@@ -686,33 +632,6 @@
       "status": "NEEDS_EVIDENCE"
     },
     {
-      "ticker": "2317",
-      "company": "鴻海",
-      "theme_id": "server_rack",
-      "priority": 1,
-      "catalyst": {
-        "source_family_count": 0,
-        "source_families": [],
-        "best_source_tier": null,
-        "ready": false,
-        "missing_independent_source_families": 2,
-        "missing_tier_1_or_2_source": true
-      },
-      "bottleneck": {
-        "source_family_count": 0,
-        "source_families": [],
-        "best_source_tier": null,
-        "ready": false,
-        "missing_independent_source_families": 2,
-        "missing_tier_1_or_2_source": true
-      },
-      "missing": [
-        "CATALYST_EVIDENCE",
-        "BOTTLENECK_EVIDENCE"
-      ],
-      "status": "NEEDS_EVIDENCE"
-    },
-    {
       "ticker": "2356",
       "company": "英業達",
       "theme_id": "server_rack",
@@ -1160,6 +1079,36 @@
       "status": "READY"
     },
     {
+      "ticker": "2449",
+      "company": "京元電子",
+      "theme_id": "advanced_packaging",
+      "priority": 1,
+      "catalyst": {
+        "source_family_count": 2,
+        "source_families": [
+          "kyec_ir",
+          "moneydj_industry"
+        ],
+        "best_source_tier": 1,
+        "ready": true,
+        "missing_independent_source_families": 0,
+        "missing_tier_1_or_2_source": false
+      },
+      "bottleneck": {
+        "source_family_count": 2,
+        "source_families": [
+          "kyec_ir",
+          "moneydj_industry"
+        ],
+        "best_source_tier": 1,
+        "ready": true,
+        "missing_independent_source_families": 0,
+        "missing_tier_1_or_2_source": false
+      },
+      "missing": [],
+      "status": "READY"
+    },
+    {
       "ticker": "3711",
       "company": "日月光投控",
       "theme_id": "advanced_packaging",
@@ -1240,6 +1189,36 @@
         "source_families": [
           "trendforce_research",
           "tsmc_ir"
+        ],
+        "best_source_tier": 1,
+        "ready": true,
+        "missing_independent_source_families": 0,
+        "missing_tier_1_or_2_source": false
+      },
+      "missing": [],
+      "status": "READY"
+    },
+    {
+      "ticker": "3035",
+      "company": "智原",
+      "theme_id": "compute_foundry",
+      "priority": 1,
+      "catalyst": {
+        "source_family_count": 2,
+        "source_families": [
+          "faraday_ir",
+          "moneydj_industry"
+        ],
+        "best_source_tier": 1,
+        "ready": true,
+        "missing_independent_source_families": 0,
+        "missing_tier_1_or_2_source": false
+      },
+      "bottleneck": {
+        "source_family_count": 2,
+        "source_families": [
+          "faraday_ir",
+          "moneydj_industry"
         ],
         "best_source_tier": 1,
         "ready": true,
@@ -1420,6 +1399,36 @@
         "source_families": [
           "technews_industry",
           "yageo_ir"
+        ],
+        "best_source_tier": 1,
+        "ready": true,
+        "missing_independent_source_families": 0,
+        "missing_tier_1_or_2_source": false
+      },
+      "missing": [],
+      "status": "READY"
+    },
+    {
+      "ticker": "2317",
+      "company": "鴻海",
+      "theme_id": "server_rack",
+      "priority": 1,
+      "catalyst": {
+        "source_family_count": 2,
+        "source_families": [
+          "honhai_ir",
+          "trendforce_research"
+        ],
+        "best_source_tier": 1,
+        "ready": true,
+        "missing_independent_source_families": 0,
+        "missing_tier_1_or_2_source": false
+      },
+      "bottleneck": {
+        "source_family_count": 2,
+        "source_families": [
+          "honhai_ir",
+          "trendforce_research"
         ],
         "best_source_tier": 1,
         "ready": true,
