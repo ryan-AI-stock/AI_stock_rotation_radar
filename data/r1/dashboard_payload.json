@@ -234,11 +234,11 @@
         "決定每個題材Top1～Top3"
       ],
       [
-        "優先持有參考值",
-        "結構性龍頭／營收獲利成長／自身歷史估值／價格風險安全度／需求訂單催化",
-        "30%／25%／20%／15%／10%",
-        "每日資料＋週月季事件",
-        "提供Ryan自行比較持有優先序"
+        "每日換倉優先序",
+        "結構瓶頸／營收獲利兌現／12個月目標價上行／目標價修正與機構廣度／題材動能與催化／相對估值／價格籌碼風險",
+        "20%／20%／20%／10%／10%／10%／10%",
+        "每日排名＋每週目標價與事件",
+        "從實際持股角度提供換出／換入優先序"
       ],
       [
         "06｜更新排程"
@@ -624,13 +624,13 @@
         null,
         null,
         false,
-        false,
-        false,
+        true,
+        true,
         false,
         true,
         null,
         "DATA_MISSING",
-        "CONSENSUS_NOT_READY;EPS_REVISION_HISTORY_NOT_READY;CATALYST_EVIDENCE_NOT_READY;BOTTLENECK_EVIDENCE_NOT_READY;VALUATION_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
+        "CONSENSUS_NOT_READY;EPS_REVISION_HISTORY_NOT_READY;VALUATION_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
       ],
       [
         "2026-10-08",
