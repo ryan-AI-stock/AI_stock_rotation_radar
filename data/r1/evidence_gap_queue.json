@@ -1,0 +1,1520 @@
+{
+  "model": "R1",
+  "version": "r1-evidence-gap-queue-v0.1",
+  "as_of_date": "2026-10-08",
+  "requested_ticker_count": 54,
+  "ready_ticker_count": 14,
+  "pending_ticker_count": 40,
+  "rejected_evidence": {
+    "catalyst": [],
+    "bottleneck": []
+  },
+  "rows": [
+    {
+      "ticker": "2449",
+      "company": "京元電子",
+      "theme_id": "advanced_packaging",
+      "priority": 1,
+      "catalyst": {
+        "source_family_count": 0,
+        "source_families": [],
+        "best_source_tier": null,
+        "ready": false,
+        "missing_independent_source_families": 2,
+        "missing_tier_1_or_2_source": true
+      },
+      "bottleneck": {
+        "source_family_count": 0,
+        "source_families": [],
+        "best_source_tier": null,
+        "ready": false,
+        "missing_independent_source_families": 2,
+        "missing_tier_1_or_2_source": true
+      },
+      "missing": [
+        "CATALYST_EVIDENCE",
+        "BOTTLENECK_EVIDENCE"
+      ],
+      "status": "NEEDS_EVIDENCE"
+    },
+    {
+      "ticker": "3583",
+      "company": "辛耘",
+      "theme_id": "advanced_packaging",
+      "priority": 1,
+      "catalyst": {
+        "source_family_count": 0,
+        "source_families": [],
+        "best_source_tier": null,
+        "ready": false,
+        "missing_independent_source_families": 2,
+        "missing_tier_1_or_2_source": true
+      },
+      "bottleneck": {
+        "source_family_count": 0,
+        "source_families": [],
+        "best_source_tier": null,
+        "ready": false,
+        "missing_independent_source_families": 2,
+        "missing_tier_1_or_2_source": true
+      },
+      "missing": [
+        "CATALYST_EVIDENCE",
+        "BOTTLENECK_EVIDENCE"
+      ],
+      "status": "NEEDS_EVIDENCE"
+    },
+    {
+      "ticker": "6187",
+      "company": "萬潤",
+      "theme_id": "advanced_packaging",
+      "priority": 1,
+      "catalyst": {
+        "source_family_count": 0,
+        "source_families": [],
+        "best_source_tier": null,
+        "ready": false,
+        "missing_independent_source_families": 2,
+        "missing_tier_1_or_2_source": true
+      },
+      "bottleneck": {
+        "source_family_count": 0,
+        "source_families": [],
+        "best_source_tier": null,
+        "ready": false,
+        "missing_independent_source_families": 2,
+        "missing_tier_1_or_2_source": true
+      },
+      "missing": [
+        "CATALYST_EVIDENCE",
+        "BOTTLENECK_EVIDENCE"
+      ],
+      "status": "NEEDS_EVIDENCE"
+    },
+    {
+      "ticker": "6223",
+      "company": "旺矽",
+      "theme_id": "advanced_packaging",
+      "priority": 1,
+      "catalyst": {
+        "source_family_count": 0,
+        "source_families": [],
+        "best_source_tier": null,
+        "ready": false,
+        "missing_independent_source_families": 2,
+        "missing_tier_1_or_2_source": true
+      },
+      "bottleneck": {
+        "source_family_count": 0,
+        "source_families": [],
+        "best_source_tier": null,
+        "ready": false,
+        "missing_independent_source_families": 2,
+        "missing_tier_1_or_2_source": true
+      },
+      "missing": [
+        "CATALYST_EVIDENCE",
+        "BOTTLENECK_EVIDENCE"
+      ],
+      "status": "NEEDS_EVIDENCE"
+    },
+    {
+      "ticker": "3035",
+      "company": "智原",
+      "theme_id": "compute_foundry",
+      "priority": 1,
+      "catalyst": {
+        "source_family_count": 0,
+        "source_families": [],
+        "best_source_tier": null,
+        "ready": false,
+        "missing_independent_source_families": 2,
+        "missing_tier_1_or_2_source": true
+      },
+      "bottleneck": {
+        "source_family_count": 0,
+        "source_families": [],
+        "best_source_tier": null,
+        "ready": false,
+        "missing_independent_source_families": 2,
+        "missing_tier_1_or_2_source": true
+      },
+      "missing": [
+        "CATALYST_EVIDENCE",
+        "BOTTLENECK_EVIDENCE"
+      ],
+      "status": "NEEDS_EVIDENCE"
+    },
+    {
+      "ticker": "3443",
+      "company": "創意",
+      "theme_id": "compute_foundry",
+      "priority": 1,
+      "catalyst": {
+        "source_family_count": 0,
+        "source_families": [],
+        "best_source_tier": null,
+        "ready": false,
+        "missing_independent_source_families": 2,
+        "missing_tier_1_or_2_source": true
+      },
+      "bottleneck": {
+        "source_family_count": 0,
+        "source_families": [],
+        "best_source_tier": null,
+        "ready": false,
+        "missing_independent_source_families": 2,
+        "missing_tier_1_or_2_source": true
+      },
+      "missing": [
+        "CATALYST_EVIDENCE",
+        "BOTTLENECK_EVIDENCE"
+      ],
+      "status": "NEEDS_EVIDENCE"
+    },
+    {
+      "ticker": "3661",
+      "company": "世芯-KY",
+      "theme_id": "compute_foundry",
+      "priority": 1,
+      "catalyst": {
+        "source_family_count": 0,
+        "source_families": [],
+        "best_source_tier": null,
+        "ready": false,
+        "missing_independent_source_families": 2,
+        "missing_tier_1_or_2_source": true
+      },
+      "bottleneck": {
+        "source_family_count": 0,
+        "source_families": [],
+        "best_source_tier": null,
+        "ready": false,
+        "missing_independent_source_families": 2,
+        "missing_tier_1_or_2_source": true
+      },
+      "missing": [
+        "CATALYST_EVIDENCE",
+        "BOTTLENECK_EVIDENCE"
+      ],
+      "status": "NEEDS_EVIDENCE"
+    },
+    {
+      "ticker": "1560",
+      "company": "中砂",
+      "theme_id": "critical_materials",
+      "priority": 1,
+      "catalyst": {
+        "source_family_count": 0,
+        "source_families": [],
+        "best_source_tier": null,
+        "ready": false,
+        "missing_independent_source_families": 2,
+        "missing_tier_1_or_2_source": true
+      },
+      "bottleneck": {
+        "source_family_count": 0,
+        "source_families": [],
+        "best_source_tier": null,
+        "ready": false,
+        "missing_independent_source_families": 2,
+        "missing_tier_1_or_2_source": true
+      },
+      "missing": [
+        "CATALYST_EVIDENCE",
+        "BOTTLENECK_EVIDENCE"
+      ],
+      "status": "NEEDS_EVIDENCE"
+    },
+    {
+      "ticker": "3131",
+      "company": "弘塑",
+      "theme_id": "critical_materials",
+      "priority": 1,
+      "catalyst": {
+        "source_family_count": 0,
+        "source_families": [],
+        "best_source_tier": null,
+        "ready": false,
+        "missing_independent_source_families": 2,
+        "missing_tier_1_or_2_source": true
+      },
+      "bottleneck": {
+        "source_family_count": 0,
+        "source_families": [],
+        "best_source_tier": null,
+        "ready": false,
+        "missing_independent_source_families": 2,
+        "missing_tier_1_or_2_source": true
+      },
+      "missing": [
+        "CATALYST_EVIDENCE",
+        "BOTTLENECK_EVIDENCE"
+      ],
+      "status": "NEEDS_EVIDENCE"
+    },
+    {
+      "ticker": "3532",
+      "company": "台勝科",
+      "theme_id": "critical_materials",
+      "priority": 1,
+      "catalyst": {
+        "source_family_count": 0,
+        "source_families": [],
+        "best_source_tier": null,
+        "ready": false,
+        "missing_independent_source_families": 2,
+        "missing_tier_1_or_2_source": true
+      },
+      "bottleneck": {
+        "source_family_count": 0,
+        "source_families": [],
+        "best_source_tier": null,
+        "ready": false,
+        "missing_independent_source_families": 2,
+        "missing_tier_1_or_2_source": true
+      },
+      "missing": [
+        "CATALYST_EVIDENCE",
+        "BOTTLENECK_EVIDENCE"
+      ],
+      "status": "NEEDS_EVIDENCE"
+    },
+    {
+      "ticker": "6182",
+      "company": "合晶",
+      "theme_id": "critical_materials",
+      "priority": 1,
+      "catalyst": {
+        "source_family_count": 0,
+        "source_families": [],
+        "best_source_tier": null,
+        "ready": false,
+        "missing_independent_source_families": 2,
+        "missing_tier_1_or_2_source": true
+      },
+      "bottleneck": {
+        "source_family_count": 0,
+        "source_families": [],
+        "best_source_tier": null,
+        "ready": false,
+        "missing_independent_source_families": 2,
+        "missing_tier_1_or_2_source": true
+      },
+      "missing": [
+        "CATALYST_EVIDENCE",
+        "BOTTLENECK_EVIDENCE"
+      ],
+      "status": "NEEDS_EVIDENCE"
+    },
+    {
+      "ticker": "2337",
+      "company": "旺宏",
+      "theme_id": "memory_storage",
+      "priority": 1,
+      "catalyst": {
+        "source_family_count": 0,
+        "source_families": [],
+        "best_source_tier": null,
+        "ready": false,
+        "missing_independent_source_families": 2,
+        "missing_tier_1_or_2_source": true
+      },
+      "bottleneck": {
+        "source_family_count": 0,
+        "source_families": [],
+        "best_source_tier": null,
+        "ready": false,
+        "missing_independent_source_families": 2,
+        "missing_tier_1_or_2_source": true
+      },
+      "missing": [
+        "CATALYST_EVIDENCE",
+        "BOTTLENECK_EVIDENCE"
+      ],
+      "status": "NEEDS_EVIDENCE"
+    },
+    {
+      "ticker": "3260",
+      "company": "威剛",
+      "theme_id": "memory_storage",
+      "priority": 1,
+      "catalyst": {
+        "source_family_count": 0,
+        "source_families": [],
+        "best_source_tier": null,
+        "ready": false,
+        "missing_independent_source_families": 2,
+        "missing_tier_1_or_2_source": true
+      },
+      "bottleneck": {
+        "source_family_count": 0,
+        "source_families": [],
+        "best_source_tier": null,
+        "ready": false,
+        "missing_independent_source_families": 2,
+        "missing_tier_1_or_2_source": true
+      },
+      "missing": [
+        "CATALYST_EVIDENCE",
+        "BOTTLENECK_EVIDENCE"
+      ],
+      "status": "NEEDS_EVIDENCE"
+    },
+    {
+      "ticker": "8299",
+      "company": "群聯",
+      "theme_id": "memory_storage",
+      "priority": 1,
+      "catalyst": {
+        "source_family_count": 0,
+        "source_families": [],
+        "best_source_tier": null,
+        "ready": false,
+        "missing_independent_source_families": 2,
+        "missing_tier_1_or_2_source": true
+      },
+      "bottleneck": {
+        "source_family_count": 0,
+        "source_families": [],
+        "best_source_tier": null,
+        "ready": false,
+        "missing_independent_source_families": 2,
+        "missing_tier_1_or_2_source": true
+      },
+      "missing": [
+        "CATALYST_EVIDENCE",
+        "BOTTLENECK_EVIDENCE"
+      ],
+      "status": "NEEDS_EVIDENCE"
+    },
+    {
+      "ticker": "2345",
+      "company": "智邦",
+      "theme_id": "network_optics",
+      "priority": 1,
+      "catalyst": {
+        "source_family_count": 0,
+        "source_families": [],
+        "best_source_tier": null,
+        "ready": false,
+        "missing_independent_source_families": 2,
+        "missing_tier_1_or_2_source": true
+      },
+      "bottleneck": {
+        "source_family_count": 0,
+        "source_families": [],
+        "best_source_tier": null,
+        "ready": false,
+        "missing_independent_source_families": 2,
+        "missing_tier_1_or_2_source": true
+      },
+      "missing": [
+        "CATALYST_EVIDENCE",
+        "BOTTLENECK_EVIDENCE"
+      ],
+      "status": "NEEDS_EVIDENCE"
+    },
+    {
+      "ticker": "3163",
+      "company": "波若威",
+      "theme_id": "network_optics",
+      "priority": 1,
+      "catalyst": {
+        "source_family_count": 0,
+        "source_families": [],
+        "best_source_tier": null,
+        "ready": false,
+        "missing_independent_source_families": 2,
+        "missing_tier_1_or_2_source": true
+      },
+      "bottleneck": {
+        "source_family_count": 0,
+        "source_families": [],
+        "best_source_tier": null,
+        "ready": false,
+        "missing_independent_source_families": 2,
+        "missing_tier_1_or_2_source": true
+      },
+      "missing": [
+        "CATALYST_EVIDENCE",
+        "BOTTLENECK_EVIDENCE"
+      ],
+      "status": "NEEDS_EVIDENCE"
+    },
+    {
+      "ticker": "4979",
+      "company": "華星光",
+      "theme_id": "network_optics",
+      "priority": 1,
+      "catalyst": {
+        "source_family_count": 0,
+        "source_families": [],
+        "best_source_tier": null,
+        "ready": false,
+        "missing_independent_source_families": 2,
+        "missing_tier_1_or_2_source": true
+      },
+      "bottleneck": {
+        "source_family_count": 0,
+        "source_families": [],
+        "best_source_tier": null,
+        "ready": false,
+        "missing_independent_source_families": 2,
+        "missing_tier_1_or_2_source": true
+      },
+      "missing": [
+        "CATALYST_EVIDENCE",
+        "BOTTLENECK_EVIDENCE"
+      ],
+      "status": "NEEDS_EVIDENCE"
+    },
+    {
+      "ticker": "6442",
+      "company": "光聖",
+      "theme_id": "network_optics",
+      "priority": 1,
+      "catalyst": {
+        "source_family_count": 0,
+        "source_families": [],
+        "best_source_tier": null,
+        "ready": false,
+        "missing_independent_source_families": 2,
+        "missing_tier_1_or_2_source": true
+      },
+      "bottleneck": {
+        "source_family_count": 0,
+        "source_families": [],
+        "best_source_tier": null,
+        "ready": false,
+        "missing_independent_source_families": 2,
+        "missing_tier_1_or_2_source": true
+      },
+      "missing": [
+        "CATALYST_EVIDENCE",
+        "BOTTLENECK_EVIDENCE"
+      ],
+      "status": "NEEDS_EVIDENCE"
+    },
+    {
+      "ticker": "2492",
+      "company": "華新科",
+      "theme_id": "passive_components",
+      "priority": 1,
+      "catalyst": {
+        "source_family_count": 0,
+        "source_families": [],
+        "best_source_tier": null,
+        "ready": false,
+        "missing_independent_source_families": 2,
+        "missing_tier_1_or_2_source": true
+      },
+      "bottleneck": {
+        "source_family_count": 0,
+        "source_families": [],
+        "best_source_tier": null,
+        "ready": false,
+        "missing_independent_source_families": 2,
+        "missing_tier_1_or_2_source": true
+      },
+      "missing": [
+        "CATALYST_EVIDENCE",
+        "BOTTLENECK_EVIDENCE"
+      ],
+      "status": "NEEDS_EVIDENCE"
+    },
+    {
+      "ticker": "3357",
+      "company": "臺慶科",
+      "theme_id": "passive_components",
+      "priority": 1,
+      "catalyst": {
+        "source_family_count": 0,
+        "source_families": [],
+        "best_source_tier": null,
+        "ready": false,
+        "missing_independent_source_families": 2,
+        "missing_tier_1_or_2_source": true
+      },
+      "bottleneck": {
+        "source_family_count": 0,
+        "source_families": [],
+        "best_source_tier": null,
+        "ready": false,
+        "missing_independent_source_families": 2,
+        "missing_tier_1_or_2_source": true
+      },
+      "missing": [
+        "CATALYST_EVIDENCE",
+        "BOTTLENECK_EVIDENCE"
+      ],
+      "status": "NEEDS_EVIDENCE"
+    },
+    {
+      "ticker": "2368",
+      "company": "金像電",
+      "theme_id": "pcb_substrate",
+      "priority": 1,
+      "catalyst": {
+        "source_family_count": 0,
+        "source_families": [],
+        "best_source_tier": null,
+        "ready": false,
+        "missing_independent_source_families": 2,
+        "missing_tier_1_or_2_source": true
+      },
+      "bottleneck": {
+        "source_family_count": 0,
+        "source_families": [],
+        "best_source_tier": null,
+        "ready": false,
+        "missing_independent_source_families": 2,
+        "missing_tier_1_or_2_source": true
+      },
+      "missing": [
+        "CATALYST_EVIDENCE",
+        "BOTTLENECK_EVIDENCE"
+      ],
+      "status": "NEEDS_EVIDENCE"
+    },
+    {
+      "ticker": "2383",
+      "company": "台光電",
+      "theme_id": "pcb_substrate",
+      "priority": 1,
+      "catalyst": {
+        "source_family_count": 0,
+        "source_families": [],
+        "best_source_tier": null,
+        "ready": false,
+        "missing_independent_source_families": 2,
+        "missing_tier_1_or_2_source": true
+      },
+      "bottleneck": {
+        "source_family_count": 0,
+        "source_families": [],
+        "best_source_tier": null,
+        "ready": false,
+        "missing_independent_source_families": 2,
+        "missing_tier_1_or_2_source": true
+      },
+      "missing": [
+        "CATALYST_EVIDENCE",
+        "BOTTLENECK_EVIDENCE"
+      ],
+      "status": "NEEDS_EVIDENCE"
+    },
+    {
+      "ticker": "3189",
+      "company": "景碩",
+      "theme_id": "pcb_substrate",
+      "priority": 1,
+      "catalyst": {
+        "source_family_count": 0,
+        "source_families": [],
+        "best_source_tier": null,
+        "ready": false,
+        "missing_independent_source_families": 2,
+        "missing_tier_1_or_2_source": true
+      },
+      "bottleneck": {
+        "source_family_count": 0,
+        "source_families": [],
+        "best_source_tier": null,
+        "ready": false,
+        "missing_independent_source_families": 2,
+        "missing_tier_1_or_2_source": true
+      },
+      "missing": [
+        "CATALYST_EVIDENCE",
+        "BOTTLENECK_EVIDENCE"
+      ],
+      "status": "NEEDS_EVIDENCE"
+    },
+    {
+      "ticker": "6274",
+      "company": "台燿",
+      "theme_id": "pcb_substrate",
+      "priority": 1,
+      "catalyst": {
+        "source_family_count": 0,
+        "source_families": [],
+        "best_source_tier": null,
+        "ready": false,
+        "missing_independent_source_families": 2,
+        "missing_tier_1_or_2_source": true
+      },
+      "bottleneck": {
+        "source_family_count": 0,
+        "source_families": [],
+        "best_source_tier": null,
+        "ready": false,
+        "missing_independent_source_families": 2,
+        "missing_tier_1_or_2_source": true
+      },
+      "missing": [
+        "CATALYST_EVIDENCE",
+        "BOTTLENECK_EVIDENCE"
+      ],
+      "status": "NEEDS_EVIDENCE"
+    },
+    {
+      "ticker": "2301",
+      "company": "光寶科",
+      "theme_id": "power_delivery",
+      "priority": 1,
+      "catalyst": {
+        "source_family_count": 0,
+        "source_families": [],
+        "best_source_tier": null,
+        "ready": false,
+        "missing_independent_source_families": 2,
+        "missing_tier_1_or_2_source": true
+      },
+      "bottleneck": {
+        "source_family_count": 0,
+        "source_families": [],
+        "best_source_tier": null,
+        "ready": false,
+        "missing_independent_source_families": 2,
+        "missing_tier_1_or_2_source": true
+      },
+      "missing": [
+        "CATALYST_EVIDENCE",
+        "BOTTLENECK_EVIDENCE"
+      ],
+      "status": "NEEDS_EVIDENCE"
+    },
+    {
+      "ticker": "6282",
+      "company": "康舒",
+      "theme_id": "power_delivery",
+      "priority": 1,
+      "catalyst": {
+        "source_family_count": 0,
+        "source_families": [],
+        "best_source_tier": null,
+        "ready": false,
+        "missing_independent_source_families": 2,
+        "missing_tier_1_or_2_source": true
+      },
+      "bottleneck": {
+        "source_family_count": 0,
+        "source_families": [],
+        "best_source_tier": null,
+        "ready": false,
+        "missing_independent_source_families": 2,
+        "missing_tier_1_or_2_source": true
+      },
+      "missing": [
+        "CATALYST_EVIDENCE",
+        "BOTTLENECK_EVIDENCE"
+      ],
+      "status": "NEEDS_EVIDENCE"
+    },
+    {
+      "ticker": "6412",
+      "company": "群電",
+      "theme_id": "power_delivery",
+      "priority": 1,
+      "catalyst": {
+        "source_family_count": 0,
+        "source_families": [],
+        "best_source_tier": null,
+        "ready": false,
+        "missing_independent_source_families": 2,
+        "missing_tier_1_or_2_source": true
+      },
+      "bottleneck": {
+        "source_family_count": 0,
+        "source_families": [],
+        "best_source_tier": null,
+        "ready": false,
+        "missing_independent_source_families": 2,
+        "missing_tier_1_or_2_source": true
+      },
+      "missing": [
+        "CATALYST_EVIDENCE",
+        "BOTTLENECK_EVIDENCE"
+      ],
+      "status": "NEEDS_EVIDENCE"
+    },
+    {
+      "ticker": "6781",
+      "company": "AES-KY",
+      "theme_id": "power_delivery",
+      "priority": 1,
+      "catalyst": {
+        "source_family_count": 0,
+        "source_families": [],
+        "best_source_tier": null,
+        "ready": false,
+        "missing_independent_source_families": 2,
+        "missing_tier_1_or_2_source": true
+      },
+      "bottleneck": {
+        "source_family_count": 0,
+        "source_families": [],
+        "best_source_tier": null,
+        "ready": false,
+        "missing_independent_source_families": 2,
+        "missing_tier_1_or_2_source": true
+      },
+      "missing": [
+        "CATALYST_EVIDENCE",
+        "BOTTLENECK_EVIDENCE"
+      ],
+      "status": "NEEDS_EVIDENCE"
+    },
+    {
+      "ticker": "2317",
+      "company": "鴻海",
+      "theme_id": "server_rack",
+      "priority": 1,
+      "catalyst": {
+        "source_family_count": 0,
+        "source_families": [],
+        "best_source_tier": null,
+        "ready": false,
+        "missing_independent_source_families": 2,
+        "missing_tier_1_or_2_source": true
+      },
+      "bottleneck": {
+        "source_family_count": 0,
+        "source_families": [],
+        "best_source_tier": null,
+        "ready": false,
+        "missing_independent_source_families": 2,
+        "missing_tier_1_or_2_source": true
+      },
+      "missing": [
+        "CATALYST_EVIDENCE",
+        "BOTTLENECK_EVIDENCE"
+      ],
+      "status": "NEEDS_EVIDENCE"
+    },
+    {
+      "ticker": "2356",
+      "company": "英業達",
+      "theme_id": "server_rack",
+      "priority": 1,
+      "catalyst": {
+        "source_family_count": 0,
+        "source_families": [],
+        "best_source_tier": null,
+        "ready": false,
+        "missing_independent_source_families": 2,
+        "missing_tier_1_or_2_source": true
+      },
+      "bottleneck": {
+        "source_family_count": 0,
+        "source_families": [],
+        "best_source_tier": null,
+        "ready": false,
+        "missing_independent_source_families": 2,
+        "missing_tier_1_or_2_source": true
+      },
+      "missing": [
+        "CATALYST_EVIDENCE",
+        "BOTTLENECK_EVIDENCE"
+      ],
+      "status": "NEEDS_EVIDENCE"
+    },
+    {
+      "ticker": "2382",
+      "company": "廣達",
+      "theme_id": "server_rack",
+      "priority": 1,
+      "catalyst": {
+        "source_family_count": 0,
+        "source_families": [],
+        "best_source_tier": null,
+        "ready": false,
+        "missing_independent_source_families": 2,
+        "missing_tier_1_or_2_source": true
+      },
+      "bottleneck": {
+        "source_family_count": 0,
+        "source_families": [],
+        "best_source_tier": null,
+        "ready": false,
+        "missing_independent_source_families": 2,
+        "missing_tier_1_or_2_source": true
+      },
+      "missing": [
+        "CATALYST_EVIDENCE",
+        "BOTTLENECK_EVIDENCE"
+      ],
+      "status": "NEEDS_EVIDENCE"
+    },
+    {
+      "ticker": "3231",
+      "company": "緯創",
+      "theme_id": "server_rack",
+      "priority": 1,
+      "catalyst": {
+        "source_family_count": 0,
+        "source_families": [],
+        "best_source_tier": null,
+        "ready": false,
+        "missing_independent_source_families": 2,
+        "missing_tier_1_or_2_source": true
+      },
+      "bottleneck": {
+        "source_family_count": 0,
+        "source_families": [],
+        "best_source_tier": null,
+        "ready": false,
+        "missing_independent_source_families": 2,
+        "missing_tier_1_or_2_source": true
+      },
+      "missing": [
+        "CATALYST_EVIDENCE",
+        "BOTTLENECK_EVIDENCE"
+      ],
+      "status": "NEEDS_EVIDENCE"
+    },
+    {
+      "ticker": "6669",
+      "company": "緯穎",
+      "theme_id": "server_rack",
+      "priority": 1,
+      "catalyst": {
+        "source_family_count": 0,
+        "source_families": [],
+        "best_source_tier": null,
+        "ready": false,
+        "missing_independent_source_families": 2,
+        "missing_tier_1_or_2_source": true
+      },
+      "bottleneck": {
+        "source_family_count": 0,
+        "source_families": [],
+        "best_source_tier": null,
+        "ready": false,
+        "missing_independent_source_families": 2,
+        "missing_tier_1_or_2_source": true
+      },
+      "missing": [
+        "CATALYST_EVIDENCE",
+        "BOTTLENECK_EVIDENCE"
+      ],
+      "status": "NEEDS_EVIDENCE"
+    },
+    {
+      "ticker": "3008",
+      "company": "大立光",
+      "theme_id": "silicon_photonics_cpo_discovery",
+      "priority": 1,
+      "catalyst": {
+        "source_family_count": 0,
+        "source_families": [],
+        "best_source_tier": null,
+        "ready": false,
+        "missing_independent_source_families": 2,
+        "missing_tier_1_or_2_source": true
+      },
+      "bottleneck": {
+        "source_family_count": 0,
+        "source_families": [],
+        "best_source_tier": null,
+        "ready": false,
+        "missing_independent_source_families": 2,
+        "missing_tier_1_or_2_source": true
+      },
+      "missing": [
+        "CATALYST_EVIDENCE",
+        "BOTTLENECK_EVIDENCE"
+      ],
+      "status": "NEEDS_EVIDENCE"
+    },
+    {
+      "ticker": "3406",
+      "company": "玉晶光",
+      "theme_id": "silicon_photonics_cpo_discovery",
+      "priority": 1,
+      "catalyst": {
+        "source_family_count": 0,
+        "source_families": [],
+        "best_source_tier": null,
+        "ready": false,
+        "missing_independent_source_families": 2,
+        "missing_tier_1_or_2_source": true
+      },
+      "bottleneck": {
+        "source_family_count": 0,
+        "source_families": [],
+        "best_source_tier": null,
+        "ready": false,
+        "missing_independent_source_families": 2,
+        "missing_tier_1_or_2_source": true
+      },
+      "missing": [
+        "CATALYST_EVIDENCE",
+        "BOTTLENECK_EVIDENCE"
+      ],
+      "status": "NEEDS_EVIDENCE"
+    },
+    {
+      "ticker": "3017",
+      "company": "奇鋐",
+      "theme_id": "thermal_management",
+      "priority": 1,
+      "catalyst": {
+        "source_family_count": 0,
+        "source_families": [],
+        "best_source_tier": null,
+        "ready": false,
+        "missing_independent_source_families": 2,
+        "missing_tier_1_or_2_source": true
+      },
+      "bottleneck": {
+        "source_family_count": 0,
+        "source_families": [],
+        "best_source_tier": null,
+        "ready": false,
+        "missing_independent_source_families": 2,
+        "missing_tier_1_or_2_source": true
+      },
+      "missing": [
+        "CATALYST_EVIDENCE",
+        "BOTTLENECK_EVIDENCE"
+      ],
+      "status": "NEEDS_EVIDENCE"
+    },
+    {
+      "ticker": "3324",
+      "company": "雙鴻",
+      "theme_id": "thermal_management",
+      "priority": 1,
+      "catalyst": {
+        "source_family_count": 0,
+        "source_families": [],
+        "best_source_tier": null,
+        "ready": false,
+        "missing_independent_source_families": 2,
+        "missing_tier_1_or_2_source": true
+      },
+      "bottleneck": {
+        "source_family_count": 0,
+        "source_families": [],
+        "best_source_tier": null,
+        "ready": false,
+        "missing_independent_source_families": 2,
+        "missing_tier_1_or_2_source": true
+      },
+      "missing": [
+        "CATALYST_EVIDENCE",
+        "BOTTLENECK_EVIDENCE"
+      ],
+      "status": "NEEDS_EVIDENCE"
+    },
+    {
+      "ticker": "3338",
+      "company": "泰碩",
+      "theme_id": "thermal_management",
+      "priority": 1,
+      "catalyst": {
+        "source_family_count": 0,
+        "source_families": [],
+        "best_source_tier": null,
+        "ready": false,
+        "missing_independent_source_families": 2,
+        "missing_tier_1_or_2_source": true
+      },
+      "bottleneck": {
+        "source_family_count": 0,
+        "source_families": [],
+        "best_source_tier": null,
+        "ready": false,
+        "missing_independent_source_families": 2,
+        "missing_tier_1_or_2_source": true
+      },
+      "missing": [
+        "CATALYST_EVIDENCE",
+        "BOTTLENECK_EVIDENCE"
+      ],
+      "status": "NEEDS_EVIDENCE"
+    },
+    {
+      "ticker": "3653",
+      "company": "健策",
+      "theme_id": "thermal_management",
+      "priority": 1,
+      "catalyst": {
+        "source_family_count": 0,
+        "source_families": [],
+        "best_source_tier": null,
+        "ready": false,
+        "missing_independent_source_families": 2,
+        "missing_tier_1_or_2_source": true
+      },
+      "bottleneck": {
+        "source_family_count": 0,
+        "source_families": [],
+        "best_source_tier": null,
+        "ready": false,
+        "missing_independent_source_families": 2,
+        "missing_tier_1_or_2_source": true
+      },
+      "missing": [
+        "CATALYST_EVIDENCE",
+        "BOTTLENECK_EVIDENCE"
+      ],
+      "status": "NEEDS_EVIDENCE"
+    },
+    {
+      "ticker": "6230",
+      "company": "尼得科超眾",
+      "theme_id": "thermal_management",
+      "priority": 1,
+      "catalyst": {
+        "source_family_count": 0,
+        "source_families": [],
+        "best_source_tier": null,
+        "ready": false,
+        "missing_independent_source_families": 2,
+        "missing_tier_1_or_2_source": true
+      },
+      "bottleneck": {
+        "source_family_count": 0,
+        "source_families": [],
+        "best_source_tier": null,
+        "ready": false,
+        "missing_independent_source_families": 2,
+        "missing_tier_1_or_2_source": true
+      },
+      "missing": [
+        "CATALYST_EVIDENCE",
+        "BOTTLENECK_EVIDENCE"
+      ],
+      "status": "NEEDS_EVIDENCE"
+    },
+    {
+      "ticker": "2454",
+      "company": "聯發科",
+      "theme_id": "compute_foundry",
+      "priority": 0,
+      "catalyst": {
+        "source_family_count": 2,
+        "source_families": [
+          "mediatek_ir",
+          "sp_global_research"
+        ],
+        "best_source_tier": 1,
+        "ready": true,
+        "missing_independent_source_families": 0,
+        "missing_tier_1_or_2_source": false
+      },
+      "bottleneck": {
+        "source_family_count": 2,
+        "source_families": [
+          "mediatek_ir",
+          "sp_global_research"
+        ],
+        "best_source_tier": 1,
+        "ready": true,
+        "missing_independent_source_families": 0,
+        "missing_tier_1_or_2_source": false
+      },
+      "missing": [],
+      "status": "READY"
+    },
+    {
+      "ticker": "2408",
+      "company": "南亞科",
+      "theme_id": "memory_storage",
+      "priority": 0,
+      "catalyst": {
+        "source_family_count": 2,
+        "source_families": [
+          "nanya_ir",
+          "trendforce_research"
+        ],
+        "best_source_tier": 1,
+        "ready": true,
+        "missing_independent_source_families": 0,
+        "missing_tier_1_or_2_source": false
+      },
+      "bottleneck": {
+        "source_family_count": 2,
+        "source_families": [
+          "nanya_ir",
+          "trendforce_research"
+        ],
+        "best_source_tier": 1,
+        "ready": true,
+        "missing_independent_source_families": 0,
+        "missing_tier_1_or_2_source": false
+      },
+      "missing": [],
+      "status": "READY"
+    },
+    {
+      "ticker": "3037",
+      "company": "欣興",
+      "theme_id": "pcb_substrate",
+      "priority": 0,
+      "catalyst": {
+        "source_family_count": 2,
+        "source_families": [
+          "digitimes_industry",
+          "unimicron_ir"
+        ],
+        "best_source_tier": 1,
+        "ready": true,
+        "missing_independent_source_families": 0,
+        "missing_tier_1_or_2_source": false
+      },
+      "bottleneck": {
+        "source_family_count": 2,
+        "source_families": [
+          "digitimes_industry",
+          "unimicron_ir"
+        ],
+        "best_source_tier": 1,
+        "ready": true,
+        "missing_independent_source_families": 0,
+        "missing_tier_1_or_2_source": false
+      },
+      "missing": [],
+      "status": "READY"
+    },
+    {
+      "ticker": "2308",
+      "company": "台達電",
+      "theme_id": "power_delivery",
+      "priority": 0,
+      "catalyst": {
+        "source_family_count": 2,
+        "source_families": [
+          "delta_ir",
+          "trendforce_research"
+        ],
+        "best_source_tier": 1,
+        "ready": true,
+        "missing_independent_source_families": 0,
+        "missing_tier_1_or_2_source": false
+      },
+      "bottleneck": {
+        "source_family_count": 2,
+        "source_families": [
+          "delta_ir",
+          "trendforce_research"
+        ],
+        "best_source_tier": 1,
+        "ready": true,
+        "missing_independent_source_families": 0,
+        "missing_tier_1_or_2_source": false
+      },
+      "missing": [],
+      "status": "READY"
+    },
+    {
+      "ticker": "3081",
+      "company": "聯亞",
+      "theme_id": "silicon_photonics_cpo",
+      "priority": 0,
+      "catalyst": {
+        "source_family_count": 2,
+        "source_families": [
+          "moneydj_industry",
+          "mops_company_filing"
+        ],
+        "best_source_tier": 1,
+        "ready": true,
+        "missing_independent_source_families": 0,
+        "missing_tier_1_or_2_source": false
+      },
+      "bottleneck": {
+        "source_family_count": 2,
+        "source_families": [
+          "moneydj_industry",
+          "mops_company_filing"
+        ],
+        "best_source_tier": 1,
+        "ready": true,
+        "missing_independent_source_families": 0,
+        "missing_tier_1_or_2_source": false
+      },
+      "missing": [],
+      "status": "READY"
+    },
+    {
+      "ticker": "3711",
+      "company": "日月光投控",
+      "theme_id": "advanced_packaging",
+      "priority": 1,
+      "catalyst": {
+        "source_family_count": 2,
+        "source_families": [
+          "ase_ir",
+          "trendforce_research"
+        ],
+        "best_source_tier": 1,
+        "ready": true,
+        "missing_independent_source_families": 0,
+        "missing_tier_1_or_2_source": false
+      },
+      "bottleneck": {
+        "source_family_count": 2,
+        "source_families": [
+          "ase_ir",
+          "trendforce_research"
+        ],
+        "best_source_tier": 1,
+        "ready": true,
+        "missing_independent_source_families": 0,
+        "missing_tier_1_or_2_source": false
+      },
+      "missing": [],
+      "status": "READY"
+    },
+    {
+      "ticker": "2330",
+      "company": "台積電",
+      "theme_id": "compute_foundry",
+      "priority": 1,
+      "catalyst": {
+        "source_family_count": 2,
+        "source_families": [
+          "trendforce_research",
+          "tsmc_ir"
+        ],
+        "best_source_tier": 1,
+        "ready": true,
+        "missing_independent_source_families": 0,
+        "missing_tier_1_or_2_source": false
+      },
+      "bottleneck": {
+        "source_family_count": 2,
+        "source_families": [
+          "trendforce_research",
+          "tsmc_ir"
+        ],
+        "best_source_tier": 1,
+        "ready": true,
+        "missing_independent_source_families": 0,
+        "missing_tier_1_or_2_source": false
+      },
+      "missing": [],
+      "status": "READY"
+    },
+    {
+      "ticker": "6488",
+      "company": "環球晶",
+      "theme_id": "critical_materials",
+      "priority": 1,
+      "catalyst": {
+        "source_family_count": 2,
+        "source_families": [
+          "mops_company_filing",
+          "toms_hardware_industry"
+        ],
+        "best_source_tier": 1,
+        "ready": true,
+        "missing_independent_source_families": 0,
+        "missing_tier_1_or_2_source": false
+      },
+      "bottleneck": {
+        "source_family_count": 2,
+        "source_families": [
+          "mops_company_filing",
+          "toms_hardware_industry"
+        ],
+        "best_source_tier": 1,
+        "ready": true,
+        "missing_independent_source_families": 0,
+        "missing_tier_1_or_2_source": false
+      },
+      "missing": [],
+      "status": "READY"
+    },
+    {
+      "ticker": "2344",
+      "company": "華邦電",
+      "theme_id": "memory_storage",
+      "priority": 1,
+      "catalyst": {
+        "source_family_count": 2,
+        "source_families": [
+          "trendforce_research",
+          "winbond_ir"
+        ],
+        "best_source_tier": 1,
+        "ready": true,
+        "missing_independent_source_families": 0,
+        "missing_tier_1_or_2_source": false
+      },
+      "bottleneck": {
+        "source_family_count": 2,
+        "source_families": [
+          "trendforce_research",
+          "winbond_ir"
+        ],
+        "best_source_tier": 1,
+        "ready": true,
+        "missing_independent_source_families": 0,
+        "missing_tier_1_or_2_source": false
+      },
+      "missing": [],
+      "status": "READY"
+    },
+    {
+      "ticker": "2379",
+      "company": "瑞昱",
+      "theme_id": "network_optics",
+      "priority": 1,
+      "catalyst": {
+        "source_family_count": 2,
+        "source_families": [
+          "moneydj_industry",
+          "realtek_ir"
+        ],
+        "best_source_tier": 1,
+        "ready": true,
+        "missing_independent_source_families": 0,
+        "missing_tier_1_or_2_source": false
+      },
+      "bottleneck": {
+        "source_family_count": 2,
+        "source_families": [
+          "moneydj_industry",
+          "realtek_ir"
+        ],
+        "best_source_tier": 1,
+        "ready": true,
+        "missing_independent_source_families": 0,
+        "missing_tier_1_or_2_source": false
+      },
+      "missing": [],
+      "status": "READY"
+    },
+    {
+      "ticker": "2327",
+      "company": "國巨",
+      "theme_id": "passive_components",
+      "priority": 1,
+      "catalyst": {
+        "source_family_count": 2,
+        "source_families": [
+          "technews_industry",
+          "yageo_ir"
+        ],
+        "best_source_tier": 1,
+        "ready": true,
+        "missing_independent_source_families": 0,
+        "missing_tier_1_or_2_source": false
+      },
+      "bottleneck": {
+        "source_family_count": 2,
+        "source_families": [
+          "technews_industry",
+          "yageo_ir"
+        ],
+        "best_source_tier": 1,
+        "ready": true,
+        "missing_independent_source_families": 0,
+        "missing_tier_1_or_2_source": false
+      },
+      "missing": [],
+      "status": "READY"
+    },
+    {
+      "ticker": "2376",
+      "company": "技嘉",
+      "theme_id": "server_rack",
+      "priority": 1,
+      "catalyst": {
+        "source_family_count": 2,
+        "source_families": [
+          "gigabyte_ir",
+          "goldman_research_relay"
+        ],
+        "best_source_tier": 1,
+        "ready": true,
+        "missing_independent_source_families": 0,
+        "missing_tier_1_or_2_source": false
+      },
+      "bottleneck": {
+        "source_family_count": 2,
+        "source_families": [
+          "gigabyte_ir",
+          "goldman_research_relay"
+        ],
+        "best_source_tier": 1,
+        "ready": true,
+        "missing_independent_source_families": 0,
+        "missing_tier_1_or_2_source": false
+      },
+      "missing": [],
+      "status": "READY"
+    },
+    {
+      "ticker": "2303",
+      "company": "聯電",
+      "theme_id": "silicon_photonics_cpo",
+      "priority": 1,
+      "catalyst": {
+        "source_family_count": 2,
+        "source_families": [
+          "trendforce_research",
+          "umc_ir"
+        ],
+        "best_source_tier": 1,
+        "ready": true,
+        "missing_independent_source_families": 0,
+        "missing_tier_1_or_2_source": false
+      },
+      "bottleneck": {
+        "source_family_count": 2,
+        "source_families": [
+          "trendforce_research",
+          "umc_ir"
+        ],
+        "best_source_tier": 1,
+        "ready": true,
+        "missing_independent_source_families": 0,
+        "missing_tier_1_or_2_source": false
+      },
+      "missing": [],
+      "status": "READY"
+    },
+    {
+      "ticker": "3363",
+      "company": "上詮",
+      "theme_id": "silicon_photonics_cpo",
+      "priority": 1,
+      "catalyst": {
+        "source_family_count": 2,
+        "source_families": [
+          "himax_ir",
+          "moneydj_industry"
+        ],
+        "best_source_tier": 1,
+        "ready": true,
+        "missing_independent_source_families": 0,
+        "missing_tier_1_or_2_source": false
+      },
+      "bottleneck": {
+        "source_family_count": 2,
+        "source_families": [
+          "himax_ir",
+          "moneydj_industry"
+        ],
+        "best_source_tier": 1,
+        "ready": true,
+        "missing_independent_source_families": 0,
+        "missing_tier_1_or_2_source": false
+      },
+      "missing": [],
+      "status": "READY"
+    }
+  ],
+  "resume_path": "data/r1/evidence_gap_queue.json",
+  "future_data_violation_count": 0,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": true
+}

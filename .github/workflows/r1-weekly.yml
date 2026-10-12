@@ -82,6 +82,7 @@ jobs:
           python -m r1.theme_review --date "${{ steps.gate.outputs.target_date }}"
           python -m r1.active_pool --date "${{ steps.gate.outputs.target_date }}" --weekly "data/r1/weekly/weekly_snapshot_${{ steps.gate.outputs.target_date }}.json"
           python -m r1.forward_outcomes --date "${{ steps.gate.outputs.target_date }}"
+          python -m r1.evidence_gap_queue --date "${{ steps.gate.outputs.target_date }}"
           python -m r1.evidence_readiness --date "${{ steps.gate.outputs.target_date }}"
           python -m r1.v05_rank --date "${{ steps.gate.outputs.target_date }}"
           python -m r1.discovery --date "${{ steps.gate.outputs.target_date }}"
