@@ -3,8 +3,8 @@
   "version": "r1-evidence-gap-queue-v0.1",
   "as_of_date": "2026-10-08",
   "requested_ticker_count": 54,
-  "ready_ticker_count": 16,
-  "pending_ticker_count": 38,
+  "ready_ticker_count": 17,
+  "pending_ticker_count": 37,
   "rejected_evidence": {
     "catalyst": [],
     "bottleneck": []
@@ -94,33 +94,6 @@
     {
       "ticker": "3035",
       "company": "智原",
-      "theme_id": "compute_foundry",
-      "priority": 1,
-      "catalyst": {
-        "source_family_count": 0,
-        "source_families": [],
-        "best_source_tier": null,
-        "ready": false,
-        "missing_independent_source_families": 2,
-        "missing_tier_1_or_2_source": true
-      },
-      "bottleneck": {
-        "source_family_count": 0,
-        "source_families": [],
-        "best_source_tier": null,
-        "ready": false,
-        "missing_independent_source_families": 2,
-        "missing_tier_1_or_2_source": true
-      },
-      "missing": [
-        "CATALYST_EVIDENCE",
-        "BOTTLENECK_EVIDENCE"
-      ],
-      "status": "NEEDS_EVIDENCE"
-    },
-    {
-      "ticker": "3443",
-      "company": "創意",
       "theme_id": "compute_foundry",
       "priority": 1,
       "catalyst": {
@@ -1267,6 +1240,36 @@
         "source_families": [
           "trendforce_research",
           "tsmc_ir"
+        ],
+        "best_source_tier": 1,
+        "ready": true,
+        "missing_independent_source_families": 0,
+        "missing_tier_1_or_2_source": false
+      },
+      "missing": [],
+      "status": "READY"
+    },
+    {
+      "ticker": "3443",
+      "company": "創意",
+      "theme_id": "compute_foundry",
+      "priority": 1,
+      "catalyst": {
+        "source_family_count": 2,
+        "source_families": [
+          "guc_ir",
+          "moneydj_industry"
+        ],
+        "best_source_tier": 1,
+        "ready": true,
+        "missing_independent_source_families": 0,
+        "missing_tier_1_or_2_source": false
+      },
+      "bottleneck": {
+        "source_family_count": 2,
+        "source_families": [
+          "guc_ir",
+          "moneydj_industry"
         ],
         "best_source_tier": 1,
         "ready": true,
