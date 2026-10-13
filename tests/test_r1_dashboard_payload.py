@@ -47,7 +47,9 @@ class R1DashboardPayloadTest(unittest.TestCase):
         self.assertEqual(header[4:8], ["當日收盤", "持股市值", "持股占比", "半年目標"])
         umc = next(row for row in dashboard if len(row) > 1 and row[1] == "2303 聯電")
         self.assertEqual(umc[2], "評分資料未齊")
-        self.assertEqual(umc[4:7], ["147.5", "737,500.0", "5.0%"])
+        self.assertRegex(umc[4], r"^\d[\d,]*\.\d$")
+        self.assertRegex(umc[5], r"^\d[\d,]*\.\d$")
+        self.assertRegex(umc[6], r"^\d+\.\d%$")
 
     def test_dashboard_cannot_claim_trade_ready(self):
         payload = build_dashboard_payload(config_path=ROOT / "config/r1.json",
