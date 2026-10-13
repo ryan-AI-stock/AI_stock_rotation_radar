@@ -58,7 +58,8 @@ def _build_v03_dashboard(*, config: R1Config, market: dict, theme_review: dict,
                          theme_path: str | Path, transition: dict | None = None,
                          comparison: dict | None = None,
                          recommendations: list[dict] | None = None,
-                         total_actual_equity: float | None = None) -> list[list[object]]:
+                         total_actual_equity: float | None = None,
+                         actual_positions: list[dict] | None = None) -> list[list[object]]:
     themes = load_themes(theme_path)
     membership_count = sum(len(theme.members) for theme in themes)
     universe_count = len({member.ticker for theme in themes for member in theme.members})
@@ -84,6 +85,13 @@ def _build_v03_dashboard(*, config: R1Config, market: dict, theme_review: dict,
         str(item.get("ticker", "")).zfill(4): item.get("raw_close")
         for item in market.get("rows", [])
     }
+    actual_positions = actual_positions or []
+    for item in actual_positions:
+        ticker = str(item.get("ticker", "")).upper()
+        if ticker not in held and isinstance(item.get("shares"), (int, float)) and item["shares"] > 0:
+            held[ticker] = item
+        if isinstance(item.get("raw_close"), (int, float)):
+            closes[ticker] = item["raw_close"]
     actual_equity = total_actual_equity if isinstance(total_actual_equity, (int, float)) else next(
         (item.get("equity_market_value") for item in (comparison or {}).get("rows", [])
          if item.get("line") == "ACTUAL"), None
@@ -99,15 +107,18 @@ def _build_v03_dashboard(*, config: R1Config, market: dict, theme_review: dict,
         ["所屬題材", "股票", "優先持有參考值", "實際持有", "當日收盤", "持股市值", "持股占比", "半年目標"],
     ]
     for ticker in display_tickers:
-        security = securities[ticker]
+        security = securities.get(ticker)
+        holding = held.get(ticker)
+        company = security.company if security else holding.get("company", ticker)
+        shares = security.shares if security else holding.get("shares", 0)
         close = closes.get(ticker)
-        market_value = security.shares * close if ticker in held and isinstance(close, (int, float)) else None
+        market_value = shares * close if ticker in held and isinstance(close, (int, float)) else None
         weight = market_value / actual_equity if market_value is not None and isinstance(actual_equity, (int, float)) and actual_equity else None
         rows.append([
             "；".join(membership.get(ticker, ["尚未納入11題材池"])),
-            f"{ticker} {security.company}",
+            f"{ticker} {company}",
             priority_by_ticker.get(ticker) if priority_by_ticker.get(ticker) is not None else "評分資料未齊",
-            f"實際持有｜{security.shares:,}股" if ticker in held else "",
+            f"實際持有｜{shares:,}股" if ticker in held else "",
             _money(close) if ticker in held and close is not None else "",
             _money(market_value) if market_value is not None else "",
             _percent(weight) if weight is not None else "",
@@ -323,6 +334,7 @@ def build_dashboard_payload(
         config=config, market=market, theme_review=theme_review, theme_path=theme_path,
         transition=transition, comparison=comparison, recommendations=recommendations,
         total_actual_equity=actual_account.get("equity_market_value"),
+        actual_positions=actual_account.get("positions", []),
     )
 
     for security in config.securities:

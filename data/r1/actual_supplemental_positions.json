@@ -1,0 +1,24 @@
+{
+  "as_of_date": "2026-10-13",
+  "source": "Ryan broker screenshot supplied 2026-10-13",
+  "positions": [
+    {
+      "ticker": "00631L",
+      "company": "元大台灣50正2",
+      "shares": 2500,
+      "average_cost": 39.3212,
+      "owner": "Ryan",
+      "reason": "2026-10-13 user-confirmed purchase; separate from spouse-owned 1,260 shares"
+    }
+  ],
+  "excluded_positions": [
+    {
+      "ticker": "00631L",
+      "company": "元大台灣50正2",
+      "shares": 1260,
+      "average_cost": 30.16,
+      "owner": "Ryan spouse",
+      "reason": "User explicitly excluded from R1 actual account"
+    }
+  ]
+}

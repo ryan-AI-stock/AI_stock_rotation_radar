@@ -10,11 +10,19 @@ from r1.config import R1Config
 
 def build_actual_account(*, date: str, config_path: str | Path,
                          market_path: str | Path, cash: float | None = None,
-                         broker_snapshot_path: str | Path | None = None) -> dict[str, Any]:
+                         broker_snapshot_path: str | Path | None = None,
+                         supplemental_positions_path: str | Path | None = None,
+                         supplemental_market_path: str | Path | None = None) -> dict[str, Any]:
     """Value confirmed shares even when the broker cash balance is not reconciled."""
     config = R1Config.load(config_path)
     market = json.loads(Path(market_path).read_text(encoding="utf-8"))
     closes = {str(row["ticker"]).zfill(4): row.get("raw_close") for row in market.get("rows", [])}
+    if supplemental_market_path and Path(supplemental_market_path).exists():
+        supplemental_market = json.loads(Path(supplemental_market_path).read_text(encoding="utf-8"))
+        for row in supplemental_market.get("rows", []):
+            ticker = str(row.get("ticker", "")).upper()
+            ticker = "00631L" if ticker in {"00631", "00631L"} else ticker.zfill(4)
+            closes[ticker] = row.get("raw_close")
     positions, gaps = [], []
     equity_market_value = 0.0
     for security in config.securities:
@@ -31,6 +39,29 @@ def build_actual_account(*, date: str, config_path: str | Path,
             "ticker": security.ticker, "company": security.company, "shares": security.shares,
             "raw_close": close, "market_value": market_value,
         })
+    if supplemental_positions_path and Path(supplemental_positions_path).exists():
+        supplemental = json.loads(Path(supplemental_positions_path).read_text(encoding="utf-8"))
+        if str(supplemental.get("as_of_date", "")) <= date:
+            configured = {row["ticker"] for row in positions}
+            for item in supplemental.get("positions", []):
+                ticker = str(item.get("ticker", "")).upper()
+                if ticker in configured:
+                    raise ValueError(f"supplemental actual position duplicates configured holding: {ticker}")
+                shares = item.get("shares")
+                close = closes.get(ticker)
+                if not isinstance(shares, (int, float)) or shares <= 0:
+                    raise ValueError(f"invalid supplemental actual shares: {ticker}")
+                if not isinstance(close, (int, float)):
+                    gaps.append({"ticker": ticker, "reason": "EXACT_OFFICIAL_CLOSE_MISSING"})
+                    market_value = None
+                else:
+                    market_value = float(close) * float(shares)
+                    equity_market_value += market_value
+                positions.append({
+                    "ticker": ticker, "company": item.get("company", ticker), "shares": shares,
+                    "raw_close": close, "market_value": market_value,
+                    "average_cost": item.get("average_cost"), "source": supplemental.get("source"),
+                })
     visible_positions_market_value = equity_market_value
     broker_snapshot = None
     if broker_snapshot_path and Path(broker_snapshot_path).exists():
@@ -65,6 +96,8 @@ def main() -> None:
     parser.add_argument("--cash", type=float)
     parser.add_argument("--cash-ledger", default="data/r1/actual_cash_flows.json")
     parser.add_argument("--broker-snapshot", default="data/r1/actual_holdings_snapshot_20261008.json")
+    parser.add_argument("--supplemental-positions", default="data/r1/actual_supplemental_positions.json")
+    parser.add_argument("--supplemental-market", default="data/r1/benchmark_market_latest.json")
     parser.add_argument("--output", default="data/r1/actual_account_state.json")
     args = parser.parse_args()
     cash = args.cash
@@ -76,7 +109,9 @@ def main() -> None:
             if isinstance(confirmed_cash, (int, float)):
                 cash = float(confirmed_cash)
     payload = build_actual_account(date=args.date, config_path=args.config, market_path=args.market, cash=cash,
-                                   broker_snapshot_path=args.broker_snapshot)
+                                   broker_snapshot_path=args.broker_snapshot,
+                                   supplemental_positions_path=args.supplemental_positions,
+                                   supplemental_market_path=args.supplemental_market)
     if cash_ledger.exists() and isinstance(payload.get("nav"), (int, float)):
         ledger = json.loads(cash_ledger.read_text(encoding="utf-8"))
         exclusions = ledger.get("comparison_scope_exclusions", {})

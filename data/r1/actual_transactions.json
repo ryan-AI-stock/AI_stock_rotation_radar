@@ -1,5 +1,5 @@
 {
-  "as_of_date": "2026-10-08",
+  "as_of_date": "2026-10-13",
   "source": "Ryan broker screenshots; duplicate rows removed; displayed cash flows include costs",
   "transactions": [
     {"transaction_date":"2026-08-05","action":"SELL","ticker":"00631L","company":"元大台灣50正2","shares":139000,"price":34.70,"net_cash_flow":4814353,"realized_pnl":-433401},
@@ -33,7 +33,9 @@
     {"transaction_date":"2026-10-07","action":"SELL","ticker":"2327","company":"國巨","shares":1000,"price":651.0,"net_cash_flow":648491,"realized_pnl":80006},
     {"transaction_date":"2026-10-07","action":"SELL","ticker":"2327","company":"國巨","shares":200,"price":651.0,"net_cash_flow":129699,"realized_pnl":16002},
     {"transaction_date":"2026-10-08","action":"SELL","ticker":"2327","company":"國巨","shares":1000,"price":632.0,"net_cash_flow":629564,"realized_pnl":61079},
-    {"transaction_date":"2026-10-08","action":"BUY","ticker":"3081","company":"聯亞","shares":220,"price":2990.0,"net_cash_flow":-658362,"realized_pnl":null}
+    {"transaction_date":"2026-10-08","action":"BUY","ticker":"3081","company":"聯亞","shares":220,"price":2990.0,"net_cash_flow":-658362,"realized_pnl":null},
+    {"transaction_date":"2026-10-13","action":"BUY","ticker":"00631L","company":"元大台灣50正2","shares":2000,"price":39.29,"gross_amount":78580,"fees":67,"tax":0,"net_cash_flow":-78647,"realized_pnl":null},
+    {"transaction_date":"2026-10-13","action":"BUY","ticker":"00631L","company":"元大台灣50正2","shares":500,"price":39.28,"gross_amount":19640,"fees":16,"tax":0,"net_cash_flow":-19656,"realized_pnl":null}
   ],
   "formal_model_changed": false,
   "trade_decision_changed": false,

@@ -1,5 +1,5 @@
 {
-  "as_of_date": "2026-10-08",
+  "as_of_date": "2026-10-13",
   "opening_nav": 7676961.04,
   "external_contributions": [
     {"date":"2026-08-16","amount":14954.0,"description":"基金月配息"},
@@ -19,7 +19,7 @@
       {"date":"2026-10-08","amount":17733.0,"reason":"來自比較範圍外台積電持股"}
     ]
   },
-  "confirmed_cash": 236454.0,
+  "confirmed_cash": 138151.0,
   "cumulative_contributed_capital": 8341040.04,
-  "source": "Ryan confirmed cash-flow list and current cash on 2026-10-11"
+  "source": "Ryan confirmed cash-flow list and current cash on 2026-10-11; less confirmed 2026-10-13 purchase outflow 98,303"
 }

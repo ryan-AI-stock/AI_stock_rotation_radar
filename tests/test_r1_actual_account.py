@@ -7,6 +7,28 @@ from r1.actual_account import build_actual_account
 
 
 class ActualAccountTest(unittest.TestCase):
+    def test_user_owned_supplemental_etf_is_added_without_spouse_shares(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            positions = root / "positions.json"
+            market = root / "market.json"
+            positions.write_text(json.dumps({
+                "as_of_date": "2026-10-13",
+                "positions": [{"ticker": "00631L", "company": "元大台灣50正2", "shares": 2500}],
+                "excluded_positions": [{"ticker": "00631L", "shares": 1260, "owner": "Ryan spouse"}],
+            }), encoding="utf-8")
+            market.write_text(json.dumps({
+                "rows": [{"ticker": "00631", "raw_close": 40.0}],
+            }), encoding="utf-8")
+            result = build_actual_account(
+                date="2026-10-13", config_path=Path(__file__).resolve().parents[1] / "config/r1.json",
+                market_path=Path(__file__).resolve().parents[1] / "data/r1/daily_market_latest.json",
+                supplemental_positions_path=positions, supplemental_market_path=market,
+            )
+        etf = next(row for row in result["positions"] if row["ticker"] == "00631L")
+        self.assertEqual(etf["shares"], 2500)
+        self.assertEqual(etf["market_value"], 100000)
+
     def test_current_confirmed_positions_keep_remaining_globalwafers_shares(self):
         root = Path(__file__).resolve().parents[1]
         result = build_actual_account(
