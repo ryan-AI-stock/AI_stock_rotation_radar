@@ -151,35 +151,31 @@
         "既有實際持股"
       ],
       [
-        "02｜三條績效線"
+        "02｜兩條績效線"
       ],
       [
         "比較線",
         "當日NAV",
         "累計投入本金",
         "累積報酬",
-        "狀態"
+        "狀態",
+        "相較實際操作差額"
       ],
       [
         "Ryan 8/5後操作範圍（排除既有台積電）",
         "8,218,786.5",
         "8,341,040.0",
         "-1.5%",
-        "READY"
+        "READY",
+        ""
       ],
       [
         "8/5全部轉0050正二後長抱",
         "9,530,644.8",
         "8,341,040.0",
         "14.3%",
-        "READY"
-      ],
-      [
-        "8/5原持股完全不動",
-        "9,122,039.5",
-        "8,341,040.0",
-        "9.4%",
-        "READY"
+        "READY",
+        "=B21-B20"
       ],
       [
         "03｜今日換倉建議"
@@ -196,7 +192,7 @@
         "僅觀察",
         "",
         "2308 台達電",
-        "現有證據觀察分 45.6/80.0；尚缺完整構面，不構成換倉建議"
+        "現有證據觀察分 48.3/80.0；尚缺完整構面，不構成換倉建議"
       ],
       [
         "04｜無差別殺盤過渡層（研究觀察）"
@@ -292,7 +288,7 @@
         "07｜模型完整說明"
       ],
       [
-        "R1 v0.5｜實際帳戶總覽與AI瓶頸換倉顧問\n\n【模型任務】\nR1記錄Ryan實際成交與帳戶結果，並與「8/5全部轉為0050正二後抱住」及「8/5原持股完全不動」兩條同起點基準每日比較。績效比較排除未包含於8/5共同本金的既有台積電持股及其配息；總持股區仍完整顯示。三條線未完成共同起始NAV與現金流對帳前，不發布誰勝誰負。\n\n【季度Top3】\n結構性龍頭評分：AI瓶頸直接性25%、產業與技術地位25%、AI營收兌現20%、財務與獲利品質20%、市場代表性10%。官方與公司正式揭露優先；分析師與市場共識只能補充，不能單獨決定排名。任一成分股必要證據不足時，該題材Top3維持待資料。\n\n【每日換倉優先序】\n結構瓶頸20%、營收獲利兌現20%、12個月目標價上行空間20%、目標價修正與機構廣度10%、題材動能與催化10%、相對估值10%、價格籌碼風險10%。缺一構面不補0、不重配權重。建議與實際成交分離，只有Ryan確認成交才更新持股。\n\n【無差別殺盤過渡層】\n未來半年五檔目標維持不變。當加權指數或十一題材候選池出現廣泛急跌時，R1開放全候選池進行過渡比較，包括五檔目標本身。跌深不是買進理由；候選仍須通過財務、題材催化及風險資料。盤中只列觀察，收盤後以官方資料確認；模型不自動成交。\n\n【更新頻率】\n每個交易日更新三條績效線與換倉建議；每週更新12個月目標價共識、題材催化與風險；每季重評AI瓶頸題材、成分股與Top3。目標價採90日內至少3家可識別機構的中位數，單一外資只展示、不計分。\n\n【模型邊界】\nR1是report-only顧問，不自動下單。V4-D與C6程式保留但每日發布已暫停，直到Ryan明確要求恢復。"
+        "R1 v0.5｜實際帳戶總覽與AI瓶頸換倉顧問\n\n【模型任務】\nR1記錄Ryan實際成交與帳戶結果，並與「8/5全部轉為0050正二後抱住」同起點基準每日比較。績效比較排除未包含於8/5共同本金的既有台積電持股及其配息；總持股區仍完整顯示。兩條線未完成共同起始NAV與現金流對帳前，不發布誰勝誰負。\n\n【季度Top3】\n結構性龍頭評分：AI瓶頸直接性25%、產業與技術地位25%、AI營收兌現20%、財務與獲利品質20%、市場代表性10%。官方與公司正式揭露優先；分析師與市場共識只能補充，不能單獨決定排名。任一成分股必要證據不足時，該題材Top3維持待資料。\n\n【每日換倉優先序】\n結構瓶頸20%、營收獲利兌現20%、12個月目標價上行空間20%、目標價修正與機構廣度10%、題材動能與催化10%、相對估值10%、價格籌碼風險10%。缺一構面不補0、不重配權重。建議與實際成交分離，只有Ryan確認成交才更新持股。\n\n【無差別殺盤過渡層】\n未來半年五檔目標維持不變。當加權指數或十一題材候選池出現廣泛急跌時，R1開放全候選池進行過渡比較，包括五檔目標本身。跌深不是買進理由；候選仍須通過財務、題材催化及風險資料。盤中只列觀察，收盤後以官方資料確認；模型不自動成交。\n\n【更新頻率】\n每個交易日更新兩條績效線與換倉建議；每週更新12個月目標價共識、題材催化與風險；每季重評AI瓶頸題材、成分股與Top3。目標價採90日內至少3家可識別機構的中位數，單一外資只展示、不計分。\n\n【模型邊界】\nR1是report-only顧問，不自動下單。V4-D與C6程式保留但每日發布已暫停，直到Ryan明確要求恢復。"
       ]
     ],
     "R1績效每日比較": [
@@ -328,17 +324,6 @@
         0.0,
         "READY",
         "00631L股數／起始餘現金已對帳"
-      ],
-      [
-        "2026-10-14",
-        "ORIGINAL_HOLD",
-        9122039.504153049,
-        8341040.04,
-        664079.0,
-        0.09363334313319616,
-        -0.04898733482719031,
-        "READY",
-        "8/5原持股股數與餘現金已對帳"
       ]
     ],
     "R1每日換倉建議": [
@@ -363,10 +348,10 @@
         "",
         "2308",
         "台達電",
-        45.557513,
+        48.281235,
         null,
         "LOW",
-        "現有證據觀察分 45.6/80.0；尚缺完整構面，不構成換倉建議",
+        "現有證據觀察分 48.3/80.0；尚缺完整構面，不構成換倉建議",
         "target_revision_and_breadth、price_chip_risk",
         "只觀察，不執行"
       ]
@@ -984,14 +969,14 @@
         1646326792.0,
         null,
         null,
-        false,
+        true,
         true,
         true,
         false,
         true,
         null,
         "DATA_MISSING",
-        "CONSENSUS_NOT_READY;EPS_REVISION_HISTORY_NOT_READY;VALUATION_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
+        "EPS_REVISION_HISTORY_NOT_READY;VALUATION_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
       ],
       [
         "2026-10-14",
@@ -1200,14 +1185,14 @@
         3568775601.75,
         null,
         null,
-        false,
+        true,
         true,
         true,
         false,
         true,
         null,
         "DATA_MISSING",
-        "CONSENSUS_NOT_READY;EPS_REVISION_HISTORY_NOT_READY;VALUATION_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
+        "EPS_REVISION_HISTORY_NOT_READY;VALUATION_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
       ],
       [
         "2026-10-14",
@@ -1227,14 +1212,14 @@
         1530614036.05,
         null,
         null,
-        false,
+        true,
         true,
         true,
         false,
         true,
         null,
         "DATA_MISSING",
-        "CONSENSUS_NOT_READY;EPS_REVISION_HISTORY_NOT_READY;VALUATION_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
+        "EPS_REVISION_HISTORY_NOT_READY;VALUATION_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
       ],
       [
         "2026-10-14",
@@ -1308,14 +1293,14 @@
         36519526.55,
         null,
         null,
-        false,
+        true,
         true,
         true,
         false,
         true,
         null,
         "DATA_MISSING",
-        "CONSENSUS_NOT_READY;EPS_REVISION_HISTORY_NOT_READY;VALUATION_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
+        "EPS_REVISION_HISTORY_NOT_READY;VALUATION_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
       ],
       [
         "2026-10-14",

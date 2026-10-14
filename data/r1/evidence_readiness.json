@@ -3,7 +3,7 @@
   "as_of_date": "2026-10-14",
   "fiscal_year": 2027,
   "requested_ticker_count": 54,
-  "consensus_ready_count": 42,
+  "consensus_ready_count": 46,
   "eps_revision_ready_count": 0,
   "eps_revision_progress": {
     "first_observation_date": "2026-10-02",
@@ -538,7 +538,7 @@
     },
     {
       "ticker": "3260",
-      "consensus_ready": false,
+      "consensus_ready": true,
       "eps_revision_ready": false,
       "catalyst_ready": true,
       "catalyst_score_ready": false,
@@ -555,7 +555,6 @@
       "component_score_ready": false,
       "trade_ready": false,
       "blocked_reasons": [
-        "CONSENSUS_NOT_READY",
         "EPS_REVISION_HISTORY_NOT_READY",
         "VALUATION_HISTORY_NOT_READY",
         "ACTION_POLICY_NOT_APPROVED"
@@ -731,7 +730,7 @@
     },
     {
       "ticker": "6442",
-      "consensus_ready": false,
+      "consensus_ready": true,
       "eps_revision_ready": false,
       "catalyst_ready": true,
       "catalyst_score_ready": false,
@@ -748,7 +747,6 @@
       "component_score_ready": false,
       "trade_ready": false,
       "blocked_reasons": [
-        "CONSENSUS_NOT_READY",
         "EPS_REVISION_HISTORY_NOT_READY",
         "VALUATION_HISTORY_NOT_READY",
         "ACTION_POLICY_NOT_APPROVED"
@@ -756,7 +754,7 @@
     },
     {
       "ticker": "3163",
-      "consensus_ready": false,
+      "consensus_ready": true,
       "eps_revision_ready": false,
       "catalyst_ready": true,
       "catalyst_score_ready": false,
@@ -773,7 +771,6 @@
       "component_score_ready": false,
       "trade_ready": false,
       "blocked_reasons": [
-        "CONSENSUS_NOT_READY",
         "EPS_REVISION_HISTORY_NOT_READY",
         "VALUATION_HISTORY_NOT_READY",
         "ACTION_POLICY_NOT_APPROVED"
@@ -830,7 +827,7 @@
     },
     {
       "ticker": "6412",
-      "consensus_ready": false,
+      "consensus_ready": true,
       "eps_revision_ready": false,
       "catalyst_ready": true,
       "catalyst_score_ready": false,
@@ -847,7 +844,6 @@
       "component_score_ready": false,
       "trade_ready": false,
       "blocked_reasons": [
-        "CONSENSUS_NOT_READY",
         "EPS_REVISION_HISTORY_NOT_READY",
         "VALUATION_HISTORY_NOT_READY",
         "ACTION_POLICY_NOT_APPROVED"
