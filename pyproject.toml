@@ -10,6 +10,7 @@ dependencies = [
     "google-auth",
     "playwright",
     "requests",
+    "yfinance",
 ]
 
 [project.optional-dependencies]

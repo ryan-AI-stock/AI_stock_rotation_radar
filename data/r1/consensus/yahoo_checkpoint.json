@@ -1,0 +1,1513 @@
+{
+  "retrieved_at": "2026-10-14",
+  "completed": {
+    "1560": {
+      "symbol": "1560.TW",
+      "rows": [
+        {
+          "ticker": "1560",
+          "fiscal_year": "2026",
+          "mean_eps": "14.9701",
+          "median_eps": "14.9701",
+          "high_eps": "16.28",
+          "low_eps": "14.23",
+          "analyst_count": "7",
+          "source": "Yahoo Finance analyst consensus",
+          "published_at": "2026-10-14",
+          "available_at": "2026-10-14",
+          "retrieved_at": "2026-10-14",
+          "quality": "MEDIUM",
+          "status": "READY"
+        },
+        {
+          "ticker": "1560",
+          "fiscal_year": "2027",
+          "mean_eps": "20.9748",
+          "median_eps": "20.9748",
+          "high_eps": "23.17",
+          "low_eps": "17.81",
+          "analyst_count": "8",
+          "source": "Yahoo Finance analyst consensus",
+          "published_at": "2026-10-14",
+          "available_at": "2026-10-14",
+          "retrieved_at": "2026-10-14",
+          "quality": "MEDIUM",
+          "status": "READY"
+        }
+      ]
+    },
+    "2301": {
+      "symbol": "2301.TW",
+      "rows": [
+        {
+          "ticker": "2301",
+          "fiscal_year": "2026",
+          "mean_eps": "10.83473",
+          "median_eps": "10.83473",
+          "high_eps": "11.79",
+          "low_eps": "10.06",
+          "analyst_count": "12",
+          "source": "Yahoo Finance analyst consensus",
+          "published_at": "2026-10-14",
+          "available_at": "2026-10-14",
+          "retrieved_at": "2026-10-14",
+          "quality": "MEDIUM",
+          "status": "READY"
+        },
+        {
+          "ticker": "2301",
+          "fiscal_year": "2027",
+          "mean_eps": "15.0697",
+          "median_eps": "15.0697",
+          "high_eps": "18.94",
+          "low_eps": "12.62",
+          "analyst_count": "12",
+          "source": "Yahoo Finance analyst consensus",
+          "published_at": "2026-10-14",
+          "available_at": "2026-10-14",
+          "retrieved_at": "2026-10-14",
+          "quality": "MEDIUM",
+          "status": "READY"
+        }
+      ]
+    },
+    "2303": {
+      "symbol": "2303.TW",
+      "rows": [
+        {
+          "ticker": "2303",
+          "fiscal_year": "2026",
+          "mean_eps": "7.01942",
+          "median_eps": "7.01942",
+          "high_eps": "8.15",
+          "low_eps": "4.55",
+          "analyst_count": "20",
+          "source": "Yahoo Finance analyst consensus",
+          "published_at": "2026-10-14",
+          "available_at": "2026-10-14",
+          "retrieved_at": "2026-10-14",
+          "quality": "MEDIUM",
+          "status": "READY"
+        },
+        {
+          "ticker": "2303",
+          "fiscal_year": "2027",
+          "mean_eps": "7.29565",
+          "median_eps": "7.29565",
+          "high_eps": "10.09",
+          "low_eps": "3.99277",
+          "analyst_count": "22",
+          "source": "Yahoo Finance analyst consensus",
+          "published_at": "2026-10-14",
+          "available_at": "2026-10-14",
+          "retrieved_at": "2026-10-14",
+          "quality": "MEDIUM",
+          "status": "READY"
+        }
+      ]
+    },
+    "2308": {
+      "symbol": "2308.TW",
+      "rows": [
+        {
+          "ticker": "2308",
+          "fiscal_year": "2026",
+          "mean_eps": "40.49824",
+          "median_eps": "40.49824",
+          "high_eps": "43.07",
+          "low_eps": "37.25313",
+          "analyst_count": "22",
+          "source": "Yahoo Finance analyst consensus",
+          "published_at": "2026-10-14",
+          "available_at": "2026-10-14",
+          "retrieved_at": "2026-10-14",
+          "quality": "MEDIUM",
+          "status": "READY"
+        },
+        {
+          "ticker": "2308",
+          "fiscal_year": "2027",
+          "mean_eps": "64.31741",
+          "median_eps": "64.31741",
+          "high_eps": "80.78",
+          "low_eps": "55.87921",
+          "analyst_count": "22",
+          "source": "Yahoo Finance analyst consensus",
+          "published_at": "2026-10-14",
+          "available_at": "2026-10-14",
+          "retrieved_at": "2026-10-14",
+          "quality": "MEDIUM",
+          "status": "READY"
+        }
+      ]
+    },
+    "2317": {
+      "symbol": "2317.TW",
+      "rows": [
+        {
+          "ticker": "2317",
+          "fiscal_year": "2026",
+          "mean_eps": "18.60986",
+          "median_eps": "18.60986",
+          "high_eps": "19.87",
+          "low_eps": "17.644",
+          "analyst_count": "17",
+          "source": "Yahoo Finance analyst consensus",
+          "published_at": "2026-10-14",
+          "available_at": "2026-10-14",
+          "retrieved_at": "2026-10-14",
+          "quality": "MEDIUM",
+          "status": "READY"
+        },
+        {
+          "ticker": "2317",
+          "fiscal_year": "2027",
+          "mean_eps": "23.12632",
+          "median_eps": "23.12632",
+          "high_eps": "27.12685",
+          "low_eps": "19.9",
+          "analyst_count": "19",
+          "source": "Yahoo Finance analyst consensus",
+          "published_at": "2026-10-14",
+          "available_at": "2026-10-14",
+          "retrieved_at": "2026-10-14",
+          "quality": "MEDIUM",
+          "status": "READY"
+        }
+      ]
+    },
+    "2327": {
+      "symbol": "2327.TW",
+      "rows": [
+        {
+          "ticker": "2327",
+          "fiscal_year": "2026",
+          "mean_eps": "20.11068",
+          "median_eps": "20.11068",
+          "high_eps": "20.6",
+          "low_eps": "19.66",
+          "analyst_count": "7",
+          "source": "Yahoo Finance analyst consensus",
+          "published_at": "2026-10-14",
+          "available_at": "2026-10-14",
+          "retrieved_at": "2026-10-14",
+          "quality": "MEDIUM",
+          "status": "READY"
+        },
+        {
+          "ticker": "2327",
+          "fiscal_year": "2027",
+          "mean_eps": "31.56477",
+          "median_eps": "31.56477",
+          "high_eps": "38.83643",
+          "low_eps": "24.47914",
+          "analyst_count": "14",
+          "source": "Yahoo Finance analyst consensus",
+          "published_at": "2026-10-14",
+          "available_at": "2026-10-14",
+          "retrieved_at": "2026-10-14",
+          "quality": "MEDIUM",
+          "status": "READY"
+        }
+      ]
+    },
+    "2330": {
+      "symbol": "2330.TW",
+      "rows": [
+        {
+          "ticker": "2330",
+          "fiscal_year": "2026",
+          "mean_eps": "108.56853",
+          "median_eps": "108.56853",
+          "high_eps": "115.32",
+          "low_eps": "98.4",
+          "analyst_count": "36",
+          "source": "Yahoo Finance analyst consensus",
+          "published_at": "2026-10-14",
+          "available_at": "2026-10-14",
+          "retrieved_at": "2026-10-14",
+          "quality": "MEDIUM",
+          "status": "READY"
+        },
+        {
+          "ticker": "2330",
+          "fiscal_year": "2027",
+          "mean_eps": "145.76128",
+          "median_eps": "145.76128",
+          "high_eps": "167.12775",
+          "low_eps": "126.5",
+          "analyst_count": "36",
+          "source": "Yahoo Finance analyst consensus",
+          "published_at": "2026-10-14",
+          "available_at": "2026-10-14",
+          "retrieved_at": "2026-10-14",
+          "quality": "MEDIUM",
+          "status": "READY"
+        }
+      ]
+    },
+    "2337": {
+      "symbol": "2337.TW",
+      "rows": [
+        {
+          "ticker": "2337",
+          "fiscal_year": "2026",
+          "mean_eps": "19.6119",
+          "median_eps": "19.6119",
+          "high_eps": "23.54",
+          "low_eps": "14.75859",
+          "analyst_count": "6",
+          "source": "Yahoo Finance analyst consensus",
+          "published_at": "2026-10-14",
+          "available_at": "2026-10-14",
+          "retrieved_at": "2026-10-14",
+          "quality": "MEDIUM",
+          "status": "READY"
+        },
+        {
+          "ticker": "2337",
+          "fiscal_year": "2027",
+          "mean_eps": "41.6037",
+          "median_eps": "41.6037",
+          "high_eps": "67",
+          "low_eps": "11.15",
+          "analyst_count": "7",
+          "source": "Yahoo Finance analyst consensus",
+          "published_at": "2026-10-14",
+          "available_at": "2026-10-14",
+          "retrieved_at": "2026-10-14",
+          "quality": "MEDIUM",
+          "status": "READY"
+        }
+      ]
+    },
+    "2344": {
+      "symbol": "2344.TW",
+      "rows": [
+        {
+          "ticker": "2344",
+          "fiscal_year": "2026",
+          "mean_eps": "25.418",
+          "median_eps": "25.418",
+          "high_eps": "27.08",
+          "low_eps": "24.43",
+          "analyst_count": "5",
+          "source": "Yahoo Finance analyst consensus",
+          "published_at": "2026-10-14",
+          "available_at": "2026-10-14",
+          "retrieved_at": "2026-10-14",
+          "quality": "MEDIUM",
+          "status": "READY"
+        },
+        {
+          "ticker": "2344",
+          "fiscal_year": "2027",
+          "mean_eps": "52.54831",
+          "median_eps": "52.54831",
+          "high_eps": "69.97",
+          "low_eps": "32.03878",
+          "analyst_count": "8",
+          "source": "Yahoo Finance analyst consensus",
+          "published_at": "2026-10-14",
+          "available_at": "2026-10-14",
+          "retrieved_at": "2026-10-14",
+          "quality": "MEDIUM",
+          "status": "READY"
+        }
+      ]
+    },
+    "2345": {
+      "symbol": "2345.TW",
+      "rows": [
+        {
+          "ticker": "2345",
+          "fiscal_year": "2026",
+          "mean_eps": "86.62225",
+          "median_eps": "86.62225",
+          "high_eps": "89.49073",
+          "low_eps": "83.78434",
+          "analyst_count": "9",
+          "source": "Yahoo Finance analyst consensus",
+          "published_at": "2026-10-14",
+          "available_at": "2026-10-14",
+          "retrieved_at": "2026-10-14",
+          "quality": "MEDIUM",
+          "status": "READY"
+        },
+        {
+          "ticker": "2345",
+          "fiscal_year": "2027",
+          "mean_eps": "114.61779",
+          "median_eps": "114.61779",
+          "high_eps": "139.6078",
+          "low_eps": "80.2",
+          "analyst_count": "14",
+          "source": "Yahoo Finance analyst consensus",
+          "published_at": "2026-10-14",
+          "available_at": "2026-10-14",
+          "retrieved_at": "2026-10-14",
+          "quality": "MEDIUM",
+          "status": "READY"
+        }
+      ]
+    },
+    "2356": {
+      "symbol": "2356.TW",
+      "rows": [
+        {
+          "ticker": "2356",
+          "fiscal_year": "2026",
+          "mean_eps": "3.62318",
+          "median_eps": "3.62318",
+          "high_eps": "4.01",
+          "low_eps": "3.16",
+          "analyst_count": "6",
+          "source": "Yahoo Finance analyst consensus",
+          "published_at": "2026-10-14",
+          "available_at": "2026-10-14",
+          "retrieved_at": "2026-10-14",
+          "quality": "MEDIUM",
+          "status": "READY"
+        },
+        {
+          "ticker": "2356",
+          "fiscal_year": "2027",
+          "mean_eps": "4.36402",
+          "median_eps": "4.36402",
+          "high_eps": "5.62",
+          "low_eps": "3.85",
+          "analyst_count": "8",
+          "source": "Yahoo Finance analyst consensus",
+          "published_at": "2026-10-14",
+          "available_at": "2026-10-14",
+          "retrieved_at": "2026-10-14",
+          "quality": "MEDIUM",
+          "status": "READY"
+        }
+      ]
+    },
+    "2368": {
+      "symbol": "2368.TW",
+      "rows": [
+        {
+          "ticker": "2368",
+          "fiscal_year": "2026",
+          "mean_eps": "41.22249",
+          "median_eps": "41.22249",
+          "high_eps": "41.49",
+          "low_eps": "40.76",
+          "analyst_count": "4",
+          "source": "Yahoo Finance analyst consensus",
+          "published_at": "2026-10-14",
+          "available_at": "2026-10-14",
+          "retrieved_at": "2026-10-14",
+          "quality": "MEDIUM",
+          "status": "READY"
+        },
+        {
+          "ticker": "2368",
+          "fiscal_year": "2027",
+          "mean_eps": "65.8129",
+          "median_eps": "65.8129",
+          "high_eps": "90",
+          "low_eps": "38.53",
+          "analyst_count": "10",
+          "source": "Yahoo Finance analyst consensus",
+          "published_at": "2026-10-14",
+          "available_at": "2026-10-14",
+          "retrieved_at": "2026-10-14",
+          "quality": "MEDIUM",
+          "status": "READY"
+        }
+      ]
+    },
+    "2376": {
+      "symbol": "2376.TW",
+      "rows": [
+        {
+          "ticker": "2376",
+          "fiscal_year": "2026",
+          "mean_eps": "33.4766",
+          "median_eps": "33.4766",
+          "high_eps": "37.04284",
+          "low_eps": "30.07",
+          "analyst_count": "8",
+          "source": "Yahoo Finance analyst consensus",
+          "published_at": "2026-10-14",
+          "available_at": "2026-10-14",
+          "retrieved_at": "2026-10-14",
+          "quality": "MEDIUM",
+          "status": "READY"
+        },
+        {
+          "ticker": "2376",
+          "fiscal_year": "2027",
+          "mean_eps": "36.99918",
+          "median_eps": "36.99918",
+          "high_eps": "43.42184",
+          "low_eps": "29.88",
+          "analyst_count": "10",
+          "source": "Yahoo Finance analyst consensus",
+          "published_at": "2026-10-14",
+          "available_at": "2026-10-14",
+          "retrieved_at": "2026-10-14",
+          "quality": "MEDIUM",
+          "status": "READY"
+        }
+      ]
+    },
+    "2379": {
+      "symbol": "2379.TW",
+      "rows": [
+        {
+          "ticker": "2379",
+          "fiscal_year": "2026",
+          "mean_eps": "31.29864",
+          "median_eps": "31.29864",
+          "high_eps": "33.59332",
+          "low_eps": "27.66",
+          "analyst_count": "14",
+          "source": "Yahoo Finance analyst consensus",
+          "published_at": "2026-10-14",
+          "available_at": "2026-10-14",
+          "retrieved_at": "2026-10-14",
+          "quality": "MEDIUM",
+          "status": "READY"
+        },
+        {
+          "ticker": "2379",
+          "fiscal_year": "2027",
+          "mean_eps": "38.20177",
+          "median_eps": "38.20177",
+          "high_eps": "43.92526",
+          "low_eps": "29.15",
+          "analyst_count": "16",
+          "source": "Yahoo Finance analyst consensus",
+          "published_at": "2026-10-14",
+          "available_at": "2026-10-14",
+          "retrieved_at": "2026-10-14",
+          "quality": "MEDIUM",
+          "status": "READY"
+        }
+      ]
+    },
+    "2382": {
+      "symbol": "2382.TW",
+      "rows": [
+        {
+          "ticker": "2382",
+          "fiscal_year": "2026",
+          "mean_eps": "26.72768",
+          "median_eps": "26.72768",
+          "high_eps": "29.4",
+          "low_eps": "21.07",
+          "analyst_count": "18",
+          "source": "Yahoo Finance analyst consensus",
+          "published_at": "2026-10-14",
+          "available_at": "2026-10-14",
+          "retrieved_at": "2026-10-14",
+          "quality": "MEDIUM",
+          "status": "READY"
+        },
+        {
+          "ticker": "2382",
+          "fiscal_year": "2027",
+          "mean_eps": "31.98112",
+          "median_eps": "31.98112",
+          "high_eps": "36.27",
+          "low_eps": "23.08",
+          "analyst_count": "18",
+          "source": "Yahoo Finance analyst consensus",
+          "published_at": "2026-10-14",
+          "available_at": "2026-10-14",
+          "retrieved_at": "2026-10-14",
+          "quality": "MEDIUM",
+          "status": "READY"
+        }
+      ]
+    },
+    "2383": {
+      "symbol": "2383.TW",
+      "rows": [
+        {
+          "ticker": "2383",
+          "fiscal_year": "2026",
+          "mean_eps": "118.22755",
+          "median_eps": "118.22755",
+          "high_eps": "130.62",
+          "low_eps": "108.84",
+          "analyst_count": "18",
+          "source": "Yahoo Finance analyst consensus",
+          "published_at": "2026-10-14",
+          "available_at": "2026-10-14",
+          "retrieved_at": "2026-10-14",
+          "quality": "MEDIUM",
+          "status": "READY"
+        },
+        {
+          "ticker": "2383",
+          "fiscal_year": "2027",
+          "mean_eps": "234.34383",
+          "median_eps": "234.34383",
+          "high_eps": "280.89",
+          "low_eps": "190.64",
+          "analyst_count": "18",
+          "source": "Yahoo Finance analyst consensus",
+          "published_at": "2026-10-14",
+          "available_at": "2026-10-14",
+          "retrieved_at": "2026-10-14",
+          "quality": "MEDIUM",
+          "status": "READY"
+        }
+      ]
+    },
+    "2408": {
+      "symbol": "2408.TW",
+      "rows": [
+        {
+          "ticker": "2408",
+          "fiscal_year": "2026",
+          "mean_eps": "76.64831",
+          "median_eps": "76.64831",
+          "high_eps": "79.89313",
+          "low_eps": "74.53424",
+          "analyst_count": "7",
+          "source": "Yahoo Finance analyst consensus",
+          "published_at": "2026-10-14",
+          "available_at": "2026-10-14",
+          "retrieved_at": "2026-10-14",
+          "quality": "MEDIUM",
+          "status": "READY"
+        },
+        {
+          "ticker": "2408",
+          "fiscal_year": "2027",
+          "mean_eps": "119.8265",
+          "median_eps": "119.8265",
+          "high_eps": "148.08",
+          "low_eps": "50.86",
+          "analyst_count": "10",
+          "source": "Yahoo Finance analyst consensus",
+          "published_at": "2026-10-14",
+          "available_at": "2026-10-14",
+          "retrieved_at": "2026-10-14",
+          "quality": "MEDIUM",
+          "status": "READY"
+        }
+      ]
+    },
+    "2449": {
+      "symbol": "2449.TW",
+      "rows": [
+        {
+          "ticker": "2449",
+          "fiscal_year": "2026",
+          "mean_eps": "8.69526",
+          "median_eps": "8.69526",
+          "high_eps": "9.22",
+          "low_eps": "7.62438",
+          "analyst_count": "12",
+          "source": "Yahoo Finance analyst consensus",
+          "published_at": "2026-10-14",
+          "available_at": "2026-10-14",
+          "retrieved_at": "2026-10-14",
+          "quality": "MEDIUM",
+          "status": "READY"
+        },
+        {
+          "ticker": "2449",
+          "fiscal_year": "2027",
+          "mean_eps": "14.51489",
+          "median_eps": "14.51489",
+          "high_eps": "16.92744",
+          "low_eps": "12.79048",
+          "analyst_count": "14",
+          "source": "Yahoo Finance analyst consensus",
+          "published_at": "2026-10-14",
+          "available_at": "2026-10-14",
+          "retrieved_at": "2026-10-14",
+          "quality": "MEDIUM",
+          "status": "READY"
+        }
+      ]
+    },
+    "2454": {
+      "symbol": "2454.TW",
+      "rows": [
+        {
+          "ticker": "2454",
+          "fiscal_year": "2026",
+          "mean_eps": "68.40388",
+          "median_eps": "68.40388",
+          "high_eps": "73.35",
+          "low_eps": "58.47812",
+          "analyst_count": "23",
+          "source": "Yahoo Finance analyst consensus",
+          "published_at": "2026-10-14",
+          "available_at": "2026-10-14",
+          "retrieved_at": "2026-10-14",
+          "quality": "MEDIUM",
+          "status": "READY"
+        },
+        {
+          "ticker": "2454",
+          "fiscal_year": "2027",
+          "mean_eps": "148.68452",
+          "median_eps": "148.68452",
+          "high_eps": "185.78",
+          "low_eps": "80.92",
+          "analyst_count": "22",
+          "source": "Yahoo Finance analyst consensus",
+          "published_at": "2026-10-14",
+          "available_at": "2026-10-14",
+          "retrieved_at": "2026-10-14",
+          "quality": "MEDIUM",
+          "status": "READY"
+        }
+      ]
+    },
+    "3008": {
+      "symbol": "3008.TW",
+      "rows": [
+        {
+          "ticker": "3008",
+          "fiscal_year": "2026",
+          "mean_eps": "168.25938",
+          "median_eps": "168.25938",
+          "high_eps": "190.0498",
+          "low_eps": "146.23",
+          "analyst_count": "19",
+          "source": "Yahoo Finance analyst consensus",
+          "published_at": "2026-10-14",
+          "available_at": "2026-10-14",
+          "retrieved_at": "2026-10-14",
+          "quality": "MEDIUM",
+          "status": "READY"
+        },
+        {
+          "ticker": "3008",
+          "fiscal_year": "2027",
+          "mean_eps": "186.96913",
+          "median_eps": "186.96913",
+          "high_eps": "215.67",
+          "low_eps": "147.30379",
+          "analyst_count": "18",
+          "source": "Yahoo Finance analyst consensus",
+          "published_at": "2026-10-14",
+          "available_at": "2026-10-14",
+          "retrieved_at": "2026-10-14",
+          "quality": "MEDIUM",
+          "status": "READY"
+        }
+      ]
+    },
+    "3017": {
+      "symbol": "3017.TW",
+      "rows": [
+        {
+          "ticker": "3017",
+          "fiscal_year": "2026",
+          "mean_eps": "103.52429",
+          "median_eps": "103.52429",
+          "high_eps": "108.25",
+          "low_eps": "93.05",
+          "analyst_count": "16",
+          "source": "Yahoo Finance analyst consensus",
+          "published_at": "2026-10-14",
+          "available_at": "2026-10-14",
+          "retrieved_at": "2026-10-14",
+          "quality": "MEDIUM",
+          "status": "READY"
+        },
+        {
+          "ticker": "3017",
+          "fiscal_year": "2027",
+          "mean_eps": "161.72552",
+          "median_eps": "161.72552",
+          "high_eps": "186.82",
+          "low_eps": "133.09",
+          "analyst_count": "17",
+          "source": "Yahoo Finance analyst consensus",
+          "published_at": "2026-10-14",
+          "available_at": "2026-10-14",
+          "retrieved_at": "2026-10-14",
+          "quality": "MEDIUM",
+          "status": "READY"
+        }
+      ]
+    },
+    "3035": {
+      "symbol": "3035.TW",
+      "rows": [
+        {
+          "ticker": "3035",
+          "fiscal_year": "2026",
+          "mean_eps": "3.20307",
+          "median_eps": "3.20307",
+          "high_eps": "4.05233",
+          "low_eps": "2.32",
+          "analyst_count": "9",
+          "source": "Yahoo Finance analyst consensus",
+          "published_at": "2026-10-14",
+          "available_at": "2026-10-14",
+          "retrieved_at": "2026-10-14",
+          "quality": "MEDIUM",
+          "status": "READY"
+        },
+        {
+          "ticker": "3035",
+          "fiscal_year": "2027",
+          "mean_eps": "6.35833",
+          "median_eps": "6.35833",
+          "high_eps": "8.69762",
+          "low_eps": "4.59",
+          "analyst_count": "9",
+          "source": "Yahoo Finance analyst consensus",
+          "published_at": "2026-10-14",
+          "available_at": "2026-10-14",
+          "retrieved_at": "2026-10-14",
+          "quality": "MEDIUM",
+          "status": "READY"
+        }
+      ]
+    },
+    "3037": {
+      "symbol": "3037.TW",
+      "rows": [
+        {
+          "ticker": "3037",
+          "fiscal_year": "2026",
+          "mean_eps": "20.64801",
+          "median_eps": "20.64801",
+          "high_eps": "24.83758",
+          "low_eps": "12.82",
+          "analyst_count": "17",
+          "source": "Yahoo Finance analyst consensus",
+          "published_at": "2026-10-14",
+          "available_at": "2026-10-14",
+          "retrieved_at": "2026-10-14",
+          "quality": "MEDIUM",
+          "status": "READY"
+        },
+        {
+          "ticker": "3037",
+          "fiscal_year": "2027",
+          "mean_eps": "38.29979",
+          "median_eps": "38.29979",
+          "high_eps": "50.8896",
+          "low_eps": "21.27",
+          "analyst_count": "18",
+          "source": "Yahoo Finance analyst consensus",
+          "published_at": "2026-10-14",
+          "available_at": "2026-10-14",
+          "retrieved_at": "2026-10-14",
+          "quality": "MEDIUM",
+          "status": "READY"
+        }
+      ]
+    },
+    "3081": {
+      "symbol": "3081.TWO",
+      "rows": [
+        {
+          "ticker": "3081",
+          "fiscal_year": "2026",
+          "mean_eps": "19.61077",
+          "median_eps": "19.61077",
+          "high_eps": "21.38",
+          "low_eps": "18.48415",
+          "analyst_count": "8",
+          "source": "Yahoo Finance analyst consensus",
+          "published_at": "2026-10-14",
+          "available_at": "2026-10-14",
+          "retrieved_at": "2026-10-14",
+          "quality": "MEDIUM",
+          "status": "READY"
+        },
+        {
+          "ticker": "3081",
+          "fiscal_year": "2027",
+          "mean_eps": "39.39384",
+          "median_eps": "39.39384",
+          "high_eps": "63.32",
+          "low_eps": "19.48182",
+          "analyst_count": "10",
+          "source": "Yahoo Finance analyst consensus",
+          "published_at": "2026-10-14",
+          "available_at": "2026-10-14",
+          "retrieved_at": "2026-10-14",
+          "quality": "MEDIUM",
+          "status": "READY"
+        }
+      ]
+    },
+    "3131": {
+      "symbol": "3131.TWO",
+      "rows": [
+        {
+          "ticker": "3131",
+          "fiscal_year": "2026",
+          "mean_eps": "62.92396",
+          "median_eps": "62.92396",
+          "high_eps": "70.0351",
+          "low_eps": "57.21543",
+          "analyst_count": "8",
+          "source": "Yahoo Finance analyst consensus",
+          "published_at": "2026-10-14",
+          "available_at": "2026-10-14",
+          "retrieved_at": "2026-10-14",
+          "quality": "MEDIUM",
+          "status": "READY"
+        },
+        {
+          "ticker": "3131",
+          "fiscal_year": "2027",
+          "mean_eps": "101.49858",
+          "median_eps": "101.49858",
+          "high_eps": "117.05032",
+          "low_eps": "80.50018",
+          "analyst_count": "9",
+          "source": "Yahoo Finance analyst consensus",
+          "published_at": "2026-10-14",
+          "available_at": "2026-10-14",
+          "retrieved_at": "2026-10-14",
+          "quality": "MEDIUM",
+          "status": "READY"
+        }
+      ]
+    },
+    "3189": {
+      "symbol": "3189.TW",
+      "rows": [
+        {
+          "ticker": "3189",
+          "fiscal_year": "2026",
+          "mean_eps": "11.26386",
+          "median_eps": "11.26386",
+          "high_eps": "14.824",
+          "low_eps": "8.85",
+          "analyst_count": "13",
+          "source": "Yahoo Finance analyst consensus",
+          "published_at": "2026-10-14",
+          "available_at": "2026-10-14",
+          "retrieved_at": "2026-10-14",
+          "quality": "MEDIUM",
+          "status": "READY"
+        },
+        {
+          "ticker": "3189",
+          "fiscal_year": "2027",
+          "mean_eps": "28.11055",
+          "median_eps": "28.11055",
+          "high_eps": "43.787",
+          "low_eps": "17.43",
+          "analyst_count": "12",
+          "source": "Yahoo Finance analyst consensus",
+          "published_at": "2026-10-14",
+          "available_at": "2026-10-14",
+          "retrieved_at": "2026-10-14",
+          "quality": "MEDIUM",
+          "status": "READY"
+        }
+      ]
+    },
+    "3231": {
+      "symbol": "3231.TW",
+      "rows": [
+        {
+          "ticker": "3231",
+          "fiscal_year": "2026",
+          "mean_eps": "17.2788",
+          "median_eps": "17.2788",
+          "high_eps": "19.96",
+          "low_eps": "16.14347",
+          "analyst_count": "13",
+          "source": "Yahoo Finance analyst consensus",
+          "published_at": "2026-10-14",
+          "available_at": "2026-10-14",
+          "retrieved_at": "2026-10-14",
+          "quality": "MEDIUM",
+          "status": "READY"
+        },
+        {
+          "ticker": "3231",
+          "fiscal_year": "2027",
+          "mean_eps": "24.66192",
+          "median_eps": "24.66192",
+          "high_eps": "31.99007",
+          "low_eps": "18.9005",
+          "analyst_count": "15",
+          "source": "Yahoo Finance analyst consensus",
+          "published_at": "2026-10-14",
+          "available_at": "2026-10-14",
+          "retrieved_at": "2026-10-14",
+          "quality": "MEDIUM",
+          "status": "READY"
+        }
+      ]
+    },
+    "3324": {
+      "symbol": "3324.TWO",
+      "rows": [
+        {
+          "ticker": "3324",
+          "fiscal_year": "2026",
+          "mean_eps": "56.20552",
+          "median_eps": "56.20552",
+          "high_eps": "58.82",
+          "low_eps": "52.19",
+          "analyst_count": "16",
+          "source": "Yahoo Finance analyst consensus",
+          "published_at": "2026-10-14",
+          "available_at": "2026-10-14",
+          "retrieved_at": "2026-10-14",
+          "quality": "MEDIUM",
+          "status": "READY"
+        },
+        {
+          "ticker": "3324",
+          "fiscal_year": "2027",
+          "mean_eps": "77.19513",
+          "median_eps": "77.19513",
+          "high_eps": "94.15395",
+          "low_eps": "66.06",
+          "analyst_count": "16",
+          "source": "Yahoo Finance analyst consensus",
+          "published_at": "2026-10-14",
+          "available_at": "2026-10-14",
+          "retrieved_at": "2026-10-14",
+          "quality": "MEDIUM",
+          "status": "READY"
+        }
+      ]
+    },
+    "3363": {
+      "symbol": "3363.TWO",
+      "rows": [
+        {
+          "ticker": "3363",
+          "fiscal_year": "2026",
+          "mean_eps": "-0.435",
+          "median_eps": "-0.435",
+          "high_eps": "-0.34",
+          "low_eps": "-0.53",
+          "analyst_count": "2",
+          "source": "Yahoo Finance analyst consensus",
+          "published_at": "2026-10-14",
+          "available_at": "2026-10-14",
+          "retrieved_at": "2026-10-14",
+          "quality": "MEDIUM",
+          "status": "READY"
+        },
+        {
+          "ticker": "3363",
+          "fiscal_year": "2027",
+          "mean_eps": "10.95333",
+          "median_eps": "10.95333",
+          "high_eps": "17.6",
+          "low_eps": "5.08",
+          "analyst_count": "3",
+          "source": "Yahoo Finance analyst consensus",
+          "published_at": "2026-10-14",
+          "available_at": "2026-10-14",
+          "retrieved_at": "2026-10-14",
+          "quality": "MEDIUM",
+          "status": "READY"
+        }
+      ]
+    },
+    "3406": {
+      "symbol": "3406.TW",
+      "rows": [
+        {
+          "ticker": "3406",
+          "fiscal_year": "2026",
+          "mean_eps": "38.30479",
+          "median_eps": "38.30479",
+          "high_eps": "44.35",
+          "low_eps": "34.86506",
+          "analyst_count": "7",
+          "source": "Yahoo Finance analyst consensus",
+          "published_at": "2026-10-14",
+          "available_at": "2026-10-14",
+          "retrieved_at": "2026-10-14",
+          "quality": "MEDIUM",
+          "status": "READY"
+        },
+        {
+          "ticker": "3406",
+          "fiscal_year": "2027",
+          "mean_eps": "42.00537",
+          "median_eps": "42.00537",
+          "high_eps": "50.88",
+          "low_eps": "36.4671",
+          "analyst_count": "8",
+          "source": "Yahoo Finance analyst consensus",
+          "published_at": "2026-10-14",
+          "available_at": "2026-10-14",
+          "retrieved_at": "2026-10-14",
+          "quality": "MEDIUM",
+          "status": "READY"
+        }
+      ]
+    },
+    "3443": {
+      "symbol": "3443.TW",
+      "rows": [
+        {
+          "ticker": "3443",
+          "fiscal_year": "2026",
+          "mean_eps": "53.45228",
+          "median_eps": "53.45228",
+          "high_eps": "63.94",
+          "low_eps": "47.62261",
+          "analyst_count": "18",
+          "source": "Yahoo Finance analyst consensus",
+          "published_at": "2026-10-14",
+          "available_at": "2026-10-14",
+          "retrieved_at": "2026-10-14",
+          "quality": "MEDIUM",
+          "status": "READY"
+        },
+        {
+          "ticker": "3443",
+          "fiscal_year": "2027",
+          "mean_eps": "121.13353",
+          "median_eps": "121.13353",
+          "high_eps": "202.14",
+          "low_eps": "80.4028",
+          "analyst_count": "18",
+          "source": "Yahoo Finance analyst consensus",
+          "published_at": "2026-10-14",
+          "available_at": "2026-10-14",
+          "retrieved_at": "2026-10-14",
+          "quality": "MEDIUM",
+          "status": "READY"
+        }
+      ]
+    },
+    "3583": {
+      "symbol": "3583.TW",
+      "rows": [
+        {
+          "ticker": "3583",
+          "fiscal_year": "2026",
+          "mean_eps": "20.65866",
+          "median_eps": "20.65866",
+          "high_eps": "21.57604",
+          "low_eps": "20.09994",
+          "analyst_count": "3",
+          "source": "Yahoo Finance analyst consensus",
+          "published_at": "2026-10-14",
+          "available_at": "2026-10-14",
+          "retrieved_at": "2026-10-14",
+          "quality": "MEDIUM",
+          "status": "READY"
+        },
+        {
+          "ticker": "3583",
+          "fiscal_year": "2027",
+          "mean_eps": "30.80933",
+          "median_eps": "30.80933",
+          "high_eps": "34.17",
+          "low_eps": "28.16",
+          "analyst_count": "4",
+          "source": "Yahoo Finance analyst consensus",
+          "published_at": "2026-10-14",
+          "available_at": "2026-10-14",
+          "retrieved_at": "2026-10-14",
+          "quality": "MEDIUM",
+          "status": "READY"
+        }
+      ]
+    },
+    "3653": {
+      "symbol": "3653.TW",
+      "rows": [
+        {
+          "ticker": "3653",
+          "fiscal_year": "2026",
+          "mean_eps": "69.95598",
+          "median_eps": "69.95598",
+          "high_eps": "71.65",
+          "low_eps": "68.78",
+          "analyst_count": "7",
+          "source": "Yahoo Finance analyst consensus",
+          "published_at": "2026-10-14",
+          "available_at": "2026-10-14",
+          "retrieved_at": "2026-10-14",
+          "quality": "MEDIUM",
+          "status": "READY"
+        },
+        {
+          "ticker": "3653",
+          "fiscal_year": "2027",
+          "mean_eps": "156.06091",
+          "median_eps": "156.06091",
+          "high_eps": "208.86",
+          "low_eps": "109.47",
+          "analyst_count": "10",
+          "source": "Yahoo Finance analyst consensus",
+          "published_at": "2026-10-14",
+          "available_at": "2026-10-14",
+          "retrieved_at": "2026-10-14",
+          "quality": "MEDIUM",
+          "status": "READY"
+        }
+      ]
+    },
+    "3661": {
+      "symbol": "3661.TW",
+      "rows": [
+        {
+          "ticker": "3661",
+          "fiscal_year": "2026",
+          "mean_eps": "143.4927",
+          "median_eps": "143.4927",
+          "high_eps": "176.72",
+          "low_eps": "128.3",
+          "analyst_count": "13",
+          "source": "Yahoo Finance analyst consensus",
+          "published_at": "2026-10-14",
+          "available_at": "2026-10-14",
+          "retrieved_at": "2026-10-14",
+          "quality": "MEDIUM",
+          "status": "READY"
+        },
+        {
+          "ticker": "3661",
+          "fiscal_year": "2027",
+          "mean_eps": "188.84135",
+          "median_eps": "188.84135",
+          "high_eps": "225.82",
+          "low_eps": "151.3",
+          "analyst_count": "15",
+          "source": "Yahoo Finance analyst consensus",
+          "published_at": "2026-10-14",
+          "available_at": "2026-10-14",
+          "retrieved_at": "2026-10-14",
+          "quality": "MEDIUM",
+          "status": "READY"
+        }
+      ]
+    },
+    "3711": {
+      "symbol": "3711.TW",
+      "rows": [
+        {
+          "ticker": "3711",
+          "fiscal_year": "2026",
+          "mean_eps": "18.83154",
+          "median_eps": "18.83154",
+          "high_eps": "20.42544",
+          "low_eps": "16.56386",
+          "analyst_count": "16",
+          "source": "Yahoo Finance analyst consensus",
+          "published_at": "2026-10-14",
+          "available_at": "2026-10-14",
+          "retrieved_at": "2026-10-14",
+          "quality": "MEDIUM",
+          "status": "READY"
+        },
+        {
+          "ticker": "3711",
+          "fiscal_year": "2027",
+          "mean_eps": "28.78558",
+          "median_eps": "28.78558",
+          "high_eps": "34.26054",
+          "low_eps": "24.255",
+          "analyst_count": "17",
+          "source": "Yahoo Finance analyst consensus",
+          "published_at": "2026-10-14",
+          "available_at": "2026-10-14",
+          "retrieved_at": "2026-10-14",
+          "quality": "MEDIUM",
+          "status": "READY"
+        }
+      ]
+    },
+    "6187": {
+      "symbol": "6187.TWO",
+      "rows": [
+        {
+          "ticker": "6187",
+          "fiscal_year": "2026",
+          "mean_eps": "28.30092",
+          "median_eps": "28.30092",
+          "high_eps": "30.33385",
+          "low_eps": "24.33",
+          "analyst_count": "5",
+          "source": "Yahoo Finance analyst consensus",
+          "published_at": "2026-10-14",
+          "available_at": "2026-10-14",
+          "retrieved_at": "2026-10-14",
+          "quality": "MEDIUM",
+          "status": "READY"
+        },
+        {
+          "ticker": "6187",
+          "fiscal_year": "2027",
+          "mean_eps": "41.61501",
+          "median_eps": "41.61501",
+          "high_eps": "49.18257",
+          "low_eps": "30.33",
+          "analyst_count": "6",
+          "source": "Yahoo Finance analyst consensus",
+          "published_at": "2026-10-14",
+          "available_at": "2026-10-14",
+          "retrieved_at": "2026-10-14",
+          "quality": "MEDIUM",
+          "status": "READY"
+        }
+      ]
+    },
+    "6223": {
+      "symbol": "6223.TWO",
+      "rows": [
+        {
+          "ticker": "6223",
+          "fiscal_year": "2026",
+          "mean_eps": "65.4775",
+          "median_eps": "65.4775",
+          "high_eps": "73.642",
+          "low_eps": "61.27294",
+          "analyst_count": "10",
+          "source": "Yahoo Finance analyst consensus",
+          "published_at": "2026-10-14",
+          "available_at": "2026-10-14",
+          "retrieved_at": "2026-10-14",
+          "quality": "MEDIUM",
+          "status": "READY"
+        },
+        {
+          "ticker": "6223",
+          "fiscal_year": "2027",
+          "mean_eps": "139.59438",
+          "median_eps": "139.59438",
+          "high_eps": "205.92",
+          "low_eps": "102.01531",
+          "analyst_count": "13",
+          "source": "Yahoo Finance analyst consensus",
+          "published_at": "2026-10-14",
+          "available_at": "2026-10-14",
+          "retrieved_at": "2026-10-14",
+          "quality": "MEDIUM",
+          "status": "READY"
+        }
+      ]
+    },
+    "6274": {
+      "symbol": "6274.TWO",
+      "rows": [
+        {
+          "ticker": "6274",
+          "fiscal_year": "2026",
+          "mean_eps": "37.27444",
+          "median_eps": "37.27444",
+          "high_eps": "40.35152",
+          "low_eps": "32.01",
+          "analyst_count": "14",
+          "source": "Yahoo Finance analyst consensus",
+          "published_at": "2026-10-14",
+          "available_at": "2026-10-14",
+          "retrieved_at": "2026-10-14",
+          "quality": "MEDIUM",
+          "status": "READY"
+        },
+        {
+          "ticker": "6274",
+          "fiscal_year": "2027",
+          "mean_eps": "77.1247",
+          "median_eps": "77.1247",
+          "high_eps": "100.0696",
+          "low_eps": "59.39",
+          "analyst_count": "15",
+          "source": "Yahoo Finance analyst consensus",
+          "published_at": "2026-10-14",
+          "available_at": "2026-10-14",
+          "retrieved_at": "2026-10-14",
+          "quality": "MEDIUM",
+          "status": "READY"
+        }
+      ]
+    },
+    "6488": {
+      "symbol": "6488.TWO",
+      "rows": [
+        {
+          "ticker": "6488",
+          "fiscal_year": "2026",
+          "mean_eps": "20.31102",
+          "median_eps": "20.31102",
+          "high_eps": "23.02",
+          "low_eps": "16.69",
+          "analyst_count": "12",
+          "source": "Yahoo Finance analyst consensus",
+          "published_at": "2026-10-14",
+          "available_at": "2026-10-14",
+          "retrieved_at": "2026-10-14",
+          "quality": "MEDIUM",
+          "status": "READY"
+        },
+        {
+          "ticker": "6488",
+          "fiscal_year": "2027",
+          "mean_eps": "34.41236",
+          "median_eps": "34.41236",
+          "high_eps": "59.99",
+          "low_eps": "20.23769",
+          "analyst_count": "14",
+          "source": "Yahoo Finance analyst consensus",
+          "published_at": "2026-10-14",
+          "available_at": "2026-10-14",
+          "retrieved_at": "2026-10-14",
+          "quality": "MEDIUM",
+          "status": "READY"
+        }
+      ]
+    },
+    "6669": {
+      "symbol": "6669.TW",
+      "rows": [
+        {
+          "ticker": "6669",
+          "fiscal_year": "2026",
+          "mean_eps": "122.09263",
+          "median_eps": "122.09263",
+          "high_eps": "139.76",
+          "low_eps": "106.67848",
+          "analyst_count": "16",
+          "source": "Yahoo Finance analyst consensus",
+          "published_at": "2026-10-14",
+          "available_at": "2026-10-14",
+          "retrieved_at": "2026-10-14",
+          "quality": "MEDIUM",
+          "status": "READY"
+        },
+        {
+          "ticker": "6669",
+          "fiscal_year": "2027",
+          "mean_eps": "182.41412",
+          "median_eps": "182.41412",
+          "high_eps": "223.38",
+          "low_eps": "120.85981",
+          "analyst_count": "17",
+          "source": "Yahoo Finance analyst consensus",
+          "published_at": "2026-10-14",
+          "available_at": "2026-10-14",
+          "retrieved_at": "2026-10-14",
+          "quality": "MEDIUM",
+          "status": "READY"
+        }
+      ]
+    },
+    "6781": {
+      "symbol": "6781.TW",
+      "rows": [
+        {
+          "ticker": "6781",
+          "fiscal_year": "2026",
+          "mean_eps": "48.3487",
+          "median_eps": "48.3487",
+          "high_eps": "49.4975",
+          "low_eps": "46.3486",
+          "analyst_count": "3",
+          "source": "Yahoo Finance analyst consensus",
+          "published_at": "2026-10-14",
+          "available_at": "2026-10-14",
+          "retrieved_at": "2026-10-14",
+          "quality": "MEDIUM",
+          "status": "READY"
+        },
+        {
+          "ticker": "6781",
+          "fiscal_year": "2027",
+          "mean_eps": "59.84767",
+          "median_eps": "59.84767",
+          "high_eps": "66.78",
+          "low_eps": "51.41505",
+          "analyst_count": "3",
+          "source": "Yahoo Finance analyst consensus",
+          "published_at": "2026-10-14",
+          "available_at": "2026-10-14",
+          "retrieved_at": "2026-10-14",
+          "quality": "MEDIUM",
+          "status": "READY"
+        }
+      ]
+    },
+    "8299": {
+      "symbol": "8299.TWO",
+      "rows": [
+        {
+          "ticker": "8299",
+          "fiscal_year": "2026",
+          "mean_eps": "412.3421",
+          "median_eps": "412.3421",
+          "high_eps": "478.35",
+          "low_eps": "360.87967",
+          "analyst_count": "10",
+          "source": "Yahoo Finance analyst consensus",
+          "published_at": "2026-10-14",
+          "available_at": "2026-10-14",
+          "retrieved_at": "2026-10-14",
+          "quality": "MEDIUM",
+          "status": "READY"
+        },
+        {
+          "ticker": "8299",
+          "fiscal_year": "2027",
+          "mean_eps": "281.53503",
+          "median_eps": "281.53503",
+          "high_eps": "414.28",
+          "low_eps": "95.37",
+          "analyst_count": "12",
+          "source": "Yahoo Finance analyst consensus",
+          "published_at": "2026-10-14",
+          "available_at": "2026-10-14",
+          "retrieved_at": "2026-10-14",
+          "quality": "MEDIUM",
+          "status": "READY"
+        }
+      ]
+    }
+  },
+  "failed": {
+    "2492": {
+      "error": "ValueError:current_and_next_year_estimates_incomplete"
+    },
+    "3163": {
+      "error": "ValueError:annual_eps_estimates_missing"
+    },
+    "3260": {
+      "error": "ValueError:current_and_next_year_estimates_incomplete"
+    },
+    "3338": {
+      "error": "ValueError:annual_eps_estimates_missing"
+    },
+    "3357": {
+      "error": "ValueError:current_and_next_year_estimates_incomplete"
+    },
+    "3532": {
+      "error": "ValueError:current_and_next_year_estimates_incomplete"
+    },
+    "4979": {
+      "error": "ValueError:current_and_next_year_estimates_incomplete"
+    },
+    "6182": {
+      "error": "ValueError:annual_eps_estimates_missing"
+    },
+    "6230": {
+      "error": "ValueError:annual_eps_estimates_missing"
+    },
+    "6282": {
+      "error": "ValueError:annual_eps_estimates_missing"
+    },
+    "6412": {
+      "error": "ValueError:current_and_next_year_estimates_incomplete"
+    },
+    "6442": {
+      "error": "ValueError:current_and_next_year_estimates_incomplete"
+    }
+  }
+}
