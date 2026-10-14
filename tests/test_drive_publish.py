@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 import sys
+import base64
+import json
 import tempfile
 import unittest
 from datetime import date
@@ -12,6 +14,21 @@ from rotation_radar.drive_publish import classify_drive_publish_error, google_oa
 
 
 class DrivePublishTests(unittest.TestCase):
+    def test_service_account_is_preferred_over_oauth(self) -> None:
+        info = {"type": "service_account", "client_email": "robot@example.test", "private_key": "secret"}
+        encoded = base64.b64encode(json.dumps(info).encode("utf-8")).decode("ascii")
+        credentials = MagicMock()
+
+        with (
+            patch.dict("os.environ", {"GOOGLE_SERVICE_ACCOUNT_JSON_B64": encoded}, clear=True),
+            patch("google.oauth2.service_account.Credentials.from_service_account_info", return_value=credentials) as build,
+        ):
+            actual, mode = drive_publish._build_google_drive_credentials()
+
+        self.assertIs(actual, credentials)
+        self.assertEqual(mode, "ServiceAccount")
+        build.assert_called_once_with(info, scopes=["https://www.googleapis.com/auth/drive"])
+
     def test_resolve_google_oauth_config_trims_env_values_without_logging_secrets(self) -> None:
         config = resolve_google_oauth_config(
             {

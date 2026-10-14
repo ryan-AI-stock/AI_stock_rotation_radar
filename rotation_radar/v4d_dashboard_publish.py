@@ -217,20 +217,15 @@ def build_dashboard_values(signal_rows: list[list[object]], simulation: dict) ->
 class SheetsClient:
     def __init__(self, spreadsheet_id: str) -> None:
         from google.auth.transport.requests import Request
-        from google.oauth2.credentials import Credentials
+        from .drive_publish import _build_google_drive_credentials
 
         self.spreadsheet_id = spreadsheet_id
-        credentials = Credentials(
-            token=None,
-            refresh_token=os.environ["GOOGLE_OAUTH_REFRESH_TOKEN"],
-            token_uri="https://oauth2.googleapis.com/token",
-            client_id=os.environ["GOOGLE_OAUTH_CLIENT_ID"],
-            client_secret=os.environ["GOOGLE_OAUTH_CLIENT_SECRET"],
-            # Keep the scope identical to the repository's existing OAuth token.
-            # Google Sheets accepts the full Drive scope for spreadsheet access.
-            scopes=["https://www.googleapis.com/auth/drive"],
-        )
-        credentials.refresh(Request())
+        credentials, auth_mode = _build_google_drive_credentials()
+        if credentials is None:
+            raise RuntimeError("Google credentials are unavailable; Sheet publication was not performed.")
+        if not credentials.valid:
+            credentials.refresh(Request())
+        self.auth_mode = auth_mode
         self.headers = {"Authorization": f"Bearer {credentials.token}", "Content-Type": "application/json"}
         self.base = f"https://sheets.googleapis.com/v4/spreadsheets/{spreadsheet_id}"
 

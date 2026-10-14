@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 import argparse
+import base64
+import json
 import multiprocessing
 import os
 import shutil
@@ -437,6 +439,20 @@ def build_google_drive_service():
 
 
 def _build_google_drive_credentials():
+    service_account_b64 = os.environ.get("GOOGLE_SERVICE_ACCOUNT_JSON_B64", "").strip()
+    if service_account_b64:
+        try:
+            from google.oauth2 import service_account
+
+            info = json.loads(base64.b64decode(service_account_b64).decode("utf-8"))
+            credentials = service_account.Credentials.from_service_account_info(
+                info,
+                scopes=["https://www.googleapis.com/auth/drive"],
+            )
+            return credentials, "ServiceAccount"
+        except Exception as exc:
+            log_warning(f"Google service account 憑證失敗：{exc}")
+
     oauth_config = resolve_google_oauth_config(os.environ)
     if not oauth_config.is_complete:
         log_warning("未設定 Google OAuth 憑證，跳過 Google Drive 操作")
