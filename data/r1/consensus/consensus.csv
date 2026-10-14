@@ -679,3 +679,11 @@ ticker,fiscal_year,mean_eps,median_eps,high_eps,low_eps,analyst_count,source,pub
 8299,2028,200.29,200.29,279.02,56.18,5,ToAlpha public consensus,2026-10-06,2026-10-06,2026-10-07,MEDIUM,READY
 8299,2028,200.29,200.29,279.02,56.18,5,ToAlpha public consensus,2026-10-08,2026-10-08,2026-10-11,MEDIUM,READY
 8299,2028,200.29,200.29,279.02,56.18,5,ToAlpha public consensus,2026-10-14,2026-10-14,2026-10-14,MEDIUM,READY
+3163,2026,8.12,8.12,,,5,Fintel public analyst consensus,2026-10-14,2026-10-14,2026-10-14,MEDIUM,READY
+3163,2027,21.81,21.81,,,4,Fintel public analyst consensus,2026-10-14,2026-10-14,2026-10-14,MEDIUM,READY
+3260,2026,106.71,106.71,,,6,Fintel public analyst consensus,2026-10-14,2026-10-14,2026-10-14,MEDIUM,READY
+3260,2027,65.14,65.14,,,5,Fintel public analyst consensus,2026-10-14,2026-10-14,2026-10-14,MEDIUM,READY
+6412,2026,5.61,5.61,,,6,Fintel public analyst consensus,2026-10-14,2026-10-14,2026-10-14,MEDIUM,READY
+6412,2027,6.91,6.91,,,4,Fintel public analyst consensus,2026-10-14,2026-10-14,2026-10-14,MEDIUM,READY
+6442,2026,52.44,52.44,,,4,Fintel public analyst consensus,2026-10-14,2026-10-14,2026-10-14,MEDIUM,READY
+6442,2027,132.60,132.60,,,3,Fintel public analyst consensus,2026-10-14,2026-10-14,2026-10-14,MEDIUM,READY

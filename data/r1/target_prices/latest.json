@@ -1,9 +1,9 @@
 {
-  "date": "2026-10-08",
+  "date": "2026-10-14",
   "rows": [
     {
       "ticker": "2330",
-      "as_of_date": "2026-10-08",
+      "as_of_date": "2026-10-14",
       "institution_count": 0,
       "consensus_target_price": null,
       "consensus_upside": null,
@@ -15,7 +15,7 @@
     },
     {
       "ticker": "2327",
-      "as_of_date": "2026-10-08",
+      "as_of_date": "2026-10-14",
       "institution_count": 0,
       "consensus_target_price": null,
       "consensus_upside": null,
@@ -27,9 +27,9 @@
     },
     {
       "ticker": "2344",
-      "as_of_date": "2026-10-08",
-      "institution_count": 1,
-      "consensus_target_price": 360.0,
+      "as_of_date": "2026-10-14",
+      "institution_count": 0,
+      "consensus_target_price": null,
       "consensus_upside": null,
       "dispersion": null,
       "status": "DATA_MISSING",
@@ -50,13 +50,21 @@
         {
           "institution": "JPMorgan",
           "error": "stale"
+        },
+        {
+          "institution": "JPMorgan",
+          "error": "stale"
+        },
+        {
+          "institution": "JPMorgan",
+          "error": "stale"
         }
       ],
       "source_policy": "12M median; independent identifiable institutions; PIT max 90 days"
     },
     {
       "ticker": "2376",
-      "as_of_date": "2026-10-08",
+      "as_of_date": "2026-10-14",
       "institution_count": 1,
       "consensus_target_price": 595.0,
       "consensus_upside": null,
@@ -68,9 +76,9 @@
     },
     {
       "ticker": "2454",
-      "as_of_date": "2026-10-08",
-      "institution_count": 1,
-      "consensus_target_price": 5600.0,
+      "as_of_date": "2026-10-14",
+      "institution_count": 2,
+      "consensus_target_price": 5550.0,
       "consensus_upside": null,
       "dispersion": null,
       "status": "DATA_MISSING",
@@ -95,29 +103,30 @@
         {
           "institution": "Citi",
           "error": "stale"
-        },
-        {
-          "institution": "Bernstein SocGen Group",
-          "error": "future_data"
         }
       ],
       "source_policy": "12M median; independent identifiable institutions; PIT max 90 days"
     },
     {
       "ticker": "3037",
-      "as_of_date": "2026-10-08",
+      "as_of_date": "2026-10-14",
       "institution_count": 3,
       "consensus_target_price": 1400.0,
-      "consensus_upside": 0.10236220472440949,
+      "consensus_upside": 0.18644067796610164,
       "dispersion": 0.3392857142857143,
       "status": "READY",
       "scoreable": true,
-      "rejected": [],
+      "rejected": [
+        {
+          "institution": "Macquarie",
+          "error": "stale"
+        }
+      ],
       "source_policy": "12M median; independent identifiable institutions; PIT max 90 days"
     },
     {
       "ticker": "6488",
-      "as_of_date": "2026-10-08",
+      "as_of_date": "2026-10-14",
       "institution_count": 0,
       "consensus_target_price": null,
       "consensus_upside": null,
@@ -129,7 +138,7 @@
     },
     {
       "ticker": "3661",
-      "as_of_date": "2026-10-08",
+      "as_of_date": "2026-10-14",
       "institution_count": 0,
       "consensus_target_price": null,
       "consensus_upside": null,
@@ -141,10 +150,10 @@
     },
     {
       "ticker": "3443",
-      "as_of_date": "2026-10-08",
+      "as_of_date": "2026-10-14",
       "institution_count": 4,
       "consensus_target_price": 5650.0,
-      "consensus_upside": -0.3241626794258373,
+      "consensus_upside": -0.30203829524397774,
       "dispersion": 0.6017699115044248,
       "status": "READY",
       "scoreable": true,
@@ -158,7 +167,7 @@
     },
     {
       "ticker": "3035",
-      "as_of_date": "2026-10-08",
+      "as_of_date": "2026-10-14",
       "institution_count": 0,
       "consensus_target_price": null,
       "consensus_upside": null,
@@ -175,7 +184,7 @@
     },
     {
       "ticker": "2449",
-      "as_of_date": "2026-10-08",
+      "as_of_date": "2026-10-14",
       "institution_count": 2,
       "consensus_target_price": 366.0,
       "consensus_upside": null,
@@ -200,7 +209,7 @@
     },
     {
       "ticker": "6223",
-      "as_of_date": "2026-10-08",
+      "as_of_date": "2026-10-14",
       "institution_count": 0,
       "consensus_target_price": null,
       "consensus_upside": null,
@@ -212,7 +221,7 @@
     },
     {
       "ticker": "6187",
-      "as_of_date": "2026-10-08",
+      "as_of_date": "2026-10-14",
       "institution_count": 0,
       "consensus_target_price": null,
       "consensus_upside": null,
@@ -245,7 +254,7 @@
     },
     {
       "ticker": "3583",
-      "as_of_date": "2026-10-08",
+      "as_of_date": "2026-10-14",
       "institution_count": 0,
       "consensus_target_price": null,
       "consensus_upside": null,
@@ -257,7 +266,7 @@
     },
     {
       "ticker": "2408",
-      "as_of_date": "2026-10-08",
+      "as_of_date": "2026-10-14",
       "institution_count": 2,
       "consensus_target_price": 765.7,
       "consensus_upside": null,
@@ -269,7 +278,7 @@
     },
     {
       "ticker": "3081",
-      "as_of_date": "2026-10-08",
+      "as_of_date": "2026-10-14",
       "institution_count": 1,
       "consensus_target_price": 3345.0,
       "consensus_upside": null,
@@ -298,39 +307,43 @@
     },
     {
       "ticker": "2303",
-      "as_of_date": "2026-10-08",
+      "as_of_date": "2026-10-14",
       "institution_count": 3,
       "consensus_target_price": 140.0,
-      "consensus_upside": -0.05084745762711862,
-      "dispersion": 0.8857142857142857,
-      "status": "READY",
-      "scoreable": true,
-      "rejected": [
-        {
-          "institution": "Bernstein SocGen Group",
-          "error": "future_data"
-        }
-      ],
-      "source_policy": "12M median; independent identifiable institutions; PIT max 90 days"
-    },
-    {
-      "ticker": "3008",
-      "as_of_date": "2026-10-08",
-      "institution_count": 5,
-      "consensus_target_price": 7100.0,
-      "consensus_upside": 0.06606606606606613,
-      "dispersion": 0.737887323943662,
+      "consensus_upside": -0.010600706713780883,
+      "dispersion": 0.7785714285714286,
       "status": "READY",
       "scoreable": true,
       "rejected": [],
       "source_policy": "12M median; independent identifiable institutions; PIT max 90 days"
     },
     {
+      "ticker": "3008",
+      "as_of_date": "2026-10-14",
+      "institution_count": 3,
+      "consensus_target_price": 8300.0,
+      "consensus_upside": 0.14089347079037795,
+      "dispersion": 0.1686746987951807,
+      "status": "READY",
+      "scoreable": true,
+      "rejected": [
+        {
+          "institution": "CLSA",
+          "error": "stale"
+        },
+        {
+          "institution": "Macquarie",
+          "error": "stale"
+        }
+      ],
+      "source_policy": "12M median; independent identifiable institutions; PIT max 90 days"
+    },
+    {
       "ticker": "3406",
-      "as_of_date": "2026-10-08",
+      "as_of_date": "2026-10-14",
       "institution_count": 3,
       "consensus_target_price": 1050.0,
-      "consensus_upside": -0.009433962264150941,
+      "consensus_upside": -0.1063829787234043,
       "dispersion": 0.48095238095238096,
       "status": "READY",
       "scoreable": true,
@@ -348,7 +361,7 @@
     },
     {
       "ticker": "2337",
-      "as_of_date": "2026-10-08",
+      "as_of_date": "2026-10-14",
       "institution_count": 0,
       "consensus_target_price": null,
       "consensus_upside": null,
@@ -360,7 +373,7 @@
     },
     {
       "ticker": "8299",
-      "as_of_date": "2026-10-08",
+      "as_of_date": "2026-10-14",
       "institution_count": 0,
       "consensus_target_price": null,
       "consensus_upside": null,
@@ -372,7 +385,7 @@
     },
     {
       "ticker": "3260",
-      "as_of_date": "2026-10-08",
+      "as_of_date": "2026-10-14",
       "institution_count": 0,
       "consensus_target_price": null,
       "consensus_upside": null,
@@ -384,7 +397,7 @@
     },
     {
       "ticker": "2383",
-      "as_of_date": "2026-10-08",
+      "as_of_date": "2026-10-14",
       "institution_count": 0,
       "consensus_target_price": null,
       "consensus_upside": null,
@@ -396,7 +409,7 @@
     },
     {
       "ticker": "6274",
-      "as_of_date": "2026-10-08",
+      "as_of_date": "2026-10-14",
       "institution_count": 1,
       "consensus_target_price": 2250.0,
       "consensus_upside": null,
@@ -425,9 +438,9 @@
     },
     {
       "ticker": "3189",
-      "as_of_date": "2026-10-08",
-      "institution_count": 2,
-      "consensus_target_price": 1032.5,
+      "as_of_date": "2026-10-14",
+      "institution_count": 0,
+      "consensus_target_price": null,
       "consensus_upside": null,
       "dispersion": null,
       "status": "DATA_MISSING",
@@ -440,13 +453,25 @@
         {
           "institution": "Citi",
           "error": "stale"
+        },
+        {
+          "institution": "Macquarie",
+          "error": "stale"
+        },
+        {
+          "institution": "Goldman Sachs",
+          "error": "stale"
+        },
+        {
+          "institution": "Macquarie",
+          "error": "stale"
         }
       ],
       "source_policy": "12M median; independent identifiable institutions; PIT max 90 days"
     },
     {
       "ticker": "2368",
-      "as_of_date": "2026-10-08",
+      "as_of_date": "2026-10-14",
       "institution_count": 0,
       "consensus_target_price": null,
       "consensus_upside": null,
@@ -458,7 +483,7 @@
     },
     {
       "ticker": "2345",
-      "as_of_date": "2026-10-08",
+      "as_of_date": "2026-10-14",
       "institution_count": 2,
       "consensus_target_price": 3700.0,
       "consensus_upside": null,
@@ -483,7 +508,7 @@
     },
     {
       "ticker": "3363",
-      "as_of_date": "2026-10-08",
+      "as_of_date": "2026-10-14",
       "institution_count": 0,
       "consensus_target_price": null,
       "consensus_upside": null,
@@ -495,7 +520,7 @@
     },
     {
       "ticker": "4979",
-      "as_of_date": "2026-10-08",
+      "as_of_date": "2026-10-14",
       "institution_count": 0,
       "consensus_target_price": null,
       "consensus_upside": null,
@@ -507,7 +532,7 @@
     },
     {
       "ticker": "6442",
-      "as_of_date": "2026-10-08",
+      "as_of_date": "2026-10-14",
       "institution_count": 0,
       "consensus_target_price": null,
       "consensus_upside": null,
@@ -519,7 +544,7 @@
     },
     {
       "ticker": "3163",
-      "as_of_date": "2026-10-08",
+      "as_of_date": "2026-10-14",
       "institution_count": 0,
       "consensus_target_price": null,
       "consensus_upside": null,
@@ -531,7 +556,7 @@
     },
     {
       "ticker": "2301",
-      "as_of_date": "2026-10-08",
+      "as_of_date": "2026-10-14",
       "institution_count": 1,
       "consensus_target_price": 338.0,
       "consensus_upside": null,
@@ -560,7 +585,7 @@
     },
     {
       "ticker": "6282",
-      "as_of_date": "2026-10-08",
+      "as_of_date": "2026-10-14",
       "institution_count": 0,
       "consensus_target_price": null,
       "consensus_upside": null,
@@ -572,7 +597,7 @@
     },
     {
       "ticker": "6412",
-      "as_of_date": "2026-10-08",
+      "as_of_date": "2026-10-14",
       "institution_count": 0,
       "consensus_target_price": null,
       "consensus_upside": null,
@@ -584,7 +609,7 @@
     },
     {
       "ticker": "6781",
-      "as_of_date": "2026-10-08",
+      "as_of_date": "2026-10-14",
       "institution_count": 1,
       "consensus_target_price": 1285.0,
       "consensus_upside": null,
@@ -605,7 +630,7 @@
     },
     {
       "ticker": "2492",
-      "as_of_date": "2026-10-08",
+      "as_of_date": "2026-10-14",
       "institution_count": 0,
       "consensus_target_price": null,
       "consensus_upside": null,
@@ -617,7 +642,7 @@
     },
     {
       "ticker": "3357",
-      "as_of_date": "2026-10-08",
+      "as_of_date": "2026-10-14",
       "institution_count": 0,
       "consensus_target_price": null,
       "consensus_upside": null,
@@ -629,7 +654,7 @@
     },
     {
       "ticker": "3653",
-      "as_of_date": "2026-10-08",
+      "as_of_date": "2026-10-14",
       "institution_count": 2,
       "consensus_target_price": 8150.0,
       "consensus_upside": null,
@@ -650,10 +675,10 @@
     },
     {
       "ticker": "3017",
-      "as_of_date": "2026-10-08",
+      "as_of_date": "2026-10-14",
       "institution_count": 4,
       "consensus_target_price": 4381.5,
-      "consensus_upside": 0.2736918604651162,
+      "consensus_upside": 0.3358231707317074,
       "dispersion": 0.27387880862718245,
       "status": "READY",
       "scoreable": true,
@@ -662,10 +687,10 @@
     },
     {
       "ticker": "3324",
-      "as_of_date": "2026-10-08",
+      "as_of_date": "2026-10-14",
       "institution_count": 4,
       "consensus_target_price": 1451.5,
-      "consensus_upside": -0.045065789473684226,
+      "consensus_upside": -0.01593220338983048,
       "dispersion": 0.2755769893213917,
       "status": "READY",
       "scoreable": true,
@@ -679,7 +704,7 @@
     },
     {
       "ticker": "6230",
-      "as_of_date": "2026-10-08",
+      "as_of_date": "2026-10-14",
       "institution_count": 0,
       "consensus_target_price": null,
       "consensus_upside": null,
@@ -691,7 +716,7 @@
     },
     {
       "ticker": "3338",
-      "as_of_date": "2026-10-08",
+      "as_of_date": "2026-10-14",
       "institution_count": 0,
       "consensus_target_price": null,
       "consensus_upside": null,
@@ -703,10 +728,10 @@
     },
     {
       "ticker": "2382",
-      "as_of_date": "2026-10-08",
+      "as_of_date": "2026-10-14",
       "institution_count": 3,
       "consensus_target_price": 75.0,
-      "consensus_upside": -0.7695852534562212,
+      "consensus_upside": -0.7678018575851393,
       "dispersion": 0.12466666666666659,
       "status": "READY",
       "scoreable": true,
@@ -720,7 +745,7 @@
     },
     {
       "ticker": "3231",
-      "as_of_date": "2026-10-08",
+      "as_of_date": "2026-10-14",
       "institution_count": 0,
       "consensus_target_price": null,
       "consensus_upside": null,
@@ -732,7 +757,7 @@
     },
     {
       "ticker": "6669",
-      "as_of_date": "2026-10-08",
+      "as_of_date": "2026-10-14",
       "institution_count": 0,
       "consensus_target_price": null,
       "consensus_upside": null,
@@ -744,7 +769,7 @@
     },
     {
       "ticker": "2317",
-      "as_of_date": "2026-10-08",
+      "as_of_date": "2026-10-14",
       "institution_count": 0,
       "consensus_target_price": null,
       "consensus_upside": null,
@@ -756,7 +781,7 @@
     },
     {
       "ticker": "2356",
-      "as_of_date": "2026-10-08",
+      "as_of_date": "2026-10-14",
       "institution_count": 1,
       "consensus_target_price": 16.7,
       "consensus_upside": null,
@@ -777,7 +802,7 @@
     },
     {
       "ticker": "3711",
-      "as_of_date": "2026-10-08",
+      "as_of_date": "2026-10-14",
       "institution_count": 0,
       "consensus_target_price": null,
       "consensus_upside": null,
@@ -789,10 +814,10 @@
     },
     {
       "ticker": "2308",
-      "as_of_date": "2026-10-08",
+      "as_of_date": "2026-10-14",
       "institution_count": 3,
       "consensus_target_price": 2500.0,
-      "consensus_upside": 0.27226463104325704,
+      "consensus_upside": 0.408450704225352,
       "dispersion": 0.18,
       "status": "READY",
       "scoreable": true,
@@ -806,7 +831,7 @@
     },
     {
       "ticker": "2379",
-      "as_of_date": "2026-10-08",
+      "as_of_date": "2026-10-14",
       "institution_count": 0,
       "consensus_target_price": null,
       "consensus_upside": null,
@@ -818,7 +843,7 @@
     },
     {
       "ticker": "3532",
-      "as_of_date": "2026-10-08",
+      "as_of_date": "2026-10-14",
       "institution_count": 0,
       "consensus_target_price": null,
       "consensus_upside": null,
@@ -830,7 +855,7 @@
     },
     {
       "ticker": "6182",
-      "as_of_date": "2026-10-08",
+      "as_of_date": "2026-10-14",
       "institution_count": 0,
       "consensus_target_price": null,
       "consensus_upside": null,
@@ -842,7 +867,7 @@
     },
     {
       "ticker": "1560",
-      "as_of_date": "2026-10-08",
+      "as_of_date": "2026-10-14",
       "institution_count": 0,
       "consensus_target_price": null,
       "consensus_upside": null,
@@ -854,7 +879,7 @@
     },
     {
       "ticker": "3131",
-      "as_of_date": "2026-10-08",
+      "as_of_date": "2026-10-14",
       "institution_count": 0,
       "consensus_target_price": null,
       "consensus_upside": null,

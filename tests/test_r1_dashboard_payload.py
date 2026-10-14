@@ -20,17 +20,20 @@ class R1DashboardPayloadTest(unittest.TestCase):
         dashboard = payload["tabs"]["R1 Dashboard"]
         sections = [row[0] for row in dashboard]
         self.assertIn("01｜實際持股與未來半年目標持股", sections)
-        self.assertIn("02｜三條績效線", sections)
+        self.assertIn("02｜兩條績效線", sections)
         self.assertIn("03｜今日換倉建議", sections)
         self.assertIn("04｜無差別殺盤過渡層（研究觀察）", sections)
         self.assertIn("05｜分數規則", sections)
         self.assertIn("06｜更新排程", sections)
         self.assertIn("07｜模型完整說明", sections)
-        performance_start = sections.index("02｜三條績效線")
+        performance_start = sections.index("02｜兩條績效線")
         self.assertEqual(
-            [row[0] for row in dashboard[performance_start + 2:performance_start + 5]],
-            ["Ryan 8/5後操作範圍（排除既有台積電）", "8/5全部轉0050正二後長抱", "8/5原持股完全不動"],
+            [row[0] for row in dashboard[performance_start + 2:performance_start + 4]],
+            ["Ryan 8/5後操作範圍（排除既有台積電）", "8/5全部轉0050正二後長抱"],
         )
+        self.assertNotIn("8/5原持股完全不動", [cell for row in dashboard for cell in row])
+        self.assertEqual(dashboard[performance_start + 1][5], "相較實際操作差額")
+        self.assertEqual(dashboard[performance_start + 3][5], "=B21-B20")
         recommendation_start = sections.index("03｜今日換倉建議")
         self.assertIn(
             dashboard[recommendation_start + 2][:2],

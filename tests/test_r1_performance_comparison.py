@@ -9,16 +9,15 @@ class PerformanceComparisonTest(unittest.TestCase):
         self.assertFalse(result["comparison_ready"])
         self.assertTrue(all(row["return_pct"] is None for row in result["rows"]))
 
-    def test_same_seed_calculates_three_lines(self):
+    def test_same_seed_calculates_two_lines(self):
         config = {"common_starting_nav": 1000, "benchmarks": {
             "00631l_buy_hold": {"status": "READY", "shares": 10, "cash": 0},
-            "original_hold": {"status": "READY", "positions": [{"ticker": "2308", "shares": 5}], "cash": 0},
         }}
         market = {"rows": [{"ticker": "00631", "raw_close": 110}, {"ticker": "2308", "raw_close": 220}]}
         result = build_comparison(date="2026-10-10", market=market, benchmark_config=config,
                                   actual_snapshot={"nav": 1200})
         self.assertTrue(result["comparison_ready"])
-        self.assertEqual([round(row["return_pct"], 2) for row in result["rows"]], [0.2, 0.1, 0.1])
+        self.assertEqual([round(row["return_pct"], 2) for row in result["rows"]], [0.2, 0.1])
 
     def test_actual_equity_is_exposed_without_publishing_return(self):
         result = build_comparison(
@@ -39,15 +38,13 @@ class PerformanceComparisonTest(unittest.TestCase):
             ],
             "benchmarks": {
                 "00631l_buy_hold": {"status": "READY", "shares": 10, "cash": 0},
-                "original_hold": {"status": "READY", "positions": [{"ticker": "2308", "shares": 5}], "cash": 0},
             },
         }
         market = {"rows": [{"ticker": "00631", "raw_close": 10}, {"ticker": "2308", "raw_close": 200}]}
         result = build_comparison(date="2026-09-20", market=market, benchmark_config=config)
-        all_in, original = result["rows"][1:]
+        all_in = result["rows"][1]
         self.assertEqual(all_in["starting_nav"], 1100)
         self.assertEqual(all_in["nav"], 124)
-        self.assertEqual(original["nav"], 1024)
         self.assertEqual(all_in["external_cash_flow"], 100)
 
 

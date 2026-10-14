@@ -93,10 +93,16 @@ def _format_workbook(client: SheetsClient, dashboard_rows: list[list[object]]) -
     holding_header = next((index for index, row in enumerate(dashboard_rows)
                            if row and row[0] == "所屬題材"), -1)
     performance_section = next(index for index, row in enumerate(dashboard_rows)
-                               if row and row[0] == "02｜三條績效線")
+                               if row and row[0] == "02｜兩條績效線")
     transition_status = next((index for index, row in enumerate(dashboard_rows)
                               if row and row[0] == "狀態" and len(row) > 2
                               and row[2] == "候選池下跌比例"), max(len(dashboard_rows) - 2, 0))
+    benchmark_row = next(index for index, row in enumerate(dashboard_rows)
+                         if row and row[0] == "8/5全部轉0050正二後長抱")
+    benchmark_delta = (
+        float(str(dashboard_rows[benchmark_row][1]).replace(",", ""))
+        - float(str(dashboard_rows[benchmark_row - 1][1]).replace(",", ""))
+    )
     navy = {"red": 0.0784, "green": 0.2, "blue": 0.2863}
     light = {"red": 0.91, "green": 0.957, "blue": 0.957}
     white = {"red": 1.0, "green": 1.0, "blue": 1.0}
@@ -166,14 +172,22 @@ def _format_workbook(client: SheetsClient, dashboard_rows: list[list[object]]) -
           "fields": "userEnteredFormat.numberFormat"}},
         {"repeatCell": {
           "range": {"sheetId": dashboard_id, "startRowIndex": performance_section + 2,
-                    "endRowIndex": performance_section + 5, "startColumnIndex": 1, "endColumnIndex": 3},
+                    "endRowIndex": performance_section + 4, "startColumnIndex": 1, "endColumnIndex": 3},
           "cell": {"userEnteredFormat": {"numberFormat": {"type": "NUMBER", "pattern": "#,##0.0"}}},
           "fields": "userEnteredFormat.numberFormat"}},
         {"repeatCell": {
           "range": {"sheetId": dashboard_id, "startRowIndex": performance_section + 2,
-                    "endRowIndex": performance_section + 5, "startColumnIndex": 3, "endColumnIndex": 4},
+                    "endRowIndex": performance_section + 4, "startColumnIndex": 3, "endColumnIndex": 4},
           "cell": {"userEnteredFormat": {"numberFormat": {"type": "PERCENT", "pattern": "0.0%"}}},
           "fields": "userEnteredFormat.numberFormat"}},
+        {"repeatCell": {
+          "range": {"sheetId": dashboard_id, "startRowIndex": benchmark_row,
+                    "endRowIndex": benchmark_row + 1, "startColumnIndex": 5, "endColumnIndex": 6},
+          "cell": {"userEnteredFormat": {"numberFormat": {"type": "NUMBER", "pattern": "#,##0.0"},
+                   "textFormat": {"foregroundColor": (
+                       {"red": 0.8, "green": 0.0, "blue": 0.0} if benchmark_delta >= 0
+                       else {"red": 0.0, "green": 0.55, "blue": 0.15}), "bold": True}}},
+          "fields": "userEnteredFormat(numberFormat,textFormat)"}},
         {"repeatCell": {
           "range": {"sheetId": dashboard_id, "startRowIndex": transition_status,
                     "endRowIndex": transition_status + 1, "startColumnIndex": 3, "endColumnIndex": 4},
@@ -192,13 +206,13 @@ def _format_workbook(client: SheetsClient, dashboard_rows: list[list[object]]) -
             "properties": {"pixelSize": 560}, "fields": "pixelSize",
         }})
     performance_section = next(
-        (index for index, row in enumerate(dashboard_rows) if row and row[0] == "02｜三條績效線"), None
+        (index for index, row in enumerate(dashboard_rows) if row and row[0] == "02｜兩條績效線"), None
     )
     if performance_section is not None:
         requests_body.append({"updateDimensionProperties": {
             "range": {"sheetId": dashboard_id, "dimension": "ROWS",
                       "startIndex": performance_section + 2,
-                      "endIndex": min(performance_section + 5, len(dashboard_rows))},
+                      "endIndex": min(performance_section + 4, len(dashboard_rows))},
             "properties": {"pixelSize": 64}, "fields": "pixelSize",
         }})
     for title in (PERFORMANCE, RECOMMENDATIONS, SIGNALS, TRADES):

@@ -5,7 +5,7 @@ from pathlib import Path
 from typing import Any
 
 
-LINES = ("ACTUAL", "00631L_BUY_HOLD", "ORIGINAL_HOLD")
+LINES = ("ACTUAL", "00631L_BUY_HOLD")
 
 
 def build_comparison(*, date: str, market: dict[str, Any], benchmark_config: dict[str, Any],
@@ -52,34 +52,6 @@ def build_comparison(*, date: str, market: dict[str, Any], benchmark_config: dic
     ready = seed_ready and nav is not None and all_in.get("status") == "READY"
     rows.append(_row(date, "00631L_BUY_HOLD", nav, contributed_capital, ready,
                      "00631L股數／起始餘現金已對帳" if ready else "8/5轉入00631L的精確股數與餘現金尚未對帳"))
-    rows[-1]["external_cash_flow"] = external_cash_flow
-
-    original = benchmark_config.get("benchmarks", {}).get(
-        "original_hold", benchmark_config.get("benchmark_original_holdings", {})
-    )
-    positions = original.get("positions", original.get("known_positions", []))
-    nav = 0.0
-    complete = bool(positions)
-    for position in positions:
-        ticker = str(position.get("ticker", "")).replace("L", "").zfill(5 if str(position.get("ticker", "")).startswith("0") else 4)
-        px = closes.get(ticker)
-        shares = position.get("shares")
-        if px is None or not isinstance(shares, (int, float)):
-            complete = False
-            break
-        nav += shares * px
-    if complete:
-        nav += float(original.get("cash", 0) or 0) + added_cash
-        if close is None:
-            complete = False
-            nav = None
-        else:
-            nav += added_shares * close
-    else:
-        nav = None
-    ready = seed_ready and complete and original.get("status") == "READY"
-    rows.append(_row(date, "ORIGINAL_HOLD", nav, contributed_capital, ready,
-                     "8/5原持股股數與餘現金已對帳" if ready else "8/5原持股或餘現金尚未完整對帳"))
     rows[-1]["external_cash_flow"] = external_cash_flow
 
     base = next((row["return_pct"] for row in rows if row["line"] == "00631L_BUY_HOLD"), None)

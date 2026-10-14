@@ -15,7 +15,7 @@ from r1.recommendations import build_recommendations
 MODEL_LOGIC = """R1 v0.5｜實際帳戶總覽與AI瓶頸換倉顧問
 
 【模型任務】
-R1記錄Ryan實際成交與帳戶結果，並與「8/5全部轉為0050正二後抱住」及「8/5原持股完全不動」兩條同起點基準每日比較。績效比較排除未包含於8/5共同本金的既有台積電持股及其配息；總持股區仍完整顯示。三條線未完成共同起始NAV與現金流對帳前，不發布誰勝誰負。
+R1記錄Ryan實際成交與帳戶結果，並與「8/5全部轉為0050正二後抱住」同起點基準每日比較。績效比較排除未包含於8/5共同本金的既有台積電持股及其配息；總持股區仍完整顯示。兩條線未完成共同起始NAV與現金流對帳前，不發布誰勝誰負。
 
 【季度Top3】
 結構性龍頭評分：AI瓶頸直接性25%、產業與技術地位25%、AI營收兌現20%、財務與獲利品質20%、市場代表性10%。官方與公司正式揭露優先；分析師與市場共識只能補充，不能單獨決定排名。任一成分股必要證據不足時，該題材Top3維持待資料。
@@ -27,7 +27,7 @@ R1記錄Ryan實際成交與帳戶結果，並與「8/5全部轉為0050正二後�
 未來半年五檔目標維持不變。當加權指數或十一題材候選池出現廣泛急跌時，R1開放全候選池進行過渡比較，包括五檔目標本身。跌深不是買進理由；候選仍須通過財務、題材催化及風險資料。盤中只列觀察，收盤後以官方資料確認；模型不自動成交。
 
 【更新頻率】
-每個交易日更新三條績效線與換倉建議；每週更新12個月目標價共識、題材催化與風險；每季重評AI瓶頸題材、成分股與Top3。目標價採90日內至少3家可識別機構的中位數，單一外資只展示、不計分。
+每個交易日更新兩條績效線與換倉建議；每週更新12個月目標價共識、題材催化與風險；每季重評AI瓶頸題材、成分股與Top3。目標價採90日內至少3家可識別機構的中位數，單一外資只展示、不計分。
 
 【模型邊界】
 R1是report-only顧問，不自動下單。V4-D與C6程式保留但每日發布已暫停，直到Ryan明確要求恢復。"""
@@ -35,7 +35,6 @@ R1是report-only顧問，不自動下單。V4-D與C6程式保留但每日發布�
 PERFORMANCE_LINE_LABELS = {
     "ACTUAL": "Ryan 8/5後操作範圍（排除既有台積電）",
     "00631L_BUY_HOLD": "8/5全部轉0050正二後長抱",
-    "ORIGINAL_HOLD": "8/5原持股完全不動",
 }
 
 RECOMMENDATION_DISPLAY = {
@@ -126,17 +125,22 @@ def _build_v03_dashboard(*, config: R1Config, market: dict, theme_review: dict,
         ])
     comparison = comparison or {"rows": [], "comparison_ready": False}
     recommendations = recommendations or []
+    comparison_rows = comparison.get("rows", [])
+    actual_nav = next((item.get("nav") for item in comparison_rows if item.get("line") == "ACTUAL"), None)
     rows.extend([
-        ["02｜三條績效線"],
-        ["比較線", "當日NAV", "累計投入本金", "累積報酬", "狀態"],
+        ["02｜兩條績效線"],
+        ["比較線", "當日NAV", "累計投入本金", "累積報酬", "狀態", "相較實際操作差額"],
         *[[PERFORMANCE_LINE_LABELS.get(item["line"], item["line"]),
            _money(item.get("nav") or item.get("equity_market_value")) if
            (item.get("nav") or item.get("equity_market_value")) is not None else "待對帳",
            _money(item.get("starting_nav")) if item.get("starting_nav") is not None else "待對帳",
            _percent(item.get("return_pct")) if item.get("return_pct") is not None else "不發布",
            (item.get("source_note") if item["line"] == "ACTUAL" and item.get("nav") is None
-            and item.get("equity_market_value") is not None else item.get("status"))]
-          for item in comparison.get("rows", [])],
+            and item.get("equity_market_value") is not None else item.get("status")),
+           ("=B21-B20"
+            if item.get("line") == "00631L_BUY_HOLD"
+            and isinstance(item.get("nav"), (int, float)) and isinstance(actual_nav, (int, float)) else "")]
+          for item in comparison_rows],
         ["03｜今日換倉建議"],
         ["優先序", "動作", "換出", "換入", "理由／狀態"],
         *[[RECOMMENDATION_DISPLAY.get((item["priority"], item["action"]),
