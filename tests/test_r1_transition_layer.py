@@ -1,12 +1,17 @@
 from __future__ import annotations
 
 import unittest
+import json
+import tempfile
+from pathlib import Path
+from unittest.mock import patch
 
 import pandas as pd
 
 from r1.transition_layer import (
-    assess_selloff, classify_candidate, select_transition_candidates, taiex_return_from_history,
+    assess_selloff, classify_candidate, materialize, select_transition_candidates, taiex_return_from_history,
 )
+from rotation_radar.base_cycle_daily_report import ReportDataNotReady
 
 
 class R1TransitionLayerTest(unittest.TestCase):
@@ -67,6 +72,29 @@ class R1TransitionLayerTest(unittest.TestCase):
             target_tickers={"2454", "2408", "3081"},
         )
         self.assertEqual([row["ticker"] for row in result], ["2454"])
+
+    def test_materialize_uses_complete_breadth_when_taiex_source_is_temporarily_unavailable(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            market = root / "market.json"
+            output = root / "transition.json"
+            themes = root / "themes.json"
+            market.write_text(json.dumps({
+                "date": "2026-10-13", "requested_ticker_count": 10,
+                "rows": [{"ticker": str(1000 + i), "daily_return": -0.02} for i in range(10)],
+            }), encoding="utf-8")
+            themes.write_text(json.dumps({"target_portfolio_6m": []}), encoding="utf-8")
+
+            with patch("r1.transition_layer.load_taiex_history", side_effect=ReportDataNotReady("TAIEX unavailable")):
+                result = materialize(
+                    market_path=market, output_path=output, theme_path=themes,
+                    active_pool_path=root / "missing-active.json",
+                    theme_review_path=root / "missing-review.json",
+                )
+
+        self.assertTrue(result["triggered"])
+        self.assertEqual(result["taiex_source_status"], "SOURCE_GAP_BREADTH_FALLBACK")
+        self.assertEqual(result["source_gaps"], ["TAIEX unavailable"])
 
 
 if __name__ == "__main__":

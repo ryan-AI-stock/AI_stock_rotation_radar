@@ -8,6 +8,7 @@ from statistics import median
 
 import pandas as pd
 
+from rotation_radar.base_cycle_daily_report import ReportDataNotReady
 from rotation_radar.v4d_top1_daily_report import load_taiex_history
 
 
@@ -143,10 +144,21 @@ def materialize(*, market_path: str | Path, output_path: str | Path,
                 theme_path: str | Path = "config/r1_v02_themes.json") -> dict:
     market = json.loads(Path(market_path).read_text(encoding="utf-8"))
     target_date = str(market.get("date"))
-    taiex_history = load_taiex_history(
-        target=pd.Timestamp(target_date), source_cache=Path(source_cache), offline=offline,
-    )
-    taiex_return = taiex_return_from_history(taiex_history, target=target_date)
+    taiex_return = None
+    taiex_source_status = "READY"
+    source_gaps: list[str] = []
+    try:
+        taiex_history = load_taiex_history(
+            target=pd.Timestamp(target_date), source_cache=Path(source_cache), offline=offline,
+        )
+        taiex_return = taiex_return_from_history(taiex_history, target=target_date)
+    except (ReportDataNotReady, ValueError) as exc:
+        # The transition layer has two independent selloff signals: TAIEX and
+        # full-universe breadth.  A temporary index endpoint failure must remain
+        # visible, but must not suppress a complete 90%+ breadth observation or
+        # the rest of the R1 dashboard.
+        taiex_source_status = "SOURCE_GAP_BREADTH_FALLBACK"
+        source_gaps.append(str(exc))
     result = assess_selloff(
         [{"return": row.get("daily_return")} for row in market.get("rows", [])],
         taiex_return=taiex_return,
@@ -190,6 +202,8 @@ def materialize(*, market_path: str | Path, output_path: str | Path,
         "candidate_count": len(candidates),
         "candidates": candidates,
         "active_pool_as_of": active_date,
+        "taiex_source_status": taiex_source_status,
+        "source_gaps": source_gaps,
         "note": "after-close official TAIEX return plus R1-universe breadth; research-only",
     }
     target = Path(output_path)
