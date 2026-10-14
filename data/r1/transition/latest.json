@@ -18,5 +18,7 @@
   "candidate_count": 0,
   "candidates": [],
   "active_pool_as_of": "2026-10-08",
+  "taiex_source_status": "READY",
+  "source_gaps": [],
   "note": "after-close official TAIEX return plus R1-universe breadth; research-only"
 }
