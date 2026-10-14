@@ -1,13 +1,13 @@
 {
   "model": "R1",
-  "as_of_date": "2026-10-13",
+  "as_of_date": "2026-10-14",
   "fiscal_year": 2027,
   "requested_ticker_count": 54,
-  "consensus_ready_count": 14,
+  "consensus_ready_count": 42,
   "eps_revision_ready_count": 0,
   "eps_revision_progress": {
     "first_observation_date": "2026-10-02",
-    "observed_ticker_count": 14,
+    "observed_ticker_count": 42,
     "ready_counts": {
       "1w": 13,
       "4w": 0,
@@ -20,11 +20,11 @@
     },
     "note": "Calendar eligibility does not guarantee a usable snapshot; the first later weekly run must still contain valid PIT consensus."
   },
-  "catalyst_ready_count": 20,
+  "catalyst_ready_count": 52,
   "catalyst_score_ready_count": 0,
-  "bottleneck_ready_count": 20,
+  "bottleneck_ready_count": 52,
   "price_chip_ready_count": 54,
-  "current_chip_ready_count": 54,
+  "current_chip_ready_count": 0,
   "component_score_ready_count": 0,
   "trade_ready_count": 0,
   "action_policy_approved": false,
@@ -47,7 +47,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": true,
+      "current_chip_ready": false,
       "price_chip_coverage": {
         "price_days": 28,
         "institutional_days": 28,
@@ -70,7 +70,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": true,
+      "current_chip_ready": false,
       "price_chip_coverage": {
         "price_days": 28,
         "institutional_days": 28,
@@ -93,7 +93,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": true,
+      "current_chip_ready": false,
       "price_chip_coverage": {
         "price_days": 28,
         "institutional_days": 28,
@@ -116,7 +116,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": true,
+      "current_chip_ready": false,
       "price_chip_coverage": {
         "price_days": 28,
         "institutional_days": 28,
@@ -139,7 +139,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": true,
+      "current_chip_ready": false,
       "price_chip_coverage": {
         "price_days": 28,
         "institutional_days": 28,
@@ -162,7 +162,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": true,
+      "current_chip_ready": false,
       "price_chip_coverage": {
         "price_days": 28,
         "institutional_days": 28,
@@ -185,7 +185,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": true,
+      "current_chip_ready": false,
       "price_chip_coverage": {
         "price_days": 28,
         "institutional_days": 28,
@@ -201,14 +201,14 @@
     },
     {
       "ticker": "3661",
-      "consensus_ready": false,
+      "consensus_ready": true,
       "eps_revision_ready": false,
       "catalyst_ready": true,
       "catalyst_score_ready": false,
       "bottleneck_ready": true,
       "valuation_ready": false,
       "price_chip_ready": true,
-      "current_chip_ready": true,
+      "current_chip_ready": false,
       "price_chip_coverage": {
         "price_days": 28,
         "institutional_days": 28,
@@ -218,7 +218,6 @@
       "component_score_ready": false,
       "trade_ready": false,
       "blocked_reasons": [
-        "CONSENSUS_NOT_READY",
         "EPS_REVISION_HISTORY_NOT_READY",
         "VALUATION_HISTORY_NOT_READY",
         "ACTION_POLICY_NOT_APPROVED"
@@ -226,14 +225,14 @@
     },
     {
       "ticker": "3443",
-      "consensus_ready": false,
+      "consensus_ready": true,
       "eps_revision_ready": false,
       "catalyst_ready": true,
       "catalyst_score_ready": false,
       "bottleneck_ready": true,
       "valuation_ready": false,
       "price_chip_ready": true,
-      "current_chip_ready": true,
+      "current_chip_ready": false,
       "price_chip_coverage": {
         "price_days": 28,
         "institutional_days": 28,
@@ -243,7 +242,6 @@
       "component_score_ready": false,
       "trade_ready": false,
       "blocked_reasons": [
-        "CONSENSUS_NOT_READY",
         "EPS_REVISION_HISTORY_NOT_READY",
         "VALUATION_HISTORY_NOT_READY",
         "ACTION_POLICY_NOT_APPROVED"
@@ -251,14 +249,14 @@
     },
     {
       "ticker": "3035",
-      "consensus_ready": false,
+      "consensus_ready": true,
       "eps_revision_ready": false,
       "catalyst_ready": true,
       "catalyst_score_ready": false,
       "bottleneck_ready": true,
       "valuation_ready": false,
       "price_chip_ready": true,
-      "current_chip_ready": true,
+      "current_chip_ready": false,
       "price_chip_coverage": {
         "price_days": 28,
         "institutional_days": 28,
@@ -268,7 +266,6 @@
       "component_score_ready": false,
       "trade_ready": false,
       "blocked_reasons": [
-        "CONSENSUS_NOT_READY",
         "EPS_REVISION_HISTORY_NOT_READY",
         "VALUATION_HISTORY_NOT_READY",
         "ACTION_POLICY_NOT_APPROVED"
@@ -276,14 +273,14 @@
     },
     {
       "ticker": "2449",
-      "consensus_ready": false,
+      "consensus_ready": true,
       "eps_revision_ready": false,
       "catalyst_ready": true,
       "catalyst_score_ready": false,
       "bottleneck_ready": true,
       "valuation_ready": false,
       "price_chip_ready": true,
-      "current_chip_ready": true,
+      "current_chip_ready": false,
       "price_chip_coverage": {
         "price_days": 28,
         "institutional_days": 28,
@@ -293,7 +290,6 @@
       "component_score_ready": false,
       "trade_ready": false,
       "blocked_reasons": [
-        "CONSENSUS_NOT_READY",
         "EPS_REVISION_HISTORY_NOT_READY",
         "VALUATION_HISTORY_NOT_READY",
         "ACTION_POLICY_NOT_APPROVED"
@@ -301,14 +297,14 @@
     },
     {
       "ticker": "6223",
-      "consensus_ready": false,
+      "consensus_ready": true,
       "eps_revision_ready": false,
       "catalyst_ready": true,
       "catalyst_score_ready": false,
       "bottleneck_ready": true,
       "valuation_ready": false,
       "price_chip_ready": true,
-      "current_chip_ready": true,
+      "current_chip_ready": false,
       "price_chip_coverage": {
         "price_days": 28,
         "institutional_days": 28,
@@ -318,7 +314,6 @@
       "component_score_ready": false,
       "trade_ready": false,
       "blocked_reasons": [
-        "CONSENSUS_NOT_READY",
         "EPS_REVISION_HISTORY_NOT_READY",
         "VALUATION_HISTORY_NOT_READY",
         "ACTION_POLICY_NOT_APPROVED"
@@ -326,14 +321,14 @@
     },
     {
       "ticker": "6187",
-      "consensus_ready": false,
+      "consensus_ready": true,
       "eps_revision_ready": false,
-      "catalyst_ready": false,
+      "catalyst_ready": true,
       "catalyst_score_ready": false,
-      "bottleneck_ready": false,
+      "bottleneck_ready": true,
       "valuation_ready": false,
       "price_chip_ready": true,
-      "current_chip_ready": true,
+      "current_chip_ready": false,
       "price_chip_coverage": {
         "price_days": 28,
         "institutional_days": 28,
@@ -343,24 +338,21 @@
       "component_score_ready": false,
       "trade_ready": false,
       "blocked_reasons": [
-        "CONSENSUS_NOT_READY",
         "EPS_REVISION_HISTORY_NOT_READY",
-        "CATALYST_EVIDENCE_NOT_READY",
-        "BOTTLENECK_EVIDENCE_NOT_READY",
         "VALUATION_HISTORY_NOT_READY",
         "ACTION_POLICY_NOT_APPROVED"
       ]
     },
     {
       "ticker": "3583",
-      "consensus_ready": false,
+      "consensus_ready": true,
       "eps_revision_ready": false,
-      "catalyst_ready": false,
+      "catalyst_ready": true,
       "catalyst_score_ready": false,
-      "bottleneck_ready": false,
+      "bottleneck_ready": true,
       "valuation_ready": false,
       "price_chip_ready": true,
-      "current_chip_ready": true,
+      "current_chip_ready": false,
       "price_chip_coverage": {
         "price_days": 28,
         "institutional_days": 28,
@@ -370,10 +362,7 @@
       "component_score_ready": false,
       "trade_ready": false,
       "blocked_reasons": [
-        "CONSENSUS_NOT_READY",
         "EPS_REVISION_HISTORY_NOT_READY",
-        "CATALYST_EVIDENCE_NOT_READY",
-        "BOTTLENECK_EVIDENCE_NOT_READY",
         "VALUATION_HISTORY_NOT_READY",
         "ACTION_POLICY_NOT_APPROVED"
       ]
@@ -387,7 +376,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": true,
+      "current_chip_ready": false,
       "price_chip_coverage": {
         "price_days": 28,
         "institutional_days": 28,
@@ -410,7 +399,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": true,
+      "current_chip_ready": false,
       "price_chip_coverage": {
         "price_days": 28,
         "institutional_days": 28,
@@ -433,7 +422,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": true,
+      "current_chip_ready": false,
       "price_chip_coverage": {
         "price_days": 28,
         "institutional_days": 28,
@@ -449,14 +438,14 @@
     },
     {
       "ticker": "3008",
-      "consensus_ready": false,
+      "consensus_ready": true,
       "eps_revision_ready": false,
       "catalyst_ready": false,
       "catalyst_score_ready": false,
       "bottleneck_ready": false,
       "valuation_ready": false,
       "price_chip_ready": true,
-      "current_chip_ready": true,
+      "current_chip_ready": false,
       "price_chip_coverage": {
         "price_days": 28,
         "institutional_days": 28,
@@ -466,7 +455,6 @@
       "component_score_ready": false,
       "trade_ready": false,
       "blocked_reasons": [
-        "CONSENSUS_NOT_READY",
         "EPS_REVISION_HISTORY_NOT_READY",
         "CATALYST_EVIDENCE_NOT_READY",
         "BOTTLENECK_EVIDENCE_NOT_READY",
@@ -476,14 +464,14 @@
     },
     {
       "ticker": "3406",
-      "consensus_ready": false,
+      "consensus_ready": true,
       "eps_revision_ready": false,
       "catalyst_ready": false,
       "catalyst_score_ready": false,
       "bottleneck_ready": false,
       "valuation_ready": false,
       "price_chip_ready": true,
-      "current_chip_ready": true,
+      "current_chip_ready": false,
       "price_chip_coverage": {
         "price_days": 28,
         "institutional_days": 28,
@@ -493,7 +481,6 @@
       "component_score_ready": false,
       "trade_ready": false,
       "blocked_reasons": [
-        "CONSENSUS_NOT_READY",
         "EPS_REVISION_HISTORY_NOT_READY",
         "CATALYST_EVIDENCE_NOT_READY",
         "BOTTLENECK_EVIDENCE_NOT_READY",
@@ -503,14 +490,14 @@
     },
     {
       "ticker": "2337",
-      "consensus_ready": false,
+      "consensus_ready": true,
       "eps_revision_ready": false,
-      "catalyst_ready": false,
+      "catalyst_ready": true,
       "catalyst_score_ready": false,
-      "bottleneck_ready": false,
+      "bottleneck_ready": true,
       "valuation_ready": false,
       "price_chip_ready": true,
-      "current_chip_ready": true,
+      "current_chip_ready": false,
       "price_chip_coverage": {
         "price_days": 28,
         "institutional_days": 28,
@@ -520,24 +507,21 @@
       "component_score_ready": false,
       "trade_ready": false,
       "blocked_reasons": [
-        "CONSENSUS_NOT_READY",
         "EPS_REVISION_HISTORY_NOT_READY",
-        "CATALYST_EVIDENCE_NOT_READY",
-        "BOTTLENECK_EVIDENCE_NOT_READY",
         "VALUATION_HISTORY_NOT_READY",
         "ACTION_POLICY_NOT_APPROVED"
       ]
     },
     {
       "ticker": "8299",
-      "consensus_ready": false,
+      "consensus_ready": true,
       "eps_revision_ready": false,
-      "catalyst_ready": false,
+      "catalyst_ready": true,
       "catalyst_score_ready": false,
-      "bottleneck_ready": false,
+      "bottleneck_ready": true,
       "valuation_ready": false,
       "price_chip_ready": true,
-      "current_chip_ready": true,
+      "current_chip_ready": false,
       "price_chip_coverage": {
         "price_days": 28,
         "institutional_days": 28,
@@ -547,10 +531,7 @@
       "component_score_ready": false,
       "trade_ready": false,
       "blocked_reasons": [
-        "CONSENSUS_NOT_READY",
         "EPS_REVISION_HISTORY_NOT_READY",
-        "CATALYST_EVIDENCE_NOT_READY",
-        "BOTTLENECK_EVIDENCE_NOT_READY",
         "VALUATION_HISTORY_NOT_READY",
         "ACTION_POLICY_NOT_APPROVED"
       ]
@@ -559,12 +540,12 @@
       "ticker": "3260",
       "consensus_ready": false,
       "eps_revision_ready": false,
-      "catalyst_ready": false,
+      "catalyst_ready": true,
       "catalyst_score_ready": false,
-      "bottleneck_ready": false,
+      "bottleneck_ready": true,
       "valuation_ready": false,
       "price_chip_ready": true,
-      "current_chip_ready": true,
+      "current_chip_ready": false,
       "price_chip_coverage": {
         "price_days": 28,
         "institutional_days": 28,
@@ -576,22 +557,20 @@
       "blocked_reasons": [
         "CONSENSUS_NOT_READY",
         "EPS_REVISION_HISTORY_NOT_READY",
-        "CATALYST_EVIDENCE_NOT_READY",
-        "BOTTLENECK_EVIDENCE_NOT_READY",
         "VALUATION_HISTORY_NOT_READY",
         "ACTION_POLICY_NOT_APPROVED"
       ]
     },
     {
       "ticker": "2383",
-      "consensus_ready": false,
+      "consensus_ready": true,
       "eps_revision_ready": false,
-      "catalyst_ready": false,
+      "catalyst_ready": true,
       "catalyst_score_ready": false,
-      "bottleneck_ready": false,
+      "bottleneck_ready": true,
       "valuation_ready": false,
       "price_chip_ready": true,
-      "current_chip_ready": true,
+      "current_chip_ready": false,
       "price_chip_coverage": {
         "price_days": 28,
         "institutional_days": 28,
@@ -601,24 +580,21 @@
       "component_score_ready": false,
       "trade_ready": false,
       "blocked_reasons": [
-        "CONSENSUS_NOT_READY",
         "EPS_REVISION_HISTORY_NOT_READY",
-        "CATALYST_EVIDENCE_NOT_READY",
-        "BOTTLENECK_EVIDENCE_NOT_READY",
         "VALUATION_HISTORY_NOT_READY",
         "ACTION_POLICY_NOT_APPROVED"
       ]
     },
     {
       "ticker": "6274",
-      "consensus_ready": false,
+      "consensus_ready": true,
       "eps_revision_ready": false,
-      "catalyst_ready": false,
+      "catalyst_ready": true,
       "catalyst_score_ready": false,
-      "bottleneck_ready": false,
+      "bottleneck_ready": true,
       "valuation_ready": false,
       "price_chip_ready": true,
-      "current_chip_ready": true,
+      "current_chip_ready": false,
       "price_chip_coverage": {
         "price_days": 28,
         "institutional_days": 28,
@@ -628,24 +604,21 @@
       "component_score_ready": false,
       "trade_ready": false,
       "blocked_reasons": [
-        "CONSENSUS_NOT_READY",
         "EPS_REVISION_HISTORY_NOT_READY",
-        "CATALYST_EVIDENCE_NOT_READY",
-        "BOTTLENECK_EVIDENCE_NOT_READY",
         "VALUATION_HISTORY_NOT_READY",
         "ACTION_POLICY_NOT_APPROVED"
       ]
     },
     {
       "ticker": "3189",
-      "consensus_ready": false,
+      "consensus_ready": true,
       "eps_revision_ready": false,
-      "catalyst_ready": false,
+      "catalyst_ready": true,
       "catalyst_score_ready": false,
-      "bottleneck_ready": false,
+      "bottleneck_ready": true,
       "valuation_ready": false,
       "price_chip_ready": true,
-      "current_chip_ready": true,
+      "current_chip_ready": false,
       "price_chip_coverage": {
         "price_days": 28,
         "institutional_days": 28,
@@ -655,24 +628,21 @@
       "component_score_ready": false,
       "trade_ready": false,
       "blocked_reasons": [
-        "CONSENSUS_NOT_READY",
         "EPS_REVISION_HISTORY_NOT_READY",
-        "CATALYST_EVIDENCE_NOT_READY",
-        "BOTTLENECK_EVIDENCE_NOT_READY",
         "VALUATION_HISTORY_NOT_READY",
         "ACTION_POLICY_NOT_APPROVED"
       ]
     },
     {
       "ticker": "2368",
-      "consensus_ready": false,
+      "consensus_ready": true,
       "eps_revision_ready": false,
-      "catalyst_ready": false,
+      "catalyst_ready": true,
       "catalyst_score_ready": false,
-      "bottleneck_ready": false,
+      "bottleneck_ready": true,
       "valuation_ready": false,
       "price_chip_ready": true,
-      "current_chip_ready": true,
+      "current_chip_ready": false,
       "price_chip_coverage": {
         "price_days": 28,
         "institutional_days": 28,
@@ -682,24 +652,21 @@
       "component_score_ready": false,
       "trade_ready": false,
       "blocked_reasons": [
-        "CONSENSUS_NOT_READY",
         "EPS_REVISION_HISTORY_NOT_READY",
-        "CATALYST_EVIDENCE_NOT_READY",
-        "BOTTLENECK_EVIDENCE_NOT_READY",
         "VALUATION_HISTORY_NOT_READY",
         "ACTION_POLICY_NOT_APPROVED"
       ]
     },
     {
       "ticker": "2345",
-      "consensus_ready": false,
+      "consensus_ready": true,
       "eps_revision_ready": false,
-      "catalyst_ready": false,
+      "catalyst_ready": true,
       "catalyst_score_ready": false,
-      "bottleneck_ready": false,
+      "bottleneck_ready": true,
       "valuation_ready": false,
       "price_chip_ready": true,
-      "current_chip_ready": true,
+      "current_chip_ready": false,
       "price_chip_coverage": {
         "price_days": 28,
         "institutional_days": 28,
@@ -709,10 +676,7 @@
       "component_score_ready": false,
       "trade_ready": false,
       "blocked_reasons": [
-        "CONSENSUS_NOT_READY",
         "EPS_REVISION_HISTORY_NOT_READY",
-        "CATALYST_EVIDENCE_NOT_READY",
-        "BOTTLENECK_EVIDENCE_NOT_READY",
         "VALUATION_HISTORY_NOT_READY",
         "ACTION_POLICY_NOT_APPROVED"
       ]
@@ -726,7 +690,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": true,
+      "current_chip_ready": false,
       "price_chip_coverage": {
         "price_days": 28,
         "institutional_days": 28,
@@ -744,12 +708,12 @@
       "ticker": "4979",
       "consensus_ready": false,
       "eps_revision_ready": false,
-      "catalyst_ready": false,
+      "catalyst_ready": true,
       "catalyst_score_ready": false,
-      "bottleneck_ready": false,
+      "bottleneck_ready": true,
       "valuation_ready": false,
       "price_chip_ready": true,
-      "current_chip_ready": true,
+      "current_chip_ready": false,
       "price_chip_coverage": {
         "price_days": 28,
         "institutional_days": 28,
@@ -761,8 +725,6 @@
       "blocked_reasons": [
         "CONSENSUS_NOT_READY",
         "EPS_REVISION_HISTORY_NOT_READY",
-        "CATALYST_EVIDENCE_NOT_READY",
-        "BOTTLENECK_EVIDENCE_NOT_READY",
         "VALUATION_HISTORY_NOT_READY",
         "ACTION_POLICY_NOT_APPROVED"
       ]
@@ -771,12 +733,12 @@
       "ticker": "6442",
       "consensus_ready": false,
       "eps_revision_ready": false,
-      "catalyst_ready": false,
+      "catalyst_ready": true,
       "catalyst_score_ready": false,
-      "bottleneck_ready": false,
+      "bottleneck_ready": true,
       "valuation_ready": false,
       "price_chip_ready": true,
-      "current_chip_ready": true,
+      "current_chip_ready": false,
       "price_chip_coverage": {
         "price_days": 28,
         "institutional_days": 28,
@@ -788,8 +750,6 @@
       "blocked_reasons": [
         "CONSENSUS_NOT_READY",
         "EPS_REVISION_HISTORY_NOT_READY",
-        "CATALYST_EVIDENCE_NOT_READY",
-        "BOTTLENECK_EVIDENCE_NOT_READY",
         "VALUATION_HISTORY_NOT_READY",
         "ACTION_POLICY_NOT_APPROVED"
       ]
@@ -798,12 +758,12 @@
       "ticker": "3163",
       "consensus_ready": false,
       "eps_revision_ready": false,
-      "catalyst_ready": false,
+      "catalyst_ready": true,
       "catalyst_score_ready": false,
-      "bottleneck_ready": false,
+      "bottleneck_ready": true,
       "valuation_ready": false,
       "price_chip_ready": true,
-      "current_chip_ready": true,
+      "current_chip_ready": false,
       "price_chip_coverage": {
         "price_days": 28,
         "institutional_days": 28,
@@ -815,22 +775,20 @@
       "blocked_reasons": [
         "CONSENSUS_NOT_READY",
         "EPS_REVISION_HISTORY_NOT_READY",
-        "CATALYST_EVIDENCE_NOT_READY",
-        "BOTTLENECK_EVIDENCE_NOT_READY",
         "VALUATION_HISTORY_NOT_READY",
         "ACTION_POLICY_NOT_APPROVED"
       ]
     },
     {
       "ticker": "2301",
-      "consensus_ready": false,
+      "consensus_ready": true,
       "eps_revision_ready": false,
-      "catalyst_ready": false,
+      "catalyst_ready": true,
       "catalyst_score_ready": false,
-      "bottleneck_ready": false,
+      "bottleneck_ready": true,
       "valuation_ready": false,
       "price_chip_ready": true,
-      "current_chip_ready": true,
+      "current_chip_ready": false,
       "price_chip_coverage": {
         "price_days": 28,
         "institutional_days": 28,
@@ -840,10 +798,7 @@
       "component_score_ready": false,
       "trade_ready": false,
       "blocked_reasons": [
-        "CONSENSUS_NOT_READY",
         "EPS_REVISION_HISTORY_NOT_READY",
-        "CATALYST_EVIDENCE_NOT_READY",
-        "BOTTLENECK_EVIDENCE_NOT_READY",
         "VALUATION_HISTORY_NOT_READY",
         "ACTION_POLICY_NOT_APPROVED"
       ]
@@ -852,12 +807,12 @@
       "ticker": "6282",
       "consensus_ready": false,
       "eps_revision_ready": false,
-      "catalyst_ready": false,
+      "catalyst_ready": true,
       "catalyst_score_ready": false,
-      "bottleneck_ready": false,
+      "bottleneck_ready": true,
       "valuation_ready": false,
       "price_chip_ready": true,
-      "current_chip_ready": true,
+      "current_chip_ready": false,
       "price_chip_coverage": {
         "price_days": 28,
         "institutional_days": 28,
@@ -869,8 +824,6 @@
       "blocked_reasons": [
         "CONSENSUS_NOT_READY",
         "EPS_REVISION_HISTORY_NOT_READY",
-        "CATALYST_EVIDENCE_NOT_READY",
-        "BOTTLENECK_EVIDENCE_NOT_READY",
         "VALUATION_HISTORY_NOT_READY",
         "ACTION_POLICY_NOT_APPROVED"
       ]
@@ -879,12 +832,12 @@
       "ticker": "6412",
       "consensus_ready": false,
       "eps_revision_ready": false,
-      "catalyst_ready": false,
+      "catalyst_ready": true,
       "catalyst_score_ready": false,
-      "bottleneck_ready": false,
+      "bottleneck_ready": true,
       "valuation_ready": false,
       "price_chip_ready": true,
-      "current_chip_ready": true,
+      "current_chip_ready": false,
       "price_chip_coverage": {
         "price_days": 28,
         "institutional_days": 28,
@@ -896,22 +849,20 @@
       "blocked_reasons": [
         "CONSENSUS_NOT_READY",
         "EPS_REVISION_HISTORY_NOT_READY",
-        "CATALYST_EVIDENCE_NOT_READY",
-        "BOTTLENECK_EVIDENCE_NOT_READY",
         "VALUATION_HISTORY_NOT_READY",
         "ACTION_POLICY_NOT_APPROVED"
       ]
     },
     {
       "ticker": "6781",
-      "consensus_ready": false,
+      "consensus_ready": true,
       "eps_revision_ready": false,
-      "catalyst_ready": false,
+      "catalyst_ready": true,
       "catalyst_score_ready": false,
-      "bottleneck_ready": false,
+      "bottleneck_ready": true,
       "valuation_ready": false,
       "price_chip_ready": true,
-      "current_chip_ready": true,
+      "current_chip_ready": false,
       "price_chip_coverage": {
         "price_days": 28,
         "institutional_days": 28,
@@ -921,10 +872,7 @@
       "component_score_ready": false,
       "trade_ready": false,
       "blocked_reasons": [
-        "CONSENSUS_NOT_READY",
         "EPS_REVISION_HISTORY_NOT_READY",
-        "CATALYST_EVIDENCE_NOT_READY",
-        "BOTTLENECK_EVIDENCE_NOT_READY",
         "VALUATION_HISTORY_NOT_READY",
         "ACTION_POLICY_NOT_APPROVED"
       ]
@@ -933,12 +881,12 @@
       "ticker": "2492",
       "consensus_ready": false,
       "eps_revision_ready": false,
-      "catalyst_ready": false,
+      "catalyst_ready": true,
       "catalyst_score_ready": false,
-      "bottleneck_ready": false,
+      "bottleneck_ready": true,
       "valuation_ready": false,
       "price_chip_ready": true,
-      "current_chip_ready": true,
+      "current_chip_ready": false,
       "price_chip_coverage": {
         "price_days": 28,
         "institutional_days": 28,
@@ -950,8 +898,6 @@
       "blocked_reasons": [
         "CONSENSUS_NOT_READY",
         "EPS_REVISION_HISTORY_NOT_READY",
-        "CATALYST_EVIDENCE_NOT_READY",
-        "BOTTLENECK_EVIDENCE_NOT_READY",
         "VALUATION_HISTORY_NOT_READY",
         "ACTION_POLICY_NOT_APPROVED"
       ]
@@ -960,12 +906,12 @@
       "ticker": "3357",
       "consensus_ready": false,
       "eps_revision_ready": false,
-      "catalyst_ready": false,
+      "catalyst_ready": true,
       "catalyst_score_ready": false,
-      "bottleneck_ready": false,
+      "bottleneck_ready": true,
       "valuation_ready": false,
       "price_chip_ready": true,
-      "current_chip_ready": true,
+      "current_chip_ready": false,
       "price_chip_coverage": {
         "price_days": 28,
         "institutional_days": 28,
@@ -977,22 +923,20 @@
       "blocked_reasons": [
         "CONSENSUS_NOT_READY",
         "EPS_REVISION_HISTORY_NOT_READY",
-        "CATALYST_EVIDENCE_NOT_READY",
-        "BOTTLENECK_EVIDENCE_NOT_READY",
         "VALUATION_HISTORY_NOT_READY",
         "ACTION_POLICY_NOT_APPROVED"
       ]
     },
     {
       "ticker": "3653",
-      "consensus_ready": false,
+      "consensus_ready": true,
       "eps_revision_ready": false,
-      "catalyst_ready": false,
+      "catalyst_ready": true,
       "catalyst_score_ready": false,
-      "bottleneck_ready": false,
+      "bottleneck_ready": true,
       "valuation_ready": false,
       "price_chip_ready": true,
-      "current_chip_ready": true,
+      "current_chip_ready": false,
       "price_chip_coverage": {
         "price_days": 28,
         "institutional_days": 28,
@@ -1002,24 +946,21 @@
       "component_score_ready": false,
       "trade_ready": false,
       "blocked_reasons": [
-        "CONSENSUS_NOT_READY",
         "EPS_REVISION_HISTORY_NOT_READY",
-        "CATALYST_EVIDENCE_NOT_READY",
-        "BOTTLENECK_EVIDENCE_NOT_READY",
         "VALUATION_HISTORY_NOT_READY",
         "ACTION_POLICY_NOT_APPROVED"
       ]
     },
     {
       "ticker": "3017",
-      "consensus_ready": false,
+      "consensus_ready": true,
       "eps_revision_ready": false,
-      "catalyst_ready": false,
+      "catalyst_ready": true,
       "catalyst_score_ready": false,
-      "bottleneck_ready": false,
+      "bottleneck_ready": true,
       "valuation_ready": false,
       "price_chip_ready": true,
-      "current_chip_ready": true,
+      "current_chip_ready": false,
       "price_chip_coverage": {
         "price_days": 28,
         "institutional_days": 28,
@@ -1029,24 +970,21 @@
       "component_score_ready": false,
       "trade_ready": false,
       "blocked_reasons": [
-        "CONSENSUS_NOT_READY",
         "EPS_REVISION_HISTORY_NOT_READY",
-        "CATALYST_EVIDENCE_NOT_READY",
-        "BOTTLENECK_EVIDENCE_NOT_READY",
         "VALUATION_HISTORY_NOT_READY",
         "ACTION_POLICY_NOT_APPROVED"
       ]
     },
     {
       "ticker": "3324",
-      "consensus_ready": false,
+      "consensus_ready": true,
       "eps_revision_ready": false,
-      "catalyst_ready": false,
+      "catalyst_ready": true,
       "catalyst_score_ready": false,
-      "bottleneck_ready": false,
+      "bottleneck_ready": true,
       "valuation_ready": false,
       "price_chip_ready": true,
-      "current_chip_ready": true,
+      "current_chip_ready": false,
       "price_chip_coverage": {
         "price_days": 28,
         "institutional_days": 28,
@@ -1056,10 +994,7 @@
       "component_score_ready": false,
       "trade_ready": false,
       "blocked_reasons": [
-        "CONSENSUS_NOT_READY",
         "EPS_REVISION_HISTORY_NOT_READY",
-        "CATALYST_EVIDENCE_NOT_READY",
-        "BOTTLENECK_EVIDENCE_NOT_READY",
         "VALUATION_HISTORY_NOT_READY",
         "ACTION_POLICY_NOT_APPROVED"
       ]
@@ -1068,12 +1003,12 @@
       "ticker": "6230",
       "consensus_ready": false,
       "eps_revision_ready": false,
-      "catalyst_ready": false,
+      "catalyst_ready": true,
       "catalyst_score_ready": false,
-      "bottleneck_ready": false,
+      "bottleneck_ready": true,
       "valuation_ready": false,
       "price_chip_ready": true,
-      "current_chip_ready": true,
+      "current_chip_ready": false,
       "price_chip_coverage": {
         "price_days": 28,
         "institutional_days": 28,
@@ -1085,8 +1020,6 @@
       "blocked_reasons": [
         "CONSENSUS_NOT_READY",
         "EPS_REVISION_HISTORY_NOT_READY",
-        "CATALYST_EVIDENCE_NOT_READY",
-        "BOTTLENECK_EVIDENCE_NOT_READY",
         "VALUATION_HISTORY_NOT_READY",
         "ACTION_POLICY_NOT_APPROVED"
       ]
@@ -1095,12 +1028,12 @@
       "ticker": "3338",
       "consensus_ready": false,
       "eps_revision_ready": false,
-      "catalyst_ready": false,
+      "catalyst_ready": true,
       "catalyst_score_ready": false,
-      "bottleneck_ready": false,
+      "bottleneck_ready": true,
       "valuation_ready": false,
       "price_chip_ready": true,
-      "current_chip_ready": true,
+      "current_chip_ready": false,
       "price_chip_coverage": {
         "price_days": 28,
         "institutional_days": 28,
@@ -1112,103 +1045,20 @@
       "blocked_reasons": [
         "CONSENSUS_NOT_READY",
         "EPS_REVISION_HISTORY_NOT_READY",
-        "CATALYST_EVIDENCE_NOT_READY",
-        "BOTTLENECK_EVIDENCE_NOT_READY",
         "VALUATION_HISTORY_NOT_READY",
         "ACTION_POLICY_NOT_APPROVED"
       ]
     },
     {
       "ticker": "2382",
-      "consensus_ready": false,
-      "eps_revision_ready": false,
-      "catalyst_ready": false,
-      "catalyst_score_ready": false,
-      "bottleneck_ready": false,
-      "valuation_ready": false,
-      "price_chip_ready": true,
-      "current_chip_ready": true,
-      "price_chip_coverage": {
-        "price_days": 28,
-        "institutional_days": 28,
-        "margin_short_days": 28,
-        "ready": true
-      },
-      "component_score_ready": false,
-      "trade_ready": false,
-      "blocked_reasons": [
-        "CONSENSUS_NOT_READY",
-        "EPS_REVISION_HISTORY_NOT_READY",
-        "CATALYST_EVIDENCE_NOT_READY",
-        "BOTTLENECK_EVIDENCE_NOT_READY",
-        "VALUATION_HISTORY_NOT_READY",
-        "ACTION_POLICY_NOT_APPROVED"
-      ]
-    },
-    {
-      "ticker": "3231",
-      "consensus_ready": false,
-      "eps_revision_ready": false,
-      "catalyst_ready": false,
-      "catalyst_score_ready": false,
-      "bottleneck_ready": false,
-      "valuation_ready": false,
-      "price_chip_ready": true,
-      "current_chip_ready": true,
-      "price_chip_coverage": {
-        "price_days": 28,
-        "institutional_days": 28,
-        "margin_short_days": 28,
-        "ready": true
-      },
-      "component_score_ready": false,
-      "trade_ready": false,
-      "blocked_reasons": [
-        "CONSENSUS_NOT_READY",
-        "EPS_REVISION_HISTORY_NOT_READY",
-        "CATALYST_EVIDENCE_NOT_READY",
-        "BOTTLENECK_EVIDENCE_NOT_READY",
-        "VALUATION_HISTORY_NOT_READY",
-        "ACTION_POLICY_NOT_APPROVED"
-      ]
-    },
-    {
-      "ticker": "6669",
-      "consensus_ready": false,
-      "eps_revision_ready": false,
-      "catalyst_ready": false,
-      "catalyst_score_ready": false,
-      "bottleneck_ready": false,
-      "valuation_ready": false,
-      "price_chip_ready": true,
-      "current_chip_ready": true,
-      "price_chip_coverage": {
-        "price_days": 28,
-        "institutional_days": 28,
-        "margin_short_days": 28,
-        "ready": true
-      },
-      "component_score_ready": false,
-      "trade_ready": false,
-      "blocked_reasons": [
-        "CONSENSUS_NOT_READY",
-        "EPS_REVISION_HISTORY_NOT_READY",
-        "CATALYST_EVIDENCE_NOT_READY",
-        "BOTTLENECK_EVIDENCE_NOT_READY",
-        "VALUATION_HISTORY_NOT_READY",
-        "ACTION_POLICY_NOT_APPROVED"
-      ]
-    },
-    {
-      "ticker": "2317",
-      "consensus_ready": false,
+      "consensus_ready": true,
       "eps_revision_ready": false,
       "catalyst_ready": true,
       "catalyst_score_ready": false,
       "bottleneck_ready": true,
       "valuation_ready": false,
       "price_chip_ready": true,
-      "current_chip_ready": true,
+      "current_chip_ready": false,
       "price_chip_coverage": {
         "price_days": 28,
         "institutional_days": 28,
@@ -1218,7 +1068,78 @@
       "component_score_ready": false,
       "trade_ready": false,
       "blocked_reasons": [
-        "CONSENSUS_NOT_READY",
+        "EPS_REVISION_HISTORY_NOT_READY",
+        "VALUATION_HISTORY_NOT_READY",
+        "ACTION_POLICY_NOT_APPROVED"
+      ]
+    },
+    {
+      "ticker": "3231",
+      "consensus_ready": true,
+      "eps_revision_ready": false,
+      "catalyst_ready": true,
+      "catalyst_score_ready": false,
+      "bottleneck_ready": true,
+      "valuation_ready": false,
+      "price_chip_ready": true,
+      "current_chip_ready": false,
+      "price_chip_coverage": {
+        "price_days": 28,
+        "institutional_days": 28,
+        "margin_short_days": 28,
+        "ready": true
+      },
+      "component_score_ready": false,
+      "trade_ready": false,
+      "blocked_reasons": [
+        "EPS_REVISION_HISTORY_NOT_READY",
+        "VALUATION_HISTORY_NOT_READY",
+        "ACTION_POLICY_NOT_APPROVED"
+      ]
+    },
+    {
+      "ticker": "6669",
+      "consensus_ready": true,
+      "eps_revision_ready": false,
+      "catalyst_ready": true,
+      "catalyst_score_ready": false,
+      "bottleneck_ready": true,
+      "valuation_ready": false,
+      "price_chip_ready": true,
+      "current_chip_ready": false,
+      "price_chip_coverage": {
+        "price_days": 28,
+        "institutional_days": 28,
+        "margin_short_days": 28,
+        "ready": true
+      },
+      "component_score_ready": false,
+      "trade_ready": false,
+      "blocked_reasons": [
+        "EPS_REVISION_HISTORY_NOT_READY",
+        "VALUATION_HISTORY_NOT_READY",
+        "ACTION_POLICY_NOT_APPROVED"
+      ]
+    },
+    {
+      "ticker": "2317",
+      "consensus_ready": true,
+      "eps_revision_ready": false,
+      "catalyst_ready": true,
+      "catalyst_score_ready": false,
+      "bottleneck_ready": true,
+      "valuation_ready": false,
+      "price_chip_ready": true,
+      "current_chip_ready": false,
+      "price_chip_coverage": {
+        "price_days": 28,
+        "institutional_days": 28,
+        "margin_short_days": 28,
+        "ready": true
+      },
+      "component_score_ready": false,
+      "trade_ready": false,
+      "blocked_reasons": [
         "EPS_REVISION_HISTORY_NOT_READY",
         "VALUATION_HISTORY_NOT_READY",
         "ACTION_POLICY_NOT_APPROVED"
@@ -1226,14 +1147,14 @@
     },
     {
       "ticker": "2356",
-      "consensus_ready": false,
+      "consensus_ready": true,
       "eps_revision_ready": false,
-      "catalyst_ready": false,
+      "catalyst_ready": true,
       "catalyst_score_ready": false,
-      "bottleneck_ready": false,
+      "bottleneck_ready": true,
       "valuation_ready": false,
       "price_chip_ready": true,
-      "current_chip_ready": true,
+      "current_chip_ready": false,
       "price_chip_coverage": {
         "price_days": 28,
         "institutional_days": 28,
@@ -1243,10 +1164,7 @@
       "component_score_ready": false,
       "trade_ready": false,
       "blocked_reasons": [
-        "CONSENSUS_NOT_READY",
         "EPS_REVISION_HISTORY_NOT_READY",
-        "CATALYST_EVIDENCE_NOT_READY",
-        "BOTTLENECK_EVIDENCE_NOT_READY",
         "VALUATION_HISTORY_NOT_READY",
         "ACTION_POLICY_NOT_APPROVED"
       ]
@@ -1260,7 +1178,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": true,
+      "current_chip_ready": false,
       "price_chip_coverage": {
         "price_days": 28,
         "institutional_days": 28,
@@ -1283,7 +1201,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": true,
+      "current_chip_ready": false,
       "price_chip_coverage": {
         "price_days": 28,
         "institutional_days": 28,
@@ -1306,7 +1224,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": true,
+      "current_chip_ready": false,
       "price_chip_coverage": {
         "price_days": 28,
         "institutional_days": 28,
@@ -1324,12 +1242,12 @@
       "ticker": "3532",
       "consensus_ready": false,
       "eps_revision_ready": false,
-      "catalyst_ready": false,
+      "catalyst_ready": true,
       "catalyst_score_ready": false,
-      "bottleneck_ready": false,
+      "bottleneck_ready": true,
       "valuation_ready": false,
       "price_chip_ready": true,
-      "current_chip_ready": true,
+      "current_chip_ready": false,
       "price_chip_coverage": {
         "price_days": 28,
         "institutional_days": 28,
@@ -1341,8 +1259,6 @@
       "blocked_reasons": [
         "CONSENSUS_NOT_READY",
         "EPS_REVISION_HISTORY_NOT_READY",
-        "CATALYST_EVIDENCE_NOT_READY",
-        "BOTTLENECK_EVIDENCE_NOT_READY",
         "VALUATION_HISTORY_NOT_READY",
         "ACTION_POLICY_NOT_APPROVED"
       ]
@@ -1351,12 +1267,12 @@
       "ticker": "6182",
       "consensus_ready": false,
       "eps_revision_ready": false,
-      "catalyst_ready": false,
+      "catalyst_ready": true,
       "catalyst_score_ready": false,
-      "bottleneck_ready": false,
+      "bottleneck_ready": true,
       "valuation_ready": false,
       "price_chip_ready": true,
-      "current_chip_ready": true,
+      "current_chip_ready": false,
       "price_chip_coverage": {
         "price_days": 28,
         "institutional_days": 28,
@@ -1368,22 +1284,20 @@
       "blocked_reasons": [
         "CONSENSUS_NOT_READY",
         "EPS_REVISION_HISTORY_NOT_READY",
-        "CATALYST_EVIDENCE_NOT_READY",
-        "BOTTLENECK_EVIDENCE_NOT_READY",
         "VALUATION_HISTORY_NOT_READY",
         "ACTION_POLICY_NOT_APPROVED"
       ]
     },
     {
       "ticker": "1560",
-      "consensus_ready": false,
+      "consensus_ready": true,
       "eps_revision_ready": false,
-      "catalyst_ready": false,
+      "catalyst_ready": true,
       "catalyst_score_ready": false,
-      "bottleneck_ready": false,
+      "bottleneck_ready": true,
       "valuation_ready": false,
       "price_chip_ready": true,
-      "current_chip_ready": true,
+      "current_chip_ready": false,
       "price_chip_coverage": {
         "price_days": 28,
         "institutional_days": 28,
@@ -1393,24 +1307,21 @@
       "component_score_ready": false,
       "trade_ready": false,
       "blocked_reasons": [
-        "CONSENSUS_NOT_READY",
         "EPS_REVISION_HISTORY_NOT_READY",
-        "CATALYST_EVIDENCE_NOT_READY",
-        "BOTTLENECK_EVIDENCE_NOT_READY",
         "VALUATION_HISTORY_NOT_READY",
         "ACTION_POLICY_NOT_APPROVED"
       ]
     },
     {
       "ticker": "3131",
-      "consensus_ready": false,
+      "consensus_ready": true,
       "eps_revision_ready": false,
-      "catalyst_ready": false,
+      "catalyst_ready": true,
       "catalyst_score_ready": false,
-      "bottleneck_ready": false,
+      "bottleneck_ready": true,
       "valuation_ready": false,
       "price_chip_ready": true,
-      "current_chip_ready": true,
+      "current_chip_ready": false,
       "price_chip_coverage": {
         "price_days": 28,
         "institutional_days": 28,
@@ -1420,10 +1331,7 @@
       "component_score_ready": false,
       "trade_ready": false,
       "blocked_reasons": [
-        "CONSENSUS_NOT_READY",
         "EPS_REVISION_HISTORY_NOT_READY",
-        "CATALYST_EVIDENCE_NOT_READY",
-        "BOTTLENECK_EVIDENCE_NOT_READY",
         "VALUATION_HISTORY_NOT_READY",
         "ACTION_POLICY_NOT_APPROVED"
       ]

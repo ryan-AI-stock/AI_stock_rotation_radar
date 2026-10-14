@@ -48,31 +48,38 @@ def materialize(*, as_of_date: str, config_path: str | Path,
     targets = {str(ticker).zfill(4) for ticker in theme_payload.get("target_portfolio_6m", [])}
     rows = []
     for security in config.securities:
+        theme_id = theme_by_ticker.get(security.ticker, "UNMAPPED")
+        evidence_required = not theme_id.endswith("_discovery")
         catalyst = _state(catalysts, security.ticker)
         bottleneck = _state(bottlenecks, security.ticker)
         missing = []
-        if not catalyst["ready"]:
+        if evidence_required and not catalyst["ready"]:
             missing.append("CATALYST_EVIDENCE")
-        if not bottleneck["ready"]:
+        if evidence_required and not bottleneck["ready"]:
             missing.append("BOTTLENECK_EVIDENCE")
+        status = "READY" if not missing else "NEEDS_EVIDENCE"
+        if not evidence_required:
+            status = "DISCOVERY_NOT_IN_FORMAL_POOL"
         rows.append({
             "ticker": security.ticker,
             "company": security.company,
-            "theme_id": theme_by_ticker.get(security.ticker, "UNMAPPED"),
+            "theme_id": theme_id,
             "priority": 0 if security.ticker in targets else 1,
+            "evidence_required": evidence_required,
             "catalyst": catalyst,
             "bottleneck": bottleneck,
             "missing": missing,
-            "status": "READY" if not missing else "NEEDS_EVIDENCE",
+            "status": status,
         })
     rows.sort(key=lambda row: (row["status"] == "READY", row["priority"], row["theme_id"], row["ticker"]))
     payload = {
         "model": "R1",
         "version": "r1-evidence-gap-queue-v0.1",
         "as_of_date": as_of_date,
-        "requested_ticker_count": len(rows),
+        "requested_ticker_count": sum(row["evidence_required"] for row in rows),
         "ready_ticker_count": sum(row["status"] == "READY" for row in rows),
-        "pending_ticker_count": sum(row["status"] != "READY" for row in rows),
+        "pending_ticker_count": sum(row["status"] == "NEEDS_EVIDENCE" for row in rows),
+        "discovery_ticker_count": sum(not row["evidence_required"] for row in rows),
         "rejected_evidence": {
             "catalyst": catalyst_rejected,
             "bottleneck": bottleneck_rejected,

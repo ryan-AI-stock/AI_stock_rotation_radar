@@ -38,6 +38,22 @@ class R1EvidenceGapQueueTest(unittest.TestCase):
             self.assertTrue(row["bottleneck"]["ready"])
             self.assertEqual(result["future_data_violation_count"], 0)
 
+    def test_watch_discovery_does_not_block_formal_evidence_completion(self):
+        with TemporaryDirectory() as folder:
+            root = Path(folder)
+            result = materialize(
+                as_of_date="2026-10-01", config_path="config/r1.json",
+                catalyst_path=root / "missing-catalyst.csv",
+                bottleneck_path=root / "missing-bottleneck.csv",
+                output_path=root / "queue.json",
+            )
+            discovery = [row for row in result["rows"] if row["theme_id"].endswith("_discovery")]
+            self.assertEqual({row["ticker"] for row in discovery}, {"3008", "3406"})
+            self.assertTrue(all(row["status"] == "DISCOVERY_NOT_IN_FORMAL_POOL" for row in discovery))
+            self.assertTrue(all(not row["evidence_required"] for row in discovery))
+            self.assertEqual(result["requested_ticker_count"], 52)
+            self.assertEqual(result["discovery_ticker_count"], 2)
+
 
 if __name__ == "__main__":
     unittest.main()
