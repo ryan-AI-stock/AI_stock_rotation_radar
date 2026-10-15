@@ -186,10 +186,11 @@ def materialize(*, config_path: str | Path, consensus_path: str | Path,
     for security in config.securities:
         consensus_ready = bool(consensus and consensus_actionable(
             consensus.records, ticker=security.ticker, fiscal_year=fiscal_year, evidence=support))
-        ticker_events = [row for row in catalysts if row.event.ticker == security.ticker]
-        catalyst_score_ready = len({row.source_family for row in ticker_events}) >= 2 and any(
-            row.event.source_tier <= 2 for row in ticker_events)
         catalyst_ready = evidence_ready(catalyst_evidence, ticker=security.ticker)
+        # Weekly scoring derives catalyst decay directly from the verified PIT evidence
+        # table and the approved event policy.  The legacy scored events.csv is not a
+        # separate readiness requirement and may not exist.
+        catalyst_score_ready = catalyst_ready
         bottleneck_ready = (
             bottleneck_by_ticker.get(security.ticker, {}).get("evidence_status") == "VERIFIED"
             or bottleneck_evidence_ready(bottleneck_evidence, ticker=security.ticker)

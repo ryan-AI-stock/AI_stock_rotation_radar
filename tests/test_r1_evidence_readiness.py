@@ -68,6 +68,27 @@ class R1EvidenceReadinessTest(unittest.TestCase):
             self.assertTrue(row["consensus_ready"])
             self.assertFalse(row["catalyst_ready"])
 
+    def test_verified_catalyst_evidence_is_score_ready_without_legacy_events_file(self):
+        with TemporaryDirectory() as folder:
+            root = Path(folder)
+            evidence = root / "catalyst_evidence.csv"
+            evidence.write_text(
+                "event_date,ticker,event_type,description,source_url,source_family,source_tier,"
+                "impact_direction,affected_bottleneck,published_at,available_at,retrieved_at,evidence_status\n"
+                "2026-09-01,2330,CAPACITY_EXPANSION,x,https://a,a,1,UP,compute,2026-09-01,2026-09-01,2026-10-01,VERIFIED\n"
+                "2026-09-02,2330,CAPACITY_TIGHTNESS,x,https://b,b,2,UP,compute,2026-09-02,2026-09-02,2026-10-01,VERIFIED\n",
+                encoding="utf-8",
+            )
+            result = materialize(
+                config_path="config/r1.json", consensus_path=root / "none.csv",
+                catalyst_path=root / "legacy-events-do-not-exist.csv",
+                catalyst_evidence_path=evidence, daily_source_root=root / "daily",
+                as_of_date="2026-10-01",
+            )
+            row = next(item for item in result["rows"] if item["ticker"] == "2330")
+            self.assertTrue(row["catalyst_ready"])
+            self.assertTrue(row["catalyst_score_ready"])
+
     def test_price_chip_requires_twenty_complete_dates(self):
         with TemporaryDirectory() as folder:
             root = Path(folder)

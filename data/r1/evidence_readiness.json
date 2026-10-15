@@ -21,14 +21,435 @@
     "note": "Calendar eligibility does not guarantee a usable snapshot; the first later weekly run must still contain valid PIT consensus."
   },
   "catalyst_ready_count": 52,
-  "catalyst_score_ready_count": 0,
+  "catalyst_score_ready_count": 52,
   "bottleneck_ready_count": 52,
   "price_chip_ready_count": 54,
   "current_chip_ready_count": 54,
   "component_score_ready_count": 0,
   "trade_ready_count": 0,
   "action_policy_approved": false,
-  "consensus_rejected": [],
+  "consensus_rejected": [
+    {
+      "line": "7",
+      "ticker": "1560",
+      "error": "future_data"
+    },
+    {
+      "line": "13",
+      "ticker": "1560",
+      "error": "future_data"
+    },
+    {
+      "line": "23",
+      "ticker": "2301",
+      "error": "future_data"
+    },
+    {
+      "line": "29",
+      "ticker": "2301",
+      "error": "future_data"
+    },
+    {
+      "line": "39",
+      "ticker": "2303",
+      "error": "future_data"
+    },
+    {
+      "line": "46",
+      "ticker": "2303",
+      "error": "future_data"
+    },
+    {
+      "line": "57",
+      "ticker": "2308",
+      "error": "future_data"
+    },
+    {
+      "line": "65",
+      "ticker": "2308",
+      "error": "future_data"
+    },
+    {
+      "line": "76",
+      "ticker": "2317",
+      "error": "future_data"
+    },
+    {
+      "line": "82",
+      "ticker": "2317",
+      "error": "future_data"
+    },
+    {
+      "line": "93",
+      "ticker": "2327",
+      "error": "future_data"
+    },
+    {
+      "line": "101",
+      "ticker": "2327",
+      "error": "future_data"
+    },
+    {
+      "line": "113",
+      "ticker": "2330",
+      "error": "future_data"
+    },
+    {
+      "line": "121",
+      "ticker": "2330",
+      "error": "future_data"
+    },
+    {
+      "line": "132",
+      "ticker": "2337",
+      "error": "future_data"
+    },
+    {
+      "line": "138",
+      "ticker": "2337",
+      "error": "future_data"
+    },
+    {
+      "line": "149",
+      "ticker": "2344",
+      "error": "future_data"
+    },
+    {
+      "line": "157",
+      "ticker": "2344",
+      "error": "future_data"
+    },
+    {
+      "line": "168",
+      "ticker": "2345",
+      "error": "future_data"
+    },
+    {
+      "line": "174",
+      "ticker": "2345",
+      "error": "future_data"
+    },
+    {
+      "line": "184",
+      "ticker": "2356",
+      "error": "future_data"
+    },
+    {
+      "line": "190",
+      "ticker": "2356",
+      "error": "future_data"
+    },
+    {
+      "line": "200",
+      "ticker": "2368",
+      "error": "future_data"
+    },
+    {
+      "line": "206",
+      "ticker": "2368",
+      "error": "future_data"
+    },
+    {
+      "line": "217",
+      "ticker": "2376",
+      "error": "future_data"
+    },
+    {
+      "line": "225",
+      "ticker": "2376",
+      "error": "future_data"
+    },
+    {
+      "line": "237",
+      "ticker": "2379",
+      "error": "future_data"
+    },
+    {
+      "line": "245",
+      "ticker": "2379",
+      "error": "future_data"
+    },
+    {
+      "line": "256",
+      "ticker": "2382",
+      "error": "future_data"
+    },
+    {
+      "line": "262",
+      "ticker": "2382",
+      "error": "future_data"
+    },
+    {
+      "line": "272",
+      "ticker": "2383",
+      "error": "future_data"
+    },
+    {
+      "line": "278",
+      "ticker": "2383",
+      "error": "future_data"
+    },
+    {
+      "line": "289",
+      "ticker": "2408",
+      "error": "future_data"
+    },
+    {
+      "line": "297",
+      "ticker": "2408",
+      "error": "future_data"
+    },
+    {
+      "line": "308",
+      "ticker": "2449",
+      "error": "future_data"
+    },
+    {
+      "line": "314",
+      "ticker": "2449",
+      "error": "future_data"
+    },
+    {
+      "line": "325",
+      "ticker": "2454",
+      "error": "future_data"
+    },
+    {
+      "line": "333",
+      "ticker": "2454",
+      "error": "future_data"
+    },
+    {
+      "line": "343",
+      "ticker": "3008",
+      "error": "future_data"
+    },
+    {
+      "line": "348",
+      "ticker": "3008",
+      "error": "future_data"
+    },
+    {
+      "line": "357",
+      "ticker": "3017",
+      "error": "future_data"
+    },
+    {
+      "line": "363",
+      "ticker": "3017",
+      "error": "future_data"
+    },
+    {
+      "line": "373",
+      "ticker": "3035",
+      "error": "future_data"
+    },
+    {
+      "line": "379",
+      "ticker": "3035",
+      "error": "future_data"
+    },
+    {
+      "line": "390",
+      "ticker": "3037",
+      "error": "future_data"
+    },
+    {
+      "line": "398",
+      "ticker": "3037",
+      "error": "future_data"
+    },
+    {
+      "line": "409",
+      "ticker": "3081",
+      "error": "future_data"
+    },
+    {
+      "line": "416",
+      "ticker": "3081",
+      "error": "future_data"
+    },
+    {
+      "line": "426",
+      "ticker": "3131",
+      "error": "future_data"
+    },
+    {
+      "line": "432",
+      "ticker": "3131",
+      "error": "future_data"
+    },
+    {
+      "line": "452",
+      "ticker": "3189",
+      "error": "future_data"
+    },
+    {
+      "line": "458",
+      "ticker": "3189",
+      "error": "future_data"
+    },
+    {
+      "line": "468",
+      "ticker": "3231",
+      "error": "future_data"
+    },
+    {
+      "line": "474",
+      "ticker": "3231",
+      "error": "future_data"
+    },
+    {
+      "line": "494",
+      "ticker": "3324",
+      "error": "future_data"
+    },
+    {
+      "line": "500",
+      "ticker": "3324",
+      "error": "future_data"
+    },
+    {
+      "line": "519",
+      "ticker": "3363",
+      "error": "future_data"
+    },
+    {
+      "line": "527",
+      "ticker": "3363",
+      "error": "future_data"
+    },
+    {
+      "line": "537",
+      "ticker": "3406",
+      "error": "future_data"
+    },
+    {
+      "line": "542",
+      "ticker": "3406",
+      "error": "future_data"
+    },
+    {
+      "line": "551",
+      "ticker": "3443",
+      "error": "future_data"
+    },
+    {
+      "line": "557",
+      "ticker": "3443",
+      "error": "future_data"
+    },
+    {
+      "line": "567",
+      "ticker": "3583",
+      "error": "future_data"
+    },
+    {
+      "line": "573",
+      "ticker": "3583",
+      "error": "future_data"
+    },
+    {
+      "line": "583",
+      "ticker": "3653",
+      "error": "future_data"
+    },
+    {
+      "line": "589",
+      "ticker": "3653",
+      "error": "future_data"
+    },
+    {
+      "line": "599",
+      "ticker": "3661",
+      "error": "future_data"
+    },
+    {
+      "line": "605",
+      "ticker": "3661",
+      "error": "future_data"
+    },
+    {
+      "line": "616",
+      "ticker": "3711",
+      "error": "future_data"
+    },
+    {
+      "line": "624",
+      "ticker": "3711",
+      "error": "future_data"
+    },
+    {
+      "line": "643",
+      "ticker": "6187",
+      "error": "future_data"
+    },
+    {
+      "line": "649",
+      "ticker": "6187",
+      "error": "future_data"
+    },
+    {
+      "line": "659",
+      "ticker": "6223",
+      "error": "future_data"
+    },
+    {
+      "line": "665",
+      "ticker": "6223",
+      "error": "future_data"
+    },
+    {
+      "line": "675",
+      "ticker": "6274",
+      "error": "future_data"
+    },
+    {
+      "line": "681",
+      "ticker": "6274",
+      "error": "future_data"
+    },
+    {
+      "line": "712",
+      "ticker": "6488",
+      "error": "future_data"
+    },
+    {
+      "line": "720",
+      "ticker": "6488",
+      "error": "future_data"
+    },
+    {
+      "line": "731",
+      "ticker": "6669",
+      "error": "future_data"
+    },
+    {
+      "line": "737",
+      "ticker": "6669",
+      "error": "future_data"
+    },
+    {
+      "line": "747",
+      "ticker": "6781",
+      "error": "future_data"
+    },
+    {
+      "line": "753",
+      "ticker": "6781",
+      "error": "future_data"
+    },
+    {
+      "line": "763",
+      "ticker": "8299",
+      "error": "future_data"
+    },
+    {
+      "line": "769",
+      "ticker": "8299",
+      "error": "future_data"
+    }
+  ],
   "consensus_evidence_rejected": [],
   "catalyst_rejected": [
     {
@@ -43,7 +464,7 @@
       "consensus_ready": true,
       "eps_revision_ready": false,
       "catalyst_ready": true,
-      "catalyst_score_ready": false,
+      "catalyst_score_ready": true,
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
@@ -66,7 +487,7 @@
       "consensus_ready": true,
       "eps_revision_ready": false,
       "catalyst_ready": true,
-      "catalyst_score_ready": false,
+      "catalyst_score_ready": true,
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
@@ -89,7 +510,7 @@
       "consensus_ready": true,
       "eps_revision_ready": false,
       "catalyst_ready": true,
-      "catalyst_score_ready": false,
+      "catalyst_score_ready": true,
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
@@ -112,7 +533,7 @@
       "consensus_ready": true,
       "eps_revision_ready": false,
       "catalyst_ready": true,
-      "catalyst_score_ready": false,
+      "catalyst_score_ready": true,
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
@@ -135,7 +556,7 @@
       "consensus_ready": true,
       "eps_revision_ready": false,
       "catalyst_ready": true,
-      "catalyst_score_ready": false,
+      "catalyst_score_ready": true,
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
@@ -158,7 +579,7 @@
       "consensus_ready": true,
       "eps_revision_ready": false,
       "catalyst_ready": true,
-      "catalyst_score_ready": false,
+      "catalyst_score_ready": true,
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
@@ -181,7 +602,7 @@
       "consensus_ready": true,
       "eps_revision_ready": false,
       "catalyst_ready": true,
-      "catalyst_score_ready": false,
+      "catalyst_score_ready": true,
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
@@ -204,7 +625,7 @@
       "consensus_ready": true,
       "eps_revision_ready": false,
       "catalyst_ready": true,
-      "catalyst_score_ready": false,
+      "catalyst_score_ready": true,
       "bottleneck_ready": true,
       "valuation_ready": false,
       "price_chip_ready": true,
@@ -228,7 +649,7 @@
       "consensus_ready": true,
       "eps_revision_ready": false,
       "catalyst_ready": true,
-      "catalyst_score_ready": false,
+      "catalyst_score_ready": true,
       "bottleneck_ready": true,
       "valuation_ready": false,
       "price_chip_ready": true,
@@ -252,7 +673,7 @@
       "consensus_ready": true,
       "eps_revision_ready": false,
       "catalyst_ready": true,
-      "catalyst_score_ready": false,
+      "catalyst_score_ready": true,
       "bottleneck_ready": true,
       "valuation_ready": false,
       "price_chip_ready": true,
@@ -276,7 +697,7 @@
       "consensus_ready": true,
       "eps_revision_ready": false,
       "catalyst_ready": true,
-      "catalyst_score_ready": false,
+      "catalyst_score_ready": true,
       "bottleneck_ready": true,
       "valuation_ready": false,
       "price_chip_ready": true,
@@ -300,7 +721,7 @@
       "consensus_ready": true,
       "eps_revision_ready": false,
       "catalyst_ready": true,
-      "catalyst_score_ready": false,
+      "catalyst_score_ready": true,
       "bottleneck_ready": true,
       "valuation_ready": false,
       "price_chip_ready": true,
@@ -324,7 +745,7 @@
       "consensus_ready": true,
       "eps_revision_ready": false,
       "catalyst_ready": true,
-      "catalyst_score_ready": false,
+      "catalyst_score_ready": true,
       "bottleneck_ready": true,
       "valuation_ready": false,
       "price_chip_ready": true,
@@ -348,7 +769,7 @@
       "consensus_ready": true,
       "eps_revision_ready": false,
       "catalyst_ready": true,
-      "catalyst_score_ready": false,
+      "catalyst_score_ready": true,
       "bottleneck_ready": true,
       "valuation_ready": false,
       "price_chip_ready": true,
@@ -372,7 +793,7 @@
       "consensus_ready": true,
       "eps_revision_ready": false,
       "catalyst_ready": true,
-      "catalyst_score_ready": false,
+      "catalyst_score_ready": true,
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
@@ -395,7 +816,7 @@
       "consensus_ready": true,
       "eps_revision_ready": false,
       "catalyst_ready": true,
-      "catalyst_score_ready": false,
+      "catalyst_score_ready": true,
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
@@ -418,7 +839,7 @@
       "consensus_ready": true,
       "eps_revision_ready": false,
       "catalyst_ready": true,
-      "catalyst_score_ready": false,
+      "catalyst_score_ready": true,
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
@@ -493,7 +914,7 @@
       "consensus_ready": true,
       "eps_revision_ready": false,
       "catalyst_ready": true,
-      "catalyst_score_ready": false,
+      "catalyst_score_ready": true,
       "bottleneck_ready": true,
       "valuation_ready": false,
       "price_chip_ready": true,
@@ -517,7 +938,7 @@
       "consensus_ready": true,
       "eps_revision_ready": false,
       "catalyst_ready": true,
-      "catalyst_score_ready": false,
+      "catalyst_score_ready": true,
       "bottleneck_ready": true,
       "valuation_ready": false,
       "price_chip_ready": true,
@@ -541,7 +962,7 @@
       "consensus_ready": true,
       "eps_revision_ready": false,
       "catalyst_ready": true,
-      "catalyst_score_ready": false,
+      "catalyst_score_ready": true,
       "bottleneck_ready": true,
       "valuation_ready": false,
       "price_chip_ready": true,
@@ -565,7 +986,7 @@
       "consensus_ready": true,
       "eps_revision_ready": false,
       "catalyst_ready": true,
-      "catalyst_score_ready": false,
+      "catalyst_score_ready": true,
       "bottleneck_ready": true,
       "valuation_ready": false,
       "price_chip_ready": true,
@@ -589,7 +1010,7 @@
       "consensus_ready": true,
       "eps_revision_ready": false,
       "catalyst_ready": true,
-      "catalyst_score_ready": false,
+      "catalyst_score_ready": true,
       "bottleneck_ready": true,
       "valuation_ready": false,
       "price_chip_ready": true,
@@ -613,7 +1034,7 @@
       "consensus_ready": true,
       "eps_revision_ready": false,
       "catalyst_ready": true,
-      "catalyst_score_ready": false,
+      "catalyst_score_ready": true,
       "bottleneck_ready": true,
       "valuation_ready": false,
       "price_chip_ready": true,
@@ -637,7 +1058,7 @@
       "consensus_ready": true,
       "eps_revision_ready": false,
       "catalyst_ready": true,
-      "catalyst_score_ready": false,
+      "catalyst_score_ready": true,
       "bottleneck_ready": true,
       "valuation_ready": false,
       "price_chip_ready": true,
@@ -661,7 +1082,7 @@
       "consensus_ready": true,
       "eps_revision_ready": false,
       "catalyst_ready": true,
-      "catalyst_score_ready": false,
+      "catalyst_score_ready": true,
       "bottleneck_ready": true,
       "valuation_ready": false,
       "price_chip_ready": true,
@@ -685,7 +1106,7 @@
       "consensus_ready": true,
       "eps_revision_ready": false,
       "catalyst_ready": true,
-      "catalyst_score_ready": false,
+      "catalyst_score_ready": true,
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
@@ -708,7 +1129,7 @@
       "consensus_ready": false,
       "eps_revision_ready": false,
       "catalyst_ready": true,
-      "catalyst_score_ready": false,
+      "catalyst_score_ready": true,
       "bottleneck_ready": true,
       "valuation_ready": false,
       "price_chip_ready": true,
@@ -733,7 +1154,7 @@
       "consensus_ready": true,
       "eps_revision_ready": false,
       "catalyst_ready": true,
-      "catalyst_score_ready": false,
+      "catalyst_score_ready": true,
       "bottleneck_ready": true,
       "valuation_ready": false,
       "price_chip_ready": true,
@@ -757,7 +1178,7 @@
       "consensus_ready": true,
       "eps_revision_ready": false,
       "catalyst_ready": true,
-      "catalyst_score_ready": false,
+      "catalyst_score_ready": true,
       "bottleneck_ready": true,
       "valuation_ready": false,
       "price_chip_ready": true,
@@ -781,7 +1202,7 @@
       "consensus_ready": true,
       "eps_revision_ready": false,
       "catalyst_ready": true,
-      "catalyst_score_ready": false,
+      "catalyst_score_ready": true,
       "bottleneck_ready": true,
       "valuation_ready": false,
       "price_chip_ready": true,
@@ -805,7 +1226,7 @@
       "consensus_ready": false,
       "eps_revision_ready": false,
       "catalyst_ready": true,
-      "catalyst_score_ready": false,
+      "catalyst_score_ready": true,
       "bottleneck_ready": true,
       "valuation_ready": false,
       "price_chip_ready": true,
@@ -830,7 +1251,7 @@
       "consensus_ready": true,
       "eps_revision_ready": false,
       "catalyst_ready": true,
-      "catalyst_score_ready": false,
+      "catalyst_score_ready": true,
       "bottleneck_ready": true,
       "valuation_ready": false,
       "price_chip_ready": true,
@@ -854,7 +1275,7 @@
       "consensus_ready": true,
       "eps_revision_ready": false,
       "catalyst_ready": true,
-      "catalyst_score_ready": false,
+      "catalyst_score_ready": true,
       "bottleneck_ready": true,
       "valuation_ready": false,
       "price_chip_ready": true,
@@ -878,7 +1299,7 @@
       "consensus_ready": false,
       "eps_revision_ready": false,
       "catalyst_ready": true,
-      "catalyst_score_ready": false,
+      "catalyst_score_ready": true,
       "bottleneck_ready": true,
       "valuation_ready": false,
       "price_chip_ready": true,
@@ -903,7 +1324,7 @@
       "consensus_ready": false,
       "eps_revision_ready": false,
       "catalyst_ready": true,
-      "catalyst_score_ready": false,
+      "catalyst_score_ready": true,
       "bottleneck_ready": true,
       "valuation_ready": false,
       "price_chip_ready": true,
@@ -928,7 +1349,7 @@
       "consensus_ready": true,
       "eps_revision_ready": false,
       "catalyst_ready": true,
-      "catalyst_score_ready": false,
+      "catalyst_score_ready": true,
       "bottleneck_ready": true,
       "valuation_ready": false,
       "price_chip_ready": true,
@@ -952,7 +1373,7 @@
       "consensus_ready": true,
       "eps_revision_ready": false,
       "catalyst_ready": true,
-      "catalyst_score_ready": false,
+      "catalyst_score_ready": true,
       "bottleneck_ready": true,
       "valuation_ready": false,
       "price_chip_ready": true,
@@ -976,7 +1397,7 @@
       "consensus_ready": true,
       "eps_revision_ready": false,
       "catalyst_ready": true,
-      "catalyst_score_ready": false,
+      "catalyst_score_ready": true,
       "bottleneck_ready": true,
       "valuation_ready": false,
       "price_chip_ready": true,
@@ -1000,7 +1421,7 @@
       "consensus_ready": false,
       "eps_revision_ready": false,
       "catalyst_ready": true,
-      "catalyst_score_ready": false,
+      "catalyst_score_ready": true,
       "bottleneck_ready": true,
       "valuation_ready": false,
       "price_chip_ready": true,
@@ -1025,7 +1446,7 @@
       "consensus_ready": false,
       "eps_revision_ready": false,
       "catalyst_ready": true,
-      "catalyst_score_ready": false,
+      "catalyst_score_ready": true,
       "bottleneck_ready": true,
       "valuation_ready": false,
       "price_chip_ready": true,
@@ -1050,7 +1471,7 @@
       "consensus_ready": true,
       "eps_revision_ready": false,
       "catalyst_ready": true,
-      "catalyst_score_ready": false,
+      "catalyst_score_ready": true,
       "bottleneck_ready": true,
       "valuation_ready": false,
       "price_chip_ready": true,
@@ -1074,7 +1495,7 @@
       "consensus_ready": true,
       "eps_revision_ready": false,
       "catalyst_ready": true,
-      "catalyst_score_ready": false,
+      "catalyst_score_ready": true,
       "bottleneck_ready": true,
       "valuation_ready": false,
       "price_chip_ready": true,
@@ -1098,7 +1519,7 @@
       "consensus_ready": true,
       "eps_revision_ready": false,
       "catalyst_ready": true,
-      "catalyst_score_ready": false,
+      "catalyst_score_ready": true,
       "bottleneck_ready": true,
       "valuation_ready": false,
       "price_chip_ready": true,
@@ -1122,7 +1543,7 @@
       "consensus_ready": true,
       "eps_revision_ready": false,
       "catalyst_ready": true,
-      "catalyst_score_ready": false,
+      "catalyst_score_ready": true,
       "bottleneck_ready": true,
       "valuation_ready": false,
       "price_chip_ready": true,
@@ -1146,7 +1567,7 @@
       "consensus_ready": true,
       "eps_revision_ready": false,
       "catalyst_ready": true,
-      "catalyst_score_ready": false,
+      "catalyst_score_ready": true,
       "bottleneck_ready": true,
       "valuation_ready": false,
       "price_chip_ready": true,
@@ -1170,7 +1591,7 @@
       "consensus_ready": true,
       "eps_revision_ready": false,
       "catalyst_ready": true,
-      "catalyst_score_ready": false,
+      "catalyst_score_ready": true,
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
@@ -1193,7 +1614,7 @@
       "consensus_ready": true,
       "eps_revision_ready": false,
       "catalyst_ready": true,
-      "catalyst_score_ready": false,
+      "catalyst_score_ready": true,
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
@@ -1216,7 +1637,7 @@
       "consensus_ready": true,
       "eps_revision_ready": false,
       "catalyst_ready": true,
-      "catalyst_score_ready": false,
+      "catalyst_score_ready": true,
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
@@ -1239,7 +1660,7 @@
       "consensus_ready": false,
       "eps_revision_ready": false,
       "catalyst_ready": true,
-      "catalyst_score_ready": false,
+      "catalyst_score_ready": true,
       "bottleneck_ready": true,
       "valuation_ready": false,
       "price_chip_ready": true,
@@ -1264,7 +1685,7 @@
       "consensus_ready": false,
       "eps_revision_ready": false,
       "catalyst_ready": true,
-      "catalyst_score_ready": false,
+      "catalyst_score_ready": true,
       "bottleneck_ready": true,
       "valuation_ready": false,
       "price_chip_ready": true,
@@ -1289,7 +1710,7 @@
       "consensus_ready": true,
       "eps_revision_ready": false,
       "catalyst_ready": true,
-      "catalyst_score_ready": false,
+      "catalyst_score_ready": true,
       "bottleneck_ready": true,
       "valuation_ready": false,
       "price_chip_ready": true,
@@ -1313,7 +1734,7 @@
       "consensus_ready": true,
       "eps_revision_ready": false,
       "catalyst_ready": true,
-      "catalyst_score_ready": false,
+      "catalyst_score_ready": true,
       "bottleneck_ready": true,
       "valuation_ready": false,
       "price_chip_ready": true,
