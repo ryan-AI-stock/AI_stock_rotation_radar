@@ -1,316 +1,316 @@
 {
   "completed": {
     "2330": {
-      "retrieved_at": "2026-10-14",
+      "retrieved_at": "2026-10-15",
       "row_count": 0,
       "status": "SOURCE_GAP",
-      "error": "HTTPError:HTTP Error 403: "
+      "error": "ValueError:identifiable_analyst_target_rows_missing"
     },
     "2327": {
-      "retrieved_at": "2026-10-14",
+      "retrieved_at": "2026-10-15",
       "row_count": 0,
       "status": "SOURCE_GAP",
-      "error": "HTTPError:HTTP Error 403: "
+      "error": "ValueError:identifiable_analyst_target_rows_missing"
     },
     "2344": {
-      "retrieved_at": "2026-10-14",
-      "row_count": 0,
-      "status": "SOURCE_GAP",
-      "error": "HTTPError:HTTP Error 403: "
+      "retrieved_at": "2026-10-15",
+      "source_url": "https://hk.investing.com/equities/winbond-consensus-estimates",
+      "row_count": 5,
+      "status": "READY"
     },
     "2376": {
-      "retrieved_at": "2026-10-14",
+      "retrieved_at": "2026-10-15",
       "row_count": 0,
       "status": "SOURCE_GAP",
-      "error": "HTTPError:HTTP Error 403: "
+      "error": "ValueError:identifiable_analyst_target_rows_missing"
     },
     "2454": {
-      "retrieved_at": "2026-10-14",
-      "row_count": 0,
-      "status": "SOURCE_GAP",
-      "error": "HTTPError:HTTP Error 403: "
+      "retrieved_at": "2026-10-15",
+      "source_url": "https://hk.investing.com/equities/mediatek-consensus-estimates",
+      "row_count": 5,
+      "status": "READY"
     },
     "3037": {
-      "retrieved_at": "2026-10-14",
-      "row_count": 0,
-      "status": "SOURCE_GAP",
-      "error": "HTTPError:HTTP Error 403: "
+      "retrieved_at": "2026-10-15",
+      "source_url": "https://hk.investing.com/equities/unimicron-tech-consensus-estimates",
+      "row_count": 5,
+      "status": "READY"
     },
     "6488": {
-      "retrieved_at": "2026-10-14",
+      "retrieved_at": "2026-10-15",
       "row_count": 0,
       "status": "SOURCE_GAP",
-      "error": "HTTPError:HTTP Error 403: "
+      "error": "ValueError:identifiable_analyst_target_rows_missing"
     },
     "3661": {
-      "retrieved_at": "2026-10-14",
+      "retrieved_at": "2026-10-15",
       "row_count": 0,
       "status": "SOURCE_GAP",
-      "error": "HTTPError:HTTP Error 403: "
+      "error": "ValueError:identifiable_analyst_target_rows_missing"
     },
     "3443": {
-      "retrieved_at": "2026-10-14",
-      "row_count": 0,
-      "status": "SOURCE_GAP",
-      "error": "HTTPError:HTTP Error 403: "
+      "retrieved_at": "2026-10-15",
+      "source_url": "https://hk.investing.com/equities/global-unichip-consensus-estimates",
+      "row_count": 5,
+      "status": "READY"
     },
     "3035": {
-      "retrieved_at": "2026-10-14",
-      "row_count": 0,
-      "status": "SOURCE_GAP",
-      "error": "HTTPError:HTTP Error 403: "
+      "retrieved_at": "2026-10-15",
+      "source_url": "https://hk.investing.com/equities/faraday-tech-consensus-estimates",
+      "row_count": 1,
+      "status": "READY"
     },
     "2449": {
-      "retrieved_at": "2026-10-14",
+      "retrieved_at": "2026-10-15",
       "source_url": "https://hk.investing.com/equities/king-yuan-elec-consensus-estimates",
       "row_count": 5,
       "status": "READY"
     },
     "6223": {
-      "retrieved_at": "2026-10-14",
+      "retrieved_at": "2026-10-15",
       "row_count": 0,
       "status": "SOURCE_GAP",
       "error": "ValueError:identifiable_analyst_target_rows_missing"
     },
     "6187": {
-      "retrieved_at": "2026-10-14",
+      "retrieved_at": "2026-10-15",
       "source_url": "https://hk.investing.com/equities/all-ring-tech-co-ltd-consensus-estimates",
       "row_count": 5,
       "status": "READY"
     },
     "3583": {
-      "retrieved_at": "2026-10-14",
+      "retrieved_at": "2026-10-15",
       "row_count": 0,
       "status": "SOURCE_GAP",
-      "error": "HTTPError:HTTP Error 403: "
+      "error": "ValueError:identifiable_analyst_target_rows_missing"
     },
     "2408": {
-      "retrieved_at": "2026-10-14",
+      "retrieved_at": "2026-10-15",
       "row_count": 0,
       "status": "SOURCE_GAP",
       "error": "ValueError:identifiable_analyst_target_rows_missing"
     },
     "3081": {
-      "retrieved_at": "2026-10-14",
-      "row_count": 0,
-      "status": "SOURCE_GAP",
-      "error": "HTTPError:HTTP Error 403: "
+      "retrieved_at": "2026-10-15",
+      "source_url": "https://hk.investing.com/equities/landmark-optoelectronics-consensus-estimates",
+      "row_count": 5,
+      "status": "READY"
     },
     "2303": {
-      "retrieved_at": "2026-10-14",
-      "row_count": 0,
-      "status": "SOURCE_GAP",
-      "error": "HTTPError:HTTP Error 403: "
+      "retrieved_at": "2026-10-15",
+      "source_url": "https://hk.investing.com/equities/united-micro-consensus-estimates",
+      "row_count": 4,
+      "status": "READY"
     },
     "3008": {
-      "retrieved_at": "2026-10-14",
-      "row_count": 0,
-      "status": "SOURCE_GAP",
-      "error": "HTTPError:HTTP Error 403: "
+      "retrieved_at": "2026-10-15",
+      "source_url": "https://hk.investing.com/equities/largan-precisi-consensus-estimates",
+      "row_count": 5,
+      "status": "READY"
     },
     "3406": {
-      "retrieved_at": "2026-10-14",
-      "row_count": 0,
-      "status": "SOURCE_GAP",
-      "error": "HTTPError:HTTP Error 403: "
+      "retrieved_at": "2026-10-15",
+      "source_url": "https://hk.investing.com/equities/genius-consensus-estimates",
+      "row_count": 5,
+      "status": "READY"
     },
     "2337": {
-      "retrieved_at": "2026-10-14",
+      "retrieved_at": "2026-10-15",
       "row_count": 0,
       "status": "SOURCE_GAP",
-      "error": "HTTPError:HTTP Error 403: "
+      "error": "ValueError:identifiable_analyst_target_rows_missing"
     },
     "8299": {
-      "retrieved_at": "2026-10-14",
+      "retrieved_at": "2026-10-15",
       "row_count": 0,
       "status": "SOURCE_GAP",
-      "error": "HTTPError:HTTP Error 403: "
+      "error": "ValueError:identifiable_analyst_target_rows_missing"
     },
     "3260": {
-      "retrieved_at": "2026-10-14",
+      "retrieved_at": "2026-10-15",
       "row_count": 0,
       "status": "SOURCE_GAP",
-      "error": "HTTPError:HTTP Error 403: "
+      "error": "ValueError:identifiable_analyst_target_rows_missing"
     },
     "2383": {
-      "retrieved_at": "2026-10-14",
+      "retrieved_at": "2026-10-15",
       "row_count": 0,
       "status": "SOURCE_GAP",
-      "error": "HTTPError:HTTP Error 403: "
+      "error": "ValueError:identifiable_analyst_target_rows_missing"
     },
     "6274": {
-      "retrieved_at": "2026-10-14",
+      "retrieved_at": "2026-10-15",
       "source_url": "https://hk.investing.com/equities/taiwan-union-technology-consensus-estimates",
       "row_count": 5,
       "status": "READY"
     },
     "3189": {
-      "retrieved_at": "2026-10-14",
-      "row_count": 0,
-      "status": "SOURCE_GAP",
-      "error": "HTTPError:HTTP Error 403: "
+      "retrieved_at": "2026-10-15",
+      "source_url": "https://hk.investing.com/equities/kinsus-consensus-estimates",
+      "row_count": 5,
+      "status": "READY"
     },
     "2368": {
-      "retrieved_at": "2026-10-14",
-      "row_count": 0,
-      "status": "SOURCE_GAP",
-      "error": "HTTPError:HTTP Error 403: "
-    },
-    "2345": {
-      "retrieved_at": "2026-10-14",
-      "row_count": 0,
-      "status": "SOURCE_GAP",
-      "error": "HTTPError:HTTP Error 403: "
-    },
-    "3363": {
-      "retrieved_at": "2026-10-14",
-      "row_count": 0,
-      "status": "SOURCE_GAP",
-      "error": "HTTPError:HTTP Error 403: "
-    },
-    "4979": {
-      "retrieved_at": "2026-10-14",
-      "row_count": 0,
-      "status": "SOURCE_GAP",
-      "error": "HTTPError:HTTP Error 403: "
-    },
-    "6442": {
-      "retrieved_at": "2026-10-14",
-      "row_count": 0,
-      "status": "SOURCE_GAP",
-      "error": "HTTPError:HTTP Error 403: "
-    },
-    "3163": {
-      "retrieved_at": "2026-10-14",
-      "row_count": 0,
-      "status": "SOURCE_GAP",
-      "error": "HTTPError:HTTP Error 403: "
-    },
-    "2301": {
-      "retrieved_at": "2026-10-14",
-      "row_count": 0,
-      "status": "SOURCE_GAP",
-      "error": "HTTPError:HTTP Error 403: "
-    },
-    "6282": {
-      "retrieved_at": "2026-10-14",
-      "row_count": 0,
-      "status": "SOURCE_GAP",
-      "error": "HTTPError:HTTP Error 403: "
-    },
-    "6412": {
-      "retrieved_at": "2026-10-14",
-      "row_count": 0,
-      "status": "SOURCE_GAP",
-      "error": "HTTPError:HTTP Error 403: "
-    },
-    "6781": {
-      "retrieved_at": "2026-10-14",
-      "row_count": 0,
-      "status": "SOURCE_GAP",
-      "error": "HTTPError:HTTP Error 403: "
-    },
-    "2492": {
-      "retrieved_at": "2026-10-14",
+      "retrieved_at": "2026-10-15",
       "row_count": 0,
       "status": "SOURCE_GAP",
       "error": "ValueError:identifiable_analyst_target_rows_missing"
     },
-    "3357": {
-      "retrieved_at": "2026-10-14",
+    "2345": {
+      "retrieved_at": "2026-10-15",
+      "source_url": "https://hk.investing.com/equities/accton-consensus-estimates",
+      "row_count": 5,
+      "status": "READY"
+    },
+    "3363": {
+      "retrieved_at": "2026-10-15",
       "row_count": 0,
       "status": "SOURCE_GAP",
-      "error": "HTTPError:HTTP Error 403: "
+      "error": "HTTPError:HTTP Error 429: "
+    },
+    "4979": {
+      "retrieved_at": "2026-10-15",
+      "row_count": 0,
+      "status": "SOURCE_GAP",
+      "error": "HTTPError:HTTP Error 429: "
+    },
+    "6442": {
+      "retrieved_at": "2026-10-15",
+      "row_count": 0,
+      "status": "SOURCE_GAP",
+      "error": "HTTPError:HTTP Error 429: "
+    },
+    "3163": {
+      "retrieved_at": "2026-10-15",
+      "row_count": 0,
+      "status": "SOURCE_GAP",
+      "error": "HTTPError:HTTP Error 429: "
+    },
+    "2301": {
+      "retrieved_at": "2026-10-15",
+      "row_count": 0,
+      "status": "SOURCE_GAP",
+      "error": "HTTPError:HTTP Error 429: "
+    },
+    "6282": {
+      "retrieved_at": "2026-10-15",
+      "row_count": 0,
+      "status": "SOURCE_GAP",
+      "error": "HTTPError:HTTP Error 429: "
+    },
+    "6412": {
+      "retrieved_at": "2026-10-15",
+      "row_count": 0,
+      "status": "SOURCE_GAP",
+      "error": "HTTPError:HTTP Error 429: "
+    },
+    "6781": {
+      "retrieved_at": "2026-10-15",
+      "row_count": 0,
+      "status": "SOURCE_GAP",
+      "error": "HTTPError:HTTP Error 429: "
+    },
+    "2492": {
+      "retrieved_at": "2026-10-15",
+      "row_count": 0,
+      "status": "SOURCE_GAP",
+      "error": "HTTPError:HTTP Error 429: "
+    },
+    "3357": {
+      "retrieved_at": "2026-10-15",
+      "row_count": 0,
+      "status": "SOURCE_GAP",
+      "error": "HTTPError:HTTP Error 429: "
     },
     "3653": {
-      "retrieved_at": "2026-10-14",
-      "row_count": 0,
-      "status": "SOURCE_GAP",
-      "error": "HTTPError:HTTP Error 403: "
+      "retrieved_at": "2026-10-15",
+      "source_url": "https://hk.investing.com/equities/jentech-consensus-estimates",
+      "row_count": 5,
+      "status": "READY"
     },
     "3017": {
-      "retrieved_at": "2026-10-14",
-      "source_url": "https://hk.investing.com/equities/avc-consensus-estimates",
-      "row_count": 5,
-      "status": "READY"
+      "retrieved_at": "2026-10-15",
+      "row_count": 0,
+      "status": "SOURCE_GAP",
+      "error": "HTTPError:HTTP Error 429: "
     },
     "3324": {
-      "retrieved_at": "2026-10-14",
-      "source_url": "https://hk.investing.com/equities/auras-technology-co-ltd-consensus-estimates",
-      "row_count": 5,
-      "status": "READY"
+      "retrieved_at": "2026-10-15",
+      "row_count": 0,
+      "status": "SOURCE_GAP",
+      "error": "HTTPError:HTTP Error 429: "
     },
     "6230": {
-      "retrieved_at": "2026-10-14",
+      "retrieved_at": "2026-10-15",
       "row_count": 0,
       "status": "SOURCE_GAP",
-      "error": "HTTPError:HTTP Error 403: "
+      "error": "HTTPError:HTTP Error 429: "
     },
     "3338": {
-      "retrieved_at": "2026-10-14",
+      "retrieved_at": "2026-10-15",
       "row_count": 0,
       "status": "SOURCE_GAP",
-      "error": "HTTPError:HTTP Error 403: "
+      "error": "HTTPError:HTTP Error 429: "
     },
     "2382": {
-      "retrieved_at": "2026-10-14",
-      "row_count": 0,
-      "status": "SOURCE_GAP",
-      "error": "HTTPError:HTTP Error 403: "
-    },
-    "3231": {
-      "retrieved_at": "2026-10-14",
-      "row_count": 0,
-      "status": "SOURCE_GAP",
-      "error": "HTTPError:HTTP Error 403: "
-    },
-    "6669": {
-      "retrieved_at": "2026-10-12",
-      "row_count": 0,
-      "status": "SOURCE_GAP",
-      "error": "HTTPError:HTTP Error 403: "
-    },
-    "2317": {
-      "retrieved_at": "2026-10-12",
-      "row_count": 0,
-      "status": "SOURCE_GAP",
-      "error": "HTTPError:HTTP Error 403: "
-    },
-    "2356": {
-      "retrieved_at": "2026-10-12",
-      "source_url": "https://hk.investing.com/equities/dahsing-bankin-consensus-estimates",
-      "row_count": 3,
-      "status": "READY"
-    },
-    "3711": {
-      "retrieved_at": "2026-10-12",
-      "row_count": 0,
-      "status": "SOURCE_GAP",
-      "error": "HTTPError:HTTP Error 403: "
-    },
-    "2308": {
-      "retrieved_at": "2026-10-12",
-      "source_url": "https://hk.investing.com/equities/delta-electron-consensus-estimates",
+      "retrieved_at": "2026-10-15",
+      "source_url": "https://hk.investing.com/equities/sunny-optical-hk-consensus-estimates",
       "row_count": 5,
       "status": "READY"
     },
-    "2379": {
-      "retrieved_at": "2026-10-12",
+    "3231": {
+      "retrieved_at": "2026-10-15",
       "row_count": 0,
       "status": "SOURCE_GAP",
-      "error": "HTTPError:HTTP Error 403: "
+      "error": "HTTPError:HTTP Error 429: "
+    },
+    "6669": {
+      "retrieved_at": "2026-10-15",
+      "row_count": 0,
+      "status": "SOURCE_GAP",
+      "error": "HTTPError:HTTP Error 429: "
+    },
+    "2317": {
+      "retrieved_at": "2026-10-15",
+      "row_count": 0,
+      "status": "SOURCE_GAP",
+      "error": "HTTPError:HTTP Error 429: "
+    },
+    "2356": {
+      "retrieved_at": "2026-10-15",
+      "row_count": 0,
+      "status": "SOURCE_GAP",
+      "error": "HTTPError:HTTP Error 429: "
+    },
+    "3711": {
+      "retrieved_at": "2026-10-15",
+      "row_count": 0,
+      "status": "SOURCE_GAP",
+      "error": "HTTPError:HTTP Error 429: "
+    },
+    "2308": {
+      "retrieved_at": "2026-10-15",
+      "row_count": 0,
+      "status": "SOURCE_GAP",
+      "error": "HTTPError:HTTP Error 429: "
+    },
+    "2379": {
+      "retrieved_at": "2026-10-15",
+      "row_count": 0,
+      "status": "SOURCE_GAP",
+      "error": "HTTPError:HTTP Error 429: "
     },
     "3532": {
-      "retrieved_at": "2026-10-12",
+      "retrieved_at": "2026-10-15",
       "row_count": 0,
       "status": "SOURCE_GAP",
-      "error": "HTTPError:HTTP Error 403: "
+      "error": "HTTPError:HTTP Error 429: "
     },
     "6182": {
-      "retrieved_at": "2026-10-12",
+      "retrieved_at": "2026-10-15",
       "row_count": 0,
       "status": "SOURCE_GAP",
-      "error": "HTTPError:HTTP Error 403: "
+      "error": "HTTPError:HTTP Error 429: "
     },
     "1560": {
       "retrieved_at": "2026-10-12",

@@ -158,7 +158,9 @@ ticker,fiscal_year,source_url,source_family,source_tier,available_at,note
 3131,2027,https://toalpha.tw/stock/3131/estimates,toalpha_consensus,2,2026-10-05,10家共識平均106.47；單一來源，不單獨形成可交易共識
 3131,2027,https://finance.yahoo.com/quote/3131.TWO/analysis/,yahoo_finance_analyst_consensus,2,2026-10-14,Yahoo Finance公開分析師共識，9位分析師
 3131,2028,https://toalpha.tw/stock/3131/estimates,toalpha_consensus,2,2026-10-05,4家共識平均146.71；單一來源，不單獨形成可交易共識
+3163,2026,https://fintel.com.tw/sfo/tw/3163,fintel_public_analyst_consensus,2,2026-10-14,Fintel公開頁面年度EPS 8.12；5位分析師
 3163,2026,https://toalpha.tw/stock/3163/estimates,toalpha_consensus,2,2026-10-05,2家共識平均7.89；單一來源，不單獨形成可交易共識
+3163,2027,https://fintel.com.tw/sfo/tw/3163,fintel_public_analyst_consensus,2,2026-10-14,Fintel公開頁面年度EPS 21.81；4位分析師
 3163,2027,https://toalpha.tw/stock/3163/estimates,toalpha_consensus,2,2026-10-05,1家共識平均21.17；單一來源，不單獨形成可交易共識
 3189,2026,https://toalpha.tw/stock/3189/estimates,toalpha_consensus,2,2026-10-05,15家共識平均10.88；單一來源，不單獨形成可交易共識
 3189,2026,https://finance.yahoo.com/quote/3189.TW/analysis/,yahoo_finance_analyst_consensus,2,2026-10-14,Yahoo Finance公開分析師共識，13位分析師
@@ -170,7 +172,9 @@ ticker,fiscal_year,source_url,source_family,source_tier,available_at,note
 3231,2027,https://toalpha.tw/stock/3231/estimates,toalpha_consensus,2,2026-10-05,17家共識平均23.19；單一來源，不單獨形成可交易共識
 3231,2027,https://finance.yahoo.com/quote/3231.TW/analysis/,yahoo_finance_analyst_consensus,2,2026-10-14,Yahoo Finance公開分析師共識，15位分析師
 3231,2028,https://toalpha.tw/stock/3231/estimates,toalpha_consensus,2,2026-10-05,10家共識平均30.41；單一來源，不單獨形成可交易共識
+3260,2026,https://fintel.com.tw/sfo/tw/3260,fintel_public_analyst_consensus,2,2026-10-14,Fintel公開頁面年度EPS 106.71；6位分析師
 3260,2026,https://toalpha.tw/stock/3260/estimates,toalpha_consensus,2,2026-10-05,3家共識平均105.24；單一來源，不單獨形成可交易共識
+3260,2027,https://fintel.com.tw/sfo/tw/3260,fintel_public_analyst_consensus,2,2026-10-14,Fintel公開頁面年度EPS 65.14；5位分析師
 3260,2027,https://toalpha.tw/stock/3260/estimates,toalpha_consensus,2,2026-10-05,2家共識平均64.24；單一來源，不單獨形成可交易共識
 3324,2026,https://toalpha.tw/stock/3324/estimates,toalpha_consensus,2,2026-10-05,16家共識平均55.56；單一來源，不單獨形成可交易共識
 3324,2026,https://finance.yahoo.com/quote/3324.TWO/analysis/,yahoo_finance_analyst_consensus,2,2026-10-14,Yahoo Finance公開分析師共識，16位分析師
@@ -236,9 +240,13 @@ ticker,fiscal_year,source_url,source_family,source_tier,available_at,note
 6274,2027,https://toalpha.tw/stock/6274/estimates,toalpha_consensus,2,2026-10-05,15家共識平均77.69；單一來源，不單獨形成可交易共識
 6274,2027,https://finance.yahoo.com/quote/6274.TWO/analysis/,yahoo_finance_analyst_consensus,2,2026-10-14,Yahoo Finance公開分析師共識，15位分析師
 6274,2028,https://toalpha.tw/stock/6274/estimates,toalpha_consensus,2,2026-10-05,7家共識平均146.72；單一來源，不單獨形成可交易共識
+6412,2026,https://fintel.com.tw/sfo/tw/6412,fintel_public_analyst_consensus,2,2026-10-14,Fintel公開頁面年度EPS 5.61；6位分析師
 6412,2026,https://toalpha.tw/stock/6412/estimates,toalpha_consensus,2,2026-10-05,4家共識平均5.50；單一來源，不單獨形成可交易共識
+6412,2027,https://fintel.com.tw/sfo/tw/6412,fintel_public_analyst_consensus,2,2026-10-14,Fintel公開頁面年度EPS 6.91；4位分析師
 6412,2027,https://toalpha.tw/stock/6412/estimates,toalpha_consensus,2,2026-10-05,2家共識平均6.77；單一來源，不單獨形成可交易共識
+6442,2026,https://fintel.com.tw/sfo/tw/6442,fintel_public_analyst_consensus,2,2026-10-14,Fintel公開頁面年度EPS 52.44；4位分析師
 6442,2026,https://toalpha.tw/stock/6442/estimates,toalpha_consensus,2,2026-10-05,3家共識平均51.42；單一來源，不單獨形成可交易共識
+6442,2027,https://fintel.com.tw/sfo/tw/6442,fintel_public_analyst_consensus,2,2026-10-14,Fintel公開頁面年度EPS 132.60；3位分析師
 6442,2027,https://toalpha.tw/stock/6442/estimates,toalpha_consensus,2,2026-10-05,1家共識平均130.00；單一來源，不單獨形成可交易共識
 6488,2026,https://news.cnyes.com/news/print/6569216,factset_cnyes,2,2026-08-10,FactSet 11位分析師2026 EPS調查；作ToAlpha獨立交叉證據
 6488,2026,https://toalpha.tw/stock/6488/estimates,toalpha_consensus,2,2026-10-02,16家共識平均21.42；單一來源，不單獨形成可交易共識
@@ -263,11 +271,3 @@ ticker,fiscal_year,source_url,source_family,source_tier,available_at,note
 8299,2027,https://toalpha.tw/stock/8299/estimates,toalpha_consensus,2,2026-10-05,14家共識平均284.19；單一來源，不單獨形成可交易共識
 8299,2027,https://finance.yahoo.com/quote/8299.TWO/analysis/,yahoo_finance_analyst_consensus,2,2026-10-14,Yahoo Finance公開分析師共識，12位分析師
 8299,2028,https://toalpha.tw/stock/8299/estimates,toalpha_consensus,2,2026-10-05,5家共識平均200.29；單一來源，不單獨形成可交易共識
-3163,2026,https://fintel.com.tw/sfo/tw/3163,fintel_public_analyst_consensus,2,2026-10-14,Fintel公開頁面年度EPS 8.12；5位分析師
-3163,2027,https://fintel.com.tw/sfo/tw/3163,fintel_public_analyst_consensus,2,2026-10-14,Fintel公開頁面年度EPS 21.81；4位分析師
-3260,2026,https://fintel.com.tw/sfo/tw/3260,fintel_public_analyst_consensus,2,2026-10-14,Fintel公開頁面年度EPS 106.71；6位分析師
-3260,2027,https://fintel.com.tw/sfo/tw/3260,fintel_public_analyst_consensus,2,2026-10-14,Fintel公開頁面年度EPS 65.14；5位分析師
-6412,2026,https://fintel.com.tw/sfo/tw/6412,fintel_public_analyst_consensus,2,2026-10-14,Fintel公開頁面年度EPS 5.61；6位分析師
-6412,2027,https://fintel.com.tw/sfo/tw/6412,fintel_public_analyst_consensus,2,2026-10-14,Fintel公開頁面年度EPS 6.91；4位分析師
-6442,2026,https://fintel.com.tw/sfo/tw/6442,fintel_public_analyst_consensus,2,2026-10-14,Fintel公開頁面年度EPS 52.44；4位分析師
-6442,2027,https://fintel.com.tw/sfo/tw/6442,fintel_public_analyst_consensus,2,2026-10-14,Fintel公開頁面年度EPS 132.60；3位分析師
