@@ -184,6 +184,7 @@ def materialize(*, config_path: str | Path, consensus_path: str | Path,
     )
     rows = []
     for security in config.securities:
+        score_required = "UNIVERSE" in security.roles
         consensus_ready = bool(consensus and consensus_actionable(
             consensus.records, ticker=security.ticker, fiscal_year=fiscal_year, evidence=support))
         catalyst_ready = evidence_ready(catalyst_evidence, ticker=security.ticker)
@@ -202,7 +203,7 @@ def materialize(*, config_path: str | Path, consensus_path: str | Path,
         })
         price_chip_ready = bool(price_chip_state["ready"])
         current_chip_ready = bool(current_chip_coverage.get(security.ticker, False))
-        component_score_ready = (
+        component_score_ready = score_required and (
             consensus_ready and eps_revision_ready and catalyst_score_ready and bottleneck_ready
             and valuation_ready and price_chip_ready
         )
@@ -224,6 +225,7 @@ def materialize(*, config_path: str | Path, consensus_path: str | Path,
             blocked_reasons.append("ACTION_POLICY_NOT_APPROVED")
         rows.append({
             "ticker": security.ticker,
+            "score_required": score_required,
             "consensus_ready": consensus_ready,
             "eps_revision_ready": eps_revision_ready,
             "catalyst_ready": catalyst_ready,
@@ -235,21 +237,24 @@ def materialize(*, config_path: str | Path, consensus_path: str | Path,
             "price_chip_coverage": price_chip_state,
             "component_score_ready": component_score_ready,
             "trade_ready": trade_ready,
-            "blocked_reasons": blocked_reasons,
+            "blocked_reasons": blocked_reasons if score_required else ["DISCOVERY_ONLY_NOT_SCORE_REQUIRED"],
         })
+    required_rows = [row for row in rows if row["score_required"]]
     return {
         "model": "R1", "as_of_date": as_of_date, "fiscal_year": fiscal_year,
         "requested_ticker_count": len(rows),
-        "consensus_ready_count": sum(row["consensus_ready"] for row in rows),
-        "eps_revision_ready_count": sum(row["eps_revision_ready"] for row in rows),
+        "score_required_ticker_count": len(required_rows),
+        "discovery_ticker_count": len(rows) - len(required_rows),
+        "consensus_ready_count": sum(row["consensus_ready"] for row in required_rows),
+        "eps_revision_ready_count": sum(row["eps_revision_ready"] for row in required_rows),
         "eps_revision_progress": eps_revision_progress,
-        "catalyst_ready_count": sum(row["catalyst_ready"] for row in rows),
-        "catalyst_score_ready_count": sum(row["catalyst_score_ready"] for row in rows),
-        "bottleneck_ready_count": sum(row["bottleneck_ready"] for row in rows),
-        "price_chip_ready_count": sum(row["price_chip_ready"] for row in rows),
-        "current_chip_ready_count": sum(row["current_chip_ready"] for row in rows),
-        "component_score_ready_count": sum(row["component_score_ready"] for row in rows),
-        "trade_ready_count": sum(row["trade_ready"] for row in rows),
+        "catalyst_ready_count": sum(row["catalyst_ready"] for row in required_rows),
+        "catalyst_score_ready_count": sum(row["catalyst_score_ready"] for row in required_rows),
+        "bottleneck_ready_count": sum(row["bottleneck_ready"] for row in required_rows),
+        "price_chip_ready_count": sum(row["price_chip_ready"] for row in required_rows),
+        "current_chip_ready_count": sum(row["current_chip_ready"] for row in required_rows),
+        "component_score_ready_count": sum(row["component_score_ready"] for row in required_rows),
+        "trade_ready_count": sum(row["trade_ready"] for row in required_rows),
         "action_policy_approved": config.action_policy_approved,
         "consensus_rejected": list(consensus.rejected) if consensus else [{"error": "file_missing"}],
         "consensus_evidence_rejected": support_rejected if support_file.exists() else [{"error": "file_missing"}],

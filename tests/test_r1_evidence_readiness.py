@@ -26,10 +26,15 @@ class R1EvidenceReadinessTest(unittest.TestCase):
             result = materialize(config_path="config/r1.json", consensus_path=Path(folder) / "none.csv",
                                  catalyst_path=Path(folder) / "none2.csv", as_of_date="2026-10-01")
         self.assertEqual(result["requested_ticker_count"], 54)
+        self.assertEqual(result["score_required_ticker_count"], 52)
+        self.assertEqual(result["discovery_ticker_count"], 2)
         self.assertEqual(result["trade_ready_count"], 0)
         self.assertEqual(result["component_score_ready_count"], 0)
         self.assertFalse(result["action_policy_approved"])
         self.assertFalse(result["active_in_trade_decision"])
+        discovery = next(item for item in result["rows"] if item["ticker"] == "3008")
+        self.assertFalse(discovery["score_required"])
+        self.assertEqual(discovery["blocked_reasons"], ["DISCOVERY_ONLY_NOT_SCORE_REQUIRED"])
 
     def test_catalyst_requires_two_independent_source_families(self):
         with TemporaryDirectory() as folder:

@@ -310,6 +310,15 @@ def build_dashboard_payload(
         key=lambda row: (-float(row["total_score"]), str(row.get("ticker", ""))),
     )
     dashboard = tabs["R1 Dashboard"]
+    score_required_count = readiness.get("score_required_ticker_count", readiness["requested_ticker_count"])
+    required_readiness_rows = [
+        row for row in readiness.get("rows", []) if row.get("score_required", True)
+    ]
+    score_required_tickers = {row.get("ticker") for row in required_readiness_rows}
+    target_ready_required = sum(
+        bool(row.get("scoreable")) and str(row.get("ticker", "")).zfill(4) in score_required_tickers
+        for row in target_prices.get("rows", [])
+    )
     dashboard.extend([
         ["R1研究版｜AI瓶頸預期差輪動"],
         ["最新資料日期", market["date"], "模型定位", "研究挑戰版", "尚未啟用交易"],
@@ -442,33 +451,33 @@ def build_dashboard_payload(
         ["項目", "完成度", "顯示狀態", "用途", "資料日期"],
         ["官方市場資料", f"{market['actual_ticker_count']}/{market['requested_ticker_count']}",
          "完整" if not market["gaps"] else "資料不足", "收盤與技術資料", market["date"]],
-        ["EPS共識", f"{readiness['consensus_ready_count']}/{readiness['requested_ticker_count']}",
-         "完整" if readiness["consensus_ready_count"] == readiness["requested_ticker_count"] else "部分完成",
+        ["EPS共識", f"{readiness['consensus_ready_count']}/{score_required_count}",
+         "完整" if readiness["consensus_ready_count"] == score_required_count else "部分完成",
          "EPS修正與前瞻估值", market["date"]],
-        ["EPS修正歷史", f"{readiness.get('eps_revision_ready_count', 0)}/{readiness['requested_ticker_count']}",
-         "完整" if readiness.get("eps_revision_ready_count") == readiness["requested_ticker_count"] else "累積中",
+        ["EPS修正歷史", f"{readiness.get('eps_revision_ready_count', 0)}/{score_required_count}",
+         "完整" if readiness.get("eps_revision_ready_count") == score_required_count else "累積中",
          "至少具備1W、4W及12W PIT基準；最早日："
          f"1W {revision_dates.get('1w') or '待首筆'}／4W {revision_dates.get('4w') or '待首筆'}／"
          f"12W {revision_dates.get('12w') or '待首筆'}", market["date"]],
-        ["12個月目標價共識", f"{target_prices.get('ready_ticker_count', 0)}/{readiness['requested_ticker_count']}",
-         "完整" if target_prices.get("ready_ticker_count", 0) == readiness["requested_ticker_count"] else "部分完成",
+        ["12個月目標價共識", f"{target_ready_required}/{score_required_count}",
+         "完整" if target_ready_required == score_required_count else "部分完成",
          "90日內至少3家可識別機構的中位數；不足不評分", target_prices.get("date", market["date"])],
-        ["催化證據", f"{readiness['catalyst_ready_count']}/{readiness['requested_ticker_count']}",
-         "完整" if readiness["catalyst_ready_count"] == readiness["requested_ticker_count"] else "部分完成",
+        ["催化證據", f"{readiness['catalyst_ready_count']}/{score_required_count}",
+         "完整" if readiness["catalyst_ready_count"] == score_required_count else "部分完成",
          "需求與事件驗證", market["date"]],
-        ["瓶頸證據", f"{readiness['bottleneck_ready_count']}/{readiness['requested_ticker_count']}",
-         "完整" if readiness["bottleneck_ready_count"] == readiness["requested_ticker_count"] else "部分完成",
+        ["瓶頸證據", f"{readiness['bottleneck_ready_count']}/{score_required_count}",
+         "完整" if readiness["bottleneck_ready_count"] == score_required_count else "部分完成",
          "AI剛性需求驗證", market["date"]],
-        ["20日價量籌碼序列", f"{readiness.get('price_chip_ready_count', 0)}/{readiness['requested_ticker_count']}",
-         "完整" if readiness.get("price_chip_ready_count") == readiness["requested_ticker_count"] else "部分完成",
+        ["20日價量籌碼序列", f"{readiness.get('price_chip_ready_count', 0)}/{score_required_count}",
+         "完整" if readiness.get("price_chip_ready_count") == score_required_count else "部分完成",
          "歷史價格與籌碼構面", market["date"]],
-        ["當日法人與融資", f"{readiness.get('current_chip_ready_count', 0)}/{readiness['requested_ticker_count']}",
-         "完整" if readiness.get("current_chip_ready_count") == readiness["requested_ticker_count"] else "等待官方資料",
+        ["當日法人與融資", f"{readiness.get('current_chip_ready_count', 0)}/{score_required_count}",
+         "完整" if readiness.get("current_chip_ready_count") == score_required_count else "等待官方資料",
          "當期訊號驗收；不可由舊資料代替", market["date"]],
-        ["五年估值定位", f"{sum(bool(row.get('valuation_ready')) for row in readiness.get('rows', []))}/{readiness['requested_ticker_count']}",
-         "完整" if all(row.get("valuation_ready") for row in readiness.get("rows", [])) else "部分完成",
+        ["五年估值定位", f"{sum(bool(row.get('valuation_ready')) for row in required_readiness_rows)}/{score_required_count}",
+         "完整" if all(row.get("valuation_ready") for row in required_readiness_rows) else "部分完成",
          "下年度Forward PE自身五年百分位", market["date"]],
-        ["交易建議", f"{readiness['trade_ready_count']}/{readiness['requested_ticker_count']}",
+        ["交易建議", f"{readiness['trade_ready_count']}/{score_required_count}",
          "尚未啟用", "Action規則核准後才產生", market["date"]],
         ["09｜模型完整說明"],
         [MODEL_LOGIC],
