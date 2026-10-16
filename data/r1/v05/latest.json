@@ -1,10 +1,10 @@
 {
   "model": "R1 v0.5",
-  "date": "2026-10-13",
+  "date": "2026-10-15",
   "status": "challenger_report_only",
   "rows": [
     {
-      "date": "2026-10-13",
+      "date": "2026-10-15",
       "ticker": "1560",
       "company": "中砂",
       "structural_bottleneck": null,
@@ -31,7 +31,7 @@
       "v05_reason": "缺少：structural_bottleneck、revenue_earnings_realization、consensus_target_upside、target_revision_and_breadth、theme_momentum_and_catalyst、relative_valuation、price_chip_risk"
     },
     {
-      "date": "2026-10-13",
+      "date": "2026-10-15",
       "ticker": "2301",
       "company": "光寶科",
       "structural_bottleneck": null,
@@ -58,18 +58,18 @@
       "v05_reason": "缺少：structural_bottleneck、revenue_earnings_realization、consensus_target_upside、target_revision_and_breadth、theme_momentum_and_catalyst、relative_valuation、price_chip_risk"
     },
     {
-      "date": "2026-10-13",
+      "date": "2026-10-15",
       "ticker": "2303",
       "company": "聯電",
       "structural_bottleneck": 100.0,
       "revenue_earnings_realization": 12.745098,
-      "consensus_target_upside": 14.915254,
+      "consensus_target_upside": 24.868914,
       "target_revision_and_breadth": null,
       "theme_momentum_and_catalyst": 60.549451,
       "relative_valuation": 4.464286,
       "price_chip_risk": null,
       "v05_total_score": null,
-      "v05_observed_points": 32.033444,
+      "v05_observed_points": 34.024176,
       "v05_observed_max_points": 80.0,
       "v05_observed_weight": 0.8,
       "v05_status": "DATA_MISSING",
@@ -80,18 +80,18 @@
       "v05_reason": "缺少：target_revision_and_breadth、price_chip_risk"
     },
     {
-      "date": "2026-10-13",
+      "date": "2026-10-15",
       "ticker": "2308",
       "company": "台達電",
       "structural_bottleneck": 100.0,
       "revenue_earnings_realization": 41.62896,
-      "consensus_target_upside": 47.226463,
+      "consensus_target_upside": 73.374233,
       "target_revision_and_breadth": null,
       "theme_momentum_and_catalyst": 50.0,
       "relative_valuation": 27.864286,
       "price_chip_risk": null,
       "v05_total_score": null,
-      "v05_observed_points": 45.557513,
+      "v05_observed_points": 50.787067,
       "v05_observed_max_points": 80.0,
       "v05_observed_weight": 0.8,
       "v05_status": "DATA_MISSING",
@@ -102,7 +102,7 @@
       "v05_reason": "缺少：target_revision_and_breadth、price_chip_risk"
     },
     {
-      "date": "2026-10-13",
+      "date": "2026-10-15",
       "ticker": "2317",
       "company": "鴻海",
       "structural_bottleneck": null,
@@ -129,7 +129,7 @@
       "v05_reason": "缺少：structural_bottleneck、revenue_earnings_realization、consensus_target_upside、target_revision_and_breadth、theme_momentum_and_catalyst、relative_valuation、price_chip_risk"
     },
     {
-      "date": "2026-10-13",
+      "date": "2026-10-15",
       "ticker": "2327",
       "company": "國巨",
       "structural_bottleneck": 100.0,
@@ -152,7 +152,7 @@
       "v05_reason": "缺少：consensus_target_upside、target_revision_and_breadth、price_chip_risk"
     },
     {
-      "date": "2026-10-13",
+      "date": "2026-10-15",
       "ticker": "2330",
       "company": "台積電",
       "structural_bottleneck": 100.0,
@@ -175,7 +175,7 @@
       "v05_reason": "缺少：consensus_target_upside、target_revision_and_breadth、price_chip_risk"
     },
     {
-      "date": "2026-10-13",
+      "date": "2026-10-15",
       "ticker": "2337",
       "company": "旺宏",
       "structural_bottleneck": null,
@@ -202,7 +202,7 @@
       "v05_reason": "缺少：structural_bottleneck、revenue_earnings_realization、consensus_target_upside、target_revision_and_breadth、theme_momentum_and_catalyst、relative_valuation、price_chip_risk"
     },
     {
-      "date": "2026-10-13",
+      "date": "2026-10-15",
       "ticker": "2344",
       "company": "華邦電",
       "structural_bottleneck": 100.0,
@@ -225,7 +225,7 @@
       "v05_reason": "缺少：consensus_target_upside、target_revision_and_breadth、price_chip_risk"
     },
     {
-      "date": "2026-10-13",
+      "date": "2026-10-15",
       "ticker": "2345",
       "company": "智邦",
       "structural_bottleneck": null,
@@ -252,7 +252,7 @@
       "v05_reason": "缺少：structural_bottleneck、revenue_earnings_realization、consensus_target_upside、target_revision_and_breadth、theme_momentum_and_catalyst、relative_valuation、price_chip_risk"
     },
     {
-      "date": "2026-10-13",
+      "date": "2026-10-15",
       "ticker": "2356",
       "company": "英業達",
       "structural_bottleneck": null,
@@ -279,7 +279,7 @@
       "v05_reason": "缺少：structural_bottleneck、revenue_earnings_realization、consensus_target_upside、target_revision_and_breadth、theme_momentum_and_catalyst、relative_valuation、price_chip_risk"
     },
     {
-      "date": "2026-10-13",
+      "date": "2026-10-15",
       "ticker": "2368",
       "company": "金像電",
       "structural_bottleneck": null,
@@ -306,7 +306,7 @@
       "v05_reason": "缺少：structural_bottleneck、revenue_earnings_realization、consensus_target_upside、target_revision_and_breadth、theme_momentum_and_catalyst、relative_valuation、price_chip_risk"
     },
     {
-      "date": "2026-10-13",
+      "date": "2026-10-15",
       "ticker": "2376",
       "company": "技嘉",
       "structural_bottleneck": 92.0,
@@ -329,7 +329,7 @@
       "v05_reason": "缺少：consensus_target_upside、target_revision_and_breadth、price_chip_risk"
     },
     {
-      "date": "2026-10-13",
+      "date": "2026-10-15",
       "ticker": "2379",
       "company": "瑞昱",
       "structural_bottleneck": 92.0,
@@ -352,7 +352,7 @@
       "v05_reason": "缺少：consensus_target_upside、target_revision_and_breadth、price_chip_risk"
     },
     {
-      "date": "2026-10-13",
+      "date": "2026-10-15",
       "ticker": "2382",
       "company": "廣達",
       "structural_bottleneck": null,
@@ -378,7 +378,7 @@
       "v05_reason": "缺少：structural_bottleneck、revenue_earnings_realization、target_revision_and_breadth、theme_momentum_and_catalyst、relative_valuation、price_chip_risk"
     },
     {
-      "date": "2026-10-13",
+      "date": "2026-10-15",
       "ticker": "2383",
       "company": "台光電",
       "structural_bottleneck": null,
@@ -405,7 +405,7 @@
       "v05_reason": "缺少：structural_bottleneck、revenue_earnings_realization、consensus_target_upside、target_revision_and_breadth、theme_momentum_and_catalyst、relative_valuation、price_chip_risk"
     },
     {
-      "date": "2026-10-13",
+      "date": "2026-10-15",
       "ticker": "2408",
       "company": "南亞科",
       "structural_bottleneck": 100.0,
@@ -428,7 +428,7 @@
       "v05_reason": "缺少：consensus_target_upside、target_revision_and_breadth、price_chip_risk"
     },
     {
-      "date": "2026-10-13",
+      "date": "2026-10-15",
       "ticker": "2449",
       "company": "京元電子",
       "structural_bottleneck": null,
@@ -455,7 +455,7 @@
       "v05_reason": "缺少：structural_bottleneck、revenue_earnings_realization、consensus_target_upside、target_revision_and_breadth、theme_momentum_and_catalyst、relative_valuation、price_chip_risk"
     },
     {
-      "date": "2026-10-13",
+      "date": "2026-10-15",
       "ticker": "2454",
       "company": "聯發科",
       "structural_bottleneck": 80.0,
@@ -478,7 +478,7 @@
       "v05_reason": "缺少：consensus_target_upside、target_revision_and_breadth、price_chip_risk"
     },
     {
-      "date": "2026-10-13",
+      "date": "2026-10-15",
       "ticker": "2492",
       "company": "華新科",
       "structural_bottleneck": null,
@@ -505,18 +505,18 @@
       "v05_reason": "缺少：structural_bottleneck、revenue_earnings_realization、consensus_target_upside、target_revision_and_breadth、theme_momentum_and_catalyst、relative_valuation、price_chip_risk"
     },
     {
-      "date": "2026-10-13",
+      "date": "2026-10-15",
       "ticker": "3008",
       "company": "大立光",
       "structural_bottleneck": null,
       "revenue_earnings_realization": null,
-      "consensus_target_upside": 26.606607,
+      "consensus_target_upside": 47.176382,
       "target_revision_and_breadth": null,
       "theme_momentum_and_catalyst": null,
       "relative_valuation": null,
       "price_chip_risk": null,
       "v05_total_score": null,
-      "v05_observed_points": 5.321321,
+      "v05_observed_points": 9.435276,
       "v05_observed_max_points": 20.0,
       "v05_observed_weight": 0.2,
       "v05_status": "DATA_MISSING",
@@ -531,18 +531,18 @@
       "v05_reason": "缺少：structural_bottleneck、revenue_earnings_realization、target_revision_and_breadth、theme_momentum_and_catalyst、relative_valuation、price_chip_risk"
     },
     {
-      "date": "2026-10-13",
+      "date": "2026-10-15",
       "ticker": "3017",
       "company": "奇鋐",
       "structural_bottleneck": null,
       "revenue_earnings_realization": null,
-      "consensus_target_upside": 47.369186,
+      "consensus_target_upside": 62.025932,
       "target_revision_and_breadth": null,
       "theme_momentum_and_catalyst": null,
       "relative_valuation": null,
       "price_chip_risk": null,
       "v05_total_score": null,
-      "v05_observed_points": 9.473837,
+      "v05_observed_points": 12.405186,
       "v05_observed_max_points": 20.0,
       "v05_observed_weight": 0.2,
       "v05_status": "DATA_MISSING",
@@ -557,7 +557,7 @@
       "v05_reason": "缺少：structural_bottleneck、revenue_earnings_realization、target_revision_and_breadth、theme_momentum_and_catalyst、relative_valuation、price_chip_risk"
     },
     {
-      "date": "2026-10-13",
+      "date": "2026-10-15",
       "ticker": "3035",
       "company": "智原",
       "structural_bottleneck": null,
@@ -584,18 +584,18 @@
       "v05_reason": "缺少：structural_bottleneck、revenue_earnings_realization、consensus_target_upside、target_revision_and_breadth、theme_momentum_and_catalyst、relative_valuation、price_chip_risk"
     },
     {
-      "date": "2026-10-13",
+      "date": "2026-10-15",
       "ticker": "3037",
       "company": "欣興",
       "structural_bottleneck": 97.0,
       "revenue_earnings_realization": 64.027149,
-      "consensus_target_upside": 30.23622,
+      "consensus_target_upside": 50.232558,
       "target_revision_and_breadth": null,
       "theme_momentum_and_catalyst": 52.637363,
       "relative_valuation": 35.0,
       "price_chip_risk": null,
       "v05_total_score": null,
-      "v05_observed_points": 47.01641,
+      "v05_observed_points": 51.015678,
       "v05_observed_max_points": 80.0,
       "v05_observed_weight": 0.8,
       "v05_status": "DATA_MISSING",
@@ -606,7 +606,7 @@
       "v05_reason": "缺少：target_revision_and_breadth、price_chip_risk"
     },
     {
-      "date": "2026-10-13",
+      "date": "2026-10-15",
       "ticker": "3081",
       "company": "聯亞",
       "structural_bottleneck": 100.0,
@@ -629,7 +629,7 @@
       "v05_reason": "缺少：consensus_target_upside、target_revision_and_breadth、price_chip_risk"
     },
     {
-      "date": "2026-10-13",
+      "date": "2026-10-15",
       "ticker": "3131",
       "company": "弘塑",
       "structural_bottleneck": null,
@@ -656,7 +656,7 @@
       "v05_reason": "缺少：structural_bottleneck、revenue_earnings_realization、consensus_target_upside、target_revision_and_breadth、theme_momentum_and_catalyst、relative_valuation、price_chip_risk"
     },
     {
-      "date": "2026-10-13",
+      "date": "2026-10-15",
       "ticker": "3163",
       "company": "波若威",
       "structural_bottleneck": null,
@@ -683,7 +683,7 @@
       "v05_reason": "缺少：structural_bottleneck、revenue_earnings_realization、consensus_target_upside、target_revision_and_breadth、theme_momentum_and_catalyst、relative_valuation、price_chip_risk"
     },
     {
-      "date": "2026-10-13",
+      "date": "2026-10-15",
       "ticker": "3189",
       "company": "景碩",
       "structural_bottleneck": null,
@@ -710,7 +710,7 @@
       "v05_reason": "缺少：structural_bottleneck、revenue_earnings_realization、consensus_target_upside、target_revision_and_breadth、theme_momentum_and_catalyst、relative_valuation、price_chip_risk"
     },
     {
-      "date": "2026-10-13",
+      "date": "2026-10-15",
       "ticker": "3231",
       "company": "緯創",
       "structural_bottleneck": null,
@@ -737,7 +737,7 @@
       "v05_reason": "缺少：structural_bottleneck、revenue_earnings_realization、consensus_target_upside、target_revision_and_breadth、theme_momentum_and_catalyst、relative_valuation、price_chip_risk"
     },
     {
-      "date": "2026-10-13",
+      "date": "2026-10-15",
       "ticker": "3260",
       "company": "威剛",
       "structural_bottleneck": null,
@@ -764,18 +764,18 @@
       "v05_reason": "缺少：structural_bottleneck、revenue_earnings_realization、consensus_target_upside、target_revision_and_breadth、theme_momentum_and_catalyst、relative_valuation、price_chip_risk"
     },
     {
-      "date": "2026-10-13",
+      "date": "2026-10-15",
       "ticker": "3324",
       "company": "雙鴻",
       "structural_bottleneck": null,
       "revenue_earnings_realization": null,
-      "consensus_target_upside": 15.493421,
+      "consensus_target_upside": 22.943262,
       "target_revision_and_breadth": null,
       "theme_momentum_and_catalyst": null,
       "relative_valuation": null,
       "price_chip_risk": null,
       "v05_total_score": null,
-      "v05_observed_points": 3.098684,
+      "v05_observed_points": 4.588652,
       "v05_observed_max_points": 20.0,
       "v05_observed_weight": 0.2,
       "v05_status": "DATA_MISSING",
@@ -790,7 +790,7 @@
       "v05_reason": "缺少：structural_bottleneck、revenue_earnings_realization、target_revision_and_breadth、theme_momentum_and_catalyst、relative_valuation、price_chip_risk"
     },
     {
-      "date": "2026-10-13",
+      "date": "2026-10-15",
       "ticker": "3338",
       "company": "泰碩",
       "structural_bottleneck": null,
@@ -817,7 +817,7 @@
       "v05_reason": "缺少：structural_bottleneck、revenue_earnings_realization、consensus_target_upside、target_revision_and_breadth、theme_momentum_and_catalyst、relative_valuation、price_chip_risk"
     },
     {
-      "date": "2026-10-13",
+      "date": "2026-10-15",
       "ticker": "3357",
       "company": "臺慶科",
       "structural_bottleneck": null,
@@ -844,7 +844,7 @@
       "v05_reason": "缺少：structural_bottleneck、revenue_earnings_realization、consensus_target_upside、target_revision_and_breadth、theme_momentum_and_catalyst、relative_valuation、price_chip_risk"
     },
     {
-      "date": "2026-10-13",
+      "date": "2026-10-15",
       "ticker": "3363",
       "company": "上詮",
       "structural_bottleneck": 68.0,
@@ -867,18 +867,18 @@
       "v05_reason": "缺少：consensus_target_upside、target_revision_and_breadth、price_chip_risk"
     },
     {
-      "date": "2026-10-13",
+      "date": "2026-10-15",
       "ticker": "3406",
       "company": "玉晶光",
       "structural_bottleneck": null,
       "revenue_earnings_realization": null,
-      "consensus_target_upside": 19.056604,
+      "consensus_target_upside": 14.170404,
       "target_revision_and_breadth": null,
       "theme_momentum_and_catalyst": null,
       "relative_valuation": null,
       "price_chip_risk": null,
       "v05_total_score": null,
-      "v05_observed_points": 3.811321,
+      "v05_observed_points": 2.834081,
       "v05_observed_max_points": 20.0,
       "v05_observed_weight": 0.2,
       "v05_status": "DATA_MISSING",
@@ -893,7 +893,7 @@
       "v05_reason": "缺少：structural_bottleneck、revenue_earnings_realization、target_revision_and_breadth、theme_momentum_and_catalyst、relative_valuation、price_chip_risk"
     },
     {
-      "date": "2026-10-13",
+      "date": "2026-10-15",
       "ticker": "3443",
       "company": "創意",
       "structural_bottleneck": null,
@@ -919,7 +919,7 @@
       "v05_reason": "缺少：structural_bottleneck、revenue_earnings_realization、target_revision_and_breadth、theme_momentum_and_catalyst、relative_valuation、price_chip_risk"
     },
     {
-      "date": "2026-10-13",
+      "date": "2026-10-15",
       "ticker": "3532",
       "company": "台勝科",
       "structural_bottleneck": null,
@@ -946,7 +946,7 @@
       "v05_reason": "缺少：structural_bottleneck、revenue_earnings_realization、consensus_target_upside、target_revision_and_breadth、theme_momentum_and_catalyst、relative_valuation、price_chip_risk"
     },
     {
-      "date": "2026-10-13",
+      "date": "2026-10-15",
       "ticker": "3583",
       "company": "辛耘",
       "structural_bottleneck": null,
@@ -973,7 +973,7 @@
       "v05_reason": "缺少：structural_bottleneck、revenue_earnings_realization、consensus_target_upside、target_revision_and_breadth、theme_momentum_and_catalyst、relative_valuation、price_chip_risk"
     },
     {
-      "date": "2026-10-13",
+      "date": "2026-10-15",
       "ticker": "3653",
       "company": "健策",
       "structural_bottleneck": null,
@@ -1000,7 +1000,7 @@
       "v05_reason": "缺少：structural_bottleneck、revenue_earnings_realization、consensus_target_upside、target_revision_and_breadth、theme_momentum_and_catalyst、relative_valuation、price_chip_risk"
     },
     {
-      "date": "2026-10-13",
+      "date": "2026-10-15",
       "ticker": "3661",
       "company": "世芯-KY",
       "structural_bottleneck": null,
@@ -1027,7 +1027,7 @@
       "v05_reason": "缺少：structural_bottleneck、revenue_earnings_realization、consensus_target_upside、target_revision_and_breadth、theme_momentum_and_catalyst、relative_valuation、price_chip_risk"
     },
     {
-      "date": "2026-10-13",
+      "date": "2026-10-15",
       "ticker": "3711",
       "company": "日月光投控",
       "structural_bottleneck": 93.0,
@@ -1050,7 +1050,7 @@
       "v05_reason": "缺少：consensus_target_upside、target_revision_and_breadth、price_chip_risk"
     },
     {
-      "date": "2026-10-13",
+      "date": "2026-10-15",
       "ticker": "4979",
       "company": "華星光",
       "structural_bottleneck": null,
@@ -1077,7 +1077,7 @@
       "v05_reason": "缺少：structural_bottleneck、revenue_earnings_realization、consensus_target_upside、target_revision_and_breadth、theme_momentum_and_catalyst、relative_valuation、price_chip_risk"
     },
     {
-      "date": "2026-10-13",
+      "date": "2026-10-15",
       "ticker": "6182",
       "company": "合晶",
       "structural_bottleneck": null,
@@ -1104,7 +1104,7 @@
       "v05_reason": "缺少：structural_bottleneck、revenue_earnings_realization、consensus_target_upside、target_revision_and_breadth、theme_momentum_and_catalyst、relative_valuation、price_chip_risk"
     },
     {
-      "date": "2026-10-13",
+      "date": "2026-10-15",
       "ticker": "6187",
       "company": "萬潤",
       "structural_bottleneck": null,
@@ -1131,7 +1131,7 @@
       "v05_reason": "缺少：structural_bottleneck、revenue_earnings_realization、consensus_target_upside、target_revision_and_breadth、theme_momentum_and_catalyst、relative_valuation、price_chip_risk"
     },
     {
-      "date": "2026-10-13",
+      "date": "2026-10-15",
       "ticker": "6223",
       "company": "旺矽",
       "structural_bottleneck": null,
@@ -1158,7 +1158,7 @@
       "v05_reason": "缺少：structural_bottleneck、revenue_earnings_realization、consensus_target_upside、target_revision_and_breadth、theme_momentum_and_catalyst、relative_valuation、price_chip_risk"
     },
     {
-      "date": "2026-10-13",
+      "date": "2026-10-15",
       "ticker": "6230",
       "company": "尼得科超眾",
       "structural_bottleneck": null,
@@ -1185,7 +1185,7 @@
       "v05_reason": "缺少：structural_bottleneck、revenue_earnings_realization、consensus_target_upside、target_revision_and_breadth、theme_momentum_and_catalyst、relative_valuation、price_chip_risk"
     },
     {
-      "date": "2026-10-13",
+      "date": "2026-10-15",
       "ticker": "6274",
       "company": "台燿",
       "structural_bottleneck": null,
@@ -1212,7 +1212,7 @@
       "v05_reason": "缺少：structural_bottleneck、revenue_earnings_realization、consensus_target_upside、target_revision_and_breadth、theme_momentum_and_catalyst、relative_valuation、price_chip_risk"
     },
     {
-      "date": "2026-10-13",
+      "date": "2026-10-15",
       "ticker": "6282",
       "company": "康舒",
       "structural_bottleneck": null,
@@ -1239,7 +1239,7 @@
       "v05_reason": "缺少：structural_bottleneck、revenue_earnings_realization、consensus_target_upside、target_revision_and_breadth、theme_momentum_and_catalyst、relative_valuation、price_chip_risk"
     },
     {
-      "date": "2026-10-13",
+      "date": "2026-10-15",
       "ticker": "6412",
       "company": "群電",
       "structural_bottleneck": null,
@@ -1266,7 +1266,7 @@
       "v05_reason": "缺少：structural_bottleneck、revenue_earnings_realization、consensus_target_upside、target_revision_and_breadth、theme_momentum_and_catalyst、relative_valuation、price_chip_risk"
     },
     {
-      "date": "2026-10-13",
+      "date": "2026-10-15",
       "ticker": "6442",
       "company": "光聖",
       "structural_bottleneck": null,
@@ -1293,7 +1293,7 @@
       "v05_reason": "缺少：structural_bottleneck、revenue_earnings_realization、consensus_target_upside、target_revision_and_breadth、theme_momentum_and_catalyst、relative_valuation、price_chip_risk"
     },
     {
-      "date": "2026-10-13",
+      "date": "2026-10-15",
       "ticker": "6488",
       "company": "環球晶",
       "structural_bottleneck": 93.0,
@@ -1316,7 +1316,7 @@
       "v05_reason": "缺少：consensus_target_upside、target_revision_and_breadth、price_chip_risk"
     },
     {
-      "date": "2026-10-13",
+      "date": "2026-10-15",
       "ticker": "6669",
       "company": "緯穎",
       "structural_bottleneck": null,
@@ -1343,7 +1343,7 @@
       "v05_reason": "缺少：structural_bottleneck、revenue_earnings_realization、consensus_target_upside、target_revision_and_breadth、theme_momentum_and_catalyst、relative_valuation、price_chip_risk"
     },
     {
-      "date": "2026-10-13",
+      "date": "2026-10-15",
       "ticker": "6781",
       "company": "AES-KY",
       "structural_bottleneck": null,
@@ -1370,7 +1370,7 @@
       "v05_reason": "缺少：structural_bottleneck、revenue_earnings_realization、consensus_target_upside、target_revision_and_breadth、theme_momentum_and_catalyst、relative_valuation、price_chip_risk"
     },
     {
-      "date": "2026-10-13",
+      "date": "2026-10-15",
       "ticker": "8299",
       "company": "群聯",
       "structural_bottleneck": null,

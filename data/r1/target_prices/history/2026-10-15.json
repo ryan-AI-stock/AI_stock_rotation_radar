@@ -1,0 +1,896 @@
+{
+  "date": "2026-10-15",
+  "rows": [
+    {
+      "ticker": "2330",
+      "as_of_date": "2026-10-15",
+      "institution_count": 0,
+      "consensus_target_price": null,
+      "consensus_upside": null,
+      "dispersion": null,
+      "status": "DATA_MISSING",
+      "scoreable": false,
+      "rejected": [],
+      "source_policy": "12M median; independent identifiable institutions; PIT max 90 days"
+    },
+    {
+      "ticker": "2327",
+      "as_of_date": "2026-10-15",
+      "institution_count": 0,
+      "consensus_target_price": null,
+      "consensus_upside": null,
+      "dispersion": null,
+      "status": "DATA_MISSING",
+      "scoreable": false,
+      "rejected": [],
+      "source_policy": "12M median; independent identifiable institutions; PIT max 90 days"
+    },
+    {
+      "ticker": "2344",
+      "as_of_date": "2026-10-15",
+      "institution_count": 0,
+      "consensus_target_price": null,
+      "consensus_upside": null,
+      "dispersion": null,
+      "status": "DATA_MISSING",
+      "scoreable": false,
+      "rejected": [
+        {
+          "institution": "JPMorgan",
+          "error": "stale"
+        },
+        {
+          "institution": "JPMorgan",
+          "error": "stale"
+        },
+        {
+          "institution": "Morgan Stanley",
+          "error": "stale"
+        },
+        {
+          "institution": "JPMorgan",
+          "error": "stale"
+        },
+        {
+          "institution": "JPMorgan",
+          "error": "stale"
+        },
+        {
+          "institution": "JPMorgan",
+          "error": "stale"
+        }
+      ],
+      "source_policy": "12M median; independent identifiable institutions; PIT max 90 days"
+    },
+    {
+      "ticker": "2376",
+      "as_of_date": "2026-10-15",
+      "institution_count": 1,
+      "consensus_target_price": 595.0,
+      "consensus_upside": null,
+      "dispersion": null,
+      "status": "DATA_MISSING",
+      "scoreable": false,
+      "rejected": [],
+      "source_policy": "12M median; independent identifiable institutions; PIT max 90 days"
+    },
+    {
+      "ticker": "2454",
+      "as_of_date": "2026-10-15",
+      "institution_count": 2,
+      "consensus_target_price": 5550.0,
+      "consensus_upside": null,
+      "dispersion": null,
+      "status": "DATA_MISSING",
+      "scoreable": false,
+      "rejected": [
+        {
+          "institution": "Macquarie",
+          "error": "stale"
+        },
+        {
+          "institution": "Nomura/Instinet",
+          "error": "stale"
+        },
+        {
+          "institution": "Nomura/Instinet",
+          "error": "stale"
+        },
+        {
+          "institution": "Citi",
+          "error": "stale"
+        },
+        {
+          "institution": "Citi",
+          "error": "stale"
+        }
+      ],
+      "source_policy": "12M median; independent identifiable institutions; PIT max 90 days"
+    },
+    {
+      "ticker": "3037",
+      "as_of_date": "2026-10-15",
+      "institution_count": 3,
+      "consensus_target_price": 1400.0,
+      "consensus_upside": 0.30232558139534893,
+      "dispersion": 0.3392857142857143,
+      "status": "READY",
+      "scoreable": true,
+      "rejected": [
+        {
+          "institution": "Macquarie",
+          "error": "stale"
+        }
+      ],
+      "source_policy": "12M median; independent identifiable institutions; PIT max 90 days"
+    },
+    {
+      "ticker": "6488",
+      "as_of_date": "2026-10-15",
+      "institution_count": 0,
+      "consensus_target_price": null,
+      "consensus_upside": null,
+      "dispersion": null,
+      "status": "DATA_MISSING",
+      "scoreable": false,
+      "rejected": [],
+      "source_policy": "12M median; independent identifiable institutions; PIT max 90 days"
+    },
+    {
+      "ticker": "3661",
+      "as_of_date": "2026-10-15",
+      "institution_count": 0,
+      "consensus_target_price": null,
+      "consensus_upside": null,
+      "dispersion": null,
+      "status": "DATA_MISSING",
+      "scoreable": false,
+      "rejected": [],
+      "source_policy": "12M median; independent identifiable institutions; PIT max 90 days"
+    },
+    {
+      "ticker": "3443",
+      "as_of_date": "2026-10-15",
+      "institution_count": 4,
+      "consensus_target_price": 5650.0,
+      "consensus_upside": -0.2633637548891786,
+      "dispersion": 0.6017699115044248,
+      "status": "READY",
+      "scoreable": true,
+      "rejected": [
+        {
+          "institution": "Citi",
+          "error": "stale"
+        }
+      ],
+      "source_policy": "12M median; independent identifiable institutions; PIT max 90 days"
+    },
+    {
+      "ticker": "3035",
+      "as_of_date": "2026-10-15",
+      "institution_count": 0,
+      "consensus_target_price": null,
+      "consensus_upside": null,
+      "dispersion": null,
+      "status": "DATA_MISSING",
+      "scoreable": false,
+      "rejected": [
+        {
+          "institution": "Jefferies",
+          "error": "stale"
+        }
+      ],
+      "source_policy": "12M median; independent identifiable institutions; PIT max 90 days"
+    },
+    {
+      "ticker": "2449",
+      "as_of_date": "2026-10-15",
+      "institution_count": 2,
+      "consensus_target_price": 366.0,
+      "consensus_upside": null,
+      "dispersion": null,
+      "status": "DATA_MISSING",
+      "scoreable": false,
+      "rejected": [
+        {
+          "institution": "CLSA",
+          "error": "stale"
+        },
+        {
+          "institution": "Macquarie",
+          "error": "stale"
+        },
+        {
+          "institution": "Nomura/Instinet",
+          "error": "stale"
+        }
+      ],
+      "source_policy": "12M median; independent identifiable institutions; PIT max 90 days"
+    },
+    {
+      "ticker": "6223",
+      "as_of_date": "2026-10-15",
+      "institution_count": 0,
+      "consensus_target_price": null,
+      "consensus_upside": null,
+      "dispersion": null,
+      "status": "DATA_MISSING",
+      "scoreable": false,
+      "rejected": [],
+      "source_policy": "12M median; independent identifiable institutions; PIT max 90 days"
+    },
+    {
+      "ticker": "6187",
+      "as_of_date": "2026-10-15",
+      "institution_count": 0,
+      "consensus_target_price": null,
+      "consensus_upside": null,
+      "dispersion": null,
+      "status": "DATA_MISSING",
+      "scoreable": false,
+      "rejected": [
+        {
+          "institution": "JPMorgan",
+          "error": "stale"
+        },
+        {
+          "institution": "Goldman Sachs",
+          "error": "stale"
+        },
+        {
+          "institution": "JPMorgan",
+          "error": "stale"
+        },
+        {
+          "institution": "JPMorgan",
+          "error": "stale"
+        },
+        {
+          "institution": "JPMorgan",
+          "error": "stale"
+        }
+      ],
+      "source_policy": "12M median; independent identifiable institutions; PIT max 90 days"
+    },
+    {
+      "ticker": "3583",
+      "as_of_date": "2026-10-15",
+      "institution_count": 0,
+      "consensus_target_price": null,
+      "consensus_upside": null,
+      "dispersion": null,
+      "status": "DATA_MISSING",
+      "scoreable": false,
+      "rejected": [],
+      "source_policy": "12M median; independent identifiable institutions; PIT max 90 days"
+    },
+    {
+      "ticker": "2408",
+      "as_of_date": "2026-10-15",
+      "institution_count": 2,
+      "consensus_target_price": 765.7,
+      "consensus_upside": null,
+      "dispersion": null,
+      "status": "DATA_MISSING",
+      "scoreable": false,
+      "rejected": [],
+      "source_policy": "12M median; independent identifiable institutions; PIT max 90 days"
+    },
+    {
+      "ticker": "3081",
+      "as_of_date": "2026-10-15",
+      "institution_count": 1,
+      "consensus_target_price": 3345.0,
+      "consensus_upside": null,
+      "dispersion": null,
+      "status": "DATA_MISSING",
+      "scoreable": false,
+      "rejected": [
+        {
+          "institution": "Goldman Sachs",
+          "error": "stale"
+        },
+        {
+          "institution": "Goldman Sachs",
+          "error": "stale"
+        },
+        {
+          "institution": "Macquarie",
+          "error": "stale"
+        },
+        {
+          "institution": "Morgan Stanley",
+          "error": "stale"
+        }
+      ],
+      "source_policy": "12M median; independent identifiable institutions; PIT max 90 days"
+    },
+    {
+      "ticker": "2303",
+      "as_of_date": "2026-10-15",
+      "institution_count": 3,
+      "consensus_target_price": 140.0,
+      "consensus_upside": 0.04868913857677892,
+      "dispersion": 0.7785714285714286,
+      "status": "READY",
+      "scoreable": true,
+      "rejected": [],
+      "source_policy": "12M median; independent identifiable institutions; PIT max 90 days"
+    },
+    {
+      "ticker": "3008",
+      "as_of_date": "2026-10-15",
+      "institution_count": 6,
+      "consensus_target_price": 8400.0,
+      "consensus_upside": 0.2717638152914459,
+      "dispersion": 0.7438095238095238,
+      "status": "READY",
+      "scoreable": true,
+      "rejected": [
+        {
+          "institution": "CLSA",
+          "error": "stale"
+        },
+        {
+          "institution": "Macquarie",
+          "error": "stale"
+        }
+      ],
+      "source_policy": "12M median; independent identifiable institutions; PIT max 90 days"
+    },
+    {
+      "ticker": "3406",
+      "as_of_date": "2026-10-15",
+      "institution_count": 3,
+      "consensus_target_price": 1050.0,
+      "consensus_upside": -0.058295964125560484,
+      "dispersion": 0.48095238095238096,
+      "status": "READY",
+      "scoreable": true,
+      "rejected": [
+        {
+          "institution": "Citi",
+          "error": "stale"
+        },
+        {
+          "institution": "JPMorgan",
+          "error": "stale"
+        }
+      ],
+      "source_policy": "12M median; independent identifiable institutions; PIT max 90 days"
+    },
+    {
+      "ticker": "2337",
+      "as_of_date": "2026-10-15",
+      "institution_count": 0,
+      "consensus_target_price": null,
+      "consensus_upside": null,
+      "dispersion": null,
+      "status": "DATA_MISSING",
+      "scoreable": false,
+      "rejected": [],
+      "source_policy": "12M median; independent identifiable institutions; PIT max 90 days"
+    },
+    {
+      "ticker": "8299",
+      "as_of_date": "2026-10-15",
+      "institution_count": 0,
+      "consensus_target_price": null,
+      "consensus_upside": null,
+      "dispersion": null,
+      "status": "DATA_MISSING",
+      "scoreable": false,
+      "rejected": [],
+      "source_policy": "12M median; independent identifiable institutions; PIT max 90 days"
+    },
+    {
+      "ticker": "3260",
+      "as_of_date": "2026-10-15",
+      "institution_count": 0,
+      "consensus_target_price": null,
+      "consensus_upside": null,
+      "dispersion": null,
+      "status": "DATA_MISSING",
+      "scoreable": false,
+      "rejected": [],
+      "source_policy": "12M median; independent identifiable institutions; PIT max 90 days"
+    },
+    {
+      "ticker": "2383",
+      "as_of_date": "2026-10-15",
+      "institution_count": 0,
+      "consensus_target_price": null,
+      "consensus_upside": null,
+      "dispersion": null,
+      "status": "DATA_MISSING",
+      "scoreable": false,
+      "rejected": [],
+      "source_policy": "12M median; independent identifiable institutions; PIT max 90 days"
+    },
+    {
+      "ticker": "6274",
+      "as_of_date": "2026-10-15",
+      "institution_count": 1,
+      "consensus_target_price": 2250.0,
+      "consensus_upside": null,
+      "dispersion": null,
+      "status": "DATA_MISSING",
+      "scoreable": false,
+      "rejected": [
+        {
+          "institution": "Goldman Sachs",
+          "error": "stale"
+        },
+        {
+          "institution": "CLSA",
+          "error": "stale"
+        },
+        {
+          "institution": "Nomura/Instinet",
+          "error": "stale"
+        },
+        {
+          "institution": "Nomura/Instinet",
+          "error": "stale"
+        }
+      ],
+      "source_policy": "12M median; independent identifiable institutions; PIT max 90 days"
+    },
+    {
+      "ticker": "3189",
+      "as_of_date": "2026-10-15",
+      "institution_count": 0,
+      "consensus_target_price": null,
+      "consensus_upside": null,
+      "dispersion": null,
+      "status": "DATA_MISSING",
+      "scoreable": false,
+      "rejected": [
+        {
+          "institution": "Goldman Sachs",
+          "error": "stale"
+        },
+        {
+          "institution": "Citi",
+          "error": "stale"
+        },
+        {
+          "institution": "Macquarie",
+          "error": "stale"
+        },
+        {
+          "institution": "Goldman Sachs",
+          "error": "stale"
+        },
+        {
+          "institution": "Macquarie",
+          "error": "stale"
+        }
+      ],
+      "source_policy": "12M median; independent identifiable institutions; PIT max 90 days"
+    },
+    {
+      "ticker": "2368",
+      "as_of_date": "2026-10-15",
+      "institution_count": 0,
+      "consensus_target_price": null,
+      "consensus_upside": null,
+      "dispersion": null,
+      "status": "DATA_MISSING",
+      "scoreable": false,
+      "rejected": [],
+      "source_policy": "12M median; independent identifiable institutions; PIT max 90 days"
+    },
+    {
+      "ticker": "2345",
+      "as_of_date": "2026-10-15",
+      "institution_count": 2,
+      "consensus_target_price": 3700.0,
+      "consensus_upside": null,
+      "dispersion": null,
+      "status": "DATA_MISSING",
+      "scoreable": false,
+      "rejected": [
+        {
+          "institution": "Macquarie",
+          "error": "stale"
+        },
+        {
+          "institution": "CLSA",
+          "error": "stale"
+        },
+        {
+          "institution": "JPMorgan",
+          "error": "stale"
+        }
+      ],
+      "source_policy": "12M median; independent identifiable institutions; PIT max 90 days"
+    },
+    {
+      "ticker": "3363",
+      "as_of_date": "2026-10-15",
+      "institution_count": 0,
+      "consensus_target_price": null,
+      "consensus_upside": null,
+      "dispersion": null,
+      "status": "DATA_MISSING",
+      "scoreable": false,
+      "rejected": [],
+      "source_policy": "12M median; independent identifiable institutions; PIT max 90 days"
+    },
+    {
+      "ticker": "4979",
+      "as_of_date": "2026-10-15",
+      "institution_count": 0,
+      "consensus_target_price": null,
+      "consensus_upside": null,
+      "dispersion": null,
+      "status": "DATA_MISSING",
+      "scoreable": false,
+      "rejected": [],
+      "source_policy": "12M median; independent identifiable institutions; PIT max 90 days"
+    },
+    {
+      "ticker": "6442",
+      "as_of_date": "2026-10-15",
+      "institution_count": 0,
+      "consensus_target_price": null,
+      "consensus_upside": null,
+      "dispersion": null,
+      "status": "DATA_MISSING",
+      "scoreable": false,
+      "rejected": [],
+      "source_policy": "12M median; independent identifiable institutions; PIT max 90 days"
+    },
+    {
+      "ticker": "3163",
+      "as_of_date": "2026-10-15",
+      "institution_count": 0,
+      "consensus_target_price": null,
+      "consensus_upside": null,
+      "dispersion": null,
+      "status": "DATA_MISSING",
+      "scoreable": false,
+      "rejected": [],
+      "source_policy": "12M median; independent identifiable institutions; PIT max 90 days"
+    },
+    {
+      "ticker": "2301",
+      "as_of_date": "2026-10-15",
+      "institution_count": 1,
+      "consensus_target_price": 338.0,
+      "consensus_upside": null,
+      "dispersion": null,
+      "status": "DATA_MISSING",
+      "scoreable": false,
+      "rejected": [
+        {
+          "institution": "Nomura/Instinet",
+          "error": "stale"
+        },
+        {
+          "institution": "Nomura/Instinet",
+          "error": "stale"
+        },
+        {
+          "institution": "Morgan Stanley",
+          "error": "stale"
+        },
+        {
+          "institution": "Nomura/Instinet",
+          "error": "stale"
+        }
+      ],
+      "source_policy": "12M median; independent identifiable institutions; PIT max 90 days"
+    },
+    {
+      "ticker": "6282",
+      "as_of_date": "2026-10-15",
+      "institution_count": 0,
+      "consensus_target_price": null,
+      "consensus_upside": null,
+      "dispersion": null,
+      "status": "DATA_MISSING",
+      "scoreable": false,
+      "rejected": [],
+      "source_policy": "12M median; independent identifiable institutions; PIT max 90 days"
+    },
+    {
+      "ticker": "6412",
+      "as_of_date": "2026-10-15",
+      "institution_count": 0,
+      "consensus_target_price": null,
+      "consensus_upside": null,
+      "dispersion": null,
+      "status": "DATA_MISSING",
+      "scoreable": false,
+      "rejected": [],
+      "source_policy": "12M median; independent identifiable institutions; PIT max 90 days"
+    },
+    {
+      "ticker": "6781",
+      "as_of_date": "2026-10-15",
+      "institution_count": 1,
+      "consensus_target_price": 1285.0,
+      "consensus_upside": null,
+      "dispersion": null,
+      "status": "DATA_MISSING",
+      "scoreable": false,
+      "rejected": [
+        {
+          "institution": "JPMorgan",
+          "error": "stale"
+        },
+        {
+          "institution": "Citi",
+          "error": "stale"
+        }
+      ],
+      "source_policy": "12M median; independent identifiable institutions; PIT max 90 days"
+    },
+    {
+      "ticker": "2492",
+      "as_of_date": "2026-10-15",
+      "institution_count": 0,
+      "consensus_target_price": null,
+      "consensus_upside": null,
+      "dispersion": null,
+      "status": "DATA_MISSING",
+      "scoreable": false,
+      "rejected": [],
+      "source_policy": "12M median; independent identifiable institutions; PIT max 90 days"
+    },
+    {
+      "ticker": "3357",
+      "as_of_date": "2026-10-15",
+      "institution_count": 0,
+      "consensus_target_price": null,
+      "consensus_upside": null,
+      "dispersion": null,
+      "status": "DATA_MISSING",
+      "scoreable": false,
+      "rejected": [],
+      "source_policy": "12M median; independent identifiable institutions; PIT max 90 days"
+    },
+    {
+      "ticker": "3653",
+      "as_of_date": "2026-10-15",
+      "institution_count": 2,
+      "consensus_target_price": 8150.0,
+      "consensus_upside": null,
+      "dispersion": null,
+      "status": "DATA_MISSING",
+      "scoreable": false,
+      "rejected": [
+        {
+          "institution": "JPMorgan",
+          "error": "stale"
+        },
+        {
+          "institution": "JPMorgan",
+          "error": "stale"
+        }
+      ],
+      "source_policy": "12M median; independent identifiable institutions; PIT max 90 days"
+    },
+    {
+      "ticker": "3017",
+      "as_of_date": "2026-10-15",
+      "institution_count": 4,
+      "consensus_target_price": 4381.5,
+      "consensus_upside": 0.420259319286872,
+      "dispersion": 0.27387880862718245,
+      "status": "READY",
+      "scoreable": true,
+      "rejected": [],
+      "source_policy": "12M median; independent identifiable institutions; PIT max 90 days"
+    },
+    {
+      "ticker": "3324",
+      "as_of_date": "2026-10-15",
+      "institution_count": 4,
+      "consensus_target_price": 1451.5,
+      "consensus_upside": 0.029432624113475248,
+      "dispersion": 0.2755769893213917,
+      "status": "READY",
+      "scoreable": true,
+      "rejected": [
+        {
+          "institution": "Nomura/Instinet",
+          "error": "stale"
+        }
+      ],
+      "source_policy": "12M median; independent identifiable institutions; PIT max 90 days"
+    },
+    {
+      "ticker": "6230",
+      "as_of_date": "2026-10-15",
+      "institution_count": 0,
+      "consensus_target_price": null,
+      "consensus_upside": null,
+      "dispersion": null,
+      "status": "DATA_MISSING",
+      "scoreable": false,
+      "rejected": [],
+      "source_policy": "12M median; independent identifiable institutions; PIT max 90 days"
+    },
+    {
+      "ticker": "3338",
+      "as_of_date": "2026-10-15",
+      "institution_count": 0,
+      "consensus_target_price": null,
+      "consensus_upside": null,
+      "dispersion": null,
+      "status": "DATA_MISSING",
+      "scoreable": false,
+      "rejected": [],
+      "source_policy": "12M median; independent identifiable institutions; PIT max 90 days"
+    },
+    {
+      "ticker": "2382",
+      "as_of_date": "2026-10-15",
+      "institution_count": 3,
+      "consensus_target_price": 75.0,
+      "consensus_upside": -0.7630331753554502,
+      "dispersion": 0.12466666666666659,
+      "status": "READY",
+      "scoreable": true,
+      "rejected": [
+        {
+          "institution": "BofA Securities",
+          "error": "stale"
+        }
+      ],
+      "source_policy": "12M median; independent identifiable institutions; PIT max 90 days"
+    },
+    {
+      "ticker": "3231",
+      "as_of_date": "2026-10-15",
+      "institution_count": 0,
+      "consensus_target_price": null,
+      "consensus_upside": null,
+      "dispersion": null,
+      "status": "DATA_MISSING",
+      "scoreable": false,
+      "rejected": [],
+      "source_policy": "12M median; independent identifiable institutions; PIT max 90 days"
+    },
+    {
+      "ticker": "6669",
+      "as_of_date": "2026-10-15",
+      "institution_count": 0,
+      "consensus_target_price": null,
+      "consensus_upside": null,
+      "dispersion": null,
+      "status": "DATA_MISSING",
+      "scoreable": false,
+      "rejected": [],
+      "source_policy": "12M median; independent identifiable institutions; PIT max 90 days"
+    },
+    {
+      "ticker": "2317",
+      "as_of_date": "2026-10-15",
+      "institution_count": 0,
+      "consensus_target_price": null,
+      "consensus_upside": null,
+      "dispersion": null,
+      "status": "DATA_MISSING",
+      "scoreable": false,
+      "rejected": [],
+      "source_policy": "12M median; independent identifiable institutions; PIT max 90 days"
+    },
+    {
+      "ticker": "2356",
+      "as_of_date": "2026-10-15",
+      "institution_count": 1,
+      "consensus_target_price": 16.7,
+      "consensus_upside": null,
+      "dispersion": null,
+      "status": "DATA_MISSING",
+      "scoreable": false,
+      "rejected": [
+        {
+          "institution": "JPMorgan",
+          "error": "stale"
+        },
+        {
+          "institution": "JPMorgan",
+          "error": "stale"
+        }
+      ],
+      "source_policy": "12M median; independent identifiable institutions; PIT max 90 days"
+    },
+    {
+      "ticker": "3711",
+      "as_of_date": "2026-10-15",
+      "institution_count": 0,
+      "consensus_target_price": null,
+      "consensus_upside": null,
+      "dispersion": null,
+      "status": "DATA_MISSING",
+      "scoreable": false,
+      "rejected": [],
+      "source_policy": "12M median; independent identifiable institutions; PIT max 90 days"
+    },
+    {
+      "ticker": "2308",
+      "as_of_date": "2026-10-15",
+      "institution_count": 3,
+      "consensus_target_price": 2500.0,
+      "consensus_upside": 0.5337423312883436,
+      "dispersion": 0.18,
+      "status": "READY",
+      "scoreable": true,
+      "rejected": [
+        {
+          "institution": "Goldman Sachs",
+          "error": "stale"
+        }
+      ],
+      "source_policy": "12M median; independent identifiable institutions; PIT max 90 days"
+    },
+    {
+      "ticker": "2379",
+      "as_of_date": "2026-10-15",
+      "institution_count": 0,
+      "consensus_target_price": null,
+      "consensus_upside": null,
+      "dispersion": null,
+      "status": "DATA_MISSING",
+      "scoreable": false,
+      "rejected": [],
+      "source_policy": "12M median; independent identifiable institutions; PIT max 90 days"
+    },
+    {
+      "ticker": "3532",
+      "as_of_date": "2026-10-15",
+      "institution_count": 0,
+      "consensus_target_price": null,
+      "consensus_upside": null,
+      "dispersion": null,
+      "status": "DATA_MISSING",
+      "scoreable": false,
+      "rejected": [],
+      "source_policy": "12M median; independent identifiable institutions; PIT max 90 days"
+    },
+    {
+      "ticker": "6182",
+      "as_of_date": "2026-10-15",
+      "institution_count": 0,
+      "consensus_target_price": null,
+      "consensus_upside": null,
+      "dispersion": null,
+      "status": "DATA_MISSING",
+      "scoreable": false,
+      "rejected": [],
+      "source_policy": "12M median; independent identifiable institutions; PIT max 90 days"
+    },
+    {
+      "ticker": "1560",
+      "as_of_date": "2026-10-15",
+      "institution_count": 0,
+      "consensus_target_price": null,
+      "consensus_upside": null,
+      "dispersion": null,
+      "status": "DATA_MISSING",
+      "scoreable": false,
+      "rejected": [],
+      "source_policy": "12M median; independent identifiable institutions; PIT max 90 days"
+    },
+    {
+      "ticker": "3131",
+      "as_of_date": "2026-10-15",
+      "institution_count": 0,
+      "consensus_target_price": null,
+      "consensus_upside": null,
+      "dispersion": null,
+      "status": "DATA_MISSING",
+      "scoreable": false,
+      "rejected": [],
+      "source_policy": "12M median; independent identifiable institutions; PIT max 90 days"
+    }
+  ],
+  "requested_ticker_count": 54,
+  "ready_ticker_count": 9,
+  "source": "data/r1/target_prices/evidence.csv"
+}
