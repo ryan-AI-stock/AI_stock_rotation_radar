@@ -23,6 +23,8 @@ class R1V05RankTest(unittest.TestCase):
         self.assertIn("consensus_target_upside", row["v05_missing_components"])
         self.assertGreater(row["v05_observed_points"], 0)
         self.assertLess(row["v05_observed_max_points"], 100)
+        self.assertIsNotNone(row["v05_reference_score"])
+        self.assertAlmostEqual(row["v05_reference_coverage"], row["v05_observed_max_points"] / 100)
 
     def test_complete_components_produce_weighted_score(self) -> None:
         weekly = {"rows": [

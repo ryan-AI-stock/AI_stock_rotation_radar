@@ -58,6 +58,7 @@ def _build_v03_dashboard(*, config: R1Config, market: dict, theme_review: dict,
                          comparison: dict | None = None,
                          recommendations: list[dict] | None = None,
                          weekly_by_ticker: dict[str, dict] | None = None,
+                         v05_by_ticker: dict[str, dict] | None = None,
                          total_actual_equity: float | None = None,
                          actual_positions: list[dict] | None = None) -> list[list[object]]:
     themes = load_themes(theme_path)
@@ -87,6 +88,10 @@ def _build_v03_dashboard(*, config: R1Config, market: dict, theme_review: dict,
         for ticker, row in weekly_by_ticker.items()
         if row.get("current_reference_score") is not None
     }
+    v05_by_ticker = v05_by_ticker or {}
+    for ticker, row in v05_by_ticker.items():
+        if row.get("v05_reference_score") is not None:
+            reference_by_ticker[ticker] = row["v05_reference_score"]
     closes = {
         str(item.get("ticker", "")).zfill(4): item.get("raw_close")
         for item in market.get("rows", [])
@@ -358,6 +363,7 @@ def build_dashboard_payload(
         config=config, market=market, theme_review=theme_review, theme_path=theme_path,
         transition=transition, comparison=comparison, recommendations=recommendations,
         weekly_by_ticker=weekly_by_ticker,
+        v05_by_ticker=v05_by_ticker,
         total_actual_equity=actual_account.get("equity_market_value"),
         actual_positions=actual_account.get("positions", []),
     )
