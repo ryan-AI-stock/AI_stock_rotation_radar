@@ -1,7 +1,7 @@
 {
   "model": "R1",
   "version": "r1-evidence-gap-queue-v0.1",
-  "as_of_date": "2026-10-14",
+  "as_of_date": "2026-10-16",
   "requested_ticker_count": 52,
   "ready_ticker_count": 52,
   "pending_ticker_count": 0,
@@ -1674,7 +1674,7 @@
       "status": "READY"
     }
   ],
-  "resume_path": "data\\r1\\evidence_gap_queue.json",
+  "resume_path": "data/r1/evidence_gap_queue.json",
   "future_data_violation_count": 0,
   "formal_model_changed": false,
   "trade_decision_changed": false,

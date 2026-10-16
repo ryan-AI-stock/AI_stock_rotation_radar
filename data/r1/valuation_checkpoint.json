@@ -1,511 +1,222 @@
 {
-  "retrieved_at": "2026-10-15",
-  "completed": {
+  "retrieved_at": "2026-10-16",
+  "completed": {},
+  "failed": {
     "2330": {
-      "ticker": "2330",
-      "data_date": "2026-10-14",
-      "next_year_forward_pe": "17.5",
-      "five_year_percentile": "0.77",
-      "five_year_median_pe": "16.0",
-      "source_url": "https://toalpha.tw/stock/2330/valuation",
-      "retrieved_at": "2026-10-15",
-      "quality": "HIGH"
+      "url": "https://toalpha.tw/stock/2330/valuation",
+      "error": "HTTP Error 403: "
     },
     "2327": {
-      "ticker": "2327",
-      "data_date": "2026-10-14",
-      "next_year_forward_pe": "20.0",
-      "five_year_percentile": "1",
-      "five_year_median_pe": "11.8",
-      "source_url": "https://toalpha.tw/stock/2327/valuation",
-      "retrieved_at": "2026-10-15",
-      "quality": "HIGH"
+      "url": "https://toalpha.tw/stock/2327/valuation",
+      "error": "HTTP Error 403: "
     },
     "2344": {
-      "ticker": "2344",
-      "data_date": "2026-10-14",
-      "next_year_forward_pe": "3.2",
-      "five_year_percentile": "0.03",
-      "five_year_median_pe": "11.7",
-      "source_url": "https://toalpha.tw/stock/2344/valuation",
-      "retrieved_at": "2026-10-15",
-      "quality": "HIGH"
+      "url": "https://toalpha.tw/stock/2344/valuation",
+      "error": "HTTP Error 403: "
     },
     "2376": {
-      "ticker": "2376",
-      "data_date": "2026-10-14",
-      "next_year_forward_pe": "10.0",
-      "five_year_percentile": "0.13",
-      "five_year_median_pe": "14.5",
-      "source_url": "https://toalpha.tw/stock/2376/valuation",
-      "retrieved_at": "2026-10-15",
-      "quality": "HIGH"
+      "url": "https://toalpha.tw/stock/2376/valuation",
+      "error": "HTTP Error 403: "
     },
     "2454": {
-      "ticker": "2454",
-      "data_date": "2026-10-14",
-      "next_year_forward_pe": "31.7",
-      "five_year_percentile": "1",
-      "five_year_median_pe": "14.7",
-      "source_url": "https://toalpha.tw/stock/2454/valuation",
-      "retrieved_at": "2026-10-15",
-      "quality": "HIGH"
+      "url": "https://toalpha.tw/stock/2454/valuation",
+      "error": "HTTP Error 403: "
     },
     "3037": {
-      "ticker": "3037",
-      "data_date": "2026-10-14",
-      "next_year_forward_pe": "30.6",
-      "five_year_percentile": "0.69",
-      "five_year_median_pe": "18.6",
-      "source_url": "https://toalpha.tw/stock/3037/valuation",
-      "retrieved_at": "2026-10-15",
-      "quality": "HIGH"
+      "url": "https://toalpha.tw/stock/3037/valuation",
+      "error": "HTTP Error 403: "
     },
     "6488": {
-      "ticker": "6488",
-      "data_date": "2026-10-14",
-      "next_year_forward_pe": "31.2",
-      "five_year_percentile": "0.75",
-      "five_year_median_pe": "19.4",
-      "source_url": "https://toalpha.tw/stock/6488/valuation",
-      "retrieved_at": "2026-10-15",
-      "quality": "HIGH"
+      "url": "https://toalpha.tw/stock/6488/valuation",
+      "error": "HTTP Error 403: "
     },
     "3661": {
-      "ticker": "3661",
-      "data_date": "2026-10-14",
-      "next_year_forward_pe": "21.2",
-      "five_year_percentile": "0.04",
-      "five_year_median_pe": "37.9",
-      "source_url": "https://toalpha.tw/stock/3661/valuation",
-      "retrieved_at": "2026-10-15",
-      "quality": "HIGH"
+      "url": "https://toalpha.tw/stock/3661/valuation",
+      "error": "HTTP Error 403: "
     },
     "3443": {
-      "ticker": "3443",
-      "data_date": "2026-10-14",
-      "next_year_forward_pe": "74.1",
-      "five_year_percentile": "1",
-      "five_year_median_pe": "37.8",
-      "source_url": "https://toalpha.tw/stock/3443/valuation",
-      "retrieved_at": "2026-10-15",
-      "quality": "HIGH"
+      "url": "https://toalpha.tw/stock/3443/valuation",
+      "error": "HTTP Error 403: "
     },
     "3035": {
-      "ticker": "3035",
-      "data_date": "2026-10-14",
-      "next_year_forward_pe": "34.1",
-      "five_year_percentile": "0.44",
-      "five_year_median_pe": "62.0",
-      "source_url": "https://toalpha.tw/stock/3035/valuation",
-      "retrieved_at": "2026-10-15",
-      "quality": "HIGH"
+      "url": "https://toalpha.tw/stock/3035/valuation",
+      "error": "HTTP Error 403: "
     },
     "2449": {
-      "ticker": "2449",
-      "data_date": "2026-10-14",
-      "next_year_forward_pe": "20.6",
-      "five_year_percentile": "0.96",
-      "five_year_median_pe": "11.3",
-      "source_url": "https://toalpha.tw/stock/2449/valuation",
-      "retrieved_at": "2026-10-15",
-      "quality": "HIGH"
+      "url": "https://toalpha.tw/stock/2449/valuation",
+      "error": "HTTP Error 403: "
     },
     "6223": {
-      "ticker": "6223",
-      "data_date": "2026-10-14",
-      "next_year_forward_pe": "43.1",
-      "five_year_percentile": "0.98",
-      "five_year_median_pe": "11.9",
-      "source_url": "https://toalpha.tw/stock/6223/valuation",
-      "retrieved_at": "2026-10-15",
-      "quality": "HIGH"
+      "url": "https://toalpha.tw/stock/6223/valuation",
+      "error": "HTTP Error 403: "
     },
     "6187": {
-      "ticker": "6187",
-      "data_date": "2026-10-14",
-      "next_year_forward_pe": "35.1",
-      "five_year_percentile": "0.87",
-      "five_year_median_pe": "20.1",
-      "source_url": "https://toalpha.tw/stock/6187/valuation",
-      "retrieved_at": "2026-10-15",
-      "quality": "HIGH"
+      "url": "https://toalpha.tw/stock/6187/valuation",
+      "error": "HTTP Error 403: "
     },
     "3583": {
-      "ticker": "3583",
-      "data_date": "2026-10-14",
-      "next_year_forward_pe": "24.0",
-      "five_year_percentile": "0.73",
-      "five_year_median_pe": "19.4",
-      "source_url": "https://toalpha.tw/stock/3583/valuation",
-      "retrieved_at": "2026-10-15",
-      "quality": "HIGH"
+      "url": "https://toalpha.tw/stock/3583/valuation",
+      "error": "HTTP Error 403: "
     },
     "2408": {
-      "ticker": "2408",
-      "data_date": "2026-10-14",
-      "next_year_forward_pe": "5.2",
-      "five_year_percentile": "0.29",
-      "five_year_median_pe": "10.0",
-      "source_url": "https://toalpha.tw/stock/2408/valuation",
-      "retrieved_at": "2026-10-15",
-      "quality": "HIGH"
+      "url": "https://toalpha.tw/stock/2408/valuation",
+      "error": "HTTP Error 403: "
     },
     "3081": {
-      "ticker": "3081",
-      "data_date": "2026-10-14",
-      "next_year_forward_pe": "69.6",
-      "five_year_percentile": "0.44",
-      "five_year_median_pe": "81.8",
-      "source_url": "https://toalpha.tw/stock/3081/valuation",
-      "retrieved_at": "2026-10-15",
-      "quality": "HIGH"
+      "url": "https://toalpha.tw/stock/3081/valuation",
+      "error": "HTTP Error 403: "
     },
     "2303": {
-      "ticker": "2303",
-      "data_date": "2026-10-14",
-      "next_year_forward_pe": "20.8",
-      "five_year_percentile": "1",
-      "five_year_median_pe": "10.6",
-      "source_url": "https://toalpha.tw/stock/2303/valuation",
-      "retrieved_at": "2026-10-15",
-      "quality": "HIGH"
+      "url": "https://toalpha.tw/stock/2303/valuation",
+      "error": "HTTP Error 403: "
     },
     "3008": {
-      "ticker": "3008",
-      "data_date": "2026-10-14",
-      "next_year_forward_pe": "33.7",
-      "five_year_percentile": "1",
-      "five_year_median_pe": "14.0",
-      "source_url": "https://toalpha.tw/stock/3008/valuation",
-      "retrieved_at": "2026-10-15",
-      "quality": "HIGH"
+      "url": "https://toalpha.tw/stock/3008/valuation",
+      "error": "HTTP Error 403: "
     },
     "3406": {
-      "ticker": "3406",
-      "data_date": "2026-10-14",
-      "next_year_forward_pe": "26.5",
-      "five_year_percentile": "1",
-      "five_year_median_pe": "13.8",
-      "source_url": "https://toalpha.tw/stock/3406/valuation",
-      "retrieved_at": "2026-10-15",
-      "quality": "HIGH"
+      "url": "https://toalpha.tw/stock/3406/valuation",
+      "error": "HTTP Error 403: "
     },
     "2337": {
-      "ticker": "2337",
-      "data_date": "2026-10-14",
-      "next_year_forward_pe": "2.6",
-      "five_year_percentile": "0",
-      "five_year_median_pe": "6.7",
-      "source_url": "https://toalpha.tw/stock/2337/valuation",
-      "retrieved_at": "2026-10-15",
-      "quality": "HIGH"
+      "url": "https://toalpha.tw/stock/2337/valuation",
+      "error": "HTTP Error 403: "
     },
     "8299": {
-      "ticker": "8299",
-      "data_date": "2026-10-14",
-      "next_year_forward_pe": "6.9",
-      "five_year_percentile": "0.12",
-      "five_year_median_pe": "14.6",
-      "source_url": "https://toalpha.tw/stock/8299/valuation",
-      "retrieved_at": "2026-10-15",
-      "quality": "HIGH"
+      "url": "https://toalpha.tw/stock/8299/valuation",
+      "error": "HTTP Error 403: "
     },
     "3260": {
-      "ticker": "3260",
-      "data_date": "2026-10-14",
-      "next_year_forward_pe": "5.7",
-      "five_year_percentile": "0.15",
-      "five_year_median_pe": "11.7",
-      "source_url": "https://toalpha.tw/stock/3260/valuation",
-      "retrieved_at": "2026-10-15",
-      "quality": "HIGH"
+      "url": "https://toalpha.tw/stock/3260/valuation",
+      "error": "HTTP Error 403: "
     },
     "2383": {
-      "ticker": "2383",
-      "data_date": "2026-10-14",
-      "next_year_forward_pe": "24.4",
-      "five_year_percentile": "1",
-      "five_year_median_pe": "14.5",
-      "source_url": "https://toalpha.tw/stock/2383/valuation",
-      "retrieved_at": "2026-10-15",
-      "quality": "HIGH"
+      "url": "https://toalpha.tw/stock/2383/valuation",
+      "error": "HTTP Error 403: "
     },
     "6274": {
-      "ticker": "6274",
-      "data_date": "2026-10-14",
-      "next_year_forward_pe": "22.3",
-      "five_year_percentile": "0.88",
-      "five_year_median_pe": "17.7",
-      "source_url": "https://toalpha.tw/stock/6274/valuation",
-      "retrieved_at": "2026-10-15",
-      "quality": "HIGH"
+      "url": "https://toalpha.tw/stock/6274/valuation",
+      "error": "HTTP Error 403: "
     },
     "3189": {
-      "ticker": "3189",
-      "data_date": "2026-10-14",
-      "next_year_forward_pe": "38.6",
-      "five_year_percentile": "0.53",
-      "five_year_median_pe": "22.1",
-      "source_url": "https://toalpha.tw/stock/3189/valuation",
-      "retrieved_at": "2026-10-15",
-      "quality": "HIGH"
+      "url": "https://toalpha.tw/stock/3189/valuation",
+      "error": "HTTP Error 403: "
     },
     "2368": {
-      "ticker": "2368",
-      "data_date": "2026-10-14",
-      "next_year_forward_pe": "18.3",
-      "five_year_percentile": "0.85",
-      "five_year_median_pe": "13.7",
-      "source_url": "https://toalpha.tw/stock/2368/valuation",
-      "retrieved_at": "2026-10-15",
-      "quality": "HIGH"
+      "url": "https://toalpha.tw/stock/2368/valuation",
+      "error": "HTTP Error 403: "
     },
     "2345": {
-      "ticker": "2345",
-      "data_date": "2026-10-14",
-      "next_year_forward_pe": "17.5",
-      "five_year_percentile": "0.44",
-      "five_year_median_pe": "18.8",
-      "source_url": "https://toalpha.tw/stock/2345/valuation",
-      "retrieved_at": "2026-10-15",
-      "quality": "HIGH"
+      "url": "https://toalpha.tw/stock/2345/valuation",
+      "error": "HTTP Error 403: "
     },
     "3363": {
-      "ticker": "3363",
-      "data_date": "2026-10-14",
-      "next_year_forward_pe": "33.0",
-      "five_year_percentile": "0.36",
-      "five_year_median_pe": "37.8",
-      "source_url": "https://toalpha.tw/stock/3363/valuation",
-      "retrieved_at": "2026-10-15",
-      "quality": "HIGH"
+      "url": "https://toalpha.tw/stock/3363/valuation",
+      "error": "HTTP Error 403: "
     },
     "4979": {
-      "ticker": "4979",
-      "data_date": "2026-10-14",
-      "next_year_forward_pe": "40.9",
-      "five_year_percentile": "0.94",
-      "five_year_median_pe": "30.1",
-      "source_url": "https://toalpha.tw/stock/4979/valuation",
-      "retrieved_at": "2026-10-15",
-      "quality": "HIGH"
+      "url": "https://toalpha.tw/stock/4979/valuation",
+      "error": "HTTP Error 403: "
     },
     "6442": {
-      "ticker": "6442",
-      "data_date": "2026-10-14",
-      "next_year_forward_pe": "12.6",
-      "five_year_percentile": "0.44",
-      "five_year_median_pe": "14.8",
-      "source_url": "https://toalpha.tw/stock/6442/valuation",
-      "retrieved_at": "2026-10-15",
-      "quality": "HIGH"
+      "url": "https://toalpha.tw/stock/6442/valuation",
+      "error": "HTTP Error 403: "
     },
     "3163": {
-      "ticker": "3163",
-      "data_date": "2026-10-14",
-      "next_year_forward_pe": "30.8",
-      "five_year_percentile": "0.88",
-      "five_year_median_pe": "15.0",
-      "source_url": "https://toalpha.tw/stock/3163/valuation",
-      "retrieved_at": "2026-10-15",
-      "quality": "HIGH"
+      "url": "https://toalpha.tw/stock/3163/valuation",
+      "error": "HTTP Error 403: "
     },
     "2301": {
-      "ticker": "2301",
-      "data_date": "2026-10-14",
-      "next_year_forward_pe": "20.5",
-      "five_year_percentile": "0.9",
-      "five_year_median_pe": "15.1",
-      "source_url": "https://toalpha.tw/stock/2301/valuation",
-      "retrieved_at": "2026-10-15",
-      "quality": "HIGH"
+      "url": "https://toalpha.tw/stock/2301/valuation",
+      "error": "HTTP Error 403: "
     },
-    "6412": {
-      "ticker": "6412",
-      "data_date": "2026-10-14",
-      "next_year_forward_pe": "11.0",
-      "five_year_percentile": "0.46",
-      "five_year_median_pe": "12.9",
-      "source_url": "https://toalpha.tw/stock/6412/valuation",
-      "retrieved_at": "2026-10-15",
-      "quality": "HIGH"
-    },
-    "6781": {
-      "ticker": "6781",
-      "data_date": "2026-10-14",
-      "next_year_forward_pe": "16.0",
-      "five_year_percentile": "0.07",
-      "five_year_median_pe": "28.5",
-      "source_url": "https://toalpha.tw/stock/6781/valuation",
-      "retrieved_at": "2026-10-15",
-      "quality": "HIGH"
-    },
-    "3357": {
-      "ticker": "3357",
-      "data_date": "2026-10-14",
-      "next_year_forward_pe": "15.6",
-      "five_year_percentile": "0.57",
-      "five_year_median_pe": "13.9",
-      "source_url": "https://toalpha.tw/stock/3357/valuation",
-      "retrieved_at": "2026-10-15",
-      "quality": "HIGH"
-    },
-    "3653": {
-      "ticker": "3653",
-      "data_date": "2026-10-14",
-      "next_year_forward_pe": "52.2",
-      "five_year_percentile": "0.98",
-      "five_year_median_pe": "30.4",
-      "source_url": "https://toalpha.tw/stock/3653/valuation",
-      "retrieved_at": "2026-10-15",
-      "quality": "HIGH"
-    },
-    "3017": {
-      "ticker": "3017",
-      "data_date": "2026-10-14",
-      "next_year_forward_pe": "21.8",
-      "five_year_percentile": "0.87",
-      "five_year_median_pe": "12.5",
-      "source_url": "https://toalpha.tw/stock/3017/valuation",
-      "retrieved_at": "2026-10-15",
-      "quality": "HIGH"
-    },
-    "3324": {
-      "ticker": "3324",
-      "data_date": "2026-10-14",
-      "next_year_forward_pe": "19.7",
-      "five_year_percentile": "0.71",
-      "five_year_median_pe": "16.7",
-      "source_url": "https://toalpha.tw/stock/3324/valuation",
-      "retrieved_at": "2026-10-15",
-      "quality": "HIGH"
-    },
-    "2382": {
-      "ticker": "2382",
-      "data_date": "2026-10-14",
-      "next_year_forward_pe": "10.3",
-      "five_year_percentile": "0.25",
-      "five_year_median_pe": "12.6",
-      "source_url": "https://toalpha.tw/stock/2382/valuation",
-      "retrieved_at": "2026-10-15",
-      "quality": "HIGH"
-    },
-    "3231": {
-      "ticker": "3231",
-      "data_date": "2026-10-14",
-      "next_year_forward_pe": "8.1",
-      "five_year_percentile": "0.35",
-      "five_year_median_pe": "11.4",
-      "source_url": "https://toalpha.tw/stock/3231/valuation",
-      "retrieved_at": "2026-10-15",
-      "quality": "HIGH"
-    },
-    "6669": {
-      "ticker": "6669",
-      "data_date": "2026-10-14",
-      "next_year_forward_pe": "11.8",
-      "five_year_percentile": "0.42",
-      "five_year_median_pe": "13.4",
-      "source_url": "https://toalpha.tw/stock/6669/valuation",
-      "retrieved_at": "2026-10-15",
-      "quality": "HIGH"
-    },
-    "2317": {
-      "ticker": "2317",
-      "data_date": "2026-10-14",
-      "next_year_forward_pe": "10.5",
-      "five_year_percentile": "0.4",
-      "five_year_median_pe": "10.8",
-      "source_url": "https://toalpha.tw/stock/2317/valuation",
-      "retrieved_at": "2026-10-15",
-      "quality": "HIGH"
-    },
-    "2356": {
-      "ticker": "2356",
-      "data_date": "2026-10-14",
-      "next_year_forward_pe": "13.5",
-      "five_year_percentile": "0.1",
-      "five_year_median_pe": "17.0",
-      "source_url": "https://toalpha.tw/stock/2356/valuation",
-      "retrieved_at": "2026-10-15",
-      "quality": "HIGH"
-    },
-    "3711": {
-      "ticker": "3711",
-      "data_date": "2026-10-14",
-      "next_year_forward_pe": "26.9",
-      "five_year_percentile": "1",
-      "five_year_median_pe": "14.3",
-      "source_url": "https://toalpha.tw/stock/3711/valuation",
-      "retrieved_at": "2026-10-15",
-      "quality": "HIGH"
-    },
-    "2308": {
-      "ticker": "2308",
-      "data_date": "2026-10-14",
-      "next_year_forward_pe": "27.9",
-      "five_year_percentile": "0.94",
-      "five_year_median_pe": "22.6",
-      "source_url": "https://toalpha.tw/stock/2308/valuation",
-      "retrieved_at": "2026-10-15",
-      "quality": "HIGH"
-    },
-    "2379": {
-      "ticker": "2379",
-      "data_date": "2026-10-14",
-      "next_year_forward_pe": "20.7",
-      "five_year_percentile": "0.92",
-      "five_year_median_pe": "16.9",
-      "source_url": "https://toalpha.tw/stock/2379/valuation",
-      "retrieved_at": "2026-10-15",
-      "quality": "HIGH"
-    },
-    "1560": {
-      "ticker": "1560",
-      "data_date": "2026-10-14",
-      "next_year_forward_pe": "46.0",
-      "five_year_percentile": "1",
-      "five_year_median_pe": "23.2",
-      "source_url": "https://toalpha.tw/stock/1560/valuation",
-      "retrieved_at": "2026-10-15",
-      "quality": "HIGH"
-    },
-    "3131": {
-      "ticker": "3131",
-      "data_date": "2026-10-14",
-      "next_year_forward_pe": "22.2",
-      "five_year_percentile": "0.58",
-      "five_year_median_pe": "20.4",
-      "source_url": "https://toalpha.tw/stock/3131/valuation",
-      "retrieved_at": "2026-10-15",
-      "quality": "HIGH"
-    }
-  },
-  "failed": {
     "6282": {
       "url": "https://toalpha.tw/stock/6282/valuation",
-      "error": "next_year_forward_pe_values_missing"
+      "error": "HTTP Error 403: "
+    },
+    "6412": {
+      "url": "https://toalpha.tw/stock/6412/valuation",
+      "error": "HTTP Error 403: "
+    },
+    "6781": {
+      "url": "https://toalpha.tw/stock/6781/valuation",
+      "error": "HTTP Error 403: "
     },
     "2492": {
       "url": "https://toalpha.tw/stock/2492/valuation",
-      "error": "next_year_forward_pe_values_missing"
+      "error": "HTTP Error 403: "
+    },
+    "3357": {
+      "url": "https://toalpha.tw/stock/3357/valuation",
+      "error": "HTTP Error 403: "
+    },
+    "3653": {
+      "url": "https://toalpha.tw/stock/3653/valuation",
+      "error": "HTTP Error 403: "
+    },
+    "3017": {
+      "url": "https://toalpha.tw/stock/3017/valuation",
+      "error": "HTTP Error 403: "
+    },
+    "3324": {
+      "url": "https://toalpha.tw/stock/3324/valuation",
+      "error": "HTTP Error 403: "
     },
     "6230": {
       "url": "https://toalpha.tw/stock/6230/valuation",
-      "error": "next_year_forward_pe_values_missing"
+      "error": "HTTP Error 403: "
     },
     "3338": {
       "url": "https://toalpha.tw/stock/3338/valuation",
-      "error": "next_year_forward_pe_values_missing"
+      "error": "HTTP Error 403: "
+    },
+    "2382": {
+      "url": "https://toalpha.tw/stock/2382/valuation",
+      "error": "HTTP Error 403: "
+    },
+    "3231": {
+      "url": "https://toalpha.tw/stock/3231/valuation",
+      "error": "HTTP Error 403: "
+    },
+    "6669": {
+      "url": "https://toalpha.tw/stock/6669/valuation",
+      "error": "HTTP Error 403: "
+    },
+    "2317": {
+      "url": "https://toalpha.tw/stock/2317/valuation",
+      "error": "HTTP Error 403: "
+    },
+    "2356": {
+      "url": "https://toalpha.tw/stock/2356/valuation",
+      "error": "HTTP Error 403: "
+    },
+    "3711": {
+      "url": "https://toalpha.tw/stock/3711/valuation",
+      "error": "HTTP Error 403: "
+    },
+    "2308": {
+      "url": "https://toalpha.tw/stock/2308/valuation",
+      "error": "HTTP Error 403: "
+    },
+    "2379": {
+      "url": "https://toalpha.tw/stock/2379/valuation",
+      "error": "HTTP Error 403: "
     },
     "3532": {
       "url": "https://toalpha.tw/stock/3532/valuation",
-      "error": "next_year_forward_pe_values_missing"
+      "error": "HTTP Error 403: "
     },
     "6182": {
       "url": "https://toalpha.tw/stock/6182/valuation",
-      "error": "next_year_forward_pe_values_missing"
+      "error": "HTTP Error 403: "
+    },
+    "1560": {
+      "url": "https://toalpha.tw/stock/1560/valuation",
+      "error": "HTTP Error 403: "
+    },
+    "3131": {
+      "url": "https://toalpha.tw/stock/3131/valuation",
+      "error": "HTTP Error 403: "
     }
   }
 }
