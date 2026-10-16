@@ -57,6 +57,7 @@ def _build_v03_dashboard(*, config: R1Config, market: dict, theme_review: dict,
                          theme_path: str | Path, transition: dict | None = None,
                          comparison: dict | None = None,
                          recommendations: list[dict] | None = None,
+                         weekly_by_ticker: dict[str, dict] | None = None,
                          total_actual_equity: float | None = None,
                          actual_positions: list[dict] | None = None) -> list[list[object]]:
     themes = load_themes(theme_path)
@@ -80,6 +81,12 @@ def _build_v03_dashboard(*, config: R1Config, market: dict, theme_review: dict,
         for item in review.get("top3", []):
             ticker = str(item.get("ticker", "")).zfill(4)
             priority_by_ticker[ticker] = item.get("priority_score")
+    weekly_by_ticker = weekly_by_ticker or {}
+    reference_by_ticker = {
+        ticker: row.get("current_reference_score")
+        for ticker, row in weekly_by_ticker.items()
+        if row.get("current_reference_score") is not None
+    }
     closes = {
         str(item.get("ticker", "")).zfill(4): item.get("raw_close")
         for item in market.get("rows", [])
@@ -116,7 +123,9 @@ def _build_v03_dashboard(*, config: R1Config, market: dict, theme_review: dict,
         rows.append([
             "；".join(membership.get(ticker, ["尚未納入11題材池"])),
             f"{ticker} {company}",
-            priority_by_ticker.get(ticker) if priority_by_ticker.get(ticker) is not None else "評分資料未齊",
+            (priority_by_ticker.get(ticker) if priority_by_ticker.get(ticker) is not None
+             else reference_by_ticker.get(ticker) if reference_by_ticker.get(ticker) is not None
+             else "評分資料未齊"),
             f"實際持有｜{shares:,}股" if ticker in held else "",
             _money(close) if ticker in held and close is not None else "",
             _money(market_value) if market_value is not None else "",
@@ -174,6 +183,8 @@ def _build_v03_dashboard(*, config: R1Config, market: dict, theme_review: dict,
          "25%／25%／20%／20%／10%", "每季", "決定每個題材Top1～Top3"],
         ["每日換倉優先序", "結構瓶頸／營收獲利兌現／12個月目標價上行／目標價修正與機構廣度／題材動能與催化／相對估值／價格籌碼風險",
          "20%／20%／20%／10%／10%／10%／10%", "每日排名＋每週目標價與事件", "從實際持股角度提供換出／換入優先序"],
+        ["即時參考分數", "已取得的估值／瓶頸／催化／市場風險，依既定權重重新正規化；EPS另列信心",
+         "report-only", "每日市場＋每週證據", "不因4W／12W未滿而整份空白，不產生交易指令"],
         ["06｜更新排程"],
         ["頻率", "工作", "產出", "失敗處理", "交易影響"],
         ["每日收盤後", f"累積{universe_count}檔官方價格與市場資料", "每日資料庫", "缺資料重抓並列明缺口", "無"],
@@ -346,6 +357,7 @@ def build_dashboard_payload(
     tabs["R1 Dashboard"] = _build_v03_dashboard(
         config=config, market=market, theme_review=theme_review, theme_path=theme_path,
         transition=transition, comparison=comparison, recommendations=recommendations,
+        weekly_by_ticker=weekly_by_ticker,
         total_actual_equity=actual_account.get("equity_market_value"),
         actual_positions=actual_account.get("positions", []),
     )

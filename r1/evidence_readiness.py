@@ -208,6 +208,9 @@ def materialize(*, config_path: str | Path, consensus_path: str | Path,
             and valuation_ready and price_chip_ready
         )
         trade_ready = component_score_ready and config.action_policy_approved
+        reference_score_ready = score_required and (
+            catalyst_score_ready and bottleneck_ready and price_chip_ready
+        )
         blocked_reasons = []
         if not consensus_ready:
             blocked_reasons.append("CONSENSUS_NOT_READY")
@@ -236,6 +239,7 @@ def materialize(*, config_path: str | Path, consensus_path: str | Path,
             "current_chip_ready": current_chip_ready,
             "price_chip_coverage": price_chip_state,
             "component_score_ready": component_score_ready,
+            "reference_score_ready": reference_score_ready,
             "trade_ready": trade_ready,
             "blocked_reasons": blocked_reasons if score_required else ["DISCOVERY_ONLY_NOT_SCORE_REQUIRED"],
         })
@@ -254,6 +258,7 @@ def materialize(*, config_path: str | Path, consensus_path: str | Path,
         "price_chip_ready_count": sum(row["price_chip_ready"] for row in required_rows),
         "current_chip_ready_count": sum(row["current_chip_ready"] for row in required_rows),
         "component_score_ready_count": sum(row["component_score_ready"] for row in required_rows),
+        "reference_score_ready_count": sum(row["reference_score_ready"] for row in required_rows),
         "trade_ready_count": sum(row["trade_ready"] for row in required_rows),
         "action_policy_approved": config.action_policy_approved,
         "consensus_rejected": list(consensus.rejected) if consensus else [{"error": "file_missing"}],

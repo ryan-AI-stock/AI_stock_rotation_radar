@@ -30,6 +30,7 @@ class R1EvidenceReadinessTest(unittest.TestCase):
         self.assertEqual(result["discovery_ticker_count"], 2)
         self.assertEqual(result["trade_ready_count"], 0)
         self.assertEqual(result["component_score_ready_count"], 0)
+        self.assertIn("reference_score_ready_count", result)
         self.assertFalse(result["action_policy_approved"])
         self.assertFalse(result["active_in_trade_decision"])
         discovery = next(item for item in result["rows"] if item["ticker"] == "3008")

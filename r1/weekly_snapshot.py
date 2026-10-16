@@ -22,7 +22,7 @@ from r1.evidence import CatalystEvent
 from r1.industry_state import STAGE_ORDER, bottleneck_state, catalyst_state
 from r1.shadow_rotation import evaluate_shadow_rotation
 from r1.valuation import load_valuation_reference, valuation_position, valuation_scenarios
-from r1.scoring import score as total_model_score
+from r1.scoring import available_component_score, score as total_model_score
 from r1.toalpha_revision_history import latest_rows as latest_supplemental_revision_rows
 
 
@@ -311,6 +311,11 @@ def build_weekly_snapshot(
             "bottleneck_score": None,
             "catalyst_score": None,
             "price_chip_score": None,
+            "market_risk_score": None,
+            "current_reference_score": None,
+            "current_reference_coverage": 0.0,
+            "current_reference_missing_components": [],
+            "eps_confidence_status": "WAITING_4W_12W_HISTORY",
             "bottleneck_tightness_score": None,
             "bottleneck_financial_proof_score": None,
             "catalyst_positive_decayed": None,
@@ -418,6 +423,14 @@ def build_weekly_snapshot(
         )
         margin_rank = percentile_score(margin_change_values, row.get("margin_balance_change_20d"))
         row["leverage_structure_score"] = None if margin_rank is None else round(100.0 - margin_rank, 6)
+        market_inputs = {
+            "overheat_safety": row["overheat_safety_score"],
+            "institutional": row["institutional_score"],
+            "leverage_structure": row["leverage_structure_score"],
+        }
+        row["market_risk_score"], _, _ = available_component_score(
+            components=market_inputs, weights=config.score_policy["price_chip"]["weights"],
+        )
         row["price_chip_score"] = price_chip_score(
             earnings_vs_price_score=row["earnings_vs_price_score"],
             overheat_safety_score=row["overheat_safety_score"],
@@ -436,6 +449,21 @@ def build_weekly_snapshot(
         row["total_score"] = total.total_score
         row["score_status"] = total.reason
         row["score_missing_components"] = list(total.missing_components)
+        reference_components = {
+            "forward_valuation": row["valuation_score"],
+            "bottleneck": row["bottleneck_score"],
+            "catalyst": row["catalyst_score"],
+            "price_chip": row["market_risk_score"],
+        }
+        reference_score, reference_coverage, reference_missing = available_component_score(
+            components=reference_components, weights=config.weights,
+        )
+        row["current_reference_score"] = reference_score
+        row["current_reference_coverage"] = reference_coverage
+        row["current_reference_missing_components"] = list(reference_missing)
+        row["eps_confidence_status"] = (
+            "READY" if row["eps_score"] is not None else "WAITING_4W_12W_HISTORY"
+        )
     decision_required_fields = (
         "eps_revision_1w", "eps_revision_4w", "eps_revision_12w",
         "forward_pe", "forward_pe_percentile_5y", "base_fair_value", "base_upside",

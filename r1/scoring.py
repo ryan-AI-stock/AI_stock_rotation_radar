@@ -14,6 +14,18 @@ class ScoreResult:
     reason: str
 
 
+def available_component_score(*, components: dict[str, float | None],
+                              weights: dict[str, float]) -> tuple[float | None, float, tuple[str, ...]]:
+    """Report-only score from observed components using renormalized frozen weights."""
+    available = {name: float(value) for name, value in components.items() if value is not None}
+    missing = tuple(name for name in components if components[name] is None)
+    denominator = sum(float(weights[name]) for name in available)
+    if not available or denominator <= 0:
+        return None, 0.0, missing
+    value = sum(available[name] * float(weights[name]) for name in available) / denominator
+    return round(value, 6), round(denominator, 6), missing
+
+
 def score(*, components: dict[str, float | None], weights: dict[str, float], consensus_allowed: bool) -> ScoreResult:
     missing = tuple(name for name in COMPONENTS if components.get(name) is None)
     if missing:

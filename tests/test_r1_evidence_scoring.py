@@ -4,13 +4,22 @@ from tempfile import TemporaryDirectory
 
 from r1.consensus import ConsensusEvidence, consensus_actionable, load_consensus_csv
 from r1.evidence import CatalystEvent, discovery_eligible, load_catalyst_csv
-from r1.scoring import action, score
+from r1.scoring import action, available_component_score, score
 
 
 WEIGHTS = {"eps_revision": .30, "forward_valuation": .25, "bottleneck": .20, "catalyst": .15, "price_chip": .10}
 
 
 class R1EvidenceScoringTest(unittest.TestCase):
+    def test_available_component_score_renormalizes_observed_inputs(self):
+        value, coverage, missing = available_component_score(
+            components={"a": 80, "b": None, "c": 40},
+            weights={"a": .5, "b": .3, "c": .2},
+        )
+        self.assertAlmostEqual(value, (80 * .5 + 40 * .2) / .7, places=6)
+        self.assertEqual(coverage, .7)
+        self.assertEqual(missing, ("b",))
+
     def test_tier4_event_never_adds_score(self):
         event = CatalystEvent("2026-09-01", "2408", "SUPPLY_SHORTAGE", 100, 1, 12, 4, "forum")
         self.assertEqual(event.score_at("2026-10-01"), 0)
