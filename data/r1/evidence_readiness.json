@@ -28,6 +28,7 @@
   "price_chip_ready_count": 52,
   "current_chip_ready_count": 52,
   "component_score_ready_count": 0,
+  "reference_score_ready_count": 52,
   "trade_ready_count": 0,
   "action_policy_approved": false,
   "consensus_rejected": [],
@@ -58,6 +59,7 @@
         "ready": true
       },
       "component_score_ready": false,
+      "reference_score_ready": true,
       "trade_ready": false,
       "blocked_reasons": [
         "EPS_REVISION_HISTORY_NOT_READY",
@@ -82,6 +84,7 @@
         "ready": true
       },
       "component_score_ready": false,
+      "reference_score_ready": true,
       "trade_ready": false,
       "blocked_reasons": [
         "EPS_REVISION_HISTORY_NOT_READY",
@@ -106,6 +109,7 @@
         "ready": true
       },
       "component_score_ready": false,
+      "reference_score_ready": true,
       "trade_ready": false,
       "blocked_reasons": [
         "EPS_REVISION_HISTORY_NOT_READY",
@@ -130,6 +134,7 @@
         "ready": true
       },
       "component_score_ready": false,
+      "reference_score_ready": true,
       "trade_ready": false,
       "blocked_reasons": [
         "EPS_REVISION_HISTORY_NOT_READY",
@@ -154,6 +159,7 @@
         "ready": true
       },
       "component_score_ready": false,
+      "reference_score_ready": true,
       "trade_ready": false,
       "blocked_reasons": [
         "EPS_REVISION_HISTORY_NOT_READY",
@@ -178,6 +184,7 @@
         "ready": true
       },
       "component_score_ready": false,
+      "reference_score_ready": true,
       "trade_ready": false,
       "blocked_reasons": [
         "EPS_REVISION_HISTORY_NOT_READY",
@@ -202,6 +209,7 @@
         "ready": true
       },
       "component_score_ready": false,
+      "reference_score_ready": true,
       "trade_ready": false,
       "blocked_reasons": [
         "EPS_REVISION_HISTORY_NOT_READY",
@@ -226,6 +234,7 @@
         "ready": true
       },
       "component_score_ready": false,
+      "reference_score_ready": true,
       "trade_ready": false,
       "blocked_reasons": [
         "EPS_REVISION_HISTORY_NOT_READY",
@@ -250,6 +259,7 @@
         "ready": true
       },
       "component_score_ready": false,
+      "reference_score_ready": true,
       "trade_ready": false,
       "blocked_reasons": [
         "EPS_REVISION_HISTORY_NOT_READY",
@@ -274,6 +284,7 @@
         "ready": true
       },
       "component_score_ready": false,
+      "reference_score_ready": true,
       "trade_ready": false,
       "blocked_reasons": [
         "EPS_REVISION_HISTORY_NOT_READY",
@@ -298,6 +309,7 @@
         "ready": true
       },
       "component_score_ready": false,
+      "reference_score_ready": true,
       "trade_ready": false,
       "blocked_reasons": [
         "EPS_REVISION_HISTORY_NOT_READY",
@@ -322,6 +334,7 @@
         "ready": true
       },
       "component_score_ready": false,
+      "reference_score_ready": true,
       "trade_ready": false,
       "blocked_reasons": [
         "EPS_REVISION_HISTORY_NOT_READY",
@@ -346,6 +359,7 @@
         "ready": true
       },
       "component_score_ready": false,
+      "reference_score_ready": true,
       "trade_ready": false,
       "blocked_reasons": [
         "EPS_REVISION_HISTORY_NOT_READY",
@@ -370,6 +384,7 @@
         "ready": true
       },
       "component_score_ready": false,
+      "reference_score_ready": true,
       "trade_ready": false,
       "blocked_reasons": [
         "EPS_REVISION_HISTORY_NOT_READY",
@@ -394,6 +409,7 @@
         "ready": true
       },
       "component_score_ready": false,
+      "reference_score_ready": true,
       "trade_ready": false,
       "blocked_reasons": [
         "EPS_REVISION_HISTORY_NOT_READY",
@@ -418,6 +434,7 @@
         "ready": true
       },
       "component_score_ready": false,
+      "reference_score_ready": true,
       "trade_ready": false,
       "blocked_reasons": [
         "EPS_REVISION_HISTORY_NOT_READY",
@@ -442,6 +459,7 @@
         "ready": true
       },
       "component_score_ready": false,
+      "reference_score_ready": true,
       "trade_ready": false,
       "blocked_reasons": [
         "EPS_REVISION_HISTORY_NOT_READY",
@@ -466,6 +484,7 @@
         "ready": true
       },
       "component_score_ready": false,
+      "reference_score_ready": false,
       "trade_ready": false,
       "blocked_reasons": [
         "DISCOVERY_ONLY_NOT_SCORE_REQUIRED"
@@ -489,6 +508,7 @@
         "ready": true
       },
       "component_score_ready": false,
+      "reference_score_ready": false,
       "trade_ready": false,
       "blocked_reasons": [
         "DISCOVERY_ONLY_NOT_SCORE_REQUIRED"
@@ -512,6 +532,7 @@
         "ready": true
       },
       "component_score_ready": false,
+      "reference_score_ready": true,
       "trade_ready": false,
       "blocked_reasons": [
         "EPS_REVISION_HISTORY_NOT_READY",
@@ -536,6 +557,7 @@
         "ready": true
       },
       "component_score_ready": false,
+      "reference_score_ready": true,
       "trade_ready": false,
       "blocked_reasons": [
         "EPS_REVISION_HISTORY_NOT_READY",
@@ -560,6 +582,7 @@
         "ready": true
       },
       "component_score_ready": false,
+      "reference_score_ready": true,
       "trade_ready": false,
       "blocked_reasons": [
         "EPS_REVISION_HISTORY_NOT_READY",
@@ -584,6 +607,7 @@
         "ready": true
       },
       "component_score_ready": false,
+      "reference_score_ready": true,
       "trade_ready": false,
       "blocked_reasons": [
         "EPS_REVISION_HISTORY_NOT_READY",
@@ -608,6 +632,7 @@
         "ready": true
       },
       "component_score_ready": false,
+      "reference_score_ready": true,
       "trade_ready": false,
       "blocked_reasons": [
         "EPS_REVISION_HISTORY_NOT_READY",
@@ -632,6 +657,7 @@
         "ready": true
       },
       "component_score_ready": false,
+      "reference_score_ready": true,
       "trade_ready": false,
       "blocked_reasons": [
         "EPS_REVISION_HISTORY_NOT_READY",
@@ -656,6 +682,7 @@
         "ready": true
       },
       "component_score_ready": false,
+      "reference_score_ready": true,
       "trade_ready": false,
       "blocked_reasons": [
         "EPS_REVISION_HISTORY_NOT_READY",
@@ -680,6 +707,7 @@
         "ready": true
       },
       "component_score_ready": false,
+      "reference_score_ready": true,
       "trade_ready": false,
       "blocked_reasons": [
         "EPS_REVISION_HISTORY_NOT_READY",
@@ -704,6 +732,7 @@
         "ready": true
       },
       "component_score_ready": false,
+      "reference_score_ready": true,
       "trade_ready": false,
       "blocked_reasons": [
         "EPS_REVISION_HISTORY_NOT_READY",
@@ -728,6 +757,7 @@
         "ready": true
       },
       "component_score_ready": false,
+      "reference_score_ready": true,
       "trade_ready": false,
       "blocked_reasons": [
         "CONSENSUS_NOT_READY",
@@ -753,6 +783,7 @@
         "ready": true
       },
       "component_score_ready": false,
+      "reference_score_ready": true,
       "trade_ready": false,
       "blocked_reasons": [
         "EPS_REVISION_HISTORY_NOT_READY",
@@ -777,6 +808,7 @@
         "ready": true
       },
       "component_score_ready": false,
+      "reference_score_ready": true,
       "trade_ready": false,
       "blocked_reasons": [
         "EPS_REVISION_HISTORY_NOT_READY",
@@ -801,6 +833,7 @@
         "ready": true
       },
       "component_score_ready": false,
+      "reference_score_ready": true,
       "trade_ready": false,
       "blocked_reasons": [
         "EPS_REVISION_HISTORY_NOT_READY",
@@ -825,6 +858,7 @@
         "ready": true
       },
       "component_score_ready": false,
+      "reference_score_ready": true,
       "trade_ready": false,
       "blocked_reasons": [
         "CONSENSUS_NOT_READY",
@@ -851,6 +885,7 @@
         "ready": true
       },
       "component_score_ready": false,
+      "reference_score_ready": true,
       "trade_ready": false,
       "blocked_reasons": [
         "EPS_REVISION_HISTORY_NOT_READY",
@@ -875,6 +910,7 @@
         "ready": true
       },
       "component_score_ready": false,
+      "reference_score_ready": true,
       "trade_ready": false,
       "blocked_reasons": [
         "EPS_REVISION_HISTORY_NOT_READY",
@@ -899,6 +935,7 @@
         "ready": true
       },
       "component_score_ready": false,
+      "reference_score_ready": true,
       "trade_ready": false,
       "blocked_reasons": [
         "CONSENSUS_NOT_READY",
@@ -925,6 +962,7 @@
         "ready": true
       },
       "component_score_ready": false,
+      "reference_score_ready": true,
       "trade_ready": false,
       "blocked_reasons": [
         "CONSENSUS_NOT_READY",
@@ -950,6 +988,7 @@
         "ready": true
       },
       "component_score_ready": false,
+      "reference_score_ready": true,
       "trade_ready": false,
       "blocked_reasons": [
         "EPS_REVISION_HISTORY_NOT_READY",
@@ -974,6 +1013,7 @@
         "ready": true
       },
       "component_score_ready": false,
+      "reference_score_ready": true,
       "trade_ready": false,
       "blocked_reasons": [
         "EPS_REVISION_HISTORY_NOT_READY",
@@ -998,6 +1038,7 @@
         "ready": true
       },
       "component_score_ready": false,
+      "reference_score_ready": true,
       "trade_ready": false,
       "blocked_reasons": [
         "EPS_REVISION_HISTORY_NOT_READY",
@@ -1022,6 +1063,7 @@
         "ready": true
       },
       "component_score_ready": false,
+      "reference_score_ready": true,
       "trade_ready": false,
       "blocked_reasons": [
         "CONSENSUS_NOT_READY",
@@ -1048,6 +1090,7 @@
         "ready": true
       },
       "component_score_ready": false,
+      "reference_score_ready": true,
       "trade_ready": false,
       "blocked_reasons": [
         "CONSENSUS_NOT_READY",
@@ -1074,6 +1117,7 @@
         "ready": true
       },
       "component_score_ready": false,
+      "reference_score_ready": true,
       "trade_ready": false,
       "blocked_reasons": [
         "EPS_REVISION_HISTORY_NOT_READY",
@@ -1098,6 +1142,7 @@
         "ready": true
       },
       "component_score_ready": false,
+      "reference_score_ready": true,
       "trade_ready": false,
       "blocked_reasons": [
         "EPS_REVISION_HISTORY_NOT_READY",
@@ -1122,6 +1167,7 @@
         "ready": true
       },
       "component_score_ready": false,
+      "reference_score_ready": true,
       "trade_ready": false,
       "blocked_reasons": [
         "EPS_REVISION_HISTORY_NOT_READY",
@@ -1146,6 +1192,7 @@
         "ready": true
       },
       "component_score_ready": false,
+      "reference_score_ready": true,
       "trade_ready": false,
       "blocked_reasons": [
         "EPS_REVISION_HISTORY_NOT_READY",
@@ -1170,6 +1217,7 @@
         "ready": true
       },
       "component_score_ready": false,
+      "reference_score_ready": true,
       "trade_ready": false,
       "blocked_reasons": [
         "EPS_REVISION_HISTORY_NOT_READY",
@@ -1194,6 +1242,7 @@
         "ready": true
       },
       "component_score_ready": false,
+      "reference_score_ready": true,
       "trade_ready": false,
       "blocked_reasons": [
         "EPS_REVISION_HISTORY_NOT_READY",
@@ -1218,6 +1267,7 @@
         "ready": true
       },
       "component_score_ready": false,
+      "reference_score_ready": true,
       "trade_ready": false,
       "blocked_reasons": [
         "EPS_REVISION_HISTORY_NOT_READY",
@@ -1242,6 +1292,7 @@
         "ready": true
       },
       "component_score_ready": false,
+      "reference_score_ready": true,
       "trade_ready": false,
       "blocked_reasons": [
         "EPS_REVISION_HISTORY_NOT_READY",
@@ -1266,6 +1317,7 @@
         "ready": true
       },
       "component_score_ready": false,
+      "reference_score_ready": true,
       "trade_ready": false,
       "blocked_reasons": [
         "CONSENSUS_NOT_READY",
@@ -1292,6 +1344,7 @@
         "ready": true
       },
       "component_score_ready": false,
+      "reference_score_ready": true,
       "trade_ready": false,
       "blocked_reasons": [
         "CONSENSUS_NOT_READY",
@@ -1318,6 +1371,7 @@
         "ready": true
       },
       "component_score_ready": false,
+      "reference_score_ready": true,
       "trade_ready": false,
       "blocked_reasons": [
         "EPS_REVISION_HISTORY_NOT_READY",
@@ -1342,6 +1396,7 @@
         "ready": true
       },
       "component_score_ready": false,
+      "reference_score_ready": true,
       "trade_ready": false,
       "blocked_reasons": [
         "EPS_REVISION_HISTORY_NOT_READY",
