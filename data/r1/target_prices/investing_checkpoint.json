@@ -1,336 +1,336 @@
 {
   "completed": {
     "2330": {
-      "retrieved_at": "2026-10-16",
+      "retrieved_at": "2026-10-17",
       "row_count": 0,
       "status": "SOURCE_GAP",
       "error": "HTTPError:HTTP Error 403: "
     },
     "2327": {
-      "retrieved_at": "2026-10-16",
+      "retrieved_at": "2026-10-17",
       "row_count": 0,
       "status": "SOURCE_GAP",
       "error": "HTTPError:HTTP Error 403: "
     },
     "2344": {
-      "retrieved_at": "2026-10-16",
+      "retrieved_at": "2026-10-17",
       "row_count": 0,
       "status": "SOURCE_GAP",
       "error": "HTTPError:HTTP Error 403: "
     },
     "2376": {
-      "retrieved_at": "2026-10-16",
+      "retrieved_at": "2026-10-17",
       "row_count": 0,
       "status": "SOURCE_GAP",
       "error": "HTTPError:HTTP Error 403: "
     },
     "2454": {
-      "retrieved_at": "2026-10-16",
+      "retrieved_at": "2026-10-17",
       "row_count": 0,
       "status": "SOURCE_GAP",
       "error": "HTTPError:HTTP Error 403: "
     },
     "3037": {
-      "retrieved_at": "2026-10-16",
-      "row_count": 0,
-      "status": "SOURCE_GAP",
-      "error": "HTTPError:HTTP Error 403: "
+      "retrieved_at": "2026-10-17",
+      "source_url": "https://hk.investing.com/equities/unimicron-tech-consensus-estimates",
+      "row_count": 5,
+      "status": "READY"
     },
     "6488": {
-      "retrieved_at": "2026-10-16",
+      "retrieved_at": "2026-10-17",
       "row_count": 0,
       "status": "SOURCE_GAP",
       "error": "HTTPError:HTTP Error 403: "
     },
     "3661": {
-      "retrieved_at": "2026-10-16",
+      "retrieved_at": "2026-10-17",
       "row_count": 0,
       "status": "SOURCE_GAP",
       "error": "HTTPError:HTTP Error 403: "
     },
     "3443": {
-      "retrieved_at": "2026-10-16",
-      "row_count": 0,
-      "status": "SOURCE_GAP",
-      "error": "HTTPError:HTTP Error 403: "
+      "retrieved_at": "2026-10-17",
+      "source_url": "https://hk.investing.com/equities/global-unichip-consensus-estimates",
+      "row_count": 5,
+      "status": "READY"
     },
     "3035": {
-      "retrieved_at": "2026-10-16",
-      "row_count": 0,
-      "status": "SOURCE_GAP",
-      "error": "HTTPError:HTTP Error 403: "
+      "retrieved_at": "2026-10-17",
+      "source_url": "https://hk.investing.com/equities/faraday-tech-consensus-estimates",
+      "row_count": 1,
+      "status": "READY"
     },
     "2449": {
-      "retrieved_at": "2026-10-16",
+      "retrieved_at": "2026-10-17",
       "row_count": 0,
       "status": "SOURCE_GAP",
       "error": "HTTPError:HTTP Error 403: "
     },
     "6223": {
-      "retrieved_at": "2026-10-16",
+      "retrieved_at": "2026-10-17",
       "row_count": 0,
       "status": "SOURCE_GAP",
       "error": "HTTPError:HTTP Error 403: "
     },
     "6187": {
-      "retrieved_at": "2026-10-16",
+      "retrieved_at": "2026-10-17",
       "row_count": 0,
       "status": "SOURCE_GAP",
       "error": "HTTPError:HTTP Error 403: "
     },
     "3583": {
-      "retrieved_at": "2026-10-16",
+      "retrieved_at": "2026-10-17",
       "row_count": 0,
       "status": "SOURCE_GAP",
       "error": "HTTPError:HTTP Error 403: "
     },
     "2408": {
-      "retrieved_at": "2026-10-16",
+      "retrieved_at": "2026-10-17",
       "row_count": 0,
       "status": "SOURCE_GAP",
       "error": "HTTPError:HTTP Error 403: "
     },
     "3081": {
-      "retrieved_at": "2026-10-16",
+      "retrieved_at": "2026-10-17",
       "row_count": 0,
       "status": "SOURCE_GAP",
       "error": "HTTPError:HTTP Error 403: "
     },
     "2303": {
-      "retrieved_at": "2026-10-16",
+      "retrieved_at": "2026-10-17",
       "row_count": 0,
       "status": "SOURCE_GAP",
       "error": "HTTPError:HTTP Error 403: "
     },
     "3008": {
-      "retrieved_at": "2026-10-16",
+      "retrieved_at": "2026-10-17",
       "row_count": 0,
       "status": "SOURCE_GAP",
       "error": "HTTPError:HTTP Error 403: "
     },
     "3406": {
-      "retrieved_at": "2026-10-16",
-      "row_count": 0,
-      "status": "SOURCE_GAP",
-      "error": "HTTPError:HTTP Error 403: "
+      "retrieved_at": "2026-10-17",
+      "source_url": "https://hk.investing.com/equities/genius-consensus-estimates",
+      "row_count": 5,
+      "status": "READY"
     },
     "2337": {
-      "retrieved_at": "2026-10-16",
+      "retrieved_at": "2026-10-17",
       "row_count": 0,
       "status": "SOURCE_GAP",
       "error": "HTTPError:HTTP Error 403: "
     },
     "8299": {
-      "retrieved_at": "2026-10-16",
+      "retrieved_at": "2026-10-17",
       "row_count": 0,
       "status": "SOURCE_GAP",
       "error": "HTTPError:HTTP Error 403: "
     },
     "3260": {
-      "retrieved_at": "2026-10-16",
+      "retrieved_at": "2026-10-17",
       "row_count": 0,
       "status": "SOURCE_GAP",
       "error": "HTTPError:HTTP Error 403: "
     },
     "2383": {
-      "retrieved_at": "2026-10-16",
+      "retrieved_at": "2026-10-17",
       "row_count": 0,
       "status": "SOURCE_GAP",
       "error": "HTTPError:HTTP Error 403: "
     },
     "6274": {
-      "retrieved_at": "2026-10-16",
+      "retrieved_at": "2026-10-17",
       "row_count": 0,
       "status": "SOURCE_GAP",
       "error": "HTTPError:HTTP Error 403: "
     },
     "3189": {
-      "retrieved_at": "2026-10-16",
-      "row_count": 0,
-      "status": "SOURCE_GAP",
-      "error": "HTTPError:HTTP Error 403: "
+      "retrieved_at": "2026-10-17",
+      "source_url": "https://hk.investing.com/equities/kinsus-consensus-estimates",
+      "row_count": 5,
+      "status": "READY"
     },
     "2368": {
-      "retrieved_at": "2026-10-16",
+      "retrieved_at": "2026-10-17",
       "row_count": 0,
       "status": "SOURCE_GAP",
       "error": "HTTPError:HTTP Error 403: "
     },
     "2345": {
-      "retrieved_at": "2026-10-16",
+      "retrieved_at": "2026-10-17",
       "row_count": 0,
       "status": "SOURCE_GAP",
       "error": "HTTPError:HTTP Error 403: "
     },
     "3363": {
-      "retrieved_at": "2026-10-16",
+      "retrieved_at": "2026-10-17",
       "row_count": 0,
       "status": "SOURCE_GAP",
       "error": "HTTPError:HTTP Error 403: "
     },
     "4979": {
-      "retrieved_at": "2026-10-16",
+      "retrieved_at": "2026-10-17",
       "row_count": 0,
       "status": "SOURCE_GAP",
-      "error": "HTTPError:HTTP Error 403: "
+      "error": "ValueError:identifiable_analyst_target_rows_missing"
     },
     "6442": {
-      "retrieved_at": "2026-10-16",
+      "retrieved_at": "2026-10-17",
       "row_count": 0,
       "status": "SOURCE_GAP",
       "error": "HTTPError:HTTP Error 403: "
     },
     "3163": {
-      "retrieved_at": "2026-10-16",
+      "retrieved_at": "2026-10-17",
       "row_count": 0,
       "status": "SOURCE_GAP",
       "error": "HTTPError:HTTP Error 403: "
     },
     "2301": {
-      "retrieved_at": "2026-10-16",
-      "row_count": 0,
-      "status": "SOURCE_GAP",
-      "error": "HTTPError:HTTP Error 403: "
+      "retrieved_at": "2026-10-17",
+      "source_url": "https://hk.investing.com/equities/lite-on-tech-consensus-estimates",
+      "row_count": 5,
+      "status": "READY"
     },
     "6282": {
-      "retrieved_at": "2026-10-16",
+      "retrieved_at": "2026-10-17",
       "row_count": 0,
       "status": "SOURCE_GAP",
       "error": "HTTPError:HTTP Error 403: "
     },
     "6412": {
-      "retrieved_at": "2026-10-16",
+      "retrieved_at": "2026-10-17",
       "row_count": 0,
       "status": "SOURCE_GAP",
       "error": "HTTPError:HTTP Error 403: "
     },
     "6781": {
-      "retrieved_at": "2026-10-16",
+      "retrieved_at": "2026-10-17",
       "row_count": 0,
       "status": "SOURCE_GAP",
       "error": "HTTPError:HTTP Error 403: "
     },
     "2492": {
-      "retrieved_at": "2026-10-16",
+      "retrieved_at": "2026-10-17",
       "row_count": 0,
       "status": "SOURCE_GAP",
       "error": "HTTPError:HTTP Error 403: "
     },
     "3357": {
-      "retrieved_at": "2026-10-16",
+      "retrieved_at": "2026-10-17",
       "row_count": 0,
       "status": "SOURCE_GAP",
       "error": "HTTPError:HTTP Error 403: "
     },
     "3653": {
-      "retrieved_at": "2026-10-16",
+      "retrieved_at": "2026-10-17",
       "row_count": 0,
       "status": "SOURCE_GAP",
       "error": "HTTPError:HTTP Error 403: "
     },
     "3017": {
-      "retrieved_at": "2026-10-16",
-      "row_count": 0,
-      "status": "SOURCE_GAP",
-      "error": "HTTPError:HTTP Error 403: "
+      "retrieved_at": "2026-10-17",
+      "source_url": "https://hk.investing.com/equities/avc-consensus-estimates",
+      "row_count": 5,
+      "status": "READY"
     },
     "3324": {
-      "retrieved_at": "2026-10-16",
+      "retrieved_at": "2026-10-17",
       "row_count": 0,
       "status": "SOURCE_GAP",
       "error": "HTTPError:HTTP Error 403: "
     },
     "6230": {
-      "retrieved_at": "2026-10-16",
+      "retrieved_at": "2026-10-17",
       "row_count": 0,
       "status": "SOURCE_GAP",
       "error": "HTTPError:HTTP Error 403: "
     },
     "3338": {
-      "retrieved_at": "2026-10-16",
+      "retrieved_at": "2026-10-17",
       "row_count": 0,
       "status": "SOURCE_GAP",
       "error": "HTTPError:HTTP Error 403: "
     },
     "2382": {
-      "retrieved_at": "2026-10-16",
+      "retrieved_at": "2026-10-17",
       "row_count": 0,
       "status": "SOURCE_GAP",
       "error": "HTTPError:HTTP Error 403: "
     },
     "3231": {
-      "retrieved_at": "2026-10-16",
+      "retrieved_at": "2026-10-17",
       "row_count": 0,
       "status": "SOURCE_GAP",
       "error": "HTTPError:HTTP Error 403: "
     },
     "6669": {
-      "retrieved_at": "2026-10-16",
+      "retrieved_at": "2026-10-17",
       "row_count": 0,
       "status": "SOURCE_GAP",
       "error": "HTTPError:HTTP Error 403: "
     },
     "2317": {
-      "retrieved_at": "2026-10-16",
+      "retrieved_at": "2026-10-17",
       "row_count": 0,
       "status": "SOURCE_GAP",
       "error": "HTTPError:HTTP Error 403: "
     },
     "2356": {
-      "retrieved_at": "2026-10-16",
+      "retrieved_at": "2026-10-17",
       "row_count": 0,
       "status": "SOURCE_GAP",
       "error": "HTTPError:HTTP Error 403: "
     },
     "3711": {
-      "retrieved_at": "2026-10-16",
+      "retrieved_at": "2026-10-17",
       "row_count": 0,
       "status": "SOURCE_GAP",
       "error": "HTTPError:HTTP Error 403: "
     },
     "2308": {
-      "retrieved_at": "2026-10-16",
-      "source_url": "https://hk.investing.com/equities/delta-electron-consensus-estimates",
-      "row_count": 5,
-      "status": "READY"
+      "retrieved_at": "2026-10-17",
+      "row_count": 0,
+      "status": "SOURCE_GAP",
+      "error": "HTTPError:HTTP Error 403: "
     },
     "2379": {
-      "retrieved_at": "2026-10-16",
+      "retrieved_at": "2026-10-17",
       "row_count": 0,
       "status": "SOURCE_GAP",
       "error": "HTTPError:HTTP Error 403: "
     },
     "3532": {
-      "retrieved_at": "2026-10-16",
+      "retrieved_at": "2026-10-17",
       "row_count": 0,
       "status": "SOURCE_GAP",
       "error": "HTTPError:HTTP Error 403: "
     },
     "6182": {
-      "retrieved_at": "2026-10-16",
+      "retrieved_at": "2026-10-17",
       "row_count": 0,
       "status": "SOURCE_GAP",
       "error": "HTTPError:HTTP Error 403: "
     },
     "1560": {
-      "retrieved_at": "2026-10-16",
+      "retrieved_at": "2026-10-17",
       "row_count": 0,
       "status": "SOURCE_GAP",
       "error": "HTTPError:HTTP Error 403: "
     },
     "3131": {
-      "retrieved_at": "2026-10-16",
+      "retrieved_at": "2026-10-17",
       "row_count": 0,
       "status": "SOURCE_GAP",
       "error": "HTTPError:HTTP Error 403: "
     }
   },
   "last_summary": {
-    "retrieved_at": "2026-10-16",
+    "retrieved_at": "2026-10-17",
     "requested_ticker_count": 54,
-    "ready_ticker_count": 1,
-    "source_gap_ticker_count": 53,
-    "new_evidence_row_count": 5,
+    "ready_ticker_count": 7,
+    "source_gap_ticker_count": 47,
+    "new_evidence_row_count": 31,
     "total_evidence_row_count": 114,
     "failures": {
       "2330": "HTTPError:HTTP Error 403: ",
@@ -338,11 +338,8 @@
       "2344": "HTTPError:HTTP Error 403: ",
       "2376": "HTTPError:HTTP Error 403: ",
       "2454": "HTTPError:HTTP Error 403: ",
-      "3037": "HTTPError:HTTP Error 403: ",
       "6488": "HTTPError:HTTP Error 403: ",
       "3661": "HTTPError:HTTP Error 403: ",
-      "3443": "HTTPError:HTTP Error 403: ",
-      "3035": "HTTPError:HTTP Error 403: ",
       "2449": "HTTPError:HTTP Error 403: ",
       "6223": "HTTPError:HTTP Error 403: ",
       "6187": "HTTPError:HTTP Error 403: ",
@@ -351,27 +348,23 @@
       "3081": "HTTPError:HTTP Error 403: ",
       "2303": "HTTPError:HTTP Error 403: ",
       "3008": "HTTPError:HTTP Error 403: ",
-      "3406": "HTTPError:HTTP Error 403: ",
       "2337": "HTTPError:HTTP Error 403: ",
       "8299": "HTTPError:HTTP Error 403: ",
       "3260": "HTTPError:HTTP Error 403: ",
       "2383": "HTTPError:HTTP Error 403: ",
       "6274": "HTTPError:HTTP Error 403: ",
-      "3189": "HTTPError:HTTP Error 403: ",
       "2368": "HTTPError:HTTP Error 403: ",
       "2345": "HTTPError:HTTP Error 403: ",
       "3363": "HTTPError:HTTP Error 403: ",
-      "4979": "HTTPError:HTTP Error 403: ",
+      "4979": "ValueError:identifiable_analyst_target_rows_missing",
       "6442": "HTTPError:HTTP Error 403: ",
       "3163": "HTTPError:HTTP Error 403: ",
-      "2301": "HTTPError:HTTP Error 403: ",
       "6282": "HTTPError:HTTP Error 403: ",
       "6412": "HTTPError:HTTP Error 403: ",
       "6781": "HTTPError:HTTP Error 403: ",
       "2492": "HTTPError:HTTP Error 403: ",
       "3357": "HTTPError:HTTP Error 403: ",
       "3653": "HTTPError:HTTP Error 403: ",
-      "3017": "HTTPError:HTTP Error 403: ",
       "3324": "HTTPError:HTTP Error 403: ",
       "6230": "HTTPError:HTTP Error 403: ",
       "3338": "HTTPError:HTTP Error 403: ",
@@ -381,6 +374,7 @@
       "2317": "HTTPError:HTTP Error 403: ",
       "2356": "HTTPError:HTTP Error 403: ",
       "3711": "HTTPError:HTTP Error 403: ",
+      "2308": "HTTPError:HTTP Error 403: ",
       "2379": "HTTPError:HTTP Error 403: ",
       "3532": "HTTPError:HTTP Error 403: ",
       "6182": "HTTPError:HTTP Error 403: ",

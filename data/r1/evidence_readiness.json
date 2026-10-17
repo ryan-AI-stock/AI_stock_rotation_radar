@@ -31,7 +31,428 @@
   "reference_score_ready_count": 52,
   "trade_ready_count": 0,
   "action_policy_approved": false,
-  "consensus_rejected": [],
+  "consensus_rejected": [
+    {
+      "line": "9",
+      "ticker": "1560",
+      "error": "future_data"
+    },
+    {
+      "line": "17",
+      "ticker": "1560",
+      "error": "future_data"
+    },
+    {
+      "line": "29",
+      "ticker": "2301",
+      "error": "future_data"
+    },
+    {
+      "line": "37",
+      "ticker": "2301",
+      "error": "future_data"
+    },
+    {
+      "line": "49",
+      "ticker": "2303",
+      "error": "future_data"
+    },
+    {
+      "line": "58",
+      "ticker": "2303",
+      "error": "future_data"
+    },
+    {
+      "line": "71",
+      "ticker": "2308",
+      "error": "future_data"
+    },
+    {
+      "line": "81",
+      "ticker": "2308",
+      "error": "future_data"
+    },
+    {
+      "line": "94",
+      "ticker": "2317",
+      "error": "future_data"
+    },
+    {
+      "line": "102",
+      "ticker": "2317",
+      "error": "future_data"
+    },
+    {
+      "line": "115",
+      "ticker": "2327",
+      "error": "future_data"
+    },
+    {
+      "line": "125",
+      "ticker": "2327",
+      "error": "future_data"
+    },
+    {
+      "line": "139",
+      "ticker": "2330",
+      "error": "future_data"
+    },
+    {
+      "line": "149",
+      "ticker": "2330",
+      "error": "future_data"
+    },
+    {
+      "line": "162",
+      "ticker": "2337",
+      "error": "future_data"
+    },
+    {
+      "line": "170",
+      "ticker": "2337",
+      "error": "future_data"
+    },
+    {
+      "line": "183",
+      "ticker": "2344",
+      "error": "future_data"
+    },
+    {
+      "line": "193",
+      "ticker": "2344",
+      "error": "future_data"
+    },
+    {
+      "line": "206",
+      "ticker": "2345",
+      "error": "future_data"
+    },
+    {
+      "line": "214",
+      "ticker": "2345",
+      "error": "future_data"
+    },
+    {
+      "line": "226",
+      "ticker": "2356",
+      "error": "future_data"
+    },
+    {
+      "line": "234",
+      "ticker": "2356",
+      "error": "future_data"
+    },
+    {
+      "line": "246",
+      "ticker": "2368",
+      "error": "future_data"
+    },
+    {
+      "line": "254",
+      "ticker": "2368",
+      "error": "future_data"
+    },
+    {
+      "line": "267",
+      "ticker": "2376",
+      "error": "future_data"
+    },
+    {
+      "line": "277",
+      "ticker": "2376",
+      "error": "future_data"
+    },
+    {
+      "line": "291",
+      "ticker": "2379",
+      "error": "future_data"
+    },
+    {
+      "line": "301",
+      "ticker": "2379",
+      "error": "future_data"
+    },
+    {
+      "line": "314",
+      "ticker": "2382",
+      "error": "future_data"
+    },
+    {
+      "line": "322",
+      "ticker": "2382",
+      "error": "future_data"
+    },
+    {
+      "line": "334",
+      "ticker": "2383",
+      "error": "future_data"
+    },
+    {
+      "line": "342",
+      "ticker": "2383",
+      "error": "future_data"
+    },
+    {
+      "line": "355",
+      "ticker": "2408",
+      "error": "future_data"
+    },
+    {
+      "line": "365",
+      "ticker": "2408",
+      "error": "future_data"
+    },
+    {
+      "line": "378",
+      "ticker": "2449",
+      "error": "future_data"
+    },
+    {
+      "line": "386",
+      "ticker": "2449",
+      "error": "future_data"
+    },
+    {
+      "line": "399",
+      "ticker": "2454",
+      "error": "future_data"
+    },
+    {
+      "line": "409",
+      "ticker": "2454",
+      "error": "future_data"
+    },
+    {
+      "line": "421",
+      "ticker": "3008",
+      "error": "future_data"
+    },
+    {
+      "line": "428",
+      "ticker": "3008",
+      "error": "future_data"
+    },
+    {
+      "line": "439",
+      "ticker": "3017",
+      "error": "future_data"
+    },
+    {
+      "line": "447",
+      "ticker": "3017",
+      "error": "future_data"
+    },
+    {
+      "line": "459",
+      "ticker": "3035",
+      "error": "future_data"
+    },
+    {
+      "line": "467",
+      "ticker": "3035",
+      "error": "future_data"
+    },
+    {
+      "line": "480",
+      "ticker": "3037",
+      "error": "future_data"
+    },
+    {
+      "line": "490",
+      "ticker": "3037",
+      "error": "future_data"
+    },
+    {
+      "line": "503",
+      "ticker": "3081",
+      "error": "future_data"
+    },
+    {
+      "line": "512",
+      "ticker": "3081",
+      "error": "future_data"
+    },
+    {
+      "line": "524",
+      "ticker": "3131",
+      "error": "future_data"
+    },
+    {
+      "line": "532",
+      "ticker": "3131",
+      "error": "future_data"
+    },
+    {
+      "line": "554",
+      "ticker": "3189",
+      "error": "future_data"
+    },
+    {
+      "line": "562",
+      "ticker": "3189",
+      "error": "future_data"
+    },
+    {
+      "line": "574",
+      "ticker": "3231",
+      "error": "future_data"
+    },
+    {
+      "line": "582",
+      "ticker": "3231",
+      "error": "future_data"
+    },
+    {
+      "line": "604",
+      "ticker": "3324",
+      "error": "future_data"
+    },
+    {
+      "line": "612",
+      "ticker": "3324",
+      "error": "future_data"
+    },
+    {
+      "line": "633",
+      "ticker": "3363",
+      "error": "future_data"
+    },
+    {
+      "line": "643",
+      "ticker": "3363",
+      "error": "future_data"
+    },
+    {
+      "line": "655",
+      "ticker": "3406",
+      "error": "future_data"
+    },
+    {
+      "line": "662",
+      "ticker": "3406",
+      "error": "future_data"
+    },
+    {
+      "line": "673",
+      "ticker": "3443",
+      "error": "future_data"
+    },
+    {
+      "line": "681",
+      "ticker": "3443",
+      "error": "future_data"
+    },
+    {
+      "line": "693",
+      "ticker": "3583",
+      "error": "future_data"
+    },
+    {
+      "line": "701",
+      "ticker": "3583",
+      "error": "future_data"
+    },
+    {
+      "line": "713",
+      "ticker": "3653",
+      "error": "future_data"
+    },
+    {
+      "line": "721",
+      "ticker": "3653",
+      "error": "future_data"
+    },
+    {
+      "line": "733",
+      "ticker": "3661",
+      "error": "future_data"
+    },
+    {
+      "line": "741",
+      "ticker": "3661",
+      "error": "future_data"
+    },
+    {
+      "line": "754",
+      "ticker": "3711",
+      "error": "future_data"
+    },
+    {
+      "line": "764",
+      "ticker": "3711",
+      "error": "future_data"
+    },
+    {
+      "line": "785",
+      "ticker": "6187",
+      "error": "future_data"
+    },
+    {
+      "line": "793",
+      "ticker": "6187",
+      "error": "future_data"
+    },
+    {
+      "line": "805",
+      "ticker": "6223",
+      "error": "future_data"
+    },
+    {
+      "line": "813",
+      "ticker": "6223",
+      "error": "future_data"
+    },
+    {
+      "line": "825",
+      "ticker": "6274",
+      "error": "future_data"
+    },
+    {
+      "line": "833",
+      "ticker": "6274",
+      "error": "future_data"
+    },
+    {
+      "line": "866",
+      "ticker": "6488",
+      "error": "future_data"
+    },
+    {
+      "line": "876",
+      "ticker": "6488",
+      "error": "future_data"
+    },
+    {
+      "line": "889",
+      "ticker": "6669",
+      "error": "future_data"
+    },
+    {
+      "line": "897",
+      "ticker": "6669",
+      "error": "future_data"
+    },
+    {
+      "line": "909",
+      "ticker": "6781",
+      "error": "future_data"
+    },
+    {
+      "line": "917",
+      "ticker": "6781",
+      "error": "future_data"
+    },
+    {
+      "line": "929",
+      "ticker": "8299",
+      "error": "future_data"
+    },
+    {
+      "line": "937",
+      "ticker": "8299",
+      "error": "future_data"
+    }
+  ],
   "consensus_evidence_rejected": [],
   "catalyst_rejected": [
     {
