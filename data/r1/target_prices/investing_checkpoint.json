@@ -92,15 +92,15 @@
     },
     "3081": {
       "retrieved_at": "2026-10-17",
-      "row_count": 0,
-      "status": "SOURCE_GAP",
-      "error": "HTTPError:HTTP Error 403: "
+      "source_url": "https://hk.investing.com/equities/landmark-optoelectronics-consensus-estimates",
+      "row_count": 5,
+      "status": "READY"
     },
     "2303": {
       "retrieved_at": "2026-10-17",
-      "row_count": 0,
-      "status": "SOURCE_GAP",
-      "error": "HTTPError:HTTP Error 403: "
+      "source_url": "https://hk.investing.com/equities/united-micro-consensus-estimates",
+      "row_count": 4,
+      "status": "READY"
     },
     "3008": {
       "retrieved_at": "2026-10-17",
@@ -172,7 +172,7 @@
       "retrieved_at": "2026-10-17",
       "row_count": 0,
       "status": "SOURCE_GAP",
-      "error": "ValueError:identifiable_analyst_target_rows_missing"
+      "error": "HTTPError:HTTP Error 403: "
     },
     "6442": {
       "retrieved_at": "2026-10-17",
@@ -254,9 +254,9 @@
     },
     "2382": {
       "retrieved_at": "2026-10-17",
-      "row_count": 0,
-      "status": "SOURCE_GAP",
-      "error": "HTTPError:HTTP Error 403: "
+      "source_url": "https://hk.investing.com/equities/sunny-optical-hk-consensus-estimates",
+      "row_count": 5,
+      "status": "READY"
     },
     "3231": {
       "retrieved_at": "2026-10-17",
@@ -286,7 +286,7 @@
       "retrieved_at": "2026-10-17",
       "row_count": 0,
       "status": "SOURCE_GAP",
-      "error": "HTTPError:HTTP Error 403: "
+      "error": "ValueError:identifiable_analyst_target_rows_missing"
     },
     "2308": {
       "retrieved_at": "2026-10-17",
@@ -328,9 +328,9 @@
   "last_summary": {
     "retrieved_at": "2026-10-17",
     "requested_ticker_count": 54,
-    "ready_ticker_count": 7,
-    "source_gap_ticker_count": 47,
-    "new_evidence_row_count": 31,
+    "ready_ticker_count": 10,
+    "source_gap_ticker_count": 44,
+    "new_evidence_row_count": 14,
     "total_evidence_row_count": 114,
     "failures": {
       "2330": "HTTPError:HTTP Error 403: ",
@@ -345,8 +345,6 @@
       "6187": "HTTPError:HTTP Error 403: ",
       "3583": "HTTPError:HTTP Error 403: ",
       "2408": "HTTPError:HTTP Error 403: ",
-      "3081": "HTTPError:HTTP Error 403: ",
-      "2303": "HTTPError:HTTP Error 403: ",
       "3008": "HTTPError:HTTP Error 403: ",
       "2337": "HTTPError:HTTP Error 403: ",
       "8299": "HTTPError:HTTP Error 403: ",
@@ -356,7 +354,7 @@
       "2368": "HTTPError:HTTP Error 403: ",
       "2345": "HTTPError:HTTP Error 403: ",
       "3363": "HTTPError:HTTP Error 403: ",
-      "4979": "ValueError:identifiable_analyst_target_rows_missing",
+      "4979": "HTTPError:HTTP Error 403: ",
       "6442": "HTTPError:HTTP Error 403: ",
       "3163": "HTTPError:HTTP Error 403: ",
       "6282": "HTTPError:HTTP Error 403: ",
@@ -368,12 +366,11 @@
       "3324": "HTTPError:HTTP Error 403: ",
       "6230": "HTTPError:HTTP Error 403: ",
       "3338": "HTTPError:HTTP Error 403: ",
-      "2382": "HTTPError:HTTP Error 403: ",
       "3231": "HTTPError:HTTP Error 403: ",
       "6669": "HTTPError:HTTP Error 403: ",
       "2317": "HTTPError:HTTP Error 403: ",
       "2356": "HTTPError:HTTP Error 403: ",
-      "3711": "HTTPError:HTTP Error 403: ",
+      "3711": "ValueError:identifiable_analyst_target_rows_missing",
       "2308": "HTTPError:HTTP Error 403: ",
       "2379": "HTTPError:HTTP Error 403: ",
       "3532": "HTTPError:HTTP Error 403: ",
