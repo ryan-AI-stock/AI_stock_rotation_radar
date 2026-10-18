@@ -148,7 +148,13 @@ def acquire(*, config_path: str | Path, evidence_path: str | Path,
     existing = _load_existing(evidence)
     added: list[dict[str, str]] = []
     failures: dict[str, str] = {}
-    for security in config.securities:
+    securities = list(config.securities)
+    start_index = int(state.get("next_index", 0)) % len(securities)
+    ordered_securities = securities[start_index:] + securities[:start_index]
+    consecutive_forbidden = 0
+    circuit_breaker_tripped = False
+    attempted_count = 0
+    for offset, security in enumerate(ordered_securities):
         ticker = security.ticker
         if _reusable_consensus(existing, ticker=ticker, retrieved_at=retrieved_at):
             completed[ticker] = {
@@ -161,6 +167,7 @@ def acquire(*, config_path: str | Path, evidence_path: str | Path,
                 and completed.get(ticker, {}).get("status") == "READY"):
             continue
         try:
+            attempted_count += 1
             search_html = _get(f"{BASE_URL}/search/?q={ticker}")
             equity_path = resolve_equity_path(search_html, ticker=ticker)
             if not equity_path:
@@ -184,16 +191,28 @@ def acquire(*, config_path: str | Path, evidence_path: str | Path,
                 "retrieved_at": retrieved_at, "source_url": source_url,
                 "row_count": len(ticker_rows), "status": "READY",
             }
+            consecutive_forbidden = 0
         except Exception as exc:  # source failures are checkpointed and retried next run
             failures[ticker] = f"{type(exc).__name__}:{exc}"
             completed[ticker] = {
                 "retrieved_at": retrieved_at, "row_count": 0,
                 "status": "SOURCE_GAP", "error": failures[ticker],
             }
+            if "403" in failures[ticker]:
+                consecutive_forbidden += 1
+            else:
+                consecutive_forbidden = 0
+            if consecutive_forbidden >= 3:
+                circuit_breaker_tripped = True
+                state["next_index"] = (start_index + offset + 1) % len(securities)
         checkpoint.parent.mkdir(parents=True, exist_ok=True)
         checkpoint.write_text(json.dumps(state, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        if circuit_breaker_tripped:
+            break
         if pause_seconds:
             sleep(pause_seconds)
+    if not circuit_breaker_tripped:
+        state["next_index"] = 0
     ordered = _merge_rows(existing, [])
     _write_rows(evidence, ordered)
     payload = {
@@ -211,6 +230,9 @@ def acquire(*, config_path: str | Path, evidence_path: str | Path,
         "source_gap_ticker_count": len(failures),
         "new_evidence_row_count": len(added),
         "total_evidence_row_count": len(ordered),
+        "attempted_ticker_count": attempted_count,
+        "circuit_breaker_tripped": circuit_breaker_tripped,
+        "next_index": state.get("next_index", 0),
         "failures": failures,
     }
     state["last_summary"] = payload

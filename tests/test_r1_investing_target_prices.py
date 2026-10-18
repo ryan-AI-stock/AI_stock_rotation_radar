@@ -1,8 +1,13 @@
 from __future__ import annotations
 
 import unittest
+from pathlib import Path
+from tempfile import TemporaryDirectory
+from unittest.mock import patch
 
-from r1.investing_target_prices import _reusable_consensus, parse_ratings, resolve_equity_path
+from r1.investing_target_prices import (
+    _reusable_consensus, acquire, parse_ratings, resolve_equity_path,
+)
 
 
 class InvestingTargetPriceTests(unittest.TestCase):
@@ -49,6 +54,22 @@ class InvestingTargetPriceTests(unittest.TestCase):
         self.assertFalse(_reusable_consensus(
             rows, ticker="2308", retrieved_at="2026-11-08",
         ))
+
+    def test_three_consecutive_403s_trip_checkpointed_circuit_breaker(self) -> None:
+        with TemporaryDirectory() as folder:
+            root = Path(folder)
+            config = root / "config.json"
+            config.write_text(Path("config/r1.json").read_text(encoding="utf-8"), encoding="utf-8")
+            checkpoint = root / "checkpoint.json"
+            with patch("r1.investing_target_prices._get", side_effect=RuntimeError("HTTP 403")):
+                result = acquire(
+                    config_path=config, evidence_path=root / "evidence.csv",
+                    checkpoint_path=checkpoint, retrieved_at="2026-10-18", pause_seconds=0,
+                )
+            self.assertTrue(result["circuit_breaker_tripped"])
+            self.assertEqual(result["attempted_ticker_count"], 3)
+            self.assertEqual(result["source_gap_ticker_count"], 3)
+            self.assertEqual(result["next_index"], 3)
 
 
 if __name__ == "__main__":
