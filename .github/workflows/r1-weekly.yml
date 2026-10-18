@@ -72,6 +72,7 @@ jobs:
           python -m r1.toalpha_revision_history
           python -m r1.consensus_snapshot --date "${{ steps.gate.outputs.target_date }}"
           python -m r1.investing_target_prices
+          python -m r1.yahoo_target_prices --retrieved-at "${{ steps.gate.outputs.target_date }}"
           python -m r1.target_price_snapshot --date "${{ steps.gate.outputs.target_date }}"
           python -m r1.toalpha_valuation --retrieved-at "${{ steps.gate.outputs.target_date }}"
           python -m r1.official_valuation_fallback --tickers 2492 --date "${{ steps.gate.outputs.target_date }}" --checkpoint data/r1/official_valuation_2492.json --require-complete
