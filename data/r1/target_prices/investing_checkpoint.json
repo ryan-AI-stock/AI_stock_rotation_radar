@@ -19,25 +19,25 @@
       "error": "HTTPError:HTTP Error 403: "
     },
     "2376": {
-      "retrieved_at": "2026-10-17",
+      "retrieved_at": "2026-10-18",
       "row_count": 0,
       "status": "SOURCE_GAP",
       "error": "HTTPError:HTTP Error 403: "
     },
     "2454": {
-      "retrieved_at": "2026-10-17",
+      "retrieved_at": "2026-10-18",
       "row_count": 0,
       "status": "SOURCE_GAP",
       "error": "HTTPError:HTTP Error 403: "
     },
     "3037": {
-      "retrieved_at": "2026-10-17",
-      "source_url": "https://hk.investing.com/equities/unimicron-tech-consensus-estimates",
-      "row_count": 5,
-      "status": "READY"
+      "retrieved_at": "2026-10-18",
+      "row_count": 0,
+      "status": "REUSED_READY",
+      "note": "three or more identifiable institutions remain fresh; request capacity reserved for source gaps"
     },
     "6488": {
-      "retrieved_at": "2026-10-17",
+      "retrieved_at": "2026-10-18",
       "row_count": 0,
       "status": "SOURCE_GAP",
       "error": "HTTPError:HTTP Error 403: "
@@ -328,19 +328,19 @@
   "last_summary": {
     "retrieved_at": "2026-10-18",
     "requested_ticker_count": 54,
-    "ready_ticker_count": 0,
-    "reused_ready_ticker_count": 0,
+    "ready_ticker_count": 1,
+    "reused_ready_ticker_count": 1,
     "source_gap_ticker_count": 3,
     "new_evidence_row_count": 0,
     "total_evidence_row_count": 114,
     "attempted_ticker_count": 3,
     "circuit_breaker_tripped": true,
-    "next_index": 3,
+    "next_index": 7,
     "failures": {
-      "2330": "HTTPError:HTTP Error 403: ",
-      "2327": "HTTPError:HTTP Error 403: ",
-      "2344": "HTTPError:HTTP Error 403: "
+      "2376": "HTTPError:HTTP Error 403: ",
+      "2454": "HTTPError:HTTP Error 403: ",
+      "6488": "HTTPError:HTTP Error 403: "
     }
   },
-  "next_index": 3
+  "next_index": 7
 }
