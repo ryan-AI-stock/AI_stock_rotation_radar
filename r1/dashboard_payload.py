@@ -60,6 +60,7 @@ def _build_v03_dashboard(*, config: R1Config, market: dict, theme_review: dict,
                          weekly_by_ticker: dict[str, dict] | None = None,
                          v05_by_ticker: dict[str, dict] | None = None,
                          readiness: dict | None = None,
+                         target_consensus_ready_count: int = 0,
                          total_actual_equity: float | None = None,
                          actual_positions: list[dict] | None = None) -> list[list[object]]:
     themes = load_themes(theme_path)
@@ -125,7 +126,8 @@ def _build_v03_dashboard(*, config: R1Config, market: dict, theme_review: dict,
         ["最新資料日期", market["date"], "模型定位", "實際績效追蹤＋report-only換倉建議", "不自動成交"],
         ["資料狀態", (
             f"公開資料核心 {public_core_ready_count}/{len(v05_by_ticker)}；"
-            f"法人目標價信心層 {target_overlay_ready_count}/{len(v05_by_ticker)}；"
+            f"法人目標價共識 {target_consensus_ready_count}/{len(v05_by_ticker)}；"
+            f"具4W修正比較的完整信心層 {target_overlay_ready_count}/{len(v05_by_ticker)}；"
             f"EPS修正歷史 1W {revision_ready.get('1w', 0)}、"
             f"4W {revision_ready.get('4w', 0)}、12W {revision_ready.get('12w', 0)}。"
             "信心層缺值不補0、不阻斷核心排名；不產生自動交易。"
@@ -209,8 +211,9 @@ def _build_v03_dashboard(*, config: R1Config, market: dict, theme_review: dict,
          "25%／25%／15%／15%／20%", "每日排名＋每週事件；目標價有資料才疊加", "從實際持股角度提供換出／換入優先序"],
         ["即時參考分數", "已取得的估值／瓶頸／催化／市場風險，依既定權重重新正規化；EPS另列信心",
          "report-only", "每日市場＋每週證據", "不因4W／12W未滿而整份空白，不產生交易指令"],
-        ["資料完成度", "公開資料核心／法人目標價信心層／EPS修正PIT歷史",
-         f"{public_core_ready_count}/{len(v05_by_ticker)}／{target_overlay_ready_count}/{len(v05_by_ticker)}／"
+        ["資料完成度", "公開資料核心／法人目標價共識／完整目標價修正信心層／EPS修正PIT歷史",
+         f"{public_core_ready_count}/{len(v05_by_ticker)}／{target_consensus_ready_count}/{len(v05_by_ticker)}／"
+         f"{target_overlay_ready_count}/{len(v05_by_ticker)}／"
          f"1W {revision_ready.get('1w', 0)}、4W {revision_ready.get('4w', 0)}、12W {revision_ready.get('12w', 0)}",
          "每日讀回", "核心與信心層分開揭露，不再用舊0/52誤稱整體未完成"],
         ["06｜更新排程"],
@@ -389,6 +392,11 @@ def build_dashboard_payload(
         weekly_by_ticker=weekly_by_ticker,
         v05_by_ticker=v05_by_ticker,
         readiness=readiness,
+        target_consensus_ready_count=sum(
+            bool(row.get("scoreable"))
+            for ticker, row in target_price_by_ticker.items()
+            if ticker in v05_by_ticker
+        ),
         total_actual_equity=actual_account.get("equity_market_value"),
         actual_positions=actual_account.get("positions", []),
     )

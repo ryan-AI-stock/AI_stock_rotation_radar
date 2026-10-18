@@ -4,7 +4,7 @@ import argparse
 import csv
 import json
 import re
-from datetime import date
+from datetime import date, timedelta
 from pathlib import Path
 from time import sleep
 from typing import Any
@@ -116,6 +116,27 @@ def _merge_rows(existing: list[dict[str, str]], added: list[dict[str, str]]) -> 
     ))
 
 
+def _reusable_consensus(rows: list[dict[str, str]], *, ticker: str,
+                        retrieved_at: str, refresh_after_days: int = 28) -> bool:
+    """Preserve request capacity for source gaps instead of refetching fresh winners.
+
+    Reuse is only an acquisition optimization.  The downstream snapshot still
+    enforces the 90-day PIT window and three identifiable institutions.
+    """
+    asof = date.fromisoformat(retrieved_at[:10])
+    retrieved_cutoff = asof - timedelta(days=refresh_after_days - 1)
+    target_cutoff = asof - timedelta(days=90)
+    institutions = {
+        row["institution"].strip()
+        for row in rows
+        if row.get("ticker") == ticker
+        and row.get("institution", "").strip()
+        and row.get("retrieved_at", "")[:10] >= retrieved_cutoff.isoformat()
+        and target_cutoff.isoformat() <= row.get("available_at", "")[:10] <= asof.isoformat()
+    }
+    return len(institutions) >= 3
+
+
 def acquire(*, config_path: str | Path, evidence_path: str | Path,
             checkpoint_path: str | Path, retrieved_at: str,
             pause_seconds: float = 0.5) -> dict[str, Any]:
@@ -129,6 +150,13 @@ def acquire(*, config_path: str | Path, evidence_path: str | Path,
     failures: dict[str, str] = {}
     for security in config.securities:
         ticker = security.ticker
+        if _reusable_consensus(existing, ticker=ticker, retrieved_at=retrieved_at):
+            completed[ticker] = {
+                "retrieved_at": retrieved_at, "row_count": 0,
+                "status": "REUSED_READY",
+                "note": "three or more identifiable institutions remain fresh; request capacity reserved for source gaps",
+            }
+            continue
         if (completed.get(ticker, {}).get("retrieved_at") == retrieved_at
                 and completed.get(ticker, {}).get("status") == "READY"):
             continue
@@ -172,7 +200,12 @@ def acquire(*, config_path: str | Path, evidence_path: str | Path,
         "retrieved_at": retrieved_at,
         "requested_ticker_count": len(config.securities),
         "ready_ticker_count": sum(
-            item.get("retrieved_at") == retrieved_at and item.get("status") == "READY"
+            item.get("retrieved_at") == retrieved_at
+            and item.get("status") in {"READY", "REUSED_READY"}
+            for item in completed.values()
+        ),
+        "reused_ready_ticker_count": sum(
+            item.get("retrieved_at") == retrieved_at and item.get("status") == "REUSED_READY"
             for item in completed.values()
         ),
         "source_gap_ticker_count": len(failures),

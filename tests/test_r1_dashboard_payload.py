@@ -28,6 +28,10 @@ class R1DashboardPayloadTest(unittest.TestCase):
         self.assertIn("07｜模型完整說明", sections)
         data_status = next(row[1] for row in dashboard if row[0] == "資料狀態")
         self.assertIn("公開資料核心 52/52", data_status)
+        # Nine configured securities are scoreable, but two are discovery-only;
+        # the v0.6 public-core universe therefore reports seven of fifty-two.
+        self.assertIn("法人目標價共識 7/52", data_status)
+        self.assertIn("完整信心層 0/52", data_status)
         self.assertIn("信心層缺值不補0、不阻斷核心排名", data_status)
         completeness = next(row for row in dashboard if row[0] == "資料完成度")
         self.assertIn("52/52", completeness[2])
