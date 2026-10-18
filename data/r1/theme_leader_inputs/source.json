@@ -3,6 +3,130 @@
   "as_of_date": "2026-10-16",
   "rows": [
     {
+      "ticker": "1560",
+      "evidence": {
+        "bottleneck_directness": {
+          "sources": [
+            {
+              "source_url": "https://finmoconf.diveinvest.net/presentation/69b01a85bab52fb5c8bbe295",
+              "source_date": "2026-03-10",
+              "available_at": "2026-03-10",
+              "source_family": "finmoconf_mops_relay",
+              "evidence_note": "先進製程鑽石碟與高階再生晶圓已進入擴產及量產階段"
+            },
+            {
+              "source_url": "https://vocus.cc/article/6a262efffd897800018d37eb",
+              "source_date": "2026-05-27",
+              "available_at": "2026-05-27",
+              "source_family": "vocus_independent_research",
+              "evidence_note": "新增12吋產能鎖定高單價先進製程且產能提前滿載"
+            }
+          ]
+        },
+        "industry_technology_position": {
+          "sources": [
+            {
+              "source_url": "https://finmoconf.diveinvest.net/presentation/69b01a85bab52fb5c8bbe295",
+              "source_date": "2026-03-10",
+              "available_at": "2026-03-10",
+              "source_family": "finmoconf_mops_relay",
+              "evidence_note": "先進製程鑽石碟與高階再生晶圓已進入擴產及量產階段"
+            },
+            {
+              "source_url": "https://vocus.cc/article/6a262efffd897800018d37eb",
+              "source_date": "2026-05-27",
+              "available_at": "2026-05-27",
+              "source_family": "vocus_independent_research",
+              "evidence_note": "新增12吋產能鎖定高單價先進製程且產能提前滿載"
+            }
+          ]
+        },
+        "ai_revenue_realization": {
+          "sources": [
+            {
+              "source_url": "https://finmoconf.diveinvest.net/presentation/69b01a85bab52fb5c8bbe295",
+              "source_date": "2026-03-10",
+              "available_at": "2026-03-10",
+              "source_family": "finmoconf_mops_relay",
+              "evidence_note": "先進製程鑽石碟與高階再生晶圓已進入擴產及量產階段"
+            },
+            {
+              "source_url": "https://vocus.cc/article/6a262efffd897800018d37eb",
+              "source_date": "2026-05-27",
+              "available_at": "2026-05-27",
+              "source_family": "vocus_independent_research",
+              "evidence_note": "新增12吋產能鎖定高單價先進製程且產能提前滿載"
+            }
+          ]
+        }
+      },
+      "bottleneck_directness": 75,
+      "industry_technology_position": 50,
+      "ai_revenue_realization": 75
+    },
+    {
+      "ticker": "2301",
+      "evidence": {
+        "bottleneck_directness": {
+          "sources": [
+            {
+              "source_url": "https://www.liteon.com/zh-cn/news/press-center/content/liteon-ocp-2026",
+              "source_date": "2026-10-13",
+              "available_at": "2026-10-13",
+              "source_family": "liteon_ir",
+              "evidence_note": "光寶官方揭露800VDC電源櫃BBU液冷與GPU端電源模組形成完整Grid-to-Chip供電能力"
+            },
+            {
+              "source_url": "https://ec.ltn.com.tw/article/breakingnews/5524305",
+              "source_date": "2026-07-31",
+              "available_at": "2026-07-31",
+              "source_family": "liberty_times_finance",
+              "evidence_note": "獨立報導確認AI產品營收占比逾三成且多項AI電源與液冷產品進入驗證量產"
+            }
+          ]
+        },
+        "industry_technology_position": {
+          "sources": [
+            {
+              "source_url": "https://www.liteon.com/zh-cn/news/press-center/content/liteon-ocp-2026",
+              "source_date": "2026-10-13",
+              "available_at": "2026-10-13",
+              "source_family": "liteon_ir",
+              "evidence_note": "光寶官方揭露800VDC電源櫃BBU液冷與GPU端電源模組形成完整Grid-to-Chip供電能力"
+            },
+            {
+              "source_url": "https://ec.ltn.com.tw/article/breakingnews/5524305",
+              "source_date": "2026-07-31",
+              "available_at": "2026-07-31",
+              "source_family": "liberty_times_finance",
+              "evidence_note": "獨立報導確認AI產品營收占比逾三成且多項AI電源與液冷產品進入驗證量產"
+            }
+          ]
+        },
+        "ai_revenue_realization": {
+          "sources": [
+            {
+              "source_url": "https://www.liteon.com/zh-cn/news/press-center/content/liteon-ocp-2026",
+              "source_date": "2026-10-13",
+              "available_at": "2026-10-13",
+              "source_family": "liteon_ir",
+              "evidence_note": "光寶官方揭露800VDC電源櫃BBU液冷與GPU端電源模組形成完整Grid-to-Chip供電能力"
+            },
+            {
+              "source_url": "https://ec.ltn.com.tw/article/breakingnews/5524305",
+              "source_date": "2026-07-31",
+              "available_at": "2026-07-31",
+              "source_family": "liberty_times_finance",
+              "evidence_note": "獨立報導確認AI產品營收占比逾三成且多項AI電源與液冷產品進入驗證量產"
+            }
+          ]
+        }
+      },
+      "bottleneck_directness": 75,
+      "industry_technology_position": 50,
+      "ai_revenue_realization": 75
+    },
+    {
       "ticker": "2303",
       "evidence": {
         "bottleneck_directness": {
@@ -124,6 +248,68 @@
       },
       "bottleneck_directness": 100,
       "industry_technology_position": 75,
+      "ai_revenue_realization": 75
+    },
+    {
+      "ticker": "2317",
+      "evidence": {
+        "bottleneck_directness": {
+          "sources": [
+            {
+              "source_url": "https://image.honhai.com/upload/202605/law_talk/Hon_Hai_1Q26_Results_Transcript_English_20260514_3576.pdf",
+              "source_date": "2026-05-14",
+              "available_at": "2026-05-14",
+              "source_family": "honhai_ir",
+              "evidence_note": "鴻海法說確認AI伺服器占伺服器營收過半且2026年AI機櫃出貨預期至少倍增"
+            },
+            {
+              "source_url": "https://www.trendforce.com.tw/research/download/RP260409JL",
+              "source_date": "2026-04-09",
+              "available_at": "2026-04-09",
+              "source_family": "trendforce_research",
+              "evidence_note": "TrendForce確認AI伺服器整櫃需求強勁並點名鴻海受惠CSP與Tier-2客戶需求成長"
+            }
+          ]
+        },
+        "industry_technology_position": {
+          "sources": [
+            {
+              "source_url": "https://image.honhai.com/upload/202605/law_talk/Hon_Hai_1Q26_Results_Transcript_English_20260514_3576.pdf",
+              "source_date": "2026-05-14",
+              "available_at": "2026-05-14",
+              "source_family": "honhai_ir",
+              "evidence_note": "鴻海法說確認AI伺服器占伺服器營收過半且2026年AI機櫃出貨預期至少倍增"
+            },
+            {
+              "source_url": "https://www.trendforce.com.tw/research/download/RP260409JL",
+              "source_date": "2026-04-09",
+              "available_at": "2026-04-09",
+              "source_family": "trendforce_research",
+              "evidence_note": "TrendForce確認AI伺服器整櫃需求強勁並點名鴻海受惠CSP與Tier-2客戶需求成長"
+            }
+          ]
+        },
+        "ai_revenue_realization": {
+          "sources": [
+            {
+              "source_url": "https://image.honhai.com/upload/202605/law_talk/Hon_Hai_1Q26_Results_Transcript_English_20260514_3576.pdf",
+              "source_date": "2026-05-14",
+              "available_at": "2026-05-14",
+              "source_family": "honhai_ir",
+              "evidence_note": "鴻海法說確認AI伺服器占伺服器營收過半且2026年AI機櫃出貨預期至少倍增"
+            },
+            {
+              "source_url": "https://www.trendforce.com.tw/research/download/RP260409JL",
+              "source_date": "2026-04-09",
+              "available_at": "2026-04-09",
+              "source_family": "trendforce_research",
+              "evidence_note": "TrendForce確認AI伺服器整櫃需求強勁並點名鴻海受惠CSP與Tier-2客戶需求成長"
+            }
+          ]
+        }
+      },
+      "bottleneck_directness": 75,
+      "industry_technology_position": 50,
       "ai_revenue_realization": 75
     },
     {
@@ -251,6 +437,68 @@
       "ai_revenue_realization": 100
     },
     {
+      "ticker": "2337",
+      "evidence": {
+        "bottleneck_directness": {
+          "sources": [
+            {
+              "source_url": "https://www.mxic.com.tw/zh-tw/about/investor-relations/Documents/annualreport_2025_ch.pdf",
+              "source_date": "2026-05-01",
+              "available_at": "2026-05-01",
+              "source_family": "macronix_ir",
+              "evidence_note": "旺宏年報確認公司持續投入AI應用所需記憶體核心技術與專利"
+            },
+            {
+              "source_url": "https://tw.fiisual.com/blog/post/2026/Macronix-2026-q1-earnings-call-memo",
+              "source_date": "2026-04-30",
+              "available_at": "2026-04-30",
+              "source_family": "fiisual_independent_research",
+              "evidence_note": "獨立法說整理確認AI需求造成NAND缺貨且研發後量產能力為主要約束"
+            }
+          ]
+        },
+        "industry_technology_position": {
+          "sources": [
+            {
+              "source_url": "https://www.mxic.com.tw/zh-tw/about/investor-relations/Documents/annualreport_2025_ch.pdf",
+              "source_date": "2026-05-01",
+              "available_at": "2026-05-01",
+              "source_family": "macronix_ir",
+              "evidence_note": "旺宏年報確認公司持續投入AI應用所需記憶體核心技術與專利"
+            },
+            {
+              "source_url": "https://tw.fiisual.com/blog/post/2026/Macronix-2026-q1-earnings-call-memo",
+              "source_date": "2026-04-30",
+              "available_at": "2026-04-30",
+              "source_family": "fiisual_independent_research",
+              "evidence_note": "獨立法說整理確認AI需求造成NAND缺貨且研發後量產能力為主要約束"
+            }
+          ]
+        },
+        "ai_revenue_realization": {
+          "sources": [
+            {
+              "source_url": "https://www.mxic.com.tw/zh-tw/about/investor-relations/Documents/annualreport_2025_ch.pdf",
+              "source_date": "2026-05-01",
+              "available_at": "2026-05-01",
+              "source_family": "macronix_ir",
+              "evidence_note": "旺宏年報確認公司持續投入AI應用所需記憶體核心技術與專利"
+            },
+            {
+              "source_url": "https://tw.fiisual.com/blog/post/2026/Macronix-2026-q1-earnings-call-memo",
+              "source_date": "2026-04-30",
+              "available_at": "2026-04-30",
+              "source_family": "fiisual_independent_research",
+              "evidence_note": "獨立法說整理確認AI需求造成NAND缺貨且研發後量產能力為主要約束"
+            }
+          ]
+        }
+      },
+      "bottleneck_directness": 50,
+      "industry_technology_position": 50,
+      "ai_revenue_realization": 50
+    },
+    {
       "ticker": "2344",
       "evidence": {
         "bottleneck_directness": {
@@ -304,6 +552,192 @@
               "available_at": "2026-09-07",
               "source_family": "trendforce_research",
               "evidence_note": "DRAM供給落後需求且華邦電成熟型DRAM營收成長已被獨立產業資料確認"
+            }
+          ]
+        }
+      },
+      "bottleneck_directness": 75,
+      "industry_technology_position": 50,
+      "ai_revenue_realization": 75
+    },
+    {
+      "ticker": "2345",
+      "evidence": {
+        "bottleneck_directness": {
+          "sources": [
+            {
+              "source_url": "https://wwwc.twse.com.tw/IIH2/zh/company/information.html?code=2345",
+              "source_date": "2026-05-26",
+              "available_at": "2026-05-26",
+              "source_family": "twse_mops_relay",
+              "evidence_note": "證交所重大訊息顯示智邦持續投入AI智慧園區且發布2026營運資料"
+            },
+            {
+              "source_url": "https://www.yuantafutures.com.tw/UploadFile/Artical/202602/1770629077588_%E3%80%90%E5%85%83%E5%A4%A7%E6%9C%9F%E8%B2%A8%E3%80%91%E8%82%A1%E6%9C%9F%E7%84%A6%E9%BB%9E%E7%86%B1%E5%8D%80%2020260209_20260209_164934.pdf",
+              "source_date": "2026-02-09",
+              "available_at": "2026-02-09",
+              "source_family": "yuanta_futures_research",
+              "evidence_note": "元大期貨研究確認800G與1.6T高速交換器為CSP擴大AI基礎建設的關鍵網路設備"
+            }
+          ]
+        },
+        "industry_technology_position": {
+          "sources": [
+            {
+              "source_url": "https://wwwc.twse.com.tw/IIH2/zh/company/information.html?code=2345",
+              "source_date": "2026-05-26",
+              "available_at": "2026-05-26",
+              "source_family": "twse_mops_relay",
+              "evidence_note": "證交所重大訊息顯示智邦持續投入AI智慧園區且發布2026營運資料"
+            },
+            {
+              "source_url": "https://www.yuantafutures.com.tw/UploadFile/Artical/202602/1770629077588_%E3%80%90%E5%85%83%E5%A4%A7%E6%9C%9F%E8%B2%A8%E3%80%91%E8%82%A1%E6%9C%9F%E7%84%A6%E9%BB%9E%E7%86%B1%E5%8D%80%2020260209_20260209_164934.pdf",
+              "source_date": "2026-02-09",
+              "available_at": "2026-02-09",
+              "source_family": "yuanta_futures_research",
+              "evidence_note": "元大期貨研究確認800G與1.6T高速交換器為CSP擴大AI基礎建設的關鍵網路設備"
+            }
+          ]
+        },
+        "ai_revenue_realization": {
+          "sources": [
+            {
+              "source_url": "https://wwwc.twse.com.tw/IIH2/zh/company/information.html?code=2345",
+              "source_date": "2026-05-26",
+              "available_at": "2026-05-26",
+              "source_family": "twse_mops_relay",
+              "evidence_note": "證交所重大訊息顯示智邦持續投入AI智慧園區且發布2026營運資料"
+            },
+            {
+              "source_url": "https://www.yuantafutures.com.tw/UploadFile/Artical/202602/1770629077588_%E3%80%90%E5%85%83%E5%A4%A7%E6%9C%9F%E8%B2%A8%E3%80%91%E8%82%A1%E6%9C%9F%E7%84%A6%E9%BB%9E%E7%86%B1%E5%8D%80%2020260209_20260209_164934.pdf",
+              "source_date": "2026-02-09",
+              "available_at": "2026-02-09",
+              "source_family": "yuanta_futures_research",
+              "evidence_note": "元大期貨研究確認800G與1.6T高速交換器為CSP擴大AI基礎建設的關鍵網路設備"
+            }
+          ]
+        }
+      },
+      "bottleneck_directness": 75,
+      "industry_technology_position": 50,
+      "ai_revenue_realization": 75
+    },
+    {
+      "ticker": "2356",
+      "evidence": {
+        "bottleneck_directness": {
+          "sources": [
+            {
+              "source_url": "https://ebg.inventec.com/en/news/Press%20Release/2026/117",
+              "source_date": "2026-03-10",
+              "available_at": "2026-03-10",
+              "source_family": "inventec_ir",
+              "evidence_note": "英業達官方展示Vera Rubin NVL72液冷機櫃系統及多款AI訓練推論伺服器"
+            },
+            {
+              "source_url": "https://wealth.firstbank.com.tw/investment-tips/trend-insight/news/news-detail?id=%7B12D659EC-63D1-4B81-AF8F-D568769A68ED%7D",
+              "source_date": "2026-01-21",
+              "available_at": "2026-01-21",
+              "source_family": "firstbank_moneydj_relay",
+              "evidence_note": "獨立產業資料確認英業達ASIC伺服器占比提升並改善獲利結構"
+            }
+          ]
+        },
+        "industry_technology_position": {
+          "sources": [
+            {
+              "source_url": "https://ebg.inventec.com/en/news/Press%20Release/2026/117",
+              "source_date": "2026-03-10",
+              "available_at": "2026-03-10",
+              "source_family": "inventec_ir",
+              "evidence_note": "英業達官方展示Vera Rubin NVL72液冷機櫃系統及多款AI訓練推論伺服器"
+            },
+            {
+              "source_url": "https://wealth.firstbank.com.tw/investment-tips/trend-insight/news/news-detail?id=%7B12D659EC-63D1-4B81-AF8F-D568769A68ED%7D",
+              "source_date": "2026-01-21",
+              "available_at": "2026-01-21",
+              "source_family": "firstbank_moneydj_relay",
+              "evidence_note": "獨立產業資料確認英業達ASIC伺服器占比提升並改善獲利結構"
+            }
+          ]
+        },
+        "ai_revenue_realization": {
+          "sources": [
+            {
+              "source_url": "https://ebg.inventec.com/en/news/Press%20Release/2026/117",
+              "source_date": "2026-03-10",
+              "available_at": "2026-03-10",
+              "source_family": "inventec_ir",
+              "evidence_note": "英業達官方展示Vera Rubin NVL72液冷機櫃系統及多款AI訓練推論伺服器"
+            },
+            {
+              "source_url": "https://wealth.firstbank.com.tw/investment-tips/trend-insight/news/news-detail?id=%7B12D659EC-63D1-4B81-AF8F-D568769A68ED%7D",
+              "source_date": "2026-01-21",
+              "available_at": "2026-01-21",
+              "source_family": "firstbank_moneydj_relay",
+              "evidence_note": "獨立產業資料確認英業達ASIC伺服器占比提升並改善獲利結構"
+            }
+          ]
+        }
+      },
+      "bottleneck_directness": 75,
+      "industry_technology_position": 50,
+      "ai_revenue_realization": 75
+    },
+    {
+      "ticker": "2368",
+      "evidence": {
+        "bottleneck_directness": {
+          "sources": [
+            {
+              "source_url": "https://www.gce.com.tw/file/st/2024AnnualReport.pdf",
+              "source_date": "2025-03-30",
+              "available_at": "2025-03-30",
+              "source_family": "gce_ir",
+              "evidence_note": "金像電年報確認AI伺服器與高速網通板需求使既有產出與設備不足並啟動擴產"
+            },
+            {
+              "source_url": "https://www.moneydj.com/kmdj/news/newsviewer.aspx?a=c4005e83-7422-4577-bfc3-f9e57e2081d4",
+              "source_date": "2026-07-16",
+              "available_at": "2026-07-16",
+              "source_family": "moneydj_industry",
+              "evidence_note": "獨立報導確認新增蘇州基地以AI Server產品為主要生產重點並加速驗證量產"
+            }
+          ]
+        },
+        "industry_technology_position": {
+          "sources": [
+            {
+              "source_url": "https://www.gce.com.tw/file/st/2024AnnualReport.pdf",
+              "source_date": "2025-03-30",
+              "available_at": "2025-03-30",
+              "source_family": "gce_ir",
+              "evidence_note": "金像電年報確認AI伺服器與高速網通板需求使既有產出與設備不足並啟動擴產"
+            },
+            {
+              "source_url": "https://www.moneydj.com/kmdj/news/newsviewer.aspx?a=c4005e83-7422-4577-bfc3-f9e57e2081d4",
+              "source_date": "2026-07-16",
+              "available_at": "2026-07-16",
+              "source_family": "moneydj_industry",
+              "evidence_note": "獨立報導確認新增蘇州基地以AI Server產品為主要生產重點並加速驗證量產"
+            }
+          ]
+        },
+        "ai_revenue_realization": {
+          "sources": [
+            {
+              "source_url": "https://www.gce.com.tw/file/st/2024AnnualReport.pdf",
+              "source_date": "2025-03-30",
+              "available_at": "2025-03-30",
+              "source_family": "gce_ir",
+              "evidence_note": "金像電年報確認AI伺服器與高速網通板需求使既有產出與設備不足並啟動擴產"
+            },
+            {
+              "source_url": "https://www.moneydj.com/kmdj/news/newsviewer.aspx?a=c4005e83-7422-4577-bfc3-f9e57e2081d4",
+              "source_date": "2026-07-16",
+              "available_at": "2026-07-16",
+              "source_family": "moneydj_industry",
+              "evidence_note": "獨立報導確認新增蘇州基地以AI Server產品為主要生產重點並加速驗證量產"
             }
           ]
         }
@@ -375,6 +809,192 @@
       "ai_revenue_realization": 75
     },
     {
+      "ticker": "2379",
+      "evidence": {
+        "bottleneck_directness": {
+          "sources": [
+            {
+              "source_url": "https://www.realtek.com/images/ar/2025_Annual_Report__1.pdf",
+              "source_date": "2026-05-28",
+              "available_at": "2026-05-28",
+              "source_family": "realtek_ir",
+              "evidence_note": "瑞昱年報揭露10GbE已切入伺服器級邊緣AI平台並規劃25GbE產品"
+            },
+            {
+              "source_url": "https://wealth.firstbank.com.tw/investment-tips/trend-insight/news/news-detail?id=%7BEAD65F6D-7337-43C8-8B30-D62D885870B6%7D",
+              "source_date": "2026-07-08",
+              "available_at": "2026-07-08",
+              "source_family": "moneydj_industry",
+              "evidence_note": "AI資料中心建置推升800G與1.6T交換器需求且瑞昱上半年營收創同期新高"
+            }
+          ]
+        },
+        "industry_technology_position": {
+          "sources": [
+            {
+              "source_url": "https://www.realtek.com/images/ar/2025_Annual_Report__1.pdf",
+              "source_date": "2026-05-28",
+              "available_at": "2026-05-28",
+              "source_family": "realtek_ir",
+              "evidence_note": "瑞昱年報揭露10GbE已切入伺服器級邊緣AI平台並規劃25GbE產品"
+            },
+            {
+              "source_url": "https://wealth.firstbank.com.tw/investment-tips/trend-insight/news/news-detail?id=%7BEAD65F6D-7337-43C8-8B30-D62D885870B6%7D",
+              "source_date": "2026-07-08",
+              "available_at": "2026-07-08",
+              "source_family": "moneydj_industry",
+              "evidence_note": "AI資料中心建置推升800G與1.6T交換器需求且瑞昱上半年營收創同期新高"
+            }
+          ]
+        },
+        "ai_revenue_realization": {
+          "sources": [
+            {
+              "source_url": "https://www.realtek.com/images/ar/2025_Annual_Report__1.pdf",
+              "source_date": "2026-05-28",
+              "available_at": "2026-05-28",
+              "source_family": "realtek_ir",
+              "evidence_note": "瑞昱年報揭露10GbE已切入伺服器級邊緣AI平台並規劃25GbE產品"
+            },
+            {
+              "source_url": "https://wealth.firstbank.com.tw/investment-tips/trend-insight/news/news-detail?id=%7BEAD65F6D-7337-43C8-8B30-D62D885870B6%7D",
+              "source_date": "2026-07-08",
+              "available_at": "2026-07-08",
+              "source_family": "moneydj_industry",
+              "evidence_note": "AI資料中心建置推升800G與1.6T交換器需求且瑞昱上半年營收創同期新高"
+            }
+          ]
+        }
+      },
+      "bottleneck_directness": 75,
+      "industry_technology_position": 50,
+      "ai_revenue_realization": 75
+    },
+    {
+      "ticker": "2382",
+      "evidence": {
+        "bottleneck_directness": {
+          "sources": [
+            {
+              "source_url": "https://www.quantatw.com/Quanta/english/esg/ESG2024/ch02.html",
+              "source_date": "2025-05-01",
+              "available_at": "2025-05-01",
+              "source_family": "quanta_ir",
+              "evidence_note": "廣達官方資料確認AI資料中心基礎建設擴張使伺服器業務成長超過一倍"
+            },
+            {
+              "source_url": "https://wealth.firstbank.com.tw/investment-tips/trend-insight/news/news-detail?id=%7B12D659EC-63D1-4B81-AF8F-D568769A68ED%7D",
+              "source_date": "2026-01-21",
+              "available_at": "2026-01-21",
+              "source_family": "firstbank_moneydj_relay",
+              "evidence_note": "獨立產業資料確認廣達AI伺服器能見度至2027且2026年底產能預計翻倍"
+            }
+          ]
+        },
+        "industry_technology_position": {
+          "sources": [
+            {
+              "source_url": "https://www.quantatw.com/Quanta/english/esg/ESG2024/ch02.html",
+              "source_date": "2025-05-01",
+              "available_at": "2025-05-01",
+              "source_family": "quanta_ir",
+              "evidence_note": "廣達官方資料確認AI資料中心基礎建設擴張使伺服器業務成長超過一倍"
+            },
+            {
+              "source_url": "https://wealth.firstbank.com.tw/investment-tips/trend-insight/news/news-detail?id=%7B12D659EC-63D1-4B81-AF8F-D568769A68ED%7D",
+              "source_date": "2026-01-21",
+              "available_at": "2026-01-21",
+              "source_family": "firstbank_moneydj_relay",
+              "evidence_note": "獨立產業資料確認廣達AI伺服器能見度至2027且2026年底產能預計翻倍"
+            }
+          ]
+        },
+        "ai_revenue_realization": {
+          "sources": [
+            {
+              "source_url": "https://www.quantatw.com/Quanta/english/esg/ESG2024/ch02.html",
+              "source_date": "2025-05-01",
+              "available_at": "2025-05-01",
+              "source_family": "quanta_ir",
+              "evidence_note": "廣達官方資料確認AI資料中心基礎建設擴張使伺服器業務成長超過一倍"
+            },
+            {
+              "source_url": "https://wealth.firstbank.com.tw/investment-tips/trend-insight/news/news-detail?id=%7B12D659EC-63D1-4B81-AF8F-D568769A68ED%7D",
+              "source_date": "2026-01-21",
+              "available_at": "2026-01-21",
+              "source_family": "firstbank_moneydj_relay",
+              "evidence_note": "獨立產業資料確認廣達AI伺服器能見度至2027且2026年底產能預計翻倍"
+            }
+          ]
+        }
+      },
+      "bottleneck_directness": 75,
+      "industry_technology_position": 50,
+      "ai_revenue_realization": 75
+    },
+    {
+      "ticker": "2383",
+      "evidence": {
+        "bottleneck_directness": {
+          "sources": [
+            {
+              "source_url": "https://webpro.twse.com.tw/WebPortal/vod/101/B3DC01BA1D1E-FBC0C99D-1DF3-11F1-8D3E/?categoryId=148",
+              "source_date": "2026-03-12",
+              "available_at": "2026-03-12",
+              "source_family": "twse_webpro",
+              "evidence_note": "正式法說揭露高階CCL營運進展並由證交所平台留存"
+            },
+            {
+              "source_url": "https://vocus.cc/article/6982d14efd89780001399a05",
+              "source_date": "2026-02-04",
+              "available_at": "2026-02-04",
+              "source_family": "vocus_independent_research",
+              "evidence_note": "AI周邊板與高階CCL升級造成供給短缺"
+            }
+          ]
+        },
+        "industry_technology_position": {
+          "sources": [
+            {
+              "source_url": "https://webpro.twse.com.tw/WebPortal/vod/101/B3DC01BA1D1E-FBC0C99D-1DF3-11F1-8D3E/?categoryId=148",
+              "source_date": "2026-03-12",
+              "available_at": "2026-03-12",
+              "source_family": "twse_webpro",
+              "evidence_note": "正式法說揭露高階CCL營運進展並由證交所平台留存"
+            },
+            {
+              "source_url": "https://vocus.cc/article/6982d14efd89780001399a05",
+              "source_date": "2026-02-04",
+              "available_at": "2026-02-04",
+              "source_family": "vocus_independent_research",
+              "evidence_note": "AI周邊板與高階CCL升級造成供給短缺"
+            }
+          ]
+        },
+        "ai_revenue_realization": {
+          "sources": [
+            {
+              "source_url": "https://webpro.twse.com.tw/WebPortal/vod/101/B3DC01BA1D1E-FBC0C99D-1DF3-11F1-8D3E/?categoryId=148",
+              "source_date": "2026-03-12",
+              "available_at": "2026-03-12",
+              "source_family": "twse_webpro",
+              "evidence_note": "正式法說揭露高階CCL營運進展並由證交所平台留存"
+            },
+            {
+              "source_url": "https://vocus.cc/article/6982d14efd89780001399a05",
+              "source_date": "2026-02-04",
+              "available_at": "2026-02-04",
+              "source_family": "vocus_independent_research",
+              "evidence_note": "AI周邊板與高階CCL升級造成供給短缺"
+            }
+          ]
+        }
+      },
+      "bottleneck_directness": 75,
+      "industry_technology_position": 50,
+      "ai_revenue_realization": 75
+    },
+    {
       "ticker": "2408",
       "evidence": {
         "bottleneck_directness": {
@@ -435,6 +1055,68 @@
       "bottleneck_directness": 75,
       "industry_technology_position": 50,
       "ai_revenue_realization": 50
+    },
+    {
+      "ticker": "2449",
+      "evidence": {
+        "bottleneck_directness": {
+          "sources": [
+            {
+              "source_url": "https://www.kyec.com.tw/Upfiles/EDUp/files/%E8%82%A1%E6%9D%B1%E6%9C%83/%E4%BA%AC%E5%85%83115%E5%B9%B4%E8%AD%B0%E4%BA%8B%E6%89%8B%E5%86%8A%E4%B8%AD%E6%96%87%E7%89%88.pdf",
+              "source_date": "2026-05-29",
+              "available_at": "2026-05-29",
+              "source_family": "kyec_ir",
+              "evidence_note": "公司營業報告確認AI基礎設施持續擴張並推升半導體測試市場與高階測試需求"
+            },
+            {
+              "source_url": "https://www.moneydj.com/KMDJ/News/NewsViewer.aspx?a=ed9fe20c-7933-45c6-8ba5-f7d2d801386d",
+              "source_date": "2026-06-23",
+              "available_at": "2026-06-23",
+              "source_family": "moneydj_industry",
+              "evidence_note": "AI與HPC測試訂單推動公司上修資本支出並擴增高功率老化測試產能"
+            }
+          ]
+        },
+        "industry_technology_position": {
+          "sources": [
+            {
+              "source_url": "https://www.kyec.com.tw/Upfiles/EDUp/files/%E8%82%A1%E6%9D%B1%E6%9C%83/%E4%BA%AC%E5%85%83115%E5%B9%B4%E8%AD%B0%E4%BA%8B%E6%89%8B%E5%86%8A%E4%B8%AD%E6%96%87%E7%89%88.pdf",
+              "source_date": "2026-05-29",
+              "available_at": "2026-05-29",
+              "source_family": "kyec_ir",
+              "evidence_note": "公司營業報告確認AI基礎設施持續擴張並推升半導體測試市場與高階測試需求"
+            },
+            {
+              "source_url": "https://www.moneydj.com/KMDJ/News/NewsViewer.aspx?a=ed9fe20c-7933-45c6-8ba5-f7d2d801386d",
+              "source_date": "2026-06-23",
+              "available_at": "2026-06-23",
+              "source_family": "moneydj_industry",
+              "evidence_note": "AI與HPC測試訂單推動公司上修資本支出並擴增高功率老化測試產能"
+            }
+          ]
+        },
+        "ai_revenue_realization": {
+          "sources": [
+            {
+              "source_url": "https://www.kyec.com.tw/Upfiles/EDUp/files/%E8%82%A1%E6%9D%B1%E6%9C%83/%E4%BA%AC%E5%85%83115%E5%B9%B4%E8%AD%B0%E4%BA%8B%E6%89%8B%E5%86%8A%E4%B8%AD%E6%96%87%E7%89%88.pdf",
+              "source_date": "2026-05-29",
+              "available_at": "2026-05-29",
+              "source_family": "kyec_ir",
+              "evidence_note": "公司營業報告確認AI基礎設施持續擴張並推升半導體測試市場與高階測試需求"
+            },
+            {
+              "source_url": "https://www.moneydj.com/KMDJ/News/NewsViewer.aspx?a=ed9fe20c-7933-45c6-8ba5-f7d2d801386d",
+              "source_date": "2026-06-23",
+              "available_at": "2026-06-23",
+              "source_family": "moneydj_industry",
+              "evidence_note": "AI與HPC測試訂單推動公司上修資本支出並擴增高功率老化測試產能"
+            }
+          ]
+        }
+      },
+      "bottleneck_directness": 75,
+      "industry_technology_position": 50,
+      "ai_revenue_realization": 75
     },
     {
       "ticker": "2454",
@@ -557,6 +1239,130 @@
           ]
         }
       },
+      "industry_technology_position": 50,
+      "ai_revenue_realization": 50
+    },
+    {
+      "ticker": "3017",
+      "evidence": {
+        "bottleneck_directness": {
+          "sources": [
+            {
+              "source_url": "https://www.esunsec.com.tw/article/post?postid=7d7f19bcff2d4ee1bbb4ab9f092a761c",
+              "source_date": "2026-09-03",
+              "available_at": "2026-09-03",
+              "source_family": "esun_securities_research",
+              "evidence_note": "AI伺服器水冷板與機箱出貨放量且越南水冷產能開始開出"
+            },
+            {
+              "source_url": "https://wealth.firstbank.com.tw/investment-tips/trend-insight/news/news-detail?id=%7B85C157DD-773A-4B2C-AD9F-30D1B09514E6%7D",
+              "source_date": "2026-09-08",
+              "available_at": "2026-09-08",
+              "source_family": "firstbank_moneydj_relay",
+              "evidence_note": "AI散熱需求已反映於營收創高且公司持續擴張水冷產能"
+            }
+          ]
+        },
+        "industry_technology_position": {
+          "sources": [
+            {
+              "source_url": "https://www.esunsec.com.tw/article/post?postid=7d7f19bcff2d4ee1bbb4ab9f092a761c",
+              "source_date": "2026-09-03",
+              "available_at": "2026-09-03",
+              "source_family": "esun_securities_research",
+              "evidence_note": "AI伺服器水冷板與機箱出貨放量且越南水冷產能開始開出"
+            },
+            {
+              "source_url": "https://wealth.firstbank.com.tw/investment-tips/trend-insight/news/news-detail?id=%7B85C157DD-773A-4B2C-AD9F-30D1B09514E6%7D",
+              "source_date": "2026-09-08",
+              "available_at": "2026-09-08",
+              "source_family": "firstbank_moneydj_relay",
+              "evidence_note": "AI散熱需求已反映於營收創高且公司持續擴張水冷產能"
+            }
+          ]
+        },
+        "ai_revenue_realization": {
+          "sources": [
+            {
+              "source_url": "https://www.esunsec.com.tw/article/post?postid=7d7f19bcff2d4ee1bbb4ab9f092a761c",
+              "source_date": "2026-09-03",
+              "available_at": "2026-09-03",
+              "source_family": "esun_securities_research",
+              "evidence_note": "AI伺服器水冷板與機箱出貨放量且越南水冷產能開始開出"
+            },
+            {
+              "source_url": "https://wealth.firstbank.com.tw/investment-tips/trend-insight/news/news-detail?id=%7B85C157DD-773A-4B2C-AD9F-30D1B09514E6%7D",
+              "source_date": "2026-09-08",
+              "available_at": "2026-09-08",
+              "source_family": "firstbank_moneydj_relay",
+              "evidence_note": "AI散熱需求已反映於營收創高且公司持續擴張水冷產能"
+            }
+          ]
+        }
+      },
+      "bottleneck_directness": 75,
+      "industry_technology_position": 50,
+      "ai_revenue_realization": 75
+    },
+    {
+      "ticker": "3035",
+      "evidence": {
+        "bottleneck_directness": {
+          "sources": [
+            {
+              "source_url": "https://eftp.faraday-tech.com/html/News/pressRelease/ENG_01_0448.jsp",
+              "source_date": "2026-03-03",
+              "available_at": "2026-03-03",
+              "source_family": "faraday_ir",
+              "evidence_note": "公司正式揭露邊緣AI與2.5D及3D先進封裝平台已具量產品質IP與完整交付能力"
+            },
+            {
+              "source_url": "https://www.moneydj.com/kmdj/news/newsviewer.aspx?a=691d75a0-20c1-4648-8948-42eff848d38f",
+              "source_date": "2026-06-23",
+              "available_at": "2026-06-23",
+              "source_family": "moneydj_industry",
+              "evidence_note": "獨立資料確認先進封裝專案於2026下半年開始量產貢獻且既有訂單未取消"
+            }
+          ]
+        },
+        "industry_technology_position": {
+          "sources": [
+            {
+              "source_url": "https://eftp.faraday-tech.com/html/News/pressRelease/ENG_01_0448.jsp",
+              "source_date": "2026-03-03",
+              "available_at": "2026-03-03",
+              "source_family": "faraday_ir",
+              "evidence_note": "公司正式揭露邊緣AI與2.5D及3D先進封裝平台已具量產品質IP與完整交付能力"
+            },
+            {
+              "source_url": "https://www.moneydj.com/kmdj/news/newsviewer.aspx?a=691d75a0-20c1-4648-8948-42eff848d38f",
+              "source_date": "2026-06-23",
+              "available_at": "2026-06-23",
+              "source_family": "moneydj_industry",
+              "evidence_note": "獨立資料確認先進封裝專案於2026下半年開始量產貢獻且既有訂單未取消"
+            }
+          ]
+        },
+        "ai_revenue_realization": {
+          "sources": [
+            {
+              "source_url": "https://eftp.faraday-tech.com/html/News/pressRelease/ENG_01_0448.jsp",
+              "source_date": "2026-03-03",
+              "available_at": "2026-03-03",
+              "source_family": "faraday_ir",
+              "evidence_note": "公司正式揭露邊緣AI與2.5D及3D先進封裝平台已具量產品質IP與完整交付能力"
+            },
+            {
+              "source_url": "https://www.moneydj.com/kmdj/news/newsviewer.aspx?a=691d75a0-20c1-4648-8948-42eff848d38f",
+              "source_date": "2026-06-23",
+              "available_at": "2026-06-23",
+              "source_family": "moneydj_industry",
+              "evidence_note": "獨立資料確認先進封裝專案於2026下半年開始量產貢獻且既有訂單未取消"
+            }
+          ]
+        }
+      },
+      "bottleneck_directness": 50,
       "industry_technology_position": 50,
       "ai_revenue_realization": 50
     },
@@ -685,6 +1491,440 @@
       "ai_revenue_realization": 75
     },
     {
+      "ticker": "3131",
+      "evidence": {
+        "bottleneck_directness": {
+          "sources": [
+            {
+              "source_url": "https://finmoconf.diveinvest.net/presentation/6a184f15bab52fb5c80eb29b",
+              "source_date": "2026-05-26",
+              "available_at": "2026-05-26",
+              "source_family": "finmoconf_mops_relay",
+              "evidence_note": "AI先進封裝需求使設備產能超載並啟動擴廠"
+            },
+            {
+              "source_url": "https://vocus.cc/article/6a15bdbafd89780001633b4d",
+              "source_date": "2026-05-31",
+              "available_at": "2026-05-31",
+              "source_family": "vocus_independent_research",
+              "evidence_note": "CoWoS與HBM擴產已形成財務成長並推進3D Hybrid Bond量產"
+            }
+          ]
+        },
+        "industry_technology_position": {
+          "sources": [
+            {
+              "source_url": "https://finmoconf.diveinvest.net/presentation/6a184f15bab52fb5c80eb29b",
+              "source_date": "2026-05-26",
+              "available_at": "2026-05-26",
+              "source_family": "finmoconf_mops_relay",
+              "evidence_note": "AI先進封裝需求使設備產能超載並啟動擴廠"
+            },
+            {
+              "source_url": "https://vocus.cc/article/6a15bdbafd89780001633b4d",
+              "source_date": "2026-05-31",
+              "available_at": "2026-05-31",
+              "source_family": "vocus_independent_research",
+              "evidence_note": "CoWoS與HBM擴產已形成財務成長並推進3D Hybrid Bond量產"
+            }
+          ]
+        },
+        "ai_revenue_realization": {
+          "sources": [
+            {
+              "source_url": "https://finmoconf.diveinvest.net/presentation/6a184f15bab52fb5c80eb29b",
+              "source_date": "2026-05-26",
+              "available_at": "2026-05-26",
+              "source_family": "finmoconf_mops_relay",
+              "evidence_note": "AI先進封裝需求使設備產能超載並啟動擴廠"
+            },
+            {
+              "source_url": "https://vocus.cc/article/6a15bdbafd89780001633b4d",
+              "source_date": "2026-05-31",
+              "available_at": "2026-05-31",
+              "source_family": "vocus_independent_research",
+              "evidence_note": "CoWoS與HBM擴產已形成財務成長並推進3D Hybrid Bond量產"
+            }
+          ]
+        }
+      },
+      "bottleneck_directness": 75,
+      "industry_technology_position": 50,
+      "ai_revenue_realization": 75
+    },
+    {
+      "ticker": "3163",
+      "evidence": {
+        "bottleneck_directness": {
+          "sources": [
+            {
+              "source_url": "https://finmoconf.diveinvest.net/presentation/69b01a86bab52fb5c8bbe2c4",
+              "source_date": "2026-03-10",
+              "available_at": "2026-03-10",
+              "source_family": "finmoconf_mops_relay",
+              "evidence_note": "波若威法說資料確認AI伺服器需要800G與1.6T光纖套件及CPO高密度光纖布局"
+            },
+            {
+              "source_url": "https://wealth.firstbank.com.tw/investment-tips/trend-insight/news/news-detail?id=%7B40D51B65-DD70-4CB5-A51A-3E6BCD641D27%7D",
+              "source_date": "2026-03-10",
+              "available_at": "2026-03-10",
+              "source_family": "firstbank_moneydj_relay",
+              "evidence_note": "獨立報導確認CPO光纖套件與配線盒將由千級量產提升至萬級規模"
+            }
+          ]
+        },
+        "industry_technology_position": {
+          "sources": [
+            {
+              "source_url": "https://finmoconf.diveinvest.net/presentation/69b01a86bab52fb5c8bbe2c4",
+              "source_date": "2026-03-10",
+              "available_at": "2026-03-10",
+              "source_family": "finmoconf_mops_relay",
+              "evidence_note": "波若威法說資料確認AI伺服器需要800G與1.6T光纖套件及CPO高密度光纖布局"
+            },
+            {
+              "source_url": "https://wealth.firstbank.com.tw/investment-tips/trend-insight/news/news-detail?id=%7B40D51B65-DD70-4CB5-A51A-3E6BCD641D27%7D",
+              "source_date": "2026-03-10",
+              "available_at": "2026-03-10",
+              "source_family": "firstbank_moneydj_relay",
+              "evidence_note": "獨立報導確認CPO光纖套件與配線盒將由千級量產提升至萬級規模"
+            }
+          ]
+        },
+        "ai_revenue_realization": {
+          "sources": [
+            {
+              "source_url": "https://finmoconf.diveinvest.net/presentation/69b01a86bab52fb5c8bbe2c4",
+              "source_date": "2026-03-10",
+              "available_at": "2026-03-10",
+              "source_family": "finmoconf_mops_relay",
+              "evidence_note": "波若威法說資料確認AI伺服器需要800G與1.6T光纖套件及CPO高密度光纖布局"
+            },
+            {
+              "source_url": "https://wealth.firstbank.com.tw/investment-tips/trend-insight/news/news-detail?id=%7B40D51B65-DD70-4CB5-A51A-3E6BCD641D27%7D",
+              "source_date": "2026-03-10",
+              "available_at": "2026-03-10",
+              "source_family": "firstbank_moneydj_relay",
+              "evidence_note": "獨立報導確認CPO光纖套件與配線盒將由千級量產提升至萬級規模"
+            }
+          ]
+        }
+      },
+      "bottleneck_directness": 75,
+      "industry_technology_position": 50,
+      "ai_revenue_realization": 75
+    },
+    {
+      "ticker": "3189",
+      "evidence": {
+        "bottleneck_directness": {
+          "sources": [
+            {
+              "source_url": "https://www.pocket.tw/school/report/SCHOOL/6374/",
+              "source_date": "2026-04-15",
+              "available_at": "2026-04-15",
+              "source_family": "pocket_research",
+              "evidence_note": "AI ASIC與伺服器CPU需求帶動ABF稼動率提升"
+            },
+            {
+              "source_url": "https://www.pgia.com.tw/upload/docdl/U0006/19b9d331959V4zQ/doc_20260108_104210_0393.pdf",
+              "source_date": "2026-01-08",
+              "available_at": "2026-01-08",
+              "source_family": "pgia_research",
+              "evidence_note": "研究確認景碩進入下一代AI加速器ABF載板供應鏈"
+            }
+          ]
+        },
+        "industry_technology_position": {
+          "sources": [
+            {
+              "source_url": "https://www.pocket.tw/school/report/SCHOOL/6374/",
+              "source_date": "2026-04-15",
+              "available_at": "2026-04-15",
+              "source_family": "pocket_research",
+              "evidence_note": "AI ASIC與伺服器CPU需求帶動ABF稼動率提升"
+            },
+            {
+              "source_url": "https://www.pgia.com.tw/upload/docdl/U0006/19b9d331959V4zQ/doc_20260108_104210_0393.pdf",
+              "source_date": "2026-01-08",
+              "available_at": "2026-01-08",
+              "source_family": "pgia_research",
+              "evidence_note": "研究確認景碩進入下一代AI加速器ABF載板供應鏈"
+            }
+          ]
+        },
+        "ai_revenue_realization": {
+          "sources": [
+            {
+              "source_url": "https://www.pocket.tw/school/report/SCHOOL/6374/",
+              "source_date": "2026-04-15",
+              "available_at": "2026-04-15",
+              "source_family": "pocket_research",
+              "evidence_note": "AI ASIC與伺服器CPU需求帶動ABF稼動率提升"
+            },
+            {
+              "source_url": "https://www.pgia.com.tw/upload/docdl/U0006/19b9d331959V4zQ/doc_20260108_104210_0393.pdf",
+              "source_date": "2026-01-08",
+              "available_at": "2026-01-08",
+              "source_family": "pgia_research",
+              "evidence_note": "研究確認景碩進入下一代AI加速器ABF載板供應鏈"
+            }
+          ]
+        }
+      },
+      "bottleneck_directness": 75,
+      "industry_technology_position": 50,
+      "ai_revenue_realization": 75
+    },
+    {
+      "ticker": "3231",
+      "evidence": {
+        "bottleneck_directness": {
+          "sources": [
+            {
+              "source_url": "https://www.wistron.com/en/Newsroom/2026-03-12",
+              "source_date": "2026-03-12",
+              "available_at": "2026-03-12",
+              "source_family": "wistron_ir",
+              "evidence_note": "緯創官方確認擴充墨西哥AI伺服器製造能力並增加台灣AI相關事業產能"
+            },
+            {
+              "source_url": "https://www.moneydj.com/KMDJ/News/NewsViewer.aspx?a=5787cc31-04e5-4cad-8033-121ab2ab62a3",
+              "source_date": "2026-03-24",
+              "available_at": "2026-03-24",
+              "source_family": "moneydj_industry",
+              "evidence_note": "獨立報導確認AI伺服器放量促使緯創上修資本支出及全球產能布局"
+            }
+          ]
+        },
+        "industry_technology_position": {
+          "sources": [
+            {
+              "source_url": "https://www.wistron.com/en/Newsroom/2026-03-12",
+              "source_date": "2026-03-12",
+              "available_at": "2026-03-12",
+              "source_family": "wistron_ir",
+              "evidence_note": "緯創官方確認擴充墨西哥AI伺服器製造能力並增加台灣AI相關事業產能"
+            },
+            {
+              "source_url": "https://www.moneydj.com/KMDJ/News/NewsViewer.aspx?a=5787cc31-04e5-4cad-8033-121ab2ab62a3",
+              "source_date": "2026-03-24",
+              "available_at": "2026-03-24",
+              "source_family": "moneydj_industry",
+              "evidence_note": "獨立報導確認AI伺服器放量促使緯創上修資本支出及全球產能布局"
+            }
+          ]
+        },
+        "ai_revenue_realization": {
+          "sources": [
+            {
+              "source_url": "https://www.wistron.com/en/Newsroom/2026-03-12",
+              "source_date": "2026-03-12",
+              "available_at": "2026-03-12",
+              "source_family": "wistron_ir",
+              "evidence_note": "緯創官方確認擴充墨西哥AI伺服器製造能力並增加台灣AI相關事業產能"
+            },
+            {
+              "source_url": "https://www.moneydj.com/KMDJ/News/NewsViewer.aspx?a=5787cc31-04e5-4cad-8033-121ab2ab62a3",
+              "source_date": "2026-03-24",
+              "available_at": "2026-03-24",
+              "source_family": "moneydj_industry",
+              "evidence_note": "獨立報導確認AI伺服器放量促使緯創上修資本支出及全球產能布局"
+            }
+          ]
+        }
+      },
+      "bottleneck_directness": 75,
+      "industry_technology_position": 50,
+      "ai_revenue_realization": 75
+    },
+    {
+      "ticker": "3260",
+      "evidence": {
+        "bottleneck_directness": {
+          "sources": [
+            {
+              "source_url": "https://shop.nstock.tw/api/v2/stock-financial-report/report?type=0&url=https%3A%2F%2Fmopsov.twse.com.tw%2Fnas%2FSTR%2F326020260305M001.pdf",
+              "source_date": "2026-03-05",
+              "available_at": "2026-03-05",
+              "source_family": "mops_company_filing",
+              "evidence_note": "威剛法說簡報確認AI驅動SSD與DDR需求及高容量高頻寬記憶體成長"
+            },
+            {
+              "source_url": "https://gfe-desktop.cnyes.com/news/id/6464635",
+              "source_date": "2026-05-20",
+              "available_at": "2026-05-20",
+              "source_family": "cnyes_industry",
+              "evidence_note": "獨立報導確認新增供給有限使DRAM與NAND於2026至2027維持緊張"
+            }
+          ]
+        },
+        "industry_technology_position": {
+          "sources": [
+            {
+              "source_url": "https://shop.nstock.tw/api/v2/stock-financial-report/report?type=0&url=https%3A%2F%2Fmopsov.twse.com.tw%2Fnas%2FSTR%2F326020260305M001.pdf",
+              "source_date": "2026-03-05",
+              "available_at": "2026-03-05",
+              "source_family": "mops_company_filing",
+              "evidence_note": "威剛法說簡報確認AI驅動SSD與DDR需求及高容量高頻寬記憶體成長"
+            },
+            {
+              "source_url": "https://gfe-desktop.cnyes.com/news/id/6464635",
+              "source_date": "2026-05-20",
+              "available_at": "2026-05-20",
+              "source_family": "cnyes_industry",
+              "evidence_note": "獨立報導確認新增供給有限使DRAM與NAND於2026至2027維持緊張"
+            }
+          ]
+        },
+        "ai_revenue_realization": {
+          "sources": [
+            {
+              "source_url": "https://shop.nstock.tw/api/v2/stock-financial-report/report?type=0&url=https%3A%2F%2Fmopsov.twse.com.tw%2Fnas%2FSTR%2F326020260305M001.pdf",
+              "source_date": "2026-03-05",
+              "available_at": "2026-03-05",
+              "source_family": "mops_company_filing",
+              "evidence_note": "威剛法說簡報確認AI驅動SSD與DDR需求及高容量高頻寬記憶體成長"
+            },
+            {
+              "source_url": "https://gfe-desktop.cnyes.com/news/id/6464635",
+              "source_date": "2026-05-20",
+              "available_at": "2026-05-20",
+              "source_family": "cnyes_industry",
+              "evidence_note": "獨立報導確認新增供給有限使DRAM與NAND於2026至2027維持緊張"
+            }
+          ]
+        }
+      },
+      "bottleneck_directness": 50,
+      "industry_technology_position": 50,
+      "ai_revenue_realization": 50
+    },
+    {
+      "ticker": "3324",
+      "evidence": {
+        "bottleneck_directness": {
+          "sources": [
+            {
+              "source_url": "https://www.auras.com.tw/CMSFS/Shareholders/FinancialAnnualChinese/ed4475a3-db60-455c-9ce9-93699a2fe601.pdf",
+              "source_date": "2025-05-20",
+              "available_at": "2025-05-20",
+              "source_family": "auras_ir",
+              "evidence_note": "液冷散熱已由零組件延伸至整機櫃系統且營收獲利已兌現"
+            },
+            {
+              "source_url": "https://www.esunsec.com.tw/article/post?postid=7d7f19bcff2d4ee1bbb4ab9f092a761c",
+              "source_date": "2026-09-03",
+              "available_at": "2026-09-03",
+              "source_family": "esun_securities_research",
+              "evidence_note": "CDU與分歧管自製率提升且主要客戶水冷系統驗證陸續到位"
+            }
+          ]
+        },
+        "industry_technology_position": {
+          "sources": [
+            {
+              "source_url": "https://www.auras.com.tw/CMSFS/Shareholders/FinancialAnnualChinese/ed4475a3-db60-455c-9ce9-93699a2fe601.pdf",
+              "source_date": "2025-05-20",
+              "available_at": "2025-05-20",
+              "source_family": "auras_ir",
+              "evidence_note": "液冷散熱已由零組件延伸至整機櫃系統且營收獲利已兌現"
+            },
+            {
+              "source_url": "https://www.esunsec.com.tw/article/post?postid=7d7f19bcff2d4ee1bbb4ab9f092a761c",
+              "source_date": "2026-09-03",
+              "available_at": "2026-09-03",
+              "source_family": "esun_securities_research",
+              "evidence_note": "CDU與分歧管自製率提升且主要客戶水冷系統驗證陸續到位"
+            }
+          ]
+        },
+        "ai_revenue_realization": {
+          "sources": [
+            {
+              "source_url": "https://www.auras.com.tw/CMSFS/Shareholders/FinancialAnnualChinese/ed4475a3-db60-455c-9ce9-93699a2fe601.pdf",
+              "source_date": "2025-05-20",
+              "available_at": "2025-05-20",
+              "source_family": "auras_ir",
+              "evidence_note": "液冷散熱已由零組件延伸至整機櫃系統且營收獲利已兌現"
+            },
+            {
+              "source_url": "https://www.esunsec.com.tw/article/post?postid=7d7f19bcff2d4ee1bbb4ab9f092a761c",
+              "source_date": "2026-09-03",
+              "available_at": "2026-09-03",
+              "source_family": "esun_securities_research",
+              "evidence_note": "CDU與分歧管自製率提升且主要客戶水冷系統驗證陸續到位"
+            }
+          ]
+        }
+      },
+      "bottleneck_directness": 75,
+      "industry_technology_position": 50,
+      "ai_revenue_realization": 75
+    },
+    {
+      "ticker": "3338",
+      "evidence": {
+        "bottleneck_directness": {
+          "sources": [
+            {
+              "source_url": "https://finmoconf.diveinvest.net/presentation/6a5e2e93a16a75b8136cd25c",
+              "source_date": "2026-07-20",
+              "available_at": "2026-07-20",
+              "source_family": "finmoconf_mops_relay",
+              "evidence_note": "公司已推出800VDC高壓液冷CDU並進行高規格可靠度驗證"
+            },
+            {
+              "source_url": "https://money.udn.com/money/amp/story/5710/9639824",
+              "source_date": "2026-07-21",
+              "available_at": "2026-07-21",
+              "source_family": "udn_finance",
+              "evidence_note": "公司取得AI水冷訂單並預計第四季出貨後續量產"
+            }
+          ]
+        },
+        "industry_technology_position": {
+          "sources": [
+            {
+              "source_url": "https://finmoconf.diveinvest.net/presentation/6a5e2e93a16a75b8136cd25c",
+              "source_date": "2026-07-20",
+              "available_at": "2026-07-20",
+              "source_family": "finmoconf_mops_relay",
+              "evidence_note": "公司已推出800VDC高壓液冷CDU並進行高規格可靠度驗證"
+            },
+            {
+              "source_url": "https://money.udn.com/money/amp/story/5710/9639824",
+              "source_date": "2026-07-21",
+              "available_at": "2026-07-21",
+              "source_family": "udn_finance",
+              "evidence_note": "公司取得AI水冷訂單並預計第四季出貨後續量產"
+            }
+          ]
+        },
+        "ai_revenue_realization": {
+          "sources": [
+            {
+              "source_url": "https://finmoconf.diveinvest.net/presentation/6a5e2e93a16a75b8136cd25c",
+              "source_date": "2026-07-20",
+              "available_at": "2026-07-20",
+              "source_family": "finmoconf_mops_relay",
+              "evidence_note": "公司已推出800VDC高壓液冷CDU並進行高規格可靠度驗證"
+            },
+            {
+              "source_url": "https://money.udn.com/money/amp/story/5710/9639824",
+              "source_date": "2026-07-21",
+              "available_at": "2026-07-21",
+              "source_family": "udn_finance",
+              "evidence_note": "公司取得AI水冷訂單並預計第四季出貨後續量產"
+            }
+          ]
+        }
+      },
+      "bottleneck_directness": 50,
+      "industry_technology_position": 50,
+      "ai_revenue_realization": 50
+    },
+    {
       "ticker": "3357",
       "bottleneck_directness": 50,
       "evidence": {
@@ -747,6 +1987,998 @@
       "ai_revenue_realization": 25
     },
     {
+      "ticker": "3363",
+      "evidence": {
+        "bottleneck_directness": {
+          "sources": [
+            {
+              "source_url": "https://www.himax.com.tw/wp-content/uploads/2026/05/1Q26-Earnings-PR-Final-cht.pdf",
+              "source_date": "2026-05-07",
+              "available_at": "2026-05-07",
+              "source_family": "himax_ir",
+              "evidence_note": "奇景官方揭露與上詮合作的1.6T與3.2T方案已準備於2026下半年小量出貨且6.4T產品接近完成客戶驗證"
+            },
+            {
+              "source_url": "https://www.ttv.com.tw/finance/view/0720260710050B29AE35C5884793BFDF07635CF7BD49950E/587",
+              "source_date": "2026-07-07",
+              "available_at": "2026-07-07",
+              "source_family": "moneydj_industry",
+              "evidence_note": "上詮2026下半年開始交付1.6T與3.2T FAU且後續規劃推進6.4T"
+            }
+          ]
+        },
+        "industry_technology_position": {
+          "sources": [
+            {
+              "source_url": "https://www.himax.com.tw/wp-content/uploads/2026/05/1Q26-Earnings-PR-Final-cht.pdf",
+              "source_date": "2026-05-07",
+              "available_at": "2026-05-07",
+              "source_family": "himax_ir",
+              "evidence_note": "奇景官方揭露與上詮合作的1.6T與3.2T方案已準備於2026下半年小量出貨且6.4T產品接近完成客戶驗證"
+            },
+            {
+              "source_url": "https://www.ttv.com.tw/finance/view/0720260710050B29AE35C5884793BFDF07635CF7BD49950E/587",
+              "source_date": "2026-07-07",
+              "available_at": "2026-07-07",
+              "source_family": "moneydj_industry",
+              "evidence_note": "上詮2026下半年開始交付1.6T與3.2T FAU且後續規劃推進6.4T"
+            }
+          ]
+        },
+        "ai_revenue_realization": {
+          "sources": [
+            {
+              "source_url": "https://www.himax.com.tw/wp-content/uploads/2026/05/1Q26-Earnings-PR-Final-cht.pdf",
+              "source_date": "2026-05-07",
+              "available_at": "2026-05-07",
+              "source_family": "himax_ir",
+              "evidence_note": "奇景官方揭露與上詮合作的1.6T與3.2T方案已準備於2026下半年小量出貨且6.4T產品接近完成客戶驗證"
+            },
+            {
+              "source_url": "https://www.ttv.com.tw/finance/view/0720260710050B29AE35C5884793BFDF07635CF7BD49950E/587",
+              "source_date": "2026-07-07",
+              "available_at": "2026-07-07",
+              "source_family": "moneydj_industry",
+              "evidence_note": "上詮2026下半年開始交付1.6T與3.2T FAU且後續規劃推進6.4T"
+            }
+          ]
+        }
+      },
+      "bottleneck_directness": 50,
+      "industry_technology_position": 50,
+      "ai_revenue_realization": 50
+    },
+    {
+      "ticker": "3443",
+      "evidence": {
+        "bottleneck_directness": {
+          "sources": [
+            {
+              "source_url": "https://www.guc-asic.com/public/tw/news/PressReleases/PR_20260526",
+              "source_date": "2026-05-26",
+              "available_at": "2026-05-26",
+              "source_family": "guc_ir",
+              "evidence_note": "創意提供HBM與UCIe關鍵IP及CoWoS等2.5D與3D設計製造量產服務並已展示資料中心AI推論晶片"
+            },
+            {
+              "source_url": "https://www.moneydj.com/kmdj/news/newsviewer.aspx?a=8b9ae6d7-7f01-46fa-ab35-d29897a392e4&c=MB00",
+              "source_date": "2026-08-11",
+              "available_at": "2026-08-11",
+              "source_family": "moneydj_industry",
+              "evidence_note": "獨立產業報導確認創意AI ASIC量產出貨與兩家美系CSP後續量產專案已進入接續階段"
+            }
+          ]
+        },
+        "industry_technology_position": {
+          "sources": [
+            {
+              "source_url": "https://www.guc-asic.com/public/tw/news/PressReleases/PR_20260526",
+              "source_date": "2026-05-26",
+              "available_at": "2026-05-26",
+              "source_family": "guc_ir",
+              "evidence_note": "創意提供HBM與UCIe關鍵IP及CoWoS等2.5D與3D設計製造量產服務並已展示資料中心AI推論晶片"
+            },
+            {
+              "source_url": "https://www.moneydj.com/kmdj/news/newsviewer.aspx?a=8b9ae6d7-7f01-46fa-ab35-d29897a392e4&c=MB00",
+              "source_date": "2026-08-11",
+              "available_at": "2026-08-11",
+              "source_family": "moneydj_industry",
+              "evidence_note": "獨立產業報導確認創意AI ASIC量產出貨與兩家美系CSP後續量產專案已進入接續階段"
+            }
+          ]
+        },
+        "ai_revenue_realization": {
+          "sources": [
+            {
+              "source_url": "https://www.guc-asic.com/public/tw/news/PressReleases/PR_20260526",
+              "source_date": "2026-05-26",
+              "available_at": "2026-05-26",
+              "source_family": "guc_ir",
+              "evidence_note": "創意提供HBM與UCIe關鍵IP及CoWoS等2.5D與3D設計製造量產服務並已展示資料中心AI推論晶片"
+            },
+            {
+              "source_url": "https://www.moneydj.com/kmdj/news/newsviewer.aspx?a=8b9ae6d7-7f01-46fa-ab35-d29897a392e4&c=MB00",
+              "source_date": "2026-08-11",
+              "available_at": "2026-08-11",
+              "source_family": "moneydj_industry",
+              "evidence_note": "獨立產業報導確認創意AI ASIC量產出貨與兩家美系CSP後續量產專案已進入接續階段"
+            }
+          ]
+        }
+      },
+      "bottleneck_directness": 75,
+      "industry_technology_position": 75,
+      "ai_revenue_realization": 75
+    },
+    {
+      "ticker": "3532",
+      "evidence": {
+        "bottleneck_directness": {
+          "sources": [
+            {
+              "source_url": "https://money.udn.com/money/amp/story/5612/9531741",
+              "source_date": "2026-05-28",
+              "available_at": "2026-05-28",
+              "source_family": "udn_finance",
+              "evidence_note": "AI先進封裝多晶圓堆疊增加矽晶圓用量且供需趨緊"
+            },
+            {
+              "source_url": "https://www.yuantafutures.com.tw/UploadFile/Artical/202601/1767693408384_%E3%80%90%E5%85%83%E5%A4%A7%E6%9C%9F%E8%B2%A8%E3%80%91%E8%82%A1%E6%9C%9F%E7%84%A6%E9%BB%9E%E7%86%B1%E5%8D%80%2020260106_20260106_171557.pdf",
+              "source_date": "2026-01-06",
+              "available_at": "2026-01-06",
+              "source_family": "yuanta_research",
+              "evidence_note": "12吋產能滿載且新廠產能已被客戶訂單預定"
+            }
+          ]
+        },
+        "industry_technology_position": {
+          "sources": [
+            {
+              "source_url": "https://money.udn.com/money/amp/story/5612/9531741",
+              "source_date": "2026-05-28",
+              "available_at": "2026-05-28",
+              "source_family": "udn_finance",
+              "evidence_note": "AI先進封裝多晶圓堆疊增加矽晶圓用量且供需趨緊"
+            },
+            {
+              "source_url": "https://www.yuantafutures.com.tw/UploadFile/Artical/202601/1767693408384_%E3%80%90%E5%85%83%E5%A4%A7%E6%9C%9F%E8%B2%A8%E3%80%91%E8%82%A1%E6%9C%9F%E7%84%A6%E9%BB%9E%E7%86%B1%E5%8D%80%2020260106_20260106_171557.pdf",
+              "source_date": "2026-01-06",
+              "available_at": "2026-01-06",
+              "source_family": "yuanta_research",
+              "evidence_note": "12吋產能滿載且新廠產能已被客戶訂單預定"
+            }
+          ]
+        },
+        "ai_revenue_realization": {
+          "sources": [
+            {
+              "source_url": "https://money.udn.com/money/amp/story/5612/9531741",
+              "source_date": "2026-05-28",
+              "available_at": "2026-05-28",
+              "source_family": "udn_finance",
+              "evidence_note": "AI先進封裝多晶圓堆疊增加矽晶圓用量且供需趨緊"
+            },
+            {
+              "source_url": "https://www.yuantafutures.com.tw/UploadFile/Artical/202601/1767693408384_%E3%80%90%E5%85%83%E5%A4%A7%E6%9C%9F%E8%B2%A8%E3%80%91%E8%82%A1%E6%9C%9F%E7%84%A6%E9%BB%9E%E7%86%B1%E5%8D%80%2020260106_20260106_171557.pdf",
+              "source_date": "2026-01-06",
+              "available_at": "2026-01-06",
+              "source_family": "yuanta_research",
+              "evidence_note": "12吋產能滿載且新廠產能已被客戶訂單預定"
+            }
+          ]
+        }
+      },
+      "bottleneck_directness": 75,
+      "industry_technology_position": 50,
+      "ai_revenue_realization": 75
+    },
+    {
+      "ticker": "3583",
+      "evidence": {
+        "bottleneck_directness": {
+          "sources": [
+            {
+              "source_url": "https://news.nextapple.com/finance/20260128/984C6EF388CEE21753606669C5320C5A",
+              "source_date": "2026-01-28",
+              "available_at": "2026-01-28",
+              "source_family": "nextapple_finance",
+              "evidence_note": "自製設備2026產能滿載且訂單看到2027顯示CoWoS設備為擴產瓶頸"
+            },
+            {
+              "source_url": "https://ec.ltn.com.tw/article/breakingnews/5465681",
+              "source_date": "2026-06-09",
+              "available_at": "2026-06-09",
+              "source_family": "liberty_times_finance",
+              "evidence_note": "主要客戶擴增CoWoS使設備訂單增加且公司同步擴建產能"
+            }
+          ]
+        },
+        "industry_technology_position": {
+          "sources": [
+            {
+              "source_url": "https://news.nextapple.com/finance/20260128/984C6EF388CEE21753606669C5320C5A",
+              "source_date": "2026-01-28",
+              "available_at": "2026-01-28",
+              "source_family": "nextapple_finance",
+              "evidence_note": "自製設備2026產能滿載且訂單看到2027顯示CoWoS設備為擴產瓶頸"
+            },
+            {
+              "source_url": "https://ec.ltn.com.tw/article/breakingnews/5465681",
+              "source_date": "2026-06-09",
+              "available_at": "2026-06-09",
+              "source_family": "liberty_times_finance",
+              "evidence_note": "主要客戶擴增CoWoS使設備訂單增加且公司同步擴建產能"
+            }
+          ]
+        },
+        "ai_revenue_realization": {
+          "sources": [
+            {
+              "source_url": "https://news.nextapple.com/finance/20260128/984C6EF388CEE21753606669C5320C5A",
+              "source_date": "2026-01-28",
+              "available_at": "2026-01-28",
+              "source_family": "nextapple_finance",
+              "evidence_note": "自製設備2026產能滿載且訂單看到2027顯示CoWoS設備為擴產瓶頸"
+            },
+            {
+              "source_url": "https://ec.ltn.com.tw/article/breakingnews/5465681",
+              "source_date": "2026-06-09",
+              "available_at": "2026-06-09",
+              "source_family": "liberty_times_finance",
+              "evidence_note": "主要客戶擴增CoWoS使設備訂單增加且公司同步擴建產能"
+            }
+          ]
+        }
+      },
+      "bottleneck_directness": 75,
+      "industry_technology_position": 50,
+      "ai_revenue_realization": 75
+    },
+    {
+      "ticker": "3653",
+      "evidence": {
+        "bottleneck_directness": {
+          "sources": [
+            {
+              "source_url": "https://www.jentech.com.tw/zh/vapor-chamber-lid-2",
+              "source_date": "2026-10-01",
+              "available_at": "2026-10-01",
+              "source_family": "jentech_product",
+              "evidence_note": "微通道散熱蓋直接對應超過1000W的AI加速器與HPC液冷需求"
+            },
+            {
+              "source_url": "https://wealth.firstbank.com.tw/investment-tips/trend-insight/news/news-detail?id=%7B85C157DD-773A-4B2C-AD9F-30D1B09514E6%7D",
+              "source_date": "2026-09-08",
+              "available_at": "2026-09-08",
+              "source_family": "firstbank_moneydj_relay",
+              "evidence_note": "AI伺服器散熱需求已帶動營收連續創高並形成可驗證財務兌現"
+            }
+          ]
+        },
+        "industry_technology_position": {
+          "sources": [
+            {
+              "source_url": "https://www.jentech.com.tw/zh/vapor-chamber-lid-2",
+              "source_date": "2026-10-01",
+              "available_at": "2026-10-01",
+              "source_family": "jentech_product",
+              "evidence_note": "微通道散熱蓋直接對應超過1000W的AI加速器與HPC液冷需求"
+            },
+            {
+              "source_url": "https://wealth.firstbank.com.tw/investment-tips/trend-insight/news/news-detail?id=%7B85C157DD-773A-4B2C-AD9F-30D1B09514E6%7D",
+              "source_date": "2026-09-08",
+              "available_at": "2026-09-08",
+              "source_family": "firstbank_moneydj_relay",
+              "evidence_note": "AI伺服器散熱需求已帶動營收連續創高並形成可驗證財務兌現"
+            }
+          ]
+        },
+        "ai_revenue_realization": {
+          "sources": [
+            {
+              "source_url": "https://www.jentech.com.tw/zh/vapor-chamber-lid-2",
+              "source_date": "2026-10-01",
+              "available_at": "2026-10-01",
+              "source_family": "jentech_product",
+              "evidence_note": "微通道散熱蓋直接對應超過1000W的AI加速器與HPC液冷需求"
+            },
+            {
+              "source_url": "https://wealth.firstbank.com.tw/investment-tips/trend-insight/news/news-detail?id=%7B85C157DD-773A-4B2C-AD9F-30D1B09514E6%7D",
+              "source_date": "2026-09-08",
+              "available_at": "2026-09-08",
+              "source_family": "firstbank_moneydj_relay",
+              "evidence_note": "AI伺服器散熱需求已帶動營收連續創高並形成可驗證財務兌現"
+            }
+          ]
+        }
+      },
+      "bottleneck_directness": 75,
+      "industry_technology_position": 50,
+      "ai_revenue_realization": 75
+    },
+    {
+      "ticker": "3661",
+      "evidence": {
+        "bottleneck_directness": {
+          "sources": [
+            {
+              "source_url": "https://www.alchip.com/upload/2025_10_07/3_20251007103040lskz8o0.pdf",
+              "source_date": "2025-05-23",
+              "available_at": "2025-05-23",
+              "source_family": "alchip_ir",
+              "evidence_note": "世芯多項5奈米與3奈米AI及HPC設計案完成流片並進入量產且AI與HPC占2024營收94%"
+            },
+            {
+              "source_url": "https://www.cier.edu.tw/wp-content/uploads/2026/06/NO0225-041-047-%E8%87%BA%E7%81%A3%E7%B6%93%E6%BF%9F-%E8%94%A1%E9%B3%B3%E5%87%B0-ASIC%E8%87%AA%E7%A0%94%E8%B6%A8%E5%8B%A2%E4%B8%8B%E8%87%BA%E7%81%A3IC%E8%A8%AD%E8%A8%88%E6%9C%8D%E5%8B%99%E6%A5%AD%E7%9A%84%E8%BD%89%E5%9E%8B%E8%B7%AF%E5%BE%91.pdf",
+              "source_date": "2026-06-01",
+              "available_at": "2026-06-01",
+              "source_family": "cier_industry_research",
+              "evidence_note": "中經院研究將世芯列為ASIC委託設計代表並估計其AI伺服器ASIC市場占比於2027年提高至24%"
+            }
+          ]
+        },
+        "industry_technology_position": {
+          "sources": [
+            {
+              "source_url": "https://www.alchip.com/upload/2025_10_07/3_20251007103040lskz8o0.pdf",
+              "source_date": "2025-05-23",
+              "available_at": "2025-05-23",
+              "source_family": "alchip_ir",
+              "evidence_note": "世芯多項5奈米與3奈米AI及HPC設計案完成流片並進入量產且AI與HPC占2024營收94%"
+            },
+            {
+              "source_url": "https://www.cier.edu.tw/wp-content/uploads/2026/06/NO0225-041-047-%E8%87%BA%E7%81%A3%E7%B6%93%E6%BF%9F-%E8%94%A1%E9%B3%B3%E5%87%B0-ASIC%E8%87%AA%E7%A0%94%E8%B6%A8%E5%8B%A2%E4%B8%8B%E8%87%BA%E7%81%A3IC%E8%A8%AD%E8%A8%88%E6%9C%8D%E5%8B%99%E6%A5%AD%E7%9A%84%E8%BD%89%E5%9E%8B%E8%B7%AF%E5%BE%91.pdf",
+              "source_date": "2026-06-01",
+              "available_at": "2026-06-01",
+              "source_family": "cier_industry_research",
+              "evidence_note": "中經院研究將世芯列為ASIC委託設計代表並估計其AI伺服器ASIC市場占比於2027年提高至24%"
+            }
+          ]
+        },
+        "ai_revenue_realization": {
+          "sources": [
+            {
+              "source_url": "https://www.alchip.com/upload/2025_10_07/3_20251007103040lskz8o0.pdf",
+              "source_date": "2025-05-23",
+              "available_at": "2025-05-23",
+              "source_family": "alchip_ir",
+              "evidence_note": "世芯多項5奈米與3奈米AI及HPC設計案完成流片並進入量產且AI與HPC占2024營收94%"
+            },
+            {
+              "source_url": "https://www.cier.edu.tw/wp-content/uploads/2026/06/NO0225-041-047-%E8%87%BA%E7%81%A3%E7%B6%93%E6%BF%9F-%E8%94%A1%E9%B3%B3%E5%87%B0-ASIC%E8%87%AA%E7%A0%94%E8%B6%A8%E5%8B%A2%E4%B8%8B%E8%87%BA%E7%81%A3IC%E8%A8%AD%E8%A8%88%E6%9C%8D%E5%8B%99%E6%A5%AD%E7%9A%84%E8%BD%89%E5%9E%8B%E8%B7%AF%E5%BE%91.pdf",
+              "source_date": "2026-06-01",
+              "available_at": "2026-06-01",
+              "source_family": "cier_industry_research",
+              "evidence_note": "中經院研究將世芯列為ASIC委託設計代表並估計其AI伺服器ASIC市場占比於2027年提高至24%"
+            }
+          ]
+        }
+      },
+      "bottleneck_directness": 75,
+      "industry_technology_position": 75,
+      "ai_revenue_realization": 100
+    },
+    {
+      "ticker": "3711",
+      "evidence": {
+        "bottleneck_directness": {
+          "sources": [
+            {
+              "source_url": "https://www.aseglobal.com/press-room/310x310/",
+              "source_date": "2026-05-26",
+              "available_at": "2026-05-26",
+              "source_family": "ase_ir",
+              "evidence_note": "公司推進面板級先進封裝以擴充AI與高效能運算封裝能力"
+            },
+            {
+              "source_url": "https://www.trendforce.com/news/2026/07/31/news-ase-again-raises-2026-capex-to-record-us10-5b-eyes-2x-leading-edge-advanced-packaging-revenue-by-2027/",
+              "source_date": "2026-07-31",
+              "available_at": "2026-07-31",
+              "source_family": "trendforce_research",
+              "evidence_note": "資本支出與先進封裝營收目標同步上調顯示需求與產能擴張進入兌現期"
+            }
+          ]
+        },
+        "industry_technology_position": {
+          "sources": [
+            {
+              "source_url": "https://www.aseglobal.com/press-room/310x310/",
+              "source_date": "2026-05-26",
+              "available_at": "2026-05-26",
+              "source_family": "ase_ir",
+              "evidence_note": "公司推進面板級先進封裝以擴充AI與高效能運算封裝能力"
+            },
+            {
+              "source_url": "https://www.trendforce.com/news/2026/07/31/news-ase-again-raises-2026-capex-to-record-us10-5b-eyes-2x-leading-edge-advanced-packaging-revenue-by-2027/",
+              "source_date": "2026-07-31",
+              "available_at": "2026-07-31",
+              "source_family": "trendforce_research",
+              "evidence_note": "資本支出與先進封裝營收目標同步上調顯示需求與產能擴張進入兌現期"
+            }
+          ]
+        },
+        "ai_revenue_realization": {
+          "sources": [
+            {
+              "source_url": "https://www.aseglobal.com/press-room/310x310/",
+              "source_date": "2026-05-26",
+              "available_at": "2026-05-26",
+              "source_family": "ase_ir",
+              "evidence_note": "公司推進面板級先進封裝以擴充AI與高效能運算封裝能力"
+            },
+            {
+              "source_url": "https://www.trendforce.com/news/2026/07/31/news-ase-again-raises-2026-capex-to-record-us10-5b-eyes-2x-leading-edge-advanced-packaging-revenue-by-2027/",
+              "source_date": "2026-07-31",
+              "available_at": "2026-07-31",
+              "source_family": "trendforce_research",
+              "evidence_note": "資本支出與先進封裝營收目標同步上調顯示需求與產能擴張進入兌現期"
+            }
+          ]
+        }
+      },
+      "bottleneck_directness": 75,
+      "industry_technology_position": 50,
+      "ai_revenue_realization": 75
+    },
+    {
+      "ticker": "4979",
+      "evidence": {
+        "bottleneck_directness": {
+          "sources": [
+            {
+              "source_url": "https://www.kgi.com.hk/zh-cn/-/media/files/kgishk/research-reports/investment-perspectives/2026/kgis-global-markets-weekly-kickstart_20260202.pdf",
+              "source_date": "2026-02-02",
+              "available_at": "2026-02-02",
+              "source_family": "kgi_research",
+              "evidence_note": "凱基研究確認800G完成客戶認證出貨並受惠AI相關客戶擴張"
+            },
+            {
+              "source_url": "https://www.moneydj.com/KMDJ/news/newsviewer.aspx?a=24de7354-e77c-445f-a299-0e12c3a0792f",
+              "source_date": "2026-08-18",
+              "available_at": "2026-08-18",
+              "source_family": "moneydj_industry",
+              "evidence_note": "獨立報導確認800G ZR量產放量且AI高速傳輸需求推升營收與獲利"
+            }
+          ]
+        },
+        "industry_technology_position": {
+          "sources": [
+            {
+              "source_url": "https://www.kgi.com.hk/zh-cn/-/media/files/kgishk/research-reports/investment-perspectives/2026/kgis-global-markets-weekly-kickstart_20260202.pdf",
+              "source_date": "2026-02-02",
+              "available_at": "2026-02-02",
+              "source_family": "kgi_research",
+              "evidence_note": "凱基研究確認800G完成客戶認證出貨並受惠AI相關客戶擴張"
+            },
+            {
+              "source_url": "https://www.moneydj.com/KMDJ/news/newsviewer.aspx?a=24de7354-e77c-445f-a299-0e12c3a0792f",
+              "source_date": "2026-08-18",
+              "available_at": "2026-08-18",
+              "source_family": "moneydj_industry",
+              "evidence_note": "獨立報導確認800G ZR量產放量且AI高速傳輸需求推升營收與獲利"
+            }
+          ]
+        },
+        "ai_revenue_realization": {
+          "sources": [
+            {
+              "source_url": "https://www.kgi.com.hk/zh-cn/-/media/files/kgishk/research-reports/investment-perspectives/2026/kgis-global-markets-weekly-kickstart_20260202.pdf",
+              "source_date": "2026-02-02",
+              "available_at": "2026-02-02",
+              "source_family": "kgi_research",
+              "evidence_note": "凱基研究確認800G完成客戶認證出貨並受惠AI相關客戶擴張"
+            },
+            {
+              "source_url": "https://www.moneydj.com/KMDJ/news/newsviewer.aspx?a=24de7354-e77c-445f-a299-0e12c3a0792f",
+              "source_date": "2026-08-18",
+              "available_at": "2026-08-18",
+              "source_family": "moneydj_industry",
+              "evidence_note": "獨立報導確認800G ZR量產放量且AI高速傳輸需求推升營收與獲利"
+            }
+          ]
+        }
+      },
+      "bottleneck_directness": 75,
+      "industry_technology_position": 50,
+      "ai_revenue_realization": 75
+    },
+    {
+      "ticker": "6182",
+      "evidence": {
+        "bottleneck_directness": {
+          "sources": [
+            {
+              "source_url": "https://www.waferworks.com/uploads/investor/financial_information/annual_reports/2025_annual_report.pdf",
+              "source_date": "2026-05-20",
+              "available_at": "2026-05-20",
+              "source_family": "waferworks_ir",
+              "evidence_note": "公司年報確認AI與HPC推升12吋先進邏輯及HBM用矽晶圓需求"
+            },
+            {
+              "source_url": "https://finmoconf.diveinvest.net/presentation/6a749815a16a75b8138c21b7",
+              "source_date": "2026-08-06",
+              "available_at": "2026-08-06",
+              "source_family": "finmoconf_mops_relay",
+              "evidence_note": "AI材料平台包含先進封裝中介層與光傳輸材料且進入客戶驗證"
+            }
+          ]
+        },
+        "industry_technology_position": {
+          "sources": [
+            {
+              "source_url": "https://www.waferworks.com/uploads/investor/financial_information/annual_reports/2025_annual_report.pdf",
+              "source_date": "2026-05-20",
+              "available_at": "2026-05-20",
+              "source_family": "waferworks_ir",
+              "evidence_note": "公司年報確認AI與HPC推升12吋先進邏輯及HBM用矽晶圓需求"
+            },
+            {
+              "source_url": "https://finmoconf.diveinvest.net/presentation/6a749815a16a75b8138c21b7",
+              "source_date": "2026-08-06",
+              "available_at": "2026-08-06",
+              "source_family": "finmoconf_mops_relay",
+              "evidence_note": "AI材料平台包含先進封裝中介層與光傳輸材料且進入客戶驗證"
+            }
+          ]
+        },
+        "ai_revenue_realization": {
+          "sources": [
+            {
+              "source_url": "https://www.waferworks.com/uploads/investor/financial_information/annual_reports/2025_annual_report.pdf",
+              "source_date": "2026-05-20",
+              "available_at": "2026-05-20",
+              "source_family": "waferworks_ir",
+              "evidence_note": "公司年報確認AI與HPC推升12吋先進邏輯及HBM用矽晶圓需求"
+            },
+            {
+              "source_url": "https://finmoconf.diveinvest.net/presentation/6a749815a16a75b8138c21b7",
+              "source_date": "2026-08-06",
+              "available_at": "2026-08-06",
+              "source_family": "finmoconf_mops_relay",
+              "evidence_note": "AI材料平台包含先進封裝中介層與光傳輸材料且進入客戶驗證"
+            }
+          ]
+        }
+      },
+      "bottleneck_directness": 50,
+      "industry_technology_position": 50,
+      "ai_revenue_realization": 50
+    },
+    {
+      "ticker": "6187",
+      "evidence": {
+        "bottleneck_directness": {
+          "sources": [
+            {
+              "source_url": "https://www.mirrormedia.mg/external/mirrordaily_82154",
+              "source_date": "2026-08-27",
+              "available_at": "2026-08-27",
+              "source_family": "mirror_media",
+              "evidence_note": "CoWoS設備訂單能見度延伸至2027年第二季反映設備供給瓶頸"
+            },
+            {
+              "source_url": "https://www.allring-tech.com.tw/userfiles/Ping%202024%20add/%E8%90%AC%E6%BD%A4%E7%A7%91%E6%8A%80%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8%E5%B9%B4%E5%A0%B1113.pdf",
+              "source_date": "2026-05-20",
+              "available_at": "2026-05-20",
+              "source_family": "allring_ir",
+              "evidence_note": "公司年報將CoWoS與SoIC列為AI高效運算先進封裝核心設備方向"
+            }
+          ]
+        },
+        "industry_technology_position": {
+          "sources": [
+            {
+              "source_url": "https://www.mirrormedia.mg/external/mirrordaily_82154",
+              "source_date": "2026-08-27",
+              "available_at": "2026-08-27",
+              "source_family": "mirror_media",
+              "evidence_note": "CoWoS設備訂單能見度延伸至2027年第二季反映設備供給瓶頸"
+            },
+            {
+              "source_url": "https://www.allring-tech.com.tw/userfiles/Ping%202024%20add/%E8%90%AC%E6%BD%A4%E7%A7%91%E6%8A%80%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8%E5%B9%B4%E5%A0%B1113.pdf",
+              "source_date": "2026-05-20",
+              "available_at": "2026-05-20",
+              "source_family": "allring_ir",
+              "evidence_note": "公司年報將CoWoS與SoIC列為AI高效運算先進封裝核心設備方向"
+            }
+          ]
+        },
+        "ai_revenue_realization": {
+          "sources": [
+            {
+              "source_url": "https://www.mirrormedia.mg/external/mirrordaily_82154",
+              "source_date": "2026-08-27",
+              "available_at": "2026-08-27",
+              "source_family": "mirror_media",
+              "evidence_note": "CoWoS設備訂單能見度延伸至2027年第二季反映設備供給瓶頸"
+            },
+            {
+              "source_url": "https://www.allring-tech.com.tw/userfiles/Ping%202024%20add/%E8%90%AC%E6%BD%A4%E7%A7%91%E6%8A%80%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8%E5%B9%B4%E5%A0%B1113.pdf",
+              "source_date": "2026-05-20",
+              "available_at": "2026-05-20",
+              "source_family": "allring_ir",
+              "evidence_note": "公司年報將CoWoS與SoIC列為AI高效運算先進封裝核心設備方向"
+            }
+          ]
+        }
+      },
+      "bottleneck_directness": 75,
+      "industry_technology_position": 50,
+      "ai_revenue_realization": 75
+    },
+    {
+      "ticker": "6223",
+      "evidence": {
+        "bottleneck_directness": {
+          "sources": [
+            {
+              "source_url": "https://www.mpi.com.tw/wp-content/uploads/2025/11/MPI_20251121BofA_2025-AI-Tech-Internet-Conference_CH_2page.pdf",
+              "source_date": "2025-11-21",
+              "available_at": "2025-11-21",
+              "source_family": "mpi_ir",
+              "evidence_note": "旺矽具備HPC與AI高針數高電流高速探針卡及探針頭載板與PCB一站式整合能力"
+            },
+            {
+              "source_url": "https://www.trendforce.com/research/download/RP260626XO3",
+              "source_date": "2026-06-26",
+              "available_at": "2026-06-26",
+              "source_family": "trendforce_research",
+              "evidence_note": "TrendForce確認AI封裝推升探針卡技術與需求並點名MPI市占提升及供應鏈訂單能見度延長"
+            }
+          ]
+        },
+        "industry_technology_position": {
+          "sources": [
+            {
+              "source_url": "https://www.mpi.com.tw/wp-content/uploads/2025/11/MPI_20251121BofA_2025-AI-Tech-Internet-Conference_CH_2page.pdf",
+              "source_date": "2025-11-21",
+              "available_at": "2025-11-21",
+              "source_family": "mpi_ir",
+              "evidence_note": "旺矽具備HPC與AI高針數高電流高速探針卡及探針頭載板與PCB一站式整合能力"
+            },
+            {
+              "source_url": "https://www.trendforce.com/research/download/RP260626XO3",
+              "source_date": "2026-06-26",
+              "available_at": "2026-06-26",
+              "source_family": "trendforce_research",
+              "evidence_note": "TrendForce確認AI封裝推升探針卡技術與需求並點名MPI市占提升及供應鏈訂單能見度延長"
+            }
+          ]
+        },
+        "ai_revenue_realization": {
+          "sources": [
+            {
+              "source_url": "https://www.mpi.com.tw/wp-content/uploads/2025/11/MPI_20251121BofA_2025-AI-Tech-Internet-Conference_CH_2page.pdf",
+              "source_date": "2025-11-21",
+              "available_at": "2025-11-21",
+              "source_family": "mpi_ir",
+              "evidence_note": "旺矽具備HPC與AI高針數高電流高速探針卡及探針頭載板與PCB一站式整合能力"
+            },
+            {
+              "source_url": "https://www.trendforce.com/research/download/RP260626XO3",
+              "source_date": "2026-06-26",
+              "available_at": "2026-06-26",
+              "source_family": "trendforce_research",
+              "evidence_note": "TrendForce確認AI封裝推升探針卡技術與需求並點名MPI市占提升及供應鏈訂單能見度延長"
+            }
+          ]
+        }
+      },
+      "bottleneck_directness": 75,
+      "industry_technology_position": 50,
+      "ai_revenue_realization": 75
+    },
+    {
+      "ticker": "6230",
+      "evidence": {
+        "bottleneck_directness": {
+          "sources": [
+            {
+              "source_url": "https://poorstock.com/earningcall/6230",
+              "source_date": "2026-08-28",
+              "available_at": "2026-08-28",
+              "source_family": "poorstock_mops_relay",
+              "evidence_note": "伺服器與mini CDU已貢獻營收但仍處於液冷轉型早期"
+            },
+            {
+              "source_url": "https://vocus.cc/article/6a92d9cdfd89780001fddd66",
+              "source_date": "2026-08-29",
+              "available_at": "2026-08-29",
+              "source_family": "vocus_independent_research",
+              "evidence_note": "獨立法說整理確認液冷產品已有銷售成長並設定2027水冷占比目標"
+            }
+          ]
+        },
+        "industry_technology_position": {
+          "sources": [
+            {
+              "source_url": "https://poorstock.com/earningcall/6230",
+              "source_date": "2026-08-28",
+              "available_at": "2026-08-28",
+              "source_family": "poorstock_mops_relay",
+              "evidence_note": "伺服器與mini CDU已貢獻營收但仍處於液冷轉型早期"
+            },
+            {
+              "source_url": "https://vocus.cc/article/6a92d9cdfd89780001fddd66",
+              "source_date": "2026-08-29",
+              "available_at": "2026-08-29",
+              "source_family": "vocus_independent_research",
+              "evidence_note": "獨立法說整理確認液冷產品已有銷售成長並設定2027水冷占比目標"
+            }
+          ]
+        },
+        "ai_revenue_realization": {
+          "sources": [
+            {
+              "source_url": "https://poorstock.com/earningcall/6230",
+              "source_date": "2026-08-28",
+              "available_at": "2026-08-28",
+              "source_family": "poorstock_mops_relay",
+              "evidence_note": "伺服器與mini CDU已貢獻營收但仍處於液冷轉型早期"
+            },
+            {
+              "source_url": "https://vocus.cc/article/6a92d9cdfd89780001fddd66",
+              "source_date": "2026-08-29",
+              "available_at": "2026-08-29",
+              "source_family": "vocus_independent_research",
+              "evidence_note": "獨立法說整理確認液冷產品已有銷售成長並設定2027水冷占比目標"
+            }
+          ]
+        }
+      },
+      "bottleneck_directness": 75,
+      "industry_technology_position": 50,
+      "ai_revenue_realization": 75
+    },
+    {
+      "ticker": "6274",
+      "evidence": {
+        "bottleneck_directness": {
+          "sources": [
+            {
+              "source_url": "https://www.tuc.com.tw/en-us/news-detail/id/84/title/Development_Trends_of_High-Speed_Transmission_CCL",
+              "source_date": "2025-10-02",
+              "available_at": "2025-10-02",
+              "source_family": "tuc_ir",
+              "evidence_note": "台燿官方技術資料確認AI與伺服器算力需求使CCL高頻高速低損耗成為關鍵材料"
+            },
+            {
+              "source_url": "https://vocus.cc/article/69953d8afd897800014be047",
+              "source_date": "2026-02-18",
+              "available_at": "2026-02-18",
+              "source_family": "vocus_independent_research",
+              "evidence_note": "獨立研究依公司法說確認M7與M8高階CCL在AI伺服器及800G交換器的需求與獲利貢獻"
+            }
+          ]
+        },
+        "industry_technology_position": {
+          "sources": [
+            {
+              "source_url": "https://www.tuc.com.tw/en-us/news-detail/id/84/title/Development_Trends_of_High-Speed_Transmission_CCL",
+              "source_date": "2025-10-02",
+              "available_at": "2025-10-02",
+              "source_family": "tuc_ir",
+              "evidence_note": "台燿官方技術資料確認AI與伺服器算力需求使CCL高頻高速低損耗成為關鍵材料"
+            },
+            {
+              "source_url": "https://vocus.cc/article/69953d8afd897800014be047",
+              "source_date": "2026-02-18",
+              "available_at": "2026-02-18",
+              "source_family": "vocus_independent_research",
+              "evidence_note": "獨立研究依公司法說確認M7與M8高階CCL在AI伺服器及800G交換器的需求與獲利貢獻"
+            }
+          ]
+        },
+        "ai_revenue_realization": {
+          "sources": [
+            {
+              "source_url": "https://www.tuc.com.tw/en-us/news-detail/id/84/title/Development_Trends_of_High-Speed_Transmission_CCL",
+              "source_date": "2025-10-02",
+              "available_at": "2025-10-02",
+              "source_family": "tuc_ir",
+              "evidence_note": "台燿官方技術資料確認AI與伺服器算力需求使CCL高頻高速低損耗成為關鍵材料"
+            },
+            {
+              "source_url": "https://vocus.cc/article/69953d8afd897800014be047",
+              "source_date": "2026-02-18",
+              "available_at": "2026-02-18",
+              "source_family": "vocus_independent_research",
+              "evidence_note": "獨立研究依公司法說確認M7與M8高階CCL在AI伺服器及800G交換器的需求與獲利貢獻"
+            }
+          ]
+        }
+      },
+      "bottleneck_directness": 75,
+      "industry_technology_position": 50,
+      "ai_revenue_realization": 75
+    },
+    {
+      "ticker": "6282",
+      "evidence": {
+        "bottleneck_directness": {
+          "sources": [
+            {
+              "source_url": "https://www.moneydj.com/kmdj/news/newsviewer.aspx?a=5b9f7b3f-c548-4f93-8145-3870311807e8",
+              "source_date": "2026-01-22",
+              "available_at": "2026-01-22",
+              "source_family": "moneydj_industry",
+              "evidence_note": "AI資料中心電源方案為公司2026主要成長動能"
+            },
+            {
+              "source_url": "https://finmoconf.diveinvest.net/presentation/69b2bd84bab52fb5c8daead0",
+              "source_date": "2026-03-12",
+              "available_at": "2026-03-12",
+              "source_family": "finmoconf_mops_relay",
+              "evidence_note": "公司法說揭露資料中心與網通電源產品並持續推進驗證導入"
+            }
+          ]
+        },
+        "industry_technology_position": {
+          "sources": [
+            {
+              "source_url": "https://www.moneydj.com/kmdj/news/newsviewer.aspx?a=5b9f7b3f-c548-4f93-8145-3870311807e8",
+              "source_date": "2026-01-22",
+              "available_at": "2026-01-22",
+              "source_family": "moneydj_industry",
+              "evidence_note": "AI資料中心電源方案為公司2026主要成長動能"
+            },
+            {
+              "source_url": "https://finmoconf.diveinvest.net/presentation/69b2bd84bab52fb5c8daead0",
+              "source_date": "2026-03-12",
+              "available_at": "2026-03-12",
+              "source_family": "finmoconf_mops_relay",
+              "evidence_note": "公司法說揭露資料中心與網通電源產品並持續推進驗證導入"
+            }
+          ]
+        },
+        "ai_revenue_realization": {
+          "sources": [
+            {
+              "source_url": "https://www.moneydj.com/kmdj/news/newsviewer.aspx?a=5b9f7b3f-c548-4f93-8145-3870311807e8",
+              "source_date": "2026-01-22",
+              "available_at": "2026-01-22",
+              "source_family": "moneydj_industry",
+              "evidence_note": "AI資料中心電源方案為公司2026主要成長動能"
+            },
+            {
+              "source_url": "https://finmoconf.diveinvest.net/presentation/69b2bd84bab52fb5c8daead0",
+              "source_date": "2026-03-12",
+              "available_at": "2026-03-12",
+              "source_family": "finmoconf_mops_relay",
+              "evidence_note": "公司法說揭露資料中心與網通電源產品並持續推進驗證導入"
+            }
+          ]
+        }
+      },
+      "bottleneck_directness": 50,
+      "industry_technology_position": 50,
+      "ai_revenue_realization": 50
+    },
+    {
+      "ticker": "6412",
+      "evidence": {
+        "bottleneck_directness": {
+          "sources": [
+            {
+              "source_url": "https://www.chiconypower.com/uploads/investor/financial%20report/Year/2025/CP-2025-Annual%20Report-ch.pdf",
+              "source_date": "2026-05-20",
+              "available_at": "2026-05-20",
+              "source_family": "chicony_power_ir",
+              "evidence_note": "公司年報確認3000至8000瓦AI伺服器與雲端資料中心電源已具量產產品"
+            },
+            {
+              "source_url": "https://ec.ltn.com.tw/article/breakingnews/5425662",
+              "source_date": "2026-05-05",
+              "available_at": "2026-05-05",
+              "source_family": "liberty_times_finance",
+              "evidence_note": "模組化AI算力中心專案已排定出貨顯示產品進入商業階段"
+            }
+          ]
+        },
+        "industry_technology_position": {
+          "sources": [
+            {
+              "source_url": "https://www.chiconypower.com/uploads/investor/financial%20report/Year/2025/CP-2025-Annual%20Report-ch.pdf",
+              "source_date": "2026-05-20",
+              "available_at": "2026-05-20",
+              "source_family": "chicony_power_ir",
+              "evidence_note": "公司年報確認3000至8000瓦AI伺服器與雲端資料中心電源已具量產產品"
+            },
+            {
+              "source_url": "https://ec.ltn.com.tw/article/breakingnews/5425662",
+              "source_date": "2026-05-05",
+              "available_at": "2026-05-05",
+              "source_family": "liberty_times_finance",
+              "evidence_note": "模組化AI算力中心專案已排定出貨顯示產品進入商業階段"
+            }
+          ]
+        },
+        "ai_revenue_realization": {
+          "sources": [
+            {
+              "source_url": "https://www.chiconypower.com/uploads/investor/financial%20report/Year/2025/CP-2025-Annual%20Report-ch.pdf",
+              "source_date": "2026-05-20",
+              "available_at": "2026-05-20",
+              "source_family": "chicony_power_ir",
+              "evidence_note": "公司年報確認3000至8000瓦AI伺服器與雲端資料中心電源已具量產產品"
+            },
+            {
+              "source_url": "https://ec.ltn.com.tw/article/breakingnews/5425662",
+              "source_date": "2026-05-05",
+              "available_at": "2026-05-05",
+              "source_family": "liberty_times_finance",
+              "evidence_note": "模組化AI算力中心專案已排定出貨顯示產品進入商業階段"
+            }
+          ]
+        }
+      },
+      "bottleneck_directness": 75,
+      "industry_technology_position": 50,
+      "ai_revenue_realization": 75
+    },
+    {
+      "ticker": "6442",
+      "evidence": {
+        "bottleneck_directness": {
+          "sources": [
+            {
+              "source_url": "https://finmoconf.diveinvest.net/presentation/69b16c05bab52fb5c8cb35a3",
+              "source_date": "2026-03-12",
+              "available_at": "2026-03-12",
+              "source_family": "finmoconf_mops_relay",
+              "evidence_note": "光聖法說資料確認AI Scale-out高密度光纖與Scale-up CPO ELS為核心產品"
+            },
+            {
+              "source_url": "https://vocus.cc/article/69dcd814fd89780001998cd0",
+              "source_date": "2026-03-13",
+              "available_at": "2026-03-13",
+              "source_family": "vocus_independent_research",
+              "evidence_note": "獨立研究確認AI資料中心需求已反映於營收獲利且CPO與FAU為後續成長產品"
+            }
+          ]
+        },
+        "industry_technology_position": {
+          "sources": [
+            {
+              "source_url": "https://finmoconf.diveinvest.net/presentation/69b16c05bab52fb5c8cb35a3",
+              "source_date": "2026-03-12",
+              "available_at": "2026-03-12",
+              "source_family": "finmoconf_mops_relay",
+              "evidence_note": "光聖法說資料確認AI Scale-out高密度光纖與Scale-up CPO ELS為核心產品"
+            },
+            {
+              "source_url": "https://vocus.cc/article/69dcd814fd89780001998cd0",
+              "source_date": "2026-03-13",
+              "available_at": "2026-03-13",
+              "source_family": "vocus_independent_research",
+              "evidence_note": "獨立研究確認AI資料中心需求已反映於營收獲利且CPO與FAU為後續成長產品"
+            }
+          ]
+        },
+        "ai_revenue_realization": {
+          "sources": [
+            {
+              "source_url": "https://finmoconf.diveinvest.net/presentation/69b16c05bab52fb5c8cb35a3",
+              "source_date": "2026-03-12",
+              "available_at": "2026-03-12",
+              "source_family": "finmoconf_mops_relay",
+              "evidence_note": "光聖法說資料確認AI Scale-out高密度光纖與Scale-up CPO ELS為核心產品"
+            },
+            {
+              "source_url": "https://vocus.cc/article/69dcd814fd89780001998cd0",
+              "source_date": "2026-03-13",
+              "available_at": "2026-03-13",
+              "source_family": "vocus_independent_research",
+              "evidence_note": "獨立研究確認AI資料中心需求已反映於營收獲利且CPO與FAU為後續成長產品"
+            }
+          ]
+        }
+      },
+      "bottleneck_directness": 75,
+      "industry_technology_position": 50,
+      "ai_revenue_realization": 75
+    },
+    {
       "ticker": "6488",
       "evidence": {
         "bottleneck_directness": {
@@ -800,6 +3032,192 @@
               "available_at": "2026-07-10",
               "source_family": "toms_hardware_industry",
               "evidence_note": "Micron以戰略投資及10年供應協議鎖定環球晶300mm矽晶圓產能"
+            }
+          ]
+        }
+      },
+      "bottleneck_directness": 75,
+      "industry_technology_position": 75,
+      "ai_revenue_realization": 75
+    },
+    {
+      "ticker": "6669",
+      "evidence": {
+        "bottleneck_directness": {
+          "sources": [
+            {
+              "source_url": "https://www.wiwynn.com/news/wiwynn-corporation-2026-annual-shareholders-meeting",
+              "source_date": "2026-05-25",
+              "available_at": "2026-05-25",
+              "source_family": "wiwynn_ir",
+              "evidence_note": "緯穎官方揭露CPU GPU ASIC多平台量產與高功率機櫃整合產能規劃至2028年"
+            },
+            {
+              "source_url": "https://wealth.firstbank.com.tw/investment-tips/trend-insight/news/news-detail?id=%7B12D659EC-63D1-4B81-AF8F-D568769A68ED%7D",
+              "source_date": "2026-01-21",
+              "available_at": "2026-01-21",
+              "source_family": "firstbank_moneydj_relay",
+              "evidence_note": "獨立產業資料確認緯穎ASIC伺服器占營收大宗且CSP資本支出支撐2026成長"
+            }
+          ]
+        },
+        "industry_technology_position": {
+          "sources": [
+            {
+              "source_url": "https://www.wiwynn.com/news/wiwynn-corporation-2026-annual-shareholders-meeting",
+              "source_date": "2026-05-25",
+              "available_at": "2026-05-25",
+              "source_family": "wiwynn_ir",
+              "evidence_note": "緯穎官方揭露CPU GPU ASIC多平台量產與高功率機櫃整合產能規劃至2028年"
+            },
+            {
+              "source_url": "https://wealth.firstbank.com.tw/investment-tips/trend-insight/news/news-detail?id=%7B12D659EC-63D1-4B81-AF8F-D568769A68ED%7D",
+              "source_date": "2026-01-21",
+              "available_at": "2026-01-21",
+              "source_family": "firstbank_moneydj_relay",
+              "evidence_note": "獨立產業資料確認緯穎ASIC伺服器占營收大宗且CSP資本支出支撐2026成長"
+            }
+          ]
+        },
+        "ai_revenue_realization": {
+          "sources": [
+            {
+              "source_url": "https://www.wiwynn.com/news/wiwynn-corporation-2026-annual-shareholders-meeting",
+              "source_date": "2026-05-25",
+              "available_at": "2026-05-25",
+              "source_family": "wiwynn_ir",
+              "evidence_note": "緯穎官方揭露CPU GPU ASIC多平台量產與高功率機櫃整合產能規劃至2028年"
+            },
+            {
+              "source_url": "https://wealth.firstbank.com.tw/investment-tips/trend-insight/news/news-detail?id=%7B12D659EC-63D1-4B81-AF8F-D568769A68ED%7D",
+              "source_date": "2026-01-21",
+              "available_at": "2026-01-21",
+              "source_family": "firstbank_moneydj_relay",
+              "evidence_note": "獨立產業資料確認緯穎ASIC伺服器占營收大宗且CSP資本支出支撐2026成長"
+            }
+          ]
+        }
+      },
+      "bottleneck_directness": 75,
+      "industry_technology_position": 50,
+      "ai_revenue_realization": 75
+    },
+    {
+      "ticker": "6781",
+      "evidence": {
+        "bottleneck_directness": {
+          "sources": [
+            {
+              "source_url": "https://money.udn.com/money/story/5612/9145095?from=edn_newest_index",
+              "source_date": "2025-11-17",
+              "available_at": "2025-11-17",
+              "source_family": "udn_finance",
+              "evidence_note": "AI資料中心備援需求使傳統UPS不足並推升BBU滲透"
+            },
+            {
+              "source_url": "https://toalpha.tw/stock/6781/conference",
+              "source_date": "2025-11-17",
+              "available_at": "2025-11-17",
+              "source_family": "toalpha_mops_relay",
+              "evidence_note": "公司於公開資訊觀測站法說資料提出2026伺服器BBU高成長展望"
+            }
+          ]
+        },
+        "industry_technology_position": {
+          "sources": [
+            {
+              "source_url": "https://money.udn.com/money/story/5612/9145095?from=edn_newest_index",
+              "source_date": "2025-11-17",
+              "available_at": "2025-11-17",
+              "source_family": "udn_finance",
+              "evidence_note": "AI資料中心備援需求使傳統UPS不足並推升BBU滲透"
+            },
+            {
+              "source_url": "https://toalpha.tw/stock/6781/conference",
+              "source_date": "2025-11-17",
+              "available_at": "2025-11-17",
+              "source_family": "toalpha_mops_relay",
+              "evidence_note": "公司於公開資訊觀測站法說資料提出2026伺服器BBU高成長展望"
+            }
+          ]
+        },
+        "ai_revenue_realization": {
+          "sources": [
+            {
+              "source_url": "https://money.udn.com/money/story/5612/9145095?from=edn_newest_index",
+              "source_date": "2025-11-17",
+              "available_at": "2025-11-17",
+              "source_family": "udn_finance",
+              "evidence_note": "AI資料中心備援需求使傳統UPS不足並推升BBU滲透"
+            },
+            {
+              "source_url": "https://toalpha.tw/stock/6781/conference",
+              "source_date": "2025-11-17",
+              "available_at": "2025-11-17",
+              "source_family": "toalpha_mops_relay",
+              "evidence_note": "公司於公開資訊觀測站法說資料提出2026伺服器BBU高成長展望"
+            }
+          ]
+        }
+      },
+      "bottleneck_directness": 75,
+      "industry_technology_position": 50,
+      "ai_revenue_realization": 75
+    },
+    {
+      "ticker": "8299",
+      "evidence": {
+        "bottleneck_directness": {
+          "sources": [
+            {
+              "source_url": "https://finmoconf.diveinvest.net/presentation/69aad485bab52fb5c87ea5dc",
+              "source_date": "2026-03-06",
+              "available_at": "2026-03-06",
+              "source_family": "finmoconf_mops_relay",
+              "evidence_note": "法說資料確認群聯由控制晶片供應商轉向企業級SSD aiDAPTIV與AI資料基礎設施平台"
+            },
+            {
+              "source_url": "https://gfe-desktop.cnyes.com/news/id/6575811",
+              "source_date": "2026-08-13",
+              "available_at": "2026-08-13",
+              "source_family": "cnyes_industry",
+              "evidence_note": "獨立報導確認AI使NAND需求結構改變且供需在2027至2028仍可能無法平衡"
+            }
+          ]
+        },
+        "industry_technology_position": {
+          "sources": [
+            {
+              "source_url": "https://finmoconf.diveinvest.net/presentation/69aad485bab52fb5c87ea5dc",
+              "source_date": "2026-03-06",
+              "available_at": "2026-03-06",
+              "source_family": "finmoconf_mops_relay",
+              "evidence_note": "法說資料確認群聯由控制晶片供應商轉向企業級SSD aiDAPTIV與AI資料基礎設施平台"
+            },
+            {
+              "source_url": "https://gfe-desktop.cnyes.com/news/id/6575811",
+              "source_date": "2026-08-13",
+              "available_at": "2026-08-13",
+              "source_family": "cnyes_industry",
+              "evidence_note": "獨立報導確認AI使NAND需求結構改變且供需在2027至2028仍可能無法平衡"
+            }
+          ]
+        },
+        "ai_revenue_realization": {
+          "sources": [
+            {
+              "source_url": "https://finmoconf.diveinvest.net/presentation/69aad485bab52fb5c87ea5dc",
+              "source_date": "2026-03-06",
+              "available_at": "2026-03-06",
+              "source_family": "finmoconf_mops_relay",
+              "evidence_note": "法說資料確認群聯由控制晶片供應商轉向企業級SSD aiDAPTIV與AI資料基礎設施平台"
+            },
+            {
+              "source_url": "https://gfe-desktop.cnyes.com/news/id/6575811",
+              "source_date": "2026-08-13",
+              "available_at": "2026-08-13",
+              "source_family": "cnyes_industry",
+              "evidence_note": "獨立報導確認AI使NAND需求結構改變且供需在2027至2028仍可能無法平衡"
             }
           ]
         }

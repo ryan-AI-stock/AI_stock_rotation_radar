@@ -4,10 +4,20 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from r1.theme_leader_priority_seed import REVIEWED_SCORES, materialize
+from r1.theme_leader_priority_seed import REVIEWED_SCORES, _baseline_scores, materialize
 
 
 class R1ThemeLeaderPrioritySeedTest(unittest.TestCase):
+    def test_baseline_stage_mapping_is_conservative(self):
+        self.assertEqual(_baseline_scores([{"stage": "THESIS"}]), {
+            "bottleneck_directness": 25,
+            "industry_technology_position": 50,
+            "ai_revenue_realization": 25,
+        })
+        self.assertEqual(_baseline_scores([{"stage": "THESIS"}, {"stage": "FINANCIAL_PROOF"}])[
+            "ai_revenue_realization"
+        ], 75)
+
     def test_only_verified_independent_evidence_is_promoted(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
