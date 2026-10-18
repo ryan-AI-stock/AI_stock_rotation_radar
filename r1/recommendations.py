@@ -6,8 +6,12 @@ from typing import Any
 def build_recommendations(*, date: str, candidates: list[dict[str, Any]], held_tickers: set[str],
                           target_tickers: set[str], max_items: int = 3) -> list[dict[str, Any]]:
     """Produce advisory-only ranked changes; incomplete inputs resolve to NO_ACTION."""
-    eligible = [row for row in candidates if row.get("score") is not None and row.get("target_upside") is not None]
-    eligible.sort(key=lambda row: (-float(row["score"]), -float(row["target_upside"]), str(row["ticker"])))
+    eligible = [row for row in candidates if row.get("score") is not None]
+    eligible.sort(key=lambda row: (
+        -float(row["score"]),
+        -(float(row["target_upside"]) if row.get("target_upside") is not None else float("-inf")),
+        str(row["ticker"]),
+    ))
     if not eligible:
         observed = [
             row for row in candidates
@@ -38,22 +42,47 @@ def build_recommendations(*, date: str, candidates: list[dict[str, Any]], held_t
                 break
         return watches or [_no_action(date, "目前較高觀察分股票均已持有；資料未完整前不換倉")]
     results = []
+    available_sources = sorted(
+        (row for row in eligible if str(row["ticker"]).zfill(4) in held_tickers),
+        key=lambda row: (float(row["score"]), str(row["ticker"])),
+    )
+    used_sources: set[str] = set()
     for row in eligible:
         ticker = str(row["ticker"]).zfill(4)
         if ticker in held_tickers:
             continue
+        source = next((
+            item for item in available_sources
+            if str(item["ticker"]).zfill(4) not in used_sources
+            and float(item["score"]) < float(row["score"])
+        ), None)
+        if available_sources and source is None:
+            continue
+        source_ticker = str(source["ticker"]).zfill(4) if source else "待Ryan決定"
+        if source:
+            used_sources.add(source_ticker)
+        has_target_overlay = row.get("target_upside") is not None
+        overlay_gaps = row.get("overlay_missing_components", [])
+        reason = row.get("reason", "公開資料核心排名較前；僅供換倉檢視")
+        if source:
+            reason += f"；相較{source_ticker}核心分數高{float(row['score']) - float(source['score']):.1f}分"
         results.append({
             "date": date, "priority": f"P{len(results) + 1}", "action": "REVIEW_SWITCH_IN",
-            "source_ticker": row.get("source_ticker", "待Ryan決定"), "target_ticker": ticker,
+            "source_ticker": source_ticker, "target_ticker": ticker,
             "target_company": row.get("company", ""), "target_score": row["score"],
             "target_upside": row["target_upside"],
-            "confidence": "HIGH" if ticker in target_tickers else "MEDIUM",
-            "reason": row.get("reason", "綜合排名較前；僅供換倉檢視"),
-            "blocking_gaps": "", "execution_status": "建議，不視為成交",
+            "confidence": (
+                "HIGH" if ticker in target_tickers and has_target_overlay
+                else "MEDIUM" if ticker in target_tickers or has_target_overlay
+                else "LOW"
+            ),
+            "reason": reason,
+            "blocking_gaps": "、".join(overlay_gaps),
+            "execution_status": "建議檢視，不視為成交",
         })
         if len(results) >= max_items:
             break
-    return results or [_no_action(date, "高分候選已在持股中，今日不需要操作")]
+    return results or [_no_action(date, "沒有未持有候選的核心分數高於可比較持股，今日不需要操作")]
 
 
 def _no_action(date: str, reason: str) -> dict[str, Any]:

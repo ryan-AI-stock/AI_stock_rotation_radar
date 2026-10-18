@@ -25,7 +25,8 @@ class R1V05RankTest(unittest.TestCase):
         row = result["rows"][0]
         self.assertIsNone(row["v05_total_score"])
         self.assertIn("price_chip_risk", row["v05_missing_components"])
-        self.assertIn("consensus_target_upside", row["v05_missing_components"])
+        self.assertNotIn("consensus_target_upside", row["v05_missing_components"])
+        self.assertIn("consensus_target_upside", row["v05_target_overlay_missing_components"])
         self.assertGreater(row["v05_observed_points"], 0)
         self.assertLess(row["v05_observed_max_points"], 100)
         self.assertIsNotNone(row["v05_reference_score"])
@@ -60,6 +61,26 @@ class R1V05RankTest(unittest.TestCase):
         self.assertEqual(row["v05_status"], "READY")
         self.assertIsNotNone(row["v05_total_score"])
         self.assertEqual(row["revenue_earnings_realization"], 100.0)
+
+    def test_public_core_is_ready_without_target_price_overlay(self) -> None:
+        result = build_v05_rank(
+            as_of_date="2026-10-08",
+            weekly={"rows": [{
+                "ticker": "2308", "company": "台達電", "bottleneck_score": 90,
+                "catalyst_score": 80, "valuation_score": 70, "market_risk_score": 60,
+            }]},
+            target_prices={"rows": []},
+            monthly_revenue={"rows": [{"ticker": "2308", "observations": [{"yoy": .2}]}]},
+            theme_review={"themes": [{"ranked": [{
+                "ticker": "2308", "bottleneck_directness": 90,
+                "financial_earnings_quality": 80,
+            }]}]},
+        )
+        row = result["rows"][0]
+        self.assertEqual(row["v05_status"], "READY")
+        self.assertIsNotNone(row["v05_total_score"])
+        self.assertIsNone(row["v05_target_overlay_score"])
+        self.assertEqual(row["v05_target_overlay_status"], "DATA_MISSING")
 
     def test_formal_universe_excludes_discovery_rows(self) -> None:
         result = build_v05_rank(

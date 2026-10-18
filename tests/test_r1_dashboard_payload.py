@@ -37,7 +37,8 @@ class R1DashboardPayloadTest(unittest.TestCase):
         recommendation_start = sections.index("03｜今日換倉建議")
         self.assertIn(
             dashboard[recommendation_start + 2][:2],
-            (["資料不足", "尚無法產生換倉建議"], ["觀察1", "僅觀察"]),
+            (["資料不足", "尚無法產生換倉建議"], ["觀察1", "僅觀察"],
+             ["優先1", "換倉檢視"]),
         )
         self.assertNotIn("06｜下一個動態觸發條件", sections)
         self.assertNotIn("07｜Shadow換倉候選（非交易指令）", sections)

@@ -1,5 +1,5 @@
 {
-  "model": "R1 v0.5",
+  "model": "R1 v0.6 public-core",
   "date": "2026-10-16",
   "status": "challenger_report_only",
   "rows": [
@@ -14,18 +14,21 @@
       "theme_momentum_and_catalyst": 50.0,
       "relative_valuation": 11.623024,
       "price_chip_risk": 63.358956,
-      "v05_total_score": null,
-      "v05_observed_points": 40.29093,
-      "v05_observed_max_points": 70.0,
-      "v05_observed_weight": 0.7,
-      "v05_reference_score": 57.558471,
-      "v05_reference_coverage": 0.7,
-      "v05_status": "DATA_MISSING",
-      "v05_missing_components": [
+      "v05_total_score": 56.65616,
+      "v05_target_overlay_score": null,
+      "v05_target_overlay_status": "DATA_MISSING",
+      "v05_target_overlay_missing_components": [
         "consensus_target_upside",
         "target_revision_and_breadth"
       ],
-      "v05_reason": "缺少：consensus_target_upside、target_revision_and_breadth"
+      "v05_observed_points": 56.65616,
+      "v05_observed_max_points": 100.0,
+      "v05_observed_weight": 1.0,
+      "v05_reference_score": 56.65616,
+      "v05_reference_coverage": 1.0,
+      "v05_status": "READY",
+      "v05_missing_components": [],
+      "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
       "date": "2026-10-16",
@@ -38,18 +41,21 @@
       "theme_momentum_and_catalyst": 63.081319,
       "relative_valuation": 28.415514,
       "price_chip_risk": 38.226765,
-      "v05_total_score": null,
-      "v05_observed_points": 35.097087,
-      "v05_observed_max_points": 70.0,
-      "v05_observed_weight": 0.7,
-      "v05_reference_score": 50.138696,
-      "v05_reference_coverage": 0.7,
-      "v05_status": "DATA_MISSING",
-      "v05_missing_components": [
+      "v05_total_score": 49.025787,
+      "v05_target_overlay_score": null,
+      "v05_target_overlay_status": "DATA_MISSING",
+      "v05_target_overlay_missing_components": [
         "consensus_target_upside",
         "target_revision_and_breadth"
       ],
-      "v05_reason": "缺少：consensus_target_upside、target_revision_and_breadth"
+      "v05_observed_points": 49.025787,
+      "v05_observed_max_points": 100.0,
+      "v05_observed_weight": 1.0,
+      "v05_reference_score": 49.025787,
+      "v05_reference_coverage": 1.0,
+      "v05_status": "READY",
+      "v05_missing_components": [],
+      "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
       "date": "2026-10-16",
@@ -62,17 +68,20 @@
       "theme_momentum_and_catalyst": 59.67033,
       "relative_valuation": 5.896739,
       "price_chip_risk": 55.747729,
-      "v05_total_score": null,
-      "v05_observed_points": 37.098649,
-      "v05_observed_max_points": 90.0,
-      "v05_observed_weight": 0.9,
-      "v05_reference_score": 41.220721,
-      "v05_reference_coverage": 0.9,
-      "v05_status": "DATA_MISSING",
-      "v05_missing_components": [
+      "v05_total_score": 45.877779,
+      "v05_target_overlay_score": null,
+      "v05_target_overlay_status": "DATA_MISSING",
+      "v05_target_overlay_missing_components": [
         "target_revision_and_breadth"
       ],
-      "v05_reason": "缺少：target_revision_and_breadth"
+      "v05_observed_points": 45.877779,
+      "v05_observed_max_points": 100.0,
+      "v05_observed_weight": 1.0,
+      "v05_reference_score": 45.877779,
+      "v05_reference_coverage": 1.0,
+      "v05_status": "READY",
+      "v05_missing_components": [],
+      "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
       "date": "2026-10-16",
@@ -85,17 +94,20 @@
       "theme_momentum_and_catalyst": 50.0,
       "relative_valuation": 32.554249,
       "price_chip_risk": 39.818192,
-      "v05_total_score": null,
-      "v05_observed_points": 57.169623,
-      "v05_observed_max_points": 90.0,
-      "v05_observed_weight": 0.9,
-      "v05_reference_score": 63.521803,
-      "v05_reference_coverage": 0.9,
-      "v05_status": "DATA_MISSING",
-      "v05_missing_components": [
+      "v05_total_score": 58.28595,
+      "v05_target_overlay_score": null,
+      "v05_target_overlay_status": "DATA_MISSING",
+      "v05_target_overlay_missing_components": [
         "target_revision_and_breadth"
       ],
-      "v05_reason": "缺少：target_revision_and_breadth"
+      "v05_observed_points": 58.28595,
+      "v05_observed_max_points": 100.0,
+      "v05_observed_weight": 1.0,
+      "v05_reference_score": 58.28595,
+      "v05_reference_coverage": 1.0,
+      "v05_status": "READY",
+      "v05_missing_components": [],
+      "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
       "date": "2026-10-16",
@@ -108,18 +120,21 @@
       "theme_momentum_and_catalyst": 50.0,
       "relative_valuation": 54.309783,
       "price_chip_risk": 32.522711,
-      "v05_total_score": null,
-      "v05_observed_points": 38.12153,
-      "v05_observed_max_points": 70.0,
-      "v05_observed_weight": 0.7,
-      "v05_reference_score": 54.459329,
-      "v05_reference_coverage": 0.7,
-      "v05_status": "DATA_MISSING",
-      "v05_missing_components": [
+      "v05_total_score": 52.69886,
+      "v05_target_overlay_score": null,
+      "v05_target_overlay_status": "DATA_MISSING",
+      "v05_target_overlay_missing_components": [
         "consensus_target_upside",
         "target_revision_and_breadth"
       ],
-      "v05_reason": "缺少：consensus_target_upside、target_revision_and_breadth"
+      "v05_observed_points": 52.69886,
+      "v05_observed_max_points": 100.0,
+      "v05_observed_weight": 1.0,
+      "v05_reference_score": 52.69886,
+      "v05_reference_coverage": 1.0,
+      "v05_status": "READY",
+      "v05_missing_components": [],
+      "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
       "date": "2026-10-16",
@@ -132,18 +147,21 @@
       "theme_momentum_and_catalyst": 50.632967,
       "relative_valuation": 20.669467,
       "price_chip_risk": 27.597252,
-      "v05_total_score": null,
-      "v05_observed_points": 42.432451,
-      "v05_observed_max_points": 70.0,
-      "v05_observed_weight": 0.7,
-      "v05_reference_score": 60.617787,
-      "v05_reference_coverage": 0.7,
-      "v05_status": "DATA_MISSING",
-      "v05_missing_components": [
+      "v05_total_score": 56.892918,
+      "v05_target_overlay_score": null,
+      "v05_target_overlay_status": "DATA_MISSING",
+      "v05_target_overlay_missing_components": [
         "consensus_target_upside",
         "target_revision_and_breadth"
       ],
-      "v05_reason": "缺少：consensus_target_upside、target_revision_and_breadth"
+      "v05_observed_points": 56.892918,
+      "v05_observed_max_points": 100.0,
+      "v05_observed_weight": 1.0,
+      "v05_reference_score": 56.892918,
+      "v05_reference_coverage": 1.0,
+      "v05_status": "READY",
+      "v05_missing_components": [],
+      "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
       "date": "2026-10-16",
@@ -156,18 +174,21 @@
       "theme_momentum_and_catalyst": 50.0,
       "relative_valuation": 35.0,
       "price_chip_risk": 20.67546,
-      "v05_total_score": null,
-      "v05_observed_points": 44.965894,
-      "v05_observed_max_points": 70.0,
-      "v05_observed_weight": 0.7,
-      "v05_reference_score": 64.236991,
-      "v05_reference_coverage": 0.7,
-      "v05_status": "DATA_MISSING",
-      "v05_missing_components": [
+      "v05_total_score": 59.883026,
+      "v05_target_overlay_score": null,
+      "v05_target_overlay_status": "DATA_MISSING",
+      "v05_target_overlay_missing_components": [
         "consensus_target_upside",
         "target_revision_and_breadth"
       ],
-      "v05_reason": "缺少：consensus_target_upside、target_revision_and_breadth"
+      "v05_observed_points": 59.883026,
+      "v05_observed_max_points": 100.0,
+      "v05_observed_weight": 1.0,
+      "v05_reference_score": 59.883026,
+      "v05_reference_coverage": 1.0,
+      "v05_status": "READY",
+      "v05_missing_components": [],
+      "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
       "date": "2026-10-16",
@@ -180,18 +201,21 @@
       "theme_momentum_and_catalyst": 50.0,
       "relative_valuation": 94.750494,
       "price_chip_risk": 73.561611,
-      "v05_total_score": null,
-      "v05_observed_points": 48.50698,
-      "v05_observed_max_points": 70.0,
-      "v05_observed_weight": 0.7,
-      "v05_reference_score": 69.295686,
-      "v05_reference_coverage": 0.7,
-      "v05_status": "DATA_MISSING",
-      "v05_missing_components": [
+      "v05_total_score": 69.769608,
+      "v05_target_overlay_score": null,
+      "v05_target_overlay_status": "DATA_MISSING",
+      "v05_target_overlay_missing_components": [
         "consensus_target_upside",
         "target_revision_and_breadth"
       ],
-      "v05_reason": "缺少：consensus_target_upside、target_revision_and_breadth"
+      "v05_observed_points": 69.769608,
+      "v05_observed_max_points": 100.0,
+      "v05_observed_weight": 1.0,
+      "v05_reference_score": 69.769608,
+      "v05_reference_coverage": 1.0,
+      "v05_status": "READY",
+      "v05_missing_components": [],
+      "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
       "date": "2026-10-16",
@@ -204,18 +228,21 @@
       "theme_momentum_and_catalyst": 55.485714,
       "relative_valuation": 94.121838,
       "price_chip_risk": 84.813709,
-      "v05_total_score": null,
-      "v05_observed_points": 54.970101,
-      "v05_observed_max_points": 70.0,
-      "v05_observed_weight": 0.7,
-      "v05_reference_score": 78.528716,
-      "v05_reference_coverage": 0.7,
-      "v05_status": "DATA_MISSING",
-      "v05_missing_components": [
+      "v05_total_score": 78.813843,
+      "v05_target_overlay_score": null,
+      "v05_target_overlay_status": "DATA_MISSING",
+      "v05_target_overlay_missing_components": [
         "consensus_target_upside",
         "target_revision_and_breadth"
       ],
-      "v05_reason": "缺少：consensus_target_upside、target_revision_and_breadth"
+      "v05_observed_points": 78.813843,
+      "v05_observed_max_points": 100.0,
+      "v05_observed_weight": 1.0,
+      "v05_reference_score": 78.813843,
+      "v05_reference_coverage": 1.0,
+      "v05_status": "READY",
+      "v05_missing_components": [],
+      "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
       "date": "2026-10-16",
@@ -228,18 +255,21 @@
       "theme_momentum_and_catalyst": 50.0,
       "relative_valuation": 54.174802,
       "price_chip_risk": 35.756348,
-      "v05_total_score": null,
-      "v05_observed_points": 42.168565,
-      "v05_observed_max_points": 70.0,
-      "v05_observed_weight": 0.7,
-      "v05_reference_score": 60.240807,
-      "v05_reference_coverage": 0.7,
-      "v05_status": "DATA_MISSING",
-      "v05_missing_components": [
+      "v05_total_score": 57.996802,
+      "v05_target_overlay_score": null,
+      "v05_target_overlay_status": "DATA_MISSING",
+      "v05_target_overlay_missing_components": [
         "consensus_target_upside",
         "target_revision_and_breadth"
       ],
-      "v05_reason": "缺少：consensus_target_upside、target_revision_and_breadth"
+      "v05_observed_points": 57.996802,
+      "v05_observed_max_points": 100.0,
+      "v05_observed_weight": 1.0,
+      "v05_reference_score": 57.996802,
+      "v05_reference_coverage": 1.0,
+      "v05_status": "READY",
+      "v05_missing_components": [],
+      "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
       "date": "2026-10-16",
@@ -252,18 +282,21 @@
       "theme_momentum_and_catalyst": 50.0,
       "relative_valuation": 69.25247,
       "price_chip_risk": 35.323201,
-      "v05_total_score": null,
-      "v05_observed_points": 41.07921,
-      "v05_observed_max_points": 70.0,
-      "v05_observed_weight": 0.7,
-      "v05_reference_score": 58.684586,
-      "v05_reference_coverage": 0.7,
-      "v05_status": "DATA_MISSING",
-      "v05_missing_components": [
+      "v05_total_score": 56.979564,
+      "v05_target_overlay_score": null,
+      "v05_target_overlay_status": "DATA_MISSING",
+      "v05_target_overlay_missing_components": [
         "consensus_target_upside",
         "target_revision_and_breadth"
       ],
-      "v05_reason": "缺少：consensus_target_upside、target_revision_and_breadth"
+      "v05_observed_points": 56.979564,
+      "v05_observed_max_points": 100.0,
+      "v05_observed_weight": 1.0,
+      "v05_reference_score": 56.979564,
+      "v05_reference_coverage": 1.0,
+      "v05_status": "READY",
+      "v05_missing_components": [],
+      "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
       "date": "2026-10-16",
@@ -276,18 +309,21 @@
       "theme_momentum_and_catalyst": 50.0,
       "relative_valuation": 32.701087,
       "price_chip_risk": 10.476066,
-      "v05_total_score": null,
-      "v05_observed_points": 37.644332,
-      "v05_observed_max_points": 70.0,
-      "v05_observed_weight": 0.7,
-      "v05_reference_score": 53.777617,
-      "v05_reference_coverage": 0.7,
-      "v05_status": "DATA_MISSING",
-      "v05_missing_components": [
+      "v05_total_score": 49.908647,
+      "v05_target_overlay_score": null,
+      "v05_target_overlay_status": "DATA_MISSING",
+      "v05_target_overlay_missing_components": [
         "consensus_target_upside",
         "target_revision_and_breadth"
       ],
-      "v05_reason": "缺少：consensus_target_upside、target_revision_and_breadth"
+      "v05_observed_points": 49.908647,
+      "v05_observed_max_points": 100.0,
+      "v05_observed_weight": 1.0,
+      "v05_reference_score": 49.908647,
+      "v05_reference_coverage": 1.0,
+      "v05_status": "READY",
+      "v05_missing_components": [],
+      "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
       "date": "2026-10-16",
@@ -300,18 +336,21 @@
       "theme_momentum_and_catalyst": 57.384615,
       "relative_valuation": 68.984486,
       "price_chip_risk": 50.948696,
-      "v05_total_score": null,
-      "v05_observed_points": 47.095722,
-      "v05_observed_max_points": 70.0,
-      "v05_observed_weight": 0.7,
-      "v05_reference_score": 67.279603,
-      "v05_reference_coverage": 0.7,
-      "v05_status": "DATA_MISSING",
-      "v05_missing_components": [
+      "v05_total_score": 65.850033,
+      "v05_target_overlay_score": null,
+      "v05_target_overlay_status": "DATA_MISSING",
+      "v05_target_overlay_missing_components": [
         "consensus_target_upside",
         "target_revision_and_breadth"
       ],
-      "v05_reason": "缺少：consensus_target_upside、target_revision_and_breadth"
+      "v05_observed_points": 65.850033,
+      "v05_observed_max_points": 100.0,
+      "v05_observed_weight": 1.0,
+      "v05_reference_score": 65.850033,
+      "v05_reference_coverage": 1.0,
+      "v05_status": "READY",
+      "v05_missing_components": [],
+      "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
       "date": "2026-10-16",
@@ -324,18 +363,21 @@
       "theme_momentum_and_catalyst": 50.0,
       "relative_valuation": 23.241798,
       "price_chip_risk": 48.866993,
-      "v05_total_score": null,
-      "v05_observed_points": 33.002643,
-      "v05_observed_max_points": 70.0,
-      "v05_observed_weight": 0.7,
-      "v05_reference_score": 47.146633,
-      "v05_reference_coverage": 0.7,
-      "v05_status": "DATA_MISSING",
-      "v05_missing_components": [
+      "v05_total_score": 46.749374,
+      "v05_target_overlay_score": null,
+      "v05_target_overlay_status": "DATA_MISSING",
+      "v05_target_overlay_missing_components": [
         "consensus_target_upside",
         "target_revision_and_breadth"
       ],
-      "v05_reason": "缺少：consensus_target_upside、target_revision_and_breadth"
+      "v05_observed_points": 46.749374,
+      "v05_observed_max_points": 100.0,
+      "v05_observed_weight": 1.0,
+      "v05_reference_score": 46.749374,
+      "v05_reference_coverage": 1.0,
+      "v05_status": "READY",
+      "v05_missing_components": [],
+      "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
       "date": "2026-10-16",
@@ -348,17 +390,20 @@
       "theme_momentum_and_catalyst": 50.0,
       "relative_valuation": 61.272233,
       "price_chip_risk": 39.394072,
-      "v05_total_score": null,
-      "v05_observed_points": 42.171809,
-      "v05_observed_max_points": 90.0,
-      "v05_observed_weight": 0.9,
-      "v05_reference_score": 46.857566,
-      "v05_reference_coverage": 0.9,
-      "v05_status": "DATA_MISSING",
-      "v05_missing_components": [
+      "v05_total_score": 58.451122,
+      "v05_target_overlay_score": null,
+      "v05_target_overlay_status": "DATA_MISSING",
+      "v05_target_overlay_missing_components": [
         "target_revision_and_breadth"
       ],
-      "v05_reason": "缺少：target_revision_and_breadth"
+      "v05_observed_points": 58.451122,
+      "v05_observed_max_points": 100.0,
+      "v05_observed_weight": 1.0,
+      "v05_reference_score": 58.451122,
+      "v05_reference_coverage": 1.0,
+      "v05_status": "READY",
+      "v05_missing_components": [],
+      "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
       "date": "2026-10-16",
@@ -371,18 +416,21 @@
       "theme_momentum_and_catalyst": 50.0,
       "relative_valuation": 25.738636,
       "price_chip_risk": 31.574657,
-      "v05_total_score": null,
-      "v05_observed_points": 40.30094,
-      "v05_observed_max_points": 70.0,
-      "v05_observed_weight": 0.7,
-      "v05_reference_score": 57.572771,
-      "v05_reference_coverage": 0.7,
-      "v05_status": "DATA_MISSING",
-      "v05_missing_components": [
+      "v05_total_score": 54.637741,
+      "v05_target_overlay_score": null,
+      "v05_target_overlay_status": "DATA_MISSING",
+      "v05_target_overlay_missing_components": [
         "consensus_target_upside",
         "target_revision_and_breadth"
       ],
-      "v05_reason": "缺少：consensus_target_upside、target_revision_and_breadth"
+      "v05_observed_points": 54.637741,
+      "v05_observed_max_points": 100.0,
+      "v05_observed_weight": 1.0,
+      "v05_reference_score": 54.637741,
+      "v05_reference_coverage": 1.0,
+      "v05_status": "READY",
+      "v05_missing_components": [],
+      "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
       "date": "2026-10-16",
@@ -395,18 +443,21 @@
       "theme_momentum_and_catalyst": 51.371429,
       "relative_valuation": 76.408992,
       "price_chip_risk": 71.174179,
-      "v05_total_score": null,
-      "v05_observed_points": 52.99363,
-      "v05_observed_max_points": 70.0,
-      "v05_observed_weight": 0.7,
-      "v05_reference_score": 75.705186,
-      "v05_reference_coverage": 0.7,
-      "v05_status": "DATA_MISSING",
-      "v05_missing_components": [
+      "v05_total_score": 74.774611,
+      "v05_target_overlay_score": null,
+      "v05_target_overlay_status": "DATA_MISSING",
+      "v05_target_overlay_missing_components": [
         "consensus_target_upside",
         "target_revision_and_breadth"
       ],
-      "v05_reason": "缺少：consensus_target_upside、target_revision_and_breadth"
+      "v05_observed_points": 74.774611,
+      "v05_observed_max_points": 100.0,
+      "v05_observed_weight": 1.0,
+      "v05_reference_score": 74.774611,
+      "v05_reference_coverage": 1.0,
+      "v05_status": "READY",
+      "v05_missing_components": [],
+      "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
       "date": "2026-10-16",
@@ -419,18 +470,21 @@
       "theme_momentum_and_catalyst": 50.0,
       "relative_valuation": 21.026779,
       "price_chip_risk": 33.314233,
-      "v05_total_score": null,
-      "v05_observed_points": 34.561092,
-      "v05_observed_max_points": 70.0,
-      "v05_observed_weight": 0.7,
-      "v05_reference_score": 49.372989,
-      "v05_reference_coverage": 0.7,
-      "v05_status": "DATA_MISSING",
-      "v05_missing_components": [
+      "v05_total_score": 47.475602,
+      "v05_target_overlay_score": null,
+      "v05_target_overlay_status": "DATA_MISSING",
+      "v05_target_overlay_missing_components": [
         "consensus_target_upside",
         "target_revision_and_breadth"
       ],
-      "v05_reason": "缺少：consensus_target_upside、target_revision_and_breadth"
+      "v05_observed_points": 47.475602,
+      "v05_observed_max_points": 100.0,
+      "v05_observed_weight": 1.0,
+      "v05_reference_score": 47.475602,
+      "v05_reference_coverage": 1.0,
+      "v05_status": "READY",
+      "v05_missing_components": [],
+      "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
       "date": "2026-10-16",
@@ -443,18 +497,21 @@
       "theme_momentum_and_catalyst": 61.516484,
       "relative_valuation": 19.597332,
       "price_chip_risk": 28.261123,
-      "v05_total_score": null,
-      "v05_observed_points": 29.472791,
-      "v05_observed_max_points": 70.0,
-      "v05_observed_weight": 0.7,
-      "v05_reference_score": 42.103987,
-      "v05_reference_coverage": 0.7,
-      "v05_status": "DATA_MISSING",
-      "v05_missing_components": [
+      "v05_total_score": 40.988418,
+      "v05_target_overlay_score": null,
+      "v05_target_overlay_status": "DATA_MISSING",
+      "v05_target_overlay_missing_components": [
         "consensus_target_upside",
         "target_revision_and_breadth"
       ],
-      "v05_reason": "缺少：consensus_target_upside、target_revision_and_breadth"
+      "v05_observed_points": 40.988418,
+      "v05_observed_max_points": 100.0,
+      "v05_observed_weight": 1.0,
+      "v05_reference_score": 40.988418,
+      "v05_reference_coverage": 1.0,
+      "v05_status": "READY",
+      "v05_missing_components": [],
+      "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
       "date": "2026-10-16",
@@ -468,18 +525,22 @@
       "relative_valuation": null,
       "price_chip_risk": 68.827161,
       "v05_total_score": null,
-      "v05_observed_points": 38.375087,
-      "v05_observed_max_points": 60.0,
-      "v05_observed_weight": 0.6,
-      "v05_reference_score": 63.958478,
-      "v05_reference_coverage": 0.6,
+      "v05_target_overlay_score": null,
+      "v05_target_overlay_status": "DATA_MISSING",
+      "v05_target_overlay_missing_components": [
+        "consensus_target_upside",
+        "target_revision_and_breadth"
+      ],
+      "v05_observed_points": 54.420456,
+      "v05_observed_max_points": 85.0,
+      "v05_observed_weight": 0.85,
+      "v05_reference_score": 64.024066,
+      "v05_reference_coverage": 0.85,
       "v05_status": "DATA_MISSING",
       "v05_missing_components": [
-        "consensus_target_upside",
-        "target_revision_and_breadth",
         "relative_valuation"
       ],
-      "v05_reason": "缺少：consensus_target_upside、target_revision_and_breadth、relative_valuation"
+      "v05_reason": "缺少：relative_valuation"
     },
     {
       "date": "2026-10-16",
@@ -492,17 +553,20 @@
       "theme_momentum_and_catalyst": 60.654945,
       "relative_valuation": 23.69832,
       "price_chip_risk": 31.284009,
-      "v05_total_score": null,
-      "v05_observed_points": 49.829892,
-      "v05_observed_max_points": 90.0,
-      "v05_observed_weight": 0.9,
-      "v05_reference_score": 55.366547,
-      "v05_reference_coverage": 0.9,
-      "v05_status": "DATA_MISSING",
-      "v05_missing_components": [
+      "v05_total_score": 53.699511,
+      "v05_target_overlay_score": null,
+      "v05_target_overlay_status": "DATA_MISSING",
+      "v05_target_overlay_missing_components": [
         "target_revision_and_breadth"
       ],
-      "v05_reason": "缺少：target_revision_and_breadth"
+      "v05_observed_points": 53.699511,
+      "v05_observed_max_points": 100.0,
+      "v05_observed_weight": 1.0,
+      "v05_reference_score": 53.699511,
+      "v05_reference_coverage": 1.0,
+      "v05_status": "READY",
+      "v05_missing_components": [],
+      "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
       "date": "2026-10-16",
@@ -515,18 +579,21 @@
       "theme_momentum_and_catalyst": 55.89011,
       "relative_valuation": 70.390217,
       "price_chip_risk": 68.705334,
-      "v05_total_score": null,
-      "v05_observed_points": 35.838858,
-      "v05_observed_max_points": 70.0,
-      "v05_observed_weight": 0.7,
-      "v05_reference_score": 51.198369,
-      "v05_reference_coverage": 0.7,
-      "v05_status": "DATA_MISSING",
-      "v05_missing_components": [
+      "v05_total_score": 53.108481,
+      "v05_target_overlay_score": null,
+      "v05_target_overlay_status": "DATA_MISSING",
+      "v05_target_overlay_missing_components": [
         "consensus_target_upside",
         "target_revision_and_breadth"
       ],
-      "v05_reason": "缺少：consensus_target_upside、target_revision_and_breadth"
+      "v05_observed_points": 53.108481,
+      "v05_observed_max_points": 100.0,
+      "v05_observed_weight": 1.0,
+      "v05_reference_score": 53.108481,
+      "v05_reference_coverage": 1.0,
+      "v05_status": "READY",
+      "v05_missing_components": [],
+      "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
       "date": "2026-10-16",
@@ -539,17 +606,20 @@
       "theme_momentum_and_catalyst": 51.582418,
       "relative_valuation": 35.0,
       "price_chip_risk": 63.812194,
-      "v05_total_score": null,
-      "v05_observed_points": 53.197486,
-      "v05_observed_max_points": 90.0,
-      "v05_observed_weight": 0.9,
-      "v05_reference_score": 59.108318,
-      "v05_reference_coverage": 0.9,
-      "v05_status": "DATA_MISSING",
-      "v05_missing_components": [
+      "v05_total_score": 61.337241,
+      "v05_target_overlay_score": null,
+      "v05_target_overlay_status": "DATA_MISSING",
+      "v05_target_overlay_missing_components": [
         "target_revision_and_breadth"
       ],
-      "v05_reason": "缺少：target_revision_and_breadth"
+      "v05_observed_points": 61.337241,
+      "v05_observed_max_points": 100.0,
+      "v05_observed_weight": 1.0,
+      "v05_reference_score": 61.337241,
+      "v05_reference_coverage": 1.0,
+      "v05_status": "READY",
+      "v05_missing_components": [],
+      "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
       "date": "2026-10-16",
@@ -562,18 +632,21 @@
       "theme_momentum_and_catalyst": 54.395604,
       "relative_valuation": 66.487055,
       "price_chip_risk": 51.811554,
-      "v05_total_score": null,
-      "v05_observed_points": 50.019799,
-      "v05_observed_max_points": 70.0,
-      "v05_observed_weight": 0.7,
-      "v05_reference_score": 71.456856,
-      "v05_reference_coverage": 0.7,
-      "v05_status": "DATA_MISSING",
-      "v05_missing_components": [
+      "v05_total_score": 69.432682,
+      "v05_target_overlay_score": null,
+      "v05_target_overlay_status": "DATA_MISSING",
+      "v05_target_overlay_missing_components": [
         "consensus_target_upside",
         "target_revision_and_breadth"
       ],
-      "v05_reason": "缺少：consensus_target_upside、target_revision_and_breadth"
+      "v05_observed_points": 69.432682,
+      "v05_observed_max_points": 100.0,
+      "v05_observed_weight": 1.0,
+      "v05_reference_score": 69.432682,
+      "v05_reference_coverage": 1.0,
+      "v05_status": "READY",
+      "v05_missing_components": [],
+      "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
       "date": "2026-10-16",
@@ -586,18 +659,21 @@
       "theme_momentum_and_catalyst": 50.0,
       "relative_valuation": 35.0,
       "price_chip_risk": 45.516306,
-      "v05_total_score": null,
-      "v05_observed_points": 38.988695,
-      "v05_observed_max_points": 70.0,
-      "v05_observed_weight": 0.7,
-      "v05_reference_score": 55.698136,
-      "v05_reference_coverage": 0.7,
-      "v05_status": "DATA_MISSING",
-      "v05_missing_components": [
+      "v05_total_score": 54.274592,
+      "v05_target_overlay_score": null,
+      "v05_target_overlay_status": "DATA_MISSING",
+      "v05_target_overlay_missing_components": [
         "consensus_target_upside",
         "target_revision_and_breadth"
       ],
-      "v05_reason": "缺少：consensus_target_upside、target_revision_and_breadth"
+      "v05_observed_points": 54.274592,
+      "v05_observed_max_points": 100.0,
+      "v05_observed_weight": 1.0,
+      "v05_reference_score": 54.274592,
+      "v05_reference_coverage": 1.0,
+      "v05_status": "READY",
+      "v05_missing_components": [],
+      "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
       "date": "2026-10-16",
@@ -611,18 +687,22 @@
       "relative_valuation": null,
       "price_chip_risk": 43.443746,
       "v05_total_score": null,
-      "v05_observed_points": 32.414001,
-      "v05_observed_max_points": 60.0,
-      "v05_observed_weight": 0.6,
-      "v05_reference_score": 54.023335,
-      "v05_reference_coverage": 0.6,
+      "v05_target_overlay_score": null,
+      "v05_target_overlay_status": "DATA_MISSING",
+      "v05_target_overlay_missing_components": [
+        "consensus_target_upside",
+        "target_revision_and_breadth"
+      ],
+      "v05_observed_points": 45.025782,
+      "v05_observed_max_points": 85.0,
+      "v05_observed_weight": 0.85,
+      "v05_reference_score": 52.971508,
+      "v05_reference_coverage": 0.85,
       "v05_status": "DATA_MISSING",
       "v05_missing_components": [
-        "consensus_target_upside",
-        "target_revision_and_breadth",
         "relative_valuation"
       ],
-      "v05_reason": "缺少：consensus_target_upside、target_revision_and_breadth、relative_valuation"
+      "v05_reason": "缺少：relative_valuation"
     },
     {
       "date": "2026-10-16",
@@ -635,18 +715,21 @@
       "theme_momentum_and_catalyst": 50.0,
       "relative_valuation": 35.0,
       "price_chip_risk": 60.032087,
-      "v05_total_score": null,
-      "v05_observed_points": 41.373356,
-      "v05_observed_max_points": 70.0,
-      "v05_observed_weight": 0.7,
-      "v05_reference_score": 59.104794,
-      "v05_reference_coverage": 0.7,
-      "v05_status": "DATA_MISSING",
-      "v05_missing_components": [
+      "v05_total_score": 58.344101,
+      "v05_target_overlay_score": null,
+      "v05_target_overlay_status": "DATA_MISSING",
+      "v05_target_overlay_missing_components": [
         "consensus_target_upside",
         "target_revision_and_breadth"
       ],
-      "v05_reason": "缺少：consensus_target_upside、target_revision_and_breadth"
+      "v05_observed_points": 58.344101,
+      "v05_observed_max_points": 100.0,
+      "v05_observed_weight": 1.0,
+      "v05_reference_score": 58.344101,
+      "v05_reference_coverage": 1.0,
+      "v05_status": "READY",
+      "v05_missing_components": [],
+      "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
       "date": "2026-10-16",
@@ -659,18 +742,21 @@
       "theme_momentum_and_catalyst": 50.0,
       "relative_valuation": 65.966897,
       "price_chip_risk": 57.194561,
-      "v05_total_score": null,
-      "v05_observed_points": 45.110829,
-      "v05_observed_max_points": 70.0,
-      "v05_observed_weight": 0.7,
-      "v05_reference_score": 64.444041,
-      "v05_reference_coverage": 0.7,
-      "v05_status": "DATA_MISSING",
-      "v05_missing_components": [
+      "v05_total_score": 63.577301,
+      "v05_target_overlay_score": null,
+      "v05_target_overlay_status": "DATA_MISSING",
+      "v05_target_overlay_missing_components": [
         "consensus_target_upside",
         "target_revision_and_breadth"
       ],
-      "v05_reason": "缺少：consensus_target_upside、target_revision_and_breadth"
+      "v05_observed_points": 63.577301,
+      "v05_observed_max_points": 100.0,
+      "v05_observed_weight": 1.0,
+      "v05_reference_score": 63.577301,
+      "v05_reference_coverage": 1.0,
+      "v05_status": "READY",
+      "v05_missing_components": [],
+      "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
       "date": "2026-10-16",
@@ -683,18 +769,21 @@
       "theme_momentum_and_catalyst": 50.0,
       "relative_valuation": 70.322628,
       "price_chip_risk": 46.867284,
-      "v05_total_score": null,
-      "v05_observed_points": 42.110178,
-      "v05_observed_max_points": 70.0,
-      "v05_observed_weight": 0.7,
-      "v05_reference_score": 60.157397,
-      "v05_reference_coverage": 0.7,
-      "v05_status": "DATA_MISSING",
-      "v05_missing_components": [
+      "v05_total_score": 59.160834,
+      "v05_target_overlay_score": null,
+      "v05_target_overlay_status": "DATA_MISSING",
+      "v05_target_overlay_missing_components": [
         "consensus_target_upside",
         "target_revision_and_breadth"
       ],
-      "v05_reason": "缺少：consensus_target_upside、target_revision_and_breadth"
+      "v05_observed_points": 59.160834,
+      "v05_observed_max_points": 100.0,
+      "v05_observed_weight": 1.0,
+      "v05_reference_score": 59.160834,
+      "v05_reference_coverage": 1.0,
+      "v05_status": "READY",
+      "v05_missing_components": [],
+      "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
       "date": "2026-10-16",
@@ -707,17 +796,20 @@
       "theme_momentum_and_catalyst": 55.063736,
       "relative_valuation": 35.0,
       "price_chip_risk": 38.149138,
-      "v05_total_score": null,
-      "v05_observed_points": 41.533423,
-      "v05_observed_max_points": 90.0,
-      "v05_observed_weight": 0.9,
-      "v05_reference_score": 46.148248,
-      "v05_reference_coverage": 0.9,
-      "v05_status": "DATA_MISSING",
-      "v05_missing_components": [
+      "v05_total_score": 51.564645,
+      "v05_target_overlay_score": null,
+      "v05_target_overlay_status": "DATA_MISSING",
+      "v05_target_overlay_missing_components": [
         "target_revision_and_breadth"
       ],
-      "v05_reason": "缺少：target_revision_and_breadth"
+      "v05_observed_points": 51.564645,
+      "v05_observed_max_points": 100.0,
+      "v05_observed_weight": 1.0,
+      "v05_reference_score": 51.564645,
+      "v05_reference_coverage": 1.0,
+      "v05_status": "READY",
+      "v05_missing_components": [],
+      "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
       "date": "2026-10-16",
@@ -731,18 +823,22 @@
       "relative_valuation": null,
       "price_chip_risk": 92.28395,
       "v05_total_score": null,
-      "v05_observed_points": 31.008067,
-      "v05_observed_max_points": 60.0,
-      "v05_observed_weight": 0.6,
-      "v05_reference_score": 51.680112,
-      "v05_reference_coverage": 0.6,
+      "v05_target_overlay_score": null,
+      "v05_target_overlay_status": "DATA_MISSING",
+      "v05_target_overlay_missing_components": [
+        "consensus_target_upside",
+        "target_revision_and_breadth"
+      ],
+      "v05_observed_points": 47.148083,
+      "v05_observed_max_points": 85.0,
+      "v05_observed_weight": 0.85,
+      "v05_reference_score": 55.468333,
+      "v05_reference_coverage": 0.85,
       "v05_status": "DATA_MISSING",
       "v05_missing_components": [
-        "consensus_target_upside",
-        "target_revision_and_breadth",
         "relative_valuation"
       ],
-      "v05_reason": "缺少：consensus_target_upside、target_revision_and_breadth、relative_valuation"
+      "v05_reason": "缺少：relative_valuation"
     },
     {
       "date": "2026-10-16",
@@ -756,18 +852,22 @@
       "relative_valuation": null,
       "price_chip_risk": 54.018111,
       "v05_total_score": null,
-      "v05_observed_points": 32.373262,
-      "v05_observed_max_points": 60.0,
-      "v05_observed_weight": 0.6,
-      "v05_reference_score": 53.955437,
-      "v05_reference_coverage": 0.6,
+      "v05_target_overlay_score": null,
+      "v05_target_overlay_status": "DATA_MISSING",
+      "v05_target_overlay_missing_components": [
+        "consensus_target_upside",
+        "target_revision_and_breadth"
+      ],
+      "v05_observed_points": 45.767936,
+      "v05_observed_max_points": 85.0,
+      "v05_observed_weight": 0.85,
+      "v05_reference_score": 53.844631,
+      "v05_reference_coverage": 0.85,
       "v05_status": "DATA_MISSING",
       "v05_missing_components": [
-        "consensus_target_upside",
-        "target_revision_and_breadth",
         "relative_valuation"
       ],
-      "v05_reason": "缺少：consensus_target_upside、target_revision_and_breadth、relative_valuation"
+      "v05_reason": "缺少：relative_valuation"
     },
     {
       "date": "2026-10-16",
@@ -780,18 +880,21 @@
       "theme_momentum_and_catalyst": 57.120879,
       "relative_valuation": 35.0,
       "price_chip_risk": 68.387608,
-      "v05_total_score": null,
-      "v05_observed_points": 30.827664,
-      "v05_observed_max_points": 70.0,
-      "v05_observed_weight": 0.7,
-      "v05_reference_score": 44.03952,
-      "v05_reference_coverage": 0.7,
-      "v05_status": "DATA_MISSING",
-      "v05_missing_components": [
+      "v05_total_score": 45.966672,
+      "v05_target_overlay_score": null,
+      "v05_target_overlay_status": "DATA_MISSING",
+      "v05_target_overlay_missing_components": [
         "consensus_target_upside",
         "target_revision_and_breadth"
       ],
-      "v05_reason": "缺少：consensus_target_upside、target_revision_and_breadth"
+      "v05_observed_points": 45.966672,
+      "v05_observed_max_points": 100.0,
+      "v05_observed_weight": 1.0,
+      "v05_reference_score": 45.966672,
+      "v05_reference_coverage": 1.0,
+      "v05_status": "READY",
+      "v05_missing_components": [],
+      "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
       "date": "2026-10-16",
@@ -804,17 +907,20 @@
       "theme_momentum_and_catalyst": 60.197802,
       "relative_valuation": 26.035079,
       "price_chip_risk": 50.471698,
-      "v05_total_score": null,
-      "v05_observed_points": 42.749508,
-      "v05_observed_max_points": 90.0,
-      "v05_observed_weight": 0.9,
-      "v05_reference_score": 47.499453,
-      "v05_reference_coverage": 0.9,
-      "v05_status": "DATA_MISSING",
-      "v05_missing_components": [
+      "v05_total_score": 59.378085,
+      "v05_target_overlay_score": null,
+      "v05_target_overlay_status": "DATA_MISSING",
+      "v05_target_overlay_missing_components": [
         "target_revision_and_breadth"
       ],
-      "v05_reason": "缺少：target_revision_and_breadth"
+      "v05_observed_points": 59.378085,
+      "v05_observed_max_points": 100.0,
+      "v05_observed_weight": 1.0,
+      "v05_reference_score": 59.378085,
+      "v05_reference_coverage": 1.0,
+      "v05_status": "READY",
+      "v05_missing_components": [],
+      "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
       "date": "2026-10-16",
@@ -828,18 +934,22 @@
       "relative_valuation": null,
       "price_chip_risk": 62.037037,
       "v05_total_score": null,
-      "v05_observed_points": 32.778157,
-      "v05_observed_max_points": 60.0,
-      "v05_observed_weight": 0.6,
-      "v05_reference_score": 54.630262,
-      "v05_reference_coverage": 0.6,
+      "v05_target_overlay_score": null,
+      "v05_target_overlay_status": "DATA_MISSING",
+      "v05_target_overlay_missing_components": [
+        "consensus_target_upside",
+        "target_revision_and_breadth"
+      ],
+      "v05_observed_points": 46.875474,
+      "v05_observed_max_points": 85.0,
+      "v05_observed_weight": 0.85,
+      "v05_reference_score": 55.147616,
+      "v05_reference_coverage": 0.85,
       "v05_status": "DATA_MISSING",
       "v05_missing_components": [
-        "consensus_target_upside",
-        "target_revision_and_breadth",
         "relative_valuation"
       ],
-      "v05_reason": "缺少：consensus_target_upside、target_revision_and_breadth、relative_valuation"
+      "v05_reason": "缺少：relative_valuation"
     },
     {
       "date": "2026-10-16",
@@ -852,18 +962,21 @@
       "theme_momentum_and_catalyst": 50.0,
       "relative_valuation": 35.0,
       "price_chip_risk": 38.173247,
-      "v05_total_score": null,
-      "v05_observed_points": 33.88849,
-      "v05_observed_max_points": 70.0,
-      "v05_observed_weight": 0.7,
-      "v05_reference_score": 48.412129,
-      "v05_reference_coverage": 0.7,
-      "v05_status": "DATA_MISSING",
-      "v05_missing_components": [
+      "v05_total_score": 47.348606,
+      "v05_target_overlay_score": null,
+      "v05_target_overlay_status": "DATA_MISSING",
+      "v05_target_overlay_missing_components": [
         "consensus_target_upside",
         "target_revision_and_breadth"
       ],
-      "v05_reason": "缺少：consensus_target_upside、target_revision_and_breadth"
+      "v05_observed_points": 47.348606,
+      "v05_observed_max_points": 100.0,
+      "v05_observed_weight": 1.0,
+      "v05_reference_score": 47.348606,
+      "v05_reference_coverage": 1.0,
+      "v05_status": "READY",
+      "v05_missing_components": [],
+      "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
       "date": "2026-10-16",
@@ -876,18 +989,21 @@
       "theme_momentum_and_catalyst": 65.613187,
       "relative_valuation": 31.273024,
       "price_chip_risk": 27.957489,
-      "v05_total_score": null,
-      "v05_observed_points": 42.019007,
-      "v05_observed_max_points": 70.0,
-      "v05_observed_weight": 0.7,
-      "v05_reference_score": 60.027153,
-      "v05_reference_coverage": 0.7,
-      "v05_status": "DATA_MISSING",
-      "v05_missing_components": [
+      "v05_total_score": 57.042725,
+      "v05_target_overlay_score": null,
+      "v05_target_overlay_status": "DATA_MISSING",
+      "v05_target_overlay_missing_components": [
         "consensus_target_upside",
         "target_revision_and_breadth"
       ],
-      "v05_reason": "缺少：consensus_target_upside、target_revision_and_breadth"
+      "v05_observed_points": 57.042725,
+      "v05_observed_max_points": 100.0,
+      "v05_observed_weight": 1.0,
+      "v05_reference_score": 57.042725,
+      "v05_reference_coverage": 1.0,
+      "v05_status": "READY",
+      "v05_missing_components": [],
+      "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
       "date": "2026-10-16",
@@ -900,18 +1016,21 @@
       "theme_momentum_and_catalyst": 50.0,
       "relative_valuation": 78.899111,
       "price_chip_risk": 73.056604,
-      "v05_total_score": null,
-      "v05_observed_points": 49.891863,
-      "v05_observed_max_points": 70.0,
-      "v05_observed_weight": 0.7,
-      "v05_reference_score": 71.27409,
-      "v05_reference_coverage": 0.7,
-      "v05_status": "DATA_MISSING",
-      "v05_missing_components": [
+      "v05_total_score": 71.066552,
+      "v05_target_overlay_score": null,
+      "v05_target_overlay_status": "DATA_MISSING",
+      "v05_target_overlay_missing_components": [
         "consensus_target_upside",
         "target_revision_and_breadth"
       ],
-      "v05_reason": "缺少：consensus_target_upside、target_revision_and_breadth"
+      "v05_observed_points": 71.066552,
+      "v05_observed_max_points": 100.0,
+      "v05_observed_weight": 1.0,
+      "v05_reference_score": 71.066552,
+      "v05_reference_coverage": 1.0,
+      "v05_status": "READY",
+      "v05_missing_components": [],
+      "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
       "date": "2026-10-16",
@@ -924,18 +1043,21 @@
       "theme_momentum_and_catalyst": 51.476923,
       "relative_valuation": 18.569664,
       "price_chip_risk": 55.083858,
-      "v05_total_score": null,
-      "v05_observed_points": 39.180098,
-      "v05_observed_max_points": 70.0,
-      "v05_observed_weight": 0.7,
-      "v05_reference_score": 55.971569,
-      "v05_reference_coverage": 0.7,
-      "v05_status": "DATA_MISSING",
-      "v05_missing_components": [
+      "v05_total_score": 54.857577,
+      "v05_target_overlay_score": null,
+      "v05_target_overlay_status": "DATA_MISSING",
+      "v05_target_overlay_missing_components": [
         "consensus_target_upside",
         "target_revision_and_breadth"
       ],
-      "v05_reason": "缺少：consensus_target_upside、target_revision_and_breadth"
+      "v05_observed_points": 54.857577,
+      "v05_observed_max_points": 100.0,
+      "v05_observed_weight": 1.0,
+      "v05_reference_score": 54.857577,
+      "v05_reference_coverage": 1.0,
+      "v05_status": "READY",
+      "v05_missing_components": [],
+      "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
       "date": "2026-10-16",
@@ -949,18 +1071,22 @@
       "relative_valuation": null,
       "price_chip_risk": 49.642325,
       "v05_total_score": null,
-      "v05_observed_points": 41.20859,
-      "v05_observed_max_points": 60.0,
-      "v05_observed_weight": 0.6,
-      "v05_reference_score": 68.680983,
-      "v05_reference_coverage": 0.6,
+      "v05_target_overlay_score": null,
+      "v05_target_overlay_status": "DATA_MISSING",
+      "v05_target_overlay_missing_components": [
+        "consensus_target_upside",
+        "target_revision_and_breadth"
+      ],
+      "v05_observed_points": 56.754242,
+      "v05_observed_max_points": 85.0,
+      "v05_observed_weight": 0.85,
+      "v05_reference_score": 66.769696,
+      "v05_reference_coverage": 0.85,
       "v05_status": "DATA_MISSING",
       "v05_missing_components": [
-        "consensus_target_upside",
-        "target_revision_and_breadth",
         "relative_valuation"
       ],
-      "v05_reason": "缺少：consensus_target_upside、target_revision_and_breadth、relative_valuation"
+      "v05_reason": "缺少：relative_valuation"
     },
     {
       "date": "2026-10-16",
@@ -974,18 +1100,22 @@
       "relative_valuation": null,
       "price_chip_risk": 62.037037,
       "v05_total_score": null,
-      "v05_observed_points": 29.125943,
-      "v05_observed_max_points": 60.0,
-      "v05_observed_weight": 0.6,
-      "v05_reference_score": 48.543238,
-      "v05_reference_coverage": 0.6,
+      "v05_target_overlay_score": null,
+      "v05_target_overlay_status": "DATA_MISSING",
+      "v05_target_overlay_missing_components": [
+        "consensus_target_upside",
+        "target_revision_and_breadth"
+      ],
+      "v05_observed_points": 42.362954,
+      "v05_observed_max_points": 85.0,
+      "v05_observed_weight": 0.85,
+      "v05_reference_score": 49.838769,
+      "v05_reference_coverage": 0.85,
       "v05_status": "DATA_MISSING",
       "v05_missing_components": [
-        "consensus_target_upside",
-        "target_revision_and_breadth",
         "relative_valuation"
       ],
-      "v05_reason": "缺少：consensus_target_upside、target_revision_and_breadth、relative_valuation"
+      "v05_reason": "缺少：relative_valuation"
     },
     {
       "date": "2026-10-16",
@@ -998,18 +1128,21 @@
       "theme_momentum_and_catalyst": 54.325275,
       "relative_valuation": 20.36828,
       "price_chip_risk": 33.159154,
-      "v05_total_score": null,
-      "v05_observed_points": 40.854827,
-      "v05_observed_max_points": 70.0,
-      "v05_observed_weight": 0.7,
-      "v05_reference_score": 58.364039,
-      "v05_reference_coverage": 0.7,
-      "v05_status": "DATA_MISSING",
-      "v05_missing_components": [
+      "v05_total_score": 55.422809,
+      "v05_target_overlay_score": null,
+      "v05_target_overlay_status": "DATA_MISSING",
+      "v05_target_overlay_missing_components": [
         "consensus_target_upside",
         "target_revision_and_breadth"
       ],
-      "v05_reason": "缺少：consensus_target_upside、target_revision_and_breadth"
+      "v05_observed_points": 55.422809,
+      "v05_observed_max_points": 100.0,
+      "v05_observed_weight": 1.0,
+      "v05_reference_score": 55.422809,
+      "v05_reference_coverage": 1.0,
+      "v05_status": "READY",
+      "v05_missing_components": [],
+      "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
       "date": "2026-10-16",
@@ -1022,18 +1155,21 @@
       "theme_momentum_and_catalyst": 50.0,
       "relative_valuation": 18.47164,
       "price_chip_risk": 47.902749,
-      "v05_total_score": null,
-      "v05_observed_points": 40.359174,
-      "v05_observed_max_points": 70.0,
-      "v05_observed_weight": 0.7,
-      "v05_reference_score": 57.655963,
-      "v05_reference_coverage": 0.7,
-      "v05_status": "DATA_MISSING",
-      "v05_missing_components": [
+      "v05_total_score": 55.753465,
+      "v05_target_overlay_score": null,
+      "v05_target_overlay_status": "DATA_MISSING",
+      "v05_target_overlay_missing_components": [
         "consensus_target_upside",
         "target_revision_and_breadth"
       ],
-      "v05_reason": "缺少：consensus_target_upside、target_revision_and_breadth"
+      "v05_observed_points": 55.753465,
+      "v05_observed_max_points": 100.0,
+      "v05_observed_weight": 1.0,
+      "v05_reference_score": 55.753465,
+      "v05_reference_coverage": 1.0,
+      "v05_status": "READY",
+      "v05_missing_components": [],
+      "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
       "date": "2026-10-16",
@@ -1047,18 +1183,22 @@
       "relative_valuation": null,
       "price_chip_risk": 83.024691,
       "v05_total_score": null,
-      "v05_observed_points": 33.472396,
-      "v05_observed_max_points": 60.0,
-      "v05_observed_weight": 0.6,
-      "v05_reference_score": 55.787327,
-      "v05_reference_coverage": 0.6,
+      "v05_target_overlay_score": null,
+      "v05_target_overlay_status": "DATA_MISSING",
+      "v05_target_overlay_missing_components": [
+        "consensus_target_upside",
+        "target_revision_and_breadth"
+      ],
+      "v05_observed_points": 49.498996,
+      "v05_observed_max_points": 85.0,
+      "v05_observed_weight": 0.85,
+      "v05_reference_score": 58.234113,
+      "v05_reference_coverage": 0.85,
       "v05_status": "DATA_MISSING",
       "v05_missing_components": [
-        "consensus_target_upside",
-        "target_revision_and_breadth",
         "relative_valuation"
       ],
-      "v05_reason": "缺少：consensus_target_upside、target_revision_and_breadth、relative_valuation"
+      "v05_reason": "缺少：relative_valuation"
     },
     {
       "date": "2026-10-16",
@@ -1071,18 +1211,21 @@
       "theme_momentum_and_catalyst": 50.0,
       "relative_valuation": 35.0,
       "price_chip_risk": 29.96832,
-      "v05_total_score": null,
-      "v05_observed_points": 41.910986,
-      "v05_observed_max_points": 70.0,
-      "v05_observed_weight": 0.7,
-      "v05_reference_score": 59.872837,
-      "v05_reference_coverage": 0.7,
-      "v05_status": "DATA_MISSING",
-      "v05_missing_components": [
+      "v05_total_score": 56.761357,
+      "v05_target_overlay_score": null,
+      "v05_target_overlay_status": "DATA_MISSING",
+      "v05_target_overlay_missing_components": [
         "consensus_target_upside",
         "target_revision_and_breadth"
       ],
-      "v05_reason": "缺少：consensus_target_upside、target_revision_and_breadth"
+      "v05_observed_points": 56.761357,
+      "v05_observed_max_points": 100.0,
+      "v05_observed_weight": 1.0,
+      "v05_reference_score": 56.761357,
+      "v05_reference_coverage": 1.0,
+      "v05_status": "READY",
+      "v05_missing_components": [],
+      "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
       "date": "2026-10-16",
@@ -1096,18 +1239,22 @@
       "relative_valuation": null,
       "price_chip_risk": 15.123457,
       "v05_total_score": null,
-      "v05_observed_points": 24.599858,
-      "v05_observed_max_points": 60.0,
-      "v05_observed_weight": 0.6,
-      "v05_reference_score": 40.999763,
-      "v05_reference_coverage": 0.6,
+      "v05_target_overlay_score": null,
+      "v05_target_overlay_status": "DATA_MISSING",
+      "v05_target_overlay_missing_components": [
+        "consensus_target_upside",
+        "target_revision_and_breadth"
+      ],
+      "v05_observed_points": 33.134082,
+      "v05_observed_max_points": 85.0,
+      "v05_observed_weight": 0.85,
+      "v05_reference_score": 38.981273,
+      "v05_reference_coverage": 0.85,
       "v05_status": "DATA_MISSING",
       "v05_missing_components": [
-        "consensus_target_upside",
-        "target_revision_and_breadth",
         "relative_valuation"
       ],
-      "v05_reason": "缺少：consensus_target_upside、target_revision_and_breadth、relative_valuation"
+      "v05_reason": "缺少：relative_valuation"
     },
     {
       "date": "2026-10-16",
@@ -1120,18 +1267,21 @@
       "theme_momentum_and_catalyst": 51.582418,
       "relative_valuation": 52.331127,
       "price_chip_risk": 43.444095,
-      "v05_total_score": null,
-      "v05_observed_points": 32.922474,
-      "v05_observed_max_points": 70.0,
-      "v05_observed_weight": 0.7,
-      "v05_reference_score": 47.032106,
-      "v05_reference_coverage": 0.7,
-      "v05_status": "DATA_MISSING",
-      "v05_missing_components": [
+      "v05_total_score": 47.009238,
+      "v05_target_overlay_score": null,
+      "v05_target_overlay_status": "DATA_MISSING",
+      "v05_target_overlay_missing_components": [
         "consensus_target_upside",
         "target_revision_and_breadth"
       ],
-      "v05_reason": "缺少：consensus_target_upside、target_revision_and_breadth"
+      "v05_observed_points": 47.009238,
+      "v05_observed_max_points": 100.0,
+      "v05_observed_weight": 1.0,
+      "v05_reference_score": 47.009238,
+      "v05_reference_coverage": 1.0,
+      "v05_status": "READY",
+      "v05_missing_components": [],
+      "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
       "date": "2026-10-16",
@@ -1145,18 +1295,22 @@
       "relative_valuation": null,
       "price_chip_risk": 53.523643,
       "v05_total_score": null,
-      "v05_observed_points": 40.985546,
-      "v05_observed_max_points": 60.0,
-      "v05_observed_weight": 0.6,
-      "v05_reference_score": 68.309243,
-      "v05_reference_coverage": 0.6,
+      "v05_target_overlay_score": null,
+      "v05_target_overlay_status": "DATA_MISSING",
+      "v05_target_overlay_missing_components": [
+        "consensus_target_upside",
+        "target_revision_and_breadth"
+      ],
+      "v05_observed_points": 56.496206,
+      "v05_observed_max_points": 85.0,
+      "v05_observed_weight": 0.85,
+      "v05_reference_score": 66.466125,
+      "v05_reference_coverage": 0.85,
       "v05_status": "DATA_MISSING",
       "v05_missing_components": [
-        "consensus_target_upside",
-        "target_revision_and_breadth",
         "relative_valuation"
       ],
-      "v05_reason": "缺少：consensus_target_upside、target_revision_and_breadth、relative_valuation"
+      "v05_reason": "缺少：relative_valuation"
     },
     {
       "date": "2026-10-16",
@@ -1169,18 +1323,21 @@
       "theme_momentum_and_catalyst": 57.384615,
       "relative_valuation": 35.0,
       "price_chip_risk": 43.49668,
-      "v05_total_score": null,
-      "v05_observed_points": 32.667118,
-      "v05_observed_max_points": 70.0,
-      "v05_observed_weight": 0.7,
-      "v05_reference_score": 46.667311,
-      "v05_reference_coverage": 0.7,
-      "v05_status": "DATA_MISSING",
-      "v05_missing_components": [
+      "v05_total_score": 46.405764,
+      "v05_target_overlay_score": null,
+      "v05_target_overlay_status": "DATA_MISSING",
+      "v05_target_overlay_missing_components": [
         "consensus_target_upside",
         "target_revision_and_breadth"
       ],
-      "v05_reason": "缺少：consensus_target_upside、target_revision_and_breadth"
+      "v05_observed_points": 46.405764,
+      "v05_observed_max_points": 100.0,
+      "v05_observed_weight": 1.0,
+      "v05_reference_score": 46.405764,
+      "v05_reference_coverage": 1.0,
+      "v05_status": "READY",
+      "v05_missing_components": [],
+      "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
       "date": "2026-10-16",
@@ -1193,18 +1350,21 @@
       "theme_momentum_and_catalyst": 50.0,
       "relative_valuation": 61.660771,
       "price_chip_risk": 63.946774,
-      "v05_total_score": null,
-      "v05_observed_points": 45.283382,
-      "v05_observed_max_points": 70.0,
-      "v05_observed_weight": 0.7,
-      "v05_reference_score": 64.690546,
-      "v05_reference_coverage": 0.7,
-      "v05_status": "DATA_MISSING",
-      "v05_missing_components": [
+      "v05_total_score": 64.191754,
+      "v05_target_overlay_score": null,
+      "v05_target_overlay_status": "DATA_MISSING",
+      "v05_target_overlay_missing_components": [
         "consensus_target_upside",
         "target_revision_and_breadth"
       ],
-      "v05_reason": "缺少：consensus_target_upside、target_revision_and_breadth"
+      "v05_observed_points": 64.191754,
+      "v05_observed_max_points": 100.0,
+      "v05_observed_weight": 1.0,
+      "v05_reference_score": 64.191754,
+      "v05_reference_coverage": 1.0,
+      "v05_status": "READY",
+      "v05_missing_components": [],
+      "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
       "date": "2026-10-16",
@@ -1217,18 +1377,21 @@
       "theme_momentum_and_catalyst": 50.0,
       "relative_valuation": 75.884091,
       "price_chip_risk": 53.857966,
-      "v05_total_score": null,
-      "v05_observed_points": 42.723985,
-      "v05_observed_max_points": 70.0,
-      "v05_observed_weight": 0.7,
-      "v05_reference_score": 61.034264,
-      "v05_reference_coverage": 0.7,
-      "v05_status": "DATA_MISSING",
-      "v05_missing_components": [
+      "v05_total_score": 60.591431,
+      "v05_target_overlay_score": null,
+      "v05_target_overlay_status": "DATA_MISSING",
+      "v05_target_overlay_missing_components": [
         "consensus_target_upside",
         "target_revision_and_breadth"
       ],
-      "v05_reason": "缺少：consensus_target_upside、target_revision_and_breadth"
+      "v05_observed_points": 60.591431,
+      "v05_observed_max_points": 100.0,
+      "v05_observed_weight": 1.0,
+      "v05_reference_score": 60.591431,
+      "v05_reference_coverage": 1.0,
+      "v05_status": "READY",
+      "v05_missing_components": [],
+      "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
       "date": "2026-10-16",
@@ -1241,23 +1404,37 @@
       "theme_momentum_and_catalyst": 52.848352,
       "relative_valuation": 72.902866,
       "price_chip_risk": 72.57652,
-      "v05_total_score": null,
-      "v05_observed_points": 51.158397,
-      "v05_observed_max_points": 70.0,
-      "v05_observed_weight": 0.7,
-      "v05_reference_score": 73.083424,
-      "v05_reference_coverage": 0.7,
-      "v05_status": "DATA_MISSING",
-      "v05_missing_components": [
+      "v05_total_score": 72.535016,
+      "v05_target_overlay_score": null,
+      "v05_target_overlay_status": "DATA_MISSING",
+      "v05_target_overlay_missing_components": [
         "consensus_target_upside",
         "target_revision_and_breadth"
       ],
-      "v05_reason": "缺少：consensus_target_upside、target_revision_and_breadth"
+      "v05_observed_points": 72.535016,
+      "v05_observed_max_points": 100.0,
+      "v05_observed_weight": 1.0,
+      "v05_reference_score": 72.535016,
+      "v05_reference_coverage": 1.0,
+      "v05_status": "READY",
+      "v05_missing_components": [],
+      "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     }
   ],
   "requested_ticker_count": 52,
-  "ready_ticker_count": 0,
-  "missing_value_policy": "NA_BLOCKS_FORMAL_TOTAL_NO_ZERO_NO_TRADE; reference score renormalizes only observed components and always publishes coverage",
+  "ready_ticker_count": 42,
+  "missing_value_policy": "NA blocks the five-component public core without zero fill; target-price fields are a separate confidence overlay and never fabricate missing institutions",
+  "core_weights": {
+    "structural_bottleneck": 0.25,
+    "revenue_earnings_realization": 0.25,
+    "theme_momentum_and_catalyst": 0.15,
+    "relative_valuation": 0.15,
+    "price_chip_risk": 0.2
+  },
+  "target_overlay_weights": {
+    "consensus_target_upside": 0.6666666666666666,
+    "target_revision_and_breadth": 0.3333333333333333
+  },
   "realization_policy": "official monthly-revenue YoY cross-section plus latest PIT official financial-quality score; analyst EPS is not substituted for realized earnings",
   "price_chip_policy": "current observable market-risk score; 4W/12W EPS-price history remains a confidence diagnostic and does not block today's component",
   "future_data_violation_count": 0,

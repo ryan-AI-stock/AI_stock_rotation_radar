@@ -12,7 +12,7 @@ from r1.performance_comparison import build_comparison
 from r1.recommendations import build_recommendations
 
 
-MODEL_LOGIC = """R1 v0.5｜實際帳戶總覽與AI瓶頸換倉顧問
+MODEL_LOGIC = """R1 v0.6｜實際帳戶總覽與AI瓶頸換倉顧問
 
 【模型任務】
 R1記錄Ryan實際成交與帳戶結果，並與「8/5全部轉為0050正二後抱住」同起點基準每日比較。績效比較排除未包含於8/5共同本金的既有台積電持股及其配息；總持股區仍完整顯示。兩條線未完成共同起始NAV與現金流對帳前，不發布誰勝誰負。
@@ -21,7 +21,7 @@ R1記錄Ryan實際成交與帳戶結果，並與「8/5全部轉為0050正二後�
 結構性龍頭評分：AI瓶頸直接性25%、產業與技術地位25%、AI營收兌現20%、財務與獲利品質20%、市場代表性10%。官方與公司正式揭露優先；分析師與市場共識只能補充，不能單獨決定排名。任一成分股必要證據不足時，該題材Top3維持待資料。
 
 【每日換倉優先序】
-結構瓶頸20%、營收獲利兌現20%、12個月目標價上行空間20%、目標價修正與機構廣度10%、題材動能與催化10%、相對估值10%、價格籌碼風險10%。缺一構面不補0、不重配權重。建議與實際成交分離，只有Ryan確認成交才更新持股。
+公開資料核心分數：結構瓶頸25%、營收獲利兌現25%、題材動能與催化15%、相對估值15%、價格籌碼風險20%。法人目標價上行與修正廣度另作信心加減項，缺少時不補0，也不阻斷核心排名。建議與實際成交分離，只有Ryan確認成交才更新持股。
 
 【無差別殺盤過渡層】
 未來半年五檔目標維持不變。當加權指數或十一題材候選池出現廣泛急跌時，R1開放全候選池進行過渡比較，包括五檔目標本身。跌深不是買進理由；候選仍須通過財務、題材催化及風險資料。盤中只列觀察，收盤後以官方資料確認；模型不自動成交。
@@ -157,10 +157,12 @@ def _build_v03_dashboard(*, config: R1Config, market: dict, theme_review: dict,
           for item in comparison_rows],
         ["03｜今日換倉建議"],
         ["優先序", "動作", "換出", "換入", "理由／狀態"],
-        *[[RECOMMENDATION_DISPLAY.get((item["priority"], item["action"]),
-                                     (item["priority"], item["action"]))[0],
-           RECOMMENDATION_DISPLAY.get((item["priority"], item["action"]),
-                                     (item["priority"], item["action"]))[1],
+        *[[(f"優先{item['priority'][1:]}" if item["action"] == "REVIEW_SWITCH_IN" else
+            RECOMMENDATION_DISPLAY.get((item["priority"], item["action"]),
+                                       (item["priority"], item["action"]))[0]),
+           ("換倉檢視" if item["action"] == "REVIEW_SWITCH_IN" else
+            RECOMMENDATION_DISPLAY.get((item["priority"], item["action"]),
+                                       (item["priority"], item["action"]))[1]),
            item.get("source_ticker", ""),
            f"{item.get('target_ticker', '')} {item.get('target_company', '')}".strip(), item["reason"]]
           for item in recommendations],
@@ -186,8 +188,8 @@ def _build_v03_dashboard(*, config: R1Config, market: dict, theme_review: dict,
         ["分數", "構成", "權重", "更新頻率", "用途"],
         ["季度結構性龍頭", "瓶頸直接性／產業技術地位／AI營收兌現／財務獲利品質／市場代表性",
          "25%／25%／20%／20%／10%", "每季", "決定每個題材Top1～Top3"],
-        ["每日換倉優先序", "結構瓶頸／營收獲利兌現／12個月目標價上行／目標價修正與機構廣度／題材動能與催化／相對估值／價格籌碼風險",
-         "20%／20%／20%／10%／10%／10%／10%", "每日排名＋每週目標價與事件", "從實際持股角度提供換出／換入優先序"],
+        ["每日換倉優先序", "結構瓶頸／營收獲利兌現／題材動能與催化／相對估值／價格籌碼風險；法人目標價另作信心加減項",
+         "25%／25%／15%／15%／20%", "每日排名＋每週事件；目標價有資料才疊加", "從實際持股角度提供換出／換入優先序"],
         ["即時參考分數", "已取得的估值／瓶頸／催化／市場風險，依既定權重重新正規化；EPS另列信心",
          "report-only", "每日市場＋每週證據", "不因4W／12W未滿而整份空白，不產生交易指令"],
         ["06｜更新排程"],
@@ -306,6 +308,7 @@ def build_dashboard_payload(
             "observed_points": v05.get("v05_observed_points"),
             "observed_max_points": v05.get("v05_observed_max_points"),
             "missing_components": v05.get("v05_missing_components", []),
+            "overlay_missing_components": v05.get("v05_target_overlay_missing_components", []),
             "target_upside": target_price_by_ticker.get(ticker, {}).get("consensus_upside"),
             "reason": v05.get("v05_reason"),
         })

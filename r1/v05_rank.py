@@ -9,14 +9,17 @@ from typing import Any
 from .theme_policy import load_themes
 
 
-WEIGHTS = {
-    "structural_bottleneck": 0.20,
-    "revenue_earnings_realization": 0.20,
-    "consensus_target_upside": 0.20,
-    "target_revision_and_breadth": 0.10,
-    "theme_momentum_and_catalyst": 0.10,
-    "relative_valuation": 0.10,
-    "price_chip_risk": 0.10,
+CORE_WEIGHTS = {
+    "structural_bottleneck": 0.25,
+    "revenue_earnings_realization": 0.25,
+    "theme_momentum_and_catalyst": 0.15,
+    "relative_valuation": 0.15,
+    "price_chip_risk": 0.20,
+}
+
+TARGET_OVERLAY_WEIGHTS = {
+    "consensus_target_upside": 2 / 3,
+    "target_revision_and_breadth": 1 / 3,
 }
 
 
@@ -120,11 +123,21 @@ def build_v05_rank(*, as_of_date: str, weekly: dict[str, Any], target_prices: di
                 else weekly_row.get("price_chip_score")
             ),
         }
-        missing = [name for name in WEIGHTS if components.get(name) is None]
-        total = None if missing else round(sum(float(components[name]) * WEIGHTS[name] for name in WEIGHTS), 6)
-        observed_weight = round(sum(WEIGHTS[name] for name in WEIGHTS if components.get(name) is not None), 6)
+        missing = [name for name in CORE_WEIGHTS if components.get(name) is None]
+        overlay_missing = [name for name in TARGET_OVERLAY_WEIGHTS if components.get(name) is None]
+        total = None if missing else round(
+            sum(float(components[name]) * CORE_WEIGHTS[name] for name in CORE_WEIGHTS), 6
+        )
+        target_overlay = None if overlay_missing else round(sum(
+            float(components[name]) * TARGET_OVERLAY_WEIGHTS[name]
+            for name in TARGET_OVERLAY_WEIGHTS
+        ), 6)
+        observed_weight = round(sum(
+            CORE_WEIGHTS[name] for name in CORE_WEIGHTS if components.get(name) is not None
+        ), 6)
         observed_points = round(
-            sum(float(components[name]) * WEIGHTS[name] for name in WEIGHTS if components.get(name) is not None), 6
+            sum(float(components[name]) * CORE_WEIGHTS[name]
+                for name in CORE_WEIGHTS if components.get(name) is not None), 6
         )
         reference_score = None if observed_weight == 0 else round(observed_points / observed_weight, 6)
         rows.append({
@@ -133,6 +146,9 @@ def build_v05_rank(*, as_of_date: str, weekly: dict[str, Any], target_prices: di
             "company": weekly_row.get("company", ""),
             **components,
             "v05_total_score": total,
+            "v05_target_overlay_score": target_overlay,
+            "v05_target_overlay_status": "READY" if target_overlay is not None else "DATA_MISSING",
+            "v05_target_overlay_missing_components": overlay_missing,
             "v05_observed_points": observed_points,
             "v05_observed_max_points": round(observed_weight * 100, 6),
             "v05_observed_weight": observed_weight,
@@ -141,18 +157,20 @@ def build_v05_rank(*, as_of_date: str, weekly: dict[str, Any], target_prices: di
             "v05_status": "READY" if total is not None else "DATA_MISSING",
             "v05_missing_components": missing,
             "v05_reason": (
-                "七構面完整；僅供Ryan換倉比較，不是成交指令"
+                "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
                 if total is not None else "缺少：" + "、".join(missing)
             ),
         })
     return {
-        "model": "R1 v0.5",
+        "model": "R1 v0.6 public-core",
         "date": as_of_date,
         "status": "challenger_report_only",
         "rows": rows,
         "requested_ticker_count": len(rows),
         "ready_ticker_count": sum(row["v05_status"] == "READY" for row in rows),
-        "missing_value_policy": "NA_BLOCKS_FORMAL_TOTAL_NO_ZERO_NO_TRADE; reference score renormalizes only observed components and always publishes coverage",
+        "missing_value_policy": "NA blocks the five-component public core without zero fill; target-price fields are a separate confidence overlay and never fabricate missing institutions",
+        "core_weights": CORE_WEIGHTS,
+        "target_overlay_weights": TARGET_OVERLAY_WEIGHTS,
         "realization_policy": "official monthly-revenue YoY cross-section plus latest PIT official financial-quality score; analyst EPS is not substituted for realized earnings",
         "price_chip_policy": "current observable market-risk score; 4W/12W EPS-price history remains a confidence diagnostic and does not block today's component",
         "future_data_violation_count": 0,

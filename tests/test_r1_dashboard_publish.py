@@ -38,10 +38,11 @@ class FakeSheetsClient:
 
 
 class R1DashboardPublishTest(unittest.TestCase):
-    def test_dashboard_uses_v05_seven_component_rotation_weights(self):
+    def test_dashboard_uses_v06_public_core_rotation_weights(self):
         source = inspect.getsource(dashboard_payload._build_v03_dashboard)
         self.assertIn("每日換倉優先序", source)
-        self.assertIn("20%／20%／20%／10%／10%／10%／10%", source)
+        self.assertIn("25%／25%／15%／15%／20%", source)
+        self.assertIn("法人目標價另作信心加減項", source)
         self.assertNotIn("30%／25%／20%／15%／10%", source)
 
     def test_dashboard_section_formatting_is_derived_from_content(self):

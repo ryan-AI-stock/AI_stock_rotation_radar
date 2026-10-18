@@ -14,6 +14,7 @@ class RecommendationTest(unittest.TestCase):
             {"ticker": "3081", "company": "聯亞", "score": 90, "target_upside": .4},
         ], held_tickers={"2454"}, target_tickers={"2454", "3081"})
         self.assertEqual(rows[0]["target_ticker"], "3081")
+        self.assertEqual(rows[0]["source_ticker"], "2454")
         self.assertEqual(rows[0]["confidence"], "HIGH")
 
     def test_partial_evidence_is_observation_only(self):
@@ -24,6 +25,16 @@ class RecommendationTest(unittest.TestCase):
         ], held_tickers=set(), target_tickers={"2308"})
         self.assertEqual(rows[0]["action"], "OBSERVE_ONLY")
         self.assertEqual(rows[0]["execution_status"], "只觀察，不執行")
+
+    def test_public_core_can_rank_without_target_price_overlay(self):
+        rows = build_recommendations(date="2026-10-10", candidates=[
+            {"ticker": "2308", "company": "台達電", "score": 82,
+             "target_upside": None,
+             "overlay_missing_components": ["consensus_target_upside"]},
+        ], held_tickers=set(), target_tickers={"2308"})
+        self.assertEqual(rows[0]["action"], "REVIEW_SWITCH_IN")
+        self.assertEqual(rows[0]["confidence"], "MEDIUM")
+        self.assertIn("consensus_target_upside", rows[0]["blocking_gaps"])
 
 
 if __name__ == "__main__":
