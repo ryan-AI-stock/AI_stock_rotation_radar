@@ -91,37 +91,37 @@
       "error": "HTTPError:HTTP Error 403: "
     },
     "3081": {
-      "retrieved_at": "2026-10-17",
-      "source_url": "https://hk.investing.com/equities/landmark-optoelectronics-consensus-estimates",
-      "row_count": 5,
-      "status": "READY"
-    },
-    "2303": {
-      "retrieved_at": "2026-10-17",
-      "source_url": "https://hk.investing.com/equities/united-micro-consensus-estimates",
-      "row_count": 4,
-      "status": "READY"
-    },
-    "3008": {
-      "retrieved_at": "2026-10-17",
+      "retrieved_at": "2026-10-19",
       "row_count": 0,
       "status": "SOURCE_GAP",
       "error": "HTTPError:HTTP Error 403: "
     },
+    "2303": {
+      "retrieved_at": "2026-10-19",
+      "row_count": 0,
+      "status": "REUSED_READY",
+      "note": "three or more identifiable institutions remain fresh; request capacity reserved for source gaps"
+    },
+    "3008": {
+      "retrieved_at": "2026-10-19",
+      "row_count": 0,
+      "status": "REUSED_READY",
+      "note": "three or more identifiable institutions remain fresh; request capacity reserved for source gaps"
+    },
     "3406": {
-      "retrieved_at": "2026-10-17",
-      "source_url": "https://hk.investing.com/equities/genius-consensus-estimates",
-      "row_count": 5,
-      "status": "READY"
+      "retrieved_at": "2026-10-19",
+      "row_count": 0,
+      "status": "REUSED_READY",
+      "note": "three or more identifiable institutions remain fresh; request capacity reserved for source gaps"
     },
     "2337": {
-      "retrieved_at": "2026-10-17",
+      "retrieved_at": "2026-10-19",
       "row_count": 0,
       "status": "SOURCE_GAP",
       "error": "HTTPError:HTTP Error 403: "
     },
     "8299": {
-      "retrieved_at": "2026-10-17",
+      "retrieved_at": "2026-10-19",
       "row_count": 0,
       "status": "SOURCE_GAP",
       "error": "HTTPError:HTTP Error 403: "
@@ -326,23 +326,21 @@
     }
   },
   "last_summary": {
-    "retrieved_at": "2026-10-18",
+    "retrieved_at": "2026-10-19",
     "requested_ticker_count": 54,
-    "ready_ticker_count": 4,
-    "reused_ready_ticker_count": 2,
-    "source_gap_ticker_count": 5,
-    "new_evidence_row_count": 6,
+    "ready_ticker_count": 3,
+    "reused_ready_ticker_count": 3,
+    "source_gap_ticker_count": 3,
+    "new_evidence_row_count": 0,
     "total_evidence_row_count": 114,
-    "attempted_ticker_count": 7,
+    "attempted_ticker_count": 3,
     "circuit_breaker_tripped": true,
-    "next_index": 15,
+    "next_index": 21,
     "failures": {
-      "3661": "HTTPError:HTTP Error 403: ",
-      "6223": "ValueError:identifiable_analyst_target_rows_missing",
-      "6187": "HTTPError:HTTP Error 403: ",
-      "3583": "HTTPError:HTTP Error 403: ",
-      "2408": "HTTPError:HTTP Error 403: "
+      "3081": "HTTPError:HTTP Error 403: ",
+      "2337": "HTTPError:HTTP Error 403: ",
+      "8299": "HTTPError:HTTP Error 403: "
     }
   },
-  "next_index": 15
+  "next_index": 21
 }
