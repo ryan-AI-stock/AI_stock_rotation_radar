@@ -78,11 +78,17 @@ def materialize(*, as_of_date: str, theme_path: str | Path,
         structural = leader_score(row)
         if structural is not None:
             row["structural_leader"] = structural
-        missing_fields = [field for field in ALL_FIELDS if row.get(field) is None]
-        row["status"] = "READY" if not missing_fields else "DATA_MISSING"
-        row["missing_fields"] = missing_fields
-        if missing_fields:
-            rejected.append({"ticker": ticker, "missing_fields": missing_fields})
+        leader_missing_fields = [field for field in LEADER_FIELDS if row.get(field) is None]
+        priority_missing_fields = [field for field in PRIORITY_FIELDS if row.get(field) is None]
+        row["status"] = "READY" if not leader_missing_fields else "DATA_MISSING"
+        row["leader_missing_fields"] = leader_missing_fields
+        row["priority_status"] = "READY" if not priority_missing_fields else "DATA_MISSING"
+        row["priority_missing_fields"] = priority_missing_fields
+        # Backward-compatible aggregate diagnostics.  Quarterly Top3 readiness must
+        # not be blocked by daily priority fields produced by separate pipelines.
+        row["missing_fields"] = [*leader_missing_fields, *priority_missing_fields]
+        if leader_missing_fields:
+            rejected.append({"ticker": ticker, "missing_fields": leader_missing_fields})
         rows.append(row)
 
     payload = {

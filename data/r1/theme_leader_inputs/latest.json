@@ -5,7 +5,7 @@
   "score_rubric_version": "r1-theme-score-rubric-v0.1",
   "requested_ticker_count": 52,
   "actual_ticker_count": 52,
-  "complete_ticker_count": 0,
+  "complete_ticker_count": 10,
   "rows": [
     {
       "ticker": "2330",
@@ -13,6 +13,60 @@
       "theme_id": "compute_foundry",
       "as_of_date": "2026-10-16",
       "evidence": {
+        "bottleneck_directness": {
+          "sources": [
+            {
+              "source_url": "https://investor.tsmc.com/schinese/encrypt/files/encrypt_file/reports/2026-07/547d1696765e05ce3adb81c108ce1c8c1682b80c/TSMC%202Q26%20Transcript.pdf",
+              "source_date": "2026-07-16",
+              "available_at": "2026-07-16",
+              "source_family": "tsmc_ir",
+              "evidence_note": "AI推升先進製程與CoWoS結構性需求且公司持續擴產"
+            },
+            {
+              "source_url": "https://www.trendforce.com/presscenter/news/20260430-13028.html",
+              "source_date": "2026-04-30",
+              "available_at": "2026-04-30",
+              "source_family": "trendforce_research",
+              "evidence_note": "3奈米與先進封裝仍是AI供應鏈瓶頸且台積電具主導地位"
+            }
+          ]
+        },
+        "industry_technology_position": {
+          "sources": [
+            {
+              "source_url": "https://investor.tsmc.com/schinese/encrypt/files/encrypt_file/reports/2026-07/547d1696765e05ce3adb81c108ce1c8c1682b80c/TSMC%202Q26%20Transcript.pdf",
+              "source_date": "2026-07-16",
+              "available_at": "2026-07-16",
+              "source_family": "tsmc_ir",
+              "evidence_note": "AI推升先進製程與CoWoS結構性需求且公司持續擴產"
+            },
+            {
+              "source_url": "https://www.trendforce.com/presscenter/news/20260430-13028.html",
+              "source_date": "2026-04-30",
+              "available_at": "2026-04-30",
+              "source_family": "trendforce_research",
+              "evidence_note": "3奈米與先進封裝仍是AI供應鏈瓶頸且台積電具主導地位"
+            }
+          ]
+        },
+        "ai_revenue_realization": {
+          "sources": [
+            {
+              "source_url": "https://investor.tsmc.com/schinese/encrypt/files/encrypt_file/reports/2026-07/547d1696765e05ce3adb81c108ce1c8c1682b80c/TSMC%202Q26%20Transcript.pdf",
+              "source_date": "2026-07-16",
+              "available_at": "2026-07-16",
+              "source_family": "tsmc_ir",
+              "evidence_note": "AI推升先進製程與CoWoS結構性需求且公司持續擴產"
+            },
+            {
+              "source_url": "https://www.trendforce.com/presscenter/news/20260430-13028.html",
+              "source_date": "2026-04-30",
+              "available_at": "2026-04-30",
+              "source_family": "trendforce_research",
+              "evidence_note": "3奈米與先進封裝仍是AI供應鏈瓶頸且台積電具主導地位"
+            }
+          ]
+        },
         "financial_earnings_quality": {
           "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=2330&SYEAR=2026&SSEASON=2&REPORT_ID=C",
           "source_date": "2026-10-16",
@@ -28,22 +82,26 @@
           "evidence_note": "同題材內市值、20TD平均成交金額與官方外資持股比例百分位。"
         }
       },
-      "bottleneck_directness": null,
-      "industry_technology_position": null,
-      "ai_revenue_realization": null,
+      "bottleneck_directness": 100.0,
+      "industry_technology_position": 100.0,
+      "ai_revenue_realization": 100.0,
       "financial_earnings_quality": 91.0423,
       "market_representation": 100.0,
-      "structural_leader": null,
+      "structural_leader": 98.20846,
       "revenue_earnings_growth": null,
       "self_historical_valuation": null,
       "price_risk_safety": null,
       "demand_order_catalyst": null,
-      "status": "DATA_MISSING",
+      "status": "READY",
+      "leader_missing_fields": [],
+      "priority_status": "DATA_MISSING",
+      "priority_missing_fields": [
+        "revenue_earnings_growth",
+        "self_historical_valuation",
+        "price_risk_safety",
+        "demand_order_catalyst"
+      ],
       "missing_fields": [
-        "bottleneck_directness",
-        "industry_technology_position",
-        "ai_revenue_realization",
-        "structural_leader",
         "revenue_earnings_growth",
         "self_historical_valuation",
         "price_risk_safety",
@@ -56,6 +114,60 @@
       "theme_id": "compute_foundry",
       "as_of_date": "2026-10-16",
       "evidence": {
+        "bottleneck_directness": {
+          "sources": [
+            {
+              "source_url": "https://www.mediatek.com/hubfs/MediaTek%20Assets/Pdfs/Quarterly%20Earnings%20Release/2025/Quarterly%20Earnings%20Release-2025Q4/%E8%AF%B4%E6%98%8E%E4%BC%9A%E9%80%90%E5%AD%97%E7%A8%BF.pdf?hsLang=zh-cn",
+              "source_date": "2026-02-04",
+              "available_at": "2026-02-04",
+              "source_family": "mediatek_ir",
+              "evidence_note": "資料中心客製ASIC由設計階段進入量產與營收兌現期"
+            },
+            {
+              "source_url": "https://www.spglobal.com/market-intelligence/en/news-insights/research/2026/08/mediatek-s-ai-asics-growth-to-offset-smartphone-weakness",
+              "source_date": "2026-08-26",
+              "available_at": "2026-08-26",
+              "source_family": "sp_global_research",
+              "evidence_note": "獨立研究預期首款AI加速器量產後2027營收占比快速提高"
+            }
+          ]
+        },
+        "industry_technology_position": {
+          "sources": [
+            {
+              "source_url": "https://www.mediatek.com/hubfs/MediaTek%20Assets/Pdfs/Quarterly%20Earnings%20Release/2025/Quarterly%20Earnings%20Release-2025Q4/%E8%AF%B4%E6%98%8E%E4%BC%9A%E9%80%90%E5%AD%97%E7%A8%BF.pdf?hsLang=zh-cn",
+              "source_date": "2026-02-04",
+              "available_at": "2026-02-04",
+              "source_family": "mediatek_ir",
+              "evidence_note": "資料中心客製ASIC由設計階段進入量產與營收兌現期"
+            },
+            {
+              "source_url": "https://www.spglobal.com/market-intelligence/en/news-insights/research/2026/08/mediatek-s-ai-asics-growth-to-offset-smartphone-weakness",
+              "source_date": "2026-08-26",
+              "available_at": "2026-08-26",
+              "source_family": "sp_global_research",
+              "evidence_note": "獨立研究預期首款AI加速器量產後2027營收占比快速提高"
+            }
+          ]
+        },
+        "ai_revenue_realization": {
+          "sources": [
+            {
+              "source_url": "https://www.mediatek.com/hubfs/MediaTek%20Assets/Pdfs/Quarterly%20Earnings%20Release/2025/Quarterly%20Earnings%20Release-2025Q4/%E8%AF%B4%E6%98%8E%E4%BC%9A%E9%80%90%E5%AD%97%E7%A8%BF.pdf?hsLang=zh-cn",
+              "source_date": "2026-02-04",
+              "available_at": "2026-02-04",
+              "source_family": "mediatek_ir",
+              "evidence_note": "資料中心客製ASIC由設計階段進入量產與營收兌現期"
+            },
+            {
+              "source_url": "https://www.spglobal.com/market-intelligence/en/news-insights/research/2026/08/mediatek-s-ai-asics-growth-to-offset-smartphone-weakness",
+              "source_date": "2026-08-26",
+              "available_at": "2026-08-26",
+              "source_family": "sp_global_research",
+              "evidence_note": "獨立研究預期首款AI加速器量產後2027營收占比快速提高"
+            }
+          ]
+        },
         "financial_earnings_quality": {
           "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=2454&SYEAR=2026&SSEASON=2&REPORT_ID=C",
           "source_date": "2026-10-16",
@@ -71,22 +183,26 @@
           "evidence_note": "同題材內市值、20TD平均成交金額與官方外資持股比例百分位。"
         }
       },
-      "bottleneck_directness": null,
-      "industry_technology_position": null,
-      "ai_revenue_realization": null,
+      "bottleneck_directness": 75.0,
+      "industry_technology_position": 75.0,
+      "ai_revenue_realization": 75.0,
       "financial_earnings_quality": 31.4314,
       "market_representation": 75.0,
-      "structural_leader": null,
+      "structural_leader": 66.28628,
       "revenue_earnings_growth": null,
       "self_historical_valuation": null,
       "price_risk_safety": null,
       "demand_order_catalyst": null,
-      "status": "DATA_MISSING",
+      "status": "READY",
+      "leader_missing_fields": [],
+      "priority_status": "DATA_MISSING",
+      "priority_missing_fields": [
+        "revenue_earnings_growth",
+        "self_historical_valuation",
+        "price_risk_safety",
+        "demand_order_catalyst"
+      ],
       "missing_fields": [
-        "bottleneck_directness",
-        "industry_technology_position",
-        "ai_revenue_realization",
-        "structural_leader",
         "revenue_earnings_growth",
         "self_historical_valuation",
         "price_risk_safety",
@@ -125,6 +241,19 @@
       "price_risk_safety": null,
       "demand_order_catalyst": null,
       "status": "DATA_MISSING",
+      "leader_missing_fields": [
+        "bottleneck_directness",
+        "industry_technology_position",
+        "ai_revenue_realization"
+      ],
+      "priority_status": "DATA_MISSING",
+      "priority_missing_fields": [
+        "structural_leader",
+        "revenue_earnings_growth",
+        "self_historical_valuation",
+        "price_risk_safety",
+        "demand_order_catalyst"
+      ],
       "missing_fields": [
         "bottleneck_directness",
         "industry_technology_position",
@@ -168,6 +297,19 @@
       "price_risk_safety": null,
       "demand_order_catalyst": null,
       "status": "DATA_MISSING",
+      "leader_missing_fields": [
+        "bottleneck_directness",
+        "industry_technology_position",
+        "ai_revenue_realization"
+      ],
+      "priority_status": "DATA_MISSING",
+      "priority_missing_fields": [
+        "structural_leader",
+        "revenue_earnings_growth",
+        "self_historical_valuation",
+        "price_risk_safety",
+        "demand_order_catalyst"
+      ],
       "missing_fields": [
         "bottleneck_directness",
         "industry_technology_position",
@@ -211,6 +353,19 @@
       "price_risk_safety": null,
       "demand_order_catalyst": null,
       "status": "DATA_MISSING",
+      "leader_missing_fields": [
+        "bottleneck_directness",
+        "industry_technology_position",
+        "ai_revenue_realization"
+      ],
+      "priority_status": "DATA_MISSING",
+      "priority_missing_fields": [
+        "structural_leader",
+        "revenue_earnings_growth",
+        "self_historical_valuation",
+        "price_risk_safety",
+        "demand_order_catalyst"
+      ],
       "missing_fields": [
         "bottleneck_directness",
         "industry_technology_position",
@@ -254,6 +409,19 @@
       "price_risk_safety": null,
       "demand_order_catalyst": null,
       "status": "DATA_MISSING",
+      "leader_missing_fields": [
+        "bottleneck_directness",
+        "industry_technology_position",
+        "ai_revenue_realization"
+      ],
+      "priority_status": "DATA_MISSING",
+      "priority_missing_fields": [
+        "structural_leader",
+        "revenue_earnings_growth",
+        "self_historical_valuation",
+        "price_risk_safety",
+        "demand_order_catalyst"
+      ],
       "missing_fields": [
         "bottleneck_directness",
         "industry_technology_position",
@@ -297,6 +465,19 @@
       "price_risk_safety": null,
       "demand_order_catalyst": null,
       "status": "DATA_MISSING",
+      "leader_missing_fields": [
+        "bottleneck_directness",
+        "industry_technology_position",
+        "ai_revenue_realization"
+      ],
+      "priority_status": "DATA_MISSING",
+      "priority_missing_fields": [
+        "structural_leader",
+        "revenue_earnings_growth",
+        "self_historical_valuation",
+        "price_risk_safety",
+        "demand_order_catalyst"
+      ],
       "missing_fields": [
         "bottleneck_directness",
         "industry_technology_position",
@@ -340,6 +521,19 @@
       "price_risk_safety": null,
       "demand_order_catalyst": null,
       "status": "DATA_MISSING",
+      "leader_missing_fields": [
+        "bottleneck_directness",
+        "industry_technology_position",
+        "ai_revenue_realization"
+      ],
+      "priority_status": "DATA_MISSING",
+      "priority_missing_fields": [
+        "structural_leader",
+        "revenue_earnings_growth",
+        "self_historical_valuation",
+        "price_risk_safety",
+        "demand_order_catalyst"
+      ],
       "missing_fields": [
         "bottleneck_directness",
         "industry_technology_position",
@@ -383,6 +577,19 @@
       "price_risk_safety": null,
       "demand_order_catalyst": null,
       "status": "DATA_MISSING",
+      "leader_missing_fields": [
+        "bottleneck_directness",
+        "industry_technology_position",
+        "ai_revenue_realization"
+      ],
+      "priority_status": "DATA_MISSING",
+      "priority_missing_fields": [
+        "structural_leader",
+        "revenue_earnings_growth",
+        "self_historical_valuation",
+        "price_risk_safety",
+        "demand_order_catalyst"
+      ],
       "missing_fields": [
         "bottleneck_directness",
         "industry_technology_position",
@@ -426,6 +633,19 @@
       "price_risk_safety": null,
       "demand_order_catalyst": null,
       "status": "DATA_MISSING",
+      "leader_missing_fields": [
+        "bottleneck_directness",
+        "industry_technology_position",
+        "ai_revenue_realization"
+      ],
+      "priority_status": "DATA_MISSING",
+      "priority_missing_fields": [
+        "structural_leader",
+        "revenue_earnings_growth",
+        "self_historical_valuation",
+        "price_risk_safety",
+        "demand_order_catalyst"
+      ],
       "missing_fields": [
         "bottleneck_directness",
         "industry_technology_position",
@@ -443,6 +663,60 @@
       "theme_id": "memory_storage",
       "as_of_date": "2026-10-16",
       "evidence": {
+        "bottleneck_directness": {
+          "sources": [
+            {
+              "source_url": "https://www.nanya.com/tw/IR/16/%E6%96%B0%E8%81%9E%E7%A8%BF?IRId=12105",
+              "source_date": "2026-04-13",
+              "available_at": "2026-04-13",
+              "source_family": "nanya_ir",
+              "evidence_note": "DRAM價格與獲利已回升且AI UWIO開始貢獻營收、客戶入股確保長期供應"
+            },
+            {
+              "source_url": "https://www.trendforce.com/presscenter/news/20260730-13158.html",
+              "source_date": "2026-07-30",
+              "available_at": "2026-07-30",
+              "source_family": "trendforce_research",
+              "evidence_note": "AI伺服器為DRAM需求主力且產能擴充有限使供給持續吃緊"
+            }
+          ]
+        },
+        "industry_technology_position": {
+          "sources": [
+            {
+              "source_url": "https://www.nanya.com/tw/IR/16/%E6%96%B0%E8%81%9E%E7%A8%BF?IRId=12105",
+              "source_date": "2026-04-13",
+              "available_at": "2026-04-13",
+              "source_family": "nanya_ir",
+              "evidence_note": "DRAM價格與獲利已回升且AI UWIO開始貢獻營收、客戶入股確保長期供應"
+            },
+            {
+              "source_url": "https://www.trendforce.com/presscenter/news/20260730-13158.html",
+              "source_date": "2026-07-30",
+              "available_at": "2026-07-30",
+              "source_family": "trendforce_research",
+              "evidence_note": "AI伺服器為DRAM需求主力且產能擴充有限使供給持續吃緊"
+            }
+          ]
+        },
+        "ai_revenue_realization": {
+          "sources": [
+            {
+              "source_url": "https://www.nanya.com/tw/IR/16/%E6%96%B0%E8%81%9E%E7%A8%BF?IRId=12105",
+              "source_date": "2026-04-13",
+              "available_at": "2026-04-13",
+              "source_family": "nanya_ir",
+              "evidence_note": "DRAM價格與獲利已回升且AI UWIO開始貢獻營收、客戶入股確保長期供應"
+            },
+            {
+              "source_url": "https://www.trendforce.com/presscenter/news/20260730-13158.html",
+              "source_date": "2026-07-30",
+              "available_at": "2026-07-30",
+              "source_family": "trendforce_research",
+              "evidence_note": "AI伺服器為DRAM需求主力且產能擴充有限使供給持續吃緊"
+            }
+          ]
+        },
         "financial_earnings_quality": {
           "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=2408&SYEAR=2026&SSEASON=2&REPORT_ID=C",
           "source_date": "2026-10-16",
@@ -458,22 +732,26 @@
           "evidence_note": "同題材內市值、20TD平均成交金額與官方外資持股比例百分位。"
         }
       },
-      "bottleneck_directness": null,
-      "industry_technology_position": null,
-      "ai_revenue_realization": null,
+      "bottleneck_directness": 75.0,
+      "industry_technology_position": 50.0,
+      "ai_revenue_realization": 50.0,
       "financial_earnings_quality": 80.9817,
       "market_representation": 85.0,
-      "structural_leader": null,
+      "structural_leader": 65.94634,
       "revenue_earnings_growth": null,
       "self_historical_valuation": null,
       "price_risk_safety": null,
       "demand_order_catalyst": null,
-      "status": "DATA_MISSING",
+      "status": "READY",
+      "leader_missing_fields": [],
+      "priority_status": "DATA_MISSING",
+      "priority_missing_fields": [
+        "revenue_earnings_growth",
+        "self_historical_valuation",
+        "price_risk_safety",
+        "demand_order_catalyst"
+      ],
       "missing_fields": [
-        "bottleneck_directness",
-        "industry_technology_position",
-        "ai_revenue_realization",
-        "structural_leader",
         "revenue_earnings_growth",
         "self_historical_valuation",
         "price_risk_safety",
@@ -486,6 +764,60 @@
       "theme_id": "memory_storage",
       "as_of_date": "2026-10-16",
       "evidence": {
+        "bottleneck_directness": {
+          "sources": [
+            {
+              "source_url": "https://www.winbond.com/export/sites/winbond/about-winbond/investor/investor-conference/1Q26-investor-conference_EN_Final.pdf",
+              "source_date": "2026-04-30",
+              "available_at": "2026-04-30",
+              "source_family": "winbond_ir",
+              "evidence_note": "AI需求排擠一般型記憶體產能且成熟型DRAM需求與價格同步轉強"
+            },
+            {
+              "source_url": "https://www.trendforce.com/presscenter/news/20260907-13219.html",
+              "source_date": "2026-09-07",
+              "available_at": "2026-09-07",
+              "source_family": "trendforce_research",
+              "evidence_note": "DRAM供給落後需求且華邦電成熟型DRAM營收成長已被獨立產業資料確認"
+            }
+          ]
+        },
+        "industry_technology_position": {
+          "sources": [
+            {
+              "source_url": "https://www.winbond.com/export/sites/winbond/about-winbond/investor/investor-conference/1Q26-investor-conference_EN_Final.pdf",
+              "source_date": "2026-04-30",
+              "available_at": "2026-04-30",
+              "source_family": "winbond_ir",
+              "evidence_note": "AI需求排擠一般型記憶體產能且成熟型DRAM需求與價格同步轉強"
+            },
+            {
+              "source_url": "https://www.trendforce.com/presscenter/news/20260907-13219.html",
+              "source_date": "2026-09-07",
+              "available_at": "2026-09-07",
+              "source_family": "trendforce_research",
+              "evidence_note": "DRAM供給落後需求且華邦電成熟型DRAM營收成長已被獨立產業資料確認"
+            }
+          ]
+        },
+        "ai_revenue_realization": {
+          "sources": [
+            {
+              "source_url": "https://www.winbond.com/export/sites/winbond/about-winbond/investor/investor-conference/1Q26-investor-conference_EN_Final.pdf",
+              "source_date": "2026-04-30",
+              "available_at": "2026-04-30",
+              "source_family": "winbond_ir",
+              "evidence_note": "AI需求排擠一般型記憶體產能且成熟型DRAM需求與價格同步轉強"
+            },
+            {
+              "source_url": "https://www.trendforce.com/presscenter/news/20260907-13219.html",
+              "source_date": "2026-09-07",
+              "available_at": "2026-09-07",
+              "source_family": "trendforce_research",
+              "evidence_note": "DRAM供給落後需求且華邦電成熟型DRAM營收成長已被獨立產業資料確認"
+            }
+          ]
+        },
         "financial_earnings_quality": {
           "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=2344&SYEAR=2026&SSEASON=2&REPORT_ID=C",
           "source_date": "2026-10-16",
@@ -501,22 +833,26 @@
           "evidence_note": "同題材內市值、20TD平均成交金額與官方外資持股比例百分位。"
         }
       },
-      "bottleneck_directness": null,
-      "industry_technology_position": null,
-      "ai_revenue_realization": null,
+      "bottleneck_directness": 75.0,
+      "industry_technology_position": 50.0,
+      "ai_revenue_realization": 75.0,
       "financial_earnings_quality": 71.1621,
       "market_representation": 70.0,
-      "structural_leader": null,
+      "structural_leader": 67.48242,
       "revenue_earnings_growth": null,
       "self_historical_valuation": null,
       "price_risk_safety": null,
       "demand_order_catalyst": null,
-      "status": "DATA_MISSING",
+      "status": "READY",
+      "leader_missing_fields": [],
+      "priority_status": "DATA_MISSING",
+      "priority_missing_fields": [
+        "revenue_earnings_growth",
+        "self_historical_valuation",
+        "price_risk_safety",
+        "demand_order_catalyst"
+      ],
       "missing_fields": [
-        "bottleneck_directness",
-        "industry_technology_position",
-        "ai_revenue_realization",
-        "structural_leader",
         "revenue_earnings_growth",
         "self_historical_valuation",
         "price_risk_safety",
@@ -555,6 +891,19 @@
       "price_risk_safety": null,
       "demand_order_catalyst": null,
       "status": "DATA_MISSING",
+      "leader_missing_fields": [
+        "bottleneck_directness",
+        "industry_technology_position",
+        "ai_revenue_realization"
+      ],
+      "priority_status": "DATA_MISSING",
+      "priority_missing_fields": [
+        "structural_leader",
+        "revenue_earnings_growth",
+        "self_historical_valuation",
+        "price_risk_safety",
+        "demand_order_catalyst"
+      ],
       "missing_fields": [
         "bottleneck_directness",
         "industry_technology_position",
@@ -598,6 +947,19 @@
       "price_risk_safety": null,
       "demand_order_catalyst": null,
       "status": "DATA_MISSING",
+      "leader_missing_fields": [
+        "bottleneck_directness",
+        "industry_technology_position",
+        "ai_revenue_realization"
+      ],
+      "priority_status": "DATA_MISSING",
+      "priority_missing_fields": [
+        "structural_leader",
+        "revenue_earnings_growth",
+        "self_historical_valuation",
+        "price_risk_safety",
+        "demand_order_catalyst"
+      ],
       "missing_fields": [
         "bottleneck_directness",
         "industry_technology_position",
@@ -641,6 +1003,19 @@
       "price_risk_safety": null,
       "demand_order_catalyst": null,
       "status": "DATA_MISSING",
+      "leader_missing_fields": [
+        "bottleneck_directness",
+        "industry_technology_position",
+        "ai_revenue_realization"
+      ],
+      "priority_status": "DATA_MISSING",
+      "priority_missing_fields": [
+        "structural_leader",
+        "revenue_earnings_growth",
+        "self_historical_valuation",
+        "price_risk_safety",
+        "demand_order_catalyst"
+      ],
       "missing_fields": [
         "bottleneck_directness",
         "industry_technology_position",
@@ -684,6 +1059,19 @@
       "price_risk_safety": null,
       "demand_order_catalyst": null,
       "status": "DATA_MISSING",
+      "leader_missing_fields": [
+        "bottleneck_directness",
+        "industry_technology_position",
+        "ai_revenue_realization"
+      ],
+      "priority_status": "DATA_MISSING",
+      "priority_missing_fields": [
+        "structural_leader",
+        "revenue_earnings_growth",
+        "self_historical_valuation",
+        "price_risk_safety",
+        "demand_order_catalyst"
+      ],
       "missing_fields": [
         "bottleneck_directness",
         "industry_technology_position",
@@ -727,6 +1115,19 @@
       "price_risk_safety": null,
       "demand_order_catalyst": null,
       "status": "DATA_MISSING",
+      "leader_missing_fields": [
+        "bottleneck_directness",
+        "industry_technology_position",
+        "ai_revenue_realization"
+      ],
+      "priority_status": "DATA_MISSING",
+      "priority_missing_fields": [
+        "structural_leader",
+        "revenue_earnings_growth",
+        "self_historical_valuation",
+        "price_risk_safety",
+        "demand_order_catalyst"
+      ],
       "missing_fields": [
         "bottleneck_directness",
         "industry_technology_position",
@@ -744,6 +1145,60 @@
       "theme_id": "pcb_substrate",
       "as_of_date": "2026-10-16",
       "evidence": {
+        "bottleneck_directness": {
+          "sources": [
+            {
+              "source_url": "https://www.unimicron.com/files/money/Earnings/en/2026-Q2-consolidated-en.pdf",
+              "source_date": "2026-07-29",
+              "available_at": "2026-07-29",
+              "source_family": "unimicron_ir",
+              "evidence_note": "ABF載板與AI資料中心需求已在欣興第二季營運結構與獲利顯現"
+            },
+            {
+              "source_url": "https://www.digitimes.com/news/a20260226PD219/unimicron-demand-2026-price-transmission.html",
+              "source_date": "2026-02-26",
+              "available_at": "2026-02-26",
+              "source_family": "digitimes_industry",
+              "evidence_note": "AI高速傳輸推升高階ABF載板需求且玻纖短缺已導致價格傳導"
+            }
+          ]
+        },
+        "industry_technology_position": {
+          "sources": [
+            {
+              "source_url": "https://www.unimicron.com/files/money/Earnings/en/2026-Q2-consolidated-en.pdf",
+              "source_date": "2026-07-29",
+              "available_at": "2026-07-29",
+              "source_family": "unimicron_ir",
+              "evidence_note": "ABF載板與AI資料中心需求已在欣興第二季營運結構與獲利顯現"
+            },
+            {
+              "source_url": "https://www.digitimes.com/news/a20260226PD219/unimicron-demand-2026-price-transmission.html",
+              "source_date": "2026-02-26",
+              "available_at": "2026-02-26",
+              "source_family": "digitimes_industry",
+              "evidence_note": "AI高速傳輸推升高階ABF載板需求且玻纖短缺已導致價格傳導"
+            }
+          ]
+        },
+        "ai_revenue_realization": {
+          "sources": [
+            {
+              "source_url": "https://www.unimicron.com/files/money/Earnings/en/2026-Q2-consolidated-en.pdf",
+              "source_date": "2026-07-29",
+              "available_at": "2026-07-29",
+              "source_family": "unimicron_ir",
+              "evidence_note": "ABF載板與AI資料中心需求已在欣興第二季營運結構與獲利顯現"
+            },
+            {
+              "source_url": "https://www.digitimes.com/news/a20260226PD219/unimicron-demand-2026-price-transmission.html",
+              "source_date": "2026-02-26",
+              "available_at": "2026-02-26",
+              "source_family": "digitimes_industry",
+              "evidence_note": "AI高速傳輸推升高階ABF載板需求且玻纖短缺已導致價格傳導"
+            }
+          ]
+        },
         "financial_earnings_quality": {
           "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3037&SYEAR=2026&SSEASON=2&REPORT_ID=C",
           "source_date": "2026-10-16",
@@ -759,22 +1214,26 @@
           "evidence_note": "同題材內市值、20TD平均成交金額與官方外資持股比例百分位。"
         }
       },
-      "bottleneck_directness": null,
-      "industry_technology_position": null,
-      "ai_revenue_realization": null,
+      "bottleneck_directness": 75.0,
+      "industry_technology_position": 50.0,
+      "ai_revenue_realization": 75.0,
       "financial_earnings_quality": 73.9152,
       "market_representation": 75.0,
-      "structural_leader": null,
+      "structural_leader": 68.53304,
       "revenue_earnings_growth": null,
       "self_historical_valuation": null,
       "price_risk_safety": null,
       "demand_order_catalyst": null,
-      "status": "DATA_MISSING",
+      "status": "READY",
+      "leader_missing_fields": [],
+      "priority_status": "DATA_MISSING",
+      "priority_missing_fields": [
+        "revenue_earnings_growth",
+        "self_historical_valuation",
+        "price_risk_safety",
+        "demand_order_catalyst"
+      ],
       "missing_fields": [
-        "bottleneck_directness",
-        "industry_technology_position",
-        "ai_revenue_realization",
-        "structural_leader",
         "revenue_earnings_growth",
         "self_historical_valuation",
         "price_risk_safety",
@@ -813,6 +1272,19 @@
       "price_risk_safety": null,
       "demand_order_catalyst": null,
       "status": "DATA_MISSING",
+      "leader_missing_fields": [
+        "bottleneck_directness",
+        "industry_technology_position",
+        "ai_revenue_realization"
+      ],
+      "priority_status": "DATA_MISSING",
+      "priority_missing_fields": [
+        "structural_leader",
+        "revenue_earnings_growth",
+        "self_historical_valuation",
+        "price_risk_safety",
+        "demand_order_catalyst"
+      ],
       "missing_fields": [
         "bottleneck_directness",
         "industry_technology_position",
@@ -856,6 +1328,19 @@
       "price_risk_safety": null,
       "demand_order_catalyst": null,
       "status": "DATA_MISSING",
+      "leader_missing_fields": [
+        "bottleneck_directness",
+        "industry_technology_position",
+        "ai_revenue_realization"
+      ],
+      "priority_status": "DATA_MISSING",
+      "priority_missing_fields": [
+        "structural_leader",
+        "revenue_earnings_growth",
+        "self_historical_valuation",
+        "price_risk_safety",
+        "demand_order_catalyst"
+      ],
       "missing_fields": [
         "bottleneck_directness",
         "industry_technology_position",
@@ -899,6 +1384,19 @@
       "price_risk_safety": null,
       "demand_order_catalyst": null,
       "status": "DATA_MISSING",
+      "leader_missing_fields": [
+        "bottleneck_directness",
+        "industry_technology_position",
+        "ai_revenue_realization"
+      ],
+      "priority_status": "DATA_MISSING",
+      "priority_missing_fields": [
+        "structural_leader",
+        "revenue_earnings_growth",
+        "self_historical_valuation",
+        "price_risk_safety",
+        "demand_order_catalyst"
+      ],
       "missing_fields": [
         "bottleneck_directness",
         "industry_technology_position",
@@ -942,6 +1440,19 @@
       "price_risk_safety": null,
       "demand_order_catalyst": null,
       "status": "DATA_MISSING",
+      "leader_missing_fields": [
+        "bottleneck_directness",
+        "industry_technology_position",
+        "ai_revenue_realization"
+      ],
+      "priority_status": "DATA_MISSING",
+      "priority_missing_fields": [
+        "structural_leader",
+        "revenue_earnings_growth",
+        "self_historical_valuation",
+        "price_risk_safety",
+        "demand_order_catalyst"
+      ],
       "missing_fields": [
         "bottleneck_directness",
         "industry_technology_position",
@@ -985,6 +1496,19 @@
       "price_risk_safety": null,
       "demand_order_catalyst": null,
       "status": "DATA_MISSING",
+      "leader_missing_fields": [
+        "bottleneck_directness",
+        "industry_technology_position",
+        "ai_revenue_realization"
+      ],
+      "priority_status": "DATA_MISSING",
+      "priority_missing_fields": [
+        "structural_leader",
+        "revenue_earnings_growth",
+        "self_historical_valuation",
+        "price_risk_safety",
+        "demand_order_catalyst"
+      ],
       "missing_fields": [
         "bottleneck_directness",
         "industry_technology_position",
@@ -1028,6 +1552,19 @@
       "price_risk_safety": null,
       "demand_order_catalyst": null,
       "status": "DATA_MISSING",
+      "leader_missing_fields": [
+        "bottleneck_directness",
+        "industry_technology_position",
+        "ai_revenue_realization"
+      ],
+      "priority_status": "DATA_MISSING",
+      "priority_missing_fields": [
+        "structural_leader",
+        "revenue_earnings_growth",
+        "self_historical_valuation",
+        "price_risk_safety",
+        "demand_order_catalyst"
+      ],
       "missing_fields": [
         "bottleneck_directness",
         "industry_technology_position",
@@ -1071,6 +1608,19 @@
       "price_risk_safety": null,
       "demand_order_catalyst": null,
       "status": "DATA_MISSING",
+      "leader_missing_fields": [
+        "bottleneck_directness",
+        "industry_technology_position",
+        "ai_revenue_realization"
+      ],
+      "priority_status": "DATA_MISSING",
+      "priority_missing_fields": [
+        "structural_leader",
+        "revenue_earnings_growth",
+        "self_historical_valuation",
+        "price_risk_safety",
+        "demand_order_catalyst"
+      ],
       "missing_fields": [
         "bottleneck_directness",
         "industry_technology_position",
@@ -1088,6 +1638,60 @@
       "theme_id": "power_delivery",
       "as_of_date": "2026-10-16",
       "evidence": {
+        "bottleneck_directness": {
+          "sources": [
+            {
+              "source_url": "https://www.deltaww.com/en-US/products/data-center?trk=article-ssr-frontend-pulse_little-text-block",
+              "source_date": "2026-03-24",
+              "available_at": "2026-03-24",
+              "source_family": "delta_ir",
+              "evidence_note": "3MW液冷CDU已出貨AI資料中心且高密度電源散熱方案進入商用交付"
+            },
+            {
+              "source_url": "https://www.trendforce.com/research/download/RP260528DS",
+              "source_date": "2026-05-28",
+              "available_at": "2026-05-28",
+              "source_family": "trendforce_research",
+              "evidence_note": "CSP擴建AI資料中心持續推升高功率電源與液冷需求"
+            }
+          ]
+        },
+        "industry_technology_position": {
+          "sources": [
+            {
+              "source_url": "https://www.deltaww.com/en-US/products/data-center?trk=article-ssr-frontend-pulse_little-text-block",
+              "source_date": "2026-03-24",
+              "available_at": "2026-03-24",
+              "source_family": "delta_ir",
+              "evidence_note": "3MW液冷CDU已出貨AI資料中心且高密度電源散熱方案進入商用交付"
+            },
+            {
+              "source_url": "https://www.trendforce.com/research/download/RP260528DS",
+              "source_date": "2026-05-28",
+              "available_at": "2026-05-28",
+              "source_family": "trendforce_research",
+              "evidence_note": "CSP擴建AI資料中心持續推升高功率電源與液冷需求"
+            }
+          ]
+        },
+        "ai_revenue_realization": {
+          "sources": [
+            {
+              "source_url": "https://www.deltaww.com/en-US/products/data-center?trk=article-ssr-frontend-pulse_little-text-block",
+              "source_date": "2026-03-24",
+              "available_at": "2026-03-24",
+              "source_family": "delta_ir",
+              "evidence_note": "3MW液冷CDU已出貨AI資料中心且高密度電源散熱方案進入商用交付"
+            },
+            {
+              "source_url": "https://www.trendforce.com/research/download/RP260528DS",
+              "source_date": "2026-05-28",
+              "available_at": "2026-05-28",
+              "source_family": "trendforce_research",
+              "evidence_note": "CSP擴建AI資料中心持續推升高功率電源與液冷需求"
+            }
+          ]
+        },
         "financial_earnings_quality": {
           "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=2308&SYEAR=2026&SSEASON=2&REPORT_ID=C",
           "source_date": "2026-10-16",
@@ -1103,22 +1707,26 @@
           "evidence_note": "同題材內市值、20TD平均成交金額與官方外資持股比例百分位。"
         }
       },
-      "bottleneck_directness": null,
-      "industry_technology_position": null,
-      "ai_revenue_realization": null,
+      "bottleneck_directness": 100.0,
+      "industry_technology_position": 75.0,
+      "ai_revenue_realization": 75.0,
       "financial_earnings_quality": 89.7879,
       "market_representation": 95.0,
-      "structural_leader": null,
+      "structural_leader": 86.20758,
       "revenue_earnings_growth": null,
       "self_historical_valuation": null,
       "price_risk_safety": null,
       "demand_order_catalyst": null,
-      "status": "DATA_MISSING",
+      "status": "READY",
+      "leader_missing_fields": [],
+      "priority_status": "DATA_MISSING",
+      "priority_missing_fields": [
+        "revenue_earnings_growth",
+        "self_historical_valuation",
+        "price_risk_safety",
+        "demand_order_catalyst"
+      ],
       "missing_fields": [
-        "bottleneck_directness",
-        "industry_technology_position",
-        "ai_revenue_realization",
-        "structural_leader",
         "revenue_earnings_growth",
         "self_historical_valuation",
         "price_risk_safety",
@@ -1157,6 +1765,19 @@
       "price_risk_safety": null,
       "demand_order_catalyst": null,
       "status": "DATA_MISSING",
+      "leader_missing_fields": [
+        "bottleneck_directness",
+        "industry_technology_position",
+        "ai_revenue_realization"
+      ],
+      "priority_status": "DATA_MISSING",
+      "priority_missing_fields": [
+        "structural_leader",
+        "revenue_earnings_growth",
+        "self_historical_valuation",
+        "price_risk_safety",
+        "demand_order_catalyst"
+      ],
       "missing_fields": [
         "bottleneck_directness",
         "industry_technology_position",
@@ -1200,6 +1821,19 @@
       "price_risk_safety": null,
       "demand_order_catalyst": null,
       "status": "DATA_MISSING",
+      "leader_missing_fields": [
+        "bottleneck_directness",
+        "industry_technology_position",
+        "ai_revenue_realization"
+      ],
+      "priority_status": "DATA_MISSING",
+      "priority_missing_fields": [
+        "structural_leader",
+        "revenue_earnings_growth",
+        "self_historical_valuation",
+        "price_risk_safety",
+        "demand_order_catalyst"
+      ],
       "missing_fields": [
         "bottleneck_directness",
         "industry_technology_position",
@@ -1243,6 +1877,19 @@
       "price_risk_safety": null,
       "demand_order_catalyst": null,
       "status": "DATA_MISSING",
+      "leader_missing_fields": [
+        "bottleneck_directness",
+        "industry_technology_position",
+        "ai_revenue_realization"
+      ],
+      "priority_status": "DATA_MISSING",
+      "priority_missing_fields": [
+        "structural_leader",
+        "revenue_earnings_growth",
+        "self_historical_valuation",
+        "price_risk_safety",
+        "demand_order_catalyst"
+      ],
       "missing_fields": [
         "bottleneck_directness",
         "industry_technology_position",
@@ -1286,6 +1933,19 @@
       "price_risk_safety": null,
       "demand_order_catalyst": null,
       "status": "DATA_MISSING",
+      "leader_missing_fields": [
+        "bottleneck_directness",
+        "industry_technology_position",
+        "ai_revenue_realization"
+      ],
+      "priority_status": "DATA_MISSING",
+      "priority_missing_fields": [
+        "structural_leader",
+        "revenue_earnings_growth",
+        "self_historical_valuation",
+        "price_risk_safety",
+        "demand_order_catalyst"
+      ],
       "missing_fields": [
         "bottleneck_directness",
         "industry_technology_position",
@@ -1309,15 +1969,51 @@
               "source_url": "https://yageogroup.com/content/Resource%20Library/Financial/Yageo%202025%20Annual%20Report_c.pdf",
               "source_date": "2026-05-08",
               "available_at": "2026-05-08",
-              "source_family": "company_annual_report",
-              "evidence_note": "國巨年報揭露AI伺服器高階被動元件需求及財務兌現。"
+              "source_family": "yageo_ir",
+              "evidence_note": "AI伺服器帶動高階MLCC需求且營收占比已開始兌現"
             },
             {
               "source_url": "https://finance.technews.tw/2026/07/23/ai-mlcc/",
               "source_date": "2026-07-23",
               "available_at": "2026-07-23",
-              "source_family": "independent_industry_report",
-              "evidence_note": "獨立產業報導確認AI伺服器高階MLCC需求與供給壓力。"
+              "source_family": "technews_industry",
+              "evidence_note": "獨立產業報導確認AI伺服器高階MLCC需求增加並形成供給壓力"
+            }
+          ]
+        },
+        "industry_technology_position": {
+          "sources": [
+            {
+              "source_url": "https://yageogroup.com/content/Resource%20Library/Financial/Yageo%202025%20Annual%20Report_c.pdf",
+              "source_date": "2026-05-08",
+              "available_at": "2026-05-08",
+              "source_family": "yageo_ir",
+              "evidence_note": "AI伺服器帶動高階MLCC需求且營收占比已開始兌現"
+            },
+            {
+              "source_url": "https://finance.technews.tw/2026/07/23/ai-mlcc/",
+              "source_date": "2026-07-23",
+              "available_at": "2026-07-23",
+              "source_family": "technews_industry",
+              "evidence_note": "獨立產業報導確認AI伺服器高階MLCC需求增加並形成供給壓力"
+            }
+          ]
+        },
+        "ai_revenue_realization": {
+          "sources": [
+            {
+              "source_url": "https://yageogroup.com/content/Resource%20Library/Financial/Yageo%202025%20Annual%20Report_c.pdf",
+              "source_date": "2026-05-08",
+              "available_at": "2026-05-08",
+              "source_family": "yageo_ir",
+              "evidence_note": "AI伺服器帶動高階MLCC需求且營收占比已開始兌現"
+            },
+            {
+              "source_url": "https://finance.technews.tw/2026/07/23/ai-mlcc/",
+              "source_date": "2026-07-23",
+              "available_at": "2026-07-23",
+              "source_family": "technews_industry",
+              "evidence_note": "獨立產業報導確認AI伺服器高階MLCC需求增加並形成供給壓力"
             }
           ]
         },
@@ -1337,20 +2033,25 @@
         }
       },
       "bottleneck_directness": 100.0,
-      "industry_technology_position": null,
-      "ai_revenue_realization": null,
+      "industry_technology_position": 75.0,
+      "ai_revenue_realization": 75.0,
       "financial_earnings_quality": 78.366,
       "market_representation": 100.0,
-      "structural_leader": null,
+      "structural_leader": 84.4232,
       "revenue_earnings_growth": null,
       "self_historical_valuation": null,
       "price_risk_safety": null,
       "demand_order_catalyst": null,
-      "status": "DATA_MISSING",
+      "status": "READY",
+      "leader_missing_fields": [],
+      "priority_status": "DATA_MISSING",
+      "priority_missing_fields": [
+        "revenue_earnings_growth",
+        "self_historical_valuation",
+        "price_risk_safety",
+        "demand_order_catalyst"
+      ],
       "missing_fields": [
-        "industry_technology_position",
-        "ai_revenue_realization",
-        "structural_leader",
         "revenue_earnings_growth",
         "self_historical_valuation",
         "price_risk_safety",
@@ -1407,6 +2108,18 @@
       "price_risk_safety": null,
       "demand_order_catalyst": null,
       "status": "DATA_MISSING",
+      "leader_missing_fields": [
+        "industry_technology_position",
+        "ai_revenue_realization"
+      ],
+      "priority_status": "DATA_MISSING",
+      "priority_missing_fields": [
+        "structural_leader",
+        "revenue_earnings_growth",
+        "self_historical_valuation",
+        "price_risk_safety",
+        "demand_order_catalyst"
+      ],
       "missing_fields": [
         "industry_technology_position",
         "ai_revenue_realization",
@@ -1456,6 +2169,18 @@
       "price_risk_safety": null,
       "demand_order_catalyst": null,
       "status": "DATA_MISSING",
+      "leader_missing_fields": [
+        "industry_technology_position",
+        "ai_revenue_realization"
+      ],
+      "priority_status": "DATA_MISSING",
+      "priority_missing_fields": [
+        "structural_leader",
+        "revenue_earnings_growth",
+        "self_historical_valuation",
+        "price_risk_safety",
+        "demand_order_catalyst"
+      ],
       "missing_fields": [
         "industry_technology_position",
         "ai_revenue_realization",
@@ -1498,6 +2223,19 @@
       "price_risk_safety": null,
       "demand_order_catalyst": null,
       "status": "DATA_MISSING",
+      "leader_missing_fields": [
+        "bottleneck_directness",
+        "industry_technology_position",
+        "ai_revenue_realization"
+      ],
+      "priority_status": "DATA_MISSING",
+      "priority_missing_fields": [
+        "structural_leader",
+        "revenue_earnings_growth",
+        "self_historical_valuation",
+        "price_risk_safety",
+        "demand_order_catalyst"
+      ],
       "missing_fields": [
         "bottleneck_directness",
         "industry_technology_position",
@@ -1541,6 +2279,19 @@
       "price_risk_safety": null,
       "demand_order_catalyst": null,
       "status": "DATA_MISSING",
+      "leader_missing_fields": [
+        "bottleneck_directness",
+        "industry_technology_position",
+        "ai_revenue_realization"
+      ],
+      "priority_status": "DATA_MISSING",
+      "priority_missing_fields": [
+        "structural_leader",
+        "revenue_earnings_growth",
+        "self_historical_valuation",
+        "price_risk_safety",
+        "demand_order_catalyst"
+      ],
       "missing_fields": [
         "bottleneck_directness",
         "industry_technology_position",
@@ -1584,6 +2335,19 @@
       "price_risk_safety": null,
       "demand_order_catalyst": null,
       "status": "DATA_MISSING",
+      "leader_missing_fields": [
+        "bottleneck_directness",
+        "industry_technology_position",
+        "ai_revenue_realization"
+      ],
+      "priority_status": "DATA_MISSING",
+      "priority_missing_fields": [
+        "structural_leader",
+        "revenue_earnings_growth",
+        "self_historical_valuation",
+        "price_risk_safety",
+        "demand_order_catalyst"
+      ],
       "missing_fields": [
         "bottleneck_directness",
         "industry_technology_position",
@@ -1627,6 +2391,19 @@
       "price_risk_safety": null,
       "demand_order_catalyst": null,
       "status": "DATA_MISSING",
+      "leader_missing_fields": [
+        "bottleneck_directness",
+        "industry_technology_position",
+        "ai_revenue_realization"
+      ],
+      "priority_status": "DATA_MISSING",
+      "priority_missing_fields": [
+        "structural_leader",
+        "revenue_earnings_growth",
+        "self_historical_valuation",
+        "price_risk_safety",
+        "demand_order_catalyst"
+      ],
       "missing_fields": [
         "bottleneck_directness",
         "industry_technology_position",
@@ -1670,6 +2447,19 @@
       "price_risk_safety": null,
       "demand_order_catalyst": null,
       "status": "DATA_MISSING",
+      "leader_missing_fields": [
+        "bottleneck_directness",
+        "industry_technology_position",
+        "ai_revenue_realization"
+      ],
+      "priority_status": "DATA_MISSING",
+      "priority_missing_fields": [
+        "structural_leader",
+        "revenue_earnings_growth",
+        "self_historical_valuation",
+        "price_risk_safety",
+        "demand_order_catalyst"
+      ],
       "missing_fields": [
         "bottleneck_directness",
         "industry_technology_position",
@@ -1713,6 +2503,19 @@
       "price_risk_safety": null,
       "demand_order_catalyst": null,
       "status": "DATA_MISSING",
+      "leader_missing_fields": [
+        "bottleneck_directness",
+        "industry_technology_position",
+        "ai_revenue_realization"
+      ],
+      "priority_status": "DATA_MISSING",
+      "priority_missing_fields": [
+        "structural_leader",
+        "revenue_earnings_growth",
+        "self_historical_valuation",
+        "price_risk_safety",
+        "demand_order_catalyst"
+      ],
       "missing_fields": [
         "bottleneck_directness",
         "industry_technology_position",
@@ -1756,6 +2559,19 @@
       "price_risk_safety": null,
       "demand_order_catalyst": null,
       "status": "DATA_MISSING",
+      "leader_missing_fields": [
+        "bottleneck_directness",
+        "industry_technology_position",
+        "ai_revenue_realization"
+      ],
+      "priority_status": "DATA_MISSING",
+      "priority_missing_fields": [
+        "structural_leader",
+        "revenue_earnings_growth",
+        "self_historical_valuation",
+        "price_risk_safety",
+        "demand_order_catalyst"
+      ],
       "missing_fields": [
         "bottleneck_directness",
         "industry_technology_position",
@@ -1799,6 +2615,19 @@
       "price_risk_safety": null,
       "demand_order_catalyst": null,
       "status": "DATA_MISSING",
+      "leader_missing_fields": [
+        "bottleneck_directness",
+        "industry_technology_position",
+        "ai_revenue_realization"
+      ],
+      "priority_status": "DATA_MISSING",
+      "priority_missing_fields": [
+        "structural_leader",
+        "revenue_earnings_growth",
+        "self_historical_valuation",
+        "price_risk_safety",
+        "demand_order_catalyst"
+      ],
       "missing_fields": [
         "bottleneck_directness",
         "industry_technology_position",
@@ -1842,6 +2671,19 @@
       "price_risk_safety": null,
       "demand_order_catalyst": null,
       "status": "DATA_MISSING",
+      "leader_missing_fields": [
+        "bottleneck_directness",
+        "industry_technology_position",
+        "ai_revenue_realization"
+      ],
+      "priority_status": "DATA_MISSING",
+      "priority_missing_fields": [
+        "structural_leader",
+        "revenue_earnings_growth",
+        "self_historical_valuation",
+        "price_risk_safety",
+        "demand_order_catalyst"
+      ],
       "missing_fields": [
         "bottleneck_directness",
         "industry_technology_position",
@@ -1885,6 +2727,19 @@
       "price_risk_safety": null,
       "demand_order_catalyst": null,
       "status": "DATA_MISSING",
+      "leader_missing_fields": [
+        "bottleneck_directness",
+        "industry_technology_position",
+        "ai_revenue_realization"
+      ],
+      "priority_status": "DATA_MISSING",
+      "priority_missing_fields": [
+        "structural_leader",
+        "revenue_earnings_growth",
+        "self_historical_valuation",
+        "price_risk_safety",
+        "demand_order_catalyst"
+      ],
       "missing_fields": [
         "bottleneck_directness",
         "industry_technology_position",
@@ -1902,6 +2757,60 @@
       "theme_id": "server_rack",
       "as_of_date": "2026-10-16",
       "evidence": {
+        "bottleneck_directness": {
+          "sources": [
+            {
+              "source_url": "https://www.gigabyte.com/FileUpload/TW/SiteMap/83/images/2026Q1-0515.en.pdf",
+              "source_date": "2026-05-15",
+              "available_at": "2026-05-15",
+              "source_family": "gigabyte_ir",
+              "evidence_note": "AI伺服器與機櫃需求已反映於營收展望並仍在擴張"
+            },
+            {
+              "source_url": "https://www.xxquant.com/en/institution/institutional-research/63fc05022b4f6cf9d73e160779b31d86",
+              "source_date": "2026-09-25",
+              "available_at": "2026-09-25",
+              "source_family": "goldman_research_relay",
+              "evidence_note": "AI機櫃出貨與ASP提升帶動2026下半年營收及獲利預估上修"
+            }
+          ]
+        },
+        "industry_technology_position": {
+          "sources": [
+            {
+              "source_url": "https://www.gigabyte.com/FileUpload/TW/SiteMap/83/images/2026Q1-0515.en.pdf",
+              "source_date": "2026-05-15",
+              "available_at": "2026-05-15",
+              "source_family": "gigabyte_ir",
+              "evidence_note": "AI伺服器與機櫃需求已反映於營收展望並仍在擴張"
+            },
+            {
+              "source_url": "https://www.xxquant.com/en/institution/institutional-research/63fc05022b4f6cf9d73e160779b31d86",
+              "source_date": "2026-09-25",
+              "available_at": "2026-09-25",
+              "source_family": "goldman_research_relay",
+              "evidence_note": "AI機櫃出貨與ASP提升帶動2026下半年營收及獲利預估上修"
+            }
+          ]
+        },
+        "ai_revenue_realization": {
+          "sources": [
+            {
+              "source_url": "https://www.gigabyte.com/FileUpload/TW/SiteMap/83/images/2026Q1-0515.en.pdf",
+              "source_date": "2026-05-15",
+              "available_at": "2026-05-15",
+              "source_family": "gigabyte_ir",
+              "evidence_note": "AI伺服器與機櫃需求已反映於營收展望並仍在擴張"
+            },
+            {
+              "source_url": "https://www.xxquant.com/en/institution/institutional-research/63fc05022b4f6cf9d73e160779b31d86",
+              "source_date": "2026-09-25",
+              "available_at": "2026-09-25",
+              "source_family": "goldman_research_relay",
+              "evidence_note": "AI機櫃出貨與ASP提升帶動2026下半年營收及獲利預估上修"
+            }
+          ]
+        },
         "financial_earnings_quality": {
           "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=2376&SYEAR=2026&SSEASON=2&REPORT_ID=C",
           "source_date": "2026-10-16",
@@ -1917,22 +2826,26 @@
           "evidence_note": "同題材內市值、20TD平均成交金額與官方外資持股比例百分位。"
         }
       },
-      "bottleneck_directness": null,
-      "industry_technology_position": null,
-      "ai_revenue_realization": null,
+      "bottleneck_directness": 75.0,
+      "industry_technology_position": 75.0,
+      "ai_revenue_realization": 75.0,
       "financial_earnings_quality": 59.3257,
       "market_representation": 24.0,
-      "structural_leader": null,
+      "structural_leader": 66.76514,
       "revenue_earnings_growth": null,
       "self_historical_valuation": null,
       "price_risk_safety": null,
       "demand_order_catalyst": null,
-      "status": "DATA_MISSING",
+      "status": "READY",
+      "leader_missing_fields": [],
+      "priority_status": "DATA_MISSING",
+      "priority_missing_fields": [
+        "revenue_earnings_growth",
+        "self_historical_valuation",
+        "price_risk_safety",
+        "demand_order_catalyst"
+      ],
       "missing_fields": [
-        "bottleneck_directness",
-        "industry_technology_position",
-        "ai_revenue_realization",
-        "structural_leader",
         "revenue_earnings_growth",
         "self_historical_valuation",
         "price_risk_safety",
@@ -1945,6 +2858,60 @@
       "theme_id": "critical_materials",
       "as_of_date": "2026-10-16",
       "evidence": {
+        "bottleneck_directness": {
+          "sources": [
+            {
+              "source_url": "https://mopsov.twse.com.tw/nas/STR/648820260505M002.pdf",
+              "source_date": "2026-05-05",
+              "available_at": "2026-05-05",
+              "source_family": "mops_company_filing",
+              "evidence_note": "AI需求推升12吋矽晶圓需求能見度且環球晶持續擴建美國產能"
+            },
+            {
+              "source_url": "https://www.tomshardware.com/tech-industry/semiconductors/micron-takes-a-500-million-position-in-americas-only-300mm-wafer-plant",
+              "source_date": "2026-07-10",
+              "available_at": "2026-07-10",
+              "source_family": "toms_hardware_industry",
+              "evidence_note": "Micron以戰略投資及10年供應協議鎖定環球晶300mm矽晶圓產能"
+            }
+          ]
+        },
+        "industry_technology_position": {
+          "sources": [
+            {
+              "source_url": "https://mopsov.twse.com.tw/nas/STR/648820260505M002.pdf",
+              "source_date": "2026-05-05",
+              "available_at": "2026-05-05",
+              "source_family": "mops_company_filing",
+              "evidence_note": "AI需求推升12吋矽晶圓需求能見度且環球晶持續擴建美國產能"
+            },
+            {
+              "source_url": "https://www.tomshardware.com/tech-industry/semiconductors/micron-takes-a-500-million-position-in-americas-only-300mm-wafer-plant",
+              "source_date": "2026-07-10",
+              "available_at": "2026-07-10",
+              "source_family": "toms_hardware_industry",
+              "evidence_note": "Micron以戰略投資及10年供應協議鎖定環球晶300mm矽晶圓產能"
+            }
+          ]
+        },
+        "ai_revenue_realization": {
+          "sources": [
+            {
+              "source_url": "https://mopsov.twse.com.tw/nas/STR/648820260505M002.pdf",
+              "source_date": "2026-05-05",
+              "available_at": "2026-05-05",
+              "source_family": "mops_company_filing",
+              "evidence_note": "AI需求推升12吋矽晶圓需求能見度且環球晶持續擴建美國產能"
+            },
+            {
+              "source_url": "https://www.tomshardware.com/tech-industry/semiconductors/micron-takes-a-500-million-position-in-americas-only-300mm-wafer-plant",
+              "source_date": "2026-07-10",
+              "available_at": "2026-07-10",
+              "source_family": "toms_hardware_industry",
+              "evidence_note": "Micron以戰略投資及10年供應協議鎖定環球晶300mm矽晶圓產能"
+            }
+          ]
+        },
         "financial_earnings_quality": {
           "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=6488&SYEAR=2026&SSEASON=2&REPORT_ID=C",
           "source_date": "2026-10-16",
@@ -1960,22 +2927,26 @@
           "evidence_note": "同題材內市值、20TD平均成交金額與官方外資持股比例百分位。"
         }
       },
-      "bottleneck_directness": null,
-      "industry_technology_position": null,
-      "ai_revenue_realization": null,
+      "bottleneck_directness": 75.0,
+      "industry_technology_position": 75.0,
+      "ai_revenue_realization": 75.0,
       "financial_earnings_quality": 38.8291,
       "market_representation": 85.0,
-      "structural_leader": null,
+      "structural_leader": 68.76582,
       "revenue_earnings_growth": null,
       "self_historical_valuation": null,
       "price_risk_safety": null,
       "demand_order_catalyst": null,
-      "status": "DATA_MISSING",
+      "status": "READY",
+      "leader_missing_fields": [],
+      "priority_status": "DATA_MISSING",
+      "priority_missing_fields": [
+        "revenue_earnings_growth",
+        "self_historical_valuation",
+        "price_risk_safety",
+        "demand_order_catalyst"
+      ],
       "missing_fields": [
-        "bottleneck_directness",
-        "industry_technology_position",
-        "ai_revenue_realization",
-        "structural_leader",
         "revenue_earnings_growth",
         "self_historical_valuation",
         "price_risk_safety",
@@ -2014,6 +2985,19 @@
       "price_risk_safety": null,
       "demand_order_catalyst": null,
       "status": "DATA_MISSING",
+      "leader_missing_fields": [
+        "bottleneck_directness",
+        "industry_technology_position",
+        "ai_revenue_realization"
+      ],
+      "priority_status": "DATA_MISSING",
+      "priority_missing_fields": [
+        "structural_leader",
+        "revenue_earnings_growth",
+        "self_historical_valuation",
+        "price_risk_safety",
+        "demand_order_catalyst"
+      ],
       "missing_fields": [
         "bottleneck_directness",
         "industry_technology_position",
@@ -2057,6 +3041,19 @@
       "price_risk_safety": null,
       "demand_order_catalyst": null,
       "status": "DATA_MISSING",
+      "leader_missing_fields": [
+        "bottleneck_directness",
+        "industry_technology_position",
+        "ai_revenue_realization"
+      ],
+      "priority_status": "DATA_MISSING",
+      "priority_missing_fields": [
+        "structural_leader",
+        "revenue_earnings_growth",
+        "self_historical_valuation",
+        "price_risk_safety",
+        "demand_order_catalyst"
+      ],
       "missing_fields": [
         "bottleneck_directness",
         "industry_technology_position",
@@ -2100,6 +3097,19 @@
       "price_risk_safety": null,
       "demand_order_catalyst": null,
       "status": "DATA_MISSING",
+      "leader_missing_fields": [
+        "bottleneck_directness",
+        "industry_technology_position",
+        "ai_revenue_realization"
+      ],
+      "priority_status": "DATA_MISSING",
+      "priority_missing_fields": [
+        "structural_leader",
+        "revenue_earnings_growth",
+        "self_historical_valuation",
+        "price_risk_safety",
+        "demand_order_catalyst"
+      ],
       "missing_fields": [
         "bottleneck_directness",
         "industry_technology_position",
@@ -2143,6 +3153,19 @@
       "price_risk_safety": null,
       "demand_order_catalyst": null,
       "status": "DATA_MISSING",
+      "leader_missing_fields": [
+        "bottleneck_directness",
+        "industry_technology_position",
+        "ai_revenue_realization"
+      ],
+      "priority_status": "DATA_MISSING",
+      "priority_missing_fields": [
+        "structural_leader",
+        "revenue_earnings_growth",
+        "self_historical_valuation",
+        "price_risk_safety",
+        "demand_order_catalyst"
+      ],
       "missing_fields": [
         "bottleneck_directness",
         "industry_technology_position",
@@ -2160,6 +3183,60 @@
       "theme_id": "silicon_photonics_cpo",
       "as_of_date": "2026-10-16",
       "evidence": {
+        "bottleneck_directness": {
+          "sources": [
+            {
+              "source_url": "https://doc.twse.com.tw/pdf/2025_3081_20260527F04_20260714_045320.pdf",
+              "source_date": "2026-05-27",
+              "available_at": "2026-05-27",
+              "source_family": "mops_company_filing",
+              "evidence_note": "800G與1.6T矽光產品已進入放量階段且公司持續擴充產能與研發"
+            },
+            {
+              "source_url": "https://www.moneydj.com/kmdj/news/newsviewer.aspx?a=cef30e33-e97c-4fd5-8505-145ffde6a40c",
+              "source_date": "2026-02-03",
+              "available_at": "2026-02-03",
+              "source_family": "moneydj_industry",
+              "evidence_note": "高速光傳輸規格升級使CW Laser需求增加且供需仍吃緊"
+            }
+          ]
+        },
+        "industry_technology_position": {
+          "sources": [
+            {
+              "source_url": "https://doc.twse.com.tw/pdf/2025_3081_20260527F04_20260714_045320.pdf",
+              "source_date": "2026-05-27",
+              "available_at": "2026-05-27",
+              "source_family": "mops_company_filing",
+              "evidence_note": "800G與1.6T矽光產品已進入放量階段且公司持續擴充產能與研發"
+            },
+            {
+              "source_url": "https://www.moneydj.com/kmdj/news/newsviewer.aspx?a=cef30e33-e97c-4fd5-8505-145ffde6a40c",
+              "source_date": "2026-02-03",
+              "available_at": "2026-02-03",
+              "source_family": "moneydj_industry",
+              "evidence_note": "高速光傳輸規格升級使CW Laser需求增加且供需仍吃緊"
+            }
+          ]
+        },
+        "ai_revenue_realization": {
+          "sources": [
+            {
+              "source_url": "https://doc.twse.com.tw/pdf/2025_3081_20260527F04_20260714_045320.pdf",
+              "source_date": "2026-05-27",
+              "available_at": "2026-05-27",
+              "source_family": "mops_company_filing",
+              "evidence_note": "800G與1.6T矽光產品已進入放量階段且公司持續擴充產能與研發"
+            },
+            {
+              "source_url": "https://www.moneydj.com/kmdj/news/newsviewer.aspx?a=cef30e33-e97c-4fd5-8505-145ffde6a40c",
+              "source_date": "2026-02-03",
+              "available_at": "2026-02-03",
+              "source_family": "moneydj_industry",
+              "evidence_note": "高速光傳輸規格升級使CW Laser需求增加且供需仍吃緊"
+            }
+          ]
+        },
         "market_representation": {
           "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/qfii?date=2026%2F10%2F16&response=json",
           "source_date": "2026-10-16",
@@ -2168,9 +3245,9 @@
           "evidence_note": "同題材內市值、20TD平均成交金額與官方外資持股比例百分位。"
         }
       },
-      "bottleneck_directness": null,
-      "industry_technology_position": null,
-      "ai_revenue_realization": null,
+      "bottleneck_directness": 75.0,
+      "industry_technology_position": 50.0,
+      "ai_revenue_realization": 75.0,
       "financial_earnings_quality": null,
       "market_representation": 72.0,
       "structural_leader": null,
@@ -2179,10 +3256,18 @@
       "price_risk_safety": null,
       "demand_order_catalyst": null,
       "status": "DATA_MISSING",
+      "leader_missing_fields": [
+        "financial_earnings_quality"
+      ],
+      "priority_status": "DATA_MISSING",
+      "priority_missing_fields": [
+        "structural_leader",
+        "revenue_earnings_growth",
+        "self_historical_valuation",
+        "price_risk_safety",
+        "demand_order_catalyst"
+      ],
       "missing_fields": [
-        "bottleneck_directness",
-        "industry_technology_position",
-        "ai_revenue_realization",
         "financial_earnings_quality",
         "structural_leader",
         "revenue_earnings_growth",
@@ -2223,6 +3308,19 @@
       "price_risk_safety": null,
       "demand_order_catalyst": null,
       "status": "DATA_MISSING",
+      "leader_missing_fields": [
+        "bottleneck_directness",
+        "industry_technology_position",
+        "ai_revenue_realization"
+      ],
+      "priority_status": "DATA_MISSING",
+      "priority_missing_fields": [
+        "structural_leader",
+        "revenue_earnings_growth",
+        "self_historical_valuation",
+        "price_risk_safety",
+        "demand_order_catalyst"
+      ],
       "missing_fields": [
         "bottleneck_directness",
         "industry_technology_position",
@@ -2240,6 +3338,60 @@
       "theme_id": "silicon_photonics_cpo",
       "as_of_date": "2026-10-16",
       "evidence": {
+        "bottleneck_directness": {
+          "sources": [
+            {
+              "source_url": "https://www.umc.com/zh-TW/News/press_release/Content/technology_related/20260714",
+              "source_date": "2026-07-14",
+              "available_at": "2026-07-14",
+              "source_family": "umc_ir",
+              "evidence_note": "1.6T矽光子平台已完成首批量產晶圓並支援AI資料中心光互連"
+            },
+            {
+              "source_url": "https://www.trendforce.com/presscenter/news/20260630-13127.html",
+              "source_date": "2026-06-30",
+              "available_at": "2026-06-30",
+              "source_family": "trendforce_research",
+              "evidence_note": "AI電源與光通訊需求正占用成熟製程並使供需與價格轉強"
+            }
+          ]
+        },
+        "industry_technology_position": {
+          "sources": [
+            {
+              "source_url": "https://www.umc.com/zh-TW/News/press_release/Content/technology_related/20260714",
+              "source_date": "2026-07-14",
+              "available_at": "2026-07-14",
+              "source_family": "umc_ir",
+              "evidence_note": "1.6T矽光子平台已完成首批量產晶圓並支援AI資料中心光互連"
+            },
+            {
+              "source_url": "https://www.trendforce.com/presscenter/news/20260630-13127.html",
+              "source_date": "2026-06-30",
+              "available_at": "2026-06-30",
+              "source_family": "trendforce_research",
+              "evidence_note": "AI電源與光通訊需求正占用成熟製程並使供需與價格轉強"
+            }
+          ]
+        },
+        "ai_revenue_realization": {
+          "sources": [
+            {
+              "source_url": "https://www.umc.com/zh-TW/News/press_release/Content/technology_related/20260714",
+              "source_date": "2026-07-14",
+              "available_at": "2026-07-14",
+              "source_family": "umc_ir",
+              "evidence_note": "1.6T矽光子平台已完成首批量產晶圓並支援AI資料中心光互連"
+            },
+            {
+              "source_url": "https://www.trendforce.com/presscenter/news/20260630-13127.html",
+              "source_date": "2026-06-30",
+              "available_at": "2026-06-30",
+              "source_family": "trendforce_research",
+              "evidence_note": "AI電源與光通訊需求正占用成熟製程並使供需與價格轉強"
+            }
+          ]
+        },
         "financial_earnings_quality": {
           "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=2303&SYEAR=2026&SSEASON=2&REPORT_ID=C",
           "source_date": "2026-10-16",
@@ -2255,22 +3407,26 @@
           "evidence_note": "同題材內市值、20TD平均成交金額與官方外資持股比例百分位。"
         }
       },
-      "bottleneck_directness": null,
-      "industry_technology_position": null,
-      "ai_revenue_realization": null,
+      "bottleneck_directness": 50.0,
+      "industry_technology_position": 50.0,
+      "ai_revenue_realization": 50.0,
       "financial_earnings_quality": 73.0944,
       "market_representation": 100.0,
-      "structural_leader": null,
+      "structural_leader": 59.61888,
       "revenue_earnings_growth": null,
       "self_historical_valuation": null,
       "price_risk_safety": null,
       "demand_order_catalyst": null,
-      "status": "DATA_MISSING",
+      "status": "READY",
+      "leader_missing_fields": [],
+      "priority_status": "DATA_MISSING",
+      "priority_missing_fields": [
+        "revenue_earnings_growth",
+        "self_historical_valuation",
+        "price_risk_safety",
+        "demand_order_catalyst"
+      ],
       "missing_fields": [
-        "bottleneck_directness",
-        "industry_technology_position",
-        "ai_revenue_realization",
-        "structural_leader",
         "revenue_earnings_growth",
         "self_historical_valuation",
         "price_risk_safety",
@@ -2280,42 +3436,11 @@
   ],
   "data_gaps": [
     {
-      "ticker": "2330",
-      "missing_fields": [
-        "bottleneck_directness",
-        "industry_technology_position",
-        "ai_revenue_realization",
-        "structural_leader",
-        "revenue_earnings_growth",
-        "self_historical_valuation",
-        "price_risk_safety",
-        "demand_order_catalyst"
-      ]
-    },
-    {
-      "ticker": "2454",
-      "missing_fields": [
-        "bottleneck_directness",
-        "industry_technology_position",
-        "ai_revenue_realization",
-        "structural_leader",
-        "revenue_earnings_growth",
-        "self_historical_valuation",
-        "price_risk_safety",
-        "demand_order_catalyst"
-      ]
-    },
-    {
       "ticker": "3661",
       "missing_fields": [
         "bottleneck_directness",
         "industry_technology_position",
-        "ai_revenue_realization",
-        "structural_leader",
-        "revenue_earnings_growth",
-        "self_historical_valuation",
-        "price_risk_safety",
-        "demand_order_catalyst"
+        "ai_revenue_realization"
       ]
     },
     {
@@ -2323,12 +3448,7 @@
       "missing_fields": [
         "bottleneck_directness",
         "industry_technology_position",
-        "ai_revenue_realization",
-        "structural_leader",
-        "revenue_earnings_growth",
-        "self_historical_valuation",
-        "price_risk_safety",
-        "demand_order_catalyst"
+        "ai_revenue_realization"
       ]
     },
     {
@@ -2336,12 +3456,7 @@
       "missing_fields": [
         "bottleneck_directness",
         "industry_technology_position",
-        "ai_revenue_realization",
-        "structural_leader",
-        "revenue_earnings_growth",
-        "self_historical_valuation",
-        "price_risk_safety",
-        "demand_order_catalyst"
+        "ai_revenue_realization"
       ]
     },
     {
@@ -2349,12 +3464,7 @@
       "missing_fields": [
         "bottleneck_directness",
         "industry_technology_position",
-        "ai_revenue_realization",
-        "structural_leader",
-        "revenue_earnings_growth",
-        "self_historical_valuation",
-        "price_risk_safety",
-        "demand_order_catalyst"
+        "ai_revenue_realization"
       ]
     },
     {
@@ -2362,12 +3472,7 @@
       "missing_fields": [
         "bottleneck_directness",
         "industry_technology_position",
-        "ai_revenue_realization",
-        "structural_leader",
-        "revenue_earnings_growth",
-        "self_historical_valuation",
-        "price_risk_safety",
-        "demand_order_catalyst"
+        "ai_revenue_realization"
       ]
     },
     {
@@ -2375,12 +3480,7 @@
       "missing_fields": [
         "bottleneck_directness",
         "industry_technology_position",
-        "ai_revenue_realization",
-        "structural_leader",
-        "revenue_earnings_growth",
-        "self_historical_valuation",
-        "price_risk_safety",
-        "demand_order_catalyst"
+        "ai_revenue_realization"
       ]
     },
     {
@@ -2388,12 +3488,7 @@
       "missing_fields": [
         "bottleneck_directness",
         "industry_technology_position",
-        "ai_revenue_realization",
-        "structural_leader",
-        "revenue_earnings_growth",
-        "self_historical_valuation",
-        "price_risk_safety",
-        "demand_order_catalyst"
+        "ai_revenue_realization"
       ]
     },
     {
@@ -2401,38 +3496,7 @@
       "missing_fields": [
         "bottleneck_directness",
         "industry_technology_position",
-        "ai_revenue_realization",
-        "structural_leader",
-        "revenue_earnings_growth",
-        "self_historical_valuation",
-        "price_risk_safety",
-        "demand_order_catalyst"
-      ]
-    },
-    {
-      "ticker": "2408",
-      "missing_fields": [
-        "bottleneck_directness",
-        "industry_technology_position",
-        "ai_revenue_realization",
-        "structural_leader",
-        "revenue_earnings_growth",
-        "self_historical_valuation",
-        "price_risk_safety",
-        "demand_order_catalyst"
-      ]
-    },
-    {
-      "ticker": "2344",
-      "missing_fields": [
-        "bottleneck_directness",
-        "industry_technology_position",
-        "ai_revenue_realization",
-        "structural_leader",
-        "revenue_earnings_growth",
-        "self_historical_valuation",
-        "price_risk_safety",
-        "demand_order_catalyst"
+        "ai_revenue_realization"
       ]
     },
     {
@@ -2440,12 +3504,7 @@
       "missing_fields": [
         "bottleneck_directness",
         "industry_technology_position",
-        "ai_revenue_realization",
-        "structural_leader",
-        "revenue_earnings_growth",
-        "self_historical_valuation",
-        "price_risk_safety",
-        "demand_order_catalyst"
+        "ai_revenue_realization"
       ]
     },
     {
@@ -2453,12 +3512,7 @@
       "missing_fields": [
         "bottleneck_directness",
         "industry_technology_position",
-        "ai_revenue_realization",
-        "structural_leader",
-        "revenue_earnings_growth",
-        "self_historical_valuation",
-        "price_risk_safety",
-        "demand_order_catalyst"
+        "ai_revenue_realization"
       ]
     },
     {
@@ -2466,12 +3520,7 @@
       "missing_fields": [
         "bottleneck_directness",
         "industry_technology_position",
-        "ai_revenue_realization",
-        "structural_leader",
-        "revenue_earnings_growth",
-        "self_historical_valuation",
-        "price_risk_safety",
-        "demand_order_catalyst"
+        "ai_revenue_realization"
       ]
     },
     {
@@ -2479,12 +3528,7 @@
       "missing_fields": [
         "bottleneck_directness",
         "industry_technology_position",
-        "ai_revenue_realization",
-        "structural_leader",
-        "revenue_earnings_growth",
-        "self_historical_valuation",
-        "price_risk_safety",
-        "demand_order_catalyst"
+        "ai_revenue_realization"
       ]
     },
     {
@@ -2492,25 +3536,7 @@
       "missing_fields": [
         "bottleneck_directness",
         "industry_technology_position",
-        "ai_revenue_realization",
-        "structural_leader",
-        "revenue_earnings_growth",
-        "self_historical_valuation",
-        "price_risk_safety",
-        "demand_order_catalyst"
-      ]
-    },
-    {
-      "ticker": "3037",
-      "missing_fields": [
-        "bottleneck_directness",
-        "industry_technology_position",
-        "ai_revenue_realization",
-        "structural_leader",
-        "revenue_earnings_growth",
-        "self_historical_valuation",
-        "price_risk_safety",
-        "demand_order_catalyst"
+        "ai_revenue_realization"
       ]
     },
     {
@@ -2518,12 +3544,7 @@
       "missing_fields": [
         "bottleneck_directness",
         "industry_technology_position",
-        "ai_revenue_realization",
-        "structural_leader",
-        "revenue_earnings_growth",
-        "self_historical_valuation",
-        "price_risk_safety",
-        "demand_order_catalyst"
+        "ai_revenue_realization"
       ]
     },
     {
@@ -2531,12 +3552,7 @@
       "missing_fields": [
         "bottleneck_directness",
         "industry_technology_position",
-        "ai_revenue_realization",
-        "structural_leader",
-        "revenue_earnings_growth",
-        "self_historical_valuation",
-        "price_risk_safety",
-        "demand_order_catalyst"
+        "ai_revenue_realization"
       ]
     },
     {
@@ -2544,12 +3560,7 @@
       "missing_fields": [
         "bottleneck_directness",
         "industry_technology_position",
-        "ai_revenue_realization",
-        "structural_leader",
-        "revenue_earnings_growth",
-        "self_historical_valuation",
-        "price_risk_safety",
-        "demand_order_catalyst"
+        "ai_revenue_realization"
       ]
     },
     {
@@ -2557,12 +3568,7 @@
       "missing_fields": [
         "bottleneck_directness",
         "industry_technology_position",
-        "ai_revenue_realization",
-        "structural_leader",
-        "revenue_earnings_growth",
-        "self_historical_valuation",
-        "price_risk_safety",
-        "demand_order_catalyst"
+        "ai_revenue_realization"
       ]
     },
     {
@@ -2570,12 +3576,7 @@
       "missing_fields": [
         "bottleneck_directness",
         "industry_technology_position",
-        "ai_revenue_realization",
-        "structural_leader",
-        "revenue_earnings_growth",
-        "self_historical_valuation",
-        "price_risk_safety",
-        "demand_order_catalyst"
+        "ai_revenue_realization"
       ]
     },
     {
@@ -2583,12 +3584,7 @@
       "missing_fields": [
         "bottleneck_directness",
         "industry_technology_position",
-        "ai_revenue_realization",
-        "structural_leader",
-        "revenue_earnings_growth",
-        "self_historical_valuation",
-        "price_risk_safety",
-        "demand_order_catalyst"
+        "ai_revenue_realization"
       ]
     },
     {
@@ -2596,25 +3592,7 @@
       "missing_fields": [
         "bottleneck_directness",
         "industry_technology_position",
-        "ai_revenue_realization",
-        "structural_leader",
-        "revenue_earnings_growth",
-        "self_historical_valuation",
-        "price_risk_safety",
-        "demand_order_catalyst"
-      ]
-    },
-    {
-      "ticker": "2308",
-      "missing_fields": [
-        "bottleneck_directness",
-        "industry_technology_position",
-        "ai_revenue_realization",
-        "structural_leader",
-        "revenue_earnings_growth",
-        "self_historical_valuation",
-        "price_risk_safety",
-        "demand_order_catalyst"
+        "ai_revenue_realization"
       ]
     },
     {
@@ -2622,12 +3600,7 @@
       "missing_fields": [
         "bottleneck_directness",
         "industry_technology_position",
-        "ai_revenue_realization",
-        "structural_leader",
-        "revenue_earnings_growth",
-        "self_historical_valuation",
-        "price_risk_safety",
-        "demand_order_catalyst"
+        "ai_revenue_realization"
       ]
     },
     {
@@ -2635,12 +3608,7 @@
       "missing_fields": [
         "bottleneck_directness",
         "industry_technology_position",
-        "ai_revenue_realization",
-        "structural_leader",
-        "revenue_earnings_growth",
-        "self_historical_valuation",
-        "price_risk_safety",
-        "demand_order_catalyst"
+        "ai_revenue_realization"
       ]
     },
     {
@@ -2648,12 +3616,7 @@
       "missing_fields": [
         "bottleneck_directness",
         "industry_technology_position",
-        "ai_revenue_realization",
-        "structural_leader",
-        "revenue_earnings_growth",
-        "self_historical_valuation",
-        "price_risk_safety",
-        "demand_order_catalyst"
+        "ai_revenue_realization"
       ]
     },
     {
@@ -2661,48 +3624,21 @@
       "missing_fields": [
         "bottleneck_directness",
         "industry_technology_position",
-        "ai_revenue_realization",
-        "structural_leader",
-        "revenue_earnings_growth",
-        "self_historical_valuation",
-        "price_risk_safety",
-        "demand_order_catalyst"
-      ]
-    },
-    {
-      "ticker": "2327",
-      "missing_fields": [
-        "industry_technology_position",
-        "ai_revenue_realization",
-        "structural_leader",
-        "revenue_earnings_growth",
-        "self_historical_valuation",
-        "price_risk_safety",
-        "demand_order_catalyst"
+        "ai_revenue_realization"
       ]
     },
     {
       "ticker": "2492",
       "missing_fields": [
         "industry_technology_position",
-        "ai_revenue_realization",
-        "structural_leader",
-        "revenue_earnings_growth",
-        "self_historical_valuation",
-        "price_risk_safety",
-        "demand_order_catalyst"
+        "ai_revenue_realization"
       ]
     },
     {
       "ticker": "3357",
       "missing_fields": [
         "industry_technology_position",
-        "ai_revenue_realization",
-        "structural_leader",
-        "revenue_earnings_growth",
-        "self_historical_valuation",
-        "price_risk_safety",
-        "demand_order_catalyst"
+        "ai_revenue_realization"
       ]
     },
     {
@@ -2710,12 +3646,7 @@
       "missing_fields": [
         "bottleneck_directness",
         "industry_technology_position",
-        "ai_revenue_realization",
-        "structural_leader",
-        "revenue_earnings_growth",
-        "self_historical_valuation",
-        "price_risk_safety",
-        "demand_order_catalyst"
+        "ai_revenue_realization"
       ]
     },
     {
@@ -2723,12 +3654,7 @@
       "missing_fields": [
         "bottleneck_directness",
         "industry_technology_position",
-        "ai_revenue_realization",
-        "structural_leader",
-        "revenue_earnings_growth",
-        "self_historical_valuation",
-        "price_risk_safety",
-        "demand_order_catalyst"
+        "ai_revenue_realization"
       ]
     },
     {
@@ -2736,12 +3662,7 @@
       "missing_fields": [
         "bottleneck_directness",
         "industry_technology_position",
-        "ai_revenue_realization",
-        "structural_leader",
-        "revenue_earnings_growth",
-        "self_historical_valuation",
-        "price_risk_safety",
-        "demand_order_catalyst"
+        "ai_revenue_realization"
       ]
     },
     {
@@ -2749,12 +3670,7 @@
       "missing_fields": [
         "bottleneck_directness",
         "industry_technology_position",
-        "ai_revenue_realization",
-        "structural_leader",
-        "revenue_earnings_growth",
-        "self_historical_valuation",
-        "price_risk_safety",
-        "demand_order_catalyst"
+        "ai_revenue_realization"
       ]
     },
     {
@@ -2762,12 +3678,7 @@
       "missing_fields": [
         "bottleneck_directness",
         "industry_technology_position",
-        "ai_revenue_realization",
-        "structural_leader",
-        "revenue_earnings_growth",
-        "self_historical_valuation",
-        "price_risk_safety",
-        "demand_order_catalyst"
+        "ai_revenue_realization"
       ]
     },
     {
@@ -2775,12 +3686,7 @@
       "missing_fields": [
         "bottleneck_directness",
         "industry_technology_position",
-        "ai_revenue_realization",
-        "structural_leader",
-        "revenue_earnings_growth",
-        "self_historical_valuation",
-        "price_risk_safety",
-        "demand_order_catalyst"
+        "ai_revenue_realization"
       ]
     },
     {
@@ -2788,12 +3694,7 @@
       "missing_fields": [
         "bottleneck_directness",
         "industry_technology_position",
-        "ai_revenue_realization",
-        "structural_leader",
-        "revenue_earnings_growth",
-        "self_historical_valuation",
-        "price_risk_safety",
-        "demand_order_catalyst"
+        "ai_revenue_realization"
       ]
     },
     {
@@ -2801,12 +3702,7 @@
       "missing_fields": [
         "bottleneck_directness",
         "industry_technology_position",
-        "ai_revenue_realization",
-        "structural_leader",
-        "revenue_earnings_growth",
-        "self_historical_valuation",
-        "price_risk_safety",
-        "demand_order_catalyst"
+        "ai_revenue_realization"
       ]
     },
     {
@@ -2814,12 +3710,7 @@
       "missing_fields": [
         "bottleneck_directness",
         "industry_technology_position",
-        "ai_revenue_realization",
-        "structural_leader",
-        "revenue_earnings_growth",
-        "self_historical_valuation",
-        "price_risk_safety",
-        "demand_order_catalyst"
+        "ai_revenue_realization"
       ]
     },
     {
@@ -2827,38 +3718,7 @@
       "missing_fields": [
         "bottleneck_directness",
         "industry_technology_position",
-        "ai_revenue_realization",
-        "structural_leader",
-        "revenue_earnings_growth",
-        "self_historical_valuation",
-        "price_risk_safety",
-        "demand_order_catalyst"
-      ]
-    },
-    {
-      "ticker": "2376",
-      "missing_fields": [
-        "bottleneck_directness",
-        "industry_technology_position",
-        "ai_revenue_realization",
-        "structural_leader",
-        "revenue_earnings_growth",
-        "self_historical_valuation",
-        "price_risk_safety",
-        "demand_order_catalyst"
-      ]
-    },
-    {
-      "ticker": "6488",
-      "missing_fields": [
-        "bottleneck_directness",
-        "industry_technology_position",
-        "ai_revenue_realization",
-        "structural_leader",
-        "revenue_earnings_growth",
-        "self_historical_valuation",
-        "price_risk_safety",
-        "demand_order_catalyst"
+        "ai_revenue_realization"
       ]
     },
     {
@@ -2866,12 +3726,7 @@
       "missing_fields": [
         "bottleneck_directness",
         "industry_technology_position",
-        "ai_revenue_realization",
-        "structural_leader",
-        "revenue_earnings_growth",
-        "self_historical_valuation",
-        "price_risk_safety",
-        "demand_order_catalyst"
+        "ai_revenue_realization"
       ]
     },
     {
@@ -2879,12 +3734,7 @@
       "missing_fields": [
         "bottleneck_directness",
         "industry_technology_position",
-        "ai_revenue_realization",
-        "structural_leader",
-        "revenue_earnings_growth",
-        "self_historical_valuation",
-        "price_risk_safety",
-        "demand_order_catalyst"
+        "ai_revenue_realization"
       ]
     },
     {
@@ -2892,12 +3742,7 @@
       "missing_fields": [
         "bottleneck_directness",
         "industry_technology_position",
-        "ai_revenue_realization",
-        "structural_leader",
-        "revenue_earnings_growth",
-        "self_historical_valuation",
-        "price_risk_safety",
-        "demand_order_catalyst"
+        "ai_revenue_realization"
       ]
     },
     {
@@ -2905,26 +3750,13 @@
       "missing_fields": [
         "bottleneck_directness",
         "industry_technology_position",
-        "ai_revenue_realization",
-        "structural_leader",
-        "revenue_earnings_growth",
-        "self_historical_valuation",
-        "price_risk_safety",
-        "demand_order_catalyst"
+        "ai_revenue_realization"
       ]
     },
     {
       "ticker": "3081",
       "missing_fields": [
-        "bottleneck_directness",
-        "industry_technology_position",
-        "ai_revenue_realization",
-        "financial_earnings_quality",
-        "structural_leader",
-        "revenue_earnings_growth",
-        "self_historical_valuation",
-        "price_risk_safety",
-        "demand_order_catalyst"
+        "financial_earnings_quality"
       ]
     },
     {
@@ -2932,25 +3764,7 @@
       "missing_fields": [
         "bottleneck_directness",
         "industry_technology_position",
-        "ai_revenue_realization",
-        "structural_leader",
-        "revenue_earnings_growth",
-        "self_historical_valuation",
-        "price_risk_safety",
-        "demand_order_catalyst"
-      ]
-    },
-    {
-      "ticker": "2303",
-      "missing_fields": [
-        "bottleneck_directness",
-        "industry_technology_position",
-        "ai_revenue_realization",
-        "structural_leader",
-        "revenue_earnings_growth",
-        "self_historical_valuation",
-        "price_risk_safety",
-        "demand_order_catalyst"
+        "ai_revenue_realization"
       ]
     }
   ],

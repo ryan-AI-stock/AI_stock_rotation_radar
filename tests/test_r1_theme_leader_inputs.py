@@ -98,6 +98,34 @@ class R1ThemeLeaderInputsTest(unittest.TestCase):
         row = next(item for item in payload["rows"] if item["ticker"] == "2330")
         self.assertEqual(row["bottleneck_directness"], 75)
 
+    def test_quarterly_readiness_is_not_blocked_by_daily_priority_fields(self):
+        with tempfile.TemporaryDirectory() as directory:
+            source = Path(directory) / "source.json"
+            proof = {
+                "source_url": "https://company.test", "source_date": "2026-10-01",
+                "available_at": "2026-10-01", "source_family": "company_ir",
+                "evidence_note": "quarterly evidence",
+            }
+            row = {"ticker": "2330", "evidence": {}}
+            for field in (
+                "bottleneck_directness", "industry_technology_position",
+                "ai_revenue_realization", "financial_earnings_quality",
+                "market_representation",
+            ):
+                row[field] = 50
+                row["evidence"][field] = proof
+            source.write_text(json.dumps({"rows": [row]}), encoding="utf-8")
+            payload = materialize(
+                as_of_date="2026-10-02", theme_path=ROOT / "config/r1_v02_themes.json",
+                source_path=source, output_path=Path(directory) / "latest.json",
+                rubric_path=ROOT / "config/r1_v03_score_rubric.json",
+            )
+        result = next(item for item in payload["rows"] if item["ticker"] == "2330")
+        self.assertEqual(result["status"], "READY")
+        self.assertEqual(result["leader_missing_fields"], [])
+        self.assertEqual(result["priority_status"], "DATA_MISSING")
+        self.assertEqual(payload["complete_ticker_count"], 1)
+
 
 if __name__ == "__main__":
     unittest.main()
