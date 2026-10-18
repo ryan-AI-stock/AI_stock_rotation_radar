@@ -43,49 +43,49 @@
       "error": "HTTPError:HTTP Error 403: "
     },
     "3661": {
-      "retrieved_at": "2026-10-17",
+      "retrieved_at": "2026-10-18",
       "row_count": 0,
       "status": "SOURCE_GAP",
       "error": "HTTPError:HTTP Error 403: "
     },
     "3443": {
-      "retrieved_at": "2026-10-17",
-      "source_url": "https://hk.investing.com/equities/global-unichip-consensus-estimates",
-      "row_count": 5,
-      "status": "READY"
+      "retrieved_at": "2026-10-18",
+      "row_count": 0,
+      "status": "REUSED_READY",
+      "note": "three or more identifiable institutions remain fresh; request capacity reserved for source gaps"
     },
     "3035": {
-      "retrieved_at": "2026-10-17",
+      "retrieved_at": "2026-10-18",
       "source_url": "https://hk.investing.com/equities/faraday-tech-consensus-estimates",
       "row_count": 1,
       "status": "READY"
     },
     "2449": {
-      "retrieved_at": "2026-10-17",
-      "row_count": 0,
-      "status": "SOURCE_GAP",
-      "error": "HTTPError:HTTP Error 403: "
+      "retrieved_at": "2026-10-18",
+      "source_url": "https://hk.investing.com/equities/king-yuan-elec-consensus-estimates",
+      "row_count": 5,
+      "status": "READY"
     },
     "6223": {
-      "retrieved_at": "2026-10-17",
+      "retrieved_at": "2026-10-18",
       "row_count": 0,
       "status": "SOURCE_GAP",
-      "error": "HTTPError:HTTP Error 403: "
+      "error": "ValueError:identifiable_analyst_target_rows_missing"
     },
     "6187": {
-      "retrieved_at": "2026-10-17",
+      "retrieved_at": "2026-10-18",
       "row_count": 0,
       "status": "SOURCE_GAP",
       "error": "HTTPError:HTTP Error 403: "
     },
     "3583": {
-      "retrieved_at": "2026-10-17",
+      "retrieved_at": "2026-10-18",
       "row_count": 0,
       "status": "SOURCE_GAP",
       "error": "HTTPError:HTTP Error 403: "
     },
     "2408": {
-      "retrieved_at": "2026-10-17",
+      "retrieved_at": "2026-10-18",
       "row_count": 0,
       "status": "SOURCE_GAP",
       "error": "HTTPError:HTTP Error 403: "
@@ -328,19 +328,21 @@
   "last_summary": {
     "retrieved_at": "2026-10-18",
     "requested_ticker_count": 54,
-    "ready_ticker_count": 1,
-    "reused_ready_ticker_count": 1,
-    "source_gap_ticker_count": 3,
-    "new_evidence_row_count": 0,
+    "ready_ticker_count": 4,
+    "reused_ready_ticker_count": 2,
+    "source_gap_ticker_count": 5,
+    "new_evidence_row_count": 6,
     "total_evidence_row_count": 114,
-    "attempted_ticker_count": 3,
+    "attempted_ticker_count": 7,
     "circuit_breaker_tripped": true,
-    "next_index": 7,
+    "next_index": 15,
     "failures": {
-      "2376": "HTTPError:HTTP Error 403: ",
-      "2454": "HTTPError:HTTP Error 403: ",
-      "6488": "HTTPError:HTTP Error 403: "
+      "3661": "HTTPError:HTTP Error 403: ",
+      "6223": "ValueError:identifiable_analyst_target_rows_missing",
+      "6187": "HTTPError:HTTP Error 403: ",
+      "3583": "HTTPError:HTTP Error 403: ",
+      "2408": "HTTPError:HTTP Error 403: "
     }
   },
-  "next_index": 7
+  "next_index": 15
 }
