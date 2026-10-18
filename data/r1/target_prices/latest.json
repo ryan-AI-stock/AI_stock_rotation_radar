@@ -77,12 +77,12 @@
     {
       "ticker": "2454",
       "as_of_date": "2026-10-16",
-      "institution_count": 2,
-      "consensus_target_price": 5550.0,
-      "consensus_upside": null,
-      "dispersion": null,
-      "status": "DATA_MISSING",
-      "scoreable": false,
+      "institution_count": 3,
+      "consensus_target_price": 5600.0,
+      "consensus_upside": 0.3176470588235294,
+      "dispersion": 0.8392857142857143,
+      "status": "READY",
+      "scoreable": true,
       "rejected": [
         {
           "institution": "Macquarie",
@@ -891,6 +891,6 @@
     }
   ],
   "requested_ticker_count": 54,
-  "ready_ticker_count": 9,
+  "ready_ticker_count": 10,
   "source": "data/r1/target_prices/evidence.csv"
 }

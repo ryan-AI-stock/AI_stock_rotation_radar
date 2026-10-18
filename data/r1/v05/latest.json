@@ -510,7 +510,7 @@
       "company": "聯發科",
       "structural_bottleneck": 75.0,
       "revenue_earnings_realization": 17.676485,
-      "consensus_target_upside": null,
+      "consensus_target_upside": 51.764706,
       "target_revision_and_breadth": null,
       "theme_momentum_and_catalyst": 61.516484,
       "relative_valuation": 0.0,
@@ -520,7 +520,6 @@
       "v05_target_overlay_score": null,
       "v05_target_overlay_status": "DATA_MISSING",
       "v05_target_overlay_missing_components": [
-        "consensus_target_upside",
         "target_revision_and_breadth"
       ],
       "v05_observed_points": 38.048818,
