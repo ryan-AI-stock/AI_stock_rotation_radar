@@ -5,7 +5,7 @@ from datetime import date, datetime
 from pathlib import Path
 
 from r1.bottleneck import load_bottleneck_map
-from r1.schedule import decide, weekly_output_complete
+from r1.schedule import daily_output_complete, decide, weekly_output_complete
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -63,6 +63,28 @@ class R1BottleneckScheduleTest(unittest.TestCase):
         }), encoding="utf-8")
         self.assertFalse(weekly_output_complete(
             target=target, weekly_root=weekly, dashboard_path=dashboard, rank_path=rank,
+        ))
+
+    def test_daily_output_complete_requires_exact_market_and_full_public_core(self):
+        root = Path(self.temp.name)
+        target = date(2026, 10, 16)
+        market = root / "market.json"
+        market.write_text(json.dumps({
+            "date": "2026-10-16", "rows": [{"ticker": str(index)} for index in range(54)],
+        }), encoding="utf-8")
+        dashboard = root / "dashboard.json"
+        dashboard.write_text(json.dumps({"date": "2026-10-16"}), encoding="utf-8")
+        rank = root / "rank.json"
+        rank.write_text(json.dumps({
+            "date": "2026-10-16", "requested_ticker_count": 52,
+            "ready_ticker_count": 52, "future_data_violation_count": 0,
+        }), encoding="utf-8")
+        self.assertTrue(daily_output_complete(
+            target=target, market_path=market, dashboard_path=dashboard, rank_path=rank,
+        ))
+        dashboard.write_text(json.dumps({"date": "2026-10-15"}), encoding="utf-8")
+        self.assertFalse(daily_output_complete(
+            target=target, market_path=market, dashboard_path=dashboard, rank_path=rank,
         ))
 
 
