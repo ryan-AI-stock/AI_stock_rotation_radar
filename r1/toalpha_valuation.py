@@ -16,7 +16,8 @@ from r1.toalpha_consensus import _get_public_page
 
 FIELDS = (
     "ticker", "data_date", "next_year_forward_pe", "five_year_percentile",
-    "five_year_median_pe", "source_url", "retrieved_at", "quality",
+    "five_year_median_pe", "valuation_metric", "current_multiple",
+    "source_url", "retrieved_at", "quality",
 )
 
 

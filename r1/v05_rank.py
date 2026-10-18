@@ -7,6 +7,7 @@ from pathlib import Path
 from typing import Any
 
 from .theme_policy import load_themes
+from .valuation import load_valuation_reference
 
 
 CORE_WEIGHTS = {
@@ -40,6 +41,21 @@ def _upside_score(upside: float, floor: float = -0.20, cap: float = 0.80) -> flo
     return round((bounded - floor) / (cap - floor) * 100, 6)
 
 
+def _relative_valuation_score(percentile: float | None) -> float | None:
+    """Convert a stock's PIT five-year valuation percentile into a safety score.
+
+    R1 v0.6 deliberately keeps analyst target prices and EPS forecasts out of
+    the public-data core.  A lower own-history valuation percentile therefore
+    receives the higher score.  Missing history stays missing.
+    """
+    if percentile is None:
+        return None
+    value = float(percentile)
+    if not 0.0 <= value <= 1.0:
+        return None
+    return round((1.0 - value) * 100.0, 6)
+
+
 def _revision_breadth_score(current: dict[str, Any], prior: dict[str, Any] | None) -> float | None:
     if not current.get("scoreable") or not prior or not prior.get("scoreable"):
         return None
@@ -57,6 +73,7 @@ def build_v05_rank(*, as_of_date: str, weekly: dict[str, Any], target_prices: di
                    monthly_revenue: dict[str, Any] | None = None,
                    prior_target_prices: dict[str, Any] | None = None,
                    theme_review: dict[str, Any] | None = None,
+                   valuation_reference: dict[str, dict[str, Any]] | None = None,
                    allowed_tickers: set[str] | None = None) -> dict[str, Any]:
     if target_prices.get("date", as_of_date) > as_of_date:
         target_prices = {"rows": []}
@@ -95,6 +112,15 @@ def build_v05_rank(*, as_of_date: str, weekly: dict[str, Any], target_prices: di
     for ticker, weekly_row in sorted(weekly_rows.items()):
         target = targets.get(ticker, {})
         quarterly = quarterly_rows.get(ticker, {})
+        valuation_row = (valuation_reference or {}).get(ticker, {})
+        valuation_percentile = (
+            valuation_row.get("five_year_percentile")
+            if valuation_row.get("five_year_percentile") is not None
+            else weekly_row.get("forward_pe_percentile_5y")
+        )
+        valuation_metric = (
+            valuation_row.get("valuation_metric") or weekly_row.get("valuation_metric")
+        )
         realization = None
         if ticker in revenue_percentiles and quarterly.get("financial_earnings_quality") is not None:
             realization = round(
@@ -113,7 +139,9 @@ def build_v05_rank(*, as_of_date: str, weekly: dict[str, Any], target_prices: di
             ),
             "target_revision_and_breadth": _revision_breadth_score(target, priors.get(ticker)),
             "theme_momentum_and_catalyst": weekly_row.get("catalyst_score"),
-            "relative_valuation": weekly_row.get("valuation_score"),
+            "relative_valuation": _relative_valuation_score(
+                valuation_percentile
+            ),
             # Daily current-risk ranking must not wait for 4W/12W EPS-history
             # confirmation.  Keep price_chip_score as a historical diagnostic,
             # while market_risk_score supplies today's observable price/chip risk.
@@ -145,6 +173,7 @@ def build_v05_rank(*, as_of_date: str, weekly: dict[str, Any], target_prices: di
             "ticker": ticker,
             "company": weekly_row.get("company", ""),
             **components,
+            "relative_valuation_metric": valuation_metric,
             "v05_total_score": total,
             "v05_target_overlay_score": target_overlay,
             "v05_target_overlay_status": "READY" if target_overlay is not None else "DATA_MISSING",
@@ -203,6 +232,7 @@ def main() -> None:
     parser.add_argument("--monthly-revenue", default="data/r1/monthly_revenue/latest.json")
     parser.add_argument("--themes", default="config/r1_v02_themes.json")
     parser.add_argument("--theme-review", default="data/r1/theme_reviews/latest.json")
+    parser.add_argument("--valuation-reference", default="data/r1/valuation_reference.csv")
     parser.add_argument("--output", default="data/r1/v05/latest.json")
     args = parser.parse_args()
     weekly = json.loads(_latest_weekly(Path(args.weekly_root), args.date).read_text(encoding="utf-8"))
@@ -224,6 +254,9 @@ def main() -> None:
                              monthly_revenue=monthly,
                              prior_target_prices=prior,
                              theme_review=theme_review,
+                             valuation_reference=load_valuation_reference(
+                                 args.valuation_reference, as_of_date=args.date,
+                             ),
                              allowed_tickers=allowed_tickers)
     output = Path(args.output)
     output.parent.mkdir(parents=True, exist_ok=True)

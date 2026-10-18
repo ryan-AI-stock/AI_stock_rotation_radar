@@ -41,6 +41,7 @@ def load_valuation_reference(path: str | Path, *, as_of_date: str) -> dict[str, 
                     **row,
                     "five_year_percentile": percentile,
                     "five_year_median_forward_pe": median,
+                    "valuation_metric": row.get("valuation_metric") or "FORWARD_PE_5Y",
                 }
     return result
 
@@ -52,10 +53,12 @@ def valuation_position(*, forward_pe: float | None, reference: dict | None) -> d
             "forward_pe_percentile_5y": None,
             "forward_pe_median_5y": None,
             "forward_pe_vs_median": None,
+            "valuation_metric": None,
         }
     median = float(reference["five_year_median_forward_pe"])
     return {
         "forward_pe_percentile_5y": float(reference["five_year_percentile"]),
         "forward_pe_median_5y": median,
         "forward_pe_vs_median": None if forward_pe is None else forward_pe / median - 1,
+        "valuation_metric": reference.get("valuation_metric") or "FORWARD_PE_5Y",
     }

@@ -12,7 +12,7 @@ class R1V05RankTest(unittest.TestCase):
             weekly={"rows": [{
                 "ticker": "2330", "company": "台積電", "next_year_eps_growth": .3,
                 "bottleneck_score": 90, "catalyst_score": 80,
-                "valuation_score": 70, "price_chip_score": None,
+                "forward_pe_percentile_5y": .30, "price_chip_score": None,
                 "market_risk_score": None,
             }]},
             target_prices={"rows": []},
@@ -36,9 +36,11 @@ class R1V05RankTest(unittest.TestCase):
         weekly = {"rows": [
             {"ticker": "2330", "company": "台積電", "next_year_eps_growth": .1,
              "bottleneck_score": 80, "catalyst_score": 60, "valuation_score": 70,
+             "forward_pe_percentile_5y": .30,
              "price_chip_score": None, "market_risk_score": 90},
             {"ticker": "2454", "company": "聯發科", "next_year_eps_growth": .2,
              "bottleneck_score": 90, "catalyst_score": 70, "valuation_score": 80,
+             "forward_pe_percentile_5y": .20,
              "price_chip_score": None, "market_risk_score": 60},
         ]}
         current = {"rows": [{"ticker": "2454", "scoreable": True,
@@ -67,7 +69,8 @@ class R1V05RankTest(unittest.TestCase):
             as_of_date="2026-10-08",
             weekly={"rows": [{
                 "ticker": "2308", "company": "台達電", "bottleneck_score": 90,
-                "catalyst_score": 80, "valuation_score": 70, "market_risk_score": 60,
+                "catalyst_score": 80, "forward_pe_percentile_5y": .30,
+                "market_risk_score": 60,
             }]},
             target_prices={"rows": []},
             monthly_revenue={"rows": [{"ticker": "2308", "observations": [{"yoy": .2}]}]},
@@ -94,6 +97,30 @@ class R1V05RankTest(unittest.TestCase):
         )
         self.assertEqual(result["requested_ticker_count"], 1)
         self.assertEqual(result["rows"][0]["ticker"], "2330")
+
+    def test_relative_valuation_uses_own_history_without_analyst_inputs(self) -> None:
+        result = build_v05_rank(
+            as_of_date="2026-10-08",
+            weekly={"rows": [{
+                "ticker": "3163", "company": "波若威", "bottleneck_score": 90,
+                "catalyst_score": 80, "forward_pe_percentile_5y": .88,
+                "market_risk_score": 60,
+            }]},
+            target_prices={"rows": []},
+            monthly_revenue={"rows": [{"ticker": "3163", "observations": [{"yoy": .2}]}]},
+            theme_review={"themes": [{"ranked": [{
+                "ticker": "3163", "bottleneck_directness": 90,
+                "financial_earnings_quality": 80,
+            }]}]},
+            valuation_reference={"3163": {
+                "five_year_percentile": .88,
+                "valuation_metric": "FORWARD_PE_5Y",
+            }},
+        )
+        row = result["rows"][0]
+        self.assertEqual(row["relative_valuation"], 12.0)
+        self.assertEqual(row["relative_valuation_metric"], "FORWARD_PE_5Y")
+        self.assertEqual(row["v05_status"], "READY")
 
     def test_future_dated_target_and_quarterly_review_are_not_used(self) -> None:
         result = build_v05_rank(
