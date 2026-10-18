@@ -59,6 +59,7 @@ def _build_v03_dashboard(*, config: R1Config, market: dict, theme_review: dict,
                          recommendations: list[dict] | None = None,
                          weekly_by_ticker: dict[str, dict] | None = None,
                          v05_by_ticker: dict[str, dict] | None = None,
+                         readiness: dict | None = None,
                          total_actual_equity: float | None = None,
                          actual_positions: list[dict] | None = None) -> list[list[object]]:
     themes = load_themes(theme_path)
@@ -89,6 +90,15 @@ def _build_v03_dashboard(*, config: R1Config, market: dict, theme_review: dict,
         if row.get("current_reference_score") is not None
     }
     v05_by_ticker = v05_by_ticker or {}
+    readiness = readiness or {}
+    public_core_ready_count = sum(
+        row.get("v05_status") == "READY" for row in v05_by_ticker.values()
+    )
+    target_overlay_ready_count = sum(
+        row.get("v05_target_overlay_status") == "READY" for row in v05_by_ticker.values()
+    )
+    revision_progress = readiness.get("eps_revision_progress", {})
+    revision_ready = revision_progress.get("ready_counts", {})
     for ticker, row in v05_by_ticker.items():
         if row.get("v05_reference_score") is not None:
             reference_by_ticker[ticker] = row["v05_reference_score"]
@@ -113,7 +123,13 @@ def _build_v03_dashboard(*, config: R1Config, market: dict, theme_review: dict,
     rows: list[list[object]] = [
         ["Ryan｜R1實際帳戶總覽與換倉顧問"],
         ["最新資料日期", market["date"], "模型定位", "實際績效追蹤＋report-only換倉建議", "不自動成交"],
-        ["資料狀態", f"{len(themes)}題材、{universe_count}檔股票、{membership_count}筆題材歸屬（跨題材可重複）；Dashboard只顯示實際持股與五檔目標。"],
+        ["資料狀態", (
+            f"公開資料核心 {public_core_ready_count}/{len(v05_by_ticker)}；"
+            f"法人目標價信心層 {target_overlay_ready_count}/{len(v05_by_ticker)}；"
+            f"EPS修正歷史 1W {revision_ready.get('1w', 0)}、"
+            f"4W {revision_ready.get('4w', 0)}、12W {revision_ready.get('12w', 0)}。"
+            "信心層缺值不補0、不阻斷核心排名；不產生自動交易。"
+        )],
         ["01｜實際持股與未來半年目標持股"],
         ["所屬題材", "股票", "優先持有參考值", "實際持有", "當日收盤", "持股市值", "持股占比", "半年目標"],
     ]
@@ -193,6 +209,10 @@ def _build_v03_dashboard(*, config: R1Config, market: dict, theme_review: dict,
          "25%／25%／15%／15%／20%", "每日排名＋每週事件；目標價有資料才疊加", "從實際持股角度提供換出／換入優先序"],
         ["即時參考分數", "已取得的估值／瓶頸／催化／市場風險，依既定權重重新正規化；EPS另列信心",
          "report-only", "每日市場＋每週證據", "不因4W／12W未滿而整份空白，不產生交易指令"],
+        ["資料完成度", "公開資料核心／法人目標價信心層／EPS修正PIT歷史",
+         f"{public_core_ready_count}/{len(v05_by_ticker)}／{target_overlay_ready_count}/{len(v05_by_ticker)}／"
+         f"1W {revision_ready.get('1w', 0)}、4W {revision_ready.get('4w', 0)}、12W {revision_ready.get('12w', 0)}",
+         "每日讀回", "核心與信心層分開揭露，不再用舊0/52誤稱整體未完成"],
         ["06｜更新排程"],
         ["頻率", "工作", "產出", "失敗處理", "交易影響"],
         ["每日收盤後", f"累積{universe_count}檔官方價格與市場資料", "每日資料庫", "缺資料重抓並列明缺口", "無"],
@@ -368,6 +388,7 @@ def build_dashboard_payload(
         transition=transition, comparison=comparison, recommendations=recommendations,
         weekly_by_ticker=weekly_by_ticker,
         v05_by_ticker=v05_by_ticker,
+        readiness=readiness,
         total_actual_equity=actual_account.get("equity_market_value"),
         actual_positions=actual_account.get("positions", []),
     )

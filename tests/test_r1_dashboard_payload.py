@@ -26,6 +26,11 @@ class R1DashboardPayloadTest(unittest.TestCase):
         self.assertIn("05｜分數規則", sections)
         self.assertIn("06｜更新排程", sections)
         self.assertIn("07｜模型完整說明", sections)
+        data_status = next(row[1] for row in dashboard if row[0] == "資料狀態")
+        self.assertIn("公開資料核心 52/52", data_status)
+        self.assertIn("信心層缺值不補0、不阻斷核心排名", data_status)
+        completeness = next(row for row in dashboard if row[0] == "資料完成度")
+        self.assertIn("52/52", completeness[2])
         performance_start = sections.index("02｜兩條績效線")
         self.assertEqual(
             [row[0] for row in dashboard[performance_start + 2:performance_start + 4]],
