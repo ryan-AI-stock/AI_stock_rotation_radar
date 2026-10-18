@@ -6,6 +6,8 @@ import json
 from pathlib import Path
 from typing import Any
 
+from .theme_policy import load_themes
+
 
 WEIGHTS = {
     "structural_bottleneck": 0.20,
@@ -50,17 +52,31 @@ def _revision_breadth_score(current: dict[str, Any], prior: dict[str, Any] | Non
 
 def build_v05_rank(*, as_of_date: str, weekly: dict[str, Any], target_prices: dict[str, Any],
                    monthly_revenue: dict[str, Any] | None = None,
-                   prior_target_prices: dict[str, Any] | None = None) -> dict[str, Any]:
-    weekly_rows = {str(row.get("ticker", "")).zfill(4): row for row in weekly.get("rows", [])}
+                   prior_target_prices: dict[str, Any] | None = None,
+                   theme_review: dict[str, Any] | None = None,
+                   allowed_tickers: set[str] | None = None) -> dict[str, Any]:
+    if target_prices.get("date", as_of_date) > as_of_date:
+        target_prices = {"rows": []}
+    if (theme_review or {}).get("date", as_of_date) > as_of_date:
+        theme_review = {"themes": []}
+    weekly_rows = {
+        str(row.get("ticker", "")).zfill(4): row
+        for row in weekly.get("rows", [])
+        if allowed_tickers is None or str(row.get("ticker", "")).zfill(4) in allowed_tickers
+    }
     targets = {str(row.get("ticker", "")).zfill(4): row for row in target_prices.get("rows", [])}
     priors = {
         str(row.get("ticker", "")).zfill(4): row
         for row in (prior_target_prices or {}).get("rows", [])
     }
-    growth_percentiles = _percentile_scores({
-        ticker: float(row["next_year_eps_growth"])
-        for ticker, row in weekly_rows.items() if row.get("next_year_eps_growth") is not None
-    })
+    quarterly_rows: dict[str, dict[str, Any]] = {}
+    for theme in (theme_review or {}).get("themes", []):
+        for row in theme.get("ranked", []):
+            ticker = str(row.get("ticker", "")).zfill(4)
+            previous = quarterly_rows.get(ticker)
+            if previous is None or float(row.get("bottleneck_directness") or -1) > float(
+                    previous.get("bottleneck_directness") or -1):
+                quarterly_rows[ticker] = row
     revenue_rows = {
         str(row.get("ticker", "")).zfill(4): row
         for row in (monthly_revenue or {}).get("rows", [])
@@ -75,11 +91,18 @@ def build_v05_rank(*, as_of_date: str, weekly: dict[str, Any], target_prices: di
     rows = []
     for ticker, weekly_row in sorted(weekly_rows.items()):
         target = targets.get(ticker, {})
+        quarterly = quarterly_rows.get(ticker, {})
         realization = None
-        if ticker in growth_percentiles and ticker in revenue_percentiles:
-            realization = round((growth_percentiles[ticker] + revenue_percentiles[ticker]) / 2, 6)
+        if ticker in revenue_percentiles and quarterly.get("financial_earnings_quality") is not None:
+            realization = round(
+                (revenue_percentiles[ticker] + float(quarterly["financial_earnings_quality"])) / 2, 6
+            )
         components = {
-            "structural_bottleneck": weekly_row.get("bottleneck_score"),
+            "structural_bottleneck": (
+                quarterly.get("bottleneck_directness")
+                if quarterly.get("bottleneck_directness") is not None
+                else weekly_row.get("bottleneck_score")
+            ),
             "revenue_earnings_realization": realization,
             "consensus_target_upside": (
                 _upside_score(target["consensus_upside"])
@@ -88,7 +111,14 @@ def build_v05_rank(*, as_of_date: str, weekly: dict[str, Any], target_prices: di
             "target_revision_and_breadth": _revision_breadth_score(target, priors.get(ticker)),
             "theme_momentum_and_catalyst": weekly_row.get("catalyst_score"),
             "relative_valuation": weekly_row.get("valuation_score"),
-            "price_chip_risk": weekly_row.get("price_chip_score"),
+            # Daily current-risk ranking must not wait for 4W/12W EPS-history
+            # confirmation.  Keep price_chip_score as a historical diagnostic,
+            # while market_risk_score supplies today's observable price/chip risk.
+            "price_chip_risk": (
+                weekly_row.get("market_risk_score")
+                if weekly_row.get("market_risk_score") is not None
+                else weekly_row.get("price_chip_score")
+            ),
         }
         missing = [name for name in WEIGHTS if components.get(name) is None]
         total = None if missing else round(sum(float(components[name]) * WEIGHTS[name] for name in WEIGHTS), 6)
@@ -123,6 +153,9 @@ def build_v05_rank(*, as_of_date: str, weekly: dict[str, Any], target_prices: di
         "requested_ticker_count": len(rows),
         "ready_ticker_count": sum(row["v05_status"] == "READY" for row in rows),
         "missing_value_policy": "NA_BLOCKS_FORMAL_TOTAL_NO_ZERO_NO_TRADE; reference score renormalizes only observed components and always publishes coverage",
+        "realization_policy": "official monthly-revenue YoY cross-section plus latest PIT official financial-quality score; analyst EPS is not substituted for realized earnings",
+        "price_chip_policy": "current observable market-risk score; 4W/12W EPS-price history remains a confidence diagnostic and does not block today's component",
+        "future_data_violation_count": 0,
         "formal_model_changed": False,
         "trade_decision_changed": False,
         "active_in_trade_decision": False,
@@ -150,6 +183,8 @@ def main() -> None:
     parser.add_argument("--target-prices", default="data/r1/target_prices/latest.json")
     parser.add_argument("--target-history", default="data/r1/target_prices/history")
     parser.add_argument("--monthly-revenue", default="data/r1/monthly_revenue/latest.json")
+    parser.add_argument("--themes", default="config/r1_v02_themes.json")
+    parser.add_argument("--theme-review", default="data/r1/theme_reviews/latest.json")
     parser.add_argument("--output", default="data/r1/v05/latest.json")
     args = parser.parse_args()
     weekly = json.loads(_latest_weekly(Path(args.weekly_root), args.date).read_text(encoding="utf-8"))
@@ -159,9 +194,19 @@ def main() -> None:
     if monthly.get("date", args.date) > args.date:
         monthly = {}
     prior = _prior_target_snapshot(Path(args.target_history), args.date)
+    theme_review_path = Path(args.theme_review)
+    theme_review = json.loads(theme_review_path.read_text(encoding="utf-8")) \
+        if theme_review_path.exists() else {}
+    allowed_tickers = {
+        member.ticker
+        for theme in load_themes(args.themes)
+        for member in theme.members
+    }
     payload = build_v05_rank(as_of_date=args.date, weekly=weekly, target_prices=targets,
                              monthly_revenue=monthly,
-                             prior_target_prices=prior)
+                             prior_target_prices=prior,
+                             theme_review=theme_review,
+                             allowed_tickers=allowed_tickers)
     output = Path(args.output)
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
