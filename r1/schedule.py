@@ -9,6 +9,30 @@ from pathlib import Path
 from rotation_radar.schedule_gate import TAIPEI_TZ, fetch_twse_calendar, is_trading_day
 
 
+def weekly_output_complete(*, target: date,
+                           weekly_root: str | Path = "data/r1/weekly",
+                           dashboard_path: str | Path = "data/r1/dashboard_payload.json",
+                           rank_path: str | Path = "data/r1/v05/latest.json") -> bool:
+    """Accept a week only when its snapshot, report payload and public core agree."""
+    try:
+        weekly = json.loads(
+            (Path(weekly_root) / f"weekly_snapshot_{target.isoformat()}.json").read_text(encoding="utf-8")
+        )
+        dashboard = json.loads(Path(dashboard_path).read_text(encoding="utf-8"))
+        rank = json.loads(Path(rank_path).read_text(encoding="utf-8"))
+    except (FileNotFoundError, json.JSONDecodeError):
+        return False
+    return (
+        weekly.get("date") == target.isoformat()
+        and weekly.get("future_data_violation_count") == 0
+        and dashboard.get("date") == target.isoformat()
+        and rank.get("date") == target.isoformat()
+        and rank.get("requested_ticker_count", 0) > 0
+        and rank.get("ready_ticker_count") == rank.get("requested_ticker_count")
+        and rank.get("future_data_violation_count") == 0
+    )
+
+
 def decide(*, now: datetime, profile: str, rules_path: str | Path,
            open_dates: set[date], closed_dates: set[date]) -> tuple[bool, date | None, str]:
     rules = json.loads(Path(rules_path).read_text(encoding="utf-8"))["profiles"][profile]
@@ -50,6 +74,8 @@ def main() -> None:
         result = decide(now=now, profile=args.profile, rules_path=args.rules,
                         open_dates=open_dates, closed_dates=closed_dates)
     should_run, target, reason = result
+    if should_run and target and args.profile == "weekly" and weekly_output_complete(target=target):
+        should_run, reason = False, "weekly_output_already_complete"
     output = {"should_run": str(should_run).lower(), "target_date": target.isoformat() if target else "",
               "target_key": target.strftime("%Y%m%d") if target else "", "reason": reason}
     print(json.dumps(output))
