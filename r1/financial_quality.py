@@ -7,7 +7,7 @@ import math
 import re
 from pathlib import Path
 
-from r1.official_financial_snapshot import MOPS_XBRL_URL, fetch_text
+from r1.official_financial_snapshot import MOPS_XBRL_URL, fetch_financial_page
 from r1.theme_policy import load_themes
 
 
@@ -84,10 +84,19 @@ def build_financial_quality(*, as_of_date: str, theme_path: str | Path,
         quarter = int(str(row["quarter"]))
         cache_key = f"{ticker}:{year}:Q{quarter}"
         facts = cache.get(cache_key)
+        if facts is not None and not _cache_facts_usable(facts):
+            # A previous wrong REPORT_ID may have cached an all-NA parse.  Treat
+            # that as a source miss and retry the bounded MOPS report-ID routes.
+            facts = None
         url = MOPS_XBRL_URL.format(ticker=ticker, year=year, quarter=quarter)
         if facts is None:
             try:
-                page = pages[ticker] if pages is not None else fetch_text(url)
+                if pages is not None:
+                    page = pages[ticker]
+                else:
+                    page, url = fetch_financial_page(
+                        ticker=ticker, report_year=year, quarter=quarter
+                    )
                 facts = parse_financial_facts(page, report_year=year, quarter=quarter)
                 cache[cache_key] = facts
                 _write_cache(cache_path, cache)
@@ -118,6 +127,15 @@ def build_financial_quality(*, as_of_date: str, theme_path: str | Path,
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     return payload
+
+
+def _cache_facts_usable(facts: dict) -> bool:
+    return any(
+        facts.get(key) is not None for key in (
+            "current_revenue", "current_net_income", "current_operating_cash_flow",
+            "total_assets", "total_liabilities",
+        )
+    )
 
 
 def _metrics(f: dict) -> dict:

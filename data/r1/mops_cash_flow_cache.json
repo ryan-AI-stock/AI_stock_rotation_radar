@@ -424,6 +424,14 @@
       "operating_cash_flow": 2916924000.0,
       "context": "From20260101To20260630",
       "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3406&SYEAR=2026&SSEASON=2&REPORT_ID=C"
+    },
+    "3081:2026:Q2": {
+      "ticker": "3081",
+      "report_year": 2026,
+      "quarter": 2,
+      "operating_cash_flow": 551405000.0,
+      "context": "From20260101To20260630",
+      "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3081&SYEAR=2026&SSEASON=2&REPORT_ID=A"
     }
   }
 }

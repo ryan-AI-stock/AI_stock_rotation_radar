@@ -23,6 +23,15 @@ MOPS_XBRL_URL = (
     "?step=1&CO_ID={ticker}&SYEAR={year}&SSEASON={quarter}&REPORT_ID=C"
 )
 
+
+def mops_xbrl_urls(*, ticker: str, report_year: int, quarter: int) -> list[str]:
+    base = (
+        "https://mopsov.twse.com.tw/server-java/t164sb01"
+        f"?step=1&CO_ID={ticker}&SYEAR={report_year}&SSEASON={quarter}&REPORT_ID={{}}"
+    )
+    # Consolidated reports are usually C, but some TPEx issuers publish A.
+    return [base.format(report_id) for report_id in ("C", "A", "B")]
+
 _OCF_FACT = re.compile(
     r'<ix:nonFraction\b(?P<attrs>[^>]*\bname="[^"]*:CashFlowsFromUsedInOperatingActivities"[^>]*)>'
     r'(?P<value>[^<]+)</ix:nonFraction>',
@@ -92,10 +101,23 @@ def parse_operating_cash_flow(page: str, *, report_year: int, quarter: int) -> t
 
 
 def fetch_operating_cash_flow(*, ticker: str, report_year: int, quarter: int) -> tuple[float, str, str]:
-    url = MOPS_XBRL_URL.format(ticker=ticker, year=report_year, quarter=quarter)
-    page = fetch_text(url)
-    value, context = parse_operating_cash_flow(page, report_year=report_year, quarter=quarter)
-    return value, context, url
+    errors = []
+    for url in mops_xbrl_urls(ticker=ticker, report_year=report_year, quarter=quarter):
+        page = fetch_text(url)
+        try:
+            value, context = parse_operating_cash_flow(page, report_year=report_year, quarter=quarter)
+            return value, context, url
+        except ValueError as exc:
+            errors.append(str(exc))
+    raise ValueError(f"operating cash flow unavailable across MOPS report IDs: {errors}")
+
+
+def fetch_financial_page(*, ticker: str, report_year: int, quarter: int) -> tuple[str, str]:
+    for url in mops_xbrl_urls(ticker=ticker, report_year=report_year, quarter=quarter):
+        page = fetch_text(url)
+        if "<ix:nonFraction" in page or "<ix:nonfraction" in page.lower():
+            return page, url
+    raise ValueError("financial XBRL facts unavailable across MOPS report IDs")
 
 
 def build_snapshot(*, as_of_date: str, theme_path: str | Path, output_path: str | Path,

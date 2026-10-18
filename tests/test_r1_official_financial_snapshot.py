@@ -3,13 +3,17 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from r1.official_financial_snapshot import build_snapshot, parse_operating_cash_flow
+from r1.official_financial_snapshot import build_snapshot, mops_xbrl_urls, parse_operating_cash_flow
 
 
 ROOT = Path(__file__).resolve().parents[1]
 
 
 class R1OfficialFinancialSnapshotTest(unittest.TestCase):
+    def test_mops_report_id_candidates_include_tpex_format(self):
+        urls = mops_xbrl_urls(ticker="3081", report_year=2026, quarter=2)
+        self.assertIn("REPORT_ID=C", urls[0])
+        self.assertTrue(any("REPORT_ID=A" in url for url in urls))
     def test_parses_current_cumulative_xbrl_cash_flow_with_scale_and_sign(self):
         page = """
         <ix:nonFraction name="ifrs-full:CashFlowsFromUsedInOperatingActivities"

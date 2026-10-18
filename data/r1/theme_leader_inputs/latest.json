@@ -5,7 +5,7 @@
   "score_rubric_version": "r1-theme-score-rubric-v0.1",
   "requested_ticker_count": 52,
   "actual_ticker_count": 52,
-  "complete_ticker_count": 10,
+  "complete_ticker_count": 11,
   "rows": [
     {
       "ticker": "2330",
@@ -1488,7 +1488,7 @@
       "bottleneck_directness": null,
       "industry_technology_position": null,
       "ai_revenue_realization": null,
-      "financial_earnings_quality": 77.8598,
+      "financial_earnings_quality": 75.1598,
       "market_representation": 42.0,
       "structural_leader": null,
       "revenue_earnings_growth": null,
@@ -1544,7 +1544,7 @@
       "bottleneck_directness": null,
       "industry_technology_position": null,
       "ai_revenue_realization": null,
-      "financial_earnings_quality": 86.9828,
+      "financial_earnings_quality": 83.7828,
       "market_representation": 58.0,
       "structural_leader": null,
       "revenue_earnings_growth": null,
@@ -1600,7 +1600,7 @@
       "bottleneck_directness": null,
       "industry_technology_position": null,
       "ai_revenue_realization": null,
-      "financial_earnings_quality": 53.3845,
+      "financial_earnings_quality": 51.2845,
       "market_representation": 0.0,
       "structural_leader": null,
       "revenue_earnings_growth": null,
@@ -3237,6 +3237,13 @@
             }
           ]
         },
+        "financial_earnings_quality": {
+          "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3081&SYEAR=2026&SSEASON=2&REPORT_ID=A",
+          "source_date": "2026-10-16",
+          "available_at": "2026-10-16",
+          "source_family": "MOPS_XBRL_OFFICIAL",
+          "evidence_note": "r1-financial-quality-rubric-v0.1；本期與去年同期財報、營業現金流及資產負債比率；challenger草案，未啟用交易。"
+        },
         "market_representation": {
           "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/qfii?date=2026%2F10%2F16&response=json",
           "source_date": "2026-10-16",
@@ -3248,28 +3255,23 @@
       "bottleneck_directness": 75.0,
       "industry_technology_position": 50.0,
       "ai_revenue_realization": 75.0,
-      "financial_earnings_quality": null,
+      "financial_earnings_quality": 87.3077,
       "market_representation": 72.0,
-      "structural_leader": null,
+      "structural_leader": 70.91154,
       "revenue_earnings_growth": null,
       "self_historical_valuation": null,
       "price_risk_safety": null,
       "demand_order_catalyst": null,
-      "status": "DATA_MISSING",
-      "leader_missing_fields": [
-        "financial_earnings_quality"
-      ],
+      "status": "READY",
+      "leader_missing_fields": [],
       "priority_status": "DATA_MISSING",
       "priority_missing_fields": [
-        "structural_leader",
         "revenue_earnings_growth",
         "self_historical_valuation",
         "price_risk_safety",
         "demand_order_catalyst"
       ],
       "missing_fields": [
-        "financial_earnings_quality",
-        "structural_leader",
         "revenue_earnings_growth",
         "self_historical_valuation",
         "price_risk_safety",
@@ -3300,7 +3302,7 @@
       "bottleneck_directness": null,
       "industry_technology_position": null,
       "ai_revenue_realization": null,
-      "financial_earnings_quality": 16.7956,
+      "financial_earnings_quality": 16.3956,
       "market_representation": 28.0,
       "structural_leader": null,
       "revenue_earnings_growth": null,
@@ -3410,9 +3412,9 @@
       "bottleneck_directness": 50.0,
       "industry_technology_position": 50.0,
       "ai_revenue_realization": 50.0,
-      "financial_earnings_quality": 73.0944,
+      "financial_earnings_quality": 71.6944,
       "market_representation": 100.0,
-      "structural_leader": 59.61888,
+      "structural_leader": 59.33888,
       "revenue_earnings_growth": null,
       "self_historical_valuation": null,
       "price_risk_safety": null,
@@ -3751,12 +3753,6 @@
         "bottleneck_directness",
         "industry_technology_position",
         "ai_revenue_realization"
-      ]
-    },
-    {
-      "ticker": "3081",
-      "missing_fields": [
-        "financial_earnings_quality"
       ]
     },
     {

@@ -1385,6 +1385,109 @@
       "ranked": [],
       "evaluated": [
         {
+          "ticker": "3081",
+          "company": "聯亞",
+          "theme_id": "silicon_photonics_cpo",
+          "as_of_date": "2026-10-16",
+          "evidence": {
+            "bottleneck_directness": {
+              "sources": [
+                {
+                  "source_url": "https://doc.twse.com.tw/pdf/2025_3081_20260527F04_20260714_045320.pdf",
+                  "source_date": "2026-05-27",
+                  "available_at": "2026-05-27",
+                  "source_family": "mops_company_filing",
+                  "evidence_note": "800G與1.6T矽光產品已進入放量階段且公司持續擴充產能與研發"
+                },
+                {
+                  "source_url": "https://www.moneydj.com/kmdj/news/newsviewer.aspx?a=cef30e33-e97c-4fd5-8505-145ffde6a40c",
+                  "source_date": "2026-02-03",
+                  "available_at": "2026-02-03",
+                  "source_family": "moneydj_industry",
+                  "evidence_note": "高速光傳輸規格升級使CW Laser需求增加且供需仍吃緊"
+                }
+              ]
+            },
+            "industry_technology_position": {
+              "sources": [
+                {
+                  "source_url": "https://doc.twse.com.tw/pdf/2025_3081_20260527F04_20260714_045320.pdf",
+                  "source_date": "2026-05-27",
+                  "available_at": "2026-05-27",
+                  "source_family": "mops_company_filing",
+                  "evidence_note": "800G與1.6T矽光產品已進入放量階段且公司持續擴充產能與研發"
+                },
+                {
+                  "source_url": "https://www.moneydj.com/kmdj/news/newsviewer.aspx?a=cef30e33-e97c-4fd5-8505-145ffde6a40c",
+                  "source_date": "2026-02-03",
+                  "available_at": "2026-02-03",
+                  "source_family": "moneydj_industry",
+                  "evidence_note": "高速光傳輸規格升級使CW Laser需求增加且供需仍吃緊"
+                }
+              ]
+            },
+            "ai_revenue_realization": {
+              "sources": [
+                {
+                  "source_url": "https://doc.twse.com.tw/pdf/2025_3081_20260527F04_20260714_045320.pdf",
+                  "source_date": "2026-05-27",
+                  "available_at": "2026-05-27",
+                  "source_family": "mops_company_filing",
+                  "evidence_note": "800G與1.6T矽光產品已進入放量階段且公司持續擴充產能與研發"
+                },
+                {
+                  "source_url": "https://www.moneydj.com/kmdj/news/newsviewer.aspx?a=cef30e33-e97c-4fd5-8505-145ffde6a40c",
+                  "source_date": "2026-02-03",
+                  "available_at": "2026-02-03",
+                  "source_family": "moneydj_industry",
+                  "evidence_note": "高速光傳輸規格升級使CW Laser需求增加且供需仍吃緊"
+                }
+              ]
+            },
+            "financial_earnings_quality": {
+              "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3081&SYEAR=2026&SSEASON=2&REPORT_ID=A",
+              "source_date": "2026-10-16",
+              "available_at": "2026-10-16",
+              "source_family": "MOPS_XBRL_OFFICIAL",
+              "evidence_note": "r1-financial-quality-rubric-v0.1；本期與去年同期財報、營業現金流及資產負債比率；challenger草案，未啟用交易。"
+            },
+            "market_representation": {
+              "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/qfii?date=2026%2F10%2F16&response=json",
+              "source_date": "2026-10-16",
+              "available_at": "2026-10-16",
+              "source_family": "TWSE_TPEX_OFFICIAL_MARKET_AND_OWNERSHIP",
+              "evidence_note": "同題材內市值、20TD平均成交金額與官方外資持股比例百分位。"
+            }
+          },
+          "bottleneck_directness": 75.0,
+          "industry_technology_position": 50.0,
+          "ai_revenue_realization": 75.0,
+          "financial_earnings_quality": 87.3077,
+          "market_representation": 72.0,
+          "structural_leader": 70.91154,
+          "revenue_earnings_growth": null,
+          "self_historical_valuation": null,
+          "price_risk_safety": null,
+          "demand_order_catalyst": null,
+          "status": "READY",
+          "leader_missing_fields": [],
+          "priority_status": "DATA_MISSING",
+          "priority_missing_fields": [
+            "revenue_earnings_growth",
+            "self_historical_valuation",
+            "price_risk_safety",
+            "demand_order_catalyst"
+          ],
+          "missing_fields": [
+            "revenue_earnings_growth",
+            "self_historical_valuation",
+            "price_risk_safety",
+            "demand_order_catalyst"
+          ],
+          "leader_score": 70.91154,
+          "priority_score": null
+        },
+        {
           "ticker": "2303",
           "company": "聯電",
           "theme_id": "silicon_photonics_cpo",
@@ -1462,9 +1565,9 @@
           "bottleneck_directness": 50.0,
           "industry_technology_position": 50.0,
           "ai_revenue_realization": 50.0,
-          "financial_earnings_quality": 73.0944,
+          "financial_earnings_quality": 71.6944,
           "market_representation": 100.0,
-          "structural_leader": 59.61888,
+          "structural_leader": 59.33888,
           "revenue_earnings_growth": null,
           "self_historical_valuation": null,
           "price_risk_safety": null,
@@ -1484,7 +1587,7 @@
             "price_risk_safety",
             "demand_order_catalyst"
           ],
-          "leader_score": 59.61888,
+          "leader_score": 59.33888,
           "priority_score": null
         }
       ],
@@ -1511,12 +1614,6 @@
             "bottleneck_directness",
             "industry_technology_position",
             "ai_revenue_realization"
-          ]
-        },
-        {
-          "ticker": "3081",
-          "missing_fields": [
-            "financial_earnings_quality"
           ]
         },
         {

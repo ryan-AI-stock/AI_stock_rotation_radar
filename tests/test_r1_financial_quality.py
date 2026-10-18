@@ -3,11 +3,15 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from r1.financial_quality import _absolute_scores, parse_financial_facts
+from r1.financial_quality import _absolute_scores, _cache_facts_usable, parse_financial_facts
 from r1.theme_leader_inputs import _load_financial_quality
 
 
 class R1FinancialQualityTest(unittest.TestCase):
+    def test_all_na_cached_parse_is_not_reused(self):
+        self.assertFalse(_cache_facts_usable({"current_revenue": None, "total_assets": None}))
+        self.assertTrue(_cache_facts_usable({"current_revenue": 1.0}))
+
     def test_parses_exact_current_prior_and_balance_contexts(self):
         page = """
         <ix:nonFraction name="ifrs-full:Revenue" contextRef="From20260101To20260630" scale="3">120</ix:nonFraction>

@@ -5,7 +5,7 @@
   "as_of_date": "2026-10-16",
   "rubric_version": "r1-financial-quality-rubric-v0.1",
   "requested_ticker_count": 52,
-  "actual_ticker_count": 51,
+  "actual_ticker_count": 52,
   "rows": [
     {
       "ticker": "1560",
@@ -193,20 +193,20 @@
       "status": "READY",
       "missing_subscores": [],
       "theme_percentiles": {
-        "revenue_growth_quality": 25.0,
-        "gross_and_operating_margin_quality": 50.0,
-        "eps_growth_quality": 75.0,
-        "operating_cash_flow_quality": 75.0,
+        "revenue_growth_quality": 20.0,
+        "gross_and_operating_margin_quality": 40.0,
+        "eps_growth_quality": 70.0,
+        "operating_cash_flow_quality": 80.0,
         "balance_sheet_safety": 50.0
       },
       "combined_subscores": {
-        "revenue_growth_quality": 47.5356,
-        "gross_and_operating_margin_quality": 67.2619,
-        "eps_growth_quality": 90.0,
-        "operating_cash_flow_quality": 83.8592,
+        "revenue_growth_quality": 45.5356,
+        "gross_and_operating_margin_quality": 63.2619,
+        "eps_growth_quality": 88.0,
+        "operating_cash_flow_quality": 85.8592,
         "balance_sheet_safety": 80.0
       },
-      "financial_earnings_quality": 73.0944
+      "financial_earnings_quality": 71.6944
     },
     {
       "ticker": "2308",
@@ -1554,72 +1554,66 @@
       "theme_id": "silicon_photonics_cpo",
       "report_year": 2026,
       "quarter": 2,
-      "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3081&SYEAR=2026&SSEASON=2&REPORT_ID=C",
+      "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3081&SYEAR=2026&SSEASON=2&REPORT_ID=A",
       "facts": {
         "current_context": "From20260101To20260630",
         "prior_context": "From20250101To20250630",
         "balance_context": "AsOf20260630",
-        "current_revenue": null,
-        "prior_revenue": null,
-        "current_gross_profit": null,
-        "prior_gross_profit": null,
-        "current_operating_income": null,
-        "prior_operating_income": null,
-        "current_net_income": null,
-        "prior_net_income": null,
-        "current_eps": null,
-        "prior_eps": null,
-        "current_operating_cash_flow": null,
-        "prior_operating_cash_flow": null,
-        "current_assets": null,
-        "current_liabilities": null,
-        "total_assets": null,
-        "total_liabilities": null
+        "current_revenue": 2125567000.0,
+        "prior_revenue": 1007596000.0,
+        "current_gross_profit": 1196844000.0,
+        "prior_gross_profit": 386672000.0,
+        "current_operating_income": 945800000.0,
+        "prior_operating_income": 193798000.0,
+        "current_net_income": 786002000.0,
+        "prior_net_income": 139055000.0,
+        "current_eps": 7.75,
+        "prior_eps": 1.38,
+        "current_operating_cash_flow": 551405000.0,
+        "prior_operating_cash_flow": 354150000.0,
+        "current_assets": 3350420000.0,
+        "current_liabilities": 1163237000.0,
+        "total_assets": 6217544000.0,
+        "total_liabilities": 1498638000.0
       },
       "metrics": {
-        "revenue_yoy_pct": null,
-        "gross_margin_pct": null,
-        "gross_margin_change_pp": null,
-        "operating_margin_pct": null,
-        "operating_margin_change_pp": null,
-        "eps_yoy_pct": null,
-        "current_eps": null,
-        "prior_eps": null,
-        "operating_cash_flow": null,
-        "cash_conversion": null,
-        "current_ratio": null,
-        "liabilities_to_assets_pct": null
+        "revenue_yoy_pct": 110.95429120401432,
+        "gross_margin_pct": 56.30704654334585,
+        "gross_margin_change_pp": 17.931348346846455,
+        "operating_margin_pct": 44.49636261759803,
+        "operating_margin_change_pp": 25.262661808940592,
+        "eps_yoy_pct": 461.59420289855075,
+        "current_eps": 7.75,
+        "prior_eps": 1.38,
+        "operating_cash_flow": 551405000.0,
+        "cash_conversion": 0.7015312938135018,
+        "current_ratio": 2.8802557002571274,
+        "liabilities_to_assets_pct": 24.10337586674095
       },
       "absolute_subscores": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+        "revenue_growth_quality": 100.0,
+        "gross_and_operating_margin_quality": 100.0,
+        "eps_growth_quality": 100.0,
+        "operating_cash_flow_quality": 79.23047057556258,
+        "balance_sheet_safety": 100.0
       },
-      "status": "DATA_MISSING",
-      "missing_subscores": [
-        "revenue_growth_quality",
-        "gross_and_operating_margin_quality",
-        "eps_growth_quality",
-        "operating_cash_flow_quality",
-        "balance_sheet_safety"
-      ],
+      "status": "READY",
+      "missing_subscores": [],
       "theme_percentiles": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+        "revenue_growth_quality": 100.0,
+        "gross_and_operating_margin_quality": 100.0,
+        "eps_growth_quality": 70.0,
+        "operating_cash_flow_quality": 40.0,
+        "balance_sheet_safety": 50.0
       },
       "combined_subscores": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+        "revenue_growth_quality": 100.0,
+        "gross_and_operating_margin_quality": 100.0,
+        "eps_growth_quality": 88.0,
+        "operating_cash_flow_quality": 63.5383,
+        "balance_sheet_safety": 80.0
       },
-      "financial_earnings_quality": null
+      "financial_earnings_quality": 87.3077
     },
     {
       "ticker": "3131",
@@ -1740,20 +1734,20 @@
       "status": "READY",
       "missing_subscores": [],
       "theme_percentiles": {
-        "revenue_growth_quality": 75.0,
-        "gross_and_operating_margin_quality": 25.0,
-        "eps_growth_quality": 75.0,
+        "revenue_growth_quality": 60.0,
+        "gross_and_operating_margin_quality": 20.0,
+        "eps_growth_quality": 70.0,
         "operating_cash_flow_quality": 0.0,
         "balance_sheet_safety": 50.0
       },
       "combined_subscores": {
-        "revenue_growth_quality": 74.9584,
-        "gross_and_operating_margin_quality": 33.5712,
-        "eps_growth_quality": 90.0,
+        "revenue_growth_quality": 68.9584,
+        "gross_and_operating_margin_quality": 31.5712,
+        "eps_growth_quality": 88.0,
         "operating_cash_flow_quality": 0.0,
         "balance_sheet_safety": 80.0
       },
-      "financial_earnings_quality": 53.3845
+      "financial_earnings_quality": 51.2845
     },
     {
       "ticker": "3189",
@@ -2212,17 +2206,17 @@
         "revenue_growth_quality": 0.0,
         "gross_and_operating_margin_quality": 0.0,
         "eps_growth_quality": 0.0,
-        "operating_cash_flow_quality": 25.0,
+        "operating_cash_flow_quality": 20.0,
         "balance_sheet_safety": 50.0
       },
       "combined_subscores": {
         "revenue_growth_quality": 1.9778,
         "gross_and_operating_margin_quality": 0.0,
         "eps_growth_quality": 0.0,
-        "operating_cash_flow_quality": 22.0,
+        "operating_cash_flow_quality": 20.0,
         "balance_sheet_safety": 80.0
       },
-      "financial_earnings_quality": 16.7956
+      "financial_earnings_quality": 16.3956
     },
     {
       "ticker": "3443",
@@ -2678,20 +2672,20 @@
       "status": "READY",
       "missing_subscores": [],
       "theme_percentiles": {
-        "revenue_growth_quality": 50.0,
-        "gross_and_operating_margin_quality": 75.0,
-        "eps_growth_quality": 25.0,
+        "revenue_growth_quality": 40.0,
+        "gross_and_operating_margin_quality": 60.0,
+        "eps_growth_quality": 20.0,
         "operating_cash_flow_quality": 100.0,
         "balance_sheet_safety": 50.0
       },
       "combined_subscores": {
-        "revenue_growth_quality": 62.2805,
-        "gross_and_operating_margin_quality": 82.4993,
-        "eps_growth_quality": 63.8943,
+        "revenue_growth_quality": 58.2805,
+        "gross_and_operating_margin_quality": 76.4993,
+        "eps_growth_quality": 61.8943,
         "operating_cash_flow_quality": 100.0,
         "balance_sheet_safety": 80.0
       },
-      "financial_earnings_quality": 77.8598
+      "financial_earnings_quality": 75.1598
     },
     {
       "ticker": "6182",
@@ -3214,20 +3208,20 @@
       "status": "READY",
       "missing_subscores": [],
       "theme_percentiles": {
-        "revenue_growth_quality": 100.0,
-        "gross_and_operating_margin_quality": 100.0,
-        "eps_growth_quality": 75.0,
-        "operating_cash_flow_quality": 50.0,
+        "revenue_growth_quality": 80.0,
+        "gross_and_operating_margin_quality": 80.0,
+        "eps_growth_quality": 70.0,
+        "operating_cash_flow_quality": 60.0,
         "balance_sheet_safety": 50.0
       },
       "combined_subscores": {
-        "revenue_growth_quality": 96.8669,
-        "gross_and_operating_margin_quality": 93.9203,
-        "eps_growth_quality": 90.0,
-        "operating_cash_flow_quality": 70.6468,
+        "revenue_growth_quality": 88.8669,
+        "gross_and_operating_margin_quality": 85.9203,
+        "eps_growth_quality": 88.0,
+        "operating_cash_flow_quality": 74.6468,
         "balance_sheet_safety": 80.0
       },
-      "financial_earnings_quality": 86.9828
+      "financial_earnings_quality": 83.7828
     },
     {
       "ticker": "6488",
