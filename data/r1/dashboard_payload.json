@@ -1318,11 +1318,11 @@
         false,
         true,
         true,
-        false,
+        true,
         true,
         null,
         "DATA_MISSING",
-        "CONSENSUS_NOT_READY;EPS_REVISION_HISTORY_NOT_READY;VALUATION_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
+        "CONSENSUS_NOT_READY;EPS_REVISION_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
       ],
       [
         "2026-10-16",
@@ -1399,11 +1399,11 @@
         false,
         true,
         true,
-        false,
+        true,
         true,
         null,
         "DATA_MISSING",
-        "CONSENSUS_NOT_READY;EPS_REVISION_HISTORY_NOT_READY;VALUATION_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
+        "CONSENSUS_NOT_READY;EPS_REVISION_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
       ],
       [
         "2026-10-16",
@@ -1534,11 +1534,11 @@
         false,
         true,
         true,
-        false,
+        true,
         true,
         null,
         "DATA_MISSING",
-        "CONSENSUS_NOT_READY;EPS_REVISION_HISTORY_NOT_READY;VALUATION_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
+        "CONSENSUS_NOT_READY;EPS_REVISION_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
       ],
       [
         "2026-10-16",
@@ -1561,11 +1561,11 @@
         false,
         true,
         true,
-        false,
+        true,
         true,
         null,
         "DATA_MISSING",
-        "CONSENSUS_NOT_READY;EPS_REVISION_HISTORY_NOT_READY;VALUATION_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
+        "CONSENSUS_NOT_READY;EPS_REVISION_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
       ],
       [
         "2026-10-16",
@@ -1804,11 +1804,11 @@
         false,
         true,
         true,
-        false,
+        true,
         true,
         null,
         "DATA_MISSING",
-        "CONSENSUS_NOT_READY;EPS_REVISION_HISTORY_NOT_READY;VALUATION_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
+        "CONSENSUS_NOT_READY;EPS_REVISION_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
       ],
       [
         "2026-10-16",
@@ -1831,11 +1831,11 @@
         false,
         true,
         true,
-        false,
+        true,
         true,
         null,
         "DATA_MISSING",
-        "CONSENSUS_NOT_READY;EPS_REVISION_HISTORY_NOT_READY;VALUATION_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
+        "CONSENSUS_NOT_READY;EPS_REVISION_HISTORY_NOT_READY;ACTION_POLICY_NOT_APPROVED"
       ],
       [
         "2026-10-16",
