@@ -505,22 +505,60 @@
         "bottleneck_directness": {
           "sources": [
             {
-              "source_url": "https://www.passivecomponent.com/zh-hant/",
-              "source_date": "2026-05-27",
-              "available_at": "2026-05-27",
-              "source_family": "company_investor_material",
-              "evidence_note": "公司資料列出AI伺服器、資料中心及高功率電源所需MLCC、電阻與電感應用。"
-            },
-            {
-              "source_url": "https://www.cna.com.tw/news/afe/202606120157.aspx",
+              "source_url": "https://tw.stock.yahoo.com/news/%E8%8F%AF%E6%96%B0%E7%A7%91-%E8%8B%A5%E9%82%8A%E7%B7%A3%E8%A3%9D%E7%BD%AE%E6%94%BE%E9%87%8F-%E8%A2%AB%E5%8B%95%E5%85%83%E4%BB%B6%E9%9C%80%E6%B1%82%E6%9C%89%E6%9C%9B%E5%86%8D%E5%90%91%E4%B8%8A-035300165.html",
               "source_date": "2026-06-12",
               "available_at": "2026-06-12",
-              "source_family": "independent_news_interview",
-              "evidence_note": "中央社引述公司說明接單出貨比高於1、AI需求增加及被動元件供需缺口可能延續。"
+              "source_family": "moneydj_yahoo_relay",
+              "evidence_note": "獨立報導確認AI需求推升高階MLCC供給緊張且日系產能轉向帶來替代訂單"
+            },
+            {
+              "source_url": "https://www.moneyweekly.com.tw/ArticleData/Info/Article/242076",
+              "source_date": "2026-08-01",
+              "available_at": "2026-08-01",
+              "source_family": "moneyweekly_research",
+              "evidence_note": "獨立研究確認AI伺服器功率與高速網路規格提升使MLCC電阻及保護元件用量與規格同步增加"
+            }
+          ]
+        },
+        "industry_technology_position": {
+          "sources": [
+            {
+              "source_url": "https://tw.stock.yahoo.com/news/%E8%8F%AF%E6%96%B0%E7%A7%91-%E8%8B%A5%E9%82%8A%E7%B7%A3%E8%A3%9D%E7%BD%AE%E6%94%BE%E9%87%8F-%E8%A2%AB%E5%8B%95%E5%85%83%E4%BB%B6%E9%9C%80%E6%B1%82%E6%9C%89%E6%9C%9B%E5%86%8D%E5%90%91%E4%B8%8A-035300165.html",
+              "source_date": "2026-06-12",
+              "available_at": "2026-06-12",
+              "source_family": "moneydj_yahoo_relay",
+              "evidence_note": "獨立報導確認AI需求推升高階MLCC供給緊張且日系產能轉向帶來替代訂單"
+            },
+            {
+              "source_url": "https://www.moneyweekly.com.tw/ArticleData/Info/Article/242076",
+              "source_date": "2026-08-01",
+              "available_at": "2026-08-01",
+              "source_family": "moneyweekly_research",
+              "evidence_note": "獨立研究確認AI伺服器功率與高速網路規格提升使MLCC電阻及保護元件用量與規格同步增加"
+            }
+          ]
+        },
+        "ai_revenue_realization": {
+          "sources": [
+            {
+              "source_url": "https://tw.stock.yahoo.com/news/%E8%8F%AF%E6%96%B0%E7%A7%91-%E8%8B%A5%E9%82%8A%E7%B7%A3%E8%A3%9D%E7%BD%AE%E6%94%BE%E9%87%8F-%E8%A2%AB%E5%8B%95%E5%85%83%E4%BB%B6%E9%9C%80%E6%B1%82%E6%9C%89%E6%9C%9B%E5%86%8D%E5%90%91%E4%B8%8A-035300165.html",
+              "source_date": "2026-06-12",
+              "available_at": "2026-06-12",
+              "source_family": "moneydj_yahoo_relay",
+              "evidence_note": "獨立報導確認AI需求推升高階MLCC供給緊張且日系產能轉向帶來替代訂單"
+            },
+            {
+              "source_url": "https://www.moneyweekly.com.tw/ArticleData/Info/Article/242076",
+              "source_date": "2026-08-01",
+              "available_at": "2026-08-01",
+              "source_family": "moneyweekly_research",
+              "evidence_note": "獨立研究確認AI伺服器功率與高速網路規格提升使MLCC電阻及保護元件用量與規格同步增加"
             }
           ]
         }
-      }
+      },
+      "industry_technology_position": 50,
+      "ai_revenue_realization": 50
     },
     {
       "ticker": "3037",
@@ -651,13 +689,62 @@
       "bottleneck_directness": 50,
       "evidence": {
         "bottleneck_directness": {
-          "source_url": "https://www.tai-tech.com.tw/ai-server",
-          "source_date": "2026-09-01",
-          "available_at": "2026-09-01",
-          "source_family": "company_product_application",
-          "evidence_note": "公司產品頁明列AI伺服器GPU、CPU與記憶體供電所需高電流電感及TLVR應用；尚缺獨立瓶頸與財務兌現證據。"
+          "sources": [
+            {
+              "source_url": "https://www.moneydj.com/kmdj/news/newsviewer.aspx?a=0ccc5549-a197-4502-ab81-cc62a3fd1201",
+              "source_date": "2026-03-27",
+              "available_at": "2026-03-27",
+              "source_family": "moneydj_industry",
+              "evidence_note": "獨立產業報導確認耦合電感已進入GB200與GB300且AI伺服器及ASIC產品將逐季放量"
+            },
+            {
+              "source_url": "https://money.udn.com/money/story/11074/9405348",
+              "source_date": "2026-03-26",
+              "available_at": "2026-03-26",
+              "source_family": "udn_finance",
+              "evidence_note": "獨立媒體法說資料確認AI與HPC需求推升高階電感並切入800V以上HVDC應用"
+            }
+          ]
+        },
+        "industry_technology_position": {
+          "sources": [
+            {
+              "source_url": "https://www.moneydj.com/kmdj/news/newsviewer.aspx?a=0ccc5549-a197-4502-ab81-cc62a3fd1201",
+              "source_date": "2026-03-27",
+              "available_at": "2026-03-27",
+              "source_family": "moneydj_industry",
+              "evidence_note": "獨立產業報導確認耦合電感已進入GB200與GB300且AI伺服器及ASIC產品將逐季放量"
+            },
+            {
+              "source_url": "https://money.udn.com/money/story/11074/9405348",
+              "source_date": "2026-03-26",
+              "available_at": "2026-03-26",
+              "source_family": "udn_finance",
+              "evidence_note": "獨立媒體法說資料確認AI與HPC需求推升高階電感並切入800V以上HVDC應用"
+            }
+          ]
+        },
+        "ai_revenue_realization": {
+          "sources": [
+            {
+              "source_url": "https://www.moneydj.com/kmdj/news/newsviewer.aspx?a=0ccc5549-a197-4502-ab81-cc62a3fd1201",
+              "source_date": "2026-03-27",
+              "available_at": "2026-03-27",
+              "source_family": "moneydj_industry",
+              "evidence_note": "獨立產業報導確認耦合電感已進入GB200與GB300且AI伺服器及ASIC產品將逐季放量"
+            },
+            {
+              "source_url": "https://money.udn.com/money/story/11074/9405348",
+              "source_date": "2026-03-26",
+              "available_at": "2026-03-26",
+              "source_family": "udn_finance",
+              "evidence_note": "獨立媒體法說資料確認AI與HPC需求推升高階電感並切入800V以上HVDC應用"
+            }
+          ]
         }
-      }
+      },
+      "industry_technology_position": 50,
+      "ai_revenue_realization": 25
     },
     {
       "ticker": "6488",

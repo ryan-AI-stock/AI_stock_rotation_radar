@@ -11,7 +11,7 @@
     "membership_anchor": "2026-08-15"
   },
   "theme_count": 11,
-  "ready_theme_count": 0,
+  "ready_theme_count": 1,
   "status": "DATA_MISSING",
   "themes": [
     {
@@ -897,10 +897,732 @@
     {
       "theme_id": "passive_components",
       "theme_name": "高階被動元件",
-      "status": "DATA_MISSING",
-      "top1": null,
-      "top3": [],
-      "ranked": [],
+      "status": "READY",
+      "top1": {
+        "ticker": "2327",
+        "company": "國巨",
+        "theme_id": "passive_components",
+        "as_of_date": "2026-10-16",
+        "evidence": {
+          "bottleneck_directness": {
+            "sources": [
+              {
+                "source_url": "https://yageogroup.com/content/Resource%20Library/Financial/Yageo%202025%20Annual%20Report_c.pdf",
+                "source_date": "2026-05-08",
+                "available_at": "2026-05-08",
+                "source_family": "yageo_ir",
+                "evidence_note": "AI伺服器帶動高階MLCC需求且營收占比已開始兌現"
+              },
+              {
+                "source_url": "https://finance.technews.tw/2026/07/23/ai-mlcc/",
+                "source_date": "2026-07-23",
+                "available_at": "2026-07-23",
+                "source_family": "technews_industry",
+                "evidence_note": "獨立產業報導確認AI伺服器高階MLCC需求增加並形成供給壓力"
+              }
+            ]
+          },
+          "industry_technology_position": {
+            "sources": [
+              {
+                "source_url": "https://yageogroup.com/content/Resource%20Library/Financial/Yageo%202025%20Annual%20Report_c.pdf",
+                "source_date": "2026-05-08",
+                "available_at": "2026-05-08",
+                "source_family": "yageo_ir",
+                "evidence_note": "AI伺服器帶動高階MLCC需求且營收占比已開始兌現"
+              },
+              {
+                "source_url": "https://finance.technews.tw/2026/07/23/ai-mlcc/",
+                "source_date": "2026-07-23",
+                "available_at": "2026-07-23",
+                "source_family": "technews_industry",
+                "evidence_note": "獨立產業報導確認AI伺服器高階MLCC需求增加並形成供給壓力"
+              }
+            ]
+          },
+          "ai_revenue_realization": {
+            "sources": [
+              {
+                "source_url": "https://yageogroup.com/content/Resource%20Library/Financial/Yageo%202025%20Annual%20Report_c.pdf",
+                "source_date": "2026-05-08",
+                "available_at": "2026-05-08",
+                "source_family": "yageo_ir",
+                "evidence_note": "AI伺服器帶動高階MLCC需求且營收占比已開始兌現"
+              },
+              {
+                "source_url": "https://finance.technews.tw/2026/07/23/ai-mlcc/",
+                "source_date": "2026-07-23",
+                "available_at": "2026-07-23",
+                "source_family": "technews_industry",
+                "evidence_note": "獨立產業報導確認AI伺服器高階MLCC需求增加並形成供給壓力"
+              }
+            ]
+          },
+          "financial_earnings_quality": {
+            "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=2327&SYEAR=2026&SSEASON=2&REPORT_ID=C",
+            "source_date": "2026-10-16",
+            "available_at": "2026-10-16",
+            "source_family": "MOPS_XBRL_OFFICIAL",
+            "evidence_note": "r1-financial-quality-rubric-v0.1；本期與去年同期財報、營業現金流及資產負債比率；challenger草案，未啟用交易。"
+          },
+          "market_representation": {
+            "source_url": "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261016&selectType=ALLBUT0999",
+            "source_date": "2026-10-16",
+            "available_at": "2026-10-16",
+            "source_family": "TWSE_TPEX_OFFICIAL_MARKET_AND_OWNERSHIP",
+            "evidence_note": "同題材內市值、20TD平均成交金額與官方外資持股比例百分位。"
+          }
+        },
+        "bottleneck_directness": 100.0,
+        "industry_technology_position": 75.0,
+        "ai_revenue_realization": 75.0,
+        "financial_earnings_quality": 78.366,
+        "market_representation": 100.0,
+        "structural_leader": 84.4232,
+        "revenue_earnings_growth": null,
+        "self_historical_valuation": null,
+        "price_risk_safety": null,
+        "demand_order_catalyst": null,
+        "status": "READY",
+        "leader_missing_fields": [],
+        "priority_status": "DATA_MISSING",
+        "priority_missing_fields": [
+          "revenue_earnings_growth",
+          "self_historical_valuation",
+          "price_risk_safety",
+          "demand_order_catalyst"
+        ],
+        "missing_fields": [
+          "revenue_earnings_growth",
+          "self_historical_valuation",
+          "price_risk_safety",
+          "demand_order_catalyst"
+        ],
+        "leader_score": 84.4232,
+        "priority_score": null
+      },
+      "top3": [
+        {
+          "ticker": "2327",
+          "company": "國巨",
+          "theme_id": "passive_components",
+          "as_of_date": "2026-10-16",
+          "evidence": {
+            "bottleneck_directness": {
+              "sources": [
+                {
+                  "source_url": "https://yageogroup.com/content/Resource%20Library/Financial/Yageo%202025%20Annual%20Report_c.pdf",
+                  "source_date": "2026-05-08",
+                  "available_at": "2026-05-08",
+                  "source_family": "yageo_ir",
+                  "evidence_note": "AI伺服器帶動高階MLCC需求且營收占比已開始兌現"
+                },
+                {
+                  "source_url": "https://finance.technews.tw/2026/07/23/ai-mlcc/",
+                  "source_date": "2026-07-23",
+                  "available_at": "2026-07-23",
+                  "source_family": "technews_industry",
+                  "evidence_note": "獨立產業報導確認AI伺服器高階MLCC需求增加並形成供給壓力"
+                }
+              ]
+            },
+            "industry_technology_position": {
+              "sources": [
+                {
+                  "source_url": "https://yageogroup.com/content/Resource%20Library/Financial/Yageo%202025%20Annual%20Report_c.pdf",
+                  "source_date": "2026-05-08",
+                  "available_at": "2026-05-08",
+                  "source_family": "yageo_ir",
+                  "evidence_note": "AI伺服器帶動高階MLCC需求且營收占比已開始兌現"
+                },
+                {
+                  "source_url": "https://finance.technews.tw/2026/07/23/ai-mlcc/",
+                  "source_date": "2026-07-23",
+                  "available_at": "2026-07-23",
+                  "source_family": "technews_industry",
+                  "evidence_note": "獨立產業報導確認AI伺服器高階MLCC需求增加並形成供給壓力"
+                }
+              ]
+            },
+            "ai_revenue_realization": {
+              "sources": [
+                {
+                  "source_url": "https://yageogroup.com/content/Resource%20Library/Financial/Yageo%202025%20Annual%20Report_c.pdf",
+                  "source_date": "2026-05-08",
+                  "available_at": "2026-05-08",
+                  "source_family": "yageo_ir",
+                  "evidence_note": "AI伺服器帶動高階MLCC需求且營收占比已開始兌現"
+                },
+                {
+                  "source_url": "https://finance.technews.tw/2026/07/23/ai-mlcc/",
+                  "source_date": "2026-07-23",
+                  "available_at": "2026-07-23",
+                  "source_family": "technews_industry",
+                  "evidence_note": "獨立產業報導確認AI伺服器高階MLCC需求增加並形成供給壓力"
+                }
+              ]
+            },
+            "financial_earnings_quality": {
+              "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=2327&SYEAR=2026&SSEASON=2&REPORT_ID=C",
+              "source_date": "2026-10-16",
+              "available_at": "2026-10-16",
+              "source_family": "MOPS_XBRL_OFFICIAL",
+              "evidence_note": "r1-financial-quality-rubric-v0.1；本期與去年同期財報、營業現金流及資產負債比率；challenger草案，未啟用交易。"
+            },
+            "market_representation": {
+              "source_url": "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261016&selectType=ALLBUT0999",
+              "source_date": "2026-10-16",
+              "available_at": "2026-10-16",
+              "source_family": "TWSE_TPEX_OFFICIAL_MARKET_AND_OWNERSHIP",
+              "evidence_note": "同題材內市值、20TD平均成交金額與官方外資持股比例百分位。"
+            }
+          },
+          "bottleneck_directness": 100.0,
+          "industry_technology_position": 75.0,
+          "ai_revenue_realization": 75.0,
+          "financial_earnings_quality": 78.366,
+          "market_representation": 100.0,
+          "structural_leader": 84.4232,
+          "revenue_earnings_growth": null,
+          "self_historical_valuation": null,
+          "price_risk_safety": null,
+          "demand_order_catalyst": null,
+          "status": "READY",
+          "leader_missing_fields": [],
+          "priority_status": "DATA_MISSING",
+          "priority_missing_fields": [
+            "revenue_earnings_growth",
+            "self_historical_valuation",
+            "price_risk_safety",
+            "demand_order_catalyst"
+          ],
+          "missing_fields": [
+            "revenue_earnings_growth",
+            "self_historical_valuation",
+            "price_risk_safety",
+            "demand_order_catalyst"
+          ],
+          "leader_score": 84.4232,
+          "priority_score": null
+        },
+        {
+          "ticker": "2492",
+          "company": "華新科",
+          "theme_id": "passive_components",
+          "as_of_date": "2026-10-16",
+          "evidence": {
+            "bottleneck_directness": {
+              "sources": [
+                {
+                  "source_url": "https://tw.stock.yahoo.com/news/%E8%8F%AF%E6%96%B0%E7%A7%91-%E8%8B%A5%E9%82%8A%E7%B7%A3%E8%A3%9D%E7%BD%AE%E6%94%BE%E9%87%8F-%E8%A2%AB%E5%8B%95%E5%85%83%E4%BB%B6%E9%9C%80%E6%B1%82%E6%9C%89%E6%9C%9B%E5%86%8D%E5%90%91%E4%B8%8A-035300165.html",
+                  "source_date": "2026-06-12",
+                  "available_at": "2026-06-12",
+                  "source_family": "moneydj_yahoo_relay",
+                  "evidence_note": "獨立報導確認AI需求推升高階MLCC供給緊張且日系產能轉向帶來替代訂單"
+                },
+                {
+                  "source_url": "https://www.moneyweekly.com.tw/ArticleData/Info/Article/242076",
+                  "source_date": "2026-08-01",
+                  "available_at": "2026-08-01",
+                  "source_family": "moneyweekly_research",
+                  "evidence_note": "獨立研究確認AI伺服器功率與高速網路規格提升使MLCC電阻及保護元件用量與規格同步增加"
+                }
+              ]
+            },
+            "industry_technology_position": {
+              "sources": [
+                {
+                  "source_url": "https://tw.stock.yahoo.com/news/%E8%8F%AF%E6%96%B0%E7%A7%91-%E8%8B%A5%E9%82%8A%E7%B7%A3%E8%A3%9D%E7%BD%AE%E6%94%BE%E9%87%8F-%E8%A2%AB%E5%8B%95%E5%85%83%E4%BB%B6%E9%9C%80%E6%B1%82%E6%9C%89%E6%9C%9B%E5%86%8D%E5%90%91%E4%B8%8A-035300165.html",
+                  "source_date": "2026-06-12",
+                  "available_at": "2026-06-12",
+                  "source_family": "moneydj_yahoo_relay",
+                  "evidence_note": "獨立報導確認AI需求推升高階MLCC供給緊張且日系產能轉向帶來替代訂單"
+                },
+                {
+                  "source_url": "https://www.moneyweekly.com.tw/ArticleData/Info/Article/242076",
+                  "source_date": "2026-08-01",
+                  "available_at": "2026-08-01",
+                  "source_family": "moneyweekly_research",
+                  "evidence_note": "獨立研究確認AI伺服器功率與高速網路規格提升使MLCC電阻及保護元件用量與規格同步增加"
+                }
+              ]
+            },
+            "ai_revenue_realization": {
+              "sources": [
+                {
+                  "source_url": "https://tw.stock.yahoo.com/news/%E8%8F%AF%E6%96%B0%E7%A7%91-%E8%8B%A5%E9%82%8A%E7%B7%A3%E8%A3%9D%E7%BD%AE%E6%94%BE%E9%87%8F-%E8%A2%AB%E5%8B%95%E5%85%83%E4%BB%B6%E9%9C%80%E6%B1%82%E6%9C%89%E6%9C%9B%E5%86%8D%E5%90%91%E4%B8%8A-035300165.html",
+                  "source_date": "2026-06-12",
+                  "available_at": "2026-06-12",
+                  "source_family": "moneydj_yahoo_relay",
+                  "evidence_note": "獨立報導確認AI需求推升高階MLCC供給緊張且日系產能轉向帶來替代訂單"
+                },
+                {
+                  "source_url": "https://www.moneyweekly.com.tw/ArticleData/Info/Article/242076",
+                  "source_date": "2026-08-01",
+                  "available_at": "2026-08-01",
+                  "source_family": "moneyweekly_research",
+                  "evidence_note": "獨立研究確認AI伺服器功率與高速網路規格提升使MLCC電阻及保護元件用量與規格同步增加"
+                }
+              ]
+            },
+            "financial_earnings_quality": {
+              "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=2492&SYEAR=2026&SSEASON=2&REPORT_ID=C",
+              "source_date": "2026-10-16",
+              "available_at": "2026-10-16",
+              "source_family": "MOPS_XBRL_OFFICIAL",
+              "evidence_note": "r1-financial-quality-rubric-v0.1；本期與去年同期財報、營業現金流及資產負債比率；challenger草案，未啟用交易。"
+            },
+            "market_representation": {
+              "source_url": "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261016&selectType=ALLBUT0999",
+              "source_date": "2026-10-16",
+              "available_at": "2026-10-16",
+              "source_family": "TWSE_TPEX_OFFICIAL_MARKET_AND_OWNERSHIP",
+              "evidence_note": "同題材內市值、20TD平均成交金額與官方外資持股比例百分位。"
+            }
+          },
+          "bottleneck_directness": 75.0,
+          "industry_technology_position": 50.0,
+          "ai_revenue_realization": 50.0,
+          "financial_earnings_quality": 62.3609,
+          "market_representation": 40.0,
+          "structural_leader": 57.72218,
+          "revenue_earnings_growth": null,
+          "self_historical_valuation": null,
+          "price_risk_safety": null,
+          "demand_order_catalyst": null,
+          "status": "READY",
+          "leader_missing_fields": [],
+          "priority_status": "DATA_MISSING",
+          "priority_missing_fields": [
+            "revenue_earnings_growth",
+            "self_historical_valuation",
+            "price_risk_safety",
+            "demand_order_catalyst"
+          ],
+          "missing_fields": [
+            "revenue_earnings_growth",
+            "self_historical_valuation",
+            "price_risk_safety",
+            "demand_order_catalyst"
+          ],
+          "leader_score": 57.72218,
+          "priority_score": null
+        },
+        {
+          "ticker": "3357",
+          "company": "臺慶科",
+          "theme_id": "passive_components",
+          "as_of_date": "2026-10-16",
+          "evidence": {
+            "bottleneck_directness": {
+              "sources": [
+                {
+                  "source_url": "https://www.moneydj.com/kmdj/news/newsviewer.aspx?a=0ccc5549-a197-4502-ab81-cc62a3fd1201",
+                  "source_date": "2026-03-27",
+                  "available_at": "2026-03-27",
+                  "source_family": "moneydj_industry",
+                  "evidence_note": "獨立產業報導確認耦合電感已進入GB200與GB300且AI伺服器及ASIC產品將逐季放量"
+                },
+                {
+                  "source_url": "https://money.udn.com/money/story/11074/9405348",
+                  "source_date": "2026-03-26",
+                  "available_at": "2026-03-26",
+                  "source_family": "udn_finance",
+                  "evidence_note": "獨立媒體法說資料確認AI與HPC需求推升高階電感並切入800V以上HVDC應用"
+                }
+              ]
+            },
+            "industry_technology_position": {
+              "sources": [
+                {
+                  "source_url": "https://www.moneydj.com/kmdj/news/newsviewer.aspx?a=0ccc5549-a197-4502-ab81-cc62a3fd1201",
+                  "source_date": "2026-03-27",
+                  "available_at": "2026-03-27",
+                  "source_family": "moneydj_industry",
+                  "evidence_note": "獨立產業報導確認耦合電感已進入GB200與GB300且AI伺服器及ASIC產品將逐季放量"
+                },
+                {
+                  "source_url": "https://money.udn.com/money/story/11074/9405348",
+                  "source_date": "2026-03-26",
+                  "available_at": "2026-03-26",
+                  "source_family": "udn_finance",
+                  "evidence_note": "獨立媒體法說資料確認AI與HPC需求推升高階電感並切入800V以上HVDC應用"
+                }
+              ]
+            },
+            "ai_revenue_realization": {
+              "sources": [
+                {
+                  "source_url": "https://www.moneydj.com/kmdj/news/newsviewer.aspx?a=0ccc5549-a197-4502-ab81-cc62a3fd1201",
+                  "source_date": "2026-03-27",
+                  "available_at": "2026-03-27",
+                  "source_family": "moneydj_industry",
+                  "evidence_note": "獨立產業報導確認耦合電感已進入GB200與GB300且AI伺服器及ASIC產品將逐季放量"
+                },
+                {
+                  "source_url": "https://money.udn.com/money/story/11074/9405348",
+                  "source_date": "2026-03-26",
+                  "available_at": "2026-03-26",
+                  "source_family": "udn_finance",
+                  "evidence_note": "獨立媒體法說資料確認AI與HPC需求推升高階電感並切入800V以上HVDC應用"
+                }
+              ]
+            },
+            "financial_earnings_quality": {
+              "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3357&SYEAR=2026&SSEASON=2&REPORT_ID=C",
+              "source_date": "2026-10-16",
+              "available_at": "2026-10-16",
+              "source_family": "MOPS_XBRL_OFFICIAL",
+              "evidence_note": "r1-financial-quality-rubric-v0.1；本期與去年同期財報、營業現金流及資產負債比率；challenger草案，未啟用交易。"
+            },
+            "market_representation": {
+              "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/qfii?date=2026%2F10%2F16&response=json",
+              "source_date": "2026-10-16",
+              "available_at": "2026-10-16",
+              "source_family": "TWSE_TPEX_OFFICIAL_MARKET_AND_OWNERSHIP",
+              "evidence_note": "同題材內市值、20TD平均成交金額與官方外資持股比例百分位。"
+            }
+          },
+          "bottleneck_directness": 50.0,
+          "industry_technology_position": 50.0,
+          "ai_revenue_realization": 25.0,
+          "financial_earnings_quality": 70.6949,
+          "market_representation": 10.0,
+          "structural_leader": 45.13898,
+          "revenue_earnings_growth": null,
+          "self_historical_valuation": null,
+          "price_risk_safety": null,
+          "demand_order_catalyst": null,
+          "status": "READY",
+          "leader_missing_fields": [],
+          "priority_status": "DATA_MISSING",
+          "priority_missing_fields": [
+            "revenue_earnings_growth",
+            "self_historical_valuation",
+            "price_risk_safety",
+            "demand_order_catalyst"
+          ],
+          "missing_fields": [
+            "revenue_earnings_growth",
+            "self_historical_valuation",
+            "price_risk_safety",
+            "demand_order_catalyst"
+          ],
+          "leader_score": 45.13898,
+          "priority_score": null
+        }
+      ],
+      "ranked": [
+        {
+          "ticker": "2327",
+          "company": "國巨",
+          "theme_id": "passive_components",
+          "as_of_date": "2026-10-16",
+          "evidence": {
+            "bottleneck_directness": {
+              "sources": [
+                {
+                  "source_url": "https://yageogroup.com/content/Resource%20Library/Financial/Yageo%202025%20Annual%20Report_c.pdf",
+                  "source_date": "2026-05-08",
+                  "available_at": "2026-05-08",
+                  "source_family": "yageo_ir",
+                  "evidence_note": "AI伺服器帶動高階MLCC需求且營收占比已開始兌現"
+                },
+                {
+                  "source_url": "https://finance.technews.tw/2026/07/23/ai-mlcc/",
+                  "source_date": "2026-07-23",
+                  "available_at": "2026-07-23",
+                  "source_family": "technews_industry",
+                  "evidence_note": "獨立產業報導確認AI伺服器高階MLCC需求增加並形成供給壓力"
+                }
+              ]
+            },
+            "industry_technology_position": {
+              "sources": [
+                {
+                  "source_url": "https://yageogroup.com/content/Resource%20Library/Financial/Yageo%202025%20Annual%20Report_c.pdf",
+                  "source_date": "2026-05-08",
+                  "available_at": "2026-05-08",
+                  "source_family": "yageo_ir",
+                  "evidence_note": "AI伺服器帶動高階MLCC需求且營收占比已開始兌現"
+                },
+                {
+                  "source_url": "https://finance.technews.tw/2026/07/23/ai-mlcc/",
+                  "source_date": "2026-07-23",
+                  "available_at": "2026-07-23",
+                  "source_family": "technews_industry",
+                  "evidence_note": "獨立產業報導確認AI伺服器高階MLCC需求增加並形成供給壓力"
+                }
+              ]
+            },
+            "ai_revenue_realization": {
+              "sources": [
+                {
+                  "source_url": "https://yageogroup.com/content/Resource%20Library/Financial/Yageo%202025%20Annual%20Report_c.pdf",
+                  "source_date": "2026-05-08",
+                  "available_at": "2026-05-08",
+                  "source_family": "yageo_ir",
+                  "evidence_note": "AI伺服器帶動高階MLCC需求且營收占比已開始兌現"
+                },
+                {
+                  "source_url": "https://finance.technews.tw/2026/07/23/ai-mlcc/",
+                  "source_date": "2026-07-23",
+                  "available_at": "2026-07-23",
+                  "source_family": "technews_industry",
+                  "evidence_note": "獨立產業報導確認AI伺服器高階MLCC需求增加並形成供給壓力"
+                }
+              ]
+            },
+            "financial_earnings_quality": {
+              "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=2327&SYEAR=2026&SSEASON=2&REPORT_ID=C",
+              "source_date": "2026-10-16",
+              "available_at": "2026-10-16",
+              "source_family": "MOPS_XBRL_OFFICIAL",
+              "evidence_note": "r1-financial-quality-rubric-v0.1；本期與去年同期財報、營業現金流及資產負債比率；challenger草案，未啟用交易。"
+            },
+            "market_representation": {
+              "source_url": "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261016&selectType=ALLBUT0999",
+              "source_date": "2026-10-16",
+              "available_at": "2026-10-16",
+              "source_family": "TWSE_TPEX_OFFICIAL_MARKET_AND_OWNERSHIP",
+              "evidence_note": "同題材內市值、20TD平均成交金額與官方外資持股比例百分位。"
+            }
+          },
+          "bottleneck_directness": 100.0,
+          "industry_technology_position": 75.0,
+          "ai_revenue_realization": 75.0,
+          "financial_earnings_quality": 78.366,
+          "market_representation": 100.0,
+          "structural_leader": 84.4232,
+          "revenue_earnings_growth": null,
+          "self_historical_valuation": null,
+          "price_risk_safety": null,
+          "demand_order_catalyst": null,
+          "status": "READY",
+          "leader_missing_fields": [],
+          "priority_status": "DATA_MISSING",
+          "priority_missing_fields": [
+            "revenue_earnings_growth",
+            "self_historical_valuation",
+            "price_risk_safety",
+            "demand_order_catalyst"
+          ],
+          "missing_fields": [
+            "revenue_earnings_growth",
+            "self_historical_valuation",
+            "price_risk_safety",
+            "demand_order_catalyst"
+          ],
+          "leader_score": 84.4232,
+          "priority_score": null
+        },
+        {
+          "ticker": "2492",
+          "company": "華新科",
+          "theme_id": "passive_components",
+          "as_of_date": "2026-10-16",
+          "evidence": {
+            "bottleneck_directness": {
+              "sources": [
+                {
+                  "source_url": "https://tw.stock.yahoo.com/news/%E8%8F%AF%E6%96%B0%E7%A7%91-%E8%8B%A5%E9%82%8A%E7%B7%A3%E8%A3%9D%E7%BD%AE%E6%94%BE%E9%87%8F-%E8%A2%AB%E5%8B%95%E5%85%83%E4%BB%B6%E9%9C%80%E6%B1%82%E6%9C%89%E6%9C%9B%E5%86%8D%E5%90%91%E4%B8%8A-035300165.html",
+                  "source_date": "2026-06-12",
+                  "available_at": "2026-06-12",
+                  "source_family": "moneydj_yahoo_relay",
+                  "evidence_note": "獨立報導確認AI需求推升高階MLCC供給緊張且日系產能轉向帶來替代訂單"
+                },
+                {
+                  "source_url": "https://www.moneyweekly.com.tw/ArticleData/Info/Article/242076",
+                  "source_date": "2026-08-01",
+                  "available_at": "2026-08-01",
+                  "source_family": "moneyweekly_research",
+                  "evidence_note": "獨立研究確認AI伺服器功率與高速網路規格提升使MLCC電阻及保護元件用量與規格同步增加"
+                }
+              ]
+            },
+            "industry_technology_position": {
+              "sources": [
+                {
+                  "source_url": "https://tw.stock.yahoo.com/news/%E8%8F%AF%E6%96%B0%E7%A7%91-%E8%8B%A5%E9%82%8A%E7%B7%A3%E8%A3%9D%E7%BD%AE%E6%94%BE%E9%87%8F-%E8%A2%AB%E5%8B%95%E5%85%83%E4%BB%B6%E9%9C%80%E6%B1%82%E6%9C%89%E6%9C%9B%E5%86%8D%E5%90%91%E4%B8%8A-035300165.html",
+                  "source_date": "2026-06-12",
+                  "available_at": "2026-06-12",
+                  "source_family": "moneydj_yahoo_relay",
+                  "evidence_note": "獨立報導確認AI需求推升高階MLCC供給緊張且日系產能轉向帶來替代訂單"
+                },
+                {
+                  "source_url": "https://www.moneyweekly.com.tw/ArticleData/Info/Article/242076",
+                  "source_date": "2026-08-01",
+                  "available_at": "2026-08-01",
+                  "source_family": "moneyweekly_research",
+                  "evidence_note": "獨立研究確認AI伺服器功率與高速網路規格提升使MLCC電阻及保護元件用量與規格同步增加"
+                }
+              ]
+            },
+            "ai_revenue_realization": {
+              "sources": [
+                {
+                  "source_url": "https://tw.stock.yahoo.com/news/%E8%8F%AF%E6%96%B0%E7%A7%91-%E8%8B%A5%E9%82%8A%E7%B7%A3%E8%A3%9D%E7%BD%AE%E6%94%BE%E9%87%8F-%E8%A2%AB%E5%8B%95%E5%85%83%E4%BB%B6%E9%9C%80%E6%B1%82%E6%9C%89%E6%9C%9B%E5%86%8D%E5%90%91%E4%B8%8A-035300165.html",
+                  "source_date": "2026-06-12",
+                  "available_at": "2026-06-12",
+                  "source_family": "moneydj_yahoo_relay",
+                  "evidence_note": "獨立報導確認AI需求推升高階MLCC供給緊張且日系產能轉向帶來替代訂單"
+                },
+                {
+                  "source_url": "https://www.moneyweekly.com.tw/ArticleData/Info/Article/242076",
+                  "source_date": "2026-08-01",
+                  "available_at": "2026-08-01",
+                  "source_family": "moneyweekly_research",
+                  "evidence_note": "獨立研究確認AI伺服器功率與高速網路規格提升使MLCC電阻及保護元件用量與規格同步增加"
+                }
+              ]
+            },
+            "financial_earnings_quality": {
+              "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=2492&SYEAR=2026&SSEASON=2&REPORT_ID=C",
+              "source_date": "2026-10-16",
+              "available_at": "2026-10-16",
+              "source_family": "MOPS_XBRL_OFFICIAL",
+              "evidence_note": "r1-financial-quality-rubric-v0.1；本期與去年同期財報、營業現金流及資產負債比率；challenger草案，未啟用交易。"
+            },
+            "market_representation": {
+              "source_url": "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261016&selectType=ALLBUT0999",
+              "source_date": "2026-10-16",
+              "available_at": "2026-10-16",
+              "source_family": "TWSE_TPEX_OFFICIAL_MARKET_AND_OWNERSHIP",
+              "evidence_note": "同題材內市值、20TD平均成交金額與官方外資持股比例百分位。"
+            }
+          },
+          "bottleneck_directness": 75.0,
+          "industry_technology_position": 50.0,
+          "ai_revenue_realization": 50.0,
+          "financial_earnings_quality": 62.3609,
+          "market_representation": 40.0,
+          "structural_leader": 57.72218,
+          "revenue_earnings_growth": null,
+          "self_historical_valuation": null,
+          "price_risk_safety": null,
+          "demand_order_catalyst": null,
+          "status": "READY",
+          "leader_missing_fields": [],
+          "priority_status": "DATA_MISSING",
+          "priority_missing_fields": [
+            "revenue_earnings_growth",
+            "self_historical_valuation",
+            "price_risk_safety",
+            "demand_order_catalyst"
+          ],
+          "missing_fields": [
+            "revenue_earnings_growth",
+            "self_historical_valuation",
+            "price_risk_safety",
+            "demand_order_catalyst"
+          ],
+          "leader_score": 57.72218,
+          "priority_score": null
+        },
+        {
+          "ticker": "3357",
+          "company": "臺慶科",
+          "theme_id": "passive_components",
+          "as_of_date": "2026-10-16",
+          "evidence": {
+            "bottleneck_directness": {
+              "sources": [
+                {
+                  "source_url": "https://www.moneydj.com/kmdj/news/newsviewer.aspx?a=0ccc5549-a197-4502-ab81-cc62a3fd1201",
+                  "source_date": "2026-03-27",
+                  "available_at": "2026-03-27",
+                  "source_family": "moneydj_industry",
+                  "evidence_note": "獨立產業報導確認耦合電感已進入GB200與GB300且AI伺服器及ASIC產品將逐季放量"
+                },
+                {
+                  "source_url": "https://money.udn.com/money/story/11074/9405348",
+                  "source_date": "2026-03-26",
+                  "available_at": "2026-03-26",
+                  "source_family": "udn_finance",
+                  "evidence_note": "獨立媒體法說資料確認AI與HPC需求推升高階電感並切入800V以上HVDC應用"
+                }
+              ]
+            },
+            "industry_technology_position": {
+              "sources": [
+                {
+                  "source_url": "https://www.moneydj.com/kmdj/news/newsviewer.aspx?a=0ccc5549-a197-4502-ab81-cc62a3fd1201",
+                  "source_date": "2026-03-27",
+                  "available_at": "2026-03-27",
+                  "source_family": "moneydj_industry",
+                  "evidence_note": "獨立產業報導確認耦合電感已進入GB200與GB300且AI伺服器及ASIC產品將逐季放量"
+                },
+                {
+                  "source_url": "https://money.udn.com/money/story/11074/9405348",
+                  "source_date": "2026-03-26",
+                  "available_at": "2026-03-26",
+                  "source_family": "udn_finance",
+                  "evidence_note": "獨立媒體法說資料確認AI與HPC需求推升高階電感並切入800V以上HVDC應用"
+                }
+              ]
+            },
+            "ai_revenue_realization": {
+              "sources": [
+                {
+                  "source_url": "https://www.moneydj.com/kmdj/news/newsviewer.aspx?a=0ccc5549-a197-4502-ab81-cc62a3fd1201",
+                  "source_date": "2026-03-27",
+                  "available_at": "2026-03-27",
+                  "source_family": "moneydj_industry",
+                  "evidence_note": "獨立產業報導確認耦合電感已進入GB200與GB300且AI伺服器及ASIC產品將逐季放量"
+                },
+                {
+                  "source_url": "https://money.udn.com/money/story/11074/9405348",
+                  "source_date": "2026-03-26",
+                  "available_at": "2026-03-26",
+                  "source_family": "udn_finance",
+                  "evidence_note": "獨立媒體法說資料確認AI與HPC需求推升高階電感並切入800V以上HVDC應用"
+                }
+              ]
+            },
+            "financial_earnings_quality": {
+              "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3357&SYEAR=2026&SSEASON=2&REPORT_ID=C",
+              "source_date": "2026-10-16",
+              "available_at": "2026-10-16",
+              "source_family": "MOPS_XBRL_OFFICIAL",
+              "evidence_note": "r1-financial-quality-rubric-v0.1；本期與去年同期財報、營業現金流及資產負債比率；challenger草案，未啟用交易。"
+            },
+            "market_representation": {
+              "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/qfii?date=2026%2F10%2F16&response=json",
+              "source_date": "2026-10-16",
+              "available_at": "2026-10-16",
+              "source_family": "TWSE_TPEX_OFFICIAL_MARKET_AND_OWNERSHIP",
+              "evidence_note": "同題材內市值、20TD平均成交金額與官方外資持股比例百分位。"
+            }
+          },
+          "bottleneck_directness": 50.0,
+          "industry_technology_position": 50.0,
+          "ai_revenue_realization": 25.0,
+          "financial_earnings_quality": 70.6949,
+          "market_representation": 10.0,
+          "structural_leader": 45.13898,
+          "revenue_earnings_growth": null,
+          "self_historical_valuation": null,
+          "price_risk_safety": null,
+          "demand_order_catalyst": null,
+          "status": "READY",
+          "leader_missing_fields": [],
+          "priority_status": "DATA_MISSING",
+          "priority_missing_fields": [
+            "revenue_earnings_growth",
+            "self_historical_valuation",
+            "price_risk_safety",
+            "demand_order_catalyst"
+          ],
+          "missing_fields": [
+            "revenue_earnings_growth",
+            "self_historical_valuation",
+            "price_risk_safety",
+            "demand_order_catalyst"
+          ],
+          "leader_score": 45.13898,
+          "priority_score": null
+        }
+      ],
       "evaluated": [
         {
           "ticker": "2327",
@@ -1004,24 +1726,215 @@
           ],
           "leader_score": 84.4232,
           "priority_score": null
-        }
-      ],
-      "data_gaps": [
+        },
         {
           "ticker": "2492",
+          "company": "華新科",
+          "theme_id": "passive_components",
+          "as_of_date": "2026-10-16",
+          "evidence": {
+            "bottleneck_directness": {
+              "sources": [
+                {
+                  "source_url": "https://tw.stock.yahoo.com/news/%E8%8F%AF%E6%96%B0%E7%A7%91-%E8%8B%A5%E9%82%8A%E7%B7%A3%E8%A3%9D%E7%BD%AE%E6%94%BE%E9%87%8F-%E8%A2%AB%E5%8B%95%E5%85%83%E4%BB%B6%E9%9C%80%E6%B1%82%E6%9C%89%E6%9C%9B%E5%86%8D%E5%90%91%E4%B8%8A-035300165.html",
+                  "source_date": "2026-06-12",
+                  "available_at": "2026-06-12",
+                  "source_family": "moneydj_yahoo_relay",
+                  "evidence_note": "獨立報導確認AI需求推升高階MLCC供給緊張且日系產能轉向帶來替代訂單"
+                },
+                {
+                  "source_url": "https://www.moneyweekly.com.tw/ArticleData/Info/Article/242076",
+                  "source_date": "2026-08-01",
+                  "available_at": "2026-08-01",
+                  "source_family": "moneyweekly_research",
+                  "evidence_note": "獨立研究確認AI伺服器功率與高速網路規格提升使MLCC電阻及保護元件用量與規格同步增加"
+                }
+              ]
+            },
+            "industry_technology_position": {
+              "sources": [
+                {
+                  "source_url": "https://tw.stock.yahoo.com/news/%E8%8F%AF%E6%96%B0%E7%A7%91-%E8%8B%A5%E9%82%8A%E7%B7%A3%E8%A3%9D%E7%BD%AE%E6%94%BE%E9%87%8F-%E8%A2%AB%E5%8B%95%E5%85%83%E4%BB%B6%E9%9C%80%E6%B1%82%E6%9C%89%E6%9C%9B%E5%86%8D%E5%90%91%E4%B8%8A-035300165.html",
+                  "source_date": "2026-06-12",
+                  "available_at": "2026-06-12",
+                  "source_family": "moneydj_yahoo_relay",
+                  "evidence_note": "獨立報導確認AI需求推升高階MLCC供給緊張且日系產能轉向帶來替代訂單"
+                },
+                {
+                  "source_url": "https://www.moneyweekly.com.tw/ArticleData/Info/Article/242076",
+                  "source_date": "2026-08-01",
+                  "available_at": "2026-08-01",
+                  "source_family": "moneyweekly_research",
+                  "evidence_note": "獨立研究確認AI伺服器功率與高速網路規格提升使MLCC電阻及保護元件用量與規格同步增加"
+                }
+              ]
+            },
+            "ai_revenue_realization": {
+              "sources": [
+                {
+                  "source_url": "https://tw.stock.yahoo.com/news/%E8%8F%AF%E6%96%B0%E7%A7%91-%E8%8B%A5%E9%82%8A%E7%B7%A3%E8%A3%9D%E7%BD%AE%E6%94%BE%E9%87%8F-%E8%A2%AB%E5%8B%95%E5%85%83%E4%BB%B6%E9%9C%80%E6%B1%82%E6%9C%89%E6%9C%9B%E5%86%8D%E5%90%91%E4%B8%8A-035300165.html",
+                  "source_date": "2026-06-12",
+                  "available_at": "2026-06-12",
+                  "source_family": "moneydj_yahoo_relay",
+                  "evidence_note": "獨立報導確認AI需求推升高階MLCC供給緊張且日系產能轉向帶來替代訂單"
+                },
+                {
+                  "source_url": "https://www.moneyweekly.com.tw/ArticleData/Info/Article/242076",
+                  "source_date": "2026-08-01",
+                  "available_at": "2026-08-01",
+                  "source_family": "moneyweekly_research",
+                  "evidence_note": "獨立研究確認AI伺服器功率與高速網路規格提升使MLCC電阻及保護元件用量與規格同步增加"
+                }
+              ]
+            },
+            "financial_earnings_quality": {
+              "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=2492&SYEAR=2026&SSEASON=2&REPORT_ID=C",
+              "source_date": "2026-10-16",
+              "available_at": "2026-10-16",
+              "source_family": "MOPS_XBRL_OFFICIAL",
+              "evidence_note": "r1-financial-quality-rubric-v0.1；本期與去年同期財報、營業現金流及資產負債比率；challenger草案，未啟用交易。"
+            },
+            "market_representation": {
+              "source_url": "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261016&selectType=ALLBUT0999",
+              "source_date": "2026-10-16",
+              "available_at": "2026-10-16",
+              "source_family": "TWSE_TPEX_OFFICIAL_MARKET_AND_OWNERSHIP",
+              "evidence_note": "同題材內市值、20TD平均成交金額與官方外資持股比例百分位。"
+            }
+          },
+          "bottleneck_directness": 75.0,
+          "industry_technology_position": 50.0,
+          "ai_revenue_realization": 50.0,
+          "financial_earnings_quality": 62.3609,
+          "market_representation": 40.0,
+          "structural_leader": 57.72218,
+          "revenue_earnings_growth": null,
+          "self_historical_valuation": null,
+          "price_risk_safety": null,
+          "demand_order_catalyst": null,
+          "status": "READY",
+          "leader_missing_fields": [],
+          "priority_status": "DATA_MISSING",
+          "priority_missing_fields": [
+            "revenue_earnings_growth",
+            "self_historical_valuation",
+            "price_risk_safety",
+            "demand_order_catalyst"
+          ],
           "missing_fields": [
-            "industry_technology_position",
-            "ai_revenue_realization"
-          ]
+            "revenue_earnings_growth",
+            "self_historical_valuation",
+            "price_risk_safety",
+            "demand_order_catalyst"
+          ],
+          "leader_score": 57.72218,
+          "priority_score": null
         },
         {
           "ticker": "3357",
+          "company": "臺慶科",
+          "theme_id": "passive_components",
+          "as_of_date": "2026-10-16",
+          "evidence": {
+            "bottleneck_directness": {
+              "sources": [
+                {
+                  "source_url": "https://www.moneydj.com/kmdj/news/newsviewer.aspx?a=0ccc5549-a197-4502-ab81-cc62a3fd1201",
+                  "source_date": "2026-03-27",
+                  "available_at": "2026-03-27",
+                  "source_family": "moneydj_industry",
+                  "evidence_note": "獨立產業報導確認耦合電感已進入GB200與GB300且AI伺服器及ASIC產品將逐季放量"
+                },
+                {
+                  "source_url": "https://money.udn.com/money/story/11074/9405348",
+                  "source_date": "2026-03-26",
+                  "available_at": "2026-03-26",
+                  "source_family": "udn_finance",
+                  "evidence_note": "獨立媒體法說資料確認AI與HPC需求推升高階電感並切入800V以上HVDC應用"
+                }
+              ]
+            },
+            "industry_technology_position": {
+              "sources": [
+                {
+                  "source_url": "https://www.moneydj.com/kmdj/news/newsviewer.aspx?a=0ccc5549-a197-4502-ab81-cc62a3fd1201",
+                  "source_date": "2026-03-27",
+                  "available_at": "2026-03-27",
+                  "source_family": "moneydj_industry",
+                  "evidence_note": "獨立產業報導確認耦合電感已進入GB200與GB300且AI伺服器及ASIC產品將逐季放量"
+                },
+                {
+                  "source_url": "https://money.udn.com/money/story/11074/9405348",
+                  "source_date": "2026-03-26",
+                  "available_at": "2026-03-26",
+                  "source_family": "udn_finance",
+                  "evidence_note": "獨立媒體法說資料確認AI與HPC需求推升高階電感並切入800V以上HVDC應用"
+                }
+              ]
+            },
+            "ai_revenue_realization": {
+              "sources": [
+                {
+                  "source_url": "https://www.moneydj.com/kmdj/news/newsviewer.aspx?a=0ccc5549-a197-4502-ab81-cc62a3fd1201",
+                  "source_date": "2026-03-27",
+                  "available_at": "2026-03-27",
+                  "source_family": "moneydj_industry",
+                  "evidence_note": "獨立產業報導確認耦合電感已進入GB200與GB300且AI伺服器及ASIC產品將逐季放量"
+                },
+                {
+                  "source_url": "https://money.udn.com/money/story/11074/9405348",
+                  "source_date": "2026-03-26",
+                  "available_at": "2026-03-26",
+                  "source_family": "udn_finance",
+                  "evidence_note": "獨立媒體法說資料確認AI與HPC需求推升高階電感並切入800V以上HVDC應用"
+                }
+              ]
+            },
+            "financial_earnings_quality": {
+              "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3357&SYEAR=2026&SSEASON=2&REPORT_ID=C",
+              "source_date": "2026-10-16",
+              "available_at": "2026-10-16",
+              "source_family": "MOPS_XBRL_OFFICIAL",
+              "evidence_note": "r1-financial-quality-rubric-v0.1；本期與去年同期財報、營業現金流及資產負債比率；challenger草案，未啟用交易。"
+            },
+            "market_representation": {
+              "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/qfii?date=2026%2F10%2F16&response=json",
+              "source_date": "2026-10-16",
+              "available_at": "2026-10-16",
+              "source_family": "TWSE_TPEX_OFFICIAL_MARKET_AND_OWNERSHIP",
+              "evidence_note": "同題材內市值、20TD平均成交金額與官方外資持股比例百分位。"
+            }
+          },
+          "bottleneck_directness": 50.0,
+          "industry_technology_position": 50.0,
+          "ai_revenue_realization": 25.0,
+          "financial_earnings_quality": 70.6949,
+          "market_representation": 10.0,
+          "structural_leader": 45.13898,
+          "revenue_earnings_growth": null,
+          "self_historical_valuation": null,
+          "price_risk_safety": null,
+          "demand_order_catalyst": null,
+          "status": "READY",
+          "leader_missing_fields": [],
+          "priority_status": "DATA_MISSING",
+          "priority_missing_fields": [
+            "revenue_earnings_growth",
+            "self_historical_valuation",
+            "price_risk_safety",
+            "demand_order_catalyst"
+          ],
           "missing_fields": [
-            "industry_technology_position",
-            "ai_revenue_realization"
-          ]
+            "revenue_earnings_growth",
+            "self_historical_valuation",
+            "price_risk_safety",
+            "demand_order_catalyst"
+          ],
+          "leader_score": 45.13898,
+          "priority_score": null
         }
-      ]
+      ],
+      "data_gaps": []
     },
     {
       "theme_id": "thermal_management",
