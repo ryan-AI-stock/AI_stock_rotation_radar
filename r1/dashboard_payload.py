@@ -163,7 +163,8 @@ def _build_v03_dashboard(*, config: R1Config, market: dict, theme_review: dict,
            ("換倉檢視" if item["action"] == "REVIEW_SWITCH_IN" else
             RECOMMENDATION_DISPLAY.get((item["priority"], item["action"]),
                                        (item["priority"], item["action"]))[1]),
-           item.get("source_ticker", ""),
+           (f"{item.get('source_ticker')} {securities[item.get('source_ticker')].company}"
+            if item.get("source_ticker") in securities else item.get("source_ticker", "")),
            f"{item.get('target_ticker', '')} {item.get('target_company', '')}".strip(), item["reason"]]
           for item in recommendations],
     ])
