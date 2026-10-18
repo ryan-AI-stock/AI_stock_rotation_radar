@@ -5017,7 +5017,7 @@
           ]
         },
         "financial_earnings_quality": {
-          "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3081&SYEAR=2026&SSEASON=2&REPORT_ID=A",
+          "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3081&SYEAR=2026&SSEASON=2&REPORT_ID=C",
           "source_date": "2026-10-16",
           "available_at": "2026-10-16",
           "source_family": "MOPS_XBRL_OFFICIAL",

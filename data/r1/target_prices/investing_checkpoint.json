@@ -1,19 +1,19 @@
 {
   "completed": {
     "2330": {
-      "retrieved_at": "2026-10-17",
+      "retrieved_at": "2026-10-18",
       "row_count": 0,
       "status": "SOURCE_GAP",
       "error": "HTTPError:HTTP Error 403: "
     },
     "2327": {
-      "retrieved_at": "2026-10-17",
+      "retrieved_at": "2026-10-18",
       "row_count": 0,
       "status": "SOURCE_GAP",
       "error": "HTTPError:HTTP Error 403: "
     },
     "2344": {
-      "retrieved_at": "2026-10-17",
+      "retrieved_at": "2026-10-18",
       "row_count": 0,
       "status": "SOURCE_GAP",
       "error": "HTTPError:HTTP Error 403: "
@@ -326,57 +326,21 @@
     }
   },
   "last_summary": {
-    "retrieved_at": "2026-10-17",
+    "retrieved_at": "2026-10-18",
     "requested_ticker_count": 54,
-    "ready_ticker_count": 10,
-    "source_gap_ticker_count": 44,
-    "new_evidence_row_count": 14,
+    "ready_ticker_count": 0,
+    "reused_ready_ticker_count": 0,
+    "source_gap_ticker_count": 3,
+    "new_evidence_row_count": 0,
     "total_evidence_row_count": 114,
+    "attempted_ticker_count": 3,
+    "circuit_breaker_tripped": true,
+    "next_index": 3,
     "failures": {
       "2330": "HTTPError:HTTP Error 403: ",
       "2327": "HTTPError:HTTP Error 403: ",
-      "2344": "HTTPError:HTTP Error 403: ",
-      "2376": "HTTPError:HTTP Error 403: ",
-      "2454": "HTTPError:HTTP Error 403: ",
-      "6488": "HTTPError:HTTP Error 403: ",
-      "3661": "HTTPError:HTTP Error 403: ",
-      "2449": "HTTPError:HTTP Error 403: ",
-      "6223": "HTTPError:HTTP Error 403: ",
-      "6187": "HTTPError:HTTP Error 403: ",
-      "3583": "HTTPError:HTTP Error 403: ",
-      "2408": "HTTPError:HTTP Error 403: ",
-      "3008": "HTTPError:HTTP Error 403: ",
-      "2337": "HTTPError:HTTP Error 403: ",
-      "8299": "HTTPError:HTTP Error 403: ",
-      "3260": "HTTPError:HTTP Error 403: ",
-      "2383": "HTTPError:HTTP Error 403: ",
-      "6274": "HTTPError:HTTP Error 403: ",
-      "2368": "HTTPError:HTTP Error 403: ",
-      "2345": "HTTPError:HTTP Error 403: ",
-      "3363": "HTTPError:HTTP Error 403: ",
-      "4979": "HTTPError:HTTP Error 403: ",
-      "6442": "HTTPError:HTTP Error 403: ",
-      "3163": "HTTPError:HTTP Error 403: ",
-      "6282": "HTTPError:HTTP Error 403: ",
-      "6412": "HTTPError:HTTP Error 403: ",
-      "6781": "HTTPError:HTTP Error 403: ",
-      "2492": "HTTPError:HTTP Error 403: ",
-      "3357": "HTTPError:HTTP Error 403: ",
-      "3653": "HTTPError:HTTP Error 403: ",
-      "3324": "HTTPError:HTTP Error 403: ",
-      "6230": "HTTPError:HTTP Error 403: ",
-      "3338": "HTTPError:HTTP Error 403: ",
-      "3231": "HTTPError:HTTP Error 403: ",
-      "6669": "HTTPError:HTTP Error 403: ",
-      "2317": "HTTPError:HTTP Error 403: ",
-      "2356": "HTTPError:HTTP Error 403: ",
-      "3711": "ValueError:identifiable_analyst_target_rows_missing",
-      "2308": "HTTPError:HTTP Error 403: ",
-      "2379": "HTTPError:HTTP Error 403: ",
-      "3532": "HTTPError:HTTP Error 403: ",
-      "6182": "HTTPError:HTTP Error 403: ",
-      "1560": "HTTPError:HTTP Error 403: ",
-      "3131": "HTTPError:HTTP Error 403: "
+      "2344": "HTTPError:HTTP Error 403: "
     }
-  }
+  },
+  "next_index": 3
 }

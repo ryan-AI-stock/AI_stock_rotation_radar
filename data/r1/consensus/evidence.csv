@@ -122,6 +122,8 @@ ticker,fiscal_year,source_url,source_family,source_tier,available_at,note
 2454,2027,https://finance.yahoo.com/quote/2454.TW/analysis/,yahoo_finance_analyst_consensus,2,2026-10-14,Yahoo Finance公開分析師共識，22位分析師
 2454,2028,https://news.cnyes.com/news/print/6557957,factset_cnyes,2,2026-08-04,FactSet同篇列示2028 EPS高低平均與中位數
 2454,2028,https://toalpha.tw/stock/2454/estimates,toalpha_consensus,2,2026-10-02,18家共識平均265.33；單一來源，不單獨形成可交易共識
+2492,2026,https://finance.yahoo.com/quote/2492.TW/analysis/,yahoo_finance_analyst_consensus,2,2026-10-18,Yahoo Finance公開分析師共識，2位分析師
+2492,2027,https://finance.yahoo.com/quote/2492.TW/analysis/,yahoo_finance_analyst_consensus,2,2026-10-18,Yahoo Finance公開分析師共識，2位分析師
 3008,2026,https://toalpha.tw/stock/3008/estimates,toalpha_consensus,2,2026-10-06,21家共識平均184.63；單一來源，不單獨形成可交易共識
 3008,2026,https://finance.yahoo.com/quote/3008.TW/analysis/,yahoo_finance_analyst_consensus,2,2026-10-14,Yahoo Finance公開分析師共識，19位分析師
 3008,2027,https://toalpha.tw/stock/3008/estimates,toalpha_consensus,2,2026-10-06,19家共識平均204.05；單一來源，不單獨形成可交易共識
