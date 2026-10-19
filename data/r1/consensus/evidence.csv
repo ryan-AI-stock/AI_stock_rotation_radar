@@ -185,6 +185,10 @@ ticker,fiscal_year,source_url,source_family,source_tier,available_at,note
 3324,2028,https://toalpha.tw/stock/3324/estimates,toalpha_consensus,2,2026-10-05,8家共識平均93.52；單一來源，不單獨形成可交易共識
 3357,2026,https://toalpha.tw/stock/3357/estimates,toalpha_consensus,2,2026-10-05,4家共識平均11.12；單一來源，不單獨形成可交易共識
 3357,2027,https://toalpha.tw/stock/3357/estimates,toalpha_consensus,2,2026-10-05,2家共識平均14.56；單一來源，不單獨形成可交易共識
+6282,2026,https://118-163-171-8.cmoney.tw/forum/article/181672248,cmoney_broker_report_repost,3,2026-10-12,群益證券報告公開轉載；單一具名券商，僅旁證不可評分
+6282,2027,https://118-163-171-8.cmoney.tw/forum/article/181672248,cmoney_broker_report_repost,3,2026-10-12,群益證券報告公開轉載；單一具名券商，僅旁證不可評分
+3532,2026,https://hk.finance.yahoo.com/quote/3532.TW/analysis/,yahoo_finance_analyst_consensus,2,2026-10-19,Yahoo Finance單一分析師；低覆蓋旁證，不形成正式共識
+3532,2027,https://hk.finance.yahoo.com/quote/3532.TW/analysis/,yahoo_finance_analyst_consensus,2,2026-10-19,Yahoo Finance單一分析師；低覆蓋旁證，不形成正式共識
 3363,2026,https://kumoalpha.com/reports/20260317-shangchuan-3363,kumoalpha_public_research,2,2026-03-17,公開研究列示2026 EPS預估0.7至1.2；與ToAlpha差異大僅作交叉證據
 3363,2026,https://toalpha.tw/stock/3363/estimates,toalpha_consensus,2,2026-10-02,2家共識平均0.20；單一來源，不單獨形成可交易共識
 3363,2026,https://finance.yahoo.com/quote/3363.TWO/analysis/,yahoo_finance_analyst_consensus,2,2026-10-14,Yahoo Finance公開分析師共識，2位分析師
