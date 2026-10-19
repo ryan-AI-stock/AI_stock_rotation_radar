@@ -1,5 +1,5 @@
 {
-  "date": "2026-10-16",
+  "date": "2026-10-19",
   "positions": [
     {
       "ticker": "2330",
@@ -12,85 +12,85 @@
       "ticker": "2327",
       "company": "國巨",
       "shares": 1800,
-      "raw_close": 567.0,
-      "market_value": 1020600.0
+      "raw_close": 534.0,
+      "market_value": 961200.0
     },
     {
       "ticker": "2344",
       "company": "華邦電",
       "shares": 3000,
-      "raw_close": 161.5,
-      "market_value": 484500.0
+      "raw_close": 155.5,
+      "market_value": 466500.0
     },
     {
       "ticker": "2376",
       "company": "技嘉",
       "shares": 7000,
-      "raw_close": 357.5,
-      "market_value": 2502500.0
+      "raw_close": 352.0,
+      "market_value": 2464000.0
     },
     {
       "ticker": "2454",
       "company": "聯發科",
       "shares": 19,
-      "raw_close": 4250.0,
-      "market_value": 80750.0
+      "raw_close": 4205.0,
+      "market_value": 79895.0
     },
     {
       "ticker": "3037",
       "company": "欣興",
       "shares": 1176,
-      "raw_close": 1090.0,
-      "market_value": 1281840.0
+      "raw_close": 1120.0,
+      "market_value": 1317120.0
     },
     {
       "ticker": "6488",
       "company": "環球晶",
       "shares": 500,
-      "raw_close": 902.0,
-      "market_value": 451000.0
+      "raw_close": 882.0,
+      "market_value": 441000.0
     },
     {
       "ticker": "2408",
       "company": "南亞科",
       "shares": 1147,
-      "raw_close": 447.5,
-      "market_value": 513282.5
+      "raw_close": 436.0,
+      "market_value": 500092.0
     },
     {
       "ticker": "3081",
       "company": "聯亞",
       "shares": 220,
-      "raw_close": 2545.0,
-      "market_value": 559900.0
+      "raw_close": 2570.0,
+      "market_value": 565400.0
     },
     {
       "ticker": "2303",
       "company": "聯電",
       "shares": 5000,
-      "raw_close": 133.0,
-      "market_value": 665000.0
+      "raw_close": 131.5,
+      "market_value": 657500.0
     },
     {
       "ticker": "00631L",
       "company": "元大台灣50正2",
       "shares": 2500,
-      "raw_close": 37.15,
-      "market_value": 92875.0,
+      "raw_close": 36.51,
+      "market_value": 91275.0,
       "average_cost": 39.3212,
       "source": "Ryan broker screenshot supplied 2026-10-13"
     }
   ],
-  "equity_market_value": 13784527.5,
-  "visible_positions_market_value": 13784527.5,
+  "equity_market_value": 13676262.0,
+  "visible_positions_market_value": 13676262.0,
   "cash": 138151.0,
-  "nav": 13922678.5,
+  "nav": 13814413.0,
   "status": "READY",
   "gaps": [],
   "source": "r1_config_confirmed_shares_plus_official_raw_close",
   "comparison_excluded_equity": 6132280.0,
   "comparison_excluded_cash_income": 17733.0,
-  "comparison_equity_market_value": 7652247.5,
+  "comparison_equity_market_value": 7543982.0,
   "comparison_cash": 120418.0,
-  "comparison_nav": 7772665.5
+  "comparison_nav": 7664400.0
 }
