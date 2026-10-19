@@ -326,24 +326,21 @@
     }
   },
   "last_summary": {
-    "retrieved_at": "2026-10-18",
+    "retrieved_at": "2026-10-19",
     "requested_ticker_count": 54,
-    "ready_ticker_count": 5,
-    "reused_ready_ticker_count": 2,
-    "source_gap_ticker_count": 6,
-    "new_evidence_row_count": 5,
+    "ready_ticker_count": 7,
+    "reused_ready_ticker_count": 7,
+    "source_gap_ticker_count": 3,
+    "new_evidence_row_count": 0,
     "total_evidence_row_count": 115,
-    "attempted_ticker_count": 7,
+    "attempted_ticker_count": 3,
     "circuit_breaker_tripped": true,
-    "next_index": 15,
+    "next_index": 21,
     "failures": {
-      "6488": "HTTPError:HTTP Error 403: ",
-      "3661": "HTTPError:HTTP Error 403: ",
-      "6223": "ValueError:identifiable_analyst_target_rows_missing",
-      "6187": "HTTPError:HTTP Error 403: ",
-      "3583": "HTTPError:HTTP Error 403: ",
-      "2408": "HTTPError:HTTP Error 403: "
+      "3081": "HTTPError:HTTP Error 403: ",
+      "2337": "HTTPError:HTTP Error 403: ",
+      "8299": "HTTPError:HTTP Error 403: "
     }
   },
-  "next_index": 15
+  "next_index": 21
 }
