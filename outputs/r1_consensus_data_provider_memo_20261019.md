@@ -41,6 +41,9 @@
 
 - 範本：`data/r1/consensus/provider_import_template.csv`
 - 驗證器：`python -m r1.provider_consensus_import`
+- 目標價範本：`data/r1/target_prices/provider_import_template.csv`
+- 目標價驗證器：`python -m r1.provider_target_price_import`
 - 必要欄位包含 FY、EPS 統計、分析師數、來源、發布／可用／擷取時間與品質狀態。
 - 池外股票、缺欄位、未來資料、重複觀測與不合法來源層級會被拒絕，並在 audit 結果留下原因。
 - 驗證器只產生隔離的標準化檔案，不會自行併入正式評分；取得供應商試用檔後仍須先核對 coverage 與 PIT。
+- 目標價另要求具名機構、12個月目標、正數價格及90日內資料；正式快照仍須至少三家獨立機構才可評分。
