@@ -36,6 +36,19 @@ class RecommendationTest(unittest.TestCase):
         self.assertEqual(rows[0]["confidence"], "MEDIUM")
         self.assertIn("consensus_target_upside", rows[0]["blocking_gaps"])
 
+    def test_low_confidence_core_comparison_is_watch_only(self):
+        rows = build_recommendations(date="2026-10-10", candidates=[
+            {"ticker": "8299", "company": "群聯", "score": 82,
+             "target_upside": None,
+             "overlay_missing_components": ["consensus_target_upside"]},
+            {"ticker": "2454", "company": "聯發科", "score": 70,
+             "target_upside": None,
+             "overlay_missing_components": ["consensus_target_upside"]},
+        ], held_tickers={"2454"}, target_tickers={"2454"})
+        self.assertEqual(rows[0]["priority"], "WATCH1")
+        self.assertEqual(rows[0]["action"], "OBSERVE_ONLY")
+        self.assertEqual(rows[0]["execution_status"], "只觀察，不執行")
+
 
 if __name__ == "__main__":
     unittest.main()

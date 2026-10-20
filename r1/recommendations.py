@@ -66,19 +66,34 @@ def build_recommendations(*, date: str, candidates: list[dict[str, Any]], held_t
         reason = row.get("reason", "公開資料核心排名較前；僅供換倉檢視")
         if source:
             reason += f"；相較{source_ticker}核心分數高{float(row['score']) - float(source['score']):.1f}分"
+        confidence = (
+            "HIGH" if ticker in target_tickers and has_target_overlay
+            else "MEDIUM" if ticker in target_tickers or has_target_overlay
+            else "LOW"
+        )
+        item_no = len(results) + 1
+        if confidence == "HIGH":
+            priority = f"P{item_no}"
+            action = "REVIEW_SWITCH_IN"
+            execution_status = "資料完整度較高；Ryan人工檢視，不視為成交"
+        elif confidence == "MEDIUM":
+            priority = f"REVIEW{item_no}"
+            action = "REVIEW_SWITCH_IN"
+            execution_status = "資料部分完整；Ryan人工檢視，不視為成交"
+        else:
+            priority = f"WATCH{item_no}"
+            action = "OBSERVE_ONLY"
+            execution_status = "只觀察，不執行"
+            reason += "；尚無目標價覆蓋且非半年目標股，不構成換倉建議"
         results.append({
-            "date": date, "priority": f"P{len(results) + 1}", "action": "REVIEW_SWITCH_IN",
+            "date": date, "priority": priority, "action": action,
             "source_ticker": source_ticker, "target_ticker": ticker,
             "target_company": row.get("company", ""), "target_score": row["score"],
             "target_upside": row["target_upside"],
-            "confidence": (
-                "HIGH" if ticker in target_tickers and has_target_overlay
-                else "MEDIUM" if ticker in target_tickers or has_target_overlay
-                else "LOW"
-            ),
+            "confidence": confidence,
             "reason": reason,
             "blocking_gaps": "、".join(overlay_gaps),
-            "execution_status": "建議檢視，不視為成交",
+            "execution_status": execution_status,
         })
         if len(results) >= max_items:
             break
