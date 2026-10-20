@@ -1,6 +1,6 @@
 {
   "model": "R1",
-  "as_of_date": "2026-10-21",
+  "as_of_date": "2026-10-20",
   "fiscal_year": 2027,
   "requested_ticker_count": 54,
   "score_required_ticker_count": 52,
@@ -9,9 +9,9 @@
   "eps_revision_ready_count": 0,
   "eps_revision_progress": {
     "first_observation_date": "2026-10-02",
-    "observed_ticker_count": 47,
+    "observed_ticker_count": 46,
     "ready_counts": {
-      "1w": 42,
+      "1w": 14,
       "4w": 0,
       "12w": 0
     },
@@ -26,12 +26,443 @@
   "catalyst_score_ready_count": 52,
   "bottleneck_ready_count": 52,
   "price_chip_ready_count": 52,
-  "current_chip_ready_count": 0,
+  "current_chip_ready_count": 52,
   "component_score_ready_count": 0,
   "reference_score_ready_count": 52,
   "trade_ready_count": 0,
   "action_policy_approved": false,
-  "consensus_rejected": [],
+  "consensus_rejected": [
+    {
+      "line": "12",
+      "ticker": "1560",
+      "error": "future_data"
+    },
+    {
+      "line": "23",
+      "ticker": "1560",
+      "error": "future_data"
+    },
+    {
+      "line": "38",
+      "ticker": "2301",
+      "error": "future_data"
+    },
+    {
+      "line": "49",
+      "ticker": "2301",
+      "error": "future_data"
+    },
+    {
+      "line": "64",
+      "ticker": "2303",
+      "error": "future_data"
+    },
+    {
+      "line": "76",
+      "ticker": "2303",
+      "error": "future_data"
+    },
+    {
+      "line": "92",
+      "ticker": "2308",
+      "error": "future_data"
+    },
+    {
+      "line": "105",
+      "ticker": "2308",
+      "error": "future_data"
+    },
+    {
+      "line": "121",
+      "ticker": "2317",
+      "error": "future_data"
+    },
+    {
+      "line": "132",
+      "ticker": "2317",
+      "error": "future_data"
+    },
+    {
+      "line": "148",
+      "ticker": "2327",
+      "error": "future_data"
+    },
+    {
+      "line": "161",
+      "ticker": "2327",
+      "error": "future_data"
+    },
+    {
+      "line": "178",
+      "ticker": "2330",
+      "error": "future_data"
+    },
+    {
+      "line": "191",
+      "ticker": "2330",
+      "error": "future_data"
+    },
+    {
+      "line": "207",
+      "ticker": "2337",
+      "error": "future_data"
+    },
+    {
+      "line": "218",
+      "ticker": "2337",
+      "error": "future_data"
+    },
+    {
+      "line": "234",
+      "ticker": "2344",
+      "error": "future_data"
+    },
+    {
+      "line": "247",
+      "ticker": "2344",
+      "error": "future_data"
+    },
+    {
+      "line": "263",
+      "ticker": "2345",
+      "error": "future_data"
+    },
+    {
+      "line": "274",
+      "ticker": "2345",
+      "error": "future_data"
+    },
+    {
+      "line": "289",
+      "ticker": "2356",
+      "error": "future_data"
+    },
+    {
+      "line": "300",
+      "ticker": "2356",
+      "error": "future_data"
+    },
+    {
+      "line": "315",
+      "ticker": "2368",
+      "error": "future_data"
+    },
+    {
+      "line": "326",
+      "ticker": "2368",
+      "error": "future_data"
+    },
+    {
+      "line": "342",
+      "ticker": "2376",
+      "error": "future_data"
+    },
+    {
+      "line": "355",
+      "ticker": "2376",
+      "error": "future_data"
+    },
+    {
+      "line": "372",
+      "ticker": "2379",
+      "error": "future_data"
+    },
+    {
+      "line": "385",
+      "ticker": "2379",
+      "error": "future_data"
+    },
+    {
+      "line": "401",
+      "ticker": "2382",
+      "error": "future_data"
+    },
+    {
+      "line": "412",
+      "ticker": "2382",
+      "error": "future_data"
+    },
+    {
+      "line": "427",
+      "ticker": "2383",
+      "error": "future_data"
+    },
+    {
+      "line": "438",
+      "ticker": "2383",
+      "error": "future_data"
+    },
+    {
+      "line": "454",
+      "ticker": "2408",
+      "error": "future_data"
+    },
+    {
+      "line": "467",
+      "ticker": "2408",
+      "error": "future_data"
+    },
+    {
+      "line": "483",
+      "ticker": "2449",
+      "error": "future_data"
+    },
+    {
+      "line": "494",
+      "ticker": "2449",
+      "error": "future_data"
+    },
+    {
+      "line": "510",
+      "ticker": "2454",
+      "error": "future_data"
+    },
+    {
+      "line": "523",
+      "ticker": "2454",
+      "error": "future_data"
+    },
+    {
+      "line": "531",
+      "ticker": "2492",
+      "error": "future_data"
+    },
+    {
+      "line": "534",
+      "ticker": "2492",
+      "error": "future_data"
+    },
+    {
+      "line": "544",
+      "ticker": "3008",
+      "error": "future_data"
+    },
+    {
+      "line": "554",
+      "ticker": "3008",
+      "error": "future_data"
+    },
+    {
+      "line": "568",
+      "ticker": "3017",
+      "error": "future_data"
+    },
+    {
+      "line": "579",
+      "ticker": "3017",
+      "error": "future_data"
+    },
+    {
+      "line": "594",
+      "ticker": "3035",
+      "error": "future_data"
+    },
+    {
+      "line": "605",
+      "ticker": "3035",
+      "error": "future_data"
+    },
+    {
+      "line": "621",
+      "ticker": "3037",
+      "error": "future_data"
+    },
+    {
+      "line": "634",
+      "ticker": "3037",
+      "error": "future_data"
+    },
+    {
+      "line": "650",
+      "ticker": "3081",
+      "error": "future_data"
+    },
+    {
+      "line": "662",
+      "ticker": "3081",
+      "error": "future_data"
+    },
+    {
+      "line": "677",
+      "ticker": "3131",
+      "error": "future_data"
+    },
+    {
+      "line": "688",
+      "ticker": "3131",
+      "error": "future_data"
+    },
+    {
+      "line": "713",
+      "ticker": "3189",
+      "error": "future_data"
+    },
+    {
+      "line": "724",
+      "ticker": "3189",
+      "error": "future_data"
+    },
+    {
+      "line": "739",
+      "ticker": "3231",
+      "error": "future_data"
+    },
+    {
+      "line": "750",
+      "ticker": "3231",
+      "error": "future_data"
+    },
+    {
+      "line": "775",
+      "ticker": "3324",
+      "error": "future_data"
+    },
+    {
+      "line": "786",
+      "ticker": "3324",
+      "error": "future_data"
+    },
+    {
+      "line": "812",
+      "ticker": "3363",
+      "error": "future_data"
+    },
+    {
+      "line": "825",
+      "ticker": "3363",
+      "error": "future_data"
+    },
+    {
+      "line": "840",
+      "ticker": "3406",
+      "error": "future_data"
+    },
+    {
+      "line": "850",
+      "ticker": "3406",
+      "error": "future_data"
+    },
+    {
+      "line": "864",
+      "ticker": "3443",
+      "error": "future_data"
+    },
+    {
+      "line": "875",
+      "ticker": "3443",
+      "error": "future_data"
+    },
+    {
+      "line": "892",
+      "ticker": "3583",
+      "error": "future_data"
+    },
+    {
+      "line": "903",
+      "ticker": "3583",
+      "error": "future_data"
+    },
+    {
+      "line": "918",
+      "ticker": "3653",
+      "error": "future_data"
+    },
+    {
+      "line": "929",
+      "ticker": "3653",
+      "error": "future_data"
+    },
+    {
+      "line": "944",
+      "ticker": "3661",
+      "error": "future_data"
+    },
+    {
+      "line": "955",
+      "ticker": "3661",
+      "error": "future_data"
+    },
+    {
+      "line": "971",
+      "ticker": "3711",
+      "error": "future_data"
+    },
+    {
+      "line": "984",
+      "ticker": "3711",
+      "error": "future_data"
+    },
+    {
+      "line": "1010",
+      "ticker": "6187",
+      "error": "future_data"
+    },
+    {
+      "line": "1021",
+      "ticker": "6187",
+      "error": "future_data"
+    },
+    {
+      "line": "1036",
+      "ticker": "6223",
+      "error": "future_data"
+    },
+    {
+      "line": "1047",
+      "ticker": "6223",
+      "error": "future_data"
+    },
+    {
+      "line": "1062",
+      "ticker": "6274",
+      "error": "future_data"
+    },
+    {
+      "line": "1073",
+      "ticker": "6274",
+      "error": "future_data"
+    },
+    {
+      "line": "1111",
+      "ticker": "6488",
+      "error": "future_data"
+    },
+    {
+      "line": "1124",
+      "ticker": "6488",
+      "error": "future_data"
+    },
+    {
+      "line": "1140",
+      "ticker": "6669",
+      "error": "future_data"
+    },
+    {
+      "line": "1151",
+      "ticker": "6669",
+      "error": "future_data"
+    },
+    {
+      "line": "1166",
+      "ticker": "6781",
+      "error": "future_data"
+    },
+    {
+      "line": "1177",
+      "ticker": "6781",
+      "error": "future_data"
+    },
+    {
+      "line": "1192",
+      "ticker": "8299",
+      "error": "future_data"
+    },
+    {
+      "line": "1203",
+      "ticker": "8299",
+      "error": "future_data"
+    }
+  ],
   "consensus_evidence_rejected": [],
   "catalyst_rejected": [
     {
@@ -51,7 +482,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": false,
+      "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 33,
         "institutional_days": 33,
@@ -76,7 +507,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": false,
+      "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 33,
         "institutional_days": 33,
@@ -101,7 +532,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": false,
+      "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 33,
         "institutional_days": 33,
@@ -126,7 +557,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": false,
+      "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 33,
         "institutional_days": 33,
@@ -151,7 +582,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": false,
+      "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 33,
         "institutional_days": 33,
@@ -176,7 +607,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": false,
+      "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 33,
         "institutional_days": 33,
@@ -201,7 +632,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": false,
+      "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 33,
         "institutional_days": 33,
@@ -226,7 +657,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": false,
+      "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 33,
         "institutional_days": 33,
@@ -251,7 +682,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": false,
+      "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 33,
         "institutional_days": 33,
@@ -276,7 +707,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": false,
+      "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 33,
         "institutional_days": 33,
@@ -301,7 +732,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": false,
+      "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 33,
         "institutional_days": 33,
@@ -326,7 +757,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": false,
+      "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 33,
         "institutional_days": 33,
@@ -351,7 +782,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": false,
+      "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 33,
         "institutional_days": 33,
@@ -376,7 +807,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": false,
+      "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 33,
         "institutional_days": 33,
@@ -401,7 +832,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": false,
+      "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 33,
         "institutional_days": 33,
@@ -426,7 +857,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": false,
+      "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 33,
         "institutional_days": 33,
@@ -451,7 +882,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": false,
+      "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 33,
         "institutional_days": 33,
@@ -476,7 +907,7 @@
       "bottleneck_ready": false,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": false,
+      "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 33,
         "institutional_days": 33,
@@ -500,7 +931,7 @@
       "bottleneck_ready": false,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": false,
+      "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 33,
         "institutional_days": 33,
@@ -524,7 +955,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": false,
+      "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 33,
         "institutional_days": 33,
@@ -549,7 +980,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": false,
+      "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 33,
         "institutional_days": 33,
@@ -574,7 +1005,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": false,
+      "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 33,
         "institutional_days": 33,
@@ -599,7 +1030,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": false,
+      "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 33,
         "institutional_days": 33,
@@ -624,7 +1055,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": false,
+      "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 33,
         "institutional_days": 33,
@@ -649,7 +1080,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": false,
+      "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 33,
         "institutional_days": 33,
@@ -674,7 +1105,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": false,
+      "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 33,
         "institutional_days": 33,
@@ -699,7 +1130,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": false,
+      "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 33,
         "institutional_days": 33,
@@ -724,7 +1155,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": false,
+      "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 33,
         "institutional_days": 33,
@@ -749,7 +1180,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": false,
+      "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 33,
         "institutional_days": 33,
@@ -774,7 +1205,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": false,
+      "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 33,
         "institutional_days": 33,
@@ -799,7 +1230,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": false,
+      "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 33,
         "institutional_days": 33,
@@ -824,7 +1255,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": false,
+      "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 33,
         "institutional_days": 33,
@@ -849,7 +1280,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": false,
+      "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 33,
         "institutional_days": 33,
@@ -875,7 +1306,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": false,
+      "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 33,
         "institutional_days": 33,
@@ -900,7 +1331,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": false,
+      "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 33,
         "institutional_days": 33,
@@ -925,7 +1356,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": false,
+      "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 33,
         "institutional_days": 33,
@@ -951,7 +1382,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": false,
+      "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 33,
         "institutional_days": 33,
@@ -977,7 +1408,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": false,
+      "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 33,
         "institutional_days": 33,
@@ -1002,7 +1433,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": false,
+      "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 33,
         "institutional_days": 33,
@@ -1027,7 +1458,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": false,
+      "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 33,
         "institutional_days": 33,
@@ -1052,7 +1483,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": false,
+      "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 33,
         "institutional_days": 33,
@@ -1078,7 +1509,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": false,
+      "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 33,
         "institutional_days": 33,
@@ -1104,7 +1535,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": false,
+      "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 33,
         "institutional_days": 33,
@@ -1129,7 +1560,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": false,
+      "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 33,
         "institutional_days": 33,
@@ -1154,7 +1585,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": false,
+      "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 33,
         "institutional_days": 33,
@@ -1179,7 +1610,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": false,
+      "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 33,
         "institutional_days": 33,
@@ -1204,7 +1635,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": false,
+      "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 33,
         "institutional_days": 33,
@@ -1229,7 +1660,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": false,
+      "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 33,
         "institutional_days": 33,
@@ -1254,7 +1685,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": false,
+      "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 33,
         "institutional_days": 33,
@@ -1279,7 +1710,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": false,
+      "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 33,
         "institutional_days": 33,
@@ -1304,7 +1735,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": false,
+      "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 33,
         "institutional_days": 33,
@@ -1330,7 +1761,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": false,
+      "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 33,
         "institutional_days": 33,
@@ -1356,7 +1787,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": false,
+      "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 33,
         "institutional_days": 33,
@@ -1381,7 +1812,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
-      "current_chip_ready": false,
+      "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 33,
         "institutional_days": 33,
