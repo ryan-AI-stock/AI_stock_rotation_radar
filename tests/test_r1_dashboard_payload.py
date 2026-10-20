@@ -74,6 +74,9 @@ class R1DashboardPayloadTest(unittest.TestCase):
         self.assertIn("不自動成交", [cell for row in actions for cell in row])
         signals = payload["tabs"]["R1每日訊號資料庫"]
         self.assertEqual(next(row for row in signals if row[1] == "2330")[23], "CORE")
+        mediatek = next(row for row in signals if row[1] == "2454")
+        self.assertEqual(mediatek[23], "OBSERVE_ONLY")
+        self.assertEqual(mediatek[24], "REPORT_ONLY_CORE_READY")
 
     def test_complete_theme_review_materializes_top3_and_priority_score(self):
         import json

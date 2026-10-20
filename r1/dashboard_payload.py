@@ -540,8 +540,8 @@ def build_dashboard_payload(
         valuation_row = valuation_by_ticker.get(security.ticker, {})
         if security.core_lock:
             action, reason = "CORE", "CORE_LOCK"
-        elif readiness_row.get("trade_ready"):
-            action, reason = "WATCH", "ACTION_ENGINE_NOT_MATERIALIZED"
+        elif readiness_row.get("reference_score_ready"):
+            action, reason = "OBSERVE_ONLY", "REPORT_ONLY_CORE_READY"
         else:
             action = "DATA_MISSING"
             reason = ";".join(readiness_row.get("blocked_reasons", ["READINESS_NOT_MATERIALIZED"]))
