@@ -118,15 +118,23 @@ def parse_eps_page(text: str, *, ticker: str, retrieved_at: str) -> list[dict[st
 
 def acquire(*, tickers: list[str], consensus_path: str | Path, evidence_path: str | Path,
             checkpoint_path: str | Path, retrieved_at: str | None = None,
-            timeout: int = 30) -> dict:
+            timeout: int = 30, preserve_unrequested_checkpoint_entries: bool = False) -> dict:
     retrieved_at = retrieved_at or date.today().isoformat()
     checkpoint = Path(checkpoint_path)
     checkpoint.parent.mkdir(parents=True, exist_ok=True)
-    progress = json.loads(checkpoint.read_text(encoding="utf-8")) if checkpoint.exists() else {
+    stored_progress = json.loads(checkpoint.read_text(encoding="utf-8")) if checkpoint.exists() else {
         "retrieved_at": retrieved_at, "completed": {}, "failed": {},
     }
-    if progress.get("retrieved_at") != retrieved_at:
-        progress = {"retrieved_at": retrieved_at, "completed": {}, "failed": {}}
+    if stored_progress.get("retrieved_at") != retrieved_at:
+        stored_progress = {"retrieved_at": retrieved_at, "completed": {}, "failed": {}}
+    allowed = {str(ticker).zfill(4) for ticker in tickers}
+    outside = {
+        "completed": {ticker: value for ticker, value in stored_progress.get("completed", {}).items()
+                      if ticker not in allowed},
+        "failed": {ticker: value for ticker, value in stored_progress.get("failed", {}).items()
+                   if ticker not in allowed},
+    } if preserve_unrequested_checkpoint_entries else {"completed": {}, "failed": {}}
+    progress = stored_progress
     progress = _prune_progress(progress, tickers)
     for ticker in tickers:
         expected_years = required_fiscal_years(retrieved_at)
@@ -154,7 +162,12 @@ def acquire(*, tickers: list[str], consensus_path: str | Path, evidence_path: st
             progress["failed"].pop(ticker, None)
         except (requests.RequestException, browser_requests.errors.RequestsError, ValueError) as exc:
             progress["failed"][ticker] = {"url": url, "error": str(exc)}
-        checkpoint.write_text(json.dumps(progress, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        checkpoint_payload = {
+            "retrieved_at": retrieved_at,
+            "completed": {**outside["completed"], **progress["completed"]},
+            "failed": {**outside["failed"], **progress["failed"]},
+        }
+        checkpoint.write_text(json.dumps(checkpoint_payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     _upsert_missing(progress, Path(consensus_path), Path(evidence_path))
     return {
         "requested_ticker_count": len(tickers),
@@ -232,6 +245,7 @@ def main() -> None:
         tickers=tickers,
         consensus_path=args.consensus, evidence_path=args.evidence,
         checkpoint_path=args.checkpoint, retrieved_at=args.retrieved_at,
+        preserve_unrequested_checkpoint_entries=bool(args.tickers),
     )
     print(json.dumps(result, ensure_ascii=False, indent=2))
     if args.require_complete and result["failed_ticker_count"]:

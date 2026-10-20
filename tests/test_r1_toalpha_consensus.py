@@ -1,9 +1,12 @@
+import json
 import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 from r1.toalpha_consensus import (
-    _prune_progress, _upsert_missing, parse_eps_page, parse_estimates_page, required_fiscal_years,
+    _prune_progress, _upsert_missing, acquire, parse_eps_page, parse_estimates_page,
+    required_fiscal_years,
 )
 
 
@@ -58,6 +61,26 @@ class ToAlphaConsensusTest(unittest.TestCase):
         self.assertEqual(rows[0]["fiscal_year"], "2028")
         self.assertEqual(rows[0]["mean_eps"], "49.65")
         self.assertEqual(rows[0]["analyst_count"], "2")
+
+    def test_targeted_retry_preserves_unrequested_checkpoint_entries(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            checkpoint = root / "checkpoint.json"
+            checkpoint.write_text(json.dumps({
+                "retrieved_at": "2026-10-21",
+                "completed": {"2330": {"url": "old", "rows": []}},
+                "failed": {"2454": {"error": "old"}},
+            }), encoding="utf-8")
+            with patch("r1.toalpha_consensus._get_public_page", side_effect=ValueError("missing")):
+                acquire(
+                    tickers=["6282"], consensus_path=root / "consensus.csv",
+                    evidence_path=root / "evidence.csv", checkpoint_path=checkpoint,
+                    retrieved_at="2026-10-21", preserve_unrequested_checkpoint_entries=True,
+                )
+            stored = json.loads(checkpoint.read_text(encoding="utf-8"))
+            self.assertIn("2330", stored["completed"])
+            self.assertIn("2454", stored["failed"])
+            self.assertIn("6282", stored["failed"])
 
 
 if __name__ == "__main__":
