@@ -84,7 +84,14 @@ def build_recommendations(*, date: str, candidates: list[dict[str, Any]], held_t
             priority = f"WATCH{item_no}"
             action = "OBSERVE_ONLY"
             execution_status = "只觀察，不執行"
-            reason += "；尚無目標價覆蓋且非半年目標股，不構成換倉建議"
+            anonymous_upside = row.get("anonymous_target_upside")
+            if anonymous_upside is not None:
+                reason += (
+                    f"；匿名市場目標價中位上行{float(anonymous_upside):+.1%}，僅供參考；"
+                    "尚無具名三機構嚴格共識且非半年目標股，不構成換倉建議"
+                )
+            else:
+                reason += "；尚無具名三機構嚴格共識且非半年目標股，不構成換倉建議"
         results.append({
             "date": date, "priority": priority, "action": action,
             "source_ticker": source_ticker, "target_ticker": ticker,

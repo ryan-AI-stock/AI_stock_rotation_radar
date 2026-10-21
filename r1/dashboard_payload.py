@@ -284,6 +284,7 @@ def build_dashboard_payload(
     actual_account_path: str | Path = "data/r1/actual_account_state.json",
     benchmark_market_path: str | Path = "data/r1/benchmark_market_latest.json",
     target_price_path: str | Path = "data/r1/target_prices/latest.json",
+    anonymous_target_price_path: str | Path = "data/r1/target_prices/yahoo_aggregate_latest.json",
     v05_rank_path: str | Path = "data/r1/v05/latest.json",
 ) -> dict:
     config = R1Config.load(config_path)
@@ -331,6 +332,12 @@ def build_dashboard_payload(
     target_price_file = Path(target_price_path)
     target_prices = json.loads(target_price_file.read_text(encoding="utf-8")) if target_price_file.exists() else {"rows": []}
     target_price_by_ticker = {str(row.get("ticker", "")).zfill(4): row for row in target_prices.get("rows", [])}
+    anonymous_target_file = Path(anonymous_target_price_path)
+    anonymous_targets = json.loads(anonymous_target_file.read_text(encoding="utf-8")) if anonymous_target_file.exists() else {"rows": []}
+    anonymous_target_by_ticker = {
+        str(row.get("ticker", "")).zfill(4): row for row in anonymous_targets.get("rows", [])
+        if row.get("scoreable") is False and str(row.get("status", "")).startswith("READY_AGGREGATE")
+    }
     v05_file = Path(v05_rank_path)
     v05_payload = json.loads(v05_file.read_text(encoding="utf-8")) if v05_file.exists() else {"rows": []}
     if v05_payload.get("date") != market.get("date"):
@@ -353,6 +360,7 @@ def build_dashboard_payload(
             "missing_components": v05.get("v05_missing_components", []),
             "overlay_missing_components": v05.get("v05_target_overlay_missing_components", []),
             "target_upside": target_price_by_ticker.get(ticker, {}).get("consensus_upside"),
+            "anonymous_target_upside": anonymous_target_by_ticker.get(ticker, {}).get("median_upside"),
             "reason": v05.get("v05_reason"),
         })
     recommendations = build_recommendations(

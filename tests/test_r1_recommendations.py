@@ -49,6 +49,20 @@ class RecommendationTest(unittest.TestCase):
         self.assertEqual(rows[0]["action"], "OBSERVE_ONLY")
         self.assertEqual(rows[0]["execution_status"], "只觀察，不執行")
 
+    def test_anonymous_target_is_disclosed_but_does_not_raise_confidence(self):
+        rows = build_recommendations(date="2026-10-10", candidates=[
+            {"ticker": "8299", "company": "群聯", "score": 82,
+             "target_upside": None, "anonymous_target_upside": .25,
+             "overlay_missing_components": ["consensus_target_upside"]},
+            {"ticker": "2454", "company": "聯發科", "score": 70,
+             "target_upside": None,
+             "overlay_missing_components": ["consensus_target_upside"]},
+        ], held_tickers={"2454"}, target_tickers={"2454"})
+        self.assertEqual(rows[0]["confidence"], "LOW")
+        self.assertEqual(rows[0]["action"], "OBSERVE_ONLY")
+        self.assertIn("匿名市場目標價中位上行+25.0%", rows[0]["reason"])
+        self.assertIn("尚無具名三機構嚴格共識", rows[0]["reason"])
+
 
 if __name__ == "__main__":
     unittest.main()
