@@ -25,7 +25,11 @@ class R1DashboardPayloadTest(unittest.TestCase):
         self.assertIn("04｜無差別殺盤過渡層（研究觀察）", sections)
         self.assertIn("05｜分數規則", sections)
         self.assertIn("06｜更新排程", sections)
-        self.assertIn("07｜模型完整說明", sections)
+        self.assertIn("07｜資料品質異常表", sections)
+        self.assertIn("08｜模型完整說明", sections)
+        eps_quality = next(row for row in dashboard if row[0] == "法人EPS共識")
+        self.assertRegex(eps_quality[1], r"\d+/52")
+        self.assertIn("只降低信心", eps_quality[4])
         data_status = next(row[1] for row in dashboard if row[0] == "資料狀態")
         self.assertIn("公開資料核心 52/52", data_status)
         # Coverage grows as new PIT evidence is collected.  Do not freeze an

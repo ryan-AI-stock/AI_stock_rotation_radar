@@ -100,6 +100,10 @@ def _build_v03_dashboard(*, config: R1Config, market: dict, theme_review: dict,
     )
     revision_progress = readiness.get("eps_revision_progress", {})
     revision_ready = revision_progress.get("ready_counts", {})
+    required_rows = [row for row in readiness.get("rows", []) if row.get("score_required", True)]
+    missing_consensus = [str(row.get("ticker", "")).zfill(4) for row in required_rows
+                         if not row.get("consensus_ready")]
+    target_missing_count = max(len(v05_by_ticker) - target_consensus_ready_count, 0)
     for ticker, row in v05_by_ticker.items():
         if row.get("v05_reference_score") is not None:
             reference_by_ticker[ticker] = row["v05_reference_score"]
@@ -222,7 +226,22 @@ def _build_v03_dashboard(*, config: R1Config, market: dict, theme_review: dict,
         ["每週最後交易日", "更新需求、訂單、事件與風險", "週度證據狀態", "證據不足維持原值或待資料", "無"],
         ["每季財報揭露後", f"重評{len(themes)}題材Top3", "季度排名", "全題材成分證據完整才發布", "無"],
         ["每半年", "檢討題材與成分股", "增刪建議與證據", "保留歷史版本", "無"],
-        ["07｜模型完整說明"],
+        ["07｜資料品質異常表"],
+        ["項目", "目前覆蓋", "缺口", "處理方式", "是否阻擋核心排名"],
+        ["公開核心五構面", f"{public_core_ready_count}/{len(v05_by_ticker)}",
+         "無" if public_core_ready_count == len(v05_by_ticker) else "仍有必要構面缺漏",
+         "每日收盤後有限重試", "是" if public_core_ready_count < len(v05_by_ticker) else "否"],
+        ["法人EPS共識", f"{readiness.get('consensus_ready_count', 0)}/{len(v05_by_ticker)}",
+         "無" if not missing_consensus else "缺：" + "、".join(missing_consensus),
+         "每週重抓；單一來源不升格", "否，只降低信心"],
+        ["嚴格法人目標價", f"{target_consensus_ready_count}/{len(v05_by_ticker)}",
+         f"缺{target_missing_count}檔",
+         "每週有限重試；需90日內至少3家可識別機構", "否，只降低信心"],
+        ["EPS修正歷史", f"1W {revision_ready.get('1w', 0)}／4W {revision_ready.get('4w', 0)}／12W {revision_ready.get('12w', 0)}",
+         f"4W最早{revision_progress.get('earliest_calendar_eligibility', {}).get('4w', '待累積')}；"
+         f"12W最早{revision_progress.get('earliest_calendar_eligibility', {}).get('12w', '待累積')}",
+         "只累積真實PIT快照，不回填", "否，只降低信心"],
+        ["08｜模型完整說明"],
         [MODEL_LOGIC],
     ])
     return rows
