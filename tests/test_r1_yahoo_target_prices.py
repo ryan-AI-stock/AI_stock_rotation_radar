@@ -1,11 +1,22 @@
 from __future__ import annotations
 
 import unittest
+from unittest.mock import MagicMock, patch
 
-from r1.yahoo_target_prices import parse_targets
+from r1.yahoo_target_prices import _fetch_targets_with_retry, parse_targets
 
 
 class YahooTargetPricesTest(unittest.TestCase):
+    def test_transport_failure_is_retried_three_times(self) -> None:
+        ticker = MagicMock()
+        ticker.get_analyst_price_targets.side_effect = RuntimeError("temporary")
+        with patch("r1.yahoo_target_prices.yf.Ticker", return_value=ticker) as factory:
+            with patch("r1.yahoo_target_prices.time.sleep"):
+                with self.assertRaises(RuntimeError):
+                    _fetch_targets_with_retry("2330.TW")
+        self.assertEqual(factory.call_count, 3)
+        self.assertEqual(ticker.get_analyst_price_targets.call_count, 3)
+
     def test_parses_anonymous_aggregate_as_non_scoreable(self) -> None:
         row = parse_targets(
             {"current": 100, "low": 90, "mean": 130, "median": 125, "high": 160},

@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import time
 from datetime import date
 from pathlib import Path
 from typing import Any
@@ -9,6 +10,20 @@ from typing import Any
 import yfinance as yf
 
 from r1.config import R1Config
+
+
+def _fetch_targets_with_retry(symbol: str, *, attempts: int = 3, delay_seconds: float = 2):
+    """Retry acquisition errors only; valid missing fields are handled by parse_targets."""
+    last_error = None
+    for attempt in range(1, attempts + 1):
+        try:
+            return yf.Ticker(symbol).get_analyst_price_targets()
+        except Exception as exc:
+            last_error = exc
+            if attempt < attempts:
+                time.sleep(delay_seconds)
+    assert last_error is not None
+    raise last_error
 
 
 def parse_targets(payload: dict[str, Any] | None, *, ticker: str, symbol: str,
@@ -60,7 +75,7 @@ def acquire(*, config_path: str | Path, output_path: str | Path,
         symbol = ticker + (".TWO" if market == "TPEx" else ".TW")
         try:
             state["completed"][ticker] = parse_targets(
-                yf.Ticker(symbol).get_analyst_price_targets(),
+                _fetch_targets_with_retry(symbol),
                 ticker=ticker, symbol=symbol, retrieved_at=retrieved_at,
             )
             state["failed"].pop(ticker, None)

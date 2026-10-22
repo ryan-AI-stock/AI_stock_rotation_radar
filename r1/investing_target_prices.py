@@ -22,7 +22,7 @@ FIELDS = (
 )
 
 
-def _get(url: str, *, timeout: int = 30, attempts: int = 2) -> str:
+def _get(url: str, *, timeout: int = 30, attempts: int = 3) -> str:
     from curl_cffi import requests as curl_requests
 
     last_error: Exception | None = None
