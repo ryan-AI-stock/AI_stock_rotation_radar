@@ -20,6 +20,18 @@ CATCH_UP_ORDER = {
 }
 
 
+def pool_status(*, selected_count: int, minimum: int, rows: list[dict]) -> str:
+    if selected_count >= minimum:
+        return "READY"
+    if any(
+        row.get("six_month_earnings_visibility") == "DATA_MISSING"
+        or row.get("six_month_risk_gate") == "DATA_MISSING"
+        for row in rows
+    ):
+        return "WAITING_REQUIRED_DATA"
+    return "BELOW_TARGET_QUALITY_GATES"
+
+
 def estimate_dispersion(*, high: float | None, median: float | None, low: float | None,
                         analyst_count: int | None, minimum_analyst_count: int) -> tuple[float | None, str]:
     if high is None or median in {None, 0} or low is None or analyst_count is None:
@@ -237,19 +249,29 @@ def materialize(*, as_of_date: str, theme_path: str | Path, weekly_path: str | P
     for index, row in enumerate(selected, start=1):
         row["active_pool_rank"] = index
     selected_tickers = {row["ticker"] for row in selected}
+    minimum = int(policy["target_pool_size"]["minimum"])
+    weekly_in_universe_count = sum(ticker in weekly_rows for ticker in theme_names)
+    data_blocked_count = sum(
+        row["six_month_earnings_visibility"] == "DATA_MISSING"
+        or row["six_month_risk_gate"] == "DATA_MISSING"
+        for row in output_rows
+    )
     payload = {
         "model": "R1", "version": policy["version"], "date": as_of_date,
         "structural_universe_count": len(theme_names),
-        "weekly_snapshot_coverage": {"actual": len(weekly_rows), "requested": len(theme_names)},
+        "weekly_snapshot_coverage": {"actual": weekly_in_universe_count, "requested": len(theme_names)},
         "official_financial_coverage": {
             "actual": sum(row.get("status") == "READY" for row in financial_rows.values()),
             "requested": len(theme_names),
         },
-        "active_pool_target_minimum": int(policy["target_pool_size"]["minimum"]),
+        "active_pool_target_minimum": minimum,
         "active_pool_target_maximum": maximum,
         "active_pool_count": len(selected),
-        "active_pool_status": "READY" if len(selected) >= int(policy["target_pool_size"]["minimum"])
-        else "BELOW_TARGET_DATA_OR_QUALITY_GATES",
+        "active_pool_status": pool_status(
+            selected_count=len(selected), minimum=minimum, rows=output_rows,
+        ),
+        "data_blocked_count": data_blocked_count,
+        "quality_gate_rejected_count": len(output_rows) - data_blocked_count - len(selected),
         "rows": sorted(output_rows, key=lambda row: (row["ticker"] not in selected_tickers, row["active_pool_rank"] or 999, row["ticker"])),
         "catalyst_rejected": catalyst_rejected, "bottleneck_rejected": bottleneck_rejected,
         "missing_value_policy": policy["missing_value_policy"],

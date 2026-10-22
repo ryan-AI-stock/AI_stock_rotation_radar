@@ -3,7 +3,7 @@ from __future__ import annotations
 import unittest
 
 from r1.active_pool import (
-    catch_up_state, dispersion_state, earnings_visibility, estimate_dispersion, risk_gate,
+    catch_up_state, dispersion_state, earnings_visibility, estimate_dispersion, pool_status, risk_gate,
 )
 
 
@@ -15,6 +15,16 @@ POLICY = {
 
 
 class R1ActivePoolTest(unittest.TestCase):
+    def test_pool_status_distinguishes_waiting_data_from_quality_rejection(self) -> None:
+        self.assertEqual(pool_status(
+            selected_count=0, minimum=5,
+            rows=[{"six_month_earnings_visibility": "DATA_MISSING", "six_month_risk_gate": "DATA_MISSING"}],
+        ), "WAITING_REQUIRED_DATA")
+        self.assertEqual(pool_status(
+            selected_count=0, minimum=5,
+            rows=[{"six_month_earnings_visibility": "LOW", "six_month_risk_gate": "FAIL"}],
+        ), "BELOW_TARGET_QUALITY_GATES")
+
     def test_estimate_dispersion_requires_coverage(self) -> None:
         value, status = estimate_dispersion(
             high=12, median=10, low=8, analyst_count=2, minimum_analyst_count=3,
