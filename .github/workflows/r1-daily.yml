@@ -21,16 +21,16 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: Sync latest main after concurrency wait
         shell: bash
         run: git pull --rebase origin main
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           repository: ryan-AI-stock/AI_stock_schedule_rules
           ref: main
           path: AI_stock_schedule_rules
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v7
         with:
           python-version: "3.11"
       - run: pip install '.[test]'
@@ -46,7 +46,7 @@ jobs:
           fi
       - name: Restore source cache
         if: steps.gate.outputs.should_run == 'true'
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: data/current_base_cycle_source_cache
           key: r1-source-${{ github.ref_name }}-${{ github.run_id }}
