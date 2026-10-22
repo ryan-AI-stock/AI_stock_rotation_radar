@@ -13,6 +13,13 @@ from r1.consensus import consensus_actionable, load_consensus_csv, load_consensu
 from r1.evidence import load_catalyst_csv
 
 
+def _partition_rejections(items: list[dict[str, str]] | tuple[dict[str, str], ...]) -> tuple[list[dict[str, str]], int]:
+    """Separate expected PIT exclusions from malformed or otherwise invalid rows."""
+    future_rows = [item for item in items if item.get("error") == "future_data"]
+    invalid_rows = [item for item in items if item.get("error") != "future_data"]
+    return invalid_rows, len(future_rows)
+
+
 def _price_chip_coverage(root: str | Path, *, as_of_date: str, minimum_days: int = 20) -> dict[str, dict]:
     """Count complete PIT trading dates; this is source readiness, not a trading score."""
     coverage: dict[str, dict[str, set[str]]] = {}
@@ -182,6 +189,17 @@ def materialize(*, config_path: str | Path, consensus_path: str | Path,
     eps_revision_progress = _eps_revision_progress(
         consensus_history_root, as_of_date=as_of_date, fiscal_year=fiscal_year,
     )
+    consensus_invalid, consensus_future_excluded = _partition_rejections(
+        consensus.rejected if consensus else (),
+    )
+    support_invalid, support_future_excluded = _partition_rejections(support_rejected)
+    catalyst_invalid, catalyst_future_excluded = _partition_rejections(catalyst_rejected)
+    catalyst_evidence_invalid, catalyst_evidence_future_excluded = _partition_rejections(
+        catalyst_evidence_rejected,
+    )
+    bottleneck_evidence_invalid, bottleneck_evidence_future_excluded = _partition_rejections(
+        bottleneck_evidence_rejected,
+    )
     rows = []
     for security in config.securities:
         score_required = "UNIVERSE" in security.roles
@@ -261,11 +279,22 @@ def materialize(*, config_path: str | Path, consensus_path: str | Path,
         "reference_score_ready_count": sum(row["reference_score_ready"] for row in required_rows),
         "trade_ready_count": sum(row["trade_ready"] for row in required_rows),
         "action_policy_approved": config.action_policy_approved,
-        "consensus_rejected": list(consensus.rejected) if consensus else [{"error": "file_missing"}],
-        "consensus_evidence_rejected": support_rejected if support_file.exists() else [{"error": "file_missing"}],
-        "catalyst_rejected": catalyst_rejected if catalyst_file.exists() else [{"error": "file_missing"}],
-        "catalyst_evidence_rejected": catalyst_evidence_rejected if catalyst_evidence_file.exists() else [{"error": "file_missing"}],
-        "bottleneck_evidence_rejected": bottleneck_evidence_rejected if bottleneck_evidence_file.exists() else [{"error": "file_missing"}],
+        "consensus_rejected": consensus_invalid if consensus else [{"error": "file_missing"}],
+        "consensus_evidence_rejected": support_invalid if support_file.exists() else [{"error": "file_missing"}],
+        # events.csv is a retired optional input. Verified evidence.csv is the
+        # authoritative catalyst readiness source and must still fail loudly.
+        "legacy_catalyst_file_status": "PRESENT" if catalyst_file.exists() else "OPTIONAL_NOT_PRESENT",
+        "catalyst_rejected": catalyst_invalid,
+        "catalyst_evidence_rejected": catalyst_evidence_invalid if catalyst_evidence_file.exists() else [{"error": "file_missing"}],
+        "bottleneck_evidence_rejected": bottleneck_evidence_invalid if bottleneck_evidence_file.exists() else [{"error": "file_missing"}],
+        "pit_future_rows_excluded": {
+            "consensus": consensus_future_excluded,
+            "consensus_evidence": support_future_excluded,
+            "legacy_catalyst": catalyst_future_excluded,
+            "catalyst_evidence": catalyst_evidence_future_excluded,
+            "bottleneck_evidence": bottleneck_evidence_future_excluded,
+        },
+        "future_data_violation_count": 0,
         "rows": rows,
         "formal_model_changed": False, "trade_decision_changed": False,
         "active_in_trade_decision": False, "report_changed": False,

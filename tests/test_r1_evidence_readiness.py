@@ -94,6 +94,27 @@ class R1EvidenceReadinessTest(unittest.TestCase):
             row = next(item for item in result["rows"] if item["ticker"] == "2330")
             self.assertTrue(row["catalyst_ready"])
             self.assertTrue(row["catalyst_score_ready"])
+            self.assertEqual(result["legacy_catalyst_file_status"], "OPTIONAL_NOT_PRESENT")
+            self.assertEqual(result["catalyst_rejected"], [])
+
+    def test_future_consensus_rows_are_reported_as_excluded_not_invalid(self):
+        with TemporaryDirectory() as folder:
+            root = Path(folder)
+            consensus = root / "consensus.csv"
+            consensus.write_text(
+                "ticker,fiscal_year,mean_eps,median_eps,high_eps,low_eps,analyst_count,source,published_at,available_at,retrieved_at,quality,status\n"
+                "2330,2027,100,100,,,10,x,2026-10-01,2026-10-01,2026-10-01,MEDIUM,READY\n"
+                "2454,2027,90,90,,,10,x,2026-10-02,2026-10-02,2026-10-02,MEDIUM,READY\n",
+                encoding="utf-8",
+            )
+            result = materialize(
+                config_path="config/r1.json", consensus_path=consensus,
+                catalyst_path=root / "optional-events.csv", daily_source_root=root / "daily",
+                as_of_date="2026-10-01",
+            )
+            self.assertEqual(result["consensus_rejected"], [])
+            self.assertEqual(result["pit_future_rows_excluded"]["consensus"], 1)
+            self.assertEqual(result["future_data_violation_count"], 0)
 
     def test_price_chip_requires_twenty_complete_dates(self):
         with TemporaryDirectory() as folder:
