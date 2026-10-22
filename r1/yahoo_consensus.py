@@ -3,12 +3,27 @@ from __future__ import annotations
 import argparse
 import csv
 import json
+import time
 from datetime import date
 from pathlib import Path
 
 import yfinance as yf
 
 from r1.toalpha_consensus import CONSENSUS_FIELDS, EVIDENCE_FIELDS
+
+
+def _fetch_estimates_with_retry(symbol: str, *, attempts: int = 3, delay_seconds: float = 2):
+    """Retry acquisition failures without retrying valid empty/incomplete tables."""
+    last_error = None
+    for attempt in range(1, attempts + 1):
+        try:
+            return yf.Ticker(symbol).get_earnings_estimate(as_dict=False)
+        except Exception as exc:
+            last_error = exc
+            if attempt < attempts:
+                time.sleep(delay_seconds)
+    assert last_error is not None
+    raise last_error
 
 
 def parse_estimates(table, *, ticker: str, retrieved_at: str) -> list[dict[str, str]]:
@@ -71,7 +86,7 @@ def acquire(*, tickers: list[str], consensus_path: str | Path, evidence_path: st
             continue
         try:
             suffix = ".TWO" if (market_by_ticker or {}).get(ticker) == "TPEx" else ".TW"
-            table = yf.Ticker(ticker + suffix).get_earnings_estimate(as_dict=False)
+            table = _fetch_estimates_with_retry(ticker + suffix)
             rows = parse_estimates(table, ticker=ticker, retrieved_at=retrieved_at)
             state["completed"][ticker] = {"symbol": ticker + suffix, "rows": rows}
             state["failed"].pop(ticker, None)

@@ -5,6 +5,7 @@ import csv
 import html
 import json
 import re
+import time
 from datetime import date
 from pathlib import Path
 
@@ -31,6 +32,20 @@ def _get_public_page(url: str, *, timeout: int):
     fallback = browser_requests.get(url, timeout=timeout, impersonate="chrome")
     fallback.raise_for_status()
     return fallback
+
+
+def _get_public_page_with_retry(url: str, *, timeout: int, attempts: int = 3, delay_seconds: float = 2):
+    """Retry transport failures only; missing source data remains a terminal gap."""
+    last_error = None
+    for attempt in range(1, attempts + 1):
+        try:
+            return _get_public_page(url, timeout=timeout)
+        except (requests.RequestException, browser_requests.errors.RequestsError) as exc:
+            last_error = exc
+            if attempt < attempts:
+                time.sleep(delay_seconds)
+    assert last_error is not None
+    raise last_error
 
 
 def required_fiscal_years(as_of_date: str) -> set[str]:
@@ -145,12 +160,14 @@ def acquire(*, tickers: list[str], consensus_path: str | Path, evidence_path: st
             continue
         url = f"https://toalpha.tw/stock/{ticker}/estimates"
         try:
-            response = _get_public_page(url, timeout=timeout)
+            response = _get_public_page_with_retry(url, timeout=timeout)
             try:
                 rows = parse_estimates_page(response.text, ticker=ticker, retrieved_at=retrieved_at)
             except ValueError:
                 rows = []
-            eps_response = _get_public_page(f"https://toalpha.tw/stock/{ticker}/eps", timeout=timeout)
+            eps_response = _get_public_page_with_retry(
+                f"https://toalpha.tw/stock/{ticker}/eps", timeout=timeout,
+            )
             fallback = parse_eps_page(eps_response.text, ticker=ticker, retrieved_at=retrieved_at)
             by_year = {row["fiscal_year"]: row for row in fallback}
             by_year.update({row["fiscal_year"]: row for row in rows})

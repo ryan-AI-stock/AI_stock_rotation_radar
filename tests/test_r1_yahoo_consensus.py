@@ -1,11 +1,22 @@
 import unittest
+from unittest.mock import MagicMock, patch
 
 import pandas as pd
 
-from r1.yahoo_consensus import parse_estimates
+from r1.yahoo_consensus import _fetch_estimates_with_retry, parse_estimates
 
 
 class YahooConsensusTest(unittest.TestCase):
+    def test_transport_failure_is_retried_three_times(self):
+        ticker = MagicMock()
+        ticker.get_earnings_estimate.side_effect = RuntimeError("temporary")
+        with patch("r1.yahoo_consensus.yf.Ticker", return_value=ticker) as factory:
+            with patch("r1.yahoo_consensus.time.sleep"):
+                with self.assertRaises(RuntimeError):
+                    _fetch_estimates_with_retry("2330.TW")
+        self.assertEqual(factory.call_count, 3)
+        self.assertEqual(ticker.get_earnings_estimate.call_count, 3)
+
     def test_parses_only_current_and_next_annual_estimates(self):
         table = pd.DataFrame([
             {"period": "0q", "avg": 2, "low": 1, "high": 3, "numberOfAnalysts": 4},

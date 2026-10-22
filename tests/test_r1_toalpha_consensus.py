@@ -4,8 +4,10 @@ import unittest
 from pathlib import Path
 from unittest.mock import patch
 
+import requests
+
 from r1.toalpha_consensus import (
-    _prune_progress, _upsert_missing, acquire, parse_eps_page, parse_estimates_page,
+    _get_public_page_with_retry, _prune_progress, _upsert_missing, acquire, parse_eps_page, parse_estimates_page,
     required_fiscal_years,
 )
 
@@ -22,6 +24,13 @@ EPS_HTML = '''<b>2026-10-02</b><span>資料日期</span><tbody>
 
 
 class ToAlphaConsensusTest(unittest.TestCase):
+    def test_transport_failure_is_retried_three_times(self):
+        with patch("r1.toalpha_consensus._get_public_page", side_effect=requests.ConnectionError("temporary")) as get:
+            with patch("r1.toalpha_consensus.time.sleep"):
+                with self.assertRaises(requests.ConnectionError):
+                    _get_public_page_with_retry("https://example.test", timeout=1)
+        self.assertEqual(get.call_count, 3)
+
     def test_current_and_next_year_are_required_but_second_forward_year_is_optional(self):
         self.assertEqual(required_fiscal_years("2026-10-02"), {"2026", "2027"})
 
