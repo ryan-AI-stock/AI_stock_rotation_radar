@@ -30,6 +30,9 @@ class R1DashboardPayloadTest(unittest.TestCase):
         eps_quality = next(row for row in dashboard if row[0] == "法人EPS共識")
         self.assertRegex(eps_quality[1], r"\d+/52")
         self.assertIn("只降低信心", eps_quality[4])
+        anonymous_quality = next(row for row in dashboard if row[0] == "匿名市場目標價")
+        self.assertRegex(anonymous_quality[1], r"\d+/52")
+        self.assertIn("只供參考", anonymous_quality[4])
         data_status = next(row[1] for row in dashboard if row[0] == "資料狀態")
         self.assertIn("公開資料核心 52/52", data_status)
         # Coverage grows as new PIT evidence is collected.  Do not freeze an

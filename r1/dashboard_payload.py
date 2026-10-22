@@ -61,6 +61,8 @@ def _build_v03_dashboard(*, config: R1Config, market: dict, theme_review: dict,
                          v05_by_ticker: dict[str, dict] | None = None,
                          readiness: dict | None = None,
                          target_consensus_ready_count: int = 0,
+                         anonymous_target_ready_count: int = 0,
+                         anonymous_target_missing: list[str] | None = None,
                          total_actual_equity: float | None = None,
                          actual_positions: list[dict] | None = None) -> list[list[object]]:
     themes = load_themes(theme_path)
@@ -104,6 +106,7 @@ def _build_v03_dashboard(*, config: R1Config, market: dict, theme_review: dict,
     missing_consensus = [str(row.get("ticker", "")).zfill(4) for row in required_rows
                          if not row.get("consensus_ready")]
     target_missing_count = max(len(v05_by_ticker) - target_consensus_ready_count, 0)
+    anonymous_target_missing = anonymous_target_missing or []
     for ticker, row in v05_by_ticker.items():
         if row.get("v05_reference_score") is not None:
             reference_by_ticker[ticker] = row["v05_reference_score"]
@@ -237,6 +240,9 @@ def _build_v03_dashboard(*, config: R1Config, market: dict, theme_review: dict,
         ["嚴格法人目標價", f"{target_consensus_ready_count}/{len(v05_by_ticker)}",
          f"缺{target_missing_count}檔",
          "每週有限重試；需90日內至少3家可識別機構", "否，只降低信心"],
+        ["匿名市場目標價", f"{anonymous_target_ready_count}/{len(v05_by_ticker)}",
+         "無" if not anonymous_target_missing else "缺：" + "、".join(anonymous_target_missing),
+         "每週有限重試；只展示、不計分、不提高信心", "否，只供參考"],
         ["EPS修正歷史", f"1W {revision_ready.get('1w', 0)}／4W {revision_ready.get('4w', 0)}／12W {revision_ready.get('12w', 0)}",
          f"4W最早{revision_progress.get('earliest_calendar_eligibility', {}).get('4w', '待累積')}；"
          f"12W最早{revision_progress.get('earliest_calendar_eligibility', {}).get('12w', '待累積')}",
@@ -424,6 +430,8 @@ def build_dashboard_payload(
             for ticker, row in target_price_by_ticker.items()
             if ticker in v05_by_ticker
         ),
+        anonymous_target_ready_count=sum(ticker in anonymous_target_by_ticker for ticker in v05_by_ticker),
+        anonymous_target_missing=sorted(ticker for ticker in v05_by_ticker if ticker not in anonymous_target_by_ticker),
         total_actual_equity=actual_account.get("equity_market_value"),
         actual_positions=actual_account.get("positions", []),
     )
