@@ -33,13 +33,18 @@
   "action_policy_approved": false,
   "consensus_rejected": [],
   "consensus_evidence_rejected": [],
-  "catalyst_rejected": [
-    {
-      "error": "file_missing"
-    }
-  ],
+  "legacy_catalyst_file_status": "OPTIONAL_NOT_PRESENT",
+  "catalyst_rejected": [],
   "catalyst_evidence_rejected": [],
   "bottleneck_evidence_rejected": [],
+  "pit_future_rows_excluded": {
+    "consensus": 0,
+    "consensus_evidence": 0,
+    "legacy_catalyst": 0,
+    "catalyst_evidence": 0,
+    "bottleneck_evidence": 0
+  },
+  "future_data_violation_count": 0,
   "rows": [
     {
       "ticker": "2330",
