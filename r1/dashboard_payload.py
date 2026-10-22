@@ -247,6 +247,8 @@ def _build_v03_dashboard(*, config: R1Config, market: dict, theme_review: dict,
          f"4W最早{revision_progress.get('earliest_calendar_eligibility', {}).get('4w', '待累積')}；"
          f"12W最早{revision_progress.get('earliest_calendar_eligibility', {}).get('12w', '待累積')}",
          "只累積真實PIT快照，不回填", "否，只降低信心"],
+        ["自動交易決策", "未啟用", "每日換倉參考仍正常發布",
+         "實際買賣由Ryan自行決定", "不自動成交"],
         ["08｜模型完整說明"],
         [MODEL_LOGIC],
     ])

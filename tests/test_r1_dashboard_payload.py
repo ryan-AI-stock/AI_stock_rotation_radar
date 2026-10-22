@@ -43,6 +43,10 @@ class R1DashboardPayloadTest(unittest.TestCase):
         self.assertIn("信心層缺值不補0、不阻斷核心排名", data_status)
         completeness = next(row for row in dashboard if row[0] == "資料完成度")
         self.assertIn("52/52", completeness[2])
+        auto_trade = next(row for row in dashboard if row[0] == "自動交易決策")
+        self.assertEqual(auto_trade[1], "未啟用")
+        self.assertIn("每日換倉參考仍正常發布", auto_trade[2])
+        self.assertNotIn("交易建議", [row[0] for row in dashboard])
         performance_start = sections.index("02｜兩條績效線")
         self.assertEqual(
             [row[0] for row in dashboard[performance_start + 2:performance_start + 4]],
