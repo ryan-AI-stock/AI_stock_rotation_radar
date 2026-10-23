@@ -13,11 +13,15 @@ CHALLENGER_HEALTHY_THRESHOLD = 50.0
 
 
 def _is_impaired(row: dict[str, Any], threshold: float = INCUMBENT_WEAK_THRESHOLD) -> bool:
-    if row.get("official_negative_flags"):
-        return True
     values = (row.get("price_chip_risk"), row.get("theme_momentum_and_catalyst"))
     observed = [float(value) for value in values if value is not None]
-    return bool(observed) and min(observed) <= threshold
+    weak_dimensions = sum(value <= threshold for value in observed)
+    # R1 is a long-hold advisor.  One quarterly deterioration fact or one weak
+    # market dimension is a warning, not enough by itself to rotate.  Require
+    # independent confirmation: official deterioration plus market/theme
+    # weakness, or both observable market dimensions weak together.
+    has_official_deterioration = bool(row.get("official_negative_flags"))
+    return (has_official_deterioration and weak_dimensions >= 1) or weak_dimensions >= 2
 
 
 def _is_healthy_challenger(row: dict[str, Any], threshold: float = CHALLENGER_HEALTHY_THRESHOLD) -> bool:

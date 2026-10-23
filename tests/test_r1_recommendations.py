@@ -11,7 +11,8 @@ class RecommendationTest(unittest.TestCase):
     def test_targets_rank_and_actual_holdings_are_skipped(self):
         rows = build_recommendations(date="2026-10-10", candidates=[
             {"ticker": "2454", "company": "聯發科", "score": 75, "target_upside": .2,
-             "price_chip_risk": 35, "theme_momentum_and_catalyst": 55},
+             "price_chip_risk": 35, "theme_momentum_and_catalyst": 55,
+             "official_negative_flags": ["FINANCIAL_EARNINGS_CONTRACTION"]},
             {"ticker": "3081", "company": "聯亞", "score": 90, "target_upside": .4,
              "price_chip_risk": 60, "theme_momentum_and_catalyst": 65},
         ], held_tickers={"2454"}, target_tickers={"2454", "3081"})
@@ -48,6 +49,7 @@ class RecommendationTest(unittest.TestCase):
             {"ticker": "2454", "company": "聯發科", "score": 70,
              "target_upside": None,
              "price_chip_risk": 35, "theme_momentum_and_catalyst": 55,
+             "official_negative_flags": ["FINANCIAL_EARNINGS_CONTRACTION"],
              "overlay_missing_components": ["consensus_target_upside"]},
         ], held_tickers={"2454"}, target_tickers={"2454"})
         self.assertEqual(rows[0]["priority"], "WATCH1")
@@ -63,6 +65,7 @@ class RecommendationTest(unittest.TestCase):
             {"ticker": "2454", "company": "聯發科", "score": 70,
              "target_upside": None,
              "price_chip_risk": 35, "theme_momentum_and_catalyst": 55,
+             "official_negative_flags": ["FINANCIAL_EARNINGS_CONTRACTION"],
              "overlay_missing_components": ["consensus_target_upside"]},
         ], held_tickers={"2454"}, target_tickers={"2454"})
         self.assertEqual(rows[0]["confidence"], "LOW")
@@ -83,18 +86,30 @@ class RecommendationTest(unittest.TestCase):
     def test_impaired_incumbent_requires_ten_point_advantage(self):
         rows = build_recommendations(date="2026-10-10", candidates=[
             {"ticker": "2454", "company": "聯發科", "score": 70,
-             "price_chip_risk": 35, "theme_momentum_and_catalyst": 55},
+             "price_chip_risk": 35, "theme_momentum_and_catalyst": 55,
+             "official_negative_flags": ["FINANCIAL_EARNINGS_CONTRACTION"]},
             {"ticker": "3081", "company": "聯亞", "score": 79,
              "price_chip_risk": 70, "theme_momentum_and_catalyst": 70},
         ], held_tickers={"2454"}, target_tickers={"2454", "3081"})
         self.assertEqual(rows[0]["priority"], "NO_ACTION")
         self.assertIn("至少高10分", rows[0]["reason"])
 
-    def test_official_negative_flag_marks_incumbent_impaired(self):
+    def test_official_negative_flag_needs_independent_weakness_confirmation(self):
         rows = build_recommendations(date="2026-10-10", candidates=[
             {"ticker": "2454", "company": "聯發科", "score": 70,
              "target_upside": None,
              "price_chip_risk": 60, "theme_momentum_and_catalyst": 60,
+             "official_negative_flags": ["REVENUE_AND_EPS_CONTRACTION"]},
+            {"ticker": "3081", "company": "聯亞", "score": 82,
+             "target_upside": None,
+             "price_chip_risk": 70, "theme_momentum_and_catalyst": 70},
+        ], held_tickers={"2454"}, target_tickers={"2454", "3081"})
+        self.assertEqual(rows[0]["priority"], "NO_ACTION")
+
+        rows = build_recommendations(date="2026-10-10", candidates=[
+            {"ticker": "2454", "company": "聯發科", "score": 70,
+             "target_upside": None,
+             "price_chip_risk": 35, "theme_momentum_and_catalyst": 60,
              "official_negative_flags": ["REVENUE_AND_EPS_CONTRACTION"]},
             {"ticker": "3081", "company": "聯亞", "score": 82,
              "target_upside": None,

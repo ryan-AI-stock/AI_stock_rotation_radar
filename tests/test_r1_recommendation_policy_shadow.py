@@ -7,7 +7,8 @@ class R1RecommendationPolicyShadowTest(unittest.TestCase):
     def test_records_fixed_profiles_without_changing_trade_policy(self):
         v05 = {"rows": [
             {"ticker": "2454", "v05_total_score": 70, "price_chip_risk": 40,
-             "theme_momentum_and_catalyst": 60, "official_negative_flags": []},
+             "theme_momentum_and_catalyst": 60,
+             "official_negative_flags": ["FINANCIAL_EARNINGS_CONTRACTION"]},
             {"ticker": "3081", "v05_total_score": 79, "price_chip_risk": 60,
              "theme_momentum_and_catalyst": 60, "official_negative_flags": []},
         ]}
