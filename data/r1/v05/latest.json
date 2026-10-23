@@ -1467,7 +1467,7 @@
     "target_revision_and_breadth": 0.3333333333333333
   },
   "realization_policy": "official monthly-revenue YoY cross-section plus latest PIT official financial-quality score; analyst EPS is not substituted for realized earnings",
-  "price_chip_policy": "current observable market-risk score; 4W/12W EPS-price history remains a confidence diagnostic and does not block today's component",
+  "price_chip_policy": "explicit free-data weights: overheat safety 50%, institutional flow 33.33%, leverage structure 16.67%; all three required; 4W/12W EPS-price history is confidence-only",
   "future_data_violation_count": 0,
   "formal_model_changed": false,
   "trade_decision_changed": false,
