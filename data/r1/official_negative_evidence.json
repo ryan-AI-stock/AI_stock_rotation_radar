@@ -1,0 +1,144 @@
+{
+  "model": "R1",
+  "version": "r1-official-negative-evidence-v0.1",
+  "date": "2026-10-22",
+  "status": "diagnostic_gate_only",
+  "rows": [
+    {
+      "ticker": "2356",
+      "event_type": "FINANCIAL_CASH_MARGIN_STRESS",
+      "available_at": "2026-10-16",
+      "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=2356&SYEAR=2026&SSEASON=2&REPORT_ID=C",
+      "source_family": "MOPS_FINANCIAL_STATEMENTS",
+      "facts": {
+        "gross_margin_change_pp": -0.9123042858336987,
+        "operating_margin_change_pp": -0.29131435633764813,
+        "operating_cash_flow": -25399083000.0
+      }
+    },
+    {
+      "ticker": "2454",
+      "event_type": "FINANCIAL_EARNINGS_CONTRACTION",
+      "available_at": "2026-10-16",
+      "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=2454&SYEAR=2026&SSEASON=2&REPORT_ID=C",
+      "source_family": "MOPS_FINANCIAL_STATEMENTS",
+      "facts": {
+        "revenue_yoy_pct": -0.7730771712119555,
+        "eps_yoy_pct": -15.256124721603559
+      }
+    },
+    {
+      "ticker": "3035",
+      "event_type": "FINANCIAL_EARNINGS_CONTRACTION",
+      "available_at": "2026-10-16",
+      "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3035&SYEAR=2026&SSEASON=2&REPORT_ID=C",
+      "source_family": "MOPS_FINANCIAL_STATEMENTS",
+      "facts": {
+        "revenue_yoy_pct": -50.60823801361638,
+        "eps_yoy_pct": -18.881118881118887
+      }
+    },
+    {
+      "ticker": "3163",
+      "event_type": "FINANCIAL_CASH_MARGIN_STRESS",
+      "available_at": "2026-10-16",
+      "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3163&SYEAR=2026&SSEASON=2&REPORT_ID=C",
+      "source_family": "MOPS_FINANCIAL_STATEMENTS",
+      "facts": {
+        "gross_margin_change_pp": -0.37168769957046877,
+        "operating_margin_change_pp": -1.7712322729153955,
+        "operating_cash_flow": -176173000.0
+      }
+    },
+    {
+      "ticker": "3338",
+      "event_type": "FINANCIAL_EARNINGS_CONTRACTION",
+      "available_at": "2026-10-16",
+      "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3338&SYEAR=2026&SSEASON=2&REPORT_ID=C",
+      "source_family": "MOPS_FINANCIAL_STATEMENTS",
+      "facts": {
+        "revenue_yoy_pct": -1.3789237843849445,
+        "eps_yoy_pct": -57.79816513761469
+      }
+    },
+    {
+      "ticker": "3338",
+      "event_type": "FINANCIAL_CASH_MARGIN_STRESS",
+      "available_at": "2026-10-16",
+      "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3338&SYEAR=2026&SSEASON=2&REPORT_ID=C",
+      "source_family": "MOPS_FINANCIAL_STATEMENTS",
+      "facts": {
+        "gross_margin_change_pp": -1.8290346162004276,
+        "operating_margin_change_pp": -2.7859349244797325,
+        "operating_cash_flow": -75239000.0
+      }
+    },
+    {
+      "ticker": "3363",
+      "event_type": "FINANCIAL_EARNINGS_CONTRACTION",
+      "available_at": "2026-10-16",
+      "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3363&SYEAR=2026&SSEASON=2&REPORT_ID=C",
+      "source_family": "MOPS_FINANCIAL_STATEMENTS",
+      "facts": {
+        "revenue_yoy_pct": -18.351872560970083,
+        "eps_yoy_pct": -794.1176470588234
+      }
+    },
+    {
+      "ticker": "3363",
+      "event_type": "FINANCIAL_CASH_MARGIN_STRESS",
+      "available_at": "2026-10-16",
+      "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3363&SYEAR=2026&SSEASON=2&REPORT_ID=C",
+      "source_family": "MOPS_FINANCIAL_STATEMENTS",
+      "facts": {
+        "gross_margin_change_pp": -17.660091276072087,
+        "operating_margin_change_pp": -33.128094366902985,
+        "operating_cash_flow": -151980000.0
+      }
+    },
+    {
+      "ticker": "6412",
+      "event_type": "MONTHLY_REVENUE_CONTRACTION",
+      "available_at": "2026-10-12",
+      "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_9_0.html",
+      "source_family": "MOPS_MONTHLY_REVENUE",
+      "facts": {
+        "three_month_average_yoy": -0.17873333,
+        "latest_yoy": -0.2097
+      }
+    },
+    {
+      "ticker": "6412",
+      "event_type": "FINANCIAL_CASH_MARGIN_STRESS",
+      "available_at": "2026-10-16",
+      "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=6412&SYEAR=2026&SSEASON=2&REPORT_ID=C",
+      "source_family": "MOPS_FINANCIAL_STATEMENTS",
+      "facts": {
+        "gross_margin_change_pp": -2.412829180229556,
+        "operating_margin_change_pp": -3.187851612694001,
+        "operating_cash_flow": -193150000.0
+      }
+    },
+    {
+      "ticker": "6669",
+      "event_type": "FINANCIAL_CASH_MARGIN_STRESS",
+      "available_at": "2026-10-16",
+      "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=6669&SYEAR=2026&SSEASON=2&REPORT_ID=C",
+      "source_family": "MOPS_FINANCIAL_STATEMENTS",
+      "facts": {
+        "gross_margin_change_pp": -0.22439152080002245,
+        "operating_margin_change_pp": -0.33049267432838914,
+        "operating_cash_flow": -61567715000.0
+      }
+    }
+  ],
+  "covered_ticker_count": 52,
+  "event_ticker_count": 8,
+  "event_count": 11,
+  "future_data_violation_count": 0,
+  "generated_at": "2026-10-23T01:37:52.578879+00:00",
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": true
+}

@@ -107,7 +107,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/r1/daily_market_latest.json data/r1/theme_daily_market_latest.json data/r1/benchmark_market_latest.json data/r1/actual_account_state.json data/r1/daily_sources data/r1/evidence_readiness.json data/r1/forward_outcomes.json data/r1/transition/latest.json data/r1/target_prices/latest.json data/r1/v05/latest.json data/r1/dashboard_payload.json
+          git add data/r1/daily_market_latest.json data/r1/theme_daily_market_latest.json data/r1/benchmark_market_latest.json data/r1/actual_account_state.json data/r1/daily_sources data/r1/evidence_readiness.json data/r1/forward_outcomes.json data/r1/transition/latest.json data/r1/target_prices/latest.json data/r1/official_negative_evidence.json data/r1/v05/latest.json data/r1/dashboard_payload.json
           if git diff --cached --quiet; then exit 0; fi
           git commit -m "Update R1 daily source state"
           git pull --rebase --autostash origin main

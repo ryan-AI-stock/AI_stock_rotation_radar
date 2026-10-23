@@ -82,10 +82,11 @@ jobs:
           python -m r1.official_valuation_fallback --tickers 6282 --date "${{ steps.gate.outputs.target_date }}" --checkpoint data/r1/official_valuation_6282.json --require-complete
           python -m r1.official_valuation_fallback --tickers 6182 --date "${{ steps.gate.outputs.target_date }}" --market TPEX --checkpoint data/r1/official_valuation_6182.json --require-complete
           python -m r1.valuation_snapshot --date "${{ steps.gate.outputs.target_date }}"
-          python -m r1.weekly_snapshot --date "${{ steps.gate.outputs.target_date }}" --market data/r1/daily_market_latest.json --week-final-confirmed
           python -m r1.monthly_revenue --date "${{ steps.gate.outputs.target_date }}"
           python -m r1.official_financial_snapshot --date "${{ steps.gate.outputs.target_date }}"
           python -m r1.financial_quality --date "${{ steps.gate.outputs.target_date }}"
+          python -m r1.official_negative_evidence --date "${{ steps.gate.outputs.target_date }}"
+          python -m r1.weekly_snapshot --date "${{ steps.gate.outputs.target_date }}" --market data/r1/daily_market_latest.json --week-final-confirmed
           python -m r1.market_representation --date "${{ steps.gate.outputs.target_date }}"
           python -m r1.theme_leader_inputs --date "${{ steps.gate.outputs.target_date }}"
           python -m r1.theme_review --date "${{ steps.gate.outputs.target_date }}"

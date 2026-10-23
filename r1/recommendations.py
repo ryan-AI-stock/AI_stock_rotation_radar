@@ -13,12 +13,16 @@ CHALLENGER_HEALTHY_THRESHOLD = 50.0
 
 
 def _is_impaired(row: dict[str, Any]) -> bool:
+    if row.get("official_negative_flags"):
+        return True
     values = (row.get("price_chip_risk"), row.get("theme_momentum_and_catalyst"))
     observed = [float(value) for value in values if value is not None]
     return bool(observed) and min(observed) <= INCUMBENT_WEAK_THRESHOLD
 
 
 def _is_healthy_challenger(row: dict[str, Any]) -> bool:
+    if row.get("official_negative_flags"):
+        return False
     values = (row.get("price_chip_risk"), row.get("theme_momentum_and_catalyst"))
     return all(value is not None and float(value) >= CHALLENGER_HEALTHY_THRESHOLD for value in values)
 

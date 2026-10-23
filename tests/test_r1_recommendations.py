@@ -90,6 +90,29 @@ class RecommendationTest(unittest.TestCase):
         self.assertEqual(rows[0]["priority"], "NO_ACTION")
         self.assertIn("至少高10分", rows[0]["reason"])
 
+    def test_official_negative_flag_marks_incumbent_impaired(self):
+        rows = build_recommendations(date="2026-10-10", candidates=[
+            {"ticker": "2454", "company": "聯發科", "score": 70,
+             "target_upside": None,
+             "price_chip_risk": 60, "theme_momentum_and_catalyst": 60,
+             "official_negative_flags": ["REVENUE_AND_EPS_CONTRACTION"]},
+            {"ticker": "3081", "company": "聯亞", "score": 82,
+             "target_upside": None,
+             "price_chip_risk": 70, "theme_momentum_and_catalyst": 70},
+        ], held_tickers={"2454"}, target_tickers={"2454", "3081"})
+        self.assertEqual(rows[0]["source_ticker"], "2454")
+        self.assertEqual(rows[0]["target_ticker"], "3081")
+
+    def test_official_negative_flag_blocks_challenger(self):
+        rows = build_recommendations(date="2026-10-10", candidates=[
+            {"ticker": "2454", "company": "聯發科", "score": 70,
+             "price_chip_risk": 35, "theme_momentum_and_catalyst": 60},
+            {"ticker": "3081", "company": "聯亞", "score": 90,
+             "price_chip_risk": 70, "theme_momentum_and_catalyst": 70,
+             "official_negative_flags": ["SUSTAINED_REVENUE_CONTRACTION"]},
+        ], held_tickers={"2454"}, target_tickers={"2454", "3081"})
+        self.assertEqual(rows[0]["priority"], "NO_ACTION")
+
 
 if __name__ == "__main__":
     unittest.main()

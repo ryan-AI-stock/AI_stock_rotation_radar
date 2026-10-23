@@ -371,6 +371,7 @@ def build_dashboard_payload(
             "anonymous_target_upside": anonymous_target_by_ticker.get(ticker, {}).get("median_upside"),
             "price_chip_risk": v05.get("price_chip_risk"),
             "theme_momentum_and_catalyst": v05.get("theme_momentum_and_catalyst"),
+            "official_negative_flags": v05.get("official_negative_flags", []),
             "reason": v05.get("v05_reason"),
         })
     recommendations = build_recommendations(

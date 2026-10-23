@@ -71,6 +71,7 @@ def _revision_breadth_score(current: dict[str, Any], prior: dict[str, Any] | Non
 
 def build_v05_rank(*, as_of_date: str, weekly: dict[str, Any], target_prices: dict[str, Any],
                    monthly_revenue: dict[str, Any] | None = None,
+                   official_negative_evidence: dict[str, Any] | None = None,
                    prior_target_prices: dict[str, Any] | None = None,
                    theme_review: dict[str, Any] | None = None,
                    valuation_reference: dict[str, dict[str, Any]] | None = None,
@@ -101,6 +102,12 @@ def build_v05_rank(*, as_of_date: str, weekly: dict[str, Any], target_prices: di
         str(row.get("ticker", "")).zfill(4): row
         for row in (monthly_revenue or {}).get("rows", [])
     }
+    negative_by_ticker: dict[str, list[str]] = {}
+    for item in (official_negative_evidence or {}).get("rows", []):
+        if str(item.get("available_at") or as_of_date) > as_of_date:
+            continue
+        ticker = str(item.get("ticker", "")).zfill(4)
+        negative_by_ticker.setdefault(ticker, []).append(str(item.get("event_type", "")))
     revenue_yoy = {}
     for ticker, row in revenue_rows.items():
         observations = sorted(
@@ -184,6 +191,7 @@ def build_v05_rank(*, as_of_date: str, weekly: dict[str, Any], target_prices: di
             **components,
             "relative_valuation_metric": valuation_metric,
             "revenue_yoy_3m_average": revenue_yoy.get(ticker),
+            "official_negative_flags": sorted(negative_by_ticker.get(ticker, [])),
             "catalyst_core_status": (
                 "TWO_SIDED_EVIDENCE" if catalyst_has_negative_coverage
                 else "ONE_SIDED_EVIDENCE_NEUTRALIZED"
@@ -216,6 +224,7 @@ def build_v05_rank(*, as_of_date: str, weekly: dict[str, Any], target_prices: di
         "target_overlay_weights": TARGET_OVERLAY_WEIGHTS,
         "realization_policy": "official three-month average monthly-revenue YoY cross-section plus latest PIT official financial-quality score; analyst EPS is not substituted for realized earnings",
         "catalyst_policy": "one-sided event evidence is neutralized at 50 in the core; raw positive evidence remains diagnostic until negative-event acquisition is verified",
+        "official_negative_policy": "deterministic official deterioration facts are recommendation risk gates only; they do not impose arbitrary score penalties",
         "price_chip_policy": "explicit free-data weights: overheat safety 50%, institutional flow 33.33%, leverage structure 16.67%; all three required; 4W/12W EPS-price history is confidence-only",
         "future_data_violation_count": 0,
         "formal_model_changed": False,
@@ -245,6 +254,7 @@ def main() -> None:
     parser.add_argument("--target-prices", default="data/r1/target_prices/latest.json")
     parser.add_argument("--target-history", default="data/r1/target_prices/history")
     parser.add_argument("--monthly-revenue", default="data/r1/monthly_revenue/latest.json")
+    parser.add_argument("--official-negative-evidence", default="data/r1/official_negative_evidence.json")
     parser.add_argument("--themes", default="config/r1_v02_themes.json")
     parser.add_argument("--theme-review", default="data/r1/theme_reviews/latest.json")
     parser.add_argument("--valuation-reference", default="data/r1/valuation_reference.csv")
@@ -256,6 +266,11 @@ def main() -> None:
     monthly = json.loads(monthly_path.read_text(encoding="utf-8")) if monthly_path.exists() else {}
     if monthly.get("date", args.date) > args.date:
         monthly = {}
+    negative_path = Path(args.official_negative_evidence)
+    negative_evidence = json.loads(negative_path.read_text(encoding="utf-8")) \
+        if negative_path.exists() else {}
+    if negative_evidence.get("date", args.date) > args.date:
+        negative_evidence = {}
     prior = _prior_target_snapshot(Path(args.target_history), args.date)
     theme_review_path = Path(args.theme_review)
     theme_review = json.loads(theme_review_path.read_text(encoding="utf-8")) \
@@ -267,6 +282,7 @@ def main() -> None:
     }
     payload = build_v05_rank(as_of_date=args.date, weekly=weekly, target_prices=targets,
                              monthly_revenue=monthly,
+                             official_negative_evidence=negative_evidence,
                              prior_target_prices=prior,
                              theme_review=theme_review,
                              valuation_reference=load_valuation_reference(
