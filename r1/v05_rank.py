@@ -103,11 +103,18 @@ def build_v05_rank(*, as_of_date: str, weekly: dict[str, Any], target_prices: di
     }
     revenue_yoy = {}
     for ticker, row in revenue_rows.items():
-        observations = row.get("observations") or []
-        latest_yoy = observations[-1].get("yoy") if observations else None
-        if latest_yoy is not None:
-            revenue_yoy[ticker] = float(latest_yoy)
+        observations = sorted(
+            row.get("observations") or [], key=lambda item: item.get("revenue_year_month", ""),
+        )
+        latest_three = observations[-3:]
+        if len(latest_three) == 3 and all(item.get("yoy") is not None for item in latest_three):
+            # R1 is a 1-6 month long-hold advisor.  A three-month average is
+            # less exposed to one-month base effects than the latest month.
+            revenue_yoy[ticker] = sum(float(item["yoy"]) for item in latest_three) / 3.0
     revenue_percentiles = _percentile_scores(revenue_yoy)
+    catalyst_has_negative_coverage = any(
+        float(row.get("catalyst_negative_decayed") or 0) > 0 for row in weekly_rows.values()
+    )
     rows = []
     for ticker, weekly_row in sorted(weekly_rows.items()):
         target = targets.get(ticker, {})
@@ -134,7 +141,13 @@ def build_v05_rank(*, as_of_date: str, weekly: dict[str, Any], target_prices: di
                 if target.get("scoreable") and target.get("consensus_upside") is not None else None
             ),
             "target_revision_and_breadth": _revision_breadth_score(target, priors.get(ticker)),
-            "theme_momentum_and_catalyst": weekly_row.get("catalyst_score"),
+            # Current free evidence collection is positive-event-only.  Until
+            # negative-event coverage exists, neutralize this core component
+            # instead of rewarding companies merely because good news was filed.
+            "theme_momentum_and_catalyst": (
+                weekly_row.get("catalyst_score") if catalyst_has_negative_coverage
+                else (50.0 if weekly_row.get("catalyst_score") is not None else None)
+            ),
             "relative_valuation": _relative_valuation_score(
                 valuation_percentile
             ),
@@ -170,6 +183,11 @@ def build_v05_rank(*, as_of_date: str, weekly: dict[str, Any], target_prices: di
             "company": weekly_row.get("company", ""),
             **components,
             "relative_valuation_metric": valuation_metric,
+            "revenue_yoy_3m_average": revenue_yoy.get(ticker),
+            "catalyst_core_status": (
+                "TWO_SIDED_EVIDENCE" if catalyst_has_negative_coverage
+                else "ONE_SIDED_EVIDENCE_NEUTRALIZED"
+            ),
             "v05_total_score": total,
             "v05_target_overlay_score": target_overlay,
             "v05_target_overlay_status": "READY" if target_overlay is not None else "DATA_MISSING",
@@ -196,7 +214,8 @@ def build_v05_rank(*, as_of_date: str, weekly: dict[str, Any], target_prices: di
         "missing_value_policy": "NA blocks the five-component public core without zero fill; target-price fields are a separate confidence overlay and never fabricate missing institutions",
         "core_weights": CORE_WEIGHTS,
         "target_overlay_weights": TARGET_OVERLAY_WEIGHTS,
-        "realization_policy": "official monthly-revenue YoY cross-section plus latest PIT official financial-quality score; analyst EPS is not substituted for realized earnings",
+        "realization_policy": "official three-month average monthly-revenue YoY cross-section plus latest PIT official financial-quality score; analyst EPS is not substituted for realized earnings",
+        "catalyst_policy": "one-sided event evidence is neutralized at 50 in the core; raw positive evidence remains diagnostic until negative-event acquisition is verified",
         "price_chip_policy": "explicit free-data weights: overheat safety 50%, institutional flow 33.33%, leverage structure 16.67%; all three required; 4W/12W EPS-price history is confidence-only",
         "future_data_violation_count": 0,
         "formal_model_changed": False,

@@ -6,6 +6,13 @@ from r1.v05_rank import build_v05_rank
 
 
 class R1V05RankTest(unittest.TestCase):
+    @staticmethod
+    def _revenue(ticker: str, *values: float) -> dict:
+        return {"ticker": ticker, "observations": [
+            {"revenue_year_month": f"2026-{month:02d}", "yoy": value}
+            for month, value in zip((7, 8, 9), values, strict=True)
+        ]}
+
     def test_missing_component_blocks_total_without_reweighting(self) -> None:
         result = build_v05_rank(
             as_of_date="2026-10-08",
@@ -16,7 +23,7 @@ class R1V05RankTest(unittest.TestCase):
                 "market_risk_score": None,
             }]},
             target_prices={"rows": []},
-            monthly_revenue={"rows": [{"ticker": "2330", "observations": [{"yoy": .2}]}]},
+            monthly_revenue={"rows": [self._revenue("2330", .2, .2, .2)]},
             theme_review={"themes": [{"ranked": [{
                 "ticker": "2330", "bottleneck_directness": 90,
                 "financial_earnings_quality": 80,
@@ -51,8 +58,8 @@ class R1V05RankTest(unittest.TestCase):
         result = build_v05_rank(as_of_date="2026-10-08", weekly=weekly,
                                 target_prices=current, prior_target_prices=prior,
                                 monthly_revenue={"rows": [
-                                    {"ticker": "2330", "observations": [{"yoy": .05}]},
-                                    {"ticker": "2454", "observations": [{"yoy": .30}]},
+                                    self._revenue("2330", .05, .05, .05),
+                                    self._revenue("2454", .30, .30, .30),
                                 ]}, theme_review={"themes": [{"ranked": [
                                     {"ticker": "2330", "bottleneck_directness": 80,
                                      "financial_earnings_quality": 40},
@@ -78,7 +85,7 @@ class R1V05RankTest(unittest.TestCase):
                 "market_risk_score": 60,
             }]},
             target_prices={"rows": []},
-            monthly_revenue={"rows": [{"ticker": "2308", "observations": [{"yoy": .2}]}]},
+            monthly_revenue={"rows": [self._revenue("2308", .2, .2, .2)]},
             theme_review={"themes": [{"ranked": [{
                 "ticker": "2308", "bottleneck_directness": 90,
                 "financial_earnings_quality": 80,
@@ -102,7 +109,7 @@ class R1V05RankTest(unittest.TestCase):
                 "market_risk_score": 60,
             }]},
             target_prices={"rows": []},
-            monthly_revenue={"rows": [{"ticker": "2308", "observations": [{"yoy": .2}]}]},
+            monthly_revenue={"rows": [self._revenue("2308", .2, .2, .2)]},
             theme_review={"themes": [{"ranked": [{
                 "ticker": "2308", "bottleneck_directness": 90,
                 "financial_earnings_quality": 80,
@@ -135,7 +142,7 @@ class R1V05RankTest(unittest.TestCase):
                 "market_risk_score": 60,
             }]},
             target_prices={"rows": []},
-            monthly_revenue={"rows": [{"ticker": "3163", "observations": [{"yoy": .2}]}]},
+            monthly_revenue={"rows": [self._revenue("3163", .2, .2, .2)]},
             theme_review={"themes": [{"ranked": [{
                 "ticker": "3163", "bottleneck_directness": 90,
                 "financial_earnings_quality": 80,
@@ -149,6 +156,48 @@ class R1V05RankTest(unittest.TestCase):
         self.assertEqual(row["relative_valuation"], 12.0)
         self.assertEqual(row["relative_valuation_metric"], "FORWARD_PE_5Y")
         self.assertEqual(row["v05_status"], "READY")
+
+    def test_three_month_average_reduces_single_month_base_effect(self) -> None:
+        common = {
+            "weekly": {"rows": [
+                {"ticker": "2330", "bottleneck_score": 75, "catalyst_score": 60,
+                 "market_risk_score": 60},
+                {"ticker": "2454", "bottleneck_score": 75, "catalyst_score": 60,
+                 "market_risk_score": 60},
+            ]},
+            "target_prices": {"rows": []},
+            "theme_review": {"themes": [{"ranked": [
+                {"ticker": "2330", "bottleneck_directness": 75,
+                 "financial_earnings_quality": 50},
+                {"ticker": "2454", "bottleneck_directness": 75,
+                 "financial_earnings_quality": 50},
+            ]}]},
+            "valuation_reference": {
+                "2330": {"five_year_percentile": .5},
+                "2454": {"five_year_percentile": .5},
+            },
+        }
+        result = build_v05_rank(
+            as_of_date="2026-10-08", **common,
+            monthly_revenue={"rows": [
+                self._revenue("2330", 1.0, 1.0, 0.0),
+                self._revenue("2454", .5, .5, .5),
+            ]},
+        )
+        rows = {row["ticker"]: row for row in result["rows"]}
+        self.assertGreater(rows["2330"]["revenue_yoy_3m_average"], rows["2454"]["revenue_yoy_3m_average"])
+
+    def test_positive_only_catalyst_evidence_is_neutralized(self) -> None:
+        result = build_v05_rank(
+            as_of_date="2026-10-08",
+            weekly={"rows": [{
+                "ticker": "2330", "bottleneck_score": 75, "catalyst_score": 90,
+                "catalyst_negative_decayed": 0, "market_risk_score": 60,
+            }]}, target_prices={"rows": []},
+        )
+        row = result["rows"][0]
+        self.assertEqual(row["theme_momentum_and_catalyst"], 50.0)
+        self.assertEqual(row["catalyst_core_status"], "ONE_SIDED_EVIDENCE_NEUTRALIZED")
 
     def test_future_dated_target_and_quarterly_review_are_not_used(self) -> None:
         result = build_v05_rank(

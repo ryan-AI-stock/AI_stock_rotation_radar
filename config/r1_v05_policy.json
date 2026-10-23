@@ -16,8 +16,8 @@
   },
   "ranking_component_methods": {
     "structural_bottleneck": "既有bottleneck_score，須有可追溯瓶頸證據",
-    "revenue_earnings_realization": "最新PIT官方月營收年增率之正式池百分位50%＋最新PIT官方財務品質50%",
-    "theme_momentum_and_catalyst": "既有catalyst_score",
+    "revenue_earnings_realization": "最近三個已公布月份之官方營收年增率平均的正式池百分位50%＋最新PIT官方財務品質50%",
+    "theme_momentum_and_catalyst": "正負事件取得完整時使用catalyst_score；目前僅有正向事件證據時全池中性50分，原始事件分只作診斷",
     "relative_valuation": "既有valuation_score",
     "price_chip_risk": "免費資料三構面：價格過熱安全50%、法人籌碼33.33%、融資結構16.67%；三項缺一即NA；4W／12W僅作信心確認"
   },
