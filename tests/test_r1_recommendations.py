@@ -10,8 +10,10 @@ class RecommendationTest(unittest.TestCase):
 
     def test_targets_rank_and_actual_holdings_are_skipped(self):
         rows = build_recommendations(date="2026-10-10", candidates=[
-            {"ticker": "2454", "company": "聯發科", "score": 80, "target_upside": .2},
-            {"ticker": "3081", "company": "聯亞", "score": 90, "target_upside": .4},
+            {"ticker": "2454", "company": "聯發科", "score": 75, "target_upside": .2,
+             "price_chip_risk": 35, "theme_momentum_and_catalyst": 55},
+            {"ticker": "3081", "company": "聯亞", "score": 90, "target_upside": .4,
+             "price_chip_risk": 60, "theme_momentum_and_catalyst": 65},
         ], held_tickers={"2454"}, target_tickers={"2454", "3081"})
         self.assertEqual(rows[0]["target_ticker"], "3081")
         self.assertEqual(rows[0]["source_ticker"], "2454")
@@ -30,6 +32,7 @@ class RecommendationTest(unittest.TestCase):
         rows = build_recommendations(date="2026-10-10", candidates=[
             {"ticker": "2308", "company": "台達電", "score": 82,
              "target_upside": None,
+             "price_chip_risk": 60, "theme_momentum_and_catalyst": 60,
              "overlay_missing_components": ["consensus_target_upside"]},
         ], held_tickers=set(), target_tickers={"2308"})
         self.assertEqual(rows[0]["action"], "REVIEW_SWITCH_IN")
@@ -40,9 +43,11 @@ class RecommendationTest(unittest.TestCase):
         rows = build_recommendations(date="2026-10-10", candidates=[
             {"ticker": "8299", "company": "群聯", "score": 82,
              "target_upside": None,
+             "price_chip_risk": 60, "theme_momentum_and_catalyst": 60,
              "overlay_missing_components": ["consensus_target_upside"]},
             {"ticker": "2454", "company": "聯發科", "score": 70,
              "target_upside": None,
+             "price_chip_risk": 35, "theme_momentum_and_catalyst": 55,
              "overlay_missing_components": ["consensus_target_upside"]},
         ], held_tickers={"2454"}, target_tickers={"2454"})
         self.assertEqual(rows[0]["priority"], "WATCH1")
@@ -53,15 +58,37 @@ class RecommendationTest(unittest.TestCase):
         rows = build_recommendations(date="2026-10-10", candidates=[
             {"ticker": "8299", "company": "群聯", "score": 82,
              "target_upside": None, "anonymous_target_upside": .25,
+             "price_chip_risk": 60, "theme_momentum_and_catalyst": 60,
              "overlay_missing_components": ["consensus_target_upside"]},
             {"ticker": "2454", "company": "聯發科", "score": 70,
              "target_upside": None,
+             "price_chip_risk": 35, "theme_momentum_and_catalyst": 55,
              "overlay_missing_components": ["consensus_target_upside"]},
         ], held_tickers={"2454"}, target_tickers={"2454"})
         self.assertEqual(rows[0]["confidence"], "LOW")
         self.assertEqual(rows[0]["action"], "OBSERVE_ONLY")
         self.assertIn("匿名市場目標價中位上行+25.0%", rows[0]["reason"])
         self.assertIn("尚無具名三機構嚴格共識", rows[0]["reason"])
+
+    def test_higher_score_does_not_rotate_a_healthy_incumbent(self):
+        rows = build_recommendations(date="2026-10-10", candidates=[
+            {"ticker": "2454", "company": "聯發科", "score": 70,
+             "price_chip_risk": 55, "theme_momentum_and_catalyst": 55},
+            {"ticker": "3081", "company": "聯亞", "score": 90,
+             "price_chip_risk": 70, "theme_momentum_and_catalyst": 70},
+        ], held_tickers={"2454"}, target_tickers={"2454", "3081"})
+        self.assertEqual(rows[0]["priority"], "NO_ACTION")
+        self.assertIn("不頻繁換倉", rows[0]["reason"])
+
+    def test_impaired_incumbent_requires_ten_point_advantage(self):
+        rows = build_recommendations(date="2026-10-10", candidates=[
+            {"ticker": "2454", "company": "聯發科", "score": 70,
+             "price_chip_risk": 35, "theme_momentum_and_catalyst": 55},
+            {"ticker": "3081", "company": "聯亞", "score": 79,
+             "price_chip_risk": 70, "theme_momentum_and_catalyst": 70},
+        ], held_tickers={"2454"}, target_tickers={"2454", "3081"})
+        self.assertEqual(rows[0]["priority"], "NO_ACTION")
+        self.assertIn("至少高10分", rows[0]["reason"])
 
 
 if __name__ == "__main__":

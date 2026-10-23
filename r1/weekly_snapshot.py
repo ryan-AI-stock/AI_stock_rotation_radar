@@ -9,7 +9,7 @@ from r1.config import R1Config
 from r1.consensus import consensus_actionable, load_consensus_csv, load_consensus_evidence
 from r1.component_scores import (
     bottleneck_score, catalyst_score, eps_revision_composite, eps_revision_score,
-    forward_valuation_score, percentile_score, price_chip_score,
+    forward_valuation_score, free_market_risk_score, percentile_score, price_chip_score,
 )
 from r1.providers import MissingConsensusProvider
 from r1.price_eps import price_eps_gap
@@ -423,13 +423,10 @@ def build_weekly_snapshot(
         )
         margin_rank = percentile_score(margin_change_values, row.get("margin_balance_change_20d"))
         row["leverage_structure_score"] = None if margin_rank is None else round(100.0 - margin_rank, 6)
-        market_inputs = {
-            "overheat_safety": row["overheat_safety_score"],
-            "institutional": row["institutional_score"],
-            "leverage_structure": row["leverage_structure_score"],
-        }
-        row["market_risk_score"], _, _ = available_component_score(
-            components=market_inputs, weights=config.score_policy["price_chip"]["weights"],
+        row["market_risk_score"] = free_market_risk_score(
+            overheat_safety_score=row["overheat_safety_score"],
+            institutional_score=row["institutional_score"],
+            leverage_structure_score=row["leverage_structure_score"],
         )
         row["price_chip_score"] = price_chip_score(
             earnings_vs_price_score=row["earnings_vs_price_score"],

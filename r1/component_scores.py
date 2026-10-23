@@ -104,6 +104,27 @@ def price_chip_score(*, earnings_vs_price_score: float | None, overheat_safety_s
     )
 
 
+def free_market_risk_score(*, overheat_safety_score: float | None,
+                           institutional_score: float | None,
+                           leverage_structure_score: float | None) -> float | None:
+    """Free-data risk score with explicit, non-renormalized three-part weights.
+
+    This intentionally excludes the EPS-vs-price history used by the legacy
+    four-part score.  Missing current inputs block the component rather than
+    silently redistributing their weights.
+    """
+    values = (overheat_safety_score, institutional_score, leverage_structure_score)
+    if any(value is None for value in values):
+        return None
+    _validate_0_100(*values)
+    return round(
+        0.50 * float(overheat_safety_score)
+        + (1.0 / 3.0) * float(institutional_score)
+        + (1.0 / 6.0) * float(leverage_structure_score),
+        6,
+    )
+
+
 def _validate_0_100(*values: float) -> None:
     if any(not 0 <= float(value) <= 100 for value in values):
         raise ValueError("component subscore must be 0..100")

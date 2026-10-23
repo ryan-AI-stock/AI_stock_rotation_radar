@@ -3,6 +3,26 @@ from __future__ import annotations
 from typing import Any
 
 
+# Conservative, economically interpretable guardrails for a long-hold advisory.
+# A higher total score alone is not a reason to rotate: the incumbent must first
+# show observable weakness/risk and the challenger must be healthy by the same
+# free-data measures.  These are report-only defaults, not execution rules.
+MINIMUM_SCORE_ADVANTAGE = 10.0
+INCUMBENT_WEAK_THRESHOLD = 40.0
+CHALLENGER_HEALTHY_THRESHOLD = 50.0
+
+
+def _is_impaired(row: dict[str, Any]) -> bool:
+    values = (row.get("price_chip_risk"), row.get("theme_momentum_and_catalyst"))
+    observed = [float(value) for value in values if value is not None]
+    return bool(observed) and min(observed) <= INCUMBENT_WEAK_THRESHOLD
+
+
+def _is_healthy_challenger(row: dict[str, Any]) -> bool:
+    values = (row.get("price_chip_risk"), row.get("theme_momentum_and_catalyst"))
+    return all(value is not None and float(value) >= CHALLENGER_HEALTHY_THRESHOLD for value in values)
+
+
 def build_recommendations(*, date: str, candidates: list[dict[str, Any]], held_tickers: set[str],
                           target_tickers: set[str], max_items: int = 3) -> list[dict[str, Any]]:
     """Produce advisory-only ranked changes; incomplete inputs resolve to NO_ACTION."""
@@ -46,17 +66,24 @@ def build_recommendations(*, date: str, candidates: list[dict[str, Any]], held_t
         (row for row in eligible if str(row["ticker"]).zfill(4) in held_tickers),
         key=lambda row: (float(row["score"]), str(row["ticker"])),
     )
+    if held_tickers and len(available_sources) != len(held_tickers):
+        return [_no_action(date, "部分實際持股缺少完整免費核心分數，不以不完整比較推導換倉")]
+    impaired_sources = [row for row in available_sources if _is_impaired(row)]
+    if available_sources and not impaired_sources:
+        return [_no_action(date, "現有持股尚未出現價格籌碼風險或題材催化轉弱；即使他股分數較高也不頻繁換倉")]
     used_sources: set[str] = set()
     for row in eligible:
         ticker = str(row["ticker"]).zfill(4)
         if ticker in held_tickers:
             continue
+        if not _is_healthy_challenger(row):
+            continue
         source = next((
-            item for item in available_sources
+            item for item in impaired_sources
             if str(item["ticker"]).zfill(4) not in used_sources
-            and float(item["score"]) < float(row["score"])
+            and float(row["score"]) - float(item["score"]) >= MINIMUM_SCORE_ADVANTAGE
         ), None)
-        if available_sources and source is None:
+        if impaired_sources and source is None:
             continue
         source_ticker = str(source["ticker"]).zfill(4) if source else "待Ryan決定"
         if source:
@@ -104,7 +131,10 @@ def build_recommendations(*, date: str, candidates: list[dict[str, Any]], held_t
         })
         if len(results) >= max_items:
             break
-    return results or [_no_action(date, "沒有未持有候選的核心分數高於可比較持股，今日不需要操作")]
+    return results or [_no_action(
+        date,
+        "持股雖有弱項，但沒有同時通過健康門檻且核心分數至少高10分的候選，今日不換倉",
+    )]
 
 
 def _no_action(date: str, reason: str) -> dict[str, Any]:

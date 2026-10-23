@@ -58,7 +58,12 @@ class R1V05RankTest(unittest.TestCase):
                                      "financial_earnings_quality": 40},
                                     {"ticker": "2454", "bottleneck_directness": 90,
                                      "financial_earnings_quality": 100},
-                                ]}]})
+                                ]}]}, valuation_reference={
+                                    "2330": {"five_year_percentile": .30,
+                                             "valuation_metric": "TRAILING_PE_5Y"},
+                                    "2454": {"five_year_percentile": .20,
+                                             "valuation_metric": "TRAILING_PE_5Y"},
+                                })
         row = next(item for item in result["rows"] if item["ticker"] == "2454")
         self.assertEqual(row["v05_status"], "READY")
         self.assertIsNotNone(row["v05_total_score"])
@@ -78,12 +83,35 @@ class R1V05RankTest(unittest.TestCase):
                 "ticker": "2308", "bottleneck_directness": 90,
                 "financial_earnings_quality": 80,
             }]}]},
+            valuation_reference={"2308": {
+                "five_year_percentile": .30, "valuation_metric": "TRAILING_PE_5Y",
+            }},
         )
         row = result["rows"][0]
         self.assertEqual(row["v05_status"], "READY")
         self.assertIsNotNone(row["v05_total_score"])
         self.assertIsNone(row["v05_target_overlay_score"])
         self.assertEqual(row["v05_target_overlay_status"], "DATA_MISSING")
+
+    def test_public_core_does_not_fall_back_to_analyst_forward_pe(self) -> None:
+        result = build_v05_rank(
+            as_of_date="2026-10-08",
+            weekly={"rows": [{
+                "ticker": "2308", "company": "台達電", "bottleneck_score": 90,
+                "catalyst_score": 80, "forward_pe_percentile_5y": .01,
+                "market_risk_score": 60,
+            }]},
+            target_prices={"rows": []},
+            monthly_revenue={"rows": [{"ticker": "2308", "observations": [{"yoy": .2}]}]},
+            theme_review={"themes": [{"ranked": [{
+                "ticker": "2308", "bottleneck_directness": 90,
+                "financial_earnings_quality": 80,
+            }]}]},
+            valuation_reference={},
+        )
+        row = result["rows"][0]
+        self.assertIsNone(row["relative_valuation"])
+        self.assertIn("relative_valuation", row["v05_missing_components"])
 
     def test_formal_universe_excludes_discovery_rows(self) -> None:
         result = build_v05_rank(

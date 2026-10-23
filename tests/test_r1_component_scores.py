@@ -3,7 +3,7 @@ from pathlib import Path
 
 from r1.component_scores import (
     bottleneck_score, catalyst_score, eps_revision_composite, eps_revision_score,
-    forward_valuation_score, percentile_score, price_chip_score,
+    forward_valuation_score, free_market_risk_score, percentile_score, price_chip_score,
 )
 from r1.config import R1Config
 
@@ -12,6 +12,16 @@ POLICY = R1Config.load(Path(__file__).resolve().parents[1] / "config/r1.json").s
 
 
 class R1ComponentScoresTest(unittest.TestCase):
+    def test_free_market_risk_requires_all_three_inputs_without_hidden_reweight(self):
+        self.assertIsNone(free_market_risk_score(
+            overheat_safety_score=80, institutional_score=60,
+            leverage_structure_score=None,
+        ))
+        self.assertAlmostEqual(free_market_risk_score(
+            overheat_safety_score=80, institutional_score=60,
+            leverage_structure_score=40,
+        ), 66.666667)
+
     def test_midrank_percentile_does_not_turn_all_ties_into_100(self):
         self.assertEqual(percentile_score([1, 1, 1], 1), 50)
 

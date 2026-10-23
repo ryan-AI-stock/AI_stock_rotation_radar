@@ -113,14 +113,10 @@ def build_v05_rank(*, as_of_date: str, weekly: dict[str, Any], target_prices: di
         target = targets.get(ticker, {})
         quarterly = quarterly_rows.get(ticker, {})
         valuation_row = (valuation_reference or {}).get(ticker, {})
-        valuation_percentile = (
-            valuation_row.get("five_year_percentile")
-            if valuation_row.get("five_year_percentile") is not None
-            else weekly_row.get("forward_pe_percentile_5y")
-        )
-        valuation_metric = (
-            valuation_row.get("valuation_metric") or weekly_row.get("valuation_metric")
-        )
+        # The free-data core must not fall back to analyst Forward PE when the
+        # official own-history valuation series is absent.
+        valuation_percentile = valuation_row.get("five_year_percentile")
+        valuation_metric = valuation_row.get("valuation_metric")
         realization = None
         if ticker in revenue_percentiles and quarterly.get("financial_earnings_quality") is not None:
             realization = round(
@@ -201,7 +197,7 @@ def build_v05_rank(*, as_of_date: str, weekly: dict[str, Any], target_prices: di
         "core_weights": CORE_WEIGHTS,
         "target_overlay_weights": TARGET_OVERLAY_WEIGHTS,
         "realization_policy": "official monthly-revenue YoY cross-section plus latest PIT official financial-quality score; analyst EPS is not substituted for realized earnings",
-        "price_chip_policy": "current observable market-risk score; 4W/12W EPS-price history remains a confidence diagnostic and does not block today's component",
+        "price_chip_policy": "explicit free-data weights: overheat safety 50%, institutional flow 33.33%, leverage structure 16.67%; all three required; 4W/12W EPS-price history is confidence-only",
         "future_data_violation_count": 0,
         "formal_model_changed": False,
         "trade_decision_changed": False,
