@@ -82,14 +82,22 @@ def parse_html(html: str, *, period: str, market: str, source_url: str) -> list[
             continue
         try:
             revenue = int(float(cells[2].replace(",", ""))) * 1000
-            prior_year = int(float(cells[5].replace(",", ""))) * 1000
+            # MOPS columns: current month revenue, prior month revenue,
+            # prior-year same-month revenue, MoM %, YoY %.  The prior-year
+            # amount is column 4; column 5 is a percentage and must never be
+            # stored as currency.
+            prior_year = int(float(cells[4].replace(",", ""))) * 1000
             yoy = float(cells[6].replace(",", "")) / 100
         except ValueError:
+            continue
+        derived_yoy = None if prior_year <= 0 else revenue / prior_year - 1.0
+        if derived_yoy is None or abs(derived_yoy - yoy) > 0.0015:
             continue
         rows.append({
             "ticker": cells[0].strip(), "company": cells[1].strip(), "market": market,
             "revenue_year_month": period, "revenue_twd": revenue,
             "prior_year_revenue_twd": prior_year, "yoy": yoy,
+            "derived_yoy": round(derived_yoy, 8),
             "available_date": available, "source_url": source_url,
             "source_type": "MOPS_MONTHLY_REVENUE_STATIC_HTML",
         })
