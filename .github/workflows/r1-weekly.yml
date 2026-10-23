@@ -39,8 +39,7 @@ jobs:
         shell: bash
         run: |
           if [ -n "${{ inputs.report_date }}" ]; then
-            d="${{ inputs.report_date }}"
-            printf 'should_run=true\ntarget_date=%s\ntarget_key=%s\nreason=manual_confirmed_week_final\n' "$d" "${d//-/}" >> "$GITHUB_OUTPUT"
+            python -m r1.schedule --profile weekly --rules AI_stock_schedule_rules/schedule_rules.json --report-date "${{ inputs.report_date }}"
           else
             python -m r1.schedule --profile weekly --rules AI_stock_schedule_rules/schedule_rules.json
           fi

@@ -25,6 +25,7 @@ class R1WorkflowPolicyTest(unittest.TestCase):
         self.assertIn('15 9-15 * * 1-5', workflow)
         self.assertIn("repository: ryan-AI-stock/AI_stock_schedule_rules", workflow)
         self.assertIn("--profile daily --rules AI_stock_schedule_rules/schedule_rules.json", workflow)
+        self.assertIn('--report-date "${{ inputs.report_date }}"', workflow)
         self.assertIn("Report R1 daily failure context", workflow)
         self.assertIn("Dashboard was not accepted as complete", workflow)
 
@@ -50,6 +51,7 @@ class R1WorkflowPolicyTest(unittest.TestCase):
         self.assertIn('15 11-15 * * *', workflow)
         self.assertIn("repository: ryan-AI-stock/AI_stock_schedule_rules", workflow)
         self.assertIn("--profile weekly --rules AI_stock_schedule_rules/schedule_rules.json", workflow)
+        self.assertIn('--report-date "${{ inputs.report_date }}"', workflow)
         self.assertIn("Report R1 weekly failure context", workflow)
         self.assertIn("Weekly snapshot was not accepted as complete", workflow)
         self.assertNotIn("--allow-chip-gaps", workflow)

@@ -14,15 +14,50 @@ from rotation_radar.schedule_gate import (
     fetch_twse_calendar,
     is_trading_day,
     load_schedule_rules,
+    resolve_recent_market_calendar,
 )
 
 
 class ScheduleGateTests(unittest.TestCase):
+    def test_no_rows_before_emergency_confirmation_is_pending_not_closed(self) -> None:
+        now = datetime(2026, 10, 23, 17, 15)
+        rules = ScheduleGateRules(run_after=time(17, 15), emergency_confirm_after=time(18, 0))
+
+        with patch("rotation_radar.schedule_gate.fetch_official_emergency_closure", return_value=False), patch(
+            "rotation_radar.schedule_gate.fetch_official_market_session_state", return_value="closed"
+        ):
+            closed, reason = resolve_recent_market_calendar(now, set(), set(), rules)
+
+        self.assertNotIn(date(2026, 10, 23), closed)
+        self.assertEqual(reason, "official_session_data_pending")
+
+    def test_exact_twse_notice_marks_unscheduled_closure(self) -> None:
+        now = datetime(2026, 10, 23, 18, 15)
+        rules = ScheduleGateRules(run_after=time(17, 15), emergency_confirm_after=time(18, 0))
+
+        with patch("rotation_radar.schedule_gate.fetch_official_emergency_closure", return_value=True):
+            closed, reason = resolve_recent_market_calendar(now, set(), set(), rules)
+
+        self.assertIn(date(2026, 10, 23), closed)
+        self.assertEqual(reason, "emergency_market_closed")
+
+    def test_no_rows_after_deadline_without_notice_is_delay_not_closure(self) -> None:
+        now = datetime(2026, 10, 23, 18, 15)
+        rules = ScheduleGateRules(run_after=time(17, 15), emergency_confirm_after=time(18, 0))
+
+        with patch("rotation_radar.schedule_gate.fetch_official_emergency_closure", return_value=False), patch(
+            "rotation_radar.schedule_gate.fetch_official_market_session_state", return_value="closed"
+        ):
+            closed, reason = resolve_recent_market_calendar(now, set(), set(), rules)
+
+        self.assertNotIn(date(2026, 10, 23), closed)
+        self.assertEqual(reason, "official_data_delayed")
+
     def test_emergency_friday_closure_does_not_backfill_thursday(self) -> None:
         now = datetime(2026, 7, 10, 18, 0)
         rules = ScheduleGateRules(run_after=time(15, 0))
 
-        with patch("rotation_radar.schedule_gate.fetch_official_market_session_state", return_value="closed"):
+        with patch("rotation_radar.schedule_gate.fetch_official_emergency_closure", return_value=True):
             closed = add_recent_emergency_market_closure(now, set(), set(), rules)
         decision = evaluate_schedule_gate(now, set(), closed, rules=rules)
 
@@ -34,7 +69,9 @@ class ScheduleGateTests(unittest.TestCase):
         now = datetime(2026, 7, 10, 18, 0)
         rules = ScheduleGateRules(run_after=time(15, 0))
 
-        with patch("rotation_radar.schedule_gate.fetch_official_market_session_state", return_value="unknown"):
+        with patch("rotation_radar.schedule_gate.fetch_official_emergency_closure", return_value=False), patch(
+            "rotation_radar.schedule_gate.fetch_official_market_session_state", return_value="unknown"
+        ):
             closed = add_recent_emergency_market_closure(now, set(), set(), rules)
 
         self.assertNotIn(date(2026, 7, 10), closed)

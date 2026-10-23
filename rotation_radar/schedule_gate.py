@@ -13,6 +13,7 @@ from zoneinfo import ZoneInfo
 
 TAIPEI_TZ = ZoneInfo("Asia/Taipei")
 TWSE_HOLIDAY_URL = "https://openapi.twse.com.tw/v1/holidaySchedule/holidaySchedule"
+TWSE_NEWS_URL = "https://www.twse.com.tw/rwd/zh/news/newsList?response=json"
 
 
 @dataclass(frozen=True)
@@ -34,6 +35,7 @@ class ScheduleGateDecision:
 class ScheduleGateRules:
     run_after: time = time(15, 0)
     retry_until_success: bool = False
+    emergency_confirm_after: time = time(18, 0)
 
 
 def main() -> None:
@@ -56,13 +58,25 @@ def main() -> None:
     now = _parse_now(args.now)
     rules = load_schedule_rules(args.rules)
     if args.run_after:
-        rules = ScheduleGateRules(run_after=_parse_hhmm(args.run_after), retry_until_success=rules.retry_until_success)
+        rules = ScheduleGateRules(
+            run_after=_parse_hhmm(args.run_after),
+            retry_until_success=rules.retry_until_success,
+            emergency_confirm_after=rules.emergency_confirm_after,
+        )
     if args.recover_delayed_schedule and now.time() < rules.run_after:
-        rules = ScheduleGateRules(run_after=rules.run_after, retry_until_success=True)
+        rules = ScheduleGateRules(
+            run_after=rules.run_after,
+            retry_until_success=True,
+            emergency_confirm_after=rules.emergency_confirm_after,
+        )
     open_dates, closed_dates = fetch_twse_calendar()
+    session_reason = ""
     if closed_dates is not None:
-        closed_dates = add_recent_emergency_market_closure(now, open_dates, closed_dates, rules)
-    decision = evaluate_schedule_gate(now, open_dates, closed_dates, rules=rules)
+        closed_dates, session_reason = resolve_recent_market_calendar(now, open_dates, closed_dates, rules)
+    if session_reason in {"official_session_data_pending", "official_data_delayed"}:
+        decision = ScheduleGateDecision(False, None, session_reason)
+    else:
+        decision = evaluate_schedule_gate(now, open_dates, closed_dates, rules=rules)
     outputs = {
         "should_run": str(decision.should_run).lower(),
         "target_date": decision.target_date_text,
@@ -85,11 +99,16 @@ def load_schedule_rules(path: Path | None = None) -> ScheduleGateRules:
         daily = payload["profiles"]["daily"]
         run_after = _parse_hhmm(str(daily.get("run_after", "15:00")))
         retry_until_success = bool(daily.get("retry_until_success", False))
+        emergency_confirm_after = _parse_hhmm(str(daily.get("emergency_confirm_after", "18:00")))
     except (OSError, json.JSONDecodeError, KeyError, TypeError, ValueError) as exc:
         print(f"Warning: failed to load shared schedule rules from {raw_path}; using defaults: {exc}")
         return ScheduleGateRules()
     print(f"Loaded shared daily schedule rules from {raw_path}")
-    return ScheduleGateRules(run_after=run_after, retry_until_success=retry_until_success)
+    return ScheduleGateRules(
+        run_after=run_after,
+        retry_until_success=retry_until_success,
+        emergency_confirm_after=emergency_confirm_after,
+    )
 
 
 def fetch_twse_calendar() -> tuple[set[date], set[date] | None]:
@@ -142,6 +161,19 @@ def fetch_official_market_session_state(trade_date: date) -> str:
     return "closed" if len(row_counts) == 2 else "unknown"
 
 
+def fetch_official_emergency_closure(trade_date: date) -> bool | None:
+    """Confirm an unscheduled closure from an exact-date TWSE news title."""
+    request = Request(TWSE_NEWS_URL, headers={"User-Agent": "AI-stock-rotation-radar/1.0"})
+    try:
+        with urlopen(request, timeout=30) as response:
+            payload = json.load(response)
+    except (json.JSONDecodeError, OSError, TypeError, URLError):
+        return None
+    roc_date = f"{trade_date.year - 1911}年{trade_date.month}月{trade_date.day}日"
+    titles = [str(row[1]) for row in payload.get("data") or [] if len(row) > 1]
+    return any(roc_date in title and "休市" in title for title in titles)
+
+
 def add_recent_emergency_market_closure(
     now: datetime,
     open_dates: set[date],
@@ -149,6 +181,17 @@ def add_recent_emergency_market_closure(
     rules: ScheduleGateRules,
 ) -> set[date]:
     """Add an unscheduled closure only when both official markets confirm no session."""
+    updated, _ = resolve_recent_market_calendar(now, open_dates, closed_dates, rules)
+    return updated
+
+
+def resolve_recent_market_calendar(
+    now: datetime,
+    open_dates: set[date],
+    closed_dates: set[date],
+    rules: ScheduleGateRules,
+) -> tuple[set[date], str]:
+    """Classify a recent unscheduled closure without mistaking early data delay for closure."""
     updated = set(closed_dates)
     candidate = now.date()
     if candidate.weekday() >= 5:
@@ -158,11 +201,22 @@ def add_recent_emergency_market_closure(
         while candidate.weekday() >= 5:
             candidate -= timedelta(days=1)
     if candidate in open_dates or candidate in updated:
-        return updated
-    if fetch_official_market_session_state(candidate) == "closed":
+        return updated, "calendar_known"
+    closure_notice = fetch_official_emergency_closure(candidate)
+    if closure_notice is True:
         updated.add(candidate)
-        print(f"Detected official no-session market date: {candidate.isoformat()}")
-    return updated
+        print(f"Detected official TWSE emergency closure notice: {candidate.isoformat()}")
+        return updated, "emergency_market_closed"
+    state = fetch_official_market_session_state(candidate)
+    if state == "open":
+        return updated, "official_session_open"
+    if state == "closed" and candidate == now.date() and now.time() < rules.emergency_confirm_after:
+        print(f"Official session data not ready yet: {candidate.isoformat()}")
+        return updated, "official_session_data_pending"
+    if state == "closed":
+        print(f"Official session data remains absent without a closure notice: {candidate.isoformat()}")
+        return updated, "official_data_delayed"
+    return updated, "official_session_unknown"
 
 
 def evaluate_schedule_gate(

@@ -6,7 +6,15 @@ import os
 from datetime import date, datetime, time, timedelta
 from pathlib import Path
 
-from rotation_radar.schedule_gate import TAIPEI_TZ, fetch_twse_calendar, is_trading_day
+from rotation_radar.schedule_gate import (
+    TAIPEI_TZ,
+    ScheduleGateRules,
+    fetch_official_emergency_closure,
+    fetch_official_market_session_state,
+    fetch_twse_calendar,
+    is_trading_day,
+    resolve_recent_market_calendar,
+)
 
 
 def weekly_output_complete(*, target: date,
@@ -86,20 +94,57 @@ def main() -> None:
     parser.add_argument("--profile", choices=("daily", "weekly"), required=True)
     parser.add_argument("--rules", required=True)
     parser.add_argument("--now")
+    parser.add_argument("--report-date", help="Optional exact date requested by workflow_dispatch")
     args = parser.parse_args()
     now = datetime.fromisoformat(args.now).astimezone(TAIPEI_TZ) if args.now else datetime.now(TAIPEI_TZ)
     open_dates, closed_dates = fetch_twse_calendar()
+    if args.report_date:
+        requested = date.fromisoformat(args.report_date)
+        if closed_dates is None:
+            result = (False, None, "calendar_unavailable")
+        elif not is_trading_day(requested, open_dates, closed_dates):
+            result = (False, None, "market_closed")
+        elif fetch_official_emergency_closure(requested) is True:
+            result = (False, None, "emergency_market_closed")
+        else:
+            state = fetch_official_market_session_state(requested)
+            if state == "open":
+                result = (True, requested, "manual_confirmed_trading_date")
+            elif state == "closed":
+                result = (False, None, "official_data_delayed")
+            else:
+                result = (False, None, "official_session_unknown")
+        _emit_result(*result)
+        return
     if closed_dates is None:
         result = (False, None, "calendar_unavailable")
     else:
-        result = decide(now=now, profile=args.profile, rules_path=args.rules,
-                        open_dates=open_dates, closed_dates=closed_dates)
+        profile_rules = json.loads(Path(args.rules).read_text(encoding="utf-8"))["profiles"][args.profile]
+        run_after = time(*map(int, profile_rules.get("run_after", "15:00").split(":")))
+        confirm_after = time(*map(int, profile_rules.get("emergency_confirm_after", "18:00").split(":")))
+        gate_rules = ScheduleGateRules(
+            run_after=run_after,
+            retry_until_success=True,
+            emergency_confirm_after=confirm_after,
+        )
+        closed_dates, session_reason = resolve_recent_market_calendar(
+            now, open_dates, closed_dates, gate_rules
+        )
+        if session_reason in {"official_session_data_pending", "official_data_delayed"}:
+            result = (False, None, session_reason)
+        else:
+            result = decide(now=now, profile=args.profile, rules_path=args.rules,
+                            open_dates=open_dates, closed_dates=closed_dates)
     should_run, target, reason = result
     if should_run and target:
         if args.profile == "weekly" and weekly_output_complete(target=target):
             should_run, reason = False, "weekly_output_already_complete"
         elif args.profile == "daily" and daily_output_complete(target=target):
             should_run, reason = False, "daily_output_already_complete"
+    _emit_result(should_run, target, reason)
+
+
+def _emit_result(should_run: bool, target: date | None, reason: str) -> None:
     output = {"should_run": str(should_run).lower(), "target_date": target.isoformat() if target else "",
               "target_key": target.strftime("%Y%m%d") if target else "", "reason": reason}
     print(json.dumps(output))
