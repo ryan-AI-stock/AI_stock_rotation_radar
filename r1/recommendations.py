@@ -12,23 +12,26 @@ INCUMBENT_WEAK_THRESHOLD = 40.0
 CHALLENGER_HEALTHY_THRESHOLD = 50.0
 
 
-def _is_impaired(row: dict[str, Any]) -> bool:
+def _is_impaired(row: dict[str, Any], threshold: float = INCUMBENT_WEAK_THRESHOLD) -> bool:
     if row.get("official_negative_flags"):
         return True
     values = (row.get("price_chip_risk"), row.get("theme_momentum_and_catalyst"))
     observed = [float(value) for value in values if value is not None]
-    return bool(observed) and min(observed) <= INCUMBENT_WEAK_THRESHOLD
+    return bool(observed) and min(observed) <= threshold
 
 
-def _is_healthy_challenger(row: dict[str, Any]) -> bool:
+def _is_healthy_challenger(row: dict[str, Any], threshold: float = CHALLENGER_HEALTHY_THRESHOLD) -> bool:
     if row.get("official_negative_flags"):
         return False
     values = (row.get("price_chip_risk"), row.get("theme_momentum_and_catalyst"))
-    return all(value is not None and float(value) >= CHALLENGER_HEALTHY_THRESHOLD for value in values)
+    return all(value is not None and float(value) >= threshold for value in values)
 
 
 def build_recommendations(*, date: str, candidates: list[dict[str, Any]], held_tickers: set[str],
-                          target_tickers: set[str], max_items: int = 3) -> list[dict[str, Any]]:
+                          target_tickers: set[str], max_items: int = 3,
+                          minimum_score_advantage: float = MINIMUM_SCORE_ADVANTAGE,
+                          incumbent_weak_threshold: float = INCUMBENT_WEAK_THRESHOLD,
+                          challenger_healthy_threshold: float = CHALLENGER_HEALTHY_THRESHOLD) -> list[dict[str, Any]]:
     """Produce advisory-only ranked changes; incomplete inputs resolve to NO_ACTION."""
     eligible = [row for row in candidates if row.get("score") is not None]
     eligible.sort(key=lambda row: (
@@ -72,7 +75,9 @@ def build_recommendations(*, date: str, candidates: list[dict[str, Any]], held_t
     )
     if held_tickers and len(available_sources) != len(held_tickers):
         return [_no_action(date, "部分實際持股缺少完整免費核心分數，不以不完整比較推導換倉")]
-    impaired_sources = [row for row in available_sources if _is_impaired(row)]
+    impaired_sources = [
+        row for row in available_sources if _is_impaired(row, incumbent_weak_threshold)
+    ]
     if available_sources and not impaired_sources:
         return [_no_action(date, "現有持股尚未出現價格籌碼風險或題材催化轉弱；即使他股分數較高也不頻繁換倉")]
     used_sources: set[str] = set()
@@ -80,12 +85,12 @@ def build_recommendations(*, date: str, candidates: list[dict[str, Any]], held_t
         ticker = str(row["ticker"]).zfill(4)
         if ticker in held_tickers:
             continue
-        if not _is_healthy_challenger(row):
+        if not _is_healthy_challenger(row, challenger_healthy_threshold):
             continue
         source = next((
             item for item in impaired_sources
             if str(item["ticker"]).zfill(4) not in used_sources
-            and float(row["score"]) - float(item["score"]) >= MINIMUM_SCORE_ADVANTAGE
+            and float(row["score"]) - float(item["score"]) >= minimum_score_advantage
         ), None)
         if impaired_sources and source is None:
             continue
@@ -137,7 +142,7 @@ def build_recommendations(*, date: str, candidates: list[dict[str, Any]], held_t
             break
     return results or [_no_action(
         date,
-        "持股雖有弱項，但沒有同時通過健康門檻且核心分數至少高10分的候選，今日不換倉",
+        f"持股雖有弱項，但沒有同時通過健康門檻且核心分數至少高{minimum_score_advantage:g}分的候選，今日不換倉",
     )]
 
 

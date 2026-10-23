@@ -19,6 +19,7 @@ class R1WorkflowPolicyTest(unittest.TestCase):
         self.assertIn("--allow-chip-gaps", workflow)
         self.assertIn("group: r1-publication", workflow)
         self.assertIn("r1.dashboard_publish", workflow)
+        self.assertIn("r1.recommendation_policy_shadow", workflow)
         self.assertIn("GOOGLE_OAUTH_REFRESH_TOKEN", workflow)
         self.assertIn("Sync latest main after concurrency wait", workflow)
         self.assertIn('15 9-15 * * 1-5', workflow)
