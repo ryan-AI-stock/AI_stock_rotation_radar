@@ -91,6 +91,24 @@ class ToAlphaConsensusTest(unittest.TestCase):
             self.assertIn("2454", stored["failed"])
             self.assertIn("6282", stored["failed"])
 
+    def test_repeated_schema_failures_trip_bounded_circuit_breaker(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            response = type("Response", (), {"text": "<html>new unsupported layout</html>"})()
+            with patch("r1.toalpha_consensus._get_public_page_with_retry", return_value=response) as get:
+                result = acquire(
+                    tickers=["2330", "2454", "2308", "2317"],
+                    consensus_path=root / "consensus.csv",
+                    evidence_path=root / "evidence.csv",
+                    checkpoint_path=root / "checkpoint.json",
+                    retrieved_at="2026-10-24",
+                    schema_failure_limit=2,
+                )
+            self.assertTrue(result["circuit_breaker_tripped"])
+            self.assertEqual(result["attempted_ticker_count"], 2)
+            self.assertEqual(get.call_count, 4)  # estimates and EPS page for each attempted ticker
+            self.assertNotIn("2308", result["failed"])
+
 
 if __name__ == "__main__":
     unittest.main()

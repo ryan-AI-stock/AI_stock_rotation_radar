@@ -133,7 +133,8 @@ def parse_eps_page(text: str, *, ticker: str, retrieved_at: str) -> list[dict[st
 
 def acquire(*, tickers: list[str], consensus_path: str | Path, evidence_path: str | Path,
             checkpoint_path: str | Path, retrieved_at: str | None = None,
-            timeout: int = 30, preserve_unrequested_checkpoint_entries: bool = False) -> dict:
+            timeout: int = 30, preserve_unrequested_checkpoint_entries: bool = False,
+            schema_failure_limit: int = 5) -> dict:
     retrieved_at = retrieved_at or date.today().isoformat()
     checkpoint = Path(checkpoint_path)
     checkpoint.parent.mkdir(parents=True, exist_ok=True)
@@ -151,6 +152,9 @@ def acquire(*, tickers: list[str], consensus_path: str | Path, evidence_path: st
     } if preserve_unrequested_checkpoint_entries else {"completed": {}, "failed": {}}
     progress = stored_progress
     progress = _prune_progress(progress, tickers)
+    attempted_ticker_count = 0
+    consecutive_schema_failures = 0
+    circuit_breaker_tripped = False
     for ticker in tickers:
         expected_years = required_fiscal_years(retrieved_at)
         completed_years = {
@@ -158,6 +162,10 @@ def acquire(*, tickers: list[str], consensus_path: str | Path, evidence_path: st
         }
         if expected_years.issubset(completed_years):
             continue
+        if consecutive_schema_failures >= schema_failure_limit:
+            circuit_breaker_tripped = True
+            break
+        attempted_ticker_count += 1
         url = f"https://toalpha.tw/stock/{ticker}/estimates"
         try:
             response = _get_public_page_with_retry(url, timeout=timeout)
@@ -177,8 +185,16 @@ def acquire(*, tickers: list[str], consensus_path: str | Path, evidence_path: st
                 raise ValueError("missing_fiscal_years:" + ",".join(missing_years))
             progress["completed"][ticker] = {"url": url, "rows": rows}
             progress["failed"].pop(ticker, None)
+            consecutive_schema_failures = 0
         except (requests.RequestException, browser_requests.errors.RequestsError, ValueError) as exc:
             progress["failed"][ticker] = {"url": url, "error": str(exc)}
+            if isinstance(exc, ValueError) and str(exc) in {
+                "forward_estimate_rows_missing", "annual_eps_estimate_rows_missing",
+                "forward_valuation_table_missing", "source_data_date_missing",
+            }:
+                consecutive_schema_failures += 1
+            else:
+                consecutive_schema_failures = 0
         checkpoint_payload = {
             "retrieved_at": retrieved_at,
             "completed": {**outside["completed"], **progress["completed"]},
@@ -190,6 +206,11 @@ def acquire(*, tickers: list[str], consensus_path: str | Path, evidence_path: st
         "requested_ticker_count": len(tickers),
         "completed_ticker_count": len(progress["completed"]),
         "failed_ticker_count": len(progress["failed"]),
+        "attempted_ticker_count": attempted_ticker_count,
+        "circuit_breaker_tripped": circuit_breaker_tripped,
+        "circuit_breaker_reason": (
+            "consecutive_source_schema_failures" if circuit_breaker_tripped else None
+        ),
         "failed": progress["failed"],
     }
 
