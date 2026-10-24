@@ -1,8 +1,9 @@
 import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
-from r1.toalpha_revision_history import _upsert, latest_rows, parse_revision_panel
+from r1.toalpha_revision_history import _upsert, acquire, latest_rows, parse_revision_panel
 
 
 class R1ToAlphaRevisionHistoryTest(unittest.TestCase):
@@ -34,6 +35,23 @@ class R1ToAlphaRevisionHistoryTest(unittest.TestCase):
             older = dict(row, source_data_date="2026-09-26", available_at="2026-09-26")
             _upsert(path, [older, row])
             self.assertEqual(len(path.read_text(encoding="utf-8").splitlines()), 3)
+
+    def test_repeated_schema_failures_trip_bounded_circuit_breaker(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            response = type("Response", (), {"text": "<html>new unsupported layout</html>"})()
+            with patch("r1.toalpha_revision_history._get_public_page", return_value=response) as get:
+                result = acquire(
+                    tickers=["2330", "2454", "2308", "2317"],
+                    output_path=root / "history.csv",
+                    checkpoint_path=root / "checkpoint.json",
+                    retrieved_at="2026-10-24",
+                    schema_failure_limit=2,
+                )
+            self.assertTrue(result["circuit_breaker_tripped"])
+            self.assertEqual(result["attempted_ticker_count"], 2)
+            self.assertEqual(get.call_count, 2)
+            self.assertNotIn("2308", result["failed"])
 
 
 if __name__ == "__main__":

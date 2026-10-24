@@ -96,7 +96,8 @@ def _upsert(path: Path, incoming: list[dict[str, str]]) -> None:
 
 
 def acquire(*, tickers: list[str], output_path: str | Path, checkpoint_path: str | Path,
-            retrieved_at: str | None = None, timeout: int = 30) -> dict:
+            retrieved_at: str | None = None, timeout: int = 30,
+            schema_failure_limit: int = 5) -> dict:
     retrieved_at = retrieved_at or date.today().isoformat()
     checkpoint = Path(checkpoint_path)
     checkpoint.parent.mkdir(parents=True, exist_ok=True)
@@ -110,9 +111,16 @@ def acquire(*, tickers: list[str], output_path: str | Path, checkpoint_path: str
     progress["failed"] = {
         ticker: value for ticker, value in progress.get("failed", {}).items() if ticker in allowed
     }
+    attempted_ticker_count = 0
+    consecutive_schema_failures = 0
+    circuit_breaker_tripped = False
     for ticker in tickers:
         if ticker in progress["completed"]:
             continue
+        if consecutive_schema_failures >= schema_failure_limit:
+            circuit_breaker_tripped = True
+            break
+        attempted_ticker_count += 1
         main_url = f"https://toalpha.tw/stock/{ticker}"
         try:
             headers = {"User-Agent": "Mozilla/5.0 R1 research"}
@@ -129,14 +137,28 @@ def acquire(*, tickers: list[str], output_path: str | Path, checkpoint_path: str
             })
             progress["completed"][ticker] = row
             progress["failed"].pop(ticker, None)
+            consecutive_schema_failures = 0
         except (requests.RequestException, browser_requests.errors.RequestsError, ValueError) as exc:
             progress["failed"][ticker] = {"url": main_url, "error": str(exc)}
+            if isinstance(exc, ValueError) and str(exc) in {
+                "source_data_date_missing", "revision_panel_anchor_missing",
+                "revision_panel_heading_missing", "revision_fiscal_year_missing",
+                "revision_estimates_link_missing", "revision_values_missing",
+            }:
+                consecutive_schema_failures += 1
+            else:
+                consecutive_schema_failures = 0
         checkpoint.write_text(json.dumps(progress, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     _upsert(Path(output_path), list(progress["completed"].values()))
     return {
         "requested_ticker_count": len(tickers),
         "completed_ticker_count": len(progress["completed"]),
         "failed_ticker_count": len(progress["failed"]),
+        "attempted_ticker_count": attempted_ticker_count,
+        "circuit_breaker_tripped": circuit_breaker_tripped,
+        "circuit_breaker_reason": (
+            "consecutive_source_schema_failures" if circuit_breaker_tripped else None
+        ),
         "failed": progress["failed"],
     }
 
