@@ -98,6 +98,19 @@ class R1DashboardPayloadTest(unittest.TestCase):
         self.assertIn("尚未完成共同起始NAV", text)
         self.assertNotIn("已完成對帳", text)
 
+    def test_dashboard_rejects_readiness_from_a_different_date(self):
+        import json
+        import tempfile
+        with tempfile.TemporaryDirectory() as folder:
+            readiness = Path(folder) / "readiness.json"
+            readiness.write_text(json.dumps({"as_of_date": "2099-01-01", "rows": []}), encoding="utf-8")
+            with self.assertRaisesRegex(ValueError, "does not match market date"):
+                build_dashboard_payload(
+                    config_path=ROOT / "config/r1.json",
+                    market_path=ROOT / "data/r1/theme_daily_market_latest.json",
+                    readiness_path=readiness,
+                )
+
     def test_complete_theme_review_materializes_top3_and_priority_score(self):
         import json
         import tempfile

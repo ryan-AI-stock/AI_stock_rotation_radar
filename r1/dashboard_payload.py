@@ -315,6 +315,11 @@ def build_dashboard_payload(
         "trade_ready_count": 0,
         "action_policy_approved": False, "rows": [],
     }
+    readiness_date = readiness.get("as_of_date")
+    if readiness_date and readiness_date != market.get("date"):
+        raise ValueError(
+            f"R1 readiness date {readiness_date} does not match market date {market.get('date')}"
+        )
     readiness_by_ticker = {row["ticker"]: row for row in readiness.get("rows", [])}
     market_by_ticker = {row["ticker"]: row for row in market["rows"]}
     valuation_by_ticker = _latest_valuation_rows(valuation_root, market["date"])

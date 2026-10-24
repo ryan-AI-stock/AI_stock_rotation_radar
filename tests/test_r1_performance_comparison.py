@@ -47,6 +47,52 @@ class PerformanceComparisonTest(unittest.TestCase):
         self.assertEqual(all_in["nav"], 124)
         self.assertEqual(all_in["external_cash_flow"], 100)
 
+    def test_inconsistent_whole_share_ledger_blocks_ready_comparison(self):
+        config = {
+            "common_starting_nav": 1000,
+            "external_cash_flows": [
+                {
+                    "date": "2026-09-14", "amount": 100, "official_raw_close": 10,
+                    "shares": 8, "cash_remainder": 20,
+                },
+            ],
+            "benchmark_00631l_all_in": {
+                "status": "READY", "start_raw_close": 10,
+                "buy_slippage_rate": 0, "buy_fee_rate": 0,
+                "shares": 100, "cash": 0,
+            },
+        }
+        result = build_comparison(
+            date="2026-09-20", market={"rows": [{"ticker": "00631", "raw_close": 12}]},
+            benchmark_config=config, actual_snapshot={"nav": 1200},
+        )
+        self.assertFalse(result["comparison_ready"])
+        self.assertTrue(result["benchmark_reconciliation_gaps"])
+        self.assertEqual(result["rows"][1]["status"], "SEED_RECONCILIATION_REQUIRED")
+        self.assertIsNone(result["rows"][1]["return_pct"])
+
+    def test_consistent_whole_share_ledger_remains_ready(self):
+        config = {
+            "common_starting_nav": 1000,
+            "external_cash_flows": [
+                {
+                    "date": "2026-09-14", "amount": 105, "official_raw_close": 10,
+                    "shares": 10, "cash_remainder": 5,
+                },
+            ],
+            "benchmark_00631l_all_in": {
+                "status": "READY", "start_raw_close": 10,
+                "buy_slippage_rate": 0, "buy_fee_rate": 0,
+                "shares": 100, "cash": 0,
+            },
+        }
+        result = build_comparison(
+            date="2026-09-20", market={"rows": [{"ticker": "00631", "raw_close": 12}]},
+            benchmark_config=config, actual_snapshot={"nav": 1200},
+        )
+        self.assertTrue(result["comparison_ready"])
+        self.assertEqual(result["benchmark_reconciliation_gaps"], [])
+
 
 if __name__ == "__main__":
     unittest.main()
