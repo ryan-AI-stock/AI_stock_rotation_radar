@@ -1,66 +1,222 @@
 {
-  "retrieved_at": "2026-10-22",
-  "completed": {
-    "3357": {
-      "url": "https://toalpha.tw/stock/3357/estimates",
-      "rows": [
-        {
-          "ticker": "3357",
-          "fiscal_year": "2026",
-          "mean_eps": "11.12",
-          "median_eps": "11.12",
-          "high_eps": "11.53",
-          "low_eps": "10.72",
-          "analyst_count": "4",
-          "source": "ToAlpha public consensus",
-          "published_at": "2026-10-22",
-          "available_at": "2026-10-22",
-          "retrieved_at": "2026-10-22",
-          "quality": "MEDIUM",
-          "status": "READY"
-        },
-        {
-          "ticker": "3357",
-          "fiscal_year": "2027",
-          "mean_eps": "14.56",
-          "median_eps": "14.56",
-          "high_eps": "",
-          "low_eps": "",
-          "analyst_count": "2",
-          "source": "ToAlpha public consensus",
-          "published_at": "2026-10-22",
-          "available_at": "2026-10-22",
-          "retrieved_at": "2026-10-22",
-          "quality": "MEDIUM",
-          "status": "READY"
-        }
-      ]
-    }
-  },
+  "retrieved_at": "2026-10-24",
+  "completed": {},
   "failed": {
+    "2330": {
+      "url": "https://toalpha.tw/stock/2330/estimates",
+      "error": "HTTP Error 403: "
+    },
+    "2327": {
+      "url": "https://toalpha.tw/stock/2327/estimates",
+      "error": "HTTP Error 403: "
+    },
+    "2344": {
+      "url": "https://toalpha.tw/stock/2344/estimates",
+      "error": "HTTP Error 403: "
+    },
+    "2376": {
+      "url": "https://toalpha.tw/stock/2376/estimates",
+      "error": "HTTP Error 403: "
+    },
+    "2454": {
+      "url": "https://toalpha.tw/stock/2454/estimates",
+      "error": "HTTP Error 403: "
+    },
+    "3037": {
+      "url": "https://toalpha.tw/stock/3037/estimates",
+      "error": "HTTP Error 403: "
+    },
+    "6488": {
+      "url": "https://toalpha.tw/stock/6488/estimates",
+      "error": "HTTP Error 403: "
+    },
+    "3661": {
+      "url": "https://toalpha.tw/stock/3661/estimates",
+      "error": "HTTP Error 403: "
+    },
+    "3443": {
+      "url": "https://toalpha.tw/stock/3443/estimates",
+      "error": "HTTP Error 403: "
+    },
+    "3035": {
+      "url": "https://toalpha.tw/stock/3035/estimates",
+      "error": "HTTP Error 403: "
+    },
+    "2449": {
+      "url": "https://toalpha.tw/stock/2449/estimates",
+      "error": "HTTP Error 403: "
+    },
+    "6223": {
+      "url": "https://toalpha.tw/stock/6223/estimates",
+      "error": "HTTP Error 403: "
+    },
+    "6187": {
+      "url": "https://toalpha.tw/stock/6187/estimates",
+      "error": "HTTP Error 403: "
+    },
+    "3583": {
+      "url": "https://toalpha.tw/stock/3583/estimates",
+      "error": "HTTP Error 403: "
+    },
+    "2408": {
+      "url": "https://toalpha.tw/stock/2408/estimates",
+      "error": "HTTP Error 403: "
+    },
+    "3081": {
+      "url": "https://toalpha.tw/stock/3081/estimates",
+      "error": "HTTP Error 403: "
+    },
+    "2303": {
+      "url": "https://toalpha.tw/stock/2303/estimates",
+      "error": "HTTP Error 403: "
+    },
+    "3008": {
+      "url": "https://toalpha.tw/stock/3008/estimates",
+      "error": "HTTP Error 403: "
+    },
+    "3406": {
+      "url": "https://toalpha.tw/stock/3406/estimates",
+      "error": "HTTP Error 403: "
+    },
+    "2337": {
+      "url": "https://toalpha.tw/stock/2337/estimates",
+      "error": "HTTP Error 403: "
+    },
+    "8299": {
+      "url": "https://toalpha.tw/stock/8299/estimates",
+      "error": "HTTP Error 403: "
+    },
+    "3260": {
+      "url": "https://toalpha.tw/stock/3260/estimates",
+      "error": "HTTP Error 403: "
+    },
+    "2383": {
+      "url": "https://toalpha.tw/stock/2383/estimates",
+      "error": "HTTP Error 403: "
+    },
+    "6274": {
+      "url": "https://toalpha.tw/stock/6274/estimates",
+      "error": "HTTP Error 403: "
+    },
+    "3189": {
+      "url": "https://toalpha.tw/stock/3189/estimates",
+      "error": "HTTP Error 403: "
+    },
+    "2368": {
+      "url": "https://toalpha.tw/stock/2368/estimates",
+      "error": "HTTP Error 403: "
+    },
+    "2345": {
+      "url": "https://toalpha.tw/stock/2345/estimates",
+      "error": "HTTP Error 403: "
+    },
+    "3363": {
+      "url": "https://toalpha.tw/stock/3363/estimates",
+      "error": "HTTP Error 403: "
+    },
+    "4979": {
+      "url": "https://toalpha.tw/stock/4979/estimates",
+      "error": "HTTP Error 403: "
+    },
+    "6442": {
+      "url": "https://toalpha.tw/stock/6442/estimates",
+      "error": "HTTP Error 403: "
+    },
+    "3163": {
+      "url": "https://toalpha.tw/stock/3163/estimates",
+      "error": "HTTP Error 403: "
+    },
+    "2301": {
+      "url": "https://toalpha.tw/stock/2301/estimates",
+      "error": "HTTP Error 403: "
+    },
     "6282": {
       "url": "https://toalpha.tw/stock/6282/estimates",
-      "error": "annual_eps_estimate_rows_missing"
+      "error": "HTTP Error 403: "
+    },
+    "6412": {
+      "url": "https://toalpha.tw/stock/6412/estimates",
+      "error": "HTTP Error 403: "
+    },
+    "6781": {
+      "url": "https://toalpha.tw/stock/6781/estimates",
+      "error": "HTTP Error 403: "
     },
     "2492": {
       "url": "https://toalpha.tw/stock/2492/estimates",
-      "error": "annual_eps_estimate_rows_missing"
+      "error": "HTTP Error 403: "
+    },
+    "3357": {
+      "url": "https://toalpha.tw/stock/3357/estimates",
+      "error": "HTTP Error 403: "
+    },
+    "3653": {
+      "url": "https://toalpha.tw/stock/3653/estimates",
+      "error": "HTTP Error 403: "
+    },
+    "3017": {
+      "url": "https://toalpha.tw/stock/3017/estimates",
+      "error": "HTTP Error 403: "
+    },
+    "3324": {
+      "url": "https://toalpha.tw/stock/3324/estimates",
+      "error": "HTTP Error 403: "
     },
     "6230": {
       "url": "https://toalpha.tw/stock/6230/estimates",
-      "error": "annual_eps_estimate_rows_missing"
+      "error": "HTTP Error 403: "
     },
     "3338": {
       "url": "https://toalpha.tw/stock/3338/estimates",
-      "error": "annual_eps_estimate_rows_missing"
+      "error": "HTTP Error 403: "
+    },
+    "2382": {
+      "url": "https://toalpha.tw/stock/2382/estimates",
+      "error": "HTTP Error 403: "
+    },
+    "3231": {
+      "url": "https://toalpha.tw/stock/3231/estimates",
+      "error": "HTTP Error 403: "
+    },
+    "6669": {
+      "url": "https://toalpha.tw/stock/6669/estimates",
+      "error": "HTTP Error 403: "
+    },
+    "2317": {
+      "url": "https://toalpha.tw/stock/2317/estimates",
+      "error": "HTTP Error 403: "
+    },
+    "2356": {
+      "url": "https://toalpha.tw/stock/2356/estimates",
+      "error": "HTTP Error 403: "
+    },
+    "3711": {
+      "url": "https://toalpha.tw/stock/3711/estimates",
+      "error": "HTTP Error 403: "
+    },
+    "2308": {
+      "url": "https://toalpha.tw/stock/2308/estimates",
+      "error": "HTTP Error 403: "
+    },
+    "2379": {
+      "url": "https://toalpha.tw/stock/2379/estimates",
+      "error": "HTTP Error 403: "
     },
     "3532": {
       "url": "https://toalpha.tw/stock/3532/estimates",
-      "error": "annual_eps_estimate_rows_missing"
+      "error": "HTTP Error 403: "
     },
     "6182": {
       "url": "https://toalpha.tw/stock/6182/estimates",
-      "error": "annual_eps_estimate_rows_missing"
+      "error": "HTTP Error 403: "
+    },
+    "1560": {
+      "url": "https://toalpha.tw/stock/1560/estimates",
+      "error": "HTTP Error 403: "
+    },
+    "3131": {
+      "url": "https://toalpha.tw/stock/3131/estimates",
+      "error": "HTTP Error 403: "
     }
   }
 }

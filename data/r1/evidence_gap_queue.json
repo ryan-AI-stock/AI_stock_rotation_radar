@@ -1,7 +1,7 @@
 {
   "model": "R1",
   "version": "r1-evidence-gap-queue-v0.1",
-  "as_of_date": "2026-10-21",
+  "as_of_date": "2026-10-22",
   "requested_ticker_count": 52,
   "ready_ticker_count": 52,
   "pending_ticker_count": 0,

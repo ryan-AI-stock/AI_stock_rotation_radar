@@ -1,7 +1,7 @@
 {
   "model": "R1",
   "version": "r1-membership-review-v0.1",
-  "as_of_date": "2026-10-16",
+  "as_of_date": "2026-10-22",
   "status": "NOT_DUE",
   "membership_anchor": "2026-08-15",
   "last_membership_review": "2026-10-05",

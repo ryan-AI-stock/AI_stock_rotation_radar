@@ -28,6 +28,7 @@ ticker,data_date,next_year_forward_pe,five_year_percentile,five_year_median_pe,v
 2454,2026-10-02,35.0,1.00,14.7,,,https://toalpha.tw/stock/2454/valuation,2026-10-02,HIGH
 2454,2026-10-14,31.7,1,14.7,,,https://toalpha.tw/stock/2454/valuation,2026-10-15,HIGH
 2492,2026-10-16,,0.90890523,24.09000000,TRAILING_PE_TWSE_5Y,44.38000000,https://www.twse.com.tw/exchangeReport/BWIBBU?stockNo=2492,2026-10-19,HIGH_OFFICIAL_FALLBACK
+2492,2026-10-22,,0.85464169,24.13500000,TRAILING_PE_TWSE_5Y,41.35000000,https://www.twse.com.tw/exchangeReport/BWIBBU?stockNo=2492,2026-10-24,HIGH_OFFICIAL_FALLBACK
 3008,2026-10-14,33.7,1,14.0,,,https://toalpha.tw/stock/3008/valuation,2026-10-15,HIGH
 3017,2026-10-14,21.8,0.87,12.5,,,https://toalpha.tw/stock/3017/valuation,2026-10-15,HIGH
 3035,2026-10-14,34.1,0.44,62.0,,,https://toalpha.tw/stock/3035/valuation,2026-10-15,HIGH
@@ -42,12 +43,14 @@ ticker,data_date,next_year_forward_pe,five_year_percentile,five_year_median_pe,v
 3260,2026-10-14,5.7,0.15,11.7,,,https://toalpha.tw/stock/3260/valuation,2026-10-15,HIGH
 3324,2026-10-14,19.7,0.71,16.7,,,https://toalpha.tw/stock/3324/valuation,2026-10-15,HIGH
 3338,2026-10-16,,0.98080065,22.49000000,TRAILING_PE_TWSE_5Y,56.84000000,https://www.twse.com.tw/exchangeReport/BWIBBU?stockNo=3338,2026-10-19,HIGH_OFFICIAL_FALLBACK
+3338,2026-10-22,,0.96864821,22.55000000,TRAILING_PE_TWSE_5Y,55.04000000,https://www.twse.com.tw/exchangeReport/BWIBBU?stockNo=3338,2026-10-24,HIGH_OFFICIAL_FALLBACK
 3357,2026-10-14,15.6,0.57,13.9,,,https://toalpha.tw/stock/3357/valuation,2026-10-15,HIGH
 3363,2026-10-01,37.9,0.55,37.8,,,https://toalpha.tw/stock/3363/valuation,2026-10-02,HIGH
 3363,2026-10-14,33.0,0.36,37.8,,,https://toalpha.tw/stock/3363/valuation,2026-10-15,HIGH
 3406,2026-10-14,26.5,1,13.8,,,https://toalpha.tw/stock/3406/valuation,2026-10-15,HIGH
 3443,2026-10-14,74.1,1,37.8,,,https://toalpha.tw/stock/3443/valuation,2026-10-15,HIGH
 3532,2026-10-16,,0.94321895,24.29500000,TRAILING_PE_TWSE_5Y,321.15000000,https://www.twse.com.tw/exchangeReport/BWIBBU?stockNo=3532,2026-10-19,HIGH_OFFICIAL_FALLBACK
+3532,2026-10-22,,0.93851792,24.33000000,TRAILING_PE_TWSE_5Y,312.31000000,https://www.twse.com.tw/exchangeReport/BWIBBU?stockNo=3532,2026-10-24,HIGH_OFFICIAL_FALLBACK
 3583,2026-10-14,24.0,0.73,19.4,,,https://toalpha.tw/stock/3583/valuation,2026-10-15,HIGH
 3653,2026-10-14,52.2,0.98,30.4,,,https://toalpha.tw/stock/3653/valuation,2026-10-15,HIGH
 3661,2026-10-14,21.2,0.04,37.9,,,https://toalpha.tw/stock/3661/valuation,2026-10-15,HIGH
@@ -55,11 +58,14 @@ ticker,data_date,next_year_forward_pe,five_year_percentile,five_year_median_pe,v
 3711,2026-10-14,26.9,1,14.3,,,https://toalpha.tw/stock/3711/valuation,2026-10-15,HIGH
 4979,2026-10-14,40.9,0.94,30.1,,,https://toalpha.tw/stock/4979/valuation,2026-10-15,HIGH
 6182,2026-10-16,,0.79963066,46.27000000,TRAILING_PE_TPEX_5Y,480.43000000,https://www.tpex.org.tw/www/zh-tw/afterTrading/peQryStock?code=6182,2026-10-19,HIGH_OFFICIAL_FALLBACK
+6182,2026-10-22,,0.78242870,46.43000000,TRAILING_PE_TPEX_5Y,454.35000000,https://www.tpex.org.tw/www/zh-tw/afterTrading/peQryStock?code=6182,2026-10-24,HIGH_OFFICIAL_FALLBACK
 6187,2026-10-14,35.1,0.87,20.1,,,https://toalpha.tw/stock/6187/valuation,2026-10-15,HIGH
 6223,2026-10-14,43.1,0.98,11.9,,,https://toalpha.tw/stock/6223/valuation,2026-10-15,HIGH
 6230,2026-10-16,,0.02941176,2.18000000,PRICE_TO_BOOK_TWSE_5Y,1.65000000,https://www.twse.com.tw/exchangeReport/BWIBBU?stockNo=6230,2026-10-19,HIGH_OFFICIAL_FALLBACK
+6230,2026-10-22,,0.01140065,2.17500000,PRICE_TO_BOOK_TWSE_5Y,1.61000000,https://www.twse.com.tw/exchangeReport/BWIBBU?stockNo=6230,2026-10-24,HIGH_OFFICIAL_FALLBACK
 6274,2026-10-14,22.3,0.88,17.7,,,https://toalpha.tw/stock/6274/valuation,2026-10-15,HIGH
 6282,2026-10-16,,0.37075243,45.68500000,TRAILING_PE_TWSE_5Y,35.37000000,https://www.twse.com.tw/exchangeReport/BWIBBU?stockNo=6282,2026-10-19,HIGH_OFFICIAL_FALLBACK
+6282,2026-10-22,,0.34722222,45.64000000,TRAILING_PE_TWSE_5Y,34.18000000,https://www.twse.com.tw/exchangeReport/BWIBBU?stockNo=6282,2026-10-24,HIGH_OFFICIAL_FALLBACK
 6412,2026-10-14,11.0,0.46,12.9,,,https://toalpha.tw/stock/6412/valuation,2026-10-15,HIGH
 6442,2026-10-14,12.6,0.44,14.8,,,https://toalpha.tw/stock/6442/valuation,2026-10-15,HIGH
 6488,2026-10-01,33.2,0.85,19.4,,,https://toalpha.tw/stock/6488/valuation,2026-10-02,HIGH

@@ -145,19 +145,19 @@
       "error": "HTTPError:HTTP Error 403: "
     },
     "3189": {
-      "retrieved_at": "2026-10-19",
+      "retrieved_at": "2026-10-24",
       "row_count": 0,
       "status": "SOURCE_GAP",
       "error": "HTTPError:HTTP Error 403: "
     },
     "2368": {
-      "retrieved_at": "2026-10-19",
+      "retrieved_at": "2026-10-24",
       "row_count": 0,
       "status": "SOURCE_GAP",
       "error": "HTTPError:HTTP Error 403: "
     },
     "2345": {
-      "retrieved_at": "2026-10-19",
+      "retrieved_at": "2026-10-24",
       "row_count": 0,
       "status": "SOURCE_GAP",
       "error": "HTTPError:HTTP Error 403: "
@@ -326,21 +326,21 @@
     }
   },
   "last_summary": {
-    "retrieved_at": "2026-10-19",
+    "retrieved_at": "2026-10-24",
     "requested_ticker_count": 54,
-    "ready_ticker_count": 7,
-    "reused_ready_ticker_count": 7,
+    "ready_ticker_count": 0,
+    "reused_ready_ticker_count": 0,
     "source_gap_ticker_count": 3,
     "new_evidence_row_count": 0,
     "total_evidence_row_count": 115,
     "attempted_ticker_count": 3,
     "circuit_breaker_tripped": true,
-    "next_index": 24,
+    "next_index": 27,
     "failures": {
-      "3260": "HTTPError:HTTP Error 403: ",
-      "2383": "HTTPError:HTTP Error 403: ",
-      "6274": "HTTPError:HTTP Error 403: "
+      "3189": "HTTPError:HTTP Error 403: ",
+      "2368": "HTTPError:HTTP Error 403: ",
+      "2345": "HTTPError:HTTP Error 403: "
     }
   },
-  "next_index": 24
+  "next_index": 27
 }
