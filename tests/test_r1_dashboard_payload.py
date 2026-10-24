@@ -55,6 +55,9 @@ class R1DashboardPayloadTest(unittest.TestCase):
         self.assertNotIn("8/5原持股完全不動", [cell for row in dashboard for cell in row])
         self.assertEqual(dashboard[performance_start + 1][5], "相較實際操作差額")
         self.assertEqual(dashboard[performance_start + 3][5], "=B21-B20")
+        model_logic = next(row[0] for row in dashboard if row and str(row[0]).startswith("R1 v0.6｜"))
+        self.assertIn("已完成對帳", model_logic)
+        self.assertNotIn("尚未完成共同起始NAV", model_logic)
         recommendation_start = sections.index("03｜今日換倉建議")
         self.assertIn(
             dashboard[recommendation_start + 2][:2],
@@ -88,6 +91,12 @@ class R1DashboardPayloadTest(unittest.TestCase):
         mediatek = next(row for row in signals if row[1] == "2454")
         self.assertEqual(mediatek[23], "OBSERVE_ONLY")
         self.assertEqual(mediatek[24], "REPORT_ONLY_CORE_READY")
+
+    def test_model_logic_with_unreconciled_comparison_does_not_claim_ready(self):
+        from r1.dashboard_payload import _model_logic
+        text = _model_logic(comparison_ready=False)
+        self.assertIn("尚未完成共同起始NAV", text)
+        self.assertNotIn("已完成對帳", text)
 
     def test_complete_theme_review_materializes_top3_and_priority_score(self):
         import json

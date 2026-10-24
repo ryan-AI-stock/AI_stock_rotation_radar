@@ -15,7 +15,7 @@ from r1.recommendations import build_recommendations
 MODEL_LOGIC = """R1 v0.6｜實際帳戶總覽與AI瓶頸換倉顧問
 
 【模型任務】
-R1記錄Ryan實際成交與帳戶結果，並與「8/5全部轉為0050正二後抱住」同起點基準每日比較。績效比較排除未包含於8/5共同本金的既有台積電持股及其配息；總持股區仍完整顯示。兩條線未完成共同起始NAV與現金流對帳前，不發布誰勝誰負。
+R1記錄Ryan實際成交與帳戶結果，並與「8/5全部轉為0050正二後抱住」同起點基準每日比較。績效比較排除未包含於8/5共同本金的既有台積電持股及其配息；總持股區仍完整顯示。{performance_status}
 
 【季度Top3】
 結構性龍頭評分：AI瓶頸直接性25%、產業與技術地位25%、AI營收兌現20%、財務與獲利品質20%、市場代表性10%。官方與公司正式揭露優先；分析師與市場共識只能補充，不能單獨決定排名。任一成分股必要證據不足時，該題材Top3維持待資料。
@@ -31,6 +31,15 @@ R1記錄Ryan實際成交與帳戶結果，並與「8/5全部轉為0050正二後�
 
 【模型邊界】
 R1是report-only顧問，不自動下單。V4-D與C6程式保留但每日發布已暫停，直到Ryan明確要求恢復。"""
+
+
+def _model_logic(*, comparison_ready: bool) -> str:
+    performance_status = (
+        "兩條線的共同起始NAV、外部現金流與目前現金已完成對帳，Dashboard可發布同口徑累積報酬與差額。"
+        if comparison_ready else
+        "兩條線尚未完成共同起始NAV與現金流對帳，因此暫不發布誰勝誰負。"
+    )
+    return MODEL_LOGIC.format(performance_status=performance_status)
 
 PERFORMANCE_LINE_LABELS = {
     "ACTUAL": "Ryan 8/5後操作範圍（排除既有台積電）",
@@ -250,7 +259,7 @@ def _build_v03_dashboard(*, config: R1Config, market: dict, theme_review: dict,
         ["自動交易決策", "未啟用", "每日換倉參考仍正常發布",
          "實際買賣由Ryan自行決定", "不自動成交"],
         ["08｜模型完整說明"],
-        [MODEL_LOGIC],
+        [_model_logic(comparison_ready=bool(comparison.get("comparison_ready")))],
     ])
     return rows
 
@@ -571,7 +580,7 @@ def build_dashboard_payload(
         ["交易建議", f"{readiness['trade_ready_count']}/{score_required_count}",
          "尚未啟用", "Action規則核准後才產生", market["date"]],
         ["09｜模型完整說明"],
-        [MODEL_LOGIC],
+        [_model_logic(comparison_ready=bool(comparison.get("comparison_ready")))],
     ])
 
     for security in config.securities:
