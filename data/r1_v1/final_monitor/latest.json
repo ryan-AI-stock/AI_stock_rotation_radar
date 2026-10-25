@@ -1,0 +1,730 @@
+{
+  "as_of_date": "2026-10-22",
+  "market_regime": {
+    "breadth": 0.05555555555555555,
+    "confidence": "MEDIUM",
+    "down_count": 51,
+    "evaluation_time": "2026-10-22T13:30:00+08:00",
+    "foreign_flow": null,
+    "limit_down_count": null,
+    "limit_up_count": null,
+    "major_macro_event_links": [],
+    "market_state": "RISK_OFF",
+    "return_1d": -0.018050335940480777,
+    "return_20d": null,
+    "return_5d": null,
+    "turnover": 476084248878.0,
+    "turnover_ratio_20d": 0.7719010714407727,
+    "tw50_return_1d": null,
+    "unknowns": [
+      "foreign_flow",
+      "return_20d",
+      "return_5d",
+      "tw50_return_1d",
+      "us_market_return_1d",
+      "usd_twd_return_1d",
+      "vix"
+    ],
+    "up_count": 3,
+    "us_market_return_1d": null,
+    "usd_twd_return_1d": null,
+    "vix": null
+  },
+  "theme_map": {
+    "critical_materials": {
+      "confidence": "HIGH",
+      "equal_weight_return_1d": -0.05228674907076212,
+      "market_relative_return_1d": -0.03423641313028134,
+      "median_return_1d": -0.05476190476190479,
+      "number_of_negative_names": 5,
+      "number_of_positive_names": 0,
+      "theme_breadth": 0.0,
+      "theme_context_state": "SELL_OFF",
+      "theme_event_state": "UNKNOWN",
+      "theme_id": "critical_materials",
+      "theme_return_1d": -0.05228674907076212,
+      "theme_return_20d": -0.11009668915351736,
+      "theme_return_5d": -0.055128984227536,
+      "unknowns": [],
+      "volume_state": "CONTRACTING"
+    },
+    "power_delivery": {
+      "confidence": "HIGH",
+      "equal_weight_return_1d": -0.02842787872185195,
+      "market_relative_return_1d": -0.010377542781371173,
+      "median_return_1d": -0.027972027972027802,
+      "number_of_negative_names": 5,
+      "number_of_positive_names": 0,
+      "theme_breadth": 0.0,
+      "theme_context_state": "COOLING",
+      "theme_event_state": "UNKNOWN",
+      "theme_id": "power_delivery",
+      "theme_return_1d": -0.02842787872185195,
+      "theme_return_20d": -0.09191800311228418,
+      "theme_return_5d": -0.03554446174334787,
+      "unknowns": [],
+      "volume_state": "NORMAL"
+    },
+    "silicon_photonics_cpo": {
+      "confidence": "HIGH",
+      "equal_weight_return_1d": -0.06402261090246807,
+      "market_relative_return_1d": -0.04597227496198729,
+      "median_return_1d": -0.06893442622950824,
+      "number_of_negative_names": 6,
+      "number_of_positive_names": 0,
+      "theme_breadth": 0.0,
+      "theme_context_state": "SELL_OFF",
+      "theme_event_state": "UNKNOWN",
+      "theme_id": "silicon_photonics_cpo",
+      "theme_return_1d": -0.06402261090246807,
+      "theme_return_20d": -0.1881185779416247,
+      "theme_return_5d": -0.08791282591652838,
+      "unknowns": [],
+      "volume_state": "CONTRACTING"
+    },
+    "server_rack": {
+      "confidence": "HIGH",
+      "equal_weight_return_1d": -0.021042400865997606,
+      "market_relative_return_1d": -0.002992064925516829,
+      "median_return_1d": -0.02063829787234045,
+      "number_of_negative_names": 6,
+      "number_of_positive_names": 0,
+      "theme_breadth": 0.0,
+      "theme_context_state": "STABLE",
+      "theme_event_state": "UNKNOWN",
+      "theme_id": "server_rack",
+      "theme_return_1d": -0.021042400865997606,
+      "theme_return_20d": -0.04723289506861474,
+      "theme_return_5d": 0.023646284525919953,
+      "unknowns": [],
+      "volume_state": "NORMAL"
+    },
+    "passive_components": {
+      "confidence": "HIGH",
+      "equal_weight_return_1d": -0.07032521202850384,
+      "market_relative_return_1d": -0.05227487608802306,
+      "median_return_1d": -0.06457564575645758,
+      "number_of_negative_names": 3,
+      "number_of_positive_names": 0,
+      "theme_breadth": 0.0,
+      "theme_context_state": "SELL_OFF",
+      "theme_event_state": "UNKNOWN",
+      "theme_id": "passive_components",
+      "theme_return_1d": -0.07032521202850384,
+      "theme_return_20d": 0.008849029621771328,
+      "theme_return_5d": -0.09693235323296397,
+      "unknowns": [],
+      "volume_state": "NORMAL"
+    },
+    "compute_foundry": {
+      "confidence": "HIGH",
+      "equal_weight_return_1d": -0.03719865777674898,
+      "market_relative_return_1d": -0.019148321836268203,
+      "median_return_1d": -0.03140096618357491,
+      "number_of_negative_names": 5,
+      "number_of_positive_names": 0,
+      "theme_breadth": 0.0,
+      "theme_context_state": "COOLING",
+      "theme_event_state": "UNKNOWN",
+      "theme_id": "compute_foundry",
+      "theme_return_1d": -0.03719865777674898,
+      "theme_return_20d": -0.05659919223160208,
+      "theme_return_5d": -0.031073254194172818,
+      "unknowns": [],
+      "volume_state": "CONTRACTING"
+    },
+    "memory_storage": {
+      "confidence": "HIGH",
+      "equal_weight_return_1d": -0.03126310139941117,
+      "market_relative_return_1d": -0.013212765458930395,
+      "median_return_1d": -0.031347962382445194,
+      "number_of_negative_names": 5,
+      "number_of_positive_names": 0,
+      "theme_breadth": 0.0,
+      "theme_context_state": "COOLING",
+      "theme_event_state": "UNKNOWN",
+      "theme_id": "memory_storage",
+      "theme_return_1d": -0.03126310139941117,
+      "theme_return_20d": -0.1525940904271365,
+      "theme_return_5d": -0.028925582541004746,
+      "unknowns": [],
+      "volume_state": "CONTRACTING"
+    },
+    "network_optics": {
+      "confidence": "HIGH",
+      "equal_weight_return_1d": -0.04766663741142838,
+      "market_relative_return_1d": -0.029616301470947605,
+      "median_return_1d": -0.053173241852487174,
+      "number_of_negative_names": 5,
+      "number_of_positive_names": 0,
+      "theme_breadth": 0.0,
+      "theme_context_state": "SELL_OFF",
+      "theme_event_state": "UNKNOWN",
+      "theme_id": "network_optics",
+      "theme_return_1d": -0.04766663741142838,
+      "theme_return_20d": -0.10235022661529505,
+      "theme_return_5d": -0.08390447652389096,
+      "unknowns": [],
+      "volume_state": "CONTRACTING"
+    },
+    "pcb_substrate": {
+      "confidence": "HIGH",
+      "equal_weight_return_1d": -0.028329123154724977,
+      "market_relative_return_1d": -0.0102787872142442,
+      "median_return_1d": -0.023762376237623783,
+      "number_of_negative_names": 4,
+      "number_of_positive_names": 1,
+      "theme_breadth": 0.2,
+      "theme_context_state": "COOLING",
+      "theme_event_state": "UNKNOWN",
+      "theme_id": "pcb_substrate",
+      "theme_return_1d": -0.028329123154724977,
+      "theme_return_20d": 0.06965402511010191,
+      "theme_return_5d": -0.036498440487783126,
+      "unknowns": [],
+      "volume_state": "EXPANDING"
+    },
+    "advanced_packaging": {
+      "confidence": "HIGH",
+      "equal_weight_return_1d": -0.0434318261203239,
+      "market_relative_return_1d": -0.025381490179843126,
+      "median_return_1d": -0.04385964912280704,
+      "number_of_negative_names": 5,
+      "number_of_positive_names": 0,
+      "theme_breadth": 0.0,
+      "theme_context_state": "SELL_OFF",
+      "theme_event_state": "UNKNOWN",
+      "theme_id": "advanced_packaging",
+      "theme_return_1d": -0.0434318261203239,
+      "theme_return_20d": -0.07732624486450745,
+      "theme_return_5d": -0.06487883189016483,
+      "unknowns": [],
+      "volume_state": "NORMAL"
+    },
+    "thermal_management": {
+      "confidence": "HIGH",
+      "equal_weight_return_1d": -0.03514362331602734,
+      "market_relative_return_1d": -0.017093287375546565,
+      "median_return_1d": -0.02782071097372485,
+      "number_of_negative_names": 5,
+      "number_of_positive_names": 0,
+      "theme_breadth": 0.0,
+      "theme_context_state": "COOLING",
+      "theme_event_state": "UNKNOWN",
+      "theme_id": "thermal_management",
+      "theme_return_1d": -0.03514362331602734,
+      "theme_return_20d": -0.044645510566555704,
+      "theme_return_5d": -0.03663397553297174,
+      "unknowns": [],
+      "volume_state": "NORMAL"
+    }
+  },
+  "current_portfolio_research_state": [
+    {
+      "state_id": "portfolio_state_1c4f1762d69d0e60016ae50c",
+      "date": "2026-10-22",
+      "portfolio_id": "R1_RESEARCH_PORTFOLIO",
+      "stock_id": "2330",
+      "state": "HOLD",
+      "prior_state": "HOLD",
+      "candidate_state": "WATCH",
+      "persistence_count": 2,
+      "hysteresis_required": 3,
+      "challenger_stock_id": "6412",
+      "comparison_id": "opportunity_0a01062be95530ed47a780f5",
+      "rationale": [
+        "candidate=WATCH",
+        "persistence=2/3",
+        "valuation_vs_own_history",
+        "catalyst"
+      ],
+      "evidence_ids": [
+        "source_7506c325ee312535f105ed05",
+        "source_ac886add12622cc733d564b3"
+      ],
+      "unknowns": [
+        "earnings_visibility",
+        "eps_revision"
+      ],
+      "formal_model_changed": false,
+      "trade_decision_changed": false,
+      "active_in_trade_decision": false
+    },
+    {
+      "state_id": "portfolio_state_45c5e215247ffd89bb39b1a6",
+      "date": "2026-10-22",
+      "portfolio_id": "R1_RESEARCH_PORTFOLIO",
+      "stock_id": "2327",
+      "state": "HOLD",
+      "prior_state": "HOLD",
+      "candidate_state": "WATCH",
+      "persistence_count": 2,
+      "hysteresis_required": 3,
+      "challenger_stock_id": "6230",
+      "comparison_id": "opportunity_e2cab2ec0eda5cfcd56970dd",
+      "rationale": [
+        "candidate=WATCH",
+        "persistence=2/3",
+        "valuation_vs_own_history",
+        "price_expectation_catchup",
+        "catalyst",
+        "theme_context"
+      ],
+      "evidence_ids": [
+        "source_7a7a5c7f5ef7178d589489ee",
+        "source_1ec3adc3e3560020686c1c65",
+        "source_3977acaf80a8fa8dcfcb7896"
+      ],
+      "unknowns": [
+        "earnings_visibility",
+        "eps_revision"
+      ],
+      "formal_model_changed": false,
+      "trade_decision_changed": false,
+      "active_in_trade_decision": false
+    },
+    {
+      "state_id": "portfolio_state_809e80e4fe32eee4bdbecbc5",
+      "date": "2026-10-22",
+      "portfolio_id": "R1_RESEARCH_PORTFOLIO",
+      "stock_id": "2344",
+      "state": "HOLD",
+      "prior_state": "HOLD",
+      "candidate_state": "WATCH",
+      "persistence_count": 2,
+      "hysteresis_required": 3,
+      "challenger_stock_id": "6230",
+      "comparison_id": "opportunity_61be86c4a6d9bde613497255",
+      "rationale": [
+        "candidate=WATCH",
+        "persistence=2/3",
+        "valuation_vs_own_history",
+        "price_expectation_catchup",
+        "catalyst"
+      ],
+      "evidence_ids": [
+        "source_7a7a5c7f5ef7178d589489ee",
+        "source_1ec3adc3e3560020686c1c65",
+        "source_aff5acfc524da7adcdbe8d8c"
+      ],
+      "unknowns": [
+        "earnings_visibility",
+        "eps_revision"
+      ],
+      "formal_model_changed": false,
+      "trade_decision_changed": false,
+      "active_in_trade_decision": false
+    },
+    {
+      "state_id": "portfolio_state_637b8d6527c9877d687e1b52",
+      "date": "2026-10-22",
+      "portfolio_id": "R1_RESEARCH_PORTFOLIO",
+      "stock_id": "2376",
+      "state": "HOLD",
+      "prior_state": "HOLD",
+      "candidate_state": "WATCH",
+      "persistence_count": 2,
+      "hysteresis_required": 3,
+      "challenger_stock_id": "6230",
+      "comparison_id": "opportunity_82634e25b40f0855dd309130",
+      "rationale": [
+        "candidate=WATCH",
+        "persistence=2/3",
+        "valuation_vs_own_history",
+        "price_expectation_catchup",
+        "catalyst"
+      ],
+      "evidence_ids": [
+        "source_7a7a5c7f5ef7178d589489ee",
+        "source_1ec3adc3e3560020686c1c65",
+        "source_29563dc0daac1d47c22c3da0"
+      ],
+      "unknowns": [
+        "earnings_visibility",
+        "eps_revision"
+      ],
+      "formal_model_changed": false,
+      "trade_decision_changed": false,
+      "active_in_trade_decision": false
+    },
+    {
+      "state_id": "portfolio_state_0cc801eb0b72eb5b5fa7dc16",
+      "date": "2026-10-22",
+      "portfolio_id": "R1_RESEARCH_PORTFOLIO",
+      "stock_id": "2454",
+      "state": "HOLD",
+      "prior_state": "HOLD",
+      "candidate_state": "WATCH",
+      "persistence_count": 2,
+      "hysteresis_required": 3,
+      "challenger_stock_id": "6230",
+      "comparison_id": "opportunity_8dbeeeb074d4aed8f96169db",
+      "rationale": [
+        "candidate=WATCH",
+        "persistence=2/3",
+        "valuation_vs_own_history",
+        "price_expectation_catchup",
+        "catalyst"
+      ],
+      "evidence_ids": [
+        "source_7a7a5c7f5ef7178d589489ee",
+        "source_1ec3adc3e3560020686c1c65",
+        "source_4b38a7d1652090d8840b2ae4"
+      ],
+      "unknowns": [
+        "earnings_visibility",
+        "eps_revision"
+      ],
+      "formal_model_changed": false,
+      "trade_decision_changed": false,
+      "active_in_trade_decision": false
+    },
+    {
+      "state_id": "portfolio_state_f5be9a8094b1d16d3e93385d",
+      "date": "2026-10-22",
+      "portfolio_id": "R1_RESEARCH_PORTFOLIO",
+      "stock_id": "3037",
+      "state": "HOLD",
+      "prior_state": "HOLD",
+      "candidate_state": "WATCH",
+      "persistence_count": 2,
+      "hysteresis_required": 3,
+      "challenger_stock_id": "6230",
+      "comparison_id": "opportunity_9fb1b22c1967532e2b647bf7",
+      "rationale": [
+        "candidate=WATCH",
+        "persistence=2/3",
+        "valuation_vs_own_history",
+        "catalyst"
+      ],
+      "evidence_ids": [
+        "source_7a7a5c7f5ef7178d589489ee",
+        "source_1ec3adc3e3560020686c1c65",
+        "source_97c03735324904a72a8a762e"
+      ],
+      "unknowns": [
+        "earnings_visibility",
+        "eps_revision"
+      ],
+      "formal_model_changed": false,
+      "trade_decision_changed": false,
+      "active_in_trade_decision": false
+    },
+    {
+      "state_id": "portfolio_state_49a09eb9b6515ca812a60b18",
+      "date": "2026-10-22",
+      "portfolio_id": "R1_RESEARCH_PORTFOLIO",
+      "stock_id": "6488",
+      "state": "HOLD",
+      "prior_state": "HOLD",
+      "candidate_state": "WATCH",
+      "persistence_count": 2,
+      "hysteresis_required": 3,
+      "challenger_stock_id": "6230",
+      "comparison_id": "opportunity_2d578919259eb90e788e5643",
+      "rationale": [
+        "candidate=WATCH",
+        "persistence=2/3",
+        "valuation_vs_own_history",
+        "price_expectation_catchup",
+        "catalyst",
+        "theme_context"
+      ],
+      "evidence_ids": [
+        "source_7a7a5c7f5ef7178d589489ee",
+        "source_1ec3adc3e3560020686c1c65",
+        "source_77f957ae496715906a07b5e8"
+      ],
+      "unknowns": [
+        "earnings_visibility",
+        "eps_revision"
+      ],
+      "formal_model_changed": false,
+      "trade_decision_changed": false,
+      "active_in_trade_decision": false
+    },
+    {
+      "state_id": "portfolio_state_3021cc0a8f447309457faf55",
+      "date": "2026-10-22",
+      "portfolio_id": "R1_RESEARCH_PORTFOLIO",
+      "stock_id": "2408",
+      "state": "HOLD",
+      "prior_state": "HOLD",
+      "candidate_state": "WATCH",
+      "persistence_count": 2,
+      "hysteresis_required": 3,
+      "challenger_stock_id": "6230",
+      "comparison_id": "opportunity_9fd532b2d9429785ad5358ab",
+      "rationale": [
+        "candidate=WATCH",
+        "persistence=2/3",
+        "valuation_vs_own_history",
+        "price_expectation_catchup",
+        "catalyst"
+      ],
+      "evidence_ids": [
+        "source_7a7a5c7f5ef7178d589489ee",
+        "source_1ec3adc3e3560020686c1c65",
+        "source_c8a630c1eeed8538309e0967"
+      ],
+      "unknowns": [
+        "earnings_visibility",
+        "eps_revision"
+      ],
+      "formal_model_changed": false,
+      "trade_decision_changed": false,
+      "active_in_trade_decision": false
+    },
+    {
+      "state_id": "portfolio_state_c6e9dc6a5ad586aef2848e29",
+      "date": "2026-10-22",
+      "portfolio_id": "R1_RESEARCH_PORTFOLIO",
+      "stock_id": "3081",
+      "state": "HOLD",
+      "prior_state": "HOLD",
+      "candidate_state": "WATCH",
+      "persistence_count": 2,
+      "hysteresis_required": 3,
+      "challenger_stock_id": "6230",
+      "comparison_id": "opportunity_f57cbab6886db2a751be827e",
+      "rationale": [
+        "candidate=WATCH",
+        "persistence=2/3",
+        "valuation_vs_own_history",
+        "price_expectation_catchup",
+        "catalyst",
+        "theme_context"
+      ],
+      "evidence_ids": [
+        "source_7a7a5c7f5ef7178d589489ee",
+        "source_1ec3adc3e3560020686c1c65",
+        "source_2287425fc8a002e0441d48c1"
+      ],
+      "unknowns": [
+        "earnings_visibility",
+        "eps_revision"
+      ],
+      "formal_model_changed": false,
+      "trade_decision_changed": false,
+      "active_in_trade_decision": false
+    },
+    {
+      "state_id": "portfolio_state_c7cadd7bf8a0ecfa54e221a0",
+      "date": "2026-10-22",
+      "portfolio_id": "R1_RESEARCH_PORTFOLIO",
+      "stock_id": "2303",
+      "state": "HOLD",
+      "prior_state": "HOLD",
+      "candidate_state": "WATCH",
+      "persistence_count": 2,
+      "hysteresis_required": 3,
+      "challenger_stock_id": "6230",
+      "comparison_id": "opportunity_e000468af66ce33b5e53bb5d",
+      "rationale": [
+        "candidate=WATCH",
+        "persistence=2/3",
+        "valuation_vs_own_history",
+        "catalyst",
+        "theme_context"
+      ],
+      "evidence_ids": [
+        "source_7a7a5c7f5ef7178d589489ee",
+        "source_1ec3adc3e3560020686c1c65",
+        "source_7ded75b3d923b39fe3835885"
+      ],
+      "unknowns": [
+        "earnings_visibility",
+        "eps_revision"
+      ],
+      "formal_model_changed": false,
+      "trade_decision_changed": false,
+      "active_in_trade_decision": false
+    }
+  ],
+  "top_challengers": [
+    {
+      "holding": "2330",
+      "challenger": "6412",
+      "relative_opportunity": "MODERATE_ADVANTAGE"
+    },
+    {
+      "holding": "2327",
+      "challenger": "6230",
+      "relative_opportunity": "MODERATE_ADVANTAGE"
+    },
+    {
+      "holding": "2344",
+      "challenger": "6230",
+      "relative_opportunity": "MODERATE_ADVANTAGE"
+    },
+    {
+      "holding": "2376",
+      "challenger": "6230",
+      "relative_opportunity": "MODERATE_ADVANTAGE"
+    },
+    {
+      "holding": "2454",
+      "challenger": "6230",
+      "relative_opportunity": "MODERATE_ADVANTAGE"
+    },
+    {
+      "holding": "3037",
+      "challenger": "6230",
+      "relative_opportunity": "MODERATE_ADVANTAGE"
+    },
+    {
+      "holding": "6488",
+      "challenger": "6230",
+      "relative_opportunity": "MODERATE_ADVANTAGE"
+    },
+    {
+      "holding": "2408",
+      "challenger": "6230",
+      "relative_opportunity": "MODERATE_ADVANTAGE"
+    },
+    {
+      "holding": "3081",
+      "challenger": "6230",
+      "relative_opportunity": "MODERATE_ADVANTAGE"
+    },
+    {
+      "holding": "2303",
+      "challenger": "6230",
+      "relative_opportunity": "MODERATE_ADVANTAGE"
+    }
+  ],
+  "possible_mispricing_candidates": [
+    "2492",
+    "3081"
+  ],
+  "thesis_changes": [
+    {
+      "stock_id": "2330",
+      "state": "UNKNOWN"
+    },
+    {
+      "stock_id": "2327",
+      "state": "UNKNOWN"
+    },
+    {
+      "stock_id": "2344",
+      "state": "UNKNOWN"
+    },
+    {
+      "stock_id": "2376",
+      "state": "UNKNOWN"
+    },
+    {
+      "stock_id": "2454",
+      "state": "UNKNOWN"
+    },
+    {
+      "stock_id": "3037",
+      "state": "UNKNOWN"
+    },
+    {
+      "stock_id": "6488",
+      "state": "UNKNOWN"
+    },
+    {
+      "stock_id": "2408",
+      "state": "UNKNOWN"
+    },
+    {
+      "stock_id": "3081",
+      "state": "UNKNOWN"
+    },
+    {
+      "stock_id": "2303",
+      "state": "UNKNOWN"
+    }
+  ],
+  "high_confidence_counter_evidence": [],
+  "unknown_data_gaps": [
+    "earnings_visibility",
+    "eps_revision"
+  ],
+  "benchmark_comparison": [
+    {
+      "benchmark_id": "0050",
+      "benchmark_snapshot_id": "benchmark_ca703c08bdde73f6cca16685",
+      "date": "2026-10-22",
+      "nav": null,
+      "portfolio_kind": "BENCHMARK",
+      "return_since_start": null,
+      "source_ids": [],
+      "unknowns": [
+        "benchmark_value"
+      ]
+    },
+    {
+      "benchmark_id": "00631L",
+      "benchmark_snapshot_id": "benchmark_19d4731ed7eaf072fc74e2b5",
+      "date": "2026-10-22",
+      "nav": null,
+      "portfolio_kind": "BENCHMARK",
+      "return_since_start": null,
+      "source_ids": [],
+      "unknowns": [
+        "benchmark_value"
+      ]
+    },
+    {
+      "benchmark_id": "CASH",
+      "benchmark_snapshot_id": "benchmark_94f90928820f5da7462bb1d1",
+      "date": "2026-10-22",
+      "nav": null,
+      "portfolio_kind": "BENCHMARK",
+      "return_since_start": null,
+      "source_ids": [],
+      "unknowns": [
+        "benchmark_value"
+      ]
+    },
+    {
+      "benchmark_id": "CANDIDATE_EQUAL_WEIGHT",
+      "benchmark_snapshot_id": "benchmark_aa2a527fc0bf5cf6fa395bc8",
+      "date": "2026-10-22",
+      "nav": null,
+      "portfolio_kind": "BENCHMARK",
+      "return_since_start": null,
+      "source_ids": [],
+      "unknowns": [
+        "benchmark_value"
+      ]
+    },
+    {
+      "benchmark_id": "R1_RESEARCH_PORTFOLIO",
+      "benchmark_snapshot_id": "benchmark_61c7aca14c120ede099cfae7",
+      "date": "2026-10-22",
+      "nav": null,
+      "portfolio_kind": "RESEARCH",
+      "return_since_start": null,
+      "source_ids": [],
+      "unknowns": [
+        "benchmark_value"
+      ]
+    },
+    {
+      "benchmark_id": "RYAN_ACTUAL_PORTFOLIO",
+      "benchmark_snapshot_id": "benchmark_6b84dc2ccd3852d4a19388d0",
+      "date": "2026-10-22",
+      "nav": null,
+      "portfolio_kind": "ACTUAL",
+      "return_since_start": null,
+      "source_ids": [],
+      "unknowns": [
+        "benchmark_value"
+      ]
+    }
+  ],
+  "portfolio_separation": {
+    "r1_research_portfolio": "research judgments only",
+    "ryan_actual_portfolio": "observation only; never used as R1 performance"
+  },
+  "decision_support_only": true,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false
+}
