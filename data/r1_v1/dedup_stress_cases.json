@@ -1,0 +1,33 @@
+{
+  "status": "REAL_WORLD_SOURCE_SET_RESEARCH_ONLY",
+  "cases": [
+    {
+      "case_id": "tsmc_20260716_capex_up",
+      "ticker": "2330",
+      "event_type": "CAPEX_UP",
+      "event_date": "2026-07-16",
+      "summary": "台積電上調2026資本支出至600億至640億美元，以支應AI結構性需求",
+      "numbers": ["600億美元", "640億美元"],
+      "primary": {"url": "https://investor.tsmc.com/schinese/encrypt/files/encrypt_file/reports/2026-07/547d1696765e05ce3adb81c108ce1c8c1682b80c/TSMC%202Q26%20Transcript.pdf", "family": "tsmc_ir"},
+      "secondary": [
+        {"url": "https://www.cna.com.tw/news/afe/202607160178.aspx", "family": "cna"},
+        {"url": "https://news.tvbs.com.tw/tech/3259312", "family": "tvbs"},
+        {"url": "https://ec.ltn.com.tw/article/breakingnews/5507393", "family": "ltn"}
+      ]
+    },
+    {
+      "case_id": "gigabyte_20260515_guidance_up",
+      "ticker": "2376",
+      "event_type": "GUIDANCE_UP",
+      "event_date": "2026-05-15",
+      "summary": "技嘉法說表示AI伺服器需求強勁、2026營收持續攀高且伺服器產能規劃翻倍",
+      "numbers": ["1050.57億元", "60%", "25億元", "27億元"],
+      "primary": {"url": "https://www.gigabyte.com/FileUpload/TW/SiteMap/83/images/2026Q1-0515.en.pdf", "family": "gigabyte_ir"},
+      "secondary": [
+        {"url": "https://udn.com/news/story/7240/9505486", "family": "udn"},
+        {"url": "https://money.udn.com/money/story/5612/9505463", "family": "economic_daily"},
+        {"url": "https://anuenews.cnyes.com/news/id/6460433", "family": "cnyes"}
+      ]
+    }
+  ]
+}

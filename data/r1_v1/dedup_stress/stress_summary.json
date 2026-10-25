@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "cases": [
+    {
+      "case_id": "tsmc_20260716_capex_up",
+      "source_count": 4,
+      "canonical_event_count": 1,
+      "claim_count": 4,
+      "independent_evidence_counts": [
+        1
+      ],
+      "passed": true
+    },
+    {
+      "case_id": "gigabyte_20260515_guidance_up",
+      "source_count": 4,
+      "canonical_event_count": 1,
+      "claim_count": 4,
+      "independent_evidence_counts": [
+        1
+      ],
+      "passed": true
+    }
+  ],
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false
+}
