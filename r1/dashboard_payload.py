@@ -24,7 +24,7 @@ R1記錄Ryan實際成交與帳戶結果，並與「8/5全部轉為0050正二後�
 公開資料核心分數：結構瓶頸25%、營收獲利兌現25%、題材動能與催化15%、相對估值15%、價格籌碼風險20%。法人目標價上行與修正廣度另作信心加減項，缺少時不補0，也不阻斷核心排名。建議與實際成交分離，只有Ryan確認成交才更新持股。
 
 【情境事件層】
-消息先依來源、影響範圍、方向、有效期限及基本面／價格確認分類。單一新聞、全市場急跌或未確認預估不直接觸發買賣；只有公司投資邏輯已有官方惡化證據並取得獨立確認，才提高換出檢視優先度。此層不修改核心分數、不自動成交，並保留證據與反證。
+消息先依來源、影響範圍、方向、有效期限及基本面／價格確認分類。模型同時比較「系統性賣壓、公司投資邏輯受損、價格與基本面錯位、正向催化確認」等互斥假說，保留支持證據、反證、缺口、信心與前次判斷。單一新聞、全市場急跌或未確認預估不直接觸發買賣；只有公司投資邏輯已有官方惡化證據並取得獨立確認，才提高換出檢視優先度。此層不修改核心分數、不自動成交。
 
 【無差別殺盤過渡層】
 未來半年五檔目標維持不變。當加權指數或十一題材候選池出現廣泛急跌時，R1開放全候選池進行過渡比較，包括五檔目標本身。跌深不是買進理由；候選仍須通過財務、題材催化及風險資料。盤中只列觀察，收盤後以官方資料確認；模型不自動成交。
@@ -67,6 +67,15 @@ CONTEXT_DISPLAY = {
     "NO_CONTEXT_CHANGE": "無新增情境變化",
 }
 
+DELIBERATION_DISPLAY = {
+    "PRIORITIZE_REPLACEMENT_REVIEW": "優先檢視替換",
+    "HOLD_PENDING_CONFIRMATION": "續抱並等待獨立確認",
+    "WATCH_POTENTIAL_DISLOCATION": "可能錯殺，列入回檔觀察",
+    "HOLD_NO_COMPANY_CONCLUSION": "偏系統性賣壓，無公司結論",
+    "REVIEW_ACCUMULATION_CANDIDATE": "列入加碼候選檢視",
+    "KEEP_EXISTING_PLAN": "維持原計畫",
+}
+
 
 def _money(value: object) -> str:
     return f"{float(value):,.1f}" if isinstance(value, (int, float)) else str(value)
@@ -87,6 +96,7 @@ def _build_v03_dashboard(*, config: R1Config, market: dict, theme_review: dict,
                          anonymous_target_ready_count: int = 0,
                          anonymous_target_missing: list[str] | None = None,
                          context_by_ticker: dict[str, dict] | None = None,
+                         deliberation_by_ticker: dict[str, dict] | None = None,
                          total_actual_equity: float | None = None,
                          actual_positions: list[dict] | None = None) -> list[list[object]]:
     themes = load_themes(theme_path)
@@ -140,6 +150,7 @@ def _build_v03_dashboard(*, config: R1Config, market: dict, theme_review: dict,
     }
     actual_positions = actual_positions or []
     context_by_ticker = context_by_ticker or {}
+    deliberation_by_ticker = deliberation_by_ticker or {}
     for item in actual_positions:
         ticker = str(item.get("ticker", "")).upper()
         if ticker not in held and isinstance(item.get("shares"), (int, float)) and item["shares"] > 0:
@@ -165,7 +176,7 @@ def _build_v03_dashboard(*, config: R1Config, market: dict, theme_review: dict,
             "信心層缺值不補0、不阻斷核心排名；不產生自動交易。"
         )],
         ["01｜實際持股與未來半年目標持股"],
-        ["所屬題材", "股票", "優先持有參考值", "實際持有", "當日收盤", "持股市值", "持股占比", "半年目標", "情境判讀"],
+        ["所屬題材", "股票", "優先持有參考值", "實際持有", "當日收盤", "持股市值", "持股占比", "半年目標", "情境判讀／推理結論"],
     ]
     for ticker in display_tickers:
         security = securities.get(ticker)
@@ -186,9 +197,9 @@ def _build_v03_dashboard(*, config: R1Config, market: dict, theme_review: dict,
             _money(market_value) if market_value is not None else "",
             _percent(weight) if weight is not None else "",
             "未來半年目標" if ticker in targets else "既有實際持股",
-            CONTEXT_DISPLAY.get(
-                context_by_ticker.get(ticker, {}).get("context_state"), "待資料"
-            ),
+            (f"{CONTEXT_DISPLAY.get(context_by_ticker.get(ticker, {}).get('context_state'), '待資料')}；"
+             f"{DELIBERATION_DISPLAY.get(deliberation_by_ticker.get(ticker, {}).get('conclusion'), '待推理')}"
+             f"（{deliberation_by_ticker.get(ticker, {}).get('confidence', 'NA')}）"),
         ])
     comparison = comparison or {"rows": [], "comparison_ready": False}
     recommendations = recommendations or []
@@ -323,6 +334,7 @@ def build_dashboard_payload(
     anonymous_target_price_path: str | Path = "data/r1/target_prices/yahoo_aggregate_latest.json",
     v05_rank_path: str | Path = "data/r1/v05/latest.json",
     context_event_path: str | Path = "data/r1/context_event_latest.json",
+    deliberation_path: str | Path = "data/r1/deliberation/latest.json",
 ) -> dict:
     config = R1Config.load(config_path)
     market = json.loads(Path(market_path).read_text(encoding="utf-8"))
@@ -391,6 +403,13 @@ def build_dashboard_payload(
         context_payload = {"rows": []}
     context_by_ticker = {
         str(row.get("ticker", "")).zfill(4): row for row in context_payload.get("rows", [])
+    }
+    deliberation_file = Path(deliberation_path)
+    deliberation_payload = json.loads(deliberation_file.read_text(encoding="utf-8")) if deliberation_file.exists() else {"rows": []}
+    if deliberation_payload.get("date") != market.get("date"):
+        deliberation_payload = {"rows": []}
+    deliberation_by_ticker = {
+        str(row.get("ticker", "")).zfill(4): row for row in deliberation_payload.get("rows", [])
     }
     for item in comparison["rows"]:
         tabs["R1績效每日比較"].append([item[key] for key in TAB_SCHEMAS["R1績效每日比較"]])
@@ -480,6 +499,7 @@ def build_dashboard_payload(
         anonymous_target_ready_count=sum(ticker in anonymous_target_by_ticker for ticker in v05_by_ticker),
         anonymous_target_missing=sorted(ticker for ticker in v05_by_ticker if ticker not in anonymous_target_by_ticker),
         context_by_ticker=context_by_ticker,
+        deliberation_by_ticker=deliberation_by_ticker,
         total_actual_equity=actual_account.get("equity_market_value"),
         actual_positions=actual_account.get("positions", []),
     )
