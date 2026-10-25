@@ -1,0 +1,38 @@
+{
+  "status": "RESEARCH_DEBUG_ONLY",
+  "counts": {
+    "sources": 133,
+    "facts": 1448,
+    "events": 104,
+    "claims": 104,
+    "event_claim_links": 104,
+    "claim_evidence_links": 104,
+    "dedup_decisions": 0,
+    "rejections": 0,
+    "audit_log": 1789
+  },
+  "raw_event_observations": 104,
+  "canonical_events": 104,
+  "source_classes": {
+    "EXCHANGE_MOPS": 24,
+    "GENERAL_MEDIA": 31,
+    "INDUSTRY_RESEARCH": 48,
+    "OFFICIAL": 30
+  },
+  "event_statuses": {
+    "ACTIVE": 104
+  },
+  "claim_types": {
+    "FACTUAL_CLAIM": 104
+  },
+  "evidence_stances": {
+    "SUPPORTS": 104
+  },
+  "future_data_violations": 0,
+  "data_missing": 0,
+  "possible_duplicates": 0,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false
+}

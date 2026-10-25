@@ -23,7 +23,7 @@ requires = ["setuptools>=68"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools]
-packages = ["rotation_radar", "r1"]
+packages = ["rotation_radar", "r1", "r1_v1"]
 
 [tool.ruff]
 line-length = 120
