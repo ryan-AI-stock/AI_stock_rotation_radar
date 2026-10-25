@@ -14,6 +14,7 @@ from rotation_radar.v4d_top1_signal import ADJUSTED_WARMUP, LIQUIDITY_WARMUP, ex
 
 
 RETURN_WINDOWS = {"daily_return": 1, "return_1w": 5, "return_1m": 20, "return_3m": 60, "return_6m": 120}
+ADJUSTED_SEED_SUPPLEMENT = Path("data/r1/adjusted_seed_supplement.csv")
 
 
 def _load_universe(*, config_path: str | Path, theme_path: str | Path | None = None) -> dict[str, dict]:
@@ -71,6 +72,12 @@ def build_market_snapshot(
     adjusted_seed = pd.read_csv(ADJUSTED_WARMUP, dtype={"ticker": str}).rename(
         columns={"adjusted_close": "adjusted_analysis_close"}
     )
+    if ADJUSTED_SEED_SUPPLEMENT.exists():
+        supplement = pd.read_csv(ADJUSTED_SEED_SUPPLEMENT, dtype={"ticker": str})
+        adjusted_seed = pd.concat(
+            [adjusted_seed, supplement[["ticker", "date", "adjusted_analysis_close"]]],
+            ignore_index=True,
+        ).drop_duplicates(["ticker", "date"], keep="last")
     adjusted_seed["ticker"] = adjusted_seed.ticker.str.zfill(4)
     adjusted_seed["date"] = pd.to_datetime(adjusted_seed.date)
     adjusted_seed = adjusted_seed[adjusted_seed.ticker.isin(universe)]
@@ -78,10 +85,21 @@ def build_market_snapshot(
     raw_seed["ticker"] = raw_seed.ticker.str.zfill(4)
     raw_seed["date"] = pd.to_datetime(raw_seed.date)
     raw_seed = raw_seed[raw_seed.ticker.isin(universe)]
+    # Include the official raw warm-up rows in the extension.  This matters for
+    # securities added after the frozen V4-D adjusted warm-up was built: once a
+    # dated overlap establishes the accepted factor, the earlier official raw
+    # rows must also be materialised or MA60/120-day returns remain unavailable.
+    official_extension = pd.concat(
+        [
+            raw_seed[["ticker", "date", "raw_close"]].rename(columns={"raw_close": "close"}),
+            official[["ticker", "date", "close"]],
+        ],
+        ignore_index=True,
+    ).drop_duplicates(["ticker", "date"], keep="last")
     extension = extend_adjusted_with_official_raw(
         adjusted_seed,
         raw_seed[["ticker", "date", "raw_close"]].dropna(),
-        official,
+        official_extension,
     )
     prices = pd.concat([adjusted_seed, extension], ignore_index=True, sort=False).drop_duplicates(
         ["ticker", "date"], keep="last"

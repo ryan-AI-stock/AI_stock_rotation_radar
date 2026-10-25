@@ -62,6 +62,7 @@ def build_weekly_snapshot(
     bottleneck_evidence_path: str | Path = "data/r1/bottleneck_evidence.csv",
     catalyst_evidence_path: str | Path = "data/r1/catalyst_events/evidence.csv",
     supplemental_revision_path: str | Path = "data/r1/consensus/current_year_revision_history.csv",
+    repair_incomplete_market: bool = False,
 ) -> Path:
     if not week_final_confirmed:
         raise ValueError("formal weekly snapshot requires week_final_confirmed=true")
@@ -77,7 +78,13 @@ def build_weekly_snapshot(
             or existing.get("future_data_violation_count") != 0
         ):
             raise FileExistsError(f"invalid append-only weekly snapshot already exists: {output}")
-        return output
+        if not repair_incomplete_market:
+            return output
+        missing_market_analytics = any(
+            row.get("adjusted_analysis_close") is None for row in existing["rows"]
+        )
+        if not missing_market_analytics:
+            return output
     config = R1Config.load(config_path)
     market = json.loads(Path(market_path).read_text(encoding="utf-8"))
     if market.get("date") != date:
@@ -519,6 +526,10 @@ def main() -> None:
     parser.add_argument("--bottleneck-evidence", default="data/r1/bottleneck_evidence.csv")
     parser.add_argument("--catalyst-evidence", default="data/r1/catalyst_events/evidence.csv")
     parser.add_argument("--supplemental-revision", default="data/r1/consensus/current_year_revision_history.csv")
+    parser.add_argument(
+        "--repair-incomplete-market", action="store_true",
+        help="Rebuild an exact-date snapshot only when its existing market analytics are incomplete.",
+    )
     args = parser.parse_args()
     print(build_weekly_snapshot(date=args.date, config_path=args.config, market_path=args.market,
                                 daily_source_root=args.daily_source_root, output_root=args.output_root,
@@ -529,7 +540,8 @@ def main() -> None:
                                 valuation_reference_path=args.valuation_reference,
                                 bottleneck_evidence_path=args.bottleneck_evidence,
                                 catalyst_evidence_path=args.catalyst_evidence,
-                                supplemental_revision_path=args.supplemental_revision))
+                                supplemental_revision_path=args.supplemental_revision,
+                                repair_incomplete_market=args.repair_incomplete_market))
 
 
 if __name__ == "__main__":

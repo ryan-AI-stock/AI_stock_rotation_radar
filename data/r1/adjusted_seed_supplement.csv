@@ -1,0 +1,2 @@
+ticker,date,adjusted_analysis_close,raw_close,factor,authority,note
+6230,2026-05-26,142.5,142.5,1.0,accepted_adjusted_cache_overlap,Adjusted and official raw close exact overlap; seeds factor only and does not replace official daily prices

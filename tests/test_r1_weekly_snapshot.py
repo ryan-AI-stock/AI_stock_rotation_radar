@@ -73,6 +73,22 @@ class R1WeeklySnapshotTest(unittest.TestCase):
             original = output.read_text(encoding="utf-8")
             self.assertEqual(build_weekly_snapshot(**kwargs).read_text(encoding="utf-8"), original)
 
+    def test_explicit_repair_rebuilds_only_incomplete_market_snapshot(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self._write_complete_chip_day(root)
+            market = self._market(root)
+            kwargs = dict(date="2026-10-02", config_path=ROOT / "config/r1.json",
+                          market_path=market, daily_source_root=root / "daily",
+                          output_root=root / "weekly", week_final_confirmed=True)
+            output = build_weekly_snapshot(**kwargs)
+            payload = json.loads(output.read_text(encoding="utf-8"))
+            payload["rows"][0]["adjusted_analysis_close"] = None
+            output.write_text(json.dumps(payload), encoding="utf-8")
+            repaired = build_weekly_snapshot(**kwargs, repair_incomplete_market=True)
+            repaired_payload = json.loads(repaired.read_text(encoding="utf-8"))
+            self.assertIsNotNone(repaired_payload["rows"][0]["adjusted_analysis_close"])
+
     def test_verified_consensus_enters_snapshot_as_watch_only(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)

@@ -48,6 +48,13 @@ class R1MarketSnapshotTest(unittest.TestCase):
         self.assertEqual(len(themed), 54)
         self.assertEqual(set(original), set(themed))
 
+    def test_supplemented_security_has_adjusted_analytics(self):
+        payload = json.loads((Path("data/r1/daily_market_latest.json")).read_text(encoding="utf-8"))
+        row = next(row for row in payload["rows"] if row["ticker"] == "6230")
+        self.assertEqual(row["quality"], "HIGH")
+        self.assertIsNotNone(row["adjusted_analysis_close"])
+        self.assertIsNotNone(row["bias60"])
+
 
 if __name__ == "__main__":
     unittest.main()
