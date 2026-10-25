@@ -1,0 +1,2532 @@
+{
+  "status": "RESEARCH_DEBUG_ONLY",
+  "stock_count": 52,
+  "rows": [
+    {
+      "stock_id": "1560",
+      "thesis_state": "UNKNOWN",
+      "leading_hypothesis": "SYSTEMIC_SELL_OFF",
+      "alternative_hypotheses": [
+        "THEME_DERATING",
+        "VALUATION_COMPRESSION"
+      ],
+      "confidence": "LOW",
+      "supporting_evidence": [],
+      "counter_evidence": [],
+      "unknowns": [
+        "company_specific_ai_revenue_share",
+        "20D_60D_context_history",
+        "independent_customer_confirmation",
+        "eps_revision",
+        "ev_ebitda",
+        "foreign_flow",
+        "large_holder_change",
+        "margin_change",
+        "own_volatility_history",
+        "pb",
+        "return_20d",
+        "return_5d",
+        "short_interest_change",
+        "tw50_return_1d",
+        "us_market_return_1d",
+        "usd_twd_return_1d",
+        "valuation_change_12w",
+        "valuation_change_1w",
+        "valuation_change_4w",
+        "vix",
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation",
+        "valuation_change_history"
+      ],
+      "falsification_conditions": [
+        "市場恢復但個股持續顯著落後",
+        "題材breadth與相對報酬持續回升",
+        "估值回到正常但價格仍異常"
+      ],
+      "next_observation": [
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation",
+        "valuation_change_history"
+      ]
+    },
+    {
+      "stock_id": "2301",
+      "thesis_state": "UNKNOWN",
+      "leading_hypothesis": "SYSTEMIC_SELL_OFF",
+      "alternative_hypotheses": [
+        "THEME_DERATING",
+        "VALUATION_COMPRESSION"
+      ],
+      "confidence": "LOW",
+      "supporting_evidence": [
+        "source_ad49f1acce559a8b0693a61b",
+        "source_d22fcfc8abe443427b903b78"
+      ],
+      "counter_evidence": [],
+      "unknowns": [
+        "company_specific_ai_revenue_share",
+        "20D_60D_context_history",
+        "independent_customer_confirmation",
+        "eps_revision",
+        "ev_ebitda",
+        "foreign_flow",
+        "large_holder_change",
+        "margin_change",
+        "own_volatility_history",
+        "pb",
+        "return_20d",
+        "return_5d",
+        "short_interest_change",
+        "tw50_return_1d",
+        "us_market_return_1d",
+        "usd_twd_return_1d",
+        "valuation_change_12w",
+        "valuation_change_1w",
+        "valuation_change_4w",
+        "vix",
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation",
+        "valuation_change_history"
+      ],
+      "falsification_conditions": [
+        "市場恢復但個股持續顯著落後",
+        "題材breadth與相對報酬持續回升",
+        "估值回到正常但價格仍異常"
+      ],
+      "next_observation": [
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation",
+        "valuation_change_history"
+      ]
+    },
+    {
+      "stock_id": "2303",
+      "thesis_state": "UNKNOWN",
+      "leading_hypothesis": "SYSTEMIC_SELL_OFF",
+      "alternative_hypotheses": [
+        "THEME_DERATING",
+        "VALUATION_COMPRESSION"
+      ],
+      "confidence": "LOW",
+      "supporting_evidence": [
+        "source_7ded75b3d923b39fe3835885"
+      ],
+      "counter_evidence": [],
+      "unknowns": [
+        "company_specific_ai_revenue_share",
+        "20D_60D_context_history",
+        "independent_customer_confirmation",
+        "eps_revision",
+        "ev_ebitda",
+        "foreign_flow",
+        "large_holder_change",
+        "margin_change",
+        "own_volatility_history",
+        "pb",
+        "return_20d",
+        "return_5d",
+        "short_interest_change",
+        "tw50_return_1d",
+        "us_market_return_1d",
+        "usd_twd_return_1d",
+        "valuation_change_12w",
+        "valuation_change_1w",
+        "valuation_change_4w",
+        "vix",
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation",
+        "valuation_change_history"
+      ],
+      "falsification_conditions": [
+        "市場恢復但個股持續顯著落後",
+        "題材breadth與相對報酬持續回升",
+        "估值回到正常但價格仍異常"
+      ],
+      "next_observation": [
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation",
+        "valuation_change_history"
+      ]
+    },
+    {
+      "stock_id": "2308",
+      "thesis_state": "UNKNOWN",
+      "leading_hypothesis": "SYSTEMIC_SELL_OFF",
+      "alternative_hypotheses": [
+        "THEME_DERATING",
+        "VALUATION_COMPRESSION"
+      ],
+      "confidence": "LOW",
+      "supporting_evidence": [],
+      "counter_evidence": [],
+      "unknowns": [
+        "company_specific_ai_revenue_share",
+        "20D_60D_context_history",
+        "independent_customer_confirmation",
+        "eps_revision",
+        "ev_ebitda",
+        "foreign_flow",
+        "large_holder_change",
+        "margin_change",
+        "own_volatility_history",
+        "pb",
+        "return_20d",
+        "return_5d",
+        "short_interest_change",
+        "tw50_return_1d",
+        "us_market_return_1d",
+        "usd_twd_return_1d",
+        "valuation_change_12w",
+        "valuation_change_1w",
+        "valuation_change_4w",
+        "vix",
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation",
+        "valuation_change_history"
+      ],
+      "falsification_conditions": [
+        "市場恢復但個股持續顯著落後",
+        "題材breadth與相對報酬持續回升",
+        "估值回到正常但價格仍異常"
+      ],
+      "next_observation": [
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation",
+        "valuation_change_history"
+      ]
+    },
+    {
+      "stock_id": "2317",
+      "thesis_state": "UNKNOWN",
+      "leading_hypothesis": "SYSTEMIC_SELL_OFF",
+      "alternative_hypotheses": [
+        "TEMPORARY_EXECUTION_DELAY"
+      ],
+      "confidence": "LOW",
+      "supporting_evidence": [],
+      "counter_evidence": [],
+      "unknowns": [
+        "company_specific_ai_revenue_share",
+        "20D_60D_context_history",
+        "independent_customer_confirmation",
+        "eps_revision",
+        "ev_ebitda",
+        "foreign_flow",
+        "large_holder_change",
+        "margin_change",
+        "own_volatility_history",
+        "pb",
+        "return_20d",
+        "return_5d",
+        "short_interest_change",
+        "tw50_return_1d",
+        "us_market_return_1d",
+        "usd_twd_return_1d",
+        "valuation_change_12w",
+        "valuation_change_1w",
+        "valuation_change_4w",
+        "vix",
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "company_delivery_data"
+      ],
+      "falsification_conditions": [
+        "市場恢復但個股持續顯著落後",
+        "延遲跨越預期窗口或公司下修指引"
+      ],
+      "next_observation": [
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "company_delivery_data"
+      ]
+    },
+    {
+      "stock_id": "2327",
+      "thesis_state": "UNKNOWN",
+      "leading_hypothesis": "SYSTEMIC_SELL_OFF",
+      "alternative_hypotheses": [
+        "THEME_DERATING",
+        "VALUATION_COMPRESSION"
+      ],
+      "confidence": "LOW",
+      "supporting_evidence": [
+        "source_3977acaf80a8fa8dcfcb7896"
+      ],
+      "counter_evidence": [],
+      "unknowns": [
+        "company_specific_ai_revenue_share",
+        "20D_60D_context_history",
+        "independent_customer_confirmation",
+        "eps_revision",
+        "ev_ebitda",
+        "foreign_flow",
+        "large_holder_change",
+        "margin_change",
+        "own_volatility_history",
+        "pb",
+        "return_20d",
+        "return_5d",
+        "short_interest_change",
+        "tw50_return_1d",
+        "us_market_return_1d",
+        "usd_twd_return_1d",
+        "valuation_change_12w",
+        "valuation_change_1w",
+        "valuation_change_4w",
+        "vix",
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation",
+        "valuation_change_history"
+      ],
+      "falsification_conditions": [
+        "市場恢復但個股持續顯著落後",
+        "題材breadth與相對報酬持續回升",
+        "估值回到正常但價格仍異常"
+      ],
+      "next_observation": [
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation",
+        "valuation_change_history"
+      ]
+    },
+    {
+      "stock_id": "2330",
+      "thesis_state": "UNKNOWN",
+      "leading_hypothesis": "SYSTEMIC_SELL_OFF",
+      "alternative_hypotheses": [
+        "THEME_DERATING",
+        "VALUATION_COMPRESSION"
+      ],
+      "confidence": "LOW",
+      "supporting_evidence": [],
+      "counter_evidence": [],
+      "unknowns": [
+        "company_specific_ai_revenue_share",
+        "20D_60D_context_history",
+        "independent_customer_confirmation",
+        "eps_revision",
+        "ev_ebitda",
+        "foreign_flow",
+        "large_holder_change",
+        "margin_change",
+        "own_volatility_history",
+        "pb",
+        "return_20d",
+        "return_5d",
+        "short_interest_change",
+        "tw50_return_1d",
+        "us_market_return_1d",
+        "usd_twd_return_1d",
+        "valuation_change_12w",
+        "valuation_change_1w",
+        "valuation_change_4w",
+        "vix",
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation",
+        "valuation_change_history"
+      ],
+      "falsification_conditions": [
+        "市場恢復但個股持續顯著落後",
+        "題材breadth與相對報酬持續回升",
+        "估值回到正常但價格仍異常"
+      ],
+      "next_observation": [
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation",
+        "valuation_change_history"
+      ]
+    },
+    {
+      "stock_id": "2337",
+      "thesis_state": "UNKNOWN",
+      "leading_hypothesis": "SYSTEMIC_SELL_OFF",
+      "alternative_hypotheses": [
+        "THEME_DERATING"
+      ],
+      "confidence": "LOW",
+      "supporting_evidence": [],
+      "counter_evidence": [],
+      "unknowns": [
+        "company_specific_ai_revenue_share",
+        "20D_60D_context_history",
+        "independent_customer_confirmation",
+        "eps_revision",
+        "ev_ebitda",
+        "foreign_flow",
+        "large_holder_change",
+        "margin_change",
+        "own_volatility_history",
+        "pb",
+        "return_20d",
+        "return_5d",
+        "short_interest_change",
+        "tw50_return_1d",
+        "us_market_return_1d",
+        "usd_twd_return_1d",
+        "valuation_change_12w",
+        "valuation_change_1w",
+        "valuation_change_4w",
+        "vix",
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation"
+      ],
+      "falsification_conditions": [
+        "市場恢復但個股持續顯著落後",
+        "題材breadth與相對報酬持續回升"
+      ],
+      "next_observation": [
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation"
+      ]
+    },
+    {
+      "stock_id": "2344",
+      "thesis_state": "UNKNOWN",
+      "leading_hypothesis": "SYSTEMIC_SELL_OFF",
+      "alternative_hypotheses": [
+        "THEME_DERATING"
+      ],
+      "confidence": "LOW",
+      "supporting_evidence": [
+        "source_aff5acfc524da7adcdbe8d8c"
+      ],
+      "counter_evidence": [],
+      "unknowns": [
+        "company_specific_ai_revenue_share",
+        "20D_60D_context_history",
+        "independent_customer_confirmation",
+        "eps_revision",
+        "ev_ebitda",
+        "foreign_flow",
+        "large_holder_change",
+        "margin_change",
+        "own_volatility_history",
+        "pb",
+        "return_20d",
+        "return_5d",
+        "short_interest_change",
+        "tw50_return_1d",
+        "us_market_return_1d",
+        "usd_twd_return_1d",
+        "valuation_change_12w",
+        "valuation_change_1w",
+        "valuation_change_4w",
+        "vix",
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation"
+      ],
+      "falsification_conditions": [
+        "市場恢復但個股持續顯著落後",
+        "題材breadth與相對報酬持續回升"
+      ],
+      "next_observation": [
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation"
+      ]
+    },
+    {
+      "stock_id": "2345",
+      "thesis_state": "UNKNOWN",
+      "leading_hypothesis": "SYSTEMIC_SELL_OFF",
+      "alternative_hypotheses": [
+        "THEME_DERATING"
+      ],
+      "confidence": "LOW",
+      "supporting_evidence": [],
+      "counter_evidence": [],
+      "unknowns": [
+        "company_specific_ai_revenue_share",
+        "20D_60D_context_history",
+        "independent_customer_confirmation",
+        "eps_revision",
+        "ev_ebitda",
+        "foreign_flow",
+        "large_holder_change",
+        "margin_change",
+        "own_volatility_history",
+        "pb",
+        "return_20d",
+        "return_5d",
+        "short_interest_change",
+        "tw50_return_1d",
+        "us_market_return_1d",
+        "usd_twd_return_1d",
+        "valuation_change_12w",
+        "valuation_change_1w",
+        "valuation_change_4w",
+        "vix",
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation"
+      ],
+      "falsification_conditions": [
+        "市場恢復但個股持續顯著落後",
+        "題材breadth與相對報酬持續回升"
+      ],
+      "next_observation": [
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation"
+      ]
+    },
+    {
+      "stock_id": "2356",
+      "thesis_state": "UNKNOWN",
+      "leading_hypothesis": "SYSTEMIC_SELL_OFF",
+      "alternative_hypotheses": [
+        "TEMPORARY_EXECUTION_DELAY"
+      ],
+      "confidence": "LOW",
+      "supporting_evidence": [],
+      "counter_evidence": [],
+      "unknowns": [
+        "company_specific_ai_revenue_share",
+        "20D_60D_context_history",
+        "independent_customer_confirmation",
+        "eps_revision",
+        "ev_ebitda",
+        "foreign_flow",
+        "large_holder_change",
+        "margin_change",
+        "own_volatility_history",
+        "pb",
+        "return_20d",
+        "return_5d",
+        "short_interest_change",
+        "tw50_return_1d",
+        "us_market_return_1d",
+        "usd_twd_return_1d",
+        "valuation_change_12w",
+        "valuation_change_1w",
+        "valuation_change_4w",
+        "vix",
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "company_delivery_data"
+      ],
+      "falsification_conditions": [
+        "市場恢復但個股持續顯著落後",
+        "延遲跨越預期窗口或公司下修指引"
+      ],
+      "next_observation": [
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "company_delivery_data"
+      ]
+    },
+    {
+      "stock_id": "2368",
+      "thesis_state": "UNKNOWN",
+      "leading_hypothesis": "SYSTEMIC_SELL_OFF",
+      "alternative_hypotheses": [
+        "THEME_DERATING",
+        "VALUATION_COMPRESSION"
+      ],
+      "confidence": "LOW",
+      "supporting_evidence": [],
+      "counter_evidence": [],
+      "unknowns": [
+        "company_specific_ai_revenue_share",
+        "20D_60D_context_history",
+        "independent_customer_confirmation",
+        "eps_revision",
+        "ev_ebitda",
+        "foreign_flow",
+        "large_holder_change",
+        "margin_change",
+        "own_volatility_history",
+        "pb",
+        "return_20d",
+        "return_5d",
+        "short_interest_change",
+        "tw50_return_1d",
+        "us_market_return_1d",
+        "usd_twd_return_1d",
+        "valuation_change_12w",
+        "valuation_change_1w",
+        "valuation_change_4w",
+        "vix",
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation",
+        "valuation_change_history"
+      ],
+      "falsification_conditions": [
+        "市場恢復但個股持續顯著落後",
+        "題材breadth與相對報酬持續回升",
+        "估值回到正常但價格仍異常"
+      ],
+      "next_observation": [
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation",
+        "valuation_change_history"
+      ]
+    },
+    {
+      "stock_id": "2376",
+      "thesis_state": "UNKNOWN",
+      "leading_hypothesis": "SYSTEMIC_SELL_OFF",
+      "alternative_hypotheses": [
+        "TEMPORARY_EXECUTION_DELAY"
+      ],
+      "confidence": "LOW",
+      "supporting_evidence": [
+        "source_29563dc0daac1d47c22c3da0"
+      ],
+      "counter_evidence": [],
+      "unknowns": [
+        "company_specific_ai_revenue_share",
+        "20D_60D_context_history",
+        "independent_customer_confirmation",
+        "eps_revision",
+        "ev_ebitda",
+        "foreign_flow",
+        "large_holder_change",
+        "margin_change",
+        "own_volatility_history",
+        "pb",
+        "return_20d",
+        "return_5d",
+        "short_interest_change",
+        "tw50_return_1d",
+        "us_market_return_1d",
+        "usd_twd_return_1d",
+        "valuation_change_12w",
+        "valuation_change_1w",
+        "valuation_change_4w",
+        "vix",
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "company_delivery_data"
+      ],
+      "falsification_conditions": [
+        "市場恢復但個股持續顯著落後",
+        "延遲跨越預期窗口或公司下修指引"
+      ],
+      "next_observation": [
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "company_delivery_data"
+      ]
+    },
+    {
+      "stock_id": "2379",
+      "thesis_state": "UNKNOWN",
+      "leading_hypothesis": "SYSTEMIC_SELL_OFF",
+      "alternative_hypotheses": [
+        "THEME_DERATING",
+        "VALUATION_COMPRESSION"
+      ],
+      "confidence": "LOW",
+      "supporting_evidence": [],
+      "counter_evidence": [],
+      "unknowns": [
+        "company_specific_ai_revenue_share",
+        "20D_60D_context_history",
+        "independent_customer_confirmation",
+        "eps_revision",
+        "ev_ebitda",
+        "foreign_flow",
+        "large_holder_change",
+        "margin_change",
+        "own_volatility_history",
+        "pb",
+        "return_20d",
+        "return_5d",
+        "short_interest_change",
+        "tw50_return_1d",
+        "us_market_return_1d",
+        "usd_twd_return_1d",
+        "valuation_change_12w",
+        "valuation_change_1w",
+        "valuation_change_4w",
+        "vix",
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation",
+        "valuation_change_history"
+      ],
+      "falsification_conditions": [
+        "市場恢復但個股持續顯著落後",
+        "題材breadth與相對報酬持續回升",
+        "估值回到正常但價格仍異常"
+      ],
+      "next_observation": [
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation",
+        "valuation_change_history"
+      ]
+    },
+    {
+      "stock_id": "2382",
+      "thesis_state": "UNKNOWN",
+      "leading_hypothesis": "SYSTEMIC_SELL_OFF",
+      "alternative_hypotheses": [
+        "TEMPORARY_EXECUTION_DELAY"
+      ],
+      "confidence": "LOW",
+      "supporting_evidence": [],
+      "counter_evidence": [],
+      "unknowns": [
+        "company_specific_ai_revenue_share",
+        "20D_60D_context_history",
+        "independent_customer_confirmation",
+        "eps_revision",
+        "ev_ebitda",
+        "foreign_flow",
+        "large_holder_change",
+        "margin_change",
+        "own_volatility_history",
+        "pb",
+        "return_20d",
+        "return_5d",
+        "short_interest_change",
+        "tw50_return_1d",
+        "us_market_return_1d",
+        "usd_twd_return_1d",
+        "valuation_change_12w",
+        "valuation_change_1w",
+        "valuation_change_4w",
+        "vix",
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "company_delivery_data"
+      ],
+      "falsification_conditions": [
+        "市場恢復但個股持續顯著落後",
+        "延遲跨越預期窗口或公司下修指引"
+      ],
+      "next_observation": [
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "company_delivery_data"
+      ]
+    },
+    {
+      "stock_id": "2383",
+      "thesis_state": "UNKNOWN",
+      "leading_hypothesis": "SYSTEMIC_SELL_OFF",
+      "alternative_hypotheses": [
+        "THEME_DERATING",
+        "VALUATION_COMPRESSION"
+      ],
+      "confidence": "LOW",
+      "supporting_evidence": [],
+      "counter_evidence": [],
+      "unknowns": [
+        "company_specific_ai_revenue_share",
+        "20D_60D_context_history",
+        "independent_customer_confirmation",
+        "eps_revision",
+        "ev_ebitda",
+        "foreign_flow",
+        "large_holder_change",
+        "margin_change",
+        "own_volatility_history",
+        "pb",
+        "return_20d",
+        "return_5d",
+        "short_interest_change",
+        "tw50_return_1d",
+        "us_market_return_1d",
+        "usd_twd_return_1d",
+        "valuation_change_12w",
+        "valuation_change_1w",
+        "valuation_change_4w",
+        "vix",
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation",
+        "valuation_change_history"
+      ],
+      "falsification_conditions": [
+        "市場恢復但個股持續顯著落後",
+        "題材breadth與相對報酬持續回升",
+        "估值回到正常但價格仍異常"
+      ],
+      "next_observation": [
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation",
+        "valuation_change_history"
+      ]
+    },
+    {
+      "stock_id": "2408",
+      "thesis_state": "UNKNOWN",
+      "leading_hypothesis": "SYSTEMIC_SELL_OFF",
+      "alternative_hypotheses": [
+        "THEME_DERATING"
+      ],
+      "confidence": "LOW",
+      "supporting_evidence": [
+        "source_c8a630c1eeed8538309e0967"
+      ],
+      "counter_evidence": [],
+      "unknowns": [
+        "company_specific_ai_revenue_share",
+        "20D_60D_context_history",
+        "independent_customer_confirmation",
+        "eps_revision",
+        "ev_ebitda",
+        "foreign_flow",
+        "large_holder_change",
+        "margin_change",
+        "own_volatility_history",
+        "pb",
+        "return_20d",
+        "return_5d",
+        "short_interest_change",
+        "tw50_return_1d",
+        "us_market_return_1d",
+        "usd_twd_return_1d",
+        "valuation_change_12w",
+        "valuation_change_1w",
+        "valuation_change_4w",
+        "vix",
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation"
+      ],
+      "falsification_conditions": [
+        "市場恢復但個股持續顯著落後",
+        "題材breadth與相對報酬持續回升"
+      ],
+      "next_observation": [
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation"
+      ]
+    },
+    {
+      "stock_id": "2449",
+      "thesis_state": "UNKNOWN",
+      "leading_hypothesis": "SYSTEMIC_SELL_OFF",
+      "alternative_hypotheses": [
+        "THEME_DERATING",
+        "VALUATION_COMPRESSION"
+      ],
+      "confidence": "LOW",
+      "supporting_evidence": [],
+      "counter_evidence": [],
+      "unknowns": [
+        "company_specific_ai_revenue_share",
+        "20D_60D_context_history",
+        "independent_customer_confirmation",
+        "eps_revision",
+        "ev_ebitda",
+        "foreign_flow",
+        "large_holder_change",
+        "margin_change",
+        "own_volatility_history",
+        "pb",
+        "return_20d",
+        "return_5d",
+        "short_interest_change",
+        "tw50_return_1d",
+        "us_market_return_1d",
+        "usd_twd_return_1d",
+        "valuation_change_12w",
+        "valuation_change_1w",
+        "valuation_change_4w",
+        "vix",
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation",
+        "valuation_change_history"
+      ],
+      "falsification_conditions": [
+        "市場恢復但個股持續顯著落後",
+        "題材breadth與相對報酬持續回升",
+        "估值回到正常但價格仍異常"
+      ],
+      "next_observation": [
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation",
+        "valuation_change_history"
+      ]
+    },
+    {
+      "stock_id": "2454",
+      "thesis_state": "UNKNOWN",
+      "leading_hypothesis": "SYSTEMIC_SELL_OFF",
+      "alternative_hypotheses": [
+        "THEME_DERATING",
+        "VALUATION_COMPRESSION"
+      ],
+      "confidence": "LOW",
+      "supporting_evidence": [
+        "source_4b38a7d1652090d8840b2ae4"
+      ],
+      "counter_evidence": [],
+      "unknowns": [
+        "company_specific_ai_revenue_share",
+        "20D_60D_context_history",
+        "independent_customer_confirmation",
+        "eps_revision",
+        "ev_ebitda",
+        "foreign_flow",
+        "large_holder_change",
+        "margin_change",
+        "own_volatility_history",
+        "pb",
+        "return_20d",
+        "return_5d",
+        "short_interest_change",
+        "tw50_return_1d",
+        "us_market_return_1d",
+        "usd_twd_return_1d",
+        "valuation_change_12w",
+        "valuation_change_1w",
+        "valuation_change_4w",
+        "vix",
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation",
+        "valuation_change_history"
+      ],
+      "falsification_conditions": [
+        "市場恢復但個股持續顯著落後",
+        "題材breadth與相對報酬持續回升",
+        "估值回到正常但價格仍異常"
+      ],
+      "next_observation": [
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation",
+        "valuation_change_history"
+      ]
+    },
+    {
+      "stock_id": "2492",
+      "thesis_state": "UNKNOWN",
+      "leading_hypothesis": "SYSTEMIC_SELL_OFF",
+      "alternative_hypotheses": [
+        "THEME_DERATING",
+        "FUNDAMENTAL_MISPRICING",
+        "VALUATION_COMPRESSION"
+      ],
+      "confidence": "LOW",
+      "supporting_evidence": [
+        "source_7dcc01bc24d0c26012eb691b"
+      ],
+      "counter_evidence": [],
+      "unknowns": [
+        "company_specific_ai_revenue_share",
+        "20D_60D_context_history",
+        "independent_customer_confirmation",
+        "eps_revision",
+        "ev_ebitda",
+        "foreign_flow",
+        "forward_pe",
+        "large_holder_change",
+        "margin_change",
+        "own_volatility_history",
+        "pb",
+        "return_20d",
+        "return_5d",
+        "short_interest_change",
+        "tw50_return_1d",
+        "us_market_return_1d",
+        "usd_twd_return_1d",
+        "valuation_change_12w",
+        "valuation_change_1w",
+        "valuation_change_4w",
+        "vix",
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation",
+        "fresh_company_facts",
+        "expectation_gap",
+        "valuation_change_history"
+      ],
+      "falsification_conditions": [
+        "市場恢復但個股持續顯著落後",
+        "題材breadth與相對報酬持續回升",
+        "新增官方負面Fact或指引下修",
+        "估值回到正常但價格仍異常"
+      ],
+      "next_observation": [
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation",
+        "fresh_company_facts",
+        "expectation_gap",
+        "valuation_change_history"
+      ]
+    },
+    {
+      "stock_id": "3017",
+      "thesis_state": "UNKNOWN",
+      "leading_hypothesis": "SYSTEMIC_SELL_OFF",
+      "alternative_hypotheses": [
+        "THEME_DERATING",
+        "VALUATION_COMPRESSION"
+      ],
+      "confidence": "LOW",
+      "supporting_evidence": [
+        "source_fd399b1472a95f64ee165a19",
+        "source_eef5a97fd959f70d02a86258"
+      ],
+      "counter_evidence": [],
+      "unknowns": [
+        "company_specific_ai_revenue_share",
+        "20D_60D_context_history",
+        "independent_customer_confirmation",
+        "eps_revision",
+        "ev_ebitda",
+        "foreign_flow",
+        "large_holder_change",
+        "margin_change",
+        "own_volatility_history",
+        "pb",
+        "return_20d",
+        "return_5d",
+        "short_interest_change",
+        "tw50_return_1d",
+        "us_market_return_1d",
+        "usd_twd_return_1d",
+        "valuation_change_12w",
+        "valuation_change_1w",
+        "valuation_change_4w",
+        "vix",
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation",
+        "valuation_change_history"
+      ],
+      "falsification_conditions": [
+        "市場恢復但個股持續顯著落後",
+        "題材breadth與相對報酬持續回升",
+        "估值回到正常但價格仍異常"
+      ],
+      "next_observation": [
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation",
+        "valuation_change_history"
+      ]
+    },
+    {
+      "stock_id": "3035",
+      "thesis_state": "UNKNOWN",
+      "leading_hypothesis": "SYSTEMIC_SELL_OFF",
+      "alternative_hypotheses": [
+        "THEME_DERATING"
+      ],
+      "confidence": "LOW",
+      "supporting_evidence": [
+        "source_508b399ac09ac2b1427bd5fe"
+      ],
+      "counter_evidence": [],
+      "unknowns": [
+        "company_specific_ai_revenue_share",
+        "20D_60D_context_history",
+        "independent_customer_confirmation",
+        "eps_revision",
+        "ev_ebitda",
+        "foreign_flow",
+        "large_holder_change",
+        "margin_change",
+        "own_volatility_history",
+        "pb",
+        "return_20d",
+        "return_5d",
+        "short_interest_change",
+        "tw50_return_1d",
+        "us_market_return_1d",
+        "usd_twd_return_1d",
+        "valuation_change_12w",
+        "valuation_change_1w",
+        "valuation_change_4w",
+        "vix",
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation"
+      ],
+      "falsification_conditions": [
+        "市場恢復但個股持續顯著落後",
+        "題材breadth與相對報酬持續回升"
+      ],
+      "next_observation": [
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation"
+      ]
+    },
+    {
+      "stock_id": "3037",
+      "thesis_state": "UNKNOWN",
+      "leading_hypothesis": "SYSTEMIC_SELL_OFF",
+      "alternative_hypotheses": [
+        "THEME_DERATING"
+      ],
+      "confidence": "LOW",
+      "supporting_evidence": [
+        "source_97c03735324904a72a8a762e"
+      ],
+      "counter_evidence": [],
+      "unknowns": [
+        "company_specific_ai_revenue_share",
+        "20D_60D_context_history",
+        "independent_customer_confirmation",
+        "eps_revision",
+        "ev_ebitda",
+        "foreign_flow",
+        "large_holder_change",
+        "margin_change",
+        "own_volatility_history",
+        "pb",
+        "return_20d",
+        "return_5d",
+        "short_interest_change",
+        "tw50_return_1d",
+        "us_market_return_1d",
+        "usd_twd_return_1d",
+        "valuation_change_12w",
+        "valuation_change_1w",
+        "valuation_change_4w",
+        "vix",
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation"
+      ],
+      "falsification_conditions": [
+        "市場恢復但個股持續顯著落後",
+        "題材breadth與相對報酬持續回升"
+      ],
+      "next_observation": [
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation"
+      ]
+    },
+    {
+      "stock_id": "3081",
+      "thesis_state": "UNKNOWN",
+      "leading_hypothesis": "SYSTEMIC_SELL_OFF",
+      "alternative_hypotheses": [
+        "THEME_DERATING",
+        "FUNDAMENTAL_MISPRICING"
+      ],
+      "confidence": "LOW",
+      "supporting_evidence": [
+        "source_2287425fc8a002e0441d48c1"
+      ],
+      "counter_evidence": [],
+      "unknowns": [
+        "company_specific_ai_revenue_share",
+        "20D_60D_context_history",
+        "independent_customer_confirmation",
+        "eps_revision",
+        "ev_ebitda",
+        "foreign_flow",
+        "large_holder_change",
+        "margin_change",
+        "own_volatility_history",
+        "pb",
+        "return_20d",
+        "return_5d",
+        "short_interest_change",
+        "tw50_return_1d",
+        "us_market_return_1d",
+        "usd_twd_return_1d",
+        "valuation_change_12w",
+        "valuation_change_1w",
+        "valuation_change_4w",
+        "vix",
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation",
+        "fresh_company_facts",
+        "expectation_gap"
+      ],
+      "falsification_conditions": [
+        "市場恢復但個股持續顯著落後",
+        "題材breadth與相對報酬持續回升",
+        "新增官方負面Fact或指引下修"
+      ],
+      "next_observation": [
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation",
+        "fresh_company_facts",
+        "expectation_gap"
+      ]
+    },
+    {
+      "stock_id": "3131",
+      "thesis_state": "UNKNOWN",
+      "leading_hypothesis": "SYSTEMIC_SELL_OFF",
+      "alternative_hypotheses": [
+        "THEME_DERATING"
+      ],
+      "confidence": "LOW",
+      "supporting_evidence": [],
+      "counter_evidence": [],
+      "unknowns": [
+        "company_specific_ai_revenue_share",
+        "20D_60D_context_history",
+        "independent_customer_confirmation",
+        "eps_revision",
+        "ev_ebitda",
+        "foreign_flow",
+        "large_holder_change",
+        "margin_change",
+        "own_volatility_history",
+        "pb",
+        "return_20d",
+        "return_5d",
+        "short_interest_change",
+        "tw50_return_1d",
+        "us_market_return_1d",
+        "usd_twd_return_1d",
+        "valuation_change_12w",
+        "valuation_change_1w",
+        "valuation_change_4w",
+        "vix",
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation"
+      ],
+      "falsification_conditions": [
+        "市場恢復但個股持續顯著落後",
+        "題材breadth與相對報酬持續回升"
+      ],
+      "next_observation": [
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation"
+      ]
+    },
+    {
+      "stock_id": "3163",
+      "thesis_state": "UNKNOWN",
+      "leading_hypothesis": "SYSTEMIC_SELL_OFF",
+      "alternative_hypotheses": [
+        "THEME_DERATING",
+        "VALUATION_COMPRESSION"
+      ],
+      "confidence": "LOW",
+      "supporting_evidence": [],
+      "counter_evidence": [],
+      "unknowns": [
+        "company_specific_ai_revenue_share",
+        "20D_60D_context_history",
+        "independent_customer_confirmation",
+        "eps_revision",
+        "ev_ebitda",
+        "foreign_flow",
+        "large_holder_change",
+        "margin_change",
+        "own_volatility_history",
+        "pb",
+        "return_20d",
+        "return_5d",
+        "short_interest_change",
+        "tw50_return_1d",
+        "us_market_return_1d",
+        "usd_twd_return_1d",
+        "valuation_change_12w",
+        "valuation_change_1w",
+        "valuation_change_4w",
+        "vix",
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation",
+        "valuation_change_history"
+      ],
+      "falsification_conditions": [
+        "市場恢復但個股持續顯著落後",
+        "題材breadth與相對報酬持續回升",
+        "估值回到正常但價格仍異常"
+      ],
+      "next_observation": [
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation",
+        "valuation_change_history"
+      ]
+    },
+    {
+      "stock_id": "3189",
+      "thesis_state": "UNKNOWN",
+      "leading_hypothesis": "SYSTEMIC_SELL_OFF",
+      "alternative_hypotheses": [
+        "THEME_DERATING"
+      ],
+      "confidence": "LOW",
+      "supporting_evidence": [],
+      "counter_evidence": [],
+      "unknowns": [
+        "company_specific_ai_revenue_share",
+        "20D_60D_context_history",
+        "independent_customer_confirmation",
+        "eps_revision",
+        "ev_ebitda",
+        "foreign_flow",
+        "large_holder_change",
+        "margin_change",
+        "own_volatility_history",
+        "pb",
+        "return_20d",
+        "return_5d",
+        "short_interest_change",
+        "tw50_return_1d",
+        "us_market_return_1d",
+        "usd_twd_return_1d",
+        "valuation_change_12w",
+        "valuation_change_1w",
+        "valuation_change_4w",
+        "vix",
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation"
+      ],
+      "falsification_conditions": [
+        "市場恢復但個股持續顯著落後",
+        "題材breadth與相對報酬持續回升"
+      ],
+      "next_observation": [
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation"
+      ]
+    },
+    {
+      "stock_id": "3231",
+      "thesis_state": "UNKNOWN",
+      "leading_hypothesis": "SYSTEMIC_SELL_OFF",
+      "alternative_hypotheses": [
+        "TEMPORARY_EXECUTION_DELAY"
+      ],
+      "confidence": "LOW",
+      "supporting_evidence": [],
+      "counter_evidence": [],
+      "unknowns": [
+        "company_specific_ai_revenue_share",
+        "20D_60D_context_history",
+        "independent_customer_confirmation",
+        "eps_revision",
+        "ev_ebitda",
+        "foreign_flow",
+        "large_holder_change",
+        "margin_change",
+        "own_volatility_history",
+        "pb",
+        "return_20d",
+        "return_5d",
+        "short_interest_change",
+        "tw50_return_1d",
+        "us_market_return_1d",
+        "usd_twd_return_1d",
+        "valuation_change_12w",
+        "valuation_change_1w",
+        "valuation_change_4w",
+        "vix",
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "company_delivery_data"
+      ],
+      "falsification_conditions": [
+        "市場恢復但個股持續顯著落後",
+        "延遲跨越預期窗口或公司下修指引"
+      ],
+      "next_observation": [
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "company_delivery_data"
+      ]
+    },
+    {
+      "stock_id": "3260",
+      "thesis_state": "UNKNOWN",
+      "leading_hypothesis": "SYSTEMIC_SELL_OFF",
+      "alternative_hypotheses": [
+        "THEME_DERATING"
+      ],
+      "confidence": "LOW",
+      "supporting_evidence": [],
+      "counter_evidence": [],
+      "unknowns": [
+        "company_specific_ai_revenue_share",
+        "20D_60D_context_history",
+        "independent_customer_confirmation",
+        "eps_revision",
+        "ev_ebitda",
+        "foreign_flow",
+        "large_holder_change",
+        "margin_change",
+        "own_volatility_history",
+        "pb",
+        "return_20d",
+        "return_5d",
+        "short_interest_change",
+        "tw50_return_1d",
+        "us_market_return_1d",
+        "usd_twd_return_1d",
+        "valuation_change_12w",
+        "valuation_change_1w",
+        "valuation_change_4w",
+        "vix",
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation"
+      ],
+      "falsification_conditions": [
+        "市場恢復但個股持續顯著落後",
+        "題材breadth與相對報酬持續回升"
+      ],
+      "next_observation": [
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation"
+      ]
+    },
+    {
+      "stock_id": "3324",
+      "thesis_state": "UNKNOWN",
+      "leading_hypothesis": "SYSTEMIC_SELL_OFF",
+      "alternative_hypotheses": [
+        "THEME_DERATING",
+        "VALUATION_COMPRESSION"
+      ],
+      "confidence": "LOW",
+      "supporting_evidence": [
+        "source_eef5a97fd959f70d02a86258"
+      ],
+      "counter_evidence": [],
+      "unknowns": [
+        "company_specific_ai_revenue_share",
+        "20D_60D_context_history",
+        "independent_customer_confirmation",
+        "eps_revision",
+        "ev_ebitda",
+        "foreign_flow",
+        "large_holder_change",
+        "margin_change",
+        "own_volatility_history",
+        "pb",
+        "return_20d",
+        "return_5d",
+        "short_interest_change",
+        "tw50_return_1d",
+        "us_market_return_1d",
+        "usd_twd_return_1d",
+        "valuation_change_12w",
+        "valuation_change_1w",
+        "valuation_change_4w",
+        "vix",
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation",
+        "valuation_change_history"
+      ],
+      "falsification_conditions": [
+        "市場恢復但個股持續顯著落後",
+        "題材breadth與相對報酬持續回升",
+        "估值回到正常但價格仍異常"
+      ],
+      "next_observation": [
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation",
+        "valuation_change_history"
+      ]
+    },
+    {
+      "stock_id": "3338",
+      "thesis_state": "UNKNOWN",
+      "leading_hypothesis": "SYSTEMIC_SELL_OFF",
+      "alternative_hypotheses": [
+        "THEME_DERATING",
+        "VALUATION_COMPRESSION"
+      ],
+      "confidence": "LOW",
+      "supporting_evidence": [
+        "source_23275a8e3a39da2f12a5555c"
+      ],
+      "counter_evidence": [],
+      "unknowns": [
+        "company_specific_ai_revenue_share",
+        "20D_60D_context_history",
+        "independent_customer_confirmation",
+        "eps_revision",
+        "ev_ebitda",
+        "foreign_flow",
+        "forward_pe",
+        "large_holder_change",
+        "margin_change",
+        "own_volatility_history",
+        "pb",
+        "return_20d",
+        "return_5d",
+        "short_interest_change",
+        "tw50_return_1d",
+        "us_market_return_1d",
+        "usd_twd_return_1d",
+        "valuation_change_12w",
+        "valuation_change_1w",
+        "valuation_change_4w",
+        "vix",
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation",
+        "valuation_change_history"
+      ],
+      "falsification_conditions": [
+        "市場恢復但個股持續顯著落後",
+        "題材breadth與相對報酬持續回升",
+        "估值回到正常但價格仍異常"
+      ],
+      "next_observation": [
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation",
+        "valuation_change_history"
+      ]
+    },
+    {
+      "stock_id": "3357",
+      "thesis_state": "UNKNOWN",
+      "leading_hypothesis": "SYSTEMIC_SELL_OFF",
+      "alternative_hypotheses": [
+        "THEME_DERATING"
+      ],
+      "confidence": "LOW",
+      "supporting_evidence": [],
+      "counter_evidence": [],
+      "unknowns": [
+        "company_specific_ai_revenue_share",
+        "20D_60D_context_history",
+        "independent_customer_confirmation",
+        "eps_revision",
+        "ev_ebitda",
+        "foreign_flow",
+        "forward_pe",
+        "large_holder_change",
+        "margin_change",
+        "own_volatility_history",
+        "pb",
+        "return_20d",
+        "return_5d",
+        "short_interest_change",
+        "tw50_return_1d",
+        "us_market_return_1d",
+        "usd_twd_return_1d",
+        "valuation_change_12w",
+        "valuation_change_1w",
+        "valuation_change_4w",
+        "vix",
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation"
+      ],
+      "falsification_conditions": [
+        "市場恢復但個股持續顯著落後",
+        "題材breadth與相對報酬持續回升"
+      ],
+      "next_observation": [
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation"
+      ]
+    },
+    {
+      "stock_id": "3363",
+      "thesis_state": "UNKNOWN",
+      "leading_hypothesis": "SYSTEMIC_SELL_OFF",
+      "alternative_hypotheses": [
+        "THEME_DERATING"
+      ],
+      "confidence": "LOW",
+      "supporting_evidence": [
+        "source_17ad68b9af274da21190b5f9"
+      ],
+      "counter_evidence": [],
+      "unknowns": [
+        "company_specific_ai_revenue_share",
+        "20D_60D_context_history",
+        "independent_customer_confirmation",
+        "eps_revision",
+        "ev_ebitda",
+        "foreign_flow",
+        "large_holder_change",
+        "margin_change",
+        "own_volatility_history",
+        "pb",
+        "return_20d",
+        "return_5d",
+        "short_interest_change",
+        "tw50_return_1d",
+        "us_market_return_1d",
+        "usd_twd_return_1d",
+        "valuation_change_12w",
+        "valuation_change_1w",
+        "valuation_change_4w",
+        "vix",
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation"
+      ],
+      "falsification_conditions": [
+        "市場恢復但個股持續顯著落後",
+        "題材breadth與相對報酬持續回升"
+      ],
+      "next_observation": [
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation"
+      ]
+    },
+    {
+      "stock_id": "3443",
+      "thesis_state": "UNKNOWN",
+      "leading_hypothesis": "SYSTEMIC_SELL_OFF",
+      "alternative_hypotheses": [
+        "THEME_DERATING",
+        "VALUATION_COMPRESSION"
+      ],
+      "confidence": "LOW",
+      "supporting_evidence": [
+        "source_d4d8266dd8ac233f26ade591"
+      ],
+      "counter_evidence": [],
+      "unknowns": [
+        "company_specific_ai_revenue_share",
+        "20D_60D_context_history",
+        "independent_customer_confirmation",
+        "eps_revision",
+        "ev_ebitda",
+        "foreign_flow",
+        "large_holder_change",
+        "margin_change",
+        "own_volatility_history",
+        "pb",
+        "return_20d",
+        "return_5d",
+        "short_interest_change",
+        "tw50_return_1d",
+        "us_market_return_1d",
+        "usd_twd_return_1d",
+        "valuation_change_12w",
+        "valuation_change_1w",
+        "valuation_change_4w",
+        "vix",
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation",
+        "valuation_change_history"
+      ],
+      "falsification_conditions": [
+        "市場恢復但個股持續顯著落後",
+        "題材breadth與相對報酬持續回升",
+        "估值回到正常但價格仍異常"
+      ],
+      "next_observation": [
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation",
+        "valuation_change_history"
+      ]
+    },
+    {
+      "stock_id": "3532",
+      "thesis_state": "UNKNOWN",
+      "leading_hypothesis": "SYSTEMIC_SELL_OFF",
+      "alternative_hypotheses": [
+        "THEME_DERATING",
+        "VALUATION_COMPRESSION"
+      ],
+      "confidence": "LOW",
+      "supporting_evidence": [],
+      "counter_evidence": [],
+      "unknowns": [
+        "company_specific_ai_revenue_share",
+        "20D_60D_context_history",
+        "independent_customer_confirmation",
+        "eps_revision",
+        "ev_ebitda",
+        "foreign_flow",
+        "forward_pe",
+        "large_holder_change",
+        "margin_change",
+        "own_volatility_history",
+        "pb",
+        "return_20d",
+        "return_5d",
+        "short_interest_change",
+        "tw50_return_1d",
+        "us_market_return_1d",
+        "usd_twd_return_1d",
+        "valuation_change_12w",
+        "valuation_change_1w",
+        "valuation_change_4w",
+        "vix",
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation",
+        "valuation_change_history"
+      ],
+      "falsification_conditions": [
+        "市場恢復但個股持續顯著落後",
+        "題材breadth與相對報酬持續回升",
+        "估值回到正常但價格仍異常"
+      ],
+      "next_observation": [
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation",
+        "valuation_change_history"
+      ]
+    },
+    {
+      "stock_id": "3583",
+      "thesis_state": "UNKNOWN",
+      "leading_hypothesis": "SYSTEMIC_SELL_OFF",
+      "alternative_hypotheses": [
+        "THEME_DERATING",
+        "VALUATION_COMPRESSION"
+      ],
+      "confidence": "LOW",
+      "supporting_evidence": [],
+      "counter_evidence": [],
+      "unknowns": [
+        "company_specific_ai_revenue_share",
+        "20D_60D_context_history",
+        "independent_customer_confirmation",
+        "eps_revision",
+        "ev_ebitda",
+        "foreign_flow",
+        "large_holder_change",
+        "margin_change",
+        "own_volatility_history",
+        "pb",
+        "return_20d",
+        "return_5d",
+        "short_interest_change",
+        "tw50_return_1d",
+        "us_market_return_1d",
+        "usd_twd_return_1d",
+        "valuation_change_12w",
+        "valuation_change_1w",
+        "valuation_change_4w",
+        "vix",
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation",
+        "valuation_change_history"
+      ],
+      "falsification_conditions": [
+        "市場恢復但個股持續顯著落後",
+        "題材breadth與相對報酬持續回升",
+        "估值回到正常但價格仍異常"
+      ],
+      "next_observation": [
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation",
+        "valuation_change_history"
+      ]
+    },
+    {
+      "stock_id": "3653",
+      "thesis_state": "UNKNOWN",
+      "leading_hypothesis": "SYSTEMIC_SELL_OFF",
+      "alternative_hypotheses": [
+        "THEME_DERATING",
+        "VALUATION_COMPRESSION"
+      ],
+      "confidence": "LOW",
+      "supporting_evidence": [
+        "source_fd399b1472a95f64ee165a19",
+        "source_662785344bedd80157c6b92b"
+      ],
+      "counter_evidence": [],
+      "unknowns": [
+        "company_specific_ai_revenue_share",
+        "20D_60D_context_history",
+        "independent_customer_confirmation",
+        "eps_revision",
+        "ev_ebitda",
+        "foreign_flow",
+        "large_holder_change",
+        "margin_change",
+        "own_volatility_history",
+        "pb",
+        "return_20d",
+        "return_5d",
+        "short_interest_change",
+        "tw50_return_1d",
+        "us_market_return_1d",
+        "usd_twd_return_1d",
+        "valuation_change_12w",
+        "valuation_change_1w",
+        "valuation_change_4w",
+        "vix",
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation",
+        "valuation_change_history"
+      ],
+      "falsification_conditions": [
+        "市場恢復但個股持續顯著落後",
+        "題材breadth與相對報酬持續回升",
+        "估值回到正常但價格仍異常"
+      ],
+      "next_observation": [
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation",
+        "valuation_change_history"
+      ]
+    },
+    {
+      "stock_id": "3661",
+      "thesis_state": "UNKNOWN",
+      "leading_hypothesis": "SYSTEMIC_SELL_OFF",
+      "alternative_hypotheses": [
+        "THEME_DERATING"
+      ],
+      "confidence": "LOW",
+      "supporting_evidence": [],
+      "counter_evidence": [],
+      "unknowns": [
+        "company_specific_ai_revenue_share",
+        "20D_60D_context_history",
+        "independent_customer_confirmation",
+        "eps_revision",
+        "ev_ebitda",
+        "foreign_flow",
+        "large_holder_change",
+        "margin_change",
+        "own_volatility_history",
+        "pb",
+        "return_20d",
+        "return_5d",
+        "short_interest_change",
+        "tw50_return_1d",
+        "us_market_return_1d",
+        "usd_twd_return_1d",
+        "valuation_change_12w",
+        "valuation_change_1w",
+        "valuation_change_4w",
+        "vix",
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation"
+      ],
+      "falsification_conditions": [
+        "市場恢復但個股持續顯著落後",
+        "題材breadth與相對報酬持續回升"
+      ],
+      "next_observation": [
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation"
+      ]
+    },
+    {
+      "stock_id": "3711",
+      "thesis_state": "UNKNOWN",
+      "leading_hypothesis": "SYSTEMIC_SELL_OFF",
+      "alternative_hypotheses": [
+        "THEME_DERATING",
+        "VALUATION_COMPRESSION"
+      ],
+      "confidence": "LOW",
+      "supporting_evidence": [
+        "source_73c5f37562260b00c18000de"
+      ],
+      "counter_evidence": [],
+      "unknowns": [
+        "company_specific_ai_revenue_share",
+        "20D_60D_context_history",
+        "independent_customer_confirmation",
+        "eps_revision",
+        "ev_ebitda",
+        "foreign_flow",
+        "large_holder_change",
+        "margin_change",
+        "own_volatility_history",
+        "pb",
+        "return_20d",
+        "return_5d",
+        "short_interest_change",
+        "tw50_return_1d",
+        "us_market_return_1d",
+        "usd_twd_return_1d",
+        "valuation_change_12w",
+        "valuation_change_1w",
+        "valuation_change_4w",
+        "vix",
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation",
+        "valuation_change_history"
+      ],
+      "falsification_conditions": [
+        "市場恢復但個股持續顯著落後",
+        "題材breadth與相對報酬持續回升",
+        "估值回到正常但價格仍異常"
+      ],
+      "next_observation": [
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation",
+        "valuation_change_history"
+      ]
+    },
+    {
+      "stock_id": "4979",
+      "thesis_state": "UNKNOWN",
+      "leading_hypothesis": "SYSTEMIC_SELL_OFF",
+      "alternative_hypotheses": [
+        "THEME_DERATING",
+        "VALUATION_COMPRESSION"
+      ],
+      "confidence": "LOW",
+      "supporting_evidence": [
+        "source_02038c662e51e335c3d589a9"
+      ],
+      "counter_evidence": [],
+      "unknowns": [
+        "company_specific_ai_revenue_share",
+        "20D_60D_context_history",
+        "independent_customer_confirmation",
+        "eps_revision",
+        "ev_ebitda",
+        "foreign_flow",
+        "large_holder_change",
+        "margin_change",
+        "own_volatility_history",
+        "pb",
+        "return_20d",
+        "return_5d",
+        "short_interest_change",
+        "tw50_return_1d",
+        "us_market_return_1d",
+        "usd_twd_return_1d",
+        "valuation_change_12w",
+        "valuation_change_1w",
+        "valuation_change_4w",
+        "vix",
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation",
+        "valuation_change_history"
+      ],
+      "falsification_conditions": [
+        "市場恢復但個股持續顯著落後",
+        "題材breadth與相對報酬持續回升",
+        "估值回到正常但價格仍異常"
+      ],
+      "next_observation": [
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation",
+        "valuation_change_history"
+      ]
+    },
+    {
+      "stock_id": "6182",
+      "thesis_state": "UNKNOWN",
+      "leading_hypothesis": "SYSTEMIC_SELL_OFF",
+      "alternative_hypotheses": [
+        "THEME_DERATING",
+        "VALUATION_COMPRESSION"
+      ],
+      "confidence": "LOW",
+      "supporting_evidence": [
+        "source_e8862e80b1ac92ab45e0ecfd"
+      ],
+      "counter_evidence": [],
+      "unknowns": [
+        "company_specific_ai_revenue_share",
+        "20D_60D_context_history",
+        "independent_customer_confirmation",
+        "eps_revision",
+        "ev_ebitda",
+        "foreign_flow",
+        "forward_pe",
+        "large_holder_change",
+        "margin_change",
+        "own_volatility_history",
+        "pb",
+        "return_20d",
+        "return_5d",
+        "short_interest_change",
+        "tw50_return_1d",
+        "us_market_return_1d",
+        "usd_twd_return_1d",
+        "valuation_change_12w",
+        "valuation_change_1w",
+        "valuation_change_4w",
+        "vix",
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation",
+        "valuation_change_history"
+      ],
+      "falsification_conditions": [
+        "市場恢復但個股持續顯著落後",
+        "題材breadth與相對報酬持續回升",
+        "估值回到正常但價格仍異常"
+      ],
+      "next_observation": [
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation",
+        "valuation_change_history"
+      ]
+    },
+    {
+      "stock_id": "6187",
+      "thesis_state": "UNKNOWN",
+      "leading_hypothesis": "SYSTEMIC_SELL_OFF",
+      "alternative_hypotheses": [
+        "THEME_DERATING",
+        "VALUATION_COMPRESSION"
+      ],
+      "confidence": "LOW",
+      "supporting_evidence": [
+        "source_104a0ea467848efd3f60c05e"
+      ],
+      "counter_evidence": [],
+      "unknowns": [
+        "company_specific_ai_revenue_share",
+        "20D_60D_context_history",
+        "independent_customer_confirmation",
+        "eps_revision",
+        "ev_ebitda",
+        "foreign_flow",
+        "large_holder_change",
+        "margin_change",
+        "own_volatility_history",
+        "pb",
+        "return_20d",
+        "return_5d",
+        "short_interest_change",
+        "tw50_return_1d",
+        "us_market_return_1d",
+        "usd_twd_return_1d",
+        "valuation_change_12w",
+        "valuation_change_1w",
+        "valuation_change_4w",
+        "vix",
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation",
+        "valuation_change_history"
+      ],
+      "falsification_conditions": [
+        "市場恢復但個股持續顯著落後",
+        "題材breadth與相對報酬持續回升",
+        "估值回到正常但價格仍異常"
+      ],
+      "next_observation": [
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation",
+        "valuation_change_history"
+      ]
+    },
+    {
+      "stock_id": "6223",
+      "thesis_state": "UNKNOWN",
+      "leading_hypothesis": "SYSTEMIC_SELL_OFF",
+      "alternative_hypotheses": [
+        "THEME_DERATING",
+        "VALUATION_COMPRESSION"
+      ],
+      "confidence": "LOW",
+      "supporting_evidence": [],
+      "counter_evidence": [],
+      "unknowns": [
+        "company_specific_ai_revenue_share",
+        "20D_60D_context_history",
+        "independent_customer_confirmation",
+        "eps_revision",
+        "ev_ebitda",
+        "foreign_flow",
+        "large_holder_change",
+        "margin_change",
+        "own_volatility_history",
+        "pb",
+        "return_20d",
+        "return_5d",
+        "short_interest_change",
+        "tw50_return_1d",
+        "us_market_return_1d",
+        "usd_twd_return_1d",
+        "valuation_change_12w",
+        "valuation_change_1w",
+        "valuation_change_4w",
+        "vix",
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation",
+        "valuation_change_history"
+      ],
+      "falsification_conditions": [
+        "市場恢復但個股持續顯著落後",
+        "題材breadth與相對報酬持續回升",
+        "估值回到正常但價格仍異常"
+      ],
+      "next_observation": [
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation",
+        "valuation_change_history"
+      ]
+    },
+    {
+      "stock_id": "6230",
+      "thesis_state": "UNKNOWN",
+      "leading_hypothesis": "SYSTEMIC_SELL_OFF",
+      "alternative_hypotheses": [
+        "THEME_DERATING"
+      ],
+      "confidence": "LOW",
+      "supporting_evidence": [
+        "source_7a7a5c7f5ef7178d589489ee",
+        "source_1ec3adc3e3560020686c1c65"
+      ],
+      "counter_evidence": [],
+      "unknowns": [
+        "company_specific_ai_revenue_share",
+        "20D_60D_context_history",
+        "independent_customer_confirmation",
+        "eps_revision",
+        "ev_ebitda",
+        "foreign_flow",
+        "forward_pe",
+        "large_holder_change",
+        "margin_change",
+        "own_volatility_history",
+        "pb",
+        "return_20d",
+        "return_5d",
+        "short_interest_change",
+        "tw50_return_1d",
+        "us_market_return_1d",
+        "usd_twd_return_1d",
+        "valuation_change_12w",
+        "valuation_change_1w",
+        "valuation_change_4w",
+        "vix",
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation"
+      ],
+      "falsification_conditions": [
+        "市場恢復但個股持續顯著落後",
+        "題材breadth與相對報酬持續回升"
+      ],
+      "next_observation": [
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation"
+      ]
+    },
+    {
+      "stock_id": "6274",
+      "thesis_state": "UNKNOWN",
+      "leading_hypothesis": "SYSTEMIC_SELL_OFF",
+      "alternative_hypotheses": [
+        "THEME_DERATING",
+        "VALUATION_COMPRESSION"
+      ],
+      "confidence": "LOW",
+      "supporting_evidence": [],
+      "counter_evidence": [],
+      "unknowns": [
+        "company_specific_ai_revenue_share",
+        "20D_60D_context_history",
+        "independent_customer_confirmation",
+        "eps_revision",
+        "ev_ebitda",
+        "foreign_flow",
+        "large_holder_change",
+        "margin_change",
+        "own_volatility_history",
+        "pb",
+        "return_20d",
+        "return_5d",
+        "short_interest_change",
+        "tw50_return_1d",
+        "us_market_return_1d",
+        "usd_twd_return_1d",
+        "valuation_change_12w",
+        "valuation_change_1w",
+        "valuation_change_4w",
+        "vix",
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation",
+        "valuation_change_history"
+      ],
+      "falsification_conditions": [
+        "市場恢復但個股持續顯著落後",
+        "題材breadth與相對報酬持續回升",
+        "估值回到正常但價格仍異常"
+      ],
+      "next_observation": [
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation",
+        "valuation_change_history"
+      ]
+    },
+    {
+      "stock_id": "6282",
+      "thesis_state": "UNKNOWN",
+      "leading_hypothesis": "SYSTEMIC_SELL_OFF",
+      "alternative_hypotheses": [
+        "THEME_DERATING"
+      ],
+      "confidence": "LOW",
+      "supporting_evidence": [],
+      "counter_evidence": [],
+      "unknowns": [
+        "company_specific_ai_revenue_share",
+        "20D_60D_context_history",
+        "independent_customer_confirmation",
+        "eps_revision",
+        "ev_ebitda",
+        "foreign_flow",
+        "forward_pe",
+        "large_holder_change",
+        "margin_change",
+        "own_volatility_history",
+        "pb",
+        "return_20d",
+        "return_5d",
+        "short_interest_change",
+        "tw50_return_1d",
+        "us_market_return_1d",
+        "usd_twd_return_1d",
+        "valuation_change_12w",
+        "valuation_change_1w",
+        "valuation_change_4w",
+        "vix",
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation"
+      ],
+      "falsification_conditions": [
+        "市場恢復但個股持續顯著落後",
+        "題材breadth與相對報酬持續回升"
+      ],
+      "next_observation": [
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation"
+      ]
+    },
+    {
+      "stock_id": "6412",
+      "thesis_state": "UNKNOWN",
+      "leading_hypothesis": "SYSTEMIC_SELL_OFF",
+      "alternative_hypotheses": [
+        "THEME_DERATING"
+      ],
+      "confidence": "LOW",
+      "supporting_evidence": [
+        "source_7506c325ee312535f105ed05",
+        "source_ac886add12622cc733d564b3"
+      ],
+      "counter_evidence": [],
+      "unknowns": [
+        "company_specific_ai_revenue_share",
+        "20D_60D_context_history",
+        "independent_customer_confirmation",
+        "eps_revision",
+        "ev_ebitda",
+        "foreign_flow",
+        "large_holder_change",
+        "margin_change",
+        "own_volatility_history",
+        "pb",
+        "return_20d",
+        "return_5d",
+        "short_interest_change",
+        "tw50_return_1d",
+        "us_market_return_1d",
+        "usd_twd_return_1d",
+        "valuation_change_12w",
+        "valuation_change_1w",
+        "valuation_change_4w",
+        "vix",
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation"
+      ],
+      "falsification_conditions": [
+        "市場恢復但個股持續顯著落後",
+        "題材breadth與相對報酬持續回升"
+      ],
+      "next_observation": [
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation"
+      ]
+    },
+    {
+      "stock_id": "6442",
+      "thesis_state": "UNKNOWN",
+      "leading_hypothesis": "SYSTEMIC_SELL_OFF",
+      "alternative_hypotheses": [
+        "THEME_DERATING"
+      ],
+      "confidence": "LOW",
+      "supporting_evidence": [],
+      "counter_evidence": [],
+      "unknowns": [
+        "company_specific_ai_revenue_share",
+        "20D_60D_context_history",
+        "independent_customer_confirmation",
+        "eps_revision",
+        "ev_ebitda",
+        "foreign_flow",
+        "large_holder_change",
+        "margin_change",
+        "own_volatility_history",
+        "pb",
+        "return_20d",
+        "return_5d",
+        "short_interest_change",
+        "tw50_return_1d",
+        "us_market_return_1d",
+        "usd_twd_return_1d",
+        "valuation_change_12w",
+        "valuation_change_1w",
+        "valuation_change_4w",
+        "vix",
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation"
+      ],
+      "falsification_conditions": [
+        "市場恢復但個股持續顯著落後",
+        "題材breadth與相對報酬持續回升"
+      ],
+      "next_observation": [
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation"
+      ]
+    },
+    {
+      "stock_id": "6488",
+      "thesis_state": "UNKNOWN",
+      "leading_hypothesis": "SYSTEMIC_SELL_OFF",
+      "alternative_hypotheses": [
+        "THEME_DERATING",
+        "VALUATION_COMPRESSION"
+      ],
+      "confidence": "LOW",
+      "supporting_evidence": [
+        "source_77f957ae496715906a07b5e8"
+      ],
+      "counter_evidence": [],
+      "unknowns": [
+        "company_specific_ai_revenue_share",
+        "20D_60D_context_history",
+        "independent_customer_confirmation",
+        "eps_revision",
+        "ev_ebitda",
+        "foreign_flow",
+        "large_holder_change",
+        "margin_change",
+        "own_volatility_history",
+        "pb",
+        "return_20d",
+        "return_5d",
+        "short_interest_change",
+        "tw50_return_1d",
+        "us_market_return_1d",
+        "usd_twd_return_1d",
+        "valuation_change_12w",
+        "valuation_change_1w",
+        "valuation_change_4w",
+        "vix",
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation",
+        "valuation_change_history"
+      ],
+      "falsification_conditions": [
+        "市場恢復但個股持續顯著落後",
+        "題材breadth與相對報酬持續回升",
+        "估值回到正常但價格仍異常"
+      ],
+      "next_observation": [
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation",
+        "valuation_change_history"
+      ]
+    },
+    {
+      "stock_id": "6669",
+      "thesis_state": "UNKNOWN",
+      "leading_hypothesis": "SYSTEMIC_SELL_OFF",
+      "alternative_hypotheses": [
+        "TEMPORARY_EXECUTION_DELAY"
+      ],
+      "confidence": "LOW",
+      "supporting_evidence": [],
+      "counter_evidence": [],
+      "unknowns": [
+        "company_specific_ai_revenue_share",
+        "20D_60D_context_history",
+        "independent_customer_confirmation",
+        "eps_revision",
+        "ev_ebitda",
+        "foreign_flow",
+        "large_holder_change",
+        "margin_change",
+        "own_volatility_history",
+        "pb",
+        "return_20d",
+        "return_5d",
+        "short_interest_change",
+        "tw50_return_1d",
+        "us_market_return_1d",
+        "usd_twd_return_1d",
+        "valuation_change_12w",
+        "valuation_change_1w",
+        "valuation_change_4w",
+        "vix",
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "company_delivery_data"
+      ],
+      "falsification_conditions": [
+        "市場恢復但個股持續顯著落後",
+        "延遲跨越預期窗口或公司下修指引"
+      ],
+      "next_observation": [
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "company_delivery_data"
+      ]
+    },
+    {
+      "stock_id": "6781",
+      "thesis_state": "UNKNOWN",
+      "leading_hypothesis": "SYSTEMIC_SELL_OFF",
+      "alternative_hypotheses": [
+        "THEME_DERATING"
+      ],
+      "confidence": "LOW",
+      "supporting_evidence": [],
+      "counter_evidence": [],
+      "unknowns": [
+        "company_specific_ai_revenue_share",
+        "20D_60D_context_history",
+        "independent_customer_confirmation",
+        "eps_revision",
+        "ev_ebitda",
+        "foreign_flow",
+        "large_holder_change",
+        "margin_change",
+        "own_volatility_history",
+        "pb",
+        "return_20d",
+        "return_5d",
+        "short_interest_change",
+        "tw50_return_1d",
+        "us_market_return_1d",
+        "usd_twd_return_1d",
+        "valuation_change_12w",
+        "valuation_change_1w",
+        "valuation_change_4w",
+        "vix",
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation"
+      ],
+      "falsification_conditions": [
+        "市場恢復但個股持續顯著落後",
+        "題材breadth與相對報酬持續回升"
+      ],
+      "next_observation": [
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation"
+      ]
+    },
+    {
+      "stock_id": "8299",
+      "thesis_state": "UNKNOWN",
+      "leading_hypothesis": "SYSTEMIC_SELL_OFF",
+      "alternative_hypotheses": [
+        "THEME_DERATING"
+      ],
+      "confidence": "LOW",
+      "supporting_evidence": [
+        "source_2750e6e682394776ce268381"
+      ],
+      "counter_evidence": [],
+      "unknowns": [
+        "company_specific_ai_revenue_share",
+        "20D_60D_context_history",
+        "independent_customer_confirmation",
+        "eps_revision",
+        "ev_ebitda",
+        "foreign_flow",
+        "large_holder_change",
+        "margin_change",
+        "own_volatility_history",
+        "pb",
+        "return_20d",
+        "return_5d",
+        "short_interest_change",
+        "tw50_return_1d",
+        "us_market_return_1d",
+        "usd_twd_return_1d",
+        "valuation_change_12w",
+        "valuation_change_1w",
+        "valuation_change_4w",
+        "vix",
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation"
+      ],
+      "falsification_conditions": [
+        "市場恢復但個股持續顯著落後",
+        "題材breadth與相對報酬持續回升"
+      ],
+      "next_observation": [
+        "TAIEX_5D_20D",
+        "external_market_context",
+        "theme_event_confirmation"
+      ]
+    }
+  ],
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": false
+}
