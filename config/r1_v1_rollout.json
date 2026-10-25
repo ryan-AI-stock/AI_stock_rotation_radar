@@ -1,0 +1,16 @@
+{
+  "version": "R1 v1.0",
+  "display_status": "LIVE_DATA_ACCUMULATION",
+  "shadow_start_date": "2026-10-22",
+  "dashboard_go_live_date": "2026-10-25",
+  "milestones": {
+    "5TD": "2026-10-30",
+    "4W": "2026-11-19",
+    "20TD": "2026-11-20",
+    "12W": "2027-01-14",
+    "60TD": "2027-01-18",
+    "CONTROLLED_LEARNING": "2027-01-22"
+  },
+  "maturity_review_date": "2027-01-22",
+  "notes": "Dates are expected dates based on the current Taiwan trading calendar and may move for exchange closures or delayed official data."
+}

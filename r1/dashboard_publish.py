@@ -283,7 +283,7 @@ def publish_payload(spreadsheet_id: str, payload_path: str | Path) -> dict[str, 
     recommendations_check = client.get(f"'{RECOMMENDATIONS}'!A1:L10000")
     current_signals = [row for row in signal_check[1:] if row and str(row[0]) == report_date]
     expected_signals = len(tabs[SIGNALS]) - 1
-    if not dashboard_check or dashboard_check[0][0] != "Ryan｜R1實際帳戶總覽與換倉顧問":
+    if not dashboard_check or dashboard_check[0][0] != "Ryan｜R1 v1.0研究與決策支援Dashboard":
         raise RuntimeError("R1 Dashboard readback title mismatch")
     if len(dashboard_check) < 20 or str(dashboard_check[1][1]) != report_date:
         raise RuntimeError("R1 Dashboard readback date or section mismatch")

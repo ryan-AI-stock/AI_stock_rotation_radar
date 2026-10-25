@@ -12,10 +12,10 @@ from r1.performance_comparison import build_comparison
 from r1.recommendations import build_recommendations
 
 
-MODEL_LOGIC = """R1 v0.6｜實際帳戶總覽與AI瓶頸換倉顧問
+MODEL_LOGIC = """R1 v1.0｜Evidence-driven台股研究與決策支援系統
 
 【模型任務】
-R1記錄Ryan實際成交與帳戶結果，並與「8/5全部轉為0050正二後抱住」同起點基準每日比較。績效比較排除未包含於8/5共同本金的既有台積電持股及其配息；總持股區仍完整顯示。{performance_status}
+R1記錄Ryan實際成交與帳戶結果，並與「8/5全部轉為0050正二後抱住」同起點基準每日比較。R1 v1另以Evidence、Context、Thesis、Competing Hypotheses、Relative Opportunity、Decision Memory與Controlled Learning形成研究結論。績效比較排除未包含於8/5共同本金的既有台積電持股及其配息；總持股區仍完整顯示。{performance_status}
 
 【季度Top3】
 結構性龍頭評分：AI瓶頸直接性25%、產業與技術地位25%、AI營收兌現20%、財務與獲利品質20%、市場代表性10%。官方與公司正式揭露優先；分析師與市場共識只能補充，不能單獨決定排名。任一成分股必要證據不足時，該題材Top3維持待資料。
@@ -98,7 +98,10 @@ def _build_v03_dashboard(*, config: R1Config, market: dict, theme_review: dict,
                          context_by_ticker: dict[str, dict] | None = None,
                          deliberation_by_ticker: dict[str, dict] | None = None,
                          total_actual_equity: float | None = None,
-                         actual_positions: list[dict] | None = None) -> list[list[object]]:
+                         actual_positions: list[dict] | None = None,
+                         v1_rollout: dict | None = None,
+                         v1_monitor: dict | None = None,
+                         v1_research_counts: dict | None = None) -> list[list[object]]:
     themes = load_themes(theme_path)
     membership_count = sum(len(theme.members) for theme in themes)
     universe_count = len({member.ticker for theme in themes for member in theme.members})
@@ -164,9 +167,13 @@ def _build_v03_dashboard(*, config: R1Config, market: dict, theme_review: dict,
     display_tickers = targets + [
         ticker for ticker in held if ticker not in set(targets)
     ]
+    v1_rollout = v1_rollout or {}
+    v1_monitor = v1_monitor or {}
+    v1_research_counts = v1_research_counts or {}
+    milestones = v1_rollout.get("milestones", {})
     rows: list[list[object]] = [
-        ["Ryan｜R1實際帳戶總覽與換倉顧問"],
-        ["最新資料日期", market["date"], "模型定位", "實際績效追蹤＋report-only換倉建議", "不自動成交"],
+        ["Ryan｜R1 v1.0研究與決策支援Dashboard"],
+        ["最新資料日期", market["date"], "模型定位", "R1 v1.0已上線｜資料累積模式", "不自動成交"],
         ["資料狀態", (
             f"公開資料核心 {public_core_ready_count}/{len(v05_by_ticker)}；"
             f"法人目標價共識 {target_consensus_ready_count}/{len(v05_by_ticker)}；"
@@ -175,6 +182,22 @@ def _build_v03_dashboard(*, config: R1Config, market: dict, theme_review: dict,
             f"4W {revision_ready.get('4w', 0)}、12W {revision_ready.get('12w', 0)}。"
             "信心層缺值不補0、不阻斷核心排名；不產生自動交易。"
         )],
+        ["00｜R1 v1.0上線與資料成熟進度"],
+        ["項目", "目前狀態", "完成度", "預計完成／上線日期", "說明"],
+        ["Evidence／Context／Thesis", "已上線", f"{v1_monitor.get('as_of_date', '資料補齊中')}｜52檔研究骨架",
+         v1_rollout.get("dashboard_go_live_date", "資料補齊中"), "Fact、Inference、Hypothesis、Judgment分離；缺值不補零"],
+        ["5TD成效回顧", "資料補齊中", f"已完成 {v1_research_counts.get('completed_5td', 0)}筆",
+         milestones.get("5TD", "資料補齊中"), "到期後自動檢查Thesis與Timing，不只看股價"],
+        ["20TD成效回顧", "資料補齊中", f"已完成 {v1_research_counts.get('completed_20td', 0)}筆",
+         milestones.get("20TD", "資料補齊中"), "未到期保持UNRESOLVED"],
+        ["60TD成效回顧", "資料補齊中", f"已完成 {v1_research_counts.get('completed_60td', 0)}筆",
+         milestones.get("60TD", "資料補齊中"), "長期Thesis與相對機會驗收"],
+        ["4W歷史", "資料補齊中", "真實PIT快照累積中", milestones.get("4W", "資料補齊中"), "不使用現在資料回填歷史"],
+        ["12W歷史", "資料補齊中", "真實PIT快照累積中", milestones.get("12W", "資料補齊中"), "不使用推估值補齊"],
+        ["受控學習", "資料補齊中", f"完成回顧 {v1_research_counts.get('completed_reviews', 0)}筆／最低20筆且跨5個決策日",
+         milestones.get("CONTROLLED_LEARNING", "資料補齊中"), "只能提出MODEL_CHANGE_PROPOSAL，不會自動改模型"],
+        ["R1 v1成熟版驗收", "資料補齊中", "Shadow持續累積；正式研究結論尚未成熟",
+         v1_rollout.get("maturity_review_date", "資料補齊中"), "日期遇休市或官方資料延遲時順延"],
         ["01｜實際持股與未來半年目標持股"],
         ["所屬題材", "股票", "優先持有參考值", "實際持有", "當日收盤", "持股市值", "持股占比", "半年目標", "情境判讀／推理結論"],
     ]
@@ -215,7 +238,7 @@ def _build_v03_dashboard(*, config: R1Config, market: dict, theme_review: dict,
            _percent(item.get("return_pct")) if item.get("return_pct") is not None else "不發布",
            (item.get("source_note") if item["line"] == "ACTUAL" and item.get("nav") is None
             and item.get("equity_market_value") is not None else item.get("status")),
-           ("=B21-B20"
+           (_money(float(item.get("nav")) - float(actual_nav))
             if item.get("line") == "00631L_BUY_HOLD"
             and isinstance(item.get("nav"), (int, float)) and isinstance(actual_nav, (int, float)) else "")]
           for item in comparison_rows],
@@ -288,7 +311,7 @@ def _build_v03_dashboard(*, config: R1Config, market: dict, theme_review: dict,
          "只累積真實PIT快照，不回填", "否，只降低信心"],
         ["自動交易決策", "未啟用", "每日換倉參考仍正常發布",
          "實際買賣由Ryan自行決定", "不自動成交"],
-        ["08｜模型完整說明"],
+        ["09｜模型完整說明"],
         [_model_logic(comparison_ready=bool(comparison.get("comparison_ready")))],
     ])
     return rows
@@ -335,6 +358,9 @@ def build_dashboard_payload(
     v05_rank_path: str | Path = "data/r1/v05/latest.json",
     context_event_path: str | Path = "data/r1/context_event_latest.json",
     deliberation_path: str | Path = "data/r1/deliberation/latest.json",
+    v1_rollout_path: str | Path = "config/r1_v1_rollout.json",
+    v1_monitor_path: str | Path = "data/r1_v1/final_monitor/latest.json",
+    v1_research_root: str | Path = "data/r1_v1/research",
 ) -> dict:
     config = R1Config.load(config_path)
     market = json.loads(Path(market_path).read_text(encoding="utf-8"))
@@ -410,6 +436,19 @@ def build_dashboard_payload(
         deliberation_payload = {"rows": []}
     deliberation_by_ticker = {
         str(row.get("ticker", "")).zfill(4): row for row in deliberation_payload.get("rows", [])
+    }
+    rollout_file = Path(v1_rollout_path)
+    v1_rollout = json.loads(rollout_file.read_text(encoding="utf-8")) if rollout_file.exists() else {}
+    monitor_file = Path(v1_monitor_path)
+    v1_monitor = json.loads(monitor_file.read_text(encoding="utf-8")) if monitor_file.exists() else {}
+    review_file = Path(v1_research_root) / "outcome_reviews.jsonl"
+    outcome_reviews = [json.loads(line) for line in review_file.read_text(encoding="utf-8").splitlines() if line.strip()] if review_file.exists() else []
+    completed_reviews = [row for row in outcome_reviews if row.get("result") not in {"UNRESOLVED", "DATA_INSUFFICIENT"}]
+    v1_research_counts = {
+        "completed_reviews": len(completed_reviews),
+        "completed_5td": sum(row.get("horizon_td") == 5 for row in completed_reviews),
+        "completed_20td": sum(row.get("horizon_td") == 20 for row in completed_reviews),
+        "completed_60td": sum(row.get("horizon_td") == 60 for row in completed_reviews),
     }
     for item in comparison["rows"]:
         tabs["R1績效每日比較"].append([item[key] for key in TAB_SCHEMAS["R1績效每日比較"]])
@@ -502,6 +541,9 @@ def build_dashboard_payload(
         deliberation_by_ticker=deliberation_by_ticker,
         total_actual_equity=actual_account.get("equity_market_value"),
         actual_positions=actual_account.get("positions", []),
+        v1_rollout=v1_rollout,
+        v1_monitor=v1_monitor,
+        v1_research_counts=v1_research_counts,
     )
 
     for security in config.securities:

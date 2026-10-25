@@ -26,7 +26,10 @@ class R1DashboardPayloadTest(unittest.TestCase):
         self.assertIn("05｜分數規則", sections)
         self.assertIn("06｜更新排程", sections)
         self.assertIn("07｜資料品質異常表", sections)
-        self.assertIn("08｜模型完整說明", sections)
+        self.assertIn("00｜R1 v1.0上線與資料成熟進度", sections)
+        self.assertIn("09｜模型完整說明", sections)
+        self.assertEqual(next(row for row in dashboard if row[0] == "5TD成效回顧")[1], "資料補齊中")
+        self.assertEqual(next(row for row in dashboard if row[0] == "R1 v1成熟版驗收")[3], "2027-01-22")
         eps_quality = next(row for row in dashboard if row[0] == "法人EPS共識")
         self.assertRegex(eps_quality[1], r"\d+/52")
         self.assertIn("只降低信心", eps_quality[4])
@@ -54,8 +57,8 @@ class R1DashboardPayloadTest(unittest.TestCase):
         )
         self.assertNotIn("8/5原持股完全不動", [cell for row in dashboard for cell in row])
         self.assertEqual(dashboard[performance_start + 1][5], "相較實際操作差額")
-        self.assertEqual(dashboard[performance_start + 3][5], "=B21-B20")
-        model_logic = next(row[0] for row in dashboard if row and str(row[0]).startswith("R1 v0.6｜"))
+        self.assertRegex(str(dashboard[performance_start + 3][5]), r"^-?[\d,]+\.\d$")
+        model_logic = next(row[0] for row in dashboard if row and str(row[0]).startswith("R1 v1.0｜"))
         self.assertIn("已完成對帳", model_logic)
         self.assertNotIn("尚未完成共同起始NAV", model_logic)
         recommendation_start = sections.index("03｜今日換倉建議")
@@ -135,7 +138,7 @@ class R1DashboardPayloadTest(unittest.TestCase):
 
     def test_header_mismatch_is_rejected(self):
         tabs = {title: [list(headers)] for title, headers in TAB_SCHEMAS.items()}
-        tabs["R1 Dashboard"] = [["Ryan｜R1實際帳戶總覽與換倉顧問"]]
+        tabs["R1 Dashboard"] = [["Ryan｜R1 v1.0研究與決策支援Dashboard"]]
         tabs["R1每日訊號資料庫"][0][0] = "wrong"
         with self.assertRaisesRegex(ValueError, "header mismatch"):
             validate_tabs(tabs)

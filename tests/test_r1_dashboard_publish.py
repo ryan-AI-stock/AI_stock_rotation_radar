@@ -46,7 +46,7 @@ class R1DashboardPublishTest(unittest.TestCase):
         self.assertNotIn("30%／25%／20%／15%／10%", source)
 
     def test_dashboard_section_formatting_is_derived_from_content(self):
-        rows = [["Ryan｜R1實際帳戶總覽與換倉顧問"], ["資料"], ["01｜排名"], ["順位", "股票"],
+        rows = [["Ryan｜R1 v1.0研究與決策支援Dashboard"], ["資料"], ["01｜排名"], ["順位", "股票"],
                 ["Top1"], ["05｜模型完整說明"], ["說明"]]
         self.assertEqual(dashboard_publish._section_rows(rows), ([2, 5], [3], 6))
 
@@ -57,7 +57,7 @@ class R1DashboardPublishTest(unittest.TestCase):
         self.assertEqual(dashboard_publish._holding_rows(rows), [3])
 
     def test_performance_rows_receive_readable_height(self):
-        rows = [["Ryan｜R1實際帳戶總覽與換倉顧問"], ["02｜兩條績效線"],
+        rows = [["Ryan｜R1 v1.0研究與決策支援Dashboard"], ["02｜兩條績效線"],
                 ["比較線", "當日NAV", "本金", "報酬", "狀態", "差額"],
                 ["Ryan實際操作帳戶", 1200, 1000, .2, "READY", ""],
                 ["8/5全部轉0050正二後長抱", 1100, 1000, .1, "READY", "=B21-B20"]]
@@ -80,7 +80,7 @@ class R1DashboardPublishTest(unittest.TestCase):
 
     def test_dashboard_numeric_formats_use_one_decimal(self):
         rows = [
-            ["Ryan｜R1實際帳戶總覽與換倉顧問"],
+            ["Ryan｜R1 v1.0研究與決策支援Dashboard"],
             ["01｜實際持股與未來半年目標持股"],
             ["所屬題材", "股票", "優先持有參考值", "實際持有", "當日收盤", "持股市值", "持股占比", "半年目標"],
             ["記憶體", "2408 南亞科", "評分資料未齊", "實際持有｜1,147股", 532, 610204, .041, "目標"],
@@ -117,7 +117,7 @@ class R1DashboardPublishTest(unittest.TestCase):
 
     def test_publishes_current_date_preserves_signal_history_and_keeps_transactions_empty(self):
         date = "2026-10-02"
-        dashboard = [["Ryan｜R1實際帳戶總覽與換倉顧問"], ["最新資料日期", date, "模型定位", "研究挑戰版", "尚未啟用交易"]]
+        dashboard = [["Ryan｜R1 v1.0研究與決策支援Dashboard"], ["最新資料日期", date, "模型定位", "研究挑戰版", "尚未啟用交易"]]
         dashboard.extend([[f"section-{i}"] for i in range(18)])
         signals = [list(TAB_SCHEMAS["R1每日訊號資料庫"])]
         for index in range(14):

@@ -35,7 +35,7 @@ def validate_tabs(tabs: dict[str, list[list[object]]]) -> None:
     for title, schema in TAB_SCHEMAS.items():
         rows = tabs[title]
         if title == "R1 Dashboard":
-            if not rows or not rows[0] or rows[0][0] != "Ryan｜R1實際帳戶總覽與換倉顧問":
+            if not rows or not rows[0] or rows[0][0] != "Ryan｜R1 v1.0研究與決策支援Dashboard":
                 raise ValueError("R1 Dashboard title mismatch")
             if any(len(row) > DASHBOARD_MAX_COLUMNS for row in rows):
                 raise ValueError("R1 Dashboard row width mismatch")
