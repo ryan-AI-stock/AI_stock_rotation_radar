@@ -56,6 +56,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
+      "market_analytics_ready": true,
       "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 35,
@@ -81,6 +82,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
+      "market_analytics_ready": true,
       "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 35,
@@ -106,6 +108,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
+      "market_analytics_ready": true,
       "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 35,
@@ -131,6 +134,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
+      "market_analytics_ready": true,
       "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 35,
@@ -156,6 +160,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
+      "market_analytics_ready": true,
       "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 35,
@@ -181,6 +186,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
+      "market_analytics_ready": true,
       "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 35,
@@ -206,6 +212,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
+      "market_analytics_ready": true,
       "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 35,
@@ -231,6 +238,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
+      "market_analytics_ready": true,
       "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 35,
@@ -256,6 +264,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
+      "market_analytics_ready": true,
       "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 35,
@@ -281,6 +290,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
+      "market_analytics_ready": true,
       "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 35,
@@ -306,6 +316,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
+      "market_analytics_ready": true,
       "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 35,
@@ -331,6 +342,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
+      "market_analytics_ready": true,
       "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 35,
@@ -356,6 +368,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
+      "market_analytics_ready": true,
       "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 35,
@@ -381,6 +394,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
+      "market_analytics_ready": true,
       "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 35,
@@ -406,6 +420,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
+      "market_analytics_ready": true,
       "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 35,
@@ -431,6 +446,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
+      "market_analytics_ready": true,
       "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 35,
@@ -456,6 +472,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
+      "market_analytics_ready": true,
       "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 35,
@@ -481,6 +498,7 @@
       "bottleneck_ready": false,
       "valuation_ready": true,
       "price_chip_ready": true,
+      "market_analytics_ready": true,
       "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 35,
@@ -505,6 +523,7 @@
       "bottleneck_ready": false,
       "valuation_ready": true,
       "price_chip_ready": true,
+      "market_analytics_ready": true,
       "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 35,
@@ -529,6 +548,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
+      "market_analytics_ready": true,
       "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 35,
@@ -554,6 +574,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
+      "market_analytics_ready": true,
       "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 35,
@@ -579,6 +600,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
+      "market_analytics_ready": true,
       "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 35,
@@ -604,6 +626,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
+      "market_analytics_ready": true,
       "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 35,
@@ -629,6 +652,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
+      "market_analytics_ready": true,
       "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 35,
@@ -654,6 +678,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
+      "market_analytics_ready": true,
       "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 35,
@@ -679,6 +704,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
+      "market_analytics_ready": true,
       "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 35,
@@ -704,6 +730,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
+      "market_analytics_ready": true,
       "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 35,
@@ -729,6 +756,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
+      "market_analytics_ready": true,
       "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 35,
@@ -754,6 +782,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
+      "market_analytics_ready": true,
       "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 35,
@@ -779,6 +808,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
+      "market_analytics_ready": true,
       "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 35,
@@ -804,6 +834,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
+      "market_analytics_ready": true,
       "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 35,
@@ -829,6 +860,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
+      "market_analytics_ready": true,
       "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 35,
@@ -854,6 +886,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
+      "market_analytics_ready": true,
       "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 35,
@@ -880,6 +913,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
+      "market_analytics_ready": true,
       "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 35,
@@ -905,6 +939,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
+      "market_analytics_ready": true,
       "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 35,
@@ -930,6 +965,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
+      "market_analytics_ready": true,
       "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 35,
@@ -956,6 +992,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
+      "market_analytics_ready": true,
       "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 35,
@@ -982,6 +1019,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
+      "market_analytics_ready": true,
       "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 35,
@@ -1007,6 +1045,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
+      "market_analytics_ready": true,
       "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 35,
@@ -1032,6 +1071,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
+      "market_analytics_ready": true,
       "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 35,
@@ -1057,6 +1097,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
+      "market_analytics_ready": true,
       "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 35,
@@ -1083,6 +1124,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
+      "market_analytics_ready": true,
       "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 35,
@@ -1109,6 +1151,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
+      "market_analytics_ready": true,
       "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 35,
@@ -1134,6 +1177,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
+      "market_analytics_ready": true,
       "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 35,
@@ -1159,6 +1203,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
+      "market_analytics_ready": true,
       "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 35,
@@ -1184,6 +1229,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
+      "market_analytics_ready": true,
       "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 35,
@@ -1209,6 +1255,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
+      "market_analytics_ready": true,
       "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 35,
@@ -1234,6 +1281,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
+      "market_analytics_ready": true,
       "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 35,
@@ -1259,6 +1307,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
+      "market_analytics_ready": true,
       "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 35,
@@ -1284,6 +1333,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
+      "market_analytics_ready": true,
       "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 35,
@@ -1309,6 +1359,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
+      "market_analytics_ready": true,
       "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 35,
@@ -1335,6 +1386,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
+      "market_analytics_ready": true,
       "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 35,
@@ -1361,6 +1413,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
+      "market_analytics_ready": true,
       "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 35,
@@ -1386,6 +1439,7 @@
       "bottleneck_ready": true,
       "valuation_ready": true,
       "price_chip_ready": true,
+      "market_analytics_ready": true,
       "current_chip_ready": true,
       "price_chip_coverage": {
         "price_days": 35,

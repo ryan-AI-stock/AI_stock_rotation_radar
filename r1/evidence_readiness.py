@@ -69,6 +69,22 @@ def _current_chip_coverage(root: str | Path, *, as_of_date: str) -> dict[str, bo
     return {ticker: values == {"institutional", "margin_short"} for ticker, values in families.items()}
 
 
+def _market_analytics_coverage(path: str | Path, *, as_of_date: str) -> dict[str, bool]:
+    """Require the exact-date analytics that the price/chip score actually consumes."""
+    source = Path(path)
+    if not source.exists():
+        return {}
+    payload = json.loads(source.read_text(encoding="utf-8"))
+    if payload.get("date") != as_of_date:
+        return {}
+    required = ("adjusted_analysis_close", "bias20", "bias60", "return_1m", "avg_turnover_20d")
+    return {
+        str(row.get("ticker", "")).zfill(4): all(row.get(field) is not None for field in required)
+        for row in payload.get("rows", [])
+        if row.get("ticker")
+    }
+
+
 def _valuation_reference(path: str | Path, *, as_of_date: str) -> dict[str, dict]:
     source = Path(path)
     if not source.exists():
@@ -159,6 +175,7 @@ def materialize(*, config_path: str | Path, consensus_path: str | Path,
                 catalyst_evidence_path: str | Path = "data/r1/catalyst_events/evidence.csv",
                 bottleneck_evidence_path: str | Path = "data/r1/bottleneck_evidence.csv",
                 daily_source_root: str | Path = "data/r1/daily_sources",
+                market_snapshot_path: str | Path = "data/r1/daily_market_latest.json",
                 valuation_reference_path: str | Path = "data/r1/valuation_reference.csv",
                 consensus_history_root: str | Path = "data/r1/consensus_history") -> dict:
     config = R1Config.load(config_path)
@@ -181,6 +198,9 @@ def materialize(*, config_path: str | Path, consensus_path: str | Path,
     ) if bottleneck_evidence_file.exists() else ([], [])
     price_chip_coverage = _price_chip_coverage(daily_source_root, as_of_date=as_of_date)
     current_chip_coverage = _current_chip_coverage(daily_source_root, as_of_date=as_of_date)
+    market_analytics_coverage = _market_analytics_coverage(
+        market_snapshot_path, as_of_date=as_of_date,
+    )
     fiscal_year = int(as_of_date[:4]) + 1
     valuation_reference = _valuation_reference(valuation_reference_path, as_of_date=as_of_date)
     eps_revision_coverage = _eps_revision_coverage(
@@ -219,7 +239,8 @@ def materialize(*, config_path: str | Path, consensus_path: str | Path,
         price_chip_state = price_chip_coverage.get(security.ticker, {
             "price_days": 0, "institutional_days": 0, "margin_short_days": 0, "ready": False,
         })
-        price_chip_ready = bool(price_chip_state["ready"])
+        market_analytics_ready = bool(market_analytics_coverage.get(security.ticker, False))
+        price_chip_ready = bool(price_chip_state["ready"] and market_analytics_ready)
         current_chip_ready = bool(current_chip_coverage.get(security.ticker, False))
         component_score_ready = score_required and (
             consensus_ready and eps_revision_ready and catalyst_score_ready and bottleneck_ready
@@ -254,6 +275,7 @@ def materialize(*, config_path: str | Path, consensus_path: str | Path,
             "bottleneck_ready": bottleneck_ready,
             "valuation_ready": valuation_ready,
             "price_chip_ready": price_chip_ready,
+            "market_analytics_ready": market_analytics_ready,
             "current_chip_ready": current_chip_ready,
             "price_chip_coverage": price_chip_state,
             "component_score_ready": component_score_ready,
@@ -311,6 +333,7 @@ def main() -> None:
     parser.add_argument("--bottleneck-evidence", default="data/r1/bottleneck_evidence.csv")
     parser.add_argument("--consensus-evidence", default="data/r1/consensus/evidence.csv")
     parser.add_argument("--daily-source-root", default="data/r1/daily_sources")
+    parser.add_argument("--market", default="data/r1/daily_market_latest.json")
     parser.add_argument("--valuation-reference", default="data/r1/valuation_reference.csv")
     parser.add_argument("--consensus-history-root", default="data/r1/consensus_history")
     parser.add_argument("--output", default="data/r1/evidence_readiness.json")
@@ -321,6 +344,7 @@ def main() -> None:
                           catalyst_evidence_path=args.catalyst_evidence,
                           bottleneck_evidence_path=args.bottleneck_evidence,
                           daily_source_root=args.daily_source_root,
+                          market_snapshot_path=args.market,
                           valuation_reference_path=args.valuation_reference,
                           consensus_history_root=args.consensus_history_root)
     output = Path(args.output)

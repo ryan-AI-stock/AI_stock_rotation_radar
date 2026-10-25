@@ -131,15 +131,55 @@ class R1EvidenceReadinessTest(unittest.TestCase):
                         {"ticker": "2330", "family": "margin_short"},
                     ],
                 }), encoding="utf-8")
+            market = root / "market.json"
+            market.write_text(json.dumps({
+                "date": "2026-10-01",
+                "rows": [{
+                    "ticker": "2330", "adjusted_analysis_close": 100,
+                    "bias20": 0.01, "bias60": 0.02, "return_1m": 0.03,
+                    "avg_turnover_20d": 1_000_000,
+                }],
+            }), encoding="utf-8")
             result = materialize(
                 config_path="config/r1.json", consensus_path=root / "none.csv",
                 catalyst_path=root / "none2.csv", daily_source_root=daily,
+                market_snapshot_path=market,
                 as_of_date="2026-10-01",
             )
             row = next(item for item in result["rows"] if item["ticker"] == "2330")
             self.assertTrue(row["price_chip_ready"])
             self.assertFalse(row["current_chip_ready"])
             self.assertEqual(row["price_chip_coverage"]["institutional_days"], 20)
+
+    def test_price_chip_is_not_ready_when_adjusted_analytics_are_missing(self):
+        with TemporaryDirectory() as folder:
+            root = Path(folder)
+            daily = root / "daily"
+            daily.mkdir()
+            for day in range(1, 21):
+                target = f"2026-09-{day:02d}"
+                (daily / f"{target}.json").write_text(json.dumps({
+                    "date": target,
+                    "price_rows": [{"ticker": "2330", "close": 100}],
+                    "chip_rows": [
+                        {"ticker": "2330", "family": "institutional"},
+                        {"ticker": "2330", "family": "margin_short"},
+                    ],
+                }), encoding="utf-8")
+            market = root / "market.json"
+            market.write_text(json.dumps({
+                "date": "2026-10-01",
+                "rows": [{"ticker": "2330", "adjusted_analysis_close": None}],
+            }), encoding="utf-8")
+            result = materialize(
+                config_path="config/r1.json", consensus_path=root / "none.csv",
+                catalyst_path=root / "none2.csv", daily_source_root=daily,
+                market_snapshot_path=market, as_of_date="2026-10-01",
+            )
+            row = next(item for item in result["rows"] if item["ticker"] == "2330")
+            self.assertFalse(row["market_analytics_ready"])
+            self.assertFalse(row["price_chip_ready"])
+            self.assertIn("PRICE_CHIP_HISTORY_NOT_READY", row["blocked_reasons"])
 
     def test_current_chip_requires_both_exact_date_families(self):
         with TemporaryDirectory() as folder:
