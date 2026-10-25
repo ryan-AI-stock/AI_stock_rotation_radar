@@ -7,6 +7,13 @@ from r1.theme_review import publish_review
 
 
 class R1ThemeReviewPublishTest(unittest.TestCase):
+    def test_repository_state_matches_last_published_quarterly_review(self):
+        state = json.loads(Path("data/r1/theme_reviews/state.json").read_text(encoding="utf-8"))
+        latest = json.loads(Path("data/r1/theme_reviews/latest.json").read_text(encoding="utf-8"))
+        self.assertEqual(latest["status"], "READY")
+        self.assertEqual(state["last_quarterly_review"], latest["date"])
+        self.assertEqual(state["last_quarterly_review_version"], latest["version"])
+
     def test_not_due_review_does_not_replace_quarterly_snapshot(self):
         with tempfile.TemporaryDirectory() as folder:
             root = Path(folder)
