@@ -24,7 +24,7 @@ TAB_SCHEMAS = {
     ),
 }
 
-DASHBOARD_MAX_COLUMNS = 8
+DASHBOARD_MAX_COLUMNS = 9
 
 
 def validate_tabs(tabs: dict[str, list[list[object]]]) -> None:

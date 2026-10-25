@@ -77,6 +77,7 @@ jobs:
           python -m r1.evidence_readiness --date "${{ steps.gate.outputs.target_date }}"
           python -m r1.forward_outcomes --date "${{ steps.gate.outputs.target_date }}"
           python -m r1.transition_layer --market data/r1/daily_market_latest.json --output data/r1/transition/latest.json
+          python -m r1.context_event_layer --date "${{ steps.gate.outputs.target_date }}"
           python -m r1.actual_account --date "${{ steps.gate.outputs.target_date }}"
           python -m r1.target_price_snapshot --date "${{ steps.gate.outputs.target_date }}"
           python -m r1.v05_rank --date "${{ steps.gate.outputs.target_date }}"
@@ -107,7 +108,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/r1/daily_market_latest.json data/r1/theme_daily_market_latest.json data/r1/benchmark_market_latest.json data/r1/actual_account_state.json data/r1/daily_sources data/r1/evidence_readiness.json data/r1/forward_outcomes.json data/r1/transition/latest.json data/r1/target_prices/latest.json data/r1/official_negative_evidence.json data/r1/v05/latest.json data/r1/recommendation_policy_shadow.json data/r1/dashboard_payload.json
+          git add data/r1/daily_market_latest.json data/r1/theme_daily_market_latest.json data/r1/benchmark_market_latest.json data/r1/actual_account_state.json data/r1/daily_sources data/r1/evidence_readiness.json data/r1/forward_outcomes.json data/r1/transition/latest.json data/r1/context_event_latest.json data/r1/target_prices/latest.json data/r1/official_negative_evidence.json data/r1/v05/latest.json data/r1/recommendation_policy_shadow.json data/r1/dashboard_payload.json
           if git diff --cached --quiet; then exit 0; fi
           git commit -m "Update R1 daily source state"
           git pull --rebase --autostash origin main

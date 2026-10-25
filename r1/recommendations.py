@@ -11,8 +11,21 @@ MINIMUM_SCORE_ADVANTAGE = 10.0
 INCUMBENT_WEAK_THRESHOLD = 40.0
 CHALLENGER_HEALTHY_THRESHOLD = 50.0
 
+CONTEXT_REASON = {
+    "THESIS_RISK_CONFIRMED": "投資邏輯風險已獲獨立確認",
+    "FUNDAMENTAL_RISK_REVIEW": "基本面風險待獨立確認",
+    "MIXED_EVIDENCE": "正反證據並存",
+    "MARKET_CONFIRMED_NEGATIVE": "個股負面訊號獲市場確認",
+    "MARKET_WIDE_SELLOFF": "全市場急跌，僅列回檔觀察",
+    "POSITIVE_FUNDAMENTAL_CONFIRMED": "正向事件獲基本面確認",
+    "POSITIVE_EVENT_WATCH": "正向事件待基本面確認",
+}
+
 
 def _is_impaired(row: dict[str, Any], threshold: float = INCUMBENT_WEAK_THRESHOLD) -> bool:
+    context_state = row.get("context_state")
+    if context_state == "THESIS_RISK_CONFIRMED":
+        return True
     values = (row.get("price_chip_risk"), row.get("theme_momentum_and_catalyst"))
     observed = [float(value) for value in values if value is not None]
     weak_dimensions = sum(value <= threshold for value in observed)
@@ -26,6 +39,10 @@ def _is_impaired(row: dict[str, Any], threshold: float = INCUMBENT_WEAK_THRESHOL
 
 def _is_healthy_challenger(row: dict[str, Any], threshold: float = CHALLENGER_HEALTHY_THRESHOLD) -> bool:
     if row.get("official_negative_flags"):
+        return False
+    if row.get("context_state") in {
+        "THESIS_RISK_CONFIRMED", "FUNDAMENTAL_RISK_REVIEW", "MARKET_CONFIRMED_NEGATIVE",
+    }:
         return False
     values = (row.get("price_chip_risk"), row.get("theme_momentum_and_catalyst"))
     return all(value is not None and float(value) >= threshold for value in values)
@@ -104,6 +121,9 @@ def build_recommendations(*, date: str, candidates: list[dict[str, Any]], held_t
         has_target_overlay = row.get("target_upside") is not None
         overlay_gaps = row.get("overlay_missing_components", [])
         reason = row.get("reason", "公開資料核心排名較前；僅供換倉檢視")
+        context_state = row.get("context_state")
+        if context_state and context_state != "NO_CONTEXT_CHANGE":
+            reason += f"；情境判讀：{CONTEXT_REASON.get(context_state, context_state)}"
         if source:
             reason += f"；相較{source_ticker}核心分數高{float(row['score']) - float(source['score']):.1f}分"
         confidence = (

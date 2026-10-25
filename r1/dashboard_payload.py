@@ -23,6 +23,9 @@ R1記錄Ryan實際成交與帳戶結果，並與「8/5全部轉為0050正二後�
 【每日換倉優先序】
 公開資料核心分數：結構瓶頸25%、營收獲利兌現25%、題材動能與催化15%、相對估值15%、價格籌碼風險20%。法人目標價上行與修正廣度另作信心加減項，缺少時不補0，也不阻斷核心排名。建議與實際成交分離，只有Ryan確認成交才更新持股。
 
+【情境事件層】
+消息先依來源、影響範圍、方向、有效期限及基本面／價格確認分類。單一新聞、全市場急跌或未確認預估不直接觸發買賣；只有公司投資邏輯已有官方惡化證據並取得獨立確認，才提高換出檢視優先度。此層不修改核心分數、不自動成交，並保留證據與反證。
+
 【無差別殺盤過渡層】
 未來半年五檔目標維持不變。當加權指數或十一題材候選池出現廣泛急跌時，R1開放全候選池進行過渡比較，包括五檔目標本身。跌深不是買進理由；候選仍須通過財務、題材催化及風險資料。盤中只列觀察，收盤後以官方資料確認；模型不自動成交。
 
@@ -53,6 +56,17 @@ RECOMMENDATION_DISPLAY = {
     ("WATCH3", "OBSERVE_ONLY"): ("觀察3", "僅觀察"),
 }
 
+CONTEXT_DISPLAY = {
+    "THESIS_RISK_CONFIRMED": "投資邏輯風險已獲獨立確認",
+    "FUNDAMENTAL_RISK_REVIEW": "基本面風險待獨立確認",
+    "MIXED_EVIDENCE": "正反證據並存",
+    "MARKET_CONFIRMED_NEGATIVE": "個股負面訊號獲市場確認",
+    "MARKET_WIDE_SELLOFF": "全市場急跌，僅列回檔觀察",
+    "POSITIVE_FUNDAMENTAL_CONFIRMED": "正向事件獲基本面確認",
+    "POSITIVE_EVENT_WATCH": "正向事件待基本面確認",
+    "NO_CONTEXT_CHANGE": "無新增情境變化",
+}
+
 
 def _money(value: object) -> str:
     return f"{float(value):,.1f}" if isinstance(value, (int, float)) else str(value)
@@ -72,6 +86,7 @@ def _build_v03_dashboard(*, config: R1Config, market: dict, theme_review: dict,
                          target_consensus_ready_count: int = 0,
                          anonymous_target_ready_count: int = 0,
                          anonymous_target_missing: list[str] | None = None,
+                         context_by_ticker: dict[str, dict] | None = None,
                          total_actual_equity: float | None = None,
                          actual_positions: list[dict] | None = None) -> list[list[object]]:
     themes = load_themes(theme_path)
@@ -124,6 +139,7 @@ def _build_v03_dashboard(*, config: R1Config, market: dict, theme_review: dict,
         for item in market.get("rows", [])
     }
     actual_positions = actual_positions or []
+    context_by_ticker = context_by_ticker or {}
     for item in actual_positions:
         ticker = str(item.get("ticker", "")).upper()
         if ticker not in held and isinstance(item.get("shares"), (int, float)) and item["shares"] > 0:
@@ -149,7 +165,7 @@ def _build_v03_dashboard(*, config: R1Config, market: dict, theme_review: dict,
             "信心層缺值不補0、不阻斷核心排名；不產生自動交易。"
         )],
         ["01｜實際持股與未來半年目標持股"],
-        ["所屬題材", "股票", "優先持有參考值", "實際持有", "當日收盤", "持股市值", "持股占比", "半年目標"],
+        ["所屬題材", "股票", "優先持有參考值", "實際持有", "當日收盤", "持股市值", "持股占比", "半年目標", "情境判讀"],
     ]
     for ticker in display_tickers:
         security = securities.get(ticker)
@@ -170,6 +186,9 @@ def _build_v03_dashboard(*, config: R1Config, market: dict, theme_review: dict,
             _money(market_value) if market_value is not None else "",
             _percent(weight) if weight is not None else "",
             "未來半年目標" if ticker in targets else "既有實際持股",
+            CONTEXT_DISPLAY.get(
+                context_by_ticker.get(ticker, {}).get("context_state"), "待資料"
+            ),
         ])
     comparison = comparison or {"rows": [], "comparison_ready": False}
     recommendations = recommendations or []
@@ -303,6 +322,7 @@ def build_dashboard_payload(
     target_price_path: str | Path = "data/r1/target_prices/latest.json",
     anonymous_target_price_path: str | Path = "data/r1/target_prices/yahoo_aggregate_latest.json",
     v05_rank_path: str | Path = "data/r1/v05/latest.json",
+    context_event_path: str | Path = "data/r1/context_event_latest.json",
 ) -> dict:
     config = R1Config.load(config_path)
     market = json.loads(Path(market_path).read_text(encoding="utf-8"))
@@ -365,6 +385,13 @@ def build_dashboard_payload(
     if v05_payload.get("date") != market.get("date"):
         v05_payload = {"rows": []}
     v05_by_ticker = {str(row.get("ticker", "")).zfill(4): row for row in v05_payload.get("rows", [])}
+    context_file = Path(context_event_path)
+    context_payload = json.loads(context_file.read_text(encoding="utf-8")) if context_file.exists() else {"rows": []}
+    if context_payload.get("date") != market.get("date"):
+        context_payload = {"rows": []}
+    context_by_ticker = {
+        str(row.get("ticker", "")).zfill(4): row for row in context_payload.get("rows", [])
+    }
     for item in comparison["rows"]:
         tabs["R1績效每日比較"].append([item[key] for key in TAB_SCHEMAS["R1績效每日比較"]])
 
@@ -386,6 +413,7 @@ def build_dashboard_payload(
             "price_chip_risk": v05.get("price_chip_risk"),
             "theme_momentum_and_catalyst": v05.get("theme_momentum_and_catalyst"),
             "official_negative_flags": v05.get("official_negative_flags", []),
+            "context_state": context_by_ticker.get(ticker, {}).get("context_state"),
             "reason": v05.get("v05_reason"),
         })
     recommendations = build_recommendations(
@@ -451,6 +479,7 @@ def build_dashboard_payload(
         ),
         anonymous_target_ready_count=sum(ticker in anonymous_target_by_ticker for ticker in v05_by_ticker),
         anonymous_target_missing=sorted(ticker for ticker in v05_by_ticker if ticker not in anonymous_target_by_ticker),
+        context_by_ticker=context_by_ticker,
         total_actual_equity=actual_account.get("equity_market_value"),
         actual_positions=actual_account.get("positions", []),
     )

@@ -160,6 +160,8 @@ def _format_workbook(client: SheetsClient, dashboard_rows: list[list[object]]) -
           "startIndex": 4, "endIndex": 7}, "properties": {"pixelSize": 125}, "fields": "pixelSize"}},
         {"updateDimensionProperties": {"range": {"sheetId": dashboard_id, "dimension": "COLUMNS",
           "startIndex": 7, "endIndex": 8}, "properties": {"pixelSize": 165}, "fields": "pixelSize"}},
+        {"updateDimensionProperties": {"range": {"sheetId": dashboard_id, "dimension": "COLUMNS",
+          "startIndex": 8, "endIndex": 9}, "properties": {"pixelSize": 210}, "fields": "pixelSize"}},
         {"repeatCell": {
           "range": {"sheetId": dashboard_id, "startRowIndex": holding_header + 1,
                     "endRowIndex": performance_section, "startColumnIndex": 4, "endColumnIndex": 6},
@@ -239,7 +241,7 @@ def publish_payload(spreadsheet_id: str, payload_path: str | Path) -> dict[str, 
         _ensure_tab_topology(client)
 
     dashboard_rows = tabs[DASHBOARD]
-    client.clear(f"'{DASHBOARD}'!A1:H100")
+    client.clear(f"'{DASHBOARD}'!A1:I100")
     client.update(f"'{DASHBOARD}'!A1", dashboard_rows)
     _format_workbook(client, dashboard_rows)
 
@@ -274,7 +276,7 @@ def publish_payload(spreadsheet_id: str, payload_path: str | Path) -> dict[str, 
         client.clear(f"'{TRADES}'!A1:P10000")
         client.update(f"'{TRADES}'!A1", [trade_header])
 
-    dashboard_check = client.get(f"'{DASHBOARD}'!A1:E100")
+    dashboard_check = client.get(f"'{DASHBOARD}'!A1:I100")
     signal_check = client.get(f"'{SIGNALS}'!A1:Y10000")
     trade_check = client.get(f"'{TRADES}'!A1:P10000")
     performance_check = client.get(f"'{PERFORMANCE}'!A1:I10000")
