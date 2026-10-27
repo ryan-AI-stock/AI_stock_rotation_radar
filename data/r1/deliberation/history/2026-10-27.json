@@ -1,0 +1,2168 @@
+{
+  "model": "R1",
+  "layer": "bounded_deliberation_v0.1",
+  "date": "2026-10-27",
+  "status": "READY",
+  "rows": [
+    {
+      "ticker": "2330",
+      "company": "台積電",
+      "is_held": true,
+      "is_target": false,
+      "score": 56.104652,
+      "hypotheses": [
+        {
+          "id": "SYSTEMIC_SELLING",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "COMPANY_THESIS_DAMAGE",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "PRICE_FUNDAMENTAL_DISLOCATION",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "POSITIVE_CATALYST_CONFIRMED",
+          "support": "WEAK",
+          "evidence": [
+            "正向事件0項"
+          ]
+        }
+      ],
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
+      "confidence": "LOW",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "WATCH_POTENTIAL_DISLOCATION",
+      "judgement_changed": true,
+      "evidence_urls": []
+    },
+    {
+      "ticker": "2327",
+      "company": "國巨",
+      "is_held": true,
+      "is_target": false,
+      "score": 55.971313,
+      "hypotheses": [
+        {
+          "id": "SYSTEMIC_SELLING",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "COMPANY_THESIS_DAMAGE",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "PRICE_FUNDAMENTAL_DISLOCATION",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "POSITIVE_CATALYST_CONFIRMED",
+          "support": "WEAK",
+          "evidence": [
+            "正向事件0項"
+          ]
+        }
+      ],
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
+      "confidence": "LOW",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "judgement_changed": true,
+      "evidence_urls": []
+    },
+    {
+      "ticker": "2344",
+      "company": "華邦電",
+      "is_held": true,
+      "is_target": false,
+      "score": 77.127869,
+      "hypotheses": [
+        {
+          "id": "SYSTEMIC_SELLING",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "COMPANY_THESIS_DAMAGE",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "PRICE_FUNDAMENTAL_DISLOCATION",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "POSITIVE_CATALYST_CONFIRMED",
+          "support": "MEDIUM",
+          "evidence": [
+            "正向事件1項"
+          ]
+        }
+      ],
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
+      "confidence": "LOW",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "judgement_changed": true,
+      "evidence_urls": [
+        "https://www.trendforce.com/presscenter/news/20260907-13219.html"
+      ]
+    },
+    {
+      "ticker": "2376",
+      "company": "技嘉",
+      "is_held": true,
+      "is_target": false,
+      "score": 65.705328,
+      "hypotheses": [
+        {
+          "id": "SYSTEMIC_SELLING",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "COMPANY_THESIS_DAMAGE",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "PRICE_FUNDAMENTAL_DISLOCATION",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "POSITIVE_CATALYST_CONFIRMED",
+          "support": "MEDIUM",
+          "evidence": [
+            "正向事件1項"
+          ]
+        }
+      ],
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
+      "confidence": "LOW",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "WATCH_POTENTIAL_DISLOCATION",
+      "judgement_changed": true,
+      "evidence_urls": [
+        "https://www.xxquant.com/en/institution/institutional-research/63fc05022b4f6cf9d73e160779b31d86"
+      ]
+    },
+    {
+      "ticker": "2454",
+      "company": "聯發科",
+      "is_held": true,
+      "is_target": true,
+      "score": 37.002636,
+      "hypotheses": [
+        {
+          "id": "SYSTEMIC_SELLING",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "COMPANY_THESIS_DAMAGE",
+          "support": "MEDIUM",
+          "evidence": [
+            "FINANCIAL_EARNINGS_CONTRACTION"
+          ]
+        },
+        {
+          "id": "PRICE_FUNDAMENTAL_DISLOCATION",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "POSITIVE_CATALYST_CONFIRMED",
+          "support": "MEDIUM",
+          "evidence": [
+            "正向事件1項"
+          ]
+        }
+      ],
+      "contradictions": [
+        "官方負面與正向催化並存，須等待後續營收或財報確認"
+      ],
+      "conclusion": "HOLD_PENDING_CONFIRMATION",
+      "confidence": "MEDIUM",
+      "rationale": "已有官方負面，但缺第二項獨立確認，不因單一證據賣出",
+      "previous_conclusion": "HOLD_PENDING_CONFIRMATION",
+      "judgement_changed": false,
+      "evidence_urls": [
+        "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=2454&SYEAR=2026&SSEASON=2&REPORT_ID=C",
+        "https://www.spglobal.com/market-intelligence/en/news-insights/research/2026/08/mediatek-s-ai-asics-growth-to-offset-smartphone-weakness"
+      ]
+    },
+    {
+      "ticker": "3037",
+      "company": "欣興",
+      "is_held": true,
+      "is_target": true,
+      "score": 57.022552,
+      "hypotheses": [
+        {
+          "id": "SYSTEMIC_SELLING",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "COMPANY_THESIS_DAMAGE",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "PRICE_FUNDAMENTAL_DISLOCATION",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "POSITIVE_CATALYST_CONFIRMED",
+          "support": "MEDIUM",
+          "evidence": [
+            "正向事件1項"
+          ]
+        }
+      ],
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
+      "confidence": "LOW",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "WATCH_POTENTIAL_DISLOCATION",
+      "judgement_changed": true,
+      "evidence_urls": [
+        "https://www.unimicron.com/files/money/Earnings/en/2026-Q2-consolidated-en.pdf"
+      ]
+    },
+    {
+      "ticker": "6488",
+      "company": "環球晶",
+      "is_held": true,
+      "is_target": false,
+      "score": 45.46729,
+      "hypotheses": [
+        {
+          "id": "SYSTEMIC_SELLING",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "COMPANY_THESIS_DAMAGE",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "PRICE_FUNDAMENTAL_DISLOCATION",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "POSITIVE_CATALYST_CONFIRMED",
+          "support": "MEDIUM",
+          "evidence": [
+            "正向事件1項"
+          ]
+        }
+      ],
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
+      "confidence": "LOW",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "judgement_changed": true,
+      "evidence_urls": [
+        "https://www.tomshardware.com/tech-industry/semiconductors/micron-takes-a-500-million-position-in-americas-only-300mm-wafer-plant"
+      ]
+    },
+    {
+      "ticker": "3661",
+      "company": "世芯-KY",
+      "is_held": false,
+      "is_target": false,
+      "score": 72.479587,
+      "hypotheses": [
+        {
+          "id": "SYSTEMIC_SELLING",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "COMPANY_THESIS_DAMAGE",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "PRICE_FUNDAMENTAL_DISLOCATION",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "POSITIVE_CATALYST_CONFIRMED",
+          "support": "WEAK",
+          "evidence": [
+            "正向事件0項"
+          ]
+        }
+      ],
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
+      "confidence": "LOW",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "WATCH_POTENTIAL_DISLOCATION",
+      "judgement_changed": true,
+      "evidence_urls": []
+    },
+    {
+      "ticker": "3443",
+      "company": "創意",
+      "is_held": false,
+      "is_target": false,
+      "score": 54.784724,
+      "hypotheses": [
+        {
+          "id": "SYSTEMIC_SELLING",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "COMPANY_THESIS_DAMAGE",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "PRICE_FUNDAMENTAL_DISLOCATION",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "POSITIVE_CATALYST_CONFIRMED",
+          "support": "MEDIUM",
+          "evidence": [
+            "正向事件1項"
+          ]
+        }
+      ],
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
+      "confidence": "LOW",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "judgement_changed": true,
+      "evidence_urls": [
+        "https://www.moneydj.com/kmdj/news/newsviewer.aspx?a=8b9ae6d7-7f01-46fa-ab35-d29897a392e4&c=MB00"
+      ]
+    },
+    {
+      "ticker": "3035",
+      "company": "智原",
+      "is_held": false,
+      "is_target": false,
+      "score": 49.358662,
+      "hypotheses": [
+        {
+          "id": "SYSTEMIC_SELLING",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "COMPANY_THESIS_DAMAGE",
+          "support": "MEDIUM",
+          "evidence": [
+            "FINANCIAL_EARNINGS_CONTRACTION"
+          ]
+        },
+        {
+          "id": "PRICE_FUNDAMENTAL_DISLOCATION",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "POSITIVE_CATALYST_CONFIRMED",
+          "support": "MEDIUM",
+          "evidence": [
+            "正向事件1項"
+          ]
+        }
+      ],
+      "contradictions": [
+        "官方負面與正向催化並存，須等待後續營收或財報確認"
+      ],
+      "conclusion": "HOLD_PENDING_CONFIRMATION",
+      "confidence": "MEDIUM",
+      "rationale": "已有官方負面，但缺第二項獨立確認，不因單一證據賣出",
+      "previous_conclusion": "HOLD_PENDING_CONFIRMATION",
+      "judgement_changed": false,
+      "evidence_urls": [
+        "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3035&SYEAR=2026&SSEASON=2&REPORT_ID=C",
+        "https://www.moneydj.com/kmdj/news/newsviewer.aspx?a=691d75a0-20c1-4648-8948-42eff848d38f"
+      ]
+    },
+    {
+      "ticker": "2449",
+      "company": "京元電子",
+      "is_held": false,
+      "is_target": false,
+      "score": 43.623045,
+      "hypotheses": [
+        {
+          "id": "SYSTEMIC_SELLING",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "COMPANY_THESIS_DAMAGE",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "PRICE_FUNDAMENTAL_DISLOCATION",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "POSITIVE_CATALYST_CONFIRMED",
+          "support": "WEAK",
+          "evidence": [
+            "正向事件0項"
+          ]
+        }
+      ],
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
+      "confidence": "LOW",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "judgement_changed": true,
+      "evidence_urls": []
+    },
+    {
+      "ticker": "6223",
+      "company": "旺矽",
+      "is_held": false,
+      "is_target": false,
+      "score": 53.045996,
+      "hypotheses": [
+        {
+          "id": "SYSTEMIC_SELLING",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "COMPANY_THESIS_DAMAGE",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "PRICE_FUNDAMENTAL_DISLOCATION",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "POSITIVE_CATALYST_CONFIRMED",
+          "support": "WEAK",
+          "evidence": [
+            "正向事件0項"
+          ]
+        }
+      ],
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
+      "confidence": "LOW",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "WATCH_POTENTIAL_DISLOCATION",
+      "judgement_changed": true,
+      "evidence_urls": []
+    },
+    {
+      "ticker": "6187",
+      "company": "萬潤",
+      "is_held": false,
+      "is_target": false,
+      "score": 58.016465,
+      "hypotheses": [
+        {
+          "id": "SYSTEMIC_SELLING",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "COMPANY_THESIS_DAMAGE",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "PRICE_FUNDAMENTAL_DISLOCATION",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "POSITIVE_CATALYST_CONFIRMED",
+          "support": "MEDIUM",
+          "evidence": [
+            "正向事件1項"
+          ]
+        }
+      ],
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
+      "confidence": "LOW",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "WATCH_POTENTIAL_DISLOCATION",
+      "judgement_changed": true,
+      "evidence_urls": [
+        "https://www.mirrormedia.mg/external/mirrordaily_82154"
+      ]
+    },
+    {
+      "ticker": "3583",
+      "company": "辛耘",
+      "is_held": false,
+      "is_target": false,
+      "score": 45.9905,
+      "hypotheses": [
+        {
+          "id": "SYSTEMIC_SELLING",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "COMPANY_THESIS_DAMAGE",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "PRICE_FUNDAMENTAL_DISLOCATION",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "POSITIVE_CATALYST_CONFIRMED",
+          "support": "WEAK",
+          "evidence": [
+            "正向事件0項"
+          ]
+        }
+      ],
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
+      "confidence": "LOW",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "judgement_changed": true,
+      "evidence_urls": []
+    },
+    {
+      "ticker": "2408",
+      "company": "南亞科",
+      "is_held": true,
+      "is_target": true,
+      "score": 72.347404,
+      "hypotheses": [
+        {
+          "id": "SYSTEMIC_SELLING",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "COMPANY_THESIS_DAMAGE",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "PRICE_FUNDAMENTAL_DISLOCATION",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "POSITIVE_CATALYST_CONFIRMED",
+          "support": "MEDIUM",
+          "evidence": [
+            "正向事件1項"
+          ]
+        }
+      ],
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
+      "confidence": "LOW",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "judgement_changed": true,
+      "evidence_urls": [
+        "https://www.trendforce.com/presscenter/news/20260730-13158.html"
+      ]
+    },
+    {
+      "ticker": "3081",
+      "company": "聯亞",
+      "is_held": true,
+      "is_target": true,
+      "score": 68.266331,
+      "hypotheses": [
+        {
+          "id": "SYSTEMIC_SELLING",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "COMPANY_THESIS_DAMAGE",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "PRICE_FUNDAMENTAL_DISLOCATION",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "POSITIVE_CATALYST_CONFIRMED",
+          "support": "MEDIUM",
+          "evidence": [
+            "正向事件1項"
+          ]
+        }
+      ],
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
+      "confidence": "LOW",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "WATCH_POTENTIAL_DISLOCATION",
+      "judgement_changed": true,
+      "evidence_urls": [
+        "https://doc.twse.com.tw/pdf/2025_3081_20260527F04_20260714_045320.pdf"
+      ]
+    },
+    {
+      "ticker": "2303",
+      "company": "聯電",
+      "is_held": true,
+      "is_target": false,
+      "score": 40.751016,
+      "hypotheses": [
+        {
+          "id": "SYSTEMIC_SELLING",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "COMPANY_THESIS_DAMAGE",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "PRICE_FUNDAMENTAL_DISLOCATION",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "POSITIVE_CATALYST_CONFIRMED",
+          "support": "MEDIUM",
+          "evidence": [
+            "正向事件1項"
+          ]
+        }
+      ],
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
+      "confidence": "LOW",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "judgement_changed": true,
+      "evidence_urls": [
+        "https://www.umc.com/zh-TW/News/press_release/Content/technology_related/20260714"
+      ]
+    },
+    {
+      "ticker": "3008",
+      "company": "大立光",
+      "is_held": false,
+      "is_target": false,
+      "score": null,
+      "hypotheses": [
+        {
+          "id": "SYSTEMIC_SELLING",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "COMPANY_THESIS_DAMAGE",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "PRICE_FUNDAMENTAL_DISLOCATION",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "POSITIVE_CATALYST_CONFIRMED",
+          "support": "WEAK",
+          "evidence": [
+            "正向事件0項"
+          ]
+        }
+      ],
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
+      "confidence": "LOW",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "judgement_changed": true,
+      "evidence_urls": []
+    },
+    {
+      "ticker": "3406",
+      "company": "玉晶光",
+      "is_held": false,
+      "is_target": false,
+      "score": null,
+      "hypotheses": [
+        {
+          "id": "SYSTEMIC_SELLING",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "COMPANY_THESIS_DAMAGE",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "PRICE_FUNDAMENTAL_DISLOCATION",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "POSITIVE_CATALYST_CONFIRMED",
+          "support": "WEAK",
+          "evidence": [
+            "正向事件0項"
+          ]
+        }
+      ],
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
+      "confidence": "LOW",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "judgement_changed": false,
+      "evidence_urls": []
+    },
+    {
+      "ticker": "2337",
+      "company": "旺宏",
+      "is_held": false,
+      "is_target": false,
+      "score": 68.697834,
+      "hypotheses": [
+        {
+          "id": "SYSTEMIC_SELLING",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "COMPANY_THESIS_DAMAGE",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "PRICE_FUNDAMENTAL_DISLOCATION",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "POSITIVE_CATALYST_CONFIRMED",
+          "support": "WEAK",
+          "evidence": [
+            "正向事件0項"
+          ]
+        }
+      ],
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
+      "confidence": "LOW",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "judgement_changed": true,
+      "evidence_urls": []
+    },
+    {
+      "ticker": "8299",
+      "company": "群聯",
+      "is_held": false,
+      "is_target": false,
+      "score": 71.58546,
+      "hypotheses": [
+        {
+          "id": "SYSTEMIC_SELLING",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "COMPANY_THESIS_DAMAGE",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "PRICE_FUNDAMENTAL_DISLOCATION",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "POSITIVE_CATALYST_CONFIRMED",
+          "support": "MEDIUM",
+          "evidence": [
+            "正向事件1項"
+          ]
+        }
+      ],
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
+      "confidence": "LOW",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "judgement_changed": true,
+      "evidence_urls": [
+        "https://gfe-desktop.cnyes.com/news/id/6575811"
+      ]
+    },
+    {
+      "ticker": "3260",
+      "company": "威剛",
+      "is_held": false,
+      "is_target": false,
+      "score": 60.822316,
+      "hypotheses": [
+        {
+          "id": "SYSTEMIC_SELLING",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "COMPANY_THESIS_DAMAGE",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "PRICE_FUNDAMENTAL_DISLOCATION",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "POSITIVE_CATALYST_CONFIRMED",
+          "support": "WEAK",
+          "evidence": [
+            "正向事件0項"
+          ]
+        }
+      ],
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
+      "confidence": "LOW",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "judgement_changed": true,
+      "evidence_urls": []
+    },
+    {
+      "ticker": "2383",
+      "company": "台光電",
+      "is_held": false,
+      "is_target": false,
+      "score": 49.87868,
+      "hypotheses": [
+        {
+          "id": "SYSTEMIC_SELLING",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "COMPANY_THESIS_DAMAGE",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "PRICE_FUNDAMENTAL_DISLOCATION",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "POSITIVE_CATALYST_CONFIRMED",
+          "support": "WEAK",
+          "evidence": [
+            "正向事件0項"
+          ]
+        }
+      ],
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
+      "confidence": "LOW",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "WATCH_POTENTIAL_DISLOCATION",
+      "judgement_changed": true,
+      "evidence_urls": []
+    },
+    {
+      "ticker": "6274",
+      "company": "台燿",
+      "is_held": false,
+      "is_target": false,
+      "score": 54.970162,
+      "hypotheses": [
+        {
+          "id": "SYSTEMIC_SELLING",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "COMPANY_THESIS_DAMAGE",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "PRICE_FUNDAMENTAL_DISLOCATION",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "POSITIVE_CATALYST_CONFIRMED",
+          "support": "WEAK",
+          "evidence": [
+            "正向事件0項"
+          ]
+        }
+      ],
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
+      "confidence": "LOW",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "judgement_changed": true,
+      "evidence_urls": []
+    },
+    {
+      "ticker": "3189",
+      "company": "景碩",
+      "is_held": false,
+      "is_target": false,
+      "score": 59.736958,
+      "hypotheses": [
+        {
+          "id": "SYSTEMIC_SELLING",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "COMPANY_THESIS_DAMAGE",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "PRICE_FUNDAMENTAL_DISLOCATION",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "POSITIVE_CATALYST_CONFIRMED",
+          "support": "WEAK",
+          "evidence": [
+            "正向事件0項"
+          ]
+        }
+      ],
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
+      "confidence": "LOW",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "WATCH_POTENTIAL_DISLOCATION",
+      "judgement_changed": true,
+      "evidence_urls": []
+    },
+    {
+      "ticker": "2368",
+      "company": "金像電",
+      "is_held": false,
+      "is_target": false,
+      "score": 51.900464,
+      "hypotheses": [
+        {
+          "id": "SYSTEMIC_SELLING",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "COMPANY_THESIS_DAMAGE",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "PRICE_FUNDAMENTAL_DISLOCATION",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "POSITIVE_CATALYST_CONFIRMED",
+          "support": "WEAK",
+          "evidence": [
+            "正向事件0項"
+          ]
+        }
+      ],
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
+      "confidence": "LOW",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "judgement_changed": true,
+      "evidence_urls": []
+    },
+    {
+      "ticker": "2345",
+      "company": "智邦",
+      "is_held": false,
+      "is_target": false,
+      "score": 59.4903,
+      "hypotheses": [
+        {
+          "id": "SYSTEMIC_SELLING",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "COMPANY_THESIS_DAMAGE",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "PRICE_FUNDAMENTAL_DISLOCATION",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "POSITIVE_CATALYST_CONFIRMED",
+          "support": "WEAK",
+          "evidence": [
+            "正向事件0項"
+          ]
+        }
+      ],
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
+      "confidence": "LOW",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "judgement_changed": true,
+      "evidence_urls": []
+    },
+    {
+      "ticker": "3363",
+      "company": "上詮",
+      "is_held": false,
+      "is_target": false,
+      "score": 47.29226,
+      "hypotheses": [
+        {
+          "id": "SYSTEMIC_SELLING",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "COMPANY_THESIS_DAMAGE",
+          "support": "MEDIUM",
+          "evidence": [
+            "FINANCIAL_CASH_MARGIN_STRESS",
+            "FINANCIAL_EARNINGS_CONTRACTION"
+          ]
+        },
+        {
+          "id": "PRICE_FUNDAMENTAL_DISLOCATION",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "POSITIVE_CATALYST_CONFIRMED",
+          "support": "MEDIUM",
+          "evidence": [
+            "正向事件1項"
+          ]
+        }
+      ],
+      "contradictions": [
+        "官方負面與正向催化並存，須等待後續營收或財報確認"
+      ],
+      "conclusion": "HOLD_PENDING_CONFIRMATION",
+      "confidence": "MEDIUM",
+      "rationale": "已有官方負面，但缺第二項獨立確認，不因單一證據賣出",
+      "previous_conclusion": "HOLD_PENDING_CONFIRMATION",
+      "judgement_changed": false,
+      "evidence_urls": [
+        "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3363&SYEAR=2026&SSEASON=2&REPORT_ID=C",
+        "https://www.ttv.com.tw/finance/view/0720260710050B29AE35C5884793BFDF07635CF7BD49950E/587"
+      ]
+    },
+    {
+      "ticker": "4979",
+      "company": "華星光",
+      "is_held": false,
+      "is_target": false,
+      "score": 57.114583,
+      "hypotheses": [
+        {
+          "id": "SYSTEMIC_SELLING",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "COMPANY_THESIS_DAMAGE",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "PRICE_FUNDAMENTAL_DISLOCATION",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "POSITIVE_CATALYST_CONFIRMED",
+          "support": "MEDIUM",
+          "evidence": [
+            "正向事件1項"
+          ]
+        }
+      ],
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
+      "confidence": "LOW",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "WATCH_POTENTIAL_DISLOCATION",
+      "judgement_changed": true,
+      "evidence_urls": [
+        "https://www.moneydj.com/KMDJ/news/newsviewer.aspx?a=24de7354-e77c-445f-a299-0e12c3a0792f"
+      ]
+    },
+    {
+      "ticker": "6442",
+      "company": "光聖",
+      "is_held": false,
+      "is_target": false,
+      "score": 66.632908,
+      "hypotheses": [
+        {
+          "id": "SYSTEMIC_SELLING",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "COMPANY_THESIS_DAMAGE",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "PRICE_FUNDAMENTAL_DISLOCATION",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "POSITIVE_CATALYST_CONFIRMED",
+          "support": "WEAK",
+          "evidence": [
+            "正向事件0項"
+          ]
+        }
+      ],
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
+      "confidence": "LOW",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "judgement_changed": true,
+      "evidence_urls": []
+    },
+    {
+      "ticker": "3163",
+      "company": "波若威",
+      "is_held": false,
+      "is_target": false,
+      "score": 45.771347,
+      "hypotheses": [
+        {
+          "id": "SYSTEMIC_SELLING",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "COMPANY_THESIS_DAMAGE",
+          "support": "MEDIUM",
+          "evidence": [
+            "FINANCIAL_CASH_MARGIN_STRESS"
+          ]
+        },
+        {
+          "id": "PRICE_FUNDAMENTAL_DISLOCATION",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "POSITIVE_CATALYST_CONFIRMED",
+          "support": "WEAK",
+          "evidence": [
+            "正向事件0項"
+          ]
+        }
+      ],
+      "contradictions": [],
+      "conclusion": "HOLD_PENDING_CONFIRMATION",
+      "confidence": "MEDIUM",
+      "rationale": "已有官方負面，但缺第二項獨立確認，不因單一證據賣出",
+      "previous_conclusion": "HOLD_PENDING_CONFIRMATION",
+      "judgement_changed": false,
+      "evidence_urls": [
+        "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3163&SYEAR=2026&SSEASON=2&REPORT_ID=C"
+      ]
+    },
+    {
+      "ticker": "2301",
+      "company": "光寶科",
+      "is_held": false,
+      "is_target": false,
+      "score": 45.40482,
+      "hypotheses": [
+        {
+          "id": "SYSTEMIC_SELLING",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "COMPANY_THESIS_DAMAGE",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "PRICE_FUNDAMENTAL_DISLOCATION",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "POSITIVE_CATALYST_CONFIRMED",
+          "support": "MEDIUM",
+          "evidence": [
+            "正向事件2項"
+          ]
+        }
+      ],
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
+      "confidence": "LOW",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "judgement_changed": true,
+      "evidence_urls": [
+        "https://ec.ltn.com.tw/article/breakingnews/5524305",
+        "https://www.liteon.com/zh-cn/news/press-center/content/liteon-ocp-2026"
+      ]
+    },
+    {
+      "ticker": "6282",
+      "company": "康舒",
+      "is_held": false,
+      "is_target": false,
+      "score": 47.212695,
+      "hypotheses": [
+        {
+          "id": "SYSTEMIC_SELLING",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "COMPANY_THESIS_DAMAGE",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "PRICE_FUNDAMENTAL_DISLOCATION",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "POSITIVE_CATALYST_CONFIRMED",
+          "support": "WEAK",
+          "evidence": [
+            "正向事件0項"
+          ]
+        }
+      ],
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
+      "confidence": "LOW",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "judgement_changed": true,
+      "evidence_urls": []
+    },
+    {
+      "ticker": "6412",
+      "company": "群電",
+      "is_held": false,
+      "is_target": false,
+      "score": 43.147585,
+      "hypotheses": [
+        {
+          "id": "SYSTEMIC_SELLING",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "COMPANY_THESIS_DAMAGE",
+          "support": "MEDIUM",
+          "evidence": [
+            "FINANCIAL_CASH_MARGIN_STRESS",
+            "MONTHLY_REVENUE_CONTRACTION"
+          ]
+        },
+        {
+          "id": "PRICE_FUNDAMENTAL_DISLOCATION",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "POSITIVE_CATALYST_CONFIRMED",
+          "support": "MEDIUM",
+          "evidence": [
+            "正向事件1項"
+          ]
+        }
+      ],
+      "contradictions": [
+        "官方負面與正向催化並存，須等待後續營收或財報確認"
+      ],
+      "conclusion": "HOLD_PENDING_CONFIRMATION",
+      "confidence": "MEDIUM",
+      "rationale": "已有官方負面，但缺第二項獨立確認，不因單一證據賣出",
+      "previous_conclusion": "HOLD_PENDING_CONFIRMATION",
+      "judgement_changed": false,
+      "evidence_urls": [
+        "https://ec.ltn.com.tw/article/breakingnews/5425662",
+        "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_9_0.html",
+        "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=6412&SYEAR=2026&SSEASON=2&REPORT_ID=C"
+      ]
+    },
+    {
+      "ticker": "6781",
+      "company": "AES-KY",
+      "is_held": false,
+      "is_target": false,
+      "score": 63.755634,
+      "hypotheses": [
+        {
+          "id": "SYSTEMIC_SELLING",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "COMPANY_THESIS_DAMAGE",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "PRICE_FUNDAMENTAL_DISLOCATION",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "POSITIVE_CATALYST_CONFIRMED",
+          "support": "WEAK",
+          "evidence": [
+            "正向事件0項"
+          ]
+        }
+      ],
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
+      "confidence": "LOW",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "judgement_changed": true,
+      "evidence_urls": []
+    },
+    {
+      "ticker": "2492",
+      "company": "華新科",
+      "is_held": false,
+      "is_target": false,
+      "score": 48.783252,
+      "hypotheses": [
+        {
+          "id": "SYSTEMIC_SELLING",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "COMPANY_THESIS_DAMAGE",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "PRICE_FUNDAMENTAL_DISLOCATION",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "POSITIVE_CATALYST_CONFIRMED",
+          "support": "MEDIUM",
+          "evidence": [
+            "正向事件1項"
+          ]
+        }
+      ],
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
+      "confidence": "LOW",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "WATCH_POTENTIAL_DISLOCATION",
+      "judgement_changed": true,
+      "evidence_urls": [
+        "https://www.moneyweekly.com.tw/ArticleData/Info/Article/242076"
+      ]
+    },
+    {
+      "ticker": "3357",
+      "company": "臺慶科",
+      "is_held": false,
+      "is_target": false,
+      "score": 52.80451,
+      "hypotheses": [
+        {
+          "id": "SYSTEMIC_SELLING",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "COMPANY_THESIS_DAMAGE",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "PRICE_FUNDAMENTAL_DISLOCATION",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "POSITIVE_CATALYST_CONFIRMED",
+          "support": "WEAK",
+          "evidence": [
+            "正向事件0項"
+          ]
+        }
+      ],
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
+      "confidence": "LOW",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "judgement_changed": true,
+      "evidence_urls": []
+    },
+    {
+      "ticker": "3653",
+      "company": "健策",
+      "is_held": false,
+      "is_target": false,
+      "score": 53.811578,
+      "hypotheses": [
+        {
+          "id": "SYSTEMIC_SELLING",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "COMPANY_THESIS_DAMAGE",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "PRICE_FUNDAMENTAL_DISLOCATION",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "POSITIVE_CATALYST_CONFIRMED",
+          "support": "MEDIUM",
+          "evidence": [
+            "正向事件2項"
+          ]
+        }
+      ],
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
+      "confidence": "LOW",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "judgement_changed": true,
+      "evidence_urls": [
+        "https://wealth.firstbank.com.tw/investment-tips/trend-insight/news/news-detail?id=%7B85C157DD-773A-4B2C-AD9F-30D1B09514E6%7D",
+        "https://www.jentech.com.tw/zh/vapor-chamber-lid-2"
+      ]
+    },
+    {
+      "ticker": "3017",
+      "company": "奇鋐",
+      "is_held": false,
+      "is_target": false,
+      "score": 51.194186,
+      "hypotheses": [
+        {
+          "id": "SYSTEMIC_SELLING",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "COMPANY_THESIS_DAMAGE",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "PRICE_FUNDAMENTAL_DISLOCATION",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "POSITIVE_CATALYST_CONFIRMED",
+          "support": "MEDIUM",
+          "evidence": [
+            "正向事件2項"
+          ]
+        }
+      ],
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
+      "confidence": "LOW",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "judgement_changed": true,
+      "evidence_urls": [
+        "https://wealth.firstbank.com.tw/investment-tips/trend-insight/news/news-detail?id=%7B85C157DD-773A-4B2C-AD9F-30D1B09514E6%7D",
+        "https://www.esunsec.com.tw/article/post?postid=7d7f19bcff2d4ee1bbb4ab9f092a761c"
+      ]
+    },
+    {
+      "ticker": "3324",
+      "company": "雙鴻",
+      "is_held": false,
+      "is_target": false,
+      "score": 58.789709,
+      "hypotheses": [
+        {
+          "id": "SYSTEMIC_SELLING",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "COMPANY_THESIS_DAMAGE",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "PRICE_FUNDAMENTAL_DISLOCATION",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "POSITIVE_CATALYST_CONFIRMED",
+          "support": "MEDIUM",
+          "evidence": [
+            "正向事件1項"
+          ]
+        }
+      ],
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
+      "confidence": "LOW",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "judgement_changed": true,
+      "evidence_urls": [
+        "https://www.esunsec.com.tw/article/post?postid=7d7f19bcff2d4ee1bbb4ab9f092a761c"
+      ]
+    },
+    {
+      "ticker": "6230",
+      "company": "尼得科超眾",
+      "is_held": false,
+      "is_target": false,
+      "score": 59.035304,
+      "hypotheses": [
+        {
+          "id": "SYSTEMIC_SELLING",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "COMPANY_THESIS_DAMAGE",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "PRICE_FUNDAMENTAL_DISLOCATION",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "POSITIVE_CATALYST_CONFIRMED",
+          "support": "MEDIUM",
+          "evidence": [
+            "正向事件2項"
+          ]
+        }
+      ],
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
+      "confidence": "LOW",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "judgement_changed": true,
+      "evidence_urls": [
+        "https://poorstock.com/earningcall/6230",
+        "https://vocus.cc/article/6a92d9cdfd89780001fddd66"
+      ]
+    },
+    {
+      "ticker": "3338",
+      "company": "泰碩",
+      "is_held": false,
+      "is_target": false,
+      "score": 38.492873,
+      "hypotheses": [
+        {
+          "id": "SYSTEMIC_SELLING",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "COMPANY_THESIS_DAMAGE",
+          "support": "MEDIUM",
+          "evidence": [
+            "FINANCIAL_CASH_MARGIN_STRESS",
+            "FINANCIAL_EARNINGS_CONTRACTION"
+          ]
+        },
+        {
+          "id": "PRICE_FUNDAMENTAL_DISLOCATION",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "POSITIVE_CATALYST_CONFIRMED",
+          "support": "MEDIUM",
+          "evidence": [
+            "正向事件1項"
+          ]
+        }
+      ],
+      "contradictions": [
+        "官方負面與正向催化並存，須等待後續營收或財報確認"
+      ],
+      "conclusion": "HOLD_PENDING_CONFIRMATION",
+      "confidence": "MEDIUM",
+      "rationale": "已有官方負面，但缺第二項獨立確認，不因單一證據賣出",
+      "previous_conclusion": "HOLD_PENDING_CONFIRMATION",
+      "judgement_changed": false,
+      "evidence_urls": [
+        "https://money.udn.com/money/amp/story/5710/9639824",
+        "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3338&SYEAR=2026&SSEASON=2&REPORT_ID=C"
+      ]
+    },
+    {
+      "ticker": "2382",
+      "company": "廣達",
+      "is_held": false,
+      "is_target": false,
+      "score": 62.11949,
+      "hypotheses": [
+        {
+          "id": "SYSTEMIC_SELLING",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "COMPANY_THESIS_DAMAGE",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "PRICE_FUNDAMENTAL_DISLOCATION",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "POSITIVE_CATALYST_CONFIRMED",
+          "support": "WEAK",
+          "evidence": [
+            "正向事件0項"
+          ]
+        }
+      ],
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
+      "confidence": "LOW",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "judgement_changed": true,
+      "evidence_urls": []
+    },
+    {
+      "ticker": "3231",
+      "company": "緯創",
+      "is_held": false,
+      "is_target": false,
+      "score": 65.313253,
+      "hypotheses": [
+        {
+          "id": "SYSTEMIC_SELLING",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "COMPANY_THESIS_DAMAGE",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "PRICE_FUNDAMENTAL_DISLOCATION",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "POSITIVE_CATALYST_CONFIRMED",
+          "support": "WEAK",
+          "evidence": [
+            "正向事件0項"
+          ]
+        }
+      ],
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
+      "confidence": "LOW",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "judgement_changed": true,
+      "evidence_urls": []
+    },
+    {
+      "ticker": "6669",
+      "company": "緯穎",
+      "is_held": false,
+      "is_target": false,
+      "score": 61.470241,
+      "hypotheses": [
+        {
+          "id": "SYSTEMIC_SELLING",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "COMPANY_THESIS_DAMAGE",
+          "support": "MEDIUM",
+          "evidence": [
+            "FINANCIAL_CASH_MARGIN_STRESS"
+          ]
+        },
+        {
+          "id": "PRICE_FUNDAMENTAL_DISLOCATION",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "POSITIVE_CATALYST_CONFIRMED",
+          "support": "WEAK",
+          "evidence": [
+            "正向事件0項"
+          ]
+        }
+      ],
+      "contradictions": [],
+      "conclusion": "HOLD_PENDING_CONFIRMATION",
+      "confidence": "MEDIUM",
+      "rationale": "已有官方負面，但缺第二項獨立確認，不因單一證據賣出",
+      "previous_conclusion": "HOLD_PENDING_CONFIRMATION",
+      "judgement_changed": false,
+      "evidence_urls": [
+        "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=6669&SYEAR=2026&SSEASON=2&REPORT_ID=C"
+      ]
+    },
+    {
+      "ticker": "2317",
+      "company": "鴻海",
+      "is_held": false,
+      "is_target": false,
+      "score": 53.855948,
+      "hypotheses": [
+        {
+          "id": "SYSTEMIC_SELLING",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "COMPANY_THESIS_DAMAGE",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "PRICE_FUNDAMENTAL_DISLOCATION",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "POSITIVE_CATALYST_CONFIRMED",
+          "support": "WEAK",
+          "evidence": [
+            "正向事件0項"
+          ]
+        }
+      ],
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
+      "confidence": "LOW",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "judgement_changed": true,
+      "evidence_urls": []
+    },
+    {
+      "ticker": "2356",
+      "company": "英業達",
+      "is_held": false,
+      "is_target": false,
+      "score": 59.984388,
+      "hypotheses": [
+        {
+          "id": "SYSTEMIC_SELLING",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "COMPANY_THESIS_DAMAGE",
+          "support": "MEDIUM",
+          "evidence": [
+            "FINANCIAL_CASH_MARGIN_STRESS"
+          ]
+        },
+        {
+          "id": "PRICE_FUNDAMENTAL_DISLOCATION",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "POSITIVE_CATALYST_CONFIRMED",
+          "support": "WEAK",
+          "evidence": [
+            "正向事件0項"
+          ]
+        }
+      ],
+      "contradictions": [],
+      "conclusion": "HOLD_PENDING_CONFIRMATION",
+      "confidence": "MEDIUM",
+      "rationale": "已有官方負面，但缺第二項獨立確認，不因單一證據賣出",
+      "previous_conclusion": "HOLD_PENDING_CONFIRMATION",
+      "judgement_changed": false,
+      "evidence_urls": [
+        "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=2356&SYEAR=2026&SSEASON=2&REPORT_ID=C"
+      ]
+    },
+    {
+      "ticker": "3711",
+      "company": "日月光投控",
+      "is_held": false,
+      "is_target": false,
+      "score": 46.936759,
+      "hypotheses": [
+        {
+          "id": "SYSTEMIC_SELLING",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "COMPANY_THESIS_DAMAGE",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "PRICE_FUNDAMENTAL_DISLOCATION",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "POSITIVE_CATALYST_CONFIRMED",
+          "support": "MEDIUM",
+          "evidence": [
+            "正向事件1項"
+          ]
+        }
+      ],
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
+      "confidence": "LOW",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "judgement_changed": true,
+      "evidence_urls": [
+        "https://www.trendforce.com/news/2026/07/31/news-ase-again-raises-2026-capex-to-record-us10-5b-eyes-2x-leading-edge-advanced-packaging-revenue-by-2027/"
+      ]
+    },
+    {
+      "ticker": "2308",
+      "company": "台達電",
+      "is_held": false,
+      "is_target": true,
+      "score": 55.588883,
+      "hypotheses": [
+        {
+          "id": "SYSTEMIC_SELLING",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "COMPANY_THESIS_DAMAGE",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "PRICE_FUNDAMENTAL_DISLOCATION",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "POSITIVE_CATALYST_CONFIRMED",
+          "support": "WEAK",
+          "evidence": [
+            "正向事件0項"
+          ]
+        }
+      ],
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
+      "confidence": "LOW",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "judgement_changed": true,
+      "evidence_urls": []
+    },
+    {
+      "ticker": "2379",
+      "company": "瑞昱",
+      "is_held": false,
+      "is_target": false,
+      "score": 44.269989,
+      "hypotheses": [
+        {
+          "id": "SYSTEMIC_SELLING",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "COMPANY_THESIS_DAMAGE",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "PRICE_FUNDAMENTAL_DISLOCATION",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "POSITIVE_CATALYST_CONFIRMED",
+          "support": "WEAK",
+          "evidence": [
+            "正向事件0項"
+          ]
+        }
+      ],
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
+      "confidence": "LOW",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "judgement_changed": true,
+      "evidence_urls": []
+    },
+    {
+      "ticker": "3532",
+      "company": "台勝科",
+      "is_held": false,
+      "is_target": false,
+      "score": 44.854389,
+      "hypotheses": [
+        {
+          "id": "SYSTEMIC_SELLING",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "COMPANY_THESIS_DAMAGE",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "PRICE_FUNDAMENTAL_DISLOCATION",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "POSITIVE_CATALYST_CONFIRMED",
+          "support": "WEAK",
+          "evidence": [
+            "正向事件0項"
+          ]
+        }
+      ],
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
+      "confidence": "LOW",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "judgement_changed": true,
+      "evidence_urls": []
+    },
+    {
+      "ticker": "6182",
+      "company": "合晶",
+      "is_held": false,
+      "is_target": false,
+      "score": 44.347243,
+      "hypotheses": [
+        {
+          "id": "SYSTEMIC_SELLING",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "COMPANY_THESIS_DAMAGE",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "PRICE_FUNDAMENTAL_DISLOCATION",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "POSITIVE_CATALYST_CONFIRMED",
+          "support": "MEDIUM",
+          "evidence": [
+            "正向事件1項"
+          ]
+        }
+      ],
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
+      "confidence": "LOW",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "judgement_changed": true,
+      "evidence_urls": [
+        "https://finmoconf.diveinvest.net/presentation/6a749815a16a75b8138c21b7"
+      ]
+    },
+    {
+      "ticker": "1560",
+      "company": "中砂",
+      "is_held": false,
+      "is_target": false,
+      "score": 52.23456,
+      "hypotheses": [
+        {
+          "id": "SYSTEMIC_SELLING",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "COMPANY_THESIS_DAMAGE",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "PRICE_FUNDAMENTAL_DISLOCATION",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "POSITIVE_CATALYST_CONFIRMED",
+          "support": "WEAK",
+          "evidence": [
+            "正向事件0項"
+          ]
+        }
+      ],
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
+      "confidence": "LOW",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "judgement_changed": true,
+      "evidence_urls": []
+    },
+    {
+      "ticker": "3131",
+      "company": "弘塑",
+      "is_held": false,
+      "is_target": false,
+      "score": 56.156298,
+      "hypotheses": [
+        {
+          "id": "SYSTEMIC_SELLING",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "COMPANY_THESIS_DAMAGE",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "PRICE_FUNDAMENTAL_DISLOCATION",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "POSITIVE_CATALYST_CONFIRMED",
+          "support": "WEAK",
+          "evidence": [
+            "正向事件0項"
+          ]
+        }
+      ],
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
+      "confidence": "LOW",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "WATCH_POTENTIAL_DISLOCATION",
+      "judgement_changed": true,
+      "evidence_urls": []
+    }
+  ],
+  "conclusion_counts": {
+    "KEEP_EXISTING_PLAN": 46,
+    "HOLD_PENDING_CONFIRMATION": 8
+  },
+  "reasoning_contract": [
+    "同時保留互斥假說，不把價格下跌直接等同公司惡化",
+    "支持證據、反證、資料缺口與前次判斷均需可追溯",
+    "消息不能單獨觸發買賣，證據不足維持未知或原計畫",
+    "輸出只供Ryan判斷，不自動下單"
+  ],
+  "future_data_violation_count": 0,
+  "formal_model_changed": false,
+  "trade_decision_changed": false,
+  "active_in_trade_decision": false,
+  "report_changed": true
+}
