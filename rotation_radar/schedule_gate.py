@@ -191,7 +191,14 @@ def resolve_recent_market_calendar(
     closed_dates: set[date],
     rules: ScheduleGateRules,
 ) -> tuple[set[date], str]:
-    """Classify a recent unscheduled closure without mistaking early data delay for closure."""
+    """Classify recent unscheduled closures without treating fresh data delay as closure.
+
+    The holiday feed is not retroactively complete for every emergency closure.  A
+    past weekday with no rows on either exchange can therefore be marked closed
+    once a later official session is confirmed open.  The current candidate keeps
+    the stricter notice/deadline behaviour so delayed same-day data is never
+    silently converted into a holiday.
+    """
     updated = set(closed_dates)
     candidate = now.date()
     if candidate.weekday() >= 5:
@@ -200,23 +207,52 @@ def resolve_recent_market_calendar(
         candidate -= timedelta(days=1)
         while candidate.weekday() >= 5:
             candidate -= timedelta(days=1)
-    if candidate in open_dates or candidate in updated:
-        return updated, "calendar_known"
-    closure_notice = fetch_official_emergency_closure(candidate)
-    if closure_notice is True:
-        updated.add(candidate)
-        print(f"Detected official TWSE emergency closure notice: {candidate.isoformat()}")
-        return updated, "emergency_market_closed"
-    state = fetch_official_market_session_state(candidate)
-    if state == "open":
-        return updated, "official_session_open"
-    if state == "closed" and candidate == now.date() and now.time() < rules.emergency_confirm_after:
+    candidate_reason = "calendar_known"
+    candidate_state = "known" if candidate in open_dates or candidate in updated else "unknown"
+    if candidate_state == "unknown":
+        closure_notice = fetch_official_emergency_closure(candidate)
+        if closure_notice is True:
+            updated.add(candidate)
+            candidate_state = "closed"
+            candidate_reason = "emergency_market_closed"
+            print(f"Detected official TWSE emergency closure notice: {candidate.isoformat()}")
+        else:
+            candidate_state = fetch_official_market_session_state(candidate)
+            if candidate_state == "open":
+                candidate_reason = "official_session_open"
+            elif candidate_state == "closed" and candidate == now.date() and now.time() < rules.emergency_confirm_after:
+                candidate_reason = "official_session_data_pending"
+            elif candidate_state == "closed":
+                candidate_reason = "official_data_delayed"
+            else:
+                candidate_reason = "official_session_unknown"
+
+    # Reconcile only a short recent window.  A later confirmed-open session is
+    # required before zero-row historical data may be interpreted as a closure.
+    states: dict[date, str] = {}
+    if candidate_state == "open":
+        states[candidate] = "open"
+    start = candidate - timedelta(days=10)
+    for offset in range((candidate - start).days + 1):
+        day = start + timedelta(days=offset)
+        if day.weekday() >= 5 or day in open_dates or day in updated or day == candidate:
+            continue
+        states[day] = fetch_official_market_session_state(day)
+
+    open_sessions = sorted(day for day, state in states.items() if state == "open")
+    for day, state in sorted(states.items()):
+        if state == "closed" and any(later > day for later in open_sessions):
+            updated.add(day)
+            print(
+                "Detected historical emergency closure from bracketed official sessions: "
+                f"{day.isoformat()}"
+            )
+
+    if candidate_reason == "official_session_data_pending":
         print(f"Official session data not ready yet: {candidate.isoformat()}")
-        return updated, "official_session_data_pending"
-    if state == "closed":
+    elif candidate_reason == "official_data_delayed" and candidate not in updated:
         print(f"Official session data remains absent without a closure notice: {candidate.isoformat()}")
-        return updated, "official_data_delayed"
-    return updated, "official_session_unknown"
+    return updated, candidate_reason
 
 
 def evaluate_schedule_gate(

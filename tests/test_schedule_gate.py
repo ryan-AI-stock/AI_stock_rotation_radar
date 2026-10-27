@@ -53,6 +53,40 @@ class ScheduleGateTests(unittest.TestCase):
         self.assertNotIn(date(2026, 10, 23), closed)
         self.assertEqual(reason, "official_data_delayed")
 
+    def test_historical_zero_row_weekday_is_closed_after_later_official_open(self) -> None:
+        now = datetime(2026, 10, 27, 19, 0)
+        rules = ScheduleGateRules(run_after=time(17, 15), emergency_confirm_after=time(18, 0))
+
+        def session_state(day: date) -> str:
+            if day == date(2026, 10, 23):
+                return "closed"
+            if day in {date(2026, 10, 22), date(2026, 10, 27)}:
+                return "open"
+            return "unknown"
+
+        with patch("rotation_radar.schedule_gate.fetch_official_emergency_closure", return_value=False), patch(
+            "rotation_radar.schedule_gate.fetch_official_market_session_state", side_effect=session_state
+        ):
+            closed, reason = resolve_recent_market_calendar(
+                now,
+                set(),
+                {date(2026, 10, 26)},
+                rules,
+            )
+
+        self.assertIn(date(2026, 10, 23), closed)
+        self.assertEqual(reason, "official_session_open")
+
+    def test_historical_emergency_closure_falls_back_to_last_real_session(self) -> None:
+        now = datetime(2026, 10, 27, 11, 19)
+        rules = ScheduleGateRules(run_after=time(17, 15), retry_until_success=True)
+        closed = {date(2026, 10, 23), date(2026, 10, 26)}
+
+        decision = evaluate_schedule_gate(now, set(), closed, rules=rules)
+
+        self.assertTrue(decision.should_run)
+        self.assertEqual(decision.target_date, date(2026, 10, 22))
+
     def test_emergency_friday_closure_does_not_backfill_thursday(self) -> None:
         now = datetime(2026, 7, 10, 18, 0)
         rules = ScheduleGateRules(run_after=time(15, 0))
