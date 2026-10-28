@@ -1,0 +1,20 @@
+{
+  "date": "2026-10-28",
+  "status": "READY",
+  "baseline_date": "2026-10-28",
+  "baseline_actual_value": 7591384.0,
+  "excluded_tickers": [
+    "2330",
+    "00631L"
+  ],
+  "actual_value": 7591384.0,
+  "benchmark_value": 7591384.0,
+  "benchmark_close": 36.88,
+  "benchmark_units": 205840.1301518438,
+  "difference_actual_minus_benchmark": 0.0,
+  "actual_return_pct": 0.0,
+  "benchmark_return_pct": 0.0,
+  "position_count": 9,
+  "applied_flows": [],
+  "source_note": "實際持股動態更新；排除台積電與0050正二；同額0050正二允許零股小數"
+}

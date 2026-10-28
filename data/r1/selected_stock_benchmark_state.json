@@ -1,0 +1,14 @@
+{
+  "version": "r1-selected-stock-vs-00631l-v1",
+  "baseline_date": "2026-10-28",
+  "baseline_actual_value": 7591384.0,
+  "baseline_00631l_close": 36.88,
+  "benchmark_units": 205840.1301518438,
+  "applied_flow_ids": [],
+  "excluded_tickers": [
+    "2330",
+    "00631L"
+  ],
+  "unit_policy": "fractional_units_allowed",
+  "last_date": "2026-10-28"
+}

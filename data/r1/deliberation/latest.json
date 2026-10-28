@@ -1,7 +1,7 @@
 {
   "model": "R1",
   "layer": "bounded_deliberation_v0.1",
-  "date": "2026-10-27",
+  "date": "2026-10-28",
   "status": "READY",
   "rows": [
     {
@@ -38,8 +38,8 @@
       "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
       "rationale": "沒有足夠新證據推翻原計畫",
-      "previous_conclusion": "WATCH_POTENTIAL_DISLOCATION",
-      "judgement_changed": true,
+      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "judgement_changed": false,
       "evidence_urls": []
     },
     {
@@ -76,8 +76,8 @@
       "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
       "rationale": "沒有足夠新證據推翻原計畫",
-      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
-      "judgement_changed": true,
+      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "judgement_changed": false,
       "evidence_urls": []
     },
     {
@@ -114,8 +114,8 @@
       "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
       "rationale": "沒有足夠新證據推翻原計畫",
-      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
-      "judgement_changed": true,
+      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "judgement_changed": false,
       "evidence_urls": [
         "https://www.trendforce.com/presscenter/news/20260907-13219.html"
       ]
@@ -154,8 +154,8 @@
       "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
       "rationale": "沒有足夠新證據推翻原計畫",
-      "previous_conclusion": "WATCH_POTENTIAL_DISLOCATION",
-      "judgement_changed": true,
+      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "judgement_changed": false,
       "evidence_urls": [
         "https://www.xxquant.com/en/institution/institutional-research/63fc05022b4f6cf9d73e160779b31d86"
       ]
@@ -239,8 +239,8 @@
       "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
       "rationale": "沒有足夠新證據推翻原計畫",
-      "previous_conclusion": "WATCH_POTENTIAL_DISLOCATION",
-      "judgement_changed": true,
+      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "judgement_changed": false,
       "evidence_urls": [
         "https://www.unimicron.com/files/money/Earnings/en/2026-Q2-consolidated-en.pdf"
       ]
@@ -279,8 +279,8 @@
       "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
       "rationale": "沒有足夠新證據推翻原計畫",
-      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
-      "judgement_changed": true,
+      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "judgement_changed": false,
       "evidence_urls": [
         "https://www.tomshardware.com/tech-industry/semiconductors/micron-takes-a-500-million-position-in-americas-only-300mm-wafer-plant"
       ]
@@ -319,8 +319,8 @@
       "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
       "rationale": "沒有足夠新證據推翻原計畫",
-      "previous_conclusion": "WATCH_POTENTIAL_DISLOCATION",
-      "judgement_changed": true,
+      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "judgement_changed": false,
       "evidence_urls": []
     },
     {
@@ -357,8 +357,8 @@
       "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
       "rationale": "沒有足夠新證據推翻原計畫",
-      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
-      "judgement_changed": true,
+      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "judgement_changed": false,
       "evidence_urls": [
         "https://www.moneydj.com/kmdj/news/newsviewer.aspx?a=8b9ae6d7-7f01-46fa-ab35-d29897a392e4&c=MB00"
       ]
@@ -442,8 +442,8 @@
       "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
       "rationale": "沒有足夠新證據推翻原計畫",
-      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
-      "judgement_changed": true,
+      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "judgement_changed": false,
       "evidence_urls": []
     },
     {
@@ -480,8 +480,8 @@
       "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
       "rationale": "沒有足夠新證據推翻原計畫",
-      "previous_conclusion": "WATCH_POTENTIAL_DISLOCATION",
-      "judgement_changed": true,
+      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "judgement_changed": false,
       "evidence_urls": []
     },
     {
@@ -518,8 +518,8 @@
       "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
       "rationale": "沒有足夠新證據推翻原計畫",
-      "previous_conclusion": "WATCH_POTENTIAL_DISLOCATION",
-      "judgement_changed": true,
+      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "judgement_changed": false,
       "evidence_urls": [
         "https://www.mirrormedia.mg/external/mirrordaily_82154"
       ]
@@ -558,8 +558,8 @@
       "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
       "rationale": "沒有足夠新證據推翻原計畫",
-      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
-      "judgement_changed": true,
+      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "judgement_changed": false,
       "evidence_urls": []
     },
     {
@@ -596,8 +596,8 @@
       "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
       "rationale": "沒有足夠新證據推翻原計畫",
-      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
-      "judgement_changed": true,
+      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "judgement_changed": false,
       "evidence_urls": [
         "https://www.trendforce.com/presscenter/news/20260730-13158.html"
       ]
@@ -636,8 +636,8 @@
       "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
       "rationale": "沒有足夠新證據推翻原計畫",
-      "previous_conclusion": "WATCH_POTENTIAL_DISLOCATION",
-      "judgement_changed": true,
+      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "judgement_changed": false,
       "evidence_urls": [
         "https://doc.twse.com.tw/pdf/2025_3081_20260527F04_20260714_045320.pdf"
       ]
@@ -676,8 +676,8 @@
       "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
       "rationale": "沒有足夠新證據推翻原計畫",
-      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
-      "judgement_changed": true,
+      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "judgement_changed": false,
       "evidence_urls": [
         "https://www.umc.com/zh-TW/News/press_release/Content/technology_related/20260714"
       ]
@@ -716,8 +716,8 @@
       "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
       "rationale": "沒有足夠新證據推翻原計畫",
-      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
-      "judgement_changed": true,
+      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "judgement_changed": false,
       "evidence_urls": []
     },
     {
@@ -792,8 +792,8 @@
       "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
       "rationale": "沒有足夠新證據推翻原計畫",
-      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
-      "judgement_changed": true,
+      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "judgement_changed": false,
       "evidence_urls": []
     },
     {
@@ -830,8 +830,8 @@
       "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
       "rationale": "沒有足夠新證據推翻原計畫",
-      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
-      "judgement_changed": true,
+      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "judgement_changed": false,
       "evidence_urls": [
         "https://gfe-desktop.cnyes.com/news/id/6575811"
       ]
@@ -870,8 +870,8 @@
       "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
       "rationale": "沒有足夠新證據推翻原計畫",
-      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
-      "judgement_changed": true,
+      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "judgement_changed": false,
       "evidence_urls": []
     },
     {
@@ -908,8 +908,8 @@
       "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
       "rationale": "沒有足夠新證據推翻原計畫",
-      "previous_conclusion": "WATCH_POTENTIAL_DISLOCATION",
-      "judgement_changed": true,
+      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "judgement_changed": false,
       "evidence_urls": []
     },
     {
@@ -946,8 +946,8 @@
       "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
       "rationale": "沒有足夠新證據推翻原計畫",
-      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
-      "judgement_changed": true,
+      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "judgement_changed": false,
       "evidence_urls": []
     },
     {
@@ -984,8 +984,8 @@
       "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
       "rationale": "沒有足夠新證據推翻原計畫",
-      "previous_conclusion": "WATCH_POTENTIAL_DISLOCATION",
-      "judgement_changed": true,
+      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "judgement_changed": false,
       "evidence_urls": []
     },
     {
@@ -1022,8 +1022,8 @@
       "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
       "rationale": "沒有足夠新證據推翻原計畫",
-      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
-      "judgement_changed": true,
+      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "judgement_changed": false,
       "evidence_urls": []
     },
     {
@@ -1060,8 +1060,8 @@
       "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
       "rationale": "沒有足夠新證據推翻原計畫",
-      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
-      "judgement_changed": true,
+      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "judgement_changed": false,
       "evidence_urls": []
     },
     {
@@ -1144,8 +1144,8 @@
       "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
       "rationale": "沒有足夠新證據推翻原計畫",
-      "previous_conclusion": "WATCH_POTENTIAL_DISLOCATION",
-      "judgement_changed": true,
+      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "judgement_changed": false,
       "evidence_urls": [
         "https://www.moneydj.com/KMDJ/news/newsviewer.aspx?a=24de7354-e77c-445f-a299-0e12c3a0792f"
       ]
@@ -1184,8 +1184,8 @@
       "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
       "rationale": "沒有足夠新證據推翻原計畫",
-      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
-      "judgement_changed": true,
+      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "judgement_changed": false,
       "evidence_urls": []
     },
     {
@@ -1264,8 +1264,8 @@
       "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
       "rationale": "沒有足夠新證據推翻原計畫",
-      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
-      "judgement_changed": true,
+      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "judgement_changed": false,
       "evidence_urls": [
         "https://ec.ltn.com.tw/article/breakingnews/5524305",
         "https://www.liteon.com/zh-cn/news/press-center/content/liteon-ocp-2026"
@@ -1305,8 +1305,8 @@
       "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
       "rationale": "沒有足夠新證據推翻原計畫",
-      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
-      "judgement_changed": true,
+      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "judgement_changed": false,
       "evidence_urls": []
     },
     {
@@ -1390,8 +1390,8 @@
       "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
       "rationale": "沒有足夠新證據推翻原計畫",
-      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
-      "judgement_changed": true,
+      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "judgement_changed": false,
       "evidence_urls": []
     },
     {
@@ -1428,8 +1428,8 @@
       "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
       "rationale": "沒有足夠新證據推翻原計畫",
-      "previous_conclusion": "WATCH_POTENTIAL_DISLOCATION",
-      "judgement_changed": true,
+      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "judgement_changed": false,
       "evidence_urls": [
         "https://www.moneyweekly.com.tw/ArticleData/Info/Article/242076"
       ]
@@ -1468,8 +1468,8 @@
       "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
       "rationale": "沒有足夠新證據推翻原計畫",
-      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
-      "judgement_changed": true,
+      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "judgement_changed": false,
       "evidence_urls": []
     },
     {
@@ -1506,8 +1506,8 @@
       "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
       "rationale": "沒有足夠新證據推翻原計畫",
-      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
-      "judgement_changed": true,
+      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "judgement_changed": false,
       "evidence_urls": [
         "https://wealth.firstbank.com.tw/investment-tips/trend-insight/news/news-detail?id=%7B85C157DD-773A-4B2C-AD9F-30D1B09514E6%7D",
         "https://www.jentech.com.tw/zh/vapor-chamber-lid-2"
@@ -1547,8 +1547,8 @@
       "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
       "rationale": "沒有足夠新證據推翻原計畫",
-      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
-      "judgement_changed": true,
+      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "judgement_changed": false,
       "evidence_urls": [
         "https://wealth.firstbank.com.tw/investment-tips/trend-insight/news/news-detail?id=%7B85C157DD-773A-4B2C-AD9F-30D1B09514E6%7D",
         "https://www.esunsec.com.tw/article/post?postid=7d7f19bcff2d4ee1bbb4ab9f092a761c"
@@ -1588,8 +1588,8 @@
       "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
       "rationale": "沒有足夠新證據推翻原計畫",
-      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
-      "judgement_changed": true,
+      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "judgement_changed": false,
       "evidence_urls": [
         "https://www.esunsec.com.tw/article/post?postid=7d7f19bcff2d4ee1bbb4ab9f092a761c"
       ]
@@ -1628,8 +1628,8 @@
       "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
       "rationale": "沒有足夠新證據推翻原計畫",
-      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
-      "judgement_changed": true,
+      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "judgement_changed": false,
       "evidence_urls": [
         "https://poorstock.com/earningcall/6230",
         "https://vocus.cc/article/6a92d9cdfd89780001fddd66"
@@ -1715,8 +1715,8 @@
       "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
       "rationale": "沒有足夠新證據推翻原計畫",
-      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
-      "judgement_changed": true,
+      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "judgement_changed": false,
       "evidence_urls": []
     },
     {
@@ -1753,8 +1753,8 @@
       "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
       "rationale": "沒有足夠新證據推翻原計畫",
-      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
-      "judgement_changed": true,
+      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "judgement_changed": false,
       "evidence_urls": []
     },
     {
@@ -1833,8 +1833,8 @@
       "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
       "rationale": "沒有足夠新證據推翻原計畫",
-      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
-      "judgement_changed": true,
+      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "judgement_changed": false,
       "evidence_urls": []
     },
     {
@@ -1913,8 +1913,8 @@
       "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
       "rationale": "沒有足夠新證據推翻原計畫",
-      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
-      "judgement_changed": true,
+      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "judgement_changed": false,
       "evidence_urls": [
         "https://www.trendforce.com/news/2026/07/31/news-ase-again-raises-2026-capex-to-record-us10-5b-eyes-2x-leading-edge-advanced-packaging-revenue-by-2027/"
       ]
@@ -1953,8 +1953,8 @@
       "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
       "rationale": "沒有足夠新證據推翻原計畫",
-      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
-      "judgement_changed": true,
+      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "judgement_changed": false,
       "evidence_urls": []
     },
     {
@@ -1991,8 +1991,8 @@
       "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
       "rationale": "沒有足夠新證據推翻原計畫",
-      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
-      "judgement_changed": true,
+      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "judgement_changed": false,
       "evidence_urls": []
     },
     {
@@ -2029,8 +2029,8 @@
       "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
       "rationale": "沒有足夠新證據推翻原計畫",
-      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
-      "judgement_changed": true,
+      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "judgement_changed": false,
       "evidence_urls": []
     },
     {
@@ -2067,8 +2067,8 @@
       "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
       "rationale": "沒有足夠新證據推翻原計畫",
-      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
-      "judgement_changed": true,
+      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "judgement_changed": false,
       "evidence_urls": [
         "https://finmoconf.diveinvest.net/presentation/6a749815a16a75b8138c21b7"
       ]
@@ -2107,8 +2107,8 @@
       "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
       "rationale": "沒有足夠新證據推翻原計畫",
-      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
-      "judgement_changed": true,
+      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "judgement_changed": false,
       "evidence_urls": []
     },
     {
@@ -2145,8 +2145,8 @@
       "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
       "rationale": "沒有足夠新證據推翻原計畫",
-      "previous_conclusion": "WATCH_POTENTIAL_DISLOCATION",
-      "judgement_changed": true,
+      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "judgement_changed": false,
       "evidence_urls": []
     }
   ],
