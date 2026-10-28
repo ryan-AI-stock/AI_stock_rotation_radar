@@ -94,6 +94,9 @@ def _format_workbook(client: SheetsClient, dashboard_rows: list[list[object]]) -
                            if row and row[0] == "所屬題材"), -1)
     performance_section = next(index for index, row in enumerate(dashboard_rows)
                                if row and row[0] == "02｜兩條績效線")
+    selected_section = next((index for index, row in enumerate(dashboard_rows)
+                             if row and row[0] == "02-1｜10/28起自選股與0050正二比較"), None)
+    selected_actual_row = selected_section + 2 if selected_section is not None else None
     transition_status = next((index for index, row in enumerate(dashboard_rows)
                               if row and row[0] == "狀態" and len(row) > 2
                               and row[2] == "候選池下跌比例"), max(len(dashboard_rows) - 2, 0))
@@ -103,6 +106,13 @@ def _format_workbook(client: SheetsClient, dashboard_rows: list[list[object]]) -
         float(str(dashboard_rows[benchmark_row][1]).replace(",", ""))
         - float(str(dashboard_rows[benchmark_row - 1][1]).replace(",", ""))
     )
+    selected_delta = None
+    if selected_actual_row is not None:
+        selected_delta_raw = str(dashboard_rows[selected_actual_row][4]).replace(",", "")
+        try:
+            selected_delta = float(selected_delta_raw)
+        except ValueError:
+            pass
     navy = {"red": 0.0784, "green": 0.2, "blue": 0.2863}
     light = {"red": 0.91, "green": 0.957, "blue": 0.957}
     white = {"red": 1.0, "green": 1.0, "blue": 1.0}
@@ -201,6 +211,28 @@ def _format_workbook(client: SheetsClient, dashboard_rows: list[list[object]]) -
           "cell": {"userEnteredFormat": {"numberFormat": {"type": "PERCENT", "pattern": "0.0%"}}},
           "fields": "userEnteredFormat.numberFormat"}},
     ])
+    if selected_section is not None:
+        requests_body.extend([
+            {"repeatCell": {
+              "range": {"sheetId": dashboard_id, "startRowIndex": selected_section + 2,
+                        "endRowIndex": selected_section + 4, "startColumnIndex": 1, "endColumnIndex": 2},
+              "cell": {"userEnteredFormat": {"numberFormat": {"type": "NUMBER", "pattern": "#,##0.0"}}},
+              "fields": "userEnteredFormat.numberFormat"}},
+            {"repeatCell": {
+              "range": {"sheetId": dashboard_id, "startRowIndex": selected_section + 2,
+                        "endRowIndex": selected_section + 4, "startColumnIndex": 3, "endColumnIndex": 4},
+              "cell": {"userEnteredFormat": {"numberFormat": {"type": "PERCENT", "pattern": "0.0%"}}},
+              "fields": "userEnteredFormat.numberFormat"}},
+        ])
+    if selected_delta is not None and selected_actual_row is not None:
+        requests_body.append({"repeatCell": {
+            "range": {"sheetId": dashboard_id, "startRowIndex": selected_actual_row,
+                      "endRowIndex": selected_actual_row + 1, "startColumnIndex": 4, "endColumnIndex": 5},
+            "cell": {"userEnteredFormat": {"numberFormat": {"type": "NUMBER", "pattern": "#,##0.0"},
+                     "textFormat": {"foregroundColor": (
+                         {"red": 0.8, "green": 0.0, "blue": 0.0} if selected_delta >= 0
+                         else {"red": 0.0, "green": 0.55, "blue": 0.15}), "bold": True}}},
+            "fields": "userEnteredFormat(numberFormat,textFormat)"}})
     if logic_row is not None:
         requests_body.append({"updateDimensionProperties": {
             "range": {"sheetId": dashboard_id, "dimension": "ROWS",

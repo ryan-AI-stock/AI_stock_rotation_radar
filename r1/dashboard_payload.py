@@ -99,6 +99,7 @@ def _build_v03_dashboard(*, config: R1Config, market: dict, theme_review: dict,
                          deliberation_by_ticker: dict[str, dict] | None = None,
                          total_actual_equity: float | None = None,
                          actual_positions: list[dict] | None = None,
+                         selected_comparison: dict | None = None,
                          v1_rollout: dict | None = None,
                          v1_monitor: dict | None = None,
                          v1_research_counts: dict | None = None) -> list[list[object]]:
@@ -225,6 +226,7 @@ def _build_v03_dashboard(*, config: R1Config, market: dict, theme_review: dict,
              f"（{deliberation_by_ticker.get(ticker, {}).get('confidence', 'NA')}）"),
         ])
     comparison = comparison or {"rows": [], "comparison_ready": False}
+    selected_comparison = selected_comparison or {}
     recommendations = recommendations or []
     comparison_rows = comparison.get("rows", [])
     actual_nav = next((item.get("nav") for item in comparison_rows if item.get("line") == "ACTUAL"), None)
@@ -242,6 +244,22 @@ def _build_v03_dashboard(*, config: R1Config, market: dict, theme_review: dict,
             if item.get("line") == "00631L_BUY_HOLD"
             and isinstance(item.get("nav"), (int, float)) and isinstance(actual_nav, (int, float)) else "")]
           for item in comparison_rows],
+        ["02-1｜10/28起自選股與0050正二比較"],
+        ["比較線", "當日市值", "基準日／理論股數", "累積報酬", "兩線差額", "狀態"],
+        ["Ryan自選個股（排除台積電、0050正二）",
+         _money(selected_comparison.get("actual_value")) if selected_comparison else "資料建立中",
+         selected_comparison.get("baseline_date", "2026-10-28"),
+         _percent(selected_comparison.get("actual_return_pct")) if selected_comparison else "資料建立中",
+         _money(selected_comparison.get("difference_actual_minus_benchmark")) if selected_comparison else "資料建立中",
+         selected_comparison.get("status", "等待2026-10-28收盤資料")],
+        ["同額0050正二（動態資金流、可含小數股）",
+         _money(selected_comparison.get("benchmark_value")) if selected_comparison else "資料建立中",
+         (f"{float(selected_comparison['benchmark_units']):,.4f}股｜收盤{float(selected_comparison['benchmark_close']):,.2f}"
+          if isinstance(selected_comparison.get("benchmark_units"), (int, float))
+          and isinstance(selected_comparison.get("benchmark_close"), (int, float)) else "資料建立中"),
+         _percent(selected_comparison.get("benchmark_return_pct")) if selected_comparison else "資料建立中",
+         "0.0（比較基準）", selected_comparison.get("status", "等待2026-10-28收盤資料")],
+        ["口徑", "實際持股變動即更新；自選股互換不增減比較本金；新增／抽回資金才同步調整0050正二理論股數。"],
         ["03｜今日換倉建議"],
         ["優先序", "動作", "換出", "換入", "理由／狀態"],
         *[[(f"優先{item['priority'][1:]}" if item["action"] == "REVIEW_SWITCH_IN" else
@@ -361,6 +379,7 @@ def build_dashboard_payload(
     v1_rollout_path: str | Path = "config/r1_v1_rollout.json",
     v1_monitor_path: str | Path = "data/r1_v1/final_monitor/latest.json",
     v1_research_root: str | Path = "data/r1_v1/research",
+    selected_stock_benchmark_path: str | Path = "data/r1/selected_stock_benchmark_latest.json",
 ) -> dict:
     config = R1Config.load(config_path)
     market = json.loads(Path(market_path).read_text(encoding="utf-8"))
@@ -409,6 +428,27 @@ def build_dashboard_payload(
         date=market["date"], market=comparison_market, benchmark_config=benchmark_config,
         actual_snapshot=actual_account,
     )
+    selected_file = Path(selected_stock_benchmark_path)
+    selected_comparison = json.loads(selected_file.read_text(encoding="utf-8")) if selected_file.exists() else {}
+    if selected_comparison.get("date") != market.get("date"):
+        selected_comparison = {}
+    if selected_comparison:
+        baseline = selected_comparison.get("baseline_actual_value")
+        for line, nav, return_pct, note in (
+            ("SELECTED_STOCK_ACTUAL", selected_comparison.get("actual_value"),
+             selected_comparison.get("actual_return_pct"), "排除台積電與0050正二的動態實際持股"),
+            ("SELECTED_STOCK_00631L", selected_comparison.get("benchmark_value"),
+             selected_comparison.get("benchmark_return_pct"), "同額0050正二；僅同步確認的外部資金流"),
+        ):
+            comparison["rows"].append({
+                "date": market["date"], "line": line, "nav": nav, "starting_nav": baseline,
+                "external_cash_flow": sum(float(row.get("amount", 0)) for row in selected_comparison.get("applied_flows", [])),
+                "return_pct": return_pct,
+                "excess_vs_00631l": (selected_comparison.get("difference_actual_minus_benchmark") / baseline
+                                      if line == "SELECTED_STOCK_ACTUAL"
+                                      and isinstance(baseline, (int, float)) and baseline else 0.0),
+                "status": selected_comparison.get("status"), "source_note": note,
+            })
     target_price_file = Path(target_price_path)
     target_prices = json.loads(target_price_file.read_text(encoding="utf-8")) if target_price_file.exists() else {"rows": []}
     target_price_by_ticker = {str(row.get("ticker", "")).zfill(4): row for row in target_prices.get("rows", [])}
@@ -541,6 +581,7 @@ def build_dashboard_payload(
         deliberation_by_ticker=deliberation_by_ticker,
         total_actual_equity=actual_account.get("equity_market_value"),
         actual_positions=actual_account.get("positions", []),
+        selected_comparison=selected_comparison,
         v1_rollout=v1_rollout,
         v1_monitor=v1_monitor,
         v1_research_counts=v1_research_counts,
