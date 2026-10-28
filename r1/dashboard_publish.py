@@ -249,6 +249,18 @@ def _format_workbook(client: SheetsClient, dashboard_rows: list[list[object]]) -
                       "endIndex": min(performance_section + 4, len(dashboard_rows))},
             "properties": {"pixelSize": 64}, "fields": "pixelSize",
         }})
+    if selected_section is not None:
+        for start, end, size in (
+            (selected_section, selected_section + 1, 42),
+            (selected_section + 1, selected_section + 2, 34),
+            (selected_section + 2, selected_section + 4, 48),
+            (selected_section + 4, selected_section + 5, 44),
+        ):
+            requests_body.append({"updateDimensionProperties": {
+                "range": {"sheetId": dashboard_id, "dimension": "ROWS",
+                          "startIndex": start, "endIndex": end},
+                "properties": {"pixelSize": size}, "fields": "pixelSize",
+            }})
     for title in (PERFORMANCE, RECOMMENDATIONS, SIGNALS, TRADES):
         requests_body.extend([
             {"repeatCell": {"range": {"sheetId": ids[title], "startRowIndex": 0, "endRowIndex": 1},
