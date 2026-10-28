@@ -228,7 +228,8 @@ def _build_v03_dashboard(*, config: R1Config, market: dict, theme_review: dict,
     comparison = comparison or {"rows": [], "comparison_ready": False}
     selected_comparison = selected_comparison or {}
     recommendations = recommendations or []
-    comparison_rows = comparison.get("rows", [])
+    comparison_rows = [item for item in comparison.get("rows", [])
+                       if item.get("line") in {"ACTUAL", "00631L_BUY_HOLD"}]
     actual_nav = next((item.get("nav") for item in comparison_rows if item.get("line") == "ACTUAL"), None)
     rows.extend([
         ["02｜兩條績效線"],
