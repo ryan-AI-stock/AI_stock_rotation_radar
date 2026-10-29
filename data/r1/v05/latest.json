@@ -1,10 +1,10 @@
 {
   "model": "R1 v0.6 public-core",
-  "date": "2026-10-28",
+  "date": "2026-10-29",
   "status": "challenger_report_only",
   "rows": [
     {
-      "date": "2026-10-28",
+      "date": "2026-10-29",
       "ticker": "1560",
       "company": "中砂",
       "structural_bottleneck": 75.0,
@@ -35,7 +35,7 @@
       "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
-      "date": "2026-10-28",
+      "date": "2026-10-29",
       "ticker": "2301",
       "company": "光寶科",
       "structural_bottleneck": 75.0,
@@ -66,12 +66,12 @@
       "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
-      "date": "2026-10-28",
+      "date": "2026-10-29",
       "ticker": "2303",
       "company": "聯電",
       "structural_bottleneck": 50.0,
       "revenue_earnings_realization": 44.67073,
-      "consensus_target_upside": 29.375,
+      "consensus_target_upside": null,
       "target_revision_and_breadth": null,
       "theme_momentum_and_catalyst": 50.0,
       "relative_valuation": 0.0,
@@ -84,6 +84,7 @@
       "v05_target_overlay_score": null,
       "v05_target_overlay_status": "DATA_MISSING",
       "v05_target_overlay_missing_components": [
+        "consensus_target_upside",
         "target_revision_and_breadth"
       ],
       "v05_observed_points": 40.751016,
@@ -96,12 +97,12 @@
       "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
-      "date": "2026-10-28",
+      "date": "2026-10-29",
       "ticker": "2308",
       "company": "台達電",
       "structural_bottleneck": 100.0,
       "revenue_earnings_realization": 60.580224,
-      "consensus_target_upside": 81.290323,
+      "consensus_target_upside": 88.918919,
       "target_revision_and_breadth": null,
       "theme_momentum_and_catalyst": 50.0,
       "relative_valuation": 6.0,
@@ -126,7 +127,7 @@
       "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
-      "date": "2026-10-28",
+      "date": "2026-10-29",
       "ticker": "2317",
       "company": "鴻海",
       "structural_bottleneck": 75.0,
@@ -157,7 +158,7 @@
       "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
-      "date": "2026-10-28",
+      "date": "2026-10-29",
       "ticker": "2327",
       "company": "國巨",
       "structural_bottleneck": 100.0,
@@ -188,7 +189,7 @@
       "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
-      "date": "2026-10-28",
+      "date": "2026-10-29",
       "ticker": "2330",
       "company": "台積電",
       "structural_bottleneck": 100.0,
@@ -219,7 +220,7 @@
       "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
-      "date": "2026-10-28",
+      "date": "2026-10-29",
       "ticker": "2337",
       "company": "旺宏",
       "structural_bottleneck": 50.0,
@@ -250,7 +251,7 @@
       "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
-      "date": "2026-10-28",
+      "date": "2026-10-29",
       "ticker": "2344",
       "company": "華邦電",
       "structural_bottleneck": 75.0,
@@ -281,7 +282,7 @@
       "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
-      "date": "2026-10-28",
+      "date": "2026-10-29",
       "ticker": "2345",
       "company": "智邦",
       "structural_bottleneck": 75.0,
@@ -312,7 +313,7 @@
       "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
-      "date": "2026-10-28",
+      "date": "2026-10-29",
       "ticker": "2356",
       "company": "英業達",
       "structural_bottleneck": 75.0,
@@ -345,7 +346,7 @@
       "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
-      "date": "2026-10-28",
+      "date": "2026-10-29",
       "ticker": "2368",
       "company": "金像電",
       "structural_bottleneck": 75.0,
@@ -376,7 +377,7 @@
       "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
-      "date": "2026-10-28",
+      "date": "2026-10-29",
       "ticker": "2376",
       "company": "技嘉",
       "structural_bottleneck": 75.0,
@@ -407,7 +408,7 @@
       "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
-      "date": "2026-10-28",
+      "date": "2026-10-29",
       "ticker": "2379",
       "company": "瑞昱",
       "structural_bottleneck": 75.0,
@@ -438,7 +439,7 @@
       "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
-      "date": "2026-10-28",
+      "date": "2026-10-29",
       "ticker": "2382",
       "company": "廣達",
       "structural_bottleneck": 75.0,
@@ -468,7 +469,7 @@
       "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
-      "date": "2026-10-28",
+      "date": "2026-10-29",
       "ticker": "2383",
       "company": "台光電",
       "structural_bottleneck": 75.0,
@@ -499,7 +500,7 @@
       "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
-      "date": "2026-10-28",
+      "date": "2026-10-29",
       "ticker": "2408",
       "company": "南亞科",
       "structural_bottleneck": 75.0,
@@ -530,7 +531,7 @@
       "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
-      "date": "2026-10-28",
+      "date": "2026-10-29",
       "ticker": "2449",
       "company": "京元電子",
       "structural_bottleneck": 75.0,
@@ -561,12 +562,12 @@
       "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
-      "date": "2026-10-28",
+      "date": "2026-10-29",
       "ticker": "2454",
       "company": "聯發科",
       "structural_bottleneck": 75.0,
       "revenue_earnings_realization": 22.578445,
-      "consensus_target_upside": 52.231405,
+      "consensus_target_upside": 58.442522,
       "target_revision_and_breadth": null,
       "theme_momentum_and_catalyst": 50.0,
       "relative_valuation": 0.0,
@@ -593,7 +594,7 @@
       "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
-      "date": "2026-10-28",
+      "date": "2026-10-29",
       "ticker": "2492",
       "company": "華新科",
       "structural_bottleneck": 75.0,
@@ -624,12 +625,12 @@
       "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
-      "date": "2026-10-28",
+      "date": "2026-10-29",
       "ticker": "3017",
       "company": "奇鋐",
       "structural_bottleneck": 75.0,
       "revenue_earnings_realization": 68.080446,
-      "consensus_target_upside": 56.283048,
+      "consensus_target_upside": 61.111111,
       "target_revision_and_breadth": null,
       "theme_momentum_and_catalyst": 50.0,
       "relative_valuation": 13.0,
@@ -654,7 +655,7 @@
       "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
-      "date": "2026-10-28",
+      "date": "2026-10-29",
       "ticker": "3035",
       "company": "智原",
       "structural_bottleneck": 50.0,
@@ -687,12 +688,12 @@
       "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
-      "date": "2026-10-28",
+      "date": "2026-10-29",
       "ticker": "3037",
       "company": "欣興",
       "structural_bottleneck": 75.0,
       "revenue_earnings_realization": 65.388972,
-      "consensus_target_upside": 47.272727,
+      "consensus_target_upside": null,
       "target_revision_and_breadth": null,
       "theme_momentum_and_catalyst": 50.0,
       "relative_valuation": 31.0,
@@ -705,6 +706,7 @@
       "v05_target_overlay_score": null,
       "v05_target_overlay_status": "DATA_MISSING",
       "v05_target_overlay_missing_components": [
+        "consensus_target_upside",
         "target_revision_and_breadth"
       ],
       "v05_observed_points": 57.022552,
@@ -717,7 +719,7 @@
       "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
-      "date": "2026-10-28",
+      "date": "2026-10-29",
       "ticker": "3081",
       "company": "聯亞",
       "structural_bottleneck": 75.0,
@@ -748,7 +750,7 @@
       "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
-      "date": "2026-10-28",
+      "date": "2026-10-29",
       "ticker": "3131",
       "company": "弘塑",
       "structural_bottleneck": 75.0,
@@ -779,7 +781,7 @@
       "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
-      "date": "2026-10-28",
+      "date": "2026-10-29",
       "ticker": "3163",
       "company": "波若威",
       "structural_bottleneck": 75.0,
@@ -812,7 +814,7 @@
       "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
-      "date": "2026-10-28",
+      "date": "2026-10-29",
       "ticker": "3189",
       "company": "景碩",
       "structural_bottleneck": 75.0,
@@ -843,7 +845,7 @@
       "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
-      "date": "2026-10-28",
+      "date": "2026-10-29",
       "ticker": "3231",
       "company": "緯創",
       "structural_bottleneck": 75.0,
@@ -874,7 +876,7 @@
       "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
-      "date": "2026-10-28",
+      "date": "2026-10-29",
       "ticker": "3260",
       "company": "威剛",
       "structural_bottleneck": 50.0,
@@ -905,12 +907,12 @@
       "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
-      "date": "2026-10-28",
+      "date": "2026-10-29",
       "ticker": "3324",
       "company": "雙鴻",
       "structural_bottleneck": 75.0,
       "revenue_earnings_realization": 70.230441,
-      "consensus_target_upside": 21.149826,
+      "consensus_target_upside": 19.078498,
       "target_revision_and_breadth": null,
       "theme_momentum_and_catalyst": 50.0,
       "relative_valuation": 29.0,
@@ -935,7 +937,7 @@
       "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
-      "date": "2026-10-28",
+      "date": "2026-10-29",
       "ticker": "3338",
       "company": "泰碩",
       "structural_bottleneck": 50.0,
@@ -969,7 +971,7 @@
       "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
-      "date": "2026-10-28",
+      "date": "2026-10-29",
       "ticker": "3357",
       "company": "臺慶科",
       "structural_bottleneck": 50.0,
@@ -1000,7 +1002,7 @@
       "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
-      "date": "2026-10-28",
+      "date": "2026-10-29",
       "ticker": "3363",
       "company": "上詮",
       "structural_bottleneck": 50.0,
@@ -1034,7 +1036,7 @@
       "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
-      "date": "2026-10-28",
+      "date": "2026-10-29",
       "ticker": "3443",
       "company": "創意",
       "structural_bottleneck": 75.0,
@@ -1064,7 +1066,7 @@
       "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
-      "date": "2026-10-28",
+      "date": "2026-10-29",
       "ticker": "3532",
       "company": "台勝科",
       "structural_bottleneck": 75.0,
@@ -1095,7 +1097,7 @@
       "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
-      "date": "2026-10-28",
+      "date": "2026-10-29",
       "ticker": "3583",
       "company": "辛耘",
       "structural_bottleneck": 75.0,
@@ -1126,7 +1128,7 @@
       "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
-      "date": "2026-10-28",
+      "date": "2026-10-29",
       "ticker": "3653",
       "company": "健策",
       "structural_bottleneck": 75.0,
@@ -1157,7 +1159,7 @@
       "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
-      "date": "2026-10-28",
+      "date": "2026-10-29",
       "ticker": "3661",
       "company": "世芯-KY",
       "structural_bottleneck": 75.0,
@@ -1188,7 +1190,7 @@
       "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
-      "date": "2026-10-28",
+      "date": "2026-10-29",
       "ticker": "3711",
       "company": "日月光投控",
       "structural_bottleneck": 75.0,
@@ -1219,7 +1221,7 @@
       "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
-      "date": "2026-10-28",
+      "date": "2026-10-29",
       "ticker": "4979",
       "company": "華星光",
       "structural_bottleneck": 75.0,
@@ -1250,7 +1252,7 @@
       "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
-      "date": "2026-10-28",
+      "date": "2026-10-29",
       "ticker": "6182",
       "company": "合晶",
       "structural_bottleneck": 50.0,
@@ -1281,7 +1283,7 @@
       "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
-      "date": "2026-10-28",
+      "date": "2026-10-29",
       "ticker": "6187",
       "company": "萬潤",
       "structural_bottleneck": 75.0,
@@ -1312,7 +1314,7 @@
       "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
-      "date": "2026-10-28",
+      "date": "2026-10-29",
       "ticker": "6223",
       "company": "旺矽",
       "structural_bottleneck": 75.0,
@@ -1343,7 +1345,7 @@
       "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
-      "date": "2026-10-28",
+      "date": "2026-10-29",
       "ticker": "6230",
       "company": "尼得科超眾",
       "structural_bottleneck": 75.0,
@@ -1374,7 +1376,7 @@
       "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
-      "date": "2026-10-28",
+      "date": "2026-10-29",
       "ticker": "6274",
       "company": "台燿",
       "structural_bottleneck": 75.0,
@@ -1405,7 +1407,7 @@
       "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
-      "date": "2026-10-28",
+      "date": "2026-10-29",
       "ticker": "6282",
       "company": "康舒",
       "structural_bottleneck": 50.0,
@@ -1436,7 +1438,7 @@
       "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
-      "date": "2026-10-28",
+      "date": "2026-10-29",
       "ticker": "6412",
       "company": "群電",
       "structural_bottleneck": 75.0,
@@ -1470,7 +1472,7 @@
       "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
-      "date": "2026-10-28",
+      "date": "2026-10-29",
       "ticker": "6442",
       "company": "光聖",
       "structural_bottleneck": 75.0,
@@ -1501,7 +1503,7 @@
       "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
-      "date": "2026-10-28",
+      "date": "2026-10-29",
       "ticker": "6488",
       "company": "環球晶",
       "structural_bottleneck": 75.0,
@@ -1532,7 +1534,7 @@
       "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
-      "date": "2026-10-28",
+      "date": "2026-10-29",
       "ticker": "6669",
       "company": "緯穎",
       "structural_bottleneck": 75.0,
@@ -1565,7 +1567,7 @@
       "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
-      "date": "2026-10-28",
+      "date": "2026-10-29",
       "ticker": "6781",
       "company": "AES-KY",
       "structural_bottleneck": 75.0,
@@ -1596,7 +1598,7 @@
       "v05_reason": "公開資料核心五構面完整；法人目標價僅作信心加減項；不是成交指令"
     },
     {
-      "date": "2026-10-28",
+      "date": "2026-10-29",
       "ticker": "8299",
       "company": "群聯",
       "structural_bottleneck": 75.0,
