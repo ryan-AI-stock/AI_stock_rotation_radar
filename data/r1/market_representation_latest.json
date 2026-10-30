@@ -2,21 +2,21 @@
   "model": "R1",
   "version": "r1-market-representation-v0.1",
   "status": "challenger_draft",
-  "date": "2026-10-22",
+  "date": "2026-10-30",
   "requested_ticker_count": 52,
   "actual_ticker_count": 52,
   "rows": [
     {
       "ticker": "1560",
       "theme_id": "critical_materials",
-      "date": "2026-10-22",
-      "official_close": 846.0,
+      "date": "2026-10-30",
+      "official_close": 867.0,
       "issued_shares": 149617480.0,
-      "market_cap_twd": 126576388080.0,
-      "average_turnover_20td_twd": 1494185573.55,
-      "foreign_ownership_pct": 39.6,
+      "market_cap_twd": 129718355160.0,
+      "average_turnover_20td_twd": 1252295092.0,
+      "foreign_ownership_pct": 38.24,
       "source_urls": [
-        "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261022&selectType=ALLBUT0999"
+        "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261030&selectType=ALLBUT0999"
       ],
       "status": "READY",
       "missing_fields": [],
@@ -30,14 +30,14 @@
     {
       "ticker": "2301",
       "theme_id": "power_delivery",
-      "date": "2026-10-22",
-      "official_close": 255.5,
+      "date": "2026-10-30",
+      "official_close": 240.5,
       "issued_shares": 2316107763.0,
-      "market_cap_twd": 591765533446.5,
-      "average_turnover_20td_twd": 4133146438.0,
-      "foreign_ownership_pct": 42.12,
+      "market_cap_twd": 557023917001.5,
+      "average_turnover_20td_twd": 4149598793.1,
+      "foreign_ownership_pct": 41.95,
       "source_urls": [
-        "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261022&selectType=ALLBUT0999"
+        "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261030&selectType=ALLBUT0999"
       ],
       "status": "READY",
       "missing_fields": [],
@@ -51,14 +51,14 @@
     {
       "ticker": "2303",
       "theme_id": "silicon_photonics_cpo",
-      "date": "2026-10-22",
-      "official_close": 125.5,
+      "date": "2026-10-30",
+      "official_close": 111.5,
       "issued_shares": 12570093899.0,
-      "market_cap_twd": 1577546784324.5,
-      "average_turnover_20td_twd": 21602498431.25,
-      "foreign_ownership_pct": 39.8,
+      "market_cap_twd": 1401565469738.5,
+      "average_turnover_20td_twd": 20891099834.2,
+      "foreign_ownership_pct": 38.96,
       "source_urls": [
-        "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261022&selectType=ALLBUT0999"
+        "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261030&selectType=ALLBUT0999"
       ],
       "status": "READY",
       "missing_fields": [],
@@ -72,14 +72,14 @@
     {
       "ticker": "2308",
       "theme_id": "power_delivery",
-      "date": "2026-10-22",
-      "official_close": 1560.0,
+      "date": "2026-10-30",
+      "official_close": 1335.0,
       "issued_shares": 2597543329.0,
-      "market_cap_twd": 4052167593240.0,
-      "average_turnover_20td_twd": 21135046441.65,
-      "foreign_ownership_pct": 60.37,
+      "market_cap_twd": 3467720344215.0,
+      "average_turnover_20td_twd": 21273533209.85,
+      "foreign_ownership_pct": 59.76,
       "source_urls": [
-        "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261022&selectType=ALLBUT0999"
+        "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261030&selectType=ALLBUT0999"
       ],
       "status": "READY",
       "missing_fields": [],
@@ -93,14 +93,14 @@
     {
       "ticker": "2317",
       "theme_id": "server_rack",
-      "date": "2026-10-22",
-      "official_close": 245.0,
+      "date": "2026-10-30",
+      "official_close": 245.5,
       "issued_shares": 14028648626.0,
-      "market_cap_twd": 3437018913370.0,
-      "average_turnover_20td_twd": 10290933355.75,
-      "foreign_ownership_pct": 39.85,
+      "market_cap_twd": 3444033237683.0,
+      "average_turnover_20td_twd": 10387193962.0,
+      "foreign_ownership_pct": 39.99,
       "source_urls": [
-        "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261022&selectType=ALLBUT0999"
+        "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261030&selectType=ALLBUT0999"
       ],
       "status": "READY",
       "missing_fields": [],
@@ -114,14 +114,14 @@
     {
       "ticker": "2327",
       "theme_id": "passive_components",
-      "date": "2026-10-22",
-      "official_close": 507.0,
+      "date": "2026-10-30",
+      "official_close": 502.0,
       "issued_shares": 2063128462.0,
-      "market_cap_twd": 1046006130234.0,
-      "average_turnover_20td_twd": 29877389057.65,
-      "foreign_ownership_pct": 41.69,
+      "market_cap_twd": 1035690487924.0,
+      "average_turnover_20td_twd": 28931173460.3,
+      "foreign_ownership_pct": 41.39,
       "source_urls": [
-        "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261022&selectType=ALLBUT0999"
+        "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261030&selectType=ALLBUT0999"
       ],
       "status": "READY",
       "missing_fields": [],
@@ -135,14 +135,14 @@
     {
       "ticker": "2330",
       "theme_id": "compute_foundry",
-      "date": "2026-10-22",
-      "official_close": 2385.0,
+      "date": "2026-10-30",
+      "official_close": 2370.0,
       "issued_shares": 25932370067.0,
-      "market_cap_twd": 61848702609795.0,
-      "average_turnover_20td_twd": 67463695674.7,
-      "foreign_ownership_pct": 68.58,
+      "market_cap_twd": 61459717058790.0,
+      "average_turnover_20td_twd": 70388321061.3,
+      "foreign_ownership_pct": 68.51,
       "source_urls": [
-        "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261022&selectType=ALLBUT0999"
+        "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261030&selectType=ALLBUT0999"
       ],
       "status": "READY",
       "missing_fields": [],
@@ -156,56 +156,56 @@
     {
       "ticker": "2337",
       "theme_id": "memory_storage",
-      "date": "2026-10-22",
-      "official_close": 99.5,
+      "date": "2026-10-30",
+      "official_close": 95.4,
       "issued_shares": 1981308820.0,
-      "market_cap_twd": 197140227590.0,
-      "average_turnover_20td_twd": 3032094941.15,
-      "foreign_ownership_pct": 22.29,
+      "market_cap_twd": 189016861428.0,
+      "average_turnover_20td_twd": 3631598962.0,
+      "foreign_ownership_pct": 20.39,
       "source_urls": [
-        "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261022&selectType=ALLBUT0999"
+        "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261030&selectType=ALLBUT0999"
       ],
       "status": "READY",
       "missing_fields": [],
       "subscores": {
         "market_cap": 25.0,
         "average_turnover_20td": 25.0,
-        "foreign_ownership": 75.0
+        "foreign_ownership": 50.0
       },
-      "market_representation": 35.0
+      "market_representation": 30.0
     },
     {
       "ticker": "2344",
       "theme_id": "memory_storage",
-      "date": "2026-10-22",
-      "official_close": 154.5,
+      "date": "2026-10-30",
+      "official_close": 164.5,
       "issued_shares": 4500000193.0,
-      "market_cap_twd": 695250029818.5,
-      "average_turnover_20td_twd": 11224541609.45,
-      "foreign_ownership_pct": 19.64,
+      "market_cap_twd": 740250031748.5,
+      "average_turnover_20td_twd": 11213113673.85,
+      "foreign_ownership_pct": 20.96,
       "source_urls": [
-        "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261022&selectType=ALLBUT0999"
+        "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261030&selectType=ALLBUT0999"
       ],
       "status": "READY",
       "missing_fields": [],
       "subscores": {
         "market_cap": 75.0,
         "average_turnover_20td": 75.0,
-        "foreign_ownership": 50.0
+        "foreign_ownership": 75.0
       },
-      "market_representation": 70.0
+      "market_representation": 75.0
     },
     {
       "ticker": "2345",
       "theme_id": "network_optics",
-      "date": "2026-10-22",
-      "official_close": 1775.0,
+      "date": "2026-10-30",
+      "official_close": 1615.0,
       "issued_shares": 561117897.0,
-      "market_cap_twd": 995984267175.0,
-      "average_turnover_20td_twd": 9390123898.0,
-      "foreign_ownership_pct": 56.01,
+      "market_cap_twd": 906205403655.0,
+      "average_turnover_20td_twd": 9390884432.75,
+      "foreign_ownership_pct": 56.27,
       "source_urls": [
-        "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261022&selectType=ALLBUT0999"
+        "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261030&selectType=ALLBUT0999"
       ],
       "status": "READY",
       "missing_fields": [],
@@ -219,14 +219,14 @@
     {
       "ticker": "2356",
       "theme_id": "server_rack",
-      "date": "2026-10-22",
-      "official_close": 60.5,
+      "date": "2026-10-30",
+      "official_close": 59.5,
       "issued_shares": 3587475066.0,
-      "market_cap_twd": 217042241493.0,
-      "average_turnover_20td_twd": 794611886.15,
-      "foreign_ownership_pct": 18.91,
+      "market_cap_twd": 213454766427.0,
+      "average_turnover_20td_twd": 953015216.5,
+      "foreign_ownership_pct": 19.35,
       "source_urls": [
-        "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261022&selectType=ALLBUT0999"
+        "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261030&selectType=ALLBUT0999"
       ],
       "status": "READY",
       "missing_fields": [],
@@ -240,14 +240,14 @@
     {
       "ticker": "2368",
       "theme_id": "pcb_substrate",
-      "date": "2026-10-22",
-      "official_close": 1115.0,
-      "issued_shares": 517016714.0,
-      "market_cap_twd": 576473636110.0,
-      "average_turnover_20td_twd": 14400303608.75,
-      "foreign_ownership_pct": 19.93,
+      "date": "2026-10-30",
+      "official_close": 1020.0,
+      "issued_shares": 532451280.0,
+      "market_cap_twd": 543100305600.0,
+      "average_turnover_20td_twd": 13682656782.75,
+      "foreign_ownership_pct": 19.19,
       "source_urls": [
-        "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261022&selectType=ALLBUT0999"
+        "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261030&selectType=ALLBUT0999"
       ],
       "status": "READY",
       "missing_fields": [],
@@ -261,14 +261,14 @@
     {
       "ticker": "2376",
       "theme_id": "server_rack",
-      "date": "2026-10-22",
-      "official_close": 349.0,
+      "date": "2026-10-30",
+      "official_close": 336.0,
       "issued_shares": 669888886.0,
-      "market_cap_twd": 233791221214.0,
-      "average_turnover_20td_twd": 2113009091.85,
-      "foreign_ownership_pct": 22.9,
+      "market_cap_twd": 225082665696.0,
+      "average_turnover_20td_twd": 2141685406.3,
+      "foreign_ownership_pct": 22.18,
       "source_urls": [
-        "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261022&selectType=ALLBUT0999"
+        "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261030&selectType=ALLBUT0999"
       ],
       "status": "READY",
       "missing_fields": [],
@@ -282,14 +282,14 @@
     {
       "ticker": "2379",
       "theme_id": "network_optics",
-      "date": "2026-10-22",
-      "official_close": 772.0,
+      "date": "2026-10-30",
+      "official_close": 803.0,
       "issued_shares": 515512641.0,
-      "market_cap_twd": 397975758852.0,
-      "average_turnover_20td_twd": 1964900916.05,
-      "foreign_ownership_pct": 46.77,
+      "market_cap_twd": 413956650723.0,
+      "average_turnover_20td_twd": 2078567791.6,
+      "foreign_ownership_pct": 47.34,
       "source_urls": [
-        "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261022&selectType=ALLBUT0999"
+        "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261030&selectType=ALLBUT0999"
       ],
       "status": "READY",
       "missing_fields": [],
@@ -303,14 +303,14 @@
     {
       "ticker": "2382",
       "theme_id": "server_rack",
-      "date": "2026-10-22",
-      "official_close": 322.0,
+      "date": "2026-10-30",
+      "official_close": 318.0,
       "issued_shares": 4107627432.0,
-      "market_cap_twd": 1322656033104.0,
-      "average_turnover_20td_twd": 3712363981.2,
-      "foreign_ownership_pct": 23.0,
+      "market_cap_twd": 1306225523376.0,
+      "average_turnover_20td_twd": 3833379227.1,
+      "foreign_ownership_pct": 23.05,
       "source_urls": [
-        "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261022&selectType=ALLBUT0999"
+        "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261030&selectType=ALLBUT0999"
       ],
       "status": "READY",
       "missing_fields": [],
@@ -324,14 +324,14 @@
     {
       "ticker": "2383",
       "theme_id": "pcb_substrate",
-      "date": "2026-10-22",
-      "official_close": 5070.0,
+      "date": "2026-10-30",
+      "official_close": 4675.0,
       "issued_shares": 358321114.0,
-      "market_cap_twd": 1816688047980.0,
-      "average_turnover_20td_twd": 14759211747.5,
-      "foreign_ownership_pct": 43.25,
+      "market_cap_twd": 1675151207950.0,
+      "average_turnover_20td_twd": 16411623173.1,
+      "foreign_ownership_pct": 42.65,
       "source_urls": [
-        "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261022&selectType=ALLBUT0999"
+        "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261030&selectType=ALLBUT0999"
       ],
       "status": "READY",
       "missing_fields": [],
@@ -345,14 +345,14 @@
     {
       "ticker": "2408",
       "theme_id": "memory_storage",
-      "date": "2026-10-22",
-      "official_close": 414.0,
+      "date": "2026-10-30",
+      "official_close": 454.5,
       "issued_shares": 3098627894.0,
-      "market_cap_twd": 1282831948116.0,
-      "average_turnover_20td_twd": 22534806105.65,
-      "foreign_ownership_pct": 14.58,
+      "market_cap_twd": 1408326377823.0,
+      "average_turnover_20td_twd": 22265891191.75,
+      "foreign_ownership_pct": 15.16,
       "source_urls": [
-        "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261022&selectType=ALLBUT0999"
+        "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261030&selectType=ALLBUT0999"
       ],
       "status": "READY",
       "missing_fields": [],
@@ -366,14 +366,14 @@
     {
       "ticker": "2449",
       "theme_id": "advanced_packaging",
-      "date": "2026-10-22",
-      "official_close": 262.5,
+      "date": "2026-10-30",
+      "official_close": 253.5,
       "issued_shares": 1283882318.0,
-      "market_cap_twd": 337019108475.0,
-      "average_turnover_20td_twd": 9276188401.75,
-      "foreign_ownership_pct": 24.05,
+      "market_cap_twd": 325464167613.0,
+      "average_turnover_20td_twd": 7548631188.75,
+      "foreign_ownership_pct": 24.23,
       "source_urls": [
-        "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261022&selectType=ALLBUT0999"
+        "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261030&selectType=ALLBUT0999"
       ],
       "status": "READY",
       "missing_fields": [],
@@ -387,14 +387,14 @@
     {
       "ticker": "2454",
       "theme_id": "compute_foundry",
-      "date": "2026-10-22",
-      "official_close": 4010.0,
+      "date": "2026-10-30",
+      "official_close": 3915.0,
       "issued_shares": 1604952613.0,
-      "market_cap_twd": 6435859978130.0,
-      "average_turnover_20td_twd": 40404758079.4,
-      "foreign_ownership_pct": 54.2,
+      "market_cap_twd": 6283389479895.0,
+      "average_turnover_20td_twd": 38371707247.85,
+      "foreign_ownership_pct": 53.68,
       "source_urls": [
-        "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261022&selectType=ALLBUT0999"
+        "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261030&selectType=ALLBUT0999"
       ],
       "status": "READY",
       "missing_fields": [],
@@ -408,14 +408,14 @@
     {
       "ticker": "2492",
       "theme_id": "passive_components",
-      "date": "2026-10-22",
-      "official_close": 368.0,
+      "date": "2026-10-30",
+      "official_close": 381.0,
       "issued_shares": 485204774.0,
-      "market_cap_twd": 178555356832.0,
-      "average_turnover_20td_twd": 12597843248.4,
-      "foreign_ownership_pct": 14.35,
+      "market_cap_twd": 184863018894.0,
+      "average_turnover_20td_twd": 14071600186.7,
+      "foreign_ownership_pct": 12.82,
       "source_urls": [
-        "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261022&selectType=ALLBUT0999"
+        "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261030&selectType=ALLBUT0999"
       ],
       "status": "READY",
       "missing_fields": [],
@@ -429,14 +429,14 @@
     {
       "ticker": "3017",
       "theme_id": "thermal_management",
-      "date": "2026-10-22",
-      "official_close": 3145.0,
+      "date": "2026-10-30",
+      "official_close": 3095.0,
       "issued_shares": 392543007.0,
-      "market_cap_twd": 1234547757015.0,
-      "average_turnover_20td_twd": 10619154910.2,
-      "foreign_ownership_pct": 52.65,
+      "market_cap_twd": 1214920606665.0,
+      "average_turnover_20td_twd": 10197719063.05,
+      "foreign_ownership_pct": 52.36,
       "source_urls": [
-        "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261022&selectType=ALLBUT0999"
+        "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261030&selectType=ALLBUT0999"
       ],
       "status": "READY",
       "missing_fields": [],
@@ -450,14 +450,14 @@
     {
       "ticker": "3035",
       "theme_id": "compute_foundry",
-      "date": "2026-10-22",
-      "official_close": 192.0,
+      "date": "2026-10-30",
+      "official_close": 213.5,
       "issued_shares": 260550313.0,
-      "market_cap_twd": 50025660096.0,
-      "average_turnover_20td_twd": 1127157267.05,
-      "foreign_ownership_pct": 18.32,
+      "market_cap_twd": 55627491825.5,
+      "average_turnover_20td_twd": 1535620920.0,
+      "foreign_ownership_pct": 21.08,
       "source_urls": [
-        "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261022&selectType=ALLBUT0999"
+        "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261030&selectType=ALLBUT0999"
       ],
       "status": "READY",
       "missing_fields": [],
@@ -471,35 +471,35 @@
     {
       "ticker": "3037",
       "theme_id": "pcb_substrate",
-      "date": "2026-10-22",
-      "official_close": 1085.0,
+      "date": "2026-10-30",
+      "official_close": 989.0,
       "issued_shares": 1641291596.0,
-      "market_cap_twd": 1780801381660.0,
-      "average_turnover_20td_twd": 18733164997.6,
-      "foreign_ownership_pct": 41.78,
+      "market_cap_twd": 1623237388444.0,
+      "average_turnover_20td_twd": 19989232319.5,
+      "foreign_ownership_pct": 41.13,
       "source_urls": [
-        "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261022&selectType=ALLBUT0999"
+        "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261030&selectType=ALLBUT0999"
       ],
       "status": "READY",
       "missing_fields": [],
       "subscores": {
         "market_cap": 75.0,
-        "average_turnover_20td": 75.0,
+        "average_turnover_20td": 100.0,
         "foreign_ownership": 75.0
       },
-      "market_representation": 75.0
+      "market_representation": 82.5
     },
     {
       "ticker": "3081",
       "theme_id": "silicon_photonics_cpo",
-      "date": "2026-10-22",
-      "official_close": 2375.0,
+      "date": "2026-10-30",
+      "official_close": 2370.0,
       "issued_shares": 101869004.0,
-      "market_cap_twd": 241938884500.0,
-      "average_turnover_20td_twd": 9070201891.0,
-      "foreign_ownership_pct": 18.96,
+      "market_cap_twd": 241429539480.0,
+      "average_turnover_20td_twd": 9538052230.25,
+      "foreign_ownership_pct": 18.38,
       "source_urls": [
-        "https://www.tpex.org.tw/www/zh-tw/insti/qfii?date=2026%2F10%2F22&response=json"
+        "https://www.tpex.org.tw/www/zh-tw/insti/qfii?date=2026%2F10%2F30&response=json"
       ],
       "status": "READY",
       "missing_fields": [],
@@ -513,14 +513,14 @@
     {
       "ticker": "3131",
       "theme_id": "critical_materials",
-      "date": "2026-10-22",
-      "official_close": 1985.0,
+      "date": "2026-10-30",
+      "official_close": 1880.0,
       "issued_shares": 29589484.0,
-      "market_cap_twd": 58735125740.0,
-      "average_turnover_20td_twd": 923837480.25,
-      "foreign_ownership_pct": 34.05,
+      "market_cap_twd": 55628229920.0,
+      "average_turnover_20td_twd": 874290332.25,
+      "foreign_ownership_pct": 34.62,
       "source_urls": [
-        "https://www.tpex.org.tw/www/zh-tw/insti/qfii?date=2026%2F10%2F22&response=json"
+        "https://www.tpex.org.tw/www/zh-tw/insti/qfii?date=2026%2F10%2F30&response=json"
       ],
       "status": "READY",
       "missing_fields": [],
@@ -534,56 +534,56 @@
     {
       "ticker": "3163",
       "theme_id": "silicon_photonics_cpo",
-      "date": "2026-10-22",
-      "official_close": 552.0,
+      "date": "2026-10-30",
+      "official_close": 509.0,
       "issued_shares": 94635370.0,
-      "market_cap_twd": 52238724240.0,
-      "average_turnover_20td_twd": 1522343163.45,
-      "foreign_ownership_pct": 9.4,
+      "market_cap_twd": 48169403330.0,
+      "average_turnover_20td_twd": 1543765750.6,
+      "foreign_ownership_pct": 10.75,
       "source_urls": [
-        "https://www.tpex.org.tw/www/zh-tw/insti/qfii?date=2026%2F10%2F22&response=json"
+        "https://www.tpex.org.tw/www/zh-tw/insti/qfii?date=2026%2F10%2F30&response=json"
       ],
       "status": "READY",
       "missing_fields": [],
       "subscores": {
         "market_cap": 0.0,
-        "average_turnover_20td": 0.0,
+        "average_turnover_20td": 20.0,
         "foreign_ownership": 0.0
       },
-      "market_representation": 0.0
+      "market_representation": 6.0
     },
     {
       "ticker": "3189",
       "theme_id": "pcb_substrate",
-      "date": "2026-10-22",
-      "official_close": 986.0,
+      "date": "2026-10-30",
+      "official_close": 932.0,
       "issued_shares": 526910360.0,
-      "market_cap_twd": 519533614960.0,
-      "average_turnover_20td_twd": 18887370361.4,
-      "foreign_ownership_pct": 22.04,
+      "market_cap_twd": 491080455520.0,
+      "average_turnover_20td_twd": 16811373699.45,
+      "foreign_ownership_pct": 20.21,
       "source_urls": [
-        "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261022&selectType=ALLBUT0999"
+        "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261030&selectType=ALLBUT0999"
       ],
       "status": "READY",
       "missing_fields": [],
       "subscores": {
         "market_cap": 25.0,
-        "average_turnover_20td": 100.0,
+        "average_turnover_20td": 50.0,
         "foreign_ownership": 25.0
       },
-      "market_representation": 47.5
+      "market_representation": 32.5
     },
     {
       "ticker": "3231",
       "theme_id": "server_rack",
-      "date": "2026-10-22",
-      "official_close": 190.0,
+      "date": "2026-10-30",
+      "official_close": 183.5,
       "issued_shares": 3429842250.0,
-      "market_cap_twd": 651670027500.0,
-      "average_turnover_20td_twd": 7935202154.6,
-      "foreign_ownership_pct": 35.95,
+      "market_cap_twd": 629376052875.0,
+      "average_turnover_20td_twd": 7595182934.55,
+      "foreign_ownership_pct": 35.5,
       "source_urls": [
-        "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261022&selectType=ALLBUT0999"
+        "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261030&selectType=ALLBUT0999"
       ],
       "status": "READY",
       "missing_fields": [],
@@ -597,14 +597,14 @@
     {
       "ticker": "3260",
       "theme_id": "memory_storage",
-      "date": "2026-10-22",
-      "official_close": 328.0,
+      "date": "2026-10-30",
+      "official_close": 346.5,
       "issued_shares": 356463418.0,
-      "market_cap_twd": 116920001104.0,
-      "average_turnover_20td_twd": 1604460618.9,
-      "foreign_ownership_pct": 13.55,
+      "market_cap_twd": 123514574337.0,
+      "average_turnover_20td_twd": 2032268693.7,
+      "foreign_ownership_pct": 14.13,
       "source_urls": [
-        "https://www.tpex.org.tw/www/zh-tw/insti/qfii?date=2026%2F10%2F22&response=json"
+        "https://www.tpex.org.tw/www/zh-tw/insti/qfii?date=2026%2F10%2F30&response=json"
       ],
       "status": "READY",
       "missing_fields": [],
@@ -618,14 +618,14 @@
     {
       "ticker": "3324",
       "theme_id": "thermal_management",
-      "date": "2026-10-22",
-      "official_close": 1360.0,
+      "date": "2026-10-30",
+      "official_close": 1330.0,
       "issued_shares": 93076837.0,
-      "market_cap_twd": 126584498320.0,
-      "average_turnover_20td_twd": 5724631641.75,
-      "foreign_ownership_pct": 40.26,
+      "market_cap_twd": 123792193210.0,
+      "average_turnover_20td_twd": 5168166739.0,
+      "foreign_ownership_pct": 39.85,
       "source_urls": [
-        "https://www.tpex.org.tw/www/zh-tw/insti/qfii?date=2026%2F10%2F22&response=json"
+        "https://www.tpex.org.tw/www/zh-tw/insti/qfii?date=2026%2F10%2F30&response=json"
       ],
       "status": "READY",
       "missing_fields": [],
@@ -639,14 +639,14 @@
     {
       "ticker": "3338",
       "theme_id": "thermal_management",
-      "date": "2026-10-22",
-      "official_close": 64.4,
+      "date": "2026-10-30",
+      "official_close": 61.0,
       "issued_shares": 87908141.0,
-      "market_cap_twd": 5661284280.400001,
-      "average_turnover_20td_twd": 29708867.9,
-      "foreign_ownership_pct": 3.61,
+      "market_cap_twd": 5362396601.0,
+      "average_turnover_20td_twd": 29818715.75,
+      "foreign_ownership_pct": 3.63,
       "source_urls": [
-        "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261022&selectType=ALLBUT0999"
+        "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261030&selectType=ALLBUT0999"
       ],
       "status": "READY",
       "missing_fields": [],
@@ -660,14 +660,14 @@
     {
       "ticker": "3357",
       "theme_id": "passive_components",
-      "date": "2026-10-22",
-      "official_close": 193.0,
+      "date": "2026-10-30",
+      "official_close": 191.0,
       "issued_shares": 114936971.0,
-      "market_cap_twd": 22182835403.0,
-      "average_turnover_20td_twd": 287441598.6,
-      "foreign_ownership_pct": 22.79,
+      "market_cap_twd": 21952961461.0,
+      "average_turnover_20td_twd": 287932628.95,
+      "foreign_ownership_pct": 22.8,
       "source_urls": [
-        "https://www.tpex.org.tw/www/zh-tw/insti/qfii?date=2026%2F10%2F22&response=json"
+        "https://www.tpex.org.tw/www/zh-tw/insti/qfii?date=2026%2F10%2F30&response=json"
       ],
       "status": "READY",
       "missing_fields": [],
@@ -681,35 +681,35 @@
     {
       "ticker": "3363",
       "theme_id": "silicon_photonics_cpo",
-      "date": "2026-10-22",
-      "official_close": 506.0,
+      "date": "2026-10-30",
+      "official_close": 474.5,
       "issued_shares": 113640567.0,
-      "market_cap_twd": 57502126902.0,
-      "average_turnover_20td_twd": 1599172553.85,
-      "foreign_ownership_pct": 22.56,
+      "market_cap_twd": 53922449041.5,
+      "average_turnover_20td_twd": 1510973878.95,
+      "foreign_ownership_pct": 23.13,
       "source_urls": [
-        "https://www.tpex.org.tw/www/zh-tw/insti/qfii?date=2026%2F10%2F22&response=json"
+        "https://www.tpex.org.tw/www/zh-tw/insti/qfii?date=2026%2F10%2F30&response=json"
       ],
       "status": "READY",
       "missing_fields": [],
       "subscores": {
         "market_cap": 20.0,
-        "average_turnover_20td": 20.0,
+        "average_turnover_20td": 0.0,
         "foreign_ownership": 60.0
       },
-      "market_representation": 28.0
+      "market_representation": 22.0
     },
     {
       "ticker": "3443",
       "theme_id": "compute_foundry",
-      "date": "2026-10-22",
-      "official_close": 7585.0,
+      "date": "2026-10-30",
+      "official_close": 7635.0,
       "issued_shares": 134011911.0,
-      "market_cap_twd": 1016480344935.0,
-      "average_turnover_20td_twd": 11318459845.0,
+      "market_cap_twd": 1023180940485.0,
+      "average_turnover_20td_twd": 12206926995.25,
       "foreign_ownership_pct": 27.37,
       "source_urls": [
-        "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261022&selectType=ALLBUT0999"
+        "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261030&selectType=ALLBUT0999"
       ],
       "status": "READY",
       "missing_fields": [],
@@ -723,14 +723,14 @@
     {
       "ticker": "3532",
       "theme_id": "critical_materials",
-      "date": "2026-10-22",
-      "official_close": 406.0,
+      "date": "2026-10-30",
+      "official_close": 355.5,
       "issued_shares": 387848300.0,
-      "market_cap_twd": 157466409800.0,
-      "average_turnover_20td_twd": 3462427944.15,
-      "foreign_ownership_pct": 43.73,
+      "market_cap_twd": 137880070650.0,
+      "average_turnover_20td_twd": 3069929673.35,
+      "foreign_ownership_pct": 43.72,
       "source_urls": [
-        "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261022&selectType=ALLBUT0999"
+        "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261030&selectType=ALLBUT0999"
       ],
       "status": "READY",
       "missing_fields": [],
@@ -744,14 +744,14 @@
     {
       "ticker": "3583",
       "theme_id": "advanced_packaging",
-      "date": "2026-10-22",
-      "official_close": 594.0,
+      "date": "2026-10-30",
+      "official_close": 564.0,
       "issued_shares": 80346080.0,
-      "market_cap_twd": 47725571520.0,
-      "average_turnover_20td_twd": 580944843.35,
-      "foreign_ownership_pct": 18.83,
+      "market_cap_twd": 45315189120.0,
+      "average_turnover_20td_twd": 574078480.25,
+      "foreign_ownership_pct": 19.59,
       "source_urls": [
-        "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261022&selectType=ALLBUT0999"
+        "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261030&selectType=ALLBUT0999"
       ],
       "status": "READY",
       "missing_fields": [],
@@ -765,14 +765,14 @@
     {
       "ticker": "3653",
       "theme_id": "thermal_management",
-      "date": "2026-10-22",
-      "official_close": 6070.0,
+      "date": "2026-10-30",
+      "official_close": 6315.0,
       "issued_shares": 147203878.0,
-      "market_cap_twd": 893527539460.0,
-      "average_turnover_20td_twd": 8679252830.95,
-      "foreign_ownership_pct": 25.13,
+      "market_cap_twd": 929592489570.0,
+      "average_turnover_20td_twd": 8934210066.95,
+      "foreign_ownership_pct": 24.89,
       "source_urls": [
-        "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261022&selectType=ALLBUT0999"
+        "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261030&selectType=ALLBUT0999"
       ],
       "status": "READY",
       "missing_fields": [],
@@ -786,14 +786,14 @@
     {
       "ticker": "3661",
       "theme_id": "compute_foundry",
-      "date": "2026-10-22",
-      "official_close": 3495.0,
+      "date": "2026-10-30",
+      "official_close": 3425.0,
       "issued_shares": 86204722.0,
-      "market_cap_twd": 301285503390.0,
-      "average_turnover_20td_twd": 9483299182.4,
-      "foreign_ownership_pct": 49.79,
+      "market_cap_twd": 295251172850.0,
+      "average_turnover_20td_twd": 9268854279.65,
+      "foreign_ownership_pct": 49.45,
       "source_urls": [
-        "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261022&selectType=ALLBUT0999"
+        "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261030&selectType=ALLBUT0999"
       ],
       "status": "READY",
       "missing_fields": [],
@@ -807,14 +807,14 @@
     {
       "ticker": "3711",
       "theme_id": "advanced_packaging",
-      "date": "2026-10-22",
-      "official_close": 654.0,
-      "issued_shares": 4470572282.0,
-      "market_cap_twd": 2923754272428.0,
-      "average_turnover_20td_twd": 11041606895.1,
-      "foreign_ownership_pct": 77.41,
+      "date": "2026-10-30",
+      "official_close": 668.0,
+      "issued_shares": 4488089243.0,
+      "market_cap_twd": 2998043614324.0,
+      "average_turnover_20td_twd": 11803094277.65,
+      "foreign_ownership_pct": 76.79,
       "source_urls": [
-        "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261022&selectType=ALLBUT0999"
+        "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261030&selectType=ALLBUT0999"
       ],
       "status": "READY",
       "missing_fields": [],
@@ -828,14 +828,14 @@
     {
       "ticker": "4979",
       "theme_id": "silicon_photonics_cpo",
-      "date": "2026-10-22",
-      "official_close": 450.0,
+      "date": "2026-10-30",
+      "official_close": 447.0,
       "issued_shares": 142359284.0,
-      "market_cap_twd": 64061677800.0,
-      "average_turnover_20td_twd": 3056199702.1,
-      "foreign_ownership_pct": 19.2,
+      "market_cap_twd": 63634599948.0,
+      "average_turnover_20td_twd": 2627803354.65,
+      "foreign_ownership_pct": 18.88,
       "source_urls": [
-        "https://www.tpex.org.tw/www/zh-tw/insti/qfii?date=2026%2F10%2F22&response=json"
+        "https://www.tpex.org.tw/www/zh-tw/insti/qfii?date=2026%2F10%2F30&response=json"
       ],
       "status": "READY",
       "missing_fields": [],
@@ -849,14 +849,14 @@
     {
       "ticker": "6182",
       "theme_id": "critical_materials",
-      "date": "2026-10-22",
-      "official_close": 104.5,
+      "date": "2026-10-30",
+      "official_close": 93.9,
       "issued_shares": 593601315.0,
-      "market_cap_twd": 62031337417.5,
-      "average_turnover_20td_twd": 8824650332.95,
-      "foreign_ownership_pct": 21.46,
+      "market_cap_twd": 55739163478.5,
+      "average_turnover_20td_twd": 6892056385.8,
+      "foreign_ownership_pct": 22.0,
       "source_urls": [
-        "https://www.tpex.org.tw/www/zh-tw/insti/qfii?date=2026%2F10%2F22&response=json"
+        "https://www.tpex.org.tw/www/zh-tw/insti/qfii?date=2026%2F10%2F30&response=json"
       ],
       "status": "READY",
       "missing_fields": [],
@@ -870,14 +870,14 @@
     {
       "ticker": "6187",
       "theme_id": "advanced_packaging",
-      "date": "2026-10-22",
-      "official_close": 1260.0,
+      "date": "2026-10-30",
+      "official_close": 1190.0,
       "issued_shares": 98193024.0,
-      "market_cap_twd": 123723210240.0,
-      "average_turnover_20td_twd": 4458224737.25,
-      "foreign_ownership_pct": 36.39,
+      "market_cap_twd": 116849698560.0,
+      "average_turnover_20td_twd": 4437109758.75,
+      "foreign_ownership_pct": 35.84,
       "source_urls": [
-        "https://www.tpex.org.tw/www/zh-tw/insti/qfii?date=2026%2F10%2F22&response=json"
+        "https://www.tpex.org.tw/www/zh-tw/insti/qfii?date=2026%2F10%2F30&response=json"
       ],
       "status": "READY",
       "missing_fields": [],
@@ -891,14 +891,14 @@
     {
       "ticker": "6223",
       "theme_id": "advanced_packaging",
-      "date": "2026-10-22",
-      "official_close": 4890.0,
+      "date": "2026-10-30",
+      "official_close": 4610.0,
       "issued_shares": 97981309.0,
-      "market_cap_twd": 479128601010.0,
-      "average_turnover_20td_twd": 6036827718.0,
-      "foreign_ownership_pct": 31.16,
+      "market_cap_twd": 451693834490.0,
+      "average_turnover_20td_twd": 5454095533.75,
+      "foreign_ownership_pct": 31.29,
       "source_urls": [
-        "https://www.tpex.org.tw/www/zh-tw/insti/qfii?date=2026%2F10%2F22&response=json"
+        "https://www.tpex.org.tw/www/zh-tw/insti/qfii?date=2026%2F10%2F30&response=json"
       ],
       "status": "READY",
       "missing_fields": [],
@@ -912,16 +912,14 @@
     {
       "ticker": "6230",
       "theme_id": "thermal_management",
-      "date": "2026-10-22",
-      "official_close": 108.0,
+      "date": "2026-10-30",
+      "official_close": 103.5,
       "issued_shares": 86343396.0,
-      "market_cap_twd": 9325086768.0,
-      "average_turnover_20td_twd": 4495251.6,
-      "foreign_ownership_pct": 87.12,
+      "market_cap_twd": 8936541486.0,
+      "average_turnover_20td_twd": 4225490.5,
+      "foreign_ownership_pct": 87.11,
       "source_urls": [
-        "https://www.twse.com.tw/exchangeReport/STOCK_DAY?response=json&date=20260901&stockNo=6230",
-        "https://www.twse.com.tw/exchangeReport/STOCK_DAY?response=json&date=20261001&stockNo=6230",
-        "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261022&selectType=ALLBUT0999"
+        "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261030&selectType=ALLBUT0999"
       ],
       "status": "READY",
       "missing_fields": [],
@@ -935,56 +933,56 @@
     {
       "ticker": "6274",
       "theme_id": "pcb_substrate",
-      "date": "2026-10-22",
-      "official_close": 1420.0,
+      "date": "2026-10-30",
+      "official_close": 1265.0,
       "issued_shares": 288813387.0,
-      "market_cap_twd": 410115009540.0,
-      "average_turnover_20td_twd": 17391229368.25,
-      "foreign_ownership_pct": 29.47,
+      "market_cap_twd": 365348934555.0,
+      "average_turnover_20td_twd": 17885498704.25,
+      "foreign_ownership_pct": 30.05,
       "source_urls": [
-        "https://www.tpex.org.tw/www/zh-tw/insti/qfii?date=2026%2F10%2F22&response=json"
+        "https://www.tpex.org.tw/www/zh-tw/insti/qfii?date=2026%2F10%2F30&response=json"
       ],
       "status": "READY",
       "missing_fields": [],
       "subscores": {
         "market_cap": 0.0,
-        "average_turnover_20td": 50.0,
+        "average_turnover_20td": 75.0,
         "foreign_ownership": 50.0
       },
-      "market_representation": 25.0
+      "market_representation": 32.5
     },
     {
       "ticker": "6282",
       "theme_id": "power_delivery",
-      "date": "2026-10-22",
-      "official_close": 41.7,
+      "date": "2026-10-30",
+      "official_close": 39.0,
       "issued_shares": 856031294.0,
-      "market_cap_twd": 35696504959.8,
-      "average_turnover_20td_twd": 310007532.7,
-      "foreign_ownership_pct": 10.05,
+      "market_cap_twd": 33385220466.0,
+      "average_turnover_20td_twd": 319502723.3,
+      "foreign_ownership_pct": 9.71,
       "source_urls": [
-        "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261022&selectType=ALLBUT0999"
+        "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261030&selectType=ALLBUT0999"
       ],
       "status": "READY",
       "missing_fields": [],
       "subscores": {
         "market_cap": 25.0,
-        "average_turnover_20td": 25.0,
+        "average_turnover_20td": 50.0,
         "foreign_ownership": 25.0
       },
-      "market_representation": 25.0
+      "market_representation": 32.5
     },
     {
       "ticker": "6412",
       "theme_id": "power_delivery",
-      "date": "2026-10-22",
-      "official_close": 72.3,
+      "date": "2026-10-30",
+      "official_close": 67.3,
       "issued_shares": 400769126.0,
-      "market_cap_twd": 28975607809.8,
-      "average_turnover_20td_twd": 42203897.45,
-      "foreign_ownership_pct": 4.81,
+      "market_cap_twd": 26971762179.8,
+      "average_turnover_20td_twd": 53482807.05,
+      "foreign_ownership_pct": 4.82,
       "source_urls": [
-        "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261022&selectType=ALLBUT0999"
+        "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261030&selectType=ALLBUT0999"
       ],
       "status": "READY",
       "missing_fields": [],
@@ -998,14 +996,14 @@
     {
       "ticker": "6442",
       "theme_id": "silicon_photonics_cpo",
-      "date": "2026-10-22",
-      "official_close": 1410.0,
+      "date": "2026-10-30",
+      "official_close": 1230.0,
       "issued_shares": 81817552.0,
-      "market_cap_twd": 115362748320.0,
-      "average_turnover_20td_twd": 3155324637.5,
-      "foreign_ownership_pct": 31.16,
+      "market_cap_twd": 100635588960.0,
+      "average_turnover_20td_twd": 3237018043.5,
+      "foreign_ownership_pct": 31.1,
       "source_urls": [
-        "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261022&selectType=ALLBUT0999"
+        "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261030&selectType=ALLBUT0999"
       ],
       "status": "READY",
       "missing_fields": [],
@@ -1019,14 +1017,14 @@
     {
       "ticker": "6488",
       "theme_id": "critical_materials",
-      "date": "2026-10-22",
-      "official_close": 826.0,
+      "date": "2026-10-30",
+      "official_close": 756.0,
       "issued_shares": 528113725.0,
-      "market_cap_twd": 436221936850.0,
-      "average_turnover_20td_twd": 15879360546.7,
-      "foreign_ownership_pct": 30.2,
+      "market_cap_twd": 399253976100.0,
+      "average_turnover_20td_twd": 14120237554.35,
+      "foreign_ownership_pct": 29.69,
       "source_urls": [
-        "https://www.tpex.org.tw/www/zh-tw/insti/qfii?date=2026%2F10%2F22&response=json"
+        "https://www.tpex.org.tw/www/zh-tw/insti/qfii?date=2026%2F10%2F30&response=json"
       ],
       "status": "READY",
       "missing_fields": [],
@@ -1040,14 +1038,14 @@
     {
       "ticker": "6669",
       "theme_id": "server_rack",
-      "date": "2026-10-22",
-      "official_close": 1840.0,
+      "date": "2026-10-30",
+      "official_close": 1810.0,
       "issued_shares": 560199772.0,
-      "market_cap_twd": 1030767580480.0,
-      "average_turnover_20td_twd": 9462654538.7,
-      "foreign_ownership_pct": 26.78,
+      "market_cap_twd": 1013961587320.0,
+      "average_turnover_20td_twd": 9543301674.95,
+      "foreign_ownership_pct": 26.75,
       "source_urls": [
-        "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261022&selectType=ALLBUT0999"
+        "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261030&selectType=ALLBUT0999"
       ],
       "status": "READY",
       "missing_fields": [],
@@ -1061,35 +1059,35 @@
     {
       "ticker": "6781",
       "theme_id": "power_delivery",
-      "date": "2026-10-22",
-      "official_close": 894.0,
+      "date": "2026-10-30",
+      "official_close": 880.0,
       "issued_shares": 85418780.0,
-      "market_cap_twd": 76364389320.0,
-      "average_turnover_20td_twd": 312112007.8,
-      "foreign_ownership_pct": 69.95,
+      "market_cap_twd": 75168526400.0,
+      "average_turnover_20td_twd": 305177886.8,
+      "foreign_ownership_pct": 70.1,
       "source_urls": [
-        "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261022&selectType=ALLBUT0999"
+        "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261030&selectType=ALLBUT0999"
       ],
       "status": "READY",
       "missing_fields": [],
       "subscores": {
         "market_cap": 50.0,
-        "average_turnover_20td": 50.0,
+        "average_turnover_20td": 25.0,
         "foreign_ownership": 100.0
       },
-      "market_representation": 60.0
+      "market_representation": 52.5
     },
     {
       "ticker": "8299",
       "theme_id": "memory_storage",
-      "date": "2026-10-22",
-      "official_close": 1880.0,
+      "date": "2026-10-30",
+      "official_close": 1930.0,
       "issued_shares": 221085747.0,
-      "market_cap_twd": 415641204360.0,
-      "average_turnover_20td_twd": 6248294640.0,
-      "foreign_ownership_pct": 44.44,
+      "market_cap_twd": 426695491710.0,
+      "average_turnover_20td_twd": 5334866252.5,
+      "foreign_ownership_pct": 45.48,
       "source_urls": [
-        "https://www.tpex.org.tw/www/zh-tw/insti/qfii?date=2026%2F10%2F22&response=json"
+        "https://www.tpex.org.tw/www/zh-tw/insti/qfii?date=2026%2F10%2F30&response=json"
       ],
       "status": "READY",
       "missing_fields": [],
@@ -1106,27 +1104,27 @@
     {
       "family": "foreign_ownership",
       "market": "TWSE",
-      "requested_date": "2026-10-22",
-      "actual_source_date": "2026-10-22",
+      "requested_date": "2026-10-30",
+      "actual_source_date": "2026-10-30",
       "status": "accepted",
       "row_count": 38,
       "http_status": 200,
-      "source_url": "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261022&selectType=ALLBUT0999",
-      "source_hash": "60c9e4768a6989c57ba2a7b43d7c85d84642368d3aee5f2308c1de497deaf321",
-      "retrieved_at_utc": "2026-10-24T14:35:10+00:00",
+      "source_url": "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261030&selectType=ALLBUT0999",
+      "source_hash": "ed3bd2c8d0e1a35d1f1cbb476b95c84c8540dc6494035ded009633c909f78713",
+      "retrieved_at_utc": "2026-10-30T17:13:52+00:00",
       "error": ""
     },
     {
       "family": "foreign_ownership",
       "market": "TPEx",
-      "requested_date": "2026-10-22",
-      "actual_source_date": "2026-10-22",
+      "requested_date": "2026-10-30",
+      "actual_source_date": "2026-10-30",
       "status": "accepted",
       "row_count": 14,
       "http_status": 200,
-      "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/qfii?date=2026%2F10%2F22&response=json",
-      "source_hash": "04a96e24c40730cb1ca43db586e8e0b8474bd5285faf6aab1755373b55dcf817",
-      "retrieved_at_utc": "2026-10-24T14:35:13+00:00",
+      "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/qfii?date=2026%2F10%2F30&response=json",
+      "source_hash": "890b114f8a72d25dccfa935132d2876be3ec10c777b9113e12a1adc6a5bbd1c3",
+      "retrieved_at_utc": "2026-10-30T17:13:54+00:00",
       "error": ""
     }
   ],

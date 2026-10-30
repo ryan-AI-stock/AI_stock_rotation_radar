@@ -1,6 +1,6 @@
 {
   "model": "R1",
-  "date": "2026-10-22",
+  "date": "2026-10-30",
   "periods": [
     "2026-07",
     "2026-08",
@@ -2788,7 +2788,7 @@
       "market": "TWSE",
       "company_type": 0,
       "status": "OK",
-      "row_count": 990,
+      "row_count": 992,
       "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_7_0.html"
     },
     {
@@ -2804,7 +2804,7 @@
       "market": "TPEx",
       "company_type": 0,
       "status": "OK",
-      "row_count": 862,
+      "row_count": 863,
       "source_url": "https://mopsov.twse.com.tw/nas/t21/otc/t21sc03_115_7_0.html"
     },
     {
@@ -2820,7 +2820,7 @@
       "market": "TWSE",
       "company_type": 0,
       "status": "OK",
-      "row_count": 993,
+      "row_count": 995,
       "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_8_0.html"
     },
     {
@@ -2836,7 +2836,7 @@
       "market": "TPEx",
       "company_type": 0,
       "status": "OK",
-      "row_count": 861,
+      "row_count": 862,
       "source_url": "https://mopsov.twse.com.tw/nas/t21/otc/t21sc03_115_8_0.html"
     },
     {
@@ -2852,7 +2852,7 @@
       "market": "TWSE",
       "company_type": 0,
       "status": "OK",
-      "row_count": 992,
+      "row_count": 994,
       "source_url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_9_0.html"
     },
     {
@@ -2868,7 +2868,7 @@
       "market": "TPEx",
       "company_type": 0,
       "status": "OK",
-      "row_count": 860,
+      "row_count": 861,
       "source_url": "https://mopsov.twse.com.tw/nas/t21/otc/t21sc03_115_9_0.html"
     },
     {
@@ -2881,7 +2881,7 @@
     }
   ],
   "future_data_violation_count": 0,
-  "generated_at": "2026-10-24T14:35:01.547165+00:00",
+  "generated_at": "2026-10-30T17:13:30.149104+00:00",
   "formal_model_changed": false,
   "trade_decision_changed": false,
   "active_in_trade_decision": false,

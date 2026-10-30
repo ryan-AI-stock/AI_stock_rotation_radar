@@ -110,8 +110,8 @@
     {
       "ticker": "3037",
       "as_of_date": "2026-10-30",
-      "institution_count": 0,
-      "consensus_target_price": null,
+      "institution_count": 2,
+      "consensus_target_price": 1335.0,
       "consensus_upside": null,
       "dispersion": null,
       "status": "DATA_MISSING",
@@ -213,12 +213,12 @@
     {
       "ticker": "2449",
       "as_of_date": "2026-10-30",
-      "institution_count": 2,
-      "consensus_target_price": 366.0,
-      "consensus_upside": null,
-      "dispersion": null,
-      "status": "DATA_MISSING",
-      "scoreable": false,
+      "institution_count": 3,
+      "consensus_target_price": 360.0,
+      "consensus_upside": 0.4201183431952662,
+      "dispersion": 0.13333333333333333,
+      "status": "READY",
+      "scoreable": true,
       "rejected": [
         {
           "institution": "CLSA",
@@ -308,7 +308,7 @@
       "ticker": "3081",
       "as_of_date": "2026-10-30",
       "institution_count": 1,
-      "consensus_target_price": 3345.0,
+      "consensus_target_price": 3370.0,
       "consensus_upside": null,
       "dispersion": null,
       "status": "DATA_MISSING",
@@ -336,12 +336,12 @@
     {
       "ticker": "2303",
       "as_of_date": "2026-10-30",
-      "institution_count": 1,
-      "consensus_target_price": 103.0,
-      "consensus_upside": null,
-      "dispersion": null,
-      "status": "DATA_MISSING",
-      "scoreable": false,
+      "institution_count": 3,
+      "consensus_target_price": 135.0,
+      "consensus_upside": 0.21076233183856496,
+      "dispersion": 0.5407407407407407,
+      "status": "READY",
+      "scoreable": true,
       "rejected": [
         {
           "institution": "Bernstein SocGen Group",
@@ -451,8 +451,8 @@
     {
       "ticker": "6274",
       "as_of_date": "2026-10-30",
-      "institution_count": 0,
-      "consensus_target_price": null,
+      "institution_count": 1,
+      "consensus_target_price": 2130.0,
       "consensus_upside": null,
       "dispersion": null,
       "status": "DATA_MISSING",
@@ -701,7 +701,7 @@
       "ticker": "3653",
       "as_of_date": "2026-10-30",
       "institution_count": 2,
-      "consensus_target_price": 8150.0,
+      "consensus_target_price": 8800.0,
       "consensus_upside": null,
       "dispersion": null,
       "status": "DATA_MISSING",
@@ -868,8 +868,8 @@
     {
       "ticker": "2308",
       "as_of_date": "2026-10-30",
-      "institution_count": 0,
-      "consensus_target_price": null,
+      "institution_count": 2,
+      "consensus_target_price": 2165.0,
       "consensus_upside": null,
       "dispersion": null,
       "status": "DATA_MISSING",
@@ -897,13 +897,30 @@
     {
       "ticker": "2379",
       "as_of_date": "2026-10-30",
-      "institution_count": 0,
-      "consensus_target_price": null,
+      "institution_count": 1,
+      "consensus_target_price": 815.0,
       "consensus_upside": null,
       "dispersion": null,
       "status": "DATA_MISSING",
       "scoreable": false,
-      "rejected": [],
+      "rejected": [
+        {
+          "institution": "CLSA",
+          "error": "stale"
+        },
+        {
+          "institution": "Goldman Sachs",
+          "error": "stale"
+        },
+        {
+          "institution": "JPMorgan",
+          "error": "stale"
+        },
+        {
+          "institution": "JPMorgan",
+          "error": "stale"
+        }
+      ],
       "source_policy": "12M median; independent identifiable institutions; PIT max 90 days"
     },
     {
@@ -956,6 +973,6 @@
     }
   ],
   "requested_ticker_count": 54,
-  "ready_ticker_count": 7,
+  "ready_ticker_count": 9,
   "source": "data/r1/target_prices/evidence.csv"
 }
