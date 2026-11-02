@@ -1,7 +1,7 @@
 {
   "model": "R1",
   "layer": "bounded_deliberation_v0.1",
-  "date": "2026-10-30",
+  "date": "2026-11-02",
   "status": "READY",
   "rows": [
     {
@@ -9,14 +9,12 @@
       "company": "台積電",
       "is_held": true,
       "is_target": false,
-      "score": 56.104652,
+      "score": 55.950331,
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -25,11 +23,8 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "STRONG",
-          "evidence": [
-            "市場急跌",
-            "月營收加速"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -39,14 +34,12 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "WATCH_POTENTIAL_DISLOCATION",
-      "confidence": "MEDIUM",
-      "rationale": "價格隨市場下跌但月營收加速，可列錯殺候選；尚未形成買進指令",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
+      "confidence": "LOW",
+      "rationale": "沒有足夠新證據推翻原計畫",
       "previous_conclusion": "WATCH_POTENTIAL_DISLOCATION",
-      "judgement_changed": false,
+      "judgement_changed": true,
       "evidence_urls": []
     },
     {
@@ -54,14 +47,12 @@
       "company": "國巨",
       "is_held": true,
       "is_target": false,
-      "score": 55.971313,
+      "score": 55.168844,
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -70,10 +61,8 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "MEDIUM",
-          "evidence": [
-            "市場急跌但基本面尚未確認"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -83,14 +72,12 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
-      "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
+      "rationale": "沒有足夠新證據推翻原計畫",
       "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
-      "judgement_changed": false,
+      "judgement_changed": true,
       "evidence_urls": []
     },
     {
@@ -98,14 +85,12 @@
       "company": "華邦電",
       "is_held": true,
       "is_target": false,
-      "score": 77.127869,
+      "score": 75.985894,
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -114,10 +99,8 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "MEDIUM",
-          "evidence": [
-            "市場急跌但基本面尚未確認"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -127,14 +110,12 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
-      "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
+      "rationale": "沒有足夠新證據推翻原計畫",
       "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
-      "judgement_changed": false,
+      "judgement_changed": true,
       "evidence_urls": [
         "https://www.trendforce.com/presscenter/news/20260907-13219.html"
       ]
@@ -144,14 +125,12 @@
       "company": "技嘉",
       "is_held": true,
       "is_target": false,
-      "score": 65.705328,
+      "score": 63.853476,
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -160,11 +139,8 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "STRONG",
-          "evidence": [
-            "市場急跌",
-            "月營收加速"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -174,14 +150,12 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "WATCH_POTENTIAL_DISLOCATION",
-      "confidence": "MEDIUM",
-      "rationale": "價格隨市場下跌但月營收加速，可列錯殺候選；尚未形成買進指令",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
+      "confidence": "LOW",
+      "rationale": "沒有足夠新證據推翻原計畫",
       "previous_conclusion": "WATCH_POTENTIAL_DISLOCATION",
-      "judgement_changed": false,
+      "judgement_changed": true,
       "evidence_urls": [
         "https://www.xxquant.com/en/institution/institutional-research/63fc05022b4f6cf9d73e160779b31d86"
       ]
@@ -191,14 +165,12 @@
       "company": "聯發科",
       "is_held": true,
       "is_target": true,
-      "score": 37.002636,
+      "score": 35.428562,
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -210,9 +182,7 @@
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
           "support": "WEAK",
-          "evidence": [
-            "市場急跌但基本面尚未確認"
-          ]
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -223,7 +193,6 @@
         }
       ],
       "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化",
         "官方負面與正向催化並存，須等待後續營收或財報確認"
       ],
       "conclusion": "HOLD_PENDING_CONFIRMATION",
@@ -241,14 +210,12 @@
       "company": "欣興",
       "is_held": true,
       "is_target": true,
-      "score": 57.022552,
+      "score": 56.837366,
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -257,11 +224,8 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "STRONG",
-          "evidence": [
-            "市場急跌",
-            "月營收加速"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -271,14 +235,12 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "WATCH_POTENTIAL_DISLOCATION",
-      "confidence": "MEDIUM",
-      "rationale": "價格隨市場下跌但月營收加速，可列錯殺候選；尚未形成買進指令",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
+      "confidence": "LOW",
+      "rationale": "沒有足夠新證據推翻原計畫",
       "previous_conclusion": "WATCH_POTENTIAL_DISLOCATION",
-      "judgement_changed": false,
+      "judgement_changed": true,
       "evidence_urls": []
     },
     {
@@ -286,14 +248,12 @@
       "company": "環球晶",
       "is_held": true,
       "is_target": false,
-      "score": 45.46729,
+      "score": 46.701858,
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -302,10 +262,8 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "MEDIUM",
-          "evidence": [
-            "市場急跌但基本面尚未確認"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -315,14 +273,12 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
-      "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
+      "rationale": "沒有足夠新證據推翻原計畫",
       "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
-      "judgement_changed": false,
+      "judgement_changed": true,
       "evidence_urls": [
         "https://www.tomshardware.com/tech-industry/semiconductors/micron-takes-a-500-million-position-in-americas-only-300mm-wafer-plant"
       ]
@@ -332,14 +288,12 @@
       "company": "世芯-KY",
       "is_held": false,
       "is_target": false,
-      "score": 72.479587,
+      "score": 71.430204,
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -348,11 +302,8 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "STRONG",
-          "evidence": [
-            "市場急跌",
-            "月營收加速"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -362,14 +313,12 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "WATCH_POTENTIAL_DISLOCATION",
-      "confidence": "MEDIUM",
-      "rationale": "價格隨市場下跌但月營收加速，可列錯殺候選；尚未形成買進指令",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
+      "confidence": "LOW",
+      "rationale": "沒有足夠新證據推翻原計畫",
       "previous_conclusion": "WATCH_POTENTIAL_DISLOCATION",
-      "judgement_changed": false,
+      "judgement_changed": true,
       "evidence_urls": []
     },
     {
@@ -377,14 +326,12 @@
       "company": "創意",
       "is_held": false,
       "is_target": false,
-      "score": 54.784724,
+      "score": 53.858798,
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -393,10 +340,8 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "MEDIUM",
-          "evidence": [
-            "市場急跌但基本面尚未確認"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -406,14 +351,12 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
-      "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
+      "rationale": "沒有足夠新證據推翻原計畫",
       "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
-      "judgement_changed": false,
+      "judgement_changed": true,
       "evidence_urls": [
         "https://www.moneydj.com/kmdj/news/newsviewer.aspx?a=8b9ae6d7-7f01-46fa-ab35-d29897a392e4&c=MB00"
       ]
@@ -423,14 +366,12 @@
       "company": "智原",
       "is_held": false,
       "is_target": false,
-      "score": 49.358662,
+      "score": 46.087057,
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -442,9 +383,7 @@
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
           "support": "WEAK",
-          "evidence": [
-            "市場急跌但基本面尚未確認"
-          ]
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -455,7 +394,6 @@
         }
       ],
       "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化",
         "官方負面與正向催化並存，須等待後續營收或財報確認"
       ],
       "conclusion": "HOLD_PENDING_CONFIRMATION",
@@ -473,14 +411,12 @@
       "company": "京元電子",
       "is_held": false,
       "is_target": false,
-      "score": 43.623045,
+      "score": 42.697119,
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -489,10 +425,8 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "MEDIUM",
-          "evidence": [
-            "市場急跌但基本面尚未確認"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -502,14 +436,12 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
-      "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
+      "rationale": "沒有足夠新證據推翻原計畫",
       "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
-      "judgement_changed": false,
+      "judgement_changed": true,
       "evidence_urls": []
     },
     {
@@ -517,14 +449,12 @@
       "company": "旺矽",
       "is_held": false,
       "is_target": false,
-      "score": 53.045996,
+      "score": 53.817601,
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -533,11 +463,8 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "STRONG",
-          "evidence": [
-            "市場急跌",
-            "月營收加速"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -547,14 +474,12 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "WATCH_POTENTIAL_DISLOCATION",
-      "confidence": "MEDIUM",
-      "rationale": "價格隨市場下跌但月營收加速，可列錯殺候選；尚未形成買進指令",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
+      "confidence": "LOW",
+      "rationale": "沒有足夠新證據推翻原計畫",
       "previous_conclusion": "WATCH_POTENTIAL_DISLOCATION",
-      "judgement_changed": false,
+      "judgement_changed": true,
       "evidence_urls": []
     },
     {
@@ -562,14 +487,12 @@
       "company": "萬潤",
       "is_held": false,
       "is_target": false,
-      "score": 58.016465,
+      "score": 58.664614,
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -578,11 +501,8 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "STRONG",
-          "evidence": [
-            "市場急跌",
-            "月營收加速"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -592,14 +512,12 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "WATCH_POTENTIAL_DISLOCATION",
-      "confidence": "MEDIUM",
-      "rationale": "價格隨市場下跌但月營收加速，可列錯殺候選；尚未形成買進指令",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
+      "confidence": "LOW",
+      "rationale": "沒有足夠新證據推翻原計畫",
       "previous_conclusion": "WATCH_POTENTIAL_DISLOCATION",
-      "judgement_changed": false,
+      "judgement_changed": true,
       "evidence_urls": [
         "https://www.mirrormedia.mg/external/mirrordaily_82154"
       ]
@@ -609,14 +527,12 @@
       "company": "辛耘",
       "is_held": false,
       "is_target": false,
-      "score": 45.9905,
+      "score": 46.854697,
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -625,10 +541,8 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "MEDIUM",
-          "evidence": [
-            "市場急跌但基本面尚未確認"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -638,14 +552,12 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
-      "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
+      "rationale": "沒有足夠新證據推翻原計畫",
       "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
-      "judgement_changed": false,
+      "judgement_changed": true,
       "evidence_urls": []
     },
     {
@@ -653,14 +565,12 @@
       "company": "南亞科",
       "is_held": true,
       "is_target": true,
-      "score": 72.347404,
+      "score": 69.446169,
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -669,10 +579,8 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "MEDIUM",
-          "evidence": [
-            "市場急跌但基本面尚未確認"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -682,14 +590,12 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
-      "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
+      "rationale": "沒有足夠新證據推翻原計畫",
       "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
-      "judgement_changed": false,
+      "judgement_changed": true,
       "evidence_urls": []
     },
     {
@@ -697,14 +603,12 @@
       "company": "聯亞",
       "is_held": true,
       "is_target": true,
-      "score": 68.266331,
+      "score": 66.970035,
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -713,11 +617,8 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "STRONG",
-          "evidence": [
-            "市場急跌",
-            "月營收加速"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -727,14 +628,12 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "WATCH_POTENTIAL_DISLOCATION",
-      "confidence": "MEDIUM",
-      "rationale": "價格隨市場下跌但月營收加速，可列錯殺候選；尚未形成買進指令",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
+      "confidence": "LOW",
+      "rationale": "沒有足夠新證據推翻原計畫",
       "previous_conclusion": "WATCH_POTENTIAL_DISLOCATION",
-      "judgement_changed": false,
+      "judgement_changed": true,
       "evidence_urls": [
         "https://doc.twse.com.tw/pdf/2025_3081_20260527F04_20260714_045320.pdf"
       ]
@@ -744,14 +643,12 @@
       "company": "聯電",
       "is_held": true,
       "is_target": false,
-      "score": 40.751016,
+      "score": 39.146077,
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -760,10 +657,8 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "MEDIUM",
-          "evidence": [
-            "市場急跌但基本面尚未確認"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -773,14 +668,12 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
-      "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
+      "rationale": "沒有足夠新證據推翻原計畫",
       "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
-      "judgement_changed": false,
+      "judgement_changed": true,
       "evidence_urls": [
         "https://www.umc.com/zh-TW/News/press_release/Content/technology_related/20260714"
       ]
@@ -794,10 +687,8 @@
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -806,10 +697,8 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "MEDIUM",
-          "evidence": [
-            "市場急跌但基本面尚未確認"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -819,14 +708,12 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
-      "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
+      "rationale": "沒有足夠新證據推翻原計畫",
       "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
-      "judgement_changed": false,
+      "judgement_changed": true,
       "evidence_urls": []
     },
     {
@@ -838,10 +725,8 @@
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -850,10 +735,8 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "MEDIUM",
-          "evidence": [
-            "市場急跌但基本面尚未確認"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -863,14 +746,12 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
-      "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
+      "rationale": "沒有足夠新證據推翻原計畫",
       "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
-      "judgement_changed": false,
+      "judgement_changed": true,
       "evidence_urls": []
     },
     {
@@ -878,14 +759,12 @@
       "company": "旺宏",
       "is_held": false,
       "is_target": false,
-      "score": 68.697834,
+      "score": 67.864501,
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -894,10 +773,8 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "MEDIUM",
-          "evidence": [
-            "市場急跌但基本面尚未確認"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -907,14 +784,12 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
-      "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
+      "rationale": "沒有足夠新證據推翻原計畫",
       "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
-      "judgement_changed": false,
+      "judgement_changed": true,
       "evidence_urls": []
     },
     {
@@ -922,14 +797,12 @@
       "company": "群聯",
       "is_held": false,
       "is_target": false,
-      "score": 71.58546,
+      "score": 72.449658,
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -938,10 +811,8 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "MEDIUM",
-          "evidence": [
-            "市場急跌但基本面尚未確認"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -951,14 +822,12 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
-      "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
+      "rationale": "沒有足夠新證據推翻原計畫",
       "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
-      "judgement_changed": false,
+      "judgement_changed": true,
       "evidence_urls": [
         "https://gfe-desktop.cnyes.com/news/id/6575811"
       ]
@@ -968,14 +837,12 @@
       "company": "威剛",
       "is_held": false,
       "is_target": false,
-      "score": 60.822316,
+      "score": 60.143304,
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -984,10 +851,8 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "MEDIUM",
-          "evidence": [
-            "市場急跌但基本面尚未確認"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -997,14 +862,12 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
-      "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
+      "rationale": "沒有足夠新證據推翻原計畫",
       "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
-      "judgement_changed": false,
+      "judgement_changed": true,
       "evidence_urls": []
     },
     {
@@ -1012,14 +875,12 @@
       "company": "台光電",
       "is_held": false,
       "is_target": false,
-      "score": 49.87868,
+      "score": 50.156458,
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -1028,11 +889,8 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "STRONG",
-          "evidence": [
-            "市場急跌",
-            "月營收加速"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -1042,14 +900,12 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "WATCH_POTENTIAL_DISLOCATION",
-      "confidence": "MEDIUM",
-      "rationale": "價格隨市場下跌但月營收加速，可列錯殺候選；尚未形成買進指令",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
+      "confidence": "LOW",
+      "rationale": "沒有足夠新證據推翻原計畫",
       "previous_conclusion": "WATCH_POTENTIAL_DISLOCATION",
-      "judgement_changed": false,
+      "judgement_changed": true,
       "evidence_urls": []
     },
     {
@@ -1057,14 +913,12 @@
       "company": "台燿",
       "is_held": false,
       "is_target": false,
-      "score": 54.970162,
+      "score": 57.439298,
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -1073,10 +927,8 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "MEDIUM",
-          "evidence": [
-            "市場急跌但基本面尚未確認"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -1086,14 +938,12 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
-      "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
+      "rationale": "沒有足夠新證據推翻原計畫",
       "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
-      "judgement_changed": false,
+      "judgement_changed": true,
       "evidence_urls": []
     },
     {
@@ -1101,14 +951,12 @@
       "company": "景碩",
       "is_held": false,
       "is_target": false,
-      "score": 59.736958,
+      "score": 59.181402,
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -1117,11 +965,8 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "STRONG",
-          "evidence": [
-            "市場急跌",
-            "月營收加速"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -1131,14 +976,12 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "WATCH_POTENTIAL_DISLOCATION",
-      "confidence": "MEDIUM",
-      "rationale": "價格隨市場下跌但月營收加速，可列錯殺候選；尚未形成買進指令",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
+      "confidence": "LOW",
+      "rationale": "沒有足夠新證據推翻原計畫",
       "previous_conclusion": "WATCH_POTENTIAL_DISLOCATION",
-      "judgement_changed": false,
+      "judgement_changed": true,
       "evidence_urls": []
     },
     {
@@ -1146,14 +989,12 @@
       "company": "金像電",
       "is_held": false,
       "is_target": false,
-      "score": 51.900464,
+      "score": 54.956019,
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -1162,10 +1003,8 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "MEDIUM",
-          "evidence": [
-            "市場急跌但基本面尚未確認"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -1175,14 +1014,12 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
-      "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
+      "rationale": "沒有足夠新證據推翻原計畫",
       "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
-      "judgement_changed": false,
+      "judgement_changed": true,
       "evidence_urls": []
     },
     {
@@ -1190,14 +1027,12 @@
       "company": "智邦",
       "is_held": false,
       "is_target": false,
-      "score": 59.4903,
+      "score": 62.484127,
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -1206,10 +1041,8 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "MEDIUM",
-          "evidence": [
-            "市場急跌但基本面尚未確認"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -1219,14 +1052,12 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
-      "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
+      "rationale": "沒有足夠新證據推翻原計畫",
       "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
-      "judgement_changed": false,
+      "judgement_changed": true,
       "evidence_urls": []
     },
     {
@@ -1234,14 +1065,12 @@
       "company": "上詮",
       "is_held": false,
       "is_target": false,
-      "score": 47.29226,
+      "score": 46.736705,
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -1254,10 +1083,7 @@
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
           "support": "WEAK",
-          "evidence": [
-            "市場急跌",
-            "月營收加速"
-          ]
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -1268,7 +1094,6 @@
         }
       ],
       "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化",
         "官方負面與正向催化並存，須等待後續營收或財報確認"
       ],
       "conclusion": "HOLD_PENDING_CONFIRMATION",
@@ -1286,14 +1111,12 @@
       "company": "華星光",
       "is_held": false,
       "is_target": false,
-      "score": 57.114583,
+      "score": 55.663965,
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -1302,11 +1125,8 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "STRONG",
-          "evidence": [
-            "市場急跌",
-            "月營收加速"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -1316,14 +1136,12 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "WATCH_POTENTIAL_DISLOCATION",
-      "confidence": "MEDIUM",
-      "rationale": "價格隨市場下跌但月營收加速，可列錯殺候選；尚未形成買進指令",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
+      "confidence": "LOW",
+      "rationale": "沒有足夠新證據推翻原計畫",
       "previous_conclusion": "WATCH_POTENTIAL_DISLOCATION",
-      "judgement_changed": false,
+      "judgement_changed": true,
       "evidence_urls": [
         "https://www.moneydj.com/KMDJ/news/newsviewer.aspx?a=24de7354-e77c-445f-a299-0e12c3a0792f"
       ]
@@ -1333,14 +1151,12 @@
       "company": "光聖",
       "is_held": false,
       "is_target": false,
-      "score": 66.632908,
+      "score": 68.577352,
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -1349,10 +1165,8 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "MEDIUM",
-          "evidence": [
-            "市場急跌但基本面尚未確認"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -1362,14 +1176,12 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
-      "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
+      "rationale": "沒有足夠新證據推翻原計畫",
       "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
-      "judgement_changed": false,
+      "judgement_changed": true,
       "evidence_urls": []
     },
     {
@@ -1377,14 +1189,12 @@
       "company": "波若威",
       "is_held": false,
       "is_target": false,
-      "score": 45.771347,
+      "score": 47.839248,
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -1396,9 +1206,7 @@
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
           "support": "WEAK",
-          "evidence": [
-            "市場急跌但基本面尚未確認"
-          ]
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -1408,9 +1216,7 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
+      "contradictions": [],
       "conclusion": "HOLD_PENDING_CONFIRMATION",
       "confidence": "MEDIUM",
       "rationale": "已有官方負面，但缺第二項獨立確認，不因單一證據賣出",
@@ -1425,14 +1231,12 @@
       "company": "光寶科",
       "is_held": false,
       "is_target": false,
-      "score": 45.40482,
+      "score": 45.466548,
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -1441,29 +1245,24 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "MEDIUM",
-          "evidence": [
-            "市場急跌但基本面尚未確認"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
           "support": "MEDIUM",
           "evidence": [
-            "正向事件2項"
+            "正向事件1項"
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
-      "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
+      "rationale": "沒有足夠新證據推翻原計畫",
       "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
-      "judgement_changed": false,
+      "judgement_changed": true,
       "evidence_urls": [
-        "https://ec.ltn.com.tw/article/breakingnews/5524305",
         "https://www.liteon.com/zh-cn/news/press-center/content/liteon-ocp-2026"
       ]
     },
@@ -1472,14 +1271,12 @@
       "company": "康舒",
       "is_held": false,
       "is_target": false,
-      "score": 47.212695,
+      "score": 49.156991,
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -1488,10 +1285,8 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "MEDIUM",
-          "evidence": [
-            "市場急跌但基本面尚未確認"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -1501,14 +1296,12 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
-      "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
+      "rationale": "沒有足夠新證據推翻原計畫",
       "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
-      "judgement_changed": false,
+      "judgement_changed": true,
       "evidence_urls": []
     },
     {
@@ -1516,14 +1309,12 @@
       "company": "群電",
       "is_held": false,
       "is_target": false,
-      "score": 43.147585,
+      "score": 44.443881,
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -1536,9 +1327,7 @@
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
           "support": "WEAK",
-          "evidence": [
-            "市場急跌但基本面尚未確認"
-          ]
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -1549,7 +1338,6 @@
         }
       ],
       "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化",
         "官方負面與正向催化並存，須等待後續營收或財報確認"
       ],
       "conclusion": "HOLD_PENDING_CONFIRMATION",
@@ -1568,14 +1356,12 @@
       "company": "AES-KY",
       "is_held": false,
       "is_target": false,
-      "score": 63.755634,
+      "score": 64.46551,
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -1584,10 +1370,8 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "MEDIUM",
-          "evidence": [
-            "市場急跌但基本面尚未確認"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -1597,14 +1381,12 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
-      "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
+      "rationale": "沒有足夠新證據推翻原計畫",
       "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
-      "judgement_changed": false,
+      "judgement_changed": true,
       "evidence_urls": []
     },
     {
@@ -1612,14 +1394,12 @@
       "company": "華新科",
       "is_held": false,
       "is_target": false,
-      "score": 48.783252,
+      "score": 47.602777,
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -1628,57 +1408,8 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "STRONG",
-          "evidence": [
-            "市場急跌",
-            "月營收加速"
-          ]
-        },
-        {
-          "id": "POSITIVE_CATALYST_CONFIRMED",
-          "support": "MEDIUM",
-          "evidence": [
-            "正向事件1項"
-          ]
-        }
-      ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "WATCH_POTENTIAL_DISLOCATION",
-      "confidence": "MEDIUM",
-      "rationale": "價格隨市場下跌但月營收加速，可列錯殺候選；尚未形成買進指令",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
-      "judgement_changed": true,
-      "evidence_urls": [
-        "https://www.moneyweekly.com.tw/ArticleData/Info/Article/242076"
-      ]
-    },
-    {
-      "ticker": "3357",
-      "company": "臺慶科",
-      "is_held": false,
-      "is_target": false,
-      "score": 52.80451,
-      "hypotheses": [
-        {
-          "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
-        },
-        {
-          "id": "COMPANY_THESIS_DAMAGE",
           "support": "WEAK",
           "evidence": []
-        },
-        {
-          "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "MEDIUM",
-          "evidence": [
-            "市場急跌但基本面尚未確認"
-          ]
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -1688,29 +1419,25 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
-      "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
-      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
-      "judgement_changed": false,
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "WATCH_POTENTIAL_DISLOCATION",
+      "judgement_changed": true,
       "evidence_urls": []
     },
     {
-      "ticker": "3653",
-      "company": "健策",
+      "ticker": "3357",
+      "company": "臺慶科",
       "is_held": false,
       "is_target": false,
-      "score": 53.811578,
+      "score": 52.835374,
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -1719,10 +1446,46 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "MEDIUM",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "POSITIVE_CATALYST_CONFIRMED",
+          "support": "WEAK",
           "evidence": [
-            "市場急跌但基本面尚未確認"
+            "正向事件0項"
           ]
+        }
+      ],
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
+      "confidence": "LOW",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "judgement_changed": true,
+      "evidence_urls": []
+    },
+    {
+      "ticker": "3653",
+      "company": "健策",
+      "is_held": false,
+      "is_target": false,
+      "score": 50.972072,
+      "hypotheses": [
+        {
+          "id": "SYSTEMIC_SELLING",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "COMPANY_THESIS_DAMAGE",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "PRICE_FUNDAMENTAL_DISLOCATION",
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -1732,14 +1495,12 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
-      "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
+      "rationale": "沒有足夠新證據推翻原計畫",
       "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
-      "judgement_changed": false,
+      "judgement_changed": true,
       "evidence_urls": [
         "https://wealth.firstbank.com.tw/investment-tips/trend-insight/news/news-detail?id=%7B85C157DD-773A-4B2C-AD9F-30D1B09514E6%7D",
         "https://www.jentech.com.tw/zh/vapor-chamber-lid-2"
@@ -1750,14 +1511,12 @@
       "company": "奇鋐",
       "is_held": false,
       "is_target": false,
-      "score": 51.194186,
+      "score": 50.762087,
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -1766,10 +1525,8 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "MEDIUM",
-          "evidence": [
-            "市場急跌但基本面尚未確認"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -1779,14 +1536,12 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
-      "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
+      "rationale": "沒有足夠新證據推翻原計畫",
       "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
-      "judgement_changed": false,
+      "judgement_changed": true,
       "evidence_urls": [
         "https://wealth.firstbank.com.tw/investment-tips/trend-insight/news/news-detail?id=%7B85C157DD-773A-4B2C-AD9F-30D1B09514E6%7D",
         "https://www.esunsec.com.tw/article/post?postid=7d7f19bcff2d4ee1bbb4ab9f092a761c"
@@ -1797,14 +1552,12 @@
       "company": "雙鴻",
       "is_held": false,
       "is_target": false,
-      "score": 58.789709,
+      "score": 58.110697,
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -1813,10 +1566,8 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "MEDIUM",
-          "evidence": [
-            "市場急跌但基本面尚未確認"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -1826,14 +1577,12 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
-      "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
+      "rationale": "沒有足夠新證據推翻原計畫",
       "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
-      "judgement_changed": false,
+      "judgement_changed": true,
       "evidence_urls": [
         "https://www.esunsec.com.tw/article/post?postid=7d7f19bcff2d4ee1bbb4ab9f092a761c"
       ]
@@ -1843,14 +1592,12 @@
       "company": "尼得科超眾",
       "is_held": false,
       "is_target": false,
-      "score": 59.035304,
+      "score": 60.242855,
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -1859,10 +1606,8 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "MEDIUM",
-          "evidence": [
-            "市場急跌但基本面尚未確認"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -1872,14 +1617,12 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
-      "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
+      "rationale": "沒有足夠新證據推翻原計畫",
       "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
-      "judgement_changed": false,
+      "judgement_changed": true,
       "evidence_urls": [
         "https://poorstock.com/earningcall/6230",
         "https://vocus.cc/article/6a92d9cdfd89780001fddd66"
@@ -1890,14 +1633,12 @@
       "company": "泰碩",
       "is_held": false,
       "is_target": false,
-      "score": 38.492873,
+      "score": 39.228071,
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -1910,9 +1651,7 @@
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
           "support": "WEAK",
-          "evidence": [
-            "市場急跌但基本面尚未確認"
-          ]
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -1923,7 +1662,6 @@
         }
       ],
       "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化",
         "官方負面與正向催化並存，須等待後續營收或財報確認"
       ],
       "conclusion": "HOLD_PENDING_CONFIRMATION",
@@ -1941,14 +1679,12 @@
       "company": "廣達",
       "is_held": false,
       "is_target": false,
-      "score": 62.11949,
+      "score": 63.29233,
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -1957,10 +1693,8 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "MEDIUM",
-          "evidence": [
-            "市場急跌但基本面尚未確認"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -1970,14 +1704,12 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
-      "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
+      "rationale": "沒有足夠新證據推翻原計畫",
       "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
-      "judgement_changed": false,
+      "judgement_changed": true,
       "evidence_urls": []
     },
     {
@@ -1985,14 +1717,12 @@
       "company": "緯創",
       "is_held": false,
       "is_target": false,
-      "score": 65.313253,
+      "score": 65.868808,
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -2001,10 +1731,8 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "MEDIUM",
-          "evidence": [
-            "市場急跌但基本面尚未確認"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -2014,14 +1742,12 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
-      "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
+      "rationale": "沒有足夠新證據推翻原計畫",
       "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
-      "judgement_changed": false,
+      "judgement_changed": true,
       "evidence_urls": []
     },
     {
@@ -2029,14 +1755,12 @@
       "company": "緯穎",
       "is_held": false,
       "is_target": false,
-      "score": 61.470241,
+      "score": 60.791229,
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -2048,10 +1772,7 @@
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
           "support": "WEAK",
-          "evidence": [
-            "市場急跌",
-            "月營收加速"
-          ]
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -2061,9 +1782,7 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
+      "contradictions": [],
       "conclusion": "HOLD_PENDING_CONFIRMATION",
       "confidence": "MEDIUM",
       "rationale": "已有官方負面，但缺第二項獨立確認，不因單一證據賣出",
@@ -2078,14 +1797,12 @@
       "company": "鴻海",
       "is_held": false,
       "is_target": false,
-      "score": 53.855948,
+      "score": 55.368293,
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -2094,10 +1811,8 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "MEDIUM",
-          "evidence": [
-            "市場急跌但基本面尚未確認"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -2107,14 +1822,12 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
-      "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
+      "rationale": "沒有足夠新證據推翻原計畫",
       "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
-      "judgement_changed": false,
+      "judgement_changed": true,
       "evidence_urls": []
     },
     {
@@ -2122,14 +1835,12 @@
       "company": "英業達",
       "is_held": false,
       "is_target": false,
-      "score": 59.984388,
+      "score": 62.669573,
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -2141,9 +1852,7 @@
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
           "support": "WEAK",
-          "evidence": [
-            "市場急跌但基本面尚未確認"
-          ]
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -2153,9 +1862,7 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
+      "contradictions": [],
       "conclusion": "HOLD_PENDING_CONFIRMATION",
       "confidence": "MEDIUM",
       "rationale": "已有官方負面，但缺第二項獨立確認，不因單一證據賣出",
@@ -2170,14 +1877,12 @@
       "company": "日月光投控",
       "is_held": false,
       "is_target": false,
-      "score": 46.936759,
+      "score": 42.060215,
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -2186,56 +1891,8 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "MEDIUM",
-          "evidence": [
-            "市場急跌但基本面尚未確認"
-          ]
-        },
-        {
-          "id": "POSITIVE_CATALYST_CONFIRMED",
-          "support": "MEDIUM",
-          "evidence": [
-            "正向事件1項"
-          ]
-        }
-      ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
-      "confidence": "LOW",
-      "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
-      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
-      "judgement_changed": false,
-      "evidence_urls": [
-        "https://www.trendforce.com/news/2026/07/31/news-ase-again-raises-2026-capex-to-record-us10-5b-eyes-2x-leading-edge-advanced-packaging-revenue-by-2027/"
-      ]
-    },
-    {
-      "ticker": "2308",
-      "company": "台達電",
-      "is_held": false,
-      "is_target": true,
-      "score": 55.588883,
-      "hypotheses": [
-        {
-          "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
-        },
-        {
-          "id": "COMPANY_THESIS_DAMAGE",
           "support": "WEAK",
           "evidence": []
-        },
-        {
-          "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "MEDIUM",
-          "evidence": [
-            "市場急跌但基本面尚未確認"
-          ]
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -2245,14 +1902,50 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
-      "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
+      "rationale": "沒有足夠新證據推翻原計畫",
       "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
-      "judgement_changed": false,
+      "judgement_changed": true,
+      "evidence_urls": []
+    },
+    {
+      "ticker": "2308",
+      "company": "台達電",
+      "is_held": false,
+      "is_target": true,
+      "score": 55.403698,
+      "hypotheses": [
+        {
+          "id": "SYSTEMIC_SELLING",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "COMPANY_THESIS_DAMAGE",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "PRICE_FUNDAMENTAL_DISLOCATION",
+          "support": "WEAK",
+          "evidence": []
+        },
+        {
+          "id": "POSITIVE_CATALYST_CONFIRMED",
+          "support": "WEAK",
+          "evidence": [
+            "正向事件0項"
+          ]
+        }
+      ],
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
+      "confidence": "LOW",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "judgement_changed": true,
       "evidence_urls": []
     },
     {
@@ -2260,7 +1953,7 @@
       "company": "瑞昱",
       "is_held": false,
       "is_target": false,
-      "score": 44.269989,
+      "score": 44.609495,
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
@@ -2298,14 +1991,12 @@
       "company": "台勝科",
       "is_held": false,
       "is_target": false,
-      "score": 44.854389,
+      "score": 47.788709,
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -2314,10 +2005,8 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "MEDIUM",
-          "evidence": [
-            "市場急跌但基本面尚未確認"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -2327,14 +2016,12 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
-      "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
+      "rationale": "沒有足夠新證據推翻原計畫",
       "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
-      "judgement_changed": false,
+      "judgement_changed": true,
       "evidence_urls": []
     },
     {
@@ -2342,14 +2029,12 @@
       "company": "合晶",
       "is_held": false,
       "is_target": false,
-      "score": 44.347243,
+      "score": 45.728976,
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -2358,10 +2043,8 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "MEDIUM",
-          "evidence": [
-            "市場急跌但基本面尚未確認"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -2371,14 +2054,12 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
-      "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
+      "rationale": "沒有足夠新證據推翻原計畫",
       "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
-      "judgement_changed": false,
+      "judgement_changed": true,
       "evidence_urls": [
         "https://finmoconf.diveinvest.net/presentation/6a749815a16a75b8138c21b7"
       ]
@@ -2388,14 +2069,12 @@
       "company": "中砂",
       "is_held": false,
       "is_target": false,
-      "score": 52.23456,
+      "score": 47.666659,
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -2404,10 +2083,8 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "MEDIUM",
-          "evidence": [
-            "市場急跌但基本面尚未確認"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -2417,14 +2094,12 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
-      "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
+      "rationale": "沒有足夠新證據推翻原計畫",
       "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
-      "judgement_changed": false,
+      "judgement_changed": true,
       "evidence_urls": []
     },
     {
@@ -2432,14 +2107,12 @@
       "company": "弘塑",
       "is_held": false,
       "is_target": false,
-      "score": 56.156298,
+      "score": 56.063706,
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -2448,11 +2121,8 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "STRONG",
-          "evidence": [
-            "市場急跌",
-            "月營收加速"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -2462,22 +2132,18 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "WATCH_POTENTIAL_DISLOCATION",
-      "confidence": "MEDIUM",
-      "rationale": "價格隨市場下跌但月營收加速，可列錯殺候選；尚未形成買進指令",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
+      "confidence": "LOW",
+      "rationale": "沒有足夠新證據推翻原計畫",
       "previous_conclusion": "WATCH_POTENTIAL_DISLOCATION",
-      "judgement_changed": false,
+      "judgement_changed": true,
       "evidence_urls": []
     }
   ],
   "conclusion_counts": {
-    "WATCH_POTENTIAL_DISLOCATION": 12,
-    "HOLD_NO_COMPANY_CONCLUSION": 33,
-    "HOLD_PENDING_CONFIRMATION": 8,
-    "KEEP_EXISTING_PLAN": 1
+    "KEEP_EXISTING_PLAN": 46,
+    "HOLD_PENDING_CONFIRMATION": 8
   },
   "reasoning_contract": [
     "同時保留互斥假說，不把價格下跌直接等同公司惡化",
