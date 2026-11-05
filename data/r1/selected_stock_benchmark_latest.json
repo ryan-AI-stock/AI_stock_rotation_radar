@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-04",
+  "date": "2026-11-05",
   "status": "READY",
   "baseline_date": "2026-10-28",
   "baseline_actual_value": 7591384.0,
@@ -7,13 +7,13 @@
     "2330",
     "00631L"
   ],
-  "actual_value": 6376299.5,
-  "benchmark_value": 6350168.015184381,
-  "benchmark_close": 30.85,
+  "actual_value": 5910860.0,
+  "benchmark_value": 6012590.201735358,
+  "benchmark_close": 29.21,
   "benchmark_units": 205840.1301518438,
-  "difference_actual_minus_benchmark": 26131.484815618955,
-  "actual_return_pct": -0.16006099809995122,
-  "benchmark_return_pct": -0.16350325379609554,
+  "difference_actual_minus_benchmark": -101730.20173535775,
+  "actual_return_pct": -0.2213725455068536,
+  "benchmark_return_pct": -0.20797180043383945,
   "position_count": 9,
   "applied_flows": [],
   "source_note": "實際持股動態更新；排除台積電與0050正二；同額0050正二允許零股小數"
