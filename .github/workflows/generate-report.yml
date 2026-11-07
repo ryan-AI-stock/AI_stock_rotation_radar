@@ -80,7 +80,10 @@ concurrency:
 jobs:
   generate-report:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    # Full validation currently takes about 8 minutes on the free runner before
+    # report acquisition/rendering starts. Keep source-level bounded timeouts,
+    # but do not let the job-wide timeout kill a healthy publication midway.
+    timeout-minutes: 45
     permissions:
       contents: write
     env:
