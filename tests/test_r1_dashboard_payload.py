@@ -42,7 +42,7 @@ class R1DashboardPayloadTest(unittest.TestCase):
         # old count in the test and fail merely because another core ticker
         # becomes ready.
         self.assertRegex(data_status, r"法人目標價共識 \d+/52")
-        self.assertIn("完整信心層 0/52", data_status)
+        self.assertRegex(data_status, r"完整信心層 \d+/52")
         self.assertIn("信心層缺值不補0、不阻斷核心排名", data_status)
         completeness = next(row for row in dashboard if row[0] == "資料完成度")
         self.assertIn("52/52", completeness[2])
