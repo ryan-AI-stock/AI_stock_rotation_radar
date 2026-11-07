@@ -80,8 +80,19 @@ def build_financial_quality(*, as_of_date: str, theme_path: str | Path,
     raw_rows, gaps = [], []
     for row in snapshot["rows"]:
         ticker = str(row["ticker"]).zfill(4)
-        year = int(str(row["report_year_roc"])) + 1911
-        quarter = int(str(row["quarter"]))
+        period = _parse_report_period(row)
+        if period is None:
+            reason = "missing_or_invalid_report_period"
+            gaps.append({"ticker": ticker, "reason": reason})
+            raw_rows.append({
+                "ticker": ticker, "company": row.get("company", ""),
+                "theme_id": ticker_theme[ticker], "report_year": None,
+                "quarter": None, "source_url": row.get("source_url", ""),
+                "facts": {}, "metrics": {}, "absolute_subscores": {},
+                "status": "DATA_MISSING", "missing_subscores": [reason],
+            })
+            continue
+        year, quarter = period
         cache_key = f"{ticker}:{year}:Q{quarter}"
         facts = cache.get(cache_key)
         if facts is not None and not _cache_facts_usable(facts):
@@ -127,6 +138,18 @@ def build_financial_quality(*, as_of_date: str, theme_path: str | Path,
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     return payload
+
+
+def _parse_report_period(row: dict) -> tuple[int, int] | None:
+    """Return an exact reported period; never guess a missing MOPS period."""
+    try:
+        year_roc = int(str(row.get("report_year_roc")))
+        quarter = int(str(row.get("quarter")))
+    except (TypeError, ValueError):
+        return None
+    if year_roc <= 0 or quarter not in {1, 2, 3, 4}:
+        return None
+    return year_roc + 1911, quarter
 
 
 def _cache_facts_usable(facts: dict) -> bool:

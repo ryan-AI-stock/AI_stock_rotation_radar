@@ -3,11 +3,16 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from r1.financial_quality import _absolute_scores, _cache_facts_usable, parse_financial_facts
+from r1.financial_quality import _absolute_scores, _cache_facts_usable, _parse_report_period, parse_financial_facts
 from r1.theme_leader_inputs import _load_financial_quality
 
 
 class R1FinancialQualityTest(unittest.TestCase):
+    def test_missing_report_period_remains_unknown_instead_of_crashing(self):
+        self.assertIsNone(_parse_report_period({"report_year_roc": None, "quarter": None}))
+        self.assertIsNone(_parse_report_period({"report_year_roc": "115", "quarter": "5"}))
+        self.assertEqual(_parse_report_period({"report_year_roc": "115", "quarter": "3"}), (2026, 3))
+
     def test_all_na_cached_parse_is_not_reused(self):
         self.assertFalse(_cache_facts_usable({"current_revenue": None, "total_assets": None}))
         self.assertTrue(_cache_facts_usable({"current_revenue": 1.0}))
