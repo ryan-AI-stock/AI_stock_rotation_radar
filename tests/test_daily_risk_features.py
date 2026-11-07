@@ -9,7 +9,7 @@ from datetime import date
 from pathlib import Path
 from unittest.mock import patch
 
-from rotation_radar.daily_risk_features import IncompleteSourceError, classify_calendar_day, fetch_taifex, retry_groups_from_manifest, run_date, tdcc_should_append
+from rotation_radar.daily_risk_features import IncompleteSourceError, classify_calendar_day, fetch_price, fetch_taifex, retry_groups_from_manifest, run_date, tdcc_should_append
 
 
 def source(family: str, market: str, target: str, status: str = "accepted") -> dict:
@@ -17,6 +17,19 @@ def source(family: str, market: str, target: str, status: str = "accepted") -> d
 
 
 class DailyRiskFeatureTests(unittest.TestCase):
+    def test_tpex_price_uses_official_otc_fallback_when_primary_is_blocked(self) -> None:
+        fallback = json.dumps({"tables": [{"data": [["5351", "鈺創", "106", "+1", "105", "107", "104", "1234", "130000"]]}]}).encode()
+        blocked = (b"", 0, "ConnectionError", "primary", "2026-11-06T09:00:00+00:00")
+        accepted = (fallback, 200, "", "fallback", "2026-11-06T09:00:01+00:00")
+        with patch("rotation_radar.daily_risk_features.request", side_effect=[blocked, accepted]) as official_request:
+            rows, manifest = fetch_price(date(2026, 11, 6), {"5351"}, markets={"TPEx"})
+
+        self.assertEqual(rows[0]["ticker"], "5351")
+        self.assertEqual(rows[0]["volume"], "1234")
+        self.assertEqual(rows[0]["turnover_value"], "130000")
+        self.assertEqual(manifest[0]["status"], "accepted")
+        self.assertIn("/afterTrading/otc", official_request.call_args_list[1].args[1])
+
     def test_taifex_official_range_csv_parses_foreign_trade_and_oi(self) -> None:
         payload = "\n".join([
             "日期,商品名稱,身份別,多方交易口數,多方交易契約金額(千元),空方交易口數,空方交易契約金額(千元),多空交易口數淨額,多空交易契約金額淨額(千元),多方未平倉口數,多方未平倉契約金額(千元),空方未平倉口數,空方未平倉契約金額(千元),多空未平倉口數淨額,多空未平倉契約金額淨額(千元)",

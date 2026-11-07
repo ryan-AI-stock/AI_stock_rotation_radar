@@ -146,16 +146,40 @@ def parse_tpex_price(raw: bytes, target: date, wanted: set[str], url: str, retri
     return rows
 
 
+def parse_tpex_otc_price(raw: bytes, target: date, wanted: set[str], url: str, retrieved: str) -> list[dict]:
+    """Parse TPEx's official OTC fallback route (one column shorter than dailyQuotes)."""
+    obj = json.loads(raw.decode("utf-8-sig")); table = next((x for x in obj.get("tables", []) if x.get("data")), {}); rows = []
+    for r in table.get("data") or []:
+        if len(r) >= 9 and str(r[0]).strip() in wanted and number(r[2]):
+            rows.append({"date": target.isoformat(), "ticker": str(r[0]).strip(), "name": str(r[1]).strip(), "market": "TPEx", "open": number(r[4]), "high": number(r[5]), "low": number(r[6]), "close": number(r[2]), "volume": integer(r[7]), "turnover_value": integer(r[8]), "price_basis": "official_raw_execution_unadjusted", "source_url": url, "source_hash": sha(raw), "retrieved_at_utc": retrieved})
+    return rows
+
+
 def fetch_price(target: date, wanted: set[str], markets: set[str] | None = None) -> tuple[list[dict], list[dict]]:
     rows, manifest = [], []
     routes = [("TWSE", f"https://www.twse.com.tw/exchangeReport/MI_INDEX?date={target:%Y%m%d}&type=ALLBUT0999&response=json", parse_twse_price), ("TPEx", f"https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date={target:%Y/%m/%d}&response=json", parse_tpex_price)]
     for market, url, parser in routes:
         if markets is not None and market not in markets:
             continue
-        raw, status, error, final_url, retrieved = request("GET", url); accepted = []
+        raw, status, error, final_url, retrieved = request("GET", url, retries=1); accepted = []
         if raw and status == 200:
             try: accepted = parser(raw, target, wanted, final_url, retrieved)
             except Exception as exc: error = f"parse_{type(exc).__name__}"
+        if market == "TPEx" and not accepted:
+            fallback_url = f"https://www.tpex.org.tw/www/zh-tw/afterTrading/otc?date={target:%Y/%m/%d}&type=EW&response=json"
+            fallback = request("GET", fallback_url, retries=1)
+            fallback_raw, fallback_status, fallback_error, fallback_final_url, fallback_retrieved = fallback
+            if fallback_raw and fallback_status == 200:
+                try:
+                    accepted = parse_tpex_otc_price(
+                        fallback_raw, target, wanted, fallback_final_url, fallback_retrieved,
+                    )
+                except Exception as exc:
+                    fallback_error = f"parse_{type(exc).__name__}"
+            if accepted:
+                raw, status, error, final_url, retrieved = fallback_raw, fallback_status, "", fallback_final_url, fallback_retrieved
+            else:
+                error = f"primary={error or status};fallback={fallback_error or fallback_status}"
         state = "accepted" if accepted else "no_rows" if status == 200 and not error else "blocked"
         rows.extend(accepted); manifest.append({"family": "official_raw_execution_ohlcv", "market": market, "requested_date": target.isoformat(), "actual_source_date": target.isoformat() if accepted else "", "status": state, "row_count": len(accepted), "http_status": status, "response_bytes": len(raw), "source_url": final_url, "source_hash": sha(raw) if raw else "", "retrieved_at_utc": retrieved, "error": error})
     return rows, manifest

@@ -148,17 +148,19 @@ def fetch_official_market_session_state(trade_date: date) -> str:
         f"?date={slash_date}&type=EW&response=json",
     )
     row_counts = []
-    try:
-        for url in urls:
+    successful_sources = 0
+    for url in urls:
+        try:
             request = Request(url, headers={"User-Agent": "AI-stock-rotation-radar/1.0"})
             with urlopen(request, timeout=30) as response:
                 payload = json.load(response)
             row_counts.append(sum(len(table.get("data") or []) for table in payload.get("tables") or []))
-    except (json.JSONDecodeError, OSError, TypeError, URLError):
-        return "unknown"
+            successful_sources += 1
+        except (json.JSONDecodeError, OSError, TypeError, URLError):
+            continue
     if any(count > 0 for count in row_counts):
         return "open"
-    return "closed" if len(row_counts) == 2 else "unknown"
+    return "closed" if successful_sources == len(urls) else "unknown"
 
 
 def fetch_official_emergency_closure(trade_date: date) -> bool | None:

@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import unittest
+from urllib.error import URLError
 from contextlib import contextmanager
 from datetime import date, datetime, time
 from io import StringIO
@@ -11,6 +12,7 @@ from rotation_radar.schedule_gate import (
     ScheduleGateRules,
     add_recent_emergency_market_closure,
     evaluate_schedule_gate,
+    fetch_official_market_session_state,
     fetch_twse_calendar,
     is_trading_day,
     load_schedule_rules,
@@ -19,6 +21,13 @@ from rotation_radar.schedule_gate import (
 
 
 class ScheduleGateTests(unittest.TestCase):
+    def test_session_is_open_when_one_official_market_has_rows_and_other_is_unreachable(self) -> None:
+        twse = _response('{"tables":[{"data":[["2330"]]}]}')
+        with patch("rotation_radar.schedule_gate.urlopen", side_effect=[twse, URLError("down")]):
+            state = fetch_official_market_session_state(date(2026, 11, 6))
+
+        self.assertEqual(state, "open")
+
     def test_no_rows_before_emergency_confirmation_is_pending_not_closed(self) -> None:
         now = datetime(2026, 10, 23, 17, 15)
         rules = ScheduleGateRules(run_after=time(17, 15), emergency_confirm_after=time(18, 0))
