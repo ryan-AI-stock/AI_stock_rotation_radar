@@ -83,13 +83,16 @@ def build_financial_quality(*, as_of_date: str, theme_path: str | Path,
         period = _parse_report_period(row)
         if period is None:
             reason = "missing_or_invalid_report_period"
+            missing_fields = list(rubric["subweights"])
             gaps.append({"ticker": ticker, "reason": reason})
             raw_rows.append({
                 "ticker": ticker, "company": row.get("company", ""),
                 "theme_id": ticker_theme[ticker], "report_year": None,
                 "quarter": None, "source_url": row.get("source_url", ""),
-                "facts": {}, "metrics": {}, "absolute_subscores": {},
-                "status": "DATA_MISSING", "missing_subscores": [reason],
+                "facts": {}, "metrics": {},
+                "absolute_subscores": {field: None for field in missing_fields},
+                "status": "DATA_MISSING", "missing_subscores": missing_fields,
+                "data_gap_reason": reason,
             })
             continue
         year, quarter = period

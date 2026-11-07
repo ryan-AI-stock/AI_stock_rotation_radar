@@ -3,7 +3,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from r1.financial_quality import _absolute_scores, _cache_facts_usable, _parse_report_period, parse_financial_facts
+from r1.financial_quality import _absolute_scores, _apply_theme_percentiles, _cache_facts_usable, _parse_report_period, parse_financial_facts
 from r1.theme_leader_inputs import _load_financial_quality
 
 
@@ -12,6 +12,16 @@ class R1FinancialQualityTest(unittest.TestCase):
         self.assertIsNone(_parse_report_period({"report_year_roc": None, "quarter": None}))
         self.assertIsNone(_parse_report_period({"report_year_roc": "115", "quarter": "5"}))
         self.assertEqual(_parse_report_period({"report_year_roc": "115", "quarter": "3"}), (2026, 3))
+
+    def test_unknown_subscores_survive_theme_percentile_without_zero_fill(self):
+        fields = {"revenue_growth_quality": 1.0}
+        rows = [{"theme_id": "memory", "status": "DATA_MISSING",
+                 "absolute_subscores": {"revenue_growth_quality": None}}]
+        rubric = {"subweights": fields, "absolute_weight": 0.6,
+                  "theme_percentile_weight": 0.4}
+        _apply_theme_percentiles(rows, rubric)
+        self.assertIsNone(rows[0]["combined_subscores"]["revenue_growth_quality"])
+        self.assertIsNone(rows[0]["financial_earnings_quality"])
 
     def test_all_na_cached_parse_is_not_reused(self):
         self.assertFalse(_cache_facts_usable({"current_revenue": None, "total_assets": None}))
