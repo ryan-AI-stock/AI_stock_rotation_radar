@@ -1,58 +1,58 @@
 {
   "completed": {
     "2330": {
-      "retrieved_at": "2026-10-30",
+      "retrieved_at": "2026-11-07",
       "row_count": 0,
       "status": "SOURCE_GAP",
       "error": "ValueError:identifiable_analyst_target_rows_missing"
     },
     "2327": {
-      "retrieved_at": "2026-10-30",
+      "retrieved_at": "2026-11-07",
       "row_count": 0,
       "status": "SOURCE_GAP",
       "error": "ValueError:identifiable_analyst_target_rows_missing"
     },
     "2344": {
-      "retrieved_at": "2026-10-30",
-      "source_url": "https://hk.investing.com/equities/winbond-consensus-estimates",
-      "row_count": 5,
-      "status": "READY"
-    },
-    "2376": {
-      "retrieved_at": "2026-10-30",
+      "retrieved_at": "2026-11-07",
       "row_count": 0,
       "status": "SOURCE_GAP",
-      "error": "ValueError:identifiable_analyst_target_rows_missing"
+      "error": "HTTPError:HTTP Error 403: "
+    },
+    "2376": {
+      "retrieved_at": "2026-11-07",
+      "row_count": 0,
+      "status": "SOURCE_GAP",
+      "error": "HTTPError:HTTP Error 403: "
     },
     "2454": {
-      "retrieved_at": "2026-10-30",
+      "retrieved_at": "2026-11-07",
       "row_count": 0,
       "status": "REUSED_READY",
       "note": "three or more identifiable institutions remain fresh; request capacity reserved for source gaps"
     },
     "3037": {
-      "retrieved_at": "2026-10-30",
+      "retrieved_at": "2026-11-07",
       "source_url": "https://hk.investing.com/equities/unimicron-tech-consensus-estimates",
       "row_count": 5,
       "status": "READY"
     },
     "6488": {
-      "retrieved_at": "2026-10-30",
+      "retrieved_at": "2026-11-07",
       "row_count": 0,
       "status": "SOURCE_GAP",
-      "error": "ValueError:identifiable_analyst_target_rows_missing"
+      "error": "HTTPError:HTTP Error 403: "
     },
     "3661": {
-      "retrieved_at": "2026-10-30",
+      "retrieved_at": "2026-11-07",
       "row_count": 0,
       "status": "SOURCE_GAP",
       "error": "HTTPError:HTTP Error 403: "
     },
     "3443": {
-      "retrieved_at": "2026-10-30",
+      "retrieved_at": "2026-11-07",
       "row_count": 0,
-      "status": "REUSED_READY",
-      "note": "three or more identifiable institutions remain fresh; request capacity reserved for source gaps"
+      "status": "SOURCE_GAP",
+      "error": "HTTPError:HTTP Error 403: "
     },
     "3035": {
       "retrieved_at": "2026-10-30",
@@ -326,50 +326,25 @@
     }
   },
   "last_summary": {
-    "retrieved_at": "2026-10-30",
+    "retrieved_at": "2026-11-07",
     "requested_ticker_count": 54,
-    "ready_ticker_count": 22,
-    "reused_ready_ticker_count": 7,
-    "source_gap_ticker_count": 32,
-    "new_evidence_row_count": 70,
+    "ready_ticker_count": 2,
+    "reused_ready_ticker_count": 1,
+    "source_gap_ticker_count": 7,
+    "new_evidence_row_count": 5,
     "total_evidence_row_count": 131,
-    "attempted_ticker_count": 47,
-    "circuit_breaker_tripped": false,
-    "next_index": 0,
+    "attempted_ticker_count": 8,
+    "circuit_breaker_tripped": true,
+    "next_index": 9,
     "failures": {
-      "3363": "ValueError:identifiable_analyst_target_rows_missing",
-      "4979": "ValueError:identifiable_analyst_target_rows_missing",
-      "6442": "ValueError:identifiable_analyst_target_rows_missing",
-      "3163": "ValueError:identifiable_analyst_target_rows_missing",
-      "6282": "ValueError:identifiable_analyst_target_rows_missing",
-      "6412": "ValueError:identifiable_analyst_target_rows_missing",
-      "2492": "ValueError:identifiable_analyst_target_rows_missing",
-      "3357": "ValueError:identifiable_analyst_target_rows_missing",
-      "6230": "ValueError:identifiable_analyst_target_rows_missing",
-      "3338": "ValueError:identifiable_analyst_target_rows_missing",
-      "3231": "ValueError:identifiable_analyst_target_rows_missing",
-      "6669": "HTTPError:HTTP Error 403: ",
-      "2317": "ValueError:identifiable_analyst_target_rows_missing",
-      "3711": "ValueError:identifiable_analyst_target_rows_missing",
-      "3532": "ValueError:identifiable_analyst_target_rows_missing",
-      "6182": "ValueError:identifiable_analyst_target_rows_missing",
-      "1560": "ValueError:identifiable_analyst_target_rows_missing",
-      "3131": "ValueError:identifiable_analyst_target_rows_missing",
       "2330": "ValueError:identifiable_analyst_target_rows_missing",
       "2327": "ValueError:identifiable_analyst_target_rows_missing",
-      "2376": "ValueError:identifiable_analyst_target_rows_missing",
-      "6488": "ValueError:identifiable_analyst_target_rows_missing",
+      "2344": "HTTPError:HTTP Error 403: ",
+      "2376": "HTTPError:HTTP Error 403: ",
+      "6488": "HTTPError:HTTP Error 403: ",
       "3661": "HTTPError:HTTP Error 403: ",
-      "3035": "ValueError:identifiable_analyst_target_rows_missing",
-      "6223": "ValueError:identifiable_analyst_target_rows_missing",
-      "3583": "ValueError:identifiable_analyst_target_rows_missing",
-      "2408": "ValueError:identifiable_analyst_target_rows_missing",
-      "2337": "ValueError:identifiable_analyst_target_rows_missing",
-      "8299": "ValueError:identifiable_analyst_target_rows_missing",
-      "3260": "ValueError:identifiable_analyst_target_rows_missing",
-      "2383": "ValueError:identifiable_analyst_target_rows_missing",
-      "2368": "ValueError:identifiable_analyst_target_rows_missing"
+      "3443": "HTTPError:HTTP Error 403: "
     }
   },
-  "next_index": 0
+  "next_index": 9
 }

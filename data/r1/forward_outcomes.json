@@ -1,6 +1,6 @@
 {
   "model": "R1",
-  "as_of_date": "2026-11-05",
+  "as_of_date": "2026-11-06",
   "horizon_semantics": "exact Nth later Taiwan trading observation, close-to-close, research only",
   "rows": [
     {
@@ -7048,10 +7048,10 @@
       "ticker": "2330",
       "horizon_td": 5,
       "signal_close": 2370.0,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-06",
+      "exit_close": 2135.0,
+      "forward_return": -0.09915611814345993,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-30",
@@ -7088,10 +7088,10 @@
       "ticker": "2327",
       "horizon_td": 5,
       "signal_close": 502.0,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-06",
+      "exit_close": 374.0,
+      "forward_return": -0.2549800796812749,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-30",
@@ -7128,10 +7128,10 @@
       "ticker": "2344",
       "horizon_td": 5,
       "signal_close": 164.5,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-06",
+      "exit_close": 120.5,
+      "forward_return": -0.26747720364741645,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-30",
@@ -7168,10 +7168,10 @@
       "ticker": "2376",
       "horizon_td": 5,
       "signal_close": 336.0,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-06",
+      "exit_close": 298.0,
+      "forward_return": -0.11309523809523814,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-30",
@@ -7208,10 +7208,10 @@
       "ticker": "2454",
       "horizon_td": 5,
       "signal_close": 3915.0,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-06",
+      "exit_close": 3390.0,
+      "forward_return": -0.13409961685823757,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-30",
@@ -7248,10 +7248,10 @@
       "ticker": "3037",
       "horizon_td": 5,
       "signal_close": 989.0,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-06",
+      "exit_close": 727.0,
+      "forward_return": -0.2649140546006067,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-30",
@@ -7288,10 +7288,10 @@
       "ticker": "6488",
       "horizon_td": 5,
       "signal_close": 756.0,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-06",
+      "exit_close": 512.0,
+      "forward_return": -0.3227513227513228,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-30",
@@ -7328,10 +7328,10 @@
       "ticker": "3661",
       "horizon_td": 5,
       "signal_close": 3425.0,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-06",
+      "exit_close": 2830.0,
+      "forward_return": -0.17372262773722624,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-30",
@@ -7368,10 +7368,10 @@
       "ticker": "3443",
       "horizon_td": 5,
       "signal_close": 7635.0,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-06",
+      "exit_close": 6205.0,
+      "forward_return": -0.1872953503601834,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-30",
@@ -7408,10 +7408,10 @@
       "ticker": "3035",
       "horizon_td": 5,
       "signal_close": 213.5,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-06",
+      "exit_close": 160.5,
+      "forward_return": -0.2482435597189696,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-30",
@@ -7448,10 +7448,10 @@
       "ticker": "2449",
       "horizon_td": 5,
       "signal_close": 253.5,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-06",
+      "exit_close": 206.0,
+      "forward_return": -0.18737672583826426,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-30",
@@ -7488,10 +7488,10 @@
       "ticker": "6223",
       "horizon_td": 5,
       "signal_close": 4610.0,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-06",
+      "exit_close": 3445.0,
+      "forward_return": -0.25271149674620386,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-30",
@@ -7528,10 +7528,10 @@
       "ticker": "6187",
       "horizon_td": 5,
       "signal_close": 1190.0,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-06",
+      "exit_close": 864.0,
+      "forward_return": -0.2739495798319328,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-30",
@@ -7568,10 +7568,10 @@
       "ticker": "3583",
       "horizon_td": 5,
       "signal_close": 564.0,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-06",
+      "exit_close": 425.0,
+      "forward_return": -0.2464539007092199,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-30",
@@ -7608,10 +7608,10 @@
       "ticker": "2408",
       "horizon_td": 5,
       "signal_close": 454.5,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-06",
+      "exit_close": 343.5,
+      "forward_return": -0.24422442244224418,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-30",
@@ -7648,10 +7648,10 @@
       "ticker": "3081",
       "horizon_td": 5,
       "signal_close": 2370.0,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-06",
+      "exit_close": 1750.0,
+      "forward_return": -0.2616033755274262,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-30",
@@ -7688,10 +7688,10 @@
       "ticker": "2303",
       "horizon_td": 5,
       "signal_close": 111.5,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-06",
+      "exit_close": 92.0,
+      "forward_return": -0.17488789237668156,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-30",
@@ -7728,10 +7728,10 @@
       "ticker": "3008",
       "horizon_td": 5,
       "signal_close": 5430.0,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-06",
+      "exit_close": 4480.0,
+      "forward_return": -0.17495395948434622,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-30",
@@ -7768,10 +7768,10 @@
       "ticker": "3406",
       "horizon_td": 5,
       "signal_close": 1085.0,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-06",
+      "exit_close": 825.0,
+      "forward_return": -0.23963133640552992,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-30",
@@ -7808,10 +7808,10 @@
       "ticker": "2337",
       "horizon_td": 5,
       "signal_close": 95.4,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-06",
+      "exit_close": 75.8,
+      "forward_return": -0.20545073375262057,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-30",
@@ -7848,10 +7848,10 @@
       "ticker": "8299",
       "horizon_td": 5,
       "signal_close": 1930.0,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-06",
+      "exit_close": 1500.0,
+      "forward_return": -0.2227979274611399,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-30",
@@ -7888,10 +7888,10 @@
       "ticker": "3260",
       "horizon_td": 5,
       "signal_close": 346.5,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-06",
+      "exit_close": 299.5,
+      "forward_return": -0.13564213564213567,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-30",
@@ -7928,10 +7928,10 @@
       "ticker": "2383",
       "horizon_td": 5,
       "signal_close": 4675.0,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-06",
+      "exit_close": 3820.0,
+      "forward_return": -0.18288770053475933,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-30",
@@ -7968,10 +7968,10 @@
       "ticker": "6274",
       "horizon_td": 5,
       "signal_close": 1265.0,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-06",
+      "exit_close": 906.0,
+      "forward_return": -0.2837944664031621,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-30",
@@ -8008,10 +8008,10 @@
       "ticker": "3189",
       "horizon_td": 5,
       "signal_close": 932.0,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-06",
+      "exit_close": 671.0,
+      "forward_return": -0.2800429184549357,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-30",
@@ -8048,10 +8048,10 @@
       "ticker": "2368",
       "horizon_td": 5,
       "signal_close": 1020.0,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-06",
+      "exit_close": 813.0,
+      "forward_return": -0.20294117647058818,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-30",
@@ -8088,10 +8088,10 @@
       "ticker": "2345",
       "horizon_td": 5,
       "signal_close": 1615.0,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-06",
+      "exit_close": 1280.0,
+      "forward_return": -0.2074303405572755,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-30",
@@ -8128,10 +8128,10 @@
       "ticker": "3363",
       "horizon_td": 5,
       "signal_close": 474.5,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-06",
+      "exit_close": 360.5,
+      "forward_return": -0.24025289778714431,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-30",
@@ -8168,10 +8168,10 @@
       "ticker": "4979",
       "horizon_td": 5,
       "signal_close": 447.0,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-06",
+      "exit_close": 317.0,
+      "forward_return": -0.29082774049217,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-30",
@@ -8208,10 +8208,10 @@
       "ticker": "6442",
       "horizon_td": 5,
       "signal_close": 1230.0,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-06",
+      "exit_close": 1005.0,
+      "forward_return": -0.18292682926829273,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-30",
@@ -8248,10 +8248,10 @@
       "ticker": "3163",
       "horizon_td": 5,
       "signal_close": 509.0,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-06",
+      "exit_close": 395.0,
+      "forward_return": -0.2239685658153242,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-30",
@@ -8288,10 +8288,10 @@
       "ticker": "2301",
       "horizon_td": 5,
       "signal_close": 240.5,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-06",
+      "exit_close": 198.0,
+      "forward_return": -0.17671517671517667,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-30",
@@ -8328,10 +8328,10 @@
       "ticker": "6282",
       "horizon_td": 5,
       "signal_close": 39.0,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-06",
+      "exit_close": 32.35,
+      "forward_return": -0.17051282051282046,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-30",
@@ -8368,10 +8368,10 @@
       "ticker": "6412",
       "horizon_td": 5,
       "signal_close": 67.3,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-06",
+      "exit_close": 56.1,
+      "forward_return": -0.16641901931649328,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-30",
@@ -8408,10 +8408,10 @@
       "ticker": "6781",
       "horizon_td": 5,
       "signal_close": 880.0,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-06",
+      "exit_close": 705.0,
+      "forward_return": -0.19886363636363635,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-30",
@@ -8448,10 +8448,10 @@
       "ticker": "2492",
       "horizon_td": 5,
       "signal_close": 381.0,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-06",
+      "exit_close": 258.5,
+      "forward_return": -0.32152230971128604,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-30",
@@ -8488,10 +8488,10 @@
       "ticker": "3357",
       "horizon_td": 5,
       "signal_close": 191.0,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-06",
+      "exit_close": 155.0,
+      "forward_return": -0.18848167539267013,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-30",
@@ -8528,10 +8528,10 @@
       "ticker": "3653",
       "horizon_td": 5,
       "signal_close": 6315.0,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-06",
+      "exit_close": 5225.0,
+      "forward_return": -0.17260490894695169,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-30",
@@ -8568,10 +8568,10 @@
       "ticker": "3017",
       "horizon_td": 5,
       "signal_close": 3095.0,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-06",
+      "exit_close": 2310.0,
+      "forward_return": -0.2536348949919225,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-30",
@@ -8608,10 +8608,10 @@
       "ticker": "3324",
       "horizon_td": 5,
       "signal_close": 1330.0,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-06",
+      "exit_close": 1055.0,
+      "forward_return": -0.20676691729323304,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-30",
@@ -8648,10 +8648,10 @@
       "ticker": "6230",
       "horizon_td": 5,
       "signal_close": 103.5,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-06",
+      "exit_close": 91.4,
+      "forward_return": -0.11690821256038642,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-30",
@@ -8688,10 +8688,10 @@
       "ticker": "3338",
       "horizon_td": 5,
       "signal_close": 61.0,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-06",
+      "exit_close": 52.4,
+      "forward_return": -0.14098360655737707,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-30",
@@ -8728,10 +8728,10 @@
       "ticker": "2382",
       "horizon_td": 5,
       "signal_close": 318.0,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-06",
+      "exit_close": 290.5,
+      "forward_return": -0.08647798742138368,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-30",
@@ -8768,10 +8768,10 @@
       "ticker": "3231",
       "horizon_td": 5,
       "signal_close": 183.5,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-06",
+      "exit_close": 160.0,
+      "forward_return": -0.12806539509536785,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-30",
@@ -8808,10 +8808,10 @@
       "ticker": "6669",
       "horizon_td": 5,
       "signal_close": 1810.0,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-06",
+      "exit_close": 1555.0,
+      "forward_return": -0.14088397790055252,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-30",
@@ -8848,10 +8848,10 @@
       "ticker": "2317",
       "horizon_td": 5,
       "signal_close": 245.5,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-06",
+      "exit_close": 224.5,
+      "forward_return": -0.08553971486761713,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-30",
@@ -8888,10 +8888,10 @@
       "ticker": "2356",
       "horizon_td": 5,
       "signal_close": 59.5,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-06",
+      "exit_close": 52.6,
+      "forward_return": -0.11596638655462177,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-30",
@@ -8928,10 +8928,10 @@
       "ticker": "3711",
       "horizon_td": 5,
       "signal_close": 668.0,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-06",
+      "exit_close": 527.0,
+      "forward_return": -0.21107784431137722,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-30",
@@ -8968,10 +8968,10 @@
       "ticker": "2308",
       "horizon_td": 5,
       "signal_close": 1335.0,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-06",
+      "exit_close": 1055.0,
+      "forward_return": -0.20973782771535576,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-30",
@@ -9008,10 +9008,10 @@
       "ticker": "2379",
       "horizon_td": 5,
       "signal_close": 803.0,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-06",
+      "exit_close": 708.0,
+      "forward_return": -0.11830635118306354,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-30",
@@ -9048,10 +9048,10 @@
       "ticker": "3532",
       "horizon_td": 5,
       "signal_close": 355.5,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-06",
+      "exit_close": 256.5,
+      "forward_return": -0.2784810126582279,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-30",
@@ -9088,10 +9088,10 @@
       "ticker": "6182",
       "horizon_td": 5,
       "signal_close": 93.9,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-06",
+      "exit_close": 69.0,
+      "forward_return": -0.26517571884984026,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-30",
@@ -9128,10 +9128,10 @@
       "ticker": "1560",
       "horizon_td": 5,
       "signal_close": 867.0,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-06",
+      "exit_close": 669.0,
+      "forward_return": -0.22837370242214527,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-30",
@@ -9168,10 +9168,10 @@
       "ticker": "3131",
       "horizon_td": 5,
       "signal_close": 1880.0,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-06",
+      "exit_close": 1440.0,
+      "forward_return": -0.23404255319148937,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-30",
@@ -9198,14 +9198,2174 @@
       "ticker": "3131",
       "horizon_td": 130,
       "signal_close": 1880.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "2330",
+      "horizon_td": 5,
+      "signal_close": 2135.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "2330",
+      "horizon_td": 20,
+      "signal_close": 2135.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "2330",
+      "horizon_td": 60,
+      "signal_close": 2135.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "2330",
+      "horizon_td": 130,
+      "signal_close": 2135.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "2327",
+      "horizon_td": 5,
+      "signal_close": 374.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "2327",
+      "horizon_td": 20,
+      "signal_close": 374.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "2327",
+      "horizon_td": 60,
+      "signal_close": 374.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "2327",
+      "horizon_td": 130,
+      "signal_close": 374.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "2344",
+      "horizon_td": 5,
+      "signal_close": 120.5,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "2344",
+      "horizon_td": 20,
+      "signal_close": 120.5,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "2344",
+      "horizon_td": 60,
+      "signal_close": 120.5,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "2344",
+      "horizon_td": 130,
+      "signal_close": 120.5,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "2376",
+      "horizon_td": 5,
+      "signal_close": 298.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "2376",
+      "horizon_td": 20,
+      "signal_close": 298.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "2376",
+      "horizon_td": 60,
+      "signal_close": 298.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "2376",
+      "horizon_td": 130,
+      "signal_close": 298.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "2454",
+      "horizon_td": 5,
+      "signal_close": 3390.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "2454",
+      "horizon_td": 20,
+      "signal_close": 3390.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "2454",
+      "horizon_td": 60,
+      "signal_close": 3390.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "2454",
+      "horizon_td": 130,
+      "signal_close": 3390.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "3037",
+      "horizon_td": 5,
+      "signal_close": 727.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "3037",
+      "horizon_td": 20,
+      "signal_close": 727.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "3037",
+      "horizon_td": 60,
+      "signal_close": 727.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "3037",
+      "horizon_td": 130,
+      "signal_close": 727.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "6488",
+      "horizon_td": 5,
+      "signal_close": 512.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "6488",
+      "horizon_td": 20,
+      "signal_close": 512.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "6488",
+      "horizon_td": 60,
+      "signal_close": 512.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "6488",
+      "horizon_td": 130,
+      "signal_close": 512.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "3661",
+      "horizon_td": 5,
+      "signal_close": 2830.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "3661",
+      "horizon_td": 20,
+      "signal_close": 2830.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "3661",
+      "horizon_td": 60,
+      "signal_close": 2830.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "3661",
+      "horizon_td": 130,
+      "signal_close": 2830.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "3443",
+      "horizon_td": 5,
+      "signal_close": 6205.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "3443",
+      "horizon_td": 20,
+      "signal_close": 6205.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "3443",
+      "horizon_td": 60,
+      "signal_close": 6205.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "3443",
+      "horizon_td": 130,
+      "signal_close": 6205.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "3035",
+      "horizon_td": 5,
+      "signal_close": 160.5,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "3035",
+      "horizon_td": 20,
+      "signal_close": 160.5,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "3035",
+      "horizon_td": 60,
+      "signal_close": 160.5,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "3035",
+      "horizon_td": 130,
+      "signal_close": 160.5,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "2449",
+      "horizon_td": 5,
+      "signal_close": 206.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "2449",
+      "horizon_td": 20,
+      "signal_close": 206.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "2449",
+      "horizon_td": 60,
+      "signal_close": 206.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "2449",
+      "horizon_td": 130,
+      "signal_close": 206.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "6223",
+      "horizon_td": 5,
+      "signal_close": 3445.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "6223",
+      "horizon_td": 20,
+      "signal_close": 3445.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "6223",
+      "horizon_td": 60,
+      "signal_close": 3445.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "6223",
+      "horizon_td": 130,
+      "signal_close": 3445.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "6187",
+      "horizon_td": 5,
+      "signal_close": 864.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "6187",
+      "horizon_td": 20,
+      "signal_close": 864.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "6187",
+      "horizon_td": 60,
+      "signal_close": 864.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "6187",
+      "horizon_td": 130,
+      "signal_close": 864.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "3583",
+      "horizon_td": 5,
+      "signal_close": 425.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "3583",
+      "horizon_td": 20,
+      "signal_close": 425.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "3583",
+      "horizon_td": 60,
+      "signal_close": 425.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "3583",
+      "horizon_td": 130,
+      "signal_close": 425.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "2408",
+      "horizon_td": 5,
+      "signal_close": 343.5,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "2408",
+      "horizon_td": 20,
+      "signal_close": 343.5,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "2408",
+      "horizon_td": 60,
+      "signal_close": 343.5,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "2408",
+      "horizon_td": 130,
+      "signal_close": 343.5,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "3081",
+      "horizon_td": 5,
+      "signal_close": 1750.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "3081",
+      "horizon_td": 20,
+      "signal_close": 1750.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "3081",
+      "horizon_td": 60,
+      "signal_close": 1750.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "3081",
+      "horizon_td": 130,
+      "signal_close": 1750.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "2303",
+      "horizon_td": 5,
+      "signal_close": 92.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "2303",
+      "horizon_td": 20,
+      "signal_close": 92.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "2303",
+      "horizon_td": 60,
+      "signal_close": 92.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "2303",
+      "horizon_td": 130,
+      "signal_close": 92.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "3008",
+      "horizon_td": 5,
+      "signal_close": 4480.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "3008",
+      "horizon_td": 20,
+      "signal_close": 4480.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "3008",
+      "horizon_td": 60,
+      "signal_close": 4480.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "3008",
+      "horizon_td": 130,
+      "signal_close": 4480.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "3406",
+      "horizon_td": 5,
+      "signal_close": 825.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "3406",
+      "horizon_td": 20,
+      "signal_close": 825.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "3406",
+      "horizon_td": 60,
+      "signal_close": 825.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "3406",
+      "horizon_td": 130,
+      "signal_close": 825.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "2337",
+      "horizon_td": 5,
+      "signal_close": 75.8,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "2337",
+      "horizon_td": 20,
+      "signal_close": 75.8,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "2337",
+      "horizon_td": 60,
+      "signal_close": 75.8,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "2337",
+      "horizon_td": 130,
+      "signal_close": 75.8,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "8299",
+      "horizon_td": 5,
+      "signal_close": 1500.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "8299",
+      "horizon_td": 20,
+      "signal_close": 1500.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "8299",
+      "horizon_td": 60,
+      "signal_close": 1500.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "8299",
+      "horizon_td": 130,
+      "signal_close": 1500.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "3260",
+      "horizon_td": 5,
+      "signal_close": 299.5,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "3260",
+      "horizon_td": 20,
+      "signal_close": 299.5,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "3260",
+      "horizon_td": 60,
+      "signal_close": 299.5,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "3260",
+      "horizon_td": 130,
+      "signal_close": 299.5,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "2383",
+      "horizon_td": 5,
+      "signal_close": 3820.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "2383",
+      "horizon_td": 20,
+      "signal_close": 3820.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "2383",
+      "horizon_td": 60,
+      "signal_close": 3820.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "2383",
+      "horizon_td": 130,
+      "signal_close": 3820.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "6274",
+      "horizon_td": 5,
+      "signal_close": 906.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "6274",
+      "horizon_td": 20,
+      "signal_close": 906.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "6274",
+      "horizon_td": 60,
+      "signal_close": 906.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "6274",
+      "horizon_td": 130,
+      "signal_close": 906.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "3189",
+      "horizon_td": 5,
+      "signal_close": 671.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "3189",
+      "horizon_td": 20,
+      "signal_close": 671.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "3189",
+      "horizon_td": 60,
+      "signal_close": 671.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "3189",
+      "horizon_td": 130,
+      "signal_close": 671.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "2368",
+      "horizon_td": 5,
+      "signal_close": 813.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "2368",
+      "horizon_td": 20,
+      "signal_close": 813.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "2368",
+      "horizon_td": 60,
+      "signal_close": 813.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "2368",
+      "horizon_td": 130,
+      "signal_close": 813.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "2345",
+      "horizon_td": 5,
+      "signal_close": 1280.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "2345",
+      "horizon_td": 20,
+      "signal_close": 1280.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "2345",
+      "horizon_td": 60,
+      "signal_close": 1280.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "2345",
+      "horizon_td": 130,
+      "signal_close": 1280.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "3363",
+      "horizon_td": 5,
+      "signal_close": 360.5,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "3363",
+      "horizon_td": 20,
+      "signal_close": 360.5,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "3363",
+      "horizon_td": 60,
+      "signal_close": 360.5,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "3363",
+      "horizon_td": 130,
+      "signal_close": 360.5,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "4979",
+      "horizon_td": 5,
+      "signal_close": 317.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "4979",
+      "horizon_td": 20,
+      "signal_close": 317.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "4979",
+      "horizon_td": 60,
+      "signal_close": 317.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "4979",
+      "horizon_td": 130,
+      "signal_close": 317.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "6442",
+      "horizon_td": 5,
+      "signal_close": 1005.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "6442",
+      "horizon_td": 20,
+      "signal_close": 1005.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "6442",
+      "horizon_td": 60,
+      "signal_close": 1005.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "6442",
+      "horizon_td": 130,
+      "signal_close": 1005.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "3163",
+      "horizon_td": 5,
+      "signal_close": 395.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "3163",
+      "horizon_td": 20,
+      "signal_close": 395.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "3163",
+      "horizon_td": 60,
+      "signal_close": 395.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "3163",
+      "horizon_td": 130,
+      "signal_close": 395.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "2301",
+      "horizon_td": 5,
+      "signal_close": 198.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "2301",
+      "horizon_td": 20,
+      "signal_close": 198.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "2301",
+      "horizon_td": 60,
+      "signal_close": 198.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "2301",
+      "horizon_td": 130,
+      "signal_close": 198.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "6282",
+      "horizon_td": 5,
+      "signal_close": 32.35,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "6282",
+      "horizon_td": 20,
+      "signal_close": 32.35,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "6282",
+      "horizon_td": 60,
+      "signal_close": 32.35,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "6282",
+      "horizon_td": 130,
+      "signal_close": 32.35,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "6412",
+      "horizon_td": 5,
+      "signal_close": 56.1,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "6412",
+      "horizon_td": 20,
+      "signal_close": 56.1,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "6412",
+      "horizon_td": 60,
+      "signal_close": 56.1,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "6412",
+      "horizon_td": 130,
+      "signal_close": 56.1,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "6781",
+      "horizon_td": 5,
+      "signal_close": 705.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "6781",
+      "horizon_td": 20,
+      "signal_close": 705.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "6781",
+      "horizon_td": 60,
+      "signal_close": 705.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "6781",
+      "horizon_td": 130,
+      "signal_close": 705.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "2492",
+      "horizon_td": 5,
+      "signal_close": 258.5,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "2492",
+      "horizon_td": 20,
+      "signal_close": 258.5,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "2492",
+      "horizon_td": 60,
+      "signal_close": 258.5,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "2492",
+      "horizon_td": 130,
+      "signal_close": 258.5,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "3357",
+      "horizon_td": 5,
+      "signal_close": 155.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "3357",
+      "horizon_td": 20,
+      "signal_close": 155.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "3357",
+      "horizon_td": 60,
+      "signal_close": 155.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "3357",
+      "horizon_td": 130,
+      "signal_close": 155.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "3653",
+      "horizon_td": 5,
+      "signal_close": 5225.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "3653",
+      "horizon_td": 20,
+      "signal_close": 5225.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "3653",
+      "horizon_td": 60,
+      "signal_close": 5225.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "3653",
+      "horizon_td": 130,
+      "signal_close": 5225.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "3017",
+      "horizon_td": 5,
+      "signal_close": 2310.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "3017",
+      "horizon_td": 20,
+      "signal_close": 2310.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "3017",
+      "horizon_td": 60,
+      "signal_close": 2310.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "3017",
+      "horizon_td": 130,
+      "signal_close": 2310.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "3324",
+      "horizon_td": 5,
+      "signal_close": 1055.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "3324",
+      "horizon_td": 20,
+      "signal_close": 1055.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "3324",
+      "horizon_td": 60,
+      "signal_close": 1055.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "3324",
+      "horizon_td": 130,
+      "signal_close": 1055.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "6230",
+      "horizon_td": 5,
+      "signal_close": 91.4,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "6230",
+      "horizon_td": 20,
+      "signal_close": 91.4,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "6230",
+      "horizon_td": 60,
+      "signal_close": 91.4,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "6230",
+      "horizon_td": 130,
+      "signal_close": 91.4,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "3338",
+      "horizon_td": 5,
+      "signal_close": 52.4,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "3338",
+      "horizon_td": 20,
+      "signal_close": 52.4,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "3338",
+      "horizon_td": 60,
+      "signal_close": 52.4,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "3338",
+      "horizon_td": 130,
+      "signal_close": 52.4,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "2382",
+      "horizon_td": 5,
+      "signal_close": 290.5,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "2382",
+      "horizon_td": 20,
+      "signal_close": 290.5,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "2382",
+      "horizon_td": 60,
+      "signal_close": 290.5,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "2382",
+      "horizon_td": 130,
+      "signal_close": 290.5,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "3231",
+      "horizon_td": 5,
+      "signal_close": 160.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "3231",
+      "horizon_td": 20,
+      "signal_close": 160.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "3231",
+      "horizon_td": 60,
+      "signal_close": 160.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "3231",
+      "horizon_td": 130,
+      "signal_close": 160.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "6669",
+      "horizon_td": 5,
+      "signal_close": 1555.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "6669",
+      "horizon_td": 20,
+      "signal_close": 1555.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "6669",
+      "horizon_td": 60,
+      "signal_close": 1555.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "6669",
+      "horizon_td": 130,
+      "signal_close": 1555.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "2317",
+      "horizon_td": 5,
+      "signal_close": 224.5,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "2317",
+      "horizon_td": 20,
+      "signal_close": 224.5,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "2317",
+      "horizon_td": 60,
+      "signal_close": 224.5,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "2317",
+      "horizon_td": 130,
+      "signal_close": 224.5,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "2356",
+      "horizon_td": 5,
+      "signal_close": 52.6,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "2356",
+      "horizon_td": 20,
+      "signal_close": 52.6,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "2356",
+      "horizon_td": 60,
+      "signal_close": 52.6,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "2356",
+      "horizon_td": 130,
+      "signal_close": 52.6,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "3711",
+      "horizon_td": 5,
+      "signal_close": 527.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "3711",
+      "horizon_td": 20,
+      "signal_close": 527.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "3711",
+      "horizon_td": 60,
+      "signal_close": 527.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "3711",
+      "horizon_td": 130,
+      "signal_close": 527.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "2308",
+      "horizon_td": 5,
+      "signal_close": 1055.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "2308",
+      "horizon_td": 20,
+      "signal_close": 1055.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "2308",
+      "horizon_td": 60,
+      "signal_close": 1055.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "2308",
+      "horizon_td": 130,
+      "signal_close": 1055.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "2379",
+      "horizon_td": 5,
+      "signal_close": 708.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "2379",
+      "horizon_td": 20,
+      "signal_close": 708.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "2379",
+      "horizon_td": 60,
+      "signal_close": 708.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "2379",
+      "horizon_td": 130,
+      "signal_close": 708.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "3532",
+      "horizon_td": 5,
+      "signal_close": 256.5,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "3532",
+      "horizon_td": 20,
+      "signal_close": 256.5,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "3532",
+      "horizon_td": 60,
+      "signal_close": 256.5,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "3532",
+      "horizon_td": 130,
+      "signal_close": 256.5,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "6182",
+      "horizon_td": 5,
+      "signal_close": 69.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "6182",
+      "horizon_td": 20,
+      "signal_close": 69.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "6182",
+      "horizon_td": 60,
+      "signal_close": 69.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "6182",
+      "horizon_td": 130,
+      "signal_close": 69.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "1560",
+      "horizon_td": 5,
+      "signal_close": 669.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "1560",
+      "horizon_td": 20,
+      "signal_close": 669.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "1560",
+      "horizon_td": 60,
+      "signal_close": 669.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "1560",
+      "horizon_td": 130,
+      "signal_close": 669.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "3131",
+      "horizon_td": 5,
+      "signal_close": 1440.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "3131",
+      "horizon_td": 20,
+      "signal_close": 1440.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "3131",
+      "horizon_td": 60,
+      "signal_close": 1440.0,
+      "exit_date": null,
+      "exit_close": null,
+      "forward_return": null,
+      "status": "PENDING"
+    },
+    {
+      "snapshot_date": "2026-11-06",
+      "ticker": "3131",
+      "horizon_td": 130,
+      "signal_close": 1440.0,
       "exit_date": null,
       "exit_close": null,
       "forward_return": null,
       "status": "PENDING"
     }
   ],
-  "ready_count": 190,
-  "pending_count": 730,
+  "ready_count": 244,
+  "pending_count": 892,
   "future_data_violation_count": 0,
   "formal_model_changed": false,
   "trade_decision_changed": false,

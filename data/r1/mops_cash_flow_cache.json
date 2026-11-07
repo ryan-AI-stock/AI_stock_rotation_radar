@@ -432,6 +432,166 @@
       "operating_cash_flow": 551405000.0,
       "context": "From20260101To20260630",
       "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3081&SYEAR=2026&SSEASON=2&REPORT_ID=A"
+    },
+    "2301:2026:Q3": {
+      "ticker": "2301",
+      "report_year": 2026,
+      "quarter": 3,
+      "operating_cash_flow": 1195785000.0,
+      "context": "From20260101To20260930",
+      "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=2301&SYEAR=2026&SSEASON=3&REPORT_ID=C"
+    },
+    "2303:2026:Q3": {
+      "ticker": "2303",
+      "report_year": 2026,
+      "quarter": 3,
+      "operating_cash_flow": 85694244000.0,
+      "context": "From20260101To20260930",
+      "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=2303&SYEAR=2026&SSEASON=3&REPORT_ID=C"
+    },
+    "2308:2026:Q3": {
+      "ticker": "2308",
+      "report_year": 2026,
+      "quarter": 3,
+      "operating_cash_flow": 90156906000.0,
+      "context": "From20260101To20260930",
+      "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=2308&SYEAR=2026&SSEASON=3&REPORT_ID=C"
+    },
+    "2337:2026:Q3": {
+      "ticker": "2337",
+      "report_year": 2026,
+      "quarter": 3,
+      "operating_cash_flow": 23425329000.0,
+      "context": "From20260101To20260930",
+      "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=2337&SYEAR=2026&SSEASON=3&REPORT_ID=C"
+    },
+    "2344:2026:Q3": {
+      "ticker": "2344",
+      "report_year": 2026,
+      "quarter": 3,
+      "operating_cash_flow": 81540282000.0,
+      "context": "From20260101To20260930",
+      "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=2344&SYEAR=2026&SSEASON=3&REPORT_ID=C"
+    },
+    "2383:2026:Q3": {
+      "ticker": "2383",
+      "report_year": 2026,
+      "quarter": 3,
+      "operating_cash_flow": 12292912000.0,
+      "context": "From20260101To20260930",
+      "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=2383&SYEAR=2026&SSEASON=3&REPORT_ID=C"
+    },
+    "2408:2026:Q3": {
+      "ticker": "2408",
+      "report_year": 2026,
+      "quarter": 3,
+      "operating_cash_flow": 184832960000.0,
+      "context": "From20260101To20260930",
+      "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=2408&SYEAR=2026&SSEASON=3&REPORT_ID=C"
+    },
+    "3035:2026:Q3": {
+      "ticker": "3035",
+      "report_year": 2026,
+      "quarter": 3,
+      "operating_cash_flow": 2554915000.0,
+      "context": "From20260101To20260930",
+      "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3035&SYEAR=2026&SSEASON=3&REPORT_ID=C"
+    },
+    "3037:2026:Q3": {
+      "ticker": "3037",
+      "report_year": 2026,
+      "quarter": 3,
+      "operating_cash_flow": 25122130000.0,
+      "context": "From20260101To20260930",
+      "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3037&SYEAR=2026&SSEASON=3&REPORT_ID=C"
+    },
+    "3081:2026:Q3": {
+      "ticker": "3081",
+      "report_year": 2026,
+      "quarter": 3,
+      "operating_cash_flow": 1224218000.0,
+      "context": "From20260101To20260930",
+      "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3081&SYEAR=2026&SSEASON=3&REPORT_ID=A"
+    },
+    "3163:2026:Q3": {
+      "ticker": "3163",
+      "report_year": 2026,
+      "quarter": 3,
+      "operating_cash_flow": -93114000.0,
+      "context": "From20260101To20260930",
+      "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3163&SYEAR=2026&SSEASON=3&REPORT_ID=C"
+    },
+    "3189:2026:Q3": {
+      "ticker": "3189",
+      "report_year": 2026,
+      "quarter": 3,
+      "operating_cash_flow": 7446436000.0,
+      "context": "From20260101To20260930",
+      "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3189&SYEAR=2026&SSEASON=3&REPORT_ID=C"
+    },
+    "3338:2026:Q3": {
+      "ticker": "3338",
+      "report_year": 2026,
+      "quarter": 3,
+      "operating_cash_flow": -305403000.0,
+      "context": "From20260101To20260930",
+      "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3338&SYEAR=2026&SSEASON=3&REPORT_ID=C"
+    },
+    "3443:2026:Q3": {
+      "ticker": "3443",
+      "report_year": 2026,
+      "quarter": 3,
+      "operating_cash_flow": 4251192000.0,
+      "context": "From20260101To20260930",
+      "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3443&SYEAR=2026&SSEASON=3&REPORT_ID=C"
+    },
+    "4979:2026:Q3": {
+      "ticker": "4979",
+      "report_year": 2026,
+      "quarter": 3,
+      "operating_cash_flow": 975928000.0,
+      "context": "From20260101To20260930",
+      "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=4979&SYEAR=2026&SSEASON=3&REPORT_ID=C"
+    },
+    "6274:2026:Q3": {
+      "ticker": "6274",
+      "report_year": 2026,
+      "quarter": 3,
+      "operating_cash_flow": -904242000.0,
+      "context": "From20260101To20260930",
+      "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=6274&SYEAR=2026&SSEASON=3&REPORT_ID=C"
+    },
+    "6412:2026:Q3": {
+      "ticker": "6412",
+      "report_year": 2026,
+      "quarter": 3,
+      "operating_cash_flow": 824164000.0,
+      "context": "From20260101To20260930",
+      "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=6412&SYEAR=2026&SSEASON=3&REPORT_ID=C"
+    },
+    "6488:2026:Q3": {
+      "ticker": "6488",
+      "report_year": 2026,
+      "quarter": 3,
+      "operating_cash_flow": 6379662000.0,
+      "context": "From20260101To20260930",
+      "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=6488&SYEAR=2026&SSEASON=3&REPORT_ID=C"
+    },
+    "6669:2026:Q3": {
+      "ticker": "6669",
+      "report_year": 2026,
+      "quarter": 3,
+      "operating_cash_flow": -56840884000.0,
+      "context": "From20260101To20260930",
+      "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=6669&SYEAR=2026&SSEASON=3&REPORT_ID=C"
+    },
+    "8299:2026:Q3": {
+      "ticker": "8299",
+      "report_year": 2026,
+      "quarter": 3,
+      "operating_cash_flow": -11482010000.0,
+      "context": "From20260101To20260930",
+      "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=8299&SYEAR=2026&SSEASON=3&REPORT_ID=C"
     }
   }
 }

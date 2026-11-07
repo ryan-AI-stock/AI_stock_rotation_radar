@@ -1,6 +1,6 @@
 {
   "model": "R1",
-  "date": "2026-10-30",
+  "date": "2026-11-06",
   "periods": [
     "2026-07",
     "2026-08",
@@ -2881,7 +2881,7 @@
     }
   ],
   "future_data_violation_count": 0,
-  "generated_at": "2026-10-30T17:13:30.149104+00:00",
+  "generated_at": "2026-11-07T11:50:51.167433+00:00",
   "formal_model_changed": false,
   "trade_decision_changed": false,
   "active_in_trade_decision": false,
