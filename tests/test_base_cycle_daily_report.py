@@ -10,14 +10,41 @@ from rotation_radar.base_cycle_daily_report import load_official_prices_and_turn
 
 
 class BaseCycleDailyReportTests(unittest.TestCase):
-    def test_partial_exchange_response_is_not_cached_as_complete(self):
+    def test_partial_exchange_response_is_checkpointed_but_not_treated_as_complete(self):
         with tempfile.TemporaryDirectory() as folder:
             cache = Path(folder)
             row = dict(date='2026-09-14', ticker='2344', name='Winbond', market='TWSE', close=160, turnover_value=1000)
             with patch('rotation_radar.base_cycle_daily_report.pd.read_csv', return_value=pd.DataFrame([row])), patch('rotation_radar.base_cycle_daily_report.fetch_price', return_value=([row], [{'market': 'TWSE', 'status': 'accepted'}, {'market': 'TPEx', 'status': 'blocked'}])):
                 with self.assertRaisesRegex(ReportDataNotReady, 'exchanges incomplete'):
                     load_official_prices_and_turnover(source_repo=cache, target=pd.Timestamp('2026-09-14'), current=pd.DataFrame(), source_cache=cache, offline=False)
-            self.assertFalse((cache / 'official_recent_full_market.csv.gz').exists())
+            saved = pd.read_csv(cache / 'official_recent_full_market.csv.gz', dtype={'ticker': str})
+            self.assertEqual(set(saved.market), {'TWSE'})
+
+    def test_retry_fetches_only_exchange_missing_from_partial_target_cache(self):
+        with tempfile.TemporaryDirectory() as folder:
+            cache = Path(folder)
+            cached_path = cache / 'official_recent_full_market.csv.gz'
+            twse = dict(date='2026-09-14', ticker='2344', name='Winbond', market='TWSE', close=160, turnover_value=1000)
+            tpex = dict(date='2026-09-14', ticker='5351', name='Etron', market='TPEx', close=106, turnover_value=900)
+            pd.DataFrame([twse]).to_csv(cached_path, index=False, compression='gzip')
+            static = pd.DataFrame([dict(twse, date='2026-09-13')])
+            original_read_csv = pd.read_csv
+
+            def read_csv(path, *args, **kwargs):
+                if str(path).endswith('current_layer0_official_turnover_daily.csv.gz'):
+                    return static.copy()
+                return original_read_csv(path, *args, **kwargs)
+
+            manifest = [{'market': 'TPEx', 'status': 'accepted'}]
+            with patch('rotation_radar.base_cycle_daily_report.pd.read_csv', side_effect=read_csv), patch(
+                'rotation_radar.base_cycle_daily_report.fetch_price', return_value=([tpex], manifest)
+            ) as fetch:
+                display, _ = load_official_prices_and_turnover(
+                    source_repo=cache, target=pd.Timestamp('2026-09-14'), current=pd.DataFrame(),
+                    source_cache=cache, offline=False,
+                )
+            self.assertEqual(fetch.call_args.kwargs['markets'], {'TPEx'})
+            self.assertEqual(set(display.ticker), {'2344', '5351'})
 
     def test_partial_target_cache_is_refetched(self):
         with tempfile.TemporaryDirectory() as folder:

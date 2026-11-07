@@ -296,9 +296,30 @@ def load_official_prices_and_turnover(
         for day in pd.date_range(start, target, freq="D"):
             if day.weekday() >= 5:
                 continue
-            fetched, meta = fetch_price(day.date(), {str(code) for code in range(1000, 10000)})
+            cached_day = cached[cached.date.eq(day)] if not cached.empty else pd.DataFrame()
+            cached_markets = set(cached_day.market.dropna().astype(str)) if "market" in cached_day else set()
+            missing_markets = {"TWSE", "TPEx"} - cached_markets
+            if not missing_markets:
+                continue
+            fetched, meta = fetch_price(
+                day.date(), {str(code) for code in range(1000, 10000)}, markets=missing_markets,
+            )
+            # Persist each accepted exchange immediately.  A temporary failure
+            # at the other exchange must not discard successful official data
+            # or force the next retry to download it again.
+            if fetched:
+                fresh_day = pd.DataFrame(fetched)
+                fresh_day["ticker"] = fresh_day.ticker.astype(str).str.zfill(4)
+                fresh_day["date"] = pd.to_datetime(fresh_day.date)
+                cached = pd.concat([cached, fresh_day], ignore_index=True, sort=False).drop_duplicates(
+                    ["date", "ticker"], keep="last"
+                )
+                source_cache.mkdir(parents=True, exist_ok=True)
+                cached.to_csv(cached_path, index=False, compression="gzip")
             if day == target:
-                accepted_markets = {m.get("market") for m in meta if m.get("status") == "accepted"}
+                accepted_markets = cached_markets | {
+                    m.get("market") for m in meta if m.get("status") == "accepted"
+                }
                 if not {"TWSE", "TPEx"}.issubset(accepted_markets):
                     raise ReportDataNotReady(f"Target-date official exchanges incomplete: {meta}")
             if fetched:

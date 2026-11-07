@@ -146,10 +146,12 @@ def parse_tpex_price(raw: bytes, target: date, wanted: set[str], url: str, retri
     return rows
 
 
-def fetch_price(target: date, wanted: set[str]) -> tuple[list[dict], list[dict]]:
+def fetch_price(target: date, wanted: set[str], markets: set[str] | None = None) -> tuple[list[dict], list[dict]]:
     rows, manifest = [], []
     routes = [("TWSE", f"https://www.twse.com.tw/exchangeReport/MI_INDEX?date={target:%Y%m%d}&type=ALLBUT0999&response=json", parse_twse_price), ("TPEx", f"https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date={target:%Y/%m/%d}&response=json", parse_tpex_price)]
     for market, url, parser in routes:
+        if markets is not None and market not in markets:
+            continue
         raw, status, error, final_url, retrieved = request("GET", url); accepted = []
         if raw and status == 200:
             try: accepted = parser(raw, target, wanted, final_url, retrieved)
