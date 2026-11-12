@@ -14,7 +14,7 @@
       "response_bytes": 71,
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20261113&type=ALLBUT0999&response=json",
       "source_hash": "a5691b2512d7068ab2f69df75c3ef8fbc38dc565086422b1602656895c92c652",
-      "retrieved_at_utc": "2026-11-12T20:58:14+00:00",
+      "retrieved_at_utc": "2026-11-12T21:40:23+00:00",
       "error": ""
     },
     {
@@ -28,7 +28,7 @@
       "response_bytes": 1630,
       "source_url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2026/11/13&response=json",
       "source_hash": "9ed7d79bd6ce41ff0a9952ee1b842b49992077d385145a3aa85a8fd529a0d34e",
-      "retrieved_at_utc": "2026-11-12T20:58:15+00:00",
+      "retrieved_at_utc": "2026-11-12T21:40:24+00:00",
       "error": "primary=200;fallback=200"
     }
   ],
