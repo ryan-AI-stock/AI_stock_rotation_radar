@@ -1,6 +1,6 @@
 {
   "model": "R1",
-  "as_of_date": "2026-11-13",
+  "as_of_date": "2026-11-16",
   "horizon_semantics": "exact Nth later Taiwan trading observation, close-to-close, research only",
   "rows": [
     {
@@ -578,10 +578,10 @@
       "ticker": "2330",
       "horizon_td": 20,
       "signal_close": 2550.0,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-16",
+      "exit_close": 2215.0,
+      "forward_return": -0.13137254901960782,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-08",
@@ -618,10 +618,10 @@
       "ticker": "2327",
       "horizon_td": 20,
       "signal_close": 635.0,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-16",
+      "exit_close": 374.0,
+      "forward_return": -0.4110236220472441,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-08",
@@ -658,10 +658,10 @@
       "ticker": "2344",
       "horizon_td": 20,
       "signal_close": 177.0,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-16",
+      "exit_close": 113.0,
+      "forward_return": -0.3615819209039548,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-08",
@@ -698,10 +698,10 @@
       "ticker": "2376",
       "horizon_td": 20,
       "signal_close": 363.0,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-16",
+      "exit_close": 277.5,
+      "forward_return": -0.23553719008264462,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-08",
@@ -738,10 +738,10 @@
       "ticker": "2454",
       "horizon_td": 20,
       "signal_close": 4690.0,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-16",
+      "exit_close": 3795.0,
+      "forward_return": -0.19083155650319827,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-08",
@@ -778,10 +778,10 @@
       "ticker": "3037",
       "horizon_td": 20,
       "signal_close": 1270.0,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-16",
+      "exit_close": 707.0,
+      "forward_return": -0.4433070866141732,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-08",
@@ -818,10 +818,10 @@
       "ticker": "6488",
       "horizon_td": 20,
       "signal_close": 1130.0,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-16",
+      "exit_close": 577.0,
+      "forward_return": -0.48938053097345136,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-08",
@@ -858,10 +858,10 @@
       "ticker": "3661",
       "horizon_td": 20,
       "signal_close": 4345.0,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-16",
+      "exit_close": 3660.0,
+      "forward_return": -0.1576524741081703,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-08",
@@ -898,10 +898,10 @@
       "ticker": "3443",
       "horizon_td": 20,
       "signal_close": 8360.0,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-16",
+      "exit_close": 7750.0,
+      "forward_return": -0.07296650717703346,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-08",
@@ -938,10 +938,10 @@
       "ticker": "3035",
       "horizon_td": 20,
       "signal_close": 202.0,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-16",
+      "exit_close": 186.5,
+      "forward_return": -0.07673267326732669,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-08",
@@ -978,10 +978,10 @@
       "ticker": "2449",
       "horizon_td": 20,
       "signal_close": 304.5,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-16",
+      "exit_close": 192.5,
+      "forward_return": -0.367816091954023,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-08",
@@ -1018,10 +1018,10 @@
       "ticker": "6223",
       "horizon_td": 20,
       "signal_close": 5575.0,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-16",
+      "exit_close": 4305.0,
+      "forward_return": -0.22780269058295965,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-08",
@@ -1058,10 +1058,10 @@
       "ticker": "6187",
       "horizon_td": 20,
       "signal_close": 1525.0,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-16",
+      "exit_close": 858.0,
+      "forward_return": -0.4373770491803278,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-08",
@@ -1098,10 +1098,10 @@
       "ticker": "3583",
       "horizon_td": 20,
       "signal_close": 736.0,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-16",
+      "exit_close": 453.0,
+      "forward_return": -0.3845108695652174,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-08",
@@ -1138,10 +1138,10 @@
       "ticker": "2408",
       "horizon_td": 20,
       "signal_close": 532.0,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-16",
+      "exit_close": 340.0,
+      "forward_return": -0.3609022556390977,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-08",
@@ -1178,10 +1178,10 @@
       "ticker": "3081",
       "horizon_td": 20,
       "signal_close": 2960.0,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-16",
+      "exit_close": 1900.0,
+      "forward_return": -0.3581081081081081,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-08",
@@ -1218,10 +1218,10 @@
       "ticker": "2303",
       "horizon_td": 20,
       "signal_close": 147.5,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-16",
+      "exit_close": 95.2,
+      "forward_return": -0.35457627118644064,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-08",
@@ -1258,10 +1258,10 @@
       "ticker": "3008",
       "horizon_td": 20,
       "signal_close": 6660.0,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-16",
+      "exit_close": 4780.0,
+      "forward_return": -0.28228228228228225,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-08",
@@ -1298,10 +1298,10 @@
       "ticker": "3406",
       "horizon_td": 20,
       "signal_close": 1060.0,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-16",
+      "exit_close": 889.0,
+      "forward_return": -0.16132075471698115,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-08",
@@ -1338,10 +1338,10 @@
       "ticker": "2337",
       "horizon_td": 20,
       "signal_close": 116.0,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-16",
+      "exit_close": 72.0,
+      "forward_return": -0.3793103448275862,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-08",
@@ -1378,10 +1378,10 @@
       "ticker": "8299",
       "horizon_td": 20,
       "signal_close": 2060.0,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-16",
+      "exit_close": 1515.0,
+      "forward_return": -0.2645631067961165,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-08",
@@ -1418,10 +1418,10 @@
       "ticker": "3260",
       "horizon_td": 20,
       "signal_close": 362.5,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-16",
+      "exit_close": 278.0,
+      "forward_return": -0.23310344827586205,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-08",
@@ -1458,10 +1458,10 @@
       "ticker": "2383",
       "horizon_td": 20,
       "signal_close": 6000.0,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-16",
+      "exit_close": 3795.0,
+      "forward_return": -0.36750000000000005,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-08",
@@ -1498,10 +1498,10 @@
       "ticker": "6274",
       "horizon_td": 20,
       "signal_close": 1740.0,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-16",
+      "exit_close": 877.0,
+      "forward_return": -0.4959770114942529,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-08",
@@ -1538,10 +1538,10 @@
       "ticker": "3189",
       "horizon_td": 20,
       "signal_close": 1075.0,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-16",
+      "exit_close": 602.0,
+      "forward_return": -0.43999999999999995,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-08",
@@ -1578,10 +1578,10 @@
       "ticker": "2368",
       "horizon_td": 20,
       "signal_close": 1285.0,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-16",
+      "exit_close": 927.0,
+      "forward_return": -0.2785992217898833,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-08",
@@ -1618,10 +1618,10 @@
       "ticker": "2345",
       "horizon_td": 20,
       "signal_close": 2070.0,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-16",
+      "exit_close": 1380.0,
+      "forward_return": -0.33333333333333337,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-08",
@@ -1658,10 +1658,10 @@
       "ticker": "3363",
       "horizon_td": 20,
       "signal_close": 667.0,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-16",
+      "exit_close": 339.0,
+      "forward_return": -0.4917541229385307,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-08",
@@ -1698,10 +1698,10 @@
       "ticker": "4979",
       "horizon_td": 20,
       "signal_close": 565.0,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-16",
+      "exit_close": 341.5,
+      "forward_return": -0.39557522123893807,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-08",
@@ -1738,10 +1738,10 @@
       "ticker": "6442",
       "horizon_td": 20,
       "signal_close": 1785.0,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-16",
+      "exit_close": 1045.0,
+      "forward_return": -0.4145658263305322,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-08",
@@ -1778,10 +1778,10 @@
       "ticker": "3163",
       "horizon_td": 20,
       "signal_close": 689.0,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-16",
+      "exit_close": 455.5,
+      "forward_return": -0.3388969521044993,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-08",
@@ -1818,10 +1818,10 @@
       "ticker": "2301",
       "horizon_td": 20,
       "signal_close": 297.5,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-16",
+      "exit_close": 213.0,
+      "forward_return": -0.28403361344537814,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-08",
@@ -1858,10 +1858,10 @@
       "ticker": "6282",
       "horizon_td": 20,
       "signal_close": 43.2,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-16",
+      "exit_close": 31.85,
+      "forward_return": -0.2627314814814815,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-08",
@@ -1898,10 +1898,10 @@
       "ticker": "6412",
       "horizon_td": 20,
       "signal_close": 73.0,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-16",
+      "exit_close": 53.1,
+      "forward_return": -0.27260273972602733,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-08",
@@ -1938,10 +1938,10 @@
       "ticker": "6781",
       "horizon_td": 20,
       "signal_close": 1020.0,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-16",
+      "exit_close": 694.0,
+      "forward_return": -0.3196078431372549,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-08",
@@ -1978,10 +1978,10 @@
       "ticker": "2492",
       "horizon_td": 20,
       "signal_close": 420.0,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-16",
+      "exit_close": 257.5,
+      "forward_return": -0.38690476190476186,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-08",
@@ -2018,10 +2018,10 @@
       "ticker": "3357",
       "horizon_td": 20,
       "signal_close": 226.5,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-16",
+      "exit_close": 162.0,
+      "forward_return": -0.2847682119205298,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-08",
@@ -2058,10 +2058,10 @@
       "ticker": "3653",
       "horizon_td": 20,
       "signal_close": 7165.0,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-16",
+      "exit_close": 4815.0,
+      "forward_return": -0.327983251919051,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-08",
@@ -2098,10 +2098,10 @@
       "ticker": "3017",
       "horizon_td": 20,
       "signal_close": 3440.0,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-16",
+      "exit_close": 2740.0,
+      "forward_return": -0.20348837209302328,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-08",
@@ -2138,10 +2138,10 @@
       "ticker": "3324",
       "horizon_td": 20,
       "signal_close": 1520.0,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-16",
+      "exit_close": 1030.0,
+      "forward_return": -0.3223684210526315,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-08",
@@ -2178,10 +2178,10 @@
       "ticker": "6230",
       "horizon_td": 20,
       "signal_close": 115.5,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-16",
+      "exit_close": 85.7,
+      "forward_return": -0.258008658008658,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-08",
@@ -2218,10 +2218,10 @@
       "ticker": "3338",
       "horizon_td": 20,
       "signal_close": 68.5,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-16",
+      "exit_close": 48.65,
+      "forward_return": -0.2897810218978102,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-08",
@@ -2258,10 +2258,10 @@
       "ticker": "2382",
       "horizon_td": 20,
       "signal_close": 325.5,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-16",
+      "exit_close": 264.5,
+      "forward_return": -0.1874039938556068,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-08",
@@ -2298,10 +2298,10 @@
       "ticker": "3231",
       "horizon_td": 20,
       "signal_close": 188.5,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-16",
+      "exit_close": 159.0,
+      "forward_return": -0.156498673740053,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-08",
@@ -2338,10 +2338,10 @@
       "ticker": "6669",
       "horizon_td": 20,
       "signal_close": 2240.0,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-16",
+      "exit_close": 1515.0,
+      "forward_return": -0.3236607142857143,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-08",
@@ -2378,10 +2378,10 @@
       "ticker": "2317",
       "horizon_td": 20,
       "signal_close": 249.0,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-16",
+      "exit_close": 218.5,
+      "forward_return": -0.1224899598393574,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-08",
@@ -2418,10 +2418,10 @@
       "ticker": "2356",
       "horizon_td": 20,
       "signal_close": 57.5,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-16",
+      "exit_close": 43.0,
+      "forward_return": -0.25217391304347825,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-08",
@@ -2458,10 +2458,10 @@
       "ticker": "3711",
       "horizon_td": 20,
       "signal_close": 744.0,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-16",
+      "exit_close": 550.0,
+      "forward_return": -0.260752688172043,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-08",
@@ -2498,10 +2498,10 @@
       "ticker": "2308",
       "horizon_td": 20,
       "signal_close": 1965.0,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-16",
+      "exit_close": 1120.0,
+      "forward_return": -0.4300254452926209,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-08",
@@ -2538,10 +2538,10 @@
       "ticker": "2379",
       "horizon_td": 20,
       "signal_close": 749.0,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-16",
+      "exit_close": 716.0,
+      "forward_return": -0.044058744993324406,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-08",
@@ -2578,10 +2578,10 @@
       "ticker": "3532",
       "horizon_td": 20,
       "signal_close": 509.0,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-16",
+      "exit_close": 265.5,
+      "forward_return": -0.4783889980353635,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-08",
@@ -2618,10 +2618,10 @@
       "ticker": "6182",
       "horizon_td": 20,
       "signal_close": 129.0,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-16",
+      "exit_close": 75.3,
+      "forward_return": -0.4162790697674419,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-08",
@@ -2658,10 +2658,10 @@
       "ticker": "1560",
       "horizon_td": 20,
       "signal_close": 1010.0,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-16",
+      "exit_close": 654.0,
+      "forward_return": -0.35247524752475246,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-08",
@@ -2698,10 +2698,10 @@
       "ticker": "3131",
       "horizon_td": 20,
       "signal_close": 2465.0,
-      "exit_date": null,
-      "exit_close": null,
-      "forward_return": null,
-      "status": "PENDING"
+      "exit_date": "2026-11-16",
+      "exit_close": 1565.0,
+      "forward_return": -0.3651115618661258,
+      "status": "READY"
     },
     {
       "snapshot_date": "2026-10-08",
@@ -11364,8 +11364,8 @@
       "status": "PENDING"
     }
   ],
-  "ready_count": 244,
-  "pending_count": 892,
+  "ready_count": 298,
+  "pending_count": 838,
   "future_data_violation_count": 0,
   "formal_model_changed": false,
   "trade_decision_changed": false,
