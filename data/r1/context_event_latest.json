@@ -1,15 +1,15 @@
 {
   "model": "R1",
   "layer": "context_event_v0.1",
-  "date": "2026-11-05",
+  "date": "2026-11-13",
   "status": "READY",
   "rows": [
     {
       "ticker": "2330",
       "company": "台積電",
-      "context_state": "MARKET_WIDE_SELLOFF",
-      "advisory_posture": "PULLBACK_WATCH_NO_AUTO_BUY",
-      "broad_selloff": true,
+      "context_state": "NO_CONTEXT_CHANGE",
+      "advisory_posture": "KEEP_EXISTING_PLAN",
+      "broad_selloff": false,
       "price_weak": true,
       "monthly_revenue_state": "ACCELERATING",
       "positive_event_count": 0,
@@ -22,9 +22,9 @@
     {
       "ticker": "2327",
       "company": "國巨",
-      "context_state": "MARKET_WIDE_SELLOFF",
-      "advisory_posture": "PULLBACK_WATCH_NO_AUTO_BUY",
-      "broad_selloff": true,
+      "context_state": "NO_CONTEXT_CHANGE",
+      "advisory_posture": "KEEP_EXISTING_PLAN",
+      "broad_selloff": false,
       "price_weak": true,
       "monthly_revenue_state": "NOT_ACCELERATING",
       "positive_event_count": 0,
@@ -37,9 +37,9 @@
     {
       "ticker": "2344",
       "company": "華邦電",
-      "context_state": "MARKET_WIDE_SELLOFF",
-      "advisory_posture": "PULLBACK_WATCH_NO_AUTO_BUY",
-      "broad_selloff": true,
+      "context_state": "NO_CONTEXT_CHANGE",
+      "advisory_posture": "KEEP_EXISTING_PLAN",
+      "broad_selloff": false,
       "price_weak": true,
       "monthly_revenue_state": "NOT_ACCELERATING",
       "positive_event_count": 1,
@@ -56,9 +56,9 @@
     {
       "ticker": "2376",
       "company": "技嘉",
-      "context_state": "MARKET_WIDE_SELLOFF",
-      "advisory_posture": "PULLBACK_WATCH_NO_AUTO_BUY",
-      "broad_selloff": true,
+      "context_state": "NO_CONTEXT_CHANGE",
+      "advisory_posture": "KEEP_EXISTING_PLAN",
+      "broad_selloff": false,
       "price_weak": true,
       "monthly_revenue_state": "ACCELERATING",
       "positive_event_count": 1,
@@ -75,9 +75,9 @@
     {
       "ticker": "2454",
       "company": "聯發科",
-      "context_state": "FUNDAMENTAL_RISK_REVIEW",
-      "advisory_posture": "HOLD_OR_REDUCE_REVIEW",
-      "broad_selloff": true,
+      "context_state": "NO_CONTEXT_CHANGE",
+      "advisory_posture": "KEEP_EXISTING_PLAN",
+      "broad_selloff": false,
       "price_weak": true,
       "monthly_revenue_state": "NOT_ACCELERATING",
       "positive_event_count": 1,
@@ -86,20 +86,17 @@
         "sp_global_research"
       ],
       "negative_source_families": [],
-      "official_negative_event_types": [
-        "FINANCIAL_EARNINGS_CONTRACTION"
-      ],
+      "official_negative_event_types": [],
       "evidence_urls": [
-        "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=2454&SYEAR=2026&SSEASON=2&REPORT_ID=C",
         "https://www.spglobal.com/market-intelligence/en/news-insights/research/2026/08/mediatek-s-ai-asics-growth-to-offset-smartphone-weakness"
       ]
     },
     {
       "ticker": "3037",
       "company": "欣興",
-      "context_state": "MARKET_WIDE_SELLOFF",
-      "advisory_posture": "PULLBACK_WATCH_NO_AUTO_BUY",
-      "broad_selloff": true,
+      "context_state": "NO_CONTEXT_CHANGE",
+      "advisory_posture": "KEEP_EXISTING_PLAN",
+      "broad_selloff": false,
       "price_weak": true,
       "monthly_revenue_state": "ACCELERATING",
       "positive_event_count": 0,
@@ -112,9 +109,9 @@
     {
       "ticker": "6488",
       "company": "環球晶",
-      "context_state": "MARKET_WIDE_SELLOFF",
-      "advisory_posture": "PULLBACK_WATCH_NO_AUTO_BUY",
-      "broad_selloff": true,
+      "context_state": "NO_CONTEXT_CHANGE",
+      "advisory_posture": "KEEP_EXISTING_PLAN",
+      "broad_selloff": false,
       "price_weak": true,
       "monthly_revenue_state": "NOT_ACCELERATING",
       "positive_event_count": 1,
@@ -131,10 +128,10 @@
     {
       "ticker": "3661",
       "company": "世芯-KY",
-      "context_state": "MARKET_WIDE_SELLOFF",
-      "advisory_posture": "PULLBACK_WATCH_NO_AUTO_BUY",
-      "broad_selloff": true,
-      "price_weak": true,
+      "context_state": "NO_CONTEXT_CHANGE",
+      "advisory_posture": "KEEP_EXISTING_PLAN",
+      "broad_selloff": false,
+      "price_weak": false,
       "monthly_revenue_state": "ACCELERATING",
       "positive_event_count": 0,
       "negative_event_count": 0,
@@ -146,10 +143,10 @@
     {
       "ticker": "3443",
       "company": "創意",
-      "context_state": "MARKET_WIDE_SELLOFF",
-      "advisory_posture": "PULLBACK_WATCH_NO_AUTO_BUY",
-      "broad_selloff": true,
-      "price_weak": true,
+      "context_state": "NO_CONTEXT_CHANGE",
+      "advisory_posture": "KEEP_EXISTING_PLAN",
+      "broad_selloff": false,
+      "price_weak": false,
       "monthly_revenue_state": "NOT_ACCELERATING",
       "positive_event_count": 1,
       "negative_event_count": 0,
@@ -165,9 +162,9 @@
     {
       "ticker": "3035",
       "company": "智原",
-      "context_state": "FUNDAMENTAL_RISK_REVIEW",
-      "advisory_posture": "HOLD_OR_REDUCE_REVIEW",
-      "broad_selloff": true,
+      "context_state": "NO_CONTEXT_CHANGE",
+      "advisory_posture": "KEEP_EXISTING_PLAN",
+      "broad_selloff": false,
       "price_weak": true,
       "monthly_revenue_state": "NOT_ACCELERATING",
       "positive_event_count": 1,
@@ -176,20 +173,17 @@
         "moneydj_industry"
       ],
       "negative_source_families": [],
-      "official_negative_event_types": [
-        "FINANCIAL_EARNINGS_CONTRACTION"
-      ],
+      "official_negative_event_types": [],
       "evidence_urls": [
-        "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3035&SYEAR=2026&SSEASON=2&REPORT_ID=C",
         "https://www.moneydj.com/kmdj/news/newsviewer.aspx?a=691d75a0-20c1-4648-8948-42eff848d38f"
       ]
     },
     {
       "ticker": "2449",
       "company": "京元電子",
-      "context_state": "MARKET_WIDE_SELLOFF",
-      "advisory_posture": "PULLBACK_WATCH_NO_AUTO_BUY",
-      "broad_selloff": true,
+      "context_state": "NO_CONTEXT_CHANGE",
+      "advisory_posture": "KEEP_EXISTING_PLAN",
+      "broad_selloff": false,
       "price_weak": true,
       "monthly_revenue_state": "NOT_ACCELERATING",
       "positive_event_count": 0,
@@ -202,9 +196,9 @@
     {
       "ticker": "6223",
       "company": "旺矽",
-      "context_state": "MARKET_WIDE_SELLOFF",
-      "advisory_posture": "PULLBACK_WATCH_NO_AUTO_BUY",
-      "broad_selloff": true,
+      "context_state": "NO_CONTEXT_CHANGE",
+      "advisory_posture": "KEEP_EXISTING_PLAN",
+      "broad_selloff": false,
       "price_weak": true,
       "monthly_revenue_state": "ACCELERATING",
       "positive_event_count": 0,
@@ -217,9 +211,9 @@
     {
       "ticker": "6187",
       "company": "萬潤",
-      "context_state": "MARKET_WIDE_SELLOFF",
-      "advisory_posture": "PULLBACK_WATCH_NO_AUTO_BUY",
-      "broad_selloff": true,
+      "context_state": "NO_CONTEXT_CHANGE",
+      "advisory_posture": "KEEP_EXISTING_PLAN",
+      "broad_selloff": false,
       "price_weak": true,
       "monthly_revenue_state": "ACCELERATING",
       "positive_event_count": 1,
@@ -236,9 +230,9 @@
     {
       "ticker": "3583",
       "company": "辛耘",
-      "context_state": "MARKET_WIDE_SELLOFF",
-      "advisory_posture": "PULLBACK_WATCH_NO_AUTO_BUY",
-      "broad_selloff": true,
+      "context_state": "NO_CONTEXT_CHANGE",
+      "advisory_posture": "KEEP_EXISTING_PLAN",
+      "broad_selloff": false,
       "price_weak": true,
       "monthly_revenue_state": "NOT_ACCELERATING",
       "positive_event_count": 0,
@@ -251,9 +245,9 @@
     {
       "ticker": "2408",
       "company": "南亞科",
-      "context_state": "MARKET_WIDE_SELLOFF",
-      "advisory_posture": "PULLBACK_WATCH_NO_AUTO_BUY",
-      "broad_selloff": true,
+      "context_state": "NO_CONTEXT_CHANGE",
+      "advisory_posture": "KEEP_EXISTING_PLAN",
+      "broad_selloff": false,
       "price_weak": true,
       "monthly_revenue_state": "NOT_ACCELERATING",
       "positive_event_count": 0,
@@ -266,9 +260,9 @@
     {
       "ticker": "3081",
       "company": "聯亞",
-      "context_state": "MARKET_WIDE_SELLOFF",
-      "advisory_posture": "PULLBACK_WATCH_NO_AUTO_BUY",
-      "broad_selloff": true,
+      "context_state": "NO_CONTEXT_CHANGE",
+      "advisory_posture": "KEEP_EXISTING_PLAN",
+      "broad_selloff": false,
       "price_weak": true,
       "monthly_revenue_state": "ACCELERATING",
       "positive_event_count": 1,
@@ -285,9 +279,9 @@
     {
       "ticker": "2303",
       "company": "聯電",
-      "context_state": "MARKET_WIDE_SELLOFF",
-      "advisory_posture": "PULLBACK_WATCH_NO_AUTO_BUY",
-      "broad_selloff": true,
+      "context_state": "NO_CONTEXT_CHANGE",
+      "advisory_posture": "KEEP_EXISTING_PLAN",
+      "broad_selloff": false,
       "price_weak": true,
       "monthly_revenue_state": "NOT_ACCELERATING",
       "positive_event_count": 1,
@@ -304,9 +298,9 @@
     {
       "ticker": "3008",
       "company": "大立光",
-      "context_state": "MARKET_WIDE_SELLOFF",
-      "advisory_posture": "PULLBACK_WATCH_NO_AUTO_BUY",
-      "broad_selloff": true,
+      "context_state": "NO_CONTEXT_CHANGE",
+      "advisory_posture": "KEEP_EXISTING_PLAN",
+      "broad_selloff": false,
       "price_weak": true,
       "monthly_revenue_state": "DATA_MISSING",
       "positive_event_count": 0,
@@ -319,9 +313,9 @@
     {
       "ticker": "3406",
       "company": "玉晶光",
-      "context_state": "MARKET_WIDE_SELLOFF",
-      "advisory_posture": "PULLBACK_WATCH_NO_AUTO_BUY",
-      "broad_selloff": true,
+      "context_state": "NO_CONTEXT_CHANGE",
+      "advisory_posture": "KEEP_EXISTING_PLAN",
+      "broad_selloff": false,
       "price_weak": true,
       "monthly_revenue_state": "DATA_MISSING",
       "positive_event_count": 0,
@@ -334,9 +328,9 @@
     {
       "ticker": "2337",
       "company": "旺宏",
-      "context_state": "MARKET_WIDE_SELLOFF",
-      "advisory_posture": "PULLBACK_WATCH_NO_AUTO_BUY",
-      "broad_selloff": true,
+      "context_state": "NO_CONTEXT_CHANGE",
+      "advisory_posture": "KEEP_EXISTING_PLAN",
+      "broad_selloff": false,
       "price_weak": true,
       "monthly_revenue_state": "NOT_ACCELERATING",
       "positive_event_count": 0,
@@ -349,28 +343,24 @@
     {
       "ticker": "8299",
       "company": "群聯",
-      "context_state": "MARKET_WIDE_SELLOFF",
-      "advisory_posture": "PULLBACK_WATCH_NO_AUTO_BUY",
-      "broad_selloff": true,
+      "context_state": "NO_CONTEXT_CHANGE",
+      "advisory_posture": "KEEP_EXISTING_PLAN",
+      "broad_selloff": false,
       "price_weak": true,
       "monthly_revenue_state": "NOT_ACCELERATING",
-      "positive_event_count": 1,
+      "positive_event_count": 0,
       "negative_event_count": 0,
-      "positive_source_families": [
-        "cnyes_industry"
-      ],
+      "positive_source_families": [],
       "negative_source_families": [],
       "official_negative_event_types": [],
-      "evidence_urls": [
-        "https://gfe-desktop.cnyes.com/news/id/6575811"
-      ]
+      "evidence_urls": []
     },
     {
       "ticker": "3260",
       "company": "威剛",
-      "context_state": "MARKET_WIDE_SELLOFF",
-      "advisory_posture": "PULLBACK_WATCH_NO_AUTO_BUY",
-      "broad_selloff": true,
+      "context_state": "NO_CONTEXT_CHANGE",
+      "advisory_posture": "KEEP_EXISTING_PLAN",
+      "broad_selloff": false,
       "price_weak": true,
       "monthly_revenue_state": "NOT_ACCELERATING",
       "positive_event_count": 0,
@@ -383,9 +373,9 @@
     {
       "ticker": "2383",
       "company": "台光電",
-      "context_state": "MARKET_WIDE_SELLOFF",
-      "advisory_posture": "PULLBACK_WATCH_NO_AUTO_BUY",
-      "broad_selloff": true,
+      "context_state": "NO_CONTEXT_CHANGE",
+      "advisory_posture": "KEEP_EXISTING_PLAN",
+      "broad_selloff": false,
       "price_weak": true,
       "monthly_revenue_state": "ACCELERATING",
       "positive_event_count": 0,
@@ -398,9 +388,9 @@
     {
       "ticker": "6274",
       "company": "台燿",
-      "context_state": "MARKET_WIDE_SELLOFF",
-      "advisory_posture": "PULLBACK_WATCH_NO_AUTO_BUY",
-      "broad_selloff": true,
+      "context_state": "NO_CONTEXT_CHANGE",
+      "advisory_posture": "KEEP_EXISTING_PLAN",
+      "broad_selloff": false,
       "price_weak": true,
       "monthly_revenue_state": "NOT_ACCELERATING",
       "positive_event_count": 0,
@@ -413,9 +403,9 @@
     {
       "ticker": "3189",
       "company": "景碩",
-      "context_state": "MARKET_WIDE_SELLOFF",
-      "advisory_posture": "PULLBACK_WATCH_NO_AUTO_BUY",
-      "broad_selloff": true,
+      "context_state": "NO_CONTEXT_CHANGE",
+      "advisory_posture": "KEEP_EXISTING_PLAN",
+      "broad_selloff": false,
       "price_weak": true,
       "monthly_revenue_state": "ACCELERATING",
       "positive_event_count": 0,
@@ -428,9 +418,9 @@
     {
       "ticker": "2368",
       "company": "金像電",
-      "context_state": "MARKET_WIDE_SELLOFF",
-      "advisory_posture": "PULLBACK_WATCH_NO_AUTO_BUY",
-      "broad_selloff": true,
+      "context_state": "NO_CONTEXT_CHANGE",
+      "advisory_posture": "KEEP_EXISTING_PLAN",
+      "broad_selloff": false,
       "price_weak": true,
       "monthly_revenue_state": "NOT_ACCELERATING",
       "positive_event_count": 0,
@@ -443,9 +433,9 @@
     {
       "ticker": "2345",
       "company": "智邦",
-      "context_state": "MARKET_WIDE_SELLOFF",
-      "advisory_posture": "PULLBACK_WATCH_NO_AUTO_BUY",
-      "broad_selloff": true,
+      "context_state": "NO_CONTEXT_CHANGE",
+      "advisory_posture": "KEEP_EXISTING_PLAN",
+      "broad_selloff": false,
       "price_weak": true,
       "monthly_revenue_state": "NOT_ACCELERATING",
       "positive_event_count": 0,
@@ -458,9 +448,9 @@
     {
       "ticker": "3363",
       "company": "上詮",
-      "context_state": "FUNDAMENTAL_RISK_REVIEW",
-      "advisory_posture": "HOLD_OR_REDUCE_REVIEW",
-      "broad_selloff": true,
+      "context_state": "NO_CONTEXT_CHANGE",
+      "advisory_posture": "KEEP_EXISTING_PLAN",
+      "broad_selloff": false,
       "price_weak": true,
       "monthly_revenue_state": "ACCELERATING",
       "positive_event_count": 1,
@@ -469,21 +459,17 @@
         "moneydj_industry"
       ],
       "negative_source_families": [],
-      "official_negative_event_types": [
-        "FINANCIAL_CASH_MARGIN_STRESS",
-        "FINANCIAL_EARNINGS_CONTRACTION"
-      ],
+      "official_negative_event_types": [],
       "evidence_urls": [
-        "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3363&SYEAR=2026&SSEASON=2&REPORT_ID=C",
         "https://www.ttv.com.tw/finance/view/0720260710050B29AE35C5884793BFDF07635CF7BD49950E/587"
       ]
     },
     {
       "ticker": "4979",
       "company": "華星光",
-      "context_state": "MARKET_WIDE_SELLOFF",
-      "advisory_posture": "PULLBACK_WATCH_NO_AUTO_BUY",
-      "broad_selloff": true,
+      "context_state": "NO_CONTEXT_CHANGE",
+      "advisory_posture": "KEEP_EXISTING_PLAN",
+      "broad_selloff": false,
       "price_weak": true,
       "monthly_revenue_state": "ACCELERATING",
       "positive_event_count": 1,
@@ -500,9 +486,9 @@
     {
       "ticker": "6442",
       "company": "光聖",
-      "context_state": "MARKET_WIDE_SELLOFF",
-      "advisory_posture": "PULLBACK_WATCH_NO_AUTO_BUY",
-      "broad_selloff": true,
+      "context_state": "NO_CONTEXT_CHANGE",
+      "advisory_posture": "KEEP_EXISTING_PLAN",
+      "broad_selloff": false,
       "price_weak": true,
       "monthly_revenue_state": "NOT_ACCELERATING",
       "positive_event_count": 0,
@@ -517,7 +503,7 @@
       "company": "波若威",
       "context_state": "FUNDAMENTAL_RISK_REVIEW",
       "advisory_posture": "HOLD_OR_REDUCE_REVIEW",
-      "broad_selloff": true,
+      "broad_selloff": false,
       "price_weak": true,
       "monthly_revenue_state": "NOT_ACCELERATING",
       "positive_event_count": 0,
@@ -528,15 +514,15 @@
         "FINANCIAL_CASH_MARGIN_STRESS"
       ],
       "evidence_urls": [
-        "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3163&SYEAR=2026&SSEASON=2&REPORT_ID=C"
+        "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3163&SYEAR=2026&SSEASON=3&REPORT_ID=C"
       ]
     },
     {
       "ticker": "2301",
       "company": "光寶科",
-      "context_state": "MARKET_WIDE_SELLOFF",
-      "advisory_posture": "PULLBACK_WATCH_NO_AUTO_BUY",
-      "broad_selloff": true,
+      "context_state": "NO_CONTEXT_CHANGE",
+      "advisory_posture": "KEEP_EXISTING_PLAN",
+      "broad_selloff": false,
       "price_weak": true,
       "monthly_revenue_state": "NOT_ACCELERATING",
       "positive_event_count": 1,
@@ -553,9 +539,9 @@
     {
       "ticker": "6282",
       "company": "康舒",
-      "context_state": "MARKET_WIDE_SELLOFF",
-      "advisory_posture": "PULLBACK_WATCH_NO_AUTO_BUY",
-      "broad_selloff": true,
+      "context_state": "NO_CONTEXT_CHANGE",
+      "advisory_posture": "KEEP_EXISTING_PLAN",
+      "broad_selloff": false,
       "price_weak": true,
       "monthly_revenue_state": "NOT_ACCELERATING",
       "positive_event_count": 0,
@@ -570,7 +556,7 @@
       "company": "群電",
       "context_state": "FUNDAMENTAL_RISK_REVIEW",
       "advisory_posture": "HOLD_OR_REDUCE_REVIEW",
-      "broad_selloff": true,
+      "broad_selloff": false,
       "price_weak": true,
       "monthly_revenue_state": "NOT_ACCELERATING",
       "positive_event_count": 0,
@@ -578,20 +564,20 @@
       "positive_source_families": [],
       "negative_source_families": [],
       "official_negative_event_types": [
-        "FINANCIAL_CASH_MARGIN_STRESS",
+        "FINANCIAL_EARNINGS_CONTRACTION",
         "MONTHLY_REVENUE_CONTRACTION"
       ],
       "evidence_urls": [
         "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_9_0.html",
-        "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=6412&SYEAR=2026&SSEASON=2&REPORT_ID=C"
+        "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=6412&SYEAR=2026&SSEASON=3&REPORT_ID=C"
       ]
     },
     {
       "ticker": "6781",
       "company": "AES-KY",
-      "context_state": "MARKET_WIDE_SELLOFF",
-      "advisory_posture": "PULLBACK_WATCH_NO_AUTO_BUY",
-      "broad_selloff": true,
+      "context_state": "NO_CONTEXT_CHANGE",
+      "advisory_posture": "KEEP_EXISTING_PLAN",
+      "broad_selloff": false,
       "price_weak": true,
       "monthly_revenue_state": "NOT_ACCELERATING",
       "positive_event_count": 0,
@@ -604,9 +590,9 @@
     {
       "ticker": "2492",
       "company": "華新科",
-      "context_state": "MARKET_WIDE_SELLOFF",
-      "advisory_posture": "PULLBACK_WATCH_NO_AUTO_BUY",
-      "broad_selloff": true,
+      "context_state": "NO_CONTEXT_CHANGE",
+      "advisory_posture": "KEEP_EXISTING_PLAN",
+      "broad_selloff": false,
       "price_weak": true,
       "monthly_revenue_state": "ACCELERATING",
       "positive_event_count": 0,
@@ -619,9 +605,9 @@
     {
       "ticker": "3357",
       "company": "臺慶科",
-      "context_state": "MARKET_WIDE_SELLOFF",
-      "advisory_posture": "PULLBACK_WATCH_NO_AUTO_BUY",
-      "broad_selloff": true,
+      "context_state": "NO_CONTEXT_CHANGE",
+      "advisory_posture": "KEEP_EXISTING_PLAN",
+      "broad_selloff": false,
       "price_weak": true,
       "monthly_revenue_state": "NOT_ACCELERATING",
       "positive_event_count": 0,
@@ -634,9 +620,9 @@
     {
       "ticker": "3653",
       "company": "健策",
-      "context_state": "MARKET_WIDE_SELLOFF",
-      "advisory_posture": "PULLBACK_WATCH_NO_AUTO_BUY",
-      "broad_selloff": true,
+      "context_state": "POSITIVE_EVENT_WATCH",
+      "advisory_posture": "WATCH_FOR_FUNDAMENTAL_CONFIRMATION",
+      "broad_selloff": false,
       "price_weak": true,
       "monthly_revenue_state": "NOT_ACCELERATING",
       "positive_event_count": 2,
@@ -655,9 +641,9 @@
     {
       "ticker": "3017",
       "company": "奇鋐",
-      "context_state": "MARKET_WIDE_SELLOFF",
-      "advisory_posture": "PULLBACK_WATCH_NO_AUTO_BUY",
-      "broad_selloff": true,
+      "context_state": "POSITIVE_EVENT_WATCH",
+      "advisory_posture": "WATCH_FOR_FUNDAMENTAL_CONFIRMATION",
+      "broad_selloff": false,
       "price_weak": true,
       "monthly_revenue_state": "NOT_ACCELERATING",
       "positive_event_count": 2,
@@ -676,9 +662,9 @@
     {
       "ticker": "3324",
       "company": "雙鴻",
-      "context_state": "MARKET_WIDE_SELLOFF",
-      "advisory_posture": "PULLBACK_WATCH_NO_AUTO_BUY",
-      "broad_selloff": true,
+      "context_state": "NO_CONTEXT_CHANGE",
+      "advisory_posture": "KEEP_EXISTING_PLAN",
+      "broad_selloff": false,
       "price_weak": true,
       "monthly_revenue_state": "NOT_ACCELERATING",
       "positive_event_count": 1,
@@ -695,9 +681,9 @@
     {
       "ticker": "6230",
       "company": "尼得科超眾",
-      "context_state": "MARKET_WIDE_SELLOFF",
-      "advisory_posture": "PULLBACK_WATCH_NO_AUTO_BUY",
-      "broad_selloff": true,
+      "context_state": "POSITIVE_EVENT_WATCH",
+      "advisory_posture": "WATCH_FOR_FUNDAMENTAL_CONFIRMATION",
+      "broad_selloff": false,
       "price_weak": true,
       "monthly_revenue_state": "NOT_ACCELERATING",
       "positive_event_count": 2,
@@ -718,7 +704,7 @@
       "company": "泰碩",
       "context_state": "FUNDAMENTAL_RISK_REVIEW",
       "advisory_posture": "HOLD_OR_REDUCE_REVIEW",
-      "broad_selloff": true,
+      "broad_selloff": false,
       "price_weak": true,
       "monthly_revenue_state": "NOT_ACCELERATING",
       "positive_event_count": 1,
@@ -728,20 +714,19 @@
       ],
       "negative_source_families": [],
       "official_negative_event_types": [
-        "FINANCIAL_CASH_MARGIN_STRESS",
-        "FINANCIAL_EARNINGS_CONTRACTION"
+        "FINANCIAL_CASH_MARGIN_STRESS"
       ],
       "evidence_urls": [
         "https://money.udn.com/money/amp/story/5710/9639824",
-        "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3338&SYEAR=2026&SSEASON=2&REPORT_ID=C"
+        "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3338&SYEAR=2026&SSEASON=3&REPORT_ID=C"
       ]
     },
     {
       "ticker": "2382",
       "company": "廣達",
-      "context_state": "MARKET_WIDE_SELLOFF",
-      "advisory_posture": "PULLBACK_WATCH_NO_AUTO_BUY",
-      "broad_selloff": true,
+      "context_state": "NO_CONTEXT_CHANGE",
+      "advisory_posture": "KEEP_EXISTING_PLAN",
+      "broad_selloff": false,
       "price_weak": true,
       "monthly_revenue_state": "NOT_ACCELERATING",
       "positive_event_count": 0,
@@ -754,9 +739,9 @@
     {
       "ticker": "3231",
       "company": "緯創",
-      "context_state": "MARKET_WIDE_SELLOFF",
-      "advisory_posture": "PULLBACK_WATCH_NO_AUTO_BUY",
-      "broad_selloff": true,
+      "context_state": "NO_CONTEXT_CHANGE",
+      "advisory_posture": "KEEP_EXISTING_PLAN",
+      "broad_selloff": false,
       "price_weak": true,
       "monthly_revenue_state": "NOT_ACCELERATING",
       "positive_event_count": 0,
@@ -771,7 +756,7 @@
       "company": "緯穎",
       "context_state": "FUNDAMENTAL_RISK_REVIEW",
       "advisory_posture": "HOLD_OR_REDUCE_REVIEW",
-      "broad_selloff": true,
+      "broad_selloff": false,
       "price_weak": true,
       "monthly_revenue_state": "ACCELERATING",
       "positive_event_count": 0,
@@ -782,15 +767,15 @@
         "FINANCIAL_CASH_MARGIN_STRESS"
       ],
       "evidence_urls": [
-        "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=6669&SYEAR=2026&SSEASON=2&REPORT_ID=C"
+        "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=6669&SYEAR=2026&SSEASON=3&REPORT_ID=C"
       ]
     },
     {
       "ticker": "2317",
       "company": "鴻海",
-      "context_state": "MARKET_WIDE_SELLOFF",
-      "advisory_posture": "PULLBACK_WATCH_NO_AUTO_BUY",
-      "broad_selloff": true,
+      "context_state": "NO_CONTEXT_CHANGE",
+      "advisory_posture": "KEEP_EXISTING_PLAN",
+      "broad_selloff": false,
       "price_weak": true,
       "monthly_revenue_state": "NOT_ACCELERATING",
       "positive_event_count": 0,
@@ -803,28 +788,24 @@
     {
       "ticker": "2356",
       "company": "英業達",
-      "context_state": "FUNDAMENTAL_RISK_REVIEW",
-      "advisory_posture": "HOLD_OR_REDUCE_REVIEW",
-      "broad_selloff": true,
+      "context_state": "NO_CONTEXT_CHANGE",
+      "advisory_posture": "KEEP_EXISTING_PLAN",
+      "broad_selloff": false,
       "price_weak": true,
       "monthly_revenue_state": "NOT_ACCELERATING",
       "positive_event_count": 0,
       "negative_event_count": 0,
       "positive_source_families": [],
       "negative_source_families": [],
-      "official_negative_event_types": [
-        "FINANCIAL_CASH_MARGIN_STRESS"
-      ],
-      "evidence_urls": [
-        "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=2356&SYEAR=2026&SSEASON=2&REPORT_ID=C"
-      ]
+      "official_negative_event_types": [],
+      "evidence_urls": []
     },
     {
       "ticker": "3711",
       "company": "日月光投控",
-      "context_state": "MARKET_WIDE_SELLOFF",
-      "advisory_posture": "PULLBACK_WATCH_NO_AUTO_BUY",
-      "broad_selloff": true,
+      "context_state": "NO_CONTEXT_CHANGE",
+      "advisory_posture": "KEEP_EXISTING_PLAN",
+      "broad_selloff": false,
       "price_weak": true,
       "monthly_revenue_state": "NOT_ACCELERATING",
       "positive_event_count": 0,
@@ -837,9 +818,9 @@
     {
       "ticker": "2308",
       "company": "台達電",
-      "context_state": "MARKET_WIDE_SELLOFF",
-      "advisory_posture": "PULLBACK_WATCH_NO_AUTO_BUY",
-      "broad_selloff": true,
+      "context_state": "NO_CONTEXT_CHANGE",
+      "advisory_posture": "KEEP_EXISTING_PLAN",
+      "broad_selloff": false,
       "price_weak": true,
       "monthly_revenue_state": "NOT_ACCELERATING",
       "positive_event_count": 0,
@@ -852,9 +833,9 @@
     {
       "ticker": "2379",
       "company": "瑞昱",
-      "context_state": "MARKET_WIDE_SELLOFF",
-      "advisory_posture": "PULLBACK_WATCH_NO_AUTO_BUY",
-      "broad_selloff": true,
+      "context_state": "NO_CONTEXT_CHANGE",
+      "advisory_posture": "KEEP_EXISTING_PLAN",
+      "broad_selloff": false,
       "price_weak": true,
       "monthly_revenue_state": "NOT_ACCELERATING",
       "positive_event_count": 0,
@@ -867,9 +848,9 @@
     {
       "ticker": "3532",
       "company": "台勝科",
-      "context_state": "MARKET_WIDE_SELLOFF",
-      "advisory_posture": "PULLBACK_WATCH_NO_AUTO_BUY",
-      "broad_selloff": true,
+      "context_state": "NO_CONTEXT_CHANGE",
+      "advisory_posture": "KEEP_EXISTING_PLAN",
+      "broad_selloff": false,
       "price_weak": true,
       "monthly_revenue_state": "NOT_ACCELERATING",
       "positive_event_count": 0,
@@ -882,28 +863,24 @@
     {
       "ticker": "6182",
       "company": "合晶",
-      "context_state": "MARKET_WIDE_SELLOFF",
-      "advisory_posture": "PULLBACK_WATCH_NO_AUTO_BUY",
-      "broad_selloff": true,
+      "context_state": "NO_CONTEXT_CHANGE",
+      "advisory_posture": "KEEP_EXISTING_PLAN",
+      "broad_selloff": false,
       "price_weak": true,
       "monthly_revenue_state": "NOT_ACCELERATING",
-      "positive_event_count": 1,
+      "positive_event_count": 0,
       "negative_event_count": 0,
-      "positive_source_families": [
-        "finmoconf_mops_relay"
-      ],
+      "positive_source_families": [],
       "negative_source_families": [],
       "official_negative_event_types": [],
-      "evidence_urls": [
-        "https://finmoconf.diveinvest.net/presentation/6a749815a16a75b8138c21b7"
-      ]
+      "evidence_urls": []
     },
     {
       "ticker": "1560",
       "company": "中砂",
-      "context_state": "MARKET_WIDE_SELLOFF",
-      "advisory_posture": "PULLBACK_WATCH_NO_AUTO_BUY",
-      "broad_selloff": true,
+      "context_state": "NO_CONTEXT_CHANGE",
+      "advisory_posture": "KEEP_EXISTING_PLAN",
+      "broad_selloff": false,
       "price_weak": true,
       "monthly_revenue_state": "NOT_ACCELERATING",
       "positive_event_count": 0,
@@ -916,9 +893,9 @@
     {
       "ticker": "3131",
       "company": "弘塑",
-      "context_state": "MARKET_WIDE_SELLOFF",
-      "advisory_posture": "PULLBACK_WATCH_NO_AUTO_BUY",
-      "broad_selloff": true,
+      "context_state": "NO_CONTEXT_CHANGE",
+      "advisory_posture": "KEEP_EXISTING_PLAN",
+      "broad_selloff": false,
       "price_weak": true,
       "monthly_revenue_state": "ACCELERATING",
       "positive_event_count": 0,
@@ -929,7 +906,7 @@
       "evidence_urls": []
     }
   ],
-  "broad_selloff": true,
+  "broad_selloff": false,
   "rejected_evidence": [],
   "pit_future_rows_excluded": 0,
   "future_data_violation_count": 0,
