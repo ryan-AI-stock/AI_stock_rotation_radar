@@ -1,25 +1,25 @@
 {
-  "date": "2026-11-17",
+  "date": "2026-11-18",
   "rows": [
     {
-      "date": "2026-11-17",
+      "date": "2026-11-18",
       "ticker": "00631",
       "company": "元大台灣50正2",
-      "raw_close": 26.86,
+      "raw_close": 26.84,
       "source": "official_raw_close"
     },
     {
-      "date": "2026-11-17",
+      "date": "2026-11-18",
       "ticker": "2308",
       "company": "台達電",
-      "raw_close": 1055.0,
+      "raw_close": 1060.0,
       "source": "official_raw_close"
     },
     {
-      "date": "2026-11-17",
+      "date": "2026-11-18",
       "ticker": "2317",
       "company": "鴻海",
-      "raw_close": 219.0,
+      "raw_close": 221.0,
       "source": "official_raw_close"
     }
   ],
