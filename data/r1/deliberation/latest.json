@@ -1,7 +1,7 @@
 {
   "model": "R1",
   "layer": "bounded_deliberation_v0.1",
-  "date": "2026-11-19",
+  "date": "2026-11-20",
   "status": "READY",
   "rows": [
     {
@@ -45,8 +45,8 @@
       "conclusion": "WATCH_POTENTIAL_DISLOCATION",
       "confidence": "MEDIUM",
       "rationale": "價格隨市場下跌但月營收加速，可列錯殺候選；尚未形成買進指令",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
-      "judgement_changed": true,
+      "previous_conclusion": "WATCH_POTENTIAL_DISLOCATION",
+      "judgement_changed": false,
       "evidence_urls": []
     },
     {
@@ -89,8 +89,8 @@
       "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
       "confidence": "LOW",
       "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
-      "judgement_changed": true,
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "judgement_changed": false,
       "evidence_urls": []
     },
     {
@@ -133,8 +133,8 @@
       "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
       "confidence": "LOW",
       "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
-      "judgement_changed": true,
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "judgement_changed": false,
       "evidence_urls": [
         "https://www.trendforce.com/presscenter/news/20260907-13219.html"
       ]
@@ -180,8 +180,8 @@
       "conclusion": "WATCH_POTENTIAL_DISLOCATION",
       "confidence": "MEDIUM",
       "rationale": "價格隨市場下跌但月營收加速，可列錯殺候選；尚未形成買進指令",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
-      "judgement_changed": true,
+      "previous_conclusion": "WATCH_POTENTIAL_DISLOCATION",
+      "judgement_changed": false,
       "evidence_urls": [
         "https://www.xxquant.com/en/institution/institutional-research/63fc05022b4f6cf9d73e160779b31d86"
       ]
@@ -226,8 +226,8 @@
       "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
       "confidence": "LOW",
       "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
-      "judgement_changed": true,
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "judgement_changed": false,
       "evidence_urls": [
         "https://www.spglobal.com/market-intelligence/en/news-insights/research/2026/08/mediatek-s-ai-asics-growth-to-offset-smartphone-weakness"
       ]
@@ -273,8 +273,8 @@
       "conclusion": "WATCH_POTENTIAL_DISLOCATION",
       "confidence": "MEDIUM",
       "rationale": "價格隨市場下跌但月營收加速，可列錯殺候選；尚未形成買進指令",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
-      "judgement_changed": true,
+      "previous_conclusion": "WATCH_POTENTIAL_DISLOCATION",
+      "judgement_changed": false,
       "evidence_urls": []
     },
     {
@@ -317,8 +317,8 @@
       "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
       "confidence": "LOW",
       "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
-      "judgement_changed": true,
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "judgement_changed": false,
       "evidence_urls": [
         "https://www.tomshardware.com/tech-industry/semiconductors/micron-takes-a-500-million-position-in-americas-only-300mm-wafer-plant"
       ]
@@ -364,8 +364,8 @@
       "conclusion": "WATCH_POTENTIAL_DISLOCATION",
       "confidence": "MEDIUM",
       "rationale": "價格隨市場下跌但月營收加速，可列錯殺候選；尚未形成買進指令",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
-      "judgement_changed": true,
+      "previous_conclusion": "WATCH_POTENTIAL_DISLOCATION",
+      "judgement_changed": false,
       "evidence_urls": []
     },
     {
@@ -408,8 +408,8 @@
       "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
       "confidence": "LOW",
       "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
-      "judgement_changed": true,
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "judgement_changed": false,
       "evidence_urls": [
         "https://www.moneydj.com/kmdj/news/newsviewer.aspx?a=8b9ae6d7-7f01-46fa-ab35-d29897a392e4&c=MB00"
       ]
@@ -454,8 +454,8 @@
       "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
       "confidence": "LOW",
       "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
-      "judgement_changed": true,
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "judgement_changed": false,
       "evidence_urls": [
         "https://www.moneydj.com/kmdj/news/newsviewer.aspx?a=691d75a0-20c1-4648-8948-42eff848d38f"
       ]
@@ -500,8 +500,8 @@
       "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
       "confidence": "LOW",
       "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
-      "judgement_changed": true,
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "judgement_changed": false,
       "evidence_urls": []
     },
     {
@@ -545,8 +545,8 @@
       "conclusion": "WATCH_POTENTIAL_DISLOCATION",
       "confidence": "MEDIUM",
       "rationale": "價格隨市場下跌但月營收加速，可列錯殺候選；尚未形成買進指令",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
-      "judgement_changed": true,
+      "previous_conclusion": "WATCH_POTENTIAL_DISLOCATION",
+      "judgement_changed": false,
       "evidence_urls": []
     },
     {
@@ -590,8 +590,8 @@
       "conclusion": "WATCH_POTENTIAL_DISLOCATION",
       "confidence": "MEDIUM",
       "rationale": "價格隨市場下跌但月營收加速，可列錯殺候選；尚未形成買進指令",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
-      "judgement_changed": true,
+      "previous_conclusion": "WATCH_POTENTIAL_DISLOCATION",
+      "judgement_changed": false,
       "evidence_urls": [
         "https://www.mirrormedia.mg/external/mirrordaily_82154"
       ]
@@ -636,8 +636,8 @@
       "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
       "confidence": "LOW",
       "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
-      "judgement_changed": true,
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "judgement_changed": false,
       "evidence_urls": []
     },
     {
@@ -680,8 +680,8 @@
       "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
       "confidence": "LOW",
       "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
-      "judgement_changed": true,
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "judgement_changed": false,
       "evidence_urls": []
     },
     {
@@ -725,8 +725,8 @@
       "conclusion": "WATCH_POTENTIAL_DISLOCATION",
       "confidence": "MEDIUM",
       "rationale": "價格隨市場下跌但月營收加速，可列錯殺候選；尚未形成買進指令",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
-      "judgement_changed": true,
+      "previous_conclusion": "WATCH_POTENTIAL_DISLOCATION",
+      "judgement_changed": false,
       "evidence_urls": [
         "https://doc.twse.com.tw/pdf/2025_3081_20260527F04_20260714_045320.pdf"
       ]
@@ -771,8 +771,8 @@
       "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
       "confidence": "LOW",
       "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
-      "judgement_changed": true,
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "judgement_changed": false,
       "evidence_urls": [
         "https://www.umc.com/zh-TW/News/press_release/Content/technology_related/20260714"
       ]
@@ -817,8 +817,8 @@
       "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
       "confidence": "LOW",
       "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
-      "judgement_changed": true,
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "judgement_changed": false,
       "evidence_urls": []
     },
     {
@@ -861,8 +861,8 @@
       "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
       "confidence": "LOW",
       "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
-      "judgement_changed": true,
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "judgement_changed": false,
       "evidence_urls": []
     },
     {
@@ -905,8 +905,8 @@
       "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
       "confidence": "LOW",
       "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
-      "judgement_changed": true,
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "judgement_changed": false,
       "evidence_urls": []
     },
     {
@@ -949,8 +949,8 @@
       "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
       "confidence": "LOW",
       "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
-      "judgement_changed": true,
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "judgement_changed": false,
       "evidence_urls": []
     },
     {
@@ -993,8 +993,8 @@
       "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
       "confidence": "LOW",
       "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
-      "judgement_changed": true,
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "judgement_changed": false,
       "evidence_urls": []
     },
     {
@@ -1038,8 +1038,8 @@
       "conclusion": "WATCH_POTENTIAL_DISLOCATION",
       "confidence": "MEDIUM",
       "rationale": "價格隨市場下跌但月營收加速，可列錯殺候選；尚未形成買進指令",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
-      "judgement_changed": true,
+      "previous_conclusion": "WATCH_POTENTIAL_DISLOCATION",
+      "judgement_changed": false,
       "evidence_urls": []
     },
     {
@@ -1082,8 +1082,8 @@
       "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
       "confidence": "LOW",
       "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
-      "judgement_changed": true,
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "judgement_changed": false,
       "evidence_urls": []
     },
     {
@@ -1127,8 +1127,8 @@
       "conclusion": "WATCH_POTENTIAL_DISLOCATION",
       "confidence": "MEDIUM",
       "rationale": "價格隨市場下跌但月營收加速，可列錯殺候選；尚未形成買進指令",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
-      "judgement_changed": true,
+      "previous_conclusion": "WATCH_POTENTIAL_DISLOCATION",
+      "judgement_changed": false,
       "evidence_urls": []
     },
     {
@@ -1171,8 +1171,8 @@
       "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
       "confidence": "LOW",
       "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
-      "judgement_changed": true,
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "judgement_changed": false,
       "evidence_urls": []
     },
     {
@@ -1215,8 +1215,8 @@
       "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
       "confidence": "LOW",
       "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
-      "judgement_changed": true,
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "judgement_changed": false,
       "evidence_urls": []
     },
     {
@@ -1260,8 +1260,8 @@
       "conclusion": "WATCH_POTENTIAL_DISLOCATION",
       "confidence": "MEDIUM",
       "rationale": "價格隨市場下跌但月營收加速，可列錯殺候選；尚未形成買進指令",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
-      "judgement_changed": true,
+      "previous_conclusion": "WATCH_POTENTIAL_DISLOCATION",
+      "judgement_changed": false,
       "evidence_urls": [
         "https://www.ttv.com.tw/finance/view/0720260710050B29AE35C5884793BFDF07635CF7BD49950E/587"
       ]
@@ -1307,8 +1307,8 @@
       "conclusion": "WATCH_POTENTIAL_DISLOCATION",
       "confidence": "MEDIUM",
       "rationale": "價格隨市場下跌但月營收加速，可列錯殺候選；尚未形成買進指令",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
-      "judgement_changed": true,
+      "previous_conclusion": "WATCH_POTENTIAL_DISLOCATION",
+      "judgement_changed": false,
       "evidence_urls": [
         "https://www.moneydj.com/KMDJ/news/newsviewer.aspx?a=24de7354-e77c-445f-a299-0e12c3a0792f"
       ]
@@ -1353,8 +1353,8 @@
       "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
       "confidence": "LOW",
       "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
-      "judgement_changed": true,
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "judgement_changed": false,
       "evidence_urls": []
     },
     {
@@ -1445,8 +1445,8 @@
       "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
       "confidence": "LOW",
       "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
-      "judgement_changed": true,
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "judgement_changed": false,
       "evidence_urls": [
         "https://www.liteon.com/zh-cn/news/press-center/content/liteon-ocp-2026"
       ]
@@ -1491,8 +1491,8 @@
       "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
       "confidence": "LOW",
       "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
-      "judgement_changed": true,
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "judgement_changed": false,
       "evidence_urls": []
     },
     {
@@ -1585,8 +1585,8 @@
       "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
       "confidence": "LOW",
       "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
-      "judgement_changed": true,
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "judgement_changed": false,
       "evidence_urls": []
     },
     {
@@ -1630,8 +1630,8 @@
       "conclusion": "WATCH_POTENTIAL_DISLOCATION",
       "confidence": "MEDIUM",
       "rationale": "價格隨市場下跌但月營收加速，可列錯殺候選；尚未形成買進指令",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
-      "judgement_changed": true,
+      "previous_conclusion": "WATCH_POTENTIAL_DISLOCATION",
+      "judgement_changed": false,
       "evidence_urls": []
     },
     {
@@ -1674,8 +1674,8 @@
       "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
       "confidence": "LOW",
       "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
-      "judgement_changed": true,
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "judgement_changed": false,
       "evidence_urls": []
     },
     {
@@ -1718,8 +1718,8 @@
       "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
       "confidence": "LOW",
       "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
-      "judgement_changed": true,
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "judgement_changed": false,
       "evidence_urls": [
         "https://wealth.firstbank.com.tw/investment-tips/trend-insight/news/news-detail?id=%7B85C157DD-773A-4B2C-AD9F-30D1B09514E6%7D",
         "https://www.jentech.com.tw/zh/vapor-chamber-lid-2"
@@ -1765,8 +1765,8 @@
       "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
       "confidence": "LOW",
       "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
-      "judgement_changed": true,
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "judgement_changed": false,
       "evidence_urls": [
         "https://wealth.firstbank.com.tw/investment-tips/trend-insight/news/news-detail?id=%7B85C157DD-773A-4B2C-AD9F-30D1B09514E6%7D",
         "https://www.esunsec.com.tw/article/post?postid=7d7f19bcff2d4ee1bbb4ab9f092a761c"
@@ -1812,8 +1812,8 @@
       "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
       "confidence": "LOW",
       "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
-      "judgement_changed": true,
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "judgement_changed": false,
       "evidence_urls": [
         "https://www.esunsec.com.tw/article/post?postid=7d7f19bcff2d4ee1bbb4ab9f092a761c"
       ]
@@ -1858,8 +1858,8 @@
       "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
       "confidence": "LOW",
       "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
-      "judgement_changed": true,
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "judgement_changed": false,
       "evidence_urls": [
         "https://poorstock.com/earningcall/6230",
         "https://vocus.cc/article/6a92d9cdfd89780001fddd66"
@@ -1955,8 +1955,8 @@
       "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
       "confidence": "LOW",
       "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
-      "judgement_changed": true,
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "judgement_changed": false,
       "evidence_urls": []
     },
     {
@@ -1999,8 +1999,8 @@
       "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
       "confidence": "LOW",
       "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
-      "judgement_changed": true,
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "judgement_changed": false,
       "evidence_urls": []
     },
     {
@@ -2092,8 +2092,8 @@
       "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
       "confidence": "LOW",
       "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
-      "judgement_changed": true,
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "judgement_changed": false,
       "evidence_urls": []
     },
     {
@@ -2136,8 +2136,8 @@
       "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
       "confidence": "LOW",
       "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
-      "judgement_changed": true,
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "judgement_changed": false,
       "evidence_urls": []
     },
     {
@@ -2180,8 +2180,8 @@
       "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
       "confidence": "LOW",
       "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
-      "judgement_changed": true,
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "judgement_changed": false,
       "evidence_urls": []
     },
     {
@@ -2224,8 +2224,8 @@
       "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
       "confidence": "LOW",
       "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
-      "judgement_changed": true,
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "judgement_changed": false,
       "evidence_urls": []
     },
     {
@@ -2268,8 +2268,8 @@
       "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
       "confidence": "LOW",
       "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
-      "judgement_changed": true,
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "judgement_changed": false,
       "evidence_urls": []
     },
     {
@@ -2312,8 +2312,8 @@
       "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
       "confidence": "LOW",
       "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
-      "judgement_changed": true,
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "judgement_changed": false,
       "evidence_urls": []
     },
     {
@@ -2356,8 +2356,8 @@
       "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
       "confidence": "LOW",
       "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
-      "judgement_changed": true,
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "judgement_changed": false,
       "evidence_urls": []
     },
     {
@@ -2400,8 +2400,8 @@
       "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
       "confidence": "LOW",
       "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
-      "judgement_changed": true,
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "judgement_changed": false,
       "evidence_urls": []
     },
     {
@@ -2445,8 +2445,8 @@
       "conclusion": "WATCH_POTENTIAL_DISLOCATION",
       "confidence": "MEDIUM",
       "rationale": "價格隨市場下跌但月營收加速，可列錯殺候選；尚未形成買進指令",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
-      "judgement_changed": true,
+      "previous_conclusion": "WATCH_POTENTIAL_DISLOCATION",
+      "judgement_changed": false,
       "evidence_urls": []
     }
   ],
