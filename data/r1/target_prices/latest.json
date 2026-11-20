@@ -231,7 +231,7 @@
       "ticker": "2449",
       "as_of_date": "2026-11-20",
       "institution_count": 2,
-      "consensus_target_price": 375.0,
+      "consensus_target_price": 320.0,
       "consensus_upside": null,
       "dispersion": null,
       "status": "DATA_MISSING",

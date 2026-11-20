@@ -1,17 +1,17 @@
 {
   "model": "R1",
   "version": "r1-theme-leader-input-v0.2",
-  "as_of_date": "2026-11-06",
+  "as_of_date": "2026-11-20",
   "score_rubric_version": "r1-theme-score-rubric-v0.1",
   "requested_ticker_count": 52,
   "actual_ticker_count": 52,
-  "complete_ticker_count": 20,
+  "complete_ticker_count": 52,
   "rows": [
     {
       "ticker": "2330",
       "company": "台積電",
       "theme_id": "compute_foundry",
-      "as_of_date": "2026-11-06",
+      "as_of_date": "2026-11-20",
       "evidence": {
         "bottleneck_directness": {
           "sources": [
@@ -67,10 +67,17 @@
             }
           ]
         },
+        "financial_earnings_quality": {
+          "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=2330&SYEAR=2026&SSEASON=3&REPORT_ID=C",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
+          "source_family": "MOPS_XBRL_OFFICIAL",
+          "evidence_note": "r1-financial-quality-rubric-v0.1；本期與去年同期財報、營業現金流及資產負債比率；challenger草案，未啟用交易。"
+        },
         "market_representation": {
-          "source_url": "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261106&selectType=ALLBUT0999",
-          "source_date": "2026-11-06",
-          "available_at": "2026-11-06",
+          "source_url": "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261120&selectType=ALLBUT0999",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
           "source_family": "TWSE_TPEX_OFFICIAL_MARKET_AND_OWNERSHIP",
           "evidence_note": "同題材內市值、20TD平均成交金額與官方外資持股比例百分位。"
         }
@@ -78,28 +85,23 @@
       "bottleneck_directness": 100.0,
       "industry_technology_position": 100.0,
       "ai_revenue_realization": 100.0,
-      "financial_earnings_quality": null,
+      "financial_earnings_quality": 92.3791,
       "market_representation": 100.0,
-      "structural_leader": null,
+      "structural_leader": 98.47582,
       "revenue_earnings_growth": null,
       "self_historical_valuation": null,
       "price_risk_safety": null,
       "demand_order_catalyst": null,
-      "status": "DATA_MISSING",
-      "leader_missing_fields": [
-        "financial_earnings_quality"
-      ],
+      "status": "READY",
+      "leader_missing_fields": [],
       "priority_status": "DATA_MISSING",
       "priority_missing_fields": [
-        "structural_leader",
         "revenue_earnings_growth",
         "self_historical_valuation",
         "price_risk_safety",
         "demand_order_catalyst"
       ],
       "missing_fields": [
-        "financial_earnings_quality",
-        "structural_leader",
         "revenue_earnings_growth",
         "self_historical_valuation",
         "price_risk_safety",
@@ -110,7 +112,7 @@
       "ticker": "2454",
       "company": "聯發科",
       "theme_id": "compute_foundry",
-      "as_of_date": "2026-11-06",
+      "as_of_date": "2026-11-20",
       "evidence": {
         "bottleneck_directness": {
           "sources": [
@@ -166,10 +168,17 @@
             }
           ]
         },
+        "financial_earnings_quality": {
+          "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=2454&SYEAR=2026&SSEASON=3&REPORT_ID=C",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
+          "source_family": "MOPS_XBRL_OFFICIAL",
+          "evidence_note": "r1-financial-quality-rubric-v0.1；本期與去年同期財報、營業現金流及資產負債比率；challenger草案，未啟用交易。"
+        },
         "market_representation": {
-          "source_url": "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261106&selectType=ALLBUT0999",
-          "source_date": "2026-11-06",
-          "available_at": "2026-11-06",
+          "source_url": "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261120&selectType=ALLBUT0999",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
           "source_family": "TWSE_TPEX_OFFICIAL_MARKET_AND_OWNERSHIP",
           "evidence_note": "同題材內市值、20TD平均成交金額與官方外資持股比例百分位。"
         }
@@ -177,28 +186,23 @@
       "bottleneck_directness": 75.0,
       "industry_technology_position": 75.0,
       "ai_revenue_realization": 75.0,
-      "financial_earnings_quality": null,
+      "financial_earnings_quality": 34.584,
       "market_representation": 75.0,
-      "structural_leader": null,
+      "structural_leader": 66.9168,
       "revenue_earnings_growth": null,
       "self_historical_valuation": null,
       "price_risk_safety": null,
       "demand_order_catalyst": null,
-      "status": "DATA_MISSING",
-      "leader_missing_fields": [
-        "financial_earnings_quality"
-      ],
+      "status": "READY",
+      "leader_missing_fields": [],
       "priority_status": "DATA_MISSING",
       "priority_missing_fields": [
-        "structural_leader",
         "revenue_earnings_growth",
         "self_historical_valuation",
         "price_risk_safety",
         "demand_order_catalyst"
       ],
       "missing_fields": [
-        "financial_earnings_quality",
-        "structural_leader",
         "revenue_earnings_growth",
         "self_historical_valuation",
         "price_risk_safety",
@@ -209,7 +213,7 @@
       "ticker": "3661",
       "company": "世芯-KY",
       "theme_id": "compute_foundry",
-      "as_of_date": "2026-11-06",
+      "as_of_date": "2026-11-20",
       "evidence": {
         "bottleneck_directness": {
           "sources": [
@@ -265,10 +269,17 @@
             }
           ]
         },
+        "financial_earnings_quality": {
+          "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3661&SYEAR=2026&SSEASON=3&REPORT_ID=C",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
+          "source_family": "MOPS_XBRL_OFFICIAL",
+          "evidence_note": "r1-financial-quality-rubric-v0.1；本期與去年同期財報、營業現金流及資產負債比率；challenger草案，未啟用交易。"
+        },
         "market_representation": {
-          "source_url": "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261106&selectType=ALLBUT0999",
-          "source_date": "2026-11-06",
-          "available_at": "2026-11-06",
+          "source_url": "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261120&selectType=ALLBUT0999",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
           "source_family": "TWSE_TPEX_OFFICIAL_MARKET_AND_OWNERSHIP",
           "evidence_note": "同題材內市值、20TD平均成交金額與官方外資持股比例百分位。"
         }
@@ -276,28 +287,23 @@
       "bottleneck_directness": 75.0,
       "industry_technology_position": 75.0,
       "ai_revenue_realization": 100.0,
-      "financial_earnings_quality": null,
+      "financial_earnings_quality": 65.3813,
       "market_representation": 30.0,
-      "structural_leader": null,
+      "structural_leader": 73.57626,
       "revenue_earnings_growth": null,
       "self_historical_valuation": null,
       "price_risk_safety": null,
       "demand_order_catalyst": null,
-      "status": "DATA_MISSING",
-      "leader_missing_fields": [
-        "financial_earnings_quality"
-      ],
+      "status": "READY",
+      "leader_missing_fields": [],
       "priority_status": "DATA_MISSING",
       "priority_missing_fields": [
-        "structural_leader",
         "revenue_earnings_growth",
         "self_historical_valuation",
         "price_risk_safety",
         "demand_order_catalyst"
       ],
       "missing_fields": [
-        "financial_earnings_quality",
-        "structural_leader",
         "revenue_earnings_growth",
         "self_historical_valuation",
         "price_risk_safety",
@@ -308,7 +314,7 @@
       "ticker": "3443",
       "company": "創意",
       "theme_id": "compute_foundry",
-      "as_of_date": "2026-11-06",
+      "as_of_date": "2026-11-20",
       "evidence": {
         "bottleneck_directness": {
           "sources": [
@@ -366,15 +372,15 @@
         },
         "financial_earnings_quality": {
           "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3443&SYEAR=2026&SSEASON=3&REPORT_ID=C",
-          "source_date": "2026-11-06",
-          "available_at": "2026-11-06",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
           "source_family": "MOPS_XBRL_OFFICIAL",
           "evidence_note": "r1-financial-quality-rubric-v0.1；本期與去年同期財報、營業現金流及資產負債比率；challenger草案，未啟用交易。"
         },
         "market_representation": {
-          "source_url": "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261106&selectType=ALLBUT0999",
-          "source_date": "2026-11-06",
-          "available_at": "2026-11-06",
+          "source_url": "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261120&selectType=ALLBUT0999",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
           "source_family": "TWSE_TPEX_OFFICIAL_MARKET_AND_OWNERSHIP",
           "evidence_note": "同題材內市值、20TD平均成交金額與官方外資持股比例百分位。"
         }
@@ -409,7 +415,7 @@
       "ticker": "3035",
       "company": "智原",
       "theme_id": "compute_foundry",
-      "as_of_date": "2026-11-06",
+      "as_of_date": "2026-11-20",
       "evidence": {
         "bottleneck_directness": {
           "sources": [
@@ -467,15 +473,15 @@
         },
         "financial_earnings_quality": {
           "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3035&SYEAR=2026&SSEASON=3&REPORT_ID=C",
-          "source_date": "2026-11-06",
-          "available_at": "2026-11-06",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
           "source_family": "MOPS_XBRL_OFFICIAL",
           "evidence_note": "r1-financial-quality-rubric-v0.1；本期與去年同期財報、營業現金流及資產負債比率；challenger草案，未啟用交易。"
         },
         "market_representation": {
-          "source_url": "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261106&selectType=ALLBUT0999",
-          "source_date": "2026-11-06",
-          "available_at": "2026-11-06",
+          "source_url": "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261120&selectType=ALLBUT0999",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
           "source_family": "TWSE_TPEX_OFFICIAL_MARKET_AND_OWNERSHIP",
           "evidence_note": "同題材內市值、20TD平均成交金額與官方外資持股比例百分位。"
         }
@@ -483,9 +489,9 @@
       "bottleneck_directness": 50.0,
       "industry_technology_position": 50.0,
       "ai_revenue_realization": 50.0,
-      "financial_earnings_quality": 65.4919,
+      "financial_earnings_quality": 63.4919,
       "market_representation": 0.0,
-      "structural_leader": 48.09838,
+      "structural_leader": 47.69838,
       "revenue_earnings_growth": null,
       "self_historical_valuation": null,
       "price_risk_safety": null,
@@ -510,7 +516,7 @@
       "ticker": "3711",
       "company": "日月光投控",
       "theme_id": "advanced_packaging",
-      "as_of_date": "2026-11-06",
+      "as_of_date": "2026-11-20",
       "evidence": {
         "bottleneck_directness": {
           "sources": [
@@ -566,10 +572,17 @@
             }
           ]
         },
+        "financial_earnings_quality": {
+          "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3711&SYEAR=2026&SSEASON=3&REPORT_ID=C",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
+          "source_family": "MOPS_XBRL_OFFICIAL",
+          "evidence_note": "r1-financial-quality-rubric-v0.1；本期與去年同期財報、營業現金流及資產負債比率；challenger草案，未啟用交易。"
+        },
         "market_representation": {
-          "source_url": "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261106&selectType=ALLBUT0999",
-          "source_date": "2026-11-06",
-          "available_at": "2026-11-06",
+          "source_url": "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261120&selectType=ALLBUT0999",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
           "source_family": "TWSE_TPEX_OFFICIAL_MARKET_AND_OWNERSHIP",
           "evidence_note": "同題材內市值、20TD平均成交金額與官方外資持股比例百分位。"
         }
@@ -577,28 +590,23 @@
       "bottleneck_directness": 75.0,
       "industry_technology_position": 50.0,
       "ai_revenue_realization": 75.0,
-      "financial_earnings_quality": null,
+      "financial_earnings_quality": 79.482,
       "market_representation": 100.0,
-      "structural_leader": null,
+      "structural_leader": 72.1464,
       "revenue_earnings_growth": null,
       "self_historical_valuation": null,
       "price_risk_safety": null,
       "demand_order_catalyst": null,
-      "status": "DATA_MISSING",
-      "leader_missing_fields": [
-        "financial_earnings_quality"
-      ],
+      "status": "READY",
+      "leader_missing_fields": [],
       "priority_status": "DATA_MISSING",
       "priority_missing_fields": [
-        "structural_leader",
         "revenue_earnings_growth",
         "self_historical_valuation",
         "price_risk_safety",
         "demand_order_catalyst"
       ],
       "missing_fields": [
-        "financial_earnings_quality",
-        "structural_leader",
         "revenue_earnings_growth",
         "self_historical_valuation",
         "price_risk_safety",
@@ -609,7 +617,7 @@
       "ticker": "2449",
       "company": "京元電子",
       "theme_id": "advanced_packaging",
-      "as_of_date": "2026-11-06",
+      "as_of_date": "2026-11-20",
       "evidence": {
         "bottleneck_directness": {
           "sources": [
@@ -665,10 +673,17 @@
             }
           ]
         },
+        "financial_earnings_quality": {
+          "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=2449&SYEAR=2026&SSEASON=3&REPORT_ID=C",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
+          "source_family": "MOPS_XBRL_OFFICIAL",
+          "evidence_note": "r1-financial-quality-rubric-v0.1；本期與去年同期財報、營業現金流及資產負債比率；challenger草案，未啟用交易。"
+        },
         "market_representation": {
-          "source_url": "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261106&selectType=ALLBUT0999",
-          "source_date": "2026-11-06",
-          "available_at": "2026-11-06",
+          "source_url": "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261120&selectType=ALLBUT0999",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
           "source_family": "TWSE_TPEX_OFFICIAL_MARKET_AND_OWNERSHIP",
           "evidence_note": "同題材內市值、20TD平均成交金額與官方外資持股比例百分位。"
         }
@@ -676,28 +691,23 @@
       "bottleneck_directness": 75.0,
       "industry_technology_position": 50.0,
       "ai_revenue_realization": 75.0,
-      "financial_earnings_quality": null,
+      "financial_earnings_quality": 59.2376,
       "market_representation": 52.5,
-      "structural_leader": null,
+      "structural_leader": 63.34752,
       "revenue_earnings_growth": null,
       "self_historical_valuation": null,
       "price_risk_safety": null,
       "demand_order_catalyst": null,
-      "status": "DATA_MISSING",
-      "leader_missing_fields": [
-        "financial_earnings_quality"
-      ],
+      "status": "READY",
+      "leader_missing_fields": [],
       "priority_status": "DATA_MISSING",
       "priority_missing_fields": [
-        "structural_leader",
         "revenue_earnings_growth",
         "self_historical_valuation",
         "price_risk_safety",
         "demand_order_catalyst"
       ],
       "missing_fields": [
-        "financial_earnings_quality",
-        "structural_leader",
         "revenue_earnings_growth",
         "self_historical_valuation",
         "price_risk_safety",
@@ -708,7 +718,7 @@
       "ticker": "6223",
       "company": "旺矽",
       "theme_id": "advanced_packaging",
-      "as_of_date": "2026-11-06",
+      "as_of_date": "2026-11-20",
       "evidence": {
         "bottleneck_directness": {
           "sources": [
@@ -764,10 +774,17 @@
             }
           ]
         },
+        "financial_earnings_quality": {
+          "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=6223&SYEAR=2026&SSEASON=3&REPORT_ID=C",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
+          "source_family": "MOPS_XBRL_OFFICIAL",
+          "evidence_note": "r1-financial-quality-rubric-v0.1；本期與去年同期財報、營業現金流及資產負債比率；challenger草案，未啟用交易。"
+        },
         "market_representation": {
-          "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/qfii?date=2026%2F11%2F06&response=json",
-          "source_date": "2026-11-06",
-          "available_at": "2026-11-06",
+          "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/qfii?date=2026%2F11%2F20&response=json",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
           "source_family": "TWSE_TPEX_OFFICIAL_MARKET_AND_OWNERSHIP",
           "evidence_note": "同題材內市值、20TD平均成交金額與官方外資持股比例百分位。"
         }
@@ -775,28 +792,23 @@
       "bottleneck_directness": 75.0,
       "industry_technology_position": 50.0,
       "ai_revenue_realization": 75.0,
-      "financial_earnings_quality": null,
+      "financial_earnings_quality": 75.4963,
       "market_representation": 62.5,
-      "structural_leader": null,
+      "structural_leader": 67.59926,
       "revenue_earnings_growth": null,
       "self_historical_valuation": null,
       "price_risk_safety": null,
       "demand_order_catalyst": null,
-      "status": "DATA_MISSING",
-      "leader_missing_fields": [
-        "financial_earnings_quality"
-      ],
+      "status": "READY",
+      "leader_missing_fields": [],
       "priority_status": "DATA_MISSING",
       "priority_missing_fields": [
-        "structural_leader",
         "revenue_earnings_growth",
         "self_historical_valuation",
         "price_risk_safety",
         "demand_order_catalyst"
       ],
       "missing_fields": [
-        "financial_earnings_quality",
-        "structural_leader",
         "revenue_earnings_growth",
         "self_historical_valuation",
         "price_risk_safety",
@@ -807,7 +819,7 @@
       "ticker": "6187",
       "company": "萬潤",
       "theme_id": "advanced_packaging",
-      "as_of_date": "2026-11-06",
+      "as_of_date": "2026-11-20",
       "evidence": {
         "bottleneck_directness": {
           "sources": [
@@ -863,10 +875,17 @@
             }
           ]
         },
+        "financial_earnings_quality": {
+          "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=6187&SYEAR=2026&SSEASON=3&REPORT_ID=C",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
+          "source_family": "MOPS_XBRL_OFFICIAL",
+          "evidence_note": "r1-financial-quality-rubric-v0.1；本期與去年同期財報、營業現金流及資產負債比率；challenger草案，未啟用交易。"
+        },
         "market_representation": {
-          "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/qfii?date=2026%2F11%2F06&response=json",
-          "source_date": "2026-11-06",
-          "available_at": "2026-11-06",
+          "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/qfii?date=2026%2F11%2F20&response=json",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
           "source_family": "TWSE_TPEX_OFFICIAL_MARKET_AND_OWNERSHIP",
           "evidence_note": "同題材內市值、20TD平均成交金額與官方外資持股比例百分位。"
         }
@@ -874,28 +893,23 @@
       "bottleneck_directness": 75.0,
       "industry_technology_position": 50.0,
       "ai_revenue_realization": 75.0,
-      "financial_earnings_quality": null,
+      "financial_earnings_quality": 65.3394,
       "market_representation": 35.0,
-      "structural_leader": null,
+      "structural_leader": 62.81788,
       "revenue_earnings_growth": null,
       "self_historical_valuation": null,
       "price_risk_safety": null,
       "demand_order_catalyst": null,
-      "status": "DATA_MISSING",
-      "leader_missing_fields": [
-        "financial_earnings_quality"
-      ],
+      "status": "READY",
+      "leader_missing_fields": [],
       "priority_status": "DATA_MISSING",
       "priority_missing_fields": [
-        "structural_leader",
         "revenue_earnings_growth",
         "self_historical_valuation",
         "price_risk_safety",
         "demand_order_catalyst"
       ],
       "missing_fields": [
-        "financial_earnings_quality",
-        "structural_leader",
         "revenue_earnings_growth",
         "self_historical_valuation",
         "price_risk_safety",
@@ -906,7 +920,7 @@
       "ticker": "3583",
       "company": "辛耘",
       "theme_id": "advanced_packaging",
-      "as_of_date": "2026-11-06",
+      "as_of_date": "2026-11-20",
       "evidence": {
         "bottleneck_directness": {
           "sources": [
@@ -962,10 +976,17 @@
             }
           ]
         },
+        "financial_earnings_quality": {
+          "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3583&SYEAR=2026&SSEASON=3&REPORT_ID=C",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
+          "source_family": "MOPS_XBRL_OFFICIAL",
+          "evidence_note": "r1-financial-quality-rubric-v0.1；本期與去年同期財報、營業現金流及資產負債比率；challenger草案，未啟用交易。"
+        },
         "market_representation": {
-          "source_url": "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261106&selectType=ALLBUT0999",
-          "source_date": "2026-11-06",
-          "available_at": "2026-11-06",
+          "source_url": "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261120&selectType=ALLBUT0999",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
           "source_family": "TWSE_TPEX_OFFICIAL_MARKET_AND_OWNERSHIP",
           "evidence_note": "同題材內市值、20TD平均成交金額與官方外資持股比例百分位。"
         }
@@ -973,28 +994,23 @@
       "bottleneck_directness": 75.0,
       "industry_technology_position": 50.0,
       "ai_revenue_realization": 75.0,
-      "financial_earnings_quality": null,
+      "financial_earnings_quality": 64.2394,
       "market_representation": 0.0,
-      "structural_leader": null,
+      "structural_leader": 59.09788,
       "revenue_earnings_growth": null,
       "self_historical_valuation": null,
       "price_risk_safety": null,
       "demand_order_catalyst": null,
-      "status": "DATA_MISSING",
-      "leader_missing_fields": [
-        "financial_earnings_quality"
-      ],
+      "status": "READY",
+      "leader_missing_fields": [],
       "priority_status": "DATA_MISSING",
       "priority_missing_fields": [
-        "structural_leader",
         "revenue_earnings_growth",
         "self_historical_valuation",
         "price_risk_safety",
         "demand_order_catalyst"
       ],
       "missing_fields": [
-        "financial_earnings_quality",
-        "structural_leader",
         "revenue_earnings_growth",
         "self_historical_valuation",
         "price_risk_safety",
@@ -1005,7 +1021,7 @@
       "ticker": "2408",
       "company": "南亞科",
       "theme_id": "memory_storage",
-      "as_of_date": "2026-11-06",
+      "as_of_date": "2026-11-20",
       "evidence": {
         "bottleneck_directness": {
           "sources": [
@@ -1063,15 +1079,15 @@
         },
         "financial_earnings_quality": {
           "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=2408&SYEAR=2026&SSEASON=3&REPORT_ID=C",
-          "source_date": "2026-11-06",
-          "available_at": "2026-11-06",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
           "source_family": "MOPS_XBRL_OFFICIAL",
           "evidence_note": "r1-financial-quality-rubric-v0.1；本期與去年同期財報、營業現金流及資產負債比率；challenger草案，未啟用交易。"
         },
         "market_representation": {
-          "source_url": "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261106&selectType=ALLBUT0999",
-          "source_date": "2026-11-06",
-          "available_at": "2026-11-06",
+          "source_url": "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261120&selectType=ALLBUT0999",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
           "source_family": "TWSE_TPEX_OFFICIAL_MARKET_AND_OWNERSHIP",
           "evidence_note": "同題材內市值、20TD平均成交金額與官方外資持股比例百分位。"
         }
@@ -1079,9 +1095,9 @@
       "bottleneck_directness": 75.0,
       "industry_technology_position": 50.0,
       "ai_revenue_realization": 50.0,
-      "financial_earnings_quality": 73.6394,
+      "financial_earnings_quality": 75.1394,
       "market_representation": 85.0,
-      "structural_leader": 64.47788,
+      "structural_leader": 64.77788,
       "revenue_earnings_growth": null,
       "self_historical_valuation": null,
       "price_risk_safety": null,
@@ -1106,7 +1122,7 @@
       "ticker": "2344",
       "company": "華邦電",
       "theme_id": "memory_storage",
-      "as_of_date": "2026-11-06",
+      "as_of_date": "2026-11-20",
       "evidence": {
         "bottleneck_directness": {
           "sources": [
@@ -1164,15 +1180,15 @@
         },
         "financial_earnings_quality": {
           "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=2344&SYEAR=2026&SSEASON=3&REPORT_ID=C",
-          "source_date": "2026-11-06",
-          "available_at": "2026-11-06",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
           "source_family": "MOPS_XBRL_OFFICIAL",
           "evidence_note": "r1-financial-quality-rubric-v0.1；本期與去年同期財報、營業現金流及資產負債比率；challenger草案，未啟用交易。"
         },
         "market_representation": {
-          "source_url": "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261106&selectType=ALLBUT0999",
-          "source_date": "2026-11-06",
-          "available_at": "2026-11-06",
+          "source_url": "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261120&selectType=ALLBUT0999",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
           "source_family": "TWSE_TPEX_OFFICIAL_MARKET_AND_OWNERSHIP",
           "evidence_note": "同題材內市值、20TD平均成交金額與官方外資持股比例百分位。"
         }
@@ -1180,9 +1196,9 @@
       "bottleneck_directness": 75.0,
       "industry_technology_position": 50.0,
       "ai_revenue_realization": 75.0,
-      "financial_earnings_quality": 87.5367,
+      "financial_earnings_quality": 87.37,
       "market_representation": 70.0,
-      "structural_leader": 70.75734,
+      "structural_leader": 70.724,
       "revenue_earnings_growth": null,
       "self_historical_valuation": null,
       "price_risk_safety": null,
@@ -1207,7 +1223,7 @@
       "ticker": "2337",
       "company": "旺宏",
       "theme_id": "memory_storage",
-      "as_of_date": "2026-11-06",
+      "as_of_date": "2026-11-20",
       "evidence": {
         "bottleneck_directness": {
           "sources": [
@@ -1265,15 +1281,15 @@
         },
         "financial_earnings_quality": {
           "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=2337&SYEAR=2026&SSEASON=3&REPORT_ID=C",
-          "source_date": "2026-11-06",
-          "available_at": "2026-11-06",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
           "source_family": "MOPS_XBRL_OFFICIAL",
           "evidence_note": "r1-financial-quality-rubric-v0.1；本期與去年同期財報、營業現金流及資產負債比率；challenger草案，未啟用交易。"
         },
         "market_representation": {
-          "source_url": "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261106&selectType=ALLBUT0999",
-          "source_date": "2026-11-06",
-          "available_at": "2026-11-06",
+          "source_url": "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261120&selectType=ALLBUT0999",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
           "source_family": "TWSE_TPEX_OFFICIAL_MARKET_AND_OWNERSHIP",
           "evidence_note": "同題材內市值、20TD平均成交金額與官方外資持股比例百分位。"
         }
@@ -1281,9 +1297,9 @@
       "bottleneck_directness": 50.0,
       "industry_technology_position": 50.0,
       "ai_revenue_realization": 50.0,
-      "financial_earnings_quality": 76.3896,
+      "financial_earnings_quality": 77.223,
       "market_representation": 35.0,
-      "structural_leader": 53.77792,
+      "structural_leader": 53.9446,
       "revenue_earnings_growth": null,
       "self_historical_valuation": null,
       "price_risk_safety": null,
@@ -1308,7 +1324,7 @@
       "ticker": "8299",
       "company": "群聯",
       "theme_id": "memory_storage",
-      "as_of_date": "2026-11-06",
+      "as_of_date": "2026-11-20",
       "evidence": {
         "bottleneck_directness": {
           "sources": [
@@ -1366,15 +1382,15 @@
         },
         "financial_earnings_quality": {
           "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=8299&SYEAR=2026&SSEASON=3&REPORT_ID=C",
-          "source_date": "2026-11-06",
-          "available_at": "2026-11-06",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
           "source_family": "MOPS_XBRL_OFFICIAL",
           "evidence_note": "r1-financial-quality-rubric-v0.1；本期與去年同期財報、營業現金流及資產負債比率；challenger草案，未啟用交易。"
         },
         "market_representation": {
-          "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/qfii?date=2026%2F11%2F06&response=json",
-          "source_date": "2026-11-06",
-          "available_at": "2026-11-06",
+          "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/qfii?date=2026%2F11%2F20&response=json",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
           "source_family": "TWSE_TPEX_OFFICIAL_MARKET_AND_OWNERSHIP",
           "evidence_note": "同題材內市值、20TD平均成交金額與官方外資持股比例百分位。"
         }
@@ -1382,9 +1398,9 @@
       "bottleneck_directness": 75.0,
       "industry_technology_position": 75.0,
       "ai_revenue_realization": 75.0,
-      "financial_earnings_quality": 62.5844,
+      "financial_earnings_quality": 64.4177,
       "market_representation": 60.0,
-      "structural_leader": 71.01688,
+      "structural_leader": 71.38354,
       "revenue_earnings_growth": null,
       "self_historical_valuation": null,
       "price_risk_safety": null,
@@ -1409,7 +1425,7 @@
       "ticker": "3260",
       "company": "威剛",
       "theme_id": "memory_storage",
-      "as_of_date": "2026-11-06",
+      "as_of_date": "2026-11-20",
       "evidence": {
         "bottleneck_directness": {
           "sources": [
@@ -1465,10 +1481,17 @@
             }
           ]
         },
+        "financial_earnings_quality": {
+          "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3260&SYEAR=2026&SSEASON=3&REPORT_ID=C",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
+          "source_family": "MOPS_XBRL_OFFICIAL",
+          "evidence_note": "r1-financial-quality-rubric-v0.1；本期與去年同期財報、營業現金流及資產負債比率；challenger草案，未啟用交易。"
+        },
         "market_representation": {
-          "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/qfii?date=2026%2F11%2F06&response=json",
-          "source_date": "2026-11-06",
-          "available_at": "2026-11-06",
+          "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/qfii?date=2026%2F11%2F20&response=json",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
           "source_family": "TWSE_TPEX_OFFICIAL_MARKET_AND_OWNERSHIP",
           "evidence_note": "同題材內市值、20TD平均成交金額與官方外資持股比例百分位。"
         }
@@ -1476,28 +1499,23 @@
       "bottleneck_directness": 50.0,
       "industry_technology_position": 50.0,
       "ai_revenue_realization": 50.0,
-      "financial_earnings_quality": null,
+      "financial_earnings_quality": 60.2004,
       "market_representation": 0.0,
-      "structural_leader": null,
+      "structural_leader": 47.04008,
       "revenue_earnings_growth": null,
       "self_historical_valuation": null,
       "price_risk_safety": null,
       "demand_order_catalyst": null,
-      "status": "DATA_MISSING",
-      "leader_missing_fields": [
-        "financial_earnings_quality"
-      ],
+      "status": "READY",
+      "leader_missing_fields": [],
       "priority_status": "DATA_MISSING",
       "priority_missing_fields": [
-        "structural_leader",
         "revenue_earnings_growth",
         "self_historical_valuation",
         "price_risk_safety",
         "demand_order_catalyst"
       ],
       "missing_fields": [
-        "financial_earnings_quality",
-        "structural_leader",
         "revenue_earnings_growth",
         "self_historical_valuation",
         "price_risk_safety",
@@ -1508,7 +1526,7 @@
       "ticker": "2383",
       "company": "台光電",
       "theme_id": "pcb_substrate",
-      "as_of_date": "2026-11-06",
+      "as_of_date": "2026-11-20",
       "evidence": {
         "bottleneck_directness": {
           "sources": [
@@ -1566,15 +1584,15 @@
         },
         "financial_earnings_quality": {
           "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=2383&SYEAR=2026&SSEASON=3&REPORT_ID=C",
-          "source_date": "2026-11-06",
-          "available_at": "2026-11-06",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
           "source_family": "MOPS_XBRL_OFFICIAL",
           "evidence_note": "r1-financial-quality-rubric-v0.1；本期與去年同期財報、營業現金流及資產負債比率；challenger草案，未啟用交易。"
         },
         "market_representation": {
-          "source_url": "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261106&selectType=ALLBUT0999",
-          "source_date": "2026-11-06",
-          "available_at": "2026-11-06",
+          "source_url": "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261120&selectType=ALLBUT0999",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
           "source_family": "TWSE_TPEX_OFFICIAL_MARKET_AND_OWNERSHIP",
           "evidence_note": "同題材內市值、20TD平均成交金額與官方外資持股比例百分位。"
         }
@@ -1582,9 +1600,9 @@
       "bottleneck_directness": 75.0,
       "industry_technology_position": 50.0,
       "ai_revenue_realization": 75.0,
-      "financial_earnings_quality": 61.9145,
+      "financial_earnings_quality": 63.7478,
       "market_representation": 92.5,
-      "structural_leader": 67.8829,
+      "structural_leader": 68.24956,
       "revenue_earnings_growth": null,
       "self_historical_valuation": null,
       "price_risk_safety": null,
@@ -1609,7 +1627,7 @@
       "ticker": "6274",
       "company": "台燿",
       "theme_id": "pcb_substrate",
-      "as_of_date": "2026-11-06",
+      "as_of_date": "2026-11-20",
       "evidence": {
         "bottleneck_directness": {
           "sources": [
@@ -1667,15 +1685,15 @@
         },
         "financial_earnings_quality": {
           "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=6274&SYEAR=2026&SSEASON=3&REPORT_ID=C",
-          "source_date": "2026-11-06",
-          "available_at": "2026-11-06",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
           "source_family": "MOPS_XBRL_OFFICIAL",
           "evidence_note": "r1-financial-quality-rubric-v0.1；本期與去年同期財報、營業現金流及資產負債比率；challenger草案，未啟用交易。"
         },
         "market_representation": {
-          "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/qfii?date=2026%2F11%2F06&response=json",
-          "source_date": "2026-11-06",
-          "available_at": "2026-11-06",
+          "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/qfii?date=2026%2F11%2F20&response=json",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
           "source_family": "TWSE_TPEX_OFFICIAL_MARKET_AND_OWNERSHIP",
           "evidence_note": "同題材內市值、20TD平均成交金額與官方外資持股比例百分位。"
         }
@@ -1683,9 +1701,9 @@
       "bottleneck_directness": 75.0,
       "industry_technology_position": 50.0,
       "ai_revenue_realization": 75.0,
-      "financial_earnings_quality": 65.3108,
-      "market_representation": 25.0,
-      "structural_leader": 61.81216,
+      "financial_earnings_quality": 66.6441,
+      "market_representation": 17.5,
+      "structural_leader": 61.32882,
       "revenue_earnings_growth": null,
       "self_historical_valuation": null,
       "price_risk_safety": null,
@@ -1710,7 +1728,7 @@
       "ticker": "3037",
       "company": "欣興",
       "theme_id": "pcb_substrate",
-      "as_of_date": "2026-11-06",
+      "as_of_date": "2026-11-20",
       "evidence": {
         "bottleneck_directness": {
           "sources": [
@@ -1768,15 +1786,15 @@
         },
         "financial_earnings_quality": {
           "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3037&SYEAR=2026&SSEASON=3&REPORT_ID=C",
-          "source_date": "2026-11-06",
-          "available_at": "2026-11-06",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
           "source_family": "MOPS_XBRL_OFFICIAL",
           "evidence_note": "r1-financial-quality-rubric-v0.1；本期與去年同期財報、營業現金流及資產負債比率；challenger草案，未啟用交易。"
         },
         "market_representation": {
-          "source_url": "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261106&selectType=ALLBUT0999",
-          "source_date": "2026-11-06",
-          "available_at": "2026-11-06",
+          "source_url": "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261120&selectType=ALLBUT0999",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
           "source_family": "TWSE_TPEX_OFFICIAL_MARKET_AND_OWNERSHIP",
           "evidence_note": "同題材內市值、20TD平均成交金額與官方外資持股比例百分位。"
         }
@@ -1784,9 +1802,9 @@
       "bottleneck_directness": 75.0,
       "industry_technology_position": 50.0,
       "ai_revenue_realization": 75.0,
-      "financial_earnings_quality": 78.6828,
+      "financial_earnings_quality": 79.1828,
       "market_representation": 82.5,
-      "structural_leader": 70.23656,
+      "structural_leader": 70.33656,
       "revenue_earnings_growth": null,
       "self_historical_valuation": null,
       "price_risk_safety": null,
@@ -1811,7 +1829,7 @@
       "ticker": "3189",
       "company": "景碩",
       "theme_id": "pcb_substrate",
-      "as_of_date": "2026-11-06",
+      "as_of_date": "2026-11-20",
       "evidence": {
         "bottleneck_directness": {
           "sources": [
@@ -1869,15 +1887,15 @@
         },
         "financial_earnings_quality": {
           "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3189&SYEAR=2026&SSEASON=3&REPORT_ID=C",
-          "source_date": "2026-11-06",
-          "available_at": "2026-11-06",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
           "source_family": "MOPS_XBRL_OFFICIAL",
           "evidence_note": "r1-financial-quality-rubric-v0.1；本期與去年同期財報、營業現金流及資產負債比率；challenger草案，未啟用交易。"
         },
         "market_representation": {
-          "source_url": "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261106&selectType=ALLBUT0999",
-          "source_date": "2026-11-06",
-          "available_at": "2026-11-06",
+          "source_url": "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261120&selectType=ALLBUT0999",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
           "source_family": "TWSE_TPEX_OFFICIAL_MARKET_AND_OWNERSHIP",
           "evidence_note": "同題材內市值、20TD平均成交金額與官方外資持股比例百分位。"
         }
@@ -1885,9 +1903,9 @@
       "bottleneck_directness": 75.0,
       "industry_technology_position": 50.0,
       "ai_revenue_realization": 75.0,
-      "financial_earnings_quality": 88.2353,
-      "market_representation": 25.0,
-      "structural_leader": 66.39706,
+      "financial_earnings_quality": 89.0687,
+      "market_representation": 27.5,
+      "structural_leader": 66.81374,
       "revenue_earnings_growth": null,
       "self_historical_valuation": null,
       "price_risk_safety": null,
@@ -1912,7 +1930,7 @@
       "ticker": "2368",
       "company": "金像電",
       "theme_id": "pcb_substrate",
-      "as_of_date": "2026-11-06",
+      "as_of_date": "2026-11-20",
       "evidence": {
         "bottleneck_directness": {
           "sources": [
@@ -1968,10 +1986,17 @@
             }
           ]
         },
+        "financial_earnings_quality": {
+          "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=2368&SYEAR=2026&SSEASON=3&REPORT_ID=C",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
+          "source_family": "MOPS_XBRL_OFFICIAL",
+          "evidence_note": "r1-financial-quality-rubric-v0.1；本期與去年同期財報、營業現金流及資產負債比率；challenger草案，未啟用交易。"
+        },
         "market_representation": {
-          "source_url": "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261106&selectType=ALLBUT0999",
-          "source_date": "2026-11-06",
-          "available_at": "2026-11-06",
+          "source_url": "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261120&selectType=ALLBUT0999",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
           "source_family": "TWSE_TPEX_OFFICIAL_MARKET_AND_OWNERSHIP",
           "evidence_note": "同題材內市值、20TD平均成交金額與官方外資持股比例百分位。"
         }
@@ -1979,28 +2004,23 @@
       "bottleneck_directness": 75.0,
       "industry_technology_position": 50.0,
       "ai_revenue_realization": 75.0,
-      "financial_earnings_quality": null,
-      "market_representation": 25.0,
-      "structural_leader": null,
+      "financial_earnings_quality": 70.8883,
+      "market_representation": 30.0,
+      "structural_leader": 63.42766,
       "revenue_earnings_growth": null,
       "self_historical_valuation": null,
       "price_risk_safety": null,
       "demand_order_catalyst": null,
-      "status": "DATA_MISSING",
-      "leader_missing_fields": [
-        "financial_earnings_quality"
-      ],
+      "status": "READY",
+      "leader_missing_fields": [],
       "priority_status": "DATA_MISSING",
       "priority_missing_fields": [
-        "structural_leader",
         "revenue_earnings_growth",
         "self_historical_valuation",
         "price_risk_safety",
         "demand_order_catalyst"
       ],
       "missing_fields": [
-        "financial_earnings_quality",
-        "structural_leader",
         "revenue_earnings_growth",
         "self_historical_valuation",
         "price_risk_safety",
@@ -2011,7 +2031,7 @@
       "ticker": "2345",
       "company": "智邦",
       "theme_id": "network_optics",
-      "as_of_date": "2026-11-06",
+      "as_of_date": "2026-11-20",
       "evidence": {
         "bottleneck_directness": {
           "sources": [
@@ -2067,10 +2087,17 @@
             }
           ]
         },
+        "financial_earnings_quality": {
+          "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=2345&SYEAR=2026&SSEASON=3&REPORT_ID=C",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
+          "source_family": "MOPS_XBRL_OFFICIAL",
+          "evidence_note": "r1-financial-quality-rubric-v0.1；本期與去年同期財報、營業現金流及資產負債比率；challenger草案，未啟用交易。"
+        },
         "market_representation": {
-          "source_url": "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261106&selectType=ALLBUT0999",
-          "source_date": "2026-11-06",
-          "available_at": "2026-11-06",
+          "source_url": "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261120&selectType=ALLBUT0999",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
           "source_family": "TWSE_TPEX_OFFICIAL_MARKET_AND_OWNERSHIP",
           "evidence_note": "同題材內市值、20TD平均成交金額與官方外資持股比例百分位。"
         }
@@ -2078,28 +2105,23 @@
       "bottleneck_directness": 75.0,
       "industry_technology_position": 50.0,
       "ai_revenue_realization": 75.0,
-      "financial_earnings_quality": null,
+      "financial_earnings_quality": 69.127,
       "market_representation": 100.0,
-      "structural_leader": null,
+      "structural_leader": 70.0754,
       "revenue_earnings_growth": null,
       "self_historical_valuation": null,
       "price_risk_safety": null,
       "demand_order_catalyst": null,
-      "status": "DATA_MISSING",
-      "leader_missing_fields": [
-        "financial_earnings_quality"
-      ],
+      "status": "READY",
+      "leader_missing_fields": [],
       "priority_status": "DATA_MISSING",
       "priority_missing_fields": [
-        "structural_leader",
         "revenue_earnings_growth",
         "self_historical_valuation",
         "price_risk_safety",
         "demand_order_catalyst"
       ],
       "missing_fields": [
-        "financial_earnings_quality",
-        "structural_leader",
         "revenue_earnings_growth",
         "self_historical_valuation",
         "price_risk_safety",
@@ -2110,7 +2132,7 @@
       "ticker": "2379",
       "company": "瑞昱",
       "theme_id": "network_optics",
-      "as_of_date": "2026-11-06",
+      "as_of_date": "2026-11-20",
       "evidence": {
         "bottleneck_directness": {
           "sources": [
@@ -2166,10 +2188,17 @@
             }
           ]
         },
+        "financial_earnings_quality": {
+          "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=2379&SYEAR=2026&SSEASON=3&REPORT_ID=C",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
+          "source_family": "MOPS_XBRL_OFFICIAL",
+          "evidence_note": "r1-financial-quality-rubric-v0.1；本期與去年同期財報、營業現金流及資產負債比率；challenger草案，未啟用交易。"
+        },
         "market_representation": {
-          "source_url": "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261106&selectType=ALLBUT0999",
-          "source_date": "2026-11-06",
-          "available_at": "2026-11-06",
+          "source_url": "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261120&selectType=ALLBUT0999",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
           "source_family": "TWSE_TPEX_OFFICIAL_MARKET_AND_OWNERSHIP",
           "evidence_note": "同題材內市值、20TD平均成交金額與官方外資持股比例百分位。"
         }
@@ -2177,28 +2206,23 @@
       "bottleneck_directness": 75.0,
       "industry_technology_position": 50.0,
       "ai_revenue_realization": 75.0,
-      "financial_earnings_quality": null,
+      "financial_earnings_quality": 41.2239,
       "market_representation": 0.0,
-      "structural_leader": null,
+      "structural_leader": 54.49478,
       "revenue_earnings_growth": null,
       "self_historical_valuation": null,
       "price_risk_safety": null,
       "demand_order_catalyst": null,
-      "status": "DATA_MISSING",
-      "leader_missing_fields": [
-        "financial_earnings_quality"
-      ],
+      "status": "READY",
+      "leader_missing_fields": [],
       "priority_status": "DATA_MISSING",
       "priority_missing_fields": [
-        "structural_leader",
         "revenue_earnings_growth",
         "self_historical_valuation",
         "price_risk_safety",
         "demand_order_catalyst"
       ],
       "missing_fields": [
-        "financial_earnings_quality",
-        "structural_leader",
         "revenue_earnings_growth",
         "self_historical_valuation",
         "price_risk_safety",
@@ -2209,7 +2233,7 @@
       "ticker": "4979",
       "company": "華星光",
       "theme_id": "silicon_photonics_cpo",
-      "as_of_date": "2026-11-06",
+      "as_of_date": "2026-11-20",
       "evidence": {
         "bottleneck_directness": {
           "sources": [
@@ -2267,15 +2291,15 @@
         },
         "financial_earnings_quality": {
           "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=4979&SYEAR=2026&SSEASON=3&REPORT_ID=C",
-          "source_date": "2026-11-06",
-          "available_at": "2026-11-06",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
           "source_family": "MOPS_XBRL_OFFICIAL",
           "evidence_note": "r1-financial-quality-rubric-v0.1；本期與去年同期財報、營業現金流及資產負債比率；challenger草案，未啟用交易。"
         },
         "market_representation": {
-          "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/qfii?date=2026%2F11%2F06&response=json",
-          "source_date": "2026-11-06",
-          "available_at": "2026-11-06",
+          "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/qfii?date=2026%2F11%2F20&response=json",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
           "source_family": "TWSE_TPEX_OFFICIAL_MARKET_AND_OWNERSHIP",
           "evidence_note": "同題材內市值、20TD平均成交金額與官方外資持股比例百分位。"
         }
@@ -2283,9 +2307,9 @@
       "bottleneck_directness": 75.0,
       "industry_technology_position": 50.0,
       "ai_revenue_realization": 75.0,
-      "financial_earnings_quality": 83.0585,
+      "financial_earnings_quality": 85.0585,
       "market_representation": 40.0,
-      "structural_leader": 66.8617,
+      "structural_leader": 67.2617,
       "revenue_earnings_growth": null,
       "self_historical_valuation": null,
       "price_risk_safety": null,
@@ -2310,7 +2334,7 @@
       "ticker": "6442",
       "company": "光聖",
       "theme_id": "silicon_photonics_cpo",
-      "as_of_date": "2026-11-06",
+      "as_of_date": "2026-11-20",
       "evidence": {
         "bottleneck_directness": {
           "sources": [
@@ -2366,10 +2390,17 @@
             }
           ]
         },
+        "financial_earnings_quality": {
+          "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=6442&SYEAR=2026&SSEASON=3&REPORT_ID=C",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
+          "source_family": "MOPS_XBRL_OFFICIAL",
+          "evidence_note": "r1-financial-quality-rubric-v0.1；本期與去年同期財報、營業現金流及資產負債比率；challenger草案，未啟用交易。"
+        },
         "market_representation": {
-          "source_url": "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261106&selectType=ALLBUT0999",
-          "source_date": "2026-11-06",
-          "available_at": "2026-11-06",
+          "source_url": "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261120&selectType=ALLBUT0999",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
           "source_family": "TWSE_TPEX_OFFICIAL_MARKET_AND_OWNERSHIP",
           "evidence_note": "同題材內市值、20TD平均成交金額與官方外資持股比例百分位。"
         }
@@ -2377,28 +2408,23 @@
       "bottleneck_directness": 75.0,
       "industry_technology_position": 50.0,
       "ai_revenue_realization": 75.0,
-      "financial_earnings_quality": null,
+      "financial_earnings_quality": 78.9113,
       "market_representation": 64.0,
-      "structural_leader": null,
+      "structural_leader": 68.43226,
       "revenue_earnings_growth": null,
       "self_historical_valuation": null,
       "price_risk_safety": null,
       "demand_order_catalyst": null,
-      "status": "DATA_MISSING",
-      "leader_missing_fields": [
-        "financial_earnings_quality"
-      ],
+      "status": "READY",
+      "leader_missing_fields": [],
       "priority_status": "DATA_MISSING",
       "priority_missing_fields": [
-        "structural_leader",
         "revenue_earnings_growth",
         "self_historical_valuation",
         "price_risk_safety",
         "demand_order_catalyst"
       ],
       "missing_fields": [
-        "financial_earnings_quality",
-        "structural_leader",
         "revenue_earnings_growth",
         "self_historical_valuation",
         "price_risk_safety",
@@ -2409,7 +2435,7 @@
       "ticker": "3163",
       "company": "波若威",
       "theme_id": "silicon_photonics_cpo",
-      "as_of_date": "2026-11-06",
+      "as_of_date": "2026-11-20",
       "evidence": {
         "bottleneck_directness": {
           "sources": [
@@ -2467,15 +2493,15 @@
         },
         "financial_earnings_quality": {
           "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3163&SYEAR=2026&SSEASON=3&REPORT_ID=C",
-          "source_date": "2026-11-06",
-          "available_at": "2026-11-06",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
           "source_family": "MOPS_XBRL_OFFICIAL",
           "evidence_note": "r1-financial-quality-rubric-v0.1；本期與去年同期財報、營業現金流及資產負債比率；challenger草案，未啟用交易。"
         },
         "market_representation": {
-          "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/qfii?date=2026%2F11%2F06&response=json",
-          "source_date": "2026-11-06",
-          "available_at": "2026-11-06",
+          "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/qfii?date=2026%2F11%2F20&response=json",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
           "source_family": "TWSE_TPEX_OFFICIAL_MARKET_AND_OWNERSHIP",
           "evidence_note": "同題材內市值、20TD平均成交金額與官方外資持股比例百分位。"
         }
@@ -2483,9 +2509,9 @@
       "bottleneck_directness": 75.0,
       "industry_technology_position": 50.0,
       "ai_revenue_realization": 75.0,
-      "financial_earnings_quality": 46.8201,
-      "market_representation": 0.0,
-      "structural_leader": 55.61402,
+      "financial_earnings_quality": 49.2201,
+      "market_representation": 10.0,
+      "structural_leader": 57.09402,
       "revenue_earnings_growth": null,
       "self_historical_valuation": null,
       "price_risk_safety": null,
@@ -2510,7 +2536,7 @@
       "ticker": "2308",
       "company": "台達電",
       "theme_id": "power_delivery",
-      "as_of_date": "2026-11-06",
+      "as_of_date": "2026-11-20",
       "evidence": {
         "bottleneck_directness": {
           "sources": [
@@ -2568,15 +2594,15 @@
         },
         "financial_earnings_quality": {
           "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=2308&SYEAR=2026&SSEASON=3&REPORT_ID=C",
-          "source_date": "2026-11-06",
-          "available_at": "2026-11-06",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
           "source_family": "MOPS_XBRL_OFFICIAL",
           "evidence_note": "r1-financial-quality-rubric-v0.1；本期與去年同期財報、營業現金流及資產負債比率；challenger草案，未啟用交易。"
         },
         "market_representation": {
-          "source_url": "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261106&selectType=ALLBUT0999",
-          "source_date": "2026-11-06",
-          "available_at": "2026-11-06",
+          "source_url": "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261120&selectType=ALLBUT0999",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
           "source_family": "TWSE_TPEX_OFFICIAL_MARKET_AND_OWNERSHIP",
           "evidence_note": "同題材內市值、20TD平均成交金額與官方外資持股比例百分位。"
         }
@@ -2611,7 +2637,7 @@
       "ticker": "2301",
       "company": "光寶科",
       "theme_id": "power_delivery",
-      "as_of_date": "2026-11-06",
+      "as_of_date": "2026-11-20",
       "evidence": {
         "bottleneck_directness": {
           "sources": [
@@ -2669,15 +2695,15 @@
         },
         "financial_earnings_quality": {
           "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=2301&SYEAR=2026&SSEASON=3&REPORT_ID=C",
-          "source_date": "2026-11-06",
-          "available_at": "2026-11-06",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
           "source_family": "MOPS_XBRL_OFFICIAL",
           "evidence_note": "r1-financial-quality-rubric-v0.1；本期與去年同期財報、營業現金流及資產負債比率；challenger草案，未啟用交易。"
         },
         "market_representation": {
-          "source_url": "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261106&selectType=ALLBUT0999",
-          "source_date": "2026-11-06",
-          "available_at": "2026-11-06",
+          "source_url": "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261120&selectType=ALLBUT0999",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
           "source_family": "TWSE_TPEX_OFFICIAL_MARKET_AND_OWNERSHIP",
           "evidence_note": "同題材內市值、20TD平均成交金額與官方外資持股比例百分位。"
         }
@@ -2685,9 +2711,9 @@
       "bottleneck_directness": 75.0,
       "industry_technology_position": 50.0,
       "ai_revenue_realization": 75.0,
-      "financial_earnings_quality": 64.8654,
+      "financial_earnings_quality": 63.8654,
       "market_representation": 70.0,
-      "structural_leader": 66.22308,
+      "structural_leader": 66.02308,
       "revenue_earnings_growth": null,
       "self_historical_valuation": null,
       "price_risk_safety": null,
@@ -2712,7 +2738,7 @@
       "ticker": "6282",
       "company": "康舒",
       "theme_id": "power_delivery",
-      "as_of_date": "2026-11-06",
+      "as_of_date": "2026-11-20",
       "evidence": {
         "bottleneck_directness": {
           "sources": [
@@ -2768,10 +2794,17 @@
             }
           ]
         },
+        "financial_earnings_quality": {
+          "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=6282&SYEAR=2026&SSEASON=3&REPORT_ID=C",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
+          "source_family": "MOPS_XBRL_OFFICIAL",
+          "evidence_note": "r1-financial-quality-rubric-v0.1；本期與去年同期財報、營業現金流及資產負債比率；challenger草案，未啟用交易。"
+        },
         "market_representation": {
-          "source_url": "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261106&selectType=ALLBUT0999",
-          "source_date": "2026-11-06",
-          "available_at": "2026-11-06",
+          "source_url": "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261120&selectType=ALLBUT0999",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
           "source_family": "TWSE_TPEX_OFFICIAL_MARKET_AND_OWNERSHIP",
           "evidence_note": "同題材內市值、20TD平均成交金額與官方外資持股比例百分位。"
         }
@@ -2779,28 +2812,23 @@
       "bottleneck_directness": 50.0,
       "industry_technology_position": 50.0,
       "ai_revenue_realization": 50.0,
-      "financial_earnings_quality": null,
-      "market_representation": 32.5,
-      "structural_leader": null,
+      "financial_earnings_quality": 53.7595,
+      "market_representation": 25.0,
+      "structural_leader": 48.2519,
       "revenue_earnings_growth": null,
       "self_historical_valuation": null,
       "price_risk_safety": null,
       "demand_order_catalyst": null,
-      "status": "DATA_MISSING",
-      "leader_missing_fields": [
-        "financial_earnings_quality"
-      ],
+      "status": "READY",
+      "leader_missing_fields": [],
       "priority_status": "DATA_MISSING",
       "priority_missing_fields": [
-        "structural_leader",
         "revenue_earnings_growth",
         "self_historical_valuation",
         "price_risk_safety",
         "demand_order_catalyst"
       ],
       "missing_fields": [
-        "financial_earnings_quality",
-        "structural_leader",
         "revenue_earnings_growth",
         "self_historical_valuation",
         "price_risk_safety",
@@ -2811,7 +2839,7 @@
       "ticker": "6412",
       "company": "群電",
       "theme_id": "power_delivery",
-      "as_of_date": "2026-11-06",
+      "as_of_date": "2026-11-20",
       "evidence": {
         "bottleneck_directness": {
           "sources": [
@@ -2869,15 +2897,15 @@
         },
         "financial_earnings_quality": {
           "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=6412&SYEAR=2026&SSEASON=3&REPORT_ID=C",
-          "source_date": "2026-11-06",
-          "available_at": "2026-11-06",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
           "source_family": "MOPS_XBRL_OFFICIAL",
           "evidence_note": "r1-financial-quality-rubric-v0.1；本期與去年同期財報、營業現金流及資產負債比率；challenger草案，未啟用交易。"
         },
         "market_representation": {
-          "source_url": "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261106&selectType=ALLBUT0999",
-          "source_date": "2026-11-06",
-          "available_at": "2026-11-06",
+          "source_url": "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261120&selectType=ALLBUT0999",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
           "source_family": "TWSE_TPEX_OFFICIAL_MARKET_AND_OWNERSHIP",
           "evidence_note": "同題材內市值、20TD平均成交金額與官方外資持股比例百分位。"
         }
@@ -2885,9 +2913,9 @@
       "bottleneck_directness": 75.0,
       "industry_technology_position": 50.0,
       "ai_revenue_realization": 75.0,
-      "financial_earnings_quality": 27.6109,
+      "financial_earnings_quality": 26.1109,
       "market_representation": 0.0,
-      "structural_leader": 51.77218,
+      "structural_leader": 51.47218,
       "revenue_earnings_growth": null,
       "self_historical_valuation": null,
       "price_risk_safety": null,
@@ -2912,7 +2940,7 @@
       "ticker": "6781",
       "company": "AES-KY",
       "theme_id": "power_delivery",
-      "as_of_date": "2026-11-06",
+      "as_of_date": "2026-11-20",
       "evidence": {
         "bottleneck_directness": {
           "sources": [
@@ -2968,10 +2996,17 @@
             }
           ]
         },
+        "financial_earnings_quality": {
+          "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=6781&SYEAR=2026&SSEASON=3&REPORT_ID=C",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
+          "source_family": "MOPS_XBRL_OFFICIAL",
+          "evidence_note": "r1-financial-quality-rubric-v0.1；本期與去年同期財報、營業現金流及資產負債比率；challenger草案，未啟用交易。"
+        },
         "market_representation": {
-          "source_url": "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261106&selectType=ALLBUT0999",
-          "source_date": "2026-11-06",
-          "available_at": "2026-11-06",
+          "source_url": "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261120&selectType=ALLBUT0999",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
           "source_family": "TWSE_TPEX_OFFICIAL_MARKET_AND_OWNERSHIP",
           "evidence_note": "同題材內市值、20TD平均成交金額與官方外資持股比例百分位。"
         }
@@ -2979,28 +3014,23 @@
       "bottleneck_directness": 75.0,
       "industry_technology_position": 50.0,
       "ai_revenue_realization": 75.0,
-      "financial_earnings_quality": null,
-      "market_representation": 52.5,
-      "structural_leader": null,
+      "financial_earnings_quality": 76.6007,
+      "market_representation": 60.0,
+      "structural_leader": 67.57014,
       "revenue_earnings_growth": null,
       "self_historical_valuation": null,
       "price_risk_safety": null,
       "demand_order_catalyst": null,
-      "status": "DATA_MISSING",
-      "leader_missing_fields": [
-        "financial_earnings_quality"
-      ],
+      "status": "READY",
+      "leader_missing_fields": [],
       "priority_status": "DATA_MISSING",
       "priority_missing_fields": [
-        "structural_leader",
         "revenue_earnings_growth",
         "self_historical_valuation",
         "price_risk_safety",
         "demand_order_catalyst"
       ],
       "missing_fields": [
-        "financial_earnings_quality",
-        "structural_leader",
         "revenue_earnings_growth",
         "self_historical_valuation",
         "price_risk_safety",
@@ -3011,7 +3041,7 @@
       "ticker": "2327",
       "company": "國巨",
       "theme_id": "passive_components",
-      "as_of_date": "2026-11-06",
+      "as_of_date": "2026-11-20",
       "evidence": {
         "bottleneck_directness": {
           "sources": [
@@ -3067,10 +3097,17 @@
             }
           ]
         },
+        "financial_earnings_quality": {
+          "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=2327&SYEAR=2026&SSEASON=3&REPORT_ID=C",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
+          "source_family": "MOPS_XBRL_OFFICIAL",
+          "evidence_note": "r1-financial-quality-rubric-v0.1；本期與去年同期財報、營業現金流及資產負債比率；challenger草案，未啟用交易。"
+        },
         "market_representation": {
-          "source_url": "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261106&selectType=ALLBUT0999",
-          "source_date": "2026-11-06",
-          "available_at": "2026-11-06",
+          "source_url": "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261120&selectType=ALLBUT0999",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
           "source_family": "TWSE_TPEX_OFFICIAL_MARKET_AND_OWNERSHIP",
           "evidence_note": "同題材內市值、20TD平均成交金額與官方外資持股比例百分位。"
         }
@@ -3078,28 +3115,23 @@
       "bottleneck_directness": 100.0,
       "industry_technology_position": 75.0,
       "ai_revenue_realization": 75.0,
-      "financial_earnings_quality": null,
+      "financial_earnings_quality": 73.3173,
       "market_representation": 100.0,
-      "structural_leader": null,
+      "structural_leader": 83.41346,
       "revenue_earnings_growth": null,
       "self_historical_valuation": null,
       "price_risk_safety": null,
       "demand_order_catalyst": null,
-      "status": "DATA_MISSING",
-      "leader_missing_fields": [
-        "financial_earnings_quality"
-      ],
+      "status": "READY",
+      "leader_missing_fields": [],
       "priority_status": "DATA_MISSING",
       "priority_missing_fields": [
-        "structural_leader",
         "revenue_earnings_growth",
         "self_historical_valuation",
         "price_risk_safety",
         "demand_order_catalyst"
       ],
       "missing_fields": [
-        "financial_earnings_quality",
-        "structural_leader",
         "revenue_earnings_growth",
         "self_historical_valuation",
         "price_risk_safety",
@@ -3110,7 +3142,7 @@
       "ticker": "2492",
       "company": "華新科",
       "theme_id": "passive_components",
-      "as_of_date": "2026-11-06",
+      "as_of_date": "2026-11-20",
       "evidence": {
         "bottleneck_directness": {
           "sources": [
@@ -3166,10 +3198,17 @@
             }
           ]
         },
+        "financial_earnings_quality": {
+          "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=2492&SYEAR=2026&SSEASON=3&REPORT_ID=C",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
+          "source_family": "MOPS_XBRL_OFFICIAL",
+          "evidence_note": "r1-financial-quality-rubric-v0.1；本期與去年同期財報、營業現金流及資產負債比率；challenger草案，未啟用交易。"
+        },
         "market_representation": {
-          "source_url": "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261106&selectType=ALLBUT0999",
-          "source_date": "2026-11-06",
-          "available_at": "2026-11-06",
+          "source_url": "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261120&selectType=ALLBUT0999",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
           "source_family": "TWSE_TPEX_OFFICIAL_MARKET_AND_OWNERSHIP",
           "evidence_note": "同題材內市值、20TD平均成交金額與官方外資持股比例百分位。"
         }
@@ -3177,28 +3216,23 @@
       "bottleneck_directness": 75.0,
       "industry_technology_position": 50.0,
       "ai_revenue_realization": 50.0,
-      "financial_earnings_quality": null,
+      "financial_earnings_quality": 78.6943,
       "market_representation": 40.0,
-      "structural_leader": null,
+      "structural_leader": 60.98886,
       "revenue_earnings_growth": null,
       "self_historical_valuation": null,
       "price_risk_safety": null,
       "demand_order_catalyst": null,
-      "status": "DATA_MISSING",
-      "leader_missing_fields": [
-        "financial_earnings_quality"
-      ],
+      "status": "READY",
+      "leader_missing_fields": [],
       "priority_status": "DATA_MISSING",
       "priority_missing_fields": [
-        "structural_leader",
         "revenue_earnings_growth",
         "self_historical_valuation",
         "price_risk_safety",
         "demand_order_catalyst"
       ],
       "missing_fields": [
-        "financial_earnings_quality",
-        "structural_leader",
         "revenue_earnings_growth",
         "self_historical_valuation",
         "price_risk_safety",
@@ -3209,7 +3243,7 @@
       "ticker": "3357",
       "company": "臺慶科",
       "theme_id": "passive_components",
-      "as_of_date": "2026-11-06",
+      "as_of_date": "2026-11-20",
       "evidence": {
         "bottleneck_directness": {
           "sources": [
@@ -3265,10 +3299,17 @@
             }
           ]
         },
+        "financial_earnings_quality": {
+          "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3357&SYEAR=2026&SSEASON=3&REPORT_ID=C",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
+          "source_family": "MOPS_XBRL_OFFICIAL",
+          "evidence_note": "r1-financial-quality-rubric-v0.1；本期與去年同期財報、營業現金流及資產負債比率；challenger草案，未啟用交易。"
+        },
         "market_representation": {
-          "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/qfii?date=2026%2F11%2F06&response=json",
-          "source_date": "2026-11-06",
-          "available_at": "2026-11-06",
+          "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/qfii?date=2026%2F11%2F20&response=json",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
           "source_family": "TWSE_TPEX_OFFICIAL_MARKET_AND_OWNERSHIP",
           "evidence_note": "同題材內市值、20TD平均成交金額與官方外資持股比例百分位。"
         }
@@ -3276,28 +3317,23 @@
       "bottleneck_directness": 50.0,
       "industry_technology_position": 50.0,
       "ai_revenue_realization": 25.0,
-      "financial_earnings_quality": null,
+      "financial_earnings_quality": 72.6224,
       "market_representation": 10.0,
-      "structural_leader": null,
+      "structural_leader": 45.52448,
       "revenue_earnings_growth": null,
       "self_historical_valuation": null,
       "price_risk_safety": null,
       "demand_order_catalyst": null,
-      "status": "DATA_MISSING",
-      "leader_missing_fields": [
-        "financial_earnings_quality"
-      ],
+      "status": "READY",
+      "leader_missing_fields": [],
       "priority_status": "DATA_MISSING",
       "priority_missing_fields": [
-        "structural_leader",
         "revenue_earnings_growth",
         "self_historical_valuation",
         "price_risk_safety",
         "demand_order_catalyst"
       ],
       "missing_fields": [
-        "financial_earnings_quality",
-        "structural_leader",
         "revenue_earnings_growth",
         "self_historical_valuation",
         "price_risk_safety",
@@ -3308,7 +3344,7 @@
       "ticker": "3653",
       "company": "健策",
       "theme_id": "thermal_management",
-      "as_of_date": "2026-11-06",
+      "as_of_date": "2026-11-20",
       "evidence": {
         "bottleneck_directness": {
           "sources": [
@@ -3364,10 +3400,17 @@
             }
           ]
         },
+        "financial_earnings_quality": {
+          "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3653&SYEAR=2026&SSEASON=3&REPORT_ID=C",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
+          "source_family": "MOPS_XBRL_OFFICIAL",
+          "evidence_note": "r1-financial-quality-rubric-v0.1；本期與去年同期財報、營業現金流及資產負債比率；challenger草案，未啟用交易。"
+        },
         "market_representation": {
-          "source_url": "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261106&selectType=ALLBUT0999",
-          "source_date": "2026-11-06",
-          "available_at": "2026-11-06",
+          "source_url": "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261120&selectType=ALLBUT0999",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
           "source_family": "TWSE_TPEX_OFFICIAL_MARKET_AND_OWNERSHIP",
           "evidence_note": "同題材內市值、20TD平均成交金額與官方外資持股比例百分位。"
         }
@@ -3375,28 +3418,23 @@
       "bottleneck_directness": 75.0,
       "industry_technology_position": 50.0,
       "ai_revenue_realization": 75.0,
-      "financial_earnings_quality": null,
+      "financial_earnings_quality": 87.9055,
       "market_representation": 72.5,
-      "structural_leader": null,
+      "structural_leader": 71.0811,
       "revenue_earnings_growth": null,
       "self_historical_valuation": null,
       "price_risk_safety": null,
       "demand_order_catalyst": null,
-      "status": "DATA_MISSING",
-      "leader_missing_fields": [
-        "financial_earnings_quality"
-      ],
+      "status": "READY",
+      "leader_missing_fields": [],
       "priority_status": "DATA_MISSING",
       "priority_missing_fields": [
-        "structural_leader",
         "revenue_earnings_growth",
         "self_historical_valuation",
         "price_risk_safety",
         "demand_order_catalyst"
       ],
       "missing_fields": [
-        "financial_earnings_quality",
-        "structural_leader",
         "revenue_earnings_growth",
         "self_historical_valuation",
         "price_risk_safety",
@@ -3407,7 +3445,7 @@
       "ticker": "3017",
       "company": "奇鋐",
       "theme_id": "thermal_management",
-      "as_of_date": "2026-11-06",
+      "as_of_date": "2026-11-20",
       "evidence": {
         "bottleneck_directness": {
           "sources": [
@@ -3463,10 +3501,17 @@
             }
           ]
         },
+        "financial_earnings_quality": {
+          "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3017&SYEAR=2026&SSEASON=3&REPORT_ID=C",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
+          "source_family": "MOPS_XBRL_OFFICIAL",
+          "evidence_note": "r1-financial-quality-rubric-v0.1；本期與去年同期財報、營業現金流及資產負債比率；challenger草案，未啟用交易。"
+        },
         "market_representation": {
-          "source_url": "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261106&selectType=ALLBUT0999",
-          "source_date": "2026-11-06",
-          "available_at": "2026-11-06",
+          "source_url": "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261120&selectType=ALLBUT0999",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
           "source_family": "TWSE_TPEX_OFFICIAL_MARKET_AND_OWNERSHIP",
           "evidence_note": "同題材內市值、20TD平均成交金額與官方外資持股比例百分位。"
         }
@@ -3474,28 +3519,23 @@
       "bottleneck_directness": 75.0,
       "industry_technology_position": 50.0,
       "ai_revenue_realization": 75.0,
-      "financial_earnings_quality": null,
+      "financial_earnings_quality": 84.0938,
       "market_representation": 87.5,
-      "structural_leader": null,
+      "structural_leader": 71.81876,
       "revenue_earnings_growth": null,
       "self_historical_valuation": null,
       "price_risk_safety": null,
       "demand_order_catalyst": null,
-      "status": "DATA_MISSING",
-      "leader_missing_fields": [
-        "financial_earnings_quality"
-      ],
+      "status": "READY",
+      "leader_missing_fields": [],
       "priority_status": "DATA_MISSING",
       "priority_missing_fields": [
-        "structural_leader",
         "revenue_earnings_growth",
         "self_historical_valuation",
         "price_risk_safety",
         "demand_order_catalyst"
       ],
       "missing_fields": [
-        "financial_earnings_quality",
-        "structural_leader",
         "revenue_earnings_growth",
         "self_historical_valuation",
         "price_risk_safety",
@@ -3506,7 +3546,7 @@
       "ticker": "3324",
       "company": "雙鴻",
       "theme_id": "thermal_management",
-      "as_of_date": "2026-11-06",
+      "as_of_date": "2026-11-20",
       "evidence": {
         "bottleneck_directness": {
           "sources": [
@@ -3562,10 +3602,17 @@
             }
           ]
         },
+        "financial_earnings_quality": {
+          "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3324&SYEAR=2026&SSEASON=3&REPORT_ID=C",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
+          "source_family": "MOPS_XBRL_OFFICIAL",
+          "evidence_note": "r1-financial-quality-rubric-v0.1；本期與去年同期財報、營業現金流及資產負債比率；challenger草案，未啟用交易。"
+        },
         "market_representation": {
-          "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/qfii?date=2026%2F11%2F06&response=json",
-          "source_date": "2026-11-06",
-          "available_at": "2026-11-06",
+          "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/qfii?date=2026%2F11%2F20&response=json",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
           "source_family": "TWSE_TPEX_OFFICIAL_MARKET_AND_OWNERSHIP",
           "evidence_note": "同題材內市值、20TD平均成交金額與官方外資持股比例百分位。"
         }
@@ -3573,28 +3620,23 @@
       "bottleneck_directness": 75.0,
       "industry_technology_position": 50.0,
       "ai_revenue_realization": 75.0,
-      "financial_earnings_quality": null,
+      "financial_earnings_quality": 68.7142,
       "market_representation": 50.0,
-      "structural_leader": null,
+      "structural_leader": 64.99284,
       "revenue_earnings_growth": null,
       "self_historical_valuation": null,
       "price_risk_safety": null,
       "demand_order_catalyst": null,
-      "status": "DATA_MISSING",
-      "leader_missing_fields": [
-        "financial_earnings_quality"
-      ],
+      "status": "READY",
+      "leader_missing_fields": [],
       "priority_status": "DATA_MISSING",
       "priority_missing_fields": [
-        "structural_leader",
         "revenue_earnings_growth",
         "self_historical_valuation",
         "price_risk_safety",
         "demand_order_catalyst"
       ],
       "missing_fields": [
-        "financial_earnings_quality",
-        "structural_leader",
         "revenue_earnings_growth",
         "self_historical_valuation",
         "price_risk_safety",
@@ -3605,7 +3647,7 @@
       "ticker": "6230",
       "company": "尼得科超眾",
       "theme_id": "thermal_management",
-      "as_of_date": "2026-11-06",
+      "as_of_date": "2026-11-20",
       "evidence": {
         "bottleneck_directness": {
           "sources": [
@@ -3661,10 +3703,17 @@
             }
           ]
         },
+        "financial_earnings_quality": {
+          "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=6230&SYEAR=2026&SSEASON=3&REPORT_ID=C",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
+          "source_family": "MOPS_XBRL_OFFICIAL",
+          "evidence_note": "r1-financial-quality-rubric-v0.1；本期與去年同期財報、營業現金流及資產負債比率；challenger草案，未啟用交易。"
+        },
         "market_representation": {
-          "source_url": "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261106&selectType=ALLBUT0999",
-          "source_date": "2026-11-06",
-          "available_at": "2026-11-06",
+          "source_url": "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261120&selectType=ALLBUT0999",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
           "source_family": "TWSE_TPEX_OFFICIAL_MARKET_AND_OWNERSHIP",
           "evidence_note": "同題材內市值、20TD平均成交金額與官方外資持股比例百分位。"
         }
@@ -3672,28 +3721,23 @@
       "bottleneck_directness": 75.0,
       "industry_technology_position": 50.0,
       "ai_revenue_realization": 75.0,
-      "financial_earnings_quality": null,
+      "financial_earnings_quality": 27.8264,
       "market_representation": 32.5,
-      "structural_leader": null,
+      "structural_leader": 55.06528,
       "revenue_earnings_growth": null,
       "self_historical_valuation": null,
       "price_risk_safety": null,
       "demand_order_catalyst": null,
-      "status": "DATA_MISSING",
-      "leader_missing_fields": [
-        "financial_earnings_quality"
-      ],
+      "status": "READY",
+      "leader_missing_fields": [],
       "priority_status": "DATA_MISSING",
       "priority_missing_fields": [
-        "structural_leader",
         "revenue_earnings_growth",
         "self_historical_valuation",
         "price_risk_safety",
         "demand_order_catalyst"
       ],
       "missing_fields": [
-        "financial_earnings_quality",
-        "structural_leader",
         "revenue_earnings_growth",
         "self_historical_valuation",
         "price_risk_safety",
@@ -3704,7 +3748,7 @@
       "ticker": "3338",
       "company": "泰碩",
       "theme_id": "thermal_management",
-      "as_of_date": "2026-11-06",
+      "as_of_date": "2026-11-20",
       "evidence": {
         "bottleneck_directness": {
           "sources": [
@@ -3762,15 +3806,15 @@
         },
         "financial_earnings_quality": {
           "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3338&SYEAR=2026&SSEASON=3&REPORT_ID=C",
-          "source_date": "2026-11-06",
-          "available_at": "2026-11-06",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
           "source_family": "MOPS_XBRL_OFFICIAL",
           "evidence_note": "r1-financial-quality-rubric-v0.1；本期與去年同期財報、營業現金流及資產負債比率；challenger草案，未啟用交易。"
         },
         "market_representation": {
-          "source_url": "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261106&selectType=ALLBUT0999",
-          "source_date": "2026-11-06",
-          "available_at": "2026-11-06",
+          "source_url": "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261120&selectType=ALLBUT0999",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
           "source_family": "TWSE_TPEX_OFFICIAL_MARKET_AND_OWNERSHIP",
           "evidence_note": "同題材內市值、20TD平均成交金額與官方外資持股比例百分位。"
         }
@@ -3778,9 +3822,9 @@
       "bottleneck_directness": 50.0,
       "industry_technology_position": 50.0,
       "ai_revenue_realization": 50.0,
-      "financial_earnings_quality": 41.5639,
+      "financial_earnings_quality": 31.0639,
       "market_representation": 7.5,
-      "structural_leader": 44.06278,
+      "structural_leader": 41.96278,
       "revenue_earnings_growth": null,
       "self_historical_valuation": null,
       "price_risk_safety": null,
@@ -3805,7 +3849,7 @@
       "ticker": "2382",
       "company": "廣達",
       "theme_id": "server_rack",
-      "as_of_date": "2026-11-06",
+      "as_of_date": "2026-11-20",
       "evidence": {
         "bottleneck_directness": {
           "sources": [
@@ -3861,10 +3905,17 @@
             }
           ]
         },
+        "financial_earnings_quality": {
+          "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=2382&SYEAR=2026&SSEASON=3&REPORT_ID=C",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
+          "source_family": "MOPS_XBRL_OFFICIAL",
+          "evidence_note": "r1-financial-quality-rubric-v0.1；本期與去年同期財報、營業現金流及資產負債比率；challenger草案，未啟用交易。"
+        },
         "market_representation": {
-          "source_url": "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261106&selectType=ALLBUT0999",
-          "source_date": "2026-11-06",
-          "available_at": "2026-11-06",
+          "source_url": "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261120&selectType=ALLBUT0999",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
           "source_family": "TWSE_TPEX_OFFICIAL_MARKET_AND_OWNERSHIP",
           "evidence_note": "同題材內市值、20TD平均成交金額與官方外資持股比例百分位。"
         }
@@ -3872,28 +3923,23 @@
       "bottleneck_directness": 75.0,
       "industry_technology_position": 50.0,
       "ai_revenue_realization": 75.0,
-      "financial_earnings_quality": null,
+      "financial_earnings_quality": 60.1151,
       "market_representation": 56.0,
-      "structural_leader": null,
+      "structural_leader": 63.87302,
       "revenue_earnings_growth": null,
       "self_historical_valuation": null,
       "price_risk_safety": null,
       "demand_order_catalyst": null,
-      "status": "DATA_MISSING",
-      "leader_missing_fields": [
-        "financial_earnings_quality"
-      ],
+      "status": "READY",
+      "leader_missing_fields": [],
       "priority_status": "DATA_MISSING",
       "priority_missing_fields": [
-        "structural_leader",
         "revenue_earnings_growth",
         "self_historical_valuation",
         "price_risk_safety",
         "demand_order_catalyst"
       ],
       "missing_fields": [
-        "financial_earnings_quality",
-        "structural_leader",
         "revenue_earnings_growth",
         "self_historical_valuation",
         "price_risk_safety",
@@ -3904,7 +3950,7 @@
       "ticker": "3231",
       "company": "緯創",
       "theme_id": "server_rack",
-      "as_of_date": "2026-11-06",
+      "as_of_date": "2026-11-20",
       "evidence": {
         "bottleneck_directness": {
           "sources": [
@@ -3960,10 +4006,17 @@
             }
           ]
         },
+        "financial_earnings_quality": {
+          "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3231&SYEAR=2026&SSEASON=3&REPORT_ID=C",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
+          "source_family": "MOPS_XBRL_OFFICIAL",
+          "evidence_note": "r1-financial-quality-rubric-v0.1；本期與去年同期財報、營業現金流及資產負債比率；challenger草案，未啟用交易。"
+        },
         "market_representation": {
-          "source_url": "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261106&selectType=ALLBUT0999",
-          "source_date": "2026-11-06",
-          "available_at": "2026-11-06",
+          "source_url": "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261120&selectType=ALLBUT0999",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
           "source_family": "TWSE_TPEX_OFFICIAL_MARKET_AND_OWNERSHIP",
           "evidence_note": "同題材內市值、20TD平均成交金額與官方外資持股比例百分位。"
         }
@@ -3971,28 +4024,23 @@
       "bottleneck_directness": 75.0,
       "industry_technology_position": 50.0,
       "ai_revenue_realization": 75.0,
-      "financial_earnings_quality": null,
+      "financial_earnings_quality": 52.8796,
       "market_representation": 54.0,
-      "structural_leader": null,
+      "structural_leader": 62.22592,
       "revenue_earnings_growth": null,
       "self_historical_valuation": null,
       "price_risk_safety": null,
       "demand_order_catalyst": null,
-      "status": "DATA_MISSING",
-      "leader_missing_fields": [
-        "financial_earnings_quality"
-      ],
+      "status": "READY",
+      "leader_missing_fields": [],
       "priority_status": "DATA_MISSING",
       "priority_missing_fields": [
-        "structural_leader",
         "revenue_earnings_growth",
         "self_historical_valuation",
         "price_risk_safety",
         "demand_order_catalyst"
       ],
       "missing_fields": [
-        "financial_earnings_quality",
-        "structural_leader",
         "revenue_earnings_growth",
         "self_historical_valuation",
         "price_risk_safety",
@@ -4003,7 +4051,7 @@
       "ticker": "6669",
       "company": "緯穎",
       "theme_id": "server_rack",
-      "as_of_date": "2026-11-06",
+      "as_of_date": "2026-11-20",
       "evidence": {
         "bottleneck_directness": {
           "sources": [
@@ -4061,15 +4109,15 @@
         },
         "financial_earnings_quality": {
           "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=6669&SYEAR=2026&SSEASON=3&REPORT_ID=C",
-          "source_date": "2026-11-06",
-          "available_at": "2026-11-06",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
           "source_family": "MOPS_XBRL_OFFICIAL",
           "evidence_note": "r1-financial-quality-rubric-v0.1；本期與去年同期財報、營業現金流及資產負債比率；challenger草案，未啟用交易。"
         },
         "market_representation": {
-          "source_url": "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261106&selectType=ALLBUT0999",
-          "source_date": "2026-11-06",
-          "available_at": "2026-11-06",
+          "source_url": "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261120&selectType=ALLBUT0999",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
           "source_family": "TWSE_TPEX_OFFICIAL_MARKET_AND_OWNERSHIP",
           "evidence_note": "同題材內市值、20TD平均成交金額與官方外資持股比例百分位。"
         }
@@ -4078,8 +4126,8 @@
       "industry_technology_position": 50.0,
       "ai_revenue_realization": 75.0,
       "financial_earnings_quality": 54.1317,
-      "market_representation": 62.0,
-      "structural_leader": 63.27634,
+      "market_representation": 66.0,
+      "structural_leader": 63.67634,
       "revenue_earnings_growth": null,
       "self_historical_valuation": null,
       "price_risk_safety": null,
@@ -4104,7 +4152,7 @@
       "ticker": "2317",
       "company": "鴻海",
       "theme_id": "server_rack",
-      "as_of_date": "2026-11-06",
+      "as_of_date": "2026-11-20",
       "evidence": {
         "bottleneck_directness": {
           "sources": [
@@ -4160,10 +4208,17 @@
             }
           ]
         },
+        "financial_earnings_quality": {
+          "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=2317&SYEAR=2026&SSEASON=3&REPORT_ID=C",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
+          "source_family": "MOPS_XBRL_OFFICIAL",
+          "evidence_note": "r1-financial-quality-rubric-v0.1；本期與去年同期財報、營業現金流及資產負債比率；challenger草案，未啟用交易。"
+        },
         "market_representation": {
-          "source_url": "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261106&selectType=ALLBUT0999",
-          "source_date": "2026-11-06",
-          "available_at": "2026-11-06",
+          "source_url": "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261120&selectType=ALLBUT0999",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
           "source_family": "TWSE_TPEX_OFFICIAL_MARKET_AND_OWNERSHIP",
           "evidence_note": "同題材內市值、20TD平均成交金額與官方外資持股比例百分位。"
         }
@@ -4171,28 +4226,23 @@
       "bottleneck_directness": 75.0,
       "industry_technology_position": 50.0,
       "ai_revenue_realization": 75.0,
-      "financial_earnings_quality": null,
+      "financial_earnings_quality": 55.1587,
       "market_representation": 100.0,
-      "structural_leader": null,
+      "structural_leader": 67.28174,
       "revenue_earnings_growth": null,
       "self_historical_valuation": null,
       "price_risk_safety": null,
       "demand_order_catalyst": null,
-      "status": "DATA_MISSING",
-      "leader_missing_fields": [
-        "financial_earnings_quality"
-      ],
+      "status": "READY",
+      "leader_missing_fields": [],
       "priority_status": "DATA_MISSING",
       "priority_missing_fields": [
-        "structural_leader",
         "revenue_earnings_growth",
         "self_historical_valuation",
         "price_risk_safety",
         "demand_order_catalyst"
       ],
       "missing_fields": [
-        "financial_earnings_quality",
-        "structural_leader",
         "revenue_earnings_growth",
         "self_historical_valuation",
         "price_risk_safety",
@@ -4203,7 +4253,7 @@
       "ticker": "2356",
       "company": "英業達",
       "theme_id": "server_rack",
-      "as_of_date": "2026-11-06",
+      "as_of_date": "2026-11-20",
       "evidence": {
         "bottleneck_directness": {
           "sources": [
@@ -4259,10 +4309,17 @@
             }
           ]
         },
+        "financial_earnings_quality": {
+          "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=2356&SYEAR=2026&SSEASON=3&REPORT_ID=C",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
+          "source_family": "MOPS_XBRL_OFFICIAL",
+          "evidence_note": "r1-financial-quality-rubric-v0.1；本期與去年同期財報、營業現金流及資產負債比率；challenger草案，未啟用交易。"
+        },
         "market_representation": {
-          "source_url": "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261106&selectType=ALLBUT0999",
-          "source_date": "2026-11-06",
-          "available_at": "2026-11-06",
+          "source_url": "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261120&selectType=ALLBUT0999",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
           "source_family": "TWSE_TPEX_OFFICIAL_MARKET_AND_OWNERSHIP",
           "evidence_note": "同題材內市值、20TD平均成交金額與官方外資持股比例百分位。"
         }
@@ -4270,28 +4327,23 @@
       "bottleneck_directness": 75.0,
       "industry_technology_position": 50.0,
       "ai_revenue_realization": 75.0,
-      "financial_earnings_quality": null,
+      "financial_earnings_quality": 41.5215,
       "market_representation": 0.0,
-      "structural_leader": null,
+      "structural_leader": 54.5543,
       "revenue_earnings_growth": null,
       "self_historical_valuation": null,
       "price_risk_safety": null,
       "demand_order_catalyst": null,
-      "status": "DATA_MISSING",
-      "leader_missing_fields": [
-        "financial_earnings_quality"
-      ],
+      "status": "READY",
+      "leader_missing_fields": [],
       "priority_status": "DATA_MISSING",
       "priority_missing_fields": [
-        "structural_leader",
         "revenue_earnings_growth",
         "self_historical_valuation",
         "price_risk_safety",
         "demand_order_catalyst"
       ],
       "missing_fields": [
-        "financial_earnings_quality",
-        "structural_leader",
         "revenue_earnings_growth",
         "self_historical_valuation",
         "price_risk_safety",
@@ -4302,7 +4354,7 @@
       "ticker": "2376",
       "company": "技嘉",
       "theme_id": "server_rack",
-      "as_of_date": "2026-11-06",
+      "as_of_date": "2026-11-20",
       "evidence": {
         "bottleneck_directness": {
           "sources": [
@@ -4358,10 +4410,17 @@
             }
           ]
         },
+        "financial_earnings_quality": {
+          "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=2376&SYEAR=2026&SSEASON=3&REPORT_ID=C",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
+          "source_family": "MOPS_XBRL_OFFICIAL",
+          "evidence_note": "r1-financial-quality-rubric-v0.1；本期與去年同期財報、營業現金流及資產負債比率；challenger草案，未啟用交易。"
+        },
         "market_representation": {
-          "source_url": "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261106&selectType=ALLBUT0999",
-          "source_date": "2026-11-06",
-          "available_at": "2026-11-06",
+          "source_url": "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261120&selectType=ALLBUT0999",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
           "source_family": "TWSE_TPEX_OFFICIAL_MARKET_AND_OWNERSHIP",
           "evidence_note": "同題材內市值、20TD平均成交金額與官方外資持股比例百分位。"
         }
@@ -4369,28 +4428,23 @@
       "bottleneck_directness": 75.0,
       "industry_technology_position": 75.0,
       "ai_revenue_realization": 75.0,
-      "financial_earnings_quality": null,
-      "market_representation": 28.0,
-      "structural_leader": null,
+      "financial_earnings_quality": 65.3493,
+      "market_representation": 24.0,
+      "structural_leader": 67.96986,
       "revenue_earnings_growth": null,
       "self_historical_valuation": null,
       "price_risk_safety": null,
       "demand_order_catalyst": null,
-      "status": "DATA_MISSING",
-      "leader_missing_fields": [
-        "financial_earnings_quality"
-      ],
+      "status": "READY",
+      "leader_missing_fields": [],
       "priority_status": "DATA_MISSING",
       "priority_missing_fields": [
-        "structural_leader",
         "revenue_earnings_growth",
         "self_historical_valuation",
         "price_risk_safety",
         "demand_order_catalyst"
       ],
       "missing_fields": [
-        "financial_earnings_quality",
-        "structural_leader",
         "revenue_earnings_growth",
         "self_historical_valuation",
         "price_risk_safety",
@@ -4401,7 +4455,7 @@
       "ticker": "6488",
       "company": "環球晶",
       "theme_id": "critical_materials",
-      "as_of_date": "2026-11-06",
+      "as_of_date": "2026-11-20",
       "evidence": {
         "bottleneck_directness": {
           "sources": [
@@ -4459,15 +4513,15 @@
         },
         "financial_earnings_quality": {
           "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=6488&SYEAR=2026&SSEASON=3&REPORT_ID=C",
-          "source_date": "2026-11-06",
-          "available_at": "2026-11-06",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
           "source_family": "MOPS_XBRL_OFFICIAL",
           "evidence_note": "r1-financial-quality-rubric-v0.1；本期與去年同期財報、營業現金流及資產負債比率；challenger草案，未啟用交易。"
         },
         "market_representation": {
-          "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/qfii?date=2026%2F11%2F06&response=json",
-          "source_date": "2026-11-06",
-          "available_at": "2026-11-06",
+          "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/qfii?date=2026%2F11%2F20&response=json",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
           "source_family": "TWSE_TPEX_OFFICIAL_MARKET_AND_OWNERSHIP",
           "evidence_note": "同題材內市值、20TD平均成交金額與官方外資持股比例百分位。"
         }
@@ -4475,9 +4529,9 @@
       "bottleneck_directness": 75.0,
       "industry_technology_position": 75.0,
       "ai_revenue_realization": 75.0,
-      "financial_earnings_quality": 54.9156,
+      "financial_earnings_quality": 47.4156,
       "market_representation": 85.0,
-      "structural_leader": 71.98312,
+      "structural_leader": 70.48312,
       "revenue_earnings_growth": null,
       "self_historical_valuation": null,
       "price_risk_safety": null,
@@ -4502,7 +4556,7 @@
       "ticker": "3532",
       "company": "台勝科",
       "theme_id": "critical_materials",
-      "as_of_date": "2026-11-06",
+      "as_of_date": "2026-11-20",
       "evidence": {
         "bottleneck_directness": {
           "sources": [
@@ -4558,10 +4612,17 @@
             }
           ]
         },
+        "financial_earnings_quality": {
+          "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3532&SYEAR=2026&SSEASON=3&REPORT_ID=C",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
+          "source_family": "MOPS_XBRL_OFFICIAL",
+          "evidence_note": "r1-financial-quality-rubric-v0.1；本期與去年同期財報、營業現金流及資產負債比率；challenger草案，未啟用交易。"
+        },
         "market_representation": {
-          "source_url": "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261106&selectType=ALLBUT0999",
-          "source_date": "2026-11-06",
-          "available_at": "2026-11-06",
+          "source_url": "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261120&selectType=ALLBUT0999",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
           "source_family": "TWSE_TPEX_OFFICIAL_MARKET_AND_OWNERSHIP",
           "evidence_note": "同題材內市值、20TD平均成交金額與官方外資持股比例百分位。"
         }
@@ -4569,28 +4630,23 @@
       "bottleneck_directness": 75.0,
       "industry_technology_position": 50.0,
       "ai_revenue_realization": 75.0,
-      "financial_earnings_quality": null,
-      "market_representation": 60.0,
-      "structural_leader": null,
+      "financial_earnings_quality": 41.2966,
+      "market_representation": 52.5,
+      "structural_leader": 59.75932,
       "revenue_earnings_growth": null,
       "self_historical_valuation": null,
       "price_risk_safety": null,
       "demand_order_catalyst": null,
-      "status": "DATA_MISSING",
-      "leader_missing_fields": [
-        "financial_earnings_quality"
-      ],
+      "status": "READY",
+      "leader_missing_fields": [],
       "priority_status": "DATA_MISSING",
       "priority_missing_fields": [
-        "structural_leader",
         "revenue_earnings_growth",
         "self_historical_valuation",
         "price_risk_safety",
         "demand_order_catalyst"
       ],
       "missing_fields": [
-        "financial_earnings_quality",
-        "structural_leader",
         "revenue_earnings_growth",
         "self_historical_valuation",
         "price_risk_safety",
@@ -4601,7 +4657,7 @@
       "ticker": "6182",
       "company": "合晶",
       "theme_id": "critical_materials",
-      "as_of_date": "2026-11-06",
+      "as_of_date": "2026-11-20",
       "evidence": {
         "bottleneck_directness": {
           "sources": [
@@ -4657,10 +4713,17 @@
             }
           ]
         },
+        "financial_earnings_quality": {
+          "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=6182&SYEAR=2026&SSEASON=3&REPORT_ID=C",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
+          "source_family": "MOPS_XBRL_OFFICIAL",
+          "evidence_note": "r1-financial-quality-rubric-v0.1；本期與去年同期財報、營業現金流及資產負債比率；challenger草案，未啟用交易。"
+        },
         "market_representation": {
-          "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/qfii?date=2026%2F11%2F06&response=json",
-          "source_date": "2026-11-06",
-          "available_at": "2026-11-06",
+          "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/qfii?date=2026%2F11%2F20&response=json",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
           "source_family": "TWSE_TPEX_OFFICIAL_MARKET_AND_OWNERSHIP",
           "evidence_note": "同題材內市值、20TD平均成交金額與官方外資持股比例百分位。"
         }
@@ -4668,28 +4731,23 @@
       "bottleneck_directness": 50.0,
       "industry_technology_position": 50.0,
       "ai_revenue_realization": 50.0,
-      "financial_earnings_quality": null,
+      "financial_earnings_quality": 62.6557,
       "market_representation": 22.5,
-      "structural_leader": null,
+      "structural_leader": 49.78114,
       "revenue_earnings_growth": null,
       "self_historical_valuation": null,
       "price_risk_safety": null,
       "demand_order_catalyst": null,
-      "status": "DATA_MISSING",
-      "leader_missing_fields": [
-        "financial_earnings_quality"
-      ],
+      "status": "READY",
+      "leader_missing_fields": [],
       "priority_status": "DATA_MISSING",
       "priority_missing_fields": [
-        "structural_leader",
         "revenue_earnings_growth",
         "self_historical_valuation",
         "price_risk_safety",
         "demand_order_catalyst"
       ],
       "missing_fields": [
-        "financial_earnings_quality",
-        "structural_leader",
         "revenue_earnings_growth",
         "self_historical_valuation",
         "price_risk_safety",
@@ -4700,7 +4758,7 @@
       "ticker": "1560",
       "company": "中砂",
       "theme_id": "critical_materials",
-      "as_of_date": "2026-11-06",
+      "as_of_date": "2026-11-20",
       "evidence": {
         "bottleneck_directness": {
           "sources": [
@@ -4756,10 +4814,17 @@
             }
           ]
         },
+        "financial_earnings_quality": {
+          "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=1560&SYEAR=2026&SSEASON=3&REPORT_ID=C",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
+          "source_family": "MOPS_XBRL_OFFICIAL",
+          "evidence_note": "r1-financial-quality-rubric-v0.1；本期與去年同期財報、營業現金流及資產負債比率；challenger草案，未啟用交易。"
+        },
         "market_representation": {
-          "source_url": "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261106&selectType=ALLBUT0999",
-          "source_date": "2026-11-06",
-          "available_at": "2026-11-06",
+          "source_url": "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261120&selectType=ALLBUT0999",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
           "source_family": "TWSE_TPEX_OFFICIAL_MARKET_AND_OWNERSHIP",
           "evidence_note": "同題材內市值、20TD平均成交金額與官方外資持股比例百分位。"
         }
@@ -4767,28 +4832,23 @@
       "bottleneck_directness": 75.0,
       "industry_technology_position": 50.0,
       "ai_revenue_realization": 75.0,
-      "financial_earnings_quality": null,
-      "market_representation": 60.0,
-      "structural_leader": null,
+      "financial_earnings_quality": 91.8301,
+      "market_representation": 67.5,
+      "structural_leader": 71.36602,
       "revenue_earnings_growth": null,
       "self_historical_valuation": null,
       "price_risk_safety": null,
       "demand_order_catalyst": null,
-      "status": "DATA_MISSING",
-      "leader_missing_fields": [
-        "financial_earnings_quality"
-      ],
+      "status": "READY",
+      "leader_missing_fields": [],
       "priority_status": "DATA_MISSING",
       "priority_missing_fields": [
-        "structural_leader",
         "revenue_earnings_growth",
         "self_historical_valuation",
         "price_risk_safety",
         "demand_order_catalyst"
       ],
       "missing_fields": [
-        "financial_earnings_quality",
-        "structural_leader",
         "revenue_earnings_growth",
         "self_historical_valuation",
         "price_risk_safety",
@@ -4799,7 +4859,7 @@
       "ticker": "3131",
       "company": "弘塑",
       "theme_id": "critical_materials",
-      "as_of_date": "2026-11-06",
+      "as_of_date": "2026-11-20",
       "evidence": {
         "bottleneck_directness": {
           "sources": [
@@ -4855,10 +4915,17 @@
             }
           ]
         },
+        "financial_earnings_quality": {
+          "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3131&SYEAR=2026&SSEASON=3&REPORT_ID=C",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
+          "source_family": "MOPS_XBRL_OFFICIAL",
+          "evidence_note": "r1-financial-quality-rubric-v0.1；本期與去年同期財報、營業現金流及資產負債比率；challenger草案，未啟用交易。"
+        },
         "market_representation": {
-          "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/qfii?date=2026%2F11%2F06&response=json",
-          "source_date": "2026-11-06",
-          "available_at": "2026-11-06",
+          "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/qfii?date=2026%2F11%2F20&response=json",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
           "source_family": "TWSE_TPEX_OFFICIAL_MARKET_AND_OWNERSHIP",
           "evidence_note": "同題材內市值、20TD平均成交金額與官方外資持股比例百分位。"
         }
@@ -4866,28 +4933,23 @@
       "bottleneck_directness": 75.0,
       "industry_technology_position": 50.0,
       "ai_revenue_realization": 75.0,
-      "financial_earnings_quality": null,
+      "financial_earnings_quality": 61.2716,
       "market_representation": 22.5,
-      "structural_leader": null,
+      "structural_leader": 60.75432,
       "revenue_earnings_growth": null,
       "self_historical_valuation": null,
       "price_risk_safety": null,
       "demand_order_catalyst": null,
-      "status": "DATA_MISSING",
-      "leader_missing_fields": [
-        "financial_earnings_quality"
-      ],
+      "status": "READY",
+      "leader_missing_fields": [],
       "priority_status": "DATA_MISSING",
       "priority_missing_fields": [
-        "structural_leader",
         "revenue_earnings_growth",
         "self_historical_valuation",
         "price_risk_safety",
         "demand_order_catalyst"
       ],
       "missing_fields": [
-        "financial_earnings_quality",
-        "structural_leader",
         "revenue_earnings_growth",
         "self_historical_valuation",
         "price_risk_safety",
@@ -4898,7 +4960,7 @@
       "ticker": "3081",
       "company": "聯亞",
       "theme_id": "silicon_photonics_cpo",
-      "as_of_date": "2026-11-06",
+      "as_of_date": "2026-11-20",
       "evidence": {
         "bottleneck_directness": {
           "sources": [
@@ -4955,16 +5017,16 @@
           ]
         },
         "financial_earnings_quality": {
-          "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3081&SYEAR=2026&SSEASON=3&REPORT_ID=A",
-          "source_date": "2026-11-06",
-          "available_at": "2026-11-06",
+          "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3081&SYEAR=2026&SSEASON=3&REPORT_ID=C",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
           "source_family": "MOPS_XBRL_OFFICIAL",
           "evidence_note": "r1-financial-quality-rubric-v0.1；本期與去年同期財報、營業現金流及資產負債比率；challenger草案，未啟用交易。"
         },
         "market_representation": {
-          "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/qfii?date=2026%2F11%2F06&response=json",
-          "source_date": "2026-11-06",
-          "available_at": "2026-11-06",
+          "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/qfii?date=2026%2F11%2F20&response=json",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
           "source_family": "TWSE_TPEX_OFFICIAL_MARKET_AND_OWNERSHIP",
           "evidence_note": "同題材內市值、20TD平均成交金額與官方外資持股比例百分位。"
         }
@@ -4972,9 +5034,9 @@
       "bottleneck_directness": 75.0,
       "industry_technology_position": 50.0,
       "ai_revenue_realization": 75.0,
-      "financial_earnings_quality": 84.0361,
+      "financial_earnings_quality": 85.6361,
       "market_representation": 68.0,
-      "structural_leader": 69.85722,
+      "structural_leader": 70.17722,
       "revenue_earnings_growth": null,
       "self_historical_valuation": null,
       "price_risk_safety": null,
@@ -4999,7 +5061,7 @@
       "ticker": "3363",
       "company": "上詮",
       "theme_id": "silicon_photonics_cpo",
-      "as_of_date": "2026-11-06",
+      "as_of_date": "2026-11-20",
       "evidence": {
         "bottleneck_directness": {
           "sources": [
@@ -5055,10 +5117,17 @@
             }
           ]
         },
+        "financial_earnings_quality": {
+          "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3363&SYEAR=2026&SSEASON=3&REPORT_ID=C",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
+          "source_family": "MOPS_XBRL_OFFICIAL",
+          "evidence_note": "r1-financial-quality-rubric-v0.1；本期與去年同期財報、營業現金流及資產負債比率；challenger草案，未啟用交易。"
+        },
         "market_representation": {
-          "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/qfii?date=2026%2F11%2F06&response=json",
-          "source_date": "2026-11-06",
-          "available_at": "2026-11-06",
+          "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/qfii?date=2026%2F11%2F20&response=json",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
           "source_family": "TWSE_TPEX_OFFICIAL_MARKET_AND_OWNERSHIP",
           "evidence_note": "同題材內市值、20TD平均成交金額與官方外資持股比例百分位。"
         }
@@ -5066,28 +5135,23 @@
       "bottleneck_directness": 50.0,
       "industry_technology_position": 50.0,
       "ai_revenue_realization": 50.0,
-      "financial_earnings_quality": null,
-      "market_representation": 28.0,
-      "structural_leader": null,
+      "financial_earnings_quality": 19.9535,
+      "market_representation": 18.0,
+      "structural_leader": 40.7907,
       "revenue_earnings_growth": null,
       "self_historical_valuation": null,
       "price_risk_safety": null,
       "demand_order_catalyst": null,
-      "status": "DATA_MISSING",
-      "leader_missing_fields": [
-        "financial_earnings_quality"
-      ],
+      "status": "READY",
+      "leader_missing_fields": [],
       "priority_status": "DATA_MISSING",
       "priority_missing_fields": [
-        "structural_leader",
         "revenue_earnings_growth",
         "self_historical_valuation",
         "price_risk_safety",
         "demand_order_catalyst"
       ],
       "missing_fields": [
-        "financial_earnings_quality",
-        "structural_leader",
         "revenue_earnings_growth",
         "self_historical_valuation",
         "price_risk_safety",
@@ -5098,7 +5162,7 @@
       "ticker": "2303",
       "company": "聯電",
       "theme_id": "silicon_photonics_cpo",
-      "as_of_date": "2026-11-06",
+      "as_of_date": "2026-11-20",
       "evidence": {
         "bottleneck_directness": {
           "sources": [
@@ -5156,15 +5220,15 @@
         },
         "financial_earnings_quality": {
           "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=2303&SYEAR=2026&SSEASON=3&REPORT_ID=C",
-          "source_date": "2026-11-06",
-          "available_at": "2026-11-06",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
           "source_family": "MOPS_XBRL_OFFICIAL",
           "evidence_note": "r1-financial-quality-rubric-v0.1；本期與去年同期財報、營業現金流及資產負債比率；challenger草案，未啟用交易。"
         },
         "market_representation": {
-          "source_url": "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261106&selectType=ALLBUT0999",
-          "source_date": "2026-11-06",
-          "available_at": "2026-11-06",
+          "source_url": "https://www.twse.com.tw/fund/MI_QFIIS?response=json&date=20261120&selectType=ALLBUT0999",
+          "source_date": "2026-11-20",
+          "available_at": "2026-11-20",
           "source_family": "TWSE_TPEX_OFFICIAL_MARKET_AND_OWNERSHIP",
           "evidence_note": "同題材內市值、20TD平均成交金額與官方外資持股比例百分位。"
         }
@@ -5172,9 +5236,9 @@
       "bottleneck_directness": 50.0,
       "industry_technology_position": 50.0,
       "ai_revenue_realization": 50.0,
-      "financial_earnings_quality": 72.558,
+      "financial_earnings_quality": 77.758,
       "market_representation": 100.0,
-      "structural_leader": 59.5116,
+      "structural_leader": 60.5516,
       "revenue_earnings_growth": null,
       "self_historical_valuation": null,
       "price_risk_safety": null,
@@ -5196,200 +5260,7 @@
       ]
     }
   ],
-  "data_gaps": [
-    {
-      "ticker": "2330",
-      "missing_fields": [
-        "financial_earnings_quality"
-      ]
-    },
-    {
-      "ticker": "2454",
-      "missing_fields": [
-        "financial_earnings_quality"
-      ]
-    },
-    {
-      "ticker": "3661",
-      "missing_fields": [
-        "financial_earnings_quality"
-      ]
-    },
-    {
-      "ticker": "3711",
-      "missing_fields": [
-        "financial_earnings_quality"
-      ]
-    },
-    {
-      "ticker": "2449",
-      "missing_fields": [
-        "financial_earnings_quality"
-      ]
-    },
-    {
-      "ticker": "6223",
-      "missing_fields": [
-        "financial_earnings_quality"
-      ]
-    },
-    {
-      "ticker": "6187",
-      "missing_fields": [
-        "financial_earnings_quality"
-      ]
-    },
-    {
-      "ticker": "3583",
-      "missing_fields": [
-        "financial_earnings_quality"
-      ]
-    },
-    {
-      "ticker": "3260",
-      "missing_fields": [
-        "financial_earnings_quality"
-      ]
-    },
-    {
-      "ticker": "2368",
-      "missing_fields": [
-        "financial_earnings_quality"
-      ]
-    },
-    {
-      "ticker": "2345",
-      "missing_fields": [
-        "financial_earnings_quality"
-      ]
-    },
-    {
-      "ticker": "2379",
-      "missing_fields": [
-        "financial_earnings_quality"
-      ]
-    },
-    {
-      "ticker": "6442",
-      "missing_fields": [
-        "financial_earnings_quality"
-      ]
-    },
-    {
-      "ticker": "6282",
-      "missing_fields": [
-        "financial_earnings_quality"
-      ]
-    },
-    {
-      "ticker": "6781",
-      "missing_fields": [
-        "financial_earnings_quality"
-      ]
-    },
-    {
-      "ticker": "2327",
-      "missing_fields": [
-        "financial_earnings_quality"
-      ]
-    },
-    {
-      "ticker": "2492",
-      "missing_fields": [
-        "financial_earnings_quality"
-      ]
-    },
-    {
-      "ticker": "3357",
-      "missing_fields": [
-        "financial_earnings_quality"
-      ]
-    },
-    {
-      "ticker": "3653",
-      "missing_fields": [
-        "financial_earnings_quality"
-      ]
-    },
-    {
-      "ticker": "3017",
-      "missing_fields": [
-        "financial_earnings_quality"
-      ]
-    },
-    {
-      "ticker": "3324",
-      "missing_fields": [
-        "financial_earnings_quality"
-      ]
-    },
-    {
-      "ticker": "6230",
-      "missing_fields": [
-        "financial_earnings_quality"
-      ]
-    },
-    {
-      "ticker": "2382",
-      "missing_fields": [
-        "financial_earnings_quality"
-      ]
-    },
-    {
-      "ticker": "3231",
-      "missing_fields": [
-        "financial_earnings_quality"
-      ]
-    },
-    {
-      "ticker": "2317",
-      "missing_fields": [
-        "financial_earnings_quality"
-      ]
-    },
-    {
-      "ticker": "2356",
-      "missing_fields": [
-        "financial_earnings_quality"
-      ]
-    },
-    {
-      "ticker": "2376",
-      "missing_fields": [
-        "financial_earnings_quality"
-      ]
-    },
-    {
-      "ticker": "3532",
-      "missing_fields": [
-        "financial_earnings_quality"
-      ]
-    },
-    {
-      "ticker": "6182",
-      "missing_fields": [
-        "financial_earnings_quality"
-      ]
-    },
-    {
-      "ticker": "1560",
-      "missing_fields": [
-        "financial_earnings_quality"
-      ]
-    },
-    {
-      "ticker": "3131",
-      "missing_fields": [
-        "financial_earnings_quality"
-      ]
-    },
-    {
-      "ticker": "3363",
-      "missing_fields": [
-        "financial_earnings_quality"
-      ]
-    }
-  ],
+  "data_gaps": [],
   "future_data_violation_count": 0,
   "formal_model_changed": false,
   "trade_decision_changed": false,

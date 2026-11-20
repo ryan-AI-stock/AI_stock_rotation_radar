@@ -55,34 +55,34 @@
       "error": "HTTPError:HTTP Error 403: "
     },
     "3035": {
-      "retrieved_at": "2026-10-30",
+      "retrieved_at": "2026-11-20",
       "row_count": 0,
       "status": "SOURCE_GAP",
       "error": "ValueError:identifiable_analyst_target_rows_missing"
     },
     "2449": {
-      "retrieved_at": "2026-10-30",
+      "retrieved_at": "2026-11-20",
       "source_url": "https://hk.investing.com/equities/king-yuan-elec-consensus-estimates",
       "row_count": 5,
       "status": "READY"
     },
     "6223": {
-      "retrieved_at": "2026-10-30",
+      "retrieved_at": "2026-11-20",
       "row_count": 0,
       "status": "SOURCE_GAP",
-      "error": "ValueError:identifiable_analyst_target_rows_missing"
+      "error": "HTTPError:HTTP Error 403: "
     },
     "6187": {
-      "retrieved_at": "2026-10-30",
-      "source_url": "https://hk.investing.com/equities/all-ring-tech-co-ltd-consensus-estimates",
-      "row_count": 5,
-      "status": "READY"
-    },
-    "3583": {
-      "retrieved_at": "2026-10-30",
+      "retrieved_at": "2026-11-20",
       "row_count": 0,
       "status": "SOURCE_GAP",
-      "error": "ValueError:identifiable_analyst_target_rows_missing"
+      "error": "HTTPError:HTTP Error 403: "
+    },
+    "3583": {
+      "retrieved_at": "2026-11-20",
+      "row_count": 0,
+      "status": "SOURCE_GAP",
+      "error": "HTTPError:HTTP Error 403: "
     },
     "2408": {
       "retrieved_at": "2026-10-30",
@@ -326,25 +326,22 @@
     }
   },
   "last_summary": {
-    "retrieved_at": "2026-11-07",
+    "retrieved_at": "2026-11-20",
     "requested_ticker_count": 54,
-    "ready_ticker_count": 2,
-    "reused_ready_ticker_count": 1,
-    "source_gap_ticker_count": 7,
+    "ready_ticker_count": 1,
+    "reused_ready_ticker_count": 0,
+    "source_gap_ticker_count": 4,
     "new_evidence_row_count": 5,
-    "total_evidence_row_count": 131,
-    "attempted_ticker_count": 8,
+    "total_evidence_row_count": 132,
+    "attempted_ticker_count": 5,
     "circuit_breaker_tripped": true,
-    "next_index": 9,
+    "next_index": 14,
     "failures": {
-      "2330": "ValueError:identifiable_analyst_target_rows_missing",
-      "2327": "ValueError:identifiable_analyst_target_rows_missing",
-      "2344": "HTTPError:HTTP Error 403: ",
-      "2376": "HTTPError:HTTP Error 403: ",
-      "6488": "HTTPError:HTTP Error 403: ",
-      "3661": "HTTPError:HTTP Error 403: ",
-      "3443": "HTTPError:HTTP Error 403: "
+      "3035": "ValueError:identifiable_analyst_target_rows_missing",
+      "6223": "HTTPError:HTTP Error 403: ",
+      "6187": "HTTPError:HTTP Error 403: ",
+      "3583": "HTTPError:HTTP Error 403: "
     }
   },
-  "next_index": 9
+  "next_index": 14
 }

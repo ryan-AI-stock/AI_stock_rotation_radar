@@ -2,51 +2,77 @@
   "model": "R1",
   "version": "r1-financial-quality-v0.1",
   "status": "challenger_draft",
-  "as_of_date": "2026-11-06",
+  "as_of_date": "2026-11-20",
   "rubric_version": "r1-financial-quality-rubric-v0.1",
   "requested_ticker_count": 52,
-  "actual_ticker_count": 20,
+  "actual_ticker_count": 52,
   "rows": [
     {
       "ticker": "1560",
       "company": "中砂",
       "theme_id": "critical_materials",
-      "report_year": null,
-      "quarter": null,
-      "source_url": "",
-      "facts": {},
-      "metrics": {},
-      "absolute_subscores": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+      "report_year": 2026,
+      "quarter": 3,
+      "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=1560&SYEAR=2026&SSEASON=3&REPORT_ID=C",
+      "facts": {
+        "current_context": "From20260101To20260930",
+        "prior_context": "From20250101To20250930",
+        "balance_context": "AsOf20260930",
+        "current_revenue": 7479569000.0,
+        "prior_revenue": 5977667000.0,
+        "current_gross_profit": 2938147000.0,
+        "prior_gross_profit": 1904618000.0,
+        "current_operating_income": 1774332000.0,
+        "prior_operating_income": 966789000.0,
+        "current_net_income": 1573203000.0,
+        "prior_net_income": 899600000.0,
+        "current_eps": 10.35,
+        "prior_eps": 6.02,
+        "current_operating_cash_flow": 1995624000.0,
+        "prior_operating_cash_flow": 1165304000.0,
+        "current_assets": 7418303000.0,
+        "current_liabilities": 2763086000.0,
+        "total_assets": 15946071000.0,
+        "total_liabilities": 5183863000.0
       },
-      "status": "DATA_MISSING",
-      "missing_subscores": [
-        "revenue_growth_quality",
-        "gross_and_operating_margin_quality",
-        "eps_growth_quality",
-        "operating_cash_flow_quality",
-        "balance_sheet_safety"
-      ],
-      "data_gap_reason": "missing_or_invalid_report_period",
+      "metrics": {
+        "revenue_yoy_pct": 25.1252202573345,
+        "gross_margin_pct": 39.28230356588728,
+        "gross_margin_change_pp": 7.420073702631267,
+        "operating_margin_pct": 23.72238293409687,
+        "operating_margin_change_pp": 7.5490330301962345,
+        "eps_yoy_pct": 71.92691029900334,
+        "current_eps": 10.35,
+        "prior_eps": 6.02,
+        "operating_cash_flow": 1995624000.0,
+        "cash_conversion": 1.2685101668379732,
+        "current_ratio": 2.6847890366061713,
+        "liabilities_to_assets_pct": 32.508716410456216
+      },
+      "absolute_subscores": {
+        "revenue_growth_quality": 90.25044051466901,
+        "gross_and_operating_margin_quality": 100.0,
+        "eps_growth_quality": 100.0,
+        "operating_cash_flow_quality": 100.0,
+        "balance_sheet_safety": 100.0
+      },
+      "status": "READY",
+      "missing_subscores": [],
       "theme_percentiles": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+        "revenue_growth_quality": 75.0,
+        "gross_and_operating_margin_quality": 100.0,
+        "eps_growth_quality": 75.0,
+        "operating_cash_flow_quality": 62.5,
+        "balance_sheet_safety": 100.0
       },
       "combined_subscores": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+        "revenue_growth_quality": 84.1503,
+        "gross_and_operating_margin_quality": 100.0,
+        "eps_growth_quality": 90.0,
+        "operating_cash_flow_quality": 85.0,
+        "balance_sheet_safety": 100.0
       },
-      "financial_earnings_quality": null
+      "financial_earnings_quality": 91.8301
     },
     {
       "ticker": "2301",
@@ -100,20 +126,20 @@
       "status": "READY",
       "missing_subscores": [],
       "theme_percentiles": {
-        "revenue_growth_quality": 50.0,
+        "revenue_growth_quality": 25.0,
         "gross_and_operating_margin_quality": 100.0,
-        "eps_growth_quality": 75.0,
+        "eps_growth_quality": 87.5,
         "operating_cash_flow_quality": 0.0,
         "balance_sheet_safety": 0.0
       },
       "combined_subscores": {
-        "revenue_growth_quality": 75.334,
+        "revenue_growth_quality": 65.334,
         "gross_and_operating_margin_quality": 86.6331,
-        "eps_growth_quality": 90.0,
+        "eps_growth_quality": 95.0,
         "operating_cash_flow_quality": 31.6297,
         "balance_sheet_safety": 25.4289
       },
-      "financial_earnings_quality": 64.8654
+      "financial_earnings_quality": 63.8654
     },
     {
       "ticker": "2303",
@@ -167,20 +193,20 @@
       "status": "READY",
       "missing_subscores": [],
       "theme_percentiles": {
-        "revenue_growth_quality": 0.0,
-        "gross_and_operating_margin_quality": 33.33333333333333,
-        "eps_growth_quality": 66.66666666666666,
-        "operating_cash_flow_quality": 66.66666666666666,
-        "balance_sheet_safety": 66.66666666666666
+        "revenue_growth_quality": 20.0,
+        "gross_and_operating_margin_quality": 60.0,
+        "eps_growth_quality": 70.0,
+        "operating_cash_flow_quality": 80.0,
+        "balance_sheet_safety": 60.0
       },
       "combined_subscores": {
-        "revenue_growth_quality": 43.3004,
-        "gross_and_operating_margin_quality": 65.9906,
-        "eps_growth_quality": 86.6667,
-        "operating_cash_flow_quality": 85.3346,
-        "balance_sheet_safety": 86.6667
+        "revenue_growth_quality": 51.3004,
+        "gross_and_operating_margin_quality": 76.6573,
+        "eps_growth_quality": 88.0,
+        "operating_cash_flow_quality": 90.668,
+        "balance_sheet_safety": 84.0
       },
-      "financial_earnings_quality": 72.558
+      "financial_earnings_quality": 77.758
     },
     {
       "ticker": "2308",
@@ -235,17 +261,17 @@
       "missing_subscores": [],
       "theme_percentiles": {
         "revenue_growth_quality": 100.0,
-        "gross_and_operating_margin_quality": 50.0,
-        "eps_growth_quality": 75.0,
-        "operating_cash_flow_quality": 100.0,
-        "balance_sheet_safety": 100.0
+        "gross_and_operating_margin_quality": 75.0,
+        "eps_growth_quality": 87.5,
+        "operating_cash_flow_quality": 75.0,
+        "balance_sheet_safety": 75.0
       },
       "combined_subscores": {
         "revenue_growth_quality": 100.0,
-        "gross_and_operating_margin_quality": 61.0505,
-        "eps_growth_quality": 90.0,
-        "operating_cash_flow_quality": 99.2482,
-        "balance_sheet_safety": 82.5384
+        "gross_and_operating_margin_quality": 71.0505,
+        "eps_growth_quality": 95.0,
+        "operating_cash_flow_quality": 89.2482,
+        "balance_sheet_safety": 72.5384
       },
       "financial_earnings_quality": 85.493
     },
@@ -253,124 +279,202 @@
       "ticker": "2317",
       "company": "鴻海",
       "theme_id": "server_rack",
-      "report_year": null,
-      "quarter": null,
-      "source_url": "",
-      "facts": {},
-      "metrics": {},
-      "absolute_subscores": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+      "report_year": 2026,
+      "quarter": 3,
+      "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=2317&SYEAR=2026&SSEASON=3&REPORT_ID=C",
+      "facts": {
+        "current_context": "From20260101To20260930",
+        "prior_context": "From20250101To20250930",
+        "balance_context": "AsOf20260930",
+        "current_revenue": 7661061739000.0,
+        "prior_revenue": 5496732736000.0,
+        "current_gross_profit": 467027173000.0,
+        "prior_gross_profit": 344834065000.0,
+        "current_operating_income": 285802170000.0,
+        "prior_operating_income": 173632375000.0,
+        "current_net_income": 217913014000.0,
+        "prior_net_income": 161400941000.0,
+        "current_eps": 13.35,
+        "prior_eps": 10.38,
+        "current_operating_cash_flow": -125723025000.0,
+        "prior_operating_cash_flow": -49535724000.0,
+        "current_assets": 4883730580000.0,
+        "current_liabilities": 3471717442000.0,
+        "total_assets": 6194099176000.0,
+        "total_liabilities": 3991301136000.0
       },
-      "status": "DATA_MISSING",
-      "missing_subscores": [
-        "revenue_growth_quality",
-        "gross_and_operating_margin_quality",
-        "eps_growth_quality",
-        "operating_cash_flow_quality",
-        "balance_sheet_safety"
-      ],
-      "data_gap_reason": "missing_or_invalid_report_period",
+      "metrics": {
+        "revenue_yoy_pct": 39.37482695538501,
+        "gross_margin_pct": 6.096115511281092,
+        "gross_margin_change_pp": -0.17732148414644033,
+        "operating_margin_pct": 3.730581735754369,
+        "operating_margin_change_pp": 0.571752967114743,
+        "eps_yoy_pct": 28.612716763005764,
+        "current_eps": 13.35,
+        "prior_eps": 10.38,
+        "operating_cash_flow": -125723025000.0,
+        "cash_conversion": -0.5769413340315691,
+        "current_ratio": 1.4067189111987646,
+        "liabilities_to_assets_pct": 64.43715256392595
+      },
+      "absolute_subscores": {
+        "revenue_growth_quality": 100.0,
+        "gross_and_operating_margin_quality": 51.97215741484151,
+        "eps_growth_quality": 83.73245251857966,
+        "operating_cash_flow_quality": 0.0,
+        "balance_sheet_safety": 45.72231574304314
+      },
+      "status": "READY",
+      "missing_subscores": [],
       "theme_percentiles": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+        "revenue_growth_quality": 50.0,
+        "gross_and_operating_margin_quality": 80.0,
+        "eps_growth_quality": 0.0,
+        "operating_cash_flow_quality": 40.0,
+        "balance_sheet_safety": 100.0
       },
       "combined_subscores": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+        "revenue_growth_quality": 80.0,
+        "gross_and_operating_margin_quality": 63.1833,
+        "eps_growth_quality": 50.2395,
+        "operating_cash_flow_quality": 16.0,
+        "balance_sheet_safety": 67.4334
       },
-      "financial_earnings_quality": null
+      "financial_earnings_quality": 55.1587
     },
     {
       "ticker": "2327",
       "company": "國巨",
       "theme_id": "passive_components",
-      "report_year": null,
-      "quarter": null,
-      "source_url": "",
-      "facts": {},
-      "metrics": {},
-      "absolute_subscores": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+      "report_year": 2026,
+      "quarter": 3,
+      "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=2327&SYEAR=2026&SSEASON=3&REPORT_ID=C",
+      "facts": {
+        "current_context": "From20260101To20260930",
+        "prior_context": "From20250101To20250930",
+        "balance_context": "AsOf20260930",
+        "current_revenue": 132153512000.0,
+        "prior_revenue": 96961795000.0,
+        "current_gross_profit": 51965997000.0,
+        "prior_gross_profit": 34712602000.0,
+        "current_operating_income": 35964518000.0,
+        "prior_operating_income": 21068850000.0,
+        "current_net_income": 29516204000.0,
+        "prior_net_income": 16970318000.0,
+        "current_eps": 14.32,
+        "prior_eps": 8.22,
+        "current_operating_cash_flow": 27891320000.0,
+        "prior_operating_cash_flow": 20534548000.0,
+        "current_assets": 209680983000.0,
+        "current_liabilities": 159724059000.0,
+        "total_assets": 439094245000.0,
+        "total_liabilities": 246870546000.0
       },
-      "status": "DATA_MISSING",
-      "missing_subscores": [
-        "revenue_growth_quality",
-        "gross_and_operating_margin_quality",
-        "eps_growth_quality",
-        "operating_cash_flow_quality",
-        "balance_sheet_safety"
-      ],
-      "data_gap_reason": "missing_or_invalid_report_period",
+      "metrics": {
+        "revenue_yoy_pct": 36.294415754163786,
+        "gross_margin_pct": 39.322448729171875,
+        "gross_margin_change_pp": 3.522160584753756,
+        "operating_margin_pct": 27.21419768246492,
+        "operating_margin_change_pp": 5.48517544231353,
+        "eps_yoy_pct": 74.20924574209245,
+        "current_eps": 14.32,
+        "prior_eps": 8.22,
+        "operating_cash_flow": 27891320000.0,
+        "cash_conversion": 0.9449494250683456,
+        "current_ratio": 1.3127701882407083,
+        "liabilities_to_assets_pct": 56.22267857325254
+      },
+      "absolute_subscores": {
+        "revenue_growth_quality": 100.0,
+        "gross_and_operating_margin_quality": 92.61080292376877,
+        "eps_growth_quality": 100.0,
+        "operating_cash_flow_quality": 89.37289271118107,
+        "balance_sheet_safety": 52.23245931306266
+      },
+      "status": "READY",
+      "missing_subscores": [],
       "theme_percentiles": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+        "revenue_growth_quality": 75.0,
+        "gross_and_operating_margin_quality": 0.0,
+        "eps_growth_quality": 75.0,
+        "operating_cash_flow_quality": 100.0,
+        "balance_sheet_safety": 0.0
       },
       "combined_subscores": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+        "revenue_growth_quality": 90.0,
+        "gross_and_operating_margin_quality": 55.5665,
+        "eps_growth_quality": 90.0,
+        "operating_cash_flow_quality": 93.6237,
+        "balance_sheet_safety": 31.3395
       },
-      "financial_earnings_quality": null
+      "financial_earnings_quality": 73.3173
     },
     {
       "ticker": "2330",
       "company": "台積電",
       "theme_id": "compute_foundry",
-      "report_year": null,
-      "quarter": null,
-      "source_url": "",
-      "facts": {},
-      "metrics": {},
-      "absolute_subscores": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+      "report_year": 2026,
+      "quarter": 3,
+      "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=2330&SYEAR=2026&SSEASON=3&REPORT_ID=C",
+      "facts": {
+        "current_context": "From20260101To20260930",
+        "prior_context": "From20250101To20250930",
+        "balance_context": "AsOf20260930",
+        "current_revenue": 3898726974000.0,
+        "prior_revenue": 2762963851000.0,
+        "current_gross_profit": 2603984766000.0,
+        "prior_gross_profit": 1629307143000.0,
+        "current_operating_income": 2302013957000.0,
+        "prior_operating_income": 1371189264000.0,
+        "current_net_income": 2042923054000.0,
+        "prior_net_income": 1209981447000.0,
+        "current_eps": 78.75,
+        "prior_eps": 46.75,
+        "current_operating_cash_flow": 2402116725000.0,
+        "prior_operating_cash_flow": 1549466838000.0,
+        "current_assets": 5084925495000.0,
+        "current_liabilities": 1967745043000.0,
+        "total_assets": 10052887514000.0,
+        "total_liabilities": 3009660084000.0
       },
-      "status": "DATA_MISSING",
-      "missing_subscores": [
-        "revenue_growth_quality",
-        "gross_and_operating_margin_quality",
-        "eps_growth_quality",
-        "operating_cash_flow_quality",
-        "balance_sheet_safety"
-      ],
-      "data_gap_reason": "missing_or_invalid_report_period",
+      "metrics": {
+        "revenue_yoy_pct": 41.1066949930935,
+        "gross_margin_pct": 66.7906417496164,
+        "gross_margin_change_pp": 7.821099226998719,
+        "operating_margin_pct": 59.04527227353367,
+        "operating_margin_change_pp": 9.417794755008579,
+        "eps_yoy_pct": 68.44919786096257,
+        "current_eps": 78.75,
+        "prior_eps": 46.75,
+        "operating_cash_flow": 2402116725000.0,
+        "cash_conversion": 1.1758233969197744,
+        "current_ratio": 2.584138383724542,
+        "liabilities_to_assets_pct": 29.93826480012477
+      },
+      "absolute_subscores": {
+        "revenue_growth_quality": 100.0,
+        "gross_and_operating_margin_quality": 100.0,
+        "eps_growth_quality": 100.0,
+        "operating_cash_flow_quality": 98.99264153832394,
+        "balance_sheet_safety": 100.0
+      },
+      "status": "READY",
+      "missing_subscores": [],
       "theme_percentiles": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+        "revenue_growth_quality": 75.0,
+        "gross_and_operating_margin_quality": 100.0,
+        "eps_growth_quality": 75.0,
+        "operating_cash_flow_quality": 75.0,
+        "balance_sheet_safety": 75.0
       },
       "combined_subscores": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+        "revenue_growth_quality": 90.0,
+        "gross_and_operating_margin_quality": 100.0,
+        "eps_growth_quality": 90.0,
+        "operating_cash_flow_quality": 89.3956,
+        "balance_sheet_safety": 90.0
       },
-      "financial_earnings_quality": null
+      "financial_earnings_quality": 92.3791
     },
     {
       "ticker": "2337",
@@ -426,18 +530,18 @@
       "theme_percentiles": {
         "revenue_growth_quality": 50.0,
         "gross_and_operating_margin_quality": 50.0,
-        "eps_growth_quality": 16.666666666666664,
-        "operating_cash_flow_quality": 66.66666666666666,
-        "balance_sheet_safety": 66.66666666666666
+        "eps_growth_quality": 12.5,
+        "operating_cash_flow_quality": 75.0,
+        "balance_sheet_safety": 75.0
       },
       "combined_subscores": {
         "revenue_growth_quality": 80.0,
         "gross_and_operating_margin_quality": 80.0,
-        "eps_growth_quality": 51.6667,
-        "operating_cash_flow_quality": 85.2815,
-        "balance_sheet_safety": 86.6667
+        "eps_growth_quality": 50.0,
+        "operating_cash_flow_quality": 88.6149,
+        "balance_sheet_safety": 90.0
       },
-      "financial_earnings_quality": 76.3896
+      "financial_earnings_quality": 77.223
     },
     {
       "ticker": "2344",
@@ -493,264 +597,420 @@
       "theme_percentiles": {
         "revenue_growth_quality": 50.0,
         "gross_and_operating_margin_quality": 50.0,
-        "eps_growth_quality": 83.33333333333334,
+        "eps_growth_quality": 75.0,
         "operating_cash_flow_quality": 100.0,
-        "balance_sheet_safety": 66.66666666666666
+        "balance_sheet_safety": 75.0
       },
       "combined_subscores": {
         "revenue_growth_quality": 80.0,
         "gross_and_operating_margin_quality": 80.0,
-        "eps_growth_quality": 93.3333,
+        "eps_growth_quality": 90.0,
         "operating_cash_flow_quality": 99.3501,
-        "balance_sheet_safety": 86.6667
+        "balance_sheet_safety": 90.0
       },
-      "financial_earnings_quality": 87.5367
+      "financial_earnings_quality": 87.37
     },
     {
       "ticker": "2345",
       "company": "智邦",
       "theme_id": "network_optics",
-      "report_year": null,
-      "quarter": null,
-      "source_url": "",
-      "facts": {},
-      "metrics": {},
-      "absolute_subscores": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+      "report_year": 2026,
+      "quarter": 3,
+      "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=2345&SYEAR=2026&SSEASON=3&REPORT_ID=C",
+      "facts": {
+        "current_context": "From20260101To20260930",
+        "prior_context": "From20250101To20250930",
+        "balance_context": "AsOf20260930",
+        "current_revenue": 286402145000.0,
+        "prior_revenue": 176301922000.0,
+        "current_gross_profit": 53798936000.0,
+        "prior_gross_profit": 32029696000.0,
+        "current_operating_income": 40501942000.0,
+        "prior_operating_income": 23022414000.0,
+        "current_net_income": 32445201000.0,
+        "prior_net_income": 17958033000.0,
+        "current_eps": 58.09,
+        "prior_eps": 32.18,
+        "current_operating_cash_flow": -19301766000.0,
+        "prior_operating_cash_flow": 24763738000.0,
+        "current_assets": 202523462000.0,
+        "current_liabilities": 138504394000.0,
+        "total_assets": 228712646000.0,
+        "total_liabilities": 146620328000.0
       },
-      "status": "DATA_MISSING",
-      "missing_subscores": [
-        "revenue_growth_quality",
-        "gross_and_operating_margin_quality",
-        "eps_growth_quality",
-        "operating_cash_flow_quality",
-        "balance_sheet_safety"
-      ],
-      "data_gap_reason": "missing_or_invalid_report_period",
+      "metrics": {
+        "revenue_yoy_pct": 62.44981435880206,
+        "gross_margin_pct": 18.78440400647139,
+        "gross_margin_change_pp": 0.6168788674090955,
+        "operating_margin_pct": 14.14163361101922,
+        "operating_margin_change_pp": 1.0831180039119985,
+        "eps_yoy_pct": 80.5158483530143,
+        "current_eps": 58.09,
+        "prior_eps": 32.18,
+        "operating_cash_flow": -19301766000.0,
+        "cash_conversion": -0.5949035729505883,
+        "current_ratio": 1.4622168737838022,
+        "liabilities_to_assets_pct": 64.10678664440793
+      },
+      "absolute_subscores": {
+        "revenue_growth_quality": 100.0,
+        "gross_and_operating_margin_quality": 58.49998435660547,
+        "eps_growth_quality": 100.0,
+        "operating_cash_flow_quality": 0.0,
+        "balance_sheet_safety": 48.35519164584217
+      },
+      "status": "READY",
+      "missing_subscores": [],
       "theme_percentiles": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+        "revenue_growth_quality": 100.0,
+        "gross_and_operating_margin_quality": 100.0,
+        "eps_growth_quality": 100.0,
+        "operating_cash_flow_quality": 0.0,
+        "balance_sheet_safety": 100.0
       },
       "combined_subscores": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+        "revenue_growth_quality": 100.0,
+        "gross_and_operating_margin_quality": 75.1,
+        "eps_growth_quality": 100.0,
+        "operating_cash_flow_quality": 0.0,
+        "balance_sheet_safety": 69.0131
       },
-      "financial_earnings_quality": null
+      "financial_earnings_quality": 69.127
     },
     {
       "ticker": "2356",
       "company": "英業達",
       "theme_id": "server_rack",
-      "report_year": null,
-      "quarter": null,
-      "source_url": "",
-      "facts": {},
-      "metrics": {},
-      "absolute_subscores": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+      "report_year": 2026,
+      "quarter": 3,
+      "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=2356&SYEAR=2026&SSEASON=3&REPORT_ID=C",
+      "facts": {
+        "current_context": "From20260101To20260930",
+        "prior_context": "From20250101To20250930",
+        "balance_context": "AsOf20260930",
+        "current_revenue": 742261384000.0,
+        "prior_revenue": 519897249000.0,
+        "current_gross_profit": 32926438000.0,
+        "prior_gross_profit": 27791528000.0,
+        "current_operating_income": 12729577000.0,
+        "prior_operating_income": 10174730000.0,
+        "current_net_income": 8878328000.0,
+        "prior_net_income": 7210416000.0,
+        "current_eps": 2.47,
+        "prior_eps": 1.85,
+        "current_operating_cash_flow": -25104407000.0,
+        "prior_operating_cash_flow": -3777185000.0,
+        "current_assets": 451613122000.0,
+        "current_liabilities": 417168604000.0,
+        "total_assets": 531384119000.0,
+        "total_liabilities": 450294226000.0
       },
-      "status": "DATA_MISSING",
-      "missing_subscores": [
-        "revenue_growth_quality",
-        "gross_and_operating_margin_quality",
-        "eps_growth_quality",
-        "operating_cash_flow_quality",
-        "balance_sheet_safety"
-      ],
-      "data_gap_reason": "missing_or_invalid_report_period",
+      "metrics": {
+        "revenue_yoy_pct": 42.770785078726206,
+        "gross_margin_pct": 4.4359626823857505,
+        "gross_margin_change_pp": -0.9096182095031393,
+        "operating_margin_pct": 1.7149722825941867,
+        "operating_margin_change_pp": -0.2420932759504404,
+        "eps_yoy_pct": 33.51351351351353,
+        "current_eps": 2.47,
+        "prior_eps": 1.85,
+        "operating_cash_flow": -25104407000.0,
+        "cash_conversion": -2.8276052653157215,
+        "current_ratio": 1.0825673784405885,
+        "liabilities_to_assets_pct": 84.73987270214224
+      },
+      "absolute_subscores": {
+        "revenue_growth_quality": 100.0,
+        "gross_and_operating_margin_quality": 44.241442572732105,
+        "eps_growth_quality": 90.73359073359075,
+        "operating_cash_flow_quality": 0.0,
+        "balance_sheet_safety": 13.302695137623537
+      },
+      "status": "READY",
+      "missing_subscores": [],
       "theme_percentiles": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+        "revenue_growth_quality": 50.0,
+        "gross_and_operating_margin_quality": 20.0,
+        "eps_growth_quality": 20.0,
+        "operating_cash_flow_quality": 40.0,
+        "balance_sheet_safety": 0.0
       },
       "combined_subscores": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+        "revenue_growth_quality": 80.0,
+        "gross_and_operating_margin_quality": 34.5449,
+        "eps_growth_quality": 62.4402,
+        "operating_cash_flow_quality": 16.0,
+        "balance_sheet_safety": 7.9816
       },
-      "financial_earnings_quality": null
+      "financial_earnings_quality": 41.5215
     },
     {
       "ticker": "2368",
       "company": "金像電",
       "theme_id": "pcb_substrate",
-      "report_year": null,
-      "quarter": null,
-      "source_url": "",
-      "facts": {},
-      "metrics": {},
-      "absolute_subscores": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+      "report_year": 2026,
+      "quarter": 3,
+      "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=2368&SYEAR=2026&SSEASON=3&REPORT_ID=C",
+      "facts": {
+        "current_context": "From20260101To20260930",
+        "prior_context": "From20250101To20250930",
+        "balance_context": "AsOf20260930",
+        "current_revenue": 73159351000.0,
+        "prior_revenue": 43595554000.0,
+        "current_gross_profit": 26578313000.0,
+        "prior_gross_profit": 14158973000.0,
+        "current_operating_income": 20355271000.0,
+        "prior_operating_income": 10056623000.0,
+        "current_net_income": 14652778000.0,
+        "prior_net_income": 6675522000.0,
+        "current_eps": 28.41,
+        "prior_eps": 13.61,
+        "current_operating_cash_flow": 13269482000.0,
+        "prior_operating_cash_flow": 1838464000.0,
+        "current_assets": 82741474000.0,
+        "current_liabilities": 46200227000.0,
+        "total_assets": 111105361000.0,
+        "total_liabilities": 57694798000.0
       },
-      "status": "DATA_MISSING",
-      "missing_subscores": [
-        "revenue_growth_quality",
-        "gross_and_operating_margin_quality",
-        "eps_growth_quality",
-        "operating_cash_flow_quality",
-        "balance_sheet_safety"
-      ],
-      "data_gap_reason": "missing_or_invalid_report_period",
+      "metrics": {
+        "revenue_yoy_pct": 67.81378899325377,
+        "gross_margin_pct": 36.329344966441816,
+        "gross_margin_change_pp": 3.8513243866368185,
+        "operating_margin_pct": 27.823197884847282,
+        "operating_margin_change_pp": 4.755196501036448,
+        "eps_yoy_pct": 108.74357090374724,
+        "current_eps": 28.41,
+        "prior_eps": 13.61,
+        "operating_cash_flow": 13269482000.0,
+        "cash_conversion": 0.9055949663606451,
+        "current_ratio": 1.7909321960690798,
+        "liabilities_to_assets_pct": 51.92800552621398
+      },
+      "absolute_subscores": {
+        "revenue_growth_quality": 100.0,
+        "gross_and_operating_margin_quality": 93.03260443836632,
+        "eps_growth_quality": 100.0,
+        "operating_cash_flow_quality": 87.73312359836021,
+        "balance_sheet_safety": 76.72728093499572
+      },
+      "status": "READY",
+      "missing_subscores": [],
       "theme_percentiles": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+        "revenue_growth_quality": 50.0,
+        "gross_and_operating_margin_quality": 0.0,
+        "eps_growth_quality": 50.0,
+        "operating_cash_flow_quality": 75.0,
+        "balance_sheet_safety": 25.0
       },
       "combined_subscores": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+        "revenue_growth_quality": 80.0,
+        "gross_and_operating_margin_quality": 55.8196,
+        "eps_growth_quality": 80.0,
+        "operating_cash_flow_quality": 82.6399,
+        "balance_sheet_safety": 56.0364
       },
-      "financial_earnings_quality": null
+      "financial_earnings_quality": 70.8883
     },
     {
       "ticker": "2376",
       "company": "技嘉",
       "theme_id": "server_rack",
-      "report_year": null,
-      "quarter": null,
-      "source_url": "",
-      "facts": {},
-      "metrics": {},
-      "absolute_subscores": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+      "report_year": 2026,
+      "quarter": 3,
+      "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=2376&SYEAR=2026&SSEASON=3&REPORT_ID=C",
+      "facts": {
+        "current_context": "From20260101To20260930",
+        "prior_context": "From20250101To20250930",
+        "balance_context": "AsOf20260930",
+        "current_revenue": 403983007000.0,
+        "prior_revenue": 247587020000.0,
+        "current_gross_profit": 48149172000.0,
+        "prior_gross_profit": 25996282000.0,
+        "current_operating_income": 28372187000.0,
+        "prior_operating_income": 12969595000.0,
+        "current_net_income": 22852084000.0,
+        "prior_net_income": 10033811000.0,
+        "current_eps": 30.52,
+        "prior_eps": 13.77,
+        "current_operating_cash_flow": -84036018000.0,
+        "prior_operating_cash_flow": 1904107000.0,
+        "current_assets": 355340187000.0,
+        "current_liabilities": 226675513000.0,
+        "total_assets": 371418941000.0,
+        "total_liabilities": 293726643000.0
       },
-      "status": "DATA_MISSING",
-      "missing_subscores": [
-        "revenue_growth_quality",
-        "gross_and_operating_margin_quality",
-        "eps_growth_quality",
-        "operating_cash_flow_quality",
-        "balance_sheet_safety"
-      ],
-      "data_gap_reason": "missing_or_invalid_report_period",
+      "metrics": {
+        "revenue_yoy_pct": 63.16808813321473,
+        "gross_margin_pct": 11.918613200480484,
+        "gross_margin_change_pp": 1.4187566248005474,
+        "operating_margin_pct": 7.023113969741801,
+        "operating_margin_change_pp": 1.7847153654854067,
+        "eps_yoy_pct": 121.64124909222949,
+        "current_eps": 30.52,
+        "prior_eps": 13.77,
+        "operating_cash_flow": -84036018000.0,
+        "cash_conversion": -3.6773896857722037,
+        "current_ratio": 1.5676161147587213,
+        "liabilities_to_assets_pct": 79.0823004904319
+      },
+      "absolute_subscores": {
+        "revenue_growth_quality": 100.0,
+        "gross_and_operating_margin_quality": 66.01735995142977,
+        "eps_growth_quality": 100.0,
+        "operating_cash_flow_quality": 0.0,
+        "balance_sheet_safety": 33.851768977308964
+      },
+      "status": "READY",
+      "missing_subscores": [],
       "theme_percentiles": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+        "revenue_growth_quality": 50.0,
+        "gross_and_operating_margin_quality": 100.0,
+        "eps_growth_quality": 80.0,
+        "operating_cash_flow_quality": 40.0,
+        "balance_sheet_safety": 80.0
       },
       "combined_subscores": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+        "revenue_growth_quality": 80.0,
+        "gross_and_operating_margin_quality": 79.6104,
+        "eps_growth_quality": 92.0,
+        "operating_cash_flow_quality": 16.0,
+        "balance_sheet_safety": 52.3111
       },
-      "financial_earnings_quality": null
+      "financial_earnings_quality": 65.3493
     },
     {
       "ticker": "2379",
       "company": "瑞昱",
       "theme_id": "network_optics",
-      "report_year": null,
-      "quarter": null,
-      "source_url": "",
-      "facts": {},
-      "metrics": {},
-      "absolute_subscores": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+      "report_year": 2026,
+      "quarter": 3,
+      "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=2379&SYEAR=2026&SSEASON=3&REPORT_ID=C",
+      "facts": {
+        "current_context": "From20260101To20260930",
+        "prior_context": "From20250101To20250930",
+        "balance_context": "AsOf20260930",
+        "current_revenue": 111707580000.0,
+        "prior_revenue": 96427898000.0,
+        "current_gross_profit": 53640995000.0,
+        "prior_gross_profit": 48738200000.0,
+        "current_operating_income": 12201318000.0,
+        "prior_operating_income": 12025190000.0,
+        "current_net_income": 12261407000.0,
+        "prior_net_income": 12099449000.0,
+        "current_eps": 23.91,
+        "prior_eps": 23.59,
+        "current_operating_cash_flow": 14149472000.0,
+        "prior_operating_cash_flow": 21042896000.0,
+        "current_assets": 130471735000.0,
+        "current_liabilities": 109195694000.0,
+        "total_assets": 167296453000.0,
+        "total_liabilities": 112591022000.0
       },
-      "status": "DATA_MISSING",
-      "missing_subscores": [
-        "revenue_growth_quality",
-        "gross_and_operating_margin_quality",
-        "eps_growth_quality",
-        "operating_cash_flow_quality",
-        "balance_sheet_safety"
-      ],
-      "data_gap_reason": "missing_or_invalid_report_period",
+      "metrics": {
+        "revenue_yoy_pct": 15.845706809869476,
+        "gross_margin_pct": 48.0191183087128,
+        "gross_margin_change_pp": -2.524553191831579,
+        "operating_margin_pct": 10.922551540369955,
+        "operating_margin_change_pp": -1.5481029583934625,
+        "eps_yoy_pct": 1.3565069944891928,
+        "current_eps": 23.91,
+        "prior_eps": 23.59,
+        "operating_cash_flow": 14149472000.0,
+        "cash_conversion": 1.1539843673731733,
+        "current_ratio": 1.1948432233967028,
+        "liabilities_to_assets_pct": 67.30030432862793
+      },
+      "absolute_subscores": {
+        "revenue_growth_quality": 71.69141361973895,
+        "gross_and_operating_margin_quality": 29.63671924887479,
+        "eps_growth_quality": 44.79500999212742,
+        "operating_cash_flow_quality": 98.08268197388222,
+        "balance_sheet_safety": 33.668348525083196
+      },
+      "status": "READY",
+      "missing_subscores": [],
       "theme_percentiles": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+        "revenue_growth_quality": 0.0,
+        "gross_and_operating_margin_quality": 0.0,
+        "eps_growth_quality": 0.0,
+        "operating_cash_flow_quality": 100.0,
+        "balance_sheet_safety": 0.0
       },
       "combined_subscores": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+        "revenue_growth_quality": 43.0148,
+        "gross_and_operating_margin_quality": 17.782,
+        "eps_growth_quality": 26.877,
+        "operating_cash_flow_quality": 98.8496,
+        "balance_sheet_safety": 20.201
       },
-      "financial_earnings_quality": null
+      "financial_earnings_quality": 41.2239
     },
     {
       "ticker": "2382",
       "company": "廣達",
       "theme_id": "server_rack",
-      "report_year": null,
-      "quarter": null,
-      "source_url": "",
-      "facts": {},
-      "metrics": {},
-      "absolute_subscores": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+      "report_year": 2026,
+      "quarter": 3,
+      "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=2382&SYEAR=2026&SSEASON=3&REPORT_ID=C",
+      "facts": {
+        "current_context": "From20260101To20260930",
+        "prior_context": "From20250101To20250930",
+        "balance_context": "AsOf20260930",
+        "current_revenue": 2961358288000.0,
+        "prior_revenue": 1485052023000.0,
+        "current_gross_profit": 143800264000.0,
+        "prior_gross_profit": 107934279000.0,
+        "current_operating_income": 89471802000.0,
+        "prior_operating_income": 63377557000.0,
+        "current_net_income": 78727811000.0,
+        "prior_net_income": 53402339000.0,
+        "current_eps": 20.03,
+        "prior_eps": 13.7,
+        "current_operating_cash_flow": 68030533000.0,
+        "prior_operating_cash_flow": 76578746000.0,
+        "current_assets": 2155083575000.0,
+        "current_liabilities": 1874740046000.0,
+        "total_assets": 2306024713000.0,
+        "total_liabilities": 1949455908000.0
       },
-      "status": "DATA_MISSING",
-      "missing_subscores": [
-        "revenue_growth_quality",
-        "gross_and_operating_margin_quality",
-        "eps_growth_quality",
-        "operating_cash_flow_quality",
-        "balance_sheet_safety"
-      ],
-      "data_gap_reason": "missing_or_invalid_report_period",
+      "metrics": {
+        "revenue_yoy_pct": 99.4110806985514,
+        "gross_margin_pct": 4.855888751547107,
+        "gross_margin_change_pp": -2.4121582480427506,
+        "operating_margin_pct": 3.021309591701793,
+        "operating_margin_change_pp": -1.2463898571006142,
+        "eps_yoy_pct": 46.20437956204382,
+        "current_eps": 20.03,
+        "prior_eps": 13.7,
+        "operating_cash_flow": 68030533000.0,
+        "cash_conversion": 0.8641232638870144,
+        "current_ratio": 1.1495372809676463,
+        "liabilities_to_assets_pct": 84.53751154574032
+      },
+      "absolute_subscores": {
+        "revenue_growth_quality": 100.0,
+        "gross_and_operating_margin_quality": 31.707259474283177,
+        "eps_growth_quality": 100.0,
+        "operating_cash_flow_quality": 86.00513599529228,
+        "balance_sheet_safety": 15.981491238705853
+      },
+      "status": "READY",
+      "missing_subscores": [],
       "theme_percentiles": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+        "revenue_growth_quality": 50.0,
+        "gross_and_operating_margin_quality": 0.0,
+        "eps_growth_quality": 80.0,
+        "operating_cash_flow_quality": 100.0,
+        "balance_sheet_safety": 20.0
       },
       "combined_subscores": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+        "revenue_growth_quality": 80.0,
+        "gross_and_operating_margin_quality": 19.0244,
+        "eps_growth_quality": 92.0,
+        "operating_cash_flow_quality": 91.6031,
+        "balance_sheet_safety": 17.5889
       },
-      "financial_earnings_quality": null
+      "financial_earnings_quality": 60.1151
     },
     {
       "ticker": "2383",
@@ -805,19 +1065,19 @@
       "missing_subscores": [],
       "theme_percentiles": {
         "revenue_growth_quality": 50.0,
-        "gross_and_operating_margin_quality": 0.0,
+        "gross_and_operating_margin_quality": 25.0,
         "eps_growth_quality": 50.0,
-        "operating_cash_flow_quality": 33.33333333333333,
+        "operating_cash_flow_quality": 25.0,
         "balance_sheet_safety": 0.0
       },
       "combined_subscores": {
         "revenue_growth_quality": 80.0,
-        "gross_and_operating_margin_quality": 57.5689,
+        "gross_and_operating_margin_quality": 67.5689,
         "eps_growth_quality": 80.0,
-        "operating_cash_flow_quality": 53.6776,
+        "operating_cash_flow_quality": 50.3442,
         "balance_sheet_safety": 31.9116
       },
-      "financial_earnings_quality": 61.9145
+      "financial_earnings_quality": 63.7478
     },
     {
       "ticker": "2408",
@@ -873,182 +1133,286 @@
       "theme_percentiles": {
         "revenue_growth_quality": 50.0,
         "gross_and_operating_margin_quality": 50.0,
-        "eps_growth_quality": 16.666666666666664,
-        "operating_cash_flow_quality": 33.33333333333333,
-        "balance_sheet_safety": 66.66666666666666
+        "eps_growth_quality": 12.5,
+        "operating_cash_flow_quality": 50.0,
+        "balance_sheet_safety": 75.0
       },
       "combined_subscores": {
         "revenue_growth_quality": 80.0,
         "gross_and_operating_margin_quality": 80.0,
-        "eps_growth_quality": 51.6667,
-        "operating_cash_flow_quality": 71.5302,
-        "balance_sheet_safety": 86.6667
+        "eps_growth_quality": 50.0,
+        "operating_cash_flow_quality": 78.1969,
+        "balance_sheet_safety": 90.0
       },
-      "financial_earnings_quality": 73.6394
+      "financial_earnings_quality": 75.1394
     },
     {
       "ticker": "2449",
       "company": "京元電子",
       "theme_id": "advanced_packaging",
-      "report_year": null,
-      "quarter": null,
-      "source_url": "",
-      "facts": {},
-      "metrics": {},
-      "absolute_subscores": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+      "report_year": 2026,
+      "quarter": 3,
+      "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=2449&SYEAR=2026&SSEASON=3&REPORT_ID=C",
+      "facts": {
+        "current_context": "From20260101To20260930",
+        "prior_context": "From20250101To20250930",
+        "balance_context": "AsOf20260930",
+        "current_revenue": 33475818000.0,
+        "prior_revenue": 24967894000.0,
+        "current_gross_profit": 13010534000.0,
+        "prior_gross_profit": 8768734000.0,
+        "current_operating_income": 8732446000.0,
+        "prior_operating_income": 6190946000.0,
+        "current_net_income": 7422929000.0,
+        "prior_net_income": 8809773000.0,
+        "current_eps": 5.78,
+        "prior_eps": 6.83,
+        "current_operating_cash_flow": 12435815000.0,
+        "prior_operating_cash_flow": 7070752000.0,
+        "current_assets": 36984447000.0,
+        "current_liabilities": 26906546000.0,
+        "total_assets": 149222998000.0,
+        "total_liabilities": 83497089000.0
       },
-      "status": "DATA_MISSING",
-      "missing_subscores": [
-        "revenue_growth_quality",
-        "gross_and_operating_margin_quality",
-        "eps_growth_quality",
-        "operating_cash_flow_quality",
-        "balance_sheet_safety"
-      ],
-      "data_gap_reason": "missing_or_invalid_report_period",
+      "metrics": {
+        "revenue_yoy_pct": 34.07545706498114,
+        "gross_margin_pct": 38.86546999389231,
+        "gross_margin_change_pp": 3.745431435574176,
+        "operating_margin_pct": 26.085833063138292,
+        "operating_margin_change_pp": 1.290205526430551,
+        "eps_yoy_pct": -15.373352855051237,
+        "current_eps": 5.78,
+        "prior_eps": 6.83,
+        "operating_cash_flow": 12435815000.0,
+        "cash_conversion": 1.675324524860739,
+        "current_ratio": 1.3745520142198855,
+        "liabilities_to_assets_pct": 55.954571426047885
+      },
+      "absolute_subscores": {
+        "revenue_growth_quality": 100.0,
+        "gross_and_operating_margin_quality": 75.17818481002364,
+        "eps_growth_quality": 20.895210207069663,
+        "operating_cash_flow_quality": 100.0,
+        "balance_sheet_safety": 55.03886628623556
+      },
+      "status": "READY",
+      "missing_subscores": [],
       "theme_percentiles": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+        "revenue_growth_quality": 62.5,
+        "gross_and_operating_margin_quality": 25.0,
+        "eps_growth_quality": 0.0,
+        "operating_cash_flow_quality": 75.0,
+        "balance_sheet_safety": 50.0
       },
       "combined_subscores": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+        "revenue_growth_quality": 85.0,
+        "gross_and_operating_margin_quality": 55.1069,
+        "eps_growth_quality": 12.5371,
+        "operating_cash_flow_quality": 90.0,
+        "balance_sheet_safety": 53.0233
       },
-      "financial_earnings_quality": null
+      "financial_earnings_quality": 59.2376
     },
     {
       "ticker": "2454",
       "company": "聯發科",
       "theme_id": "compute_foundry",
-      "report_year": null,
-      "quarter": null,
-      "source_url": "",
-      "facts": {},
-      "metrics": {},
-      "absolute_subscores": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+      "report_year": 2026,
+      "quarter": 3,
+      "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=2454&SYEAR=2026&SSEASON=3&REPORT_ID=C",
+      "facts": {
+        "current_context": "From20260101To20260930",
+        "prior_context": "From20250101To20250930",
+        "balance_context": "AsOf20260930",
+        "current_revenue": 469390909000.0,
+        "prior_revenue": 445777672000.0,
+        "current_gross_profit": 217211357000.0,
+        "prior_gross_profit": 213799033000.0,
+        "current_operating_income": 72860839000.0,
+        "prior_operating_income": 81619769000.0,
+        "current_net_income": 77180219000.0,
+        "prior_net_income": 83044040000.0,
+        "current_eps": 47.94,
+        "prior_eps": 51.76,
+        "current_operating_cash_flow": 2338244000.0,
+        "prior_operating_cash_flow": 98272589000.0,
+        "current_assets": 546741373000.0,
+        "current_liabilities": 341215439000.0,
+        "total_assets": 966504916000.0,
+        "total_liabilities": 492293319000.0
       },
-      "status": "DATA_MISSING",
-      "missing_subscores": [
-        "revenue_growth_quality",
-        "gross_and_operating_margin_quality",
-        "eps_growth_quality",
-        "operating_cash_flow_quality",
-        "balance_sheet_safety"
-      ],
-      "data_gap_reason": "missing_or_invalid_report_period",
+      "metrics": {
+        "revenue_yoy_pct": 5.2970883207447805,
+        "gross_margin_pct": 46.27515208224878,
+        "gross_margin_change_pp": -1.6857590241289344,
+        "operating_margin_pct": 15.522422271710424,
+        "operating_margin_change_pp": -2.7871015395225474,
+        "eps_yoy_pct": -7.38021638330757,
+        "current_eps": 47.94,
+        "prior_eps": 51.76,
+        "operating_cash_flow": 2338244000.0,
+        "cash_conversion": 0.030295897450096636,
+        "current_ratio": 1.6023348023241117,
+        "liabilities_to_assets_pct": 50.93541800464054
+      },
+      "absolute_subscores": {
+        "revenue_growth_quality": 50.59417664148956,
+        "gross_and_operating_margin_quality": 27.635697181742593,
+        "eps_growth_quality": 32.3139765952749,
+        "operating_cash_flow_quality": 51.26232906042069,
+        "balance_sheet_safety": 70.4241195871638
+      },
+      "status": "READY",
+      "missing_subscores": [],
       "theme_percentiles": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+        "revenue_growth_quality": 25.0,
+        "gross_and_operating_margin_quality": 25.0,
+        "eps_growth_quality": 0.0,
+        "operating_cash_flow_quality": 25.0,
+        "balance_sheet_safety": 25.0
       },
       "combined_subscores": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+        "revenue_growth_quality": 40.3565,
+        "gross_and_operating_margin_quality": 26.5814,
+        "eps_growth_quality": 19.3884,
+        "operating_cash_flow_quality": 40.7574,
+        "balance_sheet_safety": 52.2545
       },
-      "financial_earnings_quality": null
+      "financial_earnings_quality": 34.584
     },
     {
       "ticker": "2492",
       "company": "華新科",
       "theme_id": "passive_components",
-      "report_year": null,
-      "quarter": null,
-      "source_url": "",
-      "facts": {},
-      "metrics": {},
-      "absolute_subscores": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+      "report_year": 2026,
+      "quarter": 3,
+      "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=2492&SYEAR=2026&SSEASON=3&REPORT_ID=C",
+      "facts": {
+        "current_context": "From20260101To20260930",
+        "prior_context": "From20250101To20250930",
+        "balance_context": "AsOf20260930",
+        "current_revenue": 34669238000.0,
+        "prior_revenue": 27707893000.0,
+        "current_gross_profit": 7888855000.0,
+        "prior_gross_profit": 4700265000.0,
+        "current_operating_income": 4515375000.0,
+        "prior_operating_income": 1548450000.0,
+        "current_net_income": 5371219000.0,
+        "prior_net_income": 1871458000.0,
+        "current_eps": 9.66,
+        "prior_eps": 2.95,
+        "current_operating_cash_flow": 4424933000.0,
+        "prior_operating_cash_flow": 5220860000.0,
+        "current_assets": 40677486000.0,
+        "current_liabilities": 24630504000.0,
+        "total_assets": 121013364000.0,
+        "total_liabilities": 43032314000.0
       },
-      "status": "DATA_MISSING",
-      "missing_subscores": [
-        "revenue_growth_quality",
-        "gross_and_operating_margin_quality",
-        "eps_growth_quality",
-        "operating_cash_flow_quality",
-        "balance_sheet_safety"
-      ],
-      "data_gap_reason": "missing_or_invalid_report_period",
+      "metrics": {
+        "revenue_yoy_pct": 25.12405039242789,
+        "gross_margin_pct": 22.754624719470325,
+        "gross_margin_change_pp": 5.7909927320074,
+        "operating_margin_pct": 13.024154150720014,
+        "operating_margin_change_pp": 7.4356743626682835,
+        "eps_yoy_pct": 227.45762711864407,
+        "current_eps": 9.66,
+        "prior_eps": 2.95,
+        "operating_cash_flow": 4424933000.0,
+        "cash_conversion": 0.8238228603227684,
+        "current_ratio": 1.651508470959425,
+        "liabilities_to_assets_pct": 35.55996840150647
+      },
+      "absolute_subscores": {
+        "revenue_growth_quality": 90.24810078485578,
+        "gross_and_operating_margin_quality": 100.0,
+        "eps_growth_quality": 100.0,
+        "operating_cash_flow_quality": 84.3259525134487,
+        "balance_sheet_safety": 86.06033883837699
+      },
+      "status": "READY",
+      "missing_subscores": [],
       "theme_percentiles": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+        "revenue_growth_quality": 0.0,
+        "gross_and_operating_margin_quality": 100.0,
+        "eps_growth_quality": 75.0,
+        "operating_cash_flow_quality": 50.0,
+        "balance_sheet_safety": 50.0
       },
       "combined_subscores": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+        "revenue_growth_quality": 54.1489,
+        "gross_and_operating_margin_quality": 100.0,
+        "eps_growth_quality": 90.0,
+        "operating_cash_flow_quality": 70.5956,
+        "balance_sheet_safety": 71.6362
       },
-      "financial_earnings_quality": null
+      "financial_earnings_quality": 78.6943
     },
     {
       "ticker": "3017",
       "company": "奇鋐",
       "theme_id": "thermal_management",
-      "report_year": null,
-      "quarter": null,
-      "source_url": "",
-      "facts": {},
-      "metrics": {},
-      "absolute_subscores": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+      "report_year": 2026,
+      "quarter": 3,
+      "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3017&SYEAR=2026&SSEASON=3&REPORT_ID=C",
+      "facts": {
+        "current_context": "From20260101To20260930",
+        "prior_context": "From20250101To20250930",
+        "balance_context": "AsOf20260930",
+        "current_revenue": 157248258000.0,
+        "prior_revenue": 91864360000.0,
+        "current_gross_profit": 50606235000.0,
+        "prior_gross_profit": 23424149000.0,
+        "current_operating_income": 42352194000.0,
+        "prior_operating_income": 17540757000.0,
+        "current_net_income": 31539005000.0,
+        "prior_net_income": 13691457000.0,
+        "current_eps": 73.86,
+        "prior_eps": 32.25,
+        "current_operating_cash_flow": 36965669000.0,
+        "prior_operating_cash_flow": 23158586000.0,
+        "current_assets": 178798569000.0,
+        "current_liabilities": 141761548000.0,
+        "total_assets": 232498518000.0,
+        "total_liabilities": 157210527000.0
       },
-      "status": "DATA_MISSING",
-      "missing_subscores": [
-        "revenue_growth_quality",
-        "gross_and_operating_margin_quality",
-        "eps_growth_quality",
-        "operating_cash_flow_quality",
-        "balance_sheet_safety"
-      ],
-      "data_gap_reason": "missing_or_invalid_report_period",
+      "metrics": {
+        "revenue_yoy_pct": 71.17439015522451,
+        "gross_margin_pct": 32.182381950456964,
+        "gross_margin_change_pp": 6.683756585843312,
+        "operating_margin_pct": 26.933331115184757,
+        "operating_margin_change_pp": 7.839139417773488,
+        "eps_yoy_pct": 129.0232558139535,
+        "current_eps": 73.86,
+        "prior_eps": 32.25,
+        "operating_cash_flow": 36965669000.0,
+        "cash_conversion": 1.1720619911756887,
+        "current_ratio": 1.261262814370509,
+        "liabilities_to_assets_pct": 67.6178619770815
+      },
+      "absolute_subscores": {
+        "revenue_growth_quality": 100.0,
+        "gross_and_operating_margin_quality": 100.0,
+        "eps_growth_quality": 100.0,
+        "operating_cash_flow_quality": 98.83591629898703,
+        "balance_sheet_safety": 35.92818510346848
+      },
+      "status": "READY",
+      "missing_subscores": [],
       "theme_percentiles": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+        "revenue_growth_quality": 75.0,
+        "gross_and_operating_margin_quality": 100.0,
+        "eps_growth_quality": 75.0,
+        "operating_cash_flow_quality": 100.0,
+        "balance_sheet_safety": 0.0
       },
       "combined_subscores": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+        "revenue_growth_quality": 90.0,
+        "gross_and_operating_margin_quality": 100.0,
+        "eps_growth_quality": 90.0,
+        "operating_cash_flow_quality": 99.3015,
+        "balance_sheet_safety": 21.5569
       },
-      "financial_earnings_quality": null
+      "financial_earnings_quality": 84.0938
     },
     {
       "ticker": "3035",
@@ -1103,19 +1467,19 @@
       "missing_subscores": [],
       "theme_percentiles": {
         "revenue_growth_quality": 0.0,
-        "gross_and_operating_margin_quality": 100.0,
-        "eps_growth_quality": 0.0,
+        "gross_and_operating_margin_quality": 75.0,
+        "eps_growth_quality": 25.0,
         "operating_cash_flow_quality": 100.0,
-        "balance_sheet_safety": 100.0
+        "balance_sheet_safety": 75.0
       },
       "combined_subscores": {
         "revenue_growth_quality": 0.0,
-        "gross_and_operating_margin_quality": 93.891,
-        "eps_growth_quality": 35.0959,
+        "gross_and_operating_margin_quality": 83.891,
+        "eps_growth_quality": 45.0959,
         "operating_cash_flow_quality": 100.0,
-        "balance_sheet_safety": 100.0
+        "balance_sheet_safety": 90.0
       },
-      "financial_earnings_quality": 65.4919
+      "financial_earnings_quality": 63.4919
     },
     {
       "ticker": "3037",
@@ -1170,19 +1534,19 @@
       "missing_subscores": [],
       "theme_percentiles": {
         "revenue_growth_quality": 50.0,
-        "gross_and_operating_margin_quality": 66.66666666666666,
+        "gross_and_operating_margin_quality": 75.0,
         "eps_growth_quality": 50.0,
-        "operating_cash_flow_quality": 66.66666666666666,
-        "balance_sheet_safety": 33.33333333333333
+        "operating_cash_flow_quality": 50.0,
+        "balance_sheet_safety": 50.0
       },
       "combined_subscores": {
         "revenue_growth_quality": 80.0,
-        "gross_and_operating_margin_quality": 86.6667,
+        "gross_and_operating_margin_quality": 90.0,
         "eps_growth_quality": 80.0,
-        "operating_cash_flow_quality": 78.2172,
-        "balance_sheet_safety": 62.4848
+        "operating_cash_flow_quality": 71.5505,
+        "balance_sheet_safety": 69.1515
       },
-      "financial_earnings_quality": 78.6828
+      "financial_earnings_quality": 79.1828
     },
     {
       "ticker": "3081",
@@ -1190,7 +1554,7 @@
       "theme_id": "silicon_photonics_cpo",
       "report_year": 2026,
       "quarter": 3,
-      "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3081&SYEAR=2026&SSEASON=3&REPORT_ID=A",
+      "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3081&SYEAR=2026&SSEASON=3&REPORT_ID=C",
       "facts": {
         "current_context": "From20260101To20260930",
         "prior_context": "From20250101To20250930",
@@ -1236,61 +1600,87 @@
       "status": "READY",
       "missing_subscores": [],
       "theme_percentiles": {
-        "revenue_growth_quality": 100.0,
+        "revenue_growth_quality": 90.0,
         "gross_and_operating_margin_quality": 100.0,
-        "eps_growth_quality": 66.66666666666666,
-        "operating_cash_flow_quality": 33.33333333333333,
+        "eps_growth_quality": 70.0,
+        "operating_cash_flow_quality": 60.0,
         "balance_sheet_safety": 0.0
       },
       "combined_subscores": {
-        "revenue_growth_quality": 100.0,
+        "revenue_growth_quality": 96.0,
         "gross_and_operating_margin_quality": 100.0,
-        "eps_growth_quality": 86.6667,
-        "operating_cash_flow_quality": 65.0794,
+        "eps_growth_quality": 88.0,
+        "operating_cash_flow_quality": 75.7461,
         "balance_sheet_safety": 57.9126
       },
-      "financial_earnings_quality": 84.0361
+      "financial_earnings_quality": 85.6361
     },
     {
       "ticker": "3131",
       "company": "弘塑",
       "theme_id": "critical_materials",
-      "report_year": null,
-      "quarter": null,
-      "source_url": "",
-      "facts": {},
-      "metrics": {},
-      "absolute_subscores": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+      "report_year": 2026,
+      "quarter": 3,
+      "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3131&SYEAR=2026&SSEASON=3&REPORT_ID=C",
+      "facts": {
+        "current_context": "From20260101To20260930",
+        "prior_context": "From20250101To20250930",
+        "balance_context": "AsOf20260930",
+        "current_revenue": 5544268000.0,
+        "prior_revenue": 4364671000.0,
+        "current_gross_profit": 2022961000.0,
+        "prior_gross_profit": 1776439000.0,
+        "current_operating_income": 1062821000.0,
+        "prior_operating_income": 1000901000.0,
+        "current_net_income": 1171022000.0,
+        "prior_net_income": 763341000.0,
+        "current_eps": 40.65,
+        "prior_eps": 26.19,
+        "current_operating_cash_flow": 2053751000.0,
+        "prior_operating_cash_flow": 728524000.0,
+        "current_assets": 11640255000.0,
+        "current_liabilities": 8806222000.0,
+        "total_assets": 16151170000.0,
+        "total_liabilities": 11617103000.0
       },
-      "status": "DATA_MISSING",
-      "missing_subscores": [
-        "revenue_growth_quality",
-        "gross_and_operating_margin_quality",
-        "eps_growth_quality",
-        "operating_cash_flow_quality",
-        "balance_sheet_safety"
-      ],
-      "data_gap_reason": "missing_or_invalid_report_period",
+      "metrics": {
+        "revenue_yoy_pct": 27.0260232672749,
+        "gross_margin_pct": 36.487431704239405,
+        "gross_margin_change_pp": -4.212978475588585,
+        "operating_margin_pct": 19.169726283072897,
+        "operating_margin_change_pp": -3.762151056593712,
+        "eps_yoy_pct": 55.21191294387169,
+        "current_eps": 40.65,
+        "prior_eps": 26.19,
+        "operating_cash_flow": 2053751000.0,
+        "cash_conversion": 1.7538107738368707,
+        "current_ratio": 1.3218216620021617,
+        "liabilities_to_assets_pct": 71.92731548240778
+      },
+      "absolute_subscores": {
+        "revenue_growth_quality": 94.0520465345498,
+        "gross_and_operating_margin_quality": 10.124352339088514,
+        "eps_growth_quality": 100.0,
+        "operating_cash_flow_quality": 100.0,
+        "balance_sheet_safety": 32.96372212707675
+      },
+      "status": "READY",
+      "missing_subscores": [],
       "theme_percentiles": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+        "revenue_growth_quality": 100.0,
+        "gross_and_operating_margin_quality": 25.0,
+        "eps_growth_quality": 75.0,
+        "operating_cash_flow_quality": 62.5,
+        "balance_sheet_safety": 0.0
       },
       "combined_subscores": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+        "revenue_growth_quality": 96.4312,
+        "gross_and_operating_margin_quality": 16.0746,
+        "eps_growth_quality": 90.0,
+        "operating_cash_flow_quality": 85.0,
+        "balance_sheet_safety": 19.7782
       },
-      "financial_earnings_quality": null
+      "financial_earnings_quality": 61.2716
     },
     {
       "ticker": "3163",
@@ -1344,20 +1734,20 @@
       "status": "READY",
       "missing_subscores": [],
       "theme_percentiles": {
-        "revenue_growth_quality": 33.33333333333333,
-        "gross_and_operating_margin_quality": 0.0,
-        "eps_growth_quality": 66.66666666666666,
+        "revenue_growth_quality": 40.0,
+        "gross_and_operating_margin_quality": 20.0,
+        "eps_growth_quality": 70.0,
         "operating_cash_flow_quality": 0.0,
-        "balance_sheet_safety": 66.66666666666666
+        "balance_sheet_safety": 60.0
       },
       "combined_subscores": {
-        "revenue_growth_quality": 59.9903,
-        "gross_and_operating_margin_quality": 17.9548,
-        "eps_growth_quality": 86.6667,
+        "revenue_growth_quality": 62.657,
+        "gross_and_operating_margin_quality": 25.9548,
+        "eps_growth_quality": 88.0,
         "operating_cash_flow_quality": 0.0,
-        "balance_sheet_safety": 86.6667
+        "balance_sheet_safety": 84.0
       },
-      "financial_earnings_quality": 46.8201
+      "financial_earnings_quality": 49.2201
     },
     {
       "ticker": "3189",
@@ -1412,142 +1802,220 @@
       "missing_subscores": [],
       "theme_percentiles": {
         "revenue_growth_quality": 50.0,
-        "gross_and_operating_margin_quality": 66.66666666666666,
+        "gross_and_operating_margin_quality": 75.0,
         "eps_growth_quality": 50.0,
         "operating_cash_flow_quality": 100.0,
         "balance_sheet_safety": 100.0
       },
       "combined_subscores": {
         "revenue_growth_quality": 80.0,
-        "gross_and_operating_margin_quality": 86.6667,
+        "gross_and_operating_margin_quality": 90.0,
         "eps_growth_quality": 80.0,
         "operating_cash_flow_quality": 100.0,
         "balance_sheet_safety": 97.1245
       },
-      "financial_earnings_quality": 88.2353
+      "financial_earnings_quality": 89.0687
     },
     {
       "ticker": "3231",
       "company": "緯創",
       "theme_id": "server_rack",
-      "report_year": null,
-      "quarter": null,
-      "source_url": "",
-      "facts": {},
-      "metrics": {},
-      "absolute_subscores": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+      "report_year": 2026,
+      "quarter": 3,
+      "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3231&SYEAR=2026&SSEASON=3&REPORT_ID=C",
+      "facts": {
+        "current_context": "From20260101To20260930",
+        "prior_context": "From20250101To20250930",
+        "balance_context": "AsOf20260930",
+        "current_revenue": 2890836071000.0,
+        "prior_revenue": 1465581803000.0,
+        "current_gross_profit": 162557954000.0,
+        "prior_gross_profit": 93473899000.0,
+        "current_operating_income": 111256480000.0,
+        "prior_operating_income": 53079772000.0,
+        "current_net_income": 74251274000.0,
+        "prior_net_income": 41427049000.0,
+        "current_eps": 13.54,
+        "prior_eps": 6.43,
+        "current_operating_cash_flow": -158497681000.0,
+        "prior_operating_cash_flow": -176648214000.0,
+        "current_assets": 1588788301000.0,
+        "current_liabilities": 1324967937000.0,
+        "total_assets": 1790351901000.0,
+        "total_liabilities": 1407028774000.0
       },
-      "status": "DATA_MISSING",
-      "missing_subscores": [
-        "revenue_growth_quality",
-        "gross_and_operating_margin_quality",
-        "eps_growth_quality",
-        "operating_cash_flow_quality",
-        "balance_sheet_safety"
-      ],
-      "data_gap_reason": "missing_or_invalid_report_period",
+      "metrics": {
+        "revenue_yoy_pct": 97.24836000846553,
+        "gross_margin_pct": 5.623215914272436,
+        "gross_margin_change_pp": -0.7547221038349035,
+        "operating_margin_pct": 3.848591800693634,
+        "operating_margin_change_pp": 0.2268374986582664,
+        "eps_yoy_pct": 110.57542768273719,
+        "current_eps": 13.54,
+        "prior_eps": 6.43,
+        "operating_cash_flow": -158497681000.0,
+        "cash_conversion": -2.134612276147612,
+        "current_ratio": 1.1991145269502472,
+        "liabilities_to_assets_pct": 78.58950931457133
+      },
+      "absolute_subscores": {
+        "revenue_growth_quality": 100.0,
+        "gross_and_operating_margin_quality": 47.36057697411681,
+        "eps_growth_quality": 100.0,
+        "operating_cash_flow_quality": 0.0,
+        "balance_sheet_safety": 19.727694434795726
+      },
+      "status": "READY",
+      "missing_subscores": [],
       "theme_percentiles": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+        "revenue_growth_quality": 50.0,
+        "gross_and_operating_margin_quality": 40.0,
+        "eps_growth_quality": 80.0,
+        "operating_cash_flow_quality": 40.0,
+        "balance_sheet_safety": 40.0
       },
       "combined_subscores": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+        "revenue_growth_quality": 80.0,
+        "gross_and_operating_margin_quality": 44.4163,
+        "eps_growth_quality": 92.0,
+        "operating_cash_flow_quality": 16.0,
+        "balance_sheet_safety": 27.8366
       },
-      "financial_earnings_quality": null
+      "financial_earnings_quality": 52.8796
     },
     {
       "ticker": "3260",
       "company": "威剛",
       "theme_id": "memory_storage",
-      "report_year": null,
-      "quarter": null,
-      "source_url": "",
-      "facts": {},
-      "metrics": {},
-      "absolute_subscores": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+      "report_year": 2026,
+      "quarter": 3,
+      "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3260&SYEAR=2026&SSEASON=3&REPORT_ID=C",
+      "facts": {
+        "current_context": "From20260101To20260930",
+        "prior_context": "From20250101To20250930",
+        "balance_context": "AsOf20260930",
+        "current_revenue": 117235826000.0,
+        "prior_revenue": 37242560000.0,
+        "current_gross_profit": 49640569000.0,
+        "prior_gross_profit": 7102533000.0,
+        "current_operating_income": 40358436000.0,
+        "prior_operating_income": 3559021000.0,
+        "current_net_income": 33647476000.0,
+        "prior_net_income": 3315667000.0,
+        "current_eps": 101.47,
+        "prior_eps": 10.08,
+        "current_operating_cash_flow": -4920670000.0,
+        "prior_operating_cash_flow": 2423418000.0,
+        "current_assets": 111396795000.0,
+        "current_liabilities": 63933325000.0,
+        "total_assets": 145899909000.0,
+        "total_liabilities": 95609967000.0
       },
-      "status": "DATA_MISSING",
-      "missing_subscores": [
-        "revenue_growth_quality",
-        "gross_and_operating_margin_quality",
-        "eps_growth_quality",
-        "operating_cash_flow_quality",
-        "balance_sheet_safety"
-      ],
-      "data_gap_reason": "missing_or_invalid_report_period",
+      "metrics": {
+        "revenue_yoy_pct": 214.78992314169597,
+        "gross_margin_pct": 42.34249093788105,
+        "gross_margin_change_pp": 23.271479170698562,
+        "operating_margin_pct": 34.42500247322009,
+        "operating_margin_change_pp": 24.86867498123243,
+        "eps_yoy_pct": 906.6468253968253,
+        "current_eps": 101.47,
+        "prior_eps": 10.08,
+        "operating_cash_flow": -4920670000.0,
+        "cash_conversion": -0.14624187561646526,
+        "current_ratio": 1.7423901384762954,
+        "liabilities_to_assets_pct": 65.53120399821498
+      },
+      "absolute_subscores": {
+        "revenue_growth_quality": 100.0,
+        "gross_and_operating_margin_quality": 100.0,
+        "eps_growth_quality": 100.0,
+        "operating_cash_flow_quality": 0.0,
+        "balance_sheet_safety": 57.78160054128309
+      },
+      "status": "READY",
+      "missing_subscores": [],
       "theme_percentiles": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+        "revenue_growth_quality": 50.0,
+        "gross_and_operating_margin_quality": 50.0,
+        "eps_growth_quality": 75.0,
+        "operating_cash_flow_quality": 12.5,
+        "balance_sheet_safety": 0.0
       },
       "combined_subscores": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+        "revenue_growth_quality": 80.0,
+        "gross_and_operating_margin_quality": 80.0,
+        "eps_growth_quality": 90.0,
+        "operating_cash_flow_quality": 5.0,
+        "balance_sheet_safety": 34.669
       },
-      "financial_earnings_quality": null
+      "financial_earnings_quality": 60.2004
     },
     {
       "ticker": "3324",
       "company": "雙鴻",
       "theme_id": "thermal_management",
-      "report_year": null,
-      "quarter": null,
-      "source_url": "",
-      "facts": {},
-      "metrics": {},
-      "absolute_subscores": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+      "report_year": 2026,
+      "quarter": 3,
+      "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3324&SYEAR=2026&SSEASON=3&REPORT_ID=C",
+      "facts": {
+        "current_context": "From20260101To20260930",
+        "prior_context": "From20250101To20250930",
+        "balance_context": "AsOf20260930",
+        "current_revenue": 27038707000.0,
+        "prior_revenue": 15678955000.0,
+        "current_gross_profit": 7519314000.0,
+        "prior_gross_profit": 4368217000.0,
+        "current_operating_income": 4271893000.0,
+        "prior_operating_income": 2189674000.0,
+        "current_net_income": 3393456000.0,
+        "prior_net_income": 1722923000.0,
+        "current_eps": 34.59,
+        "prior_eps": 18.13,
+        "current_operating_cash_flow": 867880000.0,
+        "prior_operating_cash_flow": -69920000.0,
+        "current_assets": 27687137000.0,
+        "current_liabilities": 15416751000.0,
+        "total_assets": 38189032000.0,
+        "total_liabilities": 22630825000.0
       },
-      "status": "DATA_MISSING",
-      "missing_subscores": [
-        "revenue_growth_quality",
-        "gross_and_operating_margin_quality",
-        "eps_growth_quality",
-        "operating_cash_flow_quality",
-        "balance_sheet_safety"
-      ],
-      "data_gap_reason": "missing_or_invalid_report_period",
+      "metrics": {
+        "revenue_yoy_pct": 72.4522265673956,
+        "gross_margin_pct": 27.809443698620644,
+        "gross_margin_change_pp": -0.05093985372707266,
+        "operating_margin_pct": 15.799176343750462,
+        "operating_margin_change_pp": 1.8334879416854015,
+        "eps_yoy_pct": 90.7887479316051,
+        "current_eps": 34.59,
+        "prior_eps": 18.13,
+        "operating_cash_flow": 867880000.0,
+        "cash_conversion": 0.2557510691165585,
+        "current_ratio": 1.7959125758728283,
+        "liabilities_to_assets_pct": 59.26001214170603
+      },
+      "absolute_subscores": {
+        "revenue_growth_quality": 100.0,
+        "gross_and_operating_margin_quality": 58.91274043979164,
+        "eps_growth_quality": 100.0,
+        "operating_cash_flow_quality": 60.65629454652327,
+        "balance_sheet_safety": 67.7614878577806
+      },
+      "status": "READY",
+      "missing_subscores": [],
       "theme_percentiles": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+        "revenue_growth_quality": 75.0,
+        "gross_and_operating_margin_quality": 50.0,
+        "eps_growth_quality": 75.0,
+        "operating_cash_flow_quality": 50.0,
+        "balance_sheet_safety": 25.0
       },
       "combined_subscores": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+        "revenue_growth_quality": 90.0,
+        "gross_and_operating_margin_quality": 55.3476,
+        "eps_growth_quality": 90.0,
+        "operating_cash_flow_quality": 56.3938,
+        "balance_sheet_safety": 50.6569
       },
-      "financial_earnings_quality": null
+      "financial_earnings_quality": 68.7142
     },
     {
       "ticker": "3338",
@@ -1601,102 +2069,154 @@
       "status": "READY",
       "missing_subscores": [],
       "theme_percentiles": {
-        "revenue_growth_quality": 50.0,
-        "gross_and_operating_margin_quality": 50.0,
-        "eps_growth_quality": 50.0,
-        "operating_cash_flow_quality": 50.0,
+        "revenue_growth_quality": 25.0,
+        "gross_and_operating_margin_quality": 25.0,
+        "eps_growth_quality": 25.0,
+        "operating_cash_flow_quality": 0.0,
         "balance_sheet_safety": 50.0
       },
       "combined_subscores": {
-        "revenue_growth_quality": 61.1054,
-        "gross_and_operating_margin_quality": 45.1169,
-        "eps_growth_quality": 20.7143,
-        "operating_cash_flow_quality": 20.0,
+        "revenue_growth_quality": 51.1054,
+        "gross_and_operating_margin_quality": 35.1169,
+        "eps_growth_quality": 10.7143,
+        "operating_cash_flow_quality": 0.0,
         "balance_sheet_safety": 66.1385
       },
-      "financial_earnings_quality": 41.5639
+      "financial_earnings_quality": 31.0639
     },
     {
       "ticker": "3357",
       "company": "臺慶科",
       "theme_id": "passive_components",
-      "report_year": null,
-      "quarter": null,
-      "source_url": "",
-      "facts": {},
-      "metrics": {},
-      "absolute_subscores": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+      "report_year": 2026,
+      "quarter": 3,
+      "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3357&SYEAR=2026&SSEASON=3&REPORT_ID=C",
+      "facts": {
+        "current_context": "From20260101To20260930",
+        "prior_context": "From20250101To20250930",
+        "balance_context": "AsOf20260930",
+        "current_revenue": 6459848000.0,
+        "prior_revenue": 4817530000.0,
+        "current_gross_profit": 1966306000.0,
+        "prior_gross_profit": 1232117000.0,
+        "current_operating_income": 1103207000.0,
+        "prior_operating_income": 537358000.0,
+        "current_net_income": 1254521000.0,
+        "prior_net_income": 792372000.0,
+        "current_eps": 10.95,
+        "prior_eps": 7.84,
+        "current_operating_cash_flow": 447087000.0,
+        "prior_operating_cash_flow": 563851000.0,
+        "current_assets": 8005589000.0,
+        "current_liabilities": 2833214000.0,
+        "total_assets": 16536847000.0,
+        "total_liabilities": 4029255000.0
       },
-      "status": "DATA_MISSING",
-      "missing_subscores": [
-        "revenue_growth_quality",
-        "gross_and_operating_margin_quality",
-        "eps_growth_quality",
-        "operating_cash_flow_quality",
-        "balance_sheet_safety"
-      ],
-      "data_gap_reason": "missing_or_invalid_report_period",
+      "metrics": {
+        "revenue_yoy_pct": 34.09045714297576,
+        "gross_margin_pct": 30.438889583779684,
+        "gross_margin_change_pp": 4.863190003289265,
+        "operating_margin_pct": 17.077909573104506,
+        "operating_margin_change_pp": 5.923687388707108,
+        "eps_yoy_pct": 39.66836734693877,
+        "current_eps": 10.95,
+        "prior_eps": 7.84,
+        "operating_cash_flow": 447087000.0,
+        "cash_conversion": 0.3563806424922341,
+        "current_ratio": 2.8256210085083584,
+        "liabilities_to_assets_pct": 24.36531583076266
+      },
+      "absolute_subscores": {
+        "revenue_growth_quality": 100.0,
+        "gross_and_operating_margin_quality": 99.31595001644632,
+        "eps_growth_quality": 99.52623906705537,
+        "operating_cash_flow_quality": 64.84919343717642,
+        "balance_sheet_safety": 100.0
+      },
+      "status": "READY",
+      "missing_subscores": [],
       "theme_percentiles": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+        "revenue_growth_quality": 75.0,
+        "gross_and_operating_margin_quality": 50.0,
+        "eps_growth_quality": 0.0,
+        "operating_cash_flow_quality": 0.0,
+        "balance_sheet_safety": 100.0
       },
       "combined_subscores": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+        "revenue_growth_quality": 90.0,
+        "gross_and_operating_margin_quality": 79.5896,
+        "eps_growth_quality": 59.7157,
+        "operating_cash_flow_quality": 38.9095,
+        "balance_sheet_safety": 100.0
       },
-      "financial_earnings_quality": null
+      "financial_earnings_quality": 72.6224
     },
     {
       "ticker": "3363",
       "company": "上詮",
       "theme_id": "silicon_photonics_cpo",
-      "report_year": null,
-      "quarter": null,
-      "source_url": "",
-      "facts": {},
-      "metrics": {},
-      "absolute_subscores": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+      "report_year": 2026,
+      "quarter": 3,
+      "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3363&SYEAR=2026&SSEASON=3&REPORT_ID=C",
+      "facts": {
+        "current_context": "From20260101To20260930",
+        "prior_context": "From20250101To20250930",
+        "balance_context": "AsOf20260930",
+        "current_revenue": 1410739000.0,
+        "prior_revenue": 1501220000.0,
+        "current_gross_profit": 72011000.0,
+        "prior_gross_profit": 306356000.0,
+        "current_operating_income": -273727000.0,
+        "prior_operating_income": 36251000.0,
+        "current_net_income": -139064000.0,
+        "prior_net_income": 38559000.0,
+        "current_eps": -1.24,
+        "prior_eps": 0.37,
+        "current_operating_cash_flow": -281439000.0,
+        "prior_operating_cash_flow": -108365000.0,
+        "current_assets": 5457690000.0,
+        "current_liabilities": 739037000.0,
+        "total_assets": 6560785000.0,
+        "total_liabilities": 841817000.0
       },
-      "status": "DATA_MISSING",
-      "missing_subscores": [
-        "revenue_growth_quality",
-        "gross_and_operating_margin_quality",
-        "eps_growth_quality",
-        "operating_cash_flow_quality",
-        "balance_sheet_safety"
-      ],
-      "data_gap_reason": "missing_or_invalid_report_period",
+      "metrics": {
+        "revenue_yoy_pct": -6.027164572814114,
+        "gross_margin_pct": 5.104487789732899,
+        "gross_margin_change_pp": -15.302647740036221,
+        "operating_margin_pct": -19.40309298885194,
+        "operating_margin_change_pp": -21.817862309804234,
+        "eps_yoy_pct": -435.1351351351351,
+        "current_eps": -1.24,
+        "prior_eps": 0.37,
+        "operating_cash_flow": -281439000.0,
+        "cash_conversion": 2.023809181384111,
+        "current_ratio": 7.384867063489379,
+        "liabilities_to_assets_pct": 12.83104079770942
+      },
+      "absolute_subscores": {
+        "revenue_growth_quality": 27.94567085437177,
+        "gross_and_operating_margin_quality": 0.0,
+        "eps_growth_quality": 0.0,
+        "operating_cash_flow_quality": 20.0,
+        "balance_sheet_safety": 100.0
+      },
+      "status": "READY",
+      "missing_subscores": [],
       "theme_percentiles": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+        "revenue_growth_quality": 0.0,
+        "gross_and_operating_margin_quality": 0.0,
+        "eps_growth_quality": 0.0,
+        "operating_cash_flow_quality": 20.0,
+        "balance_sheet_safety": 60.0
       },
       "combined_subscores": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+        "revenue_growth_quality": 16.7674,
+        "gross_and_operating_margin_quality": 0.0,
+        "eps_growth_quality": 0.0,
+        "operating_cash_flow_quality": 20.0,
+        "balance_sheet_safety": 84.0
       },
-      "financial_earnings_quality": null
+      "financial_earnings_quality": 19.9535
     },
     {
       "ticker": "3443",
@@ -1750,17 +2270,17 @@
       "status": "READY",
       "missing_subscores": [],
       "theme_percentiles": {
-        "revenue_growth_quality": 100.0,
+        "revenue_growth_quality": 75.0,
         "gross_and_operating_margin_quality": 0.0,
-        "eps_growth_quality": 100.0,
-        "operating_cash_flow_quality": 0.0,
+        "eps_growth_quality": 75.0,
+        "operating_cash_flow_quality": 50.0,
         "balance_sheet_safety": 0.0
       },
       "combined_subscores": {
-        "revenue_growth_quality": 100.0,
+        "revenue_growth_quality": 90.0,
         "gross_and_operating_margin_quality": 13.4885,
-        "eps_growth_quality": 100.0,
-        "operating_cash_flow_quality": 49.4174,
+        "eps_growth_quality": 90.0,
+        "operating_cash_flow_quality": 69.4174,
         "balance_sheet_safety": 26.652
       },
       "financial_earnings_quality": 57.2534
@@ -1769,206 +2289,336 @@
       "ticker": "3532",
       "company": "台勝科",
       "theme_id": "critical_materials",
-      "report_year": null,
-      "quarter": null,
-      "source_url": "",
-      "facts": {},
-      "metrics": {},
-      "absolute_subscores": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+      "report_year": 2026,
+      "quarter": 3,
+      "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3532&SYEAR=2026&SSEASON=3&REPORT_ID=C",
+      "facts": {
+        "current_context": "From20260101To20260930",
+        "prior_context": "From20250101To20250930",
+        "balance_context": "AsOf20260930",
+        "current_revenue": 10903288000.0,
+        "prior_revenue": 9065551000.0,
+        "current_gross_profit": 683302000.0,
+        "prior_gross_profit": 1437427000.0,
+        "current_operating_income": 238002000.0,
+        "prior_operating_income": 696919000.0,
+        "current_net_income": 132563000.0,
+        "prior_net_income": 310541000.0,
+        "current_eps": 0.34,
+        "prior_eps": 0.8,
+        "current_operating_cash_flow": 1723921000.0,
+        "prior_operating_cash_flow": 503304000.0,
+        "current_assets": 10075051000.0,
+        "current_liabilities": 3339461000.0,
+        "total_assets": 51129613000.0,
+        "total_liabilities": 26671710000.0
       },
-      "status": "DATA_MISSING",
-      "missing_subscores": [
-        "revenue_growth_quality",
-        "gross_and_operating_margin_quality",
-        "eps_growth_quality",
-        "operating_cash_flow_quality",
-        "balance_sheet_safety"
-      ],
-      "data_gap_reason": "missing_or_invalid_report_period",
+      "metrics": {
+        "revenue_yoy_pct": 20.271652544892206,
+        "gross_margin_pct": 6.266935258428467,
+        "gross_margin_change_pp": -9.588990101210456,
+        "operating_margin_pct": 2.1828461286173493,
+        "operating_margin_change_pp": -5.504706453680186,
+        "eps_yoy_pct": -57.49999999999999,
+        "current_eps": 0.34,
+        "prior_eps": 0.8,
+        "operating_cash_flow": 1723921000.0,
+        "cash_conversion": 13.004541236996749,
+        "current_ratio": 3.0169692055095116,
+        "liabilities_to_assets_pct": 52.164897082244686
+      },
+      "absolute_subscores": {
+        "revenue_growth_quality": 80.54330508978441,
+        "gross_and_operating_margin_quality": 0.0,
+        "eps_growth_quality": 0.0,
+        "operating_cash_flow_quality": 100.0,
+        "balance_sheet_safety": 84.79387864719413
+      },
+      "status": "READY",
+      "missing_subscores": [],
       "theme_percentiles": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+        "revenue_growth_quality": 50.0,
+        "gross_and_operating_margin_quality": 0.0,
+        "eps_growth_quality": 0.0,
+        "operating_cash_flow_quality": 62.5,
+        "balance_sheet_safety": 50.0
       },
       "combined_subscores": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+        "revenue_growth_quality": 68.326,
+        "gross_and_operating_margin_quality": 0.0,
+        "eps_growth_quality": 0.0,
+        "operating_cash_flow_quality": 85.0,
+        "balance_sheet_safety": 70.8763
       },
-      "financial_earnings_quality": null
+      "financial_earnings_quality": 41.2966
     },
     {
       "ticker": "3583",
       "company": "辛耘",
       "theme_id": "advanced_packaging",
-      "report_year": null,
-      "quarter": null,
-      "source_url": "",
-      "facts": {},
-      "metrics": {},
-      "absolute_subscores": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+      "report_year": 2026,
+      "quarter": 3,
+      "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3583&SYEAR=2026&SSEASON=3&REPORT_ID=C",
+      "facts": {
+        "current_context": "From20260101To20260930",
+        "prior_context": "From20250101To20250930",
+        "balance_context": "AsOf20260930",
+        "current_revenue": 9195838000.0,
+        "prior_revenue": 8556883000.0,
+        "current_gross_profit": 3525216000.0,
+        "prior_gross_profit": 2764036000.0,
+        "current_operating_income": 1419472000.0,
+        "prior_operating_income": 1149367000.0,
+        "current_net_income": 1208270000.0,
+        "prior_net_income": 798695000.0,
+        "current_eps": 14.42,
+        "prior_eps": 9.71,
+        "current_operating_cash_flow": 2187577000.0,
+        "prior_operating_cash_flow": 60945000.0,
+        "current_assets": 25962322000.0,
+        "current_liabilities": 20295099000.0,
+        "total_assets": 34076947000.0,
+        "total_liabilities": 22751263000.0
       },
-      "status": "DATA_MISSING",
-      "missing_subscores": [
-        "revenue_growth_quality",
-        "gross_and_operating_margin_quality",
-        "eps_growth_quality",
-        "operating_cash_flow_quality",
-        "balance_sheet_safety"
-      ],
-      "data_gap_reason": "missing_or_invalid_report_period",
+      "metrics": {
+        "revenue_yoy_pct": 7.467146623367404,
+        "gross_margin_pct": 38.33490759624082,
+        "gross_margin_change_pp": 6.033005139470056,
+        "operating_margin_pct": 15.436026602469507,
+        "operating_margin_change_pp": 2.003950927249919,
+        "eps_yoy_pct": 48.50669412976312,
+        "current_eps": 14.42,
+        "prior_eps": 9.71,
+        "operating_cash_flow": 2187577000.0,
+        "cash_conversion": 1.810503447077226,
+        "current_ratio": 1.2792409635449427,
+        "liabilities_to_assets_pct": 66.7643817974656
+      },
+      "absolute_subscores": {
+        "revenue_growth_quality": 54.93429324673481,
+        "gross_and_operating_margin_quality": 85.01975463624959,
+        "eps_growth_quality": 100.0,
+        "operating_cash_flow_quality": 100.0,
+        "balance_sheet_safety": 37.714161294965706
+      },
+      "status": "READY",
+      "missing_subscores": [],
       "theme_percentiles": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+        "revenue_growth_quality": 0.0,
+        "gross_and_operating_margin_quality": 50.0,
+        "eps_growth_quality": 62.5,
+        "operating_cash_flow_quality": 75.0,
+        "balance_sheet_safety": 25.0
       },
       "combined_subscores": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+        "revenue_growth_quality": 32.9606,
+        "gross_and_operating_margin_quality": 71.0119,
+        "eps_growth_quality": 85.0,
+        "operating_cash_flow_quality": 90.0,
+        "balance_sheet_safety": 32.6285
       },
-      "financial_earnings_quality": null
+      "financial_earnings_quality": 64.2394
     },
     {
       "ticker": "3653",
       "company": "健策",
       "theme_id": "thermal_management",
-      "report_year": null,
-      "quarter": null,
-      "source_url": "",
-      "facts": {},
-      "metrics": {},
-      "absolute_subscores": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+      "report_year": 2026,
+      "quarter": 3,
+      "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3653&SYEAR=2026&SSEASON=3&REPORT_ID=C",
+      "facts": {
+        "current_context": "From20260101To20260930",
+        "prior_context": "From20250101To20250930",
+        "balance_context": "AsOf20260930",
+        "current_revenue": 22072958000.0,
+        "prior_revenue": 15003209000.0,
+        "current_gross_profit": 10365169000.0,
+        "prior_gross_profit": 6259259000.0,
+        "current_operating_income": 7994647000.0,
+        "prior_operating_income": 4849831000.0,
+        "current_net_income": 6631751000.0,
+        "prior_net_income": 3872451000.0,
+        "current_eps": 45.03,
+        "prior_eps": 26.92,
+        "current_operating_cash_flow": 4290816000.0,
+        "prior_operating_cash_flow": 3271230000.0,
+        "current_assets": 23891072000.0,
+        "current_liabilities": 6823614000.0,
+        "total_assets": 34479595000.0,
+        "total_liabilities": 7287421000.0
       },
-      "status": "DATA_MISSING",
-      "missing_subscores": [
-        "revenue_growth_quality",
-        "gross_and_operating_margin_quality",
-        "eps_growth_quality",
-        "operating_cash_flow_quality",
-        "balance_sheet_safety"
-      ],
-      "data_gap_reason": "missing_or_invalid_report_period",
+      "metrics": {
+        "revenue_yoy_pct": 47.12157912350619,
+        "gross_margin_pct": 46.958676766385366,
+        "gross_margin_change_pp": 5.239208617937926,
+        "operating_margin_pct": 36.2191918273935,
+        "operating_margin_change_pp": 3.8939006180262297,
+        "eps_yoy_pct": 67.27340267459137,
+        "current_eps": 45.03,
+        "prior_eps": 26.92,
+        "operating_cash_flow": 4290816000.0,
+        "cash_conversion": 0.6470110231822637,
+        "current_ratio": 3.501234389870236,
+        "liabilities_to_assets_pct": 21.1354599727752
+      },
+      "absolute_subscores": {
+        "revenue_growth_quality": 100.0,
+        "gross_and_operating_margin_quality": 94.46950309013116,
+        "eps_growth_quality": 100.0,
+        "operating_cash_flow_quality": 76.95879263259432,
+        "balance_sheet_safety": 100.0
+      },
+      "status": "READY",
+      "missing_subscores": [],
       "theme_percentiles": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+        "revenue_growth_quality": 75.0,
+        "gross_and_operating_margin_quality": 75.0,
+        "eps_growth_quality": 75.0,
+        "operating_cash_flow_quality": 75.0,
+        "balance_sheet_safety": 100.0
       },
       "combined_subscores": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+        "revenue_growth_quality": 90.0,
+        "gross_and_operating_margin_quality": 86.6817,
+        "eps_growth_quality": 90.0,
+        "operating_cash_flow_quality": 76.1753,
+        "balance_sheet_safety": 100.0
       },
-      "financial_earnings_quality": null
+      "financial_earnings_quality": 87.9055
     },
     {
       "ticker": "3661",
       "company": "世芯-KY",
       "theme_id": "compute_foundry",
-      "report_year": null,
-      "quarter": null,
-      "source_url": "",
-      "facts": {},
-      "metrics": {},
-      "absolute_subscores": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+      "report_year": 2026,
+      "quarter": 3,
+      "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3661&SYEAR=2026&SSEASON=3&REPORT_ID=C",
+      "facts": {
+        "current_context": "From20260101To20260930",
+        "prior_context": "From20250101To20250930",
+        "balance_context": "AsOf20260930",
+        "current_revenue": 37877562000.0,
+        "prior_revenue": 26198712000.0,
+        "current_gross_profit": 9462133000.0,
+        "prior_gross_profit": 6156880000.0,
+        "current_operating_income": 6643602000.0,
+        "prior_operating_income": 3801796000.0,
+        "current_net_income": 6314827000.0,
+        "prior_net_income": 4109517000.0,
+        "current_eps": 75.94,
+        "prior_eps": 50.89,
+        "current_operating_cash_flow": -16529067000.0,
+        "prior_operating_cash_flow": 16628809000.0,
+        "current_assets": 88968752000.0,
+        "current_liabilities": 30471815000.0,
+        "total_assets": 94471212000.0,
+        "total_liabilities": 30705963000.0
       },
-      "status": "DATA_MISSING",
-      "missing_subscores": [
-        "revenue_growth_quality",
-        "gross_and_operating_margin_quality",
-        "eps_growth_quality",
-        "operating_cash_flow_quality",
-        "balance_sheet_safety"
-      ],
-      "data_gap_reason": "missing_or_invalid_report_period",
+      "metrics": {
+        "revenue_yoy_pct": 44.57795482464939,
+        "gross_margin_pct": 24.980839579907492,
+        "gross_margin_change_pp": 1.4801422937202915,
+        "operating_margin_pct": 17.5396769200721,
+        "operating_margin_change_pp": 3.028291780222478,
+        "eps_yoy_pct": 49.22381607388484,
+        "current_eps": 75.94,
+        "prior_eps": 50.89,
+        "operating_cash_flow": -16529067000.0,
+        "cash_conversion": -2.6175011603643297,
+        "current_ratio": 2.9197063581542486,
+        "liabilities_to_assets_pct": 32.502984083659264
+      },
+      "absolute_subscores": {
+        "revenue_growth_quality": 100.0,
+        "gross_and_operating_margin_quality": 72.54217036971386,
+        "eps_growth_quality": 100.0,
+        "operating_cash_flow_quality": 0.0,
+        "balance_sheet_safety": 100.0
+      },
+      "status": "READY",
+      "missing_subscores": [],
       "theme_percentiles": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+        "revenue_growth_quality": 75.0,
+        "gross_and_operating_margin_quality": 50.0,
+        "eps_growth_quality": 75.0,
+        "operating_cash_flow_quality": 0.0,
+        "balance_sheet_safety": 75.0
       },
       "combined_subscores": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+        "revenue_growth_quality": 90.0,
+        "gross_and_operating_margin_quality": 63.5253,
+        "eps_growth_quality": 90.0,
+        "operating_cash_flow_quality": 0.0,
+        "balance_sheet_safety": 90.0
       },
-      "financial_earnings_quality": null
+      "financial_earnings_quality": 65.3813
     },
     {
       "ticker": "3711",
       "company": "日月光投控",
       "theme_id": "advanced_packaging",
-      "report_year": null,
-      "quarter": null,
-      "source_url": "",
-      "facts": {},
-      "metrics": {},
-      "absolute_subscores": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+      "report_year": 2026,
+      "quarter": 3,
+      "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3711&SYEAR=2026&SSEASON=3&REPORT_ID=C",
+      "facts": {
+        "current_context": "From20260101To20260930",
+        "prior_context": "From20250101To20250930",
+        "balance_context": "AsOf20260930",
+        "current_revenue": 608886833000.0,
+        "prior_revenue": 467472473000.0,
+        "current_gross_profit": 128931477000.0,
+        "prior_gross_profit": 79456998000.0,
+        "current_operating_income": 71764849000.0,
+        "prior_operating_income": 33065080000.0,
+        "current_net_income": 63935974000.0,
+        "prior_net_income": 26828051000.0,
+        "current_eps": 14.17,
+        "prior_eps": 5.99,
+        "current_operating_cash_flow": 133863008000.0,
+        "prior_operating_cash_flow": 71444098000.0,
+        "current_assets": 419467488000.0,
+        "current_liabilities": 362876812000.0,
+        "total_assets": 1244785061000.0,
+        "total_liabilities": 790863050000.0
       },
-      "status": "DATA_MISSING",
-      "missing_subscores": [
-        "revenue_growth_quality",
-        "gross_and_operating_margin_quality",
-        "eps_growth_quality",
-        "operating_cash_flow_quality",
-        "balance_sheet_safety"
-      ],
-      "data_gap_reason": "missing_or_invalid_report_period",
+      "metrics": {
+        "revenue_yoy_pct": 30.250842170978487,
+        "gross_margin_pct": 21.17494910585462,
+        "gross_margin_change_pp": 4.177798987028265,
+        "operating_margin_pct": 11.78623762422532,
+        "operating_margin_change_pp": 4.713076762409185,
+        "eps_yoy_pct": 136.5609348914858,
+        "current_eps": 14.17,
+        "prior_eps": 5.99,
+        "operating_cash_flow": 133863008000.0,
+        "cash_conversion": 2.093704054621894,
+        "current_ratio": 1.1559501024275973,
+        "liabilities_to_assets_pct": 63.53410518637321
+      },
+      "absolute_subscores": {
+        "revenue_growth_quality": 100.0,
+        "gross_and_operating_margin_quality": 94.45437874718725,
+        "eps_growth_quality": 100.0,
+        "operating_cash_flow_quality": 100.0,
+        "balance_sheet_safety": 36.82037261413738
+      },
+      "status": "READY",
+      "missing_subscores": [],
       "theme_percentiles": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+        "revenue_growth_quality": 62.5,
+        "gross_and_operating_margin_quality": 100.0,
+        "eps_growth_quality": 62.5,
+        "operating_cash_flow_quality": 75.0,
+        "balance_sheet_safety": 0.0
       },
       "combined_subscores": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+        "revenue_growth_quality": 85.0,
+        "gross_and_operating_margin_quality": 96.6726,
+        "eps_growth_quality": 85.0,
+        "operating_cash_flow_quality": 90.0,
+        "balance_sheet_safety": 22.0922
       },
-      "financial_earnings_quality": null
+      "financial_earnings_quality": 79.482
     },
     {
       "ticker": "4979",
@@ -2022,184 +2672,288 @@
       "status": "READY",
       "missing_subscores": [],
       "theme_percentiles": {
-        "revenue_growth_quality": 66.66666666666666,
-        "gross_and_operating_margin_quality": 66.66666666666666,
-        "eps_growth_quality": 0.0,
+        "revenue_growth_quality": 60.0,
+        "gross_and_operating_margin_quality": 80.0,
+        "eps_growth_quality": 20.0,
         "operating_cash_flow_quality": 100.0,
-        "balance_sheet_safety": 66.66666666666666
+        "balance_sheet_safety": 60.0
       },
       "combined_subscores": {
-        "revenue_growth_quality": 83.4116,
-        "gross_and_operating_margin_quality": 86.093,
-        "eps_growth_quality": 59.2646,
+        "revenue_growth_quality": 80.7449,
+        "gross_and_operating_margin_quality": 91.4264,
+        "eps_growth_quality": 67.2646,
         "operating_cash_flow_quality": 100.0,
-        "balance_sheet_safety": 86.6667
+        "balance_sheet_safety": 84.0
       },
-      "financial_earnings_quality": 83.0585
+      "financial_earnings_quality": 85.0585
     },
     {
       "ticker": "6182",
       "company": "合晶",
       "theme_id": "critical_materials",
-      "report_year": null,
-      "quarter": null,
-      "source_url": "",
-      "facts": {},
-      "metrics": {},
-      "absolute_subscores": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+      "report_year": 2026,
+      "quarter": 3,
+      "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=6182&SYEAR=2026&SSEASON=3&REPORT_ID=C",
+      "facts": {
+        "current_context": "From20260101To20260930",
+        "prior_context": "From20250101To20250930",
+        "balance_context": "AsOf20260930",
+        "current_revenue": 8186016000.0,
+        "prior_revenue": 7385681000.0,
+        "current_gross_profit": 1769781000.0,
+        "prior_gross_profit": 1687204000.0,
+        "current_operating_income": 284403000.0,
+        "prior_operating_income": 380696000.0,
+        "current_net_income": 222775000.0,
+        "prior_net_income": 285664000.0,
+        "current_eps": 0.18,
+        "prior_eps": -0.05,
+        "current_operating_cash_flow": 1587674000.0,
+        "prior_operating_cash_flow": 1319127000.0,
+        "current_assets": 13568488000.0,
+        "current_liabilities": 7963658000.0,
+        "total_assets": 47416264000.0,
+        "total_liabilities": 18685013000.0
       },
-      "status": "DATA_MISSING",
-      "missing_subscores": [
-        "revenue_growth_quality",
-        "gross_and_operating_margin_quality",
-        "eps_growth_quality",
-        "operating_cash_flow_quality",
-        "balance_sheet_safety"
-      ],
-      "data_gap_reason": "missing_or_invalid_report_period",
+      "metrics": {
+        "revenue_yoy_pct": 10.836306090122228,
+        "gross_margin_pct": 21.619564388830902,
+        "gross_margin_change_pp": -1.2246933038585048,
+        "operating_margin_pct": 3.4742541426745315,
+        "operating_margin_change_pp": -1.6802603834741068,
+        "eps_yoy_pct": null,
+        "current_eps": 0.18,
+        "prior_eps": -0.05,
+        "operating_cash_flow": 1587674000.0,
+        "cash_conversion": 7.1268050723824485,
+        "current_ratio": 1.703800941728035,
+        "liabilities_to_assets_pct": 39.40633745416973
+      },
+      "absolute_subscores": {
+        "revenue_growth_quality": 61.67261218024446,
+        "gross_and_operating_margin_quality": 35.47523156333694,
+        "eps_growth_quality": 75.0,
+        "operating_cash_flow_quality": 100.0,
+        "balance_sheet_safety": 88.1520376691214
+      },
+      "status": "READY",
+      "missing_subscores": [],
       "theme_percentiles": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+        "revenue_growth_quality": 25.0,
+        "gross_and_operating_margin_quality": 75.0,
+        "eps_growth_quality": 25.0,
+        "operating_cash_flow_quality": 62.5,
+        "balance_sheet_safety": 75.0
       },
       "combined_subscores": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+        "revenue_growth_quality": 47.0036,
+        "gross_and_operating_margin_quality": 51.2851,
+        "eps_growth_quality": 55.0,
+        "operating_cash_flow_quality": 85.0,
+        "balance_sheet_safety": 82.8912
       },
-      "financial_earnings_quality": null
+      "financial_earnings_quality": 62.6557
     },
     {
       "ticker": "6187",
       "company": "萬潤",
       "theme_id": "advanced_packaging",
-      "report_year": null,
-      "quarter": null,
-      "source_url": "",
-      "facts": {},
-      "metrics": {},
-      "absolute_subscores": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+      "report_year": 2026,
+      "quarter": 3,
+      "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=6187&SYEAR=2026&SSEASON=3&REPORT_ID=C",
+      "facts": {
+        "current_context": "From20260101To20260930",
+        "prior_context": "From20250101To20250930",
+        "balance_context": "AsOf20260930",
+        "current_revenue": 7089735000.0,
+        "prior_revenue": 4478384000.0,
+        "current_gross_profit": 3631297000.0,
+        "prior_gross_profit": 2371484000.0,
+        "current_operating_income": 2203539000.0,
+        "prior_operating_income": 1386155000.0,
+        "current_net_income": 1948362000.0,
+        "prior_net_income": 1161687000.0,
+        "current_eps": 20.38,
+        "prior_eps": 12.1,
+        "current_operating_cash_flow": 796542000.0,
+        "prior_operating_cash_flow": 1798311000.0,
+        "current_assets": 12385036000.0,
+        "current_liabilities": 3435200000.0,
+        "total_assets": 17493825000.0,
+        "total_liabilities": 6424334000.0
       },
-      "status": "DATA_MISSING",
-      "missing_subscores": [
-        "revenue_growth_quality",
-        "gross_and_operating_margin_quality",
-        "eps_growth_quality",
-        "operating_cash_flow_quality",
-        "balance_sheet_safety"
-      ],
-      "data_gap_reason": "missing_or_invalid_report_period",
+      "metrics": {
+        "revenue_yoy_pct": 58.31011811403399,
+        "gross_margin_pct": 51.21907941552117,
+        "gross_margin_change_pp": -1.7349325673726597,
+        "operating_margin_pct": 31.08069624605151,
+        "operating_margin_change_pp": 0.12857155107224827,
+        "eps_yoy_pct": 68.4297520661157,
+        "current_eps": 20.38,
+        "prior_eps": 12.1,
+        "operating_cash_flow": 796542000.0,
+        "cash_conversion": 0.4088264911756645,
+        "current_ratio": 3.6053318584070797,
+        "liabilities_to_assets_pct": 36.72343812745355
+      },
+      "absolute_subscores": {
+        "revenue_growth_quality": 100.0,
+        "gross_and_operating_margin_quality": 41.96819491849794,
+        "eps_growth_quality": 100.0,
+        "operating_cash_flow_quality": 67.03443713231935,
+        "balance_sheet_safety": 100.0
+      },
+      "status": "READY",
+      "missing_subscores": [],
       "theme_percentiles": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+        "revenue_growth_quality": 62.5,
+        "gross_and_operating_margin_quality": 0.0,
+        "eps_growth_quality": 62.5,
+        "operating_cash_flow_quality": 25.0,
+        "balance_sheet_safety": 100.0
       },
       "combined_subscores": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+        "revenue_growth_quality": 85.0,
+        "gross_and_operating_margin_quality": 25.1809,
+        "eps_growth_quality": 85.0,
+        "operating_cash_flow_quality": 50.2207,
+        "balance_sheet_safety": 100.0
       },
-      "financial_earnings_quality": null
+      "financial_earnings_quality": 65.3394
     },
     {
       "ticker": "6223",
       "company": "旺矽",
       "theme_id": "advanced_packaging",
-      "report_year": null,
-      "quarter": null,
-      "source_url": "",
-      "facts": {},
-      "metrics": {},
-      "absolute_subscores": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+      "report_year": 2026,
+      "quarter": 3,
+      "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=6223&SYEAR=2026&SSEASON=3&REPORT_ID=C",
+      "facts": {
+        "current_context": "From20260101To20260930",
+        "prior_context": "From20250101To20250930",
+        "balance_context": "AsOf20260930",
+        "current_revenue": 15070517000.0,
+        "prior_revenue": 9535264000.0,
+        "current_gross_profit": 9034269000.0,
+        "prior_gross_profit": 5365040000.0,
+        "current_operating_income": 5351159000.0,
+        "prior_operating_income": 2815279000.0,
+        "current_net_income": 4630907000.0,
+        "prior_net_income": 2227632000.0,
+        "current_eps": 47.26,
+        "prior_eps": 23.65,
+        "current_operating_cash_flow": 1663308000.0,
+        "prior_operating_cash_flow": 553396000.0,
+        "current_assets": 20634531000.0,
+        "current_liabilities": 9170968000.0,
+        "total_assets": 37592510000.0,
+        "total_liabilities": 19416418000.0
       },
-      "status": "DATA_MISSING",
-      "missing_subscores": [
-        "revenue_growth_quality",
-        "gross_and_operating_margin_quality",
-        "eps_growth_quality",
-        "operating_cash_flow_quality",
-        "balance_sheet_safety"
-      ],
-      "data_gap_reason": "missing_or_invalid_report_period",
+      "metrics": {
+        "revenue_yoy_pct": 58.05033819724341,
+        "gross_margin_pct": 59.94664283912755,
+        "gross_margin_change_pp": 3.681394178996065,
+        "operating_margin_pct": 35.507467991973996,
+        "operating_margin_change_pp": 5.982548702901347,
+        "eps_yoy_pct": 99.830866807611,
+        "current_eps": 47.26,
+        "prior_eps": 23.65,
+        "operating_cash_flow": 1663308000.0,
+        "cash_conversion": 0.35917542718953327,
+        "current_ratio": 2.2499839711576795,
+        "liabilities_to_assets_pct": 51.64969830426327
+      },
+      "absolute_subscores": {
+        "revenue_growth_quality": 100.0,
+        "gross_and_operating_margin_quality": 93.40697089498033,
+        "eps_growth_quality": 100.0,
+        "operating_cash_flow_quality": 64.96564279956388,
+        "balance_sheet_safety": 85.43787711967092
+      },
+      "status": "READY",
+      "missing_subscores": [],
       "theme_percentiles": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+        "revenue_growth_quality": 62.5,
+        "gross_and_operating_margin_quality": 75.0,
+        "eps_growth_quality": 62.5,
+        "operating_cash_flow_quality": 0.0,
+        "balance_sheet_safety": 75.0
       },
       "combined_subscores": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+        "revenue_growth_quality": 85.0,
+        "gross_and_operating_margin_quality": 86.0442,
+        "eps_growth_quality": 85.0,
+        "operating_cash_flow_quality": 38.9794,
+        "balance_sheet_safety": 81.2627
       },
-      "financial_earnings_quality": null
+      "financial_earnings_quality": 75.4963
     },
     {
       "ticker": "6230",
       "company": "尼得科超眾",
       "theme_id": "thermal_management",
-      "report_year": null,
-      "quarter": null,
-      "source_url": "",
-      "facts": {},
-      "metrics": {},
-      "absolute_subscores": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+      "report_year": 2026,
+      "quarter": 3,
+      "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=6230&SYEAR=2026&SSEASON=3&REPORT_ID=C",
+      "facts": {
+        "current_context": "From20260101To20260930",
+        "prior_context": "From20250101To20250930",
+        "balance_context": "AsOf20260930",
+        "current_revenue": 7011750000.0,
+        "prior_revenue": 6608204000.0,
+        "current_gross_profit": 1140568000.0,
+        "prior_gross_profit": 962767000.0,
+        "current_operating_income": -13184000.0,
+        "prior_operating_income": -77476000.0,
+        "current_net_income": -216436000.0,
+        "prior_net_income": -111986000.0,
+        "current_eps": -2.51,
+        "prior_eps": -1.3,
+        "current_operating_cash_flow": -429214000.0,
+        "prior_operating_cash_flow": 196368000.0,
+        "current_assets": 7638251000.0,
+        "current_liabilities": 3208145000.0,
+        "total_assets": 9796418000.0,
+        "total_liabilities": 3996297000.0
       },
-      "status": "DATA_MISSING",
-      "missing_subscores": [
-        "revenue_growth_quality",
-        "gross_and_operating_margin_quality",
-        "eps_growth_quality",
-        "operating_cash_flow_quality",
-        "balance_sheet_safety"
-      ],
-      "data_gap_reason": "missing_or_invalid_report_period",
+      "metrics": {
+        "revenue_yoy_pct": 6.1067424673935555,
+        "gross_margin_pct": 16.266524048917887,
+        "gross_margin_change_pp": 1.6972553035825442,
+        "operating_margin_pct": -0.18802723999001675,
+        "operating_margin_change_pp": 0.9843941925202389,
+        "eps_yoy_pct": null,
+        "current_eps": -2.51,
+        "prior_eps": -1.3,
+        "operating_cash_flow": -429214000.0,
+        "cash_conversion": 1.9830989299377184,
+        "current_ratio": 2.38089331997151,
+        "liabilities_to_assets_pct": 40.7934512390141
+      },
+      "absolute_subscores": {
+        "revenue_growth_quality": 52.21348493478711,
+        "gross_and_operating_margin_quality": 25.0,
+        "eps_growth_quality": 0.0,
+        "operating_cash_flow_quality": 20.0,
+        "balance_sheet_safety": 99.00818595123238
+      },
+      "status": "READY",
+      "missing_subscores": [],
       "theme_percentiles": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+        "revenue_growth_quality": 0.0,
+        "gross_and_operating_margin_quality": 0.0,
+        "eps_growth_quality": 0.0,
+        "operating_cash_flow_quality": 25.0,
+        "balance_sheet_safety": 75.0
       },
       "combined_subscores": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+        "revenue_growth_quality": 31.3281,
+        "gross_and_operating_margin_quality": 15.0,
+        "eps_growth_quality": 0.0,
+        "operating_cash_flow_quality": 22.0,
+        "balance_sheet_safety": 89.4049
       },
-      "financial_earnings_quality": null
+      "financial_earnings_quality": 27.8264
     },
     {
       "ticker": "6274",
@@ -2254,60 +3008,86 @@
       "missing_subscores": [],
       "theme_percentiles": {
         "revenue_growth_quality": 50.0,
-        "gross_and_operating_margin_quality": 66.66666666666666,
+        "gross_and_operating_margin_quality": 75.0,
         "eps_growth_quality": 50.0,
         "operating_cash_flow_quality": 0.0,
-        "balance_sheet_safety": 66.66666666666666
+        "balance_sheet_safety": 75.0
       },
       "combined_subscores": {
         "revenue_growth_quality": 80.0,
-        "gross_and_operating_margin_quality": 86.6667,
+        "gross_and_operating_margin_quality": 90.0,
         "eps_growth_quality": 80.0,
         "operating_cash_flow_quality": 0.0,
-        "balance_sheet_safety": 77.6272
+        "balance_sheet_safety": 80.9605
       },
-      "financial_earnings_quality": 65.3108
+      "financial_earnings_quality": 66.6441
     },
     {
       "ticker": "6282",
       "company": "康舒",
       "theme_id": "power_delivery",
-      "report_year": null,
-      "quarter": null,
-      "source_url": "",
-      "facts": {},
-      "metrics": {},
-      "absolute_subscores": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+      "report_year": 2026,
+      "quarter": 3,
+      "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=6282&SYEAR=2026&SSEASON=3&REPORT_ID=C",
+      "facts": {
+        "current_context": "From20260101To20260930",
+        "prior_context": "From20250101To20250930",
+        "balance_context": "AsOf20260930",
+        "current_revenue": 28901388000.0,
+        "prior_revenue": 22529129000.0,
+        "current_gross_profit": 6506829000.0,
+        "prior_gross_profit": 5723564000.0,
+        "current_operating_income": 705963000.0,
+        "prior_operating_income": 355235000.0,
+        "current_net_income": 511939000.0,
+        "prior_net_income": -330699000.0,
+        "current_eps": 0.61,
+        "prior_eps": -0.38,
+        "current_operating_cash_flow": 34402000.0,
+        "prior_operating_cash_flow": 1652918000.0,
+        "current_assets": 30940340000.0,
+        "current_liabilities": 20089719000.0,
+        "total_assets": 55160766000.0,
+        "total_liabilities": 31822179000.0
       },
-      "status": "DATA_MISSING",
-      "missing_subscores": [
-        "revenue_growth_quality",
-        "gross_and_operating_margin_quality",
-        "eps_growth_quality",
-        "operating_cash_flow_quality",
-        "balance_sheet_safety"
-      ],
-      "data_gap_reason": "missing_or_invalid_report_period",
+      "metrics": {
+        "revenue_yoy_pct": 28.28453332572245,
+        "gross_margin_pct": 22.51389794843071,
+        "gross_margin_change_pp": -2.891274173403204,
+        "operating_margin_pct": 2.4426612313567775,
+        "operating_margin_change_pp": 0.8658803447099834,
+        "eps_yoy_pct": null,
+        "current_eps": 0.61,
+        "prior_eps": -0.38,
+        "operating_cash_flow": 34402000.0,
+        "cash_conversion": 0.06719941242999654,
+        "current_ratio": 1.54010815183627,
+        "liabilities_to_assets_pct": 57.68987870835587
+      },
+      "absolute_subscores": {
+        "revenue_growth_quality": 96.5690666514449,
+        "gross_and_operating_margin_quality": 39.8730308565339,
+        "eps_growth_quality": 75.0,
+        "operating_cash_flow_quality": 52.79997551791652,
+        "balance_sheet_safety": 59.49197768800596
+      },
+      "status": "READY",
+      "missing_subscores": [],
       "theme_percentiles": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+        "revenue_growth_quality": 75.0,
+        "gross_and_operating_margin_quality": 25.0,
+        "eps_growth_quality": 25.0,
+        "operating_cash_flow_quality": 25.0,
+        "balance_sheet_safety": 50.0
       },
       "combined_subscores": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+        "revenue_growth_quality": 87.9414,
+        "gross_and_operating_margin_quality": 33.9238,
+        "eps_growth_quality": 55.0,
+        "operating_cash_flow_quality": 41.68,
+        "balance_sheet_safety": 55.6952
       },
-      "financial_earnings_quality": null
+      "financial_earnings_quality": 53.7595
     },
     {
       "ticker": "6412",
@@ -2365,57 +3145,83 @@
         "gross_and_operating_margin_quality": 0.0,
         "eps_growth_quality": 0.0,
         "operating_cash_flow_quality": 50.0,
-        "balance_sheet_safety": 50.0
+        "balance_sheet_safety": 25.0
       },
       "combined_subscores": {
         "revenue_growth_quality": 10.6157,
         "gross_and_operating_margin_quality": 6.8557,
         "eps_growth_quality": 12.3148,
         "operating_cash_flow_quality": 65.1188,
-        "balance_sheet_safety": 55.2474
+        "balance_sheet_safety": 45.2474
       },
-      "financial_earnings_quality": 27.6109
+      "financial_earnings_quality": 26.1109
     },
     {
       "ticker": "6442",
       "company": "光聖",
       "theme_id": "silicon_photonics_cpo",
-      "report_year": null,
-      "quarter": null,
-      "source_url": "",
-      "facts": {},
-      "metrics": {},
-      "absolute_subscores": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+      "report_year": 2026,
+      "quarter": 3,
+      "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=6442&SYEAR=2026&SSEASON=3&REPORT_ID=C",
+      "facts": {
+        "current_context": "From20260101To20260930",
+        "prior_context": "From20250101To20250930",
+        "balance_context": "AsOf20260930",
+        "current_revenue": 11306582000.0,
+        "prior_revenue": 7527529000.0,
+        "current_gross_profit": 6718782000.0,
+        "prior_gross_profit": 4351832000.0,
+        "current_operating_income": 3490274000.0,
+        "prior_operating_income": 1731094000.0,
+        "current_net_income": 2773089000.0,
+        "prior_net_income": 1045931000.0,
+        "current_eps": 34.9,
+        "prior_eps": 13.87,
+        "current_operating_cash_flow": 2136797000.0,
+        "prior_operating_cash_flow": 1644516000.0,
+        "current_assets": 14324728000.0,
+        "current_liabilities": 5854263000.0,
+        "total_assets": 22292439000.0,
+        "total_liabilities": 6879582000.0
       },
-      "status": "DATA_MISSING",
-      "missing_subscores": [
-        "revenue_growth_quality",
-        "gross_and_operating_margin_quality",
-        "eps_growth_quality",
-        "operating_cash_flow_quality",
-        "balance_sheet_safety"
-      ],
-      "data_gap_reason": "missing_or_invalid_report_period",
+      "metrics": {
+        "revenue_yoy_pct": 50.203101177026355,
+        "gross_margin_pct": 59.423634835001415,
+        "gross_margin_change_pp": 1.6114098671534052,
+        "operating_margin_pct": 30.869399788547945,
+        "operating_margin_change_pp": 7.872557132744159,
+        "eps_yoy_pct": 151.6222062004326,
+        "current_eps": 34.9,
+        "prior_eps": 13.87,
+        "operating_cash_flow": 2136797000.0,
+        "cash_conversion": 0.7705475734821349,
+        "current_ratio": 2.4468883615239014,
+        "liabilities_to_assets_pct": 30.86060704259413
+      },
+      "absolute_subscores": {
+        "revenue_growth_quality": 100.0,
+        "gross_and_operating_margin_quality": 83.05704933576703,
+        "eps_growth_quality": 100.0,
+        "operating_cash_flow_quality": 82.10614889508895,
+        "balance_sheet_safety": 100.0
+      },
+      "status": "READY",
+      "missing_subscores": [],
       "theme_percentiles": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+        "revenue_growth_quality": 90.0,
+        "gross_and_operating_margin_quality": 40.0,
+        "eps_growth_quality": 70.0,
+        "operating_cash_flow_quality": 40.0,
+        "balance_sheet_safety": 60.0
       },
       "combined_subscores": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+        "revenue_growth_quality": 96.0,
+        "gross_and_operating_margin_quality": 65.8342,
+        "eps_growth_quality": 88.0,
+        "operating_cash_flow_quality": 65.2637,
+        "balance_sheet_safety": 84.0
       },
-      "financial_earnings_quality": null
+      "financial_earnings_quality": 78.9113
     },
     {
       "ticker": "6488",
@@ -2469,20 +3275,20 @@
       "status": "READY",
       "missing_subscores": [],
       "theme_percentiles": {
-        "revenue_growth_quality": 50.0,
+        "revenue_growth_quality": 0.0,
         "gross_and_operating_margin_quality": 50.0,
-        "eps_growth_quality": 50.0,
-        "operating_cash_flow_quality": 50.0,
-        "balance_sheet_safety": 50.0
+        "eps_growth_quality": 75.0,
+        "operating_cash_flow_quality": 0.0,
+        "balance_sheet_safety": 25.0
       },
       "combined_subscores": {
-        "revenue_growth_quality": 38.7258,
+        "revenue_growth_quality": 18.7258,
         "gross_and_operating_margin_quality": 29.4127,
-        "eps_growth_quality": 80.0,
-        "operating_cash_flow_quality": 72.2137,
-        "balance_sheet_safety": 62.4968
+        "eps_growth_quality": 90.0,
+        "operating_cash_flow_quality": 52.2137,
+        "balance_sheet_safety": 52.4968
       },
-      "financial_earnings_quality": 54.9156
+      "financial_earnings_quality": 47.4156
     },
     {
       "ticker": "6669",
@@ -2537,17 +3343,17 @@
       "missing_subscores": [],
       "theme_percentiles": {
         "revenue_growth_quality": 50.0,
-        "gross_and_operating_margin_quality": 50.0,
-        "eps_growth_quality": 50.0,
-        "operating_cash_flow_quality": 50.0,
-        "balance_sheet_safety": 50.0
+        "gross_and_operating_margin_quality": 60.0,
+        "eps_growth_quality": 40.0,
+        "operating_cash_flow_quality": 40.0,
+        "balance_sheet_safety": 60.0
       },
       "combined_subscores": {
         "revenue_growth_quality": 80.0,
-        "gross_and_operating_margin_quality": 49.3481,
-        "eps_growth_quality": 79.6996,
-        "operating_cash_flow_quality": 20.0,
-        "balance_sheet_safety": 39.0316
+        "gross_and_operating_margin_quality": 53.3481,
+        "eps_growth_quality": 75.6996,
+        "operating_cash_flow_quality": 16.0,
+        "balance_sheet_safety": 43.0316
       },
       "financial_earnings_quality": 54.1317
     },
@@ -2555,42 +3361,68 @@
       "ticker": "6781",
       "company": "AES-KY",
       "theme_id": "power_delivery",
-      "report_year": null,
-      "quarter": null,
-      "source_url": "",
-      "facts": {},
-      "metrics": {},
-      "absolute_subscores": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+      "report_year": 2026,
+      "quarter": 3,
+      "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=6781&SYEAR=2026&SSEASON=3&REPORT_ID=C",
+      "facts": {
+        "current_context": "From20260101To20260930",
+        "prior_context": "From20250101To20250930",
+        "balance_context": "AsOf20260930",
+        "current_revenue": 14572311000.0,
+        "prior_revenue": 11539900000.0,
+        "current_gross_profit": 5412121000.0,
+        "prior_gross_profit": 4229809000.0,
+        "current_operating_income": 3690515000.0,
+        "prior_operating_income": 2897353000.0,
+        "current_net_income": 3070494000.0,
+        "prior_net_income": 2452306000.0,
+        "current_eps": 35.95,
+        "prior_eps": 28.71,
+        "current_operating_cash_flow": 4527409000.0,
+        "prior_operating_cash_flow": 2661361000.0,
+        "current_assets": 27080262000.0,
+        "current_liabilities": 11465914000.0,
+        "total_assets": 30739501000.0,
+        "total_liabilities": 12100111000.0
       },
-      "status": "DATA_MISSING",
-      "missing_subscores": [
-        "revenue_growth_quality",
-        "gross_and_operating_margin_quality",
-        "eps_growth_quality",
-        "operating_cash_flow_quality",
-        "balance_sheet_safety"
-      ],
-      "data_gap_reason": "missing_or_invalid_report_period",
+      "metrics": {
+        "revenue_yoy_pct": 26.277619390116037,
+        "gross_margin_pct": 37.139757722711245,
+        "gross_margin_change_pp": 0.48598256001486106,
+        "operating_margin_pct": 25.325530041185644,
+        "operating_margin_change_pp": 0.21826741325992316,
+        "eps_yoy_pct": 25.217694183211425,
+        "current_eps": 35.95,
+        "prior_eps": 28.71,
+        "operating_cash_flow": 4527409000.0,
+        "cash_conversion": 1.4744887956139956,
+        "current_ratio": 2.361805783647078,
+        "liabilities_to_assets_pct": 39.36339435048083
+      },
+      "absolute_subscores": {
+        "revenue_growth_quality": 92.55523878023207,
+        "gross_and_operating_margin_quality": 53.52124986637392,
+        "eps_growth_quality": 78.8824202617306,
+        "operating_cash_flow_quality": 100.0,
+        "balance_sheet_safety": 100.0
+      },
+      "status": "READY",
+      "missing_subscores": [],
       "theme_percentiles": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+        "revenue_growth_quality": 50.0,
+        "gross_and_operating_margin_quality": 50.0,
+        "eps_growth_quality": 50.0,
+        "operating_cash_flow_quality": 100.0,
+        "balance_sheet_safety": 100.0
       },
       "combined_subscores": {
-        "revenue_growth_quality": null,
-        "gross_and_operating_margin_quality": null,
-        "eps_growth_quality": null,
-        "operating_cash_flow_quality": null,
-        "balance_sheet_safety": null
+        "revenue_growth_quality": 75.5331,
+        "gross_and_operating_margin_quality": 52.1127,
+        "eps_growth_quality": 67.3295,
+        "operating_cash_flow_quality": 100.0,
+        "balance_sheet_safety": 100.0
       },
-      "financial_earnings_quality": null
+      "financial_earnings_quality": 76.6007
     },
     {
       "ticker": "8299",
@@ -2646,150 +3478,21 @@
       "theme_percentiles": {
         "revenue_growth_quality": 50.0,
         "gross_and_operating_margin_quality": 50.0,
-        "eps_growth_quality": 83.33333333333334,
-        "operating_cash_flow_quality": 0.0,
-        "balance_sheet_safety": 0.0
+        "eps_growth_quality": 75.0,
+        "operating_cash_flow_quality": 12.5,
+        "balance_sheet_safety": 25.0
       },
       "combined_subscores": {
         "revenue_growth_quality": 80.0,
         "gross_and_operating_margin_quality": 80.0,
-        "eps_growth_quality": 93.3333,
-        "operating_cash_flow_quality": 0.0,
-        "balance_sheet_safety": 52.7846
+        "eps_growth_quality": 90.0,
+        "operating_cash_flow_quality": 5.0,
+        "balance_sheet_safety": 62.7846
       },
-      "financial_earnings_quality": 62.5844
+      "financial_earnings_quality": 64.4177
     }
   ],
-  "gaps": [
-    {
-      "ticker": "1560",
-      "reason": "missing_or_invalid_report_period"
-    },
-    {
-      "ticker": "2317",
-      "reason": "missing_or_invalid_report_period"
-    },
-    {
-      "ticker": "2327",
-      "reason": "missing_or_invalid_report_period"
-    },
-    {
-      "ticker": "2330",
-      "reason": "missing_or_invalid_report_period"
-    },
-    {
-      "ticker": "2345",
-      "reason": "missing_or_invalid_report_period"
-    },
-    {
-      "ticker": "2356",
-      "reason": "missing_or_invalid_report_period"
-    },
-    {
-      "ticker": "2368",
-      "reason": "missing_or_invalid_report_period"
-    },
-    {
-      "ticker": "2376",
-      "reason": "missing_or_invalid_report_period"
-    },
-    {
-      "ticker": "2379",
-      "reason": "missing_or_invalid_report_period"
-    },
-    {
-      "ticker": "2382",
-      "reason": "missing_or_invalid_report_period"
-    },
-    {
-      "ticker": "2449",
-      "reason": "missing_or_invalid_report_period"
-    },
-    {
-      "ticker": "2454",
-      "reason": "missing_or_invalid_report_period"
-    },
-    {
-      "ticker": "2492",
-      "reason": "missing_or_invalid_report_period"
-    },
-    {
-      "ticker": "3017",
-      "reason": "missing_or_invalid_report_period"
-    },
-    {
-      "ticker": "3131",
-      "reason": "missing_or_invalid_report_period"
-    },
-    {
-      "ticker": "3231",
-      "reason": "missing_or_invalid_report_period"
-    },
-    {
-      "ticker": "3260",
-      "reason": "missing_or_invalid_report_period"
-    },
-    {
-      "ticker": "3324",
-      "reason": "missing_or_invalid_report_period"
-    },
-    {
-      "ticker": "3357",
-      "reason": "missing_or_invalid_report_period"
-    },
-    {
-      "ticker": "3363",
-      "reason": "missing_or_invalid_report_period"
-    },
-    {
-      "ticker": "3532",
-      "reason": "missing_or_invalid_report_period"
-    },
-    {
-      "ticker": "3583",
-      "reason": "missing_or_invalid_report_period"
-    },
-    {
-      "ticker": "3653",
-      "reason": "missing_or_invalid_report_period"
-    },
-    {
-      "ticker": "3661",
-      "reason": "missing_or_invalid_report_period"
-    },
-    {
-      "ticker": "3711",
-      "reason": "missing_or_invalid_report_period"
-    },
-    {
-      "ticker": "6182",
-      "reason": "missing_or_invalid_report_period"
-    },
-    {
-      "ticker": "6187",
-      "reason": "missing_or_invalid_report_period"
-    },
-    {
-      "ticker": "6223",
-      "reason": "missing_or_invalid_report_period"
-    },
-    {
-      "ticker": "6230",
-      "reason": "missing_or_invalid_report_period"
-    },
-    {
-      "ticker": "6282",
-      "reason": "missing_or_invalid_report_period"
-    },
-    {
-      "ticker": "6442",
-      "reason": "missing_or_invalid_report_period"
-    },
-    {
-      "ticker": "6781",
-      "reason": "missing_or_invalid_report_period"
-    }
-  ],
+  "gaps": [],
   "future_data_violation_count": 0,
   "formal_model_changed": false,
   "trade_decision_changed": false,
