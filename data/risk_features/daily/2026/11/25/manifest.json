@@ -8,13 +8,13 @@
       "market": "TWSE",
       "requested_date": "2026-11-25",
       "actual_source_date": "",
-      "status": "no_rows",
+      "status": "blocked",
       "row_count": 0,
-      "http_status": 200,
-      "response_bytes": 71,
+      "http_status": 307,
+      "response_bytes": 947,
       "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20261125&type=ALLBUT0999&response=json",
-      "source_hash": "a5691b2512d7068ab2f69df75c3ef8fbc38dc565086422b1602656895c92c652",
-      "retrieved_at_utc": "2026-11-24T23:08:02+00:00",
+      "source_hash": "8b61cc5a949d9d724da6e5cf78249051ca27ec744ef323df918677fa312790f0",
+      "retrieved_at_utc": "2026-11-24T23:42:26+00:00",
       "error": ""
     },
     {
@@ -28,7 +28,7 @@
       "response_bytes": 1630,
       "source_url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2026/11/25&response=json",
       "source_hash": "b0c47166a30bd65ceac262e2910e396a16e787aaf9a9a75faa1b2dd13e40229d",
-      "retrieved_at_utc": "2026-11-24T23:08:03+00:00",
+      "retrieved_at_utc": "2026-11-24T23:42:28+00:00",
       "error": "primary=200;fallback=200"
     }
   ],
