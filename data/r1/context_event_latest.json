@@ -1,7 +1,7 @@
 {
   "model": "R1",
   "layer": "context_event_v0.1",
-  "date": "2026-11-23",
+  "date": "2026-11-24",
   "status": "READY",
   "rows": [
     {
@@ -78,7 +78,7 @@
       "context_state": "NO_CONTEXT_CHANGE",
       "advisory_posture": "KEEP_EXISTING_PLAN",
       "broad_selloff": false,
-      "price_weak": true,
+      "price_weak": false,
       "monthly_revenue_state": "NOT_ACCELERATING",
       "positive_event_count": 1,
       "negative_event_count": 0,
@@ -131,7 +131,7 @@
       "context_state": "NO_CONTEXT_CHANGE",
       "advisory_posture": "KEEP_EXISTING_PLAN",
       "broad_selloff": false,
-      "price_weak": true,
+      "price_weak": false,
       "monthly_revenue_state": "ACCELERATING",
       "positive_event_count": 0,
       "negative_event_count": 0,
