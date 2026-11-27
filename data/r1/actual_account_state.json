@@ -1,96 +1,96 @@
 {
-  "date": "2026-11-25",
+  "date": "2026-11-27",
   "positions": [
     {
       "ticker": "2330",
       "company": "台積電",
       "shares": 2534,
-      "raw_close": 2150.0,
-      "market_value": 5448100.0
+      "raw_close": 2180.0,
+      "market_value": 5524120.0
     },
     {
       "ticker": "2327",
       "company": "國巨",
       "shares": 1800,
-      "raw_close": 309.0,
-      "market_value": 556200.0
+      "raw_close": 344.0,
+      "market_value": 619200.0
     },
     {
       "ticker": "2344",
       "company": "華邦電",
       "shares": 3000,
-      "raw_close": 94.5,
-      "market_value": 283500.0
+      "raw_close": 104.0,
+      "market_value": 312000.0
     },
     {
       "ticker": "2376",
       "company": "技嘉",
       "shares": 7000,
-      "raw_close": 261.0,
-      "market_value": 1827000.0
+      "raw_close": 273.5,
+      "market_value": 1914500.0
     },
     {
       "ticker": "2454",
       "company": "聯發科",
       "shares": 19,
-      "raw_close": 3645.0,
-      "market_value": 69255.0
+      "raw_close": 3680.0,
+      "market_value": 69920.0
     },
     {
       "ticker": "3037",
       "company": "欣興",
       "shares": 1176,
-      "raw_close": 585.0,
-      "market_value": 687960.0
+      "raw_close": 646.0,
+      "market_value": 759696.0
     },
     {
       "ticker": "6488",
       "company": "環球晶",
       "shares": 500,
-      "raw_close": 477.0,
-      "market_value": 238500.0
+      "raw_close": 511.0,
+      "market_value": 255500.0
     },
     {
       "ticker": "2408",
       "company": "南亞科",
       "shares": 1147,
-      "raw_close": 278.5,
-      "market_value": 319439.5
+      "raw_close": 308.0,
+      "market_value": 353276.0
     },
     {
       "ticker": "3081",
       "company": "聯亞",
       "shares": 220,
-      "raw_close": 1420.0,
-      "market_value": 312400.0
+      "raw_close": 1395.0,
+      "market_value": 306900.0
     },
     {
       "ticker": "2303",
       "company": "聯電",
       "shares": 5000,
-      "raw_close": 87.4,
-      "market_value": 437000.0
+      "raw_close": 87.5,
+      "market_value": 437500.0
     },
     {
       "ticker": "00631L",
       "company": "元大台灣50正2",
       "shares": 2500,
-      "raw_close": 23.78,
-      "market_value": 59450.0,
+      "raw_close": 25.4,
+      "market_value": 63500.0,
       "average_cost": 39.3212,
       "source": "Ryan broker screenshot supplied 2026-10-13"
     }
   ],
-  "equity_market_value": 10238804.5,
-  "visible_positions_market_value": 10238804.5,
+  "equity_market_value": 10616112.0,
+  "visible_positions_market_value": 10616112.0,
   "cash": 138151.0,
-  "nav": 10376955.5,
+  "nav": 10754263.0,
   "status": "READY",
   "gaps": [],
   "source": "r1_config_confirmed_shares_plus_official_raw_close",
-  "comparison_excluded_equity": 5448100.0,
+  "comparison_excluded_equity": 5524120.0,
   "comparison_excluded_cash_income": 17733.0,
-  "comparison_equity_market_value": 4790704.5,
+  "comparison_equity_market_value": 5091992.0,
   "comparison_cash": 120418.0,
-  "comparison_nav": 4911122.5
+  "comparison_nav": 5212410.0
 }

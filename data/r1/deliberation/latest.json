@@ -1,7 +1,7 @@
 {
   "model": "R1",
   "layer": "bounded_deliberation_v0.1",
-  "date": "2026-11-25",
+  "date": "2026-11-27",
   "status": "READY",
   "rows": [
     {
@@ -13,10 +13,8 @@
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -25,11 +23,8 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "STRONG",
-          "evidence": [
-            "市場急跌",
-            "月營收加速"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -39,13 +34,11 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "WATCH_POTENTIAL_DISLOCATION",
-      "confidence": "MEDIUM",
-      "rationale": "價格隨市場下跌但月營收加速，可列錯殺候選；尚未形成買進指令",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
+      "confidence": "LOW",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "WATCH_POTENTIAL_DISLOCATION",
       "judgement_changed": true,
       "evidence_urls": []
     },
@@ -58,10 +51,8 @@
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -70,10 +61,8 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "MEDIUM",
-          "evidence": [
-            "市場急跌但基本面尚未確認"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -83,13 +72,11 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
-      "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
       "judgement_changed": true,
       "evidence_urls": []
     },
@@ -102,10 +89,8 @@
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -114,10 +99,8 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "MEDIUM",
-          "evidence": [
-            "市場急跌但基本面尚未確認"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -127,13 +110,11 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
-      "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
       "judgement_changed": true,
       "evidence_urls": [
         "https://www.trendforce.com/presscenter/news/20260907-13219.html"
@@ -148,10 +129,8 @@
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -160,11 +139,8 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "STRONG",
-          "evidence": [
-            "市場急跌",
-            "月營收加速"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -174,13 +150,11 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "WATCH_POTENTIAL_DISLOCATION",
-      "confidence": "MEDIUM",
-      "rationale": "價格隨市場下跌但月營收加速，可列錯殺候選；尚未形成買進指令",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
+      "confidence": "LOW",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "WATCH_POTENTIAL_DISLOCATION",
       "judgement_changed": true,
       "evidence_urls": [
         "https://www.xxquant.com/en/institution/institutional-research/63fc05022b4f6cf9d73e160779b31d86"
@@ -195,10 +169,8 @@
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -207,10 +179,8 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "MEDIUM",
-          "evidence": [
-            "市場急跌但基本面尚未確認"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -220,13 +190,11 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
-      "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
       "judgement_changed": true,
       "evidence_urls": [
         "https://www.spglobal.com/market-intelligence/en/news-insights/research/2026/08/mediatek-s-ai-asics-growth-to-offset-smartphone-weakness"
@@ -241,10 +209,8 @@
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -253,11 +219,8 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "STRONG",
-          "evidence": [
-            "市場急跌",
-            "月營收加速"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -267,13 +230,11 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "WATCH_POTENTIAL_DISLOCATION",
-      "confidence": "MEDIUM",
-      "rationale": "價格隨市場下跌但月營收加速，可列錯殺候選；尚未形成買進指令",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
+      "confidence": "LOW",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "WATCH_POTENTIAL_DISLOCATION",
       "judgement_changed": true,
       "evidence_urls": []
     },
@@ -286,10 +247,8 @@
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -298,10 +257,8 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "MEDIUM",
-          "evidence": [
-            "市場急跌但基本面尚未確認"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -311,13 +268,11 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
-      "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
       "judgement_changed": true,
       "evidence_urls": [
         "https://www.tomshardware.com/tech-industry/semiconductors/micron-takes-a-500-million-position-in-americas-only-300mm-wafer-plant"
@@ -332,10 +287,8 @@
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -344,11 +297,8 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "STRONG",
-          "evidence": [
-            "市場急跌",
-            "月營收加速"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -358,13 +308,11 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "WATCH_POTENTIAL_DISLOCATION",
-      "confidence": "MEDIUM",
-      "rationale": "價格隨市場下跌但月營收加速，可列錯殺候選；尚未形成買進指令",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
+      "confidence": "LOW",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "WATCH_POTENTIAL_DISLOCATION",
       "judgement_changed": true,
       "evidence_urls": []
     },
@@ -377,10 +325,8 @@
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -389,10 +335,8 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "MEDIUM",
-          "evidence": [
-            "市場急跌但基本面尚未確認"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -402,13 +346,11 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
-      "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
       "judgement_changed": true,
       "evidence_urls": [
         "https://www.moneydj.com/kmdj/news/newsviewer.aspx?a=8b9ae6d7-7f01-46fa-ab35-d29897a392e4&c=MB00"
@@ -423,10 +365,8 @@
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -435,10 +375,8 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "MEDIUM",
-          "evidence": [
-            "市場急跌但基本面尚未確認"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -448,13 +386,11 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
-      "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
       "judgement_changed": true,
       "evidence_urls": [
         "https://www.moneydj.com/kmdj/news/newsviewer.aspx?a=691d75a0-20c1-4648-8948-42eff848d38f"
@@ -469,10 +405,8 @@
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -481,10 +415,8 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "MEDIUM",
-          "evidence": [
-            "市場急跌但基本面尚未確認"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -494,13 +426,11 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
-      "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
       "judgement_changed": true,
       "evidence_urls": []
     },
@@ -513,10 +443,8 @@
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -525,11 +453,8 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "STRONG",
-          "evidence": [
-            "市場急跌",
-            "月營收加速"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -539,13 +464,11 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "WATCH_POTENTIAL_DISLOCATION",
-      "confidence": "MEDIUM",
-      "rationale": "價格隨市場下跌但月營收加速，可列錯殺候選；尚未形成買進指令",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
+      "confidence": "LOW",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "WATCH_POTENTIAL_DISLOCATION",
       "judgement_changed": true,
       "evidence_urls": []
     },
@@ -558,10 +481,8 @@
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -570,31 +491,24 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "STRONG",
-          "evidence": [
-            "市場急跌",
-            "月營收加速"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
-          "support": "MEDIUM",
+          "support": "WEAK",
           "evidence": [
-            "正向事件1項"
+            "正向事件0項"
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "WATCH_POTENTIAL_DISLOCATION",
-      "confidence": "MEDIUM",
-      "rationale": "價格隨市場下跌但月營收加速，可列錯殺候選；尚未形成買進指令",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
+      "confidence": "LOW",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "WATCH_POTENTIAL_DISLOCATION",
       "judgement_changed": true,
-      "evidence_urls": [
-        "https://www.mirrormedia.mg/external/mirrordaily_82154"
-      ]
+      "evidence_urls": []
     },
     {
       "ticker": "3583",
@@ -605,10 +519,8 @@
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -617,10 +529,8 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "MEDIUM",
-          "evidence": [
-            "市場急跌但基本面尚未確認"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -630,13 +540,11 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
-      "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
       "judgement_changed": true,
       "evidence_urls": []
     },
@@ -649,10 +557,8 @@
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -661,10 +567,8 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "MEDIUM",
-          "evidence": [
-            "市場急跌但基本面尚未確認"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -674,13 +578,11 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
-      "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
       "judgement_changed": true,
       "evidence_urls": []
     },
@@ -693,10 +595,8 @@
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -705,30 +605,24 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "MEDIUM",
-          "evidence": [
-            "市場急跌但基本面尚未確認"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
-          "support": "MEDIUM",
+          "support": "WEAK",
           "evidence": [
-            "正向事件1項"
+            "正向事件0項"
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
-      "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
       "judgement_changed": true,
-      "evidence_urls": [
-        "https://doc.twse.com.tw/pdf/2025_3081_20260527F04_20260714_045320.pdf"
-      ]
+      "evidence_urls": []
     },
     {
       "ticker": "2303",
@@ -739,10 +633,8 @@
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -751,10 +643,8 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "MEDIUM",
-          "evidence": [
-            "市場急跌但基本面尚未確認"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -764,13 +654,11 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
-      "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
       "judgement_changed": true,
       "evidence_urls": [
         "https://www.umc.com/zh-TW/News/press_release/Content/technology_related/20260714"
@@ -785,10 +673,8 @@
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -797,10 +683,8 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "MEDIUM",
-          "evidence": [
-            "市場急跌但基本面尚未確認"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -810,13 +694,11 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
-      "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
       "judgement_changed": true,
       "evidence_urls": []
     },
@@ -829,10 +711,8 @@
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -841,10 +721,8 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "MEDIUM",
-          "evidence": [
-            "市場急跌但基本面尚未確認"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -854,13 +732,11 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
-      "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
       "judgement_changed": true,
       "evidence_urls": []
     },
@@ -873,10 +749,8 @@
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -885,10 +759,8 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "MEDIUM",
-          "evidence": [
-            "市場急跌但基本面尚未確認"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -898,13 +770,11 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
-      "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
       "judgement_changed": true,
       "evidence_urls": []
     },
@@ -917,10 +787,8 @@
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -929,10 +797,8 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "MEDIUM",
-          "evidence": [
-            "市場急跌但基本面尚未確認"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -942,13 +808,11 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
-      "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
       "judgement_changed": true,
       "evidence_urls": []
     },
@@ -961,10 +825,8 @@
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -973,10 +835,8 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "MEDIUM",
-          "evidence": [
-            "市場急跌但基本面尚未確認"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -986,13 +846,11 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
-      "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
       "judgement_changed": true,
       "evidence_urls": []
     },
@@ -1005,10 +863,8 @@
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -1017,11 +873,8 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "STRONG",
-          "evidence": [
-            "市場急跌",
-            "月營收加速"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -1031,13 +884,11 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "WATCH_POTENTIAL_DISLOCATION",
-      "confidence": "MEDIUM",
-      "rationale": "價格隨市場下跌但月營收加速，可列錯殺候選；尚未形成買進指令",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
+      "confidence": "LOW",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "WATCH_POTENTIAL_DISLOCATION",
       "judgement_changed": true,
       "evidence_urls": []
     },
@@ -1050,10 +901,8 @@
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -1062,10 +911,8 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "MEDIUM",
-          "evidence": [
-            "市場急跌但基本面尚未確認"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -1075,13 +922,11 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
-      "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
       "judgement_changed": true,
       "evidence_urls": []
     },
@@ -1094,10 +939,8 @@
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -1106,11 +949,8 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "STRONG",
-          "evidence": [
-            "市場急跌",
-            "月營收加速"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -1120,13 +960,11 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "WATCH_POTENTIAL_DISLOCATION",
-      "confidence": "MEDIUM",
-      "rationale": "價格隨市場下跌但月營收加速，可列錯殺候選；尚未形成買進指令",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
+      "confidence": "LOW",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "WATCH_POTENTIAL_DISLOCATION",
       "judgement_changed": true,
       "evidence_urls": []
     },
@@ -1139,10 +977,8 @@
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -1151,10 +987,8 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "MEDIUM",
-          "evidence": [
-            "市場急跌但基本面尚未確認"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -1164,13 +998,11 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
-      "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
       "judgement_changed": true,
       "evidence_urls": []
     },
@@ -1183,10 +1015,8 @@
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -1195,11 +1025,8 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "STRONG",
-          "evidence": [
-            "市場急跌",
-            "月營收加速"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -1209,13 +1036,11 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "WATCH_POTENTIAL_DISLOCATION",
-      "confidence": "MEDIUM",
-      "rationale": "價格隨市場下跌但月營收加速，可列錯殺候選；尚未形成買進指令",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
+      "confidence": "LOW",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "WATCH_POTENTIAL_DISLOCATION",
       "judgement_changed": true,
       "evidence_urls": []
     },
@@ -1228,10 +1053,8 @@
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -1244,10 +1067,7 @@
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
           "support": "WEAK",
-          "evidence": [
-            "市場急跌",
-            "月營收加速"
-          ]
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -1258,7 +1078,6 @@
         }
       ],
       "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化",
         "官方負面與正向催化並存，須等待後續營收或財報確認"
       ],
       "conclusion": "HOLD_PENDING_CONFIRMATION",
@@ -1280,10 +1099,8 @@
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -1292,10 +1109,8 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "MEDIUM",
-          "evidence": [
-            "市場急跌但基本面尚未確認"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -1305,13 +1120,11 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
-      "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
       "judgement_changed": true,
       "evidence_urls": [
         "https://www.moneydj.com/KMDJ/news/newsviewer.aspx?a=24de7354-e77c-445f-a299-0e12c3a0792f"
@@ -1326,10 +1139,8 @@
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -1338,10 +1149,8 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "MEDIUM",
-          "evidence": [
-            "市場急跌但基本面尚未確認"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -1351,13 +1160,11 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
-      "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
       "judgement_changed": true,
       "evidence_urls": []
     },
@@ -1370,10 +1177,8 @@
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -1385,9 +1190,7 @@
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
           "support": "WEAK",
-          "evidence": [
-            "市場急跌但基本面尚未確認"
-          ]
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -1397,9 +1200,7 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
+      "contradictions": [],
       "conclusion": "HOLD_PENDING_CONFIRMATION",
       "confidence": "MEDIUM",
       "rationale": "已有官方負面，但缺第二項獨立確認，不因單一證據賣出",
@@ -1418,10 +1219,8 @@
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -1430,10 +1229,8 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "MEDIUM",
-          "evidence": [
-            "市場急跌但基本面尚未確認"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -1443,13 +1240,11 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
-      "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
       "judgement_changed": true,
       "evidence_urls": [
         "https://www.liteon.com/zh-cn/news/press-center/content/liteon-ocp-2026"
@@ -1464,10 +1259,8 @@
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -1476,10 +1269,8 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "MEDIUM",
-          "evidence": [
-            "市場急跌但基本面尚未確認"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -1489,13 +1280,11 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
-      "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
       "judgement_changed": true,
       "evidence_urls": []
     },
@@ -1508,10 +1297,8 @@
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -1524,9 +1311,7 @@
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
           "support": "WEAK",
-          "evidence": [
-            "市場急跌但基本面尚未確認"
-          ]
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -1536,9 +1321,7 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
+      "contradictions": [],
       "conclusion": "HOLD_PENDING_CONFIRMATION",
       "confidence": "MEDIUM",
       "rationale": "已有官方負面，但缺第二項獨立確認，不因單一證據賣出",
@@ -1558,10 +1341,8 @@
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -1570,10 +1351,8 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "MEDIUM",
-          "evidence": [
-            "市場急跌但基本面尚未確認"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -1583,13 +1362,11 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
-      "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
       "judgement_changed": true,
       "evidence_urls": []
     },
@@ -1602,10 +1379,8 @@
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -1614,11 +1389,8 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "STRONG",
-          "evidence": [
-            "市場急跌",
-            "月營收加速"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -1628,13 +1400,11 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "WATCH_POTENTIAL_DISLOCATION",
-      "confidence": "MEDIUM",
-      "rationale": "價格隨市場下跌但月營收加速，可列錯殺候選；尚未形成買進指令",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
+      "confidence": "LOW",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "WATCH_POTENTIAL_DISLOCATION",
       "judgement_changed": true,
       "evidence_urls": []
     },
@@ -1647,10 +1417,8 @@
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -1659,10 +1427,8 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "MEDIUM",
-          "evidence": [
-            "市場急跌但基本面尚未確認"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -1672,13 +1438,11 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
-      "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
       "judgement_changed": true,
       "evidence_urls": []
     },
@@ -1691,10 +1455,8 @@
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -1703,10 +1465,8 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "MEDIUM",
-          "evidence": [
-            "市場急跌但基本面尚未確認"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -1716,13 +1476,11 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
-      "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
       "judgement_changed": true,
       "evidence_urls": [
         "https://wealth.firstbank.com.tw/investment-tips/trend-insight/news/news-detail?id=%7B85C157DD-773A-4B2C-AD9F-30D1B09514E6%7D",
@@ -1738,10 +1496,8 @@
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -1750,10 +1506,8 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "MEDIUM",
-          "evidence": [
-            "市場急跌但基本面尚未確認"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -1763,13 +1517,11 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
-      "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
       "judgement_changed": true,
       "evidence_urls": [
         "https://wealth.firstbank.com.tw/investment-tips/trend-insight/news/news-detail?id=%7B85C157DD-773A-4B2C-AD9F-30D1B09514E6%7D",
@@ -1785,10 +1537,8 @@
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -1797,10 +1547,8 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "MEDIUM",
-          "evidence": [
-            "市場急跌但基本面尚未確認"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -1810,13 +1558,11 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
-      "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
       "judgement_changed": true,
       "evidence_urls": [
         "https://www.esunsec.com.tw/article/post?postid=7d7f19bcff2d4ee1bbb4ab9f092a761c"
@@ -1831,10 +1577,8 @@
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -1846,9 +1590,7 @@
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
           "support": "WEAK",
-          "evidence": [
-            "市場急跌但基本面尚未確認"
-          ]
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -1859,7 +1601,6 @@
         }
       ],
       "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化",
         "官方負面與正向催化並存，須等待後續營收或財報確認"
       ],
       "conclusion": "HOLD_PENDING_CONFIRMATION",
@@ -1882,10 +1623,8 @@
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -1897,9 +1636,7 @@
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
           "support": "WEAK",
-          "evidence": [
-            "市場急跌但基本面尚未確認"
-          ]
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -1910,7 +1647,6 @@
         }
       ],
       "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化",
         "官方負面與正向催化並存，須等待後續營收或財報確認"
       ],
       "conclusion": "HOLD_PENDING_CONFIRMATION",
@@ -1932,10 +1668,8 @@
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -1944,10 +1678,8 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "MEDIUM",
-          "evidence": [
-            "市場急跌但基本面尚未確認"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -1957,13 +1689,11 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
-      "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
       "judgement_changed": true,
       "evidence_urls": []
     },
@@ -1976,10 +1706,8 @@
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -1988,10 +1716,8 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "MEDIUM",
-          "evidence": [
-            "市場急跌但基本面尚未確認"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -2001,13 +1727,11 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
-      "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
       "judgement_changed": true,
       "evidence_urls": []
     },
@@ -2020,10 +1744,8 @@
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -2035,9 +1757,7 @@
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
           "support": "WEAK",
-          "evidence": [
-            "市場急跌但基本面尚未確認"
-          ]
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -2047,9 +1767,7 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
+      "contradictions": [],
       "conclusion": "HOLD_PENDING_CONFIRMATION",
       "confidence": "MEDIUM",
       "rationale": "已有官方負面，但缺第二項獨立確認，不因單一證據賣出",
@@ -2068,10 +1786,8 @@
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -2080,10 +1796,8 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "MEDIUM",
-          "evidence": [
-            "市場急跌但基本面尚未確認"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -2093,13 +1807,11 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
-      "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
       "judgement_changed": true,
       "evidence_urls": []
     },
@@ -2112,10 +1824,8 @@
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -2127,9 +1837,7 @@
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
           "support": "WEAK",
-          "evidence": [
-            "市場急跌但基本面尚未確認"
-          ]
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -2139,9 +1847,7 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
+      "contradictions": [],
       "conclusion": "HOLD_PENDING_CONFIRMATION",
       "confidence": "MEDIUM",
       "rationale": "已有官方負面，但缺第二項獨立確認，不因單一證據賣出",
@@ -2160,10 +1866,8 @@
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -2172,10 +1876,8 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "MEDIUM",
-          "evidence": [
-            "市場急跌但基本面尚未確認"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -2185,13 +1887,11 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
-      "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
       "judgement_changed": true,
       "evidence_urls": []
     },
@@ -2204,10 +1904,8 @@
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -2216,10 +1914,8 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "MEDIUM",
-          "evidence": [
-            "市場急跌但基本面尚未確認"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -2229,13 +1925,11 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
-      "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
       "judgement_changed": true,
       "evidence_urls": []
     },
@@ -2248,10 +1942,8 @@
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -2260,10 +1952,8 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "MEDIUM",
-          "evidence": [
-            "市場急跌但基本面尚未確認"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -2273,13 +1963,11 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
-      "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
       "judgement_changed": true,
       "evidence_urls": []
     },
@@ -2292,10 +1980,8 @@
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -2304,10 +1990,8 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "MEDIUM",
-          "evidence": [
-            "市場急跌但基本面尚未確認"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -2317,13 +2001,11 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
-      "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
       "judgement_changed": true,
       "evidence_urls": []
     },
@@ -2336,10 +2018,8 @@
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -2348,10 +2028,8 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "MEDIUM",
-          "evidence": [
-            "市場急跌但基本面尚未確認"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -2361,13 +2039,11 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
-      "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
       "judgement_changed": true,
       "evidence_urls": []
     },
@@ -2380,10 +2056,8 @@
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -2392,10 +2066,8 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "MEDIUM",
-          "evidence": [
-            "市場急跌但基本面尚未確認"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -2405,13 +2077,11 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
-      "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
       "judgement_changed": true,
       "evidence_urls": []
     },
@@ -2424,10 +2094,8 @@
       "hypotheses": [
         {
           "id": "SYSTEMIC_SELLING",
-          "support": "STRONG",
-          "evidence": [
-            "候選池與加權指數同步急跌"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "COMPANY_THESIS_DAMAGE",
@@ -2436,10 +2104,8 @@
         },
         {
           "id": "PRICE_FUNDAMENTAL_DISLOCATION",
-          "support": "MEDIUM",
-          "evidence": [
-            "市場急跌但基本面尚未確認"
-          ]
+          "support": "WEAK",
+          "evidence": []
         },
         {
           "id": "POSITIVE_CATALYST_CONFIRMED",
@@ -2449,20 +2115,17 @@
           ]
         }
       ],
-      "contradictions": [
-        "全市場急跌使個股價格訊號無法單獨證明公司惡化"
-      ],
-      "conclusion": "HOLD_NO_COMPANY_CONCLUSION",
+      "contradictions": [],
+      "conclusion": "KEEP_EXISTING_PLAN",
       "confidence": "LOW",
-      "rationale": "較像系統性賣壓，且基本面未形成正向或負向確認",
-      "previous_conclusion": "KEEP_EXISTING_PLAN",
+      "rationale": "沒有足夠新證據推翻原計畫",
+      "previous_conclusion": "HOLD_NO_COMPANY_CONCLUSION",
       "judgement_changed": true,
       "evidence_urls": []
     }
   ],
   "conclusion_counts": {
-    "WATCH_POTENTIAL_DISLOCATION": 10,
-    "HOLD_NO_COMPANY_CONCLUSION": 37,
+    "KEEP_EXISTING_PLAN": 47,
     "HOLD_PENDING_CONFIRMATION": 7
   },
   "reasoning_contract": [
