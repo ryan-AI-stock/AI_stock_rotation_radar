@@ -1,7 +1,7 @@
 {
   "model": "R1",
   "version": "r1-v0.4-active-pool-research-v0.1",
-  "date": "2026-11-20",
+  "date": "2026-11-27",
   "structural_universe_count": 52,
   "weekly_snapshot_coverage": {
     "actual": 52,
@@ -19,7 +19,7 @@
   "quality_gate_rejected_count": 0,
   "rows": [
     {
-      "date": "2026-11-20",
+      "date": "2026-11-27",
       "ticker": "1560",
       "company": "中砂",
       "themes": [
@@ -39,19 +39,19 @@
       "official_financial_status": "READY",
       "catch_up_details": {
         "1w": {
-          "price_change": -0.2796143250688705,
-          "eps_revision": 0.025993096477678,
-          "price_eps_gap": 0.3056074215465485,
-          "state": "POSITIVE_DIVERGENCE"
+          "price_change": 0.25239005736137665,
+          "eps_revision": 0.0,
+          "price_eps_gap": -0.25239005736137665,
+          "state": "PRICE_LEADS_EARNINGS"
         },
         "4w": {
-          "price_change": -0.4036488027366021,
+          "price_change": -0.24452133794694353,
           "eps_revision": 0.025993096477678,
-          "price_eps_gap": 0.4296418992142801,
+          "price_eps_gap": 0.27051443442462153,
           "state": "POSITIVE_DIVERGENCE"
         },
         "12w": {
-          "price_change": -0.22974963181148744,
+          "price_change": -0.05755395683453235,
           "eps_revision": null,
           "price_eps_gap": null,
           "state": "DATA_MISSING"
@@ -65,7 +65,7 @@
       ]
     },
     {
-      "date": "2026-11-20",
+      "date": "2026-11-27",
       "ticker": "2301",
       "company": "光寶科",
       "themes": [
@@ -85,19 +85,19 @@
       "official_financial_status": "READY",
       "catch_up_details": {
         "1w": {
-          "price_change": -0.24190064794816413,
-          "eps_revision": 0.019827866513600245,
-          "price_eps_gap": 0.26172851446176437,
-          "state": "POSITIVE_DIVERGENCE"
+          "price_change": 0.11396011396011385,
+          "eps_revision": 0.0,
+          "price_eps_gap": -0.11396011396011385,
+          "state": "PRICE_LEADS_EARNINGS"
         },
         "4w": {
-          "price_change": -0.33396584440227706,
+          "price_change": -0.18711018711018712,
           "eps_revision": 0.019827866513600245,
-          "price_eps_gap": 0.3537937109158773,
+          "price_eps_gap": 0.20693805362378737,
           "state": "POSITIVE_DIVERGENCE"
         },
         "12w": {
-          "price_change": -0.3275862068965517,
+          "price_change": -0.38425196850393706,
           "eps_revision": null,
           "price_eps_gap": null,
           "state": "DATA_MISSING"
@@ -111,7 +111,7 @@
       ]
     },
     {
-      "date": "2026-11-20",
+      "date": "2026-11-27",
       "ticker": "2303",
       "company": "聯電",
       "themes": [
@@ -124,26 +124,26 @@
       "monthly_revenue_acceleration": "NOT_ACCELERATING",
       "six_month_earnings_visibility": "DATA_MISSING",
       "bottleneck_scarcity": "HIGH",
-      "price_catch_up": "EARNINGS_LEADS_PRICE",
+      "price_catch_up": "POSITIVE_DIVERGENCE",
       "six_month_risk_gate": "DATA_MISSING",
       "data_confidence": "LOW_CONFIDENCE",
       "weekly_snapshot_status": "READY",
       "official_financial_status": "READY",
       "catch_up_details": {
         "1w": {
-          "price_change": -0.20886699507389161,
-          "eps_revision": -0.00207315287934029,
-          "price_eps_gap": 0.20679384219455132,
-          "state": "EARNINGS_LEADS_PRICE"
+          "price_change": 0.08966376089663775,
+          "eps_revision": 0.0200998074822083,
+          "price_eps_gap": -0.06956395341442945,
+          "state": "PRICE_LEADS_EARNINGS"
         },
         "4w": {
-          "price_change": -0.37265625,
-          "eps_revision": -0.029182388572265627,
-          "price_eps_gap": 0.3434738614277344,
-          "state": "EARNINGS_LEADS_PRICE"
+          "price_change": -0.2152466367713004,
+          "eps_revision": 0.017984984629112022,
+          "price_eps_gap": 0.23323162140041243,
+          "state": "POSITIVE_DIVERGENCE"
         },
         "12w": {
-          "price_change": -0.3107296137339056,
+          "price_change": -0.32692307692307687,
           "eps_revision": null,
           "price_eps_gap": null,
           "state": "DATA_MISSING"
@@ -157,7 +157,7 @@
       ]
     },
     {
-      "date": "2026-11-20",
+      "date": "2026-11-27",
       "ticker": "2308",
       "company": "台達電",
       "themes": [
@@ -177,19 +177,19 @@
       "official_financial_status": "READY",
       "catch_up_details": {
         "1w": {
-          "price_change": -0.27419354838709675,
-          "eps_revision": -0.014789785857177495,
-          "price_eps_gap": 0.25940376252991926,
-          "state": "EARNINGS_LEADS_PRICE"
+          "price_change": 0.25,
+          "eps_revision": 1.3250778774231975e-06,
+          "price_eps_gap": -0.24999867492212258,
+          "state": "PRICE_LEADS_EARNINGS"
         },
         "4w": {
-          "price_change": -0.4461538461538461,
-          "eps_revision": -0.05631020097589212,
-          "price_eps_gap": 0.389843645177954,
+          "price_change": -0.1573033707865169,
+          "eps_revision": -0.014788480376918156,
+          "price_eps_gap": 0.14251489040959875,
           "state": "EARNINGS_LEADS_PRICE"
         },
         "12w": {
-          "price_change": -0.48571428571428577,
+          "price_change": -0.38524590163934425,
           "eps_revision": null,
           "price_eps_gap": null,
           "state": "DATA_MISSING"
@@ -203,7 +203,7 @@
       ]
     },
     {
-      "date": "2026-11-20",
+      "date": "2026-11-27",
       "ticker": "2317",
       "company": "鴻海",
       "themes": [
@@ -223,19 +223,19 @@
       "official_financial_status": "READY",
       "catch_up_details": {
         "1w": {
-          "price_change": -0.12863070539419086,
-          "eps_revision": 0.05338959117485387,
-          "price_eps_gap": 0.18202029656904473,
-          "state": "POSITIVE_DIVERGENCE"
+          "price_change": 0.04285714285714293,
+          "eps_revision": 0.00010797899049097559,
+          "price_eps_gap": -0.04274916386665195,
+          "state": "PRICE_LEADS_EARNINGS"
         },
         "4w": {
-          "price_change": -0.16000000000000003,
-          "eps_revision": 0.05319782827531583,
-          "price_eps_gap": 0.21319782827531586,
+          "price_change": -0.10794297352342164,
+          "eps_revision": 0.05350333511950245,
+          "price_eps_gap": 0.16144630864292409,
           "state": "POSITIVE_DIVERGENCE"
         },
         "12w": {
-          "price_change": -0.14460285132382888,
+          "price_change": -0.13438735177865613,
           "eps_revision": null,
           "price_eps_gap": null,
           "state": "DATA_MISSING"
@@ -249,7 +249,7 @@
       ]
     },
     {
-      "date": "2026-11-20",
+      "date": "2026-11-27",
       "ticker": "2327",
       "company": "國巨",
       "themes": [
@@ -269,19 +269,19 @@
       "official_financial_status": "READY",
       "catch_up_details": {
         "1w": {
-          "price_change": -0.2798053527980535,
-          "eps_revision": 0.006498197880222989,
-          "price_eps_gap": 0.2863035506782765,
-          "state": "POSITIVE_DIVERGENCE"
+          "price_change": 0.16216216216216206,
+          "eps_revision": 0.010952257153941547,
+          "price_eps_gap": -0.1512099050082205,
+          "state": "PRICE_LEADS_EARNINGS"
         },
         "4w": {
-          "price_change": -0.4538745387453874,
-          "eps_revision": 0.01997226654906714,
-          "price_eps_gap": 0.47384680529445455,
+          "price_change": -0.31474103585657376,
+          "eps_revision": 0.01752162496838605,
+          "price_eps_gap": 0.3322626608249598,
           "state": "POSITIVE_DIVERGENCE"
         },
         "12w": {
-          "price_change": -0.46570397111913353,
+          "price_change": -0.423785594639866,
           "eps_revision": null,
           "price_eps_gap": null,
           "state": "DATA_MISSING"
@@ -295,7 +295,7 @@
       ]
     },
     {
-      "date": "2026-11-20",
+      "date": "2026-11-27",
       "ticker": "2330",
       "company": "台積電",
       "themes": [
@@ -315,19 +315,19 @@
       "official_financial_status": "READY",
       "catch_up_details": {
         "1w": {
-          "price_change": -0.14893617021276595,
-          "eps_revision": 0.0028695832819674028,
-          "price_eps_gap": 0.15180575349473335,
-          "state": "POSITIVE_DIVERGENCE"
+          "price_change": 0.09000000000000008,
+          "eps_revision": 0.0023394578078093087,
+          "price_eps_gap": -0.08766054219219077,
+          "state": "PRICE_LEADS_EARNINGS"
         },
         "4w": {
-          "price_change": -0.17355371900826444,
-          "eps_revision": 0.006033455446904812,
-          "price_eps_gap": 0.17958717445516925,
+          "price_change": -0.08016877637130804,
+          "eps_revision": 0.005215754358790958,
+          "price_eps_gap": 0.085384530730099,
           "state": "POSITIVE_DIVERGENCE"
         },
         "12w": {
-          "price_change": -0.17012448132780078,
+          "price_change": -0.09917355371900827,
           "eps_revision": null,
           "price_eps_gap": null,
           "state": "DATA_MISSING"
@@ -341,7 +341,7 @@
       ]
     },
     {
-      "date": "2026-11-20",
+      "date": "2026-11-27",
       "ticker": "2337",
       "company": "旺宏",
       "themes": [
@@ -355,25 +355,25 @@
       "six_month_earnings_visibility": "DATA_MISSING",
       "bottleneck_scarcity": "HIGH",
       "price_catch_up": "EARNINGS_LEADS_PRICE",
-      "six_month_risk_gate": "FAIL",
+      "six_month_risk_gate": "DATA_MISSING",
       "data_confidence": "LOW_CONFIDENCE",
       "weekly_snapshot_status": "READY",
       "official_financial_status": "READY",
       "catch_up_details": {
         "1w": {
-          "price_change": -0.26005025125628134,
-          "eps_revision": -0.04400616838114613,
-          "price_eps_gap": 0.2160440828751352,
-          "state": "EARNINGS_LEADS_PRICE"
+          "price_change": 0.11035653650254673,
+          "eps_revision": 0.0,
+          "price_eps_gap": -0.11035653650254673,
+          "state": "PRICE_LEADS_EARNINGS"
         },
         "4w": {
-          "price_change": -0.4281553398058252,
-          "eps_revision": -0.11687625231201104,
-          "price_eps_gap": 0.31127908749381417,
+          "price_change": -0.3144654088050314,
+          "eps_revision": -0.04400616838114613,
+          "price_eps_gap": 0.27045924042388525,
           "state": "EARNINGS_LEADS_PRICE"
         },
         "12w": {
-          "price_change": -0.5191836734693878,
+          "price_change": -0.48300395256916995,
           "eps_revision": null,
           "price_eps_gap": null,
           "state": "DATA_MISSING"
@@ -383,11 +383,11 @@
         "EPS_REVISION_4W_12W_NOT_MATURE",
         "NO_VERIFIED_EVENT_IN_WINDOW",
         "EVIDENCE_FAMILIES_2",
-        "EPS_4W_MAJOR_DOWNREVISION"
+        "EARNINGS_VISIBILITY_NOT_READY"
       ]
     },
     {
-      "date": "2026-11-20",
+      "date": "2026-11-27",
       "ticker": "2344",
       "company": "華邦電",
       "themes": [
@@ -407,19 +407,19 @@
       "official_financial_status": "READY",
       "catch_up_details": {
         "1w": {
-          "price_change": -0.2864,
-          "eps_revision": -0.044268788092328815,
-          "price_eps_gap": 0.24213121190767117,
-          "state": "EARNINGS_LEADS_PRICE"
+          "price_change": 0.1659192825112108,
+          "eps_revision": 0.0,
+          "price_eps_gap": -0.1659192825112108,
+          "state": "PRICE_LEADS_EARNINGS"
         },
         "4w": {
-          "price_change": -0.4407523510971787,
+          "price_change": -0.3677811550151976,
           "eps_revision": -0.044268788092328815,
-          "price_eps_gap": 0.3964835630048499,
+          "price_eps_gap": 0.3235123669228688,
           "state": "EARNINGS_LEADS_PRICE"
         },
         "12w": {
-          "price_change": -0.507182320441989,
+          "price_change": -0.42699724517906334,
           "eps_revision": null,
           "price_eps_gap": null,
           "state": "DATA_MISSING"
@@ -433,7 +433,7 @@
       ]
     },
     {
-      "date": "2026-11-20",
+      "date": "2026-11-27",
       "ticker": "2345",
       "company": "智邦",
       "themes": [
@@ -453,19 +453,19 @@
       "official_financial_status": "READY",
       "catch_up_details": {
         "1w": {
-          "price_change": -0.1907894736842105,
-          "eps_revision": 0.021375122102453403,
-          "price_eps_gap": 0.2121645957866639,
-          "state": "POSITIVE_DIVERGENCE"
+          "price_change": 0.2642276422764227,
+          "eps_revision": 0.0,
+          "price_eps_gap": -0.2642276422764227,
+          "state": "PRICE_LEADS_EARNINGS"
         },
         "4w": {
-          "price_change": -0.3223140495867769,
-          "eps_revision": 0.021411722342759676,
-          "price_eps_gap": 0.34372577192953657,
+          "price_change": -0.037151702786377694,
+          "eps_revision": 0.021375122102453403,
+          "price_eps_gap": 0.0585268248888311,
           "state": "POSITIVE_DIVERGENCE"
         },
         "12w": {
-          "price_change": -0.3955773955773956,
+          "price_change": -0.268235294117647,
           "eps_revision": null,
           "price_eps_gap": null,
           "state": "DATA_MISSING"
@@ -479,7 +479,7 @@
       ]
     },
     {
-      "date": "2026-11-20",
+      "date": "2026-11-27",
       "ticker": "2356",
       "company": "英業達",
       "themes": [
@@ -499,19 +499,19 @@
       "official_financial_status": "READY",
       "catch_up_details": {
         "1w": {
-          "price_change": -0.14766558089033643,
-          "eps_revision": -0.0671267066642095,
-          "price_eps_gap": 0.08053887422612693,
-          "state": "EARNINGS_LEADS_PRICE"
+          "price_change": 0.06751592356687897,
+          "eps_revision": 0.0,
+          "price_eps_gap": -0.06751592356687897,
+          "state": "PRICE_LEADS_EARNINGS"
         },
         "4w": {
-          "price_change": -0.3597063621533442,
-          "eps_revision": -0.060446560739868316,
-          "price_eps_gap": 0.29925980141347586,
+          "price_change": -0.29579831932773104,
+          "eps_revision": -0.0671267066642095,
+          "price_eps_gap": 0.22867161266352154,
           "state": "EARNINGS_LEADS_PRICE"
         },
         "12w": {
-          "price_change": -0.4025875190258752,
+          "price_change": -0.3543913713405239,
           "eps_revision": null,
           "price_eps_gap": null,
           "state": "DATA_MISSING"
@@ -525,7 +525,7 @@
       ]
     },
     {
-      "date": "2026-11-20",
+      "date": "2026-11-27",
       "ticker": "2368",
       "company": "金像電",
       "themes": [
@@ -545,19 +545,19 @@
       "official_financial_status": "READY",
       "catch_up_details": {
         "1w": {
-          "price_change": -0.3097087378640777,
-          "eps_revision": 0.02864499209121618,
-          "price_eps_gap": 0.3383537299552939,
-          "state": "POSITIVE_DIVERGENCE"
+          "price_change": 0.3066104078762306,
+          "eps_revision": 0.0,
+          "price_eps_gap": -0.3066104078762306,
+          "state": "PRICE_LEADS_EARNINGS"
         },
         "4w": {
-          "price_change": -0.40502092050209204,
+          "price_change": -0.08921568627450982,
           "eps_revision": 0.02864499209121618,
-          "price_eps_gap": 0.4336659125933082,
+          "price_eps_gap": 0.117860678365726,
           "state": "POSITIVE_DIVERGENCE"
         },
         "12w": {
-          "price_change": -0.2632124352331606,
+          "price_change": -0.1778761061946903,
           "eps_revision": null,
           "price_eps_gap": null,
           "state": "DATA_MISSING"
@@ -571,7 +571,7 @@
       ]
     },
     {
-      "date": "2026-11-20",
+      "date": "2026-11-27",
       "ticker": "2376",
       "company": "技嘉",
       "themes": [
@@ -591,19 +591,19 @@
       "official_financial_status": "READY",
       "catch_up_details": {
         "1w": {
-          "price_change": -0.12676056338028174,
-          "eps_revision": 0.058953876735091226,
-          "price_eps_gap": 0.18571444011537297,
-          "state": "POSITIVE_DIVERGENCE"
+          "price_change": 0.10282258064516125,
+          "eps_revision": 0.0,
+          "price_eps_gap": -0.10282258064516125,
+          "state": "PRICE_LEADS_EARNINGS"
         },
         "4w": {
-          "price_change": -0.30822873082287305,
-          "eps_revision": 0.05929422881505286,
-          "price_eps_gap": 0.3675229596379259,
+          "price_change": -0.18601190476190477,
+          "eps_revision": 0.058953876735091226,
+          "price_eps_gap": 0.244965781496996,
           "state": "POSITIVE_DIVERGENCE"
         },
         "12w": {
-          "price_change": -0.26951399116347574,
+          "price_change": -0.2163323782234957,
           "eps_revision": null,
           "price_eps_gap": null,
           "state": "DATA_MISSING"
@@ -617,7 +617,7 @@
       ]
     },
     {
-      "date": "2026-11-20",
+      "date": "2026-11-27",
       "ticker": "2379",
       "company": "瑞昱",
       "themes": [
@@ -637,19 +637,19 @@
       "official_financial_status": "READY",
       "catch_up_details": {
         "1w": {
-          "price_change": -0.1187335092348285,
-          "eps_revision": 0.017643691113782056,
-          "price_eps_gap": 0.13637720034861056,
-          "state": "POSITIVE_DIVERGENCE"
+          "price_change": 0.13023952095808378,
+          "eps_revision": 0.0,
+          "price_eps_gap": -0.13023952095808378,
+          "state": "PRICE_LEADS_EARNINGS"
         },
         "4w": {
-          "price_change": -0.15656565656565657,
-          "eps_revision": 0.043657401214655556,
-          "price_eps_gap": 0.20022305778031213,
+          "price_change": -0.05977584059775842,
+          "eps_revision": 0.017643691113782056,
+          "price_eps_gap": 0.07741953171154048,
           "state": "POSITIVE_DIVERGENCE"
         },
         "12w": {
-          "price_change": -0.06442577030812324,
+          "price_change": 0.04570637119113563,
           "eps_revision": null,
           "price_eps_gap": null,
           "state": "DATA_MISSING"
@@ -663,7 +663,7 @@
       ]
     },
     {
-      "date": "2026-11-20",
+      "date": "2026-11-27",
       "ticker": "2382",
       "company": "廣達",
       "themes": [
@@ -683,19 +683,19 @@
       "official_financial_status": "READY",
       "catch_up_details": {
         "1w": {
-          "price_change": -0.08860759493670889,
-          "eps_revision": -0.01480380000559367,
-          "price_eps_gap": 0.07380379493111522,
-          "state": "EARNINGS_LEADS_PRICE"
+          "price_change": 0.10317460317460325,
+          "eps_revision": 0.0,
+          "price_eps_gap": -0.10317460317460325,
+          "state": "PRICE_LEADS_EARNINGS"
         },
         "4w": {
-          "price_change": -0.23287671232876717,
-          "eps_revision": -0.008848680467060777,
-          "price_eps_gap": 0.2240280318617064,
+          "price_change": -0.12578616352201255,
+          "eps_revision": -0.01480380000559367,
+          "price_eps_gap": 0.11098236351641888,
           "state": "EARNINGS_LEADS_PRICE"
         },
         "12w": {
-          "price_change": -0.21617418351477447,
+          "price_change": -0.16390977443609023,
           "eps_revision": null,
           "price_eps_gap": null,
           "state": "DATA_MISSING"
@@ -709,7 +709,7 @@
       ]
     },
     {
-      "date": "2026-11-20",
+      "date": "2026-11-27",
       "ticker": "2383",
       "company": "台光電",
       "themes": [
@@ -729,19 +729,19 @@
       "official_financial_status": "READY",
       "catch_up_details": {
         "1w": {
-          "price_change": -0.33333333333333337,
-          "eps_revision": 0.029229187788348376,
-          "price_eps_gap": 0.36256252112168175,
-          "state": "POSITIVE_DIVERGENCE"
+          "price_change": 0.2829181494661921,
+          "eps_revision": -0.00018735119019630542,
+          "price_eps_gap": -0.2831055006563884,
+          "state": "NEGATIVE_DIVERGENCE"
         },
         "4w": {
-          "price_change": -0.43687374749499,
-          "eps_revision": 0.19296920971411913,
-          "price_eps_gap": 0.6298429572091091,
+          "price_change": -0.2288770053475936,
+          "eps_revision": 0.029036360475031442,
+          "price_eps_gap": 0.25791336582262503,
           "state": "POSITIVE_DIVERGENCE"
         },
         "12w": {
-          "price_change": -0.505281690140845,
+          "price_change": -0.34335154826958103,
           "eps_revision": null,
           "price_eps_gap": null,
           "state": "DATA_MISSING"
@@ -755,7 +755,7 @@
       ]
     },
     {
-      "date": "2026-11-20",
+      "date": "2026-11-27",
       "ticker": "2408",
       "company": "南亞科",
       "themes": [
@@ -768,26 +768,26 @@
       "monthly_revenue_acceleration": "NOT_ACCELERATING",
       "six_month_earnings_visibility": "DATA_MISSING",
       "bottleneck_scarcity": "HIGH",
-      "price_catch_up": "POSITIVE_DIVERGENCE",
+      "price_catch_up": "EARNINGS_LEADS_PRICE",
       "six_month_risk_gate": "DATA_MISSING",
       "data_confidence": "LOW_CONFIDENCE",
       "weekly_snapshot_status": "READY",
       "official_financial_status": "READY",
       "catch_up_details": {
         "1w": {
-          "price_change": -0.2984084880636605,
+          "price_change": 0.16446124763705106,
           "eps_revision": 0.0,
-          "price_eps_gap": 0.2984084880636605,
-          "state": "EARNINGS_LEADS_PRICE"
+          "price_eps_gap": -0.16446124763705106,
+          "state": "PRICE_LEADS_EARNINGS"
         },
         "4w": {
-          "price_change": -0.39404352806414666,
-          "eps_revision": 0.0590846215407943,
-          "price_eps_gap": 0.45312814960494097,
-          "state": "POSITIVE_DIVERGENCE"
+          "price_change": -0.3223322332233224,
+          "eps_revision": 0.0,
+          "price_eps_gap": 0.3223322332233224,
+          "state": "EARNINGS_LEADS_PRICE"
         },
         "12w": {
-          "price_change": -0.4990530303030303,
+          "price_change": -0.4296296296296296,
           "eps_revision": null,
           "price_eps_gap": null,
           "state": "DATA_MISSING"
@@ -801,7 +801,7 @@
       ]
     },
     {
-      "date": "2026-11-20",
+      "date": "2026-11-27",
       "ticker": "2449",
       "company": "京元電子",
       "themes": [
@@ -821,19 +821,19 @@
       "official_financial_status": "READY",
       "catch_up_details": {
         "1w": {
-          "price_change": -0.2622950819672131,
-          "eps_revision": -0.06312755516953317,
-          "price_eps_gap": 0.1991675267976799,
-          "state": "EARNINGS_LEADS_PRICE"
+          "price_change": 0.16825396825396832,
+          "eps_revision": 0.0,
+          "price_eps_gap": -0.16825396825396832,
+          "state": "PRICE_LEADS_EARNINGS"
         },
         "4w": {
-          "price_change": -0.4334532374100719,
-          "eps_revision": -0.06399295300274621,
-          "price_eps_gap": 0.3694602844073257,
+          "price_change": -0.2741617357001972,
+          "eps_revision": -0.06312755516953317,
+          "price_eps_gap": 0.21103418053066403,
           "state": "EARNINGS_LEADS_PRICE"
         },
         "12w": {
-          "price_change": -0.3211206896551724,
+          "price_change": -0.31851851851851853,
           "eps_revision": null,
           "price_eps_gap": null,
           "state": "DATA_MISSING"
@@ -847,7 +847,7 @@
       ]
     },
     {
-      "date": "2026-11-20",
+      "date": "2026-11-27",
       "ticker": "2454",
       "company": "聯發科",
       "themes": [
@@ -867,19 +867,19 @@
       "official_financial_status": "READY",
       "catch_up_details": {
         "1w": {
-          "price_change": -0.18689320388349517,
-          "eps_revision": 0.04695467905706807,
-          "price_eps_gap": 0.23384788294056325,
-          "state": "POSITIVE_DIVERGENCE"
+          "price_change": 0.09850746268656718,
+          "eps_revision": 0.0,
+          "price_eps_gap": -0.09850746268656718,
+          "state": "PRICE_LEADS_EARNINGS"
         },
         "4w": {
-          "price_change": -0.1908212560386473,
-          "eps_revision": 0.04911135769257036,
-          "price_eps_gap": 0.23993261373121766,
+          "price_change": -0.0600255427841635,
+          "eps_revision": 0.04695467905706807,
+          "price_eps_gap": 0.10698022184123157,
           "state": "POSITIVE_DIVERGENCE"
         },
         "12w": {
-          "price_change": -0.11609498680738783,
+          "price_change": -0.07653701380175659,
           "eps_revision": null,
           "price_eps_gap": null,
           "state": "DATA_MISSING"
@@ -893,7 +893,7 @@
       ]
     },
     {
-      "date": "2026-11-20",
+      "date": "2026-11-27",
       "ticker": "2492",
       "company": "華新科",
       "themes": [
@@ -913,19 +913,19 @@
       "official_financial_status": "READY",
       "catch_up_details": {
         "1w": {
-          "price_change": -0.3444055944055944,
+          "price_change": 0.1120000000000001,
           "eps_revision": null,
           "price_eps_gap": null,
           "state": "DATA_MISSING"
         },
         "4w": {
-          "price_change": -0.5376078914919852,
+          "price_change": -0.452755905511811,
           "eps_revision": null,
           "price_eps_gap": null,
           "state": "DATA_MISSING"
         },
         "12w": {
-          "price_change": -0.2951127819548872,
+          "price_change": -0.33492822966507174,
           "eps_revision": null,
           "price_eps_gap": null,
           "state": "DATA_MISSING"
@@ -939,7 +939,7 @@
       ]
     },
     {
-      "date": "2026-11-20",
+      "date": "2026-11-27",
       "ticker": "3017",
       "company": "奇鋐",
       "themes": [
@@ -959,19 +959,19 @@
       "official_financial_status": "READY",
       "catch_up_details": {
         "1w": {
-          "price_change": -0.274671052631579,
-          "eps_revision": 0.019114970813798093,
-          "price_eps_gap": 0.2937860234453771,
-          "state": "POSITIVE_DIVERGENCE"
+          "price_change": 0.27210884353741505,
+          "eps_revision": -0.000754693916012461,
+          "price_eps_gap": -0.2728635374534275,
+          "state": "NEGATIVE_DIVERGENCE"
         },
         "4w": {
-          "price_change": -0.31839258114374036,
-          "eps_revision": 0.01755720678579853,
-          "price_eps_gap": 0.3359497879295389,
+          "price_change": -0.09369951534733445,
+          "eps_revision": 0.01834585094560781,
+          "price_eps_gap": 0.11204536629294226,
           "state": "POSITIVE_DIVERGENCE"
         },
         "12w": {
-          "price_change": -0.23036649214659688,
+          "price_change": -0.1651785714285714,
           "eps_revision": null,
           "price_eps_gap": null,
           "state": "DATA_MISSING"
@@ -985,7 +985,7 @@
       ]
     },
     {
-      "date": "2026-11-20",
+      "date": "2026-11-27",
       "ticker": "3035",
       "company": "智原",
       "themes": [
@@ -1005,19 +1005,19 @@
       "official_financial_status": "READY",
       "catch_up_details": {
         "1w": {
-          "price_change": -0.20408163265306123,
+          "price_change": 0.06730769230769229,
           "eps_revision": 0.0,
-          "price_eps_gap": 0.20408163265306123,
-          "state": "EARNINGS_LEADS_PRICE"
+          "price_eps_gap": -0.06730769230769229,
+          "state": "PRICE_LEADS_EARNINGS"
         },
         "4w": {
-          "price_change": -0.21212121212121215,
-          "eps_revision": -0.04144012657411611,
-          "price_eps_gap": 0.17068108554709605,
+          "price_change": -0.22014051522248246,
+          "eps_revision": 0.0,
+          "price_eps_gap": 0.22014051522248246,
           "state": "EARNINGS_LEADS_PRICE"
         },
         "12w": {
-          "price_change": -0.07964601769911506,
+          "price_change": -0.07756232686980613,
           "eps_revision": null,
           "price_eps_gap": null,
           "state": "DATA_MISSING"
@@ -1031,7 +1031,7 @@
       ]
     },
     {
-      "date": "2026-11-20",
+      "date": "2026-11-27",
       "ticker": "3037",
       "company": "欣興",
       "themes": [
@@ -1051,19 +1051,19 @@
       "official_financial_status": "READY",
       "catch_up_details": {
         "1w": {
-          "price_change": -0.31592356687898093,
-          "eps_revision": 0.031598102291059416,
-          "price_eps_gap": 0.34752166917004035,
-          "state": "POSITIVE_DIVERGENCE"
+          "price_change": 0.2029795158286778,
+          "eps_revision": 0.0,
+          "price_eps_gap": -0.2029795158286778,
+          "state": "PRICE_LEADS_EARNINGS"
         },
         "4w": {
-          "price_change": -0.5118181818181818,
-          "eps_revision": 0.11735422080225733,
-          "price_eps_gap": 0.6291724026204392,
+          "price_change": -0.3468149646107179,
+          "eps_revision": 0.031598102291059416,
+          "price_eps_gap": 0.37841306690177734,
           "state": "POSITIVE_DIVERGENCE"
         },
         "12w": {
-          "price_change": -0.5050691244239631,
+          "price_change": -0.41801801801801797,
           "eps_revision": null,
           "price_eps_gap": null,
           "state": "DATA_MISSING"
@@ -1077,7 +1077,7 @@
       ]
     },
     {
-      "date": "2026-11-20",
+      "date": "2026-11-27",
       "ticker": "3081",
       "company": "聯亞",
       "themes": [
@@ -1097,19 +1097,19 @@
       "official_financial_status": "READY",
       "catch_up_details": {
         "1w": {
-          "price_change": -0.3530805687203792,
-          "eps_revision": 0.009182000156648051,
-          "price_eps_gap": 0.36226256887702724,
-          "state": "POSITIVE_DIVERGENCE"
+          "price_change": 0.0219780219780219,
+          "eps_revision": 0.025813144760655993,
+          "price_eps_gap": 0.003835122782634093,
+          "state": "EARNINGS_LEADS_PRICE"
         },
         "4w": {
-          "price_change": -0.48,
-          "eps_revision": 0.033554738507340254,
-          "price_eps_gap": 0.5135547385073402,
+          "price_change": -0.4113924050632911,
+          "eps_revision": 0.03523216121654005,
+          "price_eps_gap": 0.44662456627983116,
           "state": "POSITIVE_DIVERGENCE"
         },
         "12w": {
-          "price_change": -0.5089928057553956,
+          "price_change": -0.586053412462908,
           "eps_revision": null,
           "price_eps_gap": null,
           "state": "DATA_MISSING"
@@ -1123,7 +1123,7 @@
       ]
     },
     {
-      "date": "2026-11-20",
+      "date": "2026-11-27",
       "ticker": "3131",
       "company": "弘塑",
       "themes": [
@@ -1136,26 +1136,26 @@
       "monthly_revenue_acceleration": "NOT_ACCELERATING",
       "six_month_earnings_visibility": "DATA_MISSING",
       "bottleneck_scarcity": "HIGH",
-      "price_catch_up": "POSITIVE_DIVERGENCE",
+      "price_catch_up": "EARNINGS_LEADS_PRICE",
       "six_month_risk_gate": "DATA_MISSING",
       "data_confidence": "LOW_CONFIDENCE",
       "weekly_snapshot_status": "READY",
       "official_financial_status": "READY",
       "catch_up_details": {
         "1w": {
-          "price_change": -0.24207492795389052,
-          "eps_revision": -0.0019925284130112297,
-          "price_eps_gap": 0.2400823995408793,
-          "state": "EARNINGS_LEADS_PRICE"
+          "price_change": 0.11026615969581743,
+          "eps_revision": -0.03901460345674357,
+          "price_eps_gap": -0.149280763152561,
+          "state": "NEGATIVE_DIVERGENCE"
         },
         "4w": {
-          "price_change": -0.3738095238095238,
-          "eps_revision": 0.0042780969476325925,
-          "price_eps_gap": 0.3780876207571564,
-          "state": "POSITIVE_DIVERGENCE"
+          "price_change": -0.22340425531914898,
+          "eps_revision": -0.04092939416384489,
+          "price_eps_gap": 0.1824748611553041,
+          "state": "EARNINGS_LEADS_PRICE"
         },
         "12w": {
-          "price_change": -0.4331896551724138,
+          "price_change": -0.4136546184738956,
           "eps_revision": null,
           "price_eps_gap": null,
           "state": "DATA_MISSING"
@@ -1169,7 +1169,7 @@
       ]
     },
     {
-      "date": "2026-11-20",
+      "date": "2026-11-27",
       "ticker": "3163",
       "company": "波若威",
       "themes": [
@@ -1190,19 +1190,19 @@
       "official_financial_status": "READY",
       "catch_up_details": {
         "1w": {
-          "price_change": -0.3241106719367589,
+          "price_change": 0.03947368421052633,
           "eps_revision": 0.0,
-          "price_eps_gap": 0.3241106719367589,
-          "state": "EARNINGS_LEADS_PRICE"
+          "price_eps_gap": -0.03947368421052633,
+          "state": "PRICE_LEADS_EARNINGS"
         },
         "4w": {
-          "price_change": -0.41337907375643224,
+          "price_change": -0.30157170923379173,
           "eps_revision": 0.0,
-          "price_eps_gap": 0.41337907375643224,
+          "price_eps_gap": 0.30157170923379173,
           "state": "EARNINGS_LEADS_PRICE"
         },
         "12w": {
-          "price_change": -0.5353260869565217,
+          "price_change": -0.5418814432989691,
           "eps_revision": null,
           "price_eps_gap": null,
           "state": "DATA_MISSING"
@@ -1216,7 +1216,7 @@
       ]
     },
     {
-      "date": "2026-11-20",
+      "date": "2026-11-27",
       "ticker": "3189",
       "company": "景碩",
       "themes": [
@@ -1236,19 +1236,19 @@
       "official_financial_status": "READY",
       "catch_up_details": {
         "1w": {
-          "price_change": -0.29640718562874246,
-          "eps_revision": 0.07979172984443972,
-          "price_eps_gap": 0.3761989154731822,
-          "state": "POSITIVE_DIVERGENCE"
+          "price_change": 0.123404255319149,
+          "eps_revision": 0.0,
+          "price_eps_gap": -0.123404255319149,
+          "state": "PRICE_LEADS_EARNINGS"
         },
         "4w": {
-          "price_change": -0.5346534653465347,
-          "eps_revision": 0.11338654854146935,
-          "price_eps_gap": 0.648040013888004,
+          "price_change": -0.4334763948497854,
+          "eps_revision": 0.07979172984443972,
+          "price_eps_gap": 0.5132681246942251,
           "state": "POSITIVE_DIVERGENCE"
         },
         "12w": {
-          "price_change": -0.4204685573366215,
+          "price_change": -0.41268075639599555,
           "eps_revision": null,
           "price_eps_gap": null,
           "state": "DATA_MISSING"
@@ -1262,7 +1262,7 @@
       ]
     },
     {
-      "date": "2026-11-20",
+      "date": "2026-11-27",
       "ticker": "3231",
       "company": "緯創",
       "themes": [
@@ -1282,19 +1282,19 @@
       "official_financial_status": "READY",
       "catch_up_details": {
         "1w": {
-          "price_change": -0.14035087719298245,
-          "eps_revision": 0.14953399217082564,
-          "price_eps_gap": 0.2898848693638081,
-          "state": "POSITIVE_DIVERGENCE"
+          "price_change": 0.1020408163265305,
+          "eps_revision": 0.0,
+          "price_eps_gap": -0.1020408163265305,
+          "state": "PRICE_LEADS_EARNINGS"
         },
         "4w": {
-          "price_change": -0.24615384615384617,
-          "eps_revision": 0.1520197940792931,
-          "price_eps_gap": 0.3981736402331393,
+          "price_change": -0.1171662125340599,
+          "eps_revision": 0.14953399217082564,
+          "price_eps_gap": 0.26670020470488554,
           "state": "POSITIVE_DIVERGENCE"
         },
         "12w": {
-          "price_change": -0.16239316239316237,
+          "price_change": -0.0898876404494382,
           "eps_revision": null,
           "price_eps_gap": null,
           "state": "DATA_MISSING"
@@ -1308,7 +1308,7 @@
       ]
     },
     {
-      "date": "2026-11-20",
+      "date": "2026-11-27",
       "ticker": "3260",
       "company": "威剛",
       "themes": [
@@ -1328,19 +1328,19 @@
       "official_financial_status": "READY",
       "catch_up_details": {
         "1w": {
-          "price_change": -0.2201986754966887,
+          "price_change": 0.1698513800424628,
           "eps_revision": 0.0,
-          "price_eps_gap": 0.2201986754966887,
-          "state": "EARNINGS_LEADS_PRICE"
+          "price_eps_gap": -0.1698513800424628,
+          "state": "PRICE_LEADS_EARNINGS"
         },
         "4w": {
-          "price_change": -0.2917293233082707,
+          "price_change": -0.20490620490620493,
           "eps_revision": 0.0,
-          "price_eps_gap": 0.2917293233082707,
+          "price_eps_gap": 0.20490620490620493,
           "state": "EARNINGS_LEADS_PRICE"
         },
         "12w": {
-          "price_change": -0.41271820448877805,
+          "price_change": -0.3369434416365824,
           "eps_revision": null,
           "price_eps_gap": null,
           "state": "DATA_MISSING"
@@ -1355,7 +1355,7 @@
       ]
     },
     {
-      "date": "2026-11-20",
+      "date": "2026-11-27",
       "ticker": "3324",
       "company": "雙鴻",
       "themes": [
@@ -1375,19 +1375,19 @@
       "official_financial_status": "READY",
       "catch_up_details": {
         "1w": {
-          "price_change": -0.3035087719298246,
-          "eps_revision": 0.028986076555509888,
-          "price_eps_gap": 0.3324948484853345,
-          "state": "POSITIVE_DIVERGENCE"
+          "price_change": 0.00881612090680095,
+          "eps_revision": -0.00019956053867542511,
+          "price_eps_gap": -0.009015681445476376,
+          "state": "NEGATIVE_DIVERGENCE"
         },
         "4w": {
-          "price_change": -0.42254545454545456,
-          "eps_revision": 0.07843102299064775,
-          "price_eps_gap": 0.5009764775361023,
+          "price_change": -0.3977443609022556,
+          "eps_revision": 0.028780731539782778,
+          "price_eps_gap": 0.4265250924420384,
           "state": "POSITIVE_DIVERGENCE"
         },
         "12w": {
-          "price_change": -0.2004028197381672,
+          "price_change": -0.24433962264150944,
           "eps_revision": null,
           "price_eps_gap": null,
           "state": "DATA_MISSING"
@@ -1401,7 +1401,7 @@
       ]
     },
     {
-      "date": "2026-11-20",
+      "date": "2026-11-27",
       "ticker": "3338",
       "company": "泰碩",
       "themes": [
@@ -1421,19 +1421,19 @@
       "official_financial_status": "READY",
       "catch_up_details": {
         "1w": {
-          "price_change": -0.22596153846153855,
+          "price_change": 0.044720496894409933,
           "eps_revision": null,
           "price_eps_gap": null,
           "state": "DATA_MISSING"
         },
         "4w": {
-          "price_change": -0.39925373134328357,
+          "price_change": -0.31065573770491806,
           "eps_revision": null,
           "price_eps_gap": null,
           "state": "DATA_MISSING"
         },
         "12w": {
-          "price_change": -0.3401639344262296,
+          "price_change": -0.3450155763239876,
           "eps_revision": null,
           "price_eps_gap": null,
           "state": "DATA_MISSING"
@@ -1447,7 +1447,7 @@
       ]
     },
     {
-      "date": "2026-11-20",
+      "date": "2026-11-27",
       "ticker": "3357",
       "company": "臺慶科",
       "themes": [
@@ -1467,19 +1467,19 @@
       "official_financial_status": "READY",
       "catch_up_details": {
         "1w": {
-          "price_change": -0.24858757062146897,
+          "price_change": 0.15037593984962405,
           "eps_revision": null,
           "price_eps_gap": null,
           "state": "DATA_MISSING"
         },
         "4w": {
-          "price_change": -0.3480392156862745,
+          "price_change": -0.19895287958115182,
           "eps_revision": null,
           "price_eps_gap": null,
           "state": "DATA_MISSING"
         },
         "12w": {
-          "price_change": -0.37850467289719625,
+          "price_change": -0.2949308755760369,
           "eps_revision": null,
           "price_eps_gap": null,
           "state": "DATA_MISSING"
@@ -1493,7 +1493,7 @@
       ]
     },
     {
-      "date": "2026-11-20",
+      "date": "2026-11-27",
       "ticker": "3363",
       "company": "上詮",
       "themes": [
@@ -1513,19 +1513,19 @@
       "official_financial_status": "READY",
       "catch_up_details": {
         "1w": {
-          "price_change": -0.3187250996015937,
-          "eps_revision": -0.02738893103741047,
-          "price_eps_gap": 0.2913361685641832,
-          "state": "EARNINGS_LEADS_PRICE"
+          "price_change": 0.015594541910331383,
+          "eps_revision": 0.0,
+          "price_eps_gap": -0.015594541910331383,
+          "state": "PRICE_LEADS_EARNINGS"
         },
         "4w": {
-          "price_change": -0.5327868852459017,
+          "price_change": -0.4510010537407798,
           "eps_revision": -0.02738893103741047,
-          "price_eps_gap": 0.5053979542084912,
+          "price_eps_gap": 0.42361212270336934,
           "state": "EARNINGS_LEADS_PRICE"
         },
         "12w": {
-          "price_change": -0.5795081967213115,
+          "price_change": -0.6299715909090908,
           "eps_revision": null,
           "price_eps_gap": null,
           "state": "DATA_MISSING"
@@ -1539,7 +1539,7 @@
       ]
     },
     {
-      "date": "2026-11-20",
+      "date": "2026-11-27",
       "ticker": "3443",
       "company": "創意",
       "themes": [
@@ -1559,19 +1559,19 @@
       "official_financial_status": "READY",
       "catch_up_details": {
         "1w": {
-          "price_change": -0.372822299651568,
-          "eps_revision": 0.14167197971918344,
-          "price_eps_gap": 0.5144942793707514,
-          "state": "POSITIVE_DIVERGENCE"
+          "price_change": -0.05740740740740746,
+          "eps_revision": 0.0,
+          "price_eps_gap": 0.05740740740740746,
+          "state": "EARNINGS_LEADS_PRICE"
         },
         "4w": {
-          "price_change": -0.32499999999999996,
-          "eps_revision": 0.1607505929714501,
-          "price_eps_gap": 0.48575059297145007,
+          "price_change": -0.33333333333333337,
+          "eps_revision": 0.14167197971918344,
+          "price_eps_gap": 0.4750053130525168,
           "state": "POSITIVE_DIVERGENCE"
         },
         "12w": {
-          "price_change": -0.0357142857142857,
+          "price_change": -0.15378221113881962,
           "eps_revision": null,
           "price_eps_gap": null,
           "state": "DATA_MISSING"
@@ -1585,7 +1585,7 @@
       ]
     },
     {
-      "date": "2026-11-20",
+      "date": "2026-11-27",
       "ticker": "3532",
       "company": "台勝科",
       "themes": [
@@ -1605,19 +1605,19 @@
       "official_financial_status": "READY",
       "catch_up_details": {
         "1w": {
-          "price_change": -0.3677966101694915,
+          "price_change": -0.02144772117962468,
           "eps_revision": null,
           "price_eps_gap": null,
           "state": "DATA_MISSING"
         },
         "4w": {
-          "price_change": -0.5642523364485981,
+          "price_change": -0.4866385372714487,
           "eps_revision": null,
           "price_eps_gap": null,
           "state": "DATA_MISSING"
         },
         "12w": {
-          "price_change": -0.4554744525547445,
+          "price_change": -0.5426065162907268,
           "eps_revision": null,
           "price_eps_gap": null,
           "state": "DATA_MISSING"
@@ -1631,7 +1631,7 @@
       ]
     },
     {
-      "date": "2026-11-20",
+      "date": "2026-11-27",
       "ticker": "3583",
       "company": "辛耘",
       "themes": [
@@ -1651,19 +1651,19 @@
       "official_financial_status": "READY",
       "catch_up_details": {
         "1w": {
-          "price_change": -0.2932405566600398,
+          "price_change": 0.1378340365682138,
           "eps_revision": 0.0,
-          "price_eps_gap": 0.2932405566600398,
-          "state": "EARNINGS_LEADS_PRICE"
+          "price_eps_gap": -0.1378340365682138,
+          "state": "PRICE_LEADS_EARNINGS"
         },
         "4w": {
-          "price_change": -0.4266129032258065,
+          "price_change": -0.2828014184397163,
           "eps_revision": 0.0,
-          "price_eps_gap": 0.4266129032258065,
+          "price_eps_gap": 0.2828014184397163,
           "state": "EARNINGS_LEADS_PRICE"
         },
         "12w": {
-          "price_change": -0.49502840909090906,
+          "price_change": -0.4599465954606141,
           "eps_revision": null,
           "price_eps_gap": null,
           "state": "DATA_MISSING"
@@ -1677,7 +1677,7 @@
       ]
     },
     {
-      "date": "2026-11-20",
+      "date": "2026-11-27",
       "ticker": "3653",
       "company": "健策",
       "themes": [
@@ -1697,19 +1697,19 @@
       "official_financial_status": "READY",
       "catch_up_details": {
         "1w": {
-          "price_change": -0.3068288119738073,
-          "eps_revision": 0.14315118655113768,
-          "price_eps_gap": 0.44997999852494497,
-          "state": "POSITIVE_DIVERGENCE"
+          "price_change": 0.3184885290148447,
+          "eps_revision": 0.03289266550471126,
+          "price_eps_gap": -0.28559586351013344,
+          "state": "PRICE_LEADS_EARNINGS"
         },
         "4w": {
-          "price_change": -0.433052792654935,
-          "eps_revision": 0.1743221284561265,
-          "price_eps_gap": 0.6073749211110615,
+          "price_change": -0.2264449722882027,
+          "eps_revision": 0.1807524761516779,
+          "price_eps_gap": 0.4071974484398806,
           "state": "POSITIVE_DIVERGENCE"
         },
         "12w": {
-          "price_change": -0.3132530120481928,
+          "price_change": -0.15557476231633538,
           "eps_revision": null,
           "price_eps_gap": null,
           "state": "DATA_MISSING"
@@ -1723,7 +1723,7 @@
       ]
     },
     {
-      "date": "2026-11-20",
+      "date": "2026-11-27",
       "ticker": "3661",
       "company": "世芯-KY",
       "themes": [
@@ -1736,26 +1736,26 @@
       "monthly_revenue_acceleration": "ACCELERATING",
       "six_month_earnings_visibility": "DATA_MISSING",
       "bottleneck_scarcity": "HIGH",
-      "price_catch_up": "POSITIVE_DIVERGENCE",
+      "price_catch_up": "EARNINGS_LEADS_PRICE",
       "six_month_risk_gate": "DATA_MISSING",
       "data_confidence": "LOW_CONFIDENCE",
       "weekly_snapshot_status": "READY",
       "official_financial_status": "READY",
       "catch_up_details": {
         "1w": {
-          "price_change": -0.19402985074626866,
-          "eps_revision": 0.10203268510842567,
-          "price_eps_gap": 0.29606253585469433,
-          "state": "POSITIVE_DIVERGENCE"
+          "price_change": 0.10956790123456783,
+          "eps_revision": 0.0,
+          "price_eps_gap": -0.10956790123456783,
+          "state": "PRICE_LEADS_EARNINGS"
         },
         "4w": {
-          "price_change": -0.12668463611859837,
+          "price_change": 0.04963503649635026,
           "eps_revision": 0.10203268510842567,
-          "price_eps_gap": 0.22871732122702404,
-          "state": "POSITIVE_DIVERGENCE"
+          "price_eps_gap": 0.05239764861207541,
+          "state": "EARNINGS_LEADS_PRICE"
         },
         "12w": {
-          "price_change": -0.12432432432432428,
+          "price_change": -0.1156211562115621,
           "eps_revision": null,
           "price_eps_gap": null,
           "state": "DATA_MISSING"
@@ -1769,7 +1769,7 @@
       ]
     },
     {
-      "date": "2026-11-20",
+      "date": "2026-11-27",
       "ticker": "3711",
       "company": "日月光投控",
       "themes": [
@@ -1789,19 +1789,19 @@
       "official_financial_status": "READY",
       "catch_up_details": {
         "1w": {
-          "price_change": -0.23578595317725748,
-          "eps_revision": 0.03142007526970003,
-          "price_eps_gap": 0.2672060284469575,
-          "state": "POSITIVE_DIVERGENCE"
+          "price_change": 0.12472647702406991,
+          "eps_revision": 0.0,
+          "price_eps_gap": -0.12472647702406991,
+          "state": "PRICE_LEADS_EARNINGS"
         },
         "4w": {
-          "price_change": -0.33187134502923976,
-          "eps_revision": 0.14713812710431817,
-          "price_eps_gap": 0.47900947213355793,
+          "price_change": -0.2305389221556886,
+          "eps_revision": 0.03142007526970003,
+          "price_eps_gap": 0.26195899742538864,
           "state": "POSITIVE_DIVERGENCE"
         },
         "12w": {
-          "price_change": -0.22146507666098803,
+          "price_change": -0.1723027375201288,
           "eps_revision": null,
           "price_eps_gap": null,
           "state": "DATA_MISSING"
@@ -1815,7 +1815,7 @@
       ]
     },
     {
-      "date": "2026-11-20",
+      "date": "2026-11-27",
       "ticker": "4979",
       "company": "華星光",
       "themes": [
@@ -1836,19 +1836,19 @@
       "official_financial_status": "READY",
       "catch_up_details": {
         "1w": {
-          "price_change": -0.29815303430079154,
+          "price_change": 0.013157894736842035,
           "eps_revision": 0.0,
-          "price_eps_gap": 0.29815303430079154,
-          "state": "EARNINGS_LEADS_PRICE"
+          "price_eps_gap": -0.013157894736842035,
+          "state": "PRICE_LEADS_EARNINGS"
         },
         "4w": {
-          "price_change": -0.45491803278688525,
+          "price_change": -0.3970917225950783,
           "eps_revision": 0.0,
-          "price_eps_gap": 0.45491803278688525,
+          "price_eps_gap": 0.3970917225950783,
           "state": "EARNINGS_LEADS_PRICE"
         },
         "12w": {
-          "price_change": -0.5333333333333333,
+          "price_change": -0.5632090761750406,
           "eps_revision": null,
           "price_eps_gap": null,
           "state": "DATA_MISSING"
@@ -1862,7 +1862,7 @@
       ]
     },
     {
-      "date": "2026-11-20",
+      "date": "2026-11-27",
       "ticker": "6182",
       "company": "合晶",
       "themes": [
@@ -1882,19 +1882,19 @@
       "official_financial_status": "READY",
       "catch_up_details": {
         "1w": {
-          "price_change": -0.3156626506024097,
+          "price_change": 0.11443661971830976,
           "eps_revision": null,
           "price_eps_gap": null,
           "state": "DATA_MISSING"
         },
         "4w": {
-          "price_change": -0.4882882882882883,
+          "price_change": -0.3258785942492014,
           "eps_revision": null,
           "price_eps_gap": null,
           "state": "DATA_MISSING"
         },
         "12w": {
-          "price_change": -0.4812785388127854,
+          "price_change": -0.41926605504587156,
           "eps_revision": null,
           "price_eps_gap": null,
           "state": "DATA_MISSING"
@@ -1908,7 +1908,7 @@
       ]
     },
     {
-      "date": "2026-11-20",
+      "date": "2026-11-27",
       "ticker": "6187",
       "company": "萬潤",
       "themes": [
@@ -1928,19 +1928,19 @@
       "official_financial_status": "READY",
       "catch_up_details": {
         "1w": {
-          "price_change": -0.34417628541448064,
-          "eps_revision": -0.002978732913917259,
-          "price_eps_gap": 0.3411975525005634,
-          "state": "EARNINGS_LEADS_PRICE"
+          "price_change": 0.10880000000000001,
+          "eps_revision": 0.0,
+          "price_eps_gap": -0.10880000000000001,
+          "state": "PRICE_LEADS_EARNINGS"
         },
         "4w": {
-          "price_change": -0.5300751879699248,
+          "price_change": -0.41764705882352937,
           "eps_revision": -0.002978732913917259,
-          "price_eps_gap": 0.5270964550560076,
+          "price_eps_gap": 0.4146683259096121,
           "state": "EARNINGS_LEADS_PRICE"
         },
         "12w": {
-          "price_change": -0.5059288537549407,
+          "price_change": -0.5153846153846153,
           "eps_revision": null,
           "price_eps_gap": null,
           "state": "DATA_MISSING"
@@ -1954,7 +1954,7 @@
       ]
     },
     {
-      "date": "2026-11-20",
+      "date": "2026-11-27",
       "ticker": "6223",
       "company": "旺矽",
       "themes": [
@@ -1974,19 +1974,19 @@
       "official_financial_status": "READY",
       "catch_up_details": {
         "1w": {
-          "price_change": -0.23768736616702357,
-          "eps_revision": -0.039319106032356776,
-          "price_eps_gap": 0.1983682601346668,
-          "state": "EARNINGS_LEADS_PRICE"
+          "price_change": 0.10393258426966301,
+          "eps_revision": 0.0057494993424052065,
+          "price_eps_gap": -0.0981830849272578,
+          "state": "PRICE_LEADS_EARNINGS"
         },
         "4w": {
-          "price_change": -0.2887112887112887,
-          "eps_revision": -0.04713169684911378,
-          "price_eps_gap": 0.24157959186217492,
+          "price_change": -0.14750542299349245,
+          "eps_revision": -0.033795671864228494,
+          "price_eps_gap": 0.11370975112926396,
           "state": "EARNINGS_LEADS_PRICE"
         },
         "12w": {
-          "price_change": -0.3699115044247787,
+          "price_change": -0.22789783889980353,
           "eps_revision": null,
           "price_eps_gap": null,
           "state": "DATA_MISSING"
@@ -2000,7 +2000,7 @@
       ]
     },
     {
-      "date": "2026-11-20",
+      "date": "2026-11-27",
       "ticker": "6230",
       "company": "尼得科超眾",
       "themes": [
@@ -2020,19 +2020,19 @@
       "official_financial_status": "READY",
       "catch_up_details": {
         "1w": {
-          "price_change": -0.06818181818181823,
+          "price_change": -0.040243902439024315,
           "eps_revision": null,
           "price_eps_gap": null,
           "state": "DATA_MISSING"
         },
         "4w": {
-          "price_change": -0.26126126126126126,
+          "price_change": -0.2396135265700483,
           "eps_revision": null,
           "price_eps_gap": null,
           "state": "DATA_MISSING"
         },
         "12w": {
-          "price_change": -0.23720930232558135,
+          "price_change": -0.2812785388127854,
           "eps_revision": null,
           "price_eps_gap": null,
           "state": "DATA_MISSING"
@@ -2046,7 +2046,7 @@
       ]
     },
     {
-      "date": "2026-11-20",
+      "date": "2026-11-27",
       "ticker": "6274",
       "company": "台燿",
       "themes": [
@@ -2066,19 +2066,19 @@
       "official_financial_status": "READY",
       "catch_up_details": {
         "1w": {
-          "price_change": -0.3603696098562629,
-          "eps_revision": 0.013599865789360788,
-          "price_eps_gap": 0.37396947564562366,
-          "state": "POSITIVE_DIVERGENCE"
+          "price_change": 0.218298555377207,
+          "eps_revision": 0.019591489647480254,
+          "price_eps_gap": -0.19870706572972674,
+          "state": "PRICE_LEADS_EARNINGS"
         },
         "4w": {
-          "price_change": -0.5846666666666667,
-          "eps_revision": 0.10750165558899316,
-          "price_eps_gap": 0.6921683222556598,
+          "price_change": -0.4,
+          "eps_revision": 0.03345779706666052,
+          "price_eps_gap": 0.43345779706666054,
           "state": "POSITIVE_DIVERGENCE"
         },
         "12w": {
-          "price_change": -0.6044444444444445,
+          "price_change": -0.4747404844290657,
           "eps_revision": null,
           "price_eps_gap": null,
           "state": "DATA_MISSING"
@@ -2092,7 +2092,7 @@
       ]
     },
     {
-      "date": "2026-11-20",
+      "date": "2026-11-27",
       "ticker": "6282",
       "company": "康舒",
       "themes": [
@@ -2112,19 +2112,19 @@
       "official_financial_status": "READY",
       "catch_up_details": {
         "1w": {
-          "price_change": -0.22786647314949193,
+          "price_change": 0.10902255639097724,
           "eps_revision": null,
           "price_eps_gap": null,
           "state": "DATA_MISSING"
         },
         "4w": {
-          "price_change": -0.37995337995337986,
+          "price_change": -0.2435897435897436,
           "eps_revision": null,
           "price_eps_gap": null,
           "state": "DATA_MISSING"
         },
         "12w": {
-          "price_change": -0.3988700564971751,
+          "price_change": -0.3487858719646798,
           "eps_revision": null,
           "price_eps_gap": null,
           "state": "DATA_MISSING"
@@ -2138,7 +2138,7 @@
       ]
     },
     {
-      "date": "2026-11-20",
+      "date": "2026-11-27",
       "ticker": "6412",
       "company": "群電",
       "themes": [
@@ -2158,19 +2158,19 @@
       "official_financial_status": "READY",
       "catch_up_details": {
         "1w": {
-          "price_change": -0.10315985130111527,
+          "price_change": 0.07150259067357534,
           "eps_revision": 0.0,
-          "price_eps_gap": 0.10315985130111527,
-          "state": "EARNINGS_LEADS_PRICE"
+          "price_eps_gap": -0.07150259067357534,
+          "state": "PRICE_LEADS_EARNINGS"
         },
         "4w": {
-          "price_change": -0.3444293478260869,
+          "price_change": -0.2317979197622585,
           "eps_revision": 0.0,
-          "price_eps_gap": 0.3444293478260869,
+          "price_eps_gap": 0.2317979197622585,
           "state": "EARNINGS_LEADS_PRICE"
         },
         "12w": {
-          "price_change": -0.3814102564102564,
+          "price_change": -0.34639696586599233,
           "eps_revision": null,
           "price_eps_gap": null,
           "state": "DATA_MISSING"
@@ -2185,7 +2185,7 @@
       ]
     },
     {
-      "date": "2026-11-20",
+      "date": "2026-11-27",
       "ticker": "6442",
       "company": "光聖",
       "themes": [
@@ -2206,19 +2206,19 @@
       "official_financial_status": "READY",
       "catch_up_details": {
         "1w": {
-          "price_change": -0.2551724137931034,
+          "price_change": 0.09490740740740744,
           "eps_revision": 0.0,
-          "price_eps_gap": 0.2551724137931034,
-          "state": "EARNINGS_LEADS_PRICE"
+          "price_eps_gap": -0.09490740740740744,
+          "state": "PRICE_LEADS_EARNINGS"
         },
         "4w": {
-          "price_change": -0.42400000000000004,
+          "price_change": -0.23089430894308938,
           "eps_revision": 0.0,
-          "price_eps_gap": 0.42400000000000004,
+          "price_eps_gap": 0.23089430894308938,
           "state": "EARNINGS_LEADS_PRICE"
         },
         "12w": {
-          "price_change": -0.4334426229508197,
+          "price_change": -0.4142414860681115,
           "eps_revision": null,
           "price_eps_gap": null,
           "state": "DATA_MISSING"
@@ -2232,7 +2232,7 @@
       ]
     },
     {
-      "date": "2026-11-20",
+      "date": "2026-11-27",
       "ticker": "6488",
       "company": "環球晶",
       "themes": [
@@ -2252,19 +2252,19 @@
       "official_financial_status": "READY",
       "catch_up_details": {
         "1w": {
-          "price_change": -0.29920634920634925,
-          "eps_revision": -0.10947868730886234,
-          "price_eps_gap": 0.1897276618974869,
-          "state": "EARNINGS_LEADS_PRICE"
+          "price_change": 0.1574178935447339,
+          "eps_revision": 0.0,
+          "price_eps_gap": -0.1574178935447339,
+          "state": "PRICE_LEADS_EARNINGS"
         },
         "4w": {
-          "price_change": -0.49829545454545454,
+          "price_change": -0.32407407407407407,
           "eps_revision": -0.10947868730886234,
-          "price_eps_gap": 0.3888167672365922,
+          "price_eps_gap": 0.21459538676521173,
           "state": "EARNINGS_LEADS_PRICE"
         },
         "12w": {
-          "price_change": -0.5553877139979859,
+          "price_change": -0.4665970772442589,
           "eps_revision": null,
           "price_eps_gap": null,
           "state": "DATA_MISSING"
@@ -2278,7 +2278,7 @@
       ]
     },
     {
-      "date": "2026-11-20",
+      "date": "2026-11-27",
       "ticker": "6669",
       "company": "緯穎",
       "themes": [
@@ -2298,19 +2298,19 @@
       "official_financial_status": "READY",
       "catch_up_details": {
         "1w": {
-          "price_change": -0.18960244648318048,
-          "eps_revision": 0.019123463021096354,
-          "price_eps_gap": 0.20872590950427683,
-          "state": "POSITIVE_DIVERGENCE"
+          "price_change": 0.260377358490566,
+          "eps_revision": 0.0,
+          "price_eps_gap": -0.260377358490566,
+          "state": "PRICE_LEADS_EARNINGS"
         },
         "4w": {
-          "price_change": -0.29521276595744683,
-          "eps_revision": 0.031798459554065905,
-          "price_eps_gap": 0.32701122551151274,
+          "price_change": -0.07734806629834257,
+          "eps_revision": 0.019123463021096354,
+          "price_eps_gap": 0.09647152931943892,
           "state": "POSITIVE_DIVERGENCE"
         },
         "12w": {
-          "price_change": -0.7881694644284573,
+          "price_change": -0.7680555555555555,
           "eps_revision": null,
           "price_eps_gap": null,
           "state": "DATA_MISSING"
@@ -2324,7 +2324,7 @@
       ]
     },
     {
-      "date": "2026-11-20",
+      "date": "2026-11-27",
       "ticker": "6781",
       "company": "AES-KY",
       "themes": [
@@ -2344,19 +2344,19 @@
       "official_financial_status": "READY",
       "catch_up_details": {
         "1w": {
-          "price_change": -0.23056653491436097,
-          "eps_revision": 0.011545979985519983,
-          "price_eps_gap": 0.24211251489988095,
-          "state": "POSITIVE_DIVERGENCE"
+          "price_change": 0.11643835616438358,
+          "eps_revision": 0.0,
+          "price_eps_gap": -0.11643835616438358,
+          "state": "PRICE_LEADS_EARNINGS"
         },
         "4w": {
-          "price_change": -0.3638344226579521,
+          "price_change": -0.25909090909090904,
           "eps_revision": 0.011545979985519983,
-          "price_eps_gap": 0.37538040264347206,
+          "price_eps_gap": 0.270636889076429,
           "state": "POSITIVE_DIVERGENCE"
         },
         "12w": {
-          "price_change": -0.44380952380952376,
+          "price_change": -0.42300884955752216,
           "eps_revision": null,
           "price_eps_gap": null,
           "state": "DATA_MISSING"
@@ -2370,7 +2370,7 @@
       ]
     },
     {
-      "date": "2026-11-20",
+      "date": "2026-11-27",
       "ticker": "8299",
       "company": "群聯",
       "themes": [
@@ -2390,19 +2390,19 @@
       "official_financial_status": "READY",
       "catch_up_details": {
         "1w": {
-          "price_change": -0.19512195121951215,
-          "eps_revision": 0.04857761394736548,
-          "price_eps_gap": 0.24369956516687763,
-          "state": "POSITIVE_DIVERGENCE"
+          "price_change": 0.19696969696969702,
+          "eps_revision": -9.881057071881028e-05,
+          "price_eps_gap": -0.19706850754041583,
+          "state": "NEGATIVE_DIVERGENCE"
         },
         "4w": {
-          "price_change": -0.3160621761658031,
-          "eps_revision": 0.04857761394736548,
-          "price_eps_gap": 0.3646397901131686,
+          "price_change": -0.18134715025906734,
+          "eps_revision": 0.048474003394888276,
+          "price_eps_gap": 0.2298211536539556,
           "state": "POSITIVE_DIVERGENCE"
         },
         "12w": {
-          "price_change": -0.33834586466165417,
+          "price_change": -0.2668213457076566,
           "eps_revision": null,
           "price_eps_gap": null,
           "state": "DATA_MISSING"

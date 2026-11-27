@@ -1,15 +1,16 @@
 ﻿ticker,institution,target_price,horizon,available_at,source_url,retrieved_at,note
 2301,Nomura/Instinet,232.5,12M,2025-10-30,https://hk.investing.com/equities/lite-on-tech-consensus-estimates,2026-10-17,公開分析師評級表；機構可識別；自動擷取
-2301,Nomura/Instinet,242,12M,2026-02-26,https://hk.investing.com/equities/lite-on-tech-consensus-estimates,2026-10-30,公開分析師評級表；機構可識別；自動擷取
-2301,Morgan Stanley,176,12M,2026-04-29,https://hk.investing.com/equities/lite-on-tech-consensus-estimates,2026-10-30,公開分析師評級表；機構可識別；自動擷取
-2301,Nomura/Instinet,285,12M,2026-04-30,https://hk.investing.com/equities/lite-on-tech-consensus-estimates,2026-10-30,公開分析師評級表；機構可識別；自動擷取
-2301,Nomura/Instinet,338,12M,2026-08-03,https://hk.investing.com/equities/lite-on-tech-consensus-estimates,2026-10-30,公開分析師評級表；機構可識別；自動擷取
+2301,Nomura/Instinet,242,12M,2026-02-26,https://hk.investing.com/equities/lite-on-tech-consensus-estimates,2026-11-27,公開分析師評級表；機構可識別；自動擷取
+2301,Morgan Stanley,176,12M,2026-04-29,https://hk.investing.com/equities/lite-on-tech-consensus-estimates,2026-11-27,公開分析師評級表；機構可識別；自動擷取
+2301,Nomura/Instinet,285,12M,2026-04-30,https://hk.investing.com/equities/lite-on-tech-consensus-estimates,2026-11-27,公開分析師評級表；機構可識別；自動擷取
+2301,Nomura/Instinet,338,12M,2026-08-03,https://hk.investing.com/equities/lite-on-tech-consensus-estimates,2026-11-27,公開分析師評級表；機構可識別；自動擷取
+2301,Nomura/Instinet,354,12M,2026-11-02,https://hk.investing.com/equities/lite-on-tech-consensus-estimates,2026-11-27,公開分析師評級表；機構可識別；自動擷取
 2303,Bernstein SocGen Group,88,12M,2026-07-28,https://hk.investing.com/equities/united-micro-consensus-estimates,2026-10-17,公開分析師評級表；機構可識別；自動擷取
-2303,HSBC,212,12M,2026-07-30,https://hk.investing.com/equities/united-micro-consensus-estimates,2026-10-30,公開分析師評級表；機構可識別；自動擷取
-2303,Nomura/Instinet,140,12M,2026-07-30,https://hk.investing.com/equities/united-micro-consensus-estimates,2026-10-30,公開分析師評級表；機構可識別；自動擷取
-2303,Bernstein SocGen Group,103,12M,2026-10-09,https://hk.investing.com/equities/united-micro-consensus-estimates,2026-10-30,公開分析師評級表；機構可識別；自動擷取
-2303,Nomura/Instinet,176,12M,2026-10-20,https://hk.investing.com/equities/united-micro-consensus-estimates,2026-10-30,公開分析師評級表；機構可識別；自動擷取
-2303,JPMorgan,135,12M,2026-10-29,https://hk.investing.com/equities/united-micro-consensus-estimates,2026-10-30,公開分析師評級表；機構可識別；自動擷取
+2303,HSBC,212,12M,2026-07-30,https://hk.investing.com/equities/united-micro-consensus-estimates,2026-11-27,公開分析師評級表；機構可識別；自動擷取
+2303,Nomura/Instinet,140,12M,2026-07-30,https://hk.investing.com/equities/united-micro-consensus-estimates,2026-11-27,公開分析師評級表；機構可識別；自動擷取
+2303,Bernstein SocGen Group,103,12M,2026-10-09,https://hk.investing.com/equities/united-micro-consensus-estimates,2026-11-27,公開分析師評級表；機構可識別；自動擷取
+2303,Nomura/Instinet,176,12M,2026-10-20,https://hk.investing.com/equities/united-micro-consensus-estimates,2026-11-27,公開分析師評級表；機構可識別；自動擷取
+2303,JPMorgan,135,12M,2026-10-29,https://hk.investing.com/equities/united-micro-consensus-estimates,2026-11-27,公開分析師評級表；機構可識別；自動擷取
 2308,Goldman Sachs,4500,12M,2026-06-05,https://hk.investing.com/equities/delta-electron-consensus-estimates,2026-10-16,公開分析師評級表；機構可識別；自動擷取
 2308,JPMorgan,2500,12M,2026-07-31,https://hk.investing.com/equities/delta-electron-consensus-estimates,2026-10-16,公開分析師評級表；機構可識別；自動擷取
 2308,Macquarie,2200,12M,2026-07-31,https://hk.investing.com/equities/delta-electron-consensus-estimates,2026-10-30,公開分析師評級表；機構可識別；自動擷取
@@ -24,10 +25,11 @@
 2344,JPMorgan,360,12M,2026-07-15,https://hk.investing.com/equities/winbond-consensus-estimates,2026-10-30,公開分析師評級表；機構可識別；自動擷取
 2344,JPMorgan,360.0,12M,2026-07-15,https://hk.investing.com/equities/winbond-consensus-estimates,2026-10-10,公開分析師評級表；機構可識別
 2345,Macquarie,3500,12M,2026-06-10,https://hk.investing.com/equities/accton-consensus-estimates,2026-10-30,公開分析師評級表；機構可識別；自動擷取
-2345,CLSA,3500,12M,2026-06-16,https://hk.investing.com/equities/accton-consensus-estimates,2026-10-30,公開分析師評級表；機構可識別；自動擷取
-2345,JPMorgan,3600,12M,2026-06-25,https://hk.investing.com/equities/accton-consensus-estimates,2026-10-30,公開分析師評級表；機構可識別；自動擷取
-2345,CLSA,3700,12M,2026-08-07,https://hk.investing.com/equities/accton-consensus-estimates,2026-10-30,公開分析師評級表；機構可識別；自動擷取
-2345,JPMorgan,3700,12M,2026-08-07,https://hk.investing.com/equities/accton-consensus-estimates,2026-10-30,公開分析師評級表；機構可識別；自動擷取
+2345,CLSA,3500,12M,2026-06-16,https://hk.investing.com/equities/accton-consensus-estimates,2026-11-27,公開分析師評級表；機構可識別；自動擷取
+2345,JPMorgan,3600,12M,2026-06-25,https://hk.investing.com/equities/accton-consensus-estimates,2026-11-27,公開分析師評級表；機構可識別；自動擷取
+2345,CLSA,3700,12M,2026-08-07,https://hk.investing.com/equities/accton-consensus-estimates,2026-11-27,公開分析師評級表；機構可識別；自動擷取
+2345,JPMorgan,3700,12M,2026-08-07,https://hk.investing.com/equities/accton-consensus-estimates,2026-11-27,公開分析師評級表；機構可識別；自動擷取
+2345,Macquarie,3420,12M,2026-11-13,https://hk.investing.com/equities/accton-consensus-estimates,2026-11-27,公開分析師評級表；機構可識別；自動擷取
 2356,JPMorgan,13.8,12M,2026-02-10,https://hk.investing.com/equities/dahsing-bankin-consensus-estimates,2026-10-30,公開分析師評級表；機構可識別；自動擷取
 2356,JPMorgan,14.5,12M,2026-03-31,https://hk.investing.com/equities/dahsing-bankin-consensus-estimates,2026-10-30,公開分析師評級表；機構可識別；自動擷取
 2356,JPMorgan,16.7,12M,2026-07-24,https://hk.investing.com/equities/dahsing-bankin-consensus-estimates,2026-10-30,公開分析師評級表；機構可識別；自動擷取
@@ -64,10 +66,11 @@
 3008,Macquarie,3261,12M,2026-07-13,https://hk.investing.com/equities/largan-precisi-consensus-estimates,2026-10-12,公開分析師評級表；機構可識別；自動擷取
 3008,Citi,8500,12M,2026-08-28,https://hk.investing.com/equities/largan-precisi-consensus-estimates,2026-10-12,公開分析師評級表；機構可識別；自動擷取
 3008,Morgan Stanley,7100,12M,2026-09-11,https://hk.investing.com/equities/largan-precisi-consensus-estimates,2026-10-15,公開分析師評級表；機構可識別；自動擷取
-3008,Nomura/Instinet,8300,12M,2026-10-06,https://hk.investing.com/equities/largan-precisi-consensus-estimates,2026-10-15,公開分析師評級表；機構可識別；自動擷取
-3008,CLSA,9200,12M,2026-10-12,https://hk.investing.com/equities/largan-precisi-consensus-estimates,2026-10-15,公開分析師評級表；機構可識別；自動擷取
-3008,Goldman Sachs,11000,12M,2026-10-12,https://hk.investing.com/equities/largan-precisi-consensus-estimates,2026-10-15,公開分析師評級表；機構可識別；自動擷取
-3008,Macquarie,4752,12M,2026-10-12,https://hk.investing.com/equities/largan-precisi-consensus-estimates,2026-10-15,公開分析師評級表；機構可識別；自動擷取
+3008,Nomura/Instinet,8300,12M,2026-10-06,https://hk.investing.com/equities/largan-precisi-consensus-estimates,2026-11-27,公開分析師評級表；機構可識別；自動擷取
+3008,CLSA,9200,12M,2026-10-12,https://hk.investing.com/equities/largan-precisi-consensus-estimates,2026-11-27,公開分析師評級表；機構可識別；自動擷取
+3008,Goldman Sachs,11000,12M,2026-10-12,https://hk.investing.com/equities/largan-precisi-consensus-estimates,2026-11-27,公開分析師評級表；機構可識別；自動擷取
+3008,Macquarie,4752,12M,2026-10-12,https://hk.investing.com/equities/largan-precisi-consensus-estimates,2026-11-27,公開分析師評級表；機構可識別；自動擷取
+3008,Macquarie,4830,12M,2026-11-06,https://hk.investing.com/equities/largan-precisi-consensus-estimates,2026-11-27,公開分析師評級表；機構可識別；自動擷取
 3017,JPMorgan,4000,12M,2026-08-13,https://hk.investing.com/equities/avc-consensus-estimates,2026-10-17,公開分析師評級表；機構可識別；自動擷取
 3017,Macquarie,4250,12M,2026-08-13,https://hk.investing.com/equities/avc-consensus-estimates,2026-10-17,公開分析師評級表；機構可識別；自動擷取
 3017,Nomura/Instinet,4000,12M,2026-08-13,https://hk.investing.com/equities/avc-consensus-estimates,2026-10-17,公開分析師評級表；機構可識別；自動擷取
@@ -85,27 +88,29 @@
 3037,Bernstein SocGen Group,1270,12M,2026-10-21,https://hk.investing.com/equities/unimicron-tech-consensus-estimates,2026-11-07,公開分析師評級表；機構可識別；自動擷取
 3037,JPMorgan,1400,12M,2026-10-28,https://hk.investing.com/equities/unimicron-tech-consensus-estimates,2026-11-07,公開分析師評級表；機構可識別；自動擷取
 3081,Goldman Sachs,2081,12M,2026-04-02,https://hk.investing.com/equities/landmark-optoelectronics-consensus-estimates,2026-10-17,公開分析師評級表；機構可識別；自動擷取
-3081,Goldman Sachs,3165,12M,2026-04-17,https://hk.investing.com/equities/landmark-optoelectronics-consensus-estimates,2026-10-30,公開分析師評級表；機構可識別；自動擷取
-3081,Macquarie,3285,12M,2026-04-22,https://hk.investing.com/equities/landmark-optoelectronics-consensus-estimates,2026-10-30,公開分析師評級表；機構可識別；自動擷取
-3081,Morgan Stanley,2850,12M,2026-04-22,https://hk.investing.com/equities/landmark-optoelectronics-consensus-estimates,2026-10-30,公開分析師評級表；機構可識別；自動擷取
-3081,Macquarie,3345,12M,2026-08-14,https://hk.investing.com/equities/landmark-optoelectronics-consensus-estimates,2026-10-30,公開分析師評級表；機構可識別；自動擷取
+3081,Goldman Sachs,3165,12M,2026-04-17,https://hk.investing.com/equities/landmark-optoelectronics-consensus-estimates,2026-11-27,公開分析師評級表；機構可識別；自動擷取
+3081,Macquarie,3285,12M,2026-04-22,https://hk.investing.com/equities/landmark-optoelectronics-consensus-estimates,2026-11-27,公開分析師評級表；機構可識別；自動擷取
+3081,Morgan Stanley,2850,12M,2026-04-22,https://hk.investing.com/equities/landmark-optoelectronics-consensus-estimates,2026-11-27,公開分析師評級表；機構可識別；自動擷取
+3081,Macquarie,3345,12M,2026-08-14,https://hk.investing.com/equities/landmark-optoelectronics-consensus-estimates,2026-11-27,公開分析師評級表；機構可識別；自動擷取
 3081,Macquarie,3345.0,12M,2026-08-14,https://hk.investing.com/equities/landmark-optoelectronics,2026-10-10,公開分析師評級表；機構可識別
-3081,Macquarie,3370,12M,2026-10-30,https://hk.investing.com/equities/landmark-optoelectronics-consensus-estimates,2026-10-30,公開分析師評級表；機構可識別；自動擷取
+3081,Macquarie,3370,12M,2026-10-30,https://hk.investing.com/equities/landmark-optoelectronics-consensus-estimates,2026-11-27,公開分析師評級表；機構可識別；自動擷取
 3189,Goldman Sachs,555,12M,2026-05-11,https://hk.investing.com/equities/kinsus-consensus-estimates,2026-10-30,公開分析師評級表；機構可識別；自動擷取
-3189,Citi,1100,12M,2026-07-01,https://hk.investing.com/equities/kinsus-consensus-estimates,2026-10-30,公開分析師評級表；機構可識別；自動擷取
-3189,Macquarie,945,12M,2026-07-10,https://hk.investing.com/equities/kinsus-consensus-estimates,2026-10-30,公開分析師評級表；機構可識別；自動擷取
-3189,Goldman Sachs,1120,12M,2026-07-13,https://hk.investing.com/equities/kinsus-consensus-estimates,2026-10-30,公開分析師評級表；機構可識別；自動擷取
-3189,Macquarie,945,12M,2026-07-13,https://hk.investing.com/equities/kinsus-consensus-estimates,2026-10-30,公開分析師評級表；機構可識別；自動擷取
+3189,Citi,1100,12M,2026-07-01,https://hk.investing.com/equities/kinsus-consensus-estimates,2026-11-27,公開分析師評級表；機構可識別；自動擷取
+3189,Macquarie,945,12M,2026-07-10,https://hk.investing.com/equities/kinsus-consensus-estimates,2026-11-27,公開分析師評級表；機構可識別；自動擷取
+3189,Goldman Sachs,1120,12M,2026-07-13,https://hk.investing.com/equities/kinsus-consensus-estimates,2026-11-27,公開分析師評級表；機構可識別；自動擷取
+3189,Macquarie,945,12M,2026-07-13,https://hk.investing.com/equities/kinsus-consensus-estimates,2026-11-27,公開分析師評級表；機構可識別；自動擷取
+3189,Macquarie,1380,12M,2026-11-02,https://hk.investing.com/equities/kinsus-consensus-estimates,2026-11-27,公開分析師評級表；機構可識別；自動擷取
 3324,Nomura/Instinet,1840,12M,2026-05-08,https://hk.investing.com/equities/auras-technology-co-ltd-consensus-estimates,2026-10-14,公開分析師評級表；機構可識別；自動擷取
 3324,Citi,1550,12M,2026-08-11,https://hk.investing.com/equities/auras-technology-co-ltd-consensus-estimates,2026-10-14,公開分析師評級表；機構可識別；自動擷取
 3324,JPMorgan,1200,12M,2026-08-11,https://hk.investing.com/equities/auras-technology-co-ltd-consensus-estimates,2026-10-14,公開分析師評級表；機構可識別；自動擷取
 3324,Macquarie,1600,12M,2026-08-11,https://hk.investing.com/equities/auras-technology-co-ltd-consensus-estimates,2026-10-14,公開分析師評級表；機構可識別；自動擷取
 3324,Goldman Sachs,1353,12M,2026-08-17,https://hk.investing.com/equities/auras-technology-co-ltd-consensus-estimates,2026-10-14,公開分析師評級表；機構可識別；自動擷取
 3406,Citi,425,12M,2025-12-10,https://hk.investing.com/equities/genius-consensus-estimates,2026-10-17,公開分析師評級表；機構可識別；自動擷取
-3406,JPMorgan,700,12M,2026-04-22,https://hk.investing.com/equities/genius-consensus-estimates,2026-10-17,公開分析師評級表；機構可識別；自動擷取
-3406,Citi,1050,12M,2026-08-28,https://hk.investing.com/equities/genius-consensus-estimates,2026-10-17,公開分析師評級表；機構可識別；自動擷取
-3406,Morgan Stanley,910,12M,2026-09-11,https://hk.investing.com/equities/genius-consensus-estimates,2026-10-17,公開分析師評級表；機構可識別；自動擷取
-3406,Nomura/Instinet,1415,12M,2026-10-06,https://hk.investing.com/equities/genius-consensus-estimates,2026-10-17,公開分析師評級表；機構可識別；自動擷取
+3406,JPMorgan,700,12M,2026-04-22,https://hk.investing.com/equities/genius-consensus-estimates,2026-11-27,公開分析師評級表；機構可識別；自動擷取
+3406,Citi,1050,12M,2026-08-28,https://hk.investing.com/equities/genius-consensus-estimates,2026-11-27,公開分析師評級表；機構可識別；自動擷取
+3406,Morgan Stanley,910,12M,2026-09-11,https://hk.investing.com/equities/genius-consensus-estimates,2026-11-27,公開分析師評級表；機構可識別；自動擷取
+3406,Nomura/Instinet,1415,12M,2026-10-06,https://hk.investing.com/equities/genius-consensus-estimates,2026-11-27,公開分析師評級表；機構可識別；自動擷取
+3406,CLSA,730,12M,2026-11-20,https://hk.investing.com/equities/genius-consensus-estimates,2026-11-27,公開分析師評級表；機構可識別；自動擷取
 3443,Citi,6000,12M,2026-07-07,https://hk.investing.com/equities/global-unichip-consensus-estimates,2026-10-17,公開分析師評級表；機構可識別；自動擷取
 3443,JPMorgan,5500,12M,2026-08-03,https://hk.investing.com/equities/global-unichip-consensus-estimates,2026-10-17,公開分析師評級表；機構可識別；自動擷取
 3443,Jefferies,4400,12M,2026-08-03,https://hk.investing.com/equities/global-unichip-consensus-estimates,2026-10-17,公開分析師評級表；機構可識別；自動擷取
@@ -123,11 +128,12 @@
 6187,JPMorgan,1450,12M,2026-05-10,https://hk.investing.com/equities/all-ring-tech-co-ltd-consensus-estimates,2026-10-30,公開分析師評級表；機構可識別；自動擷取
 6187,JPMorgan,1500,12M,2026-07-02,https://hk.investing.com/equities/all-ring-tech-co-ltd-consensus-estimates,2026-10-30,公開分析師評級表；機構可識別；自動擷取
 6274,Goldman Sachs,1165,12M,2026-04-20,https://hk.investing.com/equities/taiwan-union-technology-consensus-estimates,2026-10-15,公開分析師評級表；機構可識別；自動擷取
-6274,CLSA,1600,12M,2026-05-07,https://hk.investing.com/equities/taiwan-union-technology-consensus-estimates,2026-10-30,公開分析師評級表；機構可識別；自動擷取
+6274,CLSA,1600,12M,2026-05-07,https://hk.investing.com/equities/taiwan-union-technology-consensus-estimates,2026-11-27,公開分析師評級表；機構可識別；自動擷取
 6274,Nomura/Instinet,1710,12M,2026-05-07,https://hk.investing.com/equities/taiwan-union-technology-consensus-estimates,2026-10-30,公開分析師評級表；機構可識別；自動擷取
-6274,Nomura/Instinet,2115,12M,2026-06-30,https://hk.investing.com/equities/taiwan-union-technology-consensus-estimates,2026-10-30,公開分析師評級表；機構可識別；自動擷取
-6274,CLSA,2250,12M,2026-07-27,https://hk.investing.com/equities/taiwan-union-technology-consensus-estimates,2026-10-30,公開分析師評級表；機構可識別；自動擷取
-6274,Nomura/Instinet,2130,12M,2026-10-30,https://hk.investing.com/equities/taiwan-union-technology-consensus-estimates,2026-10-30,公開分析師評級表；機構可識別；自動擷取
+6274,Nomura/Instinet,2115,12M,2026-06-30,https://hk.investing.com/equities/taiwan-union-technology-consensus-estimates,2026-11-27,公開分析師評級表；機構可識別；自動擷取
+6274,CLSA,2250,12M,2026-07-27,https://hk.investing.com/equities/taiwan-union-technology-consensus-estimates,2026-11-27,公開分析師評級表；機構可識別；自動擷取
+6274,Nomura/Instinet,2130,12M,2026-10-30,https://hk.investing.com/equities/taiwan-union-technology-consensus-estimates,2026-11-27,公開分析師評級表；機構可識別；自動擷取
+6274,UBS,1150,12M,2026-11-23,https://hk.investing.com/equities/taiwan-union-technology-consensus-estimates,2026-11-27,公開分析師評級表；機構可識別；自動擷取
 6781,JPMorgan,1330,12M,2025-12-05,https://hk.investing.com/equities/advanced-energy-solution-holding-consensus-estimates,2026-10-30,公開分析師評級表；機構可識別；自動擷取
 6781,Citi,1680,12M,2026-07-08,https://hk.investing.com/equities/advanced-energy-solution-holding-consensus-estimates,2026-10-30,公開分析師評級表；機構可識別；自動擷取
 6781,JPMorgan,1285,12M,2026-08-07,https://hk.investing.com/equities/advanced-energy-solution-holding-consensus-estimates,2026-10-30,公開分析師評級表；機構可識別；自動擷取

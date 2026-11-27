@@ -1,6 +1,6 @@
 {
   "model": "R1",
-  "date": "2026-11-20",
+  "date": "2026-11-27",
   "periods": [
     "2026-08",
     "2026-09",
@@ -2801,7 +2801,7 @@
       "market": "TPEx",
       "company_type": 0,
       "status": "OK",
-      "row_count": 863,
+      "row_count": 864,
       "source_url": "https://mopsov.twse.com.tw/nas/t21/otc/t21sc03_115_8_0.html"
     },
     {
@@ -2833,7 +2833,7 @@
       "market": "TPEx",
       "company_type": 0,
       "status": "OK",
-      "row_count": 862,
+      "row_count": 863,
       "source_url": "https://mopsov.twse.com.tw/nas/t21/otc/t21sc03_115_9_0.html"
     },
     {
@@ -2865,7 +2865,7 @@
       "market": "TPEx",
       "company_type": 0,
       "status": "OK",
-      "row_count": 862,
+      "row_count": 863,
       "source_url": "https://mopsov.twse.com.tw/nas/t21/otc/t21sc03_115_10_0.html"
     },
     {
@@ -2878,7 +2878,7 @@
     }
   ],
   "future_data_violation_count": 0,
-  "generated_at": "2026-11-20T19:12:01.746670+00:00",
+  "generated_at": "2026-11-27T20:11:04.880875+00:00",
   "formal_model_changed": false,
   "trade_decision_changed": false,
   "active_in_trade_decision": false,

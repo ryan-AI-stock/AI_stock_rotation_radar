@@ -398,7 +398,7 @@
       "institution_count": 5,
       "consensus_target_price": 8300.0,
       "consensus_upside": 0.9598583234946871,
-      "dispersion": 0.7527710843373494,
+      "dispersion": 0.7433734939759036,
       "status": "READY",
       "scoreable": true,
       "rejected": [
@@ -420,12 +420,12 @@
     {
       "ticker": "3406",
       "as_of_date": "2026-11-27",
-      "institution_count": 2,
-      "consensus_target_price": 1162.5,
-      "consensus_upside": null,
-      "dispersion": null,
-      "status": "DATA_MISSING",
-      "scoreable": false,
+      "institution_count": 3,
+      "consensus_target_price": 910.0,
+      "consensus_upside": 0.2853107344632768,
+      "dispersion": 0.7527472527472527,
+      "status": "READY",
+      "scoreable": true,
       "rejected": [
         {
           "institution": "Citi",
@@ -493,8 +493,8 @@
     {
       "ticker": "6274",
       "as_of_date": "2026-11-27",
-      "institution_count": 1,
-      "consensus_target_price": 2130.0,
+      "institution_count": 2,
+      "consensus_target_price": 1640.0,
       "consensus_upside": null,
       "dispersion": null,
       "status": "DATA_MISSING",
@@ -526,8 +526,8 @@
     {
       "ticker": "3189",
       "as_of_date": "2026-11-27",
-      "institution_count": 0,
-      "consensus_target_price": null,
+      "institution_count": 1,
+      "consensus_target_price": 1380.0,
       "consensus_upside": null,
       "dispersion": null,
       "status": "DATA_MISSING",
@@ -571,8 +571,8 @@
     {
       "ticker": "2345",
       "as_of_date": "2026-11-27",
-      "institution_count": 0,
-      "consensus_target_price": null,
+      "institution_count": 1,
+      "consensus_target_price": 3420.0,
       "consensus_upside": null,
       "dispersion": null,
       "status": "DATA_MISSING",
@@ -652,8 +652,8 @@
     {
       "ticker": "2301",
       "as_of_date": "2026-11-27",
-      "institution_count": 0,
-      "consensus_target_price": null,
+      "institution_count": 1,
+      "consensus_target_price": 354.0,
       "consensus_upside": null,
       "dispersion": null,
       "status": "DATA_MISSING",
@@ -1076,6 +1076,6 @@
     }
   ],
   "requested_ticker_count": 54,
-  "ready_ticker_count": 3,
+  "ready_ticker_count": 4,
   "source": "data/r1/target_prices/evidence.csv"
 }

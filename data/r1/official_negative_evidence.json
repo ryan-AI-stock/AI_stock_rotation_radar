@@ -1,13 +1,13 @@
 {
   "model": "R1",
   "version": "r1-official-negative-evidence-v0.1",
-  "date": "2026-11-20",
+  "date": "2026-11-27",
   "status": "diagnostic_gate_only",
   "rows": [
     {
       "ticker": "2356",
       "event_type": "FINANCIAL_CASH_MARGIN_STRESS",
-      "available_at": "2026-11-20",
+      "available_at": "2026-11-27",
       "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=2356&SYEAR=2026&SSEASON=3&REPORT_ID=C",
       "source_family": "MOPS_FINANCIAL_STATEMENTS",
       "facts": {
@@ -19,7 +19,7 @@
     {
       "ticker": "3163",
       "event_type": "FINANCIAL_CASH_MARGIN_STRESS",
-      "available_at": "2026-11-20",
+      "available_at": "2026-11-27",
       "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3163&SYEAR=2026&SSEASON=3&REPORT_ID=C",
       "source_family": "MOPS_FINANCIAL_STATEMENTS",
       "facts": {
@@ -31,7 +31,7 @@
     {
       "ticker": "3338",
       "event_type": "FINANCIAL_CASH_MARGIN_STRESS",
-      "available_at": "2026-11-20",
+      "available_at": "2026-11-27",
       "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3338&SYEAR=2026&SSEASON=3&REPORT_ID=C",
       "source_family": "MOPS_FINANCIAL_STATEMENTS",
       "facts": {
@@ -43,7 +43,7 @@
     {
       "ticker": "3363",
       "event_type": "FINANCIAL_EARNINGS_CONTRACTION",
-      "available_at": "2026-11-20",
+      "available_at": "2026-11-27",
       "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3363&SYEAR=2026&SSEASON=3&REPORT_ID=C",
       "source_family": "MOPS_FINANCIAL_STATEMENTS",
       "facts": {
@@ -54,7 +54,7 @@
     {
       "ticker": "3363",
       "event_type": "FINANCIAL_CASH_MARGIN_STRESS",
-      "available_at": "2026-11-20",
+      "available_at": "2026-11-27",
       "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=3363&SYEAR=2026&SSEASON=3&REPORT_ID=C",
       "source_family": "MOPS_FINANCIAL_STATEMENTS",
       "facts": {
@@ -88,7 +88,7 @@
     {
       "ticker": "6412",
       "event_type": "FINANCIAL_EARNINGS_CONTRACTION",
-      "available_at": "2026-11-20",
+      "available_at": "2026-11-27",
       "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=6412&SYEAR=2026&SSEASON=3&REPORT_ID=C",
       "source_family": "MOPS_FINANCIAL_STATEMENTS",
       "facts": {
@@ -99,7 +99,7 @@
     {
       "ticker": "6669",
       "event_type": "FINANCIAL_CASH_MARGIN_STRESS",
-      "available_at": "2026-11-20",
+      "available_at": "2026-11-27",
       "source_url": "https://mopsov.twse.com.tw/server-java/t164sb01?step=1&CO_ID=6669&SYEAR=2026&SSEASON=3&REPORT_ID=C",
       "source_family": "MOPS_FINANCIAL_STATEMENTS",
       "facts": {
@@ -113,7 +113,7 @@
   "event_ticker_count": 7,
   "event_count": 9,
   "future_data_violation_count": 0,
-  "generated_at": "2026-11-20T19:19:55.786053+00:00",
+  "generated_at": "2026-11-27T20:11:12.549731+00:00",
   "formal_model_changed": false,
   "trade_decision_changed": false,
   "active_in_trade_decision": false,
